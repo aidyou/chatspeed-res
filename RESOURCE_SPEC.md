@@ -1,0 +1,63 @@
+# Resource specification
+
+## Common fields
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `id` | yes | Globally unique kebab-case identifier. |
+| `channel` | yes | `mcp`, `models`, or `free-ai`. |
+| `name` | yes | Localized object with `en`, `zh-Hans`, and `zh-Hant`. |
+| `description` | yes | Localized short summary used in import lists. |
+| `detail` | yes | Localized full introduction shown on the standalone detail page. |
+| `categories` | yes | One or more IDs from `resources/categories.json`. |
+| `tags` | yes | Searchable lowercase tags. |
+| `website` | yes | Canonical HTTPS/HTTP website URL. |
+| `status` | yes | `active`, `review`, or `deprecated`. |
+| `lastVerifiedAt` | yes | ISO date (`YYYY-MM-DD`). |
+
+## Detail content
+
+`description` is the short localized summary used by import lists and channel indexes. `detail` is a required localized object with `en`, `zh-Hans`, and `zh-Hant`; it is the full introduction rendered on each standalone VuePress detail page. Include purpose, usage/setup guidance, limitations, and verification notes rather than repeating only the summary.
+
+
+- `mcp`：MCP 服务，可导入 `Mcp.vue`。
+- `models`：模型供应商，可导入 `Model.vue`。
+- `free-ai`：免费 AI 网站或免费 API 服务；如果具备 ChatSpeed 模型导入能力，使用 `freeAi.modelProviderRef` 关联 `models` 中的资源。
+
+
+`mcp` contains the transport configuration. The generator also creates the legacy-compatible `config.mcpServers` field in the output index.
+
+- `type`: `stdio`, `sse`, or `http`.
+- `command` and `args`: required for `stdio`.
+- `url`: required for `sse` or `http`.
+- `env`: pairs of variable name and placeholder/value. Never use a real secret.
+- `requiredInputs`: optional declarations such as an API key name and application URL.
+
+## Model provider fields
+
+`provider` mirrors the fields currently consumed by `Model.vue`:
+
+- `protocol`: `openai`, `ollama`, `gemini`, `claude`, or `huggingface`.
+- `name`, `logo`, `desc`, `baseUrl`, `models`.
+- `maxTokens`, `temperature`, `topP`, `topK`.
+- `documentationUrl`, `modelListUrl`, `keyApplyUrl`.
+
+Every model in `provider.models` must contain a unique `id`. Optional capability fields include `reasoning`, `functionCall`, `imageInput`, `contextSize`, and `maxTokens`.
+
+## Free AI fields
+
+`freeAi` describes the public service and must not imply that a website is an API:
+
+- `accessType`: `web`, `api`, or `web-and-api`.
+- `requiresLogin`: boolean.
+- `hasFreeTier`: boolean.
+- `freeLimit`: localized text.
+- `availability`: `global`, `regional`, or `unknown`.
+- `modelProviderRef`: optional ID of a model-provider resource when an API import is available.
+- `integrations.chatSpeedModel`: optional object with `providerRef` and `importable`; this is the future bridge to `Model.vue` and must never contain a user API key.
+
+## Security rules
+
+- Never commit API keys, passwords, bearer tokens, cookies, or private endpoints.
+- Use placeholders such as `{YOUR_API_KEY_HERE}` only when the client will ask the user to replace them.
+- All resources remain subject to ChatSpeed-side validation before import.

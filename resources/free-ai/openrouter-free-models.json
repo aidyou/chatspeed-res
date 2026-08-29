@@ -1,0 +1,42 @@
+{
+  "id": "openrouter-free-models",
+  "channel": "free-ai",
+  "name": {
+    "en": "OpenRouter Free Models",
+    "zh-Hans": "OpenRouter 免费模型",
+    "zh-Hant": "OpenRouter 免費模型"
+  },
+  "description": {
+    "en": "Free model variants are available through OpenRouter, but the provider documents lower and changing rate limits for free usage.",
+    "zh-Hans": "OpenRouter 提供免费模型变体，但官方说明免费使用通常有较低且会变化的速率限制。",
+    "zh-Hant": "OpenRouter 提供免費模型變體，但官方說明免費使用通常有較低且會變化的速率限制。"
+  },
+  "detail": {
+    "en": "OpenRouter's free model variants provide a convenient way to experiment with an OpenAI-compatible API and can be connected to ChatSpeed through the related provider entry. Free models may have lower rate limits, queueing, provider restrictions, or changing availability, so users should confirm the selected model's current terms before relying on it.",
+    "zh-Hans": "OpenRouter 的免费模型变体提供了便于试用的 OpenAI 兼容 API，并可通过关联的供应商条目接入 ChatSpeed。免费模型可能存在较低速率限制、排队、供应商限制或可用性变化，正式依赖前应确认所选模型的最新条款。",
+    "zh-Hant": "OpenRouter 的免費模型變體提供了便於試用的 OpenAI 相容 API，並可透過關聯的供應商條目接入 ChatSpeed。免費模型可能存在較低速率限制、排隊、供應商限制或可用性變化，正式依賴前應確認所選模型的最新條款。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["openrouter", "free-models", "api"],
+  "website": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-29",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": true,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "Free model limits vary; see OpenRouter's current limits and model pages.",
+      "zh-Hans": "免费模型限制会变化，请查看 OpenRouter 当前限制和模型页面。",
+      "zh-Hant": "免費模型限制會變化，請查看 OpenRouter 目前限制與模型頁面。"
+    },
+    "availability": "global",
+    "modelProviderRef": "openrouter",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "openrouter",
+        "importable": true
+      }
+    }
+  }
+}

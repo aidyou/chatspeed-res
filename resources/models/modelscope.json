@@ -1,0 +1,39 @@
+{
+  "id": "modelscope",
+  "channel": "models",
+  "name": {
+    "en": "ModelScope",
+    "zh-Hans": "魔塔社区",
+    "zh-Hant": "魔塔社區"
+  },
+  "description": {
+    "en": "An OpenAI-compatible model inference endpoint; free quota and eligibility depend on account verification and current platform policy.",
+    "zh-Hans": "兼容 OpenAI 接口的模型推理服务，免费额度和资格取决于账号认证及平台当前政策。",
+    "zh-Hant": "相容 OpenAI 介面的模型推理服務，免費額度與資格取決於帳號認證與平台目前政策。"
+  },
+  "detail": {
+    "en": "ModelScope provides hosted inference APIs for models in its community. The OpenAI-compatible endpoint can be connected to ChatSpeed after obtaining an access token, while available models, account eligibility, regional access, and free quota should be confirmed in the current official documentation.",
+    "zh-Hans": "魔塔社区为平台中的模型提供托管推理 API。获取访问令牌后，可以通过兼容 OpenAI 的接口接入 ChatSpeed；可用模型、账号资格、区域访问和免费额度应以官方最新文档为准。",
+    "zh-Hant": "魔塔社區為平台中的模型提供託管推理 API。取得存取權杖後，可以透過相容 OpenAI 的介面接入 ChatSpeed；可用模型、帳號資格、區域存取與免費額度應以官方最新文件為準。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["modelscope", "openai-compatible", "free-quota", "china"],
+  "website": "https://www.modelscope.cn/",
+  "status": "review",
+  "lastVerifiedAt": "2026-08-29",
+  "provider": {
+    "protocol": "openai",
+    "name": "ModelScope",
+    "logo": "https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico",
+    "desc": "An OpenAI-compatible model inference service from ModelScope.",
+    "baseUrl": "https://api-inference.modelscope.cn/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://modelscope.cn/docs",
+    "modelListUrl": "https://modelscope.cn/models",
+    "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
+  }
+}

@@ -1,0 +1,6 @@
+/*
+  Cache catalog snapshots briefly. A new build updates the content while
+  allowing Cloudflare to serve repeated client requests efficiently.
+*/
+/catalog/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400

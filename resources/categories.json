@@ -1,0 +1,30 @@
+{
+  "mcp": [
+    "development",
+    "search",
+    "browser",
+    "productivity",
+    "data",
+    "memory",
+    "files"
+  ],
+  "models": [
+    "general",
+    "coding",
+    "reasoning",
+    "vision",
+    "embedding",
+    "local"
+  ],
+  "free-ai": [
+    "chat",
+    "search",
+    "writing",
+    "image",
+    "video",
+    "coding",
+    "reasoning",
+    "general",
+    "productivity"
+  ]
+}

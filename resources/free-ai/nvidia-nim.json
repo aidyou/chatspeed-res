@@ -1,0 +1,42 @@
+{
+  "id": "nvidia-nim-free-tier",
+  "channel": "free-ai",
+  "name": {
+    "en": "NVIDIA NIM APIs",
+    "zh-Hans": "NVIDIA NIM API",
+    "zh-Hant": "NVIDIA NIM API"
+  },
+  "description": {
+    "en": "Development-oriented hosted inference APIs. Free access, available models, and rate limits must be checked on the official model page after sign-in.",
+    "zh-Hans": "面向开发者的托管推理 API。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。",
+    "zh-Hant": "面向開發者的託管推理 API。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。"
+  },
+  "detail": {
+    "en": "NVIDIA NIM's free-access entry point is useful for trying selected hosted models during development. Availability is not a universal promise: users need to sign in, inspect the selected model page, create credentials through NVIDIA's official flow, and confirm current limits before configuring ChatSpeed.",
+    "zh-Hans": "NVIDIA NIM 的免费访问入口适合在开发阶段体验部分托管模型，但不能视为普遍承诺。用户需要登录、查看具体模型页面、通过 NVIDIA 官方流程创建凭据，并在配置 ChatSpeed 前确认当前限制。",
+    "zh-Hant": "NVIDIA NIM 的免費存取入口適合在開發階段體驗部分託管模型，但不能視為普遍承諾。使用者需要登入、查看具體模型頁面、透過 NVIDIA 官方流程建立憑證，並在設定 ChatSpeed 前確認目前限制。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["nvidia", "nim", "free-tier", "api"],
+  "website": "https://build.nvidia.com/explore/discover",
+  "status": "review",
+  "lastVerifiedAt": "2026-08-29",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": true,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "No fixed quota is stored here; limits vary by account and model and must be verified on the official page.",
+      "zh-Hans": "这里不写死固定额度；限制会因账号和模型而变化，请以官方页面核验。",
+      "zh-Hant": "這裡不寫死固定額度；限制會因帳號與模型而變化，請以官方頁面核驗。"
+    },
+    "availability": "global",
+    "modelProviderRef": "nvidia-nim",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "nvidia-nim",
+        "importable": true
+      }
+    }
+  }
+}

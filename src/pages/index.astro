@@ -1,0 +1,33 @@
+---
+import ResourceBrowser from '../components/ResourceBrowser.vue'
+import catalog from '../data/generated/catalog.json'
+
+const title = 'ChatSpeed Resource Center'
+const description = 'MCP servers, model providers, and free AI resources for ChatSpeed.'
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <main>
+      <p><strong>ChatSpeed</strong></p>
+      <h1>Resource Center</h1>
+      <p>{description}</p>
+      <nav aria-label="Channels">
+        <a href="/mcp/">MCP</a> · <a href="/models/">Model Providers</a> · <a href="/free-ai/">Free AI</a>
+      </nav>
+      <ResourceBrowser items={catalog.items} client:load />
+    </main>
+  </body>
+</html>
+<style>
+  body { margin: 0; color: #182230; font-family: system-ui, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.25rem; }
+  nav { margin: 2rem 0; }
+  nav a { color: #1677ff; }
+</style>

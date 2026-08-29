@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T15:37:38Z",
+  "channel": "models",
+  "items": [
+    {
+      "id": "modelscope",
+      "channel": "models",
+      "name": "ModelScope",
+      "description": {
+        "en": "An OpenAI-compatible model inference endpoint; free quota and eligibility depend on account verification and current platform policy.",
+        "zh-Hans": "兼容 OpenAI 接口的模型推理服务，免费额度和资格取决于账号认证及平台当前政策。",
+        "zh-Hant": "相容 OpenAI 介面的模型推理服務，免費額度與資格取決於帳號認證與平台目前政策。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "modelscope",
+        "openai-compatible",
+        "free-quota",
+        "china"
+      ],
+      "website": "https://www.modelscope.cn/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-29",
+      "searchText": "modelscope 魔塔社区 魔塔社區 an openai-compatible model inference endpoint; free quota and eligibility depend on account verification and current platform policy. 兼容 openai 接口的模型推理服务，免费额度和资格取决于账号认证及平台当前政策。 相容 openai 介面的模型推理服務，免費額度與資格取決於帳號認證與平台目前政策。 general coding reasoning modelscope openai-compatible free-quota china",
+      "detailPath": "/models/modelscope/",
+      "resourceId": "modelscope",
+      "protocol": "openai",
+      "logo": "https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico",
+      "desc": "An OpenAI-compatible model inference service from ModelScope.",
+      "baseUrl": "https://api-inference.modelscope.cn/v1",
+      "models": [],
+      "maxTokens": 4096,
+      "temperature": 0.6,
+      "topP": 0,
+      "topK": 0,
+      "documentationUrl": "https://modelscope.cn/docs",
+      "modelListUrl": "https://modelscope.cn/models",
+      "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
+    },
+    {
+      "id": "nvidia-nim",
+      "channel": "models",
+      "name": "NVIDIA NIM",
+      "description": {
+        "en": "NVIDIA-hosted serverless inference endpoints for development, with access and rate limits varying by account and model.",
+        "zh-Hans": "NVIDIA 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。",
+        "zh-Hant": "NVIDIA 提供的開發用途無伺服器推理介面，具體可用性與速率限制取決於帳號及模型。"
+      },
+      "categories": [
+        "general",
+        "reasoning",
+        "vision"
+      ],
+      "tags": [
+        "nvidia",
+        "nim",
+        "api",
+        "free-tier"
+      ],
+      "website": "https://build.nvidia.com/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-29",
+      "searchText": "nvidia nim nvidia nim nvidia nim nvidia-hosted serverless inference endpoints for development, with access and rate limits varying by account and model. nvidia 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。 nvidia 提供的開發用途無伺服器推理介面，具體可用性與速率限制取決於帳號及模型。 general reasoning vision nvidia nim api free-tier",
+      "detailPath": "/models/nvidia-nim/",
+      "resourceId": "nvidia-nim",
+      "protocol": "openai",
+      "logo": "https://www.google.com/s2/favicons?domain=build.nvidia.com&sz=64",
+      "desc": "NVIDIA-hosted serverless inference endpoints for development.",
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "models": [],
+      "maxTokens": 4096,
+      "temperature": 0.6,
+      "topP": 0,
+      "topK": 0,
+      "documentationUrl": "https://docs.api.nvidia.com/nim/",
+      "modelListUrl": "https://build.nvidia.com/explore/discover",
+      "keyApplyUrl": "https://build.nvidia.com/settings/api-keys"
+    },
+    {
+      "id": "openrouter",
+      "channel": "models",
+      "name": "OpenRouter",
+      "description": {
+        "en": "A unified OpenAI-compatible API with multiple free model variants whose availability and rate limits can change.",
+        "zh-Hans": "统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。",
+        "zh-Hant": "統一的 OpenAI 相容 API，提供多個免費模型變體，但可用性與速率限制可能變化。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "openrouter",
+        "openai-compatible",
+        "free-models",
+        "api"
+      ],
+      "website": "https://openrouter.ai/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-29",
+      "searchText": "openrouter openrouter openrouter a unified openai-compatible api with multiple free model variants whose availability and rate limits can change. 统一的 openai 兼容 api，提供多个免费模型变体，但可用性和速率限制可能变化。 統一的 openai 相容 api，提供多個免費模型變體，但可用性與速率限制可能變化。 general coding reasoning openrouter openai-compatible free-models api",
+      "detailPath": "/models/openrouter/",
+      "resourceId": "openrouter",
+      "protocol": "openai",
+      "logo": "https://openrouter.ai/favicon.ico",
+      "desc": "A unified interface for LLMs, including free model variants.",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "models": [],
+      "maxTokens": 4096,
+      "temperature": 0.6,
+      "topP": 0,
+      "topK": 0,
+      "documentationUrl": "https://openrouter.ai/docs",
+      "modelListUrl": "https://openrouter.ai/models?max_price=0",
+      "keyApplyUrl": "https://openrouter.ai/settings/keys"
+    }
+  ]
+}

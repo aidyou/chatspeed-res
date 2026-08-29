@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T15:37:38Z",
+  "channels": [
+    {
+      "id": "mcp",
+      "url": "/catalog/mcp.json",
+      "count": 1
+    },
+    {
+      "id": "models",
+      "url": "/catalog/model-providers.json",
+      "count": 3
+    },
+    {
+      "id": "free-ai",
+      "url": "/catalog/free-ai.json",
+      "count": 3
+    }
+  ]
+}

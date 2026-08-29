@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T15:37:38Z",
+  "channel": "mcp",
+  "items": [
+    {
+      "id": "context7",
+      "channel": "mcp",
+      "categories": [
+        "development"
+      ],
+      "tags": [
+        "documentation",
+        "programming",
+        "npm"
+      ],
+      "website": "https://github.com/upstash/context7",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-29",
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@upstash/context7-mcp"
+        ],
+        "env": [],
+        "requiredInputs": []
+      },
+      "searchText": "context7 context7 context7 up-to-date code documentation and examples for llms. 为大语言模型提供最新的代码文档和示例。 為大型語言模型提供最新的程式碼文件與範例。 development documentation programming npm",
+      "detailPath": "/mcp/context7/",
+      "config": {
+        "mcpServers": {
+          "context7": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+              "-y",
+              "@upstash/context7-mcp"
+            ],
+            "env": []
+          }
+        }
+      },
+      "nameI18n": {
+        "en": "Context7",
+        "zh-Hans": "Context7",
+        "zh-Hant": "Context7"
+      },
+      "descriptionI18n": {
+        "en": "Up-to-date code documentation and examples for LLMs.",
+        "zh-Hans": "为大语言模型提供最新的代码文档和示例。",
+        "zh-Hant": "為大型語言模型提供最新的程式碼文件與範例。"
+      },
+      "name": "Context7",
+      "description": "Up-to-date code documentation and examples for LLMs."
+    }
+  ]
+}

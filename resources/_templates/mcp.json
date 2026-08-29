@@ -1,0 +1,31 @@
+{
+  "id": "example-mcp",
+  "channel": "mcp",
+  "name": {
+    "en": "Example MCP",
+    "zh-Hans": "示例 MCP",
+    "zh-Hant": "示例 MCP"
+  },
+  "description": {
+    "en": "Copy this file to resources/mcp and replace every example value.",
+    "zh-Hans": "复制此文件到 resources/mcp，并替换所有示例内容。",
+    "zh-Hant": "複製此檔案到 resources/mcp，並替換所有範例內容。"
+  },
+  "detail": {
+    "en": "Explain what this resource does, when to use it, setup steps, limitations, and security considerations.",
+    "zh-Hans": "说明资源的用途、适用场景、配置步骤、限制和安全注意事项。",
+    "zh-Hant": "說明資源的用途、適用情境、設定步驟、限制與安全注意事項。"
+  },
+  "categories": ["development"],
+  "tags": ["example"],
+  "website": "https://example.com",
+  "status": "review",
+  "lastVerifiedAt": "2026-01-01",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": ["-y", "example-mcp"],
+    "env": [],
+    "requiredInputs": []
+  }
+}

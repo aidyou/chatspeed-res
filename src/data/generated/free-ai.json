@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-29T15:37:38Z",
+  "channel": "free-ai",
+  "items": [
+    {
+      "id": "modelscope-free-quota",
+      "channel": "free-ai",
+      "name": {
+        "en": "ModelScope Free Inference Quota",
+        "zh-Hans": "魔塔免费调用额度",
+        "zh-Hant": "魔塔免費呼叫額度"
+      },
+      "description": {
+        "en": "ModelScope inference access after account verification. The exact free quota must be checked against the current account and official policy.",
+        "zh-Hans": "魔塔账号认证后可使用模型推理服务，具体免费额度需要以当前账号和官方政策为准。",
+        "zh-Hant": "魔塔帳號認證後可使用模型推理服務，具體免費額度需要以目前帳號與官方政策為準。"
+      },
+      "detail": {
+        "en": "This entry tracks the free inference access associated with ModelScope. It is intended for users who want to evaluate models through an API and connect the related provider configuration to ChatSpeed. Account verification, model availability, regional access, and the claimed daily quota must be checked against the current official policy.",
+        "zh-Hans": "该条目记录魔塔社区相关的免费推理服务，适合希望通过 API 体验模型并将对应供应商配置接入 ChatSpeed 的用户。账号认证、模型可用性、区域访问以及传闻中的每日额度，都必须以当前官方政策为准。",
+        "zh-Hant": "此條目記錄魔塔社區相關的免費推理服務，適合希望透過 API 體驗模型並將對應供應商設定接入 ChatSpeed 的使用者。帳號認證、模型可用性、區域存取以及傳聞中的每日額度，都必須以目前官方政策為準。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "modelscope",
+        "free-quota",
+        "api",
+        "china"
+      ],
+      "website": "https://modelscope.cn/docs",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-29",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "A 2,000-calls-per-day claim is pending official verification; do not treat it as a guaranteed quota.",
+          "zh-Hans": "“认证后每天 2000 次”的说法待官方核验，不应视为保证额度。",
+          "zh-Hant": "「認證後每天 2000 次」的說法待官方核驗，不應視為保證額度。"
+        },
+        "availability": "regional",
+        "modelProviderRef": "modelscope",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "modelscope",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "modelscope free inference quota 魔塔免费调用额度 魔塔免費呼叫額度 modelscope inference access after account verification. the exact free quota must be checked against the current account and official policy. 魔塔账号认证后可使用模型推理服务，具体免费额度需要以当前账号和官方政策为准。 魔塔帳號認證後可使用模型推理服務，具體免費額度需要以目前帳號與官方政策為準。 general coding reasoning modelscope free-quota api china",
+      "detailPath": "/free-ai/modelscope-free-quota/"
+    },
+    {
+      "id": "nvidia-nim-free-tier",
+      "channel": "free-ai",
+      "name": {
+        "en": "NVIDIA NIM APIs",
+        "zh-Hans": "NVIDIA NIM API",
+        "zh-Hant": "NVIDIA NIM API"
+      },
+      "description": {
+        "en": "Development-oriented hosted inference APIs. Free access, available models, and rate limits must be checked on the official model page after sign-in.",
+        "zh-Hans": "面向开发者的托管推理 API。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。",
+        "zh-Hant": "面向開發者的託管推理 API。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。"
+      },
+      "detail": {
+        "en": "NVIDIA NIM's free-access entry point is useful for trying selected hosted models during development. Availability is not a universal promise: users need to sign in, inspect the selected model page, create credentials through NVIDIA's official flow, and confirm current limits before configuring ChatSpeed.",
+        "zh-Hans": "NVIDIA NIM 的免费访问入口适合在开发阶段体验部分托管模型，但不能视为普遍承诺。用户需要登录、查看具体模型页面、通过 NVIDIA 官方流程创建凭据，并在配置 ChatSpeed 前确认当前限制。",
+        "zh-Hant": "NVIDIA NIM 的免費存取入口適合在開發階段體驗部分託管模型，但不能視為普遍承諾。使用者需要登入、查看具體模型頁面、透過 NVIDIA 官方流程建立憑證，並在設定 ChatSpeed 前確認目前限制。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "nvidia",
+        "nim",
+        "free-tier",
+        "api"
+      ],
+      "website": "https://build.nvidia.com/explore/discover",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-29",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "No fixed quota is stored here; limits vary by account and model and must be verified on the official page.",
+          "zh-Hans": "这里不写死固定额度；限制会因账号和模型而变化，请以官方页面核验。",
+          "zh-Hant": "這裡不寫死固定額度；限制會因帳號與模型而變化，請以官方頁面核驗。"
+        },
+        "availability": "global",
+        "modelProviderRef": "nvidia-nim",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "nvidia-nim",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "nvidia nim apis nvidia nim api nvidia nim api development-oriented hosted inference apis. free access, available models, and rate limits must be checked on the official model page after sign-in. 面向开发者的托管推理 api。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。 面向開發者的託管推理 api。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。 general coding reasoning nvidia nim free-tier api",
+      "detailPath": "/free-ai/nvidia-nim-free-tier/"
+    },
+    {
+      "id": "openrouter-free-models",
+      "channel": "free-ai",
+      "name": {
+        "en": "OpenRouter Free Models",
+        "zh-Hans": "OpenRouter 免费模型",
+        "zh-Hant": "OpenRouter 免費模型"
+      },
+      "description": {
+        "en": "Free model variants are available through OpenRouter, but the provider documents lower and changing rate limits for free usage.",
+        "zh-Hans": "OpenRouter 提供免费模型变体，但官方说明免费使用通常有较低且会变化的速率限制。",
+        "zh-Hant": "OpenRouter 提供免費模型變體，但官方說明免費使用通常有較低且會變化的速率限制。"
+      },
+      "detail": {
+        "en": "OpenRouter's free model variants provide a convenient way to experiment with an OpenAI-compatible API and can be connected to ChatSpeed through the related provider entry. Free models may have lower rate limits, queueing, provider restrictions, or changing availability, so users should confirm the selected model's current terms before relying on it.",
+        "zh-Hans": "OpenRouter 的免费模型变体提供了便于试用的 OpenAI 兼容 API，并可通过关联的供应商条目接入 ChatSpeed。免费模型可能存在较低速率限制、排队、供应商限制或可用性变化，正式依赖前应确认所选模型的最新条款。",
+        "zh-Hant": "OpenRouter 的免費模型變體提供了便於試用的 OpenAI 相容 API，並可透過關聯的供應商條目接入 ChatSpeed。免費模型可能存在較低速率限制、排隊、供應商限制或可用性變化，正式依賴前應確認所選模型的最新條款。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "openrouter",
+        "free-models",
+        "api"
+      ],
+      "website": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-29",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free model limits vary; see OpenRouter's current limits and model pages.",
+          "zh-Hans": "免费模型限制会变化，请查看 OpenRouter 当前限制和模型页面。",
+          "zh-Hant": "免費模型限制會變化，請查看 OpenRouter 目前限制與模型頁面。"
+        },
+        "availability": "global",
+        "modelProviderRef": "openrouter",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "openrouter",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "openrouter free models openrouter 免费模型 openrouter 免費模型 free model variants are available through openrouter, but the provider documents lower and changing rate limits for free usage. openrouter 提供免费模型变体，但官方说明免费使用通常有较低且会变化的速率限制。 openrouter 提供免費模型變體，但官方說明免費使用通常有較低且會變化的速率限制。 general coding reasoning openrouter free-models api",
+      "detailPath": "/free-ai/openrouter-free-models/"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "example-provider",
+  "channel": "models",
+  "name": {
+    "en": "Example Provider",
+    "zh-Hans": "示例模型供应商",
+    "zh-Hant": "示例模型供應商"
+  },
+  "description": {
+    "en": "Copy this file to resources/models and replace every example value.",
+    "zh-Hans": "复制此文件到 resources/models，并替换所有示例内容。",
+    "zh-Hant": "複製此檔案到 resources/models，並替換所有範例內容。"
+  },
+  "detail": {
+    "en": "Explain the provider, compatibility, setup steps, model availability, limits, and security considerations.",
+    "zh-Hans": "说明供应商的定位、兼容性、配置步骤、模型可用性、限制和安全注意事项。",
+    "zh-Hant": "說明供應商的定位、相容性、設定步驟、模型可用性、限制與安全注意事項。"
+  },
+  "categories": ["general"],
+  "tags": ["example"],
+  "website": "https://example.com",
+  "status": "review",
+  "lastVerifiedAt": "2026-01-01",
+  "provider": {
+    "protocol": "openai",
+    "name": "Example Provider",
+    "logo": "",
+    "desc": "Example provider description",
+    "baseUrl": "https://api.example.com/v1",
+    "models": [
+      {
+        "id": "example-model",
+        "name": "Example Model",
+        "group": "Example",
+        "reasoning": false,
+        "functionCall": true,
+        "imageInput": false
+      }
+    ],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://example.com/docs",
+    "modelListUrl": "https://example.com/models",
+    "keyApplyUrl": "https://example.com/keys"
+  }
+}

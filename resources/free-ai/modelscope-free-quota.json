@@ -1,0 +1,42 @@
+{
+  "id": "modelscope-free-quota",
+  "channel": "free-ai",
+  "name": {
+    "en": "ModelScope Free Inference Quota",
+    "zh-Hans": "魔塔免费调用额度",
+    "zh-Hant": "魔塔免費呼叫額度"
+  },
+  "description": {
+    "en": "ModelScope inference access after account verification. The exact free quota must be checked against the current account and official policy.",
+    "zh-Hans": "魔塔账号认证后可使用模型推理服务，具体免费额度需要以当前账号和官方政策为准。",
+    "zh-Hant": "魔塔帳號認證後可使用模型推理服務，具體免費額度需要以目前帳號與官方政策為準。"
+  },
+  "detail": {
+    "en": "This entry tracks the free inference access associated with ModelScope. It is intended for users who want to evaluate models through an API and connect the related provider configuration to ChatSpeed. Account verification, model availability, regional access, and the claimed daily quota must be checked against the current official policy.",
+    "zh-Hans": "该条目记录魔塔社区相关的免费推理服务，适合希望通过 API 体验模型并将对应供应商配置接入 ChatSpeed 的用户。账号认证、模型可用性、区域访问以及传闻中的每日额度，都必须以当前官方政策为准。",
+    "zh-Hant": "此條目記錄魔塔社區相關的免費推理服務，適合希望透過 API 體驗模型並將對應供應商設定接入 ChatSpeed 的使用者。帳號認證、模型可用性、區域存取以及傳聞中的每日額度，都必須以目前官方政策為準。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["modelscope", "free-quota", "api", "china"],
+  "website": "https://modelscope.cn/docs",
+  "status": "review",
+  "lastVerifiedAt": "2026-08-29",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": true,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "A 2,000-calls-per-day claim is pending official verification; do not treat it as a guaranteed quota.",
+      "zh-Hans": "“认证后每天 2000 次”的说法待官方核验，不应视为保证额度。",
+      "zh-Hant": "「認證後每天 2000 次」的說法待官方核驗，不應視為保證額度。"
+    },
+    "availability": "regional",
+    "modelProviderRef": "modelscope",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "modelscope",
+        "importable": true
+      }
+    }
+  }
+}
