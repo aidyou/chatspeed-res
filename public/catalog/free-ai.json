@@ -1,25 +1,1085 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-30T09:10:21Z",
+  "generatedAt": "2026-08-30T11:53:54Z",
   "channel": "free-ai",
   "items": [
+    {
+      "id": "aliyun-bailian-free-quota",
+      "channel": "free-ai",
+      "name": {
+        "en": "Alibaba Cloud Model Studio Free Quota",
+        "zh-Hans": "阿里云百炼新人免费额度",
+        "zh-Hant": "阿里云百炼新人免费额度"
+      },
+      "description": {
+        "en": "First activation auto-grants per-model new-user free quota (usually 1M tokens per model, valid 90 days, Beijing region, no real-name needed); Qwen Code OAuth adds an independent 2,000 calls/day.",
+        "zh-Hans": "首次开通自动发放各模型新人免费额度（通常每模型 100 万 Token，有效期 90 天，华北2北京地域，无需实名）；另有 Qwen Code OAuth 独立免费额度每天 2,000 次。",
+        "zh-Hant": "首次开通自动发放各模型新人免费额度（通常每模型 100 万 Token，有效期 90 天，华北2北京地域，无需实名）；另有 Qwen Code OAuth 独立免费额度每天 2,000 次。"
+      },
+      "detail": {
+        "en": "Alibaba Cloud Model Studio (百炼) is Alibaba Cloud's model platform for Qwen and ecosystem models. On first activation it automatically grants each model a new-user free quota (usually 1M tokens per model, valid 90 days, Beijing region only); no real-name verification is required to consume the free quota, and unverified accounts default to a hard stop (403 FreeTierOnly) once it is exhausted. Qwen Code OAuth authentication carries an independent free quota of 2,000 calls/day. The OpenAI-compatible endpoint can be connected to ChatSpeed. Free quota only covers real-time inference, not batch/tuning.",
+        "zh-Hans": "阿里云百炼是阿里云的大模型服务平台（千问 Qwen 及生态模型）。首次开通百炼时，系统自动为每个模型发放新人免费额度（通常每模型 100 万 Token，有效期 90 天，仅华北2（北京）地域生效）；使用免费额度无需实名认证，未认证账号额度耗尽后默认强制用完即停（返回 403 FreeTierOnly）。此外，Qwen Code 的 OAuth 认证提供独立于 API Key 体系的免费额度（每天 2,000 次调用）。通过 OpenAI 兼容端点可接入 ChatSpeed。注意免费额度仅抵扣实时推理，不抵扣 Batch、模型调优、部署等费用。",
+        "zh-Hant": "阿里云百炼是阿里云的大模型服务平台（千问 Qwen 及生态模型）。首次开通百炼时，系统自动为每个模型发放新人免费额度（通常每模型 100 万 Token，有效期 90 天，仅华北2（北京）地域生效）；使用免费额度无需实名认证，未认证账号额度耗尽后默认强制用完即停（返回 403 FreeTierOnly）。此外，Qwen Code 的 OAuth 认证提供独立于 API Key 体系的免费额度（每天 2,000 次调用）。通过 OpenAI 兼容端点可接入 ChatSpeed。注意免费额度仅抵扣实时推理，不抵扣 Batch、模型调优、部署等费用。"
+      },
+      "categories": [
+        "general",
+        "coding"
+      ],
+      "tags": [
+        "aliyun",
+        "bailian",
+        "free-quota",
+        "api",
+        "china"
+      ],
+      "website": "https://bailian.console.aliyun.com/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Per-model new-user quota (usually 1M tokens/model, 90 days, Beijing region) + Qwen Code OAuth 2,000 calls/day; no real-name verification needed for the free quota. Check the official help doc for current values.",
+          "zh-Hans": "每模型新人免费额度（通常 100 万 Token/模型，有效期 90 天，华北2地域）+ Qwen Code OAuth 每天 2,000 次；免费额度无需实名认证。以官方帮助文档当前说明为准。",
+          "zh-Hant": "每模型新人免费额度（通常 100 万 Token/模型，有效期 90 天，华北2地域）+ Qwen Code OAuth 每天 2,000 次；免费额度无需实名认证。以官方帮助文档当前说明为准。"
+        },
+        "availability": "regional",
+        "signupUrl": "https://bailian.console.aliyun.com/",
+        "freePolicyUrl": "https://help.aliyun.com/zh/model-studio/new-free-quota",
+        "registrationRestriction": {
+          "en": "Register an Alibaba Cloud account (phone/email) to activate the platform; free quota needs no real-name verification, but continuing on a pay-as-you-go basis requires verification and top-up. Mainland China access expected.",
+          "zh-Hans": "注册阿里云账号（手机号/邮箱）并开通百炼即可；免费额度无需实名认证，但额度用完后按量付费需要实名并充值（未认证默认停止调用）。面向中国大陆用户。",
+          "zh-Hant": "注册阿里云账号（手机号/邮箱）并开通百炼即可；免费额度无需实名认证，但额度用完后按量付费需要实名并充值（未认证默认停止调用）。面向中国大陆用户。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "New-user quota per model (qwen-plus, qwen-max, qwen3-series etc.)",
+              "zh-Hans": "各模型新人免费额度（qwen-plus、qwen-max、qwen3 系列等）",
+              "zh-Hant": "各模型新人免费额度（qwen-plus、qwen-max、qwen3 系列等）"
+            },
+            "quota": {
+              "en": "Usually 1M tokens per model (independent per model)",
+              "zh-Hans": "通常每模型 100 万 Token（各模型独立）",
+              "zh-Hant": "通常每模型 100 万 Token（各模型独立）"
+            },
+            "frequency": {
+              "en": "Valid 90 days; Beijing (cn-beijing) region only",
+              "zh-Hans": "有效期 90 天；仅华北2（北京）地域",
+              "zh-Hant": "有效期 90 天；仅华北2（北京）地域"
+            }
+          },
+          {
+            "model": {
+              "en": "Qwen Code OAuth authentication",
+              "zh-Hans": "Qwen Code OAuth 认证",
+              "zh-Hant": "Qwen Code OAuth 认证"
+            },
+            "quota": {
+              "en": "2,000 calls / day",
+              "zh-Hans": "每天 2,000 次调用",
+              "zh-Hant": "每天 2,000 次调用"
+            },
+            "frequency": {
+              "en": "Independent of API-key free quota; daily",
+              "zh-Hans": "与 API Key 免费额度相互独立，按自然日",
+              "zh-Hant": "与 API Key 免费额度相互独立，按自然日"
+            }
+          }
+        ],
+        "modelProviderRef": "aliyun-bailian",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "aliyun-bailian",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "alibaba cloud model studio free quota 阿里云百炼新人免费额度 阿里云百炼新人免费额度 first activation auto-grants per-model new-user free quota (usually 1m tokens per model, valid 90 days, beijing region, no real-name needed); qwen code oauth adds an independent 2,000 calls/day. 首次开通自动发放各模型新人免费额度（通常每模型 100 万 token，有效期 90 天，华北2北京地域，无需实名）；另有 qwen code oauth 独立免费额度每天 2,000 次。 首次开通自动发放各模型新人免费额度（通常每模型 100 万 token，有效期 90 天，华北2北京地域，无需实名）；另有 qwen code oauth 独立免费额度每天 2,000 次。 general coding aliyun bailian free-quota api china",
+      "detailPath": "/free-ai/aliyun-bailian-free-quota/"
+    },
+    {
+      "id": "cerebras-free-tier",
+      "channel": "free-ai",
+      "name": {
+        "en": "Cerebras Free Tier",
+        "zh-Hans": "Cerebras 免费层",
+        "zh-Hant": "Cerebras 免费层"
+      },
+      "description": {
+        "en": "Ultra-fast OpenAI-compatible inference (up to ~2,000 tokens/s) with a free tier of roughly 1M tokens/day per model (e.g. Llama 3.3 70B); no credit card required.",
+        "zh-Hans": "OpenAI 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 Llama 3.3 70B）；无需信用卡。",
+        "zh-Hant": "OpenAI 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 Llama 3.3 70B）；无需信用卡。"
+      },
+      "detail": {
+        "en": "Cerebras runs open LLMs on wafer-scale chips with very high throughput via an OpenAI-compatible API (base https://api.cerebras.ai/v1). The free tier provides roughly 1M tokens/day per model with per-model RPM/TPM/TPD limits (values per the official rate-limits doc); hitting a limit returns 429. No credit card is required; the paid Developer tier offers about 10x higher limits.",
+        "zh-Hans": "Cerebras 使用晶圆级芯片托管开源 LLM，通过 OpenAI 兼容 API（https://api.cerebras.ai/v1）提供极高吞吐。免费层每模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速（数值见官方 rate-limits 文档）；超限返回 429。无需信用卡；付费 Developer 层限速约为免费层 10 倍。",
+        "zh-Hant": "Cerebras 使用晶圆级芯片托管开源 LLM，通过 OpenAI 兼容 API（https://api.cerebras.ai/v1）提供极高吞吐。免费层每模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速（数值见官方 rate-limits 文档）；超限返回 429。无需信用卡；付费 Developer 层限速约为免费层 10 倍。"
+      },
+      "categories": [
+        "general",
+        "coding"
+      ],
+      "tags": [
+        "cerebras",
+        "free-tier",
+        "api",
+        "fast-inference"
+      ],
+      "website": "https://www.cerebras.ai/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free tier: roughly 1M tokens/day per model (plus per-model RPM/TPM limits); no credit card required. Check the official rate-limits doc for current values.",
+          "zh-Hans": "免费层约每模型每天 100 万 tokens（另按模型设 RPM/TPM 限速）；无需信用卡；当前数值以官方 rate-limits 文档为准。",
+          "zh-Hant": "免费层约每模型每天 100 万 tokens（另按模型设 RPM/TPM 限速）；无需信用卡；当前数值以官方 rate-limits 文档为准。"
+        },
+        "availability": "global",
+        "signupUrl": "https://cloud.cerebras.ai/",
+        "freePolicyUrl": "https://inference-docs.cerebras.ai/support/rate-limits",
+        "registrationRestriction": {
+          "en": "Sign up with email; no credit card required. Rate limits are per organization/API key and model.",
+          "zh-Hans": "邮箱注册即可，无需信用卡；限速按组织/API Key 与模型计。",
+          "zh-Hant": "邮箱注册即可，无需信用卡；限速按组织/API Key 与模型计。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "Free-tier models (e.g. Llama 3.3 70B, Qwen3 and other open models)",
+              "zh-Hans": "免费层模型（如 Llama 3.3 70B、Qwen3 等开源模型）",
+              "zh-Hant": "免费层模型（如 Llama 3.3 70B、Qwen3 等开源模型）"
+            },
+            "quota": {
+              "en": "Free, ~1M tokens/day per model",
+              "zh-Hans": "免费，每模型约 100 万 tokens/天",
+              "zh-Hant": "免费，每模型约 100 万 tokens/天"
+            },
+            "frequency": {
+              "en": "RPM/TPM/TPD per model; see official doc",
+              "zh-Hans": "按模型设 RPM/TPM/TPD，见官方文档",
+              "zh-Hant": "按模型设 RPM/TPM/TPD，见官方文档"
+            }
+          }
+        ],
+        "modelProviderRef": "cerebras",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "cerebras",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "cerebras free tier cerebras 免费层 cerebras 免费层 ultra-fast openai-compatible inference (up to ~2,000 tokens/s) with a free tier of roughly 1m tokens/day per model (e.g. llama 3.3 70b); no credit card required. openai 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 llama 3.3 70b）；无需信用卡。 openai 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 llama 3.3 70b）；无需信用卡。 general coding cerebras free-tier api fast-inference",
+      "detailPath": "/free-ai/cerebras-free-tier/"
+    },
+    {
+      "id": "gemini-api-free-tier",
+      "channel": "free-ai",
+      "name": {
+        "en": "Google Gemini API Free Tier",
+        "zh-Hans": "Google Gemini API 免费层",
+        "zh-Hant": "Google Gemini API 免费层"
+      },
+      "description": {
+        "en": "Free tier covers Flash / Flash-Lite family models (e.g. Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, newer 3.x Flash Lite) with free input/output tokens; quotas are relatively generous for daily use and shown in AI Studio.",
+        "zh-Hans": "免费层覆盖 Flash / Flash-Lite 系列模型（如 Gemini 2.5 Flash、2.5 Flash-Lite 及更新的 3.x Flash Lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 AI Studio 查看。",
+        "zh-Hant": "免费层覆盖 Flash / Flash-Lite 系列模型（如 Gemini 2.5 Flash、2.5 Flash-Lite 及更新的 3.x Flash Lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 AI Studio 查看。"
+      },
+      "detail": {
+        "en": "Google's Gemini API provides a free tier for developers and small projects. Free-eligible models are the Flash and Flash-Lite families (e.g. Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, newer 3.x Flash Lite variants) with free input/output tokens and relatively generous RPM/RPD quotas, which Google no longer fully publishes per model — check your effective limits in Google AI Studio, as they change over time (free-tier cuts happened historically). The free tier needs a Google account but no billing/credit card; rate limits apply per project. The API supports both the native protocol and an OpenAI-compatible endpoint.",
+        "zh-Hans": "Google Gemini API 为开发者和小型项目提供免费层。免费可用模型主要是 Flash 与 Flash-Lite 系列（如 Gemini 2.5 Flash、Gemini 2.5 Flash-Lite 以及更新的 3.x Flash Lite 变体），输入输出 token 免费，RPM/RPD 配额相对宽裕；Google 已不再逐模型完整公布免费层限速，请在 Google AI Studio 查看当前生效额度（历史上免费额度曾多次调整，例如 2025 年底收紧）。免费层只需 Google 账号，无需绑定账单或信用卡；限速按项目维度计算。API 同时支持原生协议与 OpenAI 兼容端点。",
+        "zh-Hant": "Google Gemini API 为开发者和小型项目提供免费层。免费可用模型主要是 Flash 与 Flash-Lite 系列（如 Gemini 2.5 Flash、Gemini 2.5 Flash-Lite 以及更新的 3.x Flash Lite 变体），输入输出 token 免费，RPM/RPD 配额相对宽裕；Google 已不再逐模型完整公布免费层限速，请在 Google AI Studio 查看当前生效额度（历史上免费额度曾多次调整，例如 2025 年底收紧）。免费层只需 Google 账号，无需绑定账单或信用卡；限速按项目维度计算。API 同时支持原生协议与 OpenAI 兼容端点。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "google",
+        "gemini",
+        "free-tier",
+        "api"
+      ],
+      "website": "https://ai.google.dev/gemini-api/docs/pricing",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free tier covers Flash/Flash-Lite models with free input/output tokens; per-model RPM/RPD quotas are shown and adjusted in Google AI Studio (not fully published). No billing/credit card needed for the free tier.",
+          "zh-Hans": "免费层覆盖 Flash / Flash-Lite 系列模型，输入输出 token 免费；各模型 RPM/RPD 配额在 Google AI Studio 展示并动态调整（官方不再完整公布）。免费层无需绑定账单或信用卡。",
+          "zh-Hant": "免费层覆盖 Flash / Flash-Lite 系列模型，输入输出 token 免费；各模型 RPM/RPD 配额在 Google AI Studio 展示并动态调整（官方不再完整公布）。免费层无需绑定账单或信用卡。"
+        },
+        "availability": "global",
+        "signupUrl": "https://aistudio.google.com/app/apikey",
+        "freePolicyUrl": "https://ai.google.dev/gemini-api/docs/rate-limits",
+        "registrationRestriction": {
+          "en": "Sign up with a Google account; the free tier needs no credit card. Availability is subject to Google's supported-regions policy.",
+          "zh-Hans": "使用 Google 账号注册即可，免费层无需信用卡；部分地区不可用，可用区域以官方政策为准。",
+          "zh-Hant": "使用 Google 账号注册即可，免费层无需信用卡；部分地区不可用，可用区域以官方政策为准。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "Gemini Flash family (e.g. Gemini 2.5 Flash, newer 3.x Flash)",
+              "zh-Hans": "Gemini Flash 系列（如 Gemini 2.5 Flash 及更新的 3.x Flash）",
+              "zh-Hant": "Gemini Flash 系列（如 Gemini 2.5 Flash 及更新的 3.x Flash）"
+            },
+            "quota": {
+              "en": "Free input & output tokens",
+              "zh-Hans": "输入输出 token 免费",
+              "zh-Hant": "输入输出 token 免费"
+            },
+            "frequency": {
+              "en": "RPM/RPD per AI Studio; generous for daily use",
+              "zh-Hans": "RPM/RPD 以 AI Studio 为准，日常使用较宽裕",
+              "zh-Hant": "RPM/RPD 以 AI Studio 为准，日常使用较宽裕"
+            }
+          },
+          {
+            "model": {
+              "en": "Gemini Flash-Lite family (e.g. Gemini 2.5 Flash-Lite, newer 3.x Flash Lite)",
+              "zh-Hans": "Gemini Flash-Lite 系列（如 Gemini 2.5 Flash-Lite 及更新的 3.x Flash Lite）",
+              "zh-Hant": "Gemini Flash-Lite 系列（如 Gemini 2.5 Flash-Lite 及更新的 3.x Flash Lite）"
+            },
+            "quota": {
+              "en": "Free input & output tokens",
+              "zh-Hans": "输入输出 token 免费",
+              "zh-Hant": "输入输出 token 免费"
+            },
+            "frequency": {
+              "en": "Higher quotas than Flash; check AI Studio",
+              "zh-Hans": "额度通常高于 Flash，以 AI Studio 为准",
+              "zh-Hant": "额度通常高于 Flash，以 AI Studio 为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Other models (Pro family, previews etc.)",
+              "zh-Hans": "其他模型（Pro 系列、预览版等）",
+              "zh-Hant": "其他模型（Pro 系列、预览版等）"
+            },
+            "quota": {
+              "en": "Free-tier eligibility varies",
+              "zh-Hans": "是否计入免费层视模型而定",
+              "zh-Hant": "是否计入免费层视模型而定"
+            },
+            "frequency": {
+              "en": "Check AI Studio",
+              "zh-Hans": "以 AI Studio 为准",
+              "zh-Hant": "以 AI Studio 为准"
+            }
+          }
+        ],
+        "modelProviderRef": "gemini",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "gemini",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "google gemini api free tier google gemini api 免费层 google gemini api 免费层 free tier covers flash / flash-lite family models (e.g. gemini 2.5 flash, gemini 2.5 flash-lite, newer 3.x flash lite) with free input/output tokens; quotas are relatively generous for daily use and shown in ai studio. 免费层覆盖 flash / flash-lite 系列模型（如 gemini 2.5 flash、2.5 flash-lite 及更新的 3.x flash lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 ai studio 查看。 免费层覆盖 flash / flash-lite 系列模型（如 gemini 2.5 flash、2.5 flash-lite 及更新的 3.x flash lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 ai studio 查看。 general coding reasoning google gemini free-tier api",
+      "detailPath": "/free-ai/gemini-api-free-tier/"
+    },
+    {
+      "id": "groq-free-api",
+      "channel": "free-ai",
+      "name": {
+        "en": "Groq Free API",
+        "zh-Hans": "Groq 免费 API",
+        "zh-Hant": "Groq 免费 API"
+      },
+      "description": {
+        "en": "Permanent free tier, no credit card required: e.g. Llama 3.1 8B gets 30 RPM / 14,400 requests per day; Llama 3.3 70B, Llama 4 Scout, GPT-OSS 120B get 30 RPM / 1,000 RPD; Kimi K2/Qwen3 32B get 60 RPM / 1,000 RPD.",
+        "zh-Hans": "长期免费层、无需信用卡：如 Llama 3.1 8B 为 30 次/分钟、每天 14,400 次；Llama 3.3 70B、Llama 4 Scout、GPT-OSS 120B 为 30 次/分钟、每天 1,000 次；Kimi K2 / Qwen3 32B 为 60 次/分钟、每天 1,000 次。",
+        "zh-Hant": "长期免费层、无需信用卡：如 Llama 3.1 8B 为 30 次/分钟、每天 14,400 次；Llama 3.3 70B、Llama 4 Scout、GPT-OSS 120B 为 30 次/分钟、每天 1,000 次；Kimi K2 / Qwen3 32B 为 60 次/分钟、每天 1,000 次。"
+      },
+      "detail": {
+        "en": "Groq provides very fast inference (500+ tokens/s on some models) via an OpenAI-compatible API with a permanent free tier. Rate limits apply per organization and per model (see the quotas rows); they cover RPM, RPD, TPM and TPD, and the first one hit triggers 429 with X-RateLimit headers. No credit card is required. Free models include the Llama family, Kimi K2, Qwen3 32B, GPT-OSS 120B/20B and Whisper speech-to-text. Values change; check console.groq.com/docs/rate-limits for the current table.",
+        "zh-Hans": "Groq 通过 OpenAI 兼容 API 提供极速推理（部分模型 500+ tokens/秒），并设有长期免费层。限速按组织维度、分模型计算（见明细表），涉及 RPM、RPD、TPM、TPD 四类指标，先达到任一即返回 429 并附 X-RateLimit 响应头。注册无需信用卡。免费模型包括 Llama 系列、Kimi K2、Qwen3 32B、GPT-OSS 120B/20B 以及 Whisper 语音转写。数值可能调整，当前完整表格见 console.groq.com/docs/rate-limits。",
+        "zh-Hant": "Groq 通过 OpenAI 兼容 API 提供极速推理（部分模型 500+ tokens/秒），并设有长期免费层。限速按组织维度、分模型计算（见明细表），涉及 RPM、RPD、TPM、TPD 四类指标，先达到任一即返回 429 并附 X-RateLimit 响应头。注册无需信用卡。免费模型包括 Llama 系列、Kimi K2、Qwen3 32B、GPT-OSS 120B/20B 以及 Whisper 语音转写。数值可能调整，当前完整表格见 console.groq.com/docs/rate-limits。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "groq",
+        "free-tier",
+        "api",
+        "fast-inference"
+      ],
+      "website": "https://groq.com/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free tier with per-model limits (RPM/RPD/TPM/TPD); e.g. llama-3.1-8b-instant: 30 RPM / 14,400 RPD / 6,000 TPM / 500K TPD. No credit card required. Check the official rate-limits table for current values.",
+          "zh-Hans": "免费层按模型限速（RPM/RPD/TPM/TPD）；如 llama-3.1-8b-instant：30 次/分钟、每天 14,400 次、TPM 6,000、TPD 500,000。无需信用卡；当前数值以官方限速表为准。",
+          "zh-Hant": "免费层按模型限速（RPM/RPD/TPM/TPD）；如 llama-3.1-8b-instant：30 次/分钟、每天 14,400 次、TPM 6,000、TPD 500,000。无需信用卡；当前数值以官方限速表为准。"
+        },
+        "availability": "global",
+        "signupUrl": "https://console.groq.com/",
+        "freePolicyUrl": "https://console.groq.com/docs/rate-limits",
+        "registrationRestriction": {
+          "en": "Sign up with email or Google account; no credit card required. Rate limits are per organization, not per API key.",
+          "zh-Hans": "邮箱或 Google 账号注册即可，无需信用卡。限速按组织计，而非按 API Key 计。",
+          "zh-Hant": "邮箱或 Google 账号注册即可，无需信用卡。限速按组织计，而非按 API Key 计。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "llama-3.1-8b-instant",
+              "zh-Hans": "llama-3.1-8b-instant",
+              "zh-Hant": "llama-3.1-8b-instant"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "30 RPM / 14,400 RPD / 6,000 TPM / 500K TPD",
+              "zh-Hans": "30 次/分钟 / 每天 14,400 次 / TPM 6,000 / TPD 500,000",
+              "zh-Hant": "30 次/分钟 / 每天 14,400 次 / TPM 6,000 / TPD 500,000"
+            }
+          },
+          {
+            "model": {
+              "en": "llama-3.3-70b-versatile, Llama 4 Scout, gpt-oss-120b/20b",
+              "zh-Hans": "llama-3.3-70b-versatile、Llama 4 Scout、gpt-oss-120b/20b",
+              "zh-Hant": "llama-3.3-70b-versatile、Llama 4 Scout、gpt-oss-120b/20b"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "30 RPM / 1,000 RPD (TPM 6,000–30,000 / TPD 100K–500K)",
+              "zh-Hans": "30 次/分钟 / 每天 1,000 次（TPM 6,000–30,000 / TPD 10 万–50 万）",
+              "zh-Hant": "30 次/分钟 / 每天 1,000 次（TPM 6,000–30,000 / TPD 10 万–50 万）"
+            }
+          },
+          {
+            "model": {
+              "en": "kimi-k2-instruct, qwen3-32b",
+              "zh-Hans": "kimi-k2-instruct、qwen3-32b",
+              "zh-Hant": "kimi-k2-instruct、qwen3-32b"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "60 RPM / 1,000 RPD",
+              "zh-Hans": "60 次/分钟 / 每天 1,000 次",
+              "zh-Hant": "60 次/分钟 / 每天 1,000 次"
+            }
+          },
+          {
+            "model": {
+              "en": "whisper-large-v3 / whisper-large-v3-turbo (speech-to-text)",
+              "zh-Hans": "whisper-large-v3 / whisper-large-v3-turbo（语音转写）",
+              "zh-Hant": "whisper-large-v3 / whisper-large-v3-turbo（语音转写）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "20 RPM / 2,000 RPD",
+              "zh-Hans": "20 次/分钟 / 每天 2,000 次",
+              "zh-Hant": "20 次/分钟 / 每天 2,000 次"
+            }
+          }
+        ],
+        "modelProviderRef": "groq",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "groq",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "groq free api groq 免费 api groq 免费 api permanent free tier, no credit card required: e.g. llama 3.1 8b gets 30 rpm / 14,400 requests per day; llama 3.3 70b, llama 4 scout, gpt-oss 120b get 30 rpm / 1,000 rpd; kimi k2/qwen3 32b get 60 rpm / 1,000 rpd. 长期免费层、无需信用卡：如 llama 3.1 8b 为 30 次/分钟、每天 14,400 次；llama 3.3 70b、llama 4 scout、gpt-oss 120b 为 30 次/分钟、每天 1,000 次；kimi k2 / qwen3 32b 为 60 次/分钟、每天 1,000 次。 长期免费层、无需信用卡：如 llama 3.1 8b 为 30 次/分钟、每天 14,400 次；llama 3.3 70b、llama 4 scout、gpt-oss 120b 为 30 次/分钟、每天 1,000 次；kimi k2 / qwen3 32b 为 60 次/分钟、每天 1,000 次。 general coding reasoning groq free-tier api fast-inference",
+      "detailPath": "/free-ai/groq-free-api/"
+    },
+    {
+      "id": "openrouter-free-models",
+      "channel": "free-ai",
+      "name": {
+        "en": "OpenRouter Free Models",
+        "zh-Hans": "OpenRouter 免费模型",
+        "zh-Hant": "OpenRouter 免费模型"
+      },
+      "description": {
+        "en": "Free model variants (model IDs with the `:free` suffix) can be called free of charge through an OpenAI-compatible API; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/day after $10 in lifetime credit purchases.",
+        "zh-Hans": "免费模型变体（模型 ID 加 `:free` 后缀）可通过 OpenAI 兼容 API 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。",
+        "zh-Hant": "免费模型变体（模型 ID 加 `:free` 后缀）可通过 OpenAI 兼容 API 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。"
+      },
+      "detail": {
+        "en": "OpenRouter is a model-aggregation and routing platform: one API key accesses models from many providers, and appending `:free` to a model ID enables the free variant for quick evaluation and prototyping. Free variants usually have lower rate limits than paid ones, may queue, and can hit upstream provider 429s; platform-level limits change with policy (accounts with less than $10 in lifetime purchases get 50 requests/day, raised to 1,000 after $10). The OpenAI-compatible endpoint can be connected to ChatSpeed directly.",
+        "zh-Hans": "OpenRouter 是模型聚合与路由平台，通过一个 API Key 访问多家供应商的模型，在模型 ID 后追加 `:free` 后缀即可使用免费变体，便于快速体验与开发调试。免费变体与付费变体相比通常限速更低，可能出现排队或供应商偶发 429；平台侧免费限制会随政策调整（历史累计充值不足 $10 的账号每天最多 50 次，累计满 $10 后提升为每天 1,000 次）。OpenRouter 提供 OpenAI 兼容接口，可接入 ChatSpeed 使用。正式依赖前请查看所选模型的当前条款与官方限速文档。",
+        "zh-Hant": "OpenRouter 是模型聚合与路由平台，通过一个 API Key 访问多家供应商的模型，在模型 ID 后追加 `:free` 后缀即可使用免费变体，便于快速体验与开发调试。免费变体与付费变体相比通常限速更低，可能出现排队或供应商偶发 429；平台侧免费限制会随政策调整（历史累计充值不足 $10 的账号每天最多 50 次，累计满 $10 后提升为每天 1,000 次）。OpenRouter 提供 OpenAI 兼容接口，可接入 ChatSpeed 使用。正式依赖前请查看所选模型的当前条款与官方限速文档。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "openrouter",
+        "free-models",
+        "api"
+      ],
+      "website": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free variants: 20 requests/minute; accounts with less than $10 in lifetime credit purchases get up to 50 requests/day, raised to 1,000 requests/day after $10 in lifetime purchases. Limits may change; check the official rate-limit documentation.",
+          "zh-Hans": "免费模型变体限速 20 次/分钟；历史累计充值不足 $10 的账号每天最多 50 次，累计充值满 $10 后提升为每天 1,000 次。限制可能调整，以官方限速文档为准。",
+          "zh-Hant": "免费模型变体限速 20 次/分钟；历史累计充值不足 $10 的账号每天最多 50 次，累计充值满 $10 后提升为每天 1,000 次。限制可能调整，以官方限速文档为准。"
+        },
+        "availability": "global",
+        "signupUrl": "https://openrouter.ai/",
+        "freePolicyUrl": "https://openrouter.ai/docs/api_reference/limits",
+        "registrationRestriction": {
+          "en": "Sign up with email only; no credit card required. The free daily cap is low; you can raise it to 1,000 requests/day with $10+ in lifetime credit purchases (payment methods per official policy).",
+          "zh-Hans": "邮箱注册即可，无需信用卡；免费日额度较低，可通过历史累计充值 $10+ 提升至每天 1,000 次，充值与支付方式以官方为准。",
+          "zh-Hant": "邮箱注册即可，无需信用卡；免费日额度较低，可通过历史累计充值 $10+ 提升至每天 1,000 次，充值与支付方式以官方为准。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "All free variants (model IDs ending in `:free`)",
+              "zh-Hans": "全部免费变体（模型 ID 以 `:free` 结尾）",
+              "zh-Hant": "全部免费变体（模型 ID 以 `:free` 结尾）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "20 requests per minute",
+              "zh-Hans": "20 次/分钟",
+              "zh-Hant": "20 次/分钟"
+            }
+          },
+          {
+            "model": {
+              "en": "Accounts with less than $10 lifetime credit purchases",
+              "zh-Hans": "历史累计充值不足 $10 的账号",
+              "zh-Hant": "历史累计充值不足 $10 的账号"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "Up to 50 requests per day",
+              "zh-Hans": "每天最多 50 次",
+              "zh-Hant": "每天最多 50 次"
+            }
+          },
+          {
+            "model": {
+              "en": "Accounts with $10+ lifetime credit purchases",
+              "zh-Hans": "历史累计充值满 $10 的账号",
+              "zh-Hant": "历史累计充值满 $10 的账号"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "Up to 1,000 requests per day",
+              "zh-Hans": "每天最多 1,000 次",
+              "zh-Hant": "每天最多 1,000 次"
+            }
+          }
+        ],
+        "modelProviderRef": "openrouter",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "openrouter",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "openrouter free models openrouter 免费模型 openrouter 免费模型 free model variants (model ids with the `:free` suffix) can be called free of charge through an openai-compatible api; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/day after $10 in lifetime credit purchases. 免费模型变体（模型 id 加 `:free` 后缀）可通过 openai 兼容 api 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。 免费模型变体（模型 id 加 `:free` 后缀）可通过 openai 兼容 api 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。 general coding reasoning openrouter free-models api",
+      "detailPath": "/free-ai/openrouter-free-models/"
+    },
+    {
+      "id": "sensenova-token-plan",
+      "channel": "free-ai",
+      "name": {
+        "en": "SenseNova Token Plan (Free Beta)",
+        "zh-Hans": "商汤日日新 Token Plan（免费公测）",
+        "zh-Hant": "商汤日日新 Token Plan（免费公测）"
+      },
+      "description": {
+        "en": "Free open beta: the general-credit pool and the Flash-Lite credit pool each provide a limited-time supply of 60,000 credits per rolling 5 hours and 600,000 credits per rolling week; Flash-Lite usage of dedicated credits earns a 1:1 general-credit rebate (rules effective 2026-08-28).",
+        "zh-Hans": "免费公测中：通用积分与 Flash-Lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；Flash-Lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。",
+        "zh-Hant": "免费公测中：通用积分与 Flash-Lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；Flash-Lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。"
+      },
+      "detail": {
+        "en": "SenseNova Token Plan is SenseTime's free open-beta program for its SenseNova (日日新) large-model platform. During the beta, models opened on the platform (e.g. DeepSeek V4 Flash, SenseNova 6.7 Flash-Lite, SenseNova U1 Fast; the list may expand or change) are free through the OpenAI-compatible gateway (https://token.sensenova.cn/v1), and integrations such as WorkBuddy and Claude Code style tools are supported. From 2026-08-28 the platform applies a credits system: accounts carry general credits (shared by all opened models) and Flash-Lite-specific credits (Flash-Lite family only); during the beta each pool provides a rolling 60,000 credits per 5 hours and 600,000 credits per week. A rebate activity also runs from 2026-08-28: every Flash-Lite-specific credit consumed earns 1 general credit back (aggregated by day, settled hourly; rebated credits are valid 30 days and do not count against the rolling limits). Beta benefits and activities may change; confirm on the platform page before relying on them.",
+        "zh-Hans": "商汤日日新 SenseNova Token Plan 是商汤科技大模型平台 SenseNova（日日新）的免费公测计划。公测期间，通过 OpenAI 兼容网关（https://token.sensenova.cn/v1）可免费调用平台已开放模型，包括 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等（名单可能扩充或调整），并支持接入 WorkBuddy、Claude Code 类工具。2026-08-28 起平台启用积分规则：账户区分通用积分（所有已开放模型共用）与 Flash-Lite 专属积分（仅用于 Flash-Lite 系列）；公测期间两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度。同期开启 Flash-Lite 消费返赠活动：每实际消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（按自然日汇总、每小时结算，返赠积分 30 天有效，不占用滚动 5 小时/周额度，也不会解锁新模型权限）。公测权益与活动可能随时调整，正式依赖前请以平台页面为准。",
+        "zh-Hant": "商汤日日新 SenseNova Token Plan 是商汤科技大模型平台 SenseNova（日日新）的免费公测计划。公测期间，通过 OpenAI 兼容网关（https://token.sensenova.cn/v1）可免费调用平台已开放模型，包括 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等（名单可能扩充或调整），并支持接入 WorkBuddy、Claude Code 类工具。2026-08-28 起平台启用积分规则：账户区分通用积分（所有已开放模型共用）与 Flash-Lite 专属积分（仅用于 Flash-Lite 系列）；公测期间两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度。同期开启 Flash-Lite 消费返赠活动：每实际消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（按自然日汇总、每小时结算，返赠积分 30 天有效，不占用滚动 5 小时/周额度，也不会解锁新模型权限）。公测权益与活动可能随时调整，正式依赖前请以平台页面为准。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "sensenova",
+        "sensetime",
+        "free-trial",
+        "api",
+        "china"
+      ],
+      "website": "https://www.sensenova.cn/token-plan",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "From 2026-08-28: general-credit pool and Flash-Lite credit pool each give 60,000 credits per rolling 5h and 600,000 credits per rolling week during the beta; Flash-Lite deducts dedicated credits first, then general credits. Rebate activity: 1 Flash-Lite credit consumed returns 1 general credit (settled hourly, valid 30 days, outside the rolling limits). Beta benefits may change.",
+          "zh-Hans": "2026-08-28 起积分规则：通用积分池与 Flash-Lite 专属积分池在公测期间各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周；使用 Flash-Lite 优先扣除专属积分，不足再扣通用积分。活动期间每消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（每小时结算、30 天有效、不占滚动额度）。公测权益可能调整，以官方页面为准。",
+          "zh-Hant": "2026-08-28 起积分规则：通用积分池与 Flash-Lite 专属积分池在公测期间各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周；使用 Flash-Lite 优先扣除专属积分，不足再扣通用积分。活动期间每消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（每小时结算、30 天有效、不占滚动额度）。公测权益可能调整，以官方页面为准。"
+        },
+        "availability": "regional",
+        "signupUrl": "https://www.sensenova.cn/token-plan",
+        "freePolicyUrl": "https://www.sensenova.cn/token-plan",
+        "registrationRestriction": {
+          "en": "Register on the SenseNova platform to claim the beta quota; mainland phone/email sign-up works, no credit card required.",
+          "zh-Hans": "在商汤日日新平台注册并领取公测额度；支持大陆手机号/邮箱注册，无需信用卡。",
+          "zh-Hant": "在商汤日日新平台注册并领取公测额度；支持大陆手机号/邮箱注册，无需信用卡。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "General credit pool (all opened models)",
+              "zh-Hans": "通用积分池（全部已开放模型）",
+              "zh-Hant": "通用积分池（全部已开放模型）"
+            },
+            "quota": {
+              "en": "Limited-time supply 60,000 credits / rolling 5h; 600,000 credits / rolling week",
+              "zh-Hans": "限时放量 60,000 积分/滚动 5 小时；600,000 积分/滚动周",
+              "zh-Hant": "限时放量 60,000 积分/滚动 5 小时；600,000 积分/滚动周"
+            },
+            "frequency": {
+              "en": "Deducted per model actual usage; check account page",
+              "zh-Hans": "不同模型按实际用量扣除不同积分，以账户页面为准",
+              "zh-Hant": "不同模型按实际用量扣除不同积分，以账户页面为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Flash-Lite credit pool (Flash-Lite family only)",
+              "zh-Hans": "Flash-Lite 专属积分池（仅 Flash-Lite 系列）",
+              "zh-Hant": "Flash-Lite 专属积分池（仅 Flash-Lite 系列）"
+            },
+            "quota": {
+              "en": "60,000 credits / rolling 5h; 600,000 credits / rolling week",
+              "zh-Hans": "60,000 积分/滚动 5 小时；600,000 积分/滚动周",
+              "zh-Hant": "60,000 积分/滚动 5 小时；600,000 积分/滚动周"
+            },
+            "frequency": {
+              "en": "Deducted first for Flash-Lite; every 1 credit consumed rebates 1 general credit (activity since 2026-08-28)",
+              "zh-Hans": "使用 Flash-Lite 优先扣除；每消耗 1 积分返赠 1 通用积分（2026-08-28 起活动期间）",
+              "zh-Hant": "使用 Flash-Lite 优先扣除；每消耗 1 积分返赠 1 通用积分（2026-08-28 起活动期间）"
+            }
+          },
+          {
+            "model": {
+              "en": "DeepSeek V4 Flash, SenseNova 6.7 Flash-Lite, GLM-5.2, SenseNova U1 Fast (example models)",
+              "zh-Hans": "DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2、SenseNova U1 Fast（示例模型）",
+              "zh-Hant": "DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2、SenseNova U1 Fast（示例模型）"
+            },
+            "quota": {
+              "en": "Free within the beta credit pools",
+              "zh-Hans": "公测积分额度内免费",
+              "zh-Hant": "公测积分额度内免费"
+            },
+            "frequency": {
+              "en": "Each model deducts credits per actual usage; check account page",
+              "zh-Hans": "按模型实际用量扣减积分，以账户页面为准",
+              "zh-Hant": "按模型实际用量扣减积分，以账户页面为准"
+            }
+          }
+        ],
+        "modelProviderRef": "sensenova",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "sensenova",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "sensenova token plan (free beta) 商汤日日新 token plan（免费公测） 商汤日日新 token plan（免费公测） free open beta: the general-credit pool and the flash-lite credit pool each provide a limited-time supply of 60,000 credits per rolling 5 hours and 600,000 credits per rolling week; flash-lite usage of dedicated credits earns a 1:1 general-credit rebate (rules effective 2026-08-28). 免费公测中：通用积分与 flash-lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；flash-lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。 免费公测中：通用积分与 flash-lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；flash-lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。 general coding reasoning sensenova sensetime free-trial api china",
+      "detailPath": "/free-ai/sensenova-token-plan/"
+    },
+    {
+      "id": "siliconflow-free-models",
+      "channel": "free-ai",
+      "name": {
+        "en": "SiliconFlow Free Models & Credit",
+        "zh-Hans": "硅基流动免费模型与额度",
+        "zh-Hant": "硅基流动免费模型与额度"
+      },
+      "description": {
+        "en": "New users get about ¥14 (≈20M tokens) credit, and after real-name verification can use many permanently free open models (DeepSeek, Qwen, Llama, GLM etc.); free models cost 0 with fixed rate limits.",
+        "zh-Hans": "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。",
+        "zh-Hant": "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。"
+      },
+      "detail": {
+        "en": "SiliconFlow (硅基流动) is a domestic MaaS platform with 200+ open models behind one OpenAI-compatible endpoint. Free tier: new accounts receive a credit grant of about ¥14 (roughly 20M tokens of Qwen-class models); after real-name verification, all permanent free variants become available (named without the Pro/ prefix), which cost 0 and have fixed per-model rate limits. Text models generally allow RPM 1,000–10,000 and TPM 50,000–5,000,000 depending on the model and usage tier; image models are limited to IPM 2 / IPD 400. Free policy and limits change, so confirm with the official rate-limit and billing docs.",
+        "zh-Hans": "硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。",
+        "zh-Hant": "硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "reasoning"
+      ],
+      "tags": [
+        "siliconflow",
+        "free-models",
+        "api",
+        "china"
+      ],
+      "website": "https://siliconflow.cn/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Sign-up credit about ¥14 (≈20M tokens); permanent free models cost 0 after real-name verification, text models roughly RPM 1,000–10,000 / TPM 50K–5M, image models IPM 2 / IPD 400. Confirm current values in the official docs.",
+          "zh-Hans": "注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。",
+          "zh-Hant": "注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。"
+        },
+        "availability": "regional",
+        "signupUrl": "https://siliconflow.cn/",
+        "freePolicyUrl": "https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation",
+        "registrationRestriction": {
+          "en": "Sign up with a Chinese phone number/email; real-name verification is required to use all permanent free models. No credit card required.",
+          "zh-Hans": "手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。",
+          "zh-Hant": "手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "New-user credit (all models by tokens)",
+              "zh-Hans": "新用户注册额度（全模型按 token 消耗）",
+              "zh-Hant": "新用户注册额度（全模型按 token 消耗）"
+            },
+            "quota": {
+              "en": "≈ ¥14 (≈ 20M tokens of Qwen-class models)",
+              "zh-Hans": "约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型）",
+              "zh-Hant": "约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型）"
+            },
+            "frequency": {
+              "en": "One-time grant; exact amount per official billing doc",
+              "zh-Hans": "一次性赠送，具体以官方计费文档为准",
+              "zh-Hant": "一次性赠送，具体以官方计费文档为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Permanent free models (text, e.g. DeepSeek, Qwen, Llama, GLM variants)",
+              "zh-Hans": "永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体）",
+              "zh-Hant": "永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体）"
+            },
+            "quota": {
+              "en": "Free (cost 0)",
+              "zh-Hans": "免费（费用 0）",
+              "zh-Hant": "免费（费用 0）"
+            },
+            "frequency": {
+              "en": "RPM 1,000–10,000 / TPM 50K–5M (by model)",
+              "zh-Hans": "RPM 1,000–10,000 / TPM 5 万–500 万（按模型）",
+              "zh-Hant": "RPM 1,000–10,000 / TPM 5 万–500 万（按模型）"
+            }
+          },
+          {
+            "model": {
+              "en": "Image-generation models",
+              "zh-Hans": "图像生成模型",
+              "zh-Hant": "图像生成模型"
+            },
+            "quota": {
+              "en": "Free (cost 0)",
+              "zh-Hans": "免费（费用 0）",
+              "zh-Hant": "免费（费用 0）"
+            },
+            "frequency": {
+              "en": "IPM 2 / IPD 400",
+              "zh-Hans": "IPM 2 / IPD 400",
+              "zh-Hant": "IPM 2 / IPD 400"
+            }
+          }
+        ],
+        "modelProviderRef": "siliconflow",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "siliconflow",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "siliconflow free models & credit 硅基流动免费模型与额度 硅基流动免费模型与额度 new users get about ¥14 (≈20m tokens) credit, and after real-name verification can use many permanently free open models (deepseek, qwen, llama, glm etc.); free models cost 0 with fixed rate limits. 新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（deepseek、qwen、llama、glm 等），免费模型费用为 0、限速固定。 新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（deepseek、qwen、llama、glm 等），免费模型费用为 0、限速固定。 general coding reasoning siliconflow free-models api china",
+      "detailPath": "/free-ai/siliconflow-free-models/"
+    },
+    {
+      "id": "zhipu-glm-flash",
+      "channel": "free-ai",
+      "name": {
+        "en": "Zhipu GLM Flash Free Models",
+        "zh-Hans": "智谱 GLM Flash 免费模型",
+        "zh-Hant": "智谱 GLM Flash 免费模型"
+      },
+      "description": {
+        "en": "GLM-4-Flash is announced as permanently free with basically no call-volume limit (newer GLM-4.7-Flash is also free); sign-up also grants learning credits for paid GLM models (community reports ~20M tokens).",
+        "zh-Hans": "GLM-4-Flash 宣布长期免费、基本不限调用量（后续推出的 GLM-4.7-Flash 同样免费）；注册另有可用于付费 GLM 模型的学习额度（社区反馈约 2,000 万 tokens）。",
+        "zh-Hant": "GLM-4-Flash 宣布长期免费、基本不限调用量（后续推出的 GLM-4.7-Flash 同样免费）；注册另有可用于付费 GLM 模型的学习额度（社区反馈约 2,000 万 tokens）。"
+      },
+      "detail": {
+        "en": "Zhipu AI (智谱) is a leading Chinese LLM provider whose MaaS platform continuously offers free Flash-tier models: GLM-4-Flash (text) is announced as permanently free without call-volume restrictions, the newer GLM-4.7-Flash is also free, and GLM-4V-Flash offers free image understanding. New accounts receive learning credits usable on paid GLM models (community reports about 20M tokens; check the official console). Free-tier concurrency limits exist but are generous; current values are in the official rate-limit document. Sign up with a Chinese phone number; no credit card needed.",
+        "zh-Hans": "智谱 AI 是国内头部大模型厂商，其 MaaS 平台长期提供免费 Flash 档模型：GLM-4-Flash（文本）已宣布永久免费、基本不限调用量，后续推出的 GLM-4.7-Flash 同样免费，GLM-4V-Flash 提供免费的图像理解能力。新账号注册会赠送学习额度，可用于付费 GLM 模型（社区反馈约 2,000 万 tokens，以官方控制台为准）。免费模型存在并发限制但较为宽裕，当前数值见官方速率限制文档。使用手机号即可注册；无需信用卡。",
+        "zh-Hant": "智谱 AI 是国内头部大模型厂商，其 MaaS 平台长期提供免费 Flash 档模型：GLM-4-Flash（文本）已宣布永久免费、基本不限调用量，后续推出的 GLM-4.7-Flash 同样免费，GLM-4V-Flash 提供免费的图像理解能力。新账号注册会赠送学习额度，可用于付费 GLM 模型（社区反馈约 2,000 万 tokens，以官方控制台为准）。免费模型存在并发限制但较为宽裕，当前数值见官方速率限制文档。使用手机号即可注册；无需信用卡。"
+      },
+      "categories": [
+        "general",
+        "coding"
+      ],
+      "tags": [
+        "zhipu",
+        "glm",
+        "free-models",
+        "api",
+        "china"
+      ],
+      "website": "https://open.bigmodel.cn/",
+      "status": "active",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "GLM-4-Flash permanent free without call-volume limit (GLM-4.7-Flash also free); paid GLM models come with sign-up learning credits (commonly reported ~20M tokens). Check the official console and rate-limit doc.",
+          "zh-Hans": "GLM-4-Flash 永久免费、基本不限调用量（GLM-4.7-Flash 同样免费）；付费 GLM 模型注册赠学习额度（社区反馈约 2,000 万 tokens）。以官方控制台与速率限制文档为准。",
+          "zh-Hant": "GLM-4-Flash 永久免费、基本不限调用量（GLM-4.7-Flash 同样免费）；付费 GLM 模型注册赠学习额度（社区反馈约 2,000 万 tokens）。以官方控制台与速率限制文档为准。"
+        },
+        "availability": "regional",
+        "signupUrl": "https://open.bigmodel.cn/",
+        "freePolicyUrl": "https://docs.bigmodel.cn/cn/api/rate-limit",
+        "registrationRestriction": {
+          "en": "Sign up with a phone number (mainland China numbers supported); no credit card required. Some paid services may require real-name verification.",
+          "zh-Hans": "手机号注册（支持中国大陆号码）即可，无需信用卡；部分付费服务可能需要实名认证。",
+          "zh-Hant": "手机号注册（支持中国大陆号码）即可，无需信用卡；部分付费服务可能需要实名认证。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "GLM-4-Flash / GLM-4.7-Flash (text)",
+              "zh-Hans": "GLM-4-Flash / GLM-4.7-Flash（文本）",
+              "zh-Hant": "GLM-4-Flash / GLM-4.7-Flash（文本）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "Permanent free, no call-volume limit (generous concurrency; see official rate-limit doc)",
+              "zh-Hans": "长期免费、不限调用量（并发较宽裕，以官方速率限制文档为准）",
+              "zh-Hant": "长期免费、不限调用量（并发较宽裕，以官方速率限制文档为准）"
+            }
+          },
+          {
+            "model": {
+              "en": "GLM-4V-Flash (image understanding)",
+              "zh-Hans": "GLM-4V-Flash（图像理解）",
+              "zh-Hant": "GLM-4V-Flash（图像理解）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "Free tier with rate limits; see official doc",
+              "zh-Hans": "免费档有限速，以官方文档为准",
+              "zh-Hant": "免费档有限速，以官方文档为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Paid GLM models (GLM-4 Plus, GLM-5 series etc.)",
+              "zh-Hans": "付费 GLM 模型（GLM-4 Plus、GLM-5 系列等）",
+              "zh-Hant": "付费 GLM 模型（GLM-4 Plus、GLM-5 系列等）"
+            },
+            "quota": {
+              "en": "Sign-up learning credits (commonly ~20M tokens)",
+              "zh-Hans": "注册赠学习额度（社区反馈约 2,000 万 tokens）",
+              "zh-Hant": "注册赠学习额度（社区反馈约 2,000 万 tokens）"
+            },
+            "frequency": {
+              "en": "One-time credits per account; validity per official console",
+              "zh-Hans": "每个账号一次，以官方控制台为准",
+              "zh-Hant": "每个账号一次，以官方控制台为准"
+            }
+          }
+        ],
+        "modelProviderRef": "zhipu",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "zhipu",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "zhipu glm flash free models 智谱 glm flash 免费模型 智谱 glm flash 免费模型 glm-4-flash is announced as permanently free with basically no call-volume limit (newer glm-4.7-flash is also free); sign-up also grants learning credits for paid glm models (community reports ~20m tokens). glm-4-flash 宣布长期免费、基本不限调用量（后续推出的 glm-4.7-flash 同样免费）；注册另有可用于付费 glm 模型的学习额度（社区反馈约 2,000 万 tokens）。 glm-4-flash 宣布长期免费、基本不限调用量（后续推出的 glm-4.7-flash 同样免费）；注册另有可用于付费 glm 模型的学习额度（社区反馈约 2,000 万 tokens）。 general coding zhipu glm free-models api china",
+      "detailPath": "/free-ai/zhipu-glm-flash/"
+    },
+    {
+      "id": "agnes-ai-free-api",
+      "channel": "free-ai",
+      "name": {
+        "en": "Agnes AI Free API",
+        "zh-Hans": "Agnes AI 免费 API",
+        "zh-Hant": "Agnes AI 免费 API"
+      },
+      "description": {
+        "en": "OpenAI-compatible multimodal gateway (text/image/video) that grants free API credits on sign-up; several models run free (Agnes 2.0/2.5 Flash, Agnes Image 2.1 Flash), no credit card required.",
+        "zh-Hans": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。",
+        "zh-Hant": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。"
+      },
+      "detail": {
+        "en": "Agnes AI is an AI gateway and free-API platform (launched 2026) providing multimodal models — text, image and video generation/understanding — through a single OpenAI-compatible endpoint (https://apihub.agnes-ai.com/v1). New accounts receive free API credits, and a free tier covers models such as Agnes 2.0 Flash (agent), Agnes 2.5 Flash and Agnes Image 2.1 Flash. As a young beta-style platform, terms, quota and availability can change quickly; check the official docs and confirm current limits before relying on it.",
+        "zh-Hans": "Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。",
+        "zh-Hant": "Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。"
+      },
+      "categories": [
+        "general",
+        "image",
+        "video"
+      ],
+      "tags": [
+        "agnes-ai",
+        "free-api",
+        "multimodal",
+        "api"
+      ],
+      "website": "https://agnes-ai.com/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Sign-up grants free API credits; some models run free (Agnes 2.0 Flash, Agnes 2.5 Flash, Agnes Image 2.1 Flash). Exact credit amounts are not published; check the official platform.",
+          "zh-Hans": "注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。",
+          "zh-Hant": "注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。"
+        },
+        "availability": "global",
+        "signupUrl": "https://platform.agnes-ai.com/login",
+        "registrationRestriction": {
+          "en": "Sign up with email; no credit card required. Free terms vary by model; confirm availability and compliance on the official docs.",
+          "zh-Hans": "邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。",
+          "zh-Hant": "邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "Agnes 2.0 Flash / Agnes 2.5 Flash (text & agent)",
+              "zh-Hans": "Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent）",
+              "zh-Hant": "Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent）"
+            },
+            "quota": {
+              "en": "Free within sign-up credits",
+              "zh-Hans": "注册额度内免费",
+              "zh-Hant": "注册额度内免费"
+            },
+            "frequency": {
+              "en": "Metered by credits; check official platform",
+              "zh-Hans": "按额度扣减，以官方平台为准",
+              "zh-Hant": "按额度扣减，以官方平台为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Agnes Image 2.1 Flash (image generation)",
+              "zh-Hans": "Agnes Image 2.1 Flash（图像生成）",
+              "zh-Hant": "Agnes Image 2.1 Flash（图像生成）"
+            },
+            "quota": {
+              "en": "Free within sign-up credits",
+              "zh-Hans": "注册额度内免费",
+              "zh-Hant": "注册额度内免费"
+            },
+            "frequency": {
+              "en": "Metered by credits; check official platform",
+              "zh-Hans": "按额度扣减，以官方平台为准",
+              "zh-Hant": "按额度扣减，以官方平台为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Video and other multimodal models",
+              "zh-Hans": "视频及其他多模态模型",
+              "zh-Hant": "视频及其他多模态模型"
+            },
+            "quota": {
+              "en": "Within free tier where available",
+              "zh-Hans": "免费档范围内可用",
+              "zh-Hant": "免费档范围内可用"
+            },
+            "frequency": {
+              "en": "Check official platform",
+              "zh-Hans": "以官方平台为准",
+              "zh-Hant": "以官方平台为准"
+            }
+          }
+        ],
+        "modelProviderRef": "agnes-ai",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "agnes-ai",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "agnes ai free api agnes ai 免费 api agnes ai 免费 api openai-compatible multimodal gateway (text/image/video) that grants free api credits on sign-up; several models run free (agnes 2.0/2.5 flash, agnes image 2.1 flash), no credit card required. openai 兼容的多模态 ai 网关（文本/图像/视频），注册即送免费 api 额度，多个模型免费开放（agnes 2.0/2.5 flash、agnes image 2.1 flash 等），无需信用卡。 openai 兼容的多模态 ai 网关（文本/图像/视频），注册即送免费 api 额度，多个模型免费开放（agnes 2.0/2.5 flash、agnes image 2.1 flash 等），无需信用卡。 general image video agnes-ai free-api multimodal api",
+      "detailPath": "/free-ai/agnes-ai-free-api/"
+    },
+    {
+      "id": "cloudflare-workers-ai-free",
+      "channel": "free-ai",
+      "name": {
+        "en": "Cloudflare Workers AI Free Quota",
+        "zh-Hans": "Cloudflare Workers AI 免费额度",
+        "zh-Hant": "Cloudflare Workers AI 免费额度"
+      },
+      "description": {
+        "en": "Cloudflare Workers AI grants a daily free allocation (about 10,000 Neurons/day) across ~80 models (Llama, Mistral, Qwen, Gemma, GPT-OSS, FLUX etc.); accounts are free and limits can be adjusted to avoid overage.",
+        "zh-Hans": "Cloudflare Workers AI 提供每日免费额度（约 10,000 Neurons/天），覆盖约 80 个模型（Llama、Mistral、Qwen、Gemma、GPT-OSS、FLUX 等）；注册免费，可设置限额防止超出计费。",
+        "zh-Hant": "Cloudflare Workers AI 提供每日免费额度（约 10,000 Neurons/天），覆盖约 80 个模型（Llama、Mistral、Qwen、Gemma、GPT-OSS、FLUX 等）；注册免费，可设置限额防止超出计费。"
+      },
+      "detail": {
+        "en": "Cloudflare Workers AI provides serverless inference on Cloudflare's edge network. The free tier grants a daily allocation measured in Neurons (currently about 10,000/day, per the pricing page) usable across ~80 models including Llama 3.x/4, Mistral, Qwen, Gemma, GPT-OSS, DeepSeek-R1 distills and image models (FLUX, Stable Diffusion), with per-model free rate limits (roughly 150–1,500 requests/min depending on the model). Requests beyond the free allocation are billed per Neurons unless you set limits/hard stops in the dashboard. The OpenAI-compatible endpoint URL includes your account ID, so configure it carefully in ChatSpeed. Free daily allocation and limits change; check the official pricing page.",
+        "zh-Hans": "Cloudflare Workers AI 在 Cloudflare 边缘网络提供无服务器推理。免费层按 Neurons 计量每日免费额度（当前约 10,000 Neurons/天，见官方定价页），可用于约 80 个模型，包括 Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版以及图像模型（FLUX、Stable Diffusion），各模型另有免费层限速（视模型约 150–1,500 次/分钟）。超出免费额度的请求按 Neurons 计费，可在控制台设置限额或硬停避免意外扣费。OpenAI 兼容端点 URL 中需要带账号 ID，在 ChatSpeed 中配置时需注意。每日免费额度与限速会调整，请以官方定价页为准。",
+        "zh-Hant": "Cloudflare Workers AI 在 Cloudflare 边缘网络提供无服务器推理。免费层按 Neurons 计量每日免费额度（当前约 10,000 Neurons/天，见官方定价页），可用于约 80 个模型，包括 Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版以及图像模型（FLUX、Stable Diffusion），各模型另有免费层限速（视模型约 150–1,500 次/分钟）。超出免费额度的请求按 Neurons 计费，可在控制台设置限额或硬停避免意外扣费。OpenAI 兼容端点 URL 中需要带账号 ID，在 ChatSpeed 中配置时需注意。每日免费额度与限速会调整，请以官方定价页为准。"
+      },
+      "categories": [
+        "general",
+        "coding",
+        "image"
+      ],
+      "tags": [
+        "cloudflare",
+        "workers-ai",
+        "free-tier",
+        "api"
+      ],
+      "website": "https://developers.cloudflare.com/workers-ai/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": true,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Daily free allocation about 10,000 Neurons/day (per official pricing); per-model free rate limits (~150–1,500 req/min). Above the allocation, usage is billed per Neurons unless limits are set.",
+          "zh-Hans": "每日免费额度约 10,000 Neurons/天（见官方定价）；各模型另有免费层限速（约 150–1,500 次/分钟）。超出部分按 Neurons 计费，可设置限额防止扣费。",
+          "zh-Hant": "每日免费额度约 10,000 Neurons/天（见官方定价）；各模型另有免费层限速（约 150–1,500 次/分钟）。超出部分按 Neurons 计费，可设置限额防止扣费。"
+        },
+        "availability": "global",
+        "signupUrl": "https://dash.cloudflare.com/sign-up",
+        "freePolicyUrl": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "registrationRestriction": {
+          "en": "Sign up with an email address; the free tier needs no credit card. Requests beyond the daily free allocation are billed, so set spending limits or hard stops in the dashboard.",
+          "zh-Hans": "邮箱注册 Cloudflare 账号即可，免费层无需信用卡；超出每日免费额度的请求会产生费用，建议在控制台设置限额或用完即停。",
+          "zh-Hant": "邮箱注册 Cloudflare 账号即可，免费层无需信用卡；超出每日免费额度的请求会产生费用，建议在控制台设置限额或用完即停。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "All Workers AI models (Llama 3.x/4, Mistral, Qwen, Gemma, GPT-OSS, DeepSeek-R1 distills, FLUX/SD etc.)",
+              "zh-Hans": "Workers AI 全部模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）",
+              "zh-Hant": "Workers AI 全部模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）"
+            },
+            "quota": {
+              "en": "~10,000 Neurons / day (free allocation)",
+              "zh-Hans": "约 10,000 Neurons/天（免费配额）",
+              "zh-Hant": "约 10,000 Neurons/天（免费配额）"
+            },
+            "frequency": {
+              "en": "Daily reset; per-model rate limits ~150–1,500 req/min",
+              "zh-Hans": "每日刷新；各模型限速约 150–1,500 次/分钟",
+              "zh-Hant": "每日刷新；各模型限速约 150–1,500 次/分钟"
+            }
+          }
+        ],
+        "modelProviderRef": "cloudflare",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "cloudflare",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "cloudflare workers ai free quota cloudflare workers ai 免费额度 cloudflare workers ai 免费额度 cloudflare workers ai grants a daily free allocation (about 10,000 neurons/day) across ~80 models (llama, mistral, qwen, gemma, gpt-oss, flux etc.); accounts are free and limits can be adjusted to avoid overage. cloudflare workers ai 提供每日免费额度（约 10,000 neurons/天），覆盖约 80 个模型（llama、mistral、qwen、gemma、gpt-oss、flux 等）；注册免费，可设置限额防止超出计费。 cloudflare workers ai 提供每日免费额度（约 10,000 neurons/天），覆盖约 80 个模型（llama、mistral、qwen、gemma、gpt-oss、flux 等）；注册免费，可设置限额防止超出计费。 general coding image cloudflare workers-ai free-tier api",
+      "detailPath": "/free-ai/cloudflare-workers-ai-free/"
+    },
     {
       "id": "modelscope-free-quota",
       "channel": "free-ai",
       "name": {
         "en": "ModelScope Free Inference Quota",
         "zh-Hans": "魔塔免费调用额度",
-        "zh-Hant": "魔塔免費呼叫額度"
+        "zh-Hant": "魔塔免费调用额度"
       },
       "description": {
-        "en": "ModelScope inference access after account verification. The exact free quota must be checked against the current account and official policy.",
-        "zh-Hans": "魔塔账号认证后可使用模型推理服务，具体免费额度需要以当前账号和官方政策为准。",
-        "zh-Hant": "魔塔帳號認證後可使用模型推理服務，具體免費額度需要以目前帳號與官方政策為準。"
+        "en": "Free sign-up; after linking an Alibaba Cloud account and completing real-name verification, each account gets 2,000 free API-Inference calls per day in total, with a per-model cap of usually 500 calls/day (lower for some large models).",
+        "zh-Hans": "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。",
+        "zh-Hant": "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。"
       },
       "detail": {
-        "en": "This entry tracks the free inference access associated with ModelScope. It is intended for users who want to evaluate models through an API and connect the related provider configuration to ChatSpeed. Account verification, model availability, regional access, and the claimed daily quota must be checked against the current official policy.",
-        "zh-Hans": "该条目记录魔塔社区相关的免费推理服务，适合希望通过 API 体验模型并将对应供应商配置接入 ChatSpeed 的用户。账号认证、模型可用性、区域访问以及传闻中的每日额度，都必须以当前官方政策为准。",
-        "zh-Hant": "此條目記錄魔塔社區相關的免費推理服務，適合希望透過 API 體驗模型並將對應供應商設定接入 ChatSpeed 的使用者。帳號認證、模型可用性、區域存取以及傳聞中的每日額度，都必須以目前官方政策為準。"
+        "en": "ModelScope (魔搭) is Alibaba's model community and hosted-inference platform, providing free API-Inference for 60,000+ models (Qwen, DeepSeek, Tongyi and more) plus image-generation capabilities. The API is OpenAI-compatible and also offers an Anthropic-compatible endpoint (used by Claude Code style tools), which suits users who want to evaluate popular open models over an API and connect the provider to ChatSpeed. The currently callable (free) models can be listed through the OpenAI-compatible endpoint `GET /v1/models`; models returned there are callable under the free quota. The free quota is stable, but popular models occasionally get removed or adjusted, and the official side does not publish a per-model quota table — confirm with the official limits document and model pages before relying on it. Note: calls fail with 401 until the account is linked, and the free quota resets per calendar day.",
+        "zh-Hans": "魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。注意：未完成账号关联时调用会收到 401 提示，免费额度按自然日重新计算。",
+        "zh-Hant": "魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。"
       },
       "categories": [
         "general",
@@ -34,17 +1094,77 @@
       ],
       "website": "https://modelscope.cn/docs",
       "status": "review",
-      "lastVerifiedAt": "2026-08-29",
+      "lastVerifiedAt": "2026-08-30",
       "freeAi": {
         "accessType": "api",
         "requiresLogin": true,
         "hasFreeTier": true,
         "freeLimit": {
-          "en": "A 2,000-calls-per-day claim is pending official verification; do not treat it as a guaranteed quota.",
-          "zh-Hans": "“认证后每天 2000 次”的说法待官方核验，不应视为保证额度。",
-          "zh-Hant": "「認證後每天 2000 次」的說法待官方核驗，不應視為保證額度。"
+          "en": "After sign-up, Alibaba Cloud account linking and real-name verification: 2,000 API-Inference calls/day in total; a single model is usually capped at 500 calls/day, and some large models are currently capped at 200 calls/day (community-reported; the official side does not publish a per-model table). The callable model list is available via `GET /v1/models`. Limits may be adjusted dynamically; follow the official limits documentation.",
+          "zh-Hans": "注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。",
+          "zh-Hant": "注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。"
         },
         "availability": "regional",
+        "signupUrl": "https://modelscope.cn/",
+        "freePolicyUrl": "https://modelscope.cn/docs/model-service/API-Inference/limits",
+        "registrationRestriction": {
+          "en": "Sign up with a phone number/email, then link an Alibaba Cloud account and complete Alibaba Cloud real-name verification before the API works; no credit card is required. Unlinked or unverified accounts receive 401 errors from the API.",
+          "zh-Hans": "手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。",
+          "zh-Hant": "手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "All models (API-Inference, daily total)",
+              "zh-Hans": "全部模型（API-Inference 每日总额）",
+              "zh-Hant": "全部模型（API-Inference 每日总额）"
+            },
+            "quota": {
+              "en": "2,000 calls / day in total",
+              "zh-Hans": "每天总计 2,000 次",
+              "zh-Hant": "每天总计 2,000 次"
+            },
+            "frequency": {
+              "en": "Shared by all models per day",
+              "zh-Hans": "全模型合计，按自然日",
+              "zh-Hant": "全模型合计，按自然日"
+            }
+          },
+          {
+            "model": {
+              "en": "Single general model (e.g. Qwen series)",
+              "zh-Hans": "单个一般模型（如 Qwen 系列）",
+              "zh-Hant": "单个一般模型（如 Qwen 系列）"
+            },
+            "quota": {
+              "en": "Up to 500 calls / day per model",
+              "zh-Hans": "每个模型每天不超过 500 次",
+              "zh-Hant": "每个模型每天不超过 500 次"
+            },
+            "frequency": {
+              "en": "Per model per day",
+              "zh-Hans": "按模型按天",
+              "zh-Hant": "按模型按天"
+            }
+          },
+          {
+            "model": {
+              "en": "Large models such as deepseek-ai/DeepSeek-R1-0528, DeepSeek-V3.1",
+              "zh-Hans": "deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型",
+              "zh-Hant": "deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型"
+            },
+            "quota": {
+              "en": "200 calls / day per model (current)",
+              "zh-Hans": "每个模型每天 200 次（当前）",
+              "zh-Hant": "每个模型每天 200 次（当前）"
+            },
+            "frequency": {
+              "en": "Per model per day; may change dynamically",
+              "zh-Hans": "按模型按天，平台可能动态调整",
+              "zh-Hant": "按模型按天，平台可能动态调整"
+            }
+          }
+        ],
         "modelProviderRef": "modelscope",
         "integrations": {
           "chatSpeedModel": {
@@ -53,7 +1173,7 @@
           }
         }
       },
-      "searchText": "modelscope free inference quota 魔塔免费调用额度 魔塔免費呼叫額度 modelscope inference access after account verification. the exact free quota must be checked against the current account and official policy. 魔塔账号认证后可使用模型推理服务，具体免费额度需要以当前账号和官方政策为准。 魔塔帳號認證後可使用模型推理服務，具體免費額度需要以目前帳號與官方政策為準。 general coding reasoning modelscope free-quota api china",
+      "searchText": "modelscope free inference quota 魔塔免费调用额度 魔塔免费调用额度 free sign-up; after linking an alibaba cloud account and completing real-name verification, each account gets 2,000 free api-inference calls per day in total, with a per-model cap of usually 500 calls/day (lower for some large models). 免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 api（api-inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。 免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 api（api-inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。 general coding reasoning modelscope free-quota api china",
       "detailPath": "/free-ai/modelscope-free-quota/"
     },
     {
@@ -65,14 +1185,14 @@
         "zh-Hant": "NVIDIA NIM API"
       },
       "description": {
-        "en": "Development-oriented hosted inference APIs. Free access, available models, and rate limits must be checked on the official model page after sign-in.",
-        "zh-Hans": "面向开发者的托管推理 API。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。",
-        "zh-Hant": "面向開發者的託管推理 API。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。"
+        "en": "Sign up a free NVIDIA developer account and create an API key (nvapi-...) without a credit card to call hosted model endpoints; the common limit is about 40 requests per minute, intended for development and prototyping, with exact quotas shown on each model page.",
+        "zh-Hans": "免费注册 NVIDIA 开发者账号并申请 API Key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。",
+        "zh-Hant": "免费注册 NVIDIA 开发者账号并申请 API Key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。"
       },
       "detail": {
-        "en": "NVIDIA NIM's free-access entry point is useful for trying selected hosted models during development. Availability is not a universal promise: users need to sign in, inspect the selected model page, create credentials through NVIDIA's official flow, and confirm current limits before configuring ChatSpeed.",
-        "zh-Hans": "NVIDIA NIM 的免费访问入口适合在开发阶段体验部分托管模型，但不能视为普遍承诺。用户需要登录、查看具体模型页面、通过 NVIDIA 官方流程创建凭据，并在配置 ChatSpeed 前确认当前限制。",
-        "zh-Hant": "NVIDIA NIM 的免費存取入口適合在開發階段體驗部分託管模型，但不能視為普遍承諾。使用者需要登入、查看具體模型頁面、透過 NVIDIA 官方流程建立憑證，並在設定 ChatSpeed 前確認目前限制。"
+        "en": "NVIDIA NIM is NVIDIA's hosted (serverless) inference platform on build.nvidia.com, aggregating popular models such as DeepSeek, Qwen3-Coder, Kimi K2, MiniMax M2, Mistral and Devstral, plus some image-generation models (e.g. FLUX.1-dev). You can join the NVIDIA Developer Program for free and create an OpenAI-compatible API key; the free tier is positioned as a trial-style service for development and prototyping, and per-model free quotas and rate limits (commonly around 40 requests/minute) are displayed on each model page. The free tier is not for production reliance; for higher throughput you can request an increase or move to a paid NIM plan.",
+        "zh-Hans": "NVIDIA NIM 是 NVIDIA 在 build.nvidia.com 上提供的托管（无服务器）推理平台，汇集 DeepSeek、Qwen3-Coder、Kimi K2、MiniMax M2、Mistral、Devstral 等热门模型，并支持部分文生图模型（如 FLUX.1-dev）。新用户可以免费加入 NVIDIA 开发者计划并创建兼容 OpenAI 的 API Key（nvapi- 开头，创建后只显示一次，请立即保存）。免费层按官方定位属于面向开发与原型验证的试用性服务，不同模型的免费额度和速率限制（常见约 40 次/分钟）会在模型页面展示当前值。免费层不适合生产依赖；需要更高吞吐时可申请额度提升或转付费方案。",
+        "zh-Hant": "NVIDIA NIM 是 NVIDIA 在 build.nvidia.com 上提供的托管（无服务器）推理平台，汇集 DeepSeek、Qwen3-Coder、Kimi K2、MiniMax M2、Mistral、Devstral 等热门模型，并支持部分文生图模型（如 FLUX.1-dev）。新用户可以免费加入 NVIDIA 开发者计划并创建兼容 OpenAI 的 API Key（nvapi- 开头，创建后只显示一次，请立即保存）。免费层按官方定位属于面向开发与原型验证的试用性服务，不同模型的免费额度和速率限制（常见约 40 次/分钟）会在模型页面展示当前值。免费层不适合生产依赖；需要更高吞吐时可申请额度提升或转付费方案。"
       },
       "categories": [
         "general",
@@ -87,17 +1207,59 @@
       ],
       "website": "https://build.nvidia.com/explore/discover",
       "status": "review",
-      "lastVerifiedAt": "2026-08-29",
+      "lastVerifiedAt": "2026-08-30",
       "freeAi": {
         "accessType": "api",
         "requiresLogin": true,
         "hasFreeTier": true,
         "freeLimit": {
-          "en": "No fixed quota is stored here; limits vary by account and model and must be verified on the official page.",
-          "zh-Hans": "这里不写死固定额度；限制会因账号和模型而变化，请以官方页面核验。",
-          "zh-Hant": "這裡不寫死固定額度；限制會因帳號與模型而變化，請以官方頁面核驗。"
+          "en": "Free API credits are granted on sign-up (commonly reported as around 1,000 credits, in 'credits' units shown per model page); text models are commonly limited to about 40 requests per minute. Quotas and rate limits vary by account, model and current load; check the official model page.",
+          "zh-Hans": "新账号注册即送免费 API 额度（以模型页展示的 credits 计量，社区普遍反馈初始约 1,000）；文本模型常见限速约 40 次/分钟。免费额度和限速会因账号、模型与当前负载而异，请以模型页显示为准。",
+          "zh-Hant": "新账号注册即送免费 API 额度（以模型页展示的 credits 计量，社区普遍反馈初始约 1,000）；文本模型常见限速约 40 次/分钟。免费额度和限速会因账号、模型与当前负载而异，请以模型页显示为准。"
         },
         "availability": "global",
+        "signupUrl": "https://build.nvidia.com/",
+        "registrationRestriction": {
+          "en": "Email sign-up works (e.g. QQ Mail verified OK). For SMS verification, mainland China (+86) numbers never receive the code (confirmed by tests: one China Unicom and one China Telecom number both failed), while overseas numbers receive it fine (UK numbers verified working). Use an overseas number to complete registration/verification. No credit card required; the API key (nvapi- prefix) is shown only once at creation, so save it immediately.",
+          "zh-Hans": "邮箱可注册（实测 QQ 邮箱可用）。手机验证环节中国大陆（+86）手机号收不到验证码（已实测确认：联通、电信各一张均失败）；境外号码可正常收到验证码（已实测英国号码可用）。使用可正常接收短信的境外号码即可完成注册/验证。无需绑定信用卡；API Key（nvapi- 开头）创建后仅显示一次，需立即保存。",
+          "zh-Hant": "邮箱可注册（实测 QQ 邮箱可用）。手机验证环节中国大陆（+86）手机号收不到验证码（已实测确认：联通、电信各一张均失败）；境外号码可正常收到验证码（已实测英国号码可用）。使用可正常接收短信的境外号码即可完成注册/验证。无需绑定信用卡；API Key（nvapi- 开头）创建后仅显示一次，需立即保存。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "Most text models (e.g. DeepSeek V3.2/R1, Qwen3-Coder 480B, Kimi K2, MiniMax M2, Mistral, Devstral)",
+              "zh-Hans": "多数文本模型（如 DeepSeek V3.2/R1、Qwen3-Coder 480B、Kimi K2、MiniMax M2、Mistral、Devstral）",
+              "zh-Hant": "多数文本模型（如 DeepSeek V3.2/R1、Qwen3-Coder 480B、Kimi K2、MiniMax M2、Mistral、Devstral）"
+            },
+            "quota": {
+              "en": "Free (credits-based; commonly ~1,000 on sign-up)",
+              "zh-Hans": "免费（按 credits 计量，新账号常见约 1,000）",
+              "zh-Hant": "免费（按 credits 计量，新账号常见约 1,000）"
+            },
+            "frequency": {
+              "en": "~40 requests per minute (varies by model and load)",
+              "zh-Hans": "约 40 次/分钟（按模型与负载而异）",
+              "zh-Hant": "约 40 次/分钟（按模型与负载而异）"
+            }
+          },
+          {
+            "model": {
+              "en": "Some image-generation models (e.g. FLUX.1-dev)",
+              "zh-Hans": "部分文生图模型（如 FLUX.1-dev）",
+              "zh-Hant": "部分文生图模型（如 FLUX.1-dev）"
+            },
+            "quota": {
+              "en": "Free, e.g. 25 requests (recent example)",
+              "zh-Hans": "免费，例如 25 次请求（近期示例）",
+              "zh-Hant": "免费，例如 25 次请求（近期示例）"
+            },
+            "frequency": {
+              "en": "One-time grant; check the current model page",
+              "zh-Hans": "一次性额度，以模型页当前标注为准",
+              "zh-Hant": "一次性额度，以模型页当前标注为准"
+            }
+          }
+        ],
         "modelProviderRef": "nvidia-nim",
         "integrations": {
           "chatSpeedModel": {
@@ -106,60 +1268,179 @@
           }
         }
       },
-      "searchText": "nvidia nim apis nvidia nim api nvidia nim api development-oriented hosted inference apis. free access, available models, and rate limits must be checked on the official model page after sign-in. 面向开发者的托管推理 api。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。 面向開發者的託管推理 api。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。 general coding reasoning nvidia nim free-tier api",
+      "searchText": "nvidia nim apis nvidia nim api nvidia nim api sign up a free nvidia developer account and create an api key (nvapi-...) without a credit card to call hosted model endpoints; the common limit is about 40 requests per minute, intended for development and prototyping, with exact quotas shown on each model page. 免费注册 nvidia 开发者账号并申请 api key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。 免费注册 nvidia 开发者账号并申请 api key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。 general coding reasoning nvidia nim free-tier api",
       "detailPath": "/free-ai/nvidia-nim-free-tier/"
     },
     {
-      "id": "openrouter-free-models",
+      "id": "opencode-zen-free-models",
       "channel": "free-ai",
       "name": {
-        "en": "OpenRouter Free Models",
-        "zh-Hans": "OpenRouter 免费模型",
-        "zh-Hant": "OpenRouter 免費模型"
+        "en": "OpenCode Zen Free Models",
+        "zh-Hans": "OpenCode Zen 免费模型",
+        "zh-Hant": "OpenCode Zen 免费模型"
       },
       "description": {
-        "en": "Free model variants are available through OpenRouter, but the provider documents lower and changing rate limits for free usage.",
-        "zh-Hans": "OpenRouter 提供免费模型变体，但官方说明免费使用通常有较低且会变化的速率限制。",
-        "zh-Hant": "OpenRouter 提供免費模型變體，但官方說明免費使用通常有較低且會變化的速率限制。"
+        "en": "Inside the opencode coding agent, limited-time free models (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, etc.) are usable after signing in, without adding billing details.",
+        "zh-Hans": "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。",
+        "zh-Hant": "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。"
       },
       "detail": {
-        "en": "OpenRouter's free model variants provide a convenient way to experiment with an OpenAI-compatible API and can be connected to ChatSpeed through the related provider entry. Free models may have lower rate limits, queueing, provider restrictions, or changing availability, so users should confirm the selected model's current terms before relying on it.",
-        "zh-Hans": "OpenRouter 的免费模型变体提供了便于试用的 OpenAI 兼容 API，并可通过关联的供应商条目接入 ChatSpeed。免费模型可能存在较低速率限制、排队、供应商限制或可用性变化，正式依赖前应确认所选模型的最新条款。",
-        "zh-Hant": "OpenRouter 的免費模型變體提供了便於試用的 OpenAI 相容 API，並可透過關聯的供應商條目接入 ChatSpeed。免費模型可能存在較低速率限制、排隊、供應商限制或可用性變化，正式依賴前應確認所選模型的最新條款。"
+        "en": "OpenCode Zen is the AI gateway maintained by the OpenCode team (SST), used inside the opencode coding agent (TUI / CLI): sign in, run /connect with your Zen API key, then /models to pick a model. A set of models is currently free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, Nemotron 3.5 Lightning Free, Ling 3.0 Flash Fin Free, Muse Spark 1.2 Contributor Free) without billing details; paid models are metered per token (auto-recharge defaults to $20 when balance < $5). OpenAI-compatible endpoints are exposed at https://opencode.ai/zen/v1, so it can also be configured in ChatSpeed. The free list rotates frequently; check the official docs.",
+        "zh-Hans": "OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。",
+        "zh-Hant": "OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。"
       },
       "categories": [
-        "general",
-        "coding",
-        "reasoning"
+        "coding"
       ],
       "tags": [
-        "openrouter",
+        "opencode",
+        "zen",
         "free-models",
+        "coding",
         "api"
       ],
-      "website": "https://openrouter.ai/docs/guides/routing/model-variants/free",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-29",
+      "website": "https://opencode.ai/docs/zen/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-30",
       "freeAi": {
         "accessType": "api",
         "requiresLogin": true,
         "hasFreeTier": true,
         "freeLimit": {
-          "en": "Free model limits vary; see OpenRouter's current limits and model pages.",
-          "zh-Hans": "免费模型限制会变化，请查看 OpenRouter 当前限制和模型页面。",
-          "zh-Hant": "免費模型限制會變化，請查看 OpenRouter 目前限制與模型頁面。"
+          "en": "A set of models is free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free etc.); no billing details needed for free models. The list rotates; check the official docs.",
+          "zh-Hans": "一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。",
+          "zh-Hant": "一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。"
         },
         "availability": "global",
-        "modelProviderRef": "openrouter",
+        "signupUrl": "https://opencode.ai/zen",
+        "freePolicyUrl": "https://opencode.ai/docs/zen/",
+        "registrationRestriction": {
+          "en": "Sign up/connect with a Zen account inside opencode (or via the Zen website); free models need no billing details, paid models require adding billing (auto-recharge default $20).",
+          "zh-Hans": "在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。",
+          "zh-Hant": "在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free (current list)",
+              "zh-Hans": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单）",
+              "zh-Hant": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "Limited-time free; list rotates, check official docs",
+              "zh-Hans": "限时免费，名单轮换，以官方文档为准",
+              "zh-Hant": "限时免费，名单轮换，以官方文档为准"
+            }
+          }
+        ],
+        "modelProviderRef": "opencode-zen",
         "integrations": {
           "chatSpeedModel": {
-            "providerRef": "openrouter",
+            "providerRef": "opencode-zen",
             "importable": true
           }
         }
       },
-      "searchText": "openrouter free models openrouter 免费模型 openrouter 免費模型 free model variants are available through openrouter, but the provider documents lower and changing rate limits for free usage. openrouter 提供免费模型变体，但官方说明免费使用通常有较低且会变化的速率限制。 openrouter 提供免費模型變體，但官方說明免費使用通常有較低且會變化的速率限制。 general coding reasoning openrouter free-models api",
-      "detailPath": "/free-ai/openrouter-free-models/"
+      "searchText": "opencode zen free models opencode zen 免费模型 opencode zen 免费模型 inside the opencode coding agent, limited-time free models (mimo-v2.5 free, big pickle, nemotron 3 ultra free, etc.) are usable after signing in, without adding billing details. 在 opencode 编码代理中，登录 opencode zen 账号即可限时免费使用 mimo-v2.5 free、big pickle、nemotron 3 ultra free 等模型，无需添加账单信息。 在 opencode 编码代理中，登录 opencode zen 账号即可限时免费使用 mimo-v2.5 free、big pickle、nemotron 3 ultra free 等模型，无需添加账单信息。 coding opencode zen free-models coding api",
+      "detailPath": "/free-ai/opencode-zen-free-models/"
+    },
+    {
+      "id": "pollinations-free-api",
+      "channel": "free-ai",
+      "name": {
+        "en": "Pollinations Free API",
+        "zh-Hans": "Pollinations 免费 API",
+        "zh-Hant": "Pollinations 免费 API"
+      },
+      "description": {
+        "en": "Open-source generative API (text/image/audio/video); the OpenAI-compatible text endpoint works without sign-up or API key for free models.",
+        "zh-Hans": "开源生成式 AI API（文本/图像/音频/视频）；免费模型可直接通过 OpenAI 兼容文本端点调用，无需注册与 API Key。",
+        "zh-Hant": "开源生成式 AI API（文本/图像/音频/视频）；免费模型可直接通过 OpenAI 兼容文本端点调用，无需注册与 API Key。"
+      },
+      "detail": {
+        "en": "Pollinations is an open-source generative-AI platform exposing simple HTTP APIs for text, image, audio and video generation. The text API is OpenAI-compatible (https://text.pollinations.ai/openai) and remains free without sign-up or API key for the free model set; image generation is served at image.pollinations.ai. Some newer or higher-priority models may require account/token-based access. Rate limits are relatively loose but adjust with load, so confirm with the official repo/docs before relying on it.",
+        "zh-Hans": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频生成的简单 HTTP API。文本 API 采用 OpenAI 兼容格式（https://text.pollinations.ai/openai），免费模型无需注册和 API Key 即可调用；图像生成为 image.pollinations.ai。部分较新模型或需要更高优先级的调用可能要求账号/token 体系。限速较宽松但会随负载调整，正式依赖前请以官方仓库/文档为准。",
+        "zh-Hant": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频生成的简单 HTTP API。文本 API 采用 OpenAI 兼容格式（https://text.pollinations.ai/openai），免费模型无需注册和 API Key 即可调用；图像生成为 image.pollinations.ai。部分较新模型或需要更高优先级的调用可能要求账号/token 体系。限速较宽松但会随负载调整，正式依赖前请以官方仓库/文档为准。"
+      },
+      "categories": [
+        "general",
+        "image"
+      ],
+      "tags": [
+        "pollinations",
+        "free-api",
+        "no-key",
+        "multimodal"
+      ],
+      "website": "https://pollinations.ai/",
+      "status": "review",
+      "lastVerifiedAt": "2026-08-30",
+      "freeAi": {
+        "accessType": "api",
+        "requiresLogin": false,
+        "hasFreeTier": true,
+        "freeLimit": {
+          "en": "Free models are usable without sign-up or API key; rate limits are loose but adjust with load. Some newer models may require account/token access. Check the official repo for current limits.",
+          "zh-Hans": "免费模型无需注册与 API Key 即可使用；限速较宽松但会随负载调整。部分较新模型可能需要账号/token 体系。当前限制以官方仓库为准。",
+          "zh-Hant": "免费模型无需注册与 API Key 即可使用；限速较宽松但会随负载调整。部分较新模型可能需要账号/token 体系。当前限制以官方仓库为准。"
+        },
+        "availability": "global",
+        "registrationRestriction": {
+          "en": "No registration required for free text/image APIs; higher-priority or newer models may require account/token access per the official docs.",
+          "zh-Hans": "免费文本/图像 API 无需注册；更高优先级或较新模型可能需按官方说明使用账号/token 访问。",
+          "zh-Hant": "免费文本/图像 API 无需注册；更高优先级或较新模型可能需按官方说明使用账号/token 访问。"
+        },
+        "freeQuotas": [
+          {
+            "model": {
+              "en": "Free text models (OpenAI-compatible endpoint)",
+              "zh-Hans": "免费文本模型（OpenAI 兼容端点）",
+              "zh-Hant": "免费文本模型（OpenAI 兼容端点）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "No key needed; rate limits per official repo",
+              "zh-Hans": "无需密钥；限速以官方仓库为准",
+              "zh-Hant": "无需密钥；限速以官方仓库为准"
+            }
+          },
+          {
+            "model": {
+              "en": "Image generation (image.pollinations.ai)",
+              "zh-Hans": "图像生成（image.pollinations.ai）",
+              "zh-Hant": "图像生成（image.pollinations.ai）"
+            },
+            "quota": {
+              "en": "Free",
+              "zh-Hans": "免费",
+              "zh-Hant": "免费"
+            },
+            "frequency": {
+              "en": "No key needed; rate limits per official repo",
+              "zh-Hans": "无需密钥；限速以官方仓库为准",
+              "zh-Hant": "无需密钥；限速以官方仓库为准"
+            }
+          }
+        ],
+        "modelProviderRef": "pollinations",
+        "integrations": {
+          "chatSpeedModel": {
+            "providerRef": "pollinations",
+            "importable": true
+          }
+        }
+      },
+      "searchText": "pollinations free api pollinations 免费 api pollinations 免费 api open-source generative api (text/image/audio/video); the openai-compatible text endpoint works without sign-up or api key for free models. 开源生成式 ai api（文本/图像/音频/视频）；免费模型可直接通过 openai 兼容文本端点调用，无需注册与 api key。 开源生成式 ai api（文本/图像/音频/视频）；免费模型可直接通过 openai 兼容文本端点调用，无需注册与 api key。 general image pollinations free-api no-key multimodal",
+      "detailPath": "/free-ai/pollinations-free-api/"
     }
   ]
 }

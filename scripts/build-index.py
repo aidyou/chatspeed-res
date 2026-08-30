@@ -178,6 +178,20 @@ def validate_free_ai(path: Path, resource: dict) -> None:
     ensure_localized(path, "freeAi.freeLimit", free_ai.get("freeLimit"))
     if free_ai.get("availability") not in ("global", "regional", "unknown"):
         fail(path, "freeAi.availability is unsupported")
+    for field in ("signupUrl", "freePolicyUrl"):
+        if free_ai.get(field):
+            ensure_url(path, f"freeAi.{field}", free_ai[field])
+    if free_ai.get("registrationRestriction") is not None:
+        ensure_localized(path, "freeAi.registrationRestriction", free_ai["registrationRestriction"])
+    free_quotas = free_ai.get("freeQuotas")
+    if free_quotas is not None:
+        if not isinstance(free_quotas, list) or not free_quotas:
+            fail(path, "freeAi.freeQuotas must be a non-empty array")
+        for index, quota in enumerate(free_quotas):
+            if not isinstance(quota, dict):
+                fail(path, f"freeAi.freeQuotas[{index}] must be an object")
+            for field in ("model", "quota", "frequency"):
+                ensure_localized(path, f"freeAi.freeQuotas[{index}].{field}", quota.get(field))
     integrations = free_ai.get("integrations", {})
     if not isinstance(integrations, dict):
         fail(path, "freeAi.integrations must be an object")
@@ -253,11 +267,14 @@ def build_catalog() -> tuple[dict, dict[str, list[dict]]]:
                 fail(path, f"unknown categories: {', '.join(invalid_categories)}")
             resources.append(resource)
             by_channel[channel].append(resource)
-    # Order by quality score (descending), then id for stability, so that
-    # commonly-used, authoritative, and well-made resources appear first.
+    # Order by status (active first, review/deprecated last), then quality score
+    # (descending), then id for stability, so that confirmed and well-made
+    # resources appear first while entries still under review sit at the end.
+    status_priority = {"active": 0, "review": 1, "deprecated": 2}
+    sort_key = lambda r: (status_priority.get(r["status"], 1), -resource_score(r), r["id"])
     for channel in CHANNELS:
-        by_channel[channel].sort(key=lambda r: (-resource_score(r), r["id"]))
-    resources.sort(key=lambda r: (-resource_score(r), r["id"]))
+        by_channel[channel].sort(key=sort_key)
+    resources.sort(key=sort_key)
     for resource in resources:
         if resource["channel"] != "free-ai":
             continue
@@ -296,7 +313,7 @@ def markdown_link(url: str, label: str) -> str:
     return f"[{label}]({url})"
 
 
-def detail_markdown(resource: dict) -> str:
+def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
     channel = resource["channel"]
     title = localized(resource, "name")
     description = localized(resource, "description")
@@ -364,15 +381,48 @@ def detail_markdown(resource: dict) -> str:
             "",
             f"{localized(free_ai, 'freeLimit')}",
         ])
+        free_quotas = free_ai.get("freeQuotas")
+        if free_quotas:
+            lines.extend(["", "### 分模型免费额度明细", "", "| 模型 | 免费额度 | 频率与限速 |", "| --- | --- | --- |"])
+            for quota in free_quotas:
+                lines.append(
+                    f"| {localized(quota, 'model').replace('|', '\\\\|')} "
+                    f"| {localized(quota, 'quota').replace('|', '\\\\|')} "
+                    f"| {localized(quota, 'frequency').replace('|', '\\\\|')} |"
+                )
+        signup_url = free_ai.get("signupUrl")
+        restriction = free_ai.get("registrationRestriction")
+        policy_url = free_ai.get("freePolicyUrl")
+        if signup_url or restriction or policy_url:
+            lines.extend(["", "## 注册与限制"])
+            if signup_url:
+                lines.append(f"- 注册入口：{markdown_link(signup_url, signup_url)}")
+            if restriction:
+                lines.append(f"- 注册限制：{localized(free_ai, 'registrationRestriction')}")
+            if policy_url:
+                lines.append(f"- 免费政策文档：{markdown_link(policy_url, policy_url)}")
         integration = free_ai.get("integrations", {}).get("chatSpeedModel")
         if integration and integration.get("importable"):
-            lines.extend(["", "## ChatSpeed 导入", "", f"该服务关联模型供应商 `{integration['providerRef']}`，可从模型供应商列表导入配置。"])
+            provider_ref = integration["providerRef"]
+            lines.extend(["", "## ChatSpeed 导入", "", f"该服务关联模型供应商 `{provider_ref}`，可从模型供应商列表导入配置，调用入口如下："])
+            provider = provider_by_id.get(provider_ref)
+            if provider:
+                info = provider["provider"]
+                lines.append(f"- 协议：`{info['protocol']}`")
+                lines.append(f"- Base URL：`{info['baseUrl']}`")
+                if info.get("logo"):
+                    lines.append(f"- Logo：![{info.get('name', provider_ref)}]({info['logo']})")
+                for label, field in (("官方文档", "documentationUrl"), ("模型列表", "modelListUrl"), ("密钥申请", "keyApplyUrl")):
+                    url = info.get(field)
+                    if url:
+                        lines.append(f"- {label}：{markdown_link(url, url)}")
     lines.extend(["", "## 数据来源", "", f"资源文件：`resources/{channel}/{resource['id']}.json`。内容最后核验于 `{resource['lastVerifiedAt']}`；免费额度和服务限制可能随官方政策变化。"])
     return "\n".join(lines) + "\n"
 
 
 def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
     DOCS_ROOT.mkdir(parents=True, exist_ok=True)
+    provider_by_id = {item["id"]: item for item in by_channel.get("models", [])}
     for channel, resources in by_channel.items():
         channel_dir = DOCS_ROOT / channel
         channel_dir.mkdir(parents=True, exist_ok=True)
@@ -395,7 +445,7 @@ def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
         index_text = "\n".join(index_lines)
         write_text(channel_dir / "README.md", index_text)
         for resource in resources:
-            write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource))
+            write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource, provider_by_id))
     write_text(DOCS_ROOT / "README.md", """---\ntitle: ChatSpeed 资源中心\ndescription: MCP、模型供应商和免费 AI 服务目录\nsidebar: false\npageClass: resource-home\n---\n\n<ResourceBrowser />\n""")
 
 

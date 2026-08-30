@@ -22,8 +22,8 @@ NVIDIA NIM 为部分基础模型提供托管推理接口。开发者可以申请
 - 协议：`openai`
 - Base URL：`https://integrate.api.nvidia.com/v1`
 - 模型数量：0
-- 文档：[https://docs.api.nvidia.com/nim/](https://docs.api.nvidia.com/nim/)
-- 模型列表：[https://build.nvidia.com/explore/discover](https://build.nvidia.com/explore/discover)
+- 文档：[https://docs.api.nvidia.com/nim/reference/llm-apis](https://docs.api.nvidia.com/nim/reference/llm-apis)
+- 模型列表：[https://build.nvidia.com/models](https://build.nvidia.com/models)
 - 密钥申请：[https://build.nvidia.com/settings/api-keys](https://build.nvidia.com/settings/api-keys)
 
 ## 数据来源

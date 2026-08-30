@@ -1,0 +1,39 @@
+{
+  "id": "sensenova",
+  "channel": "models",
+  "name": {
+    "en": "SenseNova",
+    "zh-Hans": "商汤日日新",
+    "zh-Hant": "商汤日日新"
+  },
+  "description": {
+    "en": "SenseTime's SenseNova platform with an OpenAI-compatible gateway covering text chat, multimodal understanding, image generation, tool calling and streaming; the Token Plan is currently in a free open beta (credits-based) with DeepSeek V4 Flash, SenseNova Flash-Lite, GLM-5.2 and more.",
+    "zh-Hans": "商汤科技 SenseNova（日日新）平台；OpenAI 兼容网关支持文本对话、多模态理解、图像生成、工具调用与流式响应；Token Plan 目前公测免费（积分制），提供 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2 等模型（公测免费）。",
+    "zh-Hant": "商汤科技 SenseNova（日日新）平台；OpenAI 兼容网关支持文本对话、多模态理解、图像生成、工具调用与流式响应；Token Plan 目前公测免费（积分制），提供 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2 等模型（公测免费）。"
+  },
+  "detail": {
+    "en": "SenseNova is SenseTime's large-model platform. Its OpenAI-compatible gateway (https://token.sensenova.cn/v1, set as base_url in the OpenAI SDK) provides text chat, multimodal understanding, image generation, tool calling and streaming responses. Quick start: register an account and complete phone verification, create an sk- prefixed API key in the console (API Keys), then point base_url to https://token.sensenova.cn/v1 (cURL / Python both supported). The Token Plan gateway is currently in a free open beta with a credits system (general + Flash-Lite pools, see the free-ai entry); beta status, model list and quota can change — check the platform page before relying on it.",
+    "zh-Hans": "商汤日日新 SenseNova 是商汤科技的大模型平台。其 OpenAI 兼容网关（https://token.sensenova.cn/v1，在 OpenAI SDK 中作为 base_url 使用）提供文本对话、多模态理解、图像生成、工具调用与流式响应等能力，公测开放 sensenova-6.7、DeepSeek-V4、GLM-5.2 等免费模型。快速开始：注册账号并完成手机号验证，在控制台「API Keys」创建 sk- 开头的密钥，然后将 base_url 指向 https://token.sensenova.cn/v1 即可调用（支持 cURL / Python）。Token Plan 网关当前免费公测中，采用积分制（通用积分与 Flash-Lite 专属积分，详见 free-ai 对应条目）；公测状态、模型名单与额度可能调整，请以平台页面为准。",
+    "zh-Hant": "商汤日日新 SenseNova 是商汤科技的大模型平台。其 OpenAI 兼容网关（https://token.sensenova.cn/v1，在 OpenAI SDK 中作为 base_url 使用）提供文本对话、多模态理解、图像生成、工具调用与流式响应等能力，公测开放 sensenova-6.7、DeepSeek-V4、GLM-5.2 等免费模型。快速开始：注册账号并完成手机号验证，在控制台「API Keys」创建 sk- 开头的密钥，然后将 base_url 指向 https://token.sensenova.cn/v1 即可调用（支持 cURL / Python）。Token Plan 网关当前免费公测中，采用积分制（通用积分与 Flash-Lite 专属积分，详见 free-ai 对应条目）；公测状态、模型名单与额度可能调整，请以平台页面为准。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["sensenova", "sensetime", "openai-compatible", "free-trial", "china"],
+  "website": "https://www.sensenova.cn/token-plan",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "provider": {
+    "protocol": "openai",
+    "name": "SenseNova",
+    "logo": "https://platform.sensenova.cn/favicon.ico",
+    "desc": "OpenAI-compatible gateway of SenseTime SenseNova; Token Plan is free during open beta.",
+    "baseUrl": "https://token.sensenova.cn/v1",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://platform.sensenova.cn/docs",
+    "modelListUrl": "https://platform.sensenova.cn/docs",
+    "keyApplyUrl": "https://platform.sensenova.cn/console/keys"
+  }
+}

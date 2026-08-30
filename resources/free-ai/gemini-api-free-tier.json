@@ -1,0 +1,102 @@
+{
+  "id": "gemini-api-free-tier",
+  "channel": "free-ai",
+  "name": {
+    "en": "Google Gemini API Free Tier",
+    "zh-Hans": "Google Gemini API 免费层",
+    "zh-Hant": "Google Gemini API 免费层"
+  },
+  "description": {
+    "en": "Free tier covers Flash / Flash-Lite family models (e.g. Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, newer 3.x Flash Lite) with free input/output tokens; quotas are relatively generous for daily use and shown in AI Studio.",
+    "zh-Hans": "免费层覆盖 Flash / Flash-Lite 系列模型（如 Gemini 2.5 Flash、2.5 Flash-Lite 及更新的 3.x Flash Lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 AI Studio 查看。",
+    "zh-Hant": "免费层覆盖 Flash / Flash-Lite 系列模型（如 Gemini 2.5 Flash、2.5 Flash-Lite 及更新的 3.x Flash Lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 AI Studio 查看。"
+  },
+  "detail": {
+    "en": "Google's Gemini API provides a free tier for developers and small projects. Free-eligible models are the Flash and Flash-Lite families (e.g. Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, newer 3.x Flash Lite variants) with free input/output tokens and relatively generous RPM/RPD quotas, which Google no longer fully publishes per model — check your effective limits in Google AI Studio, as they change over time (free-tier cuts happened historically). The free tier needs a Google account but no billing/credit card; rate limits apply per project. The API supports both the native protocol and an OpenAI-compatible endpoint.",
+    "zh-Hans": "Google Gemini API 为开发者和小型项目提供免费层。免费可用模型主要是 Flash 与 Flash-Lite 系列（如 Gemini 2.5 Flash、Gemini 2.5 Flash-Lite 以及更新的 3.x Flash Lite 变体），输入输出 token 免费，RPM/RPD 配额相对宽裕；Google 已不再逐模型完整公布免费层限速，请在 Google AI Studio 查看当前生效额度（历史上免费额度曾多次调整，例如 2025 年底收紧）。免费层只需 Google 账号，无需绑定账单或信用卡；限速按项目维度计算。API 同时支持原生协议与 OpenAI 兼容端点。",
+    "zh-Hant": "Google Gemini API 为开发者和小型项目提供免费层。免费可用模型主要是 Flash 与 Flash-Lite 系列（如 Gemini 2.5 Flash、Gemini 2.5 Flash-Lite 以及更新的 3.x Flash Lite 变体），输入输出 token 免费，RPM/RPD 配额相对宽裕；Google 已不再逐模型完整公布免费层限速，请在 Google AI Studio 查看当前生效额度（历史上免费额度曾多次调整，例如 2025 年底收紧）。免费层只需 Google 账号，无需绑定账单或信用卡；限速按项目维度计算。API 同时支持原生协议与 OpenAI 兼容端点。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["google", "gemini", "free-tier", "api"],
+  "website": "https://ai.google.dev/gemini-api/docs/pricing",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": true,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "Free tier covers Flash/Flash-Lite models with free input/output tokens; per-model RPM/RPD quotas are shown and adjusted in Google AI Studio (not fully published). No billing/credit card needed for the free tier.",
+      "zh-Hans": "免费层覆盖 Flash / Flash-Lite 系列模型，输入输出 token 免费；各模型 RPM/RPD 配额在 Google AI Studio 展示并动态调整（官方不再完整公布）。免费层无需绑定账单或信用卡。",
+      "zh-Hant": "免费层覆盖 Flash / Flash-Lite 系列模型，输入输出 token 免费；各模型 RPM/RPD 配额在 Google AI Studio 展示并动态调整（官方不再完整公布）。免费层无需绑定账单或信用卡。"
+    },
+    "availability": "global",
+    "signupUrl": "https://aistudio.google.com/app/apikey",
+    "freePolicyUrl": "https://ai.google.dev/gemini-api/docs/rate-limits",
+    "registrationRestriction": {
+      "en": "Sign up with a Google account; the free tier needs no credit card. Availability is subject to Google's supported-regions policy.",
+      "zh-Hans": "使用 Google 账号注册即可，免费层无需信用卡；部分地区不可用，可用区域以官方政策为准。",
+      "zh-Hant": "使用 Google 账号注册即可，免费层无需信用卡；部分地区不可用，可用区域以官方政策为准。"
+    },
+    "freeQuotas": [
+      {
+        "model": {
+          "en": "Gemini Flash family (e.g. Gemini 2.5 Flash, newer 3.x Flash)",
+          "zh-Hans": "Gemini Flash 系列（如 Gemini 2.5 Flash 及更新的 3.x Flash）",
+          "zh-Hant": "Gemini Flash 系列（如 Gemini 2.5 Flash 及更新的 3.x Flash）"
+        },
+        "quota": {
+          "en": "Free input & output tokens",
+          "zh-Hans": "输入输出 token 免费",
+          "zh-Hant": "输入输出 token 免费"
+        },
+        "frequency": {
+          "en": "RPM/RPD per AI Studio; generous for daily use",
+          "zh-Hans": "RPM/RPD 以 AI Studio 为准，日常使用较宽裕",
+          "zh-Hant": "RPM/RPD 以 AI Studio 为准，日常使用较宽裕"
+        }
+      },
+      {
+        "model": {
+          "en": "Gemini Flash-Lite family (e.g. Gemini 2.5 Flash-Lite, newer 3.x Flash Lite)",
+          "zh-Hans": "Gemini Flash-Lite 系列（如 Gemini 2.5 Flash-Lite 及更新的 3.x Flash Lite）",
+          "zh-Hant": "Gemini Flash-Lite 系列（如 Gemini 2.5 Flash-Lite 及更新的 3.x Flash Lite）"
+        },
+        "quota": {
+          "en": "Free input & output tokens",
+          "zh-Hans": "输入输出 token 免费",
+          "zh-Hant": "输入输出 token 免费"
+        },
+        "frequency": {
+          "en": "Higher quotas than Flash; check AI Studio",
+          "zh-Hans": "额度通常高于 Flash，以 AI Studio 为准",
+          "zh-Hant": "额度通常高于 Flash，以 AI Studio 为准"
+        }
+      },
+      {
+        "model": {
+          "en": "Other models (Pro family, previews etc.)",
+          "zh-Hans": "其他模型（Pro 系列、预览版等）",
+          "zh-Hant": "其他模型（Pro 系列、预览版等）"
+        },
+        "quota": {
+          "en": "Free-tier eligibility varies",
+          "zh-Hans": "是否计入免费层视模型而定",
+          "zh-Hant": "是否计入免费层视模型而定"
+        },
+        "frequency": {
+          "en": "Check AI Studio",
+          "zh-Hans": "以 AI Studio 为准",
+          "zh-Hant": "以 AI Studio 为准"
+        }
+      }
+    ],
+    "modelProviderRef": "gemini",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "gemini",
+        "importable": true
+      }
+    }
+  }
+}

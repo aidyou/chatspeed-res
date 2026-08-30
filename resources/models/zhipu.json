@@ -1,0 +1,39 @@
+{
+  "id": "zhipu",
+  "channel": "models",
+  "name": {
+    "en": "Zhipu GLM",
+    "zh-Hans": "智谱 GLM",
+    "zh-Hant": "智谱 GLM"
+  },
+  "description": {
+    "en": "Zhipu AI's MaaS platform with a permanently free GLM Flash tier (GLM-4-Flash / GLM-4.7-Flash) plus sign-up credits for paid GLM models.",
+    "zh-Hans": "智谱 AI 的 MaaS 平台，提供长期免费的 GLM Flash 档位（GLM-4-Flash / GLM-4.7-Flash），注册另有付费 GLM 模型的学习额度。",
+    "zh-Hant": "智谱 AI 的 MaaS 平台，提供长期免费的 GLM Flash 档位（GLM-4-Flash / GLM-4.7-Flash），注册另有付费 GLM 模型的学习额度。"
+  },
+  "detail": {
+    "en": "Zhipu AI (智谱) offers GLM models through an OpenAI-compatible MaaS endpoint. The GLM-4-Flash text model is announced as permanently free without call-volume restrictions, and the newer GLM-4.7-Flash is also free; GLM-4V-Flash is a free image-understanding model. New accounts get learning credits for paid GLM models (community reports around 20M tokens; check the official console). Free-tier concurrency is generous but check the official rate-limit doc for current values.",
+    "zh-Hans": "智谱 AI 通过兼容 OpenAI 的 MaaS 接口提供 GLM 系列模型。GLM-4-Flash 文本模型已宣布长期免费、基本不限调用量，后续推出的 GLM-4.7-Flash 同样免费；GLM-4V-Flash 是免费的图像理解模型。新账号注册会赠送可用于付费 GLM 模型的学习额度（社区反馈约 2,000 万 tokens，以官方控制台为准）。免费模型并发较高，但当前速率限制请以官方速率限制文档为准。",
+    "zh-Hant": "智谱 AI 通过兼容 OpenAI 的 MaaS 接口提供 GLM 系列模型。GLM-4-Flash 文本模型已宣布长期免费、基本不限调用量，后续推出的 GLM-4.7-Flash 同样免费；GLM-4V-Flash 是免费的图像理解模型。新账号注册会赠送可用于付费 GLM 模型的学习额度（社区反馈约 2,000 万 tokens，以官方控制台为准）。免费模型并发较高，但当前速率限制请以官方速率限制文档为准。"
+  },
+  "categories": ["general", "coding"],
+  "tags": ["zhipu", "glm", "openai-compatible", "free-models", "china"],
+  "website": "https://open.bigmodel.cn/",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "provider": {
+    "protocol": "openai",
+    "name": "Zhipu GLM",
+    "logo": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "desc": "OpenAI-compatible MaaS endpoint for Zhipu GLM models, including free Flash tiers.",
+    "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://open.bigmodel.cn/dev/welcome",
+    "modelListUrl": "https://open.bigmodel.cn/dev/api#chatglm_turbo",
+    "keyApplyUrl": "https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys"
+  }
+}

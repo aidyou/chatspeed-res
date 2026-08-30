@@ -33,7 +33,7 @@
     "topP": 0,
     "topK": 0,
     "documentationUrl": "https://openrouter.ai/docs",
-    "modelListUrl": "https://openrouter.ai/models?max_price=0",
-    "keyApplyUrl": "https://openrouter.ai/settings/keys"
+    "modelListUrl": "https://openrouter.ai/models",
+    "keyApplyUrl": "https://openrouter.ai/keys"
   }
 }

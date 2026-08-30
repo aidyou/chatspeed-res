@@ -1,0 +1,83 @@
+{
+  "id": "pollinations-free-api",
+  "channel": "free-ai",
+  "name": {
+    "en": "Pollinations Free API",
+    "zh-Hans": "Pollinations 免费 API",
+    "zh-Hant": "Pollinations 免费 API"
+  },
+  "description": {
+    "en": "Open-source generative API (text/image/audio/video); the OpenAI-compatible text endpoint works without sign-up or API key for free models.",
+    "zh-Hans": "开源生成式 AI API（文本/图像/音频/视频）；免费模型可直接通过 OpenAI 兼容文本端点调用，无需注册与 API Key。",
+    "zh-Hant": "开源生成式 AI API（文本/图像/音频/视频）；免费模型可直接通过 OpenAI 兼容文本端点调用，无需注册与 API Key。"
+  },
+  "detail": {
+    "en": "Pollinations is an open-source generative-AI platform exposing simple HTTP APIs for text, image, audio and video generation. The text API is OpenAI-compatible (https://text.pollinations.ai/openai) and remains free without sign-up or API key for the free model set; image generation is served at image.pollinations.ai. Some newer or higher-priority models may require account/token-based access. Rate limits are relatively loose but adjust with load, so confirm with the official repo/docs before relying on it.",
+    "zh-Hans": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频生成的简单 HTTP API。文本 API 采用 OpenAI 兼容格式（https://text.pollinations.ai/openai），免费模型无需注册和 API Key 即可调用；图像生成为 image.pollinations.ai。部分较新模型或需要更高优先级的调用可能要求账号/token 体系。限速较宽松但会随负载调整，正式依赖前请以官方仓库/文档为准。",
+    "zh-Hant": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频生成的简单 HTTP API。文本 API 采用 OpenAI 兼容格式（https://text.pollinations.ai/openai），免费模型无需注册和 API Key 即可调用；图像生成为 image.pollinations.ai。部分较新模型或需要更高优先级的调用可能要求账号/token 体系。限速较宽松但会随负载调整，正式依赖前请以官方仓库/文档为准。"
+  },
+  "categories": ["general", "image"],
+  "tags": ["pollinations", "free-api", "no-key", "multimodal"],
+  "website": "https://pollinations.ai/",
+  "status": "review",
+  "lastVerifiedAt": "2026-08-30",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": false,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "Free models are usable without sign-up or API key; rate limits are loose but adjust with load. Some newer models may require account/token access. Check the official repo for current limits.",
+      "zh-Hans": "免费模型无需注册与 API Key 即可使用；限速较宽松但会随负载调整。部分较新模型可能需要账号/token 体系。当前限制以官方仓库为准。",
+      "zh-Hant": "免费模型无需注册与 API Key 即可使用；限速较宽松但会随负载调整。部分较新模型可能需要账号/token 体系。当前限制以官方仓库为准。"
+    },
+    "availability": "global",
+    "registrationRestriction": {
+      "en": "No registration required for free text/image APIs; higher-priority or newer models may require account/token access per the official docs.",
+      "zh-Hans": "免费文本/图像 API 无需注册；更高优先级或较新模型可能需按官方说明使用账号/token 访问。",
+      "zh-Hant": "免费文本/图像 API 无需注册；更高优先级或较新模型可能需按官方说明使用账号/token 访问。"
+    },
+    "freeQuotas": [
+      {
+        "model": {
+          "en": "Free text models (OpenAI-compatible endpoint)",
+          "zh-Hans": "免费文本模型（OpenAI 兼容端点）",
+          "zh-Hant": "免费文本模型（OpenAI 兼容端点）"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "No key needed; rate limits per official repo",
+          "zh-Hans": "无需密钥；限速以官方仓库为准",
+          "zh-Hant": "无需密钥；限速以官方仓库为准"
+        }
+      },
+      {
+        "model": {
+          "en": "Image generation (image.pollinations.ai)",
+          "zh-Hans": "图像生成（image.pollinations.ai）",
+          "zh-Hant": "图像生成（image.pollinations.ai）"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "No key needed; rate limits per official repo",
+          "zh-Hans": "无需密钥；限速以官方仓库为准",
+          "zh-Hant": "无需密钥；限速以官方仓库为准"
+        }
+      }
+    ],
+    "modelProviderRef": "pollinations",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "pollinations",
+        "importable": true
+      }
+    }
+  }
+}

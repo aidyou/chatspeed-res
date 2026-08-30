@@ -1,0 +1,39 @@
+{
+  "id": "cerebras",
+  "channel": "models",
+  "name": {
+    "en": "Cerebras",
+    "zh-Hans": "Cerebras",
+    "zh-Hant": "Cerebras"
+  },
+  "description": {
+    "en": "OpenAI-compatible wafer-scale inference with a free tier of roughly 1M tokens/day (e.g. Llama 3.3 70B), no credit card required.",
+    "zh-Hans": "OpenAI 兼容的晶圆级推理服务，免费层约 100 万 tokens/天（如 Llama 3.3 70B），无需信用卡。",
+    "zh-Hant": "OpenAI 兼容的晶圆级推理服务，免费层约 100 万 tokens/天（如 Llama 3.3 70B），无需信用卡。"
+  },
+  "detail": {
+    "en": "Cerebras hosts open LLMs on its wafer-scale hardware at very high throughput (up to ~2,000 tokens/s on some models) behind an OpenAI-compatible API. The free tier provides roughly 1M tokens/day shared per model, with per-model RPM/TPM/TPD limits and no credit card required; exceeding limits returns 429. Paid Developer tier offers ~10x higher limits. Check the official rate-limits doc for current values.",
+    "zh-Hans": "Cerebras 使用晶圆级芯片托管开源 LLM，吞吐极高（部分模型可达约 2,000 tokens/秒），提供 OpenAI 兼容接口。免费层每个模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速，无需信用卡；超限返回 429。付费 Developer 层限速约为免费层 10 倍。当前限速值以官方 rate-limits 文档为准。",
+    "zh-Hant": "Cerebras 使用晶圆级芯片托管开源 LLM，吞吐极高（部分模型可达约 2,000 tokens/秒），提供 OpenAI 兼容接口。免费层每个模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速，无需信用卡；超限返回 429。付费 Developer 层限速约为免费层 10 倍。当前限速值以官方 rate-limits 文档为准。"
+  },
+  "categories": ["general", "coding"],
+  "tags": ["cerebras", "openai-compatible", "free-tier", "fast-inference"],
+  "website": "https://www.cerebras.ai/",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "provider": {
+    "protocol": "openai",
+    "name": "Cerebras",
+    "logo": "https://www.google.com/s2/favicons?domain=cerebras.ai&sz=64",
+    "desc": "Ultra-fast OpenAI-compatible inference with a ~1M tokens/day free tier.",
+    "baseUrl": "https://api.cerebras.ai/v1",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://inference-docs.cerebras.ai/",
+    "modelListUrl": "https://inference-docs.cerebras.ai/",
+    "keyApplyUrl": "https://cloud.cerebras.ai/"
+  }
+}

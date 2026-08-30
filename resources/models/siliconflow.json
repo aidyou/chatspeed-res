@@ -1,0 +1,39 @@
+{
+  "id": "siliconflow",
+  "channel": "models",
+  "name": {
+    "en": "SiliconFlow",
+    "zh-Hans": "硅基流动",
+    "zh-Hant": "硅基流动"
+  },
+  "description": {
+    "en": "An OpenAI-compatible inference platform with free sign-up credit (about ¥14 / 20M tokens) and many permanently free open models after real-name verification.",
+    "zh-Hans": "OpenAI 兼容推理平台，新用户注册送约 ¥14（约 2,000 万 tokens）额度，完成实名认证后可使用大量永久免费开源模型。",
+    "zh-Hant": "OpenAI 兼容推理平台，新用户注册送约 ¥14（约 2,000 万 tokens）额度，完成实名认证后可使用大量永久免费开源模型。"
+  },
+  "detail": {
+    "en": "SiliconFlow (硅基流动) hosts 200+ open models (DeepSeek, Qwen, Llama, Kimi, MiniMax, GLM etc.) behind one OpenAI-compatible endpoint. New users receive a small credit grant (about ¥14, roughly 20M tokens of Qwen-class models) and can use permanently free model variants after real-name verification; free variants have fixed rate limits and cost 0. The endpoint can be connected to ChatSpeed.",
+    "zh-Hans": "硅基流动（SiliconFlow）提供 200+ 开源模型（DeepSeek、Qwen、Llama、Kimi、MiniMax、GLM 等）的统一 OpenAI 兼容接口。新用户注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用大量免费模型（名称不带 Pro/ 前缀的即免费版，调用费用为 0，限速固定）。该接口可接入 ChatSpeed 使用。",
+    "zh-Hant": "硅基流动（SiliconFlow）提供 200+ 开源模型（DeepSeek、Qwen、Llama、Kimi、MiniMax、GLM 等）的统一 OpenAI 兼容接口。新用户注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用大量免费模型（名称不带 Pro/ 前缀的即免费版，调用费用为 0，限速固定）。该接口可接入 ChatSpeed 使用。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["siliconflow", "openai-compatible", "free-models", "china"],
+  "website": "https://siliconflow.cn/",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "provider": {
+    "protocol": "openai",
+    "name": "SiliconFlow",
+    "logo": "https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg",
+    "desc": "An OpenAI-compatible hosted inference service with many permanently free open models.",
+    "baseUrl": "https://api.siliconflow.cn/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://docs.siliconflow.cn/cn/userguide/introduction",
+    "modelListUrl": "https://cloud.siliconflow.cn/models",
+    "keyApplyUrl": "https://cloud.siliconflow.cn/account/ak"
+  }
+}

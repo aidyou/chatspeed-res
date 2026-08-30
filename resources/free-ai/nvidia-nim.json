@@ -7,30 +7,72 @@
     "zh-Hant": "NVIDIA NIM API"
   },
   "description": {
-    "en": "Development-oriented hosted inference APIs. Free access, available models, and rate limits must be checked on the official model page after sign-in.",
-    "zh-Hans": "面向开发者的托管推理 API。免费访问、可用模型和速率限制需要登录后以官方模型页面为准。",
-    "zh-Hant": "面向開發者的託管推理 API。免費存取、可用模型與速率限制需要登入後以官方模型頁面為準。"
+    "en": "Sign up a free NVIDIA developer account and create an API key (nvapi-...) without a credit card to call hosted model endpoints; the common limit is about 40 requests per minute, intended for development and prototyping, with exact quotas shown on each model page.",
+    "zh-Hans": "免费注册 NVIDIA 开发者账号并申请 API Key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。",
+    "zh-Hant": "免费注册 NVIDIA 开发者账号并申请 API Key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。"
   },
   "detail": {
-    "en": "NVIDIA NIM's free-access entry point is useful for trying selected hosted models during development. Availability is not a universal promise: users need to sign in, inspect the selected model page, create credentials through NVIDIA's official flow, and confirm current limits before configuring ChatSpeed.",
-    "zh-Hans": "NVIDIA NIM 的免费访问入口适合在开发阶段体验部分托管模型，但不能视为普遍承诺。用户需要登录、查看具体模型页面、通过 NVIDIA 官方流程创建凭据，并在配置 ChatSpeed 前确认当前限制。",
-    "zh-Hant": "NVIDIA NIM 的免費存取入口適合在開發階段體驗部分託管模型，但不能視為普遍承諾。使用者需要登入、查看具體模型頁面、透過 NVIDIA 官方流程建立憑證，並在設定 ChatSpeed 前確認目前限制。"
+    "en": "NVIDIA NIM is NVIDIA's hosted (serverless) inference platform on build.nvidia.com, aggregating popular models such as DeepSeek, Qwen3-Coder, Kimi K2, MiniMax M2, Mistral and Devstral, plus some image-generation models (e.g. FLUX.1-dev). You can join the NVIDIA Developer Program for free and create an OpenAI-compatible API key; the free tier is positioned as a trial-style service for development and prototyping, and per-model free quotas and rate limits (commonly around 40 requests/minute) are displayed on each model page. The free tier is not for production reliance; for higher throughput you can request an increase or move to a paid NIM plan.",
+    "zh-Hans": "NVIDIA NIM 是 NVIDIA 在 build.nvidia.com 上提供的托管（无服务器）推理平台，汇集 DeepSeek、Qwen3-Coder、Kimi K2、MiniMax M2、Mistral、Devstral 等热门模型，并支持部分文生图模型（如 FLUX.1-dev）。新用户可以免费加入 NVIDIA 开发者计划并创建兼容 OpenAI 的 API Key（nvapi- 开头，创建后只显示一次，请立即保存）。免费层按官方定位属于面向开发与原型验证的试用性服务，不同模型的免费额度和速率限制（常见约 40 次/分钟）会在模型页面展示当前值。免费层不适合生产依赖；需要更高吞吐时可申请额度提升或转付费方案。",
+    "zh-Hant": "NVIDIA NIM 是 NVIDIA 在 build.nvidia.com 上提供的托管（无服务器）推理平台，汇集 DeepSeek、Qwen3-Coder、Kimi K2、MiniMax M2、Mistral、Devstral 等热门模型，并支持部分文生图模型（如 FLUX.1-dev）。新用户可以免费加入 NVIDIA 开发者计划并创建兼容 OpenAI 的 API Key（nvapi- 开头，创建后只显示一次，请立即保存）。免费层按官方定位属于面向开发与原型验证的试用性服务，不同模型的免费额度和速率限制（常见约 40 次/分钟）会在模型页面展示当前值。免费层不适合生产依赖；需要更高吞吐时可申请额度提升或转付费方案。"
   },
   "categories": ["general", "coding", "reasoning"],
   "tags": ["nvidia", "nim", "free-tier", "api"],
   "website": "https://build.nvidia.com/explore/discover",
   "status": "review",
-  "lastVerifiedAt": "2026-08-29",
+  "lastVerifiedAt": "2026-08-30",
   "freeAi": {
     "accessType": "api",
     "requiresLogin": true,
     "hasFreeTier": true,
     "freeLimit": {
-      "en": "No fixed quota is stored here; limits vary by account and model and must be verified on the official page.",
-      "zh-Hans": "这里不写死固定额度；限制会因账号和模型而变化，请以官方页面核验。",
-      "zh-Hant": "這裡不寫死固定額度；限制會因帳號與模型而變化，請以官方頁面核驗。"
+      "en": "Free API credits are granted on sign-up (commonly reported as around 1,000 credits, in 'credits' units shown per model page); text models are commonly limited to about 40 requests per minute. Quotas and rate limits vary by account, model and current load; check the official model page.",
+      "zh-Hans": "新账号注册即送免费 API 额度（以模型页展示的 credits 计量，社区普遍反馈初始约 1,000）；文本模型常见限速约 40 次/分钟。免费额度和限速会因账号、模型与当前负载而异，请以模型页显示为准。",
+      "zh-Hant": "新账号注册即送免费 API 额度（以模型页展示的 credits 计量，社区普遍反馈初始约 1,000）；文本模型常见限速约 40 次/分钟。免费额度和限速会因账号、模型与当前负载而异，请以模型页显示为准。"
     },
     "availability": "global",
+    "signupUrl": "https://build.nvidia.com/",
+    "registrationRestriction": {
+      "en": "Email sign-up works (e.g. QQ Mail verified OK). For SMS verification, mainland China (+86) numbers never receive the code (confirmed by tests: one China Unicom and one China Telecom number both failed), while overseas numbers receive it fine (UK numbers verified working). Use an overseas number to complete registration/verification. No credit card required; the API key (nvapi- prefix) is shown only once at creation, so save it immediately.",
+      "zh-Hans": "邮箱可注册（实测 QQ 邮箱可用）。手机验证环节中国大陆（+86）手机号收不到验证码（已实测确认：联通、电信各一张均失败）；境外号码可正常收到验证码（已实测英国号码可用）。使用可正常接收短信的境外号码即可完成注册/验证。无需绑定信用卡；API Key（nvapi- 开头）创建后仅显示一次，需立即保存。",
+      "zh-Hant": "邮箱可注册（实测 QQ 邮箱可用）。手机验证环节中国大陆（+86）手机号收不到验证码（已实测确认：联通、电信各一张均失败）；境外号码可正常收到验证码（已实测英国号码可用）。使用可正常接收短信的境外号码即可完成注册/验证。无需绑定信用卡；API Key（nvapi- 开头）创建后仅显示一次，需立即保存。"
+    },
+    "freeQuotas": [
+      {
+        "model": {
+          "en": "Most text models (e.g. DeepSeek V3.2/R1, Qwen3-Coder 480B, Kimi K2, MiniMax M2, Mistral, Devstral)",
+          "zh-Hans": "多数文本模型（如 DeepSeek V3.2/R1、Qwen3-Coder 480B、Kimi K2、MiniMax M2、Mistral、Devstral）",
+          "zh-Hant": "多数文本模型（如 DeepSeek V3.2/R1、Qwen3-Coder 480B、Kimi K2、MiniMax M2、Mistral、Devstral）"
+        },
+        "quota": {
+          "en": "Free (credits-based; commonly ~1,000 on sign-up)",
+          "zh-Hans": "免费（按 credits 计量，新账号常见约 1,000）",
+          "zh-Hant": "免费（按 credits 计量，新账号常见约 1,000）"
+        },
+        "frequency": {
+          "en": "~40 requests per minute (varies by model and load)",
+          "zh-Hans": "约 40 次/分钟（按模型与负载而异）",
+          "zh-Hant": "约 40 次/分钟（按模型与负载而异）"
+        }
+      },
+      {
+        "model": {
+          "en": "Some image-generation models (e.g. FLUX.1-dev)",
+          "zh-Hans": "部分文生图模型（如 FLUX.1-dev）",
+          "zh-Hant": "部分文生图模型（如 FLUX.1-dev）"
+        },
+        "quota": {
+          "en": "Free, e.g. 25 requests (recent example)",
+          "zh-Hans": "免费，例如 25 次请求（近期示例）",
+          "zh-Hant": "免费，例如 25 次请求（近期示例）"
+        },
+        "frequency": {
+          "en": "One-time grant; check the current model page",
+          "zh-Hans": "一次性额度，以模型页当前标注为准",
+          "zh-Hant": "一次性额度，以模型页当前标注为准"
+        }
+      }
+    ],
     "modelProviderRef": "nvidia-nim",
     "integrations": {
       "chatSpeedModel": {

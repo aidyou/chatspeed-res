@@ -1,0 +1,39 @@
+{
+  "id": "cloudflare",
+  "channel": "models",
+  "name": {
+    "en": "Cloudflare Workers AI",
+    "zh-Hans": "Cloudflare Workers AI",
+    "zh-Hant": "Cloudflare Workers AI"
+  },
+  "description": {
+    "en": "Serverless AI inference on Cloudflare's edge network, OpenAI-compatible (base URL contains your account ID), with a daily free allocation of about 10,000 Neurons.",
+    "zh-Hans": "Cloudflare 边缘网络上的无服务器 AI 推理，兼容 OpenAI 接口（Base URL 需带账号 ID），每日免费额度约 10,000 Neurons。",
+    "zh-Hant": "Cloudflare 边缘网络上的无服务器 AI 推理，兼容 OpenAI 接口（Base URL 需带账号 ID），每日免费额度约 10,000 Neurons。"
+  },
+  "detail": {
+    "en": "Cloudflare Workers AI provides serverless model inference on the edge network, covering about 80 models (Llama 3.x/4, Mistral, Qwen, Gemma, GPT-OSS, DeepSeek-R1 distills, FLUX/SD etc.). The OpenAI-compatible endpoint is https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1 where {account_id} must be replaced with your own Cloudflare account ID; authentication uses an API token from the Cloudflare dashboard. A daily free allocation of about 10,000 Neurons applies, with per-model rate limits; usage beyond the free allocation is billed per Neurons unless you set limits in the dashboard. Free allocation and limits change; check the official pricing page.",
+    "zh-Hans": "Cloudflare Workers AI 在边缘网络提供无服务器模型推理，覆盖约 80 个模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）。OpenAI 兼容端点为 https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1，其中 {account_id} 需替换为你自己的 Cloudflare 账号 ID；鉴权使用控制台创建的 API Token。每日免费额度约 10,000 Neurons，并含各模型限速；超出免费额度部分按 Neurons 计费，可在控制台设置限额防止扣费。免费额度与限速会调整，请以官方定价页为准。",
+    "zh-Hant": "Cloudflare Workers AI 在边缘网络提供无服务器模型推理，覆盖约 80 个模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）。OpenAI 兼容端点为 https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1，其中 {account_id} 需替换为你自己的 Cloudflare 账号 ID；鉴权使用控制台创建的 API Token。每日免费额度约 10,000 Neurons，并含各模型限速；超出免费额度部分按 Neurons 计费，可在控制台设置限额防止扣费。免费额度与限速会调整，请以官方定价页为准。"
+  },
+  "categories": ["general", "coding", "vision"],
+  "tags": ["cloudflare", "workers-ai", "serverless", "openai-compatible"],
+  "website": "https://developers.cloudflare.com/workers-ai/",
+  "status": "review",
+  "lastVerifiedAt": "2026-08-30",
+  "provider": {
+    "protocol": "openai",
+    "name": "Cloudflare",
+    "logo": "https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64",
+    "desc": "Serverless edge inference with a daily Neurons-based free allocation.",
+    "baseUrl": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1",
+    "models": [],
+    "maxTokens": 2048,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://developers.cloudflare.com/workers-ai/",
+    "modelListUrl": "https://developers.cloudflare.com/workers-ai/models/",
+    "keyApplyUrl": "https://dash.cloudflare.com/profile/api-tokens"
+  }
+}

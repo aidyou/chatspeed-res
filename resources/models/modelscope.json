@@ -32,7 +32,7 @@
     "temperature": 0.6,
     "topP": 0,
     "topK": 0,
-    "documentationUrl": "https://modelscope.cn/docs",
+    "documentationUrl": "https://modelscope.cn/docs/home",
     "modelListUrl": "https://modelscope.cn/models",
     "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
   }

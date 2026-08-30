@@ -23,8 +23,8 @@ OpenRouter 为多个模型供应商提供统一的 OpenAI 兼容接口，可简�
 - Base URL：`https://openrouter.ai/api/v1`
 - 模型数量：0
 - 文档：[https://openrouter.ai/docs](https://openrouter.ai/docs)
-- 模型列表：[https://openrouter.ai/models?max_price=0](https://openrouter.ai/models?max_price=0)
-- 密钥申请：[https://openrouter.ai/settings/keys](https://openrouter.ai/settings/keys)
+- 模型列表：[https://openrouter.ai/models](https://openrouter.ai/models)
+- 密钥申请：[https://openrouter.ai/keys](https://openrouter.ai/keys)
 
 ## 数据来源
 

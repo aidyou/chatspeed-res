@@ -3,6 +3,7 @@ dist/
 .astro/
 .DS_Store
 *.log
+__pycache__/
 .cs-tmp/
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/

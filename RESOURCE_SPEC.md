@@ -53,6 +53,10 @@ Every model in `provider.models` must contain a unique `id`. Optional capability
 - `hasFreeTier`: boolean.
 - `freeLimit`: localized text.
 - `availability`: `global`, `regional`, or `unknown`.
+- `signupUrl`: optional absolute URL of the free-tier registration entry.
+- `freePolicyUrl`: optional absolute URL of the official page documenting the latest free quota or rate limits; omit when no authoritative page exists.
+- `registrationRestriction`: optional localized text describing sign-up or verification requirements (linking a cloud account, real-name verification, SMS verification, credit-card requirements, etc.).
+- `freeQuotas`: optional non-empty array of per-model/scope free-tier details; each item is an object with localized `model`, `quota`, and `frequency` fields, rendered as a table on the detail page.
 - `modelProviderRef`: optional ID of a model-provider resource when an API import is available.
 - `integrations.chatSpeedModel`: optional object with `providerRef` and `importable`; this is the future bridge to `Model.vue` and must never contain a user API key.
 

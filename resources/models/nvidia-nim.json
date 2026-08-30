@@ -24,7 +24,7 @@
   "provider": {
     "protocol": "openai",
     "name": "NVIDIA NIM",
-    "logo": "https://www.google.com/s2/favicons?domain=build.nvidia.com&sz=64",
+    "logo": "https://build.nvidia.com/favicon.ico",
     "desc": "NVIDIA-hosted serverless inference endpoints for development.",
     "baseUrl": "https://integrate.api.nvidia.com/v1",
     "models": [],
@@ -32,8 +32,8 @@
     "temperature": 0.6,
     "topP": 0,
     "topK": 0,
-    "documentationUrl": "https://docs.api.nvidia.com/nim/",
-    "modelListUrl": "https://build.nvidia.com/explore/discover",
+    "documentationUrl": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+    "modelListUrl": "https://build.nvidia.com/models",
     "keyApplyUrl": "https://build.nvidia.com/settings/api-keys"
   }
 }

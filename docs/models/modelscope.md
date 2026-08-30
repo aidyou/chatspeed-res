@@ -22,7 +22,7 @@ description: "兼容 OpenAI 接口的模型推理服务，免费额度和资格�
 - 协议：`openai`
 - Base URL：`https://api-inference.modelscope.cn/v1`
 - 模型数量：0
-- 文档：[https://modelscope.cn/docs](https://modelscope.cn/docs)
+- 文档：[https://modelscope.cn/docs/home](https://modelscope.cn/docs/home)
 - 模型列表：[https://modelscope.cn/models](https://modelscope.cn/models)
 - 密钥申请：[https://modelscope.cn/my/myaccesstoken](https://modelscope.cn/my/myaccesstoken)
 

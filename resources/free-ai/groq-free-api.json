@@ -1,0 +1,119 @@
+{
+  "id": "groq-free-api",
+  "channel": "free-ai",
+  "name": {
+    "en": "Groq Free API",
+    "zh-Hans": "Groq 免费 API",
+    "zh-Hant": "Groq 免费 API"
+  },
+  "description": {
+    "en": "Permanent free tier, no credit card required: e.g. Llama 3.1 8B gets 30 RPM / 14,400 requests per day; Llama 3.3 70B, Llama 4 Scout, GPT-OSS 120B get 30 RPM / 1,000 RPD; Kimi K2/Qwen3 32B get 60 RPM / 1,000 RPD.",
+    "zh-Hans": "长期免费层、无需信用卡：如 Llama 3.1 8B 为 30 次/分钟、每天 14,400 次；Llama 3.3 70B、Llama 4 Scout、GPT-OSS 120B 为 30 次/分钟、每天 1,000 次；Kimi K2 / Qwen3 32B 为 60 次/分钟、每天 1,000 次。",
+    "zh-Hant": "长期免费层、无需信用卡：如 Llama 3.1 8B 为 30 次/分钟、每天 14,400 次；Llama 3.3 70B、Llama 4 Scout、GPT-OSS 120B 为 30 次/分钟、每天 1,000 次；Kimi K2 / Qwen3 32B 为 60 次/分钟、每天 1,000 次。"
+  },
+  "detail": {
+    "en": "Groq provides very fast inference (500+ tokens/s on some models) via an OpenAI-compatible API with a permanent free tier. Rate limits apply per organization and per model (see the quotas rows); they cover RPM, RPD, TPM and TPD, and the first one hit triggers 429 with X-RateLimit headers. No credit card is required. Free models include the Llama family, Kimi K2, Qwen3 32B, GPT-OSS 120B/20B and Whisper speech-to-text. Values change; check console.groq.com/docs/rate-limits for the current table.",
+    "zh-Hans": "Groq 通过 OpenAI 兼容 API 提供极速推理（部分模型 500+ tokens/秒），并设有长期免费层。限速按组织维度、分模型计算（见明细表），涉及 RPM、RPD、TPM、TPD 四类指标，先达到任一即返回 429 并附 X-RateLimit 响应头。注册无需信用卡。免费模型包括 Llama 系列、Kimi K2、Qwen3 32B、GPT-OSS 120B/20B 以及 Whisper 语音转写。数值可能调整，当前完整表格见 console.groq.com/docs/rate-limits。",
+    "zh-Hant": "Groq 通过 OpenAI 兼容 API 提供极速推理（部分模型 500+ tokens/秒），并设有长期免费层。限速按组织维度、分模型计算（见明细表），涉及 RPM、RPD、TPM、TPD 四类指标，先达到任一即返回 429 并附 X-RateLimit 响应头。注册无需信用卡。免费模型包括 Llama 系列、Kimi K2、Qwen3 32B、GPT-OSS 120B/20B 以及 Whisper 语音转写。数值可能调整，当前完整表格见 console.groq.com/docs/rate-limits。"
+  },
+  "categories": ["general", "coding", "reasoning"],
+  "tags": ["groq", "free-tier", "api", "fast-inference"],
+  "website": "https://groq.com/",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "freeAi": {
+    "accessType": "api",
+    "requiresLogin": true,
+    "hasFreeTier": true,
+    "freeLimit": {
+      "en": "Free tier with per-model limits (RPM/RPD/TPM/TPD); e.g. llama-3.1-8b-instant: 30 RPM / 14,400 RPD / 6,000 TPM / 500K TPD. No credit card required. Check the official rate-limits table for current values.",
+      "zh-Hans": "免费层按模型限速（RPM/RPD/TPM/TPD）；如 llama-3.1-8b-instant：30 次/分钟、每天 14,400 次、TPM 6,000、TPD 500,000。无需信用卡；当前数值以官方限速表为准。",
+      "zh-Hant": "免费层按模型限速（RPM/RPD/TPM/TPD）；如 llama-3.1-8b-instant：30 次/分钟、每天 14,400 次、TPM 6,000、TPD 500,000。无需信用卡；当前数值以官方限速表为准。"
+    },
+    "availability": "global",
+    "signupUrl": "https://console.groq.com/",
+    "freePolicyUrl": "https://console.groq.com/docs/rate-limits",
+    "registrationRestriction": {
+      "en": "Sign up with email or Google account; no credit card required. Rate limits are per organization, not per API key.",
+      "zh-Hans": "邮箱或 Google 账号注册即可，无需信用卡。限速按组织计，而非按 API Key 计。",
+      "zh-Hant": "邮箱或 Google 账号注册即可，无需信用卡。限速按组织计，而非按 API Key 计。"
+    },
+    "freeQuotas": [
+      {
+        "model": {
+          "en": "llama-3.1-8b-instant",
+          "zh-Hans": "llama-3.1-8b-instant",
+          "zh-Hant": "llama-3.1-8b-instant"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "30 RPM / 14,400 RPD / 6,000 TPM / 500K TPD",
+          "zh-Hans": "30 次/分钟 / 每天 14,400 次 / TPM 6,000 / TPD 500,000",
+          "zh-Hant": "30 次/分钟 / 每天 14,400 次 / TPM 6,000 / TPD 500,000"
+        }
+      },
+      {
+        "model": {
+          "en": "llama-3.3-70b-versatile, Llama 4 Scout, gpt-oss-120b/20b",
+          "zh-Hans": "llama-3.3-70b-versatile、Llama 4 Scout、gpt-oss-120b/20b",
+          "zh-Hant": "llama-3.3-70b-versatile、Llama 4 Scout、gpt-oss-120b/20b"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "30 RPM / 1,000 RPD (TPM 6,000–30,000 / TPD 100K–500K)",
+          "zh-Hans": "30 次/分钟 / 每天 1,000 次（TPM 6,000–30,000 / TPD 10 万–50 万）",
+          "zh-Hant": "30 次/分钟 / 每天 1,000 次（TPM 6,000–30,000 / TPD 10 万–50 万）"
+        }
+      },
+      {
+        "model": {
+          "en": "kimi-k2-instruct, qwen3-32b",
+          "zh-Hans": "kimi-k2-instruct、qwen3-32b",
+          "zh-Hant": "kimi-k2-instruct、qwen3-32b"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "60 RPM / 1,000 RPD",
+          "zh-Hans": "60 次/分钟 / 每天 1,000 次",
+          "zh-Hant": "60 次/分钟 / 每天 1,000 次"
+        }
+      },
+      {
+        "model": {
+          "en": "whisper-large-v3 / whisper-large-v3-turbo (speech-to-text)",
+          "zh-Hans": "whisper-large-v3 / whisper-large-v3-turbo（语音转写）",
+          "zh-Hant": "whisper-large-v3 / whisper-large-v3-turbo（语音转写）"
+        },
+        "quota": {
+          "en": "Free",
+          "zh-Hans": "免费",
+          "zh-Hant": "免费"
+        },
+        "frequency": {
+          "en": "20 RPM / 2,000 RPD",
+          "zh-Hans": "20 次/分钟 / 每天 2,000 次",
+          "zh-Hant": "20 次/分钟 / 每天 2,000 次"
+        }
+      }
+    ],
+    "modelProviderRef": "groq",
+    "integrations": {
+      "chatSpeedModel": {
+        "providerRef": "groq",
+        "importable": true
+      }
+    }
+  }
+}
