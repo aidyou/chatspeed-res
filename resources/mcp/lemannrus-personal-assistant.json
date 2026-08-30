@@ -1,0 +1,70 @@
+{
+  "id": "lemannrus-personal-assistant",
+  "channel": "mcp",
+  "name": {
+    "en": "personal-assistant-mcp",
+    "zh-Hans": "个人助手MCP数字生活管理器",
+    "zh-Hant": "个人助手MCP数字生活管理器"
+  },
+  "description": {
+    "en": "A unified interface for managing digital life through integrations with Google Calendar, Obsidian Vault, Trello, and web page parsing capabilities.",
+    "zh-Hans": "通过与Google日历、Obsidian Vault、Trello的集成以及网页解析功能，实现管理数字生活的统一接口。",
+    "zh-Hant": "通过与Google日历、Obsidian Vault、Trello的集成以及网页解析功能，实现管理数字生活的统一接口。"
+  },
+  "detail": {
+    "en": "# Personal Assistant MCP Server\n\nA powerful personal assistant server that integrates with various services including Google Calendar, Obsidian Vault, Trello, and web page parsing capabilities. Built using FastMCP, this server provides a unified interface for managing your digital life.\n\n## Features\n\n- **Google Calendar Integration**\n  - Create, read, update, and delete calendar events\n  - List upcoming events\n\n- **Obsidian Vault Management**\n  - Create, read, update, and delete notes\n  - Full-text search in notes\n  - Folder management (create, delete, search, list)\n\n- **Trello Integration**\n  - Board, list, and card management\n  - Create, update, and delete cards\n  - Search cards by text query\n\n- **Web Page Parsing**\n  - Extract and clean HTML content from any URL\n\n## Prerequisites\n\n- Python 3.10 or higher\n- Poetry (Python package manager)\n- Google Calendar API credentials\n- Trello API credentials (if using Trello features)\n- Obsidian Vault (if using Obsidian features)\n\n## Installation\n\n1. Clone the repository:\n```bash\n   git clone https://github.com/yourusername/personal-assistant-mcp.git\n   cd personal-assistant-mcp\n```\n\n2. Install dependencies using Poetry:\n```bash\n   poetry install\n```\n\n3. Set up Google Calendar API:\n   - Go to the [Google Cloud Console](https://console.cloud.google.com/)\n   - Create a new project or select an existing one\n   - Enable the Google Calendar API\n   - Create OAuth 2.0 credentials\n   - Download the credentials and save them as `credentials.json` in the project root\n\n4. Set up Trello API (optional):\n   - Go to [Trello Developer Portal](https://trello.com/app-key)\n   - Get your API key and token\n   - Add them to your environment variables or config file\n\n## Configuration\n\n1. Run the initial setup to authenticate with Google Calendar:\n```bash\n   poetry run python main.py\n```\n   - This will open a browser window for Google authentication\n   - Follow the prompts to authorize the application\n\n## Usage\n\n1. Start the server:\n```bash\n   poetry run python main.py\n```\n\n2. The server will start and be ready to accept MCP-compatible client connections.\n\n3. Use any MCP-compatible client to interact with the server. The server provides the following tools:\n   - Calendar management\n   - Obsidian vault operations\n   - Trello board management\n   - Web page parsing\n\n## Anthropic Claude Desktop Configuration\n\nTo use this server with Anthropic Claude Desktop, add the following configuration to your Claude Desktop settings:\n\n```json\n{\n   \"mcpServers\": {\n      \"personal-assistant\": {\n         \"command\": \"/path/to/your/venv/bin/python\",\n         \"args\": [\"/path/to/your/project/main.py\"],\n         \"env\": {\n                 \"GOOGLE_CREDENTIALS_PATH\": \"/path/to/your/credentials.json\",\n                 \"GOOGLE_TOKEN_PATH\": \"/path/to/your/token.json\",\n                 \"OBSIDIAN_VAULT_PATH\": \"/path/to/your/obsidian/vault\",\n                 \"OBSIDIAN_DEFAULT_FOLDER\": \"your_default_folder\",\n                 \"LOG_PATH\": \"/path/to/log.txt\",\n                 \"TRELLO_TOKEN\": \"your_trello_token\",\n                 \"TRELLO_API_KEY\": \"your_trello_api_key\"\n         }\n      }\n   }\n}\n```\n\nReplace the paths and credentials with your actual values:\n- `command`: Path to your Python virtual environment's Python executable\n- `args`: Path to your project's `main.py` file\n- `GOOGLE_CREDENTIALS_PATH`: Path to your Google Calendar credentials file\n- `GOOGLE_TOKEN_PATH`: Path to your Google Calendar token file\n- `OBSIDIAN_VAULT_PATH`: Path to your Obsidian vault\n- `OBSIDIAN_DEFAULT_FOLDER`: Path to default folder in your vault where new notes will be created\n- `TRELLO_TOKEN`: Your Trello API token\n- `TRELLO_API_KEY`: Your Trello API key\n\n## Development\n\n- The project uses Poetry for dependency management\n- All tools are registered in `main.py`\n- Service-specific implementations are in the `services/` directory\n- Follow PEP 8 style guidelines for Python code\n\n## Contributing\n\n1. Fork the repository\n2. Create your feature branch (`git checkout -b feature/amazing-feature`)\n3. Commit your changes (`git commit -m 'Add some amazing feature'`)\n4. Push to the branch (`git push origin feature/amazing-feature`)\n5. Open a Pull Request\n\nJoin:\n\n[Telegram](https://t.me/systemlog_ai)\n[Blog](https://neuromant.wordpress.com/)",
+    "zh-Hans": "# 个人助理 MCP 服务器\n\n这是一个强大的个人助理服务器，集成了包括 Google 日历、Obsidian Vault、Trello 和网页解析功能在内的多种服务。该服务器基于 FastMCP 构建，为管理您的数字生活提供了统一的接口。\n\n## 功能\n\n- **Google 日历集成**\n  - 创建、读取、更新和删除日历事件\n  - 列出即将到来的事件\n\n- **Obsidian Vault 管理**\n  - 创建、读取、更新和删除笔记\n  - 笔记全文搜索\n  - 文件夹管理（创建、删除、搜索、列出）\n\n- **Trello 集成**\n  - 看板、列表和卡片管理\n  - 创建、更新和删除卡片\n  - 通过文本查询搜索卡片\n\n- **网页解析**\n  - 从任何 URL 中提取并清理 HTML 内容\n\n## 先决条件\n\n- Python 3.10 或更高版本\n- Poetry（Python 包管理器）\n- Google 日历 API 凭证\n- Trello API 凭证（如果使用 Trello 功能）\n- Obsidian Vault（如果使用 Obsidian 功能）\n\n## 安装\n\n1. 克隆仓库：\n```bash\n   git clone https://github.com/yourusername/personal-assistant-mcp.git\n   cd personal-assistant-mcp\n```\n\n2. 使用 Poetry 安装依赖项：\n```bash\n   poetry install\n```\n\n3. 设置 Google 日历 API：\n   - 前往 [Google Cloud Console](https://console.cloud.google.com/)\n   - 创建新项目或选择现有项目\n   - 启用 Google 日历 API\n   - 创建 OAuth 2.0 凭证\n   - 下载凭证并将其保存为项目根目录下的 `credentials.json` 文件\n\n4. 设置 Trello API（可选）：\n   - 前往 [Trello 开发者门户](https://trello.com/app-key)\n   - 获取您的 API 密钥和令牌\n   - 将它们添加到环境变量或配置文件中\n\n## 配置\n\n1. 运行初始设置以与 Google 日历进行身份验证：\n```bash\n   poetry run python main.py\n```\n   - 这将打开一个浏览器窗口用于 Google 身份验证\n   - 按照提示授权应用程序\n\n## 使用\n\n1. 启动服务器：\n```bash\n   poetry run python main.py\n```\n\n2. 服务器将启动并准备好接受兼容 MCP 的客户端连接。\n\n3. 使用任何兼容 MCP 的客户端与服务器交互。服务器提供以下工具：\n   - 日历管理\n   - Obsidian vault 操作\n   - Trello 看板管理\n   - 网页解析\n\n## Anthropic Claude Desktop 配置\n\n要将此服务器与 Anthropic Claude Desktop 一起使用，请在您的 Claude Desktop 设置中添加以下配置：\n\n```json\n{\n   \"mcpServers\": {\n      \"personal-assistant\": {\n         \"command\": \"/path/to/your/venv/bin/python\",\n         \"args\": [\"/path/to/your/project/main.py\"],\n         \"env\": {\n                 \"GOOGLE_CREDENTIALS_PATH\": \"/path/to/your/credentials.json\",\n                 \"GOOGLE_TOKEN_PATH\": \"/path/to/your/token.json\",\n                 \"OBSIDIAN_VAULT_PATH\": \"/path/to/your/obsidian/vault\",\n                 \"OBSIDIAN_DEFAULT_FOLDER\": \"your_default_folder\",\n                 \"LOG_PATH\": \"/path/to/log.txt\",\n                 \"TRELLO_TOKEN\": \"your_trello_token\",\n                 \"TRELLO_API_KEY\": \"your_trello_api_key\"\n         }\n      }\n   }\n}\n```\n\n将路径和凭证替换为您实际的值：\n\n- `command`: 指向你的 Python 虚拟环境的 Python 可执行文件的路径\n- `args`: 指向你的项目中的 `main.py` 文件的路径\n- `GOOGLE_CREDENTIALS_PATH`: 指向你的 Google Calendar 凭据文件的路径\n- `GOOGLE_TOKEN_PATH`: 指向你的 Google Calendar 令牌文件的路径\n- `OBSIDIAN_VAULT_PATH`: 指向你的 Obsidian 仓库的路径\n- `OBSIDIAN_DEFAULT_FOLDER`: 在你的仓库中，新笔记将被创建的默认文件夹的路径\n- `TRELLO_TOKEN`: 你的 Trello API 令牌\n- `TRELLO_API_KEY`: 你的 Trello API 密钥\n\n## 开发\n\n- 该项目使用 Poetry 进行依赖管理\n- 所有工具都在 `main.py` 中注册\n- 针对特定服务的实现位于 `services/` 目录下\n- 遵循 PEP 8 风格指南编写 Python 代码\n\n## 贡献\n\n1. 分叉仓库\n2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)\n3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)\n4. 推送到该分支 (`git push origin feature/amazing-feature`)\n5. 打开一个 Pull Request\n\n加入我们：\n\n[Telegram](https://t.me/systemlog_ai)\n[Blog](https://neuromant.wordpress.com/)",
+    "zh-Hant": "# 个人助理 MCP 服务器\n\n这是一个强大的个人助理服务器，集成了包括 Google 日历、Obsidian Vault、Trello 和网页解析功能在内的多种服务。该服务器基于 FastMCP 构建，为管理您的数字生活提供了统一的接口。\n\n## 功能\n\n- **Google 日历集成**\n  - 创建、读取、更新和删除日历事件\n  - 列出即将到来的事件\n\n- **Obsidian Vault 管理**\n  - 创建、读取、更新和删除笔记\n  - 笔记全文搜索\n  - 文件夹管理（创建、删除、搜索、列出）\n\n- **Trello 集成**\n  - 看板、列表和卡片管理\n  - 创建、更新和删除卡片\n  - 通过文本查询搜索卡片\n\n- **网页解析**\n  - 从任何 URL 中提取并清理 HTML 内容\n\n## 先决条件\n\n- Python 3.10 或更高版本\n- Poetry（Python 包管理器）\n- Google 日历 API 凭证\n- Trello API 凭证（如果使用 Trello 功能）\n- Obsidian Vault（如果使用 Obsidian 功能）\n\n## 安装\n\n1. 克隆仓库：\n```bash\n   git clone https://github.com/yourusername/personal-assistant-mcp.git\n   cd personal-assistant-mcp\n```\n\n2. 使用 Poetry 安装依赖项：\n```bash\n   poetry install\n```\n\n3. 设置 Google 日历 API：\n   - 前往 [Google Cloud Console](https://console.cloud.google.com/)\n   - 创建新项目或选择现有项目\n   - 启用 Google 日历 API\n   - 创建 OAuth 2.0 凭证\n   - 下载凭证并将其保存为项目根目录下的 `credentials.json` 文件\n\n4. 设置 Trello API（可选）：\n   - 前往 [Trello 开发者门户](https://trello.com/app-key)\n   - 获取您的 API 密钥和令牌\n   - 将它们添加到环境变量或配置文件中\n\n## 配置\n\n1. 运行初始设置以与 Google 日历进行身份验证：\n```bash\n   poetry run python main.py\n```\n   - 这将打开一个浏览器窗口用于 Google 身份验证\n   - 按照提示授权应用程序\n\n## 使用\n\n1. 启动服务器：\n```bash\n   poetry run python main.py\n```\n\n2. 服务器将启动并准备好接受兼容 MCP 的客户端连接。\n\n3. 使用任何兼容 MCP 的客户端与服务器交互。服务器提供以下工具：\n   - 日历管理\n   - Obsidian vault 操作\n   - Trello 看板管理\n   - 网页解析\n\n## Anthropic Claude Desktop 配置\n\n要将此服务器与 Anthropic Claude Desktop 一起使用，请在您的 Claude Desktop 设置中添加以下配置：\n\n```json\n{\n   \"mcpServers\": {\n      \"personal-assistant\": {\n         \"command\": \"/path/to/your/venv/bin/python\",\n         \"args\": [\"/path/to/your/project/main.py\"],\n         \"env\": {\n                 \"GOOGLE_CREDENTIALS_PATH\": \"/path/to/your/credentials.json\",\n                 \"GOOGLE_TOKEN_PATH\": \"/path/to/your/token.json\",\n                 \"OBSIDIAN_VAULT_PATH\": \"/path/to/your/obsidian/vault\",\n                 \"OBSIDIAN_DEFAULT_FOLDER\": \"your_default_folder\",\n                 \"LOG_PATH\": \"/path/to/log.txt\",\n                 \"TRELLO_TOKEN\": \"your_trello_token\",\n                 \"TRELLO_API_KEY\": \"your_trello_api_key\"\n         }\n      }\n   }\n}\n```\n\n将路径和凭证替换为您实际的值：\n\n- `command`: 指向你的 Python 虚拟环境的 Python 可执行文件的路径\n- `args`: 指向你的项目中的 `main.py` 文件的路径\n- `GOOGLE_CREDENTIALS_PATH`: 指向你的 Google Calendar 凭据文件的路径\n- `GOOGLE_TOKEN_PATH`: 指向你的 Google Calendar 令牌文件的路径\n- `OBSIDIAN_VAULT_PATH`: 指向你的 Obsidian 仓库的路径\n- `OBSIDIAN_DEFAULT_FOLDER`: 在你的仓库中，新笔记将被创建的默认文件夹的路径\n- `TRELLO_TOKEN`: 你的 Trello API 令牌\n- `TRELLO_API_KEY`: 你的 Trello API 密钥\n\n## 开发\n\n- 该项目使用 Poetry 进行依赖管理\n- 所有工具都在 `main.py` 中注册\n- 针对特定服务的实现位于 `services/` 目录下\n- 遵循 PEP 8 风格指南编写 Python 代码\n\n## 贡献\n\n1. 分叉仓库\n2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)\n3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)\n4. 推送到该分支 (`git push origin feature/amazing-feature`)\n5. 打开一个 Pull Request\n\n加入我们：\n\n[Telegram](https://t.me/systemlog_ai)\n[Blog](https://neuromant.wordpress.com/)"
+  },
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "calendar management",
+    "note taking",
+    "chinese"
+  ],
+  "website": "https://github.com/lemannrus/personal-assistant-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "/path/to/your/venv/bin/python",
+    "args": [
+      "/path/to/your/project/main.py"
+    ],
+    "env": [
+      [
+        "GOOGLE_CREDENTIALS_PATH",
+        "/path/to/your/credentials.json"
+      ],
+      [
+        "GOOGLE_TOKEN_PATH",
+        "/path/to/your/token.json"
+      ],
+      [
+        "LOG_PATH",
+        "/path/to/log.txt"
+      ],
+      [
+        "OBSIDIAN_DEFAULT_FOLDER",
+        "your_default_folder"
+      ],
+      [
+        "OBSIDIAN_VAULT_PATH",
+        "/path/to/your/obsidian/vault"
+      ],
+      [
+        "TRELLO_API_KEY",
+        "your_trello_api_key"
+      ],
+      [
+        "TRELLO_TOKEN",
+        "your_trello_token"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 7.11
+}

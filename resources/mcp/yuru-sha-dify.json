@@ -1,0 +1,44 @@
+{
+  "id": "yuru-sha-dify",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-server-dify",
+    "zh-Hans": "Dify对话服务",
+    "zh-Hant": "Dify对话服务"
+  },
+  "description": {
+    "en": "Enables LLMs to interact with Dify AI's chat completion API, including conversation context support and a restaurant recommendation tool.",
+    "zh-Hans": "启用大型语言模型与Dify AI的聊天补全API进行交互，包括对话上下文支持和餐厅推荐工具。",
+    "zh-Hant": "启用大型语言模型与Dify AI的聊天补全API进行交互，包括对话上下文支持和餐厅推荐工具。"
+  },
+  "detail": {
+    "en": "# mcp-server-dify\n[![CI Status](/mcp-assets/90f677fd1e0f984b06982d3cb0c83958.svg)](https://github.com/yuru-sha/mcp-server-dify/actions)\n\nModel Context Protocol Server for Dify AI. This server enables LLMs to interact with Dify AI's chat completion capabilities through a standardized protocol.\n\n## Features\n\n- Integration with Dify AI chat completion API\n- Restaurant recommendation tool (meshi-doko)\n- Support for conversation context\n- Streaming response support\n- TypeScript implementation\n\n## Installation\n\n### Using Docker\n\n```bash\n# Build the Docker image\nmake docker\n\n# Run with Docker\ndocker run -i --rm mcp/dify https://your-dify-api-endpoint your-dify-api-key\n```\n\n## Usage\n\n### With Claude Desktop\n\nAdd the following configuration to your `claude_desktop_config.json`:\n\n```json\n{\n  \"mcpServers\": {\n    \"dify\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-dify\",\n        \"https://your-dify-api-endpoint\",\n        \"your-dify-api-key\"\n      ]\n    }\n  }\n}\n```\n\nReplace `your-dify-api-endpoint` and `your-dify-api-key` with your actual Dify API credentials.\n\n### Tools\n\n#### meshi-doko\n\nRestaurant recommendation tool that interfaces with Dify AI:\n\nParameters:\n- `LOCATION` (string): Location of the restaurant\n- `BUDGET` (string): Budget constraints\n- `query` (string): Query to send to Dify AI\n- `conversation_id` (string, optional): For maintaining chat context\n\n## Development\n\n```bash\n# Initial setup\nmake setup\n\n# Build the project\nmake build\n\n# Format code\nmake format\n\n# Run linter\nmake lint\n```\n\n## License\n\nThis project is released under the [MIT License](https://github.com/yuru-sha/mcp-server-dify/blob/HEAD/LICENSE).\n\n## Security\n\nThis server interacts with Dify AI using your provided API key. Ensure to:\n- Keep your API credentials secure\n- Use HTTPS for the API endpoint\n- Never commit API keys to version control\n\n## Contributing\n\nContributions are welcome! Please feel free to submit a Pull Request.",
+    "zh-Hans": "# mcp-server-dify\n[![CI Status](/mcp-assets/90f677fd1e0f984b06982d3cb0c83958.svg)](https://github.com/yuru-sha/mcp-server-dify/actions)\n\n用于Dify AI的模型上下文协议服务器。此服务器通过标准化协议使LLMs能够与Dify AI的聊天完成功能进行交互。\n\n## 特性\n\n- 与Dify AI聊天完成API集成\n- 餐厅推荐工具（meshi-doko）\n- 支持对话上下文\n- 支持流式响应\n- 使用TypeScript实现\n\n## 安装\n\n### 使用Docker\n\n```bash\n# Build the Docker image\nmake docker\n\n# Run with Docker\ndocker run -i --rm mcp/dify https://your-dify-api-endpoint your-dify-api-key\n```\n\n## 使用方法\n\n### 与Claude Desktop一起使用\n\n在您的`claude_desktop_config.json`中添加以下配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"dify\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-dify\",\n        \"https://your-dify-api-endpoint\",\n        \"your-dify-api-key\"\n      ]\n    }\n  }\n}\n```\n\n将`your-dify-api-endpoint`和`your-dify-api-key`替换为您实际的Dify API凭据。\n\n### 工具\n\n#### meshi-doko\n\n一个与Dify AI接口的餐厅推荐工具：\n\n参数：\n- `LOCATION` (字符串)：餐厅位置\n- `BUDGET` (字符串)：预算限制\n- `query` (字符串)：发送给Dify AI的查询\n- `conversation_id` (字符串, 可选)：用于维护聊天上下文\n\n## 开发\n\n```bash\n# Initial setup\nmake setup\n\n# Build the project\nmake build\n\n# Format code\nmake format\n\n# Run linter\nmake lint\n```\n\n## 许可证\n\n本项目根据[MIT许可证](https://github.com/yuru-sha/mcp-server-dify/blob/HEAD/LICENSE)发布。\n\n## 安全\n\n该服务器使用您提供的API密钥与Dify AI互动。请确保：\n- 保持您的API凭证安全\n- 对API端点使用HTTPS\n- 永远不要将API密钥提交到版本控制系统\n\n## 贡献\n\n欢迎贡献！请随时提交Pull Request。",
+    "zh-Hant": "# mcp-server-dify\n[![CI Status](/mcp-assets/90f677fd1e0f984b06982d3cb0c83958.svg)](https://github.com/yuru-sha/mcp-server-dify/actions)\n\n用于Dify AI的模型上下文协议服务器。此服务器通过标准化协议使LLMs能够与Dify AI的聊天完成功能进行交互。\n\n## 特性\n\n- 与Dify AI聊天完成API集成\n- 餐厅推荐工具（meshi-doko）\n- 支持对话上下文\n- 支持流式响应\n- 使用TypeScript实现\n\n## 安装\n\n### 使用Docker\n\n```bash\n# Build the Docker image\nmake docker\n\n# Run with Docker\ndocker run -i --rm mcp/dify https://your-dify-api-endpoint your-dify-api-key\n```\n\n## 使用方法\n\n### 与Claude Desktop一起使用\n\n在您的`claude_desktop_config.json`中添加以下配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"dify\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-dify\",\n        \"https://your-dify-api-endpoint\",\n        \"your-dify-api-key\"\n      ]\n    }\n  }\n}\n```\n\n将`your-dify-api-endpoint`和`your-dify-api-key`替换为您实际的Dify API凭据。\n\n### 工具\n\n#### meshi-doko\n\n一个与Dify AI接口的餐厅推荐工具：\n\n参数：\n- `LOCATION` (字符串)：餐厅位置\n- `BUDGET` (字符串)：预算限制\n- `query` (字符串)：发送给Dify AI的查询\n- `conversation_id` (字符串, 可选)：用于维护聊天上下文\n\n## 开发\n\n```bash\n# Initial setup\nmake setup\n\n# Build the project\nmake build\n\n# Format code\nmake format\n\n# Run linter\nmake lint\n```\n\n## 许可证\n\n本项目根据[MIT许可证](https://github.com/yuru-sha/mcp-server-dify/blob/HEAD/LICENSE)发布。\n\n## 安全\n\n该服务器使用您提供的API密钥与Dify AI互动。请确保：\n- 保持您的API凭证安全\n- 对API端点使用HTTPS\n- 永远不要将API密钥提交到版本控制系统\n\n## 贡献\n\n欢迎贡献！请随时提交Pull Request。"
+  },
+  "categories": [
+    "search"
+  ],
+  "tags": [
+    "search",
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/yuru-sha/mcp-server-dify",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-dify",
+      "https://your-dify-api-endpoint",
+      "your-dify-api-key"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 18.84
+}

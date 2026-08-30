@@ -1,0 +1,49 @@
+{
+  "id": "miv2024-codexun-prompt",
+  "channel": "mcp",
+  "name": {
+    "en": "codexun-prompt-mcp",
+    "zh-Hans": "EasyPrompt--Prompt管理工具",
+    "zh-Hant": "EasyPrompt--Prompt管理工具"
+  },
+  "description": {
+    "en": "Preface This is a tool for managing your prompts, allowing you to search for your own prompts directly within AI conversations. It's very simple to use, hence the name EasyPrompt. Usage Environment - EasyPrompt supports usage in CherryStdio and Chatbox. - Easy",
+    "zh-Hans": "前言 这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。 使用很简单，所以叫EasyPrompt 使用环境 - EasyPrompt支持在CherryStdio和Chatbox里面使用 - EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用 - EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！） 使用方法 1. 先去官网https://prompt.cod",
+    "zh-Hant": "前言 这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。 使用很简单，所以叫EasyPrompt 使用环境 - EasyPrompt支持在CherryStdio和Chatbox里面使用 - EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用 - EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！） 使用方法 1. 先去官网https://prompt.cod"
+  },
+  "detail": {
+    "en": "# Preface\n\nThis is a tool for managing your prompts, allowing you to search for your own prompts directly within AI conversations. It's very simple to use, hence the name EasyPrompt.\n\n# Usage Environment\n- EasyPrompt supports usage in CherryStdio and Chatbox.\n- EasyPrompt supports usage in programming tools like Trae and Cursor that support mcp.\n- EasyPrompt can be used in Chrome browser and Doupao PC browser environments. Through a browser extension, you can easily access your own prompts with one click. (Recommended for beginners!)\n\n# How to Use\n\n1. First, go to the official website https://prompt.code2ai.top and register an account.\n2. Click on [Avatar] -> [User Center] -> api-keys.\n3. Create an API key.\n\n# Configuring mcp\n\n{\n  \"mcpServers\": {\n    \"codexun-prompt\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"codexun-prompt-mcp@1.0.11\",\n        \"--token\",\n        \"sk-you-api-key\"\n      ],\n      \"disabled\": false,\n      \"alwaysAllow\": []\n    }\n  }\n}\n\nWhen configuring, replace `sk-you-api-key` with your actual API key.\n\nNote: `codexun-prompt-mcp` may have updates, so it's recommended to use the latest version.\n\n# Tutorial\n\nhttps://mp.weixin.qq.com/s/Sm58jONFtsLEa38aF0rkPQ\n\n# Browser Extension\n\nhttps://prompt.code2ai.top/posts/prompt-browser-ext\n\n# Official Website\n\nhttps://prompt.code2ai.top/",
+    "zh-Hans": "# 前言\r\n\r\n\r\n这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。\r\n\r\n使用很简单，所以叫EasyPrompt~\r\n\r\n# 使用环境\r\n\r\n- EasyPrompt支持在CherryStdio和Chatbox里面使用\r\n- EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用\r\n- EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！）\r\n\r\n# 使用方法\r\n\r\n\r\n1. 先去官网https://prompt.code2ai.top  注册一个用户\r\n\r\n2. 点击【头像】->【User Center】 -> api-keys\r\n\r\n3. 创建一个 API key\r\n\r\n\r\n# 配置 mcp\r\n\r\n\r\n```\n\r\n{\r\n\r\n  \"mcpServers\": {\r\n\r\n    \"codexun-prompt\": {\r\n\r\n      \"command\": \"npx\",\r\n\r\n      \"args\": [\r\n\r\n        \"codexun-prompt-mcp@1.0.11\",\r\n\r\n        \"--token\",\r\n\r\n        \"sk-you-api-key\"\r\n\r\n      ],\r\n\r\n      \"disabled\": false,\r\n\r\n      \"alwaysAllow\": []\r\n\r\n    }\r\n\r\n  }\r\n\r\n}\r\n\r\n```\n\r\n配置的时候需要把 sk-you-api-key 体会成你自己申请的 api-key\r\n\r\n备注：codexun-prompt-mcp 有可能更新版本，建议使用最新版本\r\n\r\n\r\n\r\n# 使用教程\r\n\r\nhttps://mp.weixin.qq.com/s/Sm58jONFtsLEa38aF0rkPQ\r\n\r\n# 浏览器插件\r\n\r\nhttps://prompt.code2ai.top/posts/prompt-browser-ext\r\n\r\n# 官网\r\n\r\nhttps://prompt.code2ai.top/",
+    "zh-Hant": "# 前言\r\n\r\n\r\n这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。\r\n\r\n使用很简单，所以叫EasyPrompt~\r\n\r\n# 使用环境\r\n\r\n- EasyPrompt支持在CherryStdio和Chatbox里面使用\r\n- EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用\r\n- EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！）\r\n\r\n# 使用方法\r\n\r\n\r\n1. 先去官网https://prompt.code2ai.top  注册一个用户\r\n\r\n2. 点击【头像】->【User Center】 -> api-keys\r\n\r\n3. 创建一个 API key\r\n\r\n\r\n# 配置 mcp\r\n\r\n\r\n```\n\r\n{\r\n\r\n  \"mcpServers\": {\r\n\r\n    \"codexun-prompt\": {\r\n\r\n      \"command\": \"npx\",\r\n\r\n      \"args\": [\r\n\r\n        \"codexun-prompt-mcp@1.0.11\",\r\n\r\n        \"--token\",\r\n\r\n        \"sk-you-api-key\"\r\n\r\n      ],\r\n\r\n      \"disabled\": false,\r\n\r\n      \"alwaysAllow\": []\r\n\r\n    }\r\n\r\n  }\r\n\r\n}\r\n\r\n```\n\r\n配置的时候需要把 sk-you-api-key 体会成你自己申请的 api-key\r\n\r\n备注：codexun-prompt-mcp 有可能更新版本，建议使用最新版本\r\n\r\n\r\n\r\n# 使用教程\r\n\r\nhttps://mp.weixin.qq.com/s/Sm58jONFtsLEa38aF0rkPQ\r\n\r\n# 浏览器插件\r\n\r\nhttps://prompt.code2ai.top/posts/prompt-browser-ext\r\n\r\n# 官网\r\n\r\nhttps://prompt.code2ai.top/"
+  },
+  "categories": [
+    "browser",
+    "media"
+  ],
+  "tags": [
+    "developer tools",
+    "browser automation",
+    "entertainment and media",
+    "prompt",
+    "prompt管理",
+    "prompt收藏",
+    "prompt插件",
+    "chinese"
+  ],
+  "website": "https://www.npmjs.com/package/codexun-prompt-mcp?activeTab=code",
+  "icon": "/mcp-icons/e25bb5b1e54f5682a87b256f171c4ced.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "codexun-prompt-mcp@1.0.11",
+      "--token",
+      "sk-you-api-key"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 2.23
+}

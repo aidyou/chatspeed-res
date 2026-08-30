@@ -1,0 +1,44 @@
+{
+  "id": "megemini-citytiermcpstudio",
+  "channel": "mcp",
+  "name": {
+    "en": "CitytierMCPStudio",
+    "zh-Hans": "城市分级查询MCP服务（MCP&Agent挑战赛 - -作品3）",
+    "zh-Hant": "城市分级查询MCP服务（MCP&Agent挑战赛 - -作品3）"
+  },
+  "description": {
+    "en": "City Tier Query MCP Server Description This project is created via https://modelscope.cn/studios/megemini/CitytierMCPStudio Service Introduction This city tier query service, based on the 2025 New First-Tier Cities Charm Ranking, uses FastMCP and SSE protocol.",
+    "zh-Hans": "城市分级查询 MCP Server 说明 本项目通过 https://modelscope.cn/studios/megemini/CitytierMCPStudio 创建 服务介绍 基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。 服务描述 这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称",
+    "zh-Hant": "城市分级查询 MCP Server 说明 本项目通过 https://modelscope.cn/studios/megemini/CitytierMCPStudio 创建 服务介绍 基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。 服务描述 这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称"
+  },
+  "detail": {
+    "en": "# City Tier Query MCP Server\n\n**Description** This project is created via https://modelscope.cn/studios/megemini/CitytierMCPStudio\n\n## Service Introduction\n\nThis city tier query service, based on the 2025 New First-Tier Cities Charm Ranking, uses FastMCP and SSE protocol. The service provides a complete set of features for querying city tiers, including querying by city name, listing all cities in a specified tier, obtaining statistical information, and keyword search.\n\n## Service Description\n\nThis is a professional city tier query MCP service based on the latest 2025 City Charm Rankings data. The service offers four main functions: querying the tier of a city by its name, listing all cities within a specific tier, obtaining statistical information about all tiers, and searching for cities using keywords. The service is implemented using the FastMCP framework and SSE protocol to ensure an efficient and stable query experience.\n\n## Type\n\nData Query, City Information, Geographical Services\n\n## Features\n\n- Query which tier a city belongs to by its name\n- List all cities in a specified tier\n- Obtain statistical information about all city tiers\n- Search for cities using keywords\n\n## City Tiers\n\n- **First-tier Cities (4)**: Shanghai, Beijing, Shenzhen, Guangzhou\n- **New First-tier Cities (15)**: Chengdu, Hangzhou, Chongqing, Wuhan, Suzhou, Xi'an, Nanjing, Changsha, Zhengzhou, Tianjin, Hefei, Qingdao, Dongguan, Ningbo, Foshan\n- **Second-tier Cities (30)**: Jinan, Wuxi, Shenyang, Kunming, Fuzhou, Xiamen, Wenzhou, Shijiazhuang, etc.\n- **Third-tier Cities (70)**: Urumqi, Lanzhou, Zhongshan, Yancheng, Haikou, Yangzhou, etc.\n- **Fourth-tier Cities (90)**: Zaozhuang, Yibin, Yulin, Kaifeng, Shaoyang, Yuncheng, etc.\n- **Fifth-tier Cities (128)**: Xinzhou, Panjin, Ili, Dandong, Yanbian, Jiuquan, etc.\n\n### Available Tools\n\n1. **get_city_tier** - Query city tier\n   - Parameters: `city_name` (string) - Name of the city\n   - Example: Querying \"Shanghai\" returns \"Shanghai belongs to First-tier Cities\"\n\n2. **list_cities_by_tier** - List cities by tier\n   - Parameters: `tier` (string) - City tier\n   - Possible values: First-tier Cities, New First-tier Cities, Second-tier Cities, Third-tier Cities, Fourth-tier Cities, Fifth-tier Cities\n\n3. **get_all_tiers** - Get statistics for all tiers\n   - No parameters\n   - Returns the count of cities in each tier\n\n4. **search_cities** - Search for cities\n   - Parameters: `keyword` (string) - Search keyword\n   - Returns a list of cities containing the keyword along with their tiers",
+    "zh-Hans": "# 城市分级查询 MCP Server\n\n**说明** 本项目通过 https://modelscope.cn/studios/megemini/CitytierMCPStudio 创建\n\n## 服务介绍\n\n基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。\n\n## 服务描述\n\n这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称查询其所属级别、列出特定级别的所有城市、获取所有级别的统计信息、以及根据关键词搜索城市。服务采用FastMCP框架和SSE协议实现，确保高效稳定的查询体验。\n\n## 类型\n\n数据查询、城市信息、地理服务\n\n## 功能\n\n- 根据城市名称查询城市属于哪一线城市\n- 列出指定分级的所有城市\n- 获取所有城市分级的统计信息\n- 根据关键词搜索城市\n\n## 城市分级\n\n- **一线城市（4个）**：上海、北京、深圳、广州\n- **新一线城市（15个）**：成都、杭州、重庆、武汉、苏州、西安、南京、长沙、郑州、天津、合肥、青岛、东莞、宁波、佛山\n- **二线城市（30个）**：济南、无锡、沈阳、昆明、福州、厦门、温州、石家庄等\n- **三线城市（70个）**：乌鲁木齐、兰州、中山、盐城、海口、扬州等\n- **四线城市（90个）**：枣庄、宜宾、榆林、开封、邵阳、运城等\n- **五线城市（128个）**：忻州、盘锦、伊犁、丹东、延边、酒泉等\n\n### 可用工具\n\n1. **get_city_tier** - 查询城市分级\n   - 参数：`city_name` (string) - 城市名称\n   - 示例：查询\"上海\"返回\"上海 属于 一线城市\"\n\n2. **list_cities_by_tier** - 列出指定分级的城市\n   - 参数：`tier` (string) - 城市分级\n   - 可选值：一线城市、新一线城市、二线城市、三线城市、四线城市、五线城市\n\n3. **get_all_tiers** - 获取所有分级统计\n   - 无参数\n   - 返回各分级城市数量统计\n\n4. **search_cities** - 搜索城市\n   - 参数：`keyword` (string) - 搜索关键词\n   - 返回包含关键词的城市列表及其分级",
+    "zh-Hant": "# 城市分级查询 MCP Server\n\n**说明** 本项目通过 https://modelscope.cn/studios/megemini/CitytierMCPStudio 创建\n\n## 服务介绍\n\n基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。\n\n## 服务描述\n\n这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称查询其所属级别、列出特定级别的所有城市、获取所有级别的统计信息、以及根据关键词搜索城市。服务采用FastMCP框架和SSE协议实现，确保高效稳定的查询体验。\n\n## 类型\n\n数据查询、城市信息、地理服务\n\n## 功能\n\n- 根据城市名称查询城市属于哪一线城市\n- 列出指定分级的所有城市\n- 获取所有城市分级的统计信息\n- 根据关键词搜索城市\n\n## 城市分级\n\n- **一线城市（4个）**：上海、北京、深圳、广州\n- **新一线城市（15个）**：成都、杭州、重庆、武汉、苏州、西安、南京、长沙、郑州、天津、合肥、青岛、东莞、宁波、佛山\n- **二线城市（30个）**：济南、无锡、沈阳、昆明、福州、厦门、温州、石家庄等\n- **三线城市（70个）**：乌鲁木齐、兰州、中山、盐城、海口、扬州等\n- **四线城市（90个）**：枣庄、宜宾、榆林、开封、邵阳、运城等\n- **五线城市（128个）**：忻州、盘锦、伊犁、丹东、延边、酒泉等\n\n### 可用工具\n\n1. **get_city_tier** - 查询城市分级\n   - 参数：`city_name` (string) - 城市名称\n   - 示例：查询\"上海\"返回\"上海 属于 一线城市\"\n\n2. **list_cities_by_tier** - 列出指定分级的城市\n   - 参数：`tier` (string) - 城市分级\n   - 可选值：一线城市、新一线城市、二线城市、三线城市、四线城市、五线城市\n\n3. **get_all_tiers** - 获取所有分级统计\n   - 无参数\n   - 返回各分级城市数量统计\n\n4. **search_cities** - 搜索城市\n   - 参数：`keyword` (string) - 搜索关键词\n   - 返回包含关键词的城市列表及其分级"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "location services",
+    "search",
+    "chinese"
+  ],
+  "website": "https://modelscope.cn/studios/megemini/CitytierMCPStudio",
+  "icon": "/mcp-icons/c20aae1c1fe048552cd12b1cc7bd57d8.jpeg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "mcp-remote",
+      "https://megemini-citytiermcpstudio.ms.show/gradio_api/mcp/sse",
+      "--transport",
+      "sse-only"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 7.33
+}

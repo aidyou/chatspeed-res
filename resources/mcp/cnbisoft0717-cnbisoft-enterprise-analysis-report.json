@@ -1,0 +1,39 @@
+{
+  "id": "cnbisoft0717-cnbisoft-enterprise-analysis-report",
+  "channel": "mcp",
+  "name": {
+    "en": "cnbisoft-enterprise-analysis-report",
+    "zh-Hans": "经邦大数据企业分析报告",
+    "zh-Hant": "经邦大数据企业分析报告"
+  },
+  "description": {
+    "en": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。 在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf 工具地址 { \"mcpServers\": { \"enterprise-analysis-report-sse\": { \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\" } } } Header请求头 { \"H",
+    "zh-Hans": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。 在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf 工具地址 { \"mcpServers\": { \"enterprise-analysis-report-sse\": { \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\" } } } Header请求头 { \"H",
+    "zh-Hant": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。 在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf 工具地址 { \"mcpServers\": { \"enterprise-analysis-report-sse\": { \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\" } } } Header请求头 { \"H"
+  },
+  "detail": {
+    "en": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。\r\n\r\n在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf\r\n\r\n工具地址\r\n\n\r\n{\r\n  \"mcpServers\": {\r\n    \"enterprise-analysis-report-sse\": {\r\n      \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\"\r\n    }\r\n  }\r\n}\r\n\n\r\nHeader请求头\r\n\n\r\n{\r\n    \"Headers\": {\r\n        \"appid\": \"xxx\",\r\n        \"appsecret\": \"xxxx\"\r\n    }\r\n}",
+    "zh-Hans": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。\n\n在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf\n\n工具地址\n\n{\n  \"mcpServers\": {\n    \"enterprise-analysis-report-sse\": {\n      \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\"\n    }\n  }\n}\n\nHeader请求头\n\n{\n    \"Headers\": {\n        \"appid\": \"xxx\",\n        \"appsecret\": \"xxxx\"\n    }\n}",
+    "zh-Hant": "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。\n\n在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf\n\n工具地址\n\n{\n  \"mcpServers\": {\n    \"enterprise-analysis-report-sse\": {\n      \"url\": \"https://mcp.cnbicloud.cn:8122/mcp/sse/\"\n    }\n  }\n}\n\nHeader请求头\n\n{\n    \"Headers\": {\n        \"appid\": \"xxx\",\n        \"appsecret\": \"xxxx\"\n    }\n}"
+  },
+  "categories": [
+    "search",
+    "finance"
+  ],
+  "tags": [
+    "search",
+    "finance",
+    "other"
+  ],
+  "website": "https://mcp.cnbicloud.cn:8122/mcp/sse/",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "http",
+    "url": "https://mcp.cnbicloud.cn:8122/mcp/sse/",
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 6.1
+}

@@ -1,0 +1,271 @@
+---
+title: "Snyk SAW MCP"
+description: "Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural language. Built on FastMCP "
+---
+
+# Snyk SAW MCP
+
+Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural language. Built on FastMCP 
+
+![SAW MCP Banner](https://github.com/snyk/saw-mcp/blob/HEAD/assets/Snyk_API_and_Web_Banner.webp)
+
+# Snyk API & Web MCP Server
+
+Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural language.
+
+Built on FastMCP 2.0, works with Cursor, Claude Code, Devin, and any MCP-compatible client.
+
+> **Naming note:** Snyk API & Web was formerly known as Probely. The API endpoints (`api.probely.com`), web console (`plus.probely.app`), and MCP tool names (`probely_*`) still use the legacy domain and prefix. Environment variables and config sections use the new `SAW` / `saw` naming.
+
+See **[USER_GUIDE.md](https://github.com/snyk/saw-mcp/blob/HEAD/USER_GUIDE.md)** for usage, examples, and tool reference.
+
+> **This repository is closed to public contributions.** We appreciate community interest, but we do not accept pull requests, issues, or other contributions from external contributors at this time. If you have found a security issue, please see [SECURITY.md](https://github.com/snyk/saw-mcp/blob/HEAD/SECURITY.md).
+
+## Requirements
+
+- Python 3.10+
+- Node.js 18+ and npm (for web target login recording via `playwright-cli`; optional if using Playwright MCP instead)
+- Snyk API & Web API key
+
+## Quick Start
+
+### 1. Get Your API Key
+
+Go to [https://plus.probely.app/api-keys](https://plus.probely.app/api-keys) and create an API key.
+
+> **Important**
+>
+> Use a **custom role, limited-scope API key** for the Snyk API & Web MCP Server.
+> Create the key only with the permissions required for the intended actions.
+> Do not use a highly privileged or global API key, as this can affect your entire account and its resources.
+
+### 2. Install
+
+#### Cursor Marketplace (recommended for Cursor users)
+
+Install directly from the [Cursor Marketplace](https://cursor.com/marketplace/snyk/snyk-api-web):
+
+1. Open the [Snyk API & Web plugin page](https://cursor.com/marketplace/snyk/snyk-api-web) and click **Install**, or go to **Settings → Plugins** and search for **Snyk API & Web**
+2. Set your API key as an environment variable before launching Cursor:
+```bash
+   export MCP_SAW_API_KEY="your-api-key"
+```
+
+The plugin installs the MCP server, rules, and skills automatically.
+
+#### Devin MCP Marketplace (Devin users)
+
+Install directly from Devin's MCP Marketplace:
+
+1. Open Devin and go to **Settings → Configuration**.
+2. Under **MCP servers**, click **Open MCP Marketplace**.
+3. Search for **Snyk API & Web** and click **Install**.
+4. When prompted, enter your API key.
+
+No manual configuration needed — Devin handles the setup automatically.
+
+#### One-command install (any MCP client)
+
+```bash
+uvx --from git+https://github.com/snyk/saw-mcp.git saw-mcp
+```
+
+Or add to your MCP client configuration:
+
+```json
+{
+  "mcpServers": {
+    "SAW": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/snyk/saw-mcp.git", "saw-mcp"],
+      "env": {
+        "MCP_SAW_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+Alternative installation methods
+
+**Install from release tarball**
+
+```bash
+tar -xzvf SnykAPIWeb-.tgz
+cd SnykAPIWeb
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Download from [Releases](https://github.com/snyk/saw-mcp/releases) and replace `` with the actual version number (e.g., `1.0.0`).
+
+**Clone from source**
+
+```bash
+git clone https://github.com/snyk/saw-mcp.git
+cd saw-mcp
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Store Your API Key
+
+The server reads your API key from (in order of precedence): environment variable `MCP_SAW_API_KEY` → `.env` file → `config/config.yaml`.
+
+**Option A: Environment variable** (recommended for Marketplace / `uvx` installs)
+
+```bash
+export MCP_SAW_API_KEY="your-api-key"
+```
+
+**Option B: `.env` file** (recommended for source installs)
+
+Run the setup script (prompts securely, no key in shell history):
+
+```bash
+./scripts/setup-env.sh
+```
+
+Or pipe from a secret manager: `op read 'op://vault/item/key' | ./scripts/setup-env.sh`
+
+This writes a `.env` file in the project root (gitignored). The server loads it automatically at startup.
+
+**Option C: Secret reference** (avoids storing the key in plaintext anywhere)
+
+`MCP_SAW_API_KEY` and the config `api_key` field also accept a reference that is resolved at runtime, so the literal key never sits in a file:
+
+```bash
+export MCP_SAW_API_KEY="op://vault/saw-mcp/api-key"   # resolved via the 1Password CLI (`op`)
+export MCP_SAW_API_KEY="env:MY_SAW_KEY"               # read from another environment variable
+```
+
+> Avoid committing a plaintext key. `config/config.yaml` is gitignored, and a plaintext key read from it logs a warning at startup.
+
+### 4. Install Browser Automation (web targets with login)
+
+Web target onboarding records login sequences in a real browser. **Preferred for coding agents:** [`playwright-cli`](https://www.npmjs.com/package/@playwright/cli) via Shell:
+
+```bash
+npm install -g @playwright/cli@latest
+playwright-cli install-browser chromium
+```
+
+Or run `./scripts/setup-playwright.sh` from a cloned repo.
+
+**Alternative:** install [Playwright MCP](https://playwright.dev/docs/getting-started-mcp) as a second MCP server (better for MCP-only clients without Shell). See [Web target prerequisites](#web-target-prerequisites).
+
+### 5. Configure Your IDE
+
+If you installed from the Cursor or Devin marketplace, configuration is automatic. For other clients, add to your MCP client configuration:
+
+```json
+{
+  "mcpServers": {
+    "SAW": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/snyk/saw-mcp.git", "saw-mcp"],
+      "env": {
+        "MCP_SAW_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+For host-specific setup see the Installation Guides.
+
+Additional configuration options
+
+- **Override the base URL:** add `"MCP_SAW_BASE_URL": "https://your-instance-url"` to the `env` block.
+- **Use a config file:** set `"MCP_SAW_CONFIG_PATH": "/path/to/config.yaml"` instead.
+- **Set log level:** add `"MCP_SAW_LOG_LEVEL": "DEBUG"` (options: DEBUG, INFO, WARNING, ERROR, CRITICAL; default: INFO).
+
+### 6. Start Using
+
+Ask your AI assistant to:
+
+- "Configure a Snyk API & Web API target from this OpenAPI schema / Swagger document / Postman collection."
+- "Configure a Snyk API & Web web target for this authenticated application."
+
+See **[prompts.md](https://github.com/snyk/saw-mcp/blob/HEAD/prompts.md)** for a full catalog of example prompts — from simple one-liners to complex multi-target workflows.
+
+### Web target prerequisites
+
+The SAW MCP server talks to the Snyk API & Web platform — it does not include a browser. To onboard **web targets with login sequences**, the AI needs browser automation via one of:
+
+| Path | Best for | Setup |
+|---|---|---|
+| **`playwright-cli`** (preferred) | Cursor, Devin, Claude Code, Cloud Agents with Shell | `npm install -g @playwright/cli@latest && playwright-cli install-browser chromium` |
+| **[Playwright MCP](https://playwright.dev/docs/getting-started-mcp)** (fallback) | MCP-only clients without Shell (e.g. Claude Desktop) | Add Playwright MCP to your IDE's MCP config |
+
+**Workflow:**
+
+1. Prompt with the target URL and credentials — e.g. *"Add target example.com with credentials user@example.com / password123"*.
+2. The AI records the login in a browser (`playwright-cli` or Playwright MCP).
+3. SAW MCP tools create the target and upload the sequence in the [Probely sequence-recorder format](https://github.com/Probely/sequence-recorder).
+
+Without browser automation, the AI falls back to **form login** (`probely_configure_form_login`) — simple single-page login only; no multi-step flows or 2FA.
+
+See the [Cursor installation guide](https://github.com/snyk/saw-mcp/blob/HEAD/docs/installation-guides/install-cursor.md#browser-automation-for-web-targets) for setup details.
+
+## IDE Integration
+
+Detailed per-host guides live in [`docs/installation-guides/`](https://github.com/snyk/saw-mcp/tree/HEAD/docs/installation-guides/):
+
+| Host | Guide |
+|------|-------|
+| **Cursor** | [install-cursor.md](https://github.com/snyk/saw-mcp/blob/HEAD/docs/installation-guides/install-cursor.md) |
+| **Claude Desktop** | [install-claude.md](https://github.com/snyk/saw-mcp/blob/HEAD/docs/installation-guides/install-claude.md) |
+| **Devin / Other IDEs** | [install-devin.md](https://github.com/snyk/saw-mcp/blob/HEAD/docs/installation-guides/install-devin.md) |
+
+## Packaging
+
+```bash
+bash scripts/package.sh
+```
+
+Creates `dist/SnykAPIWeb-.tgz` (version from `snyk_apiweb/__init__.py`).
+
+## Development & Testing
+
+### Run the Server (standalone)
+
+Running the server directly starts it and waits for an MCP client connection. This is mainly useful for **development and debugging**:
+
+```bash
+./venv/bin/python -m snyk_apiweb.server
+```
+
+### Development Mode (hot reload)
+
+For active development with automatic reload on file changes:
+
+```bash
+./scripts/dev.sh
+```
+
+## License
+
+This project is licensed under the [Apache License 2.0](https://github.com/snyk/saw-mcp/blob/HEAD/LICENSE).
+
+**官方网站：** [https://github.com/snyk/saw-mcp](https://github.com/snyk/saw-mcp)
+**状态：** `active`　**最后核验：** `2026-08-30`
+
+## 分类与标签
+
+- 分类：`development`
+- 标签：`developer tools`, `security`, `snyk`, `dast`, `official`
+
+## MCP 配置
+
+- 传输方式：`stdio`
+- 启动命令：`uvx`
+- 参数：`--from git+https://github.com/snyk/saw-mcp.git saw-mcp`
+
+该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+
+## 数据来源
+
+资源文件：`resources/mcp/snyk-saw.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。

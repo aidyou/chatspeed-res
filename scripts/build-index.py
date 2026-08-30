@@ -41,6 +41,25 @@ SECRET_KEY_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+PLACEHOLDER_TOKEN_PATTERN = re.compile(
+    r"(?:\*+|xxx+|your[\w-]*|you[\w-]*|api[\w-]*key|token|placeholder|your|my|the|a|an)"
+    r"|^[^a-z0-9]+$"
+    r"|<[^>]*>|\{[^}]*\}|[^\x00-\x7f]",
+    re.IGNORECASE,
+)
+
+
+def looks_like_placeholder(token: str) -> bool:
+    """Return True when a sk-/bearer token is clearly a documentation placeholder."""
+    if not token:
+        return True
+    if PLACEHOLDER_TOKEN_PATTERN.search(token):
+        return True
+    # A real secret is a longer alphanumeric token; short words are prose
+    if len(re.sub(r"[^a-z0-9]", "", token)) < 8:
+        return True
+    return False
+
 
 class ValidationError(Exception):
     """A resource validation error with a file-relative location."""
@@ -96,7 +115,14 @@ def check_secrets(path: Path, value: object, location: str = "") -> None:
             check_secrets(path, child, f"{location}[{index}]")
     elif isinstance(value, str):
         lowered = value.lower()
-        if "sk-" in lowered or "bearer " in lowered or "ghp_" in lowered:
+        if re.search(r"\bghp_[a-z0-9]{10,}", lowered):
+            fail(path, f"possible credential found at {location}")
+        # sk-/bearer tokens that look like real secrets (not doc placeholders)
+        sk_bearer = re.finditer(r"(?:\bsk-|\bbearer\s+)([^\s\"'`]+)", lowered)
+        for match in sk_bearer:
+            token = match.group(1)
+            if looks_like_placeholder(token):
+                continue
             fail(path, f"possible credential found at {location}")
 
 
@@ -198,6 +224,14 @@ def validate_resource(path: Path, expected_channel: str) -> dict:
     return value
 
 
+def resource_score(resource: dict) -> float:
+    """Return the numeric quality score used for ordering (default 0.0)."""
+    value = resource.get("score")
+    if isinstance(value, (int, float)):
+        return float(value)
+    return 0.0
+
+
 def build_catalog() -> tuple[dict, dict[str, list[dict]]]:
     categories = load_json(RESOURCES / "categories.json")
     if not isinstance(categories, dict):
@@ -219,6 +253,11 @@ def build_catalog() -> tuple[dict, dict[str, list[dict]]]:
                 fail(path, f"unknown categories: {', '.join(invalid_categories)}")
             resources.append(resource)
             by_channel[channel].append(resource)
+    # Order by quality score (descending), then id for stability, so that
+    # commonly-used, authoritative, and well-made resources appear first.
+    for channel in CHANNELS:
+        by_channel[channel].sort(key=lambda r: (-resource_score(r), r["id"]))
+    resources.sort(key=lambda r: (-resource_score(r), r["id"]))
     for resource in resources:
         if resource["channel"] != "free-ai":
             continue

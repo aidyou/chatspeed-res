@@ -1,0 +1,42 @@
+{
+  "id": "quantgeekdev-fiscal-data",
+  "channel": "mcp",
+  "name": {
+    "en": "fiscal-data-mcp",
+    "zh-Hans": "Fiscal Data 连接器",
+    "zh-Hant": "Fiscal Data 连接器"
+  },
+  "description": {
+    "en": "Connects to the US Treasury's Fiscal Data API, enabling users to fetch specific treasury statements, access historical data, and generate formatted reports.",
+    "zh-Hans": "连接到美国财政部的财政数据API，使用户能够获取特定的财政部报表、访问历史数据并生成格式化的报告。",
+    "zh-Hant": "连接到美国财政部的财政数据API，使用户能够获取特定的财政部报表、访问历史数据并生成格式化的报告。"
+  },
+  "detail": {
+    "en": "## Overview\n\nThe [Fiscal Data MCP Server](https://github.com/QuantGeekDev/fiscal-data-mcp) demonstrates a practical implementation of an MCP server that connects to the US Treasury's Fiscal Data API. It showcases:\n\n- Tools for fetching specific treasury statements\n- Resources for historical data access\n- Prompts for generating formatted reports\n\n## Quick Start\n\n### 1. Install and Use with Claude Desktop\n\nAdd this configuration to your Claude Desktop config file:\n\n**MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"fiscal-data\": {\n      \"command\": \"npx\",\n      \"args\": [\"fiscal-data-mcp\"]\n    }\n  }\n}\n```\n\n### 2. Example Interactions\n\nOnce configured, you can interact with the server through Claude:\n\n```\nHuman: Can you get the treasury statement for the 20th of September 2023?\n```\n\n## Features\n\n### 1. Daily Treasury Statements\n\nFetch treasury data for specific dates using the `get_daily_treasury_statement` tool:\n\n```typescript\n// Example usage through Claude\nHuman: Get the treasury statement for 2024-03-01\nAssistant: I'll fetch that information for you using the treasury statement tool.\n```\n\n### 2. Historical Data Resource\n\nAccess 30 days of historical treasury data through the resource system:\n\n- Automatically cached for 1 hour\n- Updates on demand\n- Provides formatted JSON data\n\n### 3. Report Generation\n\nGenerate formatted treasury reports using the `daily_treasury_report` prompt:\n\n```typescript\n// Example usage through Claude\nHuman: Generate a treasury report for 2024-03-01\nAssistant: I'll use the daily treasury report prompt to create a formatted report...\n```",
+    "zh-Hans": "## 概述\n\n[Fiscal Data MCP 服务器](https://github.com/QuantGeekDev/fiscal-data-mcp) 展示了一个连接到美国财政部 Fiscal Data API 的MCP服务器的实际实现。它展示了以下功能：\n\n- 获取特定财政报表的工具\n- 访问历史数据的资源\n- 生成格式化报告的提示\n\n## 快速开始\n\n### 1. 使用 Claude Desktop 安装和使用\n\n将此配置添加到您的 Claude Desktop 配置文件中：\n\n**MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"fiscal-data\": {\n      \"command\": \"npx\",\n      \"args\": [\"fiscal-data-mcp\"]\n    }\n  }\n}\n```\n\n### 2. 示例交互\n\n配置完成后，您可以通过 Claude 与服务器进行交互：\n\n```\nHuman: Can you get the treasury statement for the 20th of September 2023?\n```\n\n## 功能\n\n### 1. 每日财政报表\n\n使用 `get_daily_treasury_statement` 工具获取特定日期的财政数据：\n\n```typescript\n// Example usage through Claude\nHuman: Get the treasury statement for 2024-03-01\nAssistant: I'll fetch that information for you using the treasury statement tool.\n```\n\n### 2. 历史数据资源\n\n通过资源系统访问30天的历史财政数据：\n- 自动缓存1小时\n- 按需更新\n- 提供格式化的 JSON 数据\n\n### 3. 报告生成\n\n使用 `daily_treasury_report` 提示生成格式化的财政报告：\n\n```typescript\n// Example usage through Claude\nHuman: Generate a treasury report for 2024-03-01\nAssistant: I'll use the daily treasury report prompt to create a formatted report...\n```",
+    "zh-Hant": "## 概述\n\n[Fiscal Data MCP 服务器](https://github.com/QuantGeekDev/fiscal-data-mcp) 展示了一个连接到美国财政部 Fiscal Data API 的MCP服务器的实际实现。它展示了以下功能：\n\n- 获取特定财政报表的工具\n- 访问历史数据的资源\n- 生成格式化报告的提示\n\n## 快速开始\n\n### 1. 使用 Claude Desktop 安装和使用\n\n将此配置添加到您的 Claude Desktop 配置文件中：\n\n**MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"fiscal-data\": {\n      \"command\": \"npx\",\n      \"args\": [\"fiscal-data-mcp\"]\n    }\n  }\n}\n```\n\n### 2. 示例交互\n\n配置完成后，您可以通过 Claude 与服务器进行交互：\n\n```\nHuman: Can you get the treasury statement for the 20th of September 2023?\n```\n\n## 功能\n\n### 1. 每日财政报表\n\n使用 `get_daily_treasury_statement` 工具获取特定日期的财政数据：\n\n```typescript\n// Example usage through Claude\nHuman: Get the treasury statement for 2024-03-01\nAssistant: I'll fetch that information for you using the treasury statement tool.\n```\n\n### 2. 历史数据资源\n\n通过资源系统访问30天的历史财政数据：\n- 自动缓存1小时\n- 按需更新\n- 提供格式化的 JSON 数据\n\n### 3. 报告生成\n\n使用 `daily_treasury_report` 提示生成格式化的财政报告：\n\n```typescript\n// Example usage through Claude\nHuman: Generate a treasury report for 2024-03-01\nAssistant: I'll use the daily treasury report prompt to create a formatted report...\n```"
+  },
+  "categories": [
+    "finance",
+    "data"
+  ],
+  "tags": [
+    "finance",
+    "research and data",
+    "chinese"
+  ],
+  "website": "https://github.com/QuantGeekDev/fiscal-data-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "fiscal-data-mcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 26.76
+}

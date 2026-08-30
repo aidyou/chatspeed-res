@@ -1,0 +1,51 @@
+{
+  "id": "shaike1-ssh",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-server-ssh",
+    "zh-Hans": "MCP SSH服务器",
+    "zh-Hant": "MCP SSH服务器"
+  },
+  "description": {
+    "en": "A secure SSH server implementation for Model Context Protocol that enables remote command execution and file operations, supporting both password and key-based authentication.",
+    "zh-Hans": "针对模型上下文协议的安全SSH服务器实现， enables远程命令执行和文件操作，同时支持基于密码和密钥的身份验证。",
+    "zh-Hant": "针对模型上下文协议的安全SSH服务器实现， enables远程命令执行和文件操作，同时支持基于密码和密钥的身份验证。"
+  },
+  "detail": {
+    "en": "# MCP SSH Server\n\nA powerful SSH server implementation for Model Context Protocol (MCP). This server enables secure remote command execution and file operations through SSH protocol, supporting both password and key-based authentication.\n\n## Features\n\n- ✨ Secure SSH connection management\n- 🔑 Password and key-based authentication\n- 💻 Remote command execution\n- 📁 File operations (upload/download)\n- 📊 Progress tracking for file transfers\n- 🔐 Permission management\n- 📂 Directory operations\n- 🚀 Bulk file transfers\n- 📝 Detailed logging\n\n## Installation\n\n1. Install the package:\n```bash\nnpm install mcp-ssh\n```\n\n2. Add to your Claude desktop config (`claude_desktop_config.json`):\n```json\n{\n  \"mcpServers\": {\n    \"ssh\": {\n      \"command\": \"node\",\n      \"args\": [\"%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js\"],\n      \"env\": {\n        \"SSH_PORT\": \"8889\",\n        \"SSH_LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n\n```\n\n## Usage\n\n### Password Authentication\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    password = \"pass123\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### Key Authentication\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    privateKey = Get-Content ~/.ssh/id_rsa | Out-String\n    passphrase = \"optional-key-passphrase\"  # if your key is protected\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### Execute Commands\n```powershell\n$execBody = @{\n    id = \"test\"\n    command = \"ls -la\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/exec\" -Method Post -Body $execBody -ContentType \"application/json\"\n```\n\n### File Operations\n```powershell\n# Upload file\n$uploadForm = @{\n    file = Get-Item -Path \"localfile.txt\"\n    remotePath = \"/remote/path/file.txt\"\n}\nInvoke-RestMethod -Uri \"http://localhost:8889/upload/test\" -Method Post -Form $uploadForm\n\n# Download file\nInvoke-RestMethod -Uri \"http://localhost:8889/download/test?remotePath=/remote/path/file.txt\" -Method Get -OutFile \"downloaded.txt\"\n```\n\n### Directory Operations\n```powershell\n# List directory\nInvoke-RestMethod -Uri \"http://localhost:8889/ls/test?path=/remote/path\" -Method Get\n\n# Get connection status\nInvoke-RestMethod -Uri \"http://localhost:8889/status/test\" -Method Get\n```\n\n## Development\n\n1. Clone the repository:\n```bash\ngit clone https://github.com/shaike1/mcp-server-ssh.git\ncd mcp-server-ssh\n```\n\n2. Install dependencies:\n```bash\nnpm install\n```\n\n3. Build:\n```bash\nnpm run build\n```\n\n4. Start server:\n```bash\nnpm start\n```\n\n## Environment Variables\n\n- `SSH_PORT`: Server port (default: 8889)\n- `SSH_LOG_LEVEL`: Logging level (default: info)\n\n## Contributing\n\n1. Fork the repository\n2. Create your feature branch (`git checkout -b feature/amazing-feature`)\n3. Commit your changes (`git commit -m 'Add some amazing feature'`)\n4. Push to the branch (`git push origin feature/amazing-feature`)\n5. Open a Pull Request\n\n## License\n\nMIT",
+    "zh-Hans": "# MCP SSH 服务器\n\n一个强大的 SSH 服务器实现，用于模型上下文协议 (MCP)。该服务器通过 SSH 协议启用安全的远程命令执行和文件操作，支持基于密码和密钥的身份验证。\n\n## 特性\n\n- ✨ 安全的 SSH 连接管理\n- 🔑 基于密码和密钥的身份验证\n- 💻 远程命令执行\n- 📁 文件操作（上传/下载）\n- 📊 文件传输进度跟踪\n- 🔐 权限管理\n- 📂 目录操作\n- 🚀 批量文件传输\n- 📝 详细日志记录\n\n## 安装\n\n1. 安装软件包：\n```bash\nnpm install mcp-ssh\n```\n\n2. 添加到你的 Claude 桌面配置 (`claude_desktop_config.json`) 中：\n```json\n{\n  \"mcpServers\": {\n    \"ssh\": {\n      \"command\": \"node\",\n      \"args\": [\"%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js\"],\n      \"env\": {\n        \"SSH_PORT\": \"8889\",\n        \"SSH_LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n\n```\n\n## 使用方法\n\n### 密码认证\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    password = \"pass123\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### 密钥认证\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    privateKey = Get-Content ~/.ssh/id_rsa | Out-String\n    passphrase = \"optional-key-passphrase\"  # if your key is protected\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### 执行命令\n```powershell\n$execBody = @{\n    id = \"test\"\n    command = \"ls -la\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/exec\" -Method Post -Body $execBody -ContentType \"application/json\"\n```\n\n### 文件操作\n```powershell\n# Upload file\n$uploadForm = @{\n    file = Get-Item -Path \"localfile.txt\"\n    remotePath = \"/remote/path/file.txt\"\n}\nInvoke-RestMethod -Uri \"http://localhost:8889/upload/test\" -Method Post -Form $uploadForm\n\n# Download file\nInvoke-RestMethod -Uri \"http://localhost:8889/download/test?remotePath=/remote/path/file.txt\" -Method Get -OutFile \"downloaded.txt\"\n```\n\n### 目录操作\n```powershell\n# List directory\nInvoke-RestMethod -Uri \"http://localhost:8889/ls/test?path=/remote/path\" -Method Get\n\n# Get connection status\nInvoke-RestMethod -Uri \"http://localhost:8889/status/test\" -Method Get\n```\n\n## 开发\n\n1. 克隆仓库：\n```bash\ngit clone https://github.com/shaike1/mcp-server-ssh.git\ncd mcp-server-ssh\n```\n\n2. 安装依赖项：\n```bash\nnpm install\n```\n\n3. 构建：\n```bash\nnpm run build\n```\n\n4. 启动服务器：\n```bash\nnpm start\n```\n\n## 环境变量\n\n- `SSH_PORT`: 服务器端口（默认：8889）\n- `SSH_LOG_LEVEL`: 日志级别（默认：info）\n\n## 贡献\n\n1. 叉分仓库\n2. 创建特性分支 (`git checkout -b feature/amazing-feature`)\n3. 提交更改 (`git commit -m 'Add some amazing feature'`)\n4. 推送到分支 (`git push origin feature/amazing-feature`)\n5. 打开拉取请求\n\n## 许可证\n\nMIT",
+    "zh-Hant": "# MCP SSH 服务器\n\n一个强大的 SSH 服务器实现，用于模型上下文协议 (MCP)。该服务器通过 SSH 协议启用安全的远程命令执行和文件操作，支持基于密码和密钥的身份验证。\n\n## 特性\n\n- ✨ 安全的 SSH 连接管理\n- 🔑 基于密码和密钥的身份验证\n- 💻 远程命令执行\n- 📁 文件操作（上传/下载）\n- 📊 文件传输进度跟踪\n- 🔐 权限管理\n- 📂 目录操作\n- 🚀 批量文件传输\n- 📝 详细日志记录\n\n## 安装\n\n1. 安装软件包：\n```bash\nnpm install mcp-ssh\n```\n\n2. 添加到你的 Claude 桌面配置 (`claude_desktop_config.json`) 中：\n```json\n{\n  \"mcpServers\": {\n    \"ssh\": {\n      \"command\": \"node\",\n      \"args\": [\"%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js\"],\n      \"env\": {\n        \"SSH_PORT\": \"8889\",\n        \"SSH_LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n\n```\n\n## 使用方法\n\n### 密码认证\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    password = \"pass123\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### 密钥认证\n```powershell\n$body = @{\n    id = \"test\"\n    host = \"example.com\"\n    port = 22\n    username = \"user\"\n    privateKey = Get-Content ~/.ssh/id_rsa | Out-String\n    passphrase = \"optional-key-passphrase\"  # if your key is protected\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/connect\" -Method Post -Body $body -ContentType \"application/json\"\n```\n\n### 执行命令\n```powershell\n$execBody = @{\n    id = \"test\"\n    command = \"ls -la\"\n} | ConvertTo-Json\n\nInvoke-RestMethod -Uri \"http://localhost:8889/exec\" -Method Post -Body $execBody -ContentType \"application/json\"\n```\n\n### 文件操作\n```powershell\n# Upload file\n$uploadForm = @{\n    file = Get-Item -Path \"localfile.txt\"\n    remotePath = \"/remote/path/file.txt\"\n}\nInvoke-RestMethod -Uri \"http://localhost:8889/upload/test\" -Method Post -Form $uploadForm\n\n# Download file\nInvoke-RestMethod -Uri \"http://localhost:8889/download/test?remotePath=/remote/path/file.txt\" -Method Get -OutFile \"downloaded.txt\"\n```\n\n### 目录操作\n```powershell\n# List directory\nInvoke-RestMethod -Uri \"http://localhost:8889/ls/test?path=/remote/path\" -Method Get\n\n# Get connection status\nInvoke-RestMethod -Uri \"http://localhost:8889/status/test\" -Method Get\n```\n\n## 开发\n\n1. 克隆仓库：\n```bash\ngit clone https://github.com/shaike1/mcp-server-ssh.git\ncd mcp-server-ssh\n```\n\n2. 安装依赖项：\n```bash\nnpm install\n```\n\n3. 构建：\n```bash\nnpm run build\n```\n\n4. 启动服务器：\n```bash\nnpm start\n```\n\n## 环境变量\n\n- `SSH_PORT`: 服务器端口（默认：8889）\n- `SSH_LOG_LEVEL`: 日志级别（默认：info）\n\n## 贡献\n\n1. 叉分仓库\n2. 创建特性分支 (`git checkout -b feature/amazing-feature`)\n3. 提交更改 (`git commit -m 'Add some amazing feature'`)\n4. 推送到分支 (`git push origin feature/amazing-feature`)\n5. 打开拉取请求\n\n## 许可证\n\nMIT"
+  },
+  "categories": [
+    "files"
+  ],
+  "tags": [
+    "file systems",
+    "os automation",
+    "security and iam",
+    "chinese"
+  ],
+  "website": "https://github.com/shaike1/mcp-server-ssh",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js"
+    ],
+    "env": [
+      [
+        "SSH_LOG_LEVEL",
+        "info"
+      ],
+      [
+        "SSH_PORT",
+        "8889"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 5.48
+}

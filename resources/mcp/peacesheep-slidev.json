@@ -1,0 +1,52 @@
+{
+  "id": "peacesheep-slidev",
+  "channel": "mcp",
+  "name": {
+    "en": "slidev-mcp",
+    "zh-Hans": "[MCP&Agent挑战赛]slidev-mcp",
+    "zh-Hant": "[MCP&Agent挑战赛]slidev-mcp"
+  },
+  "description": {
+    "en": "Let AI help you easily create professional slide presentations!",
+    "zh-Hans": "让 AI 帮你轻松创建专业幻灯片演示！",
+    "zh-Hant": "让 AI 帮你轻松创建专业幻灯片演示！"
+  },
+  "detail": {
+    "en": "## ✨ 项目介绍\r\n\r\nslidev-mcp 是一个基于 [Slidev](https://github.com/slidevjs/slidev) 的智能幻灯片生成工具，通过集成大语言模型技术，让用户只需简单描述需求，即可自动生成专业的在线PPT演示文稿。\r\n\r\n\n **核心价值**：\r\n- 大幅降低 Slidev 使用门槛\r\n- 自然语言交互式创建幻灯片\r\n- 自动化生成专业级演示文稿\r\n\r\n## 🎥 演示视频\r\n\r\n下面的视频展示了使用 MCP 工具创建 Slidev 项目的基本流程：\r\n\r\n\r\n\r\n\r\n## 🚀 快速开始\r\n\r\n详细的设置和使用说明，请查看[快速开始指南](https://github.com/LSTM-Kirigaya/slidev-mcp/blob/main/docs/quickstart.zh.md)。\r\n\r\n## 🔧 可用工具\r\n\r\nMCP 服务器提供以下工具用于幻灯片创建和管理：\r\n\r\n### 环境与项目管理\r\n\r\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\r\n|---------|---------|---------|------|\r\n| `check_environment` | 无 | 环境状态和版本信息 | 验证依赖项是否已安装 |\r\n| `create_slidev` | `path` (字符串), `title` (字符串), `author` (字符串) | 项目创建状态和路径 | 初始化新的 Slidev 项目 |\r\n| `load_slidev` | `path` (字符串) | 项目内容和幻灯片数据 | 加载现有演示文稿 |\r\n\r\n### 幻灯片内容管理\r\n\r\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\r\n|---------|---------|---------|------|\r\n| `make_cover` | `title` (字符串), `subtitle` (字符串, 可选), `author` (字符串, 可选), `background` (字符串, 可选), `python_string_template` (字符串, 可选) | 封面创建状态 | 创建/更新封面页 |\r\n| `add_page` | `content` (字符串), `layout` (字符串, 可选) | 新幻灯片索引 | 向演示文稿添加新幻灯片 |\r\n| `set_page` | `index` (整数), `content` (字符串), `layout` (字符串, 可选) | 更新状态 | 修改现有幻灯片内容 |\r\n| `get_page` | `index` (整数) | Markdown 格式的幻灯片内容 | 获取指定幻灯片内容 |\r\n\r\n### 实用工具\r\n\r\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\r\n|---------|---------|---------|------|\r\n| `websearch` | `url` (字符串) | 提取的 Markdown 文本 | 从网络收集幻灯片内容 |\r\n| `get_slidev_usage` | 无 | Slidev 布局指南和模板 | 提供布局文档参考 |\r\n| `start_slidev` | 无 | 服务器启动命令字符串 | 启动演示文稿服务器 |\r\n\r\n### AI 助手\r\n\r\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\r\n|---------|---------|---------|------|\r\n| `guide` | 无 | 系统提示 | 指导 AI 有效使用工具 |\r\n\r\n> **注释**: `可选` = 可选参数\r\n\r\n## 📄 开源协议\r\n\r\nMIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)",
+    "zh-Hans": "## ✨ 项目介绍\n\nslidev-mcp 是一个基于 [Slidev](https://github.com/slidevjs/slidev) 的智能幻灯片生成工具，通过集成大语言模型技术，让用户只需简单描述需求，即可自动生成专业的在线PPT演示文稿。\n\n **核心价值**：\n- 大幅降低 Slidev 使用门槛\n- 自然语言交互式创建幻灯片\n- 自动化生成专业级演示文稿\n\n## 🎥 演示视频\n\n下面的视频展示了使用 MCP 工具创建 Slidev 项目的基本流程：\n\n## 🚀 快速开始\n\n详细的设置和使用说明，请查看[快速开始指南](https://github.com/LSTM-Kirigaya/slidev-mcp/blob/main/docs/quickstart.zh.md)。\n\n## 🔧 可用工具\n\nMCP 服务器提供以下工具用于幻灯片创建和管理：\n\n### 环境与项目管理\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `check_environment` | 无 | 环境状态和版本信息 | 验证依赖项是否已安装 |\n| `create_slidev` | `path` (字符串), `title` (字符串), `author` (字符串) | 项目创建状态和路径 | 初始化新的 Slidev 项目 |\n| `load_slidev` | `path` (字符串) | 项目内容和幻灯片数据 | 加载现有演示文稿 |\n\n### 幻灯片内容管理\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `make_cover` | `title` (字符串), `subtitle` (字符串, 可选), `author` (字符串, 可选), `background` (字符串, 可选), `python_string_template` (字符串, 可选) | 封面创建状态 | 创建/更新封面页 |\n| `add_page` | `content` (字符串), `layout` (字符串, 可选) | 新幻灯片索引 | 向演示文稿添加新幻灯片 |\n| `set_page` | `index` (整数), `content` (字符串), `layout` (字符串, 可选) | 更新状态 | 修改现有幻灯片内容 |\n| `get_page` | `index` (整数) | Markdown 格式的幻灯片内容 | 获取指定幻灯片内容 |\n\n### 实用工具\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `websearch` | `url` (字符串) | 提取的 Markdown 文本 | 从网络收集幻灯片内容 |\n| `get_slidev_usage` | 无 | Slidev 布局指南和模板 | 提供布局文档参考 |\n| `start_slidev` | 无 | 服务器启动命令字符串 | 启动演示文稿服务器 |\n\n### AI 助手\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `guide` | 无 | 系统提示 | 指导 AI 有效使用工具 |\n\n> **注释**: `可选` = 可选参数\n\n## 📄 开源协议\n\nMIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)",
+    "zh-Hant": "## ✨ 项目介绍\n\nslidev-mcp 是一个基于 [Slidev](https://github.com/slidevjs/slidev) 的智能幻灯片生成工具，通过集成大语言模型技术，让用户只需简单描述需求，即可自动生成专业的在线PPT演示文稿。\n\n **核心价值**：\n- 大幅降低 Slidev 使用门槛\n- 自然语言交互式创建幻灯片\n- 自动化生成专业级演示文稿\n\n## 🎥 演示视频\n\n下面的视频展示了使用 MCP 工具创建 Slidev 项目的基本流程：\n\n## 🚀 快速开始\n\n详细的设置和使用说明，请查看[快速开始指南](https://github.com/LSTM-Kirigaya/slidev-mcp/blob/main/docs/quickstart.zh.md)。\n\n## 🔧 可用工具\n\nMCP 服务器提供以下工具用于幻灯片创建和管理：\n\n### 环境与项目管理\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `check_environment` | 无 | 环境状态和版本信息 | 验证依赖项是否已安装 |\n| `create_slidev` | `path` (字符串), `title` (字符串), `author` (字符串) | 项目创建状态和路径 | 初始化新的 Slidev 项目 |\n| `load_slidev` | `path` (字符串) | 项目内容和幻灯片数据 | 加载现有演示文稿 |\n\n### 幻灯片内容管理\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `make_cover` | `title` (字符串), `subtitle` (字符串, 可选), `author` (字符串, 可选), `background` (字符串, 可选), `python_string_template` (字符串, 可选) | 封面创建状态 | 创建/更新封面页 |\n| `add_page` | `content` (字符串), `layout` (字符串, 可选) | 新幻灯片索引 | 向演示文稿添加新幻灯片 |\n| `set_page` | `index` (整数), `content` (字符串), `layout` (字符串, 可选) | 更新状态 | 修改现有幻灯片内容 |\n| `get_page` | `index` (整数) | Markdown 格式的幻灯片内容 | 获取指定幻灯片内容 |\n\n### 实用工具\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `websearch` | `url` (字符串) | 提取的 Markdown 文本 | 从网络收集幻灯片内容 |\n| `get_slidev_usage` | 无 | Slidev 布局指南和模板 | 提供布局文档参考 |\n| `start_slidev` | 无 | 服务器启动命令字符串 | 启动演示文稿服务器 |\n\n### AI 助手\n\n| 工具名称 | 输入参数 | 输出结果 | 作用 |\n|---------|---------|---------|------|\n| `guide` | 无 | 系统提示 | 指导 AI 有效使用工具 |\n\n> **注释**: `可选` = 可选参数\n\n## 📄 开源协议\n\nMIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "developer tools",
+    "entertainment and media",
+    "research and data",
+    "slidev",
+    "幻灯片",
+    "markdown"
+  ],
+  "website": "https://github.com/LSTM-Kirigaya/slidev-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uv",
+    "args": [
+      "--directory",
+      "<替换为你的slidev-mcp路径>",
+      "run",
+      "servers\\themes\\academic\\server.py"
+    ],
+    "env": [
+      [
+        "PATH",
+        "<替换为你的nodejs路径>;${PATH}"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 3.07
+}

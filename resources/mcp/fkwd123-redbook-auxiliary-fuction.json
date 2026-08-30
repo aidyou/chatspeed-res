@@ -1,0 +1,43 @@
+{
+  "id": "fkwd123-redbook-auxiliary-fuction",
+  "channel": "mcp",
+  "name": {
+    "en": "RedBook_auxiliary_fuction",
+    "zh-Hans": "小红书辅助功能",
+    "zh-Hant": "小红书辅助功能"
+  },
+  "description": {
+    "en": "Help users quickly complete the entire process from account creation to content generation and compliance checks.",
+    "zh-Hans": "帮助用户快速完成从账号打造到内容生成、合规检测的全流程操作。",
+    "zh-Hant": "帮助用户快速完成从账号打造到内容生成、合规检测的全流程操作。"
+  },
+  "detail": {
+    "en": "# Xiaohongshu Auxiliary MCP\n\nAn intelligent auxiliary tool designed specifically for Xiaohongshu content creators, providing three core functions: persona building, copywriting generation, and prohibited word detection.\n\n## Features\n\n### 1. Internet Celebrity Persona Building\n- Precise persona positioning analysis based on user interests and skills\n- Design of unique image (nickname, avatar, bio)\n- Formulation of content creation strategy and operation plan\n- Provision of interaction strategies and traffic ignition points\n\n### 2. Viral Copywriting Generation\n- Generate 5 attractive titles (including emoji)\n- Create complete body text (paragraphed, rich in emojis)\n- Provide SEO optimized tags\n- Utilize diode title method and viral keywords\n\n### 3. Prohibited Word Detection\n- Three-level risk scan (absolute language, false advertising, sensitive content)\n- Highlighting of non-compliant words\n- Provide compliance replacement suggestions\n- Risk level assessment (red/yellow/green)\n\n## Usage Process\n\n1. **Select Function**: The user selects the required function module\n2. **Input Requirements**: Provide relevant information according to the function requirements\n3. **Intelligent Analysis**: The system performs intelligent analysis and generation based on user input\n4. **Output Results**: Provide structured results and recommendations",
+    "zh-Hans": "# 小红书辅助MCP\n\n一个专为小红书内容创作者设计的智能辅助工具，提供人设打造、文案生成和违禁词检测三大核心功能。\n\n## 功能特性\n\n### 1. 网红人设打造\n- 基于用户兴趣和技能进行精准人设定位分析\n- 设计独特形象（昵称、头像、简介）\n- 制定内容创作策略和运营方案\n- 提供互动策略和流量引爆点\n\n### 2. 爆款文案生成\n- 生成5个吸引人的标题（含emoji表情）\n- 创作完整正文内容（段落化、表情丰富）\n- 提供SEO优化标签\n- 运用二极管标题法和爆款关键词\n\n### 3. 违禁词检测\n- 三级风险扫描（绝对化用语、虚假宣传、敏感内容）\n- 高亮显示违规词汇\n- 提供合规替换建议\n- 风险等级评估（红/黄/绿）\n\n## 使用流程\n\n1. **选择功能**：用户选择需要使用的功能模块\n2. **输入需求**：根据功能要求提供相关信息\n3. **智能分析**：系统基于用户输入进行智能分析和生成\n4. **输出结果**：提供结构化的结果和建议",
+    "zh-Hant": "# 小红书辅助MCP\n\n一个专为小红书内容创作者设计的智能辅助工具，提供人设打造、文案生成和违禁词检测三大核心功能。\n\n## 功能特性\n\n### 1. 网红人设打造\n- 基于用户兴趣和技能进行精准人设定位分析\n- 设计独特形象（昵称、头像、简介）\n- 制定内容创作策略和运营方案\n- 提供互动策略和流量引爆点\n\n### 2. 爆款文案生成\n- 生成5个吸引人的标题（含emoji表情）\n- 创作完整正文内容（段落化、表情丰富）\n- 提供SEO优化标签\n- 运用二极管标题法和爆款关键词\n\n### 3. 违禁词检测\n- 三级风险扫描（绝对化用语、虚假宣传、敏感内容）\n- 高亮显示违规词汇\n- 提供合规替换建议\n- 风险等级评估（红/黄/绿）\n\n## 使用流程\n\n1. **选择功能**：用户选择需要使用的功能模块\n2. **输入需求**：根据功能要求提供相关信息\n3. **智能分析**：系统基于用户输入进行智能分析和生成\n4. **输出结果**：提供结构化的结果和建议"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://www.modelscope.cn/studios/FKWD123/RedBook_Auxiliary_Function/summary",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "mcp-remote",
+      "https://fkwd123-redbook-auxiliary-function.ms.show/gradio_api/mcp/sse",
+      "--transport",
+      "sse-only"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 32.67
+}

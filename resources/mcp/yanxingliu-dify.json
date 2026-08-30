@@ -1,0 +1,49 @@
+{
+  "id": "yanxingliu-dify",
+  "channel": "mcp",
+  "name": {
+    "en": "dify-mcp-server",
+    "zh-Hans": "Dify MCP 服务器",
+    "zh-Hant": "Dify MCP 服务器"
+  },
+  "description": {
+    "en": "Server for using [Dify](https://github.com/langgenius/dify). It achieves the invocation of the Dify workflow by calling the tools of MCP.",
+    "zh-Hans": "用于使用[Dify](https://github.com/langgenius/dify)的服务器。它通过调用MCP的工具来实现Dify工作流程的调用。",
+    "zh-Hant": "用于使用[Dify](https://github.com/langgenius/dify)的服务器。它通过调用MCP的工具来实现Dify工作流程的调用。"
+  },
+  "detail": {
+    "en": "# Model Context Protocol (MCP) Server for dify workflows\nA simple implementation of an MCP server for using [dify](https://github.com/langgenius/dify). It achieves the invocation of the Dify workflow by calling the tools of MCP.\n## 🔨Installation\nThe server can be installed via [Smithery](https://smithery.ai/server/dify-mcp-server) or manually. Config.yaml is required for both methods. Thus, we need to prepare it before installation.\n\n### Prepare config.yaml\nBefore using the mcp server, you should prepare a config.yaml to save your dify_base_url and dify_sks. The example config like this:\n```yaml\ndify_base_url: \"https://cloud.dify.ai/v1\"\ndify_app_sks:\n  - \"app-sk1\"\n  - \"app-sk2\"\n```\nYou can run the following command in your terminal to quickly create a configuration file:\n```\nmkdir -p ~/tools && cat > ~/tools/config.yaml\n```",
+    "zh-Hans": "# Model Context Protocol (MCP) Server for dify workflows\n一个简单的MCP服务器实现，用于使用[dify](https://github.com/langgenius/dify)。通过调用MCP的工具来实现Dify工作流的调用。\n## 🔨安装\n可以通过[Smithery](https://smithery.ai/server/dify-mcp-server)或手动方式安装该服务器。两种方法都需要Config.yaml文件。因此，在安装之前我们需要准备好它。\n\n### 准备config.yaml\n在使用mcp服务器之前，您应该准备一个config.yaml文件来保存您的dify_base_url和dify_sks。示例配置如下：\n```yaml\ndify_base_url: \"https://cloud.dify.ai/v1\"\ndify_app_sks:\n  - \"app-sk1\"\n  - \"app-sk2\"\n```\n您可以在终端中运行以下命令快速创建一个配置文件：\n```\nmkdir -p ~/tools && cat > ~/tools/config.yaml\n```",
+    "zh-Hant": "# Model Context Protocol (MCP) Server for dify workflows\n一个简单的MCP服务器实现，用于使用[dify](https://github.com/langgenius/dify)。通过调用MCP的工具来实现Dify工作流的调用。\n## 🔨安装\n可以通过[Smithery](https://smithery.ai/server/dify-mcp-server)或手动方式安装该服务器。两种方法都需要Config.yaml文件。因此，在安装之前我们需要准备好它。\n\n### 准备config.yaml\n在使用mcp服务器之前，您应该准备一个config.yaml文件来保存您的dify_base_url和dify_sks。示例配置如下：\n```yaml\ndify_base_url: \"https://cloud.dify.ai/v1\"\ndify_app_sks:\n  - \"app-sk1\"\n  - \"app-sk2\"\n```\n您可以在终端中运行以下命令快速创建一个配置文件：\n```\nmkdir -p ~/tools && cat > ~/tools/config.yaml\n```"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/YanxingLiu/dify-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uv",
+    "args": [
+      "--directory",
+      "${DIFY_MCP_SERVER_PATH}",
+      "run",
+      "dify_mcp_server"
+    ],
+    "env": [
+      [
+        "CONFIG_PATH",
+        "$CONFIG_PATH"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 1.37
+}

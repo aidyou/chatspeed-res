@@ -1,0 +1,39 @@
+{
+  "id": "hanyoud-worksheets-generator",
+  "channel": "mcp",
+  "name": {
+    "en": "Worksheets_generator",
+    "zh-Hans": "淡墨水字帖",
+    "zh-Hant": "淡墨水字帖"
+  },
+  "description": {
+    "en": "The Danmoshui MCP remote server can generate and create high-definition PDF format Chinese character sheets, word dictation/pinyin practice sheets, math mental arithmetic exercises, Hengshui-style English handwriting sheets, and English vocabulary lists for free.\n\nSSE address: https://danmoshui.com/sse",
+    "zh-Hans": "淡墨水字帖MCP远程服务器可免费生成/制作高清PDF格式的汉字字帖、词语默写/注音练习字帖、数学口算练习题、衡水体英文字帖和英语单词表。\n\nSSE地址：https://danmoshui.com/sse",
+    "zh-Hant": "淡墨水字帖MCP远程服务器可免费生成/制作高清PDF格式的汉字字帖、词语默写/注音练习字帖、数学口算练习题、衡水体英文字帖和英语单词表。\n\nSSE地址：https://danmoshui.com/sse"
+  },
+  "detail": {
+    "en": "Light Ink Character Sheet MCP Remote Service, after configuration, can directly generate and download character sheets in AI conversations.\n\nSSE address: https://danmoshui.com/sse\n\nKouzi Space configuration example:\n\n```\n\n{\n\n  \"mcpServers\": {\n\n    \"淡墨水字帖\": {\n\n      \"url\": \"https://danmoshui.com/sse\"\n\n    }\n\n  }\n\n}\n\n```\nCherry-Studio configuration example:\n\n```\n\n{\n\n  \"mcpServers\": {\n\n    \"淡墨水字帖\": {\n\n      \"type\": \"sse\",\n\n      \"url\": \"https://danmoshui.com/sse\"\n\n    }\n\n  }\n\n}\n\n```",
+    "zh-Hans": "淡墨水字帖MCP远程服务，配置后可以直接在AI对话中生成并下载字帖。\n\nSSE地址：https://danmoshui.com/sse\n\n扣子空间配置示例：\n```\n{\n  \"mcpServers\": {\n    \"淡墨水字帖\": {\n      \"url\": \"https://danmoshui.com/sse\"\n    }\n  }\n}\n```\n\nCherry-Studio配置示例：\n```\n{\n  \"mcpServers\": {\n    \"淡墨水字帖\": {\n      \"type\": \"sse\",\n      \"url\": \"https://danmoshui.com/sse\"\n    }\n  }\n}\n```",
+    "zh-Hant": "淡墨水字帖MCP远程服务，配置后可以直接在AI对话中生成并下载字帖。\n\nSSE地址：https://danmoshui.com/sse\n\n扣子空间配置示例：\n```\n{\n  \"mcpServers\": {\n    \"淡墨水字帖\": {\n      \"url\": \"https://danmoshui.com/sse\"\n    }\n  }\n}\n```\n\nCherry-Studio配置示例：\n```\n{\n  \"mcpServers\": {\n    \"淡墨水字帖\": {\n      \"type\": \"sse\",\n      \"url\": \"https://danmoshui.com/sse\"\n    }\n  }\n}\n```"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "knowledge and memory",
+    "art and culture",
+    "字帖生成",
+    "chinese"
+  ],
+  "website": "https://danmoshui.com/software",
+  "icon": "/mcp-icons/455eb68618d35a85fd210e9a2d13e2e2.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "http",
+    "url": "https://danmoshui.com/sse",
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 3.18
+}

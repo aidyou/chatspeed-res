@@ -1,0 +1,41 @@
+{
+  "id": "baranwang-tung-shing",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-tung-shing",
+    "zh-Hans": "baranwang",
+    "zh-Hant": "baranwang"
+  },
+  "description": {
+    "en": "Tung Shing MCP Service Simplified Chinese English A traditional Chinese almanac (Tung Shing) calculation service, based on the Model Context Protocol (MCP) ✨ Features - 📅 Gregorian and Lunar Calendar Conversion - Supports mutual conversion between Gregorian an",
+    "zh-Hans": "通胜 MCP 服务 简体中文 English 中国传统黄历（通胜）计算服务，基于 Model Context Protocol (MCP) ✨ 功能特点 - 📅 公历农历转换 - 支持公历与农历日期的相互转换 - 🍀 每日宜忌 - 提供每日吉凶、宜忌活动的详细信息 - 🕐 时辰信息 - 十二时辰（子、丑、寅等）的吉凶宜忌 - 🔮 命理元素 - 五行、神煞、星宿等传统命理学详细数据 🚀 安装与使用 在你的 MCP 配置文件中添加以下内容： json { \"mcpServers\": { \"tung-shing\": { ",
+    "zh-Hant": "通胜 MCP 服务 简体中文 English 中国传统黄历（通胜）计算服务，基于 Model Context Protocol (MCP) ✨ 功能特点 - 📅 公历农历转换 - 支持公历与农历日期的相互转换 - 🍀 每日宜忌 - 提供每日吉凶、宜忌活动的详细信息 - 🕐 时辰信息 - 十二时辰（子、丑、寅等）的吉凶宜忌 - 🔮 命理元素 - 五行、神煞、星宿等传统命理学详细数据 🚀 安装与使用 在你的 MCP 配置文件中添加以下内容： json { \"mcpServers\": { \"tung-shing\": { "
+  },
+  "detail": {
+    "en": "# Tung Shing MCP Service\n\n[Smithery](https://smithery.ai/server/@baranwang/mcp-tung-shing)\n[![NPM Version](/mcp-assets/a54621745a6198c873e1ad8fc7327b2b.svg)](https://www.npmjs.com/package/mcp-tung-shing)\n[![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/baranwang/mcp-tung-shing/blob/main/LICENSE)\n\nSimplified Chinese | [English](https://github.com/baranwang/mcp-tung-shing/blob/HEAD/README.en.md)\n\n> A traditional Chinese almanac (Tung Shing) calculation service, based on the Model Context Protocol (MCP)\n\n## ✨ Features\n\n- 📅 **Gregorian and Lunar Calendar Conversion** - Supports mutual conversion between Gregorian and lunar dates\n- 🍀 **Daily Auspicious and Inauspicious Activities** - Provides detailed information on daily fortune, auspicious, and inauspicious activities\n- 🕐 **Hour Information** - Details of fortune, auspicious, and inauspicious activities for the twelve hours (Zi, Chou, Yin, etc.)\n- 🔮 **Astrological Elements** - Detailed data on traditional astrology including the Five Elements, Deities, and Constellations\n\n## 🚀 Installation and Usage\n\nAdd the following to your MCP configuration file:\n\njson\n{\n  \"mcpServers\": {\n    \"tung-shing\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-tung-shing@latest\"]\n    }\n  }\n}\n\n## ⚙️ Tools\n\n### get-tung-shing\n\nFetches almanac information for a specified date.\n\n**Parameters:**\n\n| Parameter Name   | Type             | Required | Default | Description                                      |\n| ---------------- | ---------------- | -------- | ------- | ------------------------------------------------ |\n| `startDate`      | string           | No       | Today   | Start date, format: \"YYYY-MM-DD\"                 |\n| `days`           | number           | No       | 1       | Number of days to fetch                          |\n| `includeHours`   | boolean          | No       | false   | Whether to include hour information              |\n| `tabooFilters`   | array            | No       | -       | Filter types of auspicious and inauspicious activities, conditions are OR-based |\n| `tabooFilters[].type` | 1 | 2  | Yes     | -      | Filter type: Auspicious (1), Inauspicious (2)    |\n| `tabooFilters[].value` | string  | Yes   | -      | The specific auspicious or inauspicious activity to filter |\n\n## 🤝 Contributions\n\nWe welcome Issues and Pull Requests to improve this project.",
+    "zh-Hans": "# 通胜 MCP 服务\n\n[Smithery](https://smithery.ai/server/@baranwang/mcp-tung-shing)\n[![NPM Version](/mcp-assets/a54621745a6198c873e1ad8fc7327b2b.svg)](https://www.npmjs.com/package/mcp-tung-shing)\n[![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/baranwang/mcp-tung-shing/blob/main/LICENSE)\n\n简体中文 | [English](https://github.com/baranwang/mcp-tung-shing/blob/HEAD/README.en.md)\n\n> 中国传统黄历（通胜）计算服务，基于 Model Context Protocol (MCP)\n\n## ✨ 功能特点\n\n- 📅 **公历农历转换** - 支持公历与农历日期的相互转换\n- 🍀 **每日宜忌** - 提供每日吉凶、宜忌活动的详细信息\n- 🕐 **时辰信息** - 十二时辰（子、丑、寅等）的吉凶宜忌\n- 🔮 **命理元素** - 五行、神煞、星宿等传统命理学详细数据\n\n## 🚀 安装与使用\n\n在你的 MCP 配置文件中添加以下内容：\n\n```json\n{\n  \"mcpServers\": {\n    \"tung-shing\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-tung-shing@latest\"]\n    }\n  }\n}\n```\n\n## ⚙️ 工具\n\n### get-tung-shing\n\n获取指定日期的黄历信息\n\n**参数:**\n\n| 参数名         | 类型             | 必填 | 默认值 | 描述                                  |\n| -------------- | ---------------- | ---- | ------ | ------------------------------------- |\n| `startDate`    | string           | 否   | 当天   | 开始日期，格式：\"YYYY-MM-DD\"          |\n| `days`         | number           | 否   | 1      | 获取天数                              |\n| `includeHours` | boolean          | 否   | false  | 是否包含时辰信息                      |\n| `tabooFilters` | array            | 否   | -      | 筛选宜忌事项类型，条件之间为或关系     |\n| `tabooFilters[].type`   | 1 | 2  | 是   | -      | 过滤类型：宜(1)、忌(2)                |\n| `tabooFilters[].value`  | string  | 是   | -      | 要筛选的宜忌事项                      |\n\n## 🤝 贡献\n\n欢迎提交 Issues 和 Pull Requests 来完善此项目。",
+    "zh-Hant": "# 通胜 MCP 服务\n\n[Smithery](https://smithery.ai/server/@baranwang/mcp-tung-shing)\n[![NPM Version](/mcp-assets/a54621745a6198c873e1ad8fc7327b2b.svg)](https://www.npmjs.com/package/mcp-tung-shing)\n[![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/baranwang/mcp-tung-shing/blob/main/LICENSE)\n\n简体中文 | [English](https://github.com/baranwang/mcp-tung-shing/blob/HEAD/README.en.md)\n\n> 中国传统黄历（通胜）计算服务，基于 Model Context Protocol (MCP)\n\n## ✨ 功能特点\n\n- 📅 **公历农历转换** - 支持公历与农历日期的相互转换\n- 🍀 **每日宜忌** - 提供每日吉凶、宜忌活动的详细信息\n- 🕐 **时辰信息** - 十二时辰（子、丑、寅等）的吉凶宜忌\n- 🔮 **命理元素** - 五行、神煞、星宿等传统命理学详细数据\n\n## 🚀 安装与使用\n\n在你的 MCP 配置文件中添加以下内容：\n\n```json\n{\n  \"mcpServers\": {\n    \"tung-shing\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-tung-shing@latest\"]\n    }\n  }\n}\n```\n\n## ⚙️ 工具\n\n### get-tung-shing\n\n获取指定日期的黄历信息\n\n**参数:**\n\n| 参数名         | 类型             | 必填 | 默认值 | 描述                                  |\n| -------------- | ---------------- | ---- | ------ | ------------------------------------- |\n| `startDate`    | string           | 否   | 当天   | 开始日期，格式：\"YYYY-MM-DD\"          |\n| `days`         | number           | 否   | 1      | 获取天数                              |\n| `includeHours` | boolean          | 否   | false  | 是否包含时辰信息                      |\n| `tabooFilters` | array            | 否   | -      | 筛选宜忌事项类型，条件之间为或关系     |\n| `tabooFilters[].type`   | 1 | 2  | 是   | -      | 过滤类型：宜(1)、忌(2)                |\n| `tabooFilters[].value`  | string  | 是   | -      | 要筛选的宜忌事项                      |\n\n## 🤝 贡献\n\n欢迎提交 Issues 和 Pull Requests 来完善此项目。"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "art and culture",
+    "other"
+  ],
+  "website": "https://github.com/baranwang/mcp-tung-shing",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-tung-shing@latest"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 25.76
+}

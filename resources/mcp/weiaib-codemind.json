@@ -1,0 +1,41 @@
+{
+  "id": "weiaib-codemind",
+  "channel": "mcp",
+  "name": {
+    "en": "CodeMind-MCP",
+    "zh-Hans": "代码思维MCP",
+    "zh-Hant": "代码思维MCP"
+  },
+  "description": {
+    "en": "一个 MCP（Model Context Protocol）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。 是不是老是忘记git命令？ - 本MCP 可以用于管理仓库、拉取请求、问题等。 得到一个项目是不是看不懂项目？ - 本MCP会作为一个专业的架构师，帮助你快速理解代码仓库并生成思维导图。 1.",
+    "zh-Hans": "一个模型上下文协议（MCP）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。它包括管理仓库、拉取请求、问题以及从README.md文件生成思维导图的功能。",
+    "zh-Hant": "一个模型上下文协议（MCP）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。它包括管理仓库、拉取请求、问题以及从README.md文件生成思维导图的功能。"
+  },
+  "detail": {
+    "en": "一个 MCP（Model Context Protocol）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。 是不是老是忘记git命令？ - 本MCP 可以用于管理仓库、拉取请求、问题等。 得到一个项目是不是看不懂项目？ - 本MCP会作为一个专业的架构师，帮助你快速理解代码仓库并生成思维导图。 1.",
+    "zh-Hans": "# CodeMind MCP\n\n一个 MCP（Model Context Protocol）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。\n\n## 背景\n是不是老是忘记git命令？\n- 本MCP 可以用于管理仓库、拉取请求、问题等。\n\n**得到一个项目是不是看不懂项目？**\n- **本MCP会作为一个专业的架构师，帮助你快速理解代码仓库并生成思维导图**。\n\n## 核心功能\n\n1.  **`gitcode_request`**: 通用的 GitCode API 调用工具，用于管理仓库、拉取请求、问题等。\n2.  **`mindmap`**: 读取当前目录及其子目录中的所有 README.md 文件，生成思维导图：\n    *   递归查找并收集所有 README.md 文件\n    *   合并文件内容并调用 Coze 工作流生成思维导图\n    *   返回思维导图公开访问链接\n\n## 安装与使用\n\n**环境要求**: Node.js >= 18.x\n\n### 全局安装\n```bash\nnpm install -g @lucianaib/codemind-mcp\ncodemind-mcp\n```\n\n### 在 MCP 客户端中配置\n```json\n{\n  \"mcpServers\": {\n    \"CodeMind\": {\n      \"command\": \"npx\",\n      \"args\": [\"@lucianaib/codemind-mcp\"]\n    }\n  }\n}\n```\n\n\n## 工具调用参数\n\n### `gitcode_request`\n- **baseUrl**: string (可选)，如 `https://api.gitcode.com`\n- **token**: string，鉴权令牌（支持 `Bearer ` 或纯 token）\n- **method**: \"GET\" | \"POST\" | \"PUT\" | \"PATCH\" | \"DELETE\"\n- **path**: string，如 `/v1/repos`\n- **query**: Record (可选)\n- **body**: Record (可选)\n- **headers**: Record (可选)\n\n### `mindmap`\n- **prompt**: string (可选)，用于自定义生成思维导图的提示词\n\n## 开发与代码结构\n\n- `src/index.ts`: MCP 服务器入口，使用 `McpServer` 注册工具\n- `src/gitcode.ts`: GitCode API 的通用请求封装\n- `src/mindmap.ts`: README.md 文件收集及调用 Coze API 的核心逻辑\n\n## 安全提示\n\n**重要**: Coze API 凭证目前硬编码在 `src/mindmap.ts` 中，存在安全风险。生产环境请移至环境变量。\n\n## 许可证\n\n本项目采用 MIT 许可证。详见 [LICENSE](https://github.com/OnePieceLwc/CodeMind-MCP/blob/HEAD/LICENSE) 文件。",
+    "zh-Hant": "# CodeMind MCP\n\n一个 MCP（Model Context Protocol）服务器，通过自动化流程帮助用户快速理解代码仓库并生成思维导图。\n\n## 背景\n是不是老是忘记git命令？\n- 本MCP 可以用于管理仓库、拉取请求、问题等。\n\n**得到一个项目是不是看不懂项目？**\n- **本MCP会作为一个专业的架构师，帮助你快速理解代码仓库并生成思维导图**。\n\n## 核心功能\n\n1.  **`gitcode_request`**: 通用的 GitCode API 调用工具，用于管理仓库、拉取请求、问题等。\n2.  **`mindmap`**: 读取当前目录及其子目录中的所有 README.md 文件，生成思维导图：\n    *   递归查找并收集所有 README.md 文件\n    *   合并文件内容并调用 Coze 工作流生成思维导图\n    *   返回思维导图公开访问链接\n\n## 安装与使用\n\n**环境要求**: Node.js >= 18.x\n\n### 全局安装\n```bash\nnpm install -g @lucianaib/codemind-mcp\ncodemind-mcp\n```\n\n### 在 MCP 客户端中配置\n```json\n{\n  \"mcpServers\": {\n    \"CodeMind\": {\n      \"command\": \"npx\",\n      \"args\": [\"@lucianaib/codemind-mcp\"]\n    }\n  }\n}\n```\n\n\n## 工具调用参数\n\n### `gitcode_request`\n- **baseUrl**: string (可选)，如 `https://api.gitcode.com`\n- **token**: string，鉴权令牌（支持 `Bearer ` 或纯 token）\n- **method**: \"GET\" | \"POST\" | \"PUT\" | \"PATCH\" | \"DELETE\"\n- **path**: string，如 `/v1/repos`\n- **query**: Record (可选)\n- **body**: Record (可选)\n- **headers**: Record (可选)\n\n### `mindmap`\n- **prompt**: string (可选)，用于自定义生成思维导图的提示词\n\n## 开发与代码结构\n\n- `src/index.ts`: MCP 服务器入口，使用 `McpServer` 注册工具\n- `src/gitcode.ts`: GitCode API 的通用请求封装\n- `src/mindmap.ts`: README.md 文件收集及调用 Coze API 的核心逻辑\n\n## 安全提示\n\n**重要**: Coze API 凭证目前硬编码在 `src/mindmap.ts` 中，存在安全风险。生产环境请移至环境变量。\n\n## 许可证\n\n本项目采用 MIT 许可证。详见 [LICENSE](https://github.com/OnePieceLwc/CodeMind-MCP/blob/HEAD/LICENSE) 文件。"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "思维导图",
+    "chinese"
+  ],
+  "website": "https://github.com/OnePieceLwc/CodeMind-MCP",
+  "icon": "/mcp-icons/483561c1623bc6faf44286f17b8eb387.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "@lucianaib/codemind-mcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 29.04
+}

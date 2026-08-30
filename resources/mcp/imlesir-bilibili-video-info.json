@@ -1,0 +1,45 @@
+{
+  "id": "imlesir-bilibili-video-info",
+  "channel": "mcp",
+  "name": {
+    "en": "bilibili-video-info-mcp",
+    "zh-Hans": "哔哩哔哩视频信息获取",
+    "zh-Hant": "哔哩哔哩视频信息获取"
+  },
+  "description": {
+    "en": "# MCP Server for Bilibili Video Info\n\n这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。",
+    "zh-Hans": "这是一个基于MCP（模型上下文协议）的服务器，可以获取Bilibili视频的字幕、弹幕和评论信息。",
+    "zh-Hant": "这是一个基于MCP（模型上下文协议）的服务器，可以获取Bilibili视频的字幕、弹幕和评论信息。"
+  },
+  "detail": {
+    "en": "# MCP Server for Bilibili Video Info\n\nThis is a server based on MCP (Model Context Protocol) that can fetch subtitles, danmaku (bullet comments), and comments information of Bilibili videos.\n\n## MCP Tool List\n\n### 1. Get Video Subtitles List\n\njson\n{\n  \"name\": \"get_subtitles\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n\n### 2. Get Video Danmaku\n\njson\n{\n  \"name\": \"get_danmaku\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n\n### 3. Get Video Comments\n\njson\n{\n  \"name\": \"get_comments\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n\n## Usage\n\nMCP Client Configuration\njson\n{\n    \"mcpServers\": {\n        \"bilibili-video-info-mcp\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"bilibili-video-info-mcp\"\n            ],\n            \"env\": {\n                \"SESSDATA\": \"your valid sessdata\"\n            }\n        }\n    }\n}\n\n## Frequently Asked Questions\n\n### 1. What to do if SESSDATA cannot be found?\n\n1. Log in to the Bilibili website.\n2. Open the browser developer tools (F12).\n3. Go to Application/Storage -> Cookies.\n4. Find the value corresponding to SESSDATA.\n\n### 2. Error: \"SESSDATA environment variable is required\"\n\nMake sure the environment variable is set:\n\nbash\nexport SESSDATA=\"your SESSDATA value\"\n\n### 3. Which formats of video links are supported?\n\nStandard Bilibili video links are supported, such as:\n- https://www.bilibili.com/video/BV1x341177NN\n- https://b23.tv/xxxxx (short link)\n- Any link containing the BV number\n\n## License\n\nMIT",
+    "zh-Hans": "# MCP Server for Bilibili Video Info\n\n这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。\n\n## MCP 工具列表\n\n### 1. 获取视频字幕列表\n\n```json\n{\n  \"name\": \"get_subtitles\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n### 2. 获取视频弹幕\n\n```json\n{\n  \"name\": \"get_danmaku\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n### 3. 获取视频评论\n\n```json\n{\n  \"name\": \"get_comments\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n## 使用方法\n\nMCP 客户端配置\n```json\n{\n    \"mcpServers\": {\n        \"bilibili-video-info-mcp\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"bilibili-video-info-mcp\"\n            ],\n            \"env\": {\n                \"SESSDATA\": \"your valid sessdata\"\n            }\n        }\n    }\n}\n```\n\n## 常见问题\n\n### 1. 找不到 SESSDATA 怎么办？\n\n1. 登录 Bilibili 网站\n2. 打开浏览器开发者工具 (F12)\n3. 进入 Application/Storage -> Cookies\n4. 找到 SESSDATA 对应的值\n\n### 2. 报错 \"SESSDATA environment variable is required\"\n\n确保已经设置了环境变量：\n\n```bash\nexport SESSDATA=\"你的SESSDATA值\"\n```\n\n### 3. 视频链接支持哪些格式？\n\n支持标准的 Bilibili 视频链接，例如：\n- https://www.bilibili.com/video/BV1x341177NN\n- https://b23.tv/xxxxx (短链接)\n- 包含 BV 号的任何链接\n\n## 许可证\n\nMIT",
+    "zh-Hant": "# MCP Server for Bilibili Video Info\n\n这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。\n\n## MCP 工具列表\n\n### 1. 获取视频字幕列表\n\n```json\n{\n  \"name\": \"get_subtitles\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n### 2. 获取视频弹幕\n\n```json\n{\n  \"name\": \"get_danmaku\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n### 3. 获取视频评论\n\n```json\n{\n  \"name\": \"get_comments\",\n  \"arguments\": {\n    \"url\": \"https://www.bilibili.com/video/BV1x341177NN\"\n  }\n}\n```\n\n## 使用方法\n\nMCP 客户端配置\n```json\n{\n    \"mcpServers\": {\n        \"bilibili-video-info-mcp\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"bilibili-video-info-mcp\"\n            ],\n            \"env\": {\n                \"SESSDATA\": \"your valid sessdata\"\n            }\n        }\n    }\n}\n```\n\n## 常见问题\n\n### 1. 找不到 SESSDATA 怎么办？\n\n1. 登录 Bilibili 网站\n2. 打开浏览器开发者工具 (F12)\n3. 进入 Application/Storage -> Cookies\n4. 找到 SESSDATA 对应的值\n\n### 2. 报错 \"SESSDATA environment variable is required\"\n\n确保已经设置了环境变量：\n\n```bash\nexport SESSDATA=\"你的SESSDATA值\"\n```\n\n### 3. 视频链接支持哪些格式？\n\n支持标准的 Bilibili 视频链接，例如：\n- https://www.bilibili.com/video/BV1x341177NN\n- https://b23.tv/xxxxx (短链接)\n- 包含 BV 号的任何链接\n\n## 许可证\n\nMIT"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://github.com/lesir831/bilibili-video-info-mcp",
+  "icon": "/mcp-icons/094ba6fd0df9a887e35b0584efc5402a.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "bilibili-video-info-mcp"
+    ],
+    "env": [
+      [
+        "SESSDATA",
+        "your valid sessdata"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 4.25
+}

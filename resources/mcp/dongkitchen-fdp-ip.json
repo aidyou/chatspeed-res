@@ -1,0 +1,49 @@
+{
+  "id": "dongkitchen-fdp-ip",
+  "channel": "mcp",
+  "name": {
+    "en": "fdp_ip",
+    "zh-Hans": "IP相关基础数据查询",
+    "zh-Hant": "IP相关基础数据查询"
+  },
+  "description": {
+    "en": "Network foundational data and IP-related data query tools. Currently, it includes companion IP geolocation queries.",
+    "zh-Hans": "网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。",
+    "zh-Hant": "网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。"
+  },
+  "detail": {
+    "en": "# IP相关基础数据查询\r\n\r\n\r\n## X实验室介绍\r\nX实验室（XLab）是奇安信公司致力于大网安全研究、威胁分析溯源和大规模多维度安全数据平台建设的团队。\r\nX实验室是国内最早利用大规模数据进行安全研究、安全应用和威胁情报生产的团队，建立了国内首个PassiveDNS系统，以及多个业内领先的 Netflow、Whois、证书、IP 和恶意样本等基础数据系统。\r\n\r\n## IP相关基础数据\r\n网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。\r\n\r\n\r\n# 工具\r\n1. ip geo\r\n\t* 查询ipv4地理位置、ASN、IP所有者等信息\r\n\r\n\r\n# 安装使用\r\n\r\n## 说明\r\n当前工具集是基础安全数据查询的**体验版**，高并发情况下后端会限制网络访问频率。\r\n\r\n在高频场景下，请使用正式版。\r\n\r\n\r\n## MCP服务链接\r\n奇安信X实验室远端MCP服务的链接是`https://fdp.qianxin.com/mcp/v1/ip/`\r\n\r\n\r\n## 正式版安装说明\r\n1. 正式版本提供了streamable http的访问方式。\r\n2. 在使用工具时，需要提供fdp-access和fdp-secret这两个http请求头\r\n\t* 获取访问凭据，请联系奇安信X实验室\r\n3. 在编写agents代码时，在编写调用连接mcp工具时将fdp-access和fdp-secret增加到http请求头中。以smolagents为例进行说明：\r\n\t\r\n```python\n\tfrom smolagents import ToolCollection\r\n    from smolagents.agents import ToolCallingAgent\r\n    from smolagents.models import OpenAIServerModel\r\n\r\n\r\n    def main():\r\n        with ToolCollection.from_mcp(\r\n            {\r\n                \"url\": \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n                \"transport\": \"streamable-http\",\r\n                \"headers\": {\r\n                    \"fdp-access\": \"xxxx\",\r\n                    \"fdp-secret\": \"yyyy\",\r\n                },\r\n            },\r\n            trust_remote_code=True,\r\n        ) as tools:\r\n            agent = ToolCallingAgent(\r\n                tools=[*tools.tools],\r\n                model=OpenAIServerModel(\r\n                    model_id=\"YOUR-LLM-MODEL-ID\",\r\n                    api_base=\"YOUR-LLM-MODEL-API-URL\",\r\n                    api_key=\"YOUR-LLM-MODEL-API-KEY\",\r\n                ),\r\n            )\r\n            agent.run(\"查询这个ip的信息：8.8.8.8\")\r\n\r\n\r\n    if __name__ == \"__main__\":\r\n        main()\r\n\r\n```\n4. 如果是使用在claude desktop上，可以利用`mcp-remote`库进行代理转发，在转发过程配置http请求头，配置说明：\r\n\t\r\n```json\n\t{\r\n\t    \"mcpServers\": {\r\n\t        \"fdp_ip\": {\r\n\t            \"command\": \"npx\",\r\n\t            \"args\": [\r\n\t            \t\"-y\",\r\n\t                \"mcp-remote@latest\",\r\n\t                \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n\t                \"--header\",\r\n\t                \"fdp-access:xxxx\"\r\n\t                \"--header\",\r\n\t                \"fdp-secret:yyyy\"\r\n\t            ],\r\n\t        }\r\n\t    }\r\n\t}\r\n```",
+    "zh-Hans": "# IP相关基础数据查询\r\n\r\n\r\n## X实验室介绍\r\nX实验室（XLab）是奇安信公司致力于大网安全研究、威胁分析溯源和大规模多维度安全数据平台建设的团队。\r\nX实验室是国内最早利用大规模数据进行安全研究、安全应用和威胁情报生产的团队，建立了国内首个PassiveDNS系统，以及多个业内领先的 Netflow、Whois、证书、IP 和恶意样本等基础数据系统。\r\n\r\n## IP相关基础数据\r\n网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。\r\n\r\n\r\n# 工具\r\n1. ip geo\r\n\t* 查询ipv4地理位置、ASN、IP所有者等信息\r\n\r\n\r\n# 安装使用\r\n\r\n## 说明\r\n当前工具集是基础安全数据查询的**体验版**，高并发情况下后端会限制网络访问频率。\r\n\r\n在高频场景下，请使用正式版。\r\n\r\n\r\n## MCP服务链接\r\n奇安信X实验室远端MCP服务的链接是`https://fdp.qianxin.com/mcp/v1/ip/`\r\n\r\n\r\n## 正式版安装说明\r\n1. 正式版本提供了streamable http的访问方式。\r\n2. 在使用工具时，需要提供fdp-access和fdp-secret这两个http请求头\r\n\t* 获取访问凭据，请联系奇安信X实验室\r\n3. 在编写agents代码时，在编写调用连接mcp工具时将fdp-access和fdp-secret增加到http请求头中。以smolagents为例进行说明：\r\n\t\r\n```python\n\tfrom smolagents import ToolCollection\r\n    from smolagents.agents import ToolCallingAgent\r\n    from smolagents.models import OpenAIServerModel\r\n\r\n\r\n    def main():\r\n        with ToolCollection.from_mcp(\r\n            {\r\n                \"url\": \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n                \"transport\": \"streamable-http\",\r\n                \"headers\": {\r\n                    \"fdp-access\": \"xxxx\",\r\n                    \"fdp-secret\": \"yyyy\",\r\n                },\r\n            },\r\n            trust_remote_code=True,\r\n        ) as tools:\r\n            agent = ToolCallingAgent(\r\n                tools=[*tools.tools],\r\n                model=OpenAIServerModel(\r\n                    model_id=\"YOUR-LLM-MODEL-ID\",\r\n                    api_base=\"YOUR-LLM-MODEL-API-URL\",\r\n                    api_key=\"YOUR-LLM-MODEL-API-KEY\",\r\n                ),\r\n            )\r\n            agent.run(\"查询这个ip的信息：8.8.8.8\")\r\n\r\n\r\n    if __name__ == \"__main__\":\r\n        main()\r\n\r\n```\n4. 如果是使用在claude desktop上，可以利用`mcp-remote`库进行代理转发，在转发过程配置http请求头，配置说明：\r\n\t\r\n```json\n\t{\r\n\t    \"mcpServers\": {\r\n\t        \"fdp_ip\": {\r\n\t            \"command\": \"npx\",\r\n\t            \"args\": [\r\n\t            \t\"-y\",\r\n\t                \"mcp-remote@latest\",\r\n\t                \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n\t                \"--header\",\r\n\t                \"fdp-access:xxxx\"\r\n\t                \"--header\",\r\n\t                \"fdp-secret:yyyy\"\r\n\t            ],\r\n\t        }\r\n\t    }\r\n\t}\r\n```",
+    "zh-Hant": "# IP相关基础数据查询\r\n\r\n\r\n## X实验室介绍\r\nX实验室（XLab）是奇安信公司致力于大网安全研究、威胁分析溯源和大规模多维度安全数据平台建设的团队。\r\nX实验室是国内最早利用大规模数据进行安全研究、安全应用和威胁情报生产的团队，建立了国内首个PassiveDNS系统，以及多个业内领先的 Netflow、Whois、证书、IP 和恶意样本等基础数据系统。\r\n\r\n## IP相关基础数据\r\n网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。\r\n\r\n\r\n# 工具\r\n1. ip geo\r\n\t* 查询ipv4地理位置、ASN、IP所有者等信息\r\n\r\n\r\n# 安装使用\r\n\r\n## 说明\r\n当前工具集是基础安全数据查询的**体验版**，高并发情况下后端会限制网络访问频率。\r\n\r\n在高频场景下，请使用正式版。\r\n\r\n\r\n## MCP服务链接\r\n奇安信X实验室远端MCP服务的链接是`https://fdp.qianxin.com/mcp/v1/ip/`\r\n\r\n\r\n## 正式版安装说明\r\n1. 正式版本提供了streamable http的访问方式。\r\n2. 在使用工具时，需要提供fdp-access和fdp-secret这两个http请求头\r\n\t* 获取访问凭据，请联系奇安信X实验室\r\n3. 在编写agents代码时，在编写调用连接mcp工具时将fdp-access和fdp-secret增加到http请求头中。以smolagents为例进行说明：\r\n\t\r\n```python\n\tfrom smolagents import ToolCollection\r\n    from smolagents.agents import ToolCallingAgent\r\n    from smolagents.models import OpenAIServerModel\r\n\r\n\r\n    def main():\r\n        with ToolCollection.from_mcp(\r\n            {\r\n                \"url\": \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n                \"transport\": \"streamable-http\",\r\n                \"headers\": {\r\n                    \"fdp-access\": \"xxxx\",\r\n                    \"fdp-secret\": \"yyyy\",\r\n                },\r\n            },\r\n            trust_remote_code=True,\r\n        ) as tools:\r\n            agent = ToolCallingAgent(\r\n                tools=[*tools.tools],\r\n                model=OpenAIServerModel(\r\n                    model_id=\"YOUR-LLM-MODEL-ID\",\r\n                    api_base=\"YOUR-LLM-MODEL-API-URL\",\r\n                    api_key=\"YOUR-LLM-MODEL-API-KEY\",\r\n                ),\r\n            )\r\n            agent.run(\"查询这个ip的信息：8.8.8.8\")\r\n\r\n\r\n    if __name__ == \"__main__\":\r\n        main()\r\n\r\n```\n4. 如果是使用在claude desktop上，可以利用`mcp-remote`库进行代理转发，在转发过程配置http请求头，配置说明：\r\n\t\r\n```json\n\t{\r\n\t    \"mcpServers\": {\r\n\t        \"fdp_ip\": {\r\n\t            \"command\": \"npx\",\r\n\t            \"args\": [\r\n\t            \t\"-y\",\r\n\t                \"mcp-remote@latest\",\r\n\t                \"https://fdp.qianxin.com/mcp/v1/ip/\",\r\n\t                \"--header\",\r\n\t                \"fdp-access:xxxx\"\r\n\t                \"--header\",\r\n\t                \"fdp-secret:yyyy\"\r\n\t            ],\r\n\t        }\r\n\t    }\r\n\t}\r\n```"
+  },
+  "categories": [
+    "communication",
+    "data"
+  ],
+  "tags": [
+    "communication",
+    "developer tools",
+    "research and data",
+    "ip",
+    "网络安全",
+    "威胁情报",
+    "network security",
+    "data analysis"
+  ],
+  "website": "https://blog.xlab.qianxin-inc.cn",
+  "icon": "/mcp-icons/b0aabea74708c702d59b79f9861bfa3b.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-remote@latest",
+      "https://fdp.qianxin.com/mcp/v1/ip/"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 28.4
+}

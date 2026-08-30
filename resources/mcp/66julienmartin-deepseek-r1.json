@@ -1,0 +1,46 @@
+{
+  "id": "66julienmartin-deepseek-r1",
+  "channel": "mcp",
+  "name": {
+    "en": "MCP-server-Deepseek_R1",
+    "zh-Hans": "MCP-Deepseek R1推理服务",
+    "zh-Hant": "MCP-Deepseek R1推理服务"
+  },
+  "description": {
+    "en": "A Node.js/TypeScript implementation of a Model Context Protocol server for the Deepseek R1 language model, optimized for reasoning tasks with a large context window and fully integrated with Claude Desktop.",
+    "zh-Hans": "用于Deepseek R1语言模型的Node.js/TypeScript实现的模型上下文协议服务器，针对具有大上下文窗口的推理任务进行了优化，并与Claude Desktop完全集成。",
+    "zh-Hant": "用于Deepseek R1语言模型的Node.js/TypeScript实现的模型上下文协议服务器，针对具有大上下文窗口的推理任务进行了优化，并与Claude Desktop完全集成。"
+  },
+  "detail": {
+    "en": "# Deepseek R1 MCP Server\n\nA Model Context Protocol (MCP) server implementation for the Deepseek R1 language model. Deepseek R1 is a powerful language model optimized for reasoning tasks with a context window of 8192 tokens.\n\nWhy Node.js?\nThis implementation uses Node.js/TypeScript as it provides the most stable integration with MCP servers. The Node.js SDK offers better type safety, error handling, and compatibility with Claude Desktop.\n\n## Quick Start\n\n### Installing manually\n```bash\n# Clone and install\ngit clone https://github.com/66julienmartin/MCP-server-Deepseek_R1.git\ncd deepseek-r1-mcp\nnpm install\n\n# Set up environment\ncp .env.example .env  # Then add your API key\n\n# Build and run\nnpm run build\n```\n\n## Prerequisites\n\n- Node.js (v18 or higher)\n- npm\n- Claude Desktop\n- Deepseek API key\n\n## Model Selection\n\nBy default, this server uses the **deepseek-R1** model. If you want to use **DeepSeek-V3** instead, modify the model name in `src/index.ts`:\n\n```typescript\n// For DeepSeek-R1 (default)\nmodel: \"deepseek-reasoner\"\n\n// For DeepSeek-V3\nmodel: \"deepseek-chat\"\n```\n\n## Project Structure\n\n```\ndeepseek-r1-mcp/\n├── src/\n│   ├── index.ts             # Main server implementation\n├── build/                   # Compiled files\n│   ├── index.js\n├── LICENSE\n├── README.md\n├── package.json\n├── package-lock.json\n└── tsconfig.json\n```\n\n## Configuration\n\n1. Create a `.env` file:\n```\nDEEPSEEK_API_KEY=your-api-key-here\n```\n\n2. Update Claude Desktop configuration:\n```json\n{\n  \"mcpServers\": {\n    \"deepseek_r1\": {\n      \"command\": \"node\",\n      \"args\": [\"/path/to/deepseek-r1-mcp/build/index.js\"],\n      \"env\": {\n        \"DEEPSEEK_API_KEY\": \"your-api-key\"\n      }\n    }\n  }\n}\n```\n\n## Development\n\n```bash\nnpm run dev     # Watch mode\nnpm run build   # Build for production\n```\n\n## Features\n\n- Advanced text generation with Deepseek R1 (8192 token context window)\n- Configurable parameters (max_tokens, temperature)\n- Robust error handling with detailed error messages\n- Full MCP protocol support\n- Claude Desktop integration\n- Support for both DeepSeek-R1 and DeepSeek-V3 models\n\n## API Usage\n\n```typescript\n{\n  \"name\": \"deepseek_r1\",\n  \"arguments\": {\n    \"prompt\": \"Your prompt here\",\n    \"max_tokens\": 8192,    // Maximum tokens to generate\n    \"temperature\": 0.2     // Controls randomness\n  }\n}\n```\n\n## The Temperature Parameter\n\nThe default value of `temperature` is 0.2.\n\nDeepseek recommends setting the `temperature` according to your specific use case:\n\n| USE CASE | TEMPERATURE | EXAMPLE |\n|----------|-------------|---------|\n| Coding / Math | 0.0 | Code generation, mathematical calculations |\n| Data Cleaning / Data Analysis | 1.0 | Data processing tasks |\n| General Conversation | 1.3 | Chat and dialogue |\n| Translation | 1.3 | Language translation |\n| Creative Writing / Poetry | 1.5 | Story writing, poetry generation |\n\n## Error Handling\n\nThe server provides detailed error messages for common issues:\n- API authentication errors\n- Invalid parameters\n- Rate limiting\n- Network issues\n\n## Contributing\n\nContributions are welcome! Please feel free to submit a Pull Request.\n\n## License\n\nMIT",
+    "zh-Hans": "# Deepseek R1 MCP 服务器\n\n这是一个为 Deepseek R1 语言模型实现的模型上下文协议（MCP）服务器。Deepseek R1 是一个强大的语言模型，针对推理任务进行了优化，具有 8192 个令牌的上下文窗口。\n\n为什么选择 Node.js？\n这个实现使用了 Node.js/TypeScript，因为它提供了与 MCP 服务器最稳定的集成。Node.js SDK 提供了更好的类型安全性、错误处理以及与 Claude Desktop 的兼容性。\n\n## 快速开始\n\n### 手动安装\n```bash\n# Clone and install\ngit clone https://github.com/66julienmartin/MCP-server-Deepseek_R1.git\ncd deepseek-r1-mcp\nnpm install\n\n# Set up environment\ncp .env.example .env  # Then add your API key\n\n# Build and run\nnpm run build\n```\n\n## 前提条件\n\n- Node.js (v18 或更高版本)\n- npm\n- Claude Desktop\n- Deepseek API 密钥\n\n## 模型选择\n\n默认情况下，此服务器使用 **deepseek-R1** 模型。如果你想改用 **DeepSeek-V3**，请在 `src/index.ts` 中修改模型名称：\n\n```typescript\n// For DeepSeek-R1 (default)\nmodel: \"deepseek-reasoner\"\n\n// For DeepSeek-V3\nmodel: \"deepseek-chat\"\n```\n\n## 项目结构\n\n```\ndeepseek-r1-mcp/\n├── src/\n│   ├── index.ts             # Main server implementation\n├── build/                   # Compiled files\n│   ├── index.js\n├── LICENSE\n├── README.md\n├── package.json\n├── package-lock.json\n└── tsconfig.json\n```\n\n## 配置\n\n1. 创建一个 `.env` 文件：\n```\nDEEPSEEK_API_KEY=your-api-key-here\n```\n\n2. 更新 Claude Desktop 配置：\n```json\n{\n  \"mcpServers\": {\n    \"deepseek_r1\": {\n      \"command\": \"node\",\n      \"args\": [\"/path/to/deepseek-r1-mcp/build/index.js\"],\n      \"env\": {\n        \"DEEPSEEK_API_KEY\": \"your-api-key\"\n      }\n    }\n  }\n}\n```\n\n## 开发\n\n```bash\nnpm run dev     # Watch mode\nnpm run build   # Build for production\n```\n\n## 特性\n\n- 使用 Deepseek R1 进行高级文本生成（8192 个令牌的上下文窗口）\n- 可配置参数（max_tokens, temperature）\n- 具有详细错误信息的强大错误处理\n- 完全支持 MCP 协议\n- Claude Desktop 集成\n- 支持 DeepSeek-R1 和 DeepSeek-V3 模型\n\n## API 使用\n\n```typescript\n{\n  \"name\": \"deepseek_r1\",\n  \"arguments\": {\n    \"prompt\": \"Your prompt here\",\n    \"max_tokens\": 8192,    // Maximum tokens to generate\n    \"temperature\": 0.2     // Controls randomness\n  }\n}\n```\n\n## 温度参数\n\n`temperature` 的默认值是 0.2。\n\nDeepseek 建议根据您的具体使用情况设置 `temperature`：\n\n| 使用场景 | 温度 | 示例 |\n|----------|-------------|---------|\n| 编程 / 数学 | 0.0 | 代码生成，数学计算 |\n| 数据清理 / 数据分析 | 1.0 | 数据处理任务 |\n| 一般对话 | 1.3 | 聊天和对话 |\n| 翻译 | 1.3 | 语言翻译 |\n| 创意写作 / 诗歌 | 1.5 | 故事写作，诗歌生成 |\n\n## 错误处理\n\n服务器为常见问题提供详细的错误信息：\n- API 认证错误\n- 无效参数\n- 速率限制\n- 网络问题\n\n## 贡献\n\n欢迎贡献！请随时提交 Pull Request。\n\n## 许可证\n\nMIT",
+    "zh-Hant": "# Deepseek R1 MCP 服务器\n\n这是一个为 Deepseek R1 语言模型实现的模型上下文协议（MCP）服务器。Deepseek R1 是一个强大的语言模型，针对推理任务进行了优化，具有 8192 个令牌的上下文窗口。\n\n为什么选择 Node.js？\n这个实现使用了 Node.js/TypeScript，因为它提供了与 MCP 服务器最稳定的集成。Node.js SDK 提供了更好的类型安全性、错误处理以及与 Claude Desktop 的兼容性。\n\n## 快速开始\n\n### 手动安装\n```bash\n# Clone and install\ngit clone https://github.com/66julienmartin/MCP-server-Deepseek_R1.git\ncd deepseek-r1-mcp\nnpm install\n\n# Set up environment\ncp .env.example .env  # Then add your API key\n\n# Build and run\nnpm run build\n```\n\n## 前提条件\n\n- Node.js (v18 或更高版本)\n- npm\n- Claude Desktop\n- Deepseek API 密钥\n\n## 模型选择\n\n默认情况下，此服务器使用 **deepseek-R1** 模型。如果你想改用 **DeepSeek-V3**，请在 `src/index.ts` 中修改模型名称：\n\n```typescript\n// For DeepSeek-R1 (default)\nmodel: \"deepseek-reasoner\"\n\n// For DeepSeek-V3\nmodel: \"deepseek-chat\"\n```\n\n## 项目结构\n\n```\ndeepseek-r1-mcp/\n├── src/\n│   ├── index.ts             # Main server implementation\n├── build/                   # Compiled files\n│   ├── index.js\n├── LICENSE\n├── README.md\n├── package.json\n├── package-lock.json\n└── tsconfig.json\n```\n\n## 配置\n\n1. 创建一个 `.env` 文件：\n```\nDEEPSEEK_API_KEY=your-api-key-here\n```\n\n2. 更新 Claude Desktop 配置：\n```json\n{\n  \"mcpServers\": {\n    \"deepseek_r1\": {\n      \"command\": \"node\",\n      \"args\": [\"/path/to/deepseek-r1-mcp/build/index.js\"],\n      \"env\": {\n        \"DEEPSEEK_API_KEY\": \"your-api-key\"\n      }\n    }\n  }\n}\n```\n\n## 开发\n\n```bash\nnpm run dev     # Watch mode\nnpm run build   # Build for production\n```\n\n## 特性\n\n- 使用 Deepseek R1 进行高级文本生成（8192 个令牌的上下文窗口）\n- 可配置参数（max_tokens, temperature）\n- 具有详细错误信息的强大错误处理\n- 完全支持 MCP 协议\n- Claude Desktop 集成\n- 支持 DeepSeek-R1 和 DeepSeek-V3 模型\n\n## API 使用\n\n```typescript\n{\n  \"name\": \"deepseek_r1\",\n  \"arguments\": {\n    \"prompt\": \"Your prompt here\",\n    \"max_tokens\": 8192,    // Maximum tokens to generate\n    \"temperature\": 0.2     // Controls randomness\n  }\n}\n```\n\n## 温度参数\n\n`temperature` 的默认值是 0.2。\n\nDeepseek 建议根据您的具体使用情况设置 `temperature`：\n\n| 使用场景 | 温度 | 示例 |\n|----------|-------------|---------|\n| 编程 / 数学 | 0.0 | 代码生成，数学计算 |\n| 数据清理 / 数据分析 | 1.0 | 数据处理任务 |\n| 一般对话 | 1.3 | 聊天和对话 |\n| 翻译 | 1.3 | 语言翻译 |\n| 创意写作 / 诗歌 | 1.5 | 故事写作，诗歌生成 |\n\n## 错误处理\n\n服务器为常见问题提供详细的错误信息：\n- API 认证错误\n- 无效参数\n- 速率限制\n- 网络问题\n\n## 贡献\n\n欢迎贡献！请随时提交 Pull Request。\n\n## 许可证\n\nMIT"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/66julienmartin/MCP-server-Deepseek_R1",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "/path/to/deepseek-r1-mcp/build/index.js"
+    ],
+    "env": [
+      [
+        "DEEPSEEK_API_KEY",
+        "your-api-key"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 5.25
+}

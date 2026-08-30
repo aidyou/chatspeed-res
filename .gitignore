@@ -3,3 +3,6 @@ dist/
 .astro/
 .DS_Store
 *.log
+.cs-tmp/
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/

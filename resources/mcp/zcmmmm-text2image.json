@@ -1,0 +1,43 @@
+{
+  "id": "zcmmmm-text2image",
+  "channel": "mcp",
+  "name": {
+    "en": "text2image",
+    "zh-Hans": "文字转图片",
+    "zh-Hant": "文字转图片"
+  },
+  "description": {
+    "en": "A Model Context Protocol server that provides text-to-image functionality, converting any text into aesthetically pleasing image formats.",
+    "zh-Hans": "一个提供文本转图像功能的模型上下文协议服务器，可将任何文本转换为美观的图像格式。",
+    "zh-Hant": "一个提供文本转图像功能的模型上下文协议服务器，可将任何文本转换为美观的图像格式。"
+  },
+  "detail": {
+    "en": "# TextImage Service\n\nA Model Context Protocol server that provides text-to-image functionality, converting any text into aesthetically pleasing image formats.\n\n## Features\n\n- Convert text to 1080x1080 sized images\n- Automatically calculate text size and center position\n- Support custom fonts\n- Generated images can be directly saved or displayed\n\n## Installation\n```bash\npip install -r requirements.txt\n```\n\n## Usage\n### As a command line tool\n```bash\npython src/text2image/text2image.py\n```\n\n### In Claude Desktop\nAdd to your Claude Desktop configuration (claude_desktop_config.json):\n```json\n{\n  \"mcpServers\": {\n    \"text2image\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \"/absolute/path/to/text2image\",\n        \"run\", \"text2image.py\"\n      ]\n    }\n  }\n}\n```\n\n## Available Tools\n### text_to_image\nConvert text to image\n\n**Parameters**:\n- `text` (string, required): Text to be converted\n to image (It can be equipped with a line break character to control the position of line breaks.)\n- `text_color` (string, optional): Text color in Hex format, default \"#000000\"\n- `bg_color` (string, optional): Background color in Hex format, default \"#FFFFFF\"\n- `width` (integer, optional): Image width, default 1080\n- `height` (integer, optional): Image height, default 1080\n- `font_size` (integer, optional): Font size, default 80\n- `font_path` (string, optional): Font file path, default 'simhei.ttf'\n- `texture` (string, optional): Background texture image path\n- `output_path` (string, optional): Output file path, defaults to \"output.png\" if not specified\n- `corner_radius` (integer, optional): Image corner radius, defaults to 0 (sharp corners)\n\n**JSON Request Example**:\n```json\n{\n  \"text\": \"Example text\",\n  \"text_color\": \"#FF0000\",\n  \"bg_color\": \"#FFFFFF\",\n  \"width\": 800,\n  \"height\": 600,\n  \"font_size\": 60,\n  \"font_path\": \"arial.ttf\",\n  \"texture\": \"background.jpg\",\n  \"output_path\": \"custom_output.png\"\n}\n```\n\n**Returns**:\n- PIL.Image.Image: Generated image object\n\n## Development\n```bash\n# Install dependencies\npip install -r requirements.txt\n\n# Run service\npython src/text2image/text2image.py\n```\n\n## License\nMIT License\n\n## Contributing\nContributions are welcome! Feel free to submit Pull Requests.",
+    "zh-Hans": "# TextImage 服务\n\n一个提供文本转图片功能的模型上下文协议服务器，可将任意文本转换为美观的图片格式。\n\n## 功能\n\n- 将文本转换为1080x1080尺寸的图片\n- 自动计算文字大小和居中位置\n- 支持自定义字体\n- 生成图片可直接保存或显示\n\n## 安装\n```bash\npip install -r requirements.txt\n```\n\n## 使用方法\n### 作为命令行工具\n```bash\npython src/text2image/text2image.py\n```\n\n### 在 Claude 桌面版中\n添加到您的 Claude 桌面配置 (claude_desktop_config.json)：\n```json\n{\n  \"mcpServers\": {\n    \"text2image\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \"/absolute/path/to/text2image\",\n        \"run\", \"text2image.py\"\n      ]\n    }\n  }\n}\n```\n\n## 可用工具\n### text_to_image\n将文本转换为图片\n\n**参数**:\n- `text` (字符串, 必填): 要转换为图片的文本\n- `text_color` (字符串, 可选): 文字颜色，Hex格式，默认\"#000000\"\n- `bg_color` (字符串, 可选): 背景颜色，Hex格式，默认\"#FFFFFF\"\n- `width` (整数, 可选): 图片宽度，默认1080\n- `height` (整数, 可选): 图片高度，默认1080\n- `font_size` (整数, 可选): 字体大小，默认80\n- `font_path` (字符串, 可选): 字体文件路径，默认'simhei.ttf'\n- `texture` (字符串, 可选): 背景材质图片路径\n- `output_path` (字符串, 可选): 图片保存路径，未指定时默认保存为\"output.png\"\n- `corner_radius` (整数, 可选): 图片圆角半径，默认为0（直角）\n\n**JSON示例请求**:\n```json\n{\n  \"text\": \"示例\n文本(可自带换行符控制换行位置)\",\n  \"text_color\": \"#FF0000\",\n  \"bg_color\": \"#FFFFFF\",\n  \"width\": 800,\n  \"height\": 600,\n  \"font_size\": 60,\n  \"font_path\": \"arial.ttf\",\n  \"texture\": \"background.jpg\",\n  \"output_path\": \"custom_output.png\"\n}\n```\n\n**返回值**:\n- PIL.Image.Image: 生成的图片对象\n\n## 开发\n```bash\n# 安装依赖\npip install -r requirements.txt\n\n# 运行服务\npython src/text2image/text2image.py\n```\n\n## 许可证\nMIT 许可证\n\n## 贡献\n欢迎贡献！请随时提交 Pull Request。\n  \"mcpServers\": # TextImage 服务",
+    "zh-Hant": "# TextImage 服务\n\n一个提供文本转图片功能的模型上下文协议服务器，可将任意文本转换为美观的图片格式。\n\n## 功能\n\n- 将文本转换为1080x1080尺寸的图片\n- 自动计算文字大小和居中位置\n- 支持自定义字体\n- 生成图片可直接保存或显示\n\n## 安装\n```bash\npip install -r requirements.txt\n```\n\n## 使用方法\n### 作为命令行工具\n```bash\npython src/text2image/text2image.py\n```\n\n### 在 Claude 桌面版中\n添加到您的 Claude 桌面配置 (claude_desktop_config.json)：\n```json\n{\n  \"mcpServers\": {\n    \"text2image\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \"/absolute/path/to/text2image\",\n        \"run\", \"text2image.py\"\n      ]\n    }\n  }\n}\n```\n\n## 可用工具\n### text_to_image\n将文本转换为图片\n\n**参数**:\n- `text` (字符串, 必填): 要转换为图片的文本\n- `text_color` (字符串, 可选): 文字颜色，Hex格式，默认\"#000000\"\n- `bg_color` (字符串, 可选): 背景颜色，Hex格式，默认\"#FFFFFF\"\n- `width` (整数, 可选): 图片宽度，默认1080\n- `height` (整数, 可选): 图片高度，默认1080\n- `font_size` (整数, 可选): 字体大小，默认80\n- `font_path` (字符串, 可选): 字体文件路径，默认'simhei.ttf'\n- `texture` (字符串, 可选): 背景材质图片路径\n- `output_path` (字符串, 可选): 图片保存路径，未指定时默认保存为\"output.png\"\n- `corner_radius` (整数, 可选): 图片圆角半径，默认为0（直角）\n\n**JSON示例请求**:\n```json\n{\n  \"text\": \"示例\n文本(可自带换行符控制换行位置)\",\n  \"text_color\": \"#FF0000\",\n  \"bg_color\": \"#FFFFFF\",\n  \"width\": 800,\n  \"height\": 600,\n  \"font_size\": 60,\n  \"font_path\": \"arial.ttf\",\n  \"texture\": \"background.jpg\",\n  \"output_path\": \"custom_output.png\"\n}\n```\n\n**返回值**:\n- PIL.Image.Image: 生成的图片对象\n\n## 开发\n```bash\n# 安装依赖\npip install -r requirements.txt\n\n# 运行服务\npython src/text2image/text2image.py\n```\n\n## 许可证\nMIT 许可证\n\n## 贡献\n欢迎贡献！请随时提交 Pull Request。\n  \"mcpServers\": # TextImage 服务"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://gitee.com/zcmmmm/text2image-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uv",
+    "args": [
+      "--directory",
+      "/absolute/path/to/text2image",
+      "run",
+      "text2image.py"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 20.24
+}

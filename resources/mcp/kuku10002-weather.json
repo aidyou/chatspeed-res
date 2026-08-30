@@ -1,0 +1,46 @@
+{
+  "id": "kuku10002-weather",
+  "channel": "mcp",
+  "name": {
+    "en": "weather",
+    "zh-Hans": "weather",
+    "zh-Hant": "weather"
+  },
+  "description": {
+    "en": "ReadME",
+    "zh-Hans": "ReadME 概述 这是一个简单的项目，用于演示如何使用Python进行基本的数据处理。 安装 确保你的环境中已安装了Python 3.7或更高版本。你可以通过运行以下命令来检查Python版本： python --version 接下来，你需要安装项目的依赖库。可以通过执行下面的命令来完成： pip install -r requirements.txt 使用方法 1. 克隆此仓库到本地。 2. 进入项目目录。 3. 根据上述步骤安装好所有依赖后，运行主程序文件 main.py: python main.py 文",
+    "zh-Hant": "ReadME 概述 这是一个简单的项目，用于演示如何使用Python进行基本的数据处理。 安装 确保你的环境中已安装了Python 3.7或更高版本。你可以通过运行以下命令来检查Python版本： python --version 接下来，你需要安装项目的依赖库。可以通过执行下面的命令来完成： pip install -r requirements.txt 使用方法 1. 克隆此仓库到本地。 2. 进入项目目录。 3. 根据上述步骤安装好所有依赖后，运行主程序文件 main.py: python main.py 文"
+  },
+  "detail": {
+    "en": "ReadME",
+    "zh-Hans": "ReadME\n\n## 概述\n这是一个简单的项目，用于演示如何使用Python进行基本的数据处理。\n\n## 安装\n确保你的环境中已安装了Python 3.7或更高版本。你可以通过运行以下命令来检查Python版本：\n\npython --version\n\n接下来，你需要安装项目的依赖库。可以通过执行下面的命令来完成：\n\npip install -r requirements.txt\n\n## 使用方法\n1. 克隆此仓库到本地。\n2. 进入项目目录。\n3. 根据上述步骤安装好所有依赖后，运行主程序文件 `main.py`:\n   \n   python main.py\n   \n\n## 文件结构\n- `data/`: 存放数据文件的地方。\n- `src/`: 包含源代码文件。\n  - `utils.py`: 提供辅助功能的工具函数。\n  - `main.py`: 主程序入口点。\n- `requirements.txt`: 列出了项目所需的所有外部库及其版本信息。\n\n## 贡献\n我们欢迎任何形式的贡献！如果你发现了bug或者有改进的想法，请提交一个[issue](https://github.com/your-repo/issues) 或者直接发起[pull request](https://github.com/your-repo/pulls)。\n\n## 许可证\n本项目采用MIT许可证。详情请参阅LICENSE文件。",
+    "zh-Hant": "ReadME\n\n## 概述\n这是一个简单的项目，用于演示如何使用Python进行基本的数据处理。\n\n## 安装\n确保你的环境中已安装了Python 3.7或更高版本。你可以通过运行以下命令来检查Python版本：\n\npython --version\n\n接下来，你需要安装项目的依赖库。可以通过执行下面的命令来完成：\n\npip install -r requirements.txt\n\n## 使用方法\n1. 克隆此仓库到本地。\n2. 进入项目目录。\n3. 根据上述步骤安装好所有依赖后，运行主程序文件 `main.py`:\n   \n   python main.py\n   \n\n## 文件结构\n- `data/`: 存放数据文件的地方。\n- `src/`: 包含源代码文件。\n  - `utils.py`: 提供辅助功能的工具函数。\n  - `main.py`: 主程序入口点。\n- `requirements.txt`: 列出了项目所需的所有外部库及其版本信息。\n\n## 贡献\n我们欢迎任何形式的贡献！如果你发现了bug或者有改进的想法，请提交一个[issue](https://github.com/your-repo/issues) 或者直接发起[pull request](https://github.com/your-repo/pulls)。\n\n## 许可证\n本项目采用MIT许可证。详情请参阅LICENSE文件。"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "location services",
+    "other",
+    "天气服务"
+  ],
+  "website": "https://www.modelscope.cn/mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "@chenxming/mcp-weather-server"
+    ],
+    "env": [
+      [
+        "OPENWEATHER_API_KEY",
+        "your_key"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 22.65
+}

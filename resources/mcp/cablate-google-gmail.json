@@ -1,0 +1,55 @@
+{
+  "id": "cablate-google-gmail",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-google-gmail",
+    "zh-Hans": "Google Gmail 邮件助手",
+    "zh-Hant": "Google Gmail 邮件助手"
+  },
+  "description": {
+    "en": "Provides comprehensive Gmail integration with LLM processing capabilities, allowing users to read, search, filter emails and handle attachments through the Model Context Protocol.",
+    "zh-Hans": "提供了与Gmail的全面集成，并具备LLM处理能力，允许用户通过模型上下文协议阅读、搜索、过滤电子邮件和处理附件。",
+    "zh-Hant": "提供了与Gmail的全面集成，并具备LLM处理能力，允许用户通过模型上下文协议阅读、搜索、过滤电子邮件和处理附件。"
+  },
+  "detail": {
+    "en": "# Gmail MCP Server\n\nA powerful Model Context Protocol (MCP) server providing comprehensive Gmail integration with LLM processing capabilities.\n\n## Features\n\n### Email Management\n\n- Read and search emails\n- Process email content with various formats\n- Advanced email filtering\n- Attachment handling\n\n## Demo on Dive Desktop\n\n## Installation\n\n### Manual Installation\n\n```bash\nnpm install -g @cablate/mcp-gmail\n```\n\n## Usage\n\n### CLI\n\n```bash\nmap-gmail\n```\n\n### With [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)\n\n1. Click \"+ Add MCP Server\" in Dive Desktop\n2. Copy and paste this configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"gmail\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@cablate/mcp-gmail\"],\n      \"env\": {\n        \"GMAIL_CLIENT_ID\": \"your_client_id\",\n        \"GMAIL_CLIENT_SECRET\": \"your_client_secret\",\n        \"GMAIL_REFRESH_TOKEN\": \"your_refresh_token\"\n      },\n      \"enabled\": true\n    }\n  }\n}\n```\n\n3. Click \"Save\" to install the MCP server\n\n## Gmail API Authentication Setup\n\nFor detailed instructions on setting up Gmail API authentication and obtaining necessary credentials, please refer to our [Gmail API Setup Guide](https://github.com/cablate/mcp-google-gmail/blob/HEAD/guide.md).\n\n## License\n\nMIT\n\n## Contributing\n\nWelcome community participation and contributions! Here are ways to contribute:\n\n- ⭐️ Star the project if you find it helpful\n- 🐛 Submit Issues: Report problems or provide suggestions\n- 🔧 Create Pull Requests: Submit code improvements\n\n## Contact\n\nIf you have any questions or suggestions, feel free to reach out:\n\n- 📧 Email: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)\n- 📧 GitHub: [CabLate](https://github.com/cablate/)\n- 🤝 Collaboration: Welcome to discuss project cooperation\n- 📚 Technical Guidance: Sincere welcome for suggestions and guidance",
+    "zh-Hans": "# Gmail MCP 服务器\n\n一个强大的模型上下文协议 (MCP) 服务器，提供全面的 Gmail 集成和 LLM 处理能力。\n\n## 功能\n\n### 邮件管理\n\n- 读取和搜索邮件\n- 以各种格式处理邮件内容\n- 高级邮件过滤\n- 附件处理\n\n## 在 Dive Desktop 上的演示\n\n## 安装\n\n### 手动安装\n\n```bash\nnpm install -g @cablate/mcp-gmail\n```\n\n## 使用\n\n### 命令行界面 (CLI)\n\n```bash\nmap-gmail\n```\n\n### 与 [Dive Desktop](https://github.com/OpenAgentPlatform/Dive) 一起使用\n\n1. 在 Dive Desktop 中点击 \"+ 添加 MCP 服务器\"\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"gmail\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@cablate/mcp-gmail\"],\n      \"env\": {\n        \"GMAIL_CLIENT_ID\": \"your_client_id\",\n        \"GMAIL_CLIENT_SECRET\": \"your_client_secret\",\n        \"GMAIL_REFRESH_TOKEN\": \"your_refresh_token\"\n      },\n      \"enabled\": true\n    }\n  }\n}\n```\n\n3. 点击“保存”以安装 MCP 服务器\n\n## Gmail API 认证设置\n\n有关设置 Gmail API 认证和获取必要凭证的详细说明，请参阅我们的 [Gmail API 设置指南](https://github.com/cablate/mcp-google-gmail/blob/HEAD/guide.md)。\n\n## 许可证\n\nMIT\n\n## 贡献\n\n欢迎社区参与和贡献！以下是贡献的方式：\n\n- ⭐️ 如果你觉得项目有用，请给项目加星标\n- 🐛 提交问题：报告问题或提供建议\n- 🔧 创建拉取请求：提交代码改进\n\n## 联系\n\n如果你有任何问题或建议，欢迎联系我们：\n\n- 📧 电子邮件: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)\n- 📧 GitHub: [CabLate](https://github.com/cablate/)\n- 🤝 合作：欢迎讨论项目合作\n- 📚 技术指导：真诚欢迎提出建议和技术指导",
+    "zh-Hant": "# Gmail MCP 服务器\n\n一个强大的模型上下文协议 (MCP) 服务器，提供全面的 Gmail 集成和 LLM 处理能力。\n\n## 功能\n\n### 邮件管理\n\n- 读取和搜索邮件\n- 以各种格式处理邮件内容\n- 高级邮件过滤\n- 附件处理\n\n## 在 Dive Desktop 上的演示\n\n## 安装\n\n### 手动安装\n\n```bash\nnpm install -g @cablate/mcp-gmail\n```\n\n## 使用\n\n### 命令行界面 (CLI)\n\n```bash\nmap-gmail\n```\n\n### 与 [Dive Desktop](https://github.com/OpenAgentPlatform/Dive) 一起使用\n\n1. 在 Dive Desktop 中点击 \"+ 添加 MCP 服务器\"\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"gmail\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@cablate/mcp-gmail\"],\n      \"env\": {\n        \"GMAIL_CLIENT_ID\": \"your_client_id\",\n        \"GMAIL_CLIENT_SECRET\": \"your_client_secret\",\n        \"GMAIL_REFRESH_TOKEN\": \"your_refresh_token\"\n      },\n      \"enabled\": true\n    }\n  }\n}\n```\n\n3. 点击“保存”以安装 MCP 服务器\n\n## Gmail API 认证设置\n\n有关设置 Gmail API 认证和获取必要凭证的详细说明，请参阅我们的 [Gmail API 设置指南](https://github.com/cablate/mcp-google-gmail/blob/HEAD/guide.md)。\n\n## 许可证\n\nMIT\n\n## 贡献\n\n欢迎社区参与和贡献！以下是贡献的方式：\n\n- ⭐️ 如果你觉得项目有用，请给项目加星标\n- 🐛 提交问题：报告问题或提供建议\n- 🔧 创建拉取请求：提交代码改进\n\n## 联系\n\n如果你有任何问题或建议，欢迎联系我们：\n\n- 📧 电子邮件: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)\n- 📧 GitHub: [CabLate](https://github.com/cablate/)\n- 🤝 合作：欢迎讨论项目合作\n- 📚 技术指导：真诚欢迎提出建议和技术指导"
+  },
+  "categories": [
+    "communication"
+  ],
+  "tags": [
+    "communication",
+    "search",
+    "chinese"
+  ],
+  "website": "https://github.com/cablate/mcp-google-gmail",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@cablate/mcp-gmail"
+    ],
+    "env": [
+      [
+        "GMAIL_CLIENT_ID",
+        "your_client_id"
+      ],
+      [
+        "GMAIL_CLIENT_SECRET",
+        "your_client_secret"
+      ],
+      [
+        "GMAIL_REFRESH_TOKEN",
+        "your_refresh_token"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 25.21
+}

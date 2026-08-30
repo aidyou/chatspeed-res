@@ -1,0 +1,4 @@
+# Reverse-exclude temp working dirs so Chatspeed can still access them
+# even though they are git-ignored.
+!.cs-tmp/
+!.cs-tmp/**

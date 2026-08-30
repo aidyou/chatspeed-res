@@ -1,0 +1,47 @@
+{
+  "id": "tipobt-nanobanana",
+  "channel": "mcp",
+  "name": {
+    "en": "nanobanana-mcp-server",
+    "zh-Hans": "nanobanana-mcp-server",
+    "zh-Hant": "nanobanana-mcp-server"
+  },
+  "description": {
+    "en": "A production-ready Model Context Protocol (MCP) server that provides AI-powered image generation capabilities through Google's Gemini 2.5 Flash Image model. ✨ Features 🎨 AI Image Generation: Create high-quality images from detailed text prompts 📋 Smart Templat",
+    "zh-Hans": "一个生产就绪的模型上下文协议（MCP）服务器，通过Google的Gemini 2.5 Flash Image模型提供基于AI的图像生成能力。 ✨ 特性 🎨 AI图像生成：从详细的文本提示中创建高质量的图像 📋 智能模板：预构建的用于摄影、设计和编辑的提示模板 📁 文件管理：通过Gemini Files API上传和管理文件 🔍 资源发现：通过MCP资源浏览模板和文件元数据 🛡️ 生产就绪：全面的错误处理、日志记录和验证 ⚡ 高性能：优化的架构并带有智能缓存",
+    "zh-Hant": "一个生产就绪的模型上下文协议（MCP）服务器，通过Google的Gemini 2.5 Flash Image模型提供基于AI的图像生成能力。 ✨ 特性 🎨 AI图像生成：从详细的文本提示中创建高质量的图像 📋 智能模板：预构建的用于摄影、设计和编辑的提示模板 📁 文件管理：通过Gemini Files API上传和管理文件 🔍 资源发现：通过MCP资源浏览模板和文件元数据 🛡️ 生产就绪：全面的错误处理、日志记录和验证 ⚡ 高性能：优化的架构并带有智能缓存"
+  },
+  "detail": {
+    "en": "A production-ready Model Context Protocol (MCP) server that provides AI-powered image generation capabilities through Google's Gemini 2.5 Flash Image model.\n\n✨ Features\n\n🎨 AI Image Generation: Create high-quality images from detailed text prompts\n\n📋 Smart Templates: Pre-built prompt templates for photography, design, and editing\n\n📁 File Management: Upload and manage files via Gemini Files API\n\n🔍 Resource Discovery: Browse templates and file metadata through MCP resources\n\n🛡️ Production Ready: Comprehensive error handling, logging, and validation\n\n⚡ High Performance: Optimized architecture with intelligent caching",
+    "zh-Hans": "一个生产就绪的模型上下文协议（MCP）服务器，通过Google的Gemini 2.5 Flash Image模型提供基于AI的图像生成能力。\n\n✨ 特性\n\n🎨 AI图像生成：从详细的文本提示中创建高质量的图像\n\n📋 智能模板：预构建的用于摄影、设计和编辑的提示模板\n\n📁 文件管理：通过Gemini Files API上传和管理文件\n\n🔍 资源发现：通过MCP资源浏览模板和文件元数据\n\n🛡️ 生产就绪：全面的错误处理、日志记录和验证\n\n⚡ 高性能：优化的架构并带有智能缓存",
+    "zh-Hant": "一个生产就绪的模型上下文协议（MCP）服务器，通过Google的Gemini 2.5 Flash Image模型提供基于AI的图像生成能力。\n\n✨ 特性\n\n🎨 AI图像生成：从详细的文本提示中创建高质量的图像\n\n📋 智能模板：预构建的用于摄影、设计和编辑的提示模板\n\n📁 文件管理：通过Gemini Files API上传和管理文件\n\n🔍 资源发现：通过MCP资源浏览模板和文件元数据\n\n🛡️ 生产就绪：全面的错误处理、日志记录和验证\n\n⚡ 高性能：优化的架构并带有智能缓存"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "entertainment and media",
+    "art and culture",
+    "nano-banana",
+    "gemini-2.5-flash-image"
+  ],
+  "website": "https://github.com/zhongweili/nanobanana-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "nanobanana-mcp-server@latest"
+    ],
+    "env": [
+      [
+        "GEMINI_API_KEY",
+        "your-gemini-api-key-here"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 25.74
+}

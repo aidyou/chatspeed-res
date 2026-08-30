@@ -1,0 +1,43 @@
+{
+  "id": "openkg-deepke-tools",
+  "channel": "mcp",
+  "name": {
+    "en": "deepke-mcp-tools",
+    "zh-Hans": "deepke-mcp-tools",
+    "zh-Hant": "deepke-mcp-tools"
+  },
+  "description": {
+    "en": "# DeepKE-mcp-tools\n\n为 `DeepKE` 的四个自然语言处理任务的 **standard** 的 **预测** 部分的 mcp 服务，因此前提需要有 [DeepKE](https://github.com/zjunlp/DeepKE) 对应任务训练好的模型，确保对应的 `predict.py` 能够运行。",
+    "zh-Hans": "该项目为DeepKE的四个自然语言处理任务的预测部分提供MCP服务。需要预先使用DeepKE训练好的模型，并正确配置环境。",
+    "zh-Hant": "该项目为DeepKE的四个自然语言处理任务的预测部分提供MCP服务。需要预先使用DeepKE训练好的模型，并正确配置环境。"
+  },
+  "detail": {
+    "en": "# DeepKE-mcp-tools\n\nThis is the **standard** **prediction** part of the mcp service for the four natural language processing tasks in `DeepKE`. Therefore, it is necessary to have a [DeepKE](https://github.com/zjunlp/DeepKE) model trained for the corresponding task, ensuring that the corresponding `predict.py` can run.\n\n## Download the Code\n\nbash\ncd DeepKE\ngit clone https://github.com/Shotsuke/deepke-mcp-tools.git\n\n## Configure `.env` Environment Variables\n\n- Set up the deepke / deepke-ee virtual environment.\n- If the environment has already been set up during model training, this section can be skipped.\n\nbash\ncd DeepKE\nconda create -n deepke python=3.8 -y\nconda activate deepke\n\npip install pip==24.0.0 # Requires pip<=24.0\npip install -r requirements.txt\npip install -U transformers==4.36.2 # Some libraries specify `transformers == 3.4.0`, but it actually doesn't work\n\n# `requirements.txt` does not check `torch` and `cuda` versions, so you need to manually check them\n# conda list | grep \"torch\"\n# nvidia-smi\n# Choose the appropriate version to download based on the `nvidia` compatible `cuda` from ([Start Locally | PyTorch](https://pytorch.org/get-started/locally/)), for example:\npip install torch==2.4.1\npip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118\n\npython setup.py install\npython setup.py develop\n\nAfter setting up deepke, configure deepke-ee, which is essentially the same, but with an additional `pip install hydra-core==1.3.1` as the `EE` task uses a higher version of `hydra`.\n\nAdd the `conda` directory containing `PY` and the `DeepKE` directory to the `.env` file, for example:\n\nDEEPKE_PATH=\"~/DeepKE\"\nCONDA_PY=\"/home/user_name/anaconda3/envs/deepke/bin/\"\nCONDA_EE_PY=\"/home/user_name/anaconda3/envs/deepke-ee/bin/\"\n\n- API_KEY\n\nThe project uses Alibaba's Qwen large model. You can change `DASHSCOPE_API_KEY` accordingly.\n\n## Configure the MCP Project UV Environment\n\nbash\n# curl -LsSf https://astral.sh/uv/install.sh | sh # Install uv\n# pipx install uv # Choose one method to install uv\npip install uv\n\n# Now in: DeepKE/\ncd deepke-mcp-tools\nuv venv\nsource .venv/bin/activate\nuv add \"mcp[cli]\" httpx openai pyyaml\n\n## Run\n\nbash\n# Now in: DeepKE/deepke-mcp-tools/\npython run.py",
+    "zh-Hans": "# DeepKE-mcp-tools\n\n为 `DeepKE` 的四个自然语言处理任务的 **standard** 的 **预测** 部分的 mcp 服务，因此前提需要有 [DeepKE](https://github.com/zjunlp/DeepKE) 对应任务训练好的模型，确保对应的 `predict.py` 能够运行。\n\n## 下载代码\n\n```bash\ncd DeepKE\ngit clone https://github.com/Shotsuke/deepke-mcp-tools.git\n```\n\n## 配置 `.env` 环境变量\n\n- 配置deepke / deepke-ee虚拟环境\n- 如果在训练模型时已配好环境，那么可以跳过这一部分。\n\n```bash\ncd DeepKE\nconda create -n deepke python=3.8 -y\nconda activate deepke\n\npip install pip==24.0.0 # 要求 pip<=24.0\npip install -r requirements.txt\npip install -U transformers==4.36.2 # 有若干库指定`transformers == 3.4.0`这个版本，但实际上没法运行\n\n# `requirements.txt`不会检查`torch`和`cuda`版本，因此需要手动检查\n# conda list | grep \"torch\"\n# nvidia-smi\n# 根据`nvidia`适合的`cuda`来到([Start Locally | PyTorch](https://pytorch.org/get-started/locally/))选择合适的版本下载，例如：\npip install torch==2.4.1\npip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118\n\npython setup.py install\npython setup.py develop\n```\n\n配置完deepke后再来配置deepke-ee，基本是相同的，不过多加一条 `pip install hydra-core==1.3.1` ， `EE` 任务使用版本更高的 `hydra` 。\n\n将 `conda` 对应的包含 `PY` 的目录和 `DeepKE` 目录放入 `.env` 中，例如：\n\n```\nDEEPKE_PATH=\"~/DeepKE\"\nCONDA_PY=\"/home/user_name/anaconda3/envs/deepke/bin/\"\nCONDA_EE_PY=\"/home/user_name/anaconda3/envs/deepke-ee/bin/\"\n```\n\n- API_KEY\n\n使用了阿里的qwen大模型，更改 `DASHSCOPE_API_KEY` 即可\n\n## 配置mcp项目uv环境\n\n```bash\n# curl -LsSf https://astral.sh/uv/install.sh | sh # 安装uv\n# pipx install uv # 反正选一个安装uv\npip install uv\n\n# Now in: DeepKE/\ncd deepke-mcp-tools\nuv venv\nsource .venv/bin/activate\nuv add \"mcp[cli]\" httpx openai pyyaml\n```\n\n## 运行\n\n```bash\n# Now in: DeepKE/deepke-mcp-tools/\npython run.py\n```",
+    "zh-Hant": "# DeepKE-mcp-tools\n\n为 `DeepKE` 的四个自然语言处理任务的 **standard** 的 **预测** 部分的 mcp 服务，因此前提需要有 [DeepKE](https://github.com/zjunlp/DeepKE) 对应任务训练好的模型，确保对应的 `predict.py` 能够运行。\n\n## 下载代码\n\n```bash\ncd DeepKE\ngit clone https://github.com/Shotsuke/deepke-mcp-tools.git\n```\n\n## 配置 `.env` 环境变量\n\n- 配置deepke / deepke-ee虚拟环境\n- 如果在训练模型时已配好环境，那么可以跳过这一部分。\n\n```bash\ncd DeepKE\nconda create -n deepke python=3.8 -y\nconda activate deepke\n\npip install pip==24.0.0 # 要求 pip<=24.0\npip install -r requirements.txt\npip install -U transformers==4.36.2 # 有若干库指定`transformers == 3.4.0`这个版本，但实际上没法运行\n\n# `requirements.txt`不会检查`torch`和`cuda`版本，因此需要手动检查\n# conda list | grep \"torch\"\n# nvidia-smi\n# 根据`nvidia`适合的`cuda`来到([Start Locally | PyTorch](https://pytorch.org/get-started/locally/))选择合适的版本下载，例如：\npip install torch==2.4.1\npip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118\n\npython setup.py install\npython setup.py develop\n```\n\n配置完deepke后再来配置deepke-ee，基本是相同的，不过多加一条 `pip install hydra-core==1.3.1` ， `EE` 任务使用版本更高的 `hydra` 。\n\n将 `conda` 对应的包含 `PY` 的目录和 `DeepKE` 目录放入 `.env` 中，例如：\n\n```\nDEEPKE_PATH=\"~/DeepKE\"\nCONDA_PY=\"/home/user_name/anaconda3/envs/deepke/bin/\"\nCONDA_EE_PY=\"/home/user_name/anaconda3/envs/deepke-ee/bin/\"\n```\n\n- API_KEY\n\n使用了阿里的qwen大模型，更改 `DASHSCOPE_API_KEY` 即可\n\n## 配置mcp项目uv环境\n\n```bash\n# curl -LsSf https://astral.sh/uv/install.sh | sh # 安装uv\n# pipx install uv # 反正选一个安装uv\npip install uv\n\n# Now in: DeepKE/\ncd deepke-mcp-tools\nuv venv\nsource .venv/bin/activate\nuv add \"mcp[cli]\" httpx openai pyyaml\n```\n\n## 运行\n\n```bash\n# Now in: DeepKE/deepke-mcp-tools/\npython run.py\n```"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "chinese"
+  ],
+  "website": "https://github.com/Shotsuke/deepke-mcp-tools",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uv",
+    "args": [
+      "--directory",
+      "absolute/path/to/DeepKE/deepke-mcp-tools/tools",
+      "run",
+      "server.py"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 11.76
+}

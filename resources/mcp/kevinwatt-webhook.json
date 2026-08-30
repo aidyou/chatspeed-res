@@ -1,0 +1,47 @@
+{
+  "id": "kevinwatt-webhook",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-webhook",
+    "zh-Hans": "MCP消息网关",
+    "zh-Hant": "MCP消息网关"
+  },
+  "description": {
+    "en": "Enables sending messages to webhook endpoints through the MCP protocol, supporting custom content, display names, and avatar URLs.",
+    "zh-Hans": "启用通过 MCP 协议向网络钩子端点发送消息的功能，支持自定义内容、显示名称和头像 URL。",
+    "zh-Hant": "启用通过 MCP 协议向网络钩子端点发送消息的功能，支持自定义内容、显示名称和头像 URL。"
+  },
+  "detail": {
+    "en": "# MCP Webhook Server\n\nAn MCP server implementation that integrates with webhooks, providing message sending capabilities.\n\n## Features\n\n* **Generic Webhook Support**: Send messages to any webhook endpoint\n* **Custom Username**: Set custom display name for messages\n* **Avatar Support**: Customize message avatar\n* **MCP Integration**: Works with Dive and other MCP-compatible LLMs\n\n## Installation\n\n```bash\nnpm install @kevinwatt/mcp-webhook\n```\n\n## Configuration with [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)\n\n1. Click \"+ Add MCP Server\" in Dive Desktop\n2. Copy and paste this configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"webhook\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/mcp-webhook\"\n      ],\n      \"env\": {\n        \"WEBHOOK_URL\": \"your-webhook-url\"\n      },\n      \"alwaysAllow\": [\n        \"send_message\"\n      ]\n    }\n  }\n}\n```\n\n3. Click \"Save\" to install the MCP server\n\n## Tool Documentation\n\n* **send_message**\n  * Send message to webhook endpoint\n  * Inputs:\n    * `content` (string, required): Message content to send\n    * `username` (string, optional): Display name\n    * `avatar_url` (string, optional): Avatar URL\n\n## Usage Examples\n\nAsk your LLM to:\n```\n\"Send a message to webhook: Hello World!\"\n\"Send a message with custom name: content='Testing', username='Bot'\"\n```\n\n## Manual Start\n\nIf needed, start the server manually:\n\n```bash\nnpx @kevinwatt/mcp-webhook\n```\n\n## Requirements\n\n* Node.js 18+\n* MCP-compatible LLM service\n\n## License\n\nMIT\n\n## Author\n\nkevinwatt\n\n## Keywords\n\n* mcp\n* webhook\n* chat\n* dive\n* llm\n* automation",
+    "zh-Hans": "# MCP Webhook Server\n\n一个与webhooks集成的MCP服务器实现，提供消息发送功能。\n\n## 特性\n\n* **通用Webhook支持**：向任意webhook端点发送消息\n* **自定义用户名**：为消息设置自定义显示名称\n* **头像支持**：自定义消息头像\n* **MCP集成**：与Dive及其他兼容MCP的LLM一起工作\n\n## 安装\n\n```bash\nnpm install @kevinwatt/mcp-webhook\n```\n\n## 与[Dive Desktop](https://github.com/OpenAgentPlatform/Dive)配置\n\n1. 在Dive Desktop中点击“+ 添加MCP服务器”\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"webhook\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/mcp-webhook\"\n      ],\n      \"env\": {\n        \"WEBHOOK_URL\": \"your-webhook-url\"\n      },\n      \"alwaysAllow\": [\n        \"send_message\"\n      ]\n    }\n  }\n}\n```\n\n3. 点击“保存”以安装MCP服务器\n\n## 工具文档\n\n* **send_message**\n  * 向webhook端点发送消息\n  * 输入参数：\n    * `content` (字符串, 必填): 要发送的消息内容\n    * `username` (字符串, 可选): 显示名称\n    * `avatar_url` (字符串, 可选): 头像URL\n\n## 使用示例\n\n让您的LLM执行以下操作：\n```\n\"Send a message to webhook: Hello World!\"\n\"Send a message with custom name: content='Testing', username='Bot'\"\n```\n\n## 手动启动\n\n如果需要，可以手动启动服务器：\n\n```bash\nnpx @kevinwatt/mcp-webhook\n```\n\n## 需求\n\n* Node.js 18+\n* 兼容MCP的LLM服务\n\n## 许可证\n\nMIT\n\n## 作者\n\nkevinwatt\n\n## 关键词\n\n* mcp\n* webhook\n* chat\n* dive\n* llm\n* automation",
+    "zh-Hant": "# MCP Webhook Server\n\n一个与webhooks集成的MCP服务器实现，提供消息发送功能。\n\n## 特性\n\n* **通用Webhook支持**：向任意webhook端点发送消息\n* **自定义用户名**：为消息设置自定义显示名称\n* **头像支持**：自定义消息头像\n* **MCP集成**：与Dive及其他兼容MCP的LLM一起工作\n\n## 安装\n\n```bash\nnpm install @kevinwatt/mcp-webhook\n```\n\n## 与[Dive Desktop](https://github.com/OpenAgentPlatform/Dive)配置\n\n1. 在Dive Desktop中点击“+ 添加MCP服务器”\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"webhook\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/mcp-webhook\"\n      ],\n      \"env\": {\n        \"WEBHOOK_URL\": \"your-webhook-url\"\n      },\n      \"alwaysAllow\": [\n        \"send_message\"\n      ]\n    }\n  }\n}\n```\n\n3. 点击“保存”以安装MCP服务器\n\n## 工具文档\n\n* **send_message**\n  * 向webhook端点发送消息\n  * 输入参数：\n    * `content` (字符串, 必填): 要发送的消息内容\n    * `username` (字符串, 可选): 显示名称\n    * `avatar_url` (字符串, 可选): 头像URL\n\n## 使用示例\n\n让您的LLM执行以下操作：\n```\n\"Send a message to webhook: Hello World!\"\n\"Send a message with custom name: content='Testing', username='Bot'\"\n```\n\n## 手动启动\n\n如果需要，可以手动启动服务器：\n\n```bash\nnpx @kevinwatt/mcp-webhook\n```\n\n## 需求\n\n* Node.js 18+\n* 兼容MCP的LLM服务\n\n## 许可证\n\nMIT\n\n## 作者\n\nkevinwatt\n\n## 关键词\n\n* mcp\n* webhook\n* chat\n* dive\n* llm\n* automation"
+  },
+  "categories": [
+    "communication"
+  ],
+  "tags": [
+    "communication",
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/kevinwatt/mcp-webhook",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@kevinwatt/mcp-webhook"
+    ],
+    "env": [
+      [
+        "WEBHOOK_URL",
+        "your-webhook-url"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 30.63
+}

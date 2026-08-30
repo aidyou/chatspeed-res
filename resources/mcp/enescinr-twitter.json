@@ -1,0 +1,59 @@
+{
+  "id": "enescinr-twitter",
+  "channel": "mcp",
+  "name": {
+    "en": "twitter-mcp",
+    "zh-Hans": "推特MCP",
+    "zh-Hant": "推特MCP"
+  },
+  "description": {
+    "en": "An MCP server that enables Claude to interact with Twitter, allowing for posting tweets and searching Twitter content.",
+    "zh-Hans": "一个MCP服务器，它使克劳德能够与推特互动，从而实现发布推文和搜索推特内容的功能。",
+    "zh-Hant": "一个MCP服务器，它使克劳德能够与推特互动，从而实现发布推文和搜索推特内容的功能。"
+  },
+  "detail": {
+    "en": "# Twitter MCP Server\n\n[Smithery](https://smithery.ai/server/@enescinar/twitter-mcp)\n\nThis MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.\n\n  \n\n## Quick Start\n\n1. Create a Twitter Developer account and get your API keys from [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)\n\n2. Add this configuration to your Claude Desktop config file:\n\n**Windows**: `%APPDATA%Claudeclaude_desktop_config.json`  \n**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"twitter-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@enescinar/twitter-mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\",\n        \"API_SECRET_KEY\": \"your_api_secret_key_here\",\n        \"ACCESS_TOKEN\": \"your_access_token_here\",\n        \"ACCESS_TOKEN_SECRET\": \"your_access_token_secret_here\"\n      }\n    }\n  }\n}\n```\n\n3. Restart Claude Desktop\n\nThat's it! Claude can now interact with Twitter through two tools:\n\n- `post_tweet`: Post a new tweet\n- `search_tweets`: Search for tweets\n\n## Example Usage\n\nTry asking Claude:\n- \"Can you post a tweet saying 'Hello from Claude!'\"\n- \"Can you search for tweets about Claude AI?\"\n\n## Troubleshooting\n\nLogs can be found at:\n- **Windows**: `%APPDATA%Claudelogsmcp-server-twitter.log`\n- **macOS**: `~/Library/Logs/Claude/mcp-server-twitter.log`\n\n## Development\n\nIf you want to contribute or run from source:\n\n1. Clone the repository:\n```bash\ngit clone https://github.com/EnesCinr/twitter-mcp.git\ncd twitter-mcp\n```\n\n2. Install dependencies:\n```bash\nnpm install\n```\n\n3. Build:\n```bash\nnpm run build\n```\n\n4. Run:\n```bash\nnpm start\n```\n\n## License\n\nMIT",
+    "zh-Hans": "# Twitter MCP 服务器\n\n[Smithery](https://smithery.ai/server/@enescinar/twitter-mcp)\n\n此MCP服务器允许客户端与Twitter进行交互，支持发布推文和搜索Twitter。\n\n  \n\n## 快速开始\n\n1. 创建一个Twitter开发者账户，并从[Twitter开发者门户](https://developer.twitter.com/en/portal/dashboard)获取您的API密钥。\n\n2. 将以下配置添加到您的Claude Desktop配置文件中：\n\n**Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`  \n**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"twitter-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@enescinar/twitter-mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\",\n        \"API_SECRET_KEY\": \"your_api_secret_key_here\",\n        \"ACCESS_TOKEN\": \"your_access_token_here\",\n        \"ACCESS_TOKEN_SECRET\": \"your_access_token_secret_here\"\n      }\n    }\n  }\n}\n```\n\n3. 重启Claude Desktop\n\n就这样！Claude现在可以通过两个工具与Twitter进行交互：\n\n- `post_tweet`: 发布一条新推文\n- `search_tweets`: 搜索推文\n\n## 使用示例\n\n尝试向Claude提问：\n- \"你能发一条推文说'Hello from Claude!'吗？\"\n- \"你能搜索关于Claude AI的推文吗？\"\n\n## 故障排除\n\n日志可以在以下位置找到：\n- **Windows**: `%APPDATA%\\Claude\\logs\\mcp-server-twitter.log`\n- **macOS**: `~/Library/Logs/Claude/mcp-server-twitter.log`\n\n## 开发\n\n如果您想贡献代码或从源码运行：\n\n1. 克隆仓库：\n```bash\ngit clone https://github.com/EnesCinr/twitter-mcp.git\ncd twitter-mcp\n```\n\n2. 安装依赖项：\n```bash\nnpm install\n```\n\n3. 构建：\n```bash\nnpm run build\n```\n\n4. 运行：\n```bash\nnpm start\n```\n\n## 许可证\n\nMIT",
+    "zh-Hant": "# Twitter MCP 服务器\n\n[Smithery](https://smithery.ai/server/@enescinar/twitter-mcp)\n\n此MCP服务器允许客户端与Twitter进行交互，支持发布推文和搜索Twitter。\n\n  \n\n## 快速开始\n\n1. 创建一个Twitter开发者账户，并从[Twitter开发者门户](https://developer.twitter.com/en/portal/dashboard)获取您的API密钥。\n\n2. 将以下配置添加到您的Claude Desktop配置文件中：\n\n**Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`  \n**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"twitter-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@enescinar/twitter-mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\",\n        \"API_SECRET_KEY\": \"your_api_secret_key_here\",\n        \"ACCESS_TOKEN\": \"your_access_token_here\",\n        \"ACCESS_TOKEN_SECRET\": \"your_access_token_secret_here\"\n      }\n    }\n  }\n}\n```\n\n3. 重启Claude Desktop\n\n就这样！Claude现在可以通过两个工具与Twitter进行交互：\n\n- `post_tweet`: 发布一条新推文\n- `search_tweets`: 搜索推文\n\n## 使用示例\n\n尝试向Claude提问：\n- \"你能发一条推文说'Hello from Claude!'吗？\"\n- \"你能搜索关于Claude AI的推文吗？\"\n\n## 故障排除\n\n日志可以在以下位置找到：\n- **Windows**: `%APPDATA%\\Claude\\logs\\mcp-server-twitter.log`\n- **macOS**: `~/Library/Logs/Claude/mcp-server-twitter.log`\n\n## 开发\n\n如果您想贡献代码或从源码运行：\n\n1. 克隆仓库：\n```bash\ngit clone https://github.com/EnesCinr/twitter-mcp.git\ncd twitter-mcp\n```\n\n2. 安装依赖项：\n```bash\nnpm install\n```\n\n3. 构建：\n```bash\nnpm run build\n```\n\n4. 运行：\n```bash\nnpm start\n```\n\n## 许可证\n\nMIT"
+  },
+  "categories": [
+    "communication"
+  ],
+  "tags": [
+    "social media",
+    "communication",
+    "chinese"
+  ],
+  "website": "https://github.com/EnesCinr/twitter-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@enescinar/twitter-mcp"
+    ],
+    "env": [
+      [
+        "ACCESS_TOKEN",
+        "your_access_token_here"
+      ],
+      [
+        "ACCESS_TOKEN_SECRET",
+        "your_access_token_secret_here"
+      ],
+      [
+        "API_KEY",
+        "your_api_key_here"
+      ],
+      [
+        "API_SECRET_KEY",
+        "your_api_secret_key_here"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 31.36
+}

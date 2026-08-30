@@ -1,0 +1,46 @@
+{
+  "id": "zyy07-xiyan-table",
+  "channel": "mcp",
+  "name": {
+    "en": "xiyan_table_mcp_server",
+    "zh-Hans": "CSV表格读取",
+    "zh-Hant": "CSV表格读取"
+  },
+  "description": {
+    "en": "\"The get_data tool offers a natural language interface for accessing CSV files and uses language model to analyze and respond to queries.\"",
+    "zh-Hans": "\"该get_data工具提供了用于访问 CSV 文件的自然语言界面,并使用语言模型来分析和响应查询.\"",
+    "zh-Hant": "\"该get_data工具提供了用于访问 CSV 文件的自然语言界面,并使用语言模型来分析和响应查询.\""
+  },
+  "detail": {
+    "en": "## Features\n- 🌐 Analyze and query table information using natural language.\n- 🤖 Support general LLMs (GPT,Qwen-Max), and [XiYanTable]\n- 🔧 Read table contents from CSV files\n\n## Tools Preview\n - \"The ``get_data`` tool offers a natural language interface for accessing CSV files and uses language model to analyze and respond to queries.\"\n\n## QuickStart\n\nPython 3.10+ is required. \nYou can install the server through pip, and it will install the latest version:\n\n```bash\npip install xiyan-table-mcp-server\n```\n\nAfter that you can directly run the server by:\n```bash\npython -m xiyan_table_mcp_server\n```\nBut it does not provide any functions until you complete following config.\nYou will get a yml file. After that you can run the server by:\n```yaml\nenv YML=path/to/yml python -m xiyan_table_mcp_server\n```\n\n## Configuration\n\nYou need a YAML config file to configure the server.\nA default config file is provided in config_demo.yml which looks like this:\n\n```yaml\ntable:\n  path: \"\" \n  encoding: \"utf-8\"     \n  preview_rows: 20       \n\nmodel:\n  model_name: \"qwen-max-0125\"\n  api_key: \"\"\n  api_base: \"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n  temperature: 0.1\n\nserver:\n  name: \"xiyan-table\"    \n  version: \"0.1.0\"   \n```\n\n## Launch\n```json\n{\n    \"mcpServers\": {\n        \"xiyan-table-mcp-server\": {\n            \"command\": \"python\",\n            \"args\": [\n                \"-m\",\n                \"xiyan_table_mcp_server\"\n            ],\n            \"env\": {\n                \"YML\": \"PATH/TO/YML\"\n            }\n        }\n    }\n}\n```",
+    "zh-Hans": "# Xiyan Table MCP Server\n\n这是一个基于 MCP (Model Control Protocol) 的表格数据查询服务器。它允许用户配置本地表格数据，并通过自然语言进行查询。\n\n## 功能特点\n- 🌐 使用自然语言分析和查询表格信息\n- 🤖 支持通用大语言模型（GPT、Qwen-Max）和 [XiYanTable]\n- 🔧 支持从 CSV 文件读取表格内容\n\n## 工具预览\n- \"get_data 工具提供了一个自然语言接口来访问 CSV 文件，并使用语言模型来分析和响应查询。\"\n\n## 快速开始\n\n需要 Python 3.10+ 环境。\n你可以通过 pip 安装服务器，它将安装最新版本：\n\n```bash\npip install xiyan-table-mcp-server\n```\n\n安装完成后，你可以直接通过以下命令运行服务器：\n```bash\npython -m xiyan_mcp_server\n```\n但在完成以下配置之前，它不会提供任何功能。\n你将获得一个 yml 文件。之后你可以通过以下命令运行服务器：\n```yaml\nenv YML=path/to/yml python -m xiyan_mcp_server\n```\n\n## 配置\n\n你需要一个 YAML 配置文件来配置服务器。\n在 config_demo.yml 中提供了一个默认配置文件，内容如下：\n\n```yaml\ntable:\n  path: \"\" \n  encoding: \"utf-8\"     \n  preview_rows: 20       \n\nmodel:\n  model_name: \"qwen-max-0125\"\n  api_key: \"\"\n  api_base: \"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n  temperature: 0.1\n\nserver:\n  name: \"xiyan-table\"    \n  version: \"0.1.0\"   \n```\n\n## 启动\n```json\n{\n    \"mcpServers\": {\n        \"xiyan-table-mcp-server\": {\n            \"command\": \"python\",\n            \"args\": [\n                \"-m\",\n                \"xiyan_table_mcp_server\"\n            ],\n            \"env\": {\n                \"YML\": \"PATH/TO/YML\"\n            }\n        }\n    }\n}\n```",
+    "zh-Hant": "# Xiyan Table MCP Server\n\n这是一个基于 MCP (Model Control Protocol) 的表格数据查询服务器。它允许用户配置本地表格数据，并通过自然语言进行查询。\n\n## 功能特点\n- 🌐 使用自然语言分析和查询表格信息\n- 🤖 支持通用大语言模型（GPT、Qwen-Max）和 [XiYanTable]\n- 🔧 支持从 CSV 文件读取表格内容\n\n## 工具预览\n- \"get_data 工具提供了一个自然语言接口来访问 CSV 文件，并使用语言模型来分析和响应查询。\"\n\n## 快速开始\n\n需要 Python 3.10+ 环境。\n你可以通过 pip 安装服务器，它将安装最新版本：\n\n```bash\npip install xiyan-table-mcp-server\n```\n\n安装完成后，你可以直接通过以下命令运行服务器：\n```bash\npython -m xiyan_mcp_server\n```\n但在完成以下配置之前，它不会提供任何功能。\n你将获得一个 yml 文件。之后你可以通过以下命令运行服务器：\n```yaml\nenv YML=path/to/yml python -m xiyan_mcp_server\n```\n\n## 配置\n\n你需要一个 YAML 配置文件来配置服务器。\n在 config_demo.yml 中提供了一个默认配置文件，内容如下：\n\n```yaml\ntable:\n  path: \"\" \n  encoding: \"utf-8\"     \n  preview_rows: 20       \n\nmodel:\n  model_name: \"qwen-max-0125\"\n  api_key: \"\"\n  api_base: \"https://dashscope.aliyuncs.com/compatible-mode/v1\"\n  temperature: 0.1\n\nserver:\n  name: \"xiyan-table\"    \n  version: \"0.1.0\"   \n```\n\n## 启动\n```json\n{\n    \"mcpServers\": {\n        \"xiyan-table-mcp-server\": {\n            \"command\": \"python\",\n            \"args\": [\n                \"-m\",\n                \"xiyan_table_mcp_server\"\n            ],\n            \"env\": {\n                \"YML\": \"PATH/TO/YML\"\n            }\n        }\n    }\n}\n```"
+  },
+  "categories": [
+    "files"
+  ],
+  "tags": [
+    "file systems",
+    "chinese"
+  ],
+  "website": "https://github.com/zyy07/xiyan_table_mcp_server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "python",
+    "args": [
+      "-m",
+      "xiyan_table_mcp_server"
+    ],
+    "env": [
+      [
+        "YML",
+        "PATH/TO/YML"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 2.65
+}

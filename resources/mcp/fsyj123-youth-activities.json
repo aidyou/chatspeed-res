@@ -1,0 +1,44 @@
+{
+  "id": "fsyj123-youth-activities",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-youth-activities",
+    "zh-Hans": "成都线下活动MCP",
+    "zh-Hant": "成都线下活动MCP"
+  },
+  "description": {
+    "en": "一个基于 Model Context Protocol (MCP) 的服务端（Server）， 用于抓取并解析 成都青年之家 的最新活动信息。（后续会扩宽范围）",
+    "zh-Hans": "一个基于 Model Context Protocol (MCP) 的服务端（Server），用于抓取并解析成都青年之家的最新活动信息。（后续会扩宽范围）",
+    "zh-Hant": "一个基于 Model Context Protocol (MCP) 的服务端（Server），用于抓取并解析成都青年之家的最新活动信息。（后续会扩宽范围）"
+  },
+  "detail": {
+    "en": "# MCP Server · Chengdu Youth Home Activity Scraper\n\nA server based on [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) for scraping and parsing the latest activity information from [Chengdu Youth Home](https://cdyouth.cdcyl.org.cn/jgc/).\n\nThis project provides an MCP Tool: `fetch_chengdu_youth_activities`\n\n---\n\n## ✨ Features\n\n- 🔍 **Scrape Activity Information**: Fetch the latest activities from `https://cdyouth.cdcyl.org.cn/jgc/`.\n- 📝 **Automatic Parsing**: Extract activity title, tags, time, location, status, views, images, etc.\n- 📦 **MCP Tool Interface**: Can be directly used in MCP-compatible clients (e.g., Anthropic MCP Inspector).\n- 🔄 **SSE Transport**: Implemented using Server-Sent Events (compatible with older MCP clients).\n- 🧩 **Structured Output**: Returns a JSON array, including human-readable text.\n\n---\n\n## 📦 Installation and Running\n\n### 1. Clone the Repository\nbash\ngit clone https://github.com//mcp-chengdu-youth-activities.git\ncd mcp-chengdu-youth-activities",
+    "zh-Hans": "# MCP Server · 成都青年之家活动抓取器\r\n\r\n一个基于 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) 的服务端（Server），\r\n用于抓取并解析 [成都青年之家](https://cdyouth.cdcyl.org.cn/jgc/) 的最新活动信息。\r\n\r\n本项目提供一个 MCP Tool：`fetch_chengdu_youth_activities`  \r\n\r\n---\r\n\r\n## ✨ 功能特性\r\n\r\n- 🔍 **抓取活动信息**：从 `https://cdyouth.cdcyl.org.cn/jgc/` 获取最新活动。\r\n- 📝 **自动解析**：活动标题、标签、时间、地点、状态、浏览量、图片等。\r\n- 📦 **MCP Tool 接口**：可直接在兼容 MCP 的客户端（如 Anthropic MCP Inspector）中使用。\r\n- 🔄 **SSE Transport**：基于 Server-Sent Events 实现（兼容旧版 MCP 客户端）。\r\n- 🧩 **结构化输出**：返回 JSON 数组，同时包含可读文本。\r\n\r\n---\r\n\r\n## 📦 安装与运行\r\n\r\n### 1. 克隆仓库\r\n```bash\ngit clone https://github.com//mcp-chengdu-youth-activities.git\r\ncd mcp-chengdu-youth-activities\n```",
+    "zh-Hant": "# MCP Server · 成都青年之家活动抓取器\r\n\r\n一个基于 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) 的服务端（Server），\r\n用于抓取并解析 [成都青年之家](https://cdyouth.cdcyl.org.cn/jgc/) 的最新活动信息。\r\n\r\n本项目提供一个 MCP Tool：`fetch_chengdu_youth_activities`  \r\n\r\n---\r\n\r\n## ✨ 功能特性\r\n\r\n- 🔍 **抓取活动信息**：从 `https://cdyouth.cdcyl.org.cn/jgc/` 获取最新活动。\r\n- 📝 **自动解析**：活动标题、标签、时间、地点、状态、浏览量、图片等。\r\n- 📦 **MCP Tool 接口**：可直接在兼容 MCP 的客户端（如 Anthropic MCP Inspector）中使用。\r\n- 🔄 **SSE Transport**：基于 Server-Sent Events 实现（兼容旧版 MCP 客户端）。\r\n- 🧩 **结构化输出**：返回 JSON 数组，同时包含可读文本。\r\n\r\n---\r\n\r\n## 📦 安装与运行\r\n\r\n### 1. 克隆仓库\r\n```bash\ngit clone https://github.com//mcp-chengdu-youth-activities.git\r\ncd mcp-chengdu-youth-activities\n```"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "art and culture",
+    "娱乐",
+    "生活",
+    "线下活动",
+    "成都",
+    "chinese"
+  ],
+  "website": "https://github.com/fsyj123/mcp-chengdu-youth-activities",
+  "icon": "/mcp-icons/8976a21138117a7852ee037f1adec5c4.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-cd-youth"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 23.21
+}

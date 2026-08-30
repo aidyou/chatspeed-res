@@ -1,0 +1,44 @@
+{
+  "id": "jackgan-bilibili-video-info",
+  "channel": "mcp",
+  "name": {
+    "en": "bilibili_video_info",
+    "zh-Hans": "B站视频信息获取器（MCP&Agent挑战赛）",
+    "zh-Hant": "B站视频信息获取器（MCP&Agent挑战赛）"
+  },
+  "description": {
+    "en": "Bilibili Video Information Fetcher This is a Bilibili video information fetching tool based on Python and Gradio. It can quickly obtain detailed information about Bilibili videos, including the uploader's information, basic video details, and video data, throu",
+    "zh-Hans": "B站视频信息获取器 这是一个基于Python和Gradio的B站视频信息获取工具，可以通过视频链接或BV号快速获取B站视频的详细信息，包括UP主信息、视频基本信息和视频数据。 功能特点 - 支持输入B站视频链接或直接输入BV号 - 获取视频的详细信息：标题、类型、简介、发布时间、时长等 - 获取UP主信息：昵称、用户ID、粉丝数、关注数等 - 获取视频统计数据：播放量、弹幕数、点赞数、投币数、收藏数、分享数等 - 提供友好的Web界面，支持示例输入 - 支持MCP服务器功能，便于集成到其他应用 - 生成公共可访问链",
+    "zh-Hant": "B站视频信息获取器 这是一个基于Python和Gradio的B站视频信息获取工具，可以通过视频链接或BV号快速获取B站视频的详细信息，包括UP主信息、视频基本信息和视频数据。 功能特点 - 支持输入B站视频链接或直接输入BV号 - 获取视频的详细信息：标题、类型、简介、发布时间、时长等 - 获取UP主信息：昵称、用户ID、粉丝数、关注数等 - 获取视频统计数据：播放量、弹幕数、点赞数、投币数、收藏数、分享数等 - 提供友好的Web界面，支持示例输入 - 支持MCP服务器功能，便于集成到其他应用 - 生成公共可访问链"
+  },
+  "detail": {
+    "en": "# Bilibili Video Information Fetcher\n\nThis is a Bilibili video information fetching tool based on Python and Gradio. It can quickly obtain detailed information about Bilibili videos, including the uploader's information, basic video details, and video data, through video links or BV numbers.\n\n## Features\n\n- Supports input of Bilibili video links or direct input of BV numbers\n- Retrieves detailed video information: title, type, description, release time, duration, etc.\n- Obtains uploader information: nickname, user ID, number of followers, number of followings, etc.\n- Retrieves video statistics: views, danmaku count, likes, coins, favorites, shares, etc.\n- Provides a friendly web interface with example inputs\n- Supports MCP server functionality for easy integration into other applications\n- Generates publicly accessible links for convenient remote use\n\n## Usage Instructions\n\n1. Enter the Bilibili video link or BV number in the input box\n2. Click the \"Submit\" button\n3. View the fetched video details in the output box\n4. Use the example buttons to quickly test\n\n## MCP Server Functionality\n\nThis program supports MCP (Model Communication Protocol) server functionality, allowing other applications to communicate with this program via HTTP requests to fetch Bilibili video information.\n\n### How to Use MCP Server\n\nWhen the program runs, the MCP server will automatically start, and other applications can communicate with it as follows:\n\n1. Send a POST request to the MCP server, with the request format as below:\nhttp\nPOST /run/predict HTTP/1.1\nContent-Type: application/json\n\n{\n  \"data\": [\"Bilibili video link or BV number\"]\n}\n\n2. The server will return a JSON formatted response containing the fetched video information\n\n## Examples\n\n### Example 1: Using BV Number\nInput: `BV1XmtyzKEzQ`\n\n### Example 2: Using Video Link\nInput: `https://www.bilibili.com/video/BV1xx411x7x9/`\n\n## Notes\n\n- This tool is only for fetching publicly available video information and should not be used for any illegal purposes\n- Please comply with Bilibili's user agreement and relevant regulations\n- Due to Bilibili API restrictions, some video information may not be accessible or require login\n- If you encounter issues during use, please check your network connection or try using a different video link",
+    "zh-Hans": "# B站视频信息获取器\r\n\r\n这是一个基于Python和Gradio的B站视频信息获取工具，可以通过视频链接或BV号快速获取B站视频的详细信息，包括UP主信息、视频基本信息和视频数据。\r\n\r\n## 功能特点\r\n\r\n- 支持输入B站视频链接或直接输入BV号\r\n- 获取视频的详细信息：标题、类型、简介、发布时间、时长等\r\n- 获取UP主信息：昵称、用户ID、粉丝数、关注数等\r\n- 获取视频统计数据：播放量、弹幕数、点赞数、投币数、收藏数、分享数等\r\n- 提供友好的Web界面，支持示例输入\r\n- 支持MCP服务器功能，便于集成到其他应用\r\n- 生成公共可访问链接，方便远程使用\r\n\r\n## 使用说明\r\n\r\n1. 在输入框中输入B站视频链接或直接输入BV号\r\n2. 点击\"提交\"按钮\r\n3. 在输出框中查看获取到的视频详细信息\r\n4. 可以使用示例按钮快速测试\r\n\r\n## MCP服务器功能\r\n\r\n该程序支持MCP（Model Communication Protocol）服务器功能，允许其他应用程序通过HTTP请求与本程序进行通信，获取B站视频信息。\r\n\r\n### MCP服务器使用方法\r\n\r\n当程序运行时，MCP服务器会自动启动，其他应用可以通过以下方式与其通信：\r\n\r\n1. 向MCP服务器发送POST请求，请求格式如下：\r\n```http\nPOST /run/predict HTTP/1.1\r\nContent-Type: application/json\r\n\r\n{\r\n  \"data\": [\"B站视频链接或BV号\"]\r\n}\r\n```\n\r\n2. 服务器将返回JSON格式的响应，包含获取到的视频信息\r\n\r\n## 示例\r\n\r\n### 示例1：使用BV号\r\n输入：`BV1XmtyzKEzQ`\r\n\r\n### 示例2：使用视频链接\r\n输入：`https://www.bilibili.com/video/BV1xx411x7x9/`\r\n\r\n## 注意事项\r\n\r\n- 本工具仅用于获取公开的视频信息，不得用于任何非法用途\r\n- 请遵守B站的用户协议和相关规定\r\n- 由于B站API限制，部分视频信息可能无法获取或需要登录\r\n- 使用过程中如遇到问题，请检查网络连接或尝试更换视频链接",
+    "zh-Hant": "# B站视频信息获取器\r\n\r\n这是一个基于Python和Gradio的B站视频信息获取工具，可以通过视频链接或BV号快速获取B站视频的详细信息，包括UP主信息、视频基本信息和视频数据。\r\n\r\n## 功能特点\r\n\r\n- 支持输入B站视频链接或直接输入BV号\r\n- 获取视频的详细信息：标题、类型、简介、发布时间、时长等\r\n- 获取UP主信息：昵称、用户ID、粉丝数、关注数等\r\n- 获取视频统计数据：播放量、弹幕数、点赞数、投币数、收藏数、分享数等\r\n- 提供友好的Web界面，支持示例输入\r\n- 支持MCP服务器功能，便于集成到其他应用\r\n- 生成公共可访问链接，方便远程使用\r\n\r\n## 使用说明\r\n\r\n1. 在输入框中输入B站视频链接或直接输入BV号\r\n2. 点击\"提交\"按钮\r\n3. 在输出框中查看获取到的视频详细信息\r\n4. 可以使用示例按钮快速测试\r\n\r\n## MCP服务器功能\r\n\r\n该程序支持MCP（Model Communication Protocol）服务器功能，允许其他应用程序通过HTTP请求与本程序进行通信，获取B站视频信息。\r\n\r\n### MCP服务器使用方法\r\n\r\n当程序运行时，MCP服务器会自动启动，其他应用可以通过以下方式与其通信：\r\n\r\n1. 向MCP服务器发送POST请求，请求格式如下：\r\n```http\nPOST /run/predict HTTP/1.1\r\nContent-Type: application/json\r\n\r\n{\r\n  \"data\": [\"B站视频链接或BV号\"]\r\n}\r\n```\n\r\n2. 服务器将返回JSON格式的响应，包含获取到的视频信息\r\n\r\n## 示例\r\n\r\n### 示例1：使用BV号\r\n输入：`BV1XmtyzKEzQ`\r\n\r\n### 示例2：使用视频链接\r\n输入：`https://www.bilibili.com/video/BV1xx411x7x9/`\r\n\r\n## 注意事项\r\n\r\n- 本工具仅用于获取公开的视频信息，不得用于任何非法用途\r\n- 请遵守B站的用户协议和相关规定\r\n- 由于B站API限制，部分视频信息可能无法获取或需要登录\r\n- 使用过程中如遇到问题，请检查网络连接或尝试更换视频链接"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "search",
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "http://modelscope.cn/studios/JackGan/bilibili_video_info",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "mcp-remote",
+      "https://jackgan-bilibili-video-info.ms.show/gradio_api/mcp/sse",
+      "--transport",
+      "sse-only"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 33.26
+}

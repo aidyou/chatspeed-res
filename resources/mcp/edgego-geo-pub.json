@@ -1,0 +1,41 @@
+{
+  "id": "edgego-geo-pub",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-geo-pub",
+    "zh-Hans": "MCP地理发布",
+    "zh-Hant": "MCP地理发布"
+  },
+  "description": {
+    "en": "Integrates EdgeOne Pages Functions with large language models to retrieve and utilize user geolocation information through the Model Context Protocol (MCP).",
+    "zh-Hans": "将 EdgeOne 页面功能与大型语言模型集成，通过模型上下文协议（MCP）获取和利用用户地理定位信息。",
+    "zh-Hant": "将 EdgeOne 页面功能与大型语言模型集成，通过模型上下文协议（MCP）获取和利用用户地理定位信息。"
+  },
+  "detail": {
+    "en": "# MCP with Pages Functions ：Geo Location Demo \n\nThis project demonstrates how to use EdgeOne Pages Functions to retrieve user geolocation information and integrate it with large language models through MCP (Model Context Protocol).\n\n## Demo\n\n![](/mcp-assets/67f6315167cad0d50116e51ef937c048.gif)\n\n## Deploy\n\n[![Deploy with EdgeOne Pages](/mcp-assets/0e43c38e86c821a6cca6f1708caf1c7c.svg)](https://edgeone.ai/pages/new?template=mcp-geo)\n\nMore Templates: [EdgeOne Pages](https://edgeone.ai/pages/templates)\n\n## Components\n\n### 1. EdgeOne Pages Functions: Geolocation\n\nThe project includes an EdgeOne Pages Function that retrieves user geolocation information:\n\n* Uses the EdgeOne request context to access geolocation data\n* Returns location information in a JSON format\n* Located in `functions/get_geo.ts`\n\n### 2. MCP Server Integration\n\nThe MCP server component provides an interface for large language models to access geolocation data:\n\n* Implements the Model Context Protocol (MCP)\n* Exposes a `get_geolocation` tool that can be used by AI models\n* Uses the EdgeOne Pages Function to fetch geolocation data\n* Located in `mcp-server/index.ts`\n\n## MCP Configuration\n\nTo use the MCP server with large language models, add the following configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"edgeone-geo-mcp-server\": {\n      \"command\": \"tsx\",\n      \"args\": [\"path/to/mcp-server/index.ts\"]\n    }\n  }\n}\n```\n\n## Learn More\n\n* [EdgeOne Pages](https://edgeone.ai/products/pages)\n* [EdgeOne Pages Functions documentation](https://edgeone.ai/document/162227908259442688)\n* [Model Context Protocol (MCP)](https://modelcontextprotocol.github.io) - Learn about integrating AI models with external tools and services",
+    "zh-Hans": "# MCP与Pages Functions：地理位置演示\n\n该项目展示了如何使用EdgeOne Pages Functions来获取用户的地理位置信息，并通过MCP（模型上下文协议）将其与大型语言模型集成。\n\n## 演示\n\n![](/mcp-assets/67f6315167cad0d50116e51ef937c048.gif)\n\n## 部署\n\n[![使用EdgeOne Pages部署](/mcp-assets/0e43c38e86c821a6cca6f1708caf1c7c.svg)](https://edgeone.ai/pages/new?template=mcp-geo)\n\n更多模板: [EdgeOne Pages](https://edgeone.ai/pages/templates)\n\n## 组件\n\n### 1. EdgeOne Pages Functions: 地理位置\n\n项目包含一个EdgeOne Pages Function，用于检索用户地理位置信息：\n\n* 使用EdgeOne请求上下文访问地理位置数据\n* 以JSON格式返回位置信息\n* 位于 `functions/get_geo.ts`\n\n### 2. MCP服务器集成\n\nMCP服务器组件为大型语言模型提供了访问地理位置数据的接口：\n\n* 实现了模型上下文协议 (MCP)\n* 提供了一个`get_geolocation`工具，可供AI模型使用\n* 使用EdgeOne Pages Function来获取地理位置数据\n* 位于 `mcp-server/index.ts`\n\n## MCP配置\n\n要将MCP服务器与大型语言模型一起使用，请添加以下配置：\n\njson\n{\n  \"mcpServers\": {\n    \"edgeone-geo-mcp-server\": {\n      \"command\": \"tsx\",\n      \"args\": [\"path/to/mcp-server/index.ts\"]\n    }\n  }\n}\n\n## 了解更多\n\n* [EdgeOne Pages](https://edgeone.ai/products/pages)\n* [EdgeOne Pages Functions 文档](https://edgeone.ai/document/162227908259442688)\n* [模型上下文协议 (MCP)](https://modelcontextprotocol.github.io) - 了解如何将AI模型与外部工具和服务集成",
+    "zh-Hant": "# MCP与Pages Functions：地理位置演示\n\n该项目展示了如何使用EdgeOne Pages Functions来获取用户的地理位置信息，并通过MCP（模型上下文协议）将其与大型语言模型集成。\n\n## 演示\n\n![](/mcp-assets/67f6315167cad0d50116e51ef937c048.gif)\n\n## 部署\n\n[![使用EdgeOne Pages部署](/mcp-assets/0e43c38e86c821a6cca6f1708caf1c7c.svg)](https://edgeone.ai/pages/new?template=mcp-geo)\n\n更多模板: [EdgeOne Pages](https://edgeone.ai/pages/templates)\n\n## 组件\n\n### 1. EdgeOne Pages Functions: 地理位置\n\n项目包含一个EdgeOne Pages Function，用于检索用户地理位置信息：\n\n* 使用EdgeOne请求上下文访问地理位置数据\n* 以JSON格式返回位置信息\n* 位于 `functions/get_geo.ts`\n\n### 2. MCP服务器集成\n\nMCP服务器组件为大型语言模型提供了访问地理位置数据的接口：\n\n* 实现了模型上下文协议 (MCP)\n* 提供了一个`get_geolocation`工具，可供AI模型使用\n* 使用EdgeOne Pages Function来获取地理位置数据\n* 位于 `mcp-server/index.ts`\n\n## MCP配置\n\n要将MCP服务器与大型语言模型一起使用，请添加以下配置：\n\njson\n{\n  \"mcpServers\": {\n    \"edgeone-geo-mcp-server\": {\n      \"command\": \"tsx\",\n      \"args\": [\"path/to/mcp-server/index.ts\"]\n    }\n  }\n}\n\n## 了解更多\n\n* [EdgeOne Pages](https://edgeone.ai/products/pages)\n* [EdgeOne Pages Functions 文档](https://edgeone.ai/document/162227908259442688)\n* [模型上下文协议 (MCP)](https://modelcontextprotocol.github.io) - 了解如何将AI模型与外部工具和服务集成"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "location services",
+    "rag systems",
+    "chinese"
+  ],
+  "website": "https://github.com/edgego/mcp-geo-pub",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "tsx",
+    "args": [
+      "path/to/mcp-server/index.ts"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 2.8
+}

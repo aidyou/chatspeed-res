@@ -1,0 +1,47 @@
+{
+  "id": "swairshah-zotero",
+  "channel": "mcp",
+  "name": {
+    "en": "zotero-mcp-server",
+    "zh-Hans": "Zotero MCP 服务端",
+    "zh-Hant": "Zotero MCP 服务端"
+  },
+  "description": {
+    "en": "A server that enables MCP clients like Anthropic Claude App to interact with local Zotero libraries, allowing users to search papers, manage notes, and access research materials through natural language.",
+    "zh-Hans": "一个服务器，它使像Anthropic Claude App这样的MCP客户端能够与本地Zotero图书馆互动，允许用户通过自然语言搜索论文、管理笔记和访问研究资料。",
+    "zh-Hant": "一个服务器，它使像Anthropic Claude App这样的MCP客户端能够与本地Zotero图书馆互动，允许用户通过自然语言搜索论文、管理笔记和访问研究资料。"
+  },
+  "detail": {
+    "en": "# Zotero MCP Server\n\nA MCP (Model Context Protocol) server to let your MCP clients (e.g. Anthropic Claude App, Goose, possibly vscode Cline too) interact with your local Zotero repository. This server enables programmatic access to your Zotero library, allowing you to search papers, manage notes, and more.\n\n## Setup\n\n1. Install dependencies:\n```bash\npip install -e .\n```\n\n2. Create a `.env` file in the root directory with your Zotero credentials:\n```bash\nZOTERO_API_KEY=your_api_key_here\nZOTERO_USER_ID=your_user_id_here\n```\n\nYou can get your Zotero API key and user ID from [Zotero's settings page](https://www.zotero.org/settings/keys).\n\n## Integration with Anthropic Desktop App\n\nTo integrate with the Anthropic Desktop app, add the following configuration to `~/Library/Application Support/Claude/claude_desktop_config.json`:\n\n```json\n{\n  \"mcpServers\": {\n    \"zotero-mcp-server\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\",\n        \"/Users/swairshah/work/research/zotero-mcp\",\n        \"run\",\n        \"python\",\n        \"-m\",\n        \"zotero_mcp.server\"\n      ]\n    }\n  }\n}\n```\nIf this gives an error like\n```\n{\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{},\"clientInfo\":{\"name\":\"claude-ai\",\"version\":\"0.1.0\"}},\"jsonrpc\":\"2.0\",\"id\":0}\n  error: unexpected argument '--directory' found\n```\nThen use the following config, make sure to do `uv venv`; `source .venv/bin/activate`; `uv pip install \".[dev]\"` to make sure the server can be run with all dependencies. \n\n```json\n{\n   \"mcpServers\": {\n      \"zotero-mcp-server\": {\n        \"command\": \"bash\",\n        \"args\": [\n          \"-c\",\n          \"cd /Users/shahswai/personal/zotero-mcp-server && source .venv/bin/activate && python -m zotero_mcp.server\"\n        ]\n      }\n    }\n  }\n```\n\n## Example Usage\n\nThe server allows you to:\n- Search papers by tags\n- Get paper details and attached notes\n- Add notes to papers\n- Request paper summaries",
+    "zh-Hans": "# Zotero MCP 服务器\n\n一个MCP（模型上下文协议）服务器，可以让您的MCP客户端（例如Anthropic Claude应用程序、Goose，可能还包括vscode Cline）与您的本地Zotero库进行交互。此服务器允许程序化访问您的Zotero图书馆，使您能够搜索论文、管理笔记等。\n\n## 设置\n\n1. 安装依赖项：\n```bash\npip install -e .\n```\n\n2. 在根目录下创建一个包含您的Zotero凭据的`.env`文件：\n```bash\nZOTERO_API_KEY=your_api_key_here\nZOTERO_USER_ID=your_user_id_here\n```\n\n您可以从[Zotero的设置页面](https://www.zotero.org/settings/keys)获取您的Zotero API密钥和用户ID。\n\n## 与Anthropic桌面应用集成\n\n要与Anthropic桌面应用程序集成，请将以下配置添加到`~/Library/Application Support/Claude/claude_desktop_config.json`：\n\n```json\n{\n  \"mcpServers\": {\n    \"zotero-mcp-server\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\",\n        \"/Users/swairshah/work/research/zotero-mcp\",\n        \"run\",\n        \"python\",\n        \"-m\",\n        \"zotero_mcp.server\"\n      ]\n    }\n  }\n}\n```\n如果这导致错误如\n```\n{\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{},\"clientInfo\":{\"name\":\"claude-ai\",\"version\":\"0.1.0\"}},\"jsonrpc\":\"2.0\",\"id\":0}\n  error: unexpected argument '--directory' found\n```\n则使用下面的配置，并确保执行 `uv venv`; `source .venv/bin/activate`; `uv pip install \".[dev]\"` 来确保服务器能够在安装所有依赖的情况下运行。\n\n```json\n{\n   \"mcpServers\": {\n      \"zotero-mcp-server\": {\n        \"command\": \"bash\",\n        \"args\": [\n          \"-c\",\n          \"cd /Users/shahswai/personal/zotero-mcp-server && source .venv/bin/activate && python -m zotero_mcp.server\"\n        ]\n      }\n    }\n  }\n```\n\n## 示例用法\n\n该服务器允许您：\n- 按标签搜索论文\n- 获取论文详情及附带的笔记\n- 向论文添加笔记\n- 请求论文摘要",
+    "zh-Hant": "# Zotero MCP 服务器\n\n一个MCP（模型上下文协议）服务器，可以让您的MCP客户端（例如Anthropic Claude应用程序、Goose，可能还包括vscode Cline）与您的本地Zotero库进行交互。此服务器允许程序化访问您的Zotero图书馆，使您能够搜索论文、管理笔记等。\n\n## 设置\n\n1. 安装依赖项：\n```bash\npip install -e .\n```\n\n2. 在根目录下创建一个包含您的Zotero凭据的`.env`文件：\n```bash\nZOTERO_API_KEY=your_api_key_here\nZOTERO_USER_ID=your_user_id_here\n```\n\n您可以从[Zotero的设置页面](https://www.zotero.org/settings/keys)获取您的Zotero API密钥和用户ID。\n\n## 与Anthropic桌面应用集成\n\n要与Anthropic桌面应用程序集成，请将以下配置添加到`~/Library/Application Support/Claude/claude_desktop_config.json`：\n\n```json\n{\n  \"mcpServers\": {\n    \"zotero-mcp-server\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\",\n        \"/Users/swairshah/work/research/zotero-mcp\",\n        \"run\",\n        \"python\",\n        \"-m\",\n        \"zotero_mcp.server\"\n      ]\n    }\n  }\n}\n```\n如果这导致错误如\n```\n{\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{},\"clientInfo\":{\"name\":\"claude-ai\",\"version\":\"0.1.0\"}},\"jsonrpc\":\"2.0\",\"id\":0}\n  error: unexpected argument '--directory' found\n```\n则使用下面的配置，并确保执行 `uv venv`; `source .venv/bin/activate`; `uv pip install \".[dev]\"` 来确保服务器能够在安装所有依赖的情况下运行。\n\n```json\n{\n   \"mcpServers\": {\n      \"zotero-mcp-server\": {\n        \"command\": \"bash\",\n        \"args\": [\n          \"-c\",\n          \"cd /Users/shahswai/personal/zotero-mcp-server && source .venv/bin/activate && python -m zotero_mcp.server\"\n        ]\n      }\n    }\n  }\n```\n\n## 示例用法\n\n该服务器允许您：\n- 按标签搜索论文\n- 获取论文详情及附带的笔记\n- 向论文添加笔记\n- 请求论文摘要"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "research and data",
+    "note taking",
+    "search",
+    "chinese"
+  ],
+  "website": "https://github.com/swairshah/zotero-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uv",
+    "args": [
+      "--directory",
+      "/Users/swairshah/work/research/zotero-mcp",
+      "run",
+      "python",
+      "-m",
+      "zotero_mcp.server"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 3.33
+}

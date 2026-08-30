@@ -1,0 +1,44 @@
+{
+  "id": "yinxiangnote-yinxiang",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-server-yinxiang",
+    "zh-Hans": "印象笔记MCP",
+    "zh-Hant": "印象笔记MCP"
+  },
+  "description": {
+    "en": "# YXBJ-MCP\n\n> 印象笔记 MCP 服务器，支持通过 Model Context Protocol 保存笔记到印象笔记",
+    "zh-Hans": "YXBJ-MCP 是一个 MCP (Model Context Protocol) 服务器，可以让 AI 助手（如 Cursor）直接与印象笔记进行交互，实现笔记的创建和保存功能。它支持连接测试、保存笔记、Markdown 格式以及通过环境变量进行安全认证。",
+    "zh-Hant": "YXBJ-MCP 是一个 MCP (Model Context Protocol) 服务器，可以让 AI 助手（如 Cursor）直接与印象笔记进行交互，实现笔记的创建和保存功能。它支持连接测试、保存笔记、Markdown 格式以及通过环境变量进行安全认证。"
+  },
+  "detail": {
+    "en": "# YXBJ-MCP\n\n> 印象笔记 MCP 服务，支持将文本内容保存到您的印象笔记\n\n## 简介\n\nYXBJ-MCP 是一个 MCP (Model Context Protocol) 服务，可以让您在与 AI 工具（如 Cursor、Claude、Cherry Studio等）聊天交互时，直接将内容保存到印象笔记。\n\n## 功能特性\n\n- ✅ **连接测试** - 测试 MCP 连接状态\n- ✅ **保存笔记** - 将内容保存到印象笔记\n- ✅ **Markdown 支持** - 支持丰富的文本格式\n- ✅ **环境变量配置** - 安全的认证方式\n\n## 安装和使用\n\n### 1. 获取授权Token\n- 访问印象笔记OAuth授权页面：https://app.yinxiang.com/third/mcp-oauth/\n- 登录印象笔记账号，并获取获取MCP服务授权Token\n\n### 2. 使用 npx 安装\n\n```bash\n# 直接运行，无需安装\nnpx yxbj-mcp\n```\n### 3. 环境配置\n在使用前，需要设置环境变量：\n```bash\n# 临时设置环境变量并运行\nYINXIANG_AUTH_TOKEN=\"your_token\" npx yxbj-mcp\n```\n> \"your_token\"替换为获取的授权Token\n\n## 在 Cursor 中使用\n\n1. 在 Cursor 的 MCP 配置中添加：\n```json\n{\n  \"mcpServers\": {\n    \"yxbj-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"yxbj-mcp\"],\n      \"env\": {\n        \"YINXIANG_AUTH_TOKEN\": \"your_token_here\"\n      }\n    }\n  }\n}\n```\n> \"your_token_here\"替换为获取的授权Token\n2. 重启 Cursor，即可在 AI 助手中使用印象笔记功能\n\n## 可用工具\n\n### test-connection\n测试 MCP 连接状态，返回系统信息\n\n### save-note\n保存笔记到印象笔记\n- `title`: 笔记标题\n- `content`: 笔记内容（支持 Markdown）\n\n## 开发\n\n```bash\n# 安装依赖\nnpm install\n\n# 开发模式（TypeScript）\nnpm run build\n\n# 测试\nnpm test\n```\n\n## 许可证\n\nISC\n\n## 贡献\n\n欢迎提交 Issue 和 Pull Request！",
+    "zh-Hans": "# YXBJ-MCP\n\n> 印象笔记 MCP 服务，支持将文本内容保存到您的印象笔记\n\n## 简介\n\nYXBJ-MCP 是一个 MCP (Model Context Protocol) 服务，可以让您在与 AI 工具（如 Cursor、Claude、Cherry Studio等）聊天交互时，直接将内容保存到印象笔记。\n\n## 功能特性\n\n- ✅ **连接测试** - 测试 MCP 连接状态\n- ✅ **保存笔记** - 将内容保存到印象笔记\n- ✅ **Markdown 支持** - 支持丰富的文本格式\n- ✅ **环境变量配置** - 安全的认证方式\n\n## 安装和使用\n\n### 1. 获取授权Token\n- 访问印象笔记OAuth授权页面：https://app.yinxiang.com/third/mcp-oauth/\n- 登录印象笔记账号，并获取获取MCP服务授权Token\n\n### 2. 使用 npx 安装\n\n```bash\n# 直接运行，无需安装\nnpx yxbj-mcp\n```\n### 3. 环境配置\n在使用前，需要设置环境变量：\n```bash\n# 临时设置环境变量并运行\nYINXIANG_AUTH_TOKEN=\"your_token\" npx yxbj-mcp\n```\n> \"your_token\"替换为获取的授权Token\n\n## 在 Cursor 中使用\n\n1. 在 Cursor 的 MCP 配置中添加：\n```json\n{\n  \"mcpServers\": {\n    \"yxbj-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"yxbj-mcp\"],\n      \"env\": {\n        \"YINXIANG_AUTH_TOKEN\": \"your_token_here\"\n      }\n    }\n  }\n}\n```\n> \"your_token_here\"替换为获取的授权Token\n2. 重启 Cursor，即可在 AI 助手中使用印象笔记功能\n\n## 可用工具\n\n### test-connection\n测试 MCP 连接状态，返回系统信息\n\n### save-note\n保存笔记到印象笔记\n- `title`: 笔记标题\n- `content`: 笔记内容（支持 Markdown）\n\n## 开发\n\n```bash\n# 安装依赖\nnpm install\n\n# 开发模式（TypeScript）\nnpm run build\n\n# 测试\nnpm test\n```\n\n## 许可证\n\nISC\n\n## 贡献\n\n欢迎提交 Issue 和 Pull Request！",
+    "zh-Hant": "# YXBJ-MCP\n\n> 印象笔记 MCP 服务，支持将文本内容保存到您的印象笔记\n\n## 简介\n\nYXBJ-MCP 是一个 MCP (Model Context Protocol) 服务，可以让您在与 AI 工具（如 Cursor、Claude、Cherry Studio等）聊天交互时，直接将内容保存到印象笔记。\n\n## 功能特性\n\n- ✅ **连接测试** - 测试 MCP 连接状态\n- ✅ **保存笔记** - 将内容保存到印象笔记\n- ✅ **Markdown 支持** - 支持丰富的文本格式\n- ✅ **环境变量配置** - 安全的认证方式\n\n## 安装和使用\n\n### 1. 获取授权Token\n- 访问印象笔记OAuth授权页面：https://app.yinxiang.com/third/mcp-oauth/\n- 登录印象笔记账号，并获取获取MCP服务授权Token\n\n### 2. 使用 npx 安装\n\n```bash\n# 直接运行，无需安装\nnpx yxbj-mcp\n```\n### 3. 环境配置\n在使用前，需要设置环境变量：\n```bash\n# 临时设置环境变量并运行\nYINXIANG_AUTH_TOKEN=\"your_token\" npx yxbj-mcp\n```\n> \"your_token\"替换为获取的授权Token\n\n## 在 Cursor 中使用\n\n1. 在 Cursor 的 MCP 配置中添加：\n```json\n{\n  \"mcpServers\": {\n    \"yxbj-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"yxbj-mcp\"],\n      \"env\": {\n        \"YINXIANG_AUTH_TOKEN\": \"your_token_here\"\n      }\n    }\n  }\n}\n```\n> \"your_token_here\"替换为获取的授权Token\n2. 重启 Cursor，即可在 AI 助手中使用印象笔记功能\n\n## 可用工具\n\n### test-connection\n测试 MCP 连接状态，返回系统信息\n\n### save-note\n保存笔记到印象笔记\n- `title`: 笔记标题\n- `content`: 笔记内容（支持 Markdown）\n\n## 开发\n\n```bash\n# 安装依赖\nnpm install\n\n# 开发模式（TypeScript）\nnpm run build\n\n# 测试\nnpm test\n```\n\n## 许可证\n\nISC\n\n## 贡献\n\n欢迎提交 Issue 和 Pull Request！"
+  },
+  "categories": [
+    "memory"
+  ],
+  "tags": [
+    "knowledge and memory"
+  ],
+  "website": "https://github.com/yinxiang-team/YXBJ-MCP",
+  "icon": "/mcp-icons/73438d4c6b9fbc67603b470e6d0bfeef.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "yxbj-mcp"
+    ],
+    "env": [
+      [
+        "YINXIANG_AUTH_TOKEN",
+        "your_token_here"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 30.63
+}

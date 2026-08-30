@@ -1,0 +1,42 @@
+{
+  "id": "zukai-mcp-webdev",
+  "channel": "mcp",
+  "name": {
+    "en": "webdev-mcp",
+    "zh-Hans": "网页开发MCP",
+    "zh-Hant": "网页开发MCP"
+  },
+  "description": {
+    "en": "An MCP server providing web development tools such as screen capturing capabilities that let AI agents take and work with screenshots of the user's screen.",
+    "zh-Hans": "一个提供网页开发工具的MCP服务器，例如屏幕捕捉功能，可以让AI代理获取并处理用户屏幕的截图。",
+    "zh-Hant": "一个提供网页开发工具的MCP服务器，例如屏幕捕捉功能，可以让AI代理获取并处理用户屏幕的截图。"
+  },
+  "detail": {
+    "en": "# webdev-mcp\n\nAn MCP server that provides useful web development tools.\n\n## Usage\n\n### Cursor\n\n- To install in a project, add the MCP server to your `.cursor/mcp.json`:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"],\n\n\t\t}\n\t}\n}\n```\n\n- To install globally, add this command to your Cursor settings:\n\n```bash\nnpx webdev-mcp\n```\n\n### Windsurf\n\n- Add the MCP server to your `~/.codeium/windsurf/mcp_config.json` file:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"]\n\t\t}\n\t}\n}\n```\n\n## Tools\n\nCurrently, the only 2 tools are `takeScreenshot` and `listScreens`. Your agent can use the list screens tool to get the screen id of the screen it wants to screenshot.\n\nThe tool will return the screenshot as a base64 encoded string.\n\n## Tips\n\nMake sure YOLO mode is on and MCP tools protection is off in your Cursor settings for the best experience. You might have to allow Cursor to record your screen on MacOS.",
+    "zh-Hans": "# webdev-mcp\n\nAn MCP server that provides useful web development tools.\n\n## Usage\n\n### Cursor\n\n- To install in a project, add the MCP server to your `.cursor/mcp.json`:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"],\n\n\t\t}\n\t}\n}\n```\n\n- To install globally, add this command to your Cursor settings:\n\n```bash\nnpx webdev-mcp\n```\n\n### Windsurf\n\n- Add the MCP server to your `~/.codeium/windsurf/mcp_config.json` file:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"]\n\t\t}\n\t}\n}\n```\n\n## Tools\n\nCurrently, the only 2 tools are `takeScreenshot` and `listScreens`. Your agent can use the list screens tool to get the screen id of the screen it wants to screenshot.\n\nThe tool will return the screenshot as a base64 encoded string.\n\n## Tips\n\nMake sure YOLO mode is on and MCP tools protection is off in your Cursor settings for the best experience. You might have to allow Cursor to record your screen on MacOS.",
+    "zh-Hant": "# webdev-mcp\n\nAn MCP server that provides useful web development tools.\n\n## Usage\n\n### Cursor\n\n- To install in a project, add the MCP server to your `.cursor/mcp.json`:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"],\n\n\t\t}\n\t}\n}\n```\n\n- To install globally, add this command to your Cursor settings:\n\n```bash\nnpx webdev-mcp\n```\n\n### Windsurf\n\n- Add the MCP server to your `~/.codeium/windsurf/mcp_config.json` file:\n\n```json\n{\n\t\"mcpServers\": {\n\t\t\"webdev\": {\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\"webdev-mcp\"]\n\t\t}\n\t}\n}\n```\n\n## Tools\n\nCurrently, the only 2 tools are `takeScreenshot` and `listScreens`. Your agent can use the list screens tool to get the screen id of the screen it wants to screenshot.\n\nThe tool will return the screenshot as a base64 encoded string.\n\n## Tips\n\nMake sure YOLO mode is on and MCP tools protection is off in your Cursor settings for the best experience. You might have to allow Cursor to record your screen on MacOS."
+  },
+  "categories": [
+    "browser"
+  ],
+  "tags": [
+    "developer tools",
+    "image and video processing",
+    "browser automation",
+    "chinese"
+  ],
+  "website": "https://github.com/ZukAi-MCP/webdev-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "webdev-mcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 32.76
+}

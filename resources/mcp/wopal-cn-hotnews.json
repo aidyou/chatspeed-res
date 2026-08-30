@@ -1,0 +1,42 @@
+{
+  "id": "wopal-cn-hotnews",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-hotnews-server",
+    "zh-Hans": "热闻社媒服务",
+    "zh-Hant": "热闻社媒服务"
+  },
+  "description": {
+    "en": "A Model Context Protocol server that provides real-time hot trending topics from major Chinese social platforms and news sites.",
+    "zh-Hans": "一个模型上下文协议服务器，提供来自主要中文社交平台和新闻网站的实时热门话题。",
+    "zh-Hant": "一个模型上下文协议服务器，提供来自主要中文社交平台和新闻网站的实时热门话题。"
+  },
+  "detail": {
+    "en": "# HotNews MCP Server\n\nA Model Context Protocol (MCP) server that provides real-time hot trending topics from major Chinese social platforms and news sites.\n\n## Features\n\n- Real-time hot topics from 9 major Chinese platforms\n- MCP protocol compatible\n- Easy integration with AI models\n- Markdown formatted output with clickable links\n- Heat index support (where available)\n\n## Supported Platforms\n\n1. Zhihu Hot List (知乎热榜)\n2. 36Kr Hot List (36氪热榜)\n3. Baidu Hot Discussion (百度热点)\n4. Bilibili Hot List (B站热榜)\n5. Weibo Hot Search (微博热搜)\n6. Douyin Hot List (抖音热点)\n7. Hupu Hot List (虎扑热榜)\n8. Douban Hot List (豆瓣热榜)\n9. IT News (IT新闻)\n\n> API Source, This project uses the `api.vvhan.com` service for fetching hot topics data.\n\n## Available Tools\n- `get_hot_news`\n  - `sources` - Required arguments: Platform ID list\n- Example usage:\n  - `get_hot_news([3])` : Get Baidu Hot Discussion only\n  - `get_hot_news([1,3,7])` : Get hot lists from zhihuHot, Baidu, and huPu\n  - `get_hot_news([1,2,3,4])` : Get hot lists from zhihuHot, 36Kr, Baidu, and Bilibili`\n\n## Installation\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n### Docker \n（ Docker image not uploaded to Docker Hub, need to build it yourself. ）\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n## Development\n\n```bash\n# Install dependencies\nnpm install\n\n# Watch mode\nnpm run watch\n\n# Build\nnpm run build\n\n# Test URLs\nnpm run test:urls\n```\n\nDocker build:\n\n```bash\ndocker build -t wopal/mcp-server-hotnews:latest -f Dockerfile .\n```\n\n## License\n\nThis MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.",
+    "zh-Hans": "# HotNews MCP Server\n\n一个提供来自中国主要社交平台和新闻网站实时热点话题的模型上下文协议（MCP）服务器。\n\n## 特性\n\n- 来自9个中国主要平台的实时热点\n- 兼容MCP协议\n- 与AI模型轻松集成\n- 支持Markdown格式输出及可点击链接\n- 热度指数支持（在可用的情况下）\n\n## 支持的平台\n\n1. 知乎热榜 (Zhihu Hot List)\n2. 36氪热榜 (36Kr Hot List)\n3. 百度热点 (Baidu Hot Discussion)\n4. B站热榜 (Bilibili Hot List)\n5. 微博热搜 (Weibo Hot Search)\n6. 抖音热点 (Douyin Hot List)\n7. 虎扑热榜 (Hupu Hot List)\n8. 豆瓣热榜 (Douban Hot List)\n9. IT新闻 (IT News)\n\n> API来源，本项目使用`api.vvhan.com`服务来获取热点数据。\n\n## 可用工具\n- `get_hot_news`\n  - `sources` - 必需参数：平台ID列表\n- 使用示例：\n  - `get_hot_news([3])` : 仅获取百度热点讨论\n  - `get_hot_news([1,3,7])` : 获取知乎、百度和虎扑的热门榜单\n  - `get_hot_news([1,2,3,4])` : 获取知乎、36氪、百度和B站的热门榜单\n\n## 安装\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n### Docker \n（Docker镜像尚未上传至Docker Hub，需要自行构建。）\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n## 开发\n\n```bash\n# Install dependencies\nnpm install\n\n# Watch mode\nnpm run watch\n\n# Build\nnpm run build\n\n# Test URLs\nnpm run test:urls\n```\n\nDocker 构建:\n\n```bash\ndocker build -t wopal/mcp-server-hotnews:latest -f Dockerfile .\n```\n\n## 许可证\n\n此MCP服务器根据MIT许可证发布。这意味着您可以自由地使用、修改和分发该软件，但需遵守MIT许可证的条款和条件。更多详情，请参见项目仓库中的LICENSE文件。",
+    "zh-Hant": "# HotNews MCP Server\n\n一个提供来自中国主要社交平台和新闻网站实时热点话题的模型上下文协议（MCP）服务器。\n\n## 特性\n\n- 来自9个中国主要平台的实时热点\n- 兼容MCP协议\n- 与AI模型轻松集成\n- 支持Markdown格式输出及可点击链接\n- 热度指数支持（在可用的情况下）\n\n## 支持的平台\n\n1. 知乎热榜 (Zhihu Hot List)\n2. 36氪热榜 (36Kr Hot List)\n3. 百度热点 (Baidu Hot Discussion)\n4. B站热榜 (Bilibili Hot List)\n5. 微博热搜 (Weibo Hot Search)\n6. 抖音热点 (Douyin Hot List)\n7. 虎扑热榜 (Hupu Hot List)\n8. 豆瓣热榜 (Douban Hot List)\n9. IT新闻 (IT News)\n\n> API来源，本项目使用`api.vvhan.com`服务来获取热点数据。\n\n## 可用工具\n- `get_hot_news`\n  - `sources` - 必需参数：平台ID列表\n- 使用示例：\n  - `get_hot_news([3])` : 仅获取百度热点讨论\n  - `get_hot_news([1,3,7])` : 获取知乎、百度和虎扑的热门榜单\n  - `get_hot_news([1,2,3,4])` : 获取知乎、36氪、百度和B站的热门榜单\n\n## 安装\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n### Docker \n（Docker镜像尚未上传至Docker Hub，需要自行构建。）\n\n```json\n{\n  \"mcpServers\": {\n    \"mcp-server-hotnews\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"wopal/mcp-server-hotnews\"\n      ]\n    }\n  }\n}\n```\n\n## 开发\n\n```bash\n# Install dependencies\nnpm install\n\n# Watch mode\nnpm run watch\n\n# Build\nnpm run build\n\n# Test URLs\nnpm run test:urls\n```\n\nDocker 构建:\n\n```bash\ndocker build -t wopal/mcp-server-hotnews:latest -f Dockerfile .\n```\n\n## 许可证\n\n此MCP服务器根据MIT许可证发布。这意味着您可以自由地使用、修改和分发该软件，但需遵守MIT许可证的条款和条件。更多详情，请参见项目仓库中的LICENSE文件。"
+  },
+  "categories": [
+    "search"
+  ],
+  "tags": [
+    "social media",
+    "search",
+    "chinese"
+  ],
+  "website": "https://github.com/wopal-cn/mcp-hotnews-server",
+  "icon": "/mcp-icons/8f6d9c10209f647476db964a4a070c47.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@wopal/mcp-server-hotnews"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 38.67
+}

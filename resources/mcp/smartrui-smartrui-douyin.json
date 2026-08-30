@@ -1,0 +1,45 @@
+{
+  "id": "smartrui-smartrui-douyin",
+  "channel": "mcp",
+  "name": {
+    "en": "smartrui-douyin-mcp-server",
+    "zh-Hans": "抖音mcp-server",
+    "zh-Hant": "抖音mcp-server"
+  },
+  "description": {
+    "en": "TikTok Video Text Content Parsing and Watermark-Free Video Download 1. 简介 本文档将介绍如何解析抖音视频中的文本内容，并提供一种方法来下载无水印的抖音视频。 2. 抖音视频文本内容解析 2.1 获取视频链接 首先，你需要获取你想要解析的抖音视频的分享链接。例如： https://v.douyin.com/xxxxxx/ 2.2 使用API解析 你可以使用第三方API来解析抖音视频的内容。这里我们以一个假设的API为例： python impor",
+    "zh-Hans": "抖音视频文本内容解析和无水印视频下载",
+    "zh-Hant": "抖音视频文本内容解析和无水印视频下载"
+  },
+  "detail": {
+    "en": "TikTok Video Text Content Parsing and Watermark-Free Video Download\n\n## 1. 简介\n本文档将介绍如何解析抖音视频中的文本内容，并提供一种方法来下载无水印的抖音视频。\n\n## 2. 抖音视频文本内容解析\n### 2.1 获取视频链接\n首先，你需要获取你想要解析的抖音视频的分享链接。例如：\n\nhttps://v.douyin.com/xxxxxx/\n\n### 2.2 使用API解析\n你可以使用第三方API来解析抖音视频的内容。这里我们以一个假设的API为例：\npython\nimport requests\n\ndef parse_douyin_video(url):\n    api_url = \"https://api.example.com/parse\"\n    response = requests.get(api_url, params={\"url\": url})\n    if response.status_code == 200:\n        return response.json()\n    else:\n        return None\n\nvideo_url = \"https://v.douyin.com/xxxxxx/\"\nresult = parse_douyin_video(video_url)\nif result:\n    print(result)\nelse:\n    print(\"Failed to parse the video.\")\n\n### 2.3 解析结果\n解析后的结果通常包含视频标题、描述、作者信息等。例如：\njson\n{\n    \"title\": \"Amazing Travel Vlog\",\n    \"description\": \"Join me on this amazing journey through the mountains!\",\n    \"author\": {\n        \"name\": \"TravelBuddy\",\n        \"id\": \"123456789\"\n    },\n    \"cover_image\": \"http://example.com/image.jpg\",\n    \"play_addr\": \"http://example.com/video.mp4\"\n}\n\n## 3. 无水印视频下载\n### 3.1 获取无水印视频链接\n通过解析得到的`play_addr`通常是带有水印的视频链接。为了获取无水印的视频链接，可以使用以下方法：\npython\ndef get_watermark_free_link(play_addr):\n    # 假设通过某种方式可以转换为无水印链接\n    watermark_free_link = play_addr.replace(\"playwm\", \"play\")\n    return watermark_free_link\n\nwatermark_free_link = get_watermark_free_link(result[\"play_addr\"])\nprint(watermark_free_link)\n\n### 3.2 下载无水印视频\n使用Python的`requests`库可以轻松下载视频：\npython\ndef download_video(url, filename):\n    response = requests.get(url, stream=True)\n    if response.status_code == 200:\n        with open(filename, 'wb') as file:\n            for chunk in response.iter_content(chunk_size=1024):\n                if chunk:\n                    file.write(chunk)\n        print(f\"Video downloaded successfully: {filename}\")\n    else:\n        print(\"Failed to download the video.\")\n\ndownload_video(watermark_free_link, \"video.mp4\")\n\n## 4. 总结\n本文介绍了如何解析抖音视频中的文本内容以及如何下载无水印的抖音视频。希望这些信息对你有所帮助！\n\n更多关于抖音API的信息，请参考[官方文档](https://developers.douyin.com/)。",
+    "zh-Hans": "抖音视频文本内容解析和无水印视频下载",
+    "zh-Hant": "抖音视频文本内容解析和无水印视频下载"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://github.com/smartruiandqq/douyin-mcp-server.git",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "douyin-mcp-server"
+    ],
+    "env": [
+      [
+        "DOUYIN_API_KEY",
+        "SiliconFlow-api-key"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 39.03
+}

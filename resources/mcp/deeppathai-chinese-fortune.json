@@ -1,0 +1,41 @@
+{
+  "id": "deeppathai-chinese-fortune",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-chinese-fortune",
+    "zh-Hans": "算命大师",
+    "zh-Hant": "算命大师"
+  },
+  "description": {
+    "en": "mcp-chinese-fortune MCP (Eight Characters Fortune Telling Project) Astrological Analysis System A fortune-telling master based on the Model Context Protocol (MCP). This project supports functions such as Gregorian/Lunar calendar conversion, Four Pillars of Des",
+    "zh-Hans": "mcp-chinese-fortune 命理分析系统 MCP（八字算命项目） 基于模型上下文协议（MCP）的算命大师。 本项目是一个支持公历/农历转换、四柱八字排盘、五行分析、十神推算、运势分析等功能，适用于传统命理应用、算命服务平台、命理类产品。 --- ✨ 功能特色 - 🧮 四柱八字排盘：支持出生日期转干支四柱（年、月、日、时） - 🔥 五行分析：统计木火土金水五行比例 - 🧙 十神推算：基于日主，计算年、月、日、时天干与十神关系 - 📈 命运分析：判断命主旺衰、喜用神、流年大运等 - 📆 虚岁与干支年计算：生",
+    "zh-Hant": "mcp-chinese-fortune 命理分析系统 MCP（八字算命项目） 基于模型上下文协议（MCP）的算命大师。 本项目是一个支持公历/农历转换、四柱八字排盘、五行分析、十神推算、运势分析等功能，适用于传统命理应用、算命服务平台、命理类产品。 --- ✨ 功能特色 - 🧮 四柱八字排盘：支持出生日期转干支四柱（年、月、日、时） - 🔥 五行分析：统计木火土金水五行比例 - 🧙 十神推算：基于日主，计算年、月、日、时天干与十神关系 - 📈 命运分析：判断命主旺衰、喜用神、流年大运等 - 📆 虚岁与干支年计算：生"
+  },
+  "detail": {
+    "en": "# mcp-chinese-fortune\n\n \n\n# MCP (Eight Characters Fortune Telling Project) Astrological Analysis System\n\nA fortune-telling master based on the Model Context Protocol (MCP).\nThis project supports functions such as Gregorian/Lunar calendar conversion, Four Pillars of Destiny (BaZi) charting, Five Elements analysis, Ten Gods calculation, and fortune analysis. It is suitable for traditional astrology applications, fortune-telling service platforms, and astrology-related products.\n\n---\n\n## ✨ Features\n\n- 🧮 **Four Pillars of Destiny Charting**: Supports converting birth dates to the Heavenly Stems and Earthly Branches (Year, Month, Day, Hour)\n- 🔥 **Five Elements Analysis**: Calculates the proportions of Wood, Fire, Earth, Metal, and Water\n- 🧙 **Ten Gods Calculation**: Based on the Day Master, calculates the relationship between the Heavenly Stems of Year, Month, Day, and Hour and the Ten Gods\n- 📈 **Fortune Analysis**: Determines the strength and weakness of the subject, favorable elements, and major life periods\n- 📆 **Age in Chinese Years and Stem-Branch Year Calculation**: Generates stem-branch year notation like \"Wu Zi Year\"\n- 🏮 **Expansion Modules** such as Purple Star, Divine Killers, Life Palace, Body Palace (extendable)\n\n---\n\n## \n▶️ Quick Start\n\n## Deployment Guide\n\n~~~bash\nnpx -y mcp-chinese-fortune\n~~~\n\n### MCP Server Configuration\n\n~~~json\n{\n    \"mcpServers\": {\n        \"mcp-chinese-fortune\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"mcp-chinese-fortune\"\n            ]\n        }\n    }\n}\n~~~\n\n## Usage Example\n\nHelp me with my fortune, birth time: 8:00 AM, October 19, 2011\n\n## \n💭 Murmurs\n\nThis project is for learning purposes only. Updates are welcome. For custom features, services, or integration with internal promotion platforms, please contact the product maintainer.\n\nContact Information\n\n   alt=\"mcp-chinese-fortune MCP server\" />\n  \n  ## Business Cooperation Contact Email:  [deeppathai@outlook.com](mailto:deeppathai@outlook.com)\n\n# ai-deeppath\n\n> Artificial Intelligence · Deep Path Exploration  \n\n🌐 **Official Website**  \n[https://www.ai-deeppath.com](https://www.ai-deeppath.com)\n\n## 🧠 MCP Access Address\n\n- 🌐 [ModelScope MCP Address](https://modelscope.cn/mcp/servers/deeppathai/mcp-chinese-fortune)  \n  Suitable for debugging and integrating `mcp-chinese-fortune` services on the ModelScope platform.",
+    "zh-Hans": "# mcp-chinese-fortune\n\n \n\n# 命理分析系统 MCP（八字算命项目）\n\n基于模型上下文协议（MCP）的算命大师。\n本项目是一个支持公历/农历转换、四柱八字排盘、五行分析、十神推算、运势分析等功能，适用于传统命理应用、算命服务平台、命理类产品。\n\n---\n\n## ✨ 功能特色\n\n- 🧮 **四柱八字排盘**：支持出生日期转干支四柱（年、月、日、时）\n- 🔥 **五行分析**：统计木火土金水五行比例\n- 🧙 **十神推算**：基于日主，计算年、月、日、时天干与十神关系\n- 📈 **命运分析**：判断命主旺衰、喜用神、流年大运等\n- 📆 **虚岁与干支年计算**：生成如「戊子年」样式的干支纪年\n- 🏮 **紫微/神煞/命宫/身宫等拓展模块**（可扩展）\n\n---\n\n## \n▶️Quick Start\n\n## 部署指南\n\n~~~bash\nnpx -y mcp-chinese-fortune\n~~~\n\n### MCP sever configuration\n\n~~~json\n{\n    \"mcpServers\": {\n        \"mcp-chinese-fortune\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"mcp-chinese-fortune\"\n            ]\n        }\n    }\n}\n~~~\n\n## 使用示例\n\n帮我算下命，出生时间 2011年 10月19日8点\n\n## \n💭Murmurs\n\n本项目仅用于学习，欢迎催更。如需定制功能等服务、与内部推广平台对接，请联系产品维护者。\n\n联系方式\n\n   alt=\"mcp-chinese-fortune MCP server\" />\n  \n  ## 商务合作联系邮件：  [deeppathai@outlook.com](mailto:deeppathai@outlook.com)\n\n# ai-deeppath\n\n> 人工智能 · 深度路径探索  \n\n🌐 **官网地址**  \n[https://www.ai-deeppath.com](https://www.ai-deeppath.com)\n\n## 🧠 MCP 接入地址\n\n- 🌐 [魔搭 ModelScope MCP 地址](https://modelscope.cn/mcp/servers/deeppathai/mcp-chinese-fortune)  \n  适用于在 ModelScope 平台上调试和集成 `mcp-chinese-fortune` 服务。",
+    "zh-Hant": "# mcp-chinese-fortune\n\n \n\n# 命理分析系统 MCP（八字算命项目）\n\n基于模型上下文协议（MCP）的算命大师。\n本项目是一个支持公历/农历转换、四柱八字排盘、五行分析、十神推算、运势分析等功能，适用于传统命理应用、算命服务平台、命理类产品。\n\n---\n\n## ✨ 功能特色\n\n- 🧮 **四柱八字排盘**：支持出生日期转干支四柱（年、月、日、时）\n- 🔥 **五行分析**：统计木火土金水五行比例\n- 🧙 **十神推算**：基于日主，计算年、月、日、时天干与十神关系\n- 📈 **命运分析**：判断命主旺衰、喜用神、流年大运等\n- 📆 **虚岁与干支年计算**：生成如「戊子年」样式的干支纪年\n- 🏮 **紫微/神煞/命宫/身宫等拓展模块**（可扩展）\n\n---\n\n## \n▶️Quick Start\n\n## 部署指南\n\n~~~bash\nnpx -y mcp-chinese-fortune\n~~~\n\n### MCP sever configuration\n\n~~~json\n{\n    \"mcpServers\": {\n        \"mcp-chinese-fortune\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"mcp-chinese-fortune\"\n            ]\n        }\n    }\n}\n~~~\n\n## 使用示例\n\n帮我算下命，出生时间 2011年 10月19日8点\n\n## \n💭Murmurs\n\n本项目仅用于学习，欢迎催更。如需定制功能等服务、与内部推广平台对接，请联系产品维护者。\n\n联系方式\n\n   alt=\"mcp-chinese-fortune MCP server\" />\n  \n  ## 商务合作联系邮件：  [deeppathai@outlook.com](mailto:deeppathai@outlook.com)\n\n# ai-deeppath\n\n> 人工智能 · 深度路径探索  \n\n🌐 **官网地址**  \n[https://www.ai-deeppath.com](https://www.ai-deeppath.com)\n\n## 🧠 MCP 接入地址\n\n- 🌐 [魔搭 ModelScope MCP 地址](https://modelscope.cn/mcp/servers/deeppathai/mcp-chinese-fortune)  \n  适用于在 ModelScope 平台上调试和集成 `mcp-chinese-fortune` 服务。"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "art and culture",
+    "chinese"
+  ],
+  "website": "https://github.com/deeppath-ai/mcp-chinese-fortune",
+  "icon": "/mcp-icons/0568ec92d93ee049f5b3f823f0456454.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-chinese-fortune"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 35.7
+}

@@ -1,0 +1,56 @@
+{
+  "id": "topoteretes-cognee",
+  "channel": "mcp",
+  "name": {
+    "en": "cognee",
+    "zh-Hans": "认知记忆管理平台",
+    "zh-Hant": "认知记忆管理平台"
+  },
+  "description": {
+    "en": "Memory manager for AI apps and Agents using various graph and vector stores and allowing ingestion from 30+ data sources",
+    "zh-Hans": "用于AI应用程序和代理的记忆管理器，使用各种图和向量存储，并允许从30多个数据源进行摄入。",
+    "zh-Hant": "用于AI应用程序和代理的记忆管理器，使用各种图和向量存储，并允许从30多个数据源进行摄入。"
+  },
+  "detail": {
+    "en": "# cognee MCP server\n\n### Installing Manually\nA MCP server project\n=======\n1. Clone the [cognee](https://github.com/topoteretes/cognee) repo\n\n2. Install dependencies\n\n```\nbrew install uv\n```\n\n```jsx\ncd cognee-mcp\nuv sync --dev --all-extras --reinstall\n```\n\n3. Activate the venv with\n\n```jsx\nsource .venv/bin/activate\n```\n\n4. Add the new server to your Claude config:\n\nThe file should be located here: ~/Library/Application Support/Claude/\n```\ncd ~/Library/Application Support/Claude/\n```\nYou need to create claude_desktop_config.json in this folder if it doesn't exist\nMake sure to add your paths and LLM API key to the file bellow\nUse your editor of choice, for example Nano:\n```\nnano claude_desktop_config.json\n```\n\n```\n{\n\t\"mcpServers\": {\n\t\t\"cognee\": {\n\t\t\t\"command\": \"/Users/{user}/cognee/.venv/bin/uv\",\n\t\t\t\"args\": [\n        \"--directory\",\n        \"/Users/{user}/cognee/cognee-mcp\",\n        \"run\",\n        \"cognee\"\n      ],\n      \"env\": {\n        \"ENV\": \"local\",\n        \"TOKENIZERS_PARALLELISM\": \"false\",\n        \"LLM_API_KEY\": \"sk-\"\n      }\n\t\t}\n\t}\n}\n```\n\nRestart your Claude desktop.\n\n### Installing via Smithery\n\nTo install Cognee for Claude Desktop automatically via [Smithery](https://smithery.ai/server/cognee):\n\n```bash\nnpx -y @smithery/cli install cognee --client claude\n```\n\nDefine cognify tool in server.py\nRestart your Claude desktop.\n\nTo use debugger, run:\n```bash\nmcp dev src/server.py\n```\nOpen inspector with timeout passed:\n```\nhttp://localhost:5173?timeout=120000\n```\n\nTo apply new changes while developing cognee you need to do:\n\n1. `poetry lock` in cognee folder\n2. `uv sync --dev --all-extras --reinstall`\n3. `mcp dev src/server.py`",
+    "zh-Hans": "# cognee MCP 服务器\n\n### 手动安装\n这是一个 MCP 服务器项目\n=======\n1. 克隆 [cognee](https://github.com/topoteretes/cognee) 仓库\n\n2. 安装依赖项\n\n```\nbrew install uv\n```\n\n```jsx\ncd cognee-mcp\nuv sync --dev --all-extras --reinstall\n```\n\n3. 激活虚拟环境：\n\n```jsx\nsource .venv/bin/activate\n```\n\n4. 将新服务器添加到您的 Claude 配置中：\n\n文件应位于这里：~/Library/Application\\ Support/Claude/\n```\ncd ~/Library/Application\\ Support/Claude/\n```\n如果该文件夹中不存在 `claude_desktop_config.json`，则需要创建它。\n确保将您的路径和 LLM API 密钥添加到下面的文件中。\n使用您选择的编辑器，例如 Nano：\n```\nnano claude_desktop_config.json\n```\n\n```\n{\n    \"mcpServers\": {\n        \"cognee\": {\n            \"command\": \"/Users/{user}/cognee/.venv/bin/uv\",\n            \"args\": [\n        \"--directory\",\n        \"/Users/{user}/cognee/cognee-mcp\",\n        \"run\",\n        \"cognee\"\n      ],\n      \"env\": {\n        \"ENV\": \"local\",\n        \"TOKENIZERS_PARALLELISM\": \"false\",\n        \"LLM_API_KEY\": \"sk-\"\n      }\n        }\n    }\n}\n```\n\n重启您的 Claude 桌面应用。\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/cognee) 自动为 Claude Desktop 安装 Cognee：\n\n```bash\nnpx -y @smithery/cli install cognee --client claude\n```\n\n在 `server.py` 中定义 `cognify` 工具\n重启您的 Claude 桌面应用。\n\n要使用调试器，请运行：\n```bash\nmcp dev src/server.py\n```\n以超时时间打开检查器：\n```\nhttp://localhost:5173?timeout=120000\n```\n\n在开发 cognee 时，如果您想应用新的更改，需要执行以下步骤：\n\n1. 在 cognee 文件夹中运行 `poetry lock`\n2. 运行 `uv sync --dev --all-extras --reinstall`\n3. 运行 `mcp dev src/server.py`",
+    "zh-Hant": "# cognee MCP 服务器\n\n### 手动安装\n这是一个 MCP 服务器项目\n=======\n1. 克隆 [cognee](https://github.com/topoteretes/cognee) 仓库\n\n2. 安装依赖项\n\n```\nbrew install uv\n```\n\n```jsx\ncd cognee-mcp\nuv sync --dev --all-extras --reinstall\n```\n\n3. 激活虚拟环境：\n\n```jsx\nsource .venv/bin/activate\n```\n\n4. 将新服务器添加到您的 Claude 配置中：\n\n文件应位于这里：~/Library/Application\\ Support/Claude/\n```\ncd ~/Library/Application\\ Support/Claude/\n```\n如果该文件夹中不存在 `claude_desktop_config.json`，则需要创建它。\n确保将您的路径和 LLM API 密钥添加到下面的文件中。\n使用您选择的编辑器，例如 Nano：\n```\nnano claude_desktop_config.json\n```\n\n```\n{\n    \"mcpServers\": {\n        \"cognee\": {\n            \"command\": \"/Users/{user}/cognee/.venv/bin/uv\",\n            \"args\": [\n        \"--directory\",\n        \"/Users/{user}/cognee/cognee-mcp\",\n        \"run\",\n        \"cognee\"\n      ],\n      \"env\": {\n        \"ENV\": \"local\",\n        \"TOKENIZERS_PARALLELISM\": \"false\",\n        \"LLM_API_KEY\": \"sk-\"\n      }\n        }\n    }\n}\n```\n\n重启您的 Claude 桌面应用。\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/cognee) 自动为 Claude Desktop 安装 Cognee：\n\n```bash\nnpx -y @smithery/cli install cognee --client claude\n```\n\n在 `server.py` 中定义 `cognify` 工具\n重启您的 Claude 桌面应用。\n\n要使用调试器，请运行：\n```bash\nmcp dev src/server.py\n```\n以超时时间打开检查器：\n```\nhttp://localhost:5173?timeout=120000\n```\n\n在开发 cognee 时，如果您想应用新的更改，需要执行以下步骤：\n\n1. 在 cognee 文件夹中运行 `poetry lock`\n2. 运行 `uv sync --dev --all-extras --reinstall`\n3. 运行 `mcp dev src/server.py`"
+  },
+  "categories": [
+    "memory"
+  ],
+  "tags": [
+    "knowledge and memory",
+    "chinese"
+  ],
+  "website": "https://github.com/topoteretes/cognee/tree/dev/cognee-mcp",
+  "icon": "/mcp-icons/c0287272a5d56c28374121f81dba3cb1.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "/Users/{user}/cognee/.venv/bin/uv",
+    "args": [
+      "--directory",
+      "/Users/{user}/cognee/cognee-mcp",
+      "run",
+      "cognee"
+    ],
+    "env": [
+      [
+        "ENV",
+        "local"
+      ],
+      [
+        "LLM_API_KEY",
+        "{YOUR_LLM_API_KEY}"
+      ],
+      [
+        "TOKENIZERS_PARALLELISM",
+        "false"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 2.93
+}

@@ -1,0 +1,43 @@
+{
+  "id": "qinyuanpei-weibo",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-server-weibo",
+    "zh-Hans": "mcp-server微博抓取器",
+    "zh-Hant": "mcp-server微博抓取器"
+  },
+  "description": {
+    "en": "A Model Context Protocol server for scraping Weibo user information, feeds, and search functionality. It helps retrieve detailed user profiles, timeline content, and perform user searches on Weibo.",
+    "zh-Hans": "一种用于抓取微博用户信息、动态和搜索功能的模型上下文协议服务器。它有助于获取详细的用户资料、时间线内容，并在微博上执行用户搜索。",
+    "zh-Hant": "一种用于抓取微博用户信息、动态和搜索功能的模型上下文协议服务器。它有助于获取详细的用户资料、时间线内容，并在微博上执行用户搜索。"
+  },
+  "detail": {
+    "en": "# Weibo MCP Server\n\n这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取微博用户的详细信息、动态内容以及进行用户搜索。\n\n## 安装\n\n从源代码安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/qinyuanpei/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n从包管理器安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## 组件\n\n### 工具\n\n- `search_users(keyword, limit)`: 用于搜索微博用户\n- `get_profile(uid)`: 获取用户详细信息\n- `get_feeds(uid, limit)`: 获取用户动态\n\n### 资源   \n\n无\n\n### 提示\n\n无\n\n## 依赖要求\n\n- Python >= 3.10\n- httpx >= 0.24.0\n\n## 许可证\n\nMIT 许可证 - 详见 [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/blob/HEAD/LICENSE) 文件\n\n## 免责声明\n\n本项目与微博官方无关，仅用于学习和研究目的。",
+    "zh-Hans": "# 微博 MCP 服务器\n\n这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取微博用户的详细信息、动态内容以及进行用户搜索。\n\n## 安装\n\n从源代码安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/qinyuanpei/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n\n从包管理器安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## 组件\n\n### 工具\n\n- `search_users(keyword, limit)`: 用于搜索微博用户\n- `get_profile(uid)`: 获取用户详细信息\n- `get_feeds(uid, limit)`: 获取用户动态\n\n### 资源   \n\n无\n\n### 提示\n\n无\n\n## 依赖要求\n\n- Python >= 3.10\n- httpx >= 0.24.0\n\n## 许可证\n\nMIT 许可证 - 详见 [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/blob/HEAD/LICENSE) 文件\n\n## 免责声明\n\n本项目与微博官方无关，仅用于学习和研究目的。",
+    "zh-Hant": "# 微博 MCP 服务器\n\n这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取微博用户的详细信息、动态内容以及进行用户搜索。\n\n## 安装\n\n从源代码安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/qinyuanpei/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n\n从包管理器安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"uvx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## 组件\n\n### 工具\n\n- `search_users(keyword, limit)`: 用于搜索微博用户\n- `get_profile(uid)`: 获取用户详细信息\n- `get_feeds(uid, limit)`: 获取用户动态\n\n### 资源   \n\n无\n\n### 提示\n\n无\n\n## 依赖要求\n\n- Python >= 3.10\n- httpx >= 0.24.0\n\n## 许可证\n\nMIT 许可证 - 详见 [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/blob/HEAD/LICENSE) 文件\n\n## 免责声明\n\n本项目与微博官方无关，仅用于学习和研究目的。"
+  },
+  "categories": [
+    "browser"
+  ],
+  "tags": [
+    "browser automation",
+    "social media",
+    "chinese"
+  ],
+  "website": "https://github.com/qinyuanpei/mcp-server-weibo",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "git+https://github.com/qinyuanpei/mcp-server-weibo.git",
+      "mcp-server-weibo"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 1.71
+}

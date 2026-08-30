@@ -1,0 +1,40 @@
+{
+  "id": "nmgliangwei-ip2region",
+  "channel": "mcp",
+  "name": {
+    "en": "ip2region",
+    "zh-Hans": "ip地址归属地查询",
+    "zh-Hant": "ip地址归属地查询"
+  },
+  "description": {
+    "en": "You can obtain the local public IP and also support querying the归属地 (location) of any IP address.\n\nIt seems like a part of your sentence was left in Chinese. I assume you meant to say \"querying the location of any IP address.\" Here is the complete translation:\n\n---\n\nYou can obtain the local public IP and also support querying the location of any IP address.",
+    "zh-Hans": "可获取本地公网ip，并且支持任意ip地址归属地查询",
+    "zh-Hant": "可获取本地公网ip，并且支持任意ip地址归属地查询"
+  },
+  "detail": {
+    "en": "### 提供2个免费mcp工具，无需认证，无需付费，开箱即用\r\n#### 1. ip2region 支持任意IP地址归属地查询\r\n#### 2. get_local_ip 获取您本地公网IP\r\n\r\n### 非mcp调用，请使用 ifconfig.cc 同样免费\r\n### 使用方法：将以下json添加到配置文件中\r\n```\n{\r\n  \"mcpServers\": {\r\n    \"ip2region\": {\r\n      \"url\": \"https://mcp.ifconfig.cc\"\r\n    }\r\n  }\r\n}\r\n```",
+    "zh-Hans": "### 提供2个免费mcp工具，无需认证，无需付费，开箱即用\n#### 1. ip2region 支持任意IP地址归属地查询\n#### 2. get_local_ip 获取您本地公网IP\n\n### 非mcp调用，请使用 ifconfig.cc 同样免费\n### 使用方法：将以下json添加到配置文件中\njson\n{\n  \"mcpServers\": {\n    \"ip2region\": {\n      \"url\": \"https://mcp.ifconfig.cc\"\n    }\n  }\n}",
+    "zh-Hant": "### 提供2个免费mcp工具，无需认证，无需付费，开箱即用\n#### 1. ip2region 支持任意IP地址归属地查询\n#### 2. get_local_ip 获取您本地公网IP\n\n### 非mcp调用，请使用 ifconfig.cc 同样免费\n### 使用方法：将以下json添加到配置文件中\njson\n{\n  \"mcpServers\": {\n    \"ip2region\": {\n      \"url\": \"https://mcp.ifconfig.cc\"\n    }\n  }\n}"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "developer tools",
+    "location services",
+    "search",
+    "ip",
+    "归属地"
+  ],
+  "website": "https://ifconfig.cc",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "http",
+    "url": "https://mcp.ifconfig.cc",
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 6.88
+}

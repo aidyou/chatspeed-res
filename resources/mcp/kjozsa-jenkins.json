@@ -1,0 +1,59 @@
+{
+  "id": "kjozsa-jenkins",
+  "channel": "mcp",
+  "name": {
+    "en": "jenkins-mcp",
+    "zh-Hans": "Jenkins-MCP管理工具",
+    "zh-Hant": "Jenkins-MCP管理工具"
+  },
+  "description": {
+    "en": "Enables managing Jenkins operations like listing jobs, triggering builds, and checking build statuses through a configurable MCP server.",
+    "zh-Hans": "通过可配置的MCP服务器，启用管理Jenkins操作的功能，例如列出作业、触发构建和检查构建状态。",
+    "zh-Hant": "通过可配置的MCP服务器，启用管理Jenkins操作的功能，例如列出作业、触发构建和检查构建状态。"
+  },
+  "detail": {
+    "en": "# Jenkins MCP\n[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)\nMCP server for managing Jenkins operations.\n\n  \n\n## Installation\n### Installing via Smithery\n\nTo install Jenkins MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp):\n\n```bash\nnpx -y @smithery/cli install @kjozsa/jenkins-mcp --client claude\n```\n\n### Installing Manually\n```bash\nuvx install jenkins-mcp\n```\n\n## Configuration\nAdd the MCP server using the following JSON configuration snippet:\n\n```json\n{\n  \"mcpServers\": {\n    \"jenkins-mcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"jenkins-mcp\"],\n      \"env\": {\n        \"JENKINS_URL\": \"https://your-jenkins-server/\",\n        \"JENKINS_USERNAME\": \"your-username\",\n        \"JENKINS_PASSWORD\": \"your-password\",\n        \"JENKINS_USE_API_TOKEN\": \"false\"\n      }\n    }\n  }\n}\n```\n\n## CSRF Crumb Handling\n\nJenkins implements CSRF protection using \"crumbs\" - tokens that must be included with POST requests. This MCP server handles CSRF crumbs in two ways:\n\n1. **Default Mode**: Automatically fetches and includes CSRF crumbs with build requests\n   - Uses session cookies to maintain the web session\n   - Handles all the CSRF protection behind the scenes\n\n2. **API Token Mode**: Uses Jenkins API tokens which are exempt from CSRF protection\n   - Set `JENKINS_USE_API_TOKEN=true`\n   - Set `JENKINS_PASSWORD` to your API token instead of password\n   - Works with Jenkins 2.96+ which doesn't require crumbs for API token auth\n\nYou can generate an API token in Jenkins at: User → Configure → API Token → Add new Token\n\n## Features\n- List Jenkins jobs\n- Trigger builds with optional parameters\n- Check build status\n- CSRF crumb handling for secure API access\n\n## Development\n```bash\n# Install dependencies\nuv pip install -r requirements.txt\n\n# Run in dev mode with Inspector\nmcp dev jenkins_mcp/server.py\n```",
+    "zh-Hans": "# Jenkins MCP\n[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)\n用于管理Jenkins操作的MCP服务器。\n\n  \n\n## 安装\n### 通过Smithery安装\n\n要通过[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)自动为Claude Desktop安装Jenkins MCP：\n\n```bash\nnpx -y @smithery/cli install @kjozsa/jenkins-mcp --client claude\n```\n\n### 手动安装\n```bash\nuvx install jenkins-mcp\n```\n\n## 配置\n使用以下JSON配置片段添加MCP服务器：\n\n```json\n{\n  \"mcpServers\": {\n    \"jenkins-mcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"jenkins-mcp\"],\n      \"env\": {\n        \"JENKINS_URL\": \"https://your-jenkins-server/\",\n        \"JENKINS_USERNAME\": \"your-username\",\n        \"JENKINS_PASSWORD\": \"your-password\",\n        \"JENKINS_USE_API_TOKEN\": \"false\"\n      }\n    }\n  }\n}\n```\n\n## CSRF Crumb处理\n\nJenkins通过“crumbs”（一种令牌）来实现CSRF保护，这些令牌必须随POST请求一起包含。此MCP服务器以两种方式处理CSRF crumbs：\n\n1. **默认模式**：自动获取并包括构建请求中的CSRF crumbs\n   - 使用会话cookie来保持Web会话\n   - 在后台处理所有CSRF保护\n\n2. **API令牌模式**：使用免于CSRF保护的Jenkins API令牌\n   - 设置`JENKINS_USE_API_TOKEN=true`\n   - 将`JENKINS_PASSWORD`设置为您的API令牌而不是密码\n   - 适用于Jenkins 2.96+版本，该版本在API令牌认证时不需要crumbs\n\n您可以在Jenkins中生成API令牌：用户 → 配置 → API令牌 → 添加新令牌\n\n## 功能\n- 列出Jenkins作业\n- 触发带有可选参数的构建\n- 检查构建状态\n- 为安全API访问处理CSRF crumbs\n\n## 开发\n```bash\n# Install dependencies\nuv pip install -r requirements.txt\n\n# Run in dev mode with Inspector\nmcp dev jenkins_mcp/server.py\n```",
+    "zh-Hant": "# Jenkins MCP\n[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)\n用于管理Jenkins操作的MCP服务器。\n\n  \n\n## 安装\n### 通过Smithery安装\n\n要通过[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)自动为Claude Desktop安装Jenkins MCP：\n\n```bash\nnpx -y @smithery/cli install @kjozsa/jenkins-mcp --client claude\n```\n\n### 手动安装\n```bash\nuvx install jenkins-mcp\n```\n\n## 配置\n使用以下JSON配置片段添加MCP服务器：\n\n```json\n{\n  \"mcpServers\": {\n    \"jenkins-mcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"jenkins-mcp\"],\n      \"env\": {\n        \"JENKINS_URL\": \"https://your-jenkins-server/\",\n        \"JENKINS_USERNAME\": \"your-username\",\n        \"JENKINS_PASSWORD\": \"your-password\",\n        \"JENKINS_USE_API_TOKEN\": \"false\"\n      }\n    }\n  }\n}\n```\n\n## CSRF Crumb处理\n\nJenkins通过“crumbs”（一种令牌）来实现CSRF保护，这些令牌必须随POST请求一起包含。此MCP服务器以两种方式处理CSRF crumbs：\n\n1. **默认模式**：自动获取并包括构建请求中的CSRF crumbs\n   - 使用会话cookie来保持Web会话\n   - 在后台处理所有CSRF保护\n\n2. **API令牌模式**：使用免于CSRF保护的Jenkins API令牌\n   - 设置`JENKINS_USE_API_TOKEN=true`\n   - 将`JENKINS_PASSWORD`设置为您的API令牌而不是密码\n   - 适用于Jenkins 2.96+版本，该版本在API令牌认证时不需要crumbs\n\n您可以在Jenkins中生成API令牌：用户 → 配置 → API令牌 → 添加新令牌\n\n## 功能\n- 列出Jenkins作业\n- 触发带有可选参数的构建\n- 检查构建状态\n- 为安全API访问处理CSRF crumbs\n\n## 开发\n```bash\n# Install dependencies\nuv pip install -r requirements.txt\n\n# Run in dev mode with Inspector\nmcp dev jenkins_mcp/server.py\n```"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "os automation",
+    "monitoring",
+    "chinese"
+  ],
+  "website": "https://github.com/kjozsa/jenkins-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "jenkins-mcp"
+    ],
+    "env": [
+      [
+        "JENKINS_PASSWORD",
+        "your-password"
+      ],
+      [
+        "JENKINS_URL",
+        "https://your-jenkins-server/"
+      ],
+      [
+        "JENKINS_USERNAME",
+        "your-username"
+      ],
+      [
+        "JENKINS_USE_API_TOKEN",
+        "false"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 23.35
+}

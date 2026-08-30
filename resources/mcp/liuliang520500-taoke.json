@@ -1,0 +1,81 @@
+{
+  "id": "liuliang520500-taoke",
+  "channel": "mcp",
+  "name": {
+    "en": "taoke-mcp",
+    "zh-Hans": "淘客助手",
+    "zh-Hant": "淘客助手"
+  },
+  "description": {
+    "en": "In the comprehensive shopping price comparison scenario, searching for coupons and comparing prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo—integrates the understanding capabilities of large models to provide users with the information.\n\n- 代码块和链接保持不变。\n- 格式结构保持一致。\n- 专业术语如“API接口”、“大模型”等确保翻译准确。 \n\nHere is the translation:\n\nIn the comprehensive shopping price comparison scenario, search for coupons and compare prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo. This process integrates the understanding capabilities of large models to output the information to the user.",
+    "zh-Hans": "综合购物比价场景，搜索优惠券，通过调用三大平台淘宝、京东、拼多多官方API接口，来搜索商品并比价结合大模型的理解能力输出给用户",
+    "zh-Hant": "综合购物比价场景，搜索优惠券，通过调用三大平台淘宝、京东、拼多多官方API接口，来搜索商品并比价结合大模型的理解能力输出给用户"
+  },
+  "detail": {
+    "en": "# Taobao MCP Service\n\n[Smithery](https://smithery.ai/server/@liuliang520530/taoke-mcp)\n\nThe Taobao Alliance, JD Alliance, and Pinduoduo full-platform MCP service is a service based on the Model Context Protocol (MCP), supporting link conversion and product promotion functions for the three major e-commerce platforms: Taobao, JD, and Pinduoduo. It also includes a series of tools such as product search.\n\n# GitHub:\n\nhttps://github.com/liuliang520530/taoke-mcp/\n\n## Video Tutorial\n\nhttps://www.bilibili.com/video/BV1tE5jzLEMu/\n\n## Smithery Service Hosting\nhttps://smithery.ai/server/@liuliang520530/taoke-mcp\n\n## Docker Deployment Support\nhttps://hub.docker.com/r/liuliang520500/taoke-mcp\n\nshell\ndocker run -dit \\\n--name taoke-mcp  \\\n--restart always \\\n-p 8081:8081 \\\n-e ENV_URL=https://config.sinataoke.cn/api/mcp/secret \\\n-e ENV_SECRET=url:mcp.sinataoke.cn \\\n-e ENV_OVERRIDE=false \\\nliuliang520500/taoke-mcp\n\nYou can add more environment variables with -e, refer to the stdio configuration below.\n\n## Official Documentation\n\nhttps://mcp.sinataoke.cn/docs\n\n## Tool Demonstration on Cherry Studio\n\n# Usage\n\n### Environment Variable Configuration\n\nThe service requires the following environment variables to be configured:\n\nshell\n# Environment variable loading configuration\nENV_URL=https://config.sinataoke.cn/api/mcp/secret\nENV_SECRET=url:mcp.sinataoke.cn\nENV_OVERRIDE=false  # Optional, whether to override existing environment variables, this must be false, otherwise the following configurations will not take effect\n\n# Taobao Alliance API configuration\nTAOBAO_PID=your-pid # Taobao Alliance PID\nTAOBAO_SESSION=your-session # Your authorization ID, see the authorization link below\n\n# JD Alliance API configuration\nJD_KEY=your-jd-key # Obtained from union.jd.com\nJD_PID=your-pid-id # The first part of the PID\n\n# Pinduoduo API configuration\nPDD_PID=your-pid # Obtained from jinbao.pinduoduo.com, requires authorization\nPDD_SESSION_TOKEN=your-session-token # Authorization token, see the authorization link below\n\n# Taobao Alliance Authorization Link:\n\nhttps://oauth.taobao.com/authorize?response_type=token&client_id=34297717&state=1212&view=web\n\n# Pinduoduo Authorization Link\n\nhttps://jinbao.pinduoduo.com/open.html?client_id=313cc43a30cf487da0a336d9f2df7de2&response_type=code&redirect_uri=http%3A%2F%2Fddk.mintaoke.cn%2FApi%2Fget_access_token&view=web\n\n# Pinduoduo PID Authorization\n\n- Use the tool `pdd.goods.prom.url` to convert a promotional link, with the parameter `generate_authority_url=true`. If not authorized, it will prioritize the authorization link.\n- If you want the AI to authorize through MCP, simply send a product link and tell the AI to set `generate_authority_url=true`. The AI will then use the current tool's authorization link to convert a promotional link and return an authorization link to you.\n\n# Integration with Claude Desktop or Cherry Studio\n\nTo use this service in Claude Desktop:\n\n### Using MCP Configuration File\n\nYou can also start the service using an MCP configuration file. Create a file named `mcp.json` with the following content [stdio configuration]:\n\njson\n{\n\t\"mcpServers\": {\n\t\t\"taobao-mcp\": {\n\t\t\t\"name\": \"Shopping Assistant\",\n\t\t\t\"type\": \"stdio\",\n\t\t\t\"isActive\": true,\n\t\t\t\"command\": \"npx\",\n\t\t\t\"args\": [\n\t\t\t\t\"-y\",\n\t\t\t\t\"@liuliang520500/sinataoke_cn@latest\",\n\t\t\t\t\"g:win11desktop/logs/\" // Optional, log folder path, replace with a folder on your local computer if needed\n\t\t\t],\n\t\t\t\"env\": {\n\t\t\t\t\"ENV_URL\": \"https://config.sinataoke.cn/api/mcp/secret\",\n\t\t\t\t\"ENV_SECRET\": \"url:mcp.sinataoke.cn\",\n\t\t\t\t\"ENV_OVERRIDE\": \"false\",\n\t\t\t\t\"TAOBAO_PID\": \"Taobao PID\",\n\t\t\t\t\"TAOBAO_SESSION\": \"Taobao authorization token, see the authorization link above, copy the token here after authorization\",\n\t\t\t\t\"JD_KEY\": \"Obtain from union.jd.com\",\n\t\t\t\t\"JD_PID\": \"Obtain from union.jd.com\",\n\t\t\t\t\"PDD_PID\": \"Pinduoduo PID\",\n\t\t\t\t\"PDD_SESSION_TOKEN\": \"Pinduoduo authorization token, see the authorization link above\"\n\t\t\t}\n\t\t}\n\t}\n}\n\n## Supported Features\n\n### Taobao Platform\n\n- Link conversion\n- Link parsing\n- Activity conversion\n- Order details query\n- Tool list\n- Promotion request\n- Create promotion position\n- Taokouling creation\n- Material search\n- Penalty order query-   Product Information Inquiry\n-   Preferred Promotion\n\n### JD Platform\n\n-   Promotion Position Inquiry\n-   Promotion Position Creation\n-   Alliance Promotion\n-   Product Inquiry\n-   Coupon Inquiry\n\n### Pinduoduo Platform\n\n-   Product Details\n-   CMS Promotion Link\n-   Promotion Position Generation\n-   Promotion Position Inquiry\n-   Promotion Link Generation\n-   Product Recommendation\n-   Product Search\n-   Duoduo Jinbao Link Conversion\n-   Member Permission Inquiry\n-   Order Details Inquiry\n-   Order Incremental Inquiry\n-   Promotion Position Generation\n\n## License\n\nISC\n\n## Author VX\n\n-   liuliangzheng\n\n### For any usage issues, please contact the author and verify the package name:\n\n-   @liuliang520500/sinataoke_cn@latest Beware of counterfeits",
+    "zh-Hans": "# 淘宝客 MCP 服务\r\n\r\n[Smithery](https://smithery.ai/server/@liuliang520530/taoke-mcp)\r\n\r\n淘宝联盟，京东联盟，多多进定全平台 MCP 服务是一个基于 Model Context Protocol (MCP) 的服务，支持淘宝、京东、拼多多三大电商平台的链接转换和商品推广功能，商品搜索等等一系列工具\r\n\r\n# github:\r\n\r\nhttps://github.com/liuliang520530/taoke-mcp/\r\n\r\n## 视频教程\r\n\r\nhttps://www.bilibili.com/video/BV1tE5jzLEMu/\r\n\r\n\r\n## smithery服务托管\r\nhttps://smithery.ai/server/@liuliang520530/taoke-mcp\r\n\r\n## 支持docker部署\r\nhttps://hub.docker.com/r/liuliang520500/taoke-mcp\r\n\r\n```shell\ndocker run -dit \\\r\n--name taoke-mcp  \\\r\n--restart always \\\r\n-p 8081:8081 \\\r\n-e ENV_URL=https://config.sinataoke.cn/api/mcp/secret \\\r\n-e ENV_SECRET=url:mcp.sinataoke.cn \\\r\n-e ENV_OVERRIDE=false \\\r\nliuliang520500/taoke-mcp\r\n\r\n\r\n你可以添加更多的环境变量 -e，参考下面的stdio配置\r\n\r\n```\n\r\n## 官方文档\r\n\r\nhttps://mcp.sinataoke.cn/docs\r\n\r\n## 在 Cherry Studio 上的工具展示\r\n\r\n\r\n\r\n# 使用方法\r\n\r\n### 环境变量配置\r\n\r\n服务需要配置以下环境变量：\r\n\r\n```\n# 环境变量加载配置\r\nENV_URL=https://config.sinataoke.cn/api/mcp/secret\r\nENV_SECRET=url:mcp.sinataoke.cn\r\nENV_OVERRIDE=false  # 可选，是否覆盖当前已存在的环境变量，这个一定要为false，不然下面的配置将不生效\r\n\r\n# 淘宝客API配置\r\nTAOBAO_PID=your-pid # 淘宝联盟PID\r\nTAOBAO_SESSION=your-session # 你的授权ID，下面有授权链接\r\n\r\n# 京东联盟API配置\r\nJD_KEY=your-jd-key # union.jd.com后台获取的\r\nJD_PID=your-pid-id # PID的第一段\r\n\r\n# 拼多多API配置\r\nPDD_PID=your-pid # jinbao.pinduoduo.com上获取的，需要授权\r\nPDD_SESSION_TOKEN=your-session-token # 授权token，授权链接在下面\r\n```\n\r\n# 淘宝联盟授权链接：\r\n\r\nhttps://oauth.taobao.com/authorize?response_type=token&client_id=34297717&state=1212&view=web\r\n\r\n# 拼多多授权链接\r\n\r\nhttps://jinbao.pinduoduo.com/open.html?client_id=313cc43a30cf487da0a336d9f2df7de2&response_type=code&redirect_uri=http%3A%2F%2Fddk.mintaoke.cn%2FApi%2Fget_access_token&view=web\r\n\r\n# 拼多多 PID 授权\r\n\r\n-   授权链接用工具 pdd.goods.prom.url 转一个推广链接，参数 generate_authority_url=true，如果没授权，会优先走授权链接\r\n-   你如果让 ai 通过 MCP 授权的话，你就直接发送一个商品链接，并告诉 ai 参数 generate_authority_url=true，然后 ai 就会通过当前工具授权链接用工具 pdd.goods.prom.url 转一个推广链接，并返回一个授权链接给你\r\n\r\n# 与 Claude Desktop 或 Cherry Studio 集成\r\n\r\n要在 Claude Desktop 中使用此服务\r\n\r\n### 使用 MCP 配置文件\r\n\r\n您也可以使用 MCP 配置文件来启动服务。创建一个名为 `mcp.json` 的文件，内容如下【stdio配置】：\r\n\r\n```json\n{\r\n\t\"mcpServers\": {\r\n\t\t\"taobao-mcp\": {\r\n\t\t\t\"name\": \"导购助手\",\r\n\t\t\t\"type\": \"stdio\",\r\n\t\t\t\"isActive\": true,\r\n\t\t\t\"command\": \"npx\",\r\n\t\t\t\"args\": [\r\n\t\t\t\t\"-y\",\r\n\t\t\t\t\"@liuliang520500/sinataoke_cn@latest\",\r\n\t\t\t\t\"g:win11desktop/logs/\" // 可选，日志文件夹路径,，如果要填写，要换成你自己本地电脑上的一个文件夹\r\n\t\t\t],\r\n\t\t\t\"env\": {\r\n\t\t\t\t\"ENV_URL\": \"https://config.sinataoke.cn/api/mcp/secret\",\r\n\t\t\t\t\"ENV_SECRET\": \"url:mcp.sinataoke.cn\",\r\n\t\t\t\t\"ENV_OVERRIDE\": \"false\",\r\n\t\t\t\t\"TAOBAO_PID\": \"淘宝PID\",\r\n\t\t\t\t\"TAOBAO_SESSION\": \"淘宝授权token，上面有授权链接，授权后，复制token到这里\",\r\n\t\t\t\t\"JD_KEY\": \"union.jd.com上去取\",\r\n\t\t\t\t\"JD_PID\": \"union.jd.com上去取\",\r\n\t\t\t\t\"PDD_PID\": \"拼多多PID\",\r\n\t\t\t\t\"PDD_SESSION_TOKEN\": \"拼多多授权token，上面有授权链接\"\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n```\n\r\n## 支持的功能\r\n\r\n### 淘宝平台\r\n\r\n-   链接转换\r\n-   链接解析\r\n-   活动转换\r\n-   订单详情查询\r\n-   工具列表\r\n-   推广请求\r\n-   创建推广位\r\n-   淘口令创建\r\n-   物料搜索\r\n-   处罚订单查询\r\n-   商品信息查询\r\n-   优选推广\r\n\r\n### 京东平台\r\n\r\n-   推广位查询\r\n-   推广位创建\r\n-   联盟推广\r\n-   商品查询\r\n-   优惠券查询\r\n\r\n### 拼多多平台\r\n\r\n-   商品详情\r\n-   CMS 推广链接\r\n-   推广位生成\r\n-   推广位查询\r\n-   推广链接生成\r\n-   商品推荐\r\n-   商品搜索\r\n-   多多进宝转链\r\n-   会员权限查询\r\n-   订单详情查询\r\n-   订单增量查询\r\n-   推广位生成\r\n\r\n## 许可证\r\n\r\nISC\r\n\r\n## 作者 VX\r\n\r\n-   liuliangzheng\r\n\r\n### 有任务使用问题联系作者，请认准包名：\r\n\r\n-   @liuliang520500/sinataoke_cn@latest 谨防假冒",
+    "zh-Hant": "# 淘宝客 MCP 服务\r\n\r\n[Smithery](https://smithery.ai/server/@liuliang520530/taoke-mcp)\r\n\r\n淘宝联盟，京东联盟，多多进定全平台 MCP 服务是一个基于 Model Context Protocol (MCP) 的服务，支持淘宝、京东、拼多多三大电商平台的链接转换和商品推广功能，商品搜索等等一系列工具\r\n\r\n# github:\r\n\r\nhttps://github.com/liuliang520530/taoke-mcp/\r\n\r\n## 视频教程\r\n\r\nhttps://www.bilibili.com/video/BV1tE5jzLEMu/\r\n\r\n\r\n## smithery服务托管\r\nhttps://smithery.ai/server/@liuliang520530/taoke-mcp\r\n\r\n## 支持docker部署\r\nhttps://hub.docker.com/r/liuliang520500/taoke-mcp\r\n\r\n```shell\ndocker run -dit \\\r\n--name taoke-mcp  \\\r\n--restart always \\\r\n-p 8081:8081 \\\r\n-e ENV_URL=https://config.sinataoke.cn/api/mcp/secret \\\r\n-e ENV_SECRET=url:mcp.sinataoke.cn \\\r\n-e ENV_OVERRIDE=false \\\r\nliuliang520500/taoke-mcp\r\n\r\n\r\n你可以添加更多的环境变量 -e，参考下面的stdio配置\r\n\r\n```\n\r\n## 官方文档\r\n\r\nhttps://mcp.sinataoke.cn/docs\r\n\r\n## 在 Cherry Studio 上的工具展示\r\n\r\n\r\n\r\n# 使用方法\r\n\r\n### 环境变量配置\r\n\r\n服务需要配置以下环境变量：\r\n\r\n```\n# 环境变量加载配置\r\nENV_URL=https://config.sinataoke.cn/api/mcp/secret\r\nENV_SECRET=url:mcp.sinataoke.cn\r\nENV_OVERRIDE=false  # 可选，是否覆盖当前已存在的环境变量，这个一定要为false，不然下面的配置将不生效\r\n\r\n# 淘宝客API配置\r\nTAOBAO_PID=your-pid # 淘宝联盟PID\r\nTAOBAO_SESSION=your-session # 你的授权ID，下面有授权链接\r\n\r\n# 京东联盟API配置\r\nJD_KEY=your-jd-key # union.jd.com后台获取的\r\nJD_PID=your-pid-id # PID的第一段\r\n\r\n# 拼多多API配置\r\nPDD_PID=your-pid # jinbao.pinduoduo.com上获取的，需要授权\r\nPDD_SESSION_TOKEN=your-session-token # 授权token，授权链接在下面\r\n```\n\r\n# 淘宝联盟授权链接：\r\n\r\nhttps://oauth.taobao.com/authorize?response_type=token&client_id=34297717&state=1212&view=web\r\n\r\n# 拼多多授权链接\r\n\r\nhttps://jinbao.pinduoduo.com/open.html?client_id=313cc43a30cf487da0a336d9f2df7de2&response_type=code&redirect_uri=http%3A%2F%2Fddk.mintaoke.cn%2FApi%2Fget_access_token&view=web\r\n\r\n# 拼多多 PID 授权\r\n\r\n-   授权链接用工具 pdd.goods.prom.url 转一个推广链接，参数 generate_authority_url=true，如果没授权，会优先走授权链接\r\n-   你如果让 ai 通过 MCP 授权的话，你就直接发送一个商品链接，并告诉 ai 参数 generate_authority_url=true，然后 ai 就会通过当前工具授权链接用工具 pdd.goods.prom.url 转一个推广链接，并返回一个授权链接给你\r\n\r\n# 与 Claude Desktop 或 Cherry Studio 集成\r\n\r\n要在 Claude Desktop 中使用此服务\r\n\r\n### 使用 MCP 配置文件\r\n\r\n您也可以使用 MCP 配置文件来启动服务。创建一个名为 `mcp.json` 的文件，内容如下【stdio配置】：\r\n\r\n```json\n{\r\n\t\"mcpServers\": {\r\n\t\t\"taobao-mcp\": {\r\n\t\t\t\"name\": \"导购助手\",\r\n\t\t\t\"type\": \"stdio\",\r\n\t\t\t\"isActive\": true,\r\n\t\t\t\"command\": \"npx\",\r\n\t\t\t\"args\": [\r\n\t\t\t\t\"-y\",\r\n\t\t\t\t\"@liuliang520500/sinataoke_cn@latest\",\r\n\t\t\t\t\"g:win11desktop/logs/\" // 可选，日志文件夹路径,，如果要填写，要换成你自己本地电脑上的一个文件夹\r\n\t\t\t],\r\n\t\t\t\"env\": {\r\n\t\t\t\t\"ENV_URL\": \"https://config.sinataoke.cn/api/mcp/secret\",\r\n\t\t\t\t\"ENV_SECRET\": \"url:mcp.sinataoke.cn\",\r\n\t\t\t\t\"ENV_OVERRIDE\": \"false\",\r\n\t\t\t\t\"TAOBAO_PID\": \"淘宝PID\",\r\n\t\t\t\t\"TAOBAO_SESSION\": \"淘宝授权token，上面有授权链接，授权后，复制token到这里\",\r\n\t\t\t\t\"JD_KEY\": \"union.jd.com上去取\",\r\n\t\t\t\t\"JD_PID\": \"union.jd.com上去取\",\r\n\t\t\t\t\"PDD_PID\": \"拼多多PID\",\r\n\t\t\t\t\"PDD_SESSION_TOKEN\": \"拼多多授权token，上面有授权链接\"\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n```\n\r\n## 支持的功能\r\n\r\n### 淘宝平台\r\n\r\n-   链接转换\r\n-   链接解析\r\n-   活动转换\r\n-   订单详情查询\r\n-   工具列表\r\n-   推广请求\r\n-   创建推广位\r\n-   淘口令创建\r\n-   物料搜索\r\n-   处罚订单查询\r\n-   商品信息查询\r\n-   优选推广\r\n\r\n### 京东平台\r\n\r\n-   推广位查询\r\n-   推广位创建\r\n-   联盟推广\r\n-   商品查询\r\n-   优惠券查询\r\n\r\n### 拼多多平台\r\n\r\n-   商品详情\r\n-   CMS 推广链接\r\n-   推广位生成\r\n-   推广位查询\r\n-   推广链接生成\r\n-   商品推荐\r\n-   商品搜索\r\n-   多多进宝转链\r\n-   会员权限查询\r\n-   订单详情查询\r\n-   订单增量查询\r\n-   推广位生成\r\n\r\n## 许可证\r\n\r\nISC\r\n\r\n## 作者 VX\r\n\r\n-   liuliangzheng\r\n\r\n### 有任务使用问题联系作者，请认准包名：\r\n\r\n-   @liuliang520500/sinataoke_cn@latest 谨防假冒"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "search",
+    "research and data",
+    "电商,淘宝客,淘宝,京东,拼多多",
+    "chinese"
+  ],
+  "website": "https://github.com/liuliang520530/taoke-mcp",
+  "icon": "/mcp-icons/e25f70463de58a5c3f00ff9e86240a76.jpg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@liuliang520500/sinataoke_cn@latest",
+      "g:win11desktop/logs/"
+    ],
+    "env": [
+      [
+        "ENV_OVERRIDE",
+        "false"
+      ],
+      [
+        "ENV_SECRET",
+        "url:mcp.sinataoke.cn"
+      ],
+      [
+        "ENV_URL",
+        "http://rap2api.taobao.org/app/mock/304812/taoke-mcp"
+      ],
+      [
+        "JD_KEY",
+        "union.jd.com上去取"
+      ],
+      [
+        "JD_PID",
+        "union.jd.com上去取"
+      ],
+      [
+        "PDD_PID",
+        "拼多多PID"
+      ],
+      [
+        "PDD_SESSION_TOKEN",
+        "拼多多授权token，上面有授权链接"
+      ],
+      [
+        "TAOBAO_PID",
+        "淘宝PID"
+      ],
+      [
+        "TAOBAO_SESSION",
+        "淘宝授权token，上面有授权链接，授权后，复制token到这里"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 8.17
+}

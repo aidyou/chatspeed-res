@@ -1,0 +1,43 @@
+{
+  "id": "kevinwatt-yt-dlp",
+  "channel": "mcp",
+  "name": {
+    "en": "yt-dlp-mcp",
+    "zh-Hans": "油管下载器-MCP",
+    "zh-Hant": "油管下载器-MCP"
+  },
+  "description": {
+    "en": "Connects 'yt-dlp' with LLMs via the Model Context Protocol, allowing users to download YouTube content and integrate it with Dive and other MCP-compatible LLMs.",
+    "zh-Hans": "通过模型上下文协议（Model Context Protocol）将“yt-dlp”与大型语言模型（LLMs）连接起来，使用户能够下载YouTube内容，并将其与Dive以及其他与MCP兼容的大型语言模型进行集成。",
+    "zh-Hant": "通过模型上下文协议（Model Context Protocol）将“yt-dlp”与大型语言模型（LLMs）连接起来，使用户能够下载YouTube内容，并将其与Dive以及其他与MCP兼容的大型语言模型进行集成。"
+  },
+  "detail": {
+    "en": "# yt-dlp-mcp\n\nAn MCP server implementation that integrates with yt-dlp, providing video and audio content download capabilities (e.g. YouTube, Facebook, Tiktok, etc.) for LLMs.\n\n## Features\n\n* **Subtitles**: Download subtitles in SRT format for LLMs to read\n* **Video Download**: Save videos to your Downloads folder with resolution control\n* **Audio Download**: Save audios to your Downloads folder\n* **Privacy-Focused**: Direct download without tracking\n* **MCP Integration**: Works with Dive and other MCP-compatible LLMs\n\n## Installation\n\n### Prerequisites\n\nInstall `yt-dlp` based on your operating system:\n\n```bash\n# Windows\nwinget install yt-dlp\n\n# macOS\nbrew install yt-dlp\n\n# Linux\npip install yt-dlp\n```\n\n### With [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)\n\n1. Click \"+ Add MCP Server\" in Dive Desktop\n2. Copy and paste this configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"yt-dlp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/yt-dlp-mcp\"\n      ]\n    }\n  }\n}\n```\n3. Click \"Save\" to install the MCP server\n\n## Tool Documentation\n\n* **list_subtitle_languages**\n  * List all available subtitle languages and their formats for a video (including auto-generated captions)\n  * Inputs:\n    * `url` (string, required): URL of the video\n\n* **download_video_subtitles**\n  * Download video subtitles in any available format. Supports both regular and auto-generated subtitles\n  * Inputs:\n    * `url` (string, required): URL of the video\n    * `language` (string, optional): Language code (e.g., 'en', 'zh-Hant', 'ja'). Defaults to 'en'\n\n* **download_video**\n  * Download video to user's Downloads folder\n  * Inputs:\n    * `url` (string, required): URL of the video\n    * `resolution` (string, optional): Video resolution ('480p', '720p', '1080p', 'best'). Defaults to '720p'\n\n* **download_audio**\n  * Download audio in best available quality (usually m4a/mp3 format) to user's Downloads folder\n  * Inputs:\n    * `url` (string, required): URL of the video\n\n## Usage Examples\n\nAsk your LLM to:\n```\n\"List available subtitles for this video: https://youtube.com/watch?v=...\"\n\"Download a video from facebook: https://facebook.com/...\"\n\"Download Chinese subtitles from this video: https://youtube.com/watch?v=...\"\n\"Download this video in 1080p: https://youtube.com/watch?v=...\"\n\"Download audio from this YouTube video: https://youtube.com/watch?v=...\"\n```\n\n## Manual Start\n\nIf needed, start the server manually:\n```bash\nnpx @kevinwatt/yt-dlp-mcp\n```\n\n## Requirements\n\n* Node.js 20+\n* `yt-dlp` in system PATH\n* MCP-compatible LLM service\n\n## Documentation\n\n- [API Reference](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/api.md)\n- [Configuration](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/configuration.md)\n- [Error Handling](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/error-handling.md)\n- [Contributing](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/contributing.md)\n\n## License\n\nMIT\n\n## Author\n\nDewei Yen",
+    "zh-Hans": "# yt-dlp-mcp\n\n一个与yt-dlp集成的MCP服务器实现，为大型语言模型（LLMs）提供视频和音频内容下载功能（例如YouTube、Facebook、Tiktok等）。\n\n## 功能\n\n* **字幕**：以SRT格式下载字幕供LLMs阅读\n* **视频下载**：将视频保存到您的下载文件夹，并可控制分辨率\n* **音频下载**：将音频保存到您的下载文件夹\n* **注重隐私**：直接下载，无追踪\n* **MCP集成**：与Dive及其他兼容MCP的LLMs一起工作\n\n## 安装\n\n### 前提条件\n\n根据您的操作系统安装`yt-dlp`：\n\n```bash\n# Windows\nwinget install yt-dlp\n\n# macOS\nbrew install yt-dlp\n\n# Linux\npip install yt-dlp\n```\n\n### 通过[Dive Desktop](https://github.com/OpenAgentPlatform/Dive)\n\n1. 在Dive Desktop中点击“+ 添加MCP服务器”\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"yt-dlp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/yt-dlp-mcp\"\n      ]\n    }\n  }\n}\n```\n3. 点击“保存”以安装MCP服务器\n\n## 工具文档\n\n* **list_subtitle_languages**\n  * 列出视频的所有可用字幕语言及其格式（包括自动生成的字幕）\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n\n* **download_video_subtitles**\n  * 以任何可用格式下载视频字幕。支持常规字幕和自动生成的字幕。\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n    * `language` (字符串, 可选): 语言代码（如'en', 'zh-Hant', 'ja'）。默认为'en'\n\n* **download_video**\n  * 将视频下载到用户的下载文件夹\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n    * `resolution` (字符串, 可选): 视频分辨率('480p', '720p', '1080p', 'best')。默认为'720p'\n\n* **download_audio**\n  * 以最佳可用质量（通常是m4a/mp3格式）将音频下载到用户的下载文件夹\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n\n## 使用示例\n\n让您的LLM执行以下命令：\n```\n\"List available subtitles for this video: https://youtube.com/watch?v=...\"\n\"Download a video from facebook: https://facebook.com/...\"\n\"Download Chinese subtitles from this video: https://youtube.com/watch?v=...\"\n\"Download this video in 1080p: https://youtube.com/watch?v=...\"\n\"Download audio from this YouTube video: https://youtube.com/watch?v=...\"\n```\n\n## 手动启动\n\n如果需要，可以手动启动服务器：\n```bash\nnpx @kevinwatt/yt-dlp-mcp\n```\n\n## 要求\n\n* Node.js 20+\n* 系统PATH中的`yt-dlp`\n* 兼容MCP的LLM服务\n\n## 文档\n\n- [API参考](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/api.md)\n- [配置](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/configuration.md)\n- [错误处理](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/error-handling.md)\n- [贡献指南](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/contributing.md)\n\n## 许可证\n\nMIT\n\n## 作者\n\nDewei Yen",
+    "zh-Hant": "# yt-dlp-mcp\n\n一个与yt-dlp集成的MCP服务器实现，为大型语言模型（LLMs）提供视频和音频内容下载功能（例如YouTube、Facebook、Tiktok等）。\n\n## 功能\n\n* **字幕**：以SRT格式下载字幕供LLMs阅读\n* **视频下载**：将视频保存到您的下载文件夹，并可控制分辨率\n* **音频下载**：将音频保存到您的下载文件夹\n* **注重隐私**：直接下载，无追踪\n* **MCP集成**：与Dive及其他兼容MCP的LLMs一起工作\n\n## 安装\n\n### 前提条件\n\n根据您的操作系统安装`yt-dlp`：\n\n```bash\n# Windows\nwinget install yt-dlp\n\n# macOS\nbrew install yt-dlp\n\n# Linux\npip install yt-dlp\n```\n\n### 通过[Dive Desktop](https://github.com/OpenAgentPlatform/Dive)\n\n1. 在Dive Desktop中点击“+ 添加MCP服务器”\n2. 复制并粘贴此配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"yt-dlp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@kevinwatt/yt-dlp-mcp\"\n      ]\n    }\n  }\n}\n```\n3. 点击“保存”以安装MCP服务器\n\n## 工具文档\n\n* **list_subtitle_languages**\n  * 列出视频的所有可用字幕语言及其格式（包括自动生成的字幕）\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n\n* **download_video_subtitles**\n  * 以任何可用格式下载视频字幕。支持常规字幕和自动生成的字幕。\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n    * `language` (字符串, 可选): 语言代码（如'en', 'zh-Hant', 'ja'）。默认为'en'\n\n* **download_video**\n  * 将视频下载到用户的下载文件夹\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n    * `resolution` (字符串, 可选): 视频分辨率('480p', '720p', '1080p', 'best')。默认为'720p'\n\n* **download_audio**\n  * 以最佳可用质量（通常是m4a/mp3格式）将音频下载到用户的下载文件夹\n  * 输入：\n    * `url` (字符串, 必填): 视频的URL\n\n## 使用示例\n\n让您的LLM执行以下命令：\n```\n\"List available subtitles for this video: https://youtube.com/watch?v=...\"\n\"Download a video from facebook: https://facebook.com/...\"\n\"Download Chinese subtitles from this video: https://youtube.com/watch?v=...\"\n\"Download this video in 1080p: https://youtube.com/watch?v=...\"\n\"Download audio from this YouTube video: https://youtube.com/watch?v=...\"\n```\n\n## 手动启动\n\n如果需要，可以手动启动服务器：\n```bash\nnpx @kevinwatt/yt-dlp-mcp\n```\n\n## 要求\n\n* Node.js 20+\n* 系统PATH中的`yt-dlp`\n* 兼容MCP的LLM服务\n\n## 文档\n\n- [API参考](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/api.md)\n- [配置](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/configuration.md)\n- [错误处理](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/error-handling.md)\n- [贡献指南](https://github.com/kevinwatt/yt-dlp-mcp/blob/HEAD/docs/contributing.md)\n\n## 许可证\n\nMIT\n\n## 作者\n\nDewei Yen"
+  },
+  "categories": [
+    "browser",
+    "media"
+  ],
+  "tags": [
+    "browser automation",
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://github.com/kevinwatt/yt-dlp-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@kevinwatt/yt-dlp-mcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 5.02
+}

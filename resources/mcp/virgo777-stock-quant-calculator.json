@@ -1,0 +1,42 @@
+{
+  "id": "virgo777-stock-quant-calculator",
+  "channel": "mcp",
+  "name": {
+    "en": "Stock-Quant-Calculator-MCP",
+    "zh-Hans": "股票量化支撑点位计算器",
+    "zh-Hant": "股票量化支撑点位计算器"
+  },
+  "description": {
+    "en": "Based on the Qwen3 inference engine, the stock quant agent calculates the support levels for a specific stock when it is declining and provides recommendations. Detailed usage instructions can be obtained through the \"Query Operation Manual\" built into the MCP platform.\nFor the web version, please log in at: http://49.235.53.176:929\nFor detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system.",
+    "zh-Hans": "基于Qwen3推理引擎的股票量化智能体，计算特定股票下跌时的介入支撑位，并提供建议。\n其详细使用方法可通过MCP平台内置的《查询操作手册》获取。\n网页版请登录：http://49.235.53.176:929\nFor detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system.",
+    "zh-Hant": "基于Qwen3推理引擎的股票量化智能体，计算特定股票下跌时的介入支撑位，并提供建议。\n其详细使用方法可通过MCP平台内置的《查询操作手册》获取。\n网页版请登录：http://49.235.53.176:929\nFor detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system."
+  },
+  "detail": {
+    "en": "# 股票量化MCP服务使用手册\r\n\r\n## 📌 简介  \r\n**智能股票量化支撑点位计算服务（MCP）** 是基于Qwen3大模型推理能力与远程量化计算服务器构建的专业金融分析工具，提供以下核心功能：  \r\n- 目标股票支撑介入价位计算  \r\n- 标准化API接口与SSE流式数据传输  \r\n\r\n---\r\n\r\n## ⚙️ 服务配置说明  \r\n在您的系统中添加以下JSON配置启用服务：  \r\n```json\n{\r\n    \"mcpServers\": {\r\n        \"quant_mcp_server\": {\r\n            \"type\": \"sse\",\r\n            \"url\": \"http://www.socoo.xyz:9000/sse\"\r\n        }\r\n    }\r\n}\r\n```\n---\r\n# 🛠️ 直接使用方法：\r\n# 建议直接使用上方提供的SSE地址\r\n\r\n| 工具名称             | 使用方法                    | 描述                            |\r\n|:-----------------|:------------------------|:------------------------------|\r\n| cookbook         | 这个socoo股票MCP服务怎么用？      | 返回socoo量化服务MCP的使用指南           |\r\n| get_support_quant_price | 帮我计算一下000858.SZ的支撑位是多少？ | 返回特定股票量化计算得到的支撑位（保守位，正常位，极限位） |\r\n| get-     | 请求...接口                 | 冗余量化计算接口服务                    |\r\n\r\n\r\n\r\n## ❓ 常见问题解答\r\nQ1：如何获取详细文档？\r\n\r\n输入示例：\r\n```text\n    股票量化MCP服务的使用方法有哪些？  (在安装MCP服务过多时候，最好带有socoo关键字)\r\n    这个socoo股票MCP服务怎么用？\r\n    这个socoo量化怎么用？\r\n    能否提供一份关于量化交易MCP服务的详细说明文档？\r\n    我想了解如何使用MCP服务进行股票数据分析。\r\n    MCP服务支持哪些函数调用，这些函数的功能是什么？\r\n    给我讲一下这个股票量化MCP服务的使用方法；\r\n    讲一下这个量化MCP的使用方法；\r\n    这个股票MCP服务怎么用？\r\n    这个股票量化怎么用？\r\n```\n\r\n\r\n## 技术支持:\r\n官方文档：https://mcp-docs.socoo.xyz\r\n  \r\n开发者邮箱：virgo_wang@qq.com",
+    "zh-Hans": "# 股票量化MCP服务使用手册\r\n\r\n## 📌 简介  \r\n**智能股票量化支撑点位计算服务（MCP）** 是基于Qwen3大模型推理能力与远程量化计算服务器构建的专业金融分析工具，提供以下核心功能：  \r\n- 目标股票支撑介入价位计算  \r\n- 标准化API接口与SSE流式数据传输  \r\n\r\n---\r\n\r\n## ⚙️ 服务配置说明  \r\n在您的系统中添加以下JSON配置启用服务：  \r\n```json\n{\r\n    \"mcpServers\": {\r\n        \"quant_mcp_server\": {\r\n            \"type\": \"sse\",\r\n            \"url\": \"http://www.socoo.xyz:9000/sse\"\r\n        }\r\n    }\r\n}\r\n```\n---\r\n# 🛠️ 直接使用方法：\r\n# 建议直接使用上方提供的SSE地址\r\n\r\n| 工具名称             | 使用方法                    | 描述                            |\r\n|:-----------------|:------------------------|:------------------------------|\r\n| cookbook         | 这个socoo股票MCP服务怎么用？      | 返回socoo量化服务MCP的使用指南           |\r\n| get_support_quant_price | 帮我计算一下000858.SZ的支撑位是多少？ | 返回特定股票量化计算得到的支撑位（保守位，正常位，极限位） |\r\n| get-     | 请求...接口                 | 冗余量化计算接口服务                    |\r\n\r\n\r\n\r\n## ❓ 常见问题解答\r\nQ1：如何获取详细文档？\r\n\r\n输入示例：\r\n```text\n    股票量化MCP服务的使用方法有哪些？  (在安装MCP服务过多时候，最好带有socoo关键字)\r\n    这个socoo股票MCP服务怎么用？\r\n    这个socoo量化怎么用？\r\n    能否提供一份关于量化交易MCP服务的详细说明文档？\r\n    我想了解如何使用MCP服务进行股票数据分析。\r\n    MCP服务支持哪些函数调用，这些函数的功能是什么？\r\n    给我讲一下这个股票量化MCP服务的使用方法；\r\n    讲一下这个量化MCP的使用方法；\r\n    这个股票MCP服务怎么用？\r\n    这个股票量化怎么用？\r\n```\n\r\n\r\n## 技术支持:\r\n官方文档：https://mcp-docs.socoo.xyz\r\n  \r\n开发者邮箱：virgo_wang@qq.com",
+    "zh-Hant": "# 股票量化MCP服务使用手册\r\n\r\n## 📌 简介  \r\n**智能股票量化支撑点位计算服务（MCP）** 是基于Qwen3大模型推理能力与远程量化计算服务器构建的专业金融分析工具，提供以下核心功能：  \r\n- 目标股票支撑介入价位计算  \r\n- 标准化API接口与SSE流式数据传输  \r\n\r\n---\r\n\r\n## ⚙️ 服务配置说明  \r\n在您的系统中添加以下JSON配置启用服务：  \r\n```json\n{\r\n    \"mcpServers\": {\r\n        \"quant_mcp_server\": {\r\n            \"type\": \"sse\",\r\n            \"url\": \"http://www.socoo.xyz:9000/sse\"\r\n        }\r\n    }\r\n}\r\n```\n---\r\n# 🛠️ 直接使用方法：\r\n# 建议直接使用上方提供的SSE地址\r\n\r\n| 工具名称             | 使用方法                    | 描述                            |\r\n|:-----------------|:------------------------|:------------------------------|\r\n| cookbook         | 这个socoo股票MCP服务怎么用？      | 返回socoo量化服务MCP的使用指南           |\r\n| get_support_quant_price | 帮我计算一下000858.SZ的支撑位是多少？ | 返回特定股票量化计算得到的支撑位（保守位，正常位，极限位） |\r\n| get-     | 请求...接口                 | 冗余量化计算接口服务                    |\r\n\r\n\r\n\r\n## ❓ 常见问题解答\r\nQ1：如何获取详细文档？\r\n\r\n输入示例：\r\n```text\n    股票量化MCP服务的使用方法有哪些？  (在安装MCP服务过多时候，最好带有socoo关键字)\r\n    这个socoo股票MCP服务怎么用？\r\n    这个socoo量化怎么用？\r\n    能否提供一份关于量化交易MCP服务的详细说明文档？\r\n    我想了解如何使用MCP服务进行股票数据分析。\r\n    MCP服务支持哪些函数调用，这些函数的功能是什么？\r\n    给我讲一下这个股票量化MCP服务的使用方法；\r\n    讲一下这个量化MCP的使用方法；\r\n    这个股票MCP服务怎么用？\r\n    这个股票量化怎么用？\r\n```\n\r\n\r\n## 技术支持:\r\n官方文档：https://mcp-docs.socoo.xyz\r\n  \r\n开发者邮箱：virgo_wang@qq.com"
+  },
+  "categories": [
+    "communication",
+    "finance"
+  ],
+  "tags": [
+    "communication",
+    "finance",
+    "股票量化",
+    "量化",
+    "支撑点位",
+    "股票"
+  ],
+  "website": "https://www.modelscope.cn/mcp",
+  "icon": "/mcp-icons/807f9f7779a7f7585f861028ed7369d2.jpg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "http",
+    "url": "http://www.socoo.xyz:9000/sse",
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 13.08
+}

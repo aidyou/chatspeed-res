@@ -1,0 +1,46 @@
+{
+  "id": "deepsuthar496-figma",
+  "channel": "mcp",
+  "name": {
+    "en": "figma-mcp-server",
+    "zh-Hans": "Figma MCP 服务器",
+    "zh-Hant": "Figma MCP 服务器"
+  },
+  "description": {
+    "en": "A Model Context Protocol server that integrates with Figma's API, allowing interaction with Figma files, comments, components, projects, and webhook management.",
+    "zh-Hans": "一个集成了Figma API的模型上下文协议服务器，允许与Figma文件、评论、组件、项目和webhook管理进行交互。",
+    "zh-Hant": "一个集成了Figma API的模型上下文协议服务器，允许与Figma文件、评论、组件、项目和webhook管理进行交互。"
+  },
+  "detail": {
+    "en": "# Figma MCP Server\n\nA Model Context Protocol (MCP) server that provides integration with Figma's API, allowing you to interact with Figma files, comments, components, and more.\n\n## Features\n\n- **File Operations**\n  - Get file information\n  - Get file version history\n  - Get file components\n  \n- **Comment Management**\n  - List comments in files\n  - Add new comments\n  - Delete comments\n  \n- **Project & Team Features**\n  - List team projects\n  - Get project files\n  - Get published styles\n  \n- **Webhook Management**\n  - Create webhooks\n  - List existing webhooks\n  - Delete webhooks\n\n## Installation\n\n1. Clone the repository\n2. Install dependencies:\n```bash\nnpm install\n```\n3. Build the server:\n```bash\nnpm run build\n```\n\n## Configuration\n\nConfigure the server in your MCP settings file with your Figma access token:\n\n```json\n{\n  \"mcpServers\": {\n    \"figma\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/figma-server/build/index.js\"],\n      \"env\": {\n        \"FIGMA_ACCESS_TOKEN\": \"your-access-token-here\"\n      },\n      \"disabled\": false,\n      \"alwaysAllow\": []\n    }\n  }\n}\n```\n\n## Available Tools\n\n### File Operations\n\n#### get_file\nGet information about a Figma file\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_versions\nGet version history of a file\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_components\nGet components in a file\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n### Comment Management\n\n#### get_file_comments\nGet comments from a file\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### post_comment\nPost a comment to a file\n```json\n{\n  \"file_key\": \"string\",\n  \"message\": \"string\"\n}\n```\n\n#### delete_comment\nDelete a comment from a file\n```json\n{\n  \"file_key\": \"string\",\n  \"comment_id\": \"string\"\n}\n```\n\n### Project & Team Operations\n\n#### get_team_projects\nGet projects for a team\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### get_project_files\nGet files in a project\n```json\n{\n  \"project_id\": \"string\"\n}\n```\n\n#### get_component_styles\nGet published styles\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n### Webhook Management\n\n#### create_webhook\nCreate a webhook\n```json\n{\n  \"team_id\": \"string\",\n  \"event_type\": \"string\",\n  \"callback_url\": \"string\"\n}\n```\n\n#### get_webhooks\nList webhooks\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### delete_webhook\nDelete a webhook\n```json\n{\n  \"webhook_id\": \"string\"\n}\n```\n\n## Usage Example\n\n```typescript\n// Example using the MCP tool to get file information\n\nfigma\nget_file\n\n{\n  \"file_key\": \"your-file-key\"\n}\n\n```\n\n## License\n\nMIT\n\n## Contributing\n\n1. Fork the repository\n2. Create your feature branch\n3. Commit your changes\n4. Push to the branch\n5. Create a new Pull Request",
+    "zh-Hans": "# Figma MCP 服务器\n\n这是一个模型上下文协议（MCP）服务器，它通过与Figma的API集成，允许您与Figma文件、评论、组件等进行交互。\n\n## 功能\n\n- **文件操作**\n  - 获取文件信息\n  - 获取文件版本历史\n  - 获取文件中的组件\n  \n- **评论管理**\n  - 列出文件中的评论\n  - 添加新评论\n  - 删除评论\n  \n- **项目与团队功能**\n  - 列出团队项目\n  - 获取项目文件\n  - 获取已发布的样式\n  \n- **Webhook 管理**\n  - 创建webhook\n  - 列出现有webhook\n  - 删除webhook\n\n## 安装\n\n1. 克隆仓库\n2. 安装依赖项：\n```bash\nnpm install\n```\n3. 构建服务器：\n```bash\nnpm run build\n```\n\n## 配置\n\n在您的MCP设置文件中使用Figma访问令牌配置服务器：\n\n```json\n{\n  \"mcpServers\": {\n    \"figma\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/figma-server/build/index.js\"],\n      \"env\": {\n        \"FIGMA_ACCESS_TOKEN\": \"your-access-token-here\"\n      },\n      \"disabled\": false,\n      \"alwaysAllow\": []\n    }\n  }\n}\n```\n\n## 可用工具\n\n### 文件操作\n\n#### get_file\n获取关于Figma文件的信息\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_versions\n获取文件的版本历史\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_components\n获取文件中的组件\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n### 评论管理\n\n#### get_file_comments\n从文件中获取评论\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### post_comment\n向文件发布评论\n```json\n{\n  \"file_key\": \"string\",\n  \"message\": \"string\"\n}\n```\n\n#### delete_comment\n从文件中删除评论\n```json\n{\n  \"file_key\": \"string\",\n  \"comment_id\": \"string\"\n}\n```\n\n### 项目与团队操作\n\n#### get_team_projects\n获取团队的项目\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### get_project_files\n获取项目中的文件\n```json\n{\n  \"project_id\": \"string\"\n}\n```\n\n#### get_component_styles\n获取已发布的样式\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n### Webhook 管理\n\n#### create_webhook\n创建一个webhook\n```json\n{\n  \"team_id\": \"string\",\n  \"event_type\": \"string\",\n  \"callback_url\": \"string\"\n}\n```\n\n#### get_webhooks\n列出webhook\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### delete_webhook\n删除一个webhook\n```json\n{\n  \"webhook_id\": \"string\"\n}\n```\n\n## 使用示例\n\n```typescript\n// Example using the MCP tool to get file information\n\nfigma\nget_file\n\n{\n  \"file_key\": \"your-file-key\"\n}\n\n```\n\n## 许可证\n\nMIT\n\n## 贡献指南\n\n1. Fork 本仓库\n2. 创建你的特性分支\n3. 提交更改\n4. 推送到该分支\n5. 创建一个新的Pull Request",
+    "zh-Hant": "# Figma MCP 服务器\n\n这是一个模型上下文协议（MCP）服务器，它通过与Figma的API集成，允许您与Figma文件、评论、组件等进行交互。\n\n## 功能\n\n- **文件操作**\n  - 获取文件信息\n  - 获取文件版本历史\n  - 获取文件中的组件\n  \n- **评论管理**\n  - 列出文件中的评论\n  - 添加新评论\n  - 删除评论\n  \n- **项目与团队功能**\n  - 列出团队项目\n  - 获取项目文件\n  - 获取已发布的样式\n  \n- **Webhook 管理**\n  - 创建webhook\n  - 列出现有webhook\n  - 删除webhook\n\n## 安装\n\n1. 克隆仓库\n2. 安装依赖项：\n```bash\nnpm install\n```\n3. 构建服务器：\n```bash\nnpm run build\n```\n\n## 配置\n\n在您的MCP设置文件中使用Figma访问令牌配置服务器：\n\n```json\n{\n  \"mcpServers\": {\n    \"figma\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/figma-server/build/index.js\"],\n      \"env\": {\n        \"FIGMA_ACCESS_TOKEN\": \"your-access-token-here\"\n      },\n      \"disabled\": false,\n      \"alwaysAllow\": []\n    }\n  }\n}\n```\n\n## 可用工具\n\n### 文件操作\n\n#### get_file\n获取关于Figma文件的信息\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_versions\n获取文件的版本历史\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### get_file_components\n获取文件中的组件\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n### 评论管理\n\n#### get_file_comments\n从文件中获取评论\n```json\n{\n  \"file_key\": \"string\"\n}\n```\n\n#### post_comment\n向文件发布评论\n```json\n{\n  \"file_key\": \"string\",\n  \"message\": \"string\"\n}\n```\n\n#### delete_comment\n从文件中删除评论\n```json\n{\n  \"file_key\": \"string\",\n  \"comment_id\": \"string\"\n}\n```\n\n### 项目与团队操作\n\n#### get_team_projects\n获取团队的项目\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### get_project_files\n获取项目中的文件\n```json\n{\n  \"project_id\": \"string\"\n}\n```\n\n#### get_component_styles\n获取已发布的样式\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n### Webhook 管理\n\n#### create_webhook\n创建一个webhook\n```json\n{\n  \"team_id\": \"string\",\n  \"event_type\": \"string\",\n  \"callback_url\": \"string\"\n}\n```\n\n#### get_webhooks\n列出webhook\n```json\n{\n  \"team_id\": \"string\"\n}\n```\n\n#### delete_webhook\n删除一个webhook\n```json\n{\n  \"webhook_id\": \"string\"\n}\n```\n\n## 使用示例\n\n```typescript\n// Example using the MCP tool to get file information\n\nfigma\nget_file\n\n{\n  \"file_key\": \"your-file-key\"\n}\n\n```\n\n## 许可证\n\nMIT\n\n## 贡献指南\n\n1. Fork 本仓库\n2. 创建你的特性分支\n3. 提交更改\n4. 推送到该分支\n5. 创建一个新的Pull Request"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "art and culture",
+    "developer tools",
+    "chinese"
+  ],
+  "website": "https://github.com/deepsuthar496/figma-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "path/to/figma-server/build/index.js"
+    ],
+    "env": [
+      [
+        "FIGMA_ACCESS_TOKEN",
+        "your-access-token-here"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 4.49
+}

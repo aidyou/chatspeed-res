@@ -1,0 +1,47 @@
+{
+  "id": "wllcnm-dingding",
+  "channel": "mcp",
+  "name": {
+    "en": "dingding-mcp",
+    "zh-Hans": "钉钉-MCP服务",
+    "zh-Hant": "钉钉-MCP服务"
+  },
+  "description": {
+    "en": "A Model Control Protocol server that provides access to DingDing (Chinese workplace collaboration platform) API features, including retrieving access tokens, department lists, user information, and searching users by name.",
+    "zh-Hans": "一种模型控制协议服务器，提供对钉钉（中国职场协作平台）API功能的访问，包括检索访问令牌、部门列表、用户信息以及按名称搜索用户。",
+    "zh-Hant": "一种模型控制协议服务器，提供对钉钉（中国职场协作平台）API功能的访问，包括检索访问令牌、部门列表、用户信息以及按名称搜索用户。"
+  },
+  "detail": {
+    "en": "# 钉钉 MCP 服务\n\n这是一个基于MCP（Model Control Protocol）的钉钉服务，提供了钉钉API的访问功能。\n\n## 功能特性\n\n1. 获取钉钉 Access Token\n2. 获取部门列表\n3. 获取部门用户列表\n4. 根据姓名查询用户详细信息（包括遍历部门查找用户）\n\n## 环境要求\n\n- Python 3.12+\n- Docker（推荐）\n- 钉钉应用凭证\n\n## 安装和配置\n\n### 1. 获取钉钉应用凭证\n\n1. 登录[钉钉开放平台](https://open.dingtalk.com/)\n2. 创建企业内部应用\n3. 获取应用的 AppKey 和 AppSecret\n\n### 2. 配置环境变量\n\n需要设置以下环境变量：\n```bash\nDINGDING_APP_KEY=你的AppKey\nDINGDING_APP_SECRET=你的AppSecret\n```\n\n## 使用方法\n\n### 在 Claude 桌面客户端中使用\n\n1. 在你的 `claude_desktop_config.json` 中添加以下配置：\n```json\n{\n  \"mcpServers\": {\n    \"dingding\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"-e\", \"DINGDING_APP_KEY=你的AppKey\",\n        \"-e\", \"DINGDING_APP_SECRET=你的AppSecret\",\n        \"ghcr.io/你的用户名/dingding-mcp:latest\"\n      ]\n    }\n  }\n}\n```\n\n### 本地开发\n\n1. 克隆仓库：\n```bash\ngit clone \ncd dingding_chat\n```\n\n2. 安装依赖：\n```bash\npip install -r requirements.txt\n```\n\n3. 运行服务：\n```bash\npython src/server.py\n```\n\n### Docker 部署\n\n1. 拉取镜像：\n```bash\ndocker pull ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n2. 运行容器：\n```bash\ndocker run -d --name dingding-mcp \n  -e DINGDING_APP_KEY=你的AppKey \n  -e DINGDING_APP_SECRET=你的AppSecret \n  ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n## API 说明\n\n### 1. 获取 Access Token\n- 功能：获取钉钉API的access token\n- 工具名：`get_access_token`\n- 参数：无\n- 返回：access token字符串\n\n### 2. 获取部门列表\n- 功能：获取企业的部门列表\n- 工具名：`get_department_list`\n- 参数：\n  - fetch_child: 是否抓取子部门列表（可选，默认为true）\n- 返回：部门列表信息（包括部门ID、名称、父部门ID等）\n\n### 3. 获取部门用户列表\n- 功能：获取指定部门的用户列表\n- 工具名：`get_department_users`\n- 参数：\n  - department_id: 部门ID（必填）\n- 返回：部门用户列表（包括用户ID、姓名等）\n\n### 4. 根据姓名查询用户\n- 功能：通过用户姓名查询用户详细信息\n- 工具名：`search_user_by_name`\n- 参数：\n  - name: 用户姓名\n- 返回：用户详细信息（包括用户ID、姓名、手机、邮箱、职位、所属部门等）\n\n## 注意事项\n\n1. 确保正确配置钉钉应用的凭证信息\n2. 由于钉钉API的限制，查询用户信息需要遍历所有部门，可能需要一定时间\n3. 建议在生产环境中使用 Docker 部署，以确保环境一致性\n\n## 许可证\n\nMIT License",
+    "zh-Hans": "# 钉钉 MCP 服务\n\n这是一个基于MCP（Model Control Protocol）的钉钉服务，提供了钉钉API的访问功能。\n\n## 功能特性\n\n1. 获取钉钉 Access Token\n2. 获取部门列表\n3. 获取部门用户列表\n4. 根据姓名查询用户详细信息（包括遍历部门查找用户）\n\n## 环境要求\n\n- Python 3.12+\n- Docker（推荐）\n- 钉钉应用凭证\n\n## 安装和配置\n\n### 1. 获取钉钉应用凭证\n\n1. 登录[钉钉开放平台](https://open.dingtalk.com/)\n2. 创建企业内部应用\n3. 获取应用的 AppKey 和 AppSecret\n\n### 2. 配置环境变量\n\n需要设置以下环境变量：\n```bash\nDINGDING_APP_KEY=你的AppKey\nDINGDING_APP_SECRET=你的AppSecret\n```\n\n## 使用方法\n\n### 在 Claude 桌面客户端中使用\n\n1. 在你的 `claude_desktop_config.json` 中添加以下配置：\n```json\n{\n  \"mcpServers\": {\n    \"dingding\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"-e\", \"DINGDING_APP_KEY=你的AppKey\",\n        \"-e\", \"DINGDING_APP_SECRET=你的AppSecret\",\n        \"ghcr.io/你的用户名/dingding-mcp:latest\"\n      ]\n    }\n  }\n}\n```\n\n### 本地开发\n\n1. 克隆仓库：\n```bash\ngit clone \ncd dingding_chat\n```\n\n2. 安装依赖：\n```bash\npip install -r requirements.txt\n```\n\n3. 运行服务：\n```bash\npython src/server.py\n```\n\n### Docker 部署\n\n1. 拉取镜像：\n```bash\ndocker pull ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n2. 运行容器：\n```bash\ndocker run -d --name dingding-mcp \\\n  -e DINGDING_APP_KEY=你的AppKey \\\n  -e DINGDING_APP_SECRET=你的AppSecret \\\n  ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n## API 说明\n\n### 1. 获取 Access Token\n- 功能：获取钉钉API的access token\n- 工具名：`get_access_token`\n- 参数：无\n- 返回：access token字符串\n\n### 2. 获取部门列表\n- 功能：获取企业的部门列表\n- 工具名：`get_department_list`\n- 参数：\n  - fetch_child: 是否抓取子部门列表（可选，默认为true）\n- 返回：部门列表信息（包括部门ID、名称、父部门ID等）\n\n### 3. 获取部门用户列表\n- 功能：获取指定部门的用户列表\n- 工具名：`get_department_users`\n- 参数：\n  - department_id: 部门ID（必填）\n- 返回：部门用户列表（包括用户ID、姓名等）\n\n### 4. 根据姓名查询用户\n- 功能：通过用户姓名查询用户详细信息\n- 工具名：`search_user_by_name`\n- 参数：\n  - name: 用户姓名\n- 返回：用户详细信息（包括用户ID、姓名、手机、邮箱、职位、所属部门等）\n\n## 注意事项\n\n1. 确保正确配置钉钉应用的凭证信息\n2. 由于钉钉API的限制，查询用户信息需要遍历所有部门，可能需要一定时间\n3. 建议在生产环境中使用 Docker 部署，以确保环境一致性\n\n## 许可证\n\nMIT License",
+    "zh-Hant": "# 钉钉 MCP 服务\n\n这是一个基于MCP（Model Control Protocol）的钉钉服务，提供了钉钉API的访问功能。\n\n## 功能特性\n\n1. 获取钉钉 Access Token\n2. 获取部门列表\n3. 获取部门用户列表\n4. 根据姓名查询用户详细信息（包括遍历部门查找用户）\n\n## 环境要求\n\n- Python 3.12+\n- Docker（推荐）\n- 钉钉应用凭证\n\n## 安装和配置\n\n### 1. 获取钉钉应用凭证\n\n1. 登录[钉钉开放平台](https://open.dingtalk.com/)\n2. 创建企业内部应用\n3. 获取应用的 AppKey 和 AppSecret\n\n### 2. 配置环境变量\n\n需要设置以下环境变量：\n```bash\nDINGDING_APP_KEY=你的AppKey\nDINGDING_APP_SECRET=你的AppSecret\n```\n\n## 使用方法\n\n### 在 Claude 桌面客户端中使用\n\n1. 在你的 `claude_desktop_config.json` 中添加以下配置：\n```json\n{\n  \"mcpServers\": {\n    \"dingding\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"--rm\",\n        \"-e\", \"DINGDING_APP_KEY=你的AppKey\",\n        \"-e\", \"DINGDING_APP_SECRET=你的AppSecret\",\n        \"ghcr.io/你的用户名/dingding-mcp:latest\"\n      ]\n    }\n  }\n}\n```\n\n### 本地开发\n\n1. 克隆仓库：\n```bash\ngit clone \ncd dingding_chat\n```\n\n2. 安装依赖：\n```bash\npip install -r requirements.txt\n```\n\n3. 运行服务：\n```bash\npython src/server.py\n```\n\n### Docker 部署\n\n1. 拉取镜像：\n```bash\ndocker pull ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n2. 运行容器：\n```bash\ndocker run -d --name dingding-mcp \\\n  -e DINGDING_APP_KEY=你的AppKey \\\n  -e DINGDING_APP_SECRET=你的AppSecret \\\n  ghcr.io/你的用户名/dingding-mcp:latest\n```\n\n## API 说明\n\n### 1. 获取 Access Token\n- 功能：获取钉钉API的access token\n- 工具名：`get_access_token`\n- 参数：无\n- 返回：access token字符串\n\n### 2. 获取部门列表\n- 功能：获取企业的部门列表\n- 工具名：`get_department_list`\n- 参数：\n  - fetch_child: 是否抓取子部门列表（可选，默认为true）\n- 返回：部门列表信息（包括部门ID、名称、父部门ID等）\n\n### 3. 获取部门用户列表\n- 功能：获取指定部门的用户列表\n- 工具名：`get_department_users`\n- 参数：\n  - department_id: 部门ID（必填）\n- 返回：部门用户列表（包括用户ID、姓名等）\n\n### 4. 根据姓名查询用户\n- 功能：通过用户姓名查询用户详细信息\n- 工具名：`search_user_by_name`\n- 参数：\n  - name: 用户姓名\n- 返回：用户详细信息（包括用户ID、姓名、手机、邮箱、职位、所属部门等）\n\n## 注意事项\n\n1. 确保正确配置钉钉应用的凭证信息\n2. 由于钉钉API的限制，查询用户信息需要遍历所有部门，可能需要一定时间\n3. 建议在生产环境中使用 Docker 部署，以确保环境一致性\n\n## 许可证\n\nMIT License"
+  },
+  "categories": [
+    "communication"
+  ],
+  "tags": [
+    "communication",
+    "chinese"
+  ],
+  "website": "https://github.com/wllcnm/dingding-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "docker",
+    "args": [
+      "run",
+      "-i",
+      "--rm",
+      "-e",
+      "DINGDING_APP_KEY=你的AppKey",
+      "-e",
+      "DINGDING_APP_SECRET=你的AppSecret",
+      "ghcr.io/你的用户名/dingding-mcp:latest"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 3.36
+}

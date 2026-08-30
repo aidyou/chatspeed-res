@@ -1,0 +1,59 @@
+{
+  "id": "paddlepaddle-paddleocr",
+  "channel": "mcp",
+  "name": {
+    "en": "PaddleOCR",
+    "zh-Hans": "PaddleOCR MCP 服务器",
+    "zh-Hant": "PaddleOCR MCP 服务器"
+  },
+  "description": {
+    "en": "PaddleOCR MCP Server Overview The PaddleOCR MCP Server provides industrial-grade OCR and document parsing capabilities for AI applications. Based on PaddleOCR, a mature solution verified by over 50,000 GitHub stars and deeply integrated into leading projects s",
+    "zh-Hans": "PaddleOCR MCP服务器 概述 PaddleOCR MCP服务器为AI应用提供工业级OCR和文档解析能力。基于PaddleOCR——一个经过5万+GitHub star验证，被MinerU、RAGFlow、OmniParser等头部项目深度集成的成熟解决方案，并基于MCP理念做了针对性的优化。 官方文档：https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcpserver.html PaddleOCR GitHub仓库",
+    "zh-Hant": "PaddleOCR MCP服务器 概述 PaddleOCR MCP服务器为AI应用提供工业级OCR和文档解析能力。基于PaddleOCR——一个经过5万+GitHub star验证，被MinerU、RAGFlow、OmniParser等头部项目深度集成的成熟解决方案，并基于MCP理念做了针对性的优化。 官方文档：https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcpserver.html PaddleOCR GitHub仓库"
+  },
+  "detail": {
+    "en": "# PaddleOCR MCP Server\n## Overview\nThe PaddleOCR MCP Server provides industrial-grade OCR and document parsing capabilities for AI applications. Based on PaddleOCR, a mature solution verified by over 50,000 GitHub stars and deeply integrated into leading projects such as MinerU, RAGFlow, and OmniParser, it has been specifically optimized following the MCP philosophy.\n\n* **Official Documentation**: [https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html](https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html)\n* **PaddleOCR GitHub Repository**: [https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)\n* **Online Experience of PaddleOCR Production Features:**\n    * [PaddleOCR Official Website](https://aistudio.baidu.com/paddleocr)\n\n    * ModelScope Community\n        * [PP-OCRv5](https://modelscope.cn/studios/PaddlePaddle/PP-OCRv5_Online_Demo)\n        * [PP-StructureV3](https://modelscope.cn/studios/PaddlePaddle/PP-StructureV3_Online_Demo)\n        * [PaddleOCR-VL](https://modelscope.cn/studios/PaddlePaddle/PaddleOCR-VL_Online_Demo)\n\n## Core Features\n### Text Recognition (Based on PP-OCRv5)\n* **Multi-language Support**: Supports 37 languages including Chinese, English, Japanese, and Korean, with support for printed and handwritten text recognition.\n* **High-accuracy Recognition**: Achieves leading accuracy levels among open-source solutions.\n* **Structured Output**: Returns JSON data containing text coordinates and content.\n\n### Document Parsing (Based on PP-StructureV3) & Large Model Document Parsing (Based on PaddleOCR-VL)\n* **Intelligent Layout Analysis**: Identifies layout elements such as text blocks, headings, paragraphs, images, and tables.\n* **Structured Conversion**: Converts PDFs and images into Markdown format while preserving the original structure.\n* **Complex Document Handling**: Processes documents containing complex tables, formulas, and handwritten text.\n\n### MCP Optimizations\n* **Smart Output Modes**:\n    * `simple` mode includes key information such as recognized text/Markdown content.\n    * `detailed` mode includes detailed information such as bounding box coordinates.\n\n* **PP-OCRv5**: Both output modes include confidence scores and statistical information to help agents assess the quality of the results.\n* **PP-StructureV3 and PaddleOCR-VL**: Both output modes support mixed text and image output, preserving the original position of images.\n\n## Deployment Modes\n### Operation Modes\n* **Local Python Library**: Run PaddleOCR models directly on your local machine.\n* **PaddleOCR Official Service**: Call the cloud services provided by the PaddleOCR official website.\n* **Self-hosted Service**: Connect to a self-hosted PaddleOCR service.\n\n### Transmission Mechanisms\n* **stdio**: Standard input/output mode suitable for local integration.\n* **Streamable HTTP**: Supports remote invocation via streamable HTTP transmission.\n\n## Deploying Remote Services on ModelScope\n1. On the [PaddleOCR Official Website](https://aistudio.baidu.com/paddleocr/task), click \"API\" in the top left corner. In the code example for the desired feature, copy the base service URL (`API_URL` without `/ocr` or other endpoint suffixes) and the access token (`TOKEN`).\n2. On the right side of this page, configure `PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN` and `PADDLEOCR_MCP_SERVER_URL`, setting them to the access token and base service URL obtained in the previous step, respectively. Set `PADDLEOCR_MCP_PIPELINE` to the pipeline name (`OCR`, `PP-StructureV3`, or `PaddleOCR-VL`):\n\n    | Feature | `PADDLEOCR_MCP_PIPELINE` |\n    | - | - |\n    | Text Recognition (PP-OCRv5) | `OCR` |\n    | Document Parsing (PP-StructureV3) | `PP-StructureV3` |\n    | Large Model Document Parsing (PaddleOCR-VL) | `PaddleOCR-VL` |\n\n3. Click \"Connect\" to start the service, which can then be used in MCP hosts like Claude for Desktop and Cherry Studio.\n\n## Typical Application Scenarios\n### Document Digitization\n* Extract the content of handwritten notes and store it in note-taking software.\n* Convert image/PDF documents into editable Word/Excel formats.\n\n### Development Workflow\n* Convert handwritten ideas/pseudo-code into executable scripts.\n* Quickly convert document images into Markdown-formatted project documentation.\n\n## Technical Advantages\n* **Mature and Stable**: An industrial-grade OCR solution validated in numerous production environments.\n* **Leading Accuracy**: Surpasses many commercial solutions in public evaluations for OCR and document parsing.\n* **Easy Integration**: Simple deployment steps, with integration completed in minutes.\n* **Cost-effective**: Supports local deployment, avoiding data transfer and API call costs.\n\n---\n\n**Start using the PaddleOCR MCP Server to give your AI applications industrial-grade document understanding capabilities.**",
+    "zh-Hans": "# PaddleOCR MCP服务器\n## 概述\nPaddleOCR MCP服务器为AI应用提供工业级OCR和文档解析能力。基于PaddleOCR——一个经过5万+GitHub star验证，被MinerU、RAGFlow、OmniParser等头部项目深度集成的成熟解决方案，并基于MCP理念做了针对性的优化。\n\n* **官方文档**：[https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html](https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html)\n* **PaddleOCR GitHub仓库**：[https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)\n* **PaddleOCR产线功能在线体验：**\n    * [PaddleOCR官网](https://aistudio.baidu.com/paddleocr)\n\n    * ModelScope 魔搭社区\n        * [PP-OCRv5](https://modelscope.cn/studios/PaddlePaddle/PP-OCRv5_Online_Demo)\n        * [PP-StructureV3](https://modelscope.cn/studios/PaddlePaddle/PP-StructureV3_Online_Demo)\n        * [PaddleOCR-VL](https://modelscope.cn/studios/PaddlePaddle/PaddleOCR-VL_Online_Demo)\n\n## 核心功能\n### 文字识别（基于PP-OCRv5）\n* **多语言支持**：支持中英日韩等37种语言，支持印刷体、手写体识别\n* **高精度识别**：识别精度达到开源方案领先水平\n* **结构化输出**：返回包含文字坐标和内容的JSON数据\n\n### 文档解析（基于PP-StructureV3） & 大模型文档解析（基于PaddleOCR-VL）\n* **版面智能分析**：识别文本块、标题、段落、图片、表格等版面元素\n* **结构化转换**：将PDF和图像转换为保留原始结构的Markdown格式\n* **复杂文档处理**：处理含有复杂表格、公式、手写文字的文档\n\n### MCP优化\n* **智能输出模式**：\n    * `simple`模式包含识别到的文本/Markdown内容等关键信息\n    * `detailed`模式包含边界框坐标等详细信息\n\n* **PP-OCRv5**：两种输出模式均包含置信度和统计信息，帮助agent评估结果质量\n* **PP-StructureV3和PaddleOCR-VL**：两种输出模式均支持图文混合输出，保留图片原始位置信息\n\n## 部署模式\n### 工作模式\n* **本地Python库**：直接在本地运行PaddleOCR模型\n* **PaddleOCR官网服务**：调用PaddleOCR官网提供的云服务\n* **自托管服务**：连接自托管的PaddleOCR服务\n\n### 传输机制\n* **stdio**：适用于本地集成的标准输入输出模式\n* **Streamable HTTP**：支持远程调用的可流式HTTP传输\n\n## 在ModelScope上部署远程服务\n1. 在[PaddleOCR官网](https://aistudio.baidu.com/paddleocr/task)点击左上角的“API”，在希望使用的功能对应的代码调用示例中复制服务基础URL（`API_URL`去除`/ocr`等端点后缀）与访问令牌（`TOKEN`）。\n2. 在本页面右侧配置`PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN`和`PADDLEOCR_MCP_SERVER_URL`，分别设置为上一步骤获取到的访问令牌与服务基础URL。将`PADDLEOCR_MCP_PIPELINE`设置为产线名称（`OCR`、`PP-StructureV3`或`PaddleOCR-VL`）：\n\n    | 功能 | `PADDLEOCR_MCP_PIPELINE` |\n    | - | - |\n    | 文字识别（PP-OCRv5） | `OCR` |\n    | 文档解析（PP-StructureV3） | `PP-StructureV3` |\n    | 大模型文档解析（PaddleOCR-VL） | `PaddleOCR-VL` |\n\n3. 点击“连接”，启动服务，之后可在Claude for Desktop、Cherry Studio等MCP host中使用。\n\n## 典型应用场景\n### 文档数字化\n* 提取手写笔记的内容，并存储到笔记软件中\n* 将图片/PDF文档转换为可用Word/Excel编辑的格式\n\n### 开发工作流\n* 手写思路/伪代码转换为可运行脚本\n* 将文档图片快速转换为Markdown格式的项目文档\n\n## 技术优势\n* **成熟稳定**：经过大量生产环境验证的工业级OCR方案\n* **精度领先**：OCR、文档解析等在公开评测中超越众多商业方案\n* **易于集成**：部署步骤简单，几分钟完成集成\n* **成本可控**：支持本地部署，避免数据外传和API调用费用\n\n---\n\n**开始使用PaddleOCR MCP服务器，让您的AI应用具备工业级文档理解能力。**",
+    "zh-Hant": "# PaddleOCR MCP服务器\n## 概述\nPaddleOCR MCP服务器为AI应用提供工业级OCR和文档解析能力。基于PaddleOCR——一个经过5万+GitHub star验证，被MinerU、RAGFlow、OmniParser等头部项目深度集成的成熟解决方案，并基于MCP理念做了针对性的优化。\n\n* **官方文档**：[https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html](https://paddlepaddle.github.io/PaddleOCR/latest/version3.x/deployment/mcp_server.html)\n* **PaddleOCR GitHub仓库**：[https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)\n* **PaddleOCR产线功能在线体验：**\n    * [PaddleOCR官网](https://aistudio.baidu.com/paddleocr)\n\n    * ModelScope 魔搭社区\n        * [PP-OCRv5](https://modelscope.cn/studios/PaddlePaddle/PP-OCRv5_Online_Demo)\n        * [PP-StructureV3](https://modelscope.cn/studios/PaddlePaddle/PP-StructureV3_Online_Demo)\n        * [PaddleOCR-VL](https://modelscope.cn/studios/PaddlePaddle/PaddleOCR-VL_Online_Demo)\n\n## 核心功能\n### 文字识别（基于PP-OCRv5）\n* **多语言支持**：支持中英日韩等37种语言，支持印刷体、手写体识别\n* **高精度识别**：识别精度达到开源方案领先水平\n* **结构化输出**：返回包含文字坐标和内容的JSON数据\n\n### 文档解析（基于PP-StructureV3） & 大模型文档解析（基于PaddleOCR-VL）\n* **版面智能分析**：识别文本块、标题、段落、图片、表格等版面元素\n* **结构化转换**：将PDF和图像转换为保留原始结构的Markdown格式\n* **复杂文档处理**：处理含有复杂表格、公式、手写文字的文档\n\n### MCP优化\n* **智能输出模式**：\n    * `simple`模式包含识别到的文本/Markdown内容等关键信息\n    * `detailed`模式包含边界框坐标等详细信息\n\n* **PP-OCRv5**：两种输出模式均包含置信度和统计信息，帮助agent评估结果质量\n* **PP-StructureV3和PaddleOCR-VL**：两种输出模式均支持图文混合输出，保留图片原始位置信息\n\n## 部署模式\n### 工作模式\n* **本地Python库**：直接在本地运行PaddleOCR模型\n* **PaddleOCR官网服务**：调用PaddleOCR官网提供的云服务\n* **自托管服务**：连接自托管的PaddleOCR服务\n\n### 传输机制\n* **stdio**：适用于本地集成的标准输入输出模式\n* **Streamable HTTP**：支持远程调用的可流式HTTP传输\n\n## 在ModelScope上部署远程服务\n1. 在[PaddleOCR官网](https://aistudio.baidu.com/paddleocr/task)点击左上角的“API”，在希望使用的功能对应的代码调用示例中复制服务基础URL（`API_URL`去除`/ocr`等端点后缀）与访问令牌（`TOKEN`）。\n2. 在本页面右侧配置`PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN`和`PADDLEOCR_MCP_SERVER_URL`，分别设置为上一步骤获取到的访问令牌与服务基础URL。将`PADDLEOCR_MCP_PIPELINE`设置为产线名称（`OCR`、`PP-StructureV3`或`PaddleOCR-VL`）：\n\n    | 功能 | `PADDLEOCR_MCP_PIPELINE` |\n    | - | - |\n    | 文字识别（PP-OCRv5） | `OCR` |\n    | 文档解析（PP-StructureV3） | `PP-StructureV3` |\n    | 大模型文档解析（PaddleOCR-VL） | `PaddleOCR-VL` |\n\n3. 点击“连接”，启动服务，之后可在Claude for Desktop、Cherry Studio等MCP host中使用。\n\n## 典型应用场景\n### 文档数字化\n* 提取手写笔记的内容，并存储到笔记软件中\n* 将图片/PDF文档转换为可用Word/Excel编辑的格式\n\n### 开发工作流\n* 手写思路/伪代码转换为可运行脚本\n* 将文档图片快速转换为Markdown格式的项目文档\n\n## 技术优势\n* **成熟稳定**：经过大量生产环境验证的工业级OCR方案\n* **精度领先**：OCR、文档解析等在公开评测中超越众多商业方案\n* **易于集成**：部署步骤简单，几分钟完成集成\n* **成本可控**：支持本地部署，避免数据外传和API调用费用\n\n---\n\n**开始使用PaddleOCR MCP服务器，让您的AI应用具备工业级文档理解能力。**"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "chinese"
+  ],
+  "website": "https://github.com/PaddlePaddle/PaddleOCR",
+  "icon": "/mcp-icons/d3605393468bc82976e0f9d3309e05e1.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "paddleocr-mcp",
+      "paddleocr_mcp"
+    ],
+    "env": [
+      [
+        "PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN",
+        "<星河社区访问令牌>"
+      ],
+      [
+        "PADDLEOCR_MCP_PIPELINE",
+        "<产线名称>"
+      ],
+      [
+        "PADDLEOCR_MCP_PPOCR_SOURCE",
+        "aistudio"
+      ],
+      [
+        "PADDLEOCR_MCP_SERVER_URL",
+        "<星河社区访问令牌>"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 34.62
+}

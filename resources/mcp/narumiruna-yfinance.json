@@ -1,0 +1,40 @@
+{
+  "id": "narumiruna-yfinance",
+  "channel": "mcp",
+  "name": {
+    "en": "yfinance-mcp",
+    "zh-Hans": "yfinance股票数据服务",
+    "zh-Hant": "yfinance股票数据服务"
+  },
+  "description": {
+    "en": "A simple MCP server for Yahoo Finance using yfinance. This server provides a set of tools to fetch stock data, news, and other financial information.",
+    "zh-Hans": "一个简单的用于雅虎财经的MCP服务器，使用yfinance。该服务器提供了一组工具来获取股票数据、新闻和其他财务信息。",
+    "zh-Hant": "一个简单的用于雅虎财经的MCP服务器，使用yfinance。该服务器提供了一组工具来获取股票数据、新闻和其他财务信息。"
+  },
+  "detail": {
+    "en": "# Yahoo Finance MCP Server\n\nA simple MCP server for Yahoo Finance using yfinance. This server provides a set of tools to fetch stock data, news, and other financial information.\n\n## Tools\n\n- **get_ticker_info**\n\n  - Retrieve stock data including company info, financials, trading metrics and governance data.\n  - Inputs:\n    - `symbol` (string): The stock symbol.\n\n- **get_ticker_news**\n\n  - Fetches recent news articles related to a specific stock symbol with title, content, and source details.\n  - Inputs:\n    - `symbol` (string): The stock symbol.\n\n- **search**\n\n  - Fetches and organizes search results from Yahoo Finance, including stock quotes and news articles.\n  - Inputs:\n    - `query` (string): The search query (ticker symbol or company name).\n    - `search_type` (string): Type of search results to retrieve (options: \"all\", \"quotes\", \"news\").\n\n- **get_top**\n\n  - Get top entities (ETFs, mutual funds, companies, growth companies, or performing companies) in a sector.\n  - Inputs:\n    - `sector` (string): The sector to get.\n    - `top_type` (string): Type of top companies to retrieve (options: \"top_etfs\", \"top_mutual_funds\", \"top_companies\", \"top_growth_companies\", \"top_performing_companies\").\n    - `top_n` (number, optional): Number of top entities to retrieve (default 10).\n\n## Usage\n\nYou can use this MCP server either via uv (Python package installer) or Docker.\n\n### Via uv\n\n1. [Install uv](https://docs.astral.sh/uv/getting-started/installation/)\n2. Add the following configuration to your MCP server configuration file:\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"yfmcp\"]\n    }\n  }\n}\n```\n\n### Via Docker\n\nAdd the following configuration to your MCP server configuration file:\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"docker\",\n      \"args\": [\"run\", \"-i\", \"--rm\", \"narumi/yfinance-mcp\"]\n    }\n  }\n}\n```",
+    "zh-Hans": "# Yahoo Finance MCP 服务器\n\n使用 yfinance 的一个简单的 Yahoo Finance MCP 服务器。该服务器提供了一组工具来获取股票数据、新闻和其他金融信息。\n\n## 工具\n\n- **get_ticker_info**\n\n  - 获取包括公司信息、财务状况、交易指标和治理数据在内的股票数据。\n  - 输入：\n    - `symbol` (字符串): 股票代码。\n\n- **get_ticker_news**\n\n  - 获取与特定股票代码相关的最近新闻文章，包括标题、内容和来源详情。\n  - 输入：\n    - `symbol` (字符串): 股票代码。\n\n- **search**\n\n  - 从 Yahoo Finance 获取并组织搜索结果，包括股票报价和新闻文章。\n  - 输入：\n    - `query` (字符串): 搜索查询（股票代码或公司名称）。\n    - `search_type` (字符串): 要检索的搜索结果类型（选项：\"all\", \"quotes\", \"news\"）。\n\n- **get_top**\n\n  - 获取某一行业内的顶级实体（ETF、共同基金、公司、成长型公司或表现优异的公司）。\n  - 输入：\n    - `sector` (字符串): 要获取的行业。\n    - `top_type` (字符串): 要检索的顶级公司类型（选项：\"top_etfs\", \"top_mutual_funds\", \"top_companies\", \"top_growth_companies\", \"top_performing_companies\"）。\n    - `top_n` (数字, 可选): 要检索的顶级实体数量（默认为10）。\n\n## 使用方法\n\n您可以通过 uv（Python 包管理器）或 Docker 来使用此 MCP 服务器。\n\n### 通过 uv\n\n1. [安装 uv](https://docs.astral.sh/uv/getting-started/installation/)\n2. 将以下配置添加到您的 MCP 服务器配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"yfmcp\"]\n    }\n  }\n}\n```\n\n### 通过 Docker\n\n将以下配置添加到您的 MCP 服务器配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"docker\",\n      \"args\": [\"run\", \"-i\", \"--rm\", \"narumi/yfinance-mcp\"]\n    }\n  }\n}\n```",
+    "zh-Hant": "# Yahoo Finance MCP 服务器\n\n使用 yfinance 的一个简单的 Yahoo Finance MCP 服务器。该服务器提供了一组工具来获取股票数据、新闻和其他金融信息。\n\n## 工具\n\n- **get_ticker_info**\n\n  - 获取包括公司信息、财务状况、交易指标和治理数据在内的股票数据。\n  - 输入：\n    - `symbol` (字符串): 股票代码。\n\n- **get_ticker_news**\n\n  - 获取与特定股票代码相关的最近新闻文章，包括标题、内容和来源详情。\n  - 输入：\n    - `symbol` (字符串): 股票代码。\n\n- **search**\n\n  - 从 Yahoo Finance 获取并组织搜索结果，包括股票报价和新闻文章。\n  - 输入：\n    - `query` (字符串): 搜索查询（股票代码或公司名称）。\n    - `search_type` (字符串): 要检索的搜索结果类型（选项：\"all\", \"quotes\", \"news\"）。\n\n- **get_top**\n\n  - 获取某一行业内的顶级实体（ETF、共同基金、公司、成长型公司或表现优异的公司）。\n  - 输入：\n    - `sector` (字符串): 要获取的行业。\n    - `top_type` (字符串): 要检索的顶级公司类型（选项：\"top_etfs\", \"top_mutual_funds\", \"top_companies\", \"top_growth_companies\", \"top_performing_companies\"）。\n    - `top_n` (数字, 可选): 要检索的顶级实体数量（默认为10）。\n\n## 使用方法\n\n您可以通过 uv（Python 包管理器）或 Docker 来使用此 MCP 服务器。\n\n### 通过 uv\n\n1. [安装 uv](https://docs.astral.sh/uv/getting-started/installation/)\n2. 将以下配置添加到您的 MCP 服务器配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"uvx\",\n      \"args\": [\"yfmcp\"]\n    }\n  }\n}\n```\n\n### 通过 Docker\n\n将以下配置添加到您的 MCP 服务器配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"yfmcp\": {\n      \"command\": \"docker\",\n      \"args\": [\"run\", \"-i\", \"--rm\", \"narumi/yfinance-mcp\"]\n    }\n  }\n}\n```"
+  },
+  "categories": [
+    "finance"
+  ],
+  "tags": [
+    "finance",
+    "chinese"
+  ],
+  "website": "https://github.com/narumiruna/yfinance-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "yfmcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 3.11
+}

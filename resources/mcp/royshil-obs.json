@@ -1,0 +1,46 @@
+{
+  "id": "royshil-obs",
+  "channel": "mcp",
+  "name": {
+    "en": "obs-mcp",
+    "zh-Hans": "OBS远程控制面板",
+    "zh-Hant": "OBS远程控制面板"
+  },
+  "description": {
+    "en": "A server that provides tools to control OBS Studio remotely via the OBS WebSocket protocol, enabling management of scenes, sources, streaming, and recording through an MCP client interface.",
+    "zh-Hans": "一台通过OBS WebSocket协议提供远程控制OBS Studio工具的服务器，可以通过MCP客户端界面管理场景、源、流媒体和录制。",
+    "zh-Hant": "一台通过OBS WebSocket协议提供远程控制OBS Studio工具的服务器，可以通过MCP客户端界面管理场景、源、流媒体和录制。"
+  },
+  "detail": {
+    "en": "# OBS MCP Server\n\nAn MCP server for OBS Studio that provides tools to control OBS via the OBS WebSocket protocol.\n\n## Features\n\n- Connect to OBS WebSocket server\n- Control OBS via MCP tools\n- Provides tools for:\n  - General operations\n  - Scene management\n  - Source control\n  - Scene item manipulation\n  - Streaming and recording\n  - Transitions\n\n## Installation\n\n```bash\nnpm install\nnpm run build\n```\n\n## Usage\n\n1. Make sure OBS Studio is running with WebSocket server enabled (Tools > WebSocket Server Settings). Note the password for the WS.\n2. Set the WebSocket password in environment variable (if needed):\n\n```bash\nexport OBS_WEBSOCKET_PASSWORD=\"your_password_here\"\n```\n\n3. Run the OBS MCP server to see that it is able to build and connect:\n\n```bash\nnpm run build\nnpm run start\n```\n\n4. Provision you Claude desktop with the MCP server settings:\n\n```json\n{\n  \"mcpServers\": {\n    \"obs\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/build/index.js\"\n      ],\n      \"env\": {\n        \"OBS_WEBSOCKET_PASSWORD\": \"\n\"\n      }\n    }\n  }\n}\n```\n\n5. Use Claude to control your OBS!\n\n## Available Tools\n\nThe server provides tools organized by category:\n\n- General tools: Version info, stats, hotkeys, studio mode\n- Scene tools: List scenes, switch scenes, create/remove scenes\n- Source tools: Manage sources, settings, audio levels, mute/unmute\n- Scene item tools: Manage items in scenes (position, visibility, etc.)\n- Streaming tools: Start/stop streaming, recording, virtual camera\n- Transition tools: Set transitions, durations, trigger transitions\n\n## Environment Variables\n\n- `OBS_WEBSOCKET_URL`: WebSocket URL (default: ws://localhost:4455)\n- `OBS_WEBSOCKET_PASSWORD`: Password for authenticating with OBS WebSocket (if required)\n\n## Requirements\n\n- Node.js 16+\n- OBS Studio 31+ with WebSocket server enabled\n- Claude desktop\n\n## License\n\nSee the [LICENSE](https://github.com/royshil/obs-mcp/blob/HEAD/LICENSE) file for details.",
+    "zh-Hans": "# OBS MCP 服务器\n\n一个用于OBS Studio的MCP服务器，提供通过OBS WebSocket协议控制OBS的工具。\n\n## 功能\n\n- 连接到OBS WebSocket服务器\n- 通过MCP工具控制OBS\n- 提供以下功能的工具：\n  - 常规操作\n  - 场景管理\n  - 源控制\n  - 场景项操作\n  - 流媒体和录制\n  - 转场效果\n\n## 安装\n\n```bash\nnpm install\nnpm run build\n```\n\n## 使用方法\n\n1. 确保开启了WebSocket服务器的OBS Studio正在运行（工具 > WebSocket服务器设置）。记下WS的密码。\n2. 如果需要的话，在环境变量中设置WebSocket密码：\n\n```bash\nexport OBS_WEBSOCKET_PASSWORD=\"your_password_here\"\n```\n\n3. 运行OBS MCP服务器以检查它是否能够构建并连接成功：\n\n```bash\nnpm run build\nnpm run start\n```\n\n4. 使用MCP服务器设置配置你的Claude桌面：\n\n```json\n{\n  \"mcpServers\": {\n    \"obs\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/build/index.js\"\n      ],\n      \"env\": {\n        \"OBS_WEBSOCKET_PASSWORD\": \"\n\"\n      }\n    }\n  }\n}\n```\n\n5. 使用Claude来控制你的OBS！\n\n## 可用工具\n\n该服务器按类别组织提供了如下工具：\n\n- 通用工具：版本信息、统计信息、快捷键、工作室模式\n- 场景工具：列出场景、切换场景、创建/删除场景\n- 源工具：管理源、设置、音频级别、静音/取消静音\n- 场景项工具：管理场景中的项（位置、可见性等）\n- 流媒体工具：开始/停止流媒体、录制、虚拟摄像头\n- 转场工具：设置转场、持续时间、触发转场\n\n## 环境变量\n\n- `OBS_WEBSOCKET_URL`：WebSocket URL（默认值: ws://localhost:4455）\n- `OBS_WEBSOCKET_PASSWORD`：与OBS WebSocket认证所需的密码（如果需要）\n\n## 要求\n\n- Node.js 16+\n- 启用了WebSocket服务器的OBS Studio 31+\n- Claude桌面\n\n## 许可证\n\n详情请参见[LICENSE](https://github.com/royshil/obs-mcp/blob/HEAD/LICENSE)文件。",
+    "zh-Hant": "# OBS MCP 服务器\n\n一个用于OBS Studio的MCP服务器，提供通过OBS WebSocket协议控制OBS的工具。\n\n## 功能\n\n- 连接到OBS WebSocket服务器\n- 通过MCP工具控制OBS\n- 提供以下功能的工具：\n  - 常规操作\n  - 场景管理\n  - 源控制\n  - 场景项操作\n  - 流媒体和录制\n  - 转场效果\n\n## 安装\n\n```bash\nnpm install\nnpm run build\n```\n\n## 使用方法\n\n1. 确保开启了WebSocket服务器的OBS Studio正在运行（工具 > WebSocket服务器设置）。记下WS的密码。\n2. 如果需要的话，在环境变量中设置WebSocket密码：\n\n```bash\nexport OBS_WEBSOCKET_PASSWORD=\"your_password_here\"\n```\n\n3. 运行OBS MCP服务器以检查它是否能够构建并连接成功：\n\n```bash\nnpm run build\nnpm run start\n```\n\n4. 使用MCP服务器设置配置你的Claude桌面：\n\n```json\n{\n  \"mcpServers\": {\n    \"obs\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/build/index.js\"\n      ],\n      \"env\": {\n        \"OBS_WEBSOCKET_PASSWORD\": \"\n\"\n      }\n    }\n  }\n}\n```\n\n5. 使用Claude来控制你的OBS！\n\n## 可用工具\n\n该服务器按类别组织提供了如下工具：\n\n- 通用工具：版本信息、统计信息、快捷键、工作室模式\n- 场景工具：列出场景、切换场景、创建/删除场景\n- 源工具：管理源、设置、音频级别、静音/取消静音\n- 场景项工具：管理场景中的项（位置、可见性等）\n- 流媒体工具：开始/停止流媒体、录制、虚拟摄像头\n- 转场工具：设置转场、持续时间、触发转场\n\n## 环境变量\n\n- `OBS_WEBSOCKET_URL`：WebSocket URL（默认值: ws://localhost:4455）\n- `OBS_WEBSOCKET_PASSWORD`：与OBS WebSocket认证所需的密码（如果需要）\n\n## 要求\n\n- Node.js 16+\n- 启用了WebSocket服务器的OBS Studio 31+\n- Claude桌面\n\n## 许可证\n\n详情请参见[LICENSE](https://github.com/royshil/obs-mcp/blob/HEAD/LICENSE)文件。"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "os automation",
+    "entertainment and media",
+    "chinese"
+  ],
+  "website": "https://github.com/royshil/obs-mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "<obs-mcp_root>/build/index.js"
+    ],
+    "env": [
+      [
+        "OBS_WEBSOCKET_PASSWORD",
+        "<password_from_obs>"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 3.15
+}

@@ -1,0 +1,49 @@
+{
+  "id": "variflight-ai-variflight",
+  "channel": "mcp",
+  "name": {
+    "en": "variflight-mcp",
+    "zh-Hans": "飞常准-Aviation",
+    "zh-Hant": "飞常准-Aviation"
+  },
+  "description": {
+    "en": "A Model Context Protocol (MCP) server implementation for VariFlight flight information services. This server provides various tools to query flight information, weather data, and flight comfort metrics.",
+    "zh-Hans": "VariFlight航班信息服务的模型上下文协议（MCP）服务器实现方案。该服务器提供了多种工具，支持查询航班信息、天气数据及航班舒适度指标。",
+    "zh-Hant": "VariFlight航班信息服务的模型上下文协议（MCP）服务器实现方案。该服务器提供了多种工具，支持查询航班信息、天气数据及航班舒适度指标。"
+  },
+  "detail": {
+    "en": "# Variflight MCP Server\n\nA Model Context Protocol (MCP) server implementation for VariFlight flight information services. This server provides various tools to query flight information, weather data, and flight comfort metrics.\n\n# Variflight API Key\n\nTo use the Variflight MCP server, you need to have a Variflight API key. You can get it from [here](https://mcp.variflight.com).\n\n## Installation\n\n```json\n{\n    \"mcpServers\": {\n        \"variflight\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"@variflight-ai/variflight-mcp\"\n            ],\n            \"env\": {\n                \"VARIFLIGHT_API_KEY\": \"your_api_key_here\"\n            }\n        }\n    }\n}\n```\n\n## Available Tools\n\n### 1. Search Flights by Departure and Arrival\nSearch flights between airports using IATA codes:\n```typescript\nsearchFlightsByDepArr({\n  dep: \"PEK\",  // Beijing\n  arr: \"SHA\",  // Shanghai\n  date: \"2024-03-20\"\n})\n```\n\n### 2. Search Flights by Number\nSearch flights using flight number:\n```typescript\nsearchFlightsByNumber({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n\n### 3. Get Flight Transfer Information\nFind transfer options between cities:\n```typescript\ngetFlightTransferInfo({\n  depcity: \"BJS\",\n  arrcity: \"LAX\",\n  depdate: \"2024-03-20\"\n})\n```\n\n### 4. Flight Happiness Index\nGet detailed flight comfort metrics:\n```typescript\nflightHappinessIndex({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n\n### 5. Real-time Aircraft Location\nTrack aircraft location using registration number:\n```typescript\ngetRealtimeLocationByAnum({\n  anum: \"B2021\"\n})\n```\n\n### 6. Airport Weather Forecast\nGet 3-day weather forecast for airports:\n```typescript\ngetFutureWeatherByAirport({\n  airport: \"PEK\"\n})\n```\n\n### 7. Search Flight Itineraries\nSearch for purchasable flight options and get the lowest prices:\n```typescript\nsearchFlightItineraries({\n  depCityCode: \"BJS\",  // Beijing\n  arrCityCode: \"SHA\",  // Shanghai\n  depDate: \"2025-04-20\"\n})\n```\n\n## License\n\nISC License - See LICENSE for details.\n\n## Author\n\nVariflight (https://mcp.variflight.com)\n\n## Version\n\nCurrent version: 0.0.2",
+    "zh-Hans": "# Variflight MCP 服务器\n\n为 VariFlight 航班信息服务实现的模型上下文协议（MCP）服务器。该服务器提供了多种工具来查询航班信息、天气数据和飞行舒适度指标。\n\n# Variflight API 密钥\n\n要使用 Variflight MCP 服务器，您需要拥有一个 Variflight API 密钥。您可以从[这里](https://mcp.variflight.com)获取它。\n\n## 安装\n\n```json\n\n{\n\n    \"mcpServers\": {\n\n        \"variflight\": {\n\n            \"command\": \"npx\",\n\n            \"args\": [\n\n                \"-y\",\n\n                \"@variflight-ai/variflight-mcp\"\n\n            ],\n\n            \"env\": {\n\n                \"VARIFLIGHT_API_KEY\": \"your_api_key_here\"\n\n            }\n\n        }\n\n    }\n\n}\n\n```\n## 可用工具\n\n### 1. 按出发地和目的地搜索航班\n使用 IATA 代码搜索机场之间的航班：\n```typescript\nsearchFlightsByDepArr({\n  dep: \"PEK\",  // Beijing\n  arr: \"SHA\",  // Shanghai\n  date: \"2024-03-20\"\n})\n```\n### 2. 按航班号搜索航班\n使用航班号搜索航班：\n```typescript\nsearchFlightsByNumber({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n### 3. 获取航班中转信息\n查找城市间的中转选项：\n```typescript\ngetFlightTransferInfo({\n  depcity: \"BJS\",\n  arrcity: \"LAX\",\n  depdate: \"2024-03-20\"\n})\n```\n### 4. 飞行幸福指数\n获取详细的飞行舒适度指标：\n```typescript\nflightHappinessIndex({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n### 5. 实时飞机位置\n使用注册号跟踪飞机位置：\n```typescript\ngetRealtimeLocationByAnum({\n  anum: \"B2021\"\n})\n```\n### 6. 机场天气预报\n获取机场三天天气预报：\n```typescript\ngetFutureWeatherByAirport({\n  airport: \"PEK\"\n})\n```\n### 7. 搜索航班行程\n搜索可购买的航班选项并获取最低价格：\n```typescript\nsearchFlightItineraries({\n  depCityCode: \"BJS\",  // Beijing\n  arrCityCode: \"SHA\",  // Shanghai\n  depDate: \"2025-04-20\"\n})\n```\n## 许可证\n\nISC 许可证 - 详情请参阅 LICENSE。\n\n## 作者\n\nVariflight (https://mcp.variflight.com)\n\n## 版本\n\n当前版本：0.0.2",
+    "zh-Hant": "# Variflight MCP 服务器\n\n为 VariFlight 航班信息服务实现的模型上下文协议（MCP）服务器。该服务器提供了多种工具来查询航班信息、天气数据和飞行舒适度指标。\n\n# Variflight API 密钥\n\n要使用 Variflight MCP 服务器，您需要拥有一个 Variflight API 密钥。您可以从[这里](https://mcp.variflight.com)获取它。\n\n## 安装\n\n```json\n\n{\n\n    \"mcpServers\": {\n\n        \"variflight\": {\n\n            \"command\": \"npx\",\n\n            \"args\": [\n\n                \"-y\",\n\n                \"@variflight-ai/variflight-mcp\"\n\n            ],\n\n            \"env\": {\n\n                \"VARIFLIGHT_API_KEY\": \"your_api_key_here\"\n\n            }\n\n        }\n\n    }\n\n}\n\n```\n## 可用工具\n\n### 1. 按出发地和目的地搜索航班\n使用 IATA 代码搜索机场之间的航班：\n```typescript\nsearchFlightsByDepArr({\n  dep: \"PEK\",  // Beijing\n  arr: \"SHA\",  // Shanghai\n  date: \"2024-03-20\"\n})\n```\n### 2. 按航班号搜索航班\n使用航班号搜索航班：\n```typescript\nsearchFlightsByNumber({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n### 3. 获取航班中转信息\n查找城市间的中转选项：\n```typescript\ngetFlightTransferInfo({\n  depcity: \"BJS\",\n  arrcity: \"LAX\",\n  depdate: \"2024-03-20\"\n})\n```\n### 4. 飞行幸福指数\n获取详细的飞行舒适度指标：\n```typescript\nflightHappinessIndex({\n  fnum: \"MU2157\",\n  date: \"2024-03-20\"\n})\n```\n### 5. 实时飞机位置\n使用注册号跟踪飞机位置：\n```typescript\ngetRealtimeLocationByAnum({\n  anum: \"B2021\"\n})\n```\n### 6. 机场天气预报\n获取机场三天天气预报：\n```typescript\ngetFutureWeatherByAirport({\n  airport: \"PEK\"\n})\n```\n### 7. 搜索航班行程\n搜索可购买的航班选项并获取最低价格：\n```typescript\nsearchFlightItineraries({\n  depCityCode: \"BJS\",  // Beijing\n  arrCityCode: \"SHA\",  // Shanghai\n  depDate: \"2025-04-20\"\n})\n```\n## 许可证\n\nISC 许可证 - 详情请参阅 LICENSE。\n\n## 作者\n\nVariflight (https://mcp.variflight.com)\n\n## 版本\n\n当前版本：0.0.2"
+  },
+  "categories": [
+    "development",
+    "search",
+    "productivity"
+  ],
+  "tags": [
+    "calendar management",
+    "developer tools",
+    "search"
+  ],
+  "website": "https://www.npmjs.com/package/@variflight-ai/variflight-mcp",
+  "icon": "/mcp-icons/18db3f6ad898dc42e4e60fb977e79416.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@variflight-ai/variflight-mcp"
+    ],
+    "env": [
+      [
+        "VARIFLIGHT_API_KEY",
+        "your_api_key_here"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 39.85
+}

@@ -1,0 +1,42 @@
+{
+  "id": "microlee-unsplash",
+  "channel": "mcp",
+  "name": {
+    "en": "unsplash-server",
+    "zh-Hans": "unsplash图片浏览",
+    "zh-Hant": "unsplash图片浏览"
+  },
+  "description": {
+    "en": "Unsplash MCP Server An Unsplash tool server based on the Model Context Protocol, providing 15 tools for search, photo details, random photos, collections, topics, and users. Feature List Photo-related Tools (Photos) - searchphotos - Search Unsplash photos by k",
+    "zh-Hans": "Unsplash MCP Server 一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。 功能列表 照片相关工具 (Photos) - searchphotos - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选 - getphoto - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等 - listphotos - 列出 Unsplash 最新、最热门或最旧的照片列",
+    "zh-Hant": "Unsplash MCP Server 一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。 功能列表 照片相关工具 (Photos) - searchphotos - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选 - getphoto - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等 - listphotos - 列出 Unsplash 最新、最热门或最旧的照片列"
+  },
+  "detail": {
+    "en": "# Unsplash MCP Server\n\nAn Unsplash tool server based on the Model Context Protocol, providing 15 tools for search, photo details, random photos, collections, topics, and users.\n\n## Feature List\n\n### Photo-related Tools (Photos)\n- **search_photos** - Search Unsplash photos by keyword, supporting pagination, sorting, color filtering, and orientation filtering\n- **get_photo** - Get detailed information of a single photo by its ID, including author, dimensions, download link, etc.\n- **list_photos** - List the latest, most popular, or oldest photos on Unsplash, supporting pagination\n- **get_random_photo** - Get a random photo, with options to filter by keyword, collection, topic, user, etc.\n- **track_download** - Track photo download events (required by the Unsplash API), must be called when a user downloads a photo\n\n### Collection-related Tools (Collections)\n- **list_collections** - List photo collections on Unsplash, supporting paginated browsing\n- **get_collection** - Get detailed information of a collection by its ID, including title, description, number of photos, etc.\n- **get_collection_photos** - Get all photos in a specified collection, supporting pagination and orientation filtering\n\n### Topic-related Tools (Topics)\n- **list_topics** - List all topic categories on Unsplash, supporting sorting by newest, oldest, or location\n- **get_topic** - Get detailed information of a topic by its ID or slug\n- **get_topic_photos** - Get photos under a specified topic, supporting pagination, sorting, and orientation filtering\n\n### User-related Tools (Users)\n- **get_user** - Get public information of an Unsplash user by username, including bio, number of works, etc.\n- **get_user_photos** - Get all photos uploaded by a specified user, supporting pagination, sorting, and orientation filtering\n- **get_user_likes** - Get a list of photos liked (favorited) by a specified user, supporting pagination, sorting, and orientation filtering\n- **get_user_collections** - Get a list of photo collections created by a specified user, supporting pagination\n\n## Installation and Build\n```bash\nnpm install\nnpm run build\n```\n## Running\n```bash\nUNSPLASH_ACCESS_KEY=your_key node build/index.js\n```\n## MCP Configuration Example\n```json\n{\n    \"mcpServers\": {\n        \"unsplash\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"@microlee666/unsplash-mcp-server\"\n            ],\n            \"env\": {\n                \"UNSPLASH_ACCESS_KEY\": \"\"\n            },\n            \"disabled\": false,\n            \"alwaysAllow\": [],\n            \"disabledTools\": []\n        }\n    }\n}\n```\n## Publishing to npm\nYou need to log in to npm and ensure that the package name is not already taken:\n```bash\nnpm login\nnpm publish --registry https://registry.npmjs.org\n```",
+    "zh-Hans": "# Unsplash MCP Server\n\n一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。\n\n## 功能列表\n\n### 照片相关工具 (Photos)\n- **search_photos** - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选\n- **get_photo** - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等\n- **list_photos** - 列出 Unsplash 最新、最热门或最旧的照片列表，支持分页\n- **get_random_photo** - 获取随机照片，可按关键词、集合、主题、用户等条件筛选\n- **track_download** - 追踪照片下载事件（Unsplash API 要求），在用户下载照片时必须调用\n\n### 集合相关工具 (Collections)\n- **list_collections** - 列出 Unsplash 上的照片集合，支持分页浏览\n- **get_collection** - 根据集合 ID 获取集合的详细信息，包括标题、描述、照片数量等\n- **get_collection_photos** - 获取指定集合中的所有照片，支持分页和方向筛选\n\n### 主题相关工具 (Topics)\n- **list_topics** - 列出 Unsplash 上的所有主题分类，支持按最新、最旧或位置排序\n- **get_topic** - 根据主题 ID 或 slug 获取主题的详细信息\n- **get_topic_photos** - 获取指定主题下的照片，支持分页、排序和方向筛选\n\n### 用户相关工具 (Users)\n- **get_user** - 根据用户名获取 Unsplash 用户的公开信息，包括简介、作品数量等\n- **get_user_photos** - 获取指定用户上传的所有照片，支持分页、排序和方向筛选\n- **get_user_likes** - 获取指定用户点赞（喜欢）的照片列表，支持分页、排序和方向筛选\n- **get_user_collections** - 获取指定用户创建的照片集合列表，支持分页\n\n## 安装与构建\n```bash\nnpm install\nnpm run build\n```\n\n## 运行\n```bash\nUNSPLASH_ACCESS_KEY=your_key node build/index.js\n```\n\n## MCP 配置示例\n```json\n{\n    \"mcpServers\": {\n        \"unsplash\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"@microlee666/unsplash-mcp-server\"\n            ],\n            \"env\": {\n                \"UNSPLASH_ACCESS_KEY\": \"\"\n            },\n            \"disabled\": false,\n            \"alwaysAllow\": [],\n            \"disabledTools\": []\n        }\n    }\n}\n```\n\n## 发布到 npm\n需先登录 npm 并确保包名未被占用：\n```bash\nnpm login\nnpm publish --registry https://registry.npmjs.org\n```",
+    "zh-Hant": "# Unsplash MCP Server\n\n一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。\n\n## 功能列表\n\n### 照片相关工具 (Photos)\n- **search_photos** - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选\n- **get_photo** - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等\n- **list_photos** - 列出 Unsplash 最新、最热门或最旧的照片列表，支持分页\n- **get_random_photo** - 获取随机照片，可按关键词、集合、主题、用户等条件筛选\n- **track_download** - 追踪照片下载事件（Unsplash API 要求），在用户下载照片时必须调用\n\n### 集合相关工具 (Collections)\n- **list_collections** - 列出 Unsplash 上的照片集合，支持分页浏览\n- **get_collection** - 根据集合 ID 获取集合的详细信息，包括标题、描述、照片数量等\n- **get_collection_photos** - 获取指定集合中的所有照片，支持分页和方向筛选\n\n### 主题相关工具 (Topics)\n- **list_topics** - 列出 Unsplash 上的所有主题分类，支持按最新、最旧或位置排序\n- **get_topic** - 根据主题 ID 或 slug 获取主题的详细信息\n- **get_topic_photos** - 获取指定主题下的照片，支持分页、排序和方向筛选\n\n### 用户相关工具 (Users)\n- **get_user** - 根据用户名获取 Unsplash 用户的公开信息，包括简介、作品数量等\n- **get_user_photos** - 获取指定用户上传的所有照片，支持分页、排序和方向筛选\n- **get_user_likes** - 获取指定用户点赞（喜欢）的照片列表，支持分页、排序和方向筛选\n- **get_user_collections** - 获取指定用户创建的照片集合列表，支持分页\n\n## 安装与构建\n```bash\nnpm install\nnpm run build\n```\n\n## 运行\n```bash\nUNSPLASH_ACCESS_KEY=your_key node build/index.js\n```\n\n## MCP 配置示例\n```json\n{\n    \"mcpServers\": {\n        \"unsplash\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"-y\",\n                \"@microlee666/unsplash-mcp-server\"\n            ],\n            \"env\": {\n                \"UNSPLASH_ACCESS_KEY\": \"\"\n            },\n            \"disabled\": false,\n            \"alwaysAllow\": [],\n            \"disabledTools\": []\n        }\n    }\n}\n```\n\n## 发布到 npm\n需先登录 npm 并确保包名未被占用：\n```bash\nnpm login\nnpm publish --registry https://registry.npmjs.org\n```"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "search",
+    "art and culture",
+    "chinese"
+  ],
+  "website": "https://unsplash.com/",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@microlee666/unsplash-mcp-server"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 28.8
+}

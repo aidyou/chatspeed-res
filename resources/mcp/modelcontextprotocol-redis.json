@@ -1,0 +1,42 @@
+{
+  "id": "modelcontextprotocol-redis",
+  "channel": "mcp",
+  "name": {
+    "en": "redis",
+    "zh-Hans": "Redis数据库",
+    "zh-Hant": "Redis数据库"
+  },
+  "description": {
+    "en": "A Model Context Protocol server that provides access to Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
+    "zh-Hans": "一个提供访问Redis数据库的模型上下文协议服务器。该服务器通过一系列标准化工具使大语言模型能够与Redis键值存储进行交互。",
+    "zh-Hant": "一个提供访问Redis数据库的模型上下文协议服务器。该服务器通过一系列标准化工具使大语言模型能够与Redis键值存储进行交互。"
+  },
+  "detail": {
+    "en": "# Redis\n\nA Model Context Protocol server that provides access to Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.\n\n## Prerequisites\n\n1. Redis server must be installed and running\n   - [Download Redis](https://redis.io/download)\n   - For Windows users: Use [Windows Subsystem for Linux (WSL)](https://redis.io/docs/getting-started/installation/install-redis-on-windows/) or [Memurai](https://www.memurai.com/) (Redis-compatible Windows server)\n   - Default port: 6379\n\n## Common Issues & Solutions\n\n### Connection Errors\n\n**ECONNREFUSED**\n  - **Cause**: Redis server is not running or unreachable\n  - **Solution**: \n    - Verify Redis is running: `redis-cli ping` should return \"PONG\"\n    - Check Redis service status: `systemctl status redis` (Linux) or `brew services list` (macOS)\n    - Ensure correct port (default 6379) is not blocked by firewall\n    - Verify Redis URL format: `redis://hostname:port`\n\n### Server Behavior\n\n- The server implements exponential backoff with a maximum of 5 retries\n- Initial retry delay: 1 second, maximum delay: 30 seconds\n- Server will exit after max retries to prevent infinite reconnection loops\n\n## Components\n\n### Tools\n\n- **set**\n  - Set a Redis key-value pair with optional expiration\n  - Input:\n    - `key` (string): Redis key\n    - `value` (string): Value to store\n    - `expireSeconds` (number, optional): Expiration time in seconds\n\n- **get**\n  - Get value by key from Redis\n  - Input: `key` (string): Redis key to retrieve\n\n- **delete**\n  - Delete one or more keys from Redis\n  - Input: `key` (string | string[]): Key or array of keys to delete\n\n- **list**\n  - List Redis keys matching a pattern\n  - Input: `pattern` (string, optional): Pattern to match keys (default: *)\n\n## Usage with Claude Desktop\n\nTo use this server with the Claude Desktop app, add the following configuration to the \"mcpServers\" section of your `claude_desktop_config.json`:\n\n### Docker\n\n* when running docker on macos, use host.docker.internal if the server is running on the host network (eg localhost)\n* Redis URL can be specified as an argument, defaults to \"redis://localhost:6379\"\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \n        \"-i\", \n        \"--rm\", \n        \"mcp/redis\", \n        \"redis://host.docker.internal:6379\"]\n    }\n  }\n}\n```\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-redis\",\n        \"redis://localhost:6379\"\n      ]\n    }\n  }\n}\n```\n\n## Building\n\nDocker:\n\n```sh\ndocker build -t mcp/redis -f src/redis/Dockerfile . \n```\n\n## License\n\nThis MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.",
+    "zh-Hans": "# Redis\n\n一个提供访问 Redis 数据库的模型上下文协议服务器。此服务器通过一组标准化工具使 LLM 能够与 Redis 键值存储进行交互。\n\n## 先决条件\n\n1. 必须安装并运行 Redis 服务器\n   - [下载 Redis](https://redis.io/download)\n   - 对于 Windows 用户：使用 [Windows Subsystem for Linux (WSL)](https://redis.io/docs/getting-started/installation/install-redis-on-windows/) 或 [Memurai](https://www.memurai.com/)（兼容 Redis 的 Windows 服务器）\n   - 默认端口：6379\n\n## 常见问题及解决方案\n\n### 连接错误\n\n**ECONNREFUSED**\n  - **原因**：Redis 服务器未运行或无法访问\n  - **解决方案**：\n    - 验证 Redis 是否正在运行：`redis-cli ping` 应返回 \"PONG\"\n    - 检查 Redis 服务状态：`systemctl status redis`（Linux）或 `brew services list`（macOS）\n    - 确保默认端口（6379）未被防火墙阻止\n    - 验证 Redis URL 格式：`redis://hostname:port`\n\n### 服务器行为\n\n- 服务器实现了带有最大重试次数 5 次的指数退避策略\n- 初始重试延迟：1 秒，最大延迟：30 秒\n- 服务器将在达到最大重试次数后退出，以防止无限重连循环\n\n## 组件\n\n### 工具\n\n- **set**\n  - 设置 Redis 键值对，并可选设置过期时间\n  - 输入：\n    - `key` (字符串)：Redis 键\n    - `value` (字符串)：要存储的值\n    - `expireSeconds` (数字, 可选)：过期时间（秒）\n\n- **get**\n  - 从 Redis 中根据键获取值\n  - 输入：`key` (字符串)：要检索的 Redis 键\n\n- **delete**\n  - 从 Redis 中删除一个或多个键\n  - 输入：`key` (字符串 | 字符串数组)：要删除的单个键或键数组\n\n- **list**\n  - 列出与模式匹配的 Redis 键\n  - 输入：`pattern` (字符串, 可选)：用于匹配键的模式（默认：*）\n\n## 与 Claude Desktop 一起使用\n\n要将此服务器与 Claude Desktop 应用程序一起使用，请在您的 `claude_desktop_config.json` 文件的 \"mcpServers\" 部分添加以下配置：\n\n### Docker\n\n* 在 macOS 上运行 Docker 时，如果服务器在主机网络上运行（例如 localhost），请使用 host.docker.internal\n* 可以作为参数指定 Redis URL，默认为 \"redis://localhost:6379\"\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \n        \"-i\", \n        \"--rm\", \n        \"mcp/redis\", \n        \"redis://host.docker.internal:6379\"]\n    }\n  }\n}\n```\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-redis\",\n        \"redis://localhost:6379\"\n      ]\n    }\n  }\n}\n```\n\n## 构建\n\nDocker:\n\n```sh\ndocker build -t mcp/redis -f src/redis/Dockerfile . \n```\n\n## 许可证\n\n该 MCP 服务器基于 MIT 许可证发布。这意味着您可以自由使用、修改和分发软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目仓库中的 LICENSE 文件。",
+    "zh-Hant": "# Redis\n\n一个提供访问 Redis 数据库的模型上下文协议服务器。此服务器通过一组标准化工具使 LLM 能够与 Redis 键值存储进行交互。\n\n## 先决条件\n\n1. 必须安装并运行 Redis 服务器\n   - [下载 Redis](https://redis.io/download)\n   - 对于 Windows 用户：使用 [Windows Subsystem for Linux (WSL)](https://redis.io/docs/getting-started/installation/install-redis-on-windows/) 或 [Memurai](https://www.memurai.com/)（兼容 Redis 的 Windows 服务器）\n   - 默认端口：6379\n\n## 常见问题及解决方案\n\n### 连接错误\n\n**ECONNREFUSED**\n  - **原因**：Redis 服务器未运行或无法访问\n  - **解决方案**：\n    - 验证 Redis 是否正在运行：`redis-cli ping` 应返回 \"PONG\"\n    - 检查 Redis 服务状态：`systemctl status redis`（Linux）或 `brew services list`（macOS）\n    - 确保默认端口（6379）未被防火墙阻止\n    - 验证 Redis URL 格式：`redis://hostname:port`\n\n### 服务器行为\n\n- 服务器实现了带有最大重试次数 5 次的指数退避策略\n- 初始重试延迟：1 秒，最大延迟：30 秒\n- 服务器将在达到最大重试次数后退出，以防止无限重连循环\n\n## 组件\n\n### 工具\n\n- **set**\n  - 设置 Redis 键值对，并可选设置过期时间\n  - 输入：\n    - `key` (字符串)：Redis 键\n    - `value` (字符串)：要存储的值\n    - `expireSeconds` (数字, 可选)：过期时间（秒）\n\n- **get**\n  - 从 Redis 中根据键获取值\n  - 输入：`key` (字符串)：要检索的 Redis 键\n\n- **delete**\n  - 从 Redis 中删除一个或多个键\n  - 输入：`key` (字符串 | 字符串数组)：要删除的单个键或键数组\n\n- **list**\n  - 列出与模式匹配的 Redis 键\n  - 输入：`pattern` (字符串, 可选)：用于匹配键的模式（默认：*）\n\n## 与 Claude Desktop 一起使用\n\n要将此服务器与 Claude Desktop 应用程序一起使用，请在您的 `claude_desktop_config.json` 文件的 \"mcpServers\" 部分添加以下配置：\n\n### Docker\n\n* 在 macOS 上运行 Docker 时，如果服务器在主机网络上运行（例如 localhost），请使用 host.docker.internal\n* 可以作为参数指定 Redis URL，默认为 \"redis://localhost:6379\"\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \n        \"-i\", \n        \"--rm\", \n        \"mcp/redis\", \n        \"redis://host.docker.internal:6379\"]\n    }\n  }\n}\n```\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"redis\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-redis\",\n        \"redis://localhost:6379\"\n      ]\n    }\n  }\n}\n```\n\n## 构建\n\nDocker:\n\n```sh\ndocker build -t mcp/redis -f src/redis/Dockerfile . \n```\n\n## 许可证\n\n该 MCP 服务器基于 MIT 许可证发布。这意味着您可以自由使用、修改和分发软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目仓库中的 LICENSE 文件。"
+  },
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "developer tools",
+    "chinese"
+  ],
+  "website": "https://github.com/modelcontextprotocol/servers/tree/main/src/redis",
+  "icon": "/mcp-icons/dc650eefccc556eef2403e8c64419ec1.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-redis",
+      "REDIS_URL"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 33.76
+}

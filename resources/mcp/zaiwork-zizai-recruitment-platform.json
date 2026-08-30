@@ -1,0 +1,47 @@
+{
+  "id": "zaiwork-zizai-recruitment-platform",
+  "channel": "mcp",
+  "name": {
+    "en": "ZIZAI-Recruitment-Platform",
+    "zh-Hans": "自在招聘-MCP",
+    "zh-Hant": "自在招聘-MCP"
+  },
+  "description": {
+    "en": "ZIZAI Recruitment Platform(https://zizai.work) is a core API service that is fully compatible with the MCP protocol, making it the first recruitment platform service provider in China to support this protocol.",
+    "zh-Hans": "自在招聘平台（https://zizai.work）MCP 服务是一个与 MCP 协议完全兼容的核心 API 服务，是中国第一家支持该协议的招聘平台服务提供商。",
+    "zh-Hant": "自在招聘平台（https://zizai.work）MCP 服务是一个与 MCP 协议完全兼容的核心 API 服务，是中国第一家支持该协议的招聘平台服务提供商。"
+  },
+  "detail": {
+    "en": "# 自在招聘 MCP Server\n\nMCP Server for 自在招聘 API.\n\n# 自在招聘\n自在招聘（[https://zizai.work](https://zizai.work)）是一个基于专业测评的新一代智能招聘平台，帮助人才与职位高效、精准的智能匹配。\n\n加入我们，立即体验智能招聘的魅力！\n\n## Tools\n\n1. `get-job-list`\n   - 获取推荐的职位列表\n   - Input:\n     - `keyword` (string, 可选): 职位搜索关键词。\n     - `recruitType` (number, 可选): 职位类型，1-社招，2-校招，2-实习\n   - Returns:\n     - Array of {\n       - `workPin`: string\n       - `name`: string\n       - `entityName`: string\n       - `entityShortname`: string\n       - `responsibility`: string\n       - `requirement`: string\n       - `welfare`: string\n       - `salary`: { minSalary: number, maxSalary: number } | string\n       - `detailUrl`: string\n     }\n\n2. `apply-for-job`\n   - 投递职位\n   - Inputs:\n     - `workPin` (string) 职位唯一码\n   - Returns:\n\n## Setup\n\n### API Key\nGet a ZIZAI Work API key by following the instructions [here](https://zizai.work/user/apikey).\n\n### Usage with Claude Desktop\n\nAdd the following to your `claude_desktop_config.json`:\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"zaiwork\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@zizaiwork/mcp\"\n      ],\n      \"env\": {\n        \"ZAI_API_KEY\": \"\"\n      }\n    }\n  }\n}\n```\n\n## License\n\nThis MCP server is licensed under the Apache-2.0 License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the Apache-2.0 License. For more details, please see the LICENSE file in the project repository.",
+    "zh-Hans": "# 自在招聘 MCP Server\n\nMCP Server for 自在招聘 API.\n\n# 自在招聘\n自在招聘（[https://zizai.work](https://zizai.work)）是一个基于专业测评的新一代智能招聘平台，帮助人才与职位高效、精准的智能匹配。\n\n加入我们，立即体验智能招聘的魅力！\n\n## Tools\n\n1. `get-job-list`\n   - 获取推荐的职位列表\n   - Input:\n     - `keyword` (string, 可选): 职位搜索关键词。\n     - `recruitType` (number, 可选): 职位类型，1-社招，2-校招，2-实习\n   - Returns:\n     - Array of {\n       - `workPin`: string\n       - `name`: string\n       - `entityName`: string\n       - `entityShortname`: string\n       - `responsibility`: string\n       - `requirement`: string\n       - `welfare`: string\n       - `salary`: { minSalary: number, maxSalary: number } | string\n       - `detailUrl`: string\n     }\n\n2. `apply-for-job`\n   - 投递职位\n   - Inputs:\n     - `workPin` (string) 职位唯一码\n   - Returns:\n\n## Setup\n\n### API Key\nGet a ZIZAI Work API key by following the instructions [here](https://zizai.work/user/apikey).\n\n### Usage with Claude Desktop\n\nAdd the following to your `claude_desktop_config.json`:\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"zaiwork\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@zizaiwork/mcp\"\n      ],\n      \"env\": {\n        \"ZAI_API_KEY\": \"\"\n      }\n    }\n  }\n}\n```\n\n## License\n\nThis MCP server is licensed under the Apache-2.0 License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the Apache-2.0 License. For more details, please see the LICENSE file in the project repository.",
+    "zh-Hant": "# 自在招聘 MCP Server\n\nMCP Server for 自在招聘 API.\n\n# 自在招聘\n自在招聘（[https://zizai.work](https://zizai.work)）是一个基于专业测评的新一代智能招聘平台，帮助人才与职位高效、精准的智能匹配。\n\n加入我们，立即体验智能招聘的魅力！\n\n## Tools\n\n1. `get-job-list`\n   - 获取推荐的职位列表\n   - Input:\n     - `keyword` (string, 可选): 职位搜索关键词。\n     - `recruitType` (number, 可选): 职位类型，1-社招，2-校招，2-实习\n   - Returns:\n     - Array of {\n       - `workPin`: string\n       - `name`: string\n       - `entityName`: string\n       - `entityShortname`: string\n       - `responsibility`: string\n       - `requirement`: string\n       - `welfare`: string\n       - `salary`: { minSalary: number, maxSalary: number } | string\n       - `detailUrl`: string\n     }\n\n2. `apply-for-job`\n   - 投递职位\n   - Inputs:\n     - `workPin` (string) 职位唯一码\n   - Returns:\n\n## Setup\n\n### API Key\nGet a ZIZAI Work API key by following the instructions [here](https://zizai.work/user/apikey).\n\n### Usage with Claude Desktop\n\nAdd the following to your `claude_desktop_config.json`:\n\n### NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"zaiwork\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@zizaiwork/mcp\"\n      ],\n      \"env\": {\n        \"ZAI_API_KEY\": \"\"\n      }\n    }\n  }\n}\n```\n\n## License\n\nThis MCP server is licensed under the Apache-2.0 License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the Apache-2.0 License. For more details, please see the LICENSE file in the project repository."
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "search",
+    "research and data",
+    "chinese"
+  ],
+  "website": "https://github.com/zaiwork/mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@zizaiwork/mcp"
+    ],
+    "env": [
+      [
+        "ZAI_API_KEY",
+        "<YOUR_API_KEY>"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 29.24
+}

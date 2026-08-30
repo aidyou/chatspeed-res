@@ -1,0 +1,44 @@
+{
+  "id": "stripe-agent-toolkit",
+  "channel": "mcp",
+  "name": {
+    "en": "agent-toolkit",
+    "zh-Hans": "Stripe支付代理工具",
+    "zh-Hant": "Stripe支付代理工具"
+  },
+  "description": {
+    "en": "The Stripe Model Context Protocol server allows you to integrate with Stripe APIs through function calling. This protocol supports various tools to interact with different Stripe services.",
+    "zh-Hans": "Stripe模型上下文协议服务器允许您通过函数调用与Stripe API集成。该协议支持各种工具与不同的Stripe服务进行交互。",
+    "zh-Hant": "Stripe模型上下文协议服务器允许您通过函数调用与Stripe API集成。该协议支持各种工具与不同的Stripe服务进行交互。"
+  },
+  "detail": {
+    "en": "# Stripe Model Context Protocol\n\nThe Stripe [Model Context Protocol](https://modelcontextprotocol.com/) server allows you to integrate with Stripe APIs through function calling. This protocol supports various tools to interact with different Stripe services.\n\n## Setup\n\nTo run the Stripe MCP server using npx, use the following command:\n\n```bash\n# To set up all available tools\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To set up specific tools\nnpx -y @stripe/mcp --tools=customers.create,customers.read,products.create --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To configure a Stripe connected account\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY --stripe-account=CONNECTED_ACCOUNT_ID\n```\n\nMake sure to replace `YOUR_STRIPE_SECRET_KEY` with your actual Stripe secret key. Alternatively, you could set the STRIPE_SECRET_KEY in your environment variables.\n\n### Usage with Claude Desktop\n\nAdd the following to your `claude_desktop_config.json`. See [here](https://modelcontextprotocol.io/quickstart/user) for more details.\n\n```\n{\n  \"mcpServers\": {\n    \"stripe\": {\n      \"command\": \"npx\",\n      \"args\": [\n          \"-y\",\n          \"@stripe/mcp\",\n          \"--tools=all\",\n          \"--api-key=STRIPE_SECRET_KEY\"\n      ]\n    }\n  }\n}\n```\n\n## Available tools\n\n| Tool                  | Description                     |\n| --------------------- | ------------------------------- |\n| `customers.create`    | Create a new customer           |\n| `customers.read`      | Read customer information       |\n| `products.create`     | Create a new product            |\n| `products.read`       | Read product information        |\n| `prices.create`       | Create a new price              |\n| `prices.read`         | Read price information          |\n| `paymentLinks.create` | Create a new payment link       |\n| `invoices.create`     | Create a new invoice            |\n| `invoices.update`     | Update an existing invoice      |\n| `invoiceItems.create` | Create a new invoice item       |\n| `balance.read`        | Retrieve balance information    |\n| `refunds.create`      | Create a new refund             |\n| `paymentIntents.read` | Read payment intent information |\n| `documentation.read`  | Search Stripe documentation     |\n\n## Debugging the Server\n\nTo debug your server, you can use the [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector).\n\nFirst build the server\n\n```\nnpm run build\n```\n\nRun the following command in your terminal:\n\n```bash\n# Start MCP Inspector and server with all tools\nnpx @modelcontextprotocol/inspector node dist/index.js --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n```\n\n### Instructions\n\n1. Replace `YOUR_STRIPE_SECRET_KEY` with your actual Stripe API secret key.\n2. Run the command to start the MCP Inspector.\n3. Open the MCP Inspector UI in your browser and click Connect to start the MCP server.\n4. You can see the list of tools you selected and test each tool individually.",
+    "zh-Hans": "# Stripe Model Context Protocol\n\nStripe [Model Context Protocol](https://modelcontextprotocol.com/) 服务器允许您通过函数调用来集成 Stripe API。此协议支持多种工具以与不同的 Stripe 服务进行交互。\n\n## 设置\n\n要使用 npx 运行 Stripe MCP 服务器，请使用以下命令：\n\n```bash\n# To set up all available tools\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To set up specific tools\nnpx -y @stripe/mcp --tools=customers.create,customers.read,products.create --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To configure a Stripe connected account\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY --stripe-account=CONNECTED_ACCOUNT_ID\n```\n\n请确保将 `YOUR_STRIPE_SECRET_KEY` 替换为您的实际 Stripe 密钥。或者，您也可以在环境变量中设置 STRIPE_SECRET_KEY。\n\n### 与 Claude Desktop 一起使用\n\n在您的 `claude_desktop_config.json` 中添加以下内容。更多详情请参见[这里](https://modelcontextprotocol.io/quickstart/user)。\n\n```\n{\n  \"mcpServers\": {\n    \"stripe\": {\n      \"command\": \"npx\",\n      \"args\": [\n          \"-y\",\n          \"@stripe/mcp\",\n          \"--tools=all\",\n          \"--api-key=STRIPE_SECRET_KEY\"\n      ]\n    }\n  }\n}\n```\n\n## 可用工具\n\n| 工具                  | 描述                     |\n| --------------------- | ------------------------ |\n| `customers.create`    | 创建新客户               |\n| `customers.read`      | 读取客户信息             |\n| `products.create`     | 创建新产品               |\n| `products.read`       | 读取产品信息             |\n| `prices.create`       | 创建新价格               |\n| `prices.read`         | 读取价格信息             |\n| `paymentLinks.create` | 创建新的支付链接         |\n| `invoices.create`     | 创建新发票               |\n| `invoices.update`     | 更新现有发票             |\n| `invoiceItems.create` | 创建新发票项             |\n| `balance.read`        | 检索余额信息             |\n| `refunds.create`      | 创建新退款               |\n| `paymentIntents.read` | 读取支付意图信息         |\n| `documentation.read`  | 搜索 Stripe 文档         |\n\n## 调试服务器\n\n要调试您的服务器，您可以使用 [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector)。\n\n首先构建服务器\n\n```\nnpm run build\n```\n\n在终端中运行以下命令：\n\n```bash\n# Start MCP Inspector and server with all tools\nnpx @modelcontextprotocol/inspector node dist/index.js --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n```\n\n### 指示\n\n1. 将 `YOUR_STRIPE_SECRET_KEY` 替换为您实际的 Stripe API 密钥。\n2. 运行命令以启动 MCP Inspector。\n3. 在浏览器中打开 MCP Inspector UI 并点击连接以启动 MCP 服务器。\n4. 您可以看到所选工具列表，并单独测试每个工具。",
+    "zh-Hant": "# Stripe Model Context Protocol\n\nStripe [Model Context Protocol](https://modelcontextprotocol.com/) 服务器允许您通过函数调用来集成 Stripe API。此协议支持多种工具以与不同的 Stripe 服务进行交互。\n\n## 设置\n\n要使用 npx 运行 Stripe MCP 服务器，请使用以下命令：\n\n```bash\n# To set up all available tools\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To set up specific tools\nnpx -y @stripe/mcp --tools=customers.create,customers.read,products.create --api-key=YOUR_STRIPE_SECRET_KEY\n\n# To configure a Stripe connected account\nnpx -y @stripe/mcp --tools=all --api-key=YOUR_STRIPE_SECRET_KEY --stripe-account=CONNECTED_ACCOUNT_ID\n```\n\n请确保将 `YOUR_STRIPE_SECRET_KEY` 替换为您的实际 Stripe 密钥。或者，您也可以在环境变量中设置 STRIPE_SECRET_KEY。\n\n### 与 Claude Desktop 一起使用\n\n在您的 `claude_desktop_config.json` 中添加以下内容。更多详情请参见[这里](https://modelcontextprotocol.io/quickstart/user)。\n\n```\n{\n  \"mcpServers\": {\n    \"stripe\": {\n      \"command\": \"npx\",\n      \"args\": [\n          \"-y\",\n          \"@stripe/mcp\",\n          \"--tools=all\",\n          \"--api-key=STRIPE_SECRET_KEY\"\n      ]\n    }\n  }\n}\n```\n\n## 可用工具\n\n| 工具                  | 描述                     |\n| --------------------- | ------------------------ |\n| `customers.create`    | 创建新客户               |\n| `customers.read`      | 读取客户信息             |\n| `products.create`     | 创建新产品               |\n| `products.read`       | 读取产品信息             |\n| `prices.create`       | 创建新价格               |\n| `prices.read`         | 读取价格信息             |\n| `paymentLinks.create` | 创建新的支付链接         |\n| `invoices.create`     | 创建新发票               |\n| `invoices.update`     | 更新现有发票             |\n| `invoiceItems.create` | 创建新发票项             |\n| `balance.read`        | 检索余额信息             |\n| `refunds.create`      | 创建新退款               |\n| `paymentIntents.read` | 读取支付意图信息         |\n| `documentation.read`  | 搜索 Stripe 文档         |\n\n## 调试服务器\n\n要调试您的服务器，您可以使用 [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector)。\n\n首先构建服务器\n\n```\nnpm run build\n```\n\n在终端中运行以下命令：\n\n```bash\n# Start MCP Inspector and server with all tools\nnpx @modelcontextprotocol/inspector node dist/index.js --tools=all --api-key=YOUR_STRIPE_SECRET_KEY\n```\n\n### 指示\n\n1. 将 `YOUR_STRIPE_SECRET_KEY` 替换为您实际的 Stripe API 密钥。\n2. 运行命令以启动 MCP Inspector。\n3. 在浏览器中打开 MCP Inspector UI 并点击连接以启动 MCP 服务器。\n4. 您可以看到所选工具列表，并单独测试每个工具。"
+  },
+  "categories": [
+    "finance"
+  ],
+  "tags": [
+    "finance",
+    "developer tools",
+    "chinese"
+  ],
+  "website": "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol",
+  "icon": "/mcp-icons/02175104ce36033de3472fa4a9c7ef5f.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@stripe/mcp",
+      "--tools=all",
+      "--api-key=STRIPE_SECRET_KEY"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 41.34
+}

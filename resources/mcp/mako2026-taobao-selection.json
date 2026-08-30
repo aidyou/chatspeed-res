@@ -1,0 +1,49 @@
+{
+  "id": "mako2026-taobao-selection",
+  "channel": "mcp",
+  "name": {
+    "en": "taobao-selection",
+    "zh-Hans": "淘宝精选",
+    "zh-Hant": "淘宝精选"
+  },
+  "description": {
+    "en": "🛒 Taobao Selection MCP service for searching and recommending quality products on Taobao. Input your shopping needs, and get a selection of high-quality goods. Users can click on the short link to make a purchase. ✨ Core Features ▸ Curated Quality Goods — Only",
+    "zh-Hans": "🛒 淘宝精选 搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。 ✨ 核心特性 ▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤 ▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件 ▸ 到手价展示 — 返回最终到手价，有券自动折算 ▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买 ▸ 配置即接入 — 无需申请Key，Stdio配置即可使用 🛠 工具 searchstandard — 标品搜索 搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天",
+    "zh-Hant": "🛒 淘宝精选 搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。 ✨ 核心特性 ▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤 ▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件 ▸ 到手价展示 — 返回最终到手价，有券自动折算 ▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买 ▸ 配置即接入 — 无需申请Key，Stdio配置即可使用 🛠 工具 searchstandard — 标品搜索 搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天"
+  },
+  "detail": {
+    "en": "🛒 Taobao Selection\n\nMCP service for searching and recommending quality products on Taobao. Input your shopping needs, and get a selection of high-quality goods. Users can click on the short link to make a purchase.\n\n✨ Core Features\n\n▸ Curated Quality Goods — Only reliable products are recommended, with low-quality items automatically filtered out\n\n▸ Precise Search — Get exactly what you search for, no more results showing accessories when you search for a phone\n\n▸ Final Price Display — Shows the final price after discounts, with coupons automatically applied\n\n▸ Clickable Short Links — Provides promotional short links that can be opened in WeChat or any browser, leading directly to the purchase page on Taobao\n\n▸ Configuration-Ready Access — No need to apply for a Key; just configure in Stdio to start using\n\n🛠 Tools\n\n**search_standard — Standard Product Search**\n\nSearch for 3C electronics, home appliances, and other clearly branded and model-specified products, sorted by final price, prioritizing Tmall.\n\nParameters:\n\n▸ **keyword (required)** — Search keyword, such as \"iPhone 16 Pro Max 256G\", \"Dyson Hair Dryer HD15\"\n\n▸ **price_min (optional)** — Minimum price\n\n▸ **price_max (optional)** — Maximum price\n\n▸ **is_tmall (optional)** — Tmall only, default is true\n\n▸ **page (optional)** — Page number, default is 1\n\n**search_lifestyle — Non-Standard Product Search**\n\nSearch for clothing, beauty, home furnishings, and other products that rely on sales volume and reputation, sorted by sales volume.\n\nParameters:\n\n▸ **keyword (required)** — Search keyword, such as \"summer dress\", \"men's sports shoes\"\n\n▸ **category (optional)** — Primary category, such as \"clothing, shoes, and bags\"\n\n▸ **price_min (optional)** — Minimum price\n\n▸ **price_max (optional)** — Maximum price\n\n▸ **is_tmall (optional)** — Tmall only, default is not limited\n\n▸ **page (optional)** — Page number, default is 1\n\n**shop_search — Shop Search**\n\nSearch for official brand flagship stores or well-known shops.\n\nParameters:\n\n▸ **keyword (required)** — Shop name keyword, such as \"Uniqlo Official Flagship Store\"\n\n▸ **page (optional)** — Page number, default is 1\n\n📝 Usage Examples\n\n▸ \"Recommend an iPhone 16 for me\" → `search_standard`\n\n▸ \"Which robot vacuum is good\" → `search_standard`\n\n▸ \"How much is the Dyson Hair Dryer HD15\" → `search_standard`\n\n▸ \"Summer dress recommendation\" → `search_lifestyle`\n\n▸ \"Men's sports shoes under 200\" → `search_lifestyle`, `price_max=200`\n\n▸ \"Find the Uniqlo flagship store\" → `shop_search`\n\nApplicable Scenarios\n\n▸ AI assistants/smart agents recommending quality products from Taobao to users\n\n▸ Shopping comparison agents searching and comparing prices\n\n▸ Travel/lifestyle agents integrating product recommendation capabilities\n\n▸ Quickly finding product information in an IDE",
+    "zh-Hans": "🛒 淘宝精选\r\n\r\n搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。\r\n\r\n✨ 核心特性\r\n\r\n▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤\r\n\r\n▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件\r\n\r\n▸ 到手价展示 — 返回最终到手价，有券自动折算\r\n\r\n▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买\r\n\r\n▸ 配置即接入 — 无需申请Key，Stdio配置即可使用\r\n\r\n🛠 工具\r\n\r\nsearch_standard — 标品搜索\r\n\r\n搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天猫。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 搜索关键词，如\"iPhone 16 Pro Max 256G\"、\"戴森吹风机HD15\"\r\n\r\n▸ price_min（可选）— 最低价格\r\n\r\n▸ price_max（可选）— 最高价格\r\n\r\n▸ is_tmall（可选）— 仅天猫，默认true\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\nsearch_lifestyle — 非标品搜索\r\n\r\n搜索服饰、美妆、家居等看销量和口碑的商品，按销量排序。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 搜索关键词，如\"夏季连衣裙\"、\"男士运动鞋\"\r\n\r\n▸ category（可选）— 一级类目，如\"服饰鞋包\"\r\n\r\n▸ price_min（可选）— 最低价格\r\n\r\n▸ price_max（可选）— 最高价格\r\n\r\n▸ is_tmall（可选）— 仅天猫，默认不限\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\nshop_search — 店铺搜索\r\n\r\n搜索品牌官方旗舰店或知名店铺。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 店铺名关键词，如\"优衣库官方旗舰店\"\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\n📝 使用示例\r\n\r\n▸ \"帮我推荐一款iPhone 16\" → search_standard\r\n\r\n▸ \"扫地机器人哪款好\" → search_standard\r\n\r\n▸ \"戴森吹风机HD15多少钱\" → search_standard\r\n\r\n▸ \"夏季连衣裙推荐\" → search_lifestyle\r\n\r\n▸ \"男士运动鞋200以内\" → search_lifestyle，price_max=200\r\n\r\n▸ \"找一下优衣库旗舰店\" → shop_search\r\n\r\n适用场景\r\n\r\n▸ AI助手/智能体为用户推荐淘宝好货\r\n\r\n▸ 购物比价Agent搜索并比较价格\r\n\r\n▸ 旅行/生活类Agent集成商品推荐能力\r\n\r\n▸ IDE中快速查找商品信息",
+    "zh-Hant": "🛒 淘宝精选\r\n\r\n搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。\r\n\r\n✨ 核心特性\r\n\r\n▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤\r\n\r\n▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件\r\n\r\n▸ 到手价展示 — 返回最终到手价，有券自动折算\r\n\r\n▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买\r\n\r\n▸ 配置即接入 — 无需申请Key，Stdio配置即可使用\r\n\r\n🛠 工具\r\n\r\nsearch_standard — 标品搜索\r\n\r\n搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天猫。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 搜索关键词，如\"iPhone 16 Pro Max 256G\"、\"戴森吹风机HD15\"\r\n\r\n▸ price_min（可选）— 最低价格\r\n\r\n▸ price_max（可选）— 最高价格\r\n\r\n▸ is_tmall（可选）— 仅天猫，默认true\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\nsearch_lifestyle — 非标品搜索\r\n\r\n搜索服饰、美妆、家居等看销量和口碑的商品，按销量排序。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 搜索关键词，如\"夏季连衣裙\"、\"男士运动鞋\"\r\n\r\n▸ category（可选）— 一级类目，如\"服饰鞋包\"\r\n\r\n▸ price_min（可选）— 最低价格\r\n\r\n▸ price_max（可选）— 最高价格\r\n\r\n▸ is_tmall（可选）— 仅天猫，默认不限\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\nshop_search — 店铺搜索\r\n\r\n搜索品牌官方旗舰店或知名店铺。\r\n\r\n参数：\r\n\r\n▸ keyword（必填）— 店铺名关键词，如\"优衣库官方旗舰店\"\r\n\r\n▸ page（可选）— 页码，默认1\r\n\r\n📝 使用示例\r\n\r\n▸ \"帮我推荐一款iPhone 16\" → search_standard\r\n\r\n▸ \"扫地机器人哪款好\" → search_standard\r\n\r\n▸ \"戴森吹风机HD15多少钱\" → search_standard\r\n\r\n▸ \"夏季连衣裙推荐\" → search_lifestyle\r\n\r\n▸ \"男士运动鞋200以内\" → search_lifestyle，price_max=200\r\n\r\n▸ \"找一下优衣库旗舰店\" → shop_search\r\n\r\n适用场景\r\n\r\n▸ AI助手/智能体为用户推荐淘宝好货\r\n\r\n▸ 购物比价Agent搜索并比较价格\r\n\r\n▸ 旅行/生活类Agent集成商品推荐能力\r\n\r\n▸ IDE中快速查找商品信息"
+  },
+  "categories": [
+    "search",
+    "development"
+  ],
+  "tags": [
+    "search",
+    "developer tools",
+    "other",
+    "淘宝精选",
+    "淘宝搜索",
+    "淘宝推荐",
+    "淘宝购物",
+    "好货推荐",
+    "智能购物",
+    "淘宝mcp"
+  ],
+  "website": "https://pypi.org/project/taobao-selection-mcp/",
+  "icon": "/mcp-icons/f75dbca6f1f8091c849a66056598e22e.jpg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "taobao-selection-mcp==0.2.3"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 30.3
+}

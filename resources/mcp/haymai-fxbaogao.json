@@ -1,0 +1,49 @@
+{
+  "id": "haymai-fxbaogao",
+  "channel": "mcp",
+  "name": {
+    "en": "fxbaogao",
+    "zh-Hans": "发现报告",
+    "zh-Hant": "发现报告"
+  },
+  "description": {
+    "en": "The Discovery Report is a professional research report search platform. It comprehensively covers the search and reading of related research reports including industry analysis, company research, macro strategies, financial reports, and prospectuses.",
+    "zh-Hans": "发现报告是专业研报搜索平台。全面覆盖行业分析、公司研究、宏观策略、财报、招股书等研究报告的相关搜索和阅读。",
+    "zh-Hant": "发现报告是专业研报搜索平台。全面覆盖行业分析、公司研究、宏观策略、财报、招股书等研究报告的相关搜索和阅读。"
+  },
+  "detail": {
+    "en": "# 📊 Discovery Report (MCP Tool)\n\nThis tool is integrated into the MCP protocol, providing search and content extraction capabilities for research reports on the Discovery Report website. It is suitable for scenarios such as financial analysis, industry research, and investment analysis.\n\n💡 Official New Version Released: Now supports skills, mcp, cli. [Try it now](https://www.fxbaogao.com/agent-interface)\n---\n\n## ✨ Tool One: `search_reports`\n\nSearches for a list of research reports based on conditions such as keywords, authors, organization names, and time ranges.\n\n### 🔧 Parameter Description\n\n| Parameter Name | Type              | Required | Description |\n|---------------|-------------------|----------|-------------|\n| `keywords`    | `str`             | No       | Search keywords, supports both Chinese and English. |\n| `authors`     | `List[str]`       | No       | List of author names, e.g., `[\"Zhang San\", \"Li Si\"]`. |\n| `org_names`   | `List[str]`       | No       | List of organization names, e.g., `[\"Discovery Report\", \"Alibaba\"]`. |\n| `start_time`  | `int`             | No       | Start time, in milliseconds, e.g., `1640995200000` represents 2022-01-01 00:00:00. |\n| `end_time`    | `int` / `str`     | No       | End time, supports millisecond timestamp or relative time string:\n• `\"last3day\"`\n• `\"last7day\"`\n• `\"last1mon\"`\n• `\"last3mon\"`\n• `\"last1year\"` |\n| `page_size`   | `int`             | No       | Number of results to return, default is 10, maximum is 100. |\n\n### 📥 Usage Example\n\n```python\n\n# 按关键词搜索\n\nsearch_reports(keywords=\"人工智能\")\n\n# 按机构搜索\n\nsearch_reports(org_names=[\"发现报告\"])\n\n# 搜索最近一周某位作者的报告\n\nsearch_reports(authors=[\"王磊\"], end_time=\"last7day\")\n\n# 精确时间段搜索\n\nsearch_reports(\n\n    keywords=\"新能源\",\n\n    start_time=1748707200000,\n\n    end_time=1749398399999\n\n)\n\n```\n## ✨ Tool Two: `get_report_content`\n\nFetches detailed content and summary information of a report based on the report ID (`doc_id`).\n\n---\n\n### 🔧 Parameter Description\n\n| Parameter Name | Type   | Required | Description |\n|---------------|--------|----------|-------------|\n| `doc_id`      | `int`  | Yes      | The document ID of the research report, obtained from the `docId` field in the result returned by `search_reports`. |\n\n---\n\n### 📥 Usage Example\n\n```python\n\n# 获取该研报的内容\n\ncontent = await get_report_content(doc_id)\n\n```\n## Server Configuration:\n```json\n{\n  \"mcpServers\": {\n    \"fxbaogao-mcp\": {\n      \"args\": [\n        \"fxbaogao-mcp@latest\"\n      ],\n      \"command\": \"uvx\"\n    }\n  }\n}\n```\n## Notes\nThis tool is intended for educational and research purposes only. Do not use it for commercial purposes.\nPlease comply with the terms of use and relevant laws and regulations of Discovery Report.",
+    "zh-Hans": "# 📊 发现报告（MCP Tool）\n\n本工具集成于 MCP 协议，提供对发现报告网站研究报告的搜索与内容提取能力，适用于金融、产业研究、投资分析等场景。\n\n💡 官方新版本上线： 现已支持 skills, mcp, cli。[立即体验](https://www.fxbaogao.com/agent-interface)\n---\n\n## ✨ 工具一：`search_reports`\n\n通过关键词、作者、机构名称、时间范围等条件检索研究报告列表。\n\n### 🔧 参数说明\n\n| 参数名        | 类型              | 必填 | 说明 |\n|---------------|-------------------|------|------|\n| `keywords`    | `str`             | 否   | 搜索关键词，支持中英文。 |\n| `authors`     | `List[str]`       | 否   | 作者姓名列表，如 `[\"张三\", \"李四\"]`。 |\n| `org_names`   | `List[str]`       | 否   | 机构名称列表，如 `[\"发现报告\", \"阿里巴巴\"]`。 |\n| `start_time`  | `int`             | 否   | 起始时间，毫秒级时间戳，如 `1640995200000` 表示 2022-01-01 00:00:00。 |\n| `end_time`    | `int` / `str`     | 否   | 结束时间，支持毫秒时间戳或相对时间字符串：\n• `\"last3day\"`\n• `\"last7day\"`\n• `\"last1mon\"`\n• `\"last3mon\"`\n• `\"last1year\"` |\n| `page_size`   | `int`             | 否   | 返回结果数量，默认 10，最大 100。 |\n\n### 📥 使用示例\n\n```python\n# 按关键词搜索\nsearch_reports(keywords=\"人工智能\")\n\n# 按机构搜索\nsearch_reports(org_names=[\"发现报告\"])\n\n# 搜索最近一周某位作者的报告\nsearch_reports(authors=[\"王磊\"], end_time=\"last7day\")\n\n# 精确时间段搜索\nsearch_reports(\n    keywords=\"新能源\",\n    start_time=1748707200000,\n    end_time=1749398399999\n)\n```\n\n## ✨ 工具二：get_report_content\n\n根据报告 ID（`doc_id`）获取研报的详细内容与总结信息。\n\n---\n\n### 🔧 参数说明\n\n| 参数名   | 类型   | 必填 | 说明 |\n|----------|--------|------|------|\n| `doc_id` | `int`  | ✅ 是 | 研报文档 ID，来自 `search_reports` 返回结果中的 `docId` 字段。 |\n\n---\n\n### 📥 使用示例\n\n```python\n# 获取该研报的内容\ncontent = await get_report_content(doc_id)\n```\n\n## 服务器配置：\n```json\n{\n  \"mcpServers\": {\n    \"fxbaogao-mcp\": {\n      \"args\": [\n        \"fxbaogao-mcp@latest\"\n      ],\n      \"command\": \"uvx\"\n    }\n  }\n}\n```\n\n## 注意事项\n本工具仅供学习和研究使用，请勿用于商业目的\n请遵守发现报告的使用条款和相关法律法规",
+    "zh-Hant": "# 📊 发现报告（MCP Tool）\n\n本工具集成于 MCP 协议，提供对发现报告网站研究报告的搜索与内容提取能力，适用于金融、产业研究、投资分析等场景。\n\n💡 官方新版本上线： 现已支持 skills, mcp, cli。[立即体验](https://www.fxbaogao.com/agent-interface)\n---\n\n## ✨ 工具一：`search_reports`\n\n通过关键词、作者、机构名称、时间范围等条件检索研究报告列表。\n\n### 🔧 参数说明\n\n| 参数名        | 类型              | 必填 | 说明 |\n|---------------|-------------------|------|------|\n| `keywords`    | `str`             | 否   | 搜索关键词，支持中英文。 |\n| `authors`     | `List[str]`       | 否   | 作者姓名列表，如 `[\"张三\", \"李四\"]`。 |\n| `org_names`   | `List[str]`       | 否   | 机构名称列表，如 `[\"发现报告\", \"阿里巴巴\"]`。 |\n| `start_time`  | `int`             | 否   | 起始时间，毫秒级时间戳，如 `1640995200000` 表示 2022-01-01 00:00:00。 |\n| `end_time`    | `int` / `str`     | 否   | 结束时间，支持毫秒时间戳或相对时间字符串：\n• `\"last3day\"`\n• `\"last7day\"`\n• `\"last1mon\"`\n• `\"last3mon\"`\n• `\"last1year\"` |\n| `page_size`   | `int`             | 否   | 返回结果数量，默认 10，最大 100。 |\n\n### 📥 使用示例\n\n```python\n# 按关键词搜索\nsearch_reports(keywords=\"人工智能\")\n\n# 按机构搜索\nsearch_reports(org_names=[\"发现报告\"])\n\n# 搜索最近一周某位作者的报告\nsearch_reports(authors=[\"王磊\"], end_time=\"last7day\")\n\n# 精确时间段搜索\nsearch_reports(\n    keywords=\"新能源\",\n    start_time=1748707200000,\n    end_time=1749398399999\n)\n```\n\n## ✨ 工具二：get_report_content\n\n根据报告 ID（`doc_id`）获取研报的详细内容与总结信息。\n\n---\n\n### 🔧 参数说明\n\n| 参数名   | 类型   | 必填 | 说明 |\n|----------|--------|------|------|\n| `doc_id` | `int`  | ✅ 是 | 研报文档 ID，来自 `search_reports` 返回结果中的 `docId` 字段。 |\n\n---\n\n### 📥 使用示例\n\n```python\n# 获取该研报的内容\ncontent = await get_report_content(doc_id)\n```\n\n## 服务器配置：\n```json\n{\n  \"mcpServers\": {\n    \"fxbaogao-mcp\": {\n      \"args\": [\n        \"fxbaogao-mcp@latest\"\n      ],\n      \"command\": \"uvx\"\n    }\n  }\n}\n```\n\n## 注意事项\n本工具仅供学习和研究使用，请勿用于商业目的\n请遵守发现报告的使用条款和相关法律法规"
+  },
+  "categories": [
+    "search",
+    "finance",
+    "data"
+  ],
+  "tags": [
+    "finance",
+    "research and data",
+    "search",
+    "研究报告",
+    "行业报告",
+    "咨询管理",
+    "产业研究",
+    "投资分析",
+    "chinese"
+  ],
+  "website": "https://www.fxbaogao.com/",
+  "icon": "/mcp-icons/dd3a570866f00f1b039c7ac2eec46ff3.jpg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "fxbaogao-mcp@latest"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 40.1
+}

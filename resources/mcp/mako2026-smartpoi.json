@@ -1,0 +1,43 @@
+{
+  "id": "mako2026-smartpoi",
+  "channel": "mcp",
+  "name": {
+    "en": "SmartPoi",
+    "zh-Hans": "景点智能推荐",
+    "zh-Hant": "景点智能推荐"
+  },
+  "description": {
+    "en": "Intelligent Attraction Recommendation MCP Server (mcp-poi-smart-recommend) I. Product Introduction A 6-in-1 intelligent recommendation service centered on attraction recommendations, covering the entire process from \"where to go\" to \"how to get there.\" By inte",
+    "zh-Hans": "景点智能推荐 MCP Server（mcp-poi-smart-recommend） 一、产品介绍 以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。 二、工具能力 ▸ recommendpoi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接 ▸ searchpoi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选 ▸ searchfast",
+    "zh-Hant": "景点智能推荐 MCP Server（mcp-poi-smart-recommend） 一、产品介绍 以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。 二、工具能力 ▸ recommendpoi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接 ▸ searchpoi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选 ▸ searchfast"
+  },
+  "detail": {
+    "en": "Intelligent Attraction Recommendation MCP Server (mcp-poi-smart-recommend)\n\nI. Product Introduction\n\nA 6-in-1 intelligent recommendation service centered on attraction recommendations, covering the entire process from \"where to go\" to \"how to get there.\" By integrating Fliggy travel ticket data with AMap location services, it provides capabilities such as AI recommendations, structured search, nearby discovery, weather forecasting, and transportation planning.\n\nII. Tool Capabilities\n\n▸ recommend_poi: AI intelligent attraction recommendation, where a natural language description returns the most suitable attractions along with ticket prices and booking links\n\n▸ search_poi: Structured search for attraction tickets, supporting multi-dimensional filtering by city, keyword, type, and level\n\n▸ search_fast: Rapid search, quickly querying information about attractions, tickets, and routes\n\n▸ nearby_poi: Nearby attraction discovery, searching for nearby attractions based on location, returning distance, rating, and address\n\n▸ search_weather: Querying destination weather forecasts to assist in travel decision-making\n\n▸ search_transport: Transportation planning, including taxi fare estimates, subway/bus transfer plans, and one-click taxi booking links\n\nIII. Usage Scenarios\n\n▸ Travel Planning: Recommending destination attractions based on interest preferences\n\n▸ Ticket Inquiry: Searching for attraction ticket prices and booking links by city, type, and level\n\n▸ Nearby Exploration: Discovering hidden gems near the current location\n\n▸ Travel Preparation: Getting ahead of the game by understanding the destination's weather and transportation options\n\nIV. Usage Instructions\n\nThis MCP service is distributed via PyPI. Install it using the following command:\n\nbash\npip install mcp-poi-smart-recommend\n\nAfter installation, add the Server command in the MCP client configuration:\n\nbash\nmcp-poi-smart-recommend\n\nV. Parameter Explanation\n\nrecommend_poi (AI Intelligent Recommendation)\n\n▸ query (required): Description for attraction recommendation, in natural language, e.g., \"seaside attractions suitable for families in Sanya,\" \"5A scenic spots recommended in Hangzhou\"\n\nsearch_poi (Structured Search for Attraction Tickets)\n\n▸ cityName (required): City name, such as Hangzhou, Xi'an\n\n▸ keyword (optional): Keywords for the attraction name, such as the Forbidden City, the Great Wall, Disneyland\n\n▸ category (optional): Type of attraction, such as natural scenery, theme parks, cultural relics\n\n▸ poiLevel (optional): Attraction level 1-5 (5 being 5A), 0 indicates no limit\n\nsearch_fast (Rapid Search)\n\n▸ query (required): Search term, such as \"Sanya attractions,\" \"Beijing Forbidden City tickets,\" \"Shanghai Disneyland\"\n\nnearby_poi (Nearby Attraction Discovery)\n\n▸ location (required): Current location or landmark, such as West Lake, The Bund, the Forbidden City\n\n▸ city (optional): City, such as Hangzhou, Shanghai, Beijing\n\n▸ radius (optional): Search radius (in meters), default is 3000\n\nsearch_weather (Weather Forecast)\n\n▸ query (required): Weather query description, such as \"Sanya weather forecast,\" \"Hangzhou weather tomorrow\"\n\nsearch_transport (Transportation Planning)\n\n▸ query (required): Transportation query description, such as \"Pudong Airport to The Bund (Shanghai),\" \"Beijing South Railway Station to the Forbidden City\"",
+    "zh-Hans": "景点智能推荐 MCP Server（mcp-poi-smart-recommend）\r\n\r\n一、产品介绍\r\n\r\n以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。\r\n\r\n二、工具能力\r\n\r\n▸ recommend_poi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接\r\n\r\n▸ search_poi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选\r\n\r\n▸ search_fast：极速搜索，快速查询景点、门票、线路等信息\r\n\r\n▸ nearby_poi：周边景点发现，基于位置搜索附近景点，返回距离、评分、地址\r\n\r\n▸ search_weather：查询目的地天气预报，辅助出行决策\r\n\r\n▸ search_transport：交通方案规划，含打车预估、地铁/公交换乘方案 + 一键打车链接\r\n\r\n三、使用场景\r\n\r\n▸ 出行规划：根据兴趣偏好推荐目的地景点\r\n\r\n▸ 门票查询：按城市、类型、等级搜索景点门票价格和预订链接\r\n\r\n▸ 周边游玩：基于当前位置发现附近隐藏好去处\r\n\r\n▸ 出行准备：提前了解目的地天气和交通方案\r\n\r\n四、使用方式\r\n\r\n本 MCP 服务通过 PyPI 分发，使用以下命令安装：\r\n\r\nbash\r\n1\r\n2\r\npip install mcp-poi-smart-recommend\r\n\r\n\r\n\r\n安装后在 MCP 客户端配置中添加 Server 命令：\r\n\r\nbash\r\n1\r\n2\r\nmcp-poi-smart-recommend\r\n\r\n\r\n\r\n五、参数说明\r\n\r\nrecommend_poi（AI 智能推荐）\r\n\r\n▸ query（必填）：景点推荐描述，自然语言，如「三亚适合亲子的海边景点」「杭州 5A 景区推荐」\r\n\r\nsearch_poi（结构化搜索景点门票）\r\n\r\n▸ cityName（必填）：城市名，如杭州、西安\r\n\r\n▸ keyword（可选）：景点名称关键词，如故宫、长城、迪士尼\r\n\r\n▸ category（可选）：景点类型，如自然风光、主题乐园、人文古迹\r\n\r\n▸ poiLevel（可选）：景点等级 1-5（5 为 5A），0 表示不限\r\n\r\nsearch_fast（极速搜索）\r\n\r\n▸ query（必填）：搜索词，如三亚景点、北京故宫门票、上海迪士尼\r\n\r\nnearby_poi（周边景点发现）\r\n\r\n▸ location（必填）：当前位置或地标，如西湖、外滩、故宫\r\n\r\n▸ city（可选）：所在城市，如杭州、上海、北京\r\n\r\n▸ radius（可选）：搜索半径（米），默认 3000\r\n\r\nsearch_weather（天气预报）\r\n\r\n▸ query（必填）：天气查询描述，如三亚天气预报、杭州明天天气\r\n\r\nsearch_transport（交通方案）\r\n\r\n▸ query（必填）：交通查询描述，如「浦东机场到外滩（上海）」「北京南站到故宫」",
+    "zh-Hant": "景点智能推荐 MCP Server（mcp-poi-smart-recommend）\r\n\r\n一、产品介绍\r\n\r\n以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。\r\n\r\n二、工具能力\r\n\r\n▸ recommend_poi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接\r\n\r\n▸ search_poi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选\r\n\r\n▸ search_fast：极速搜索，快速查询景点、门票、线路等信息\r\n\r\n▸ nearby_poi：周边景点发现，基于位置搜索附近景点，返回距离、评分、地址\r\n\r\n▸ search_weather：查询目的地天气预报，辅助出行决策\r\n\r\n▸ search_transport：交通方案规划，含打车预估、地铁/公交换乘方案 + 一键打车链接\r\n\r\n三、使用场景\r\n\r\n▸ 出行规划：根据兴趣偏好推荐目的地景点\r\n\r\n▸ 门票查询：按城市、类型、等级搜索景点门票价格和预订链接\r\n\r\n▸ 周边游玩：基于当前位置发现附近隐藏好去处\r\n\r\n▸ 出行准备：提前了解目的地天气和交通方案\r\n\r\n四、使用方式\r\n\r\n本 MCP 服务通过 PyPI 分发，使用以下命令安装：\r\n\r\nbash\r\n1\r\n2\r\npip install mcp-poi-smart-recommend\r\n\r\n\r\n\r\n安装后在 MCP 客户端配置中添加 Server 命令：\r\n\r\nbash\r\n1\r\n2\r\nmcp-poi-smart-recommend\r\n\r\n\r\n\r\n五、参数说明\r\n\r\nrecommend_poi（AI 智能推荐）\r\n\r\n▸ query（必填）：景点推荐描述，自然语言，如「三亚适合亲子的海边景点」「杭州 5A 景区推荐」\r\n\r\nsearch_poi（结构化搜索景点门票）\r\n\r\n▸ cityName（必填）：城市名，如杭州、西安\r\n\r\n▸ keyword（可选）：景点名称关键词，如故宫、长城、迪士尼\r\n\r\n▸ category（可选）：景点类型，如自然风光、主题乐园、人文古迹\r\n\r\n▸ poiLevel（可选）：景点等级 1-5（5 为 5A），0 表示不限\r\n\r\nsearch_fast（极速搜索）\r\n\r\n▸ query（必填）：搜索词，如三亚景点、北京故宫门票、上海迪士尼\r\n\r\nnearby_poi（周边景点发现）\r\n\r\n▸ location（必填）：当前位置或地标，如西湖、外滩、故宫\r\n\r\n▸ city（可选）：所在城市，如杭州、上海、北京\r\n\r\n▸ radius（可选）：搜索半径（米），默认 3000\r\n\r\nsearch_weather（天气预报）\r\n\r\n▸ query（必填）：天气查询描述，如三亚天气预报、杭州明天天气\r\n\r\nsearch_transport（交通方案）\r\n\r\n▸ query（必填）：交通查询描述，如「浦东机场到外滩（上海）」「北京南站到故宫」"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "search",
+    "developer tools",
+    "location services",
+    "景点推荐",
+    "chinese"
+  ],
+  "website": "https://pypi.org/project/mcp-poi-smart-recommend/",
+  "icon": "/mcp-icons/d176fcb01d511c379418f5c7a87a7485.jpg",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-poi-smart-recommend==5.0.1"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 26.33
+}

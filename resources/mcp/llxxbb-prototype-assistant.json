@@ -1,0 +1,49 @@
+{
+  "id": "llxxbb-prototype-assistant",
+  "channel": "mcp",
+  "name": {
+    "en": "prototype_assistant",
+    "zh-Hans": "原型设计助手",
+    "zh-Hant": "原型设计助手"
+  },
+  "description": {
+    "en": "An MCP tool that allows AI to perform prototyping directly based on HTML, enabling quick software prototype construction even without tools like Figma or Axure. Tool Capabilities: - Provides a navigation bar. - Decouples markup from the prototype. - Supports a",
+    "zh-Hans": "可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。 工具能力： - 提供导航栏。 - 将标记与原型解耦。 - 支持页面附加说明。 AI 提示词建议 在原型设计前： 要求： 请按原型工具规范进行原型设计。 需求：abcd... 使用过程中，如想展示原型，直接输入： 展示原型 原型展示会启动一个后台，所以不需要多次输入指令，否则会启动多个实例。 如想关闭，可输入： 停止展示 或 关闭原型 使用规范 - 导航栏： - 层级定义：与原型所在文件系统的目录结构",
+    "zh-Hant": "可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。 工具能力： - 提供导航栏。 - 将标记与原型解耦。 - 支持页面附加说明。 AI 提示词建议 在原型设计前： 要求： 请按原型工具规范进行原型设计。 需求：abcd... 使用过程中，如想展示原型，直接输入： 展示原型 原型展示会启动一个后台，所以不需要多次输入指令，否则会启动多个实例。 如想关闭，可输入： 停止展示 或 关闭原型 使用规范 - 导航栏： - 层级定义：与原型所在文件系统的目录结构"
+  },
+  "detail": {
+    "en": "An MCP tool that allows AI to perform prototyping directly based on HTML, enabling quick software prototype construction even without tools like Figma or Axure.\n\nTool Capabilities:\n\n- Provides a navigation bar.\n- Decouples markup from the prototype.\n- Supports additional page annotations.\n\n## AI Prompt Suggestions\n\nBefore prototyping:\n\n> Requirements:\n\n> Please follow the prototype tool specifications for design.\n\n> Needs: abcd...\n\nDuring use, if you want to display the prototype, simply enter:\n\n> Show Prototype\n\nPrototype display will start a background process, so **there's no need to input the command multiple times**, as it would start multiple instances.\n\nTo stop, you can enter:\n\n> Stop Display\n\nor\n\n> Close Prototype\n\n## Usage Guidelines\n\n- Navigation Bar:\n  - Hierarchy Definition: Corresponds one-to-one with the directory structure of the file system where the prototype is located.\n  - Prototype Name: Derived from the `data-nav-name` data attribute value of the prototype page tag; if omitted, the filename is used.\n\n- Function Injection: MCP-Prototype injects the following into each HTML page:\n  - Tags, pay attention to the correctness of the \"reference\" path.\n  - The `mcp-prototype-inject.js` file, used for displaying markers.\n\n- Markers: Enhance the user's understanding of UI elements by setting the `data-marker` data attribute. This is optional. If the meaning of related UI elements is already very clear, it is not recommended to configure this.\n\nAdditional page annotations are used to express content that cannot be conveyed through the prototype pages, such as design philosophy, element drag-and-drop, precautions, etc. The format is markdown, and the filename should be in the form [prototype page filename].annotation.md.\n\nFor specific references, see the `src\\mcp\\tool\\getSpec.ts` file.\n\nTech Stack\nnodejs, SvelteKit, Vite, ts",
+    "zh-Hans": "可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。\r\n\r\n工具能力：\r\n\r\n- 提供导航栏。\r\n\r\n- 将标记与原型解耦。\r\n\r\n- 支持页面附加说明。\r\n\r\n\r\n## AI 提示词建议\r\n\r\n在原型设计前：\r\n\r\n> 要求：\r\n\r\n> 请按原型工具规范进行原型设计。\r\n\r\n> 需求：abcd...\r\n\r\n使用过程中，如想展示原型，直接输入：\r\n\r\n> 展示原型\r\n\r\n原型展示会启动一个后台，所以**不需要多次输入指令**，否则会启动多个实例。\r\n\r\n如想关闭，可输入：\r\n\r\n> 停止展示\r\n\r\n或\r\n\r\n> 关闭原型\r\n\r\n## 使用规范\r\n\r\n- 导航栏：\r\n\r\n  - 层级定义：与原型所在文件系统的目录结构一一对应。\r\n\r\n  - 原型名称：来源于原型页面标签的 data-nav-name 数据属性值，如省略则使用文件名。\r\n\r\n- 功能注入，MCP-Prototype 会为每个 HTML 页面注入：\r\n\r\n  - 标签，注意\"引用\"路径的正确性。\r\n  - mcp-prototype-inject.js 文件，用于展示标记。\r\n\r\n- 标记：通过设置 UI 元素的 data-marker 数据属性来增强使用者对UI元素的理解，可选。如相关界面元素的意义已经非常明显，则不建议配置。\r\n\r\n                     \r\n\r\n页面的附加说明，用于表达原型页面无法表达的内容，如设计理念，元素拖拽，注意事项等。markdown 格式，文件名格式为[原型页面文件名].annotation.md\r\n\r\n具体参考：src\\mcp\\tool\\getSpec.ts 文件\r\n\r\n技术栈\r\nnodejs, SvelteKit, Vite，ts",
+    "zh-Hant": "可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。\r\n\r\n工具能力：\r\n\r\n- 提供导航栏。\r\n\r\n- 将标记与原型解耦。\r\n\r\n- 支持页面附加说明。\r\n\r\n\r\n## AI 提示词建议\r\n\r\n在原型设计前：\r\n\r\n> 要求：\r\n\r\n> 请按原型工具规范进行原型设计。\r\n\r\n> 需求：abcd...\r\n\r\n使用过程中，如想展示原型，直接输入：\r\n\r\n> 展示原型\r\n\r\n原型展示会启动一个后台，所以**不需要多次输入指令**，否则会启动多个实例。\r\n\r\n如想关闭，可输入：\r\n\r\n> 停止展示\r\n\r\n或\r\n\r\n> 关闭原型\r\n\r\n## 使用规范\r\n\r\n- 导航栏：\r\n\r\n  - 层级定义：与原型所在文件系统的目录结构一一对应。\r\n\r\n  - 原型名称：来源于原型页面标签的 data-nav-name 数据属性值，如省略则使用文件名。\r\n\r\n- 功能注入，MCP-Prototype 会为每个 HTML 页面注入：\r\n\r\n  - 标签，注意\"引用\"路径的正确性。\r\n  - mcp-prototype-inject.js 文件，用于展示标记。\r\n\r\n- 标记：通过设置 UI 元素的 data-marker 数据属性来增强使用者对UI元素的理解，可选。如相关界面元素的意义已经非常明显，则不建议配置。\r\n\r\n                     \r\n\r\n页面的附加说明，用于表达原型页面无法表达的内容，如设计理念，元素拖拽，注意事项等。markdown 格式，文件名格式为[原型页面文件名].annotation.md\r\n\r\n具体参考：src\\mcp\\tool\\getSpec.ts 文件\r\n\r\n技术栈\r\nnodejs, SvelteKit, Vite，ts"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "developer tools",
+    "art and culture",
+    "原型",
+    "html",
+    "导航",
+    "标注",
+    "标记",
+    "附加说明",
+    "设计",
+    "chinese"
+  ],
+  "website": "https://github.com/llxxbb/mcp-prototype",
+  "icon": "/mcp-icons/db2ff2a823f2cda21982b810df6e5247.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@llxxbb/mcp-prototype"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 2.81
+}

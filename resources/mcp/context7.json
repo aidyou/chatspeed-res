@@ -16,16 +16,26 @@
     "zh-Hans": "Context7 通过 MCP 服务提供主流库的最新文档和用法示例，帮助编程助手避免依赖过时的训练数据。适合在开发过程中查询 API 参考和特定框架的示例。",
     "zh-Hant": "Context7 透過 MCP 服務提供主流函式庫的最新文件與用法範例，協助程式設計助手避免依賴過時的訓練資料。適合在開發過程中查詢 API 參考與特定框架的範例。"
   },
-  "categories": ["development"],
-  "tags": ["documentation", "programming", "npm"],
+  "categories": [
+    "development"
+  ],
+  "tags": [
+    "documentation",
+    "programming",
+    "npm"
+  ],
   "website": "https://github.com/upstash/context7",
   "status": "active",
   "lastVerifiedAt": "2026-08-29",
   "mcp": {
     "type": "stdio",
     "command": "npx",
-    "args": ["-y", "@upstash/context7-mcp"],
+    "args": [
+      "-y",
+      "@upstash/context7-mcp"
+    ],
     "env": [],
     "requiredInputs": []
-  }
+  },
+  "score": 36.33
 }

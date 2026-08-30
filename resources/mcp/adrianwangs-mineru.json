@@ -1,0 +1,62 @@
+{
+  "id": "adrianwangs-mineru",
+  "channel": "mcp",
+  "name": {
+    "en": "MinerU",
+    "zh-Hans": "MinerU：文档解析器(PDF/Word/PPT/图片)",
+    "zh-Hant": "MinerU：文档解析器(PDF/Word/PPT/图片)"
+  },
+  "description": {
+    "en": "MinerU MCP Service 1. Overview MinerU MCP is a powerful document parsing service specifically designed to convert online documents into high-quality Markdown format. Our service supports multiple document formats, including PDF, Word, PowerPoint, and various i",
+    "zh-Hans": "MinerU MCP 服务 1. 概述 MinerU MCP 是一个强大的文档解析服务，专门用于将在线文档转换为高质量的 Markdown 格式。我们的服务支持多种文档格式，包括 PDF、Word、PowerPoint 以及各种图片格式。 2. 核心功能 多格式支持: 支持 PDF、DOC/DOCX、PPT/PPTX、以及 JPG/JPEG/PNG 等图片格式 批量处理: 支持同时处理多个文档URL（通过提供由空格、逗号或换行符分隔的 URL 列表） OCR 识别: 可选启用 OCR 功能，处理扫描版文档和图片中的",
+    "zh-Hant": "MinerU MCP 服务 1. 概述 MinerU MCP 是一个强大的文档解析服务，专门用于将在线文档转换为高质量的 Markdown 格式。我们的服务支持多种文档格式，包括 PDF、Word、PowerPoint 以及各种图片格式。 2. 核心功能 多格式支持: 支持 PDF、DOC/DOCX、PPT/PPTX、以及 JPG/JPEG/PNG 等图片格式 批量处理: 支持同时处理多个文档URL（通过提供由空格、逗号或换行符分隔的 URL 列表） OCR 识别: 可选启用 OCR 功能，处理扫描版文档和图片中的"
+  },
+  "detail": {
+    "en": "# MinerU MCP Service\n\n## 1. Overview\n\n**MinerU MCP** is a powerful document parsing service specifically designed to convert online documents into high-quality Markdown format. Our service supports multiple document formats, including PDF, Word, PowerPoint, and various image formats.\n\n## 2. Core Features\n\n* **Multi-Format Support**: Supports PDF, DOC/DOCX, PPT/PPTX, as well as JPG/JPEG/PNG image formats\n* **Batch Processing**: Supports processing multiple document URLs simultaneously (by providing a list of URLs separated by spaces, commas, or newlines)\n* **OCR Recognition**: Optional OCR functionality to process text in scanned documents and images\n* **Multilingual Support**: Supports recognition of documents in Chinese, English, and other languages\n* **Intelligent Parsing**: Maintains the original format and structure of the document, generating high-quality Markdown content\n* **Page Range Selection**: Supports specifying particular pages for conversion, improving processing efficiency\n\n## 3. API Key Acquisition\n\nTo use the MinerU API, visit the [MinerU official website](https://mineru.net) to register an account and apply for an API key.\n\n## 4. Usage\n\nWe provide the following API functionalities:\n\n### 4.1 Document Parsing (parse_documents)\n\nConverts online document URLs into Markdown format.\n\n**Parameter Description:**\n\n| Parameter          | Type    | Description                                                                 | Default Value |\n| ------------------ | ------- | -------------------------------------------------------------------------- | ------------- |\n| `file_sources`     | String  | Document URL, multiple URLs can be separated by commas or newlines (supports pdf, ppt, pptx, doc, docx, and image formats jpg, jpeg, png) | -             |\n| `enable_ocr`       | Boolean | Whether to enable OCR functionality                                        | `false`       |\n| `language`         | String  | Document language, default \"ch\" for Chinese, options include \"en\" for English, etc. | `ch`          |\n| `page_ranges`      | String (optional) | Specifies page ranges, formatted as a comma-separated string. For example: \"2,4-6\" means select page 2, pages 4 to 6; \"2--2\" means select from page 2 to the second-to-last page. | `None`        |\n\n### 4.2 Get OCR Language List (get_ocr_languages)\n\nRetrieves the list of supported OCR recognition languages, no parameters required.\n\n## 5. Supported Document Formats\n\n- **PDF Documents**: .pdf\n- **Word Documents**: .doc, .docx  \n- **PowerPoint Presentations**: .ppt, .pptx\n- **Image Files**: .jpg, .jpeg, .png\n\n## 6. Local Deployment Options\n\n### 6.1 Local API Deployment\n\nIf you need to deploy a local API for document parsing (suitable for scenarios with high data privacy requirements or offline use), please refer to the project's **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)** for detailed local deployment instructions.\n\n### 6.2 Local File Parsing\n\nOur online API service **does not support local file parsing** and can only handle publicly accessible online document URLs.\n\nIf you need to process local files, consider the following solutions:\n- **Local MCP Deployment**: Deploy the MCP server locally. For detailed configuration, see the project's **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)**.\n- **File Upload**: Upload local files to a publicly accessible cloud storage service (such as cloud drives, object storage, etc.), and then use their public links for parsing.\n\n## 7. Frequently Asked Questions\n\n### 7.1 API Key Issues\n\n**Issue**: Unable to connect to the MinerU API or receiving a 401 error.\n\n**Solution**: Please check if your API key is correct. Ensure that you have obtained a valid API key from the [MinerU official website](https://mineru.net).\n\n### 7.2 URL Access Issues\n\n**Issue**: Receiving an error about being unable to access the URL when processing online documents.\n\n**Solution**: Ensure that the provided URL is a publicly accessible and valid link. Our servers need to be able to download these documents.\n\n### 7.3 Timeout on Large Files\n\n**Issue**: Encountering a timeout when processing large documents.\n\n**Solution**: It is recommended to split large documents into smaller parts for processing, or use the page range parameter to process only the specific pages needed.\n\n### 7.4 Handling Local Files\n\n**Issue**: How to handle local files?\n\n**Solution**: Our online API does not support direct processing of local files. You can:\n- Upload the files to a cloud storage service to obtain a public link and then use it.- Refer to the README document to deploy a local MCP server for local file processing",
+    "zh-Hans": "# MinerU MCP 服务\n\n## 1. 概述\n\n**MinerU MCP** 是一个强大的文档解析服务，专门用于将在线文档转换为高质量的 Markdown 格式。我们的服务支持多种文档格式，包括 PDF、Word、PowerPoint 以及各种图片格式。\n\n## 2. 核心功能\n\n* **多格式支持**: 支持 PDF、DOC/DOCX、PPT/PPTX、以及 JPG/JPEG/PNG 等图片格式\n* **批量处理**: 支持同时处理多个文档URL（通过提供由空格、逗号或换行符分隔的 URL 列表）\n* **OCR 识别**: 可选启用 OCR 功能，处理扫描版文档和图片中的文字\n* **多语言支持**: 支持中文、英文等多种语言的文档识别\n* **智能解析**: 保持文档原有格式和结构，生成高质量的 Markdown 内容\n* **页面范围选择**: 支持指定特定页面进行转换，提高处理效率\n\n## 3. API 密钥获取\n\n要使用 MinerU API，请访问 [MinerU 官网](https://mineru.net) 注册账号并申请 API 密钥。\n\n## 4. 使用方法\n\n我们提供以下 API 功能：\n\n### 4.1 文档解析 (parse_documents)\n\n将在线文档URL转换为Markdown格式。\n\n**参数说明：**\n\n| 参数                | 类型    | 说明                                                                | 默认值   |\n| ------------------- | ------- | ------------------------------------------------------------------- | -------- |\n| `file_sources`      | 字符串  | 文档URL，多个可用逗号或换行符分隔 (支持pdf、ppt、pptx、doc、docx以及图片格式jpg、jpeg、png) | -        |\n| `enable_ocr`        | 布尔值  | 是否启用 OCR 功能                                                   | `false`  |\n| `language`          | 字符串  | 文档语言，默认\"ch\"中文，可选\"en\"英文等                            | `ch`     |\n| `page_ranges`       | 字符串 (可选) | 指定页码范围，格式为逗号分隔的字符串。例如：\"2,4-6\"：表示选取第2页、第4页至第6页；\"2--2\"：表示从第2页一直选取到倒数第二页。  | `None`   |\n\n### 4.2 获取OCR语言列表 (get_ocr_languages)\n\n获取支持的OCR识别语言列表，无需参数。\n\n## 5. 支持的文档格式\n\n- **PDF文档**: .pdf\n- **Word文档**: .doc, .docx  \n- **PowerPoint演示**: .ppt, .pptx\n- **图片文件**: .jpg, .jpeg, .png\n\n## 6. 本地部署选项\n\n### 6.1 本地API部署\n\n如果您需要部署本地API进行文档解析（适用于对数据隐私有高要求或需要离线使用的场景），请参考项目的 **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)** 文档获取详细的本地部署指南。\n\n### 6.2 本地文件解析\n\n我们的在线API服务**不支持本地文件解析**，只能处理可公开访问的在线文档URL。\n\n如果您需要处理本地文件，请考虑以下方案：\n- **本地MCP部署**：在本地部署MCP服务器，详细配置请参考项目的 **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)** 文档\n- **文件上传**：将本地文件上传到可公开访问的云存储服务（如云盘、对象存储等），然后使用其公开链接进行解析\n\n## 7. 常见问题\n\n### 7.1 API 密钥问题\n\n**问题**：无法连接 MinerU API 或返回 401 错误。\n\n**解决方案**：请检查你的 API 密钥是否正确。确保从 [MinerU 官网](https://mineru.net) 获取有效的 API 密钥。\n\n### 7.2 URL 访问问题\n\n**问题**：处理在线文档时报无法访问URL错误。\n\n**解决方案**：请确保提供的URL是可公开访问的有效链接，我们的服务器需要能够下载这些文档。\n\n### 7.3 处理大文件超时\n\n**问题**：处理大型文档时出现超时。\n\n**解决方案**：建议将大文档分成多个较小的部分进行处理，或者使用页面范围参数只处理需要的特定页面。\n\n### 7.4 本地文件处理\n\n**问题**：如何处理本地文件？\n\n**解决方案**：我们的在线API不支持直接处理本地文件。您可以：\n- 将文件上传到云存储服务获取公开链接后使用\n- 参考 README 文档部署本地MCP服务器进行本地文件处理",
+    "zh-Hant": "# MinerU MCP 服务\n\n## 1. 概述\n\n**MinerU MCP** 是一个强大的文档解析服务，专门用于将在线文档转换为高质量的 Markdown 格式。我们的服务支持多种文档格式，包括 PDF、Word、PowerPoint 以及各种图片格式。\n\n## 2. 核心功能\n\n* **多格式支持**: 支持 PDF、DOC/DOCX、PPT/PPTX、以及 JPG/JPEG/PNG 等图片格式\n* **批量处理**: 支持同时处理多个文档URL（通过提供由空格、逗号或换行符分隔的 URL 列表）\n* **OCR 识别**: 可选启用 OCR 功能，处理扫描版文档和图片中的文字\n* **多语言支持**: 支持中文、英文等多种语言的文档识别\n* **智能解析**: 保持文档原有格式和结构，生成高质量的 Markdown 内容\n* **页面范围选择**: 支持指定特定页面进行转换，提高处理效率\n\n## 3. API 密钥获取\n\n要使用 MinerU API，请访问 [MinerU 官网](https://mineru.net) 注册账号并申请 API 密钥。\n\n## 4. 使用方法\n\n我们提供以下 API 功能：\n\n### 4.1 文档解析 (parse_documents)\n\n将在线文档URL转换为Markdown格式。\n\n**参数说明：**\n\n| 参数                | 类型    | 说明                                                                | 默认值   |\n| ------------------- | ------- | ------------------------------------------------------------------- | -------- |\n| `file_sources`      | 字符串  | 文档URL，多个可用逗号或换行符分隔 (支持pdf、ppt、pptx、doc、docx以及图片格式jpg、jpeg、png) | -        |\n| `enable_ocr`        | 布尔值  | 是否启用 OCR 功能                                                   | `false`  |\n| `language`          | 字符串  | 文档语言，默认\"ch\"中文，可选\"en\"英文等                            | `ch`     |\n| `page_ranges`       | 字符串 (可选) | 指定页码范围，格式为逗号分隔的字符串。例如：\"2,4-6\"：表示选取第2页、第4页至第6页；\"2--2\"：表示从第2页一直选取到倒数第二页。  | `None`   |\n\n### 4.2 获取OCR语言列表 (get_ocr_languages)\n\n获取支持的OCR识别语言列表，无需参数。\n\n## 5. 支持的文档格式\n\n- **PDF文档**: .pdf\n- **Word文档**: .doc, .docx  \n- **PowerPoint演示**: .ppt, .pptx\n- **图片文件**: .jpg, .jpeg, .png\n\n## 6. 本地部署选项\n\n### 6.1 本地API部署\n\n如果您需要部署本地API进行文档解析（适用于对数据隐私有高要求或需要离线使用的场景），请参考项目的 **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)** 文档获取详细的本地部署指南。\n\n### 6.2 本地文件解析\n\n我们的在线API服务**不支持本地文件解析**，只能处理可公开访问的在线文档URL。\n\n如果您需要处理本地文件，请考虑以下方案：\n- **本地MCP部署**：在本地部署MCP服务器，详细配置请参考项目的 **[README](https://github.com/opendatalab/MinerU/blob/master/projects/mcp/README.md)** 文档\n- **文件上传**：将本地文件上传到可公开访问的云存储服务（如云盘、对象存储等），然后使用其公开链接进行解析\n\n## 7. 常见问题\n\n### 7.1 API 密钥问题\n\n**问题**：无法连接 MinerU API 或返回 401 错误。\n\n**解决方案**：请检查你的 API 密钥是否正确。确保从 [MinerU 官网](https://mineru.net) 获取有效的 API 密钥。\n\n### 7.2 URL 访问问题\n\n**问题**：处理在线文档时报无法访问URL错误。\n\n**解决方案**：请确保提供的URL是可公开访问的有效链接，我们的服务器需要能够下载这些文档。\n\n### 7.3 处理大文件超时\n\n**问题**：处理大型文档时出现超时。\n\n**解决方案**：建议将大文档分成多个较小的部分进行处理，或者使用页面范围参数只处理需要的特定页面。\n\n### 7.4 本地文件处理\n\n**问题**：如何处理本地文件？\n\n**解决方案**：我们的在线API不支持直接处理本地文件。您可以：\n- 将文件上传到云存储服务获取公开链接后使用\n- 参考 README 文档部署本地MCP服务器进行本地文件处理"
+  },
+  "categories": [
+    "development",
+    "memory",
+    "files"
+  ],
+  "tags": [
+    "file systems",
+    "developer tools",
+    "knowledge and memory",
+    "pdf、图片、word、ppt",
+    "chinese"
+  ],
+  "website": "https://github.com/opendatalab/MinerU/tree/master/projects/mcp",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mineru-mcp"
+    ],
+    "env": [
+      [
+        "LOCAL_MINERU_API_BASE",
+        "http://localhost:8080"
+      ],
+      [
+        "MINERU_API_BASE",
+        "https://mineru.net"
+      ],
+      [
+        "OUTPUT_DIR",
+        "/Users/adrianwang/Documents/ailab/minerU-mcp/downloads"
+      ],
+      [
+        "USE_LOCAL_API",
+        "false"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 41.81
+}

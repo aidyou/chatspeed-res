@@ -1,0 +1,54 @@
+{
+  "id": "guangchangvjshi-vjshi",
+  "channel": "mcp",
+  "name": {
+    "en": "VJshi-MCP",
+    "zh-Hans": "光厂MCP",
+    "zh-Hant": "光厂MCP"
+  },
+  "description": {
+    "en": "You can search for licensed high-definition commercial video material in AI model clients that support the MCP protocol.",
+    "zh-Hans": "您可以在支持MCP协议的AI模型客户端中搜索授权的高清商业视频素材。",
+    "zh-Hant": "您可以在支持MCP协议的AI模型客户端中搜索授权的高清商业视频素材。"
+  },
+  "detail": {
+    "en": "# 🎬 光厂 MCP 视频素材搜索工具\n\n## ⚠️ 特别说明\n若**译文出现乱码**（魔塔强制翻译导致），请切换到原文（中文），方便阅读\n\n---\n\n## 📖 项目概述\n🔍 可以在支持MCP协议的AI模型客户端中搜索正版高清商用视频素材\n\n---\n\n## ✨ 核心功能\n🎯 在光厂数千万条正版高清商用视频素材中，为您检索并推荐相关视频素材\n\n### 主要特性：\n- 🎥 海量、正版、高清视频素材\n- 🏢 商用授权，无版权风险\n- 🚀 快速、精准的智能搜索体验\n- 📋 结构化输出，便于后续处理\n\n---\n\n## 🚀 快速开始\n\n### 步骤1️⃣：获取API密钥\n🔑 前往 [光厂MCP官网](https://open.vjshi.com/mcp) 页面获取服务端密钥\n\n> 💡 **提示**：通过密钥您才能够使用搜索功能\n\n### 步骤2️⃣：完成配置\n⚙️ 请将 `YOUR_API_KEY` 替换为您的实际密钥，并将下述配置添加到支持MCP的模型客户端\n\n**支持的客户端：** Claude App、Cherry Studio、Cursor、Cline、Windsurf 等\n\n```json\n{\n  \"mcpServers\": {\n    \"vjshi-video-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@vjshi/vjshi-video-mcp@latest\"\n      ],\n      \"env\": {\n        \"VJSHI_API_KEY\": \"YOUR_API_KEY\"\n      },\n      \"disabled\": false,\n      \"isActive\": true\n    }\n  }\n}\n```\n\n---\n\n## 📄 许可证\n📜 该项目根据 **MIT 许可证** 授权，请参阅 LICENSE 文件获取详细信息。\n\n---\n\n## 🤝 联系我们\n如有问题或建议，欢迎访问 [光厂MCP](https://open.vjshi.com/mcp) 获取更多帮助！",
+    "zh-Hans": "# 🎬 光厂 MCP 视频素材搜索工具\n\n## ⚠️ 特别说明\n若**译文出现乱码**（魔塔强制翻译导致），请切换到原文（中文），方便阅读\n\n---\n\n## 📖 项目概述\n🔍 可以在支持MCP协议的AI模型客户端中搜索正版高清商用视频素材\n\n---\n\n## ✨ 核心功能\n🎯 在光厂数千万条正版高清商用视频素材中，为您检索并推荐相关视频素材\n\n### 主要特性：\n- 🎥 海量、正版、高清视频素材\n- 🏢 商用授权，无版权风险\n- 🚀 快速、精准的智能搜索体验\n- 📋 结构化输出，便于后续处理\n\n---\n\n## 🚀 快速开始\n\n### 步骤1️⃣：获取API密钥\n🔑 前往 [光厂MCP官网](https://open.vjshi.com/mcp) 页面获取服务端密钥\n\n> 💡 **提示**：通过密钥您才能够使用搜索功能\n\n### 步骤2️⃣：完成配置\n⚙️ 请将 `YOUR_API_KEY` 替换为您的实际密钥，并将下述配置添加到支持MCP的模型客户端\n\n**支持的客户端：** Claude App、Cherry Studio、Cursor、Cline、Windsurf 等\n\njson\n{\n  \"mcpServers\": {\n    \"vjshi-video-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@vjshi/vjshi-video-mcp@latest\"\n      ],\n      \"env\": {\n        \"VJSHI_API_KEY\": \"YOUR_API_KEY\"\n      },\n      \"disabled\": false,\n      \"isActive\": true\n    }\n  }\n}\n\n---\n\n## 📄 许可证\n📜 该项目根据 **MIT 许可证** 授权，请参阅 LICENSE 文件获取详细信息。\n\n---\n\n## 🤝 联系我们\n如有问题或建议，欢迎访问 [光厂MCP](https://open.vjshi.com/mcp) 获取更多帮助！",
+    "zh-Hant": "# 🎬 光厂 MCP 视频素材搜索工具\n\n## ⚠️ 特别说明\n若**译文出现乱码**（魔塔强制翻译导致），请切换到原文（中文），方便阅读\n\n---\n\n## 📖 项目概述\n🔍 可以在支持MCP协议的AI模型客户端中搜索正版高清商用视频素材\n\n---\n\n## ✨ 核心功能\n🎯 在光厂数千万条正版高清商用视频素材中，为您检索并推荐相关视频素材\n\n### 主要特性：\n- 🎥 海量、正版、高清视频素材\n- 🏢 商用授权，无版权风险\n- 🚀 快速、精准的智能搜索体验\n- 📋 结构化输出，便于后续处理\n\n---\n\n## 🚀 快速开始\n\n### 步骤1️⃣：获取API密钥\n🔑 前往 [光厂MCP官网](https://open.vjshi.com/mcp) 页面获取服务端密钥\n\n> 💡 **提示**：通过密钥您才能够使用搜索功能\n\n### 步骤2️⃣：完成配置\n⚙️ 请将 `YOUR_API_KEY` 替换为您的实际密钥，并将下述配置添加到支持MCP的模型客户端\n\n**支持的客户端：** Claude App、Cherry Studio、Cursor、Cline、Windsurf 等\n\njson\n{\n  \"mcpServers\": {\n    \"vjshi-video-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@vjshi/vjshi-video-mcp@latest\"\n      ],\n      \"env\": {\n        \"VJSHI_API_KEY\": \"YOUR_API_KEY\"\n      },\n      \"disabled\": false,\n      \"isActive\": true\n    }\n  }\n}\n\n---\n\n## 📄 许可证\n📜 该项目根据 **MIT 许可证** 授权，请参阅 LICENSE 文件获取详细信息。\n\n---\n\n## 🤝 联系我们\n如有问题或建议，欢迎访问 [光厂MCP](https://open.vjshi.com/mcp) 获取更多帮助！"
+  },
+  "categories": [
+    "media"
+  ],
+  "tags": [
+    "search",
+    "art and culture",
+    "entertainment and media",
+    "光厂",
+    "vj师网",
+    "视频素材网",
+    "高清视频素材下载",
+    "ae模板下载",
+    "免费视频素材",
+    "素材搜索推荐"
+  ],
+  "website": "https://github.com/dioa-design/vjshi-video-mcp",
+  "icon": "/mcp-icons/a69c5728f451e79181f3ed49d2e8a4c8.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@vjshi/vjshi-video-mcp@latest"
+    ],
+    "env": [
+      [
+        "VJSHI_API_KEY",
+        "YOUR_API_KEY"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 20.45
+}

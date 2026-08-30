@@ -1,0 +1,43 @@
+{
+  "id": "selenium39-weibo",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-server-weibo",
+    "zh-Hans": "mcp微博服务器",
+    "zh-Hant": "mcp微博服务器"
+  },
+  "description": {
+    "en": "A Model Context Protocol server for scraping Weibo that provides tools to search users, retrieve detailed user profiles, and fetch user feeds.",
+    "zh-Hans": "一个用于抓取微博的模型上下文协议服务器，提供搜索用户、获取详细用户资料和提取用户动态的工具。",
+    "zh-Hant": "一个用于抓取微博的模型上下文协议服务器，提供搜索用户、获取详细用户资料和提取用户动态的工具。"
+  },
+  "detail": {
+    "en": "# Weibo MCP Server (TypeScript Version)\n\nThis is a server based on the [Model Context Protocol](https://modelcontextprotocol.io) for scraping Weibo user information, feeds, and search functionality. This server can help retrieve detailed information about Weibo users, feed content, and perform user searches.\n\n  \n\n## Installation\n\nInstall from source code:\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/Selenium39/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n\nInstall from package manager:\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## Components\n\n### Tools\n\n- `search_users(keyword, limit)`: 根据关键词搜索微博用户\n- `get_profile(uid)`: 获取用户详细资料信息\n- `get_feeds(uid, limit)`: 获取用户微博动态\n- `get_hot_search(limit)`: 获取微博热搜榜\n- `search_content(keyword, limit, page?)`: 根据关键词搜索微博内容\n\n### Resources\n\nNone\n\n### Prompts\n\nNone\n\n## Requirements\n\n- Node.js >= 18.0.0\n\n## License\n\nMIT License\n\n## Disclaimer\n\nThis project is not affiliated with Weibo and is for learning and research purposes only.",
+    "zh-Hans": "# 微博 MCP 服务器 (TypeScript 版本)\n\n这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取关于微博用户的详细信息、动态内容以及执行用户搜索。\n\n  \n\n## 安装\n\n从源代码安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/Selenium39/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n\n通过包管理器安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## 组件\n\n### 工具\n\n- `search_users(keyword, limit)`: 根据关键词搜索微博用户\n- `get_profile(uid)`: 获取用户详细资料信息\n- `get_feeds(uid, limit)`: 获取用户微博动态\n- `get_hot_search(limit)`: 获取微博热搜榜\n- `search_content(keyword, limit, page?)`: 根据关键词搜索微博内容\n\n### 资源\n\n无\n\n### 提示词\n\n无\n\n## 要求\n\n- Node.js >= 18.0.0\n\n## 许可证\n\nMIT 许可证\n\n## 免责声明\n\n此项目与微博无关，仅供学习和研究用途。",
+    "zh-Hant": "# 微博 MCP 服务器 (TypeScript 版本)\n\n这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取关于微博用户的详细信息、动态内容以及执行用户搜索。\n\n  \n\n## 安装\n\n从源代码安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\n                \"--from\",\n                \"git+https://github.com/Selenium39/mcp-server-weibo.git\",\n                \"mcp-server-weibo\"\n            ]\n        }\n    }\n}\n```\n\n通过包管理器安装：\n\n```json\n{\n    \"mcpServers\": {\n        \"weibo\": {\n            \"command\": \"npx\",\n            \"args\": [\"mcp-server-weibo\"],\n        }\n    }\n}\n```\n\n## 组件\n\n### 工具\n\n- `search_users(keyword, limit)`: 根据关键词搜索微博用户\n- `get_profile(uid)`: 获取用户详细资料信息\n- `get_feeds(uid, limit)`: 获取用户微博动态\n- `get_hot_search(limit)`: 获取微博热搜榜\n- `search_content(keyword, limit, page?)`: 根据关键词搜索微博内容\n\n### 资源\n\n无\n\n### 提示词\n\n无\n\n## 要求\n\n- Node.js >= 18.0.0\n\n## 许可证\n\nMIT 许可证\n\n## 免责声明\n\n此项目与微博无关，仅供学习和研究用途。"
+  },
+  "categories": [
+    "browser"
+  ],
+  "tags": [
+    "browser automation",
+    "social media",
+    "chinese"
+  ],
+  "website": "https://github.com/Selenium39/mcp-server-weibo",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "--from",
+      "git+https://github.com/Selenium39/mcp-server-weibo.git",
+      "mcp-server-weibo"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 2.13
+}

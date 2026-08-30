@@ -1,0 +1,41 @@
+{
+  "id": "skychumo-tblife-image-generate",
+  "channel": "mcp",
+  "name": {
+    "en": "tblife-image-generate",
+    "zh-Hans": "淘宝人生文生图mcp",
+    "zh-Hant": "淘宝人生文生图mcp"
+  },
+  "description": {
+    "en": "Create a Text-to-Image with Taobao Life Character 介绍 本文档将指导您如何使用特定API创建带有淘宝人生人物形象的文生图。淘宝人生是阿里巴巴集团推出的一款虚拟社交应用，用户可以创建自己的虚拟形象，并在虚拟世界中进行互动。 准备工作 - 您需要拥有一个有效的API密钥。 - 确保您的开发环境已经安装了必要的库，如requests等，以便能够发送HTTP请求。 - 了解基本的Python编程知识。 API调用示例 下面是一个简单的Python脚本示例，展示如何通过API",
+    "zh-Hans": "创建带有淘宝人生人物形象的文生图",
+    "zh-Hant": "创建带有淘宝人生人物形象的文生图"
+  },
+  "detail": {
+    "en": "Create a Text-to-Image with Taobao Life Character\n\n## 介绍\n本文档将指导您如何使用特定API创建带有淘宝人生人物形象的文生图。淘宝人生是阿里巴巴集团推出的一款虚拟社交应用，用户可以创建自己的虚拟形象，并在虚拟世界中进行互动。\n\n## 准备工作\n- 您需要拥有一个有效的API密钥。\n- 确保您的开发环境已经安装了必要的库，如`requests`等，以便能够发送HTTP请求。\n- 了解基本的Python编程知识。\n\n## API调用示例\n下面是一个简单的Python脚本示例，展示如何通过API调用来生成包含淘宝人生角色的图片。请确保替换`your_api_key`为您的实际API密钥。\n\npython\nimport requests\nimport json\n\nurl = \"https://api.example.com/generate_image\"\nheaders = {\n    'Content-Type': 'application/json',\n    'Authorization': 'Bearer your_api_key'\n}\ndata = {\n    \"character\": \"TaobaoLife\",\n    \"scene\": \"Garden Party\",\n    \"style\": \"Cartoon\"\n}\n\nresponse = requests.post(url, headers=headers, data=json.dumps(data))\n\nif response.status_code == 200:\n    with open('output.png', 'wb') as f:\n        f.write(response.content)\n    print(\"Image saved successfully.\")\nelse:\n    print(f\"Failed to generate image: {response.text}\")\n\n### 参数说明\n- `character`: 指定要使用的淘宝人生角色类型。\n- `scene`: 设置场景背景，例如花园派对。\n- `style`: 定义图像的整体风格，比如卡通风格。\n\n## 注意事项\n- 在正式使用前，请详细阅读API文档以获取更多关于支持的角色、场景及样式的信息。\n- 保持API密钥的安全性，不要将其公开或分享给他人。\n- 根据API服务提供商的规定，可能需要遵守某些使用限制或条款。\n\n希望这份指南能帮助您快速上手并开始创建有趣的淘宝人生相关图片！如果有任何问题或需要进一步的帮助，请参考官方文档或联系客服支持。",
+    "zh-Hans": "创建带有淘宝人生人物形象的文生图",
+    "zh-Hant": "创建带有淘宝人生人物形象的文生图"
+  },
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/driveRoad/city-mcp.git",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "12306-mcp"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 29.73
+}

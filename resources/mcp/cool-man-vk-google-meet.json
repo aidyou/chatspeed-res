@@ -1,0 +1,41 @@
+{
+  "id": "cool-man-vk-google-meet",
+  "channel": "mcp",
+  "name": {
+    "en": "google-meet-mcp-server",
+    "zh-Hans": "Google Meet MCP 服务器",
+    "zh-Hant": "Google Meet MCP 服务器"
+  },
+  "description": {
+    "en": "The Google Meet MCP Server enables AI agents to create, manage, and retrieve Google Meet meetings. Built on the Model Context Protocol, it exposes tools for scheduling, updating, and deleting meetings, making it easy to integrate Google Meet functionalities",
+    "zh-Hans": "Google Meet MCP服务器允许AI代理创建、管理和检索Google Meet会议。它基于模型上下文协议构建，提供了用于安排、更新和删除会议的工具，使得集成Google Meet功能变得轻松容易。",
+    "zh-Hant": "Google Meet MCP服务器允许AI代理创建、管理和检索Google Meet会议。它基于模型上下文协议构建，提供了用于安排、更新和删除会议的工具，使得集成Google Meet功能变得轻松容易。"
+  },
+  "detail": {
+    "en": "# Google Meet MCP Server\n\n[Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server)\n\nA Model Context Protocol (MCP) server for interacting with Google Meet through the Google Calendar API. This server provides tools for creating and managing Google Meet meetings programmatically.\n\n## Description\n\nThis project implements an MCP server that allows AI agents to interact with Google Meet by creating, retrieving, and managing meetings through the Google Calendar API. It leverages the MCP (Model Context Protocol) specification to expose these capabilities as tools that can be used by compatible AI systems.\n\n## Installation\n\n### Installing via Smithery\n\nTo install Google Meet MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server):\n\n```bash\nnpx -y @smithery/cli install @cool-man-vk/google-meet-mcp-server --client claude\n```\n\n### Manual Installation\n```bash\n# Clone the repository\ngit clone https://github.com/yourusername/google-meet-mcp.git\n\n# Navigate to the project directory\ncd google-meet-mcp\n\n# Install dependencies\nnpm install\n```\n\n## Setup\n\nBefore using the Google Meet MCP server, you need to set up your Google API credentials:\n\n1. Visit the [Google Cloud Console](https://console.cloud.google.com/)\n2. Create a new project or select an existing one\n3. Enable the Google Calendar API\n4. Create OAuth 2.0 credentials (Desktop application)\n5. Download the credentials JSON file and save it as `credentials.json` in the project root directory\n6. Run the setup script to authenticate and generate the token:\n\n```bash\nnpm run setup\n```\n\nThis will open a browser window where you can authorize the application to access your Google Calendar.\n\n## Usage\n\nOnce setup is complete, you can start the MCP server:\n\n```bash\nnpm run start\n```\n\nThe server will run and expose the following tools:\n\n- `create-meeting`: Create a new Google Meet meeting\n- `list-meetings`: List upcoming Google Meet meetings\n- `get-meeting-details`: Get details about a specific meeting\n- `update-meeting`: Update an existing meeting\n- `delete-meeting`: Delete a meeting\n\n## MCP Configuration\n\nTo use this server with MCP-compatible systems, add the following to your MCP settings configuration file:\n\n```json\n{\n  \"mcpServers\": {\n    \"google-meet\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/google-meet-mcp/src/index.js\"],\n      \"env\": {},\n      \"disabled\": false\n    }\n  }\n}\n```\n\n## Features\n\n- Create Google Meet meetings with custom settings\n- Retrieve meeting details including join URLs\n- Update existing meetings\n- Delete meetings\n- List upcoming meetings",
+    "zh-Hans": "# Google Meet MCP 服务器\n\n[Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server)\n\n这是一个通过 Google 日历 API 与 Google Meet 进行交互的 Model Context Protocol (MCP) 服务器。该服务器提供了用于以编程方式创建和管理 Google Meet 会议的工具。\n\n## 描述\n\n此项目实现了一个 MCP 服务器，允许 AI 代理通过 Google 日历 API 创建、检索和管理会议来与 Google Meet 进行交互。它利用了 MCP（Model Context Protocol）规范将这些功能作为工具暴露出来，可以被兼容的 AI 系统使用。\n\n## 安装\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server) 自动为 Claude 桌面版安装 Google Meet MCP 服务器：\n\n```bash\nnpx -y @smithery/cli install @cool-man-vk/google-meet-mcp-server --client claude\n```\n\n### 手动安装\n```bash\n# Clone the repository\ngit clone https://github.com/yourusername/google-meet-mcp.git\n\n# Navigate to the project directory\ncd google-meet-mcp\n\n# Install dependencies\nnpm install\n```\n\n## 设置\n\n在使用 Google Meet MCP 服务器之前，您需要设置您的 Google API 凭证：\n\n1. 访问 [Google Cloud 控制台](https://console.cloud.google.com/)\n2. 创建一个新项目或选择现有项目\n3. 启用 Google 日历 API\n4. 创建 OAuth 2.0 凭证（桌面应用程序）\n5. 下载凭证 JSON 文件并将其保存为 `credentials.json` 在项目根目录中\n6. 运行设置脚本进行身份验证并生成令牌：\n\n```bash\nnpm run setup\n```\n\n这将打开一个浏览器窗口，您可以在其中授权应用程序访问您的 Google 日历。\n\n## 使用\n\n设置完成后，您可以启动 MCP 服务器：\n\n```bash\nnpm run start\n```\n\n服务器将运行并提供以下工具：\n\n- `create-meeting`: 创建一个新的 Google Meet 会议\n- `list-meetings`: 列出即将到来的 Google Meet 会议\n- `get-meeting-details`: 获取特定会议的详细信息\n- `update-meeting`: 更新现有的会议\n- `delete-meeting`: 删除会议\n\n## MCP 配置\n\n要与支持 MCP 的系统一起使用此服务器，请将以下内容添加到您的 MCP 设置配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"google-meet\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/google-meet-mcp/src/index.js\"],\n      \"env\": {},\n      \"disabled\": false\n    }\n  }\n}\n```\n\n## 功能\n\n- 用自定义设置创建 Google Meet 会议\n- 检索包括加入链接在内的会议详情\n- 更新现有会议\n- 删除会议\n- 列出即将召开的会议",
+    "zh-Hant": "# Google Meet MCP 服务器\n\n[Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server)\n\n这是一个通过 Google 日历 API 与 Google Meet 进行交互的 Model Context Protocol (MCP) 服务器。该服务器提供了用于以编程方式创建和管理 Google Meet 会议的工具。\n\n## 描述\n\n此项目实现了一个 MCP 服务器，允许 AI 代理通过 Google 日历 API 创建、检索和管理会议来与 Google Meet 进行交互。它利用了 MCP（Model Context Protocol）规范将这些功能作为工具暴露出来，可以被兼容的 AI 系统使用。\n\n## 安装\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/@cool-man-vk/google-meet-mcp-server) 自动为 Claude 桌面版安装 Google Meet MCP 服务器：\n\n```bash\nnpx -y @smithery/cli install @cool-man-vk/google-meet-mcp-server --client claude\n```\n\n### 手动安装\n```bash\n# Clone the repository\ngit clone https://github.com/yourusername/google-meet-mcp.git\n\n# Navigate to the project directory\ncd google-meet-mcp\n\n# Install dependencies\nnpm install\n```\n\n## 设置\n\n在使用 Google Meet MCP 服务器之前，您需要设置您的 Google API 凭证：\n\n1. 访问 [Google Cloud 控制台](https://console.cloud.google.com/)\n2. 创建一个新项目或选择现有项目\n3. 启用 Google 日历 API\n4. 创建 OAuth 2.0 凭证（桌面应用程序）\n5. 下载凭证 JSON 文件并将其保存为 `credentials.json` 在项目根目录中\n6. 运行设置脚本进行身份验证并生成令牌：\n\n```bash\nnpm run setup\n```\n\n这将打开一个浏览器窗口，您可以在其中授权应用程序访问您的 Google 日历。\n\n## 使用\n\n设置完成后，您可以启动 MCP 服务器：\n\n```bash\nnpm run start\n```\n\n服务器将运行并提供以下工具：\n\n- `create-meeting`: 创建一个新的 Google Meet 会议\n- `list-meetings`: 列出即将到来的 Google Meet 会议\n- `get-meeting-details`: 获取特定会议的详细信息\n- `update-meeting`: 更新现有的会议\n- `delete-meeting`: 删除会议\n\n## MCP 配置\n\n要与支持 MCP 的系统一起使用此服务器，请将以下内容添加到您的 MCP 设置配置文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"google-meet\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/google-meet-mcp/src/index.js\"],\n      \"env\": {},\n      \"disabled\": false\n    }\n  }\n}\n```\n\n## 功能\n\n- 用自定义设置创建 Google Meet 会议\n- 检索包括加入链接在内的会议详情\n- 更新现有会议\n- 删除会议\n- 列出即将召开的会议"
+  },
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "calendar management",
+    "communication",
+    "chinese"
+  ],
+  "website": "https://github.com/cool-man-vk/google-meet-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "path/to/google-meet-mcp/src/index.js"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 18.27
+}

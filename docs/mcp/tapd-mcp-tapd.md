@@ -1,0 +1,89 @@
+---
+title: "mcp-server-tapd"
+description: "TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。"
+---
+
+# mcp-server-tapd
+
+TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。
+
+# TAPD MCP Server
+
+TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。
+
+* 与 TAPD API 无缝集成，提升开发效率
+
+## System requirements
+
+* uv
+* TAPD API Token
+
+## Setup Guide
+### Install uv
+```
+brew install uv
+# OR
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Get TAPD API Token
+Get API tokens from: https://www.tapd.cn/open_platform/open_api_redirect
+
+1. 未注册，请前往 [注册](https://www.tapd.cn?from_partner=copilot&source=tapd_operation_copilot)
+2. 已注册但未授权API，请前往API配置：登录TAPD，点击进入[“公司管理-API账号管理”](https://www.tapd.cn/open_platform/open_api_redirect)，复制API账号和API密钥
+3. 参数
+- TAPD_API_USER: API账号 
+- TAPD_API_PASSWORD: API密钥 
+- BOT_URL: 企业微信机器人 webhook 地址，选填，如果需要发送消息到企业微信群才需要填
+
+## Configuration and Usage
+### Claude Desktop Setup
+```
+{
+  "mcpServers": {
+    "mcp-server-tapd": {
+      "command": "uvx",
+      "args": ["mcp-server-tapd"],
+      "env": {
+        "TAPD_API_USER": "",
+        "TAPD_API_PASSWORD": "",
+        "TAPD_API_BASE_URL": "https://api.tapd.cn",
+        "TAPD_BASE_URL": "https://www.tapd.cn",
+        "BOT_URL": ""
+      }
+    }
+  }
+}
+```
+
+### Cursor IDE Setup
+1. Open Cursor Settings
+2. Navigate to Features > MCP Servers
+3. Click Add new MCP server
+
+For stdio transport:
+```
+name: mcp-server-tapd
+type: command
+command: uvx mcp-server-tapd --api-user=your_api_user --api-password=your_api_password --api-base-url=https://api.tapd.cn --tapd-base-url=https://www.tapd.cn  --bot-url=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=XXX
+```
+
+**官方网站：** [https://cnb.cool/tapd_mcp/mcp-server-tapd](https://cnb.cool/tapd_mcp/mcp-server-tapd)
+**状态：** `active`　**最后核验：** `2026-08-30`
+
+## 分类与标签
+
+- 分类：`development`
+- 标签：`developer tools`, `chinese`
+
+## MCP 配置
+
+- 传输方式：`stdio`
+- 启动命令：`uvx`
+- 参数：`mcp-server-tapd`
+
+该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+
+## 数据来源
+
+资源文件：`resources/mcp/tapd-mcp-tapd.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。

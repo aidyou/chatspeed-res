@@ -1,0 +1,43 @@
+{
+  "id": "softeria-ms-365",
+  "channel": "mcp",
+  "name": {
+    "en": "ms-365-mcp-server",
+    "zh-Hans": "微软365 MCP 服务器",
+    "zh-Hant": "微软365 MCP 服务器"
+  },
+  "description": {
+    "en": "A Model Context Protocol server that enables interaction with Microsoft 365 services (Excel, Calendar, Mail, OneDrive, Teams, etc.) through the Graph API, allowing AI assistants to manage Microsoft 365 resources via natural language.",
+    "zh-Hans": "一种模型上下文协议服务器，通过 Graph API 实现与 Microsoft 365 服务（Excel、日历、邮件、OneDrive、Teams 等）的交互，使人工智能助手能够通过自然语言管理 Microsoft 365 资源。",
+    "zh-Hant": "一种模型上下文协议服务器，通过 Graph API 实现与 Microsoft 365 服务（Excel、日历、邮件、OneDrive、Teams 等）的交互，使人工智能助手能够通过自然语言管理 Microsoft 365 资源。"
+  },
+  "detail": {
+    "en": "# ms-365-mcp-server\n\n![npm version](/mcp-assets/a31704b4715177030b77326640272691.svg) ![build status](/mcp-assets/a360cf14c31b446d557b2bc79fbedc72.svg) ![license](/mcp-assets/d177f30277cff66d9af1e3c6409e24dc.svg)\n\nMicrosoft 365 MCP Server\n\nA Model Context Protocol (MCP) server for interacting with Microsoft 365 services through the Graph API.\n\n## Prerequisites\n\n- Node.js >= 14\n\n## Features\n\n- Authentication via Microsoft Authentication Library (MSAL)\n- Excel file operations\n- Calendar event management\n- Mail operations\n- OneDrive file management\n- OneNote notebooks and pages\n- To Do tasks and task lists\n- Planner plans and tasks\n- Outlook contacts\n- User management\n- Dynamic tools powered by Microsoft Graph OpenAPI spec\n- Built on the Model Context Protocol\n\n## Quick Start Example\n\nTest login in Claude Desktop:\n\n## Examples\n\n## Integration\n\n### Claude Desktop\n\nTo add this MCP server to Claude Desktop:\n\nEdit the config file under Settings > Developer:\n\n```json\n{\n  \"mcpServers\": {\n    \"ms365\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@softeria/ms-365-mcp-server\"\n      ]\n    }\n  }\n}\n```\n\n### Claude Code CLI\n\n```bash\nclaude mcp add ms365 -- npx -y @softeria/ms-365-mcp-server\n```\n\nFor other interfaces that support MCPs, please refer to their respective documentation for the correct\nintegration method.\n\n### Authentication\n\n> ⚠️ You must authenticate before using tools.\n\n1. **MCP client login**:\n    - Call the `login` tool (auto-checks existing token)\n    - If needed, get URL+code, visit in browser\n    - Use `verify-login` tool to confirm\n2. **Optional CLI login**:\n```bash\n   npx @softeria/ms-365-mcp-server --login\n```\n   Follow the URL and code prompt in the terminal.\n\nTokens are cached securely in your OS credential store (fallback to file).\n\n## License\n\nMIT © 2025 Softeria",
+    "zh-Hans": "# ms-365-mcp-server\n\n![npm version](/mcp-assets/a31704b4715177030b77326640272691.svg) ![build status](/mcp-assets/a360cf14c31b446d557b2bc79fbedc72.svg) ![license](/mcp-assets/d177f30277cff66d9af1e3c6409e24dc.svg)\n\nMicrosoft 365 MCP Server\n\nA Model Context Protocol (MCP) server for interacting with Microsoft 365 services through the Graph API.\n\n## Prerequisites\n\n- Node.js >= 14\n\n## Features\n\n- Authentication via Microsoft Authentication Library (MSAL)\n- Excel file operations\n- Calendar event management\n- Mail operations\n- OneDrive file management\n- OneNote notebooks and pages\n- To Do tasks and task lists\n- Planner plans and tasks\n- Outlook contacts\n- User management\n- Dynamic tools powered by Microsoft Graph OpenAPI spec\n- Built on the Model Context Protocol\n\n## Quick Start Example\n\nTest login in Claude Desktop:\n\n## Examples\n\n## Integration\n\n### Claude Desktop\n\nTo add this MCP server to Claude Desktop:\n\nEdit the config file under Settings > Developer:\n\n```json\n{\n  \"mcpServers\": {\n    \"ms365\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@softeria/ms-365-mcp-server\"\n      ]\n    }\n  }\n}\n```\n\n### Claude Code CLI\n\n```bash\nclaude mcp add ms365 -- npx -y @softeria/ms-365-mcp-server\n```\n\nFor other interfaces that support MCPs, please refer to their respective documentation for the correct\nintegration method.\n\n### Authentication\n\n> ⚠️ You must authenticate before using tools.\n\n1. **MCP client login**:\n    - Call the `login` tool (auto-checks existing token)\n    - If needed, get URL+code, visit in browser\n    - Use `verify-login` tool to confirm\n2. **Optional CLI login**:\n```bash\n   npx @softeria/ms-365-mcp-server --login\n```\n   Follow the URL and code prompt in the terminal.\n\nTokens are cached securely in your OS credential store (fallback to file).\n\n## License\n\nMIT © 2025 Softeria",
+    "zh-Hant": "# ms-365-mcp-server\n\n![npm version](/mcp-assets/a31704b4715177030b77326640272691.svg) ![build status](/mcp-assets/a360cf14c31b446d557b2bc79fbedc72.svg) ![license](/mcp-assets/d177f30277cff66d9af1e3c6409e24dc.svg)\n\nMicrosoft 365 MCP Server\n\nA Model Context Protocol (MCP) server for interacting with Microsoft 365 services through the Graph API.\n\n## Prerequisites\n\n- Node.js >= 14\n\n## Features\n\n- Authentication via Microsoft Authentication Library (MSAL)\n- Excel file operations\n- Calendar event management\n- Mail operations\n- OneDrive file management\n- OneNote notebooks and pages\n- To Do tasks and task lists\n- Planner plans and tasks\n- Outlook contacts\n- User management\n- Dynamic tools powered by Microsoft Graph OpenAPI spec\n- Built on the Model Context Protocol\n\n## Quick Start Example\n\nTest login in Claude Desktop:\n\n## Examples\n\n## Integration\n\n### Claude Desktop\n\nTo add this MCP server to Claude Desktop:\n\nEdit the config file under Settings > Developer:\n\n```json\n{\n  \"mcpServers\": {\n    \"ms365\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@softeria/ms-365-mcp-server\"\n      ]\n    }\n  }\n}\n```\n\n### Claude Code CLI\n\n```bash\nclaude mcp add ms365 -- npx -y @softeria/ms-365-mcp-server\n```\n\nFor other interfaces that support MCPs, please refer to their respective documentation for the correct\nintegration method.\n\n### Authentication\n\n> ⚠️ You must authenticate before using tools.\n\n1. **MCP client login**:\n    - Call the `login` tool (auto-checks existing token)\n    - If needed, get URL+code, visit in browser\n    - Use `verify-login` tool to confirm\n2. **Optional CLI login**:\n```bash\n   npx @softeria/ms-365-mcp-server --login\n```\n   Follow the URL and code prompt in the terminal.\n\nTokens are cached securely in your OS credential store (fallback to file).\n\n## License\n\nMIT © 2025 Softeria"
+  },
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "app automation",
+    "cloud platforms",
+    "calendar management",
+    "chinese"
+  ],
+  "website": "https://github.com/softeria/ms-365-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@softeria/ms-365-mcp-server"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 3.42
+}

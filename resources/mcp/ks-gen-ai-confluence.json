@@ -1,0 +1,56 @@
+{
+  "id": "ks-gen-ai-confluence",
+  "channel": "mcp",
+  "name": {
+    "en": "confluence-mcp-server",
+    "zh-Hans": "Confluence MCP Server工具",
+    "zh-Hant": "Confluence MCP Server工具"
+  },
+  "description": {
+    "en": "Enables querying and retrieving content from Confluence through CQL searches and page content fetching, allowing Claude to seamlessly access information stored in Confluence workspaces.",
+    "zh-Hans": "启用通过CQL搜索和页面内容提取从Confluence查询和检索内容，使Claude能够无缝访问存储在Confluence工作区中的信息。",
+    "zh-Hant": "启用通过CQL搜索和页面内容提取从Confluence查询和检索内容，使Claude能够无缝访问存储在Confluence工作区中的信息。"
+  },
+  "detail": {
+    "en": "# Confluence Communication Server MCP Server\n\nInteract with Confluence\n\nThis is a TypeScript-based MCP server that provides tools to interact with Confluence. It demonstrates core MCP concepts by providing:\n\n- Tools for executing CQL queries to search pages\n- Tools for retrieving the content of Confluence pages\n\n## Features\n\n## Confluence Tools\n\n### `execute_cql_search`\n- **Purpose**: Run a CQL query to search for Confluence pages.\n- **Parameters**: `cql`, `limit` (default: 10).\n\n### `get_page_content`\n- **Purpose**: Fetch the content of a Confluence page.\n- **Parameters**: `pageId`.\n\n## Development\n\nInstall dependencies:\n```bash\nnpm install\n```\n\nBuild the server:\n```bash\nnpm run build\n```\n\nFor development with auto-rebuild:\n```bash\nnpm run watch\n```\n\n## Installation\n\nTo use with Claude Desktop, add the server config:\n\nOn MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`\nOn Windows: `%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"Confluence communication server\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/PATH_TO_THE_PROJECT/build/index.js\"\n      ],\n      \"env\": {\n        \"CONFLUENCE_URL\": \"https://XXXXXXXX.atlassian.net/wiki\",\n        \"CONFLUENCE_API_MAIL\": \"Your email\",\n        \"CONFLUENCE_API_KEY\": \"KEY_FROM: https://id.atlassian.com/manage-profile/security/api-tokens\"\n      }\n    }\n  }\n}\n```\n\n### Debugging\n\nSince MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:\n\n```bash\nnpm run inspector\n```\n\nThe Inspector will provide a URL to access debugging tools in your browser.",
+    "zh-Hans": "# Confluence 通信服务器 MCP 服务器\n\n与 Confluence 交互\n\n这是一个基于 TypeScript 的 MCP 服务器，提供了与 Confluence 交互的工具。它通过提供以下功能来展示核心的 MCP 概念：\n\n- 执行 CQL 查询以搜索页面的工具\n- 获取 Confluence 页面内容的工具\n\n## 功能\n\n## Confluence 工具\n\n### `execute_cql_search`\n- **目的**：运行 CQL 查询以搜索 Confluence 页面。\n- **参数**：`cql`，`limit`（默认值：10）。\n\n### `get_page_content`\n- **目的**：获取 Confluence 页面的内容。\n- **参数**：`pageId`。\n\n## 开发\n\n安装依赖：\n```bash\nnpm install\n```\n\n构建服务器：\n```bash\nnpm run build\n```\n\n对于带有自动重建的开发：\n```bash\nnpm run watch\n```\n\n## 安装\n\n要与 Claude Desktop 一起使用，请添加服务器配置：\n\n在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`\n在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"Confluence communication server\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/PATH_TO_THE_PROJECT/build/index.js\"\n      ],\n      \"env\": {\n        \"CONFLUENCE_URL\": \"https://XXXXXXXX.atlassian.net/wiki\",\n        \"CONFLUENCE_API_MAIL\": \"Your email\",\n        \"CONFLUENCE_API_KEY\": \"KEY_FROM: https://id.atlassian.com/manage-profile/security/api-tokens\"\n      }\n    }\n  }\n}\n```\n\n### 调试\n\n由于 MCP 服务器通过 stdio 进行通信，调试可能会比较困难。我们建议使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为包脚本可用：\n\n```bash\nnpm run inspector\n```\n\nInspector 将提供一个 URL，以便您可以在浏览器中访问调试工具。",
+    "zh-Hant": "# Confluence 通信服务器 MCP 服务器\n\n与 Confluence 交互\n\n这是一个基于 TypeScript 的 MCP 服务器，提供了与 Confluence 交互的工具。它通过提供以下功能来展示核心的 MCP 概念：\n\n- 执行 CQL 查询以搜索页面的工具\n- 获取 Confluence 页面内容的工具\n\n## 功能\n\n## Confluence 工具\n\n### `execute_cql_search`\n- **目的**：运行 CQL 查询以搜索 Confluence 页面。\n- **参数**：`cql`，`limit`（默认值：10）。\n\n### `get_page_content`\n- **目的**：获取 Confluence 页面的内容。\n- **参数**：`pageId`。\n\n## 开发\n\n安装依赖：\n```bash\nnpm install\n```\n\n构建服务器：\n```bash\nnpm run build\n```\n\n对于带有自动重建的开发：\n```bash\nnpm run watch\n```\n\n## 安装\n\n要与 Claude Desktop 一起使用，请添加服务器配置：\n\n在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`\n在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"Confluence communication server\": {\n      \"command\": \"node\",\n      \"args\": [\n        \"/PATH_TO_THE_PROJECT/build/index.js\"\n      ],\n      \"env\": {\n        \"CONFLUENCE_URL\": \"https://XXXXXXXX.atlassian.net/wiki\",\n        \"CONFLUENCE_API_MAIL\": \"Your email\",\n        \"CONFLUENCE_API_KEY\": \"KEY_FROM: https://id.atlassian.com/manage-profile/security/api-tokens\"\n      }\n    }\n  }\n}\n```\n\n### 调试\n\n由于 MCP 服务器通过 stdio 进行通信，调试可能会比较困难。我们建议使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为包脚本可用：\n\n```bash\nnpm run inspector\n```\n\nInspector 将提供一个 URL，以便您可以在浏览器中访问调试工具。"
+  },
+  "categories": [
+    "memory",
+    "communication"
+  ],
+  "tags": [
+    "communication",
+    "knowledge and memory",
+    "search",
+    "chinese"
+  ],
+  "website": "https://github.com/KS-GEN-AI/confluence-mcp-server",
+  "icon": "/mcp-icons/75a440f4d772390b7749620164b068f4.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "/PATH_TO_THE_PROJECT/build/index.js"
+    ],
+    "env": [
+      [
+        "CONFLUENCE_API_KEY",
+        "KEY_FROM: https://id.atlassian.com/manage-profile/security/api-tokens"
+      ],
+      [
+        "CONFLUENCE_API_MAIL",
+        "Your email"
+      ],
+      [
+        "CONFLUENCE_URL",
+        "https://XXXXXXXX.atlassian.net/wiki"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 15.74
+}

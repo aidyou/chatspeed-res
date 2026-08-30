@@ -1,0 +1,41 @@
+{
+  "id": "dingtalk-address-book",
+  "channel": "mcp",
+  "name": {
+    "en": "Address-Book",
+    "zh-Hans": "通讯录",
+    "zh-Hant": "通讯录"
+  },
+  "description": {
+    "en": "1.什么是钉钉通讯录（应用授权） MCP Server？   钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。    2.如何使用钉钉通讯录（应用授权） MCP Server？   钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。   MCP Tool 有：   get_user_info，获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）   list_departments，列出企业内所有部门或指定部门的子部门列表   get_department_detail，获取指定部门的详细信息（包括部门名称、负责人、成员数量等）   list_department_members，分页获取指定部门下的所有成员信息    用户使用案例：   - 查询公司“技术部”下的所有成员名单及其联系方式   - 获取员工“李四”的详细信息，包括所属部门、职位和入职时间   - 列出企业组织架构中的所有一级部门，并展示每个部门的负责人   - 获取“销售部”（部门ID: 10086）下的成员总数及成员姓名列表",
+    "zh-Hans": "1.什么是钉钉通讯录（应用授权） MCP Server？   钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。    2.如何使用钉钉通讯录（应用授权） MCP Server？   钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。   MCP Tool 有：   get_user_info，获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）   list_departments，列出企业内所有部门或指定部门的子部门列表   get_department_detail，获取指定部门的详细信息（包括部门名称、负责人、成员数量等）   list_department_members，分页获取指定部门下的所有成员信息    用户使用案例：   - 查询公司“技术部”下的所有成员名单及其联系方式   - 获取员工“李四”的详细信息，包括所属部门、职位和入职时间   - 列出企业组织架构中的所有一级部门，并展示每个部门的负责人   - 获取“销售部”（部门ID: 10086）下的成员总数及成员姓名列表",
+    "zh-Hant": "1.什么是钉钉通讯录（应用授权） MCP Server？   钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。    2.如何使用钉钉通讯录（应用授权） MCP Server？   钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。   MCP Tool 有：   get_user_info，获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）   list_departments，列出企业内所有部门或指定部门的子部门列表   get_department_detail，获取指定部门的详细信息（包括部门名称、负责人、成员数量等）   list_department_members，分页获取指定部门下的所有成员信息    用户使用案例：   - 查询公司“技术部”下的所有成员名单及其联系方式   - 获取员工“李四”的详细信息，包括所属部门、职位和入职时间   - 列出企业组织架构中的所有一级部门，并展示每个部门的负责人   - 获取“销售部”（部门ID: 10086）下的成员总数及成员姓名列表"
+  },
+  "detail": {
+    "en": "# DingTalk Address Book (App Authorization) MCP Server\n\n## 1. What is the DingTalk Address Book (App Authorization) MCP Server?\n\nThe DingTalk Address Book (App Authorization) is an MCP provided by the official open platform, supporting operations such as obtaining organizational structure information, querying member details, getting department lists, and managing the relationships between members and departments.\n\n## 2. How to Use the DingTalk Address Book (App Authorization) MCP Server?\n\nDingTalk has already deployed the cloud-based DingTalk Address Book (App Authorization) MCP service for you. You can directly add and use it in the conversation input box.\n\n### MCP Tools\n\n- **`get_user_info`**  \n  Obtain basic information of a specified user (such as name, employee ID, email, phone number, etc.).\n\n- **`list_departments`**  \n  List all departments within the enterprise or the sub-departments of a specified department.\n\n- **`get_department_detail`**  \n  Get detailed information about a specified department (including department name, head, number of members, etc.).\n\n- **`list_department_members`**  \n  Paginate and obtain all member information under a specified department.\n\n## User Cases\n\n- Query the list of all members and their contact information under the \"Technology Department\" in the company.\n- Obtain detailed information about the employee \"Li Si\", including the department they belong to, position, and start date.\n- List all first-level departments in the corporate organizational structure and display the head of each department.\n- Get the total number of members and the list of member names under the \"Sales Department\" (Department ID: `10086`).",
+    "zh-Hans": "# 钉钉通讯录（应用授权）MCP Server\n\n## 1. 什么是钉钉通讯录（应用授权） MCP Server？\n\n钉钉通讯录（应用授权）是开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表，以及管理成员与部门关系等操作。\n\n## 2. 如何使用钉钉通讯录（应用授权） MCP Server？\n\n钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。\n\n### MCP Tools\n\n- **`get_user_info`**  \n  获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）。\n\n- **`list_departments`**  \n  列出企业内所有部门或指定部门的子部门列表。\n\n- **`get_department_detail`**  \n  获取指定部门的详细信息（包括部门名称、负责人、成员数量等）。\n\n- **`list_department_members`**  \n  分页获取指定部门下的所有成员信息。\n\n## 用户使用案例\n\n- 查询公司 “技术部” 下的所有成员名单及其联系方式。\n- 获取员工 “李四” 的详细信息，包括所属部门、职位和入职时间。\n- 列出企业组织架构中的所有一级部门，并展示每个部门的负责人。\n- 获取 “销售部”（部门 ID: `10086`）下的成员总数及成员姓名列表。",
+    "zh-Hant": "# 钉钉通讯录（应用授权）MCP Server\n\n## 1. 什么是钉钉通讯录（应用授权） MCP Server？\n\n钉钉通讯录（应用授权）是开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表，以及管理成员与部门关系等操作。\n\n## 2. 如何使用钉钉通讯录（应用授权） MCP Server？\n\n钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。\n\n### MCP Tools\n\n- **`get_user_info`**  \n  获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）。\n\n- **`list_departments`**  \n  列出企业内所有部门或指定部门的子部门列表。\n\n- **`get_department_detail`**  \n  获取指定部门的详细信息（包括部门名称、负责人、成员数量等）。\n\n- **`list_department_members`**  \n  分页获取指定部门下的所有成员信息。\n\n## 用户使用案例\n\n- 查询公司 “技术部” 下的所有成员名单及其联系方式。\n- 获取员工 “李四” 的详细信息，包括所属部门、职位和入职时间。\n- 列出企业组织架构中的所有一级部门，并展示每个部门的负责人。\n- 获取 “销售部”（部门 ID: `10086`）下的成员总数及成员姓名列表。"
+  },
+  "categories": [
+    "files"
+  ],
+  "tags": [
+    "developer tools",
+    "file systems",
+    "chinese"
+  ],
+  "website": "https://mcp.dingtalk.com/#/detail?mcpId=2400&detailType=marketMcpDetail",
+  "icon": "/mcp-icons/dcf76b798b82664b87770d385a434793.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-server-fetch"
+    ],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 30.06
+}

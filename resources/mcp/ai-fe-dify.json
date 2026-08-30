@@ -1,0 +1,48 @@
+{
+  "id": "ai-fe-dify",
+  "channel": "mcp",
+  "name": {
+    "en": "dify-mcp-server",
+    "zh-Hans": "Dify组件生成器",
+    "zh-Hant": "Dify组件生成器"
+  },
+  "description": {
+    "en": "Integrates Dify AI API to provide code generation for Ant Design components, supporting both text and image inputs with stream processing capabilities.",
+    "zh-Hans": "集成了Dify AI API，为Ant Design组件提供代码生成服务，支持文本和图像输入，并具备流式处理能力。",
+    "zh-Hant": "集成了Dify AI API，为Ant Design组件提供代码生成服务，支持文本和图像输入，并具备流式处理能力。"
+  },
+  "detail": {
+    "en": "# dify-server MCP 服务器\n\n一个集成 Dify AI API 的 Model Context Protocol 服务器\n\n这是一个基于 TypeScript 的 MCP 服务器，通过集成 Dify AI API 来提供 Ant Design 业务组件的代码生成能力。它展示了以下核心 MCP 概念：\n\n- 集成 Dify AI API 实现聊天完成功能\n- 支持文本和图片输入\n- 流式响应处理\n\n## 功能特性\n\n### Tools\n\n- `antd-component-codegen-mcp-tool` - 生成 Ant Design 业务组件代码\n  - 支持文本和可选的图片输入\n  - 处理图片文件上传\n  - 支持来自 Dify AI API 的流式响应\n\n## 开发指南\n\n安装依赖：\n\n```bash\nnpm install\n```\n\n开发模式（自动重新构建）：\n\n```bash\nnpm run watch\n```\n\n构建服务器：\n\n```bash\nnpm run build\n```\n\n## 安装说明\n\n### 在 Continue 中集成\n\n在`~/.continue/config.json`中添加以下配置：\n\n```json\n{\n  \"experimental\": {\n    \"modelContextProtocolServers\": [\n      {\n        \"transport\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\"your/path/dify-server/build/index.js\"],\n          \"env\": {\n            \"DIFY_API_KEY\": \"***\"\n          }\n        }\n      }\n    ]\n  }\n}\n```\n\n### 在 Cline 中集成\n\n在`your/path/cline_mcp_settings.json`中添加以下配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"dify-server\": {\n      \"command\": \"node\",\n      \"args\": [\"your/path/dify-server/build/index.js\"],\n      \"env\": {\n        \"DIFY_API_KEY\": \"***\"\n      }\n    }\n  }\n}\n```\n\n### 调试\n\n由于 MCP 服务器通过标准输入输出（stdio）进行通信，调试可能会比较困难。我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，可通过以下命令启动：\n\n```bash\nnpm run inspector\n```\n\nInspector 将提供一个可在浏览器中访问的调试工具 URL。",
+    "zh-Hans": "# dify-server MCP 服务器\n\n一个集成 Dify AI API 的 Model Context Protocol 服务器\n\n这是一个基于 TypeScript 的 MCP 服务器，通过集成 Dify AI API 来提供 Ant Design 业务组件的代码生成能力。它展示了以下核心 MCP 概念：\n\n- 集成 Dify AI API 实现聊天完成功能\n- 支持文本和图片输入\n- 流式响应处理\n\n## 功能特性\n\n### Tools\n\n- `antd-component-codegen-mcp-tool` - 生成 Ant Design 业务组件代码\n  - 支持文本和可选的图片输入\n  - 处理图片文件上传\n  - 支持来自 Dify AI API 的流式响应\n\n## 开发指南\n\n安装依赖：\n\n```bash\nnpm install\n```\n\n开发模式（自动重新构建）：\n\n```bash\nnpm run watch\n```\n\n构建服务器：\n\n```bash\nnpm run build\n```\n\n## 安装说明\n\n### 在 Continue 中集成\n\n在`~/.continue/config.json`中添加以下配置：\n\n```json\n{\n  \"experimental\": {\n    \"modelContextProtocolServers\": [\n      {\n        \"transport\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\"your/path/dify-server/build/index.js\"],\n          \"env\": {\n            \"DIFY_API_KEY\": \"***\"\n          }\n        }\n      }\n    ]\n  }\n}\n```\n\n### 在 Cline 中集成\n\n在`your/path/cline_mcp_settings.json`中添加以下配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"dify-server\": {\n      \"command\": \"node\",\n      \"args\": [\"your/path/dify-server/build/index.js\"],\n      \"env\": {\n        \"DIFY_API_KEY\": \"***\"\n      }\n    }\n  }\n}\n```\n\n### 调试\n\n由于 MCP 服务器通过标准输入输出（stdio）进行通信，调试可能会比较困难。我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，可通过以下命令启动：\n\n```bash\nnpm run inspector\n```\n\nInspector 将提供一个可在浏览器中访问的调试工具 URL。",
+    "zh-Hant": "# dify-server MCP 服务器\n\n一个集成 Dify AI API 的 Model Context Protocol 服务器\n\n这是一个基于 TypeScript 的 MCP 服务器，通过集成 Dify AI API 来提供 Ant Design 业务组件的代码生成能力。它展示了以下核心 MCP 概念：\n\n- 集成 Dify AI API 实现聊天完成功能\n- 支持文本和图片输入\n- 流式响应处理\n\n## 功能特性\n\n### Tools\n\n- `antd-component-codegen-mcp-tool` - 生成 Ant Design 业务组件代码\n  - 支持文本和可选的图片输入\n  - 处理图片文件上传\n  - 支持来自 Dify AI API 的流式响应\n\n## 开发指南\n\n安装依赖：\n\n```bash\nnpm install\n```\n\n开发模式（自动重新构建）：\n\n```bash\nnpm run watch\n```\n\n构建服务器：\n\n```bash\nnpm run build\n```\n\n## 安装说明\n\n### 在 Continue 中集成\n\n在`~/.continue/config.json`中添加以下配置：\n\n```json\n{\n  \"experimental\": {\n    \"modelContextProtocolServers\": [\n      {\n        \"transport\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\"your/path/dify-server/build/index.js\"],\n          \"env\": {\n            \"DIFY_API_KEY\": \"***\"\n          }\n        }\n      }\n    ]\n  }\n}\n```\n\n### 在 Cline 中集成\n\n在`your/path/cline_mcp_settings.json`中添加以下配置：\n\n```json\n{\n  \"mcpServers\": {\n    \"dify-server\": {\n      \"command\": \"node\",\n      \"args\": [\"your/path/dify-server/build/index.js\"],\n      \"env\": {\n        \"DIFY_API_KEY\": \"***\"\n      }\n    }\n  }\n}\n```\n\n### 调试\n\n由于 MCP 服务器通过标准输入输出（stdio）进行通信，调试可能会比较困难。我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，可通过以下命令启动：\n\n```bash\nnpm run inspector\n```\n\nInspector 将提供一个可在浏览器中访问的调试工具 URL。"
+  },
+  "categories": [
+    "development",
+    "media"
+  ],
+  "tags": [
+    "developer tools",
+    "image and video processing",
+    "other",
+    "chinese"
+  ],
+  "website": "https://github.com/AI-FE/dify-mcp-server",
+  "icon": "/mcp-icons/5fbfcf5be37e9cddfd332c4f3daf7fa9.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+      "your/path/dify-server/build/index.js"
+    ],
+    "env": [
+      [
+        "DIFY_API_KEY",
+        "***"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 2.44
+}

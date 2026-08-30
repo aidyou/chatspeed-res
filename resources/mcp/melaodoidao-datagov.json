@@ -1,0 +1,40 @@
+{
+  "id": "melaodoidao-datagov",
+  "channel": "mcp",
+  "name": {
+    "en": "datagov-mcp-server",
+    "zh-Hans": "政府数据MCP服务器",
+    "zh-Hant": "政府数据MCP服务器"
+  },
+  "description": {
+    "en": "An MCP server that provides access to government datasets from Data.gov, enabling users to search packages, view dataset details, list groups and tags, and access resources by URL.",
+    "zh-Hans": "一个MCP服务器，提供来自Data.gov的政府数据集访问，使用户能够搜索数据包、查看数据集详情、列出组和标签，并通过URL访问资源。",
+    "zh-Hant": "一个MCP服务器，提供来自Data.gov的政府数据集访问，使用户能够搜索数据包、查看数据集详情、列出组和标签，并通过URL访问资源。"
+  },
+  "detail": {
+    "en": "# Data.gov MCP Server\n\nAn MCP server for accessing data from Data.gov, providing tools and resources for interacting with government datasets.\n\n  \n\n## Installation\n\n1.  **Install the package globally:**\n\n```bash\n    npm install -g @melaodoidao/datagov-mcp-server\n```\n\n2. **Configure the MCP Server:**\n\n   - Add the following entry to your `cline_mcp_settings.json` file (usually located in `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/` on macOS):\n\n```json\n      {\n        \"mcpServers\": {\n          \"datagov\": {\n            \"command\": \"datagov-mcp-server\",\n            \"args\": [],\n            \"env\": {}\n          }\n        }\n      }\n```\n    - If you are using the Claude Desktop app, add the entry to `~/Library/Application Support/Claude/claude_desktop_config.json` instead.\n\n## Usage\n\nThis server provides the following tools:\n\n*   `package_search`: Search for packages (datasets) on Data.gov.\n*   `package_show`: Get details for a specific package (dataset).\n*   `group_list`: List groups on Data.gov.\n*   `tag_list`: List tags on Data.gov.\n\nIt also provides the following resource template:\n\n*   `datagov://resource/{url}`: Access a Data.gov resource by its URL.\n\nYou can use these tools and resources with Cline by specifying the server name (`datagov-mcp-server`) and the tool/resource name.\n\n## Contributing\n\nContributions are welcome! Please feel free to submit issues or pull requests.\n\n## License\n\nMIT License",
+    "zh-Hans": "# Data.gov MCP 服务器\n\n一个用于访问 Data.gov 数据的MCP服务器，提供与政府数据集交互的工具和资源。\n\n  \n\n## 安装\n\n1. **全局安装包：**\n\n```bash\n    npm install -g @melaodoidao/datagov-mcp-server\n```\n\n2. **配置 MCP 服务器：**\n\n   - 在您的 `cline_mcp_settings.json` 文件中添加以下条目（通常位于 macOS 上的 `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/`）：\n\n```json\n      {\n        \"mcpServers\": {\n          \"datagov\": {\n            \"command\": \"datagov-mcp-server\",\n            \"args\": [],\n            \"env\": {}\n          }\n        }\n      }\n```\n    - 如果您使用的是 Claude 桌面应用程序，请将条目添加到 `~/Library/Application Support/Claude/claude_desktop_config.json` 中。\n\n## 使用方法\n\n此服务器提供了以下工具：\n\n*   `package_search`: 在 Data.gov 上搜索数据包（数据集）。\n*   `package_show`: 获取特定数据包（数据集）的详细信息。\n*   `group_list`: 列出 Data.gov 上的组。\n*   `tag_list`: 列出 Data.gov 上的标签。\n\n它还提供了以下资源模板：\n\n*   `datagov://resource/{url}`: 通过 URL 访问 Data.gov 资源。\n\n您可以使用 Cline 并指定服务器名称 (`datagov-mcp-server`) 和工具/资源名称来使用这些工具和资源。\n\n## 贡献\n\n欢迎贡献！请随时提交问题或拉取请求。\n\n## 许可证\n\nMIT 许可证",
+    "zh-Hant": "# Data.gov MCP 服务器\n\n一个用于访问 Data.gov 数据的MCP服务器，提供与政府数据集交互的工具和资源。\n\n  \n\n## 安装\n\n1. **全局安装包：**\n\n```bash\n    npm install -g @melaodoidao/datagov-mcp-server\n```\n\n2. **配置 MCP 服务器：**\n\n   - 在您的 `cline_mcp_settings.json` 文件中添加以下条目（通常位于 macOS 上的 `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/`）：\n\n```json\n      {\n        \"mcpServers\": {\n          \"datagov\": {\n            \"command\": \"datagov-mcp-server\",\n            \"args\": [],\n            \"env\": {}\n          }\n        }\n      }\n```\n    - 如果您使用的是 Claude 桌面应用程序，请将条目添加到 `~/Library/Application Support/Claude/claude_desktop_config.json` 中。\n\n## 使用方法\n\n此服务器提供了以下工具：\n\n*   `package_search`: 在 Data.gov 上搜索数据包（数据集）。\n*   `package_show`: 获取特定数据包（数据集）的详细信息。\n*   `group_list`: 列出 Data.gov 上的组。\n*   `tag_list`: 列出 Data.gov 上的标签。\n\n它还提供了以下资源模板：\n\n*   `datagov://resource/{url}`: 通过 URL 访问 Data.gov 资源。\n\n您可以使用 Cline 并指定服务器名称 (`datagov-mcp-server`) 和工具/资源名称来使用这些工具和资源。\n\n## 贡献\n\n欢迎贡献！请随时提交问题或拉取请求。\n\n## 许可证\n\nMIT 许可证"
+  },
+  "categories": [
+    "data"
+  ],
+  "tags": [
+    "research and data",
+    "search",
+    "databases",
+    "chinese"
+  ],
+  "website": "https://github.com/melaodoidao/datagov-mcp-server",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "datagov-mcp-server",
+    "args": [],
+    "env": [],
+    "requiredInputs": []
+  },
+  "score": 2.44
+}

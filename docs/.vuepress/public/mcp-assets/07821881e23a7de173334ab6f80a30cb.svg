@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full leading-none markmap" viewBox="-20 -200 1250 350">
+    <rect x="-20" y="-200" width="1250" height="350" fill="white" />
+    <g>
+        <path class="markmap-link" d="M 337 87.5 C 377 87.5 377 87.3 417 87.3" stroke-width="1.375" stroke="rgb(214, 39, 40)" />
+        <path class="markmap-link" d="M 305 -92.5 C 345 -92.5 345 -147.4 385 -147.4" stroke-width="1.375" stroke="rgb(148, 103, 189)" />
+        <path class="markmap-link" d="M 305 -92.5 C 345 -92.5 345 -120.1 385 -120.1" stroke-width="1.375" stroke="rgb(140, 86, 75)" />
+        <path class="markmap-link" d="M 305 -92.5 C 345 -92.5 345 -92.7 385 -92.7" stroke-width="1.375" stroke="rgb(227, 119, 194)" />
+        <path class="markmap-link" d="M 305 -92.5 C 345 -92.5 345 -65.3 385 -65.3" stroke-width="1.375" stroke="rgb(127, 127, 127)" />
+        <path class="markmap-link" d="M 305 -92.5 C 345 -92.5 345 -37.9 385 -37.9" stroke-width="1.375" stroke="rgb(188, 189, 34)" />
+        <path class="markmap-link" d="M 337 -5.4 C 377 -5.4 377 -5.6 417 -5.6" stroke-width="1.375" stroke="rgb(31, 119, 180)" />
+        <path class="markmap-link" d="M 305 27.4 C 345 27.4 345 27.2 385 27.2" stroke-width="1.375" stroke="rgb(44, 160, 44)" />
+        <path class="markmap-link" d="M 606 87.3 C 646 87.3 646 64.1 686 64.1" stroke-width="1.1875" stroke="rgb(148, 103, 189)" />
+        <path class="markmap-link" d="M 606 87.3 C 646 87.3 646 112.3 686 112.3" stroke-width="1.1875" stroke="rgb(140, 86, 75)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 -92.5 257 -92.5" stroke-width="1.75" stroke="rgb(255, 127, 14)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 -5.4 257 -5.4" stroke-width="1.75" stroke="rgb(23, 190, 207)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 27.4 257 27.4" stroke-width="1.75" stroke="rgb(255, 127, 14)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 59.8 257 59.8" stroke-width="1.75" stroke="rgb(255, 127, 14)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 87.5 257 87.5" stroke-width="1.75" stroke="rgb(44, 160, 44)" />
+        <path class="markmap-link" d="M 177 11.8 C 217 11.8 217 115.3 257 115.3" stroke-width="1.75" stroke="rgb(227, 119, 194)" />
+        <g class="markmap-highlight" />
+        <g class="markmap-node" transform="translate(385,-169.1)">
+            <line stroke="#9467bd" stroke-width="1.375" x1="-1" x2="516" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(385,-141.8)">
+            <line stroke="#8c564b" stroke-width="1.375" x1="-1" x2="446" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(385,-114.4)">
+            <line stroke="#e377c2" stroke-width="1.375" x1="-1" x2="402" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(385,-87)">
+            <line stroke="#7f7f7f" stroke-width="1.375" x1="-1" x2="388" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(385,-59.6)">
+            <line stroke="#bcbd22" stroke-width="1.375" x1="-1" x2="474" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(257,-114.4)">
+            <line stroke="#ff7f0e" stroke-width="1.75" x1="-1" x2="50" y1="21.875" y2="21.875" />
+            <circle stroke-width="1.5" r="6" stroke="#ff7f0e" fill="var(--markmap-circle-open-bg)" cx="48" cy="21.9" />
+            </g>
+        <g class="markmap-node" transform="translate(417,-27.3)">
+            <line stroke="#1f77b4" stroke-width="1.375" x1="-1" x2="157" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(257,-27.3)">
+            <line stroke="#17becf" stroke-width="1.75" x1="-1" x2="82" y1="21.875" y2="21.875" />
+            <circle stroke-width="1.5" r="6" stroke="#17becf" fill="var(--markmap-circle-open-bg)" cx="80" cy="21.9" />
+            </g>
+        <g class="markmap-node" transform="translate(385,5.5)">
+            <line stroke="#2ca02c" stroke-width="1.375" x1="-1" x2="82" y1="21.6875" y2="21.6875" />
+            </g>
+        <g class="markmap-node" transform="translate(257,5.5)">
+            <line stroke="#ff7f0e" stroke-width="1.75" x1="-1" x2="50" y1="21.875" y2="21.875" />
+            <circle stroke-width="1.5" r="6" stroke="#ff7f0e" fill="var(--markmap-circle-open-bg)" cx="48" cy="21.9" />
+            </g>
+        <g class="markmap-node" transform="translate(257,37.9)">
+            <line stroke="#ff7f0e" stroke-width="1.75" x1="-1" x2="82" y1="21.875" y2="21.875" />
+            </g>
+        <g class="markmap-node" transform="translate(686,40.5)">
+            <line stroke="#9467bd" stroke-width="1.1875" x1="-1" x2="401" y1="23.59375" y2="23.59375" />
+            </g>
+        <g class="markmap-node" transform="translate(686,69.7)">
+            <line stroke="#8c564b" stroke-width="1.1875" x1="-1" x2="518" y1="42.59375" y2="42.59375" />
+            </g>
+        <g class="markmap-node" transform="translate(417,65.6)">
+            <line stroke="#d62728" stroke-width="1.375" x1="-1" x2="191" y1="21.6875" y2="21.6875" />
+            <circle stroke-width="1.5" r="6" stroke="#d62728" fill="var(--markmap-circle-open-bg)" cx="189" cy="21.7" />
+            </g>
+        <g class="markmap-node" transform="translate(257,65.6)">
+            <line stroke="#2ca02c" stroke-width="1.75" x1="-1" x2="82" y1="21.875" y2="21.875" />
+            <circle stroke-width="1.5" r="6" stroke="#2ca02c" fill="var(--markmap-circle-open-bg)" cx="80" cy="21.9" />
+            </g>
+        <g class="markmap-node" transform="translate(257,93.4)">
+            <line stroke="#e377c2" stroke-width="1.75" x1="-1" x2="66" y1="21.875" y2="21.875" />
+            </g>
+        <g class="markmap-node" transform="translate(0,-10.5)">
+            <line stroke="#1f77b4" stroke-width="2.5" x1="-1" x2="179" y1="22.25" y2="22.25" />
+            <circle stroke-width="1.5" r="6" stroke="#1f77b4" fill="var(--markmap-circle-open-bg)" cx="177" cy="22.3" />
+            </g>
+    </g>
+</svg>

@@ -1,0 +1,55 @@
+{
+  "id": "mshk-rss-crawler",
+  "channel": "mcp",
+  "name": {
+    "en": "mcp-rss-crawler",
+    "zh-Hans": "mcp RSS爬虫",
+    "zh-Hant": "mcp RSS爬虫"
+  },
+  "description": {
+    "en": "An MCP server that fetches RSS feeds and shares them with LLMs, allowing AI assistants to access and present the latest news and articles from configured feeds.",
+    "zh-Hans": "一种MCP服务器，它获取RSS源并将其与大型语言模型共享，使人工智能助手能够访问并呈现来自已配置源的最新新闻和文章。",
+    "zh-Hant": "一种MCP服务器，它获取RSS源并将其与大型语言模型共享，使人工智能助手能够访问并呈现来自已配置源的最新新闻和文章。"
+  },
+  "detail": {
+    "en": "# MCP-RSS-Crawler\n\nAn MCP (Message Chain Protocol) server that fetches RSS feeds and shares them with LLMs.\n\n## Features\n\n- Fetching and caching of RSS feeds (SQLite database)\n- MCP protocol implementation for seamless LLM integration\n- Support for filtering feeds by category, source, or keywords\n- Comprehensive API endpoints for feed management\n  - Add, update, and delete feeds\n- Support for fetching articles from Firecrawl\n\n## Requirements\n\n- Bun\n- Firecrawl API key\n- Claude Desktop or other MCP client\n\n## Setup as MCP Server\n\n1. Clone this repository\n2. Create a `claude_desktop_config.json` file based on `claude_desktop_config.json.example` with your configuration\n\n```json\n{\n  \"mcpServers\": {\n    \"rss-crawler\": {\n      \"command\": \"/path/to/bun\",\n      \"args\": [\"run\", \"/path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts\"],\n      \"cwd\": \"/path/to/mcp-rss-crawler\",\n      \"env\": {\n        \"PORT\": \"5556\",\n        \"DB_DIR\": \"/path/to/mcp-rss-crawler\",\n        \"FIRECRAWL_API_KEY\": \"fc-\"\n      }\n    }\n  }\n}\n```\n\n3. Install dependencies:\n```\n   bun install\n```\n4. Start Claude Desktop:\n\n## MCP Protocol\n\nThe server implements the Message Chain Protocol (MCP) which allows LLMs to access your latest RSS feeds. The MCP endpoint accepts POST requests with a JSON body containing a messages array and returns a response with the latest feed items.\n\nExample request:\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What are the latest news from my RSS feeds?\"\n    }\n  ]\n}\n```\n\nExample response:\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"assistant\",\n      \"content\": \"Here are the latest articles from your RSS feeds:\",\n      \"name\": \"rss-mcp\"\n    },\n    {\n      \"role\": \"tool\",\n      \"content\": \"[{\"title\":\"Article Title\",\"summary\":\"Article summary...\",\"published\":\"2025-03-16T04:30:00.000Z\",\"origin\":\"Feed Name\",\"link\":\"https://example.com/article\"}]\",\n      \"name\": \"rss-feeds\"\n    }\n  ]\n}\n```\n\n## Configuration Options\n\nThe server can be configured through environment variables or a `.env` file:\n\n- `PORT` - Server port (default: 5556)\n- `FIRECRAWL_API_KEY` - Firecrawl API key\n- `DB_DIR` - Database directory (default: `~/.mcp-rss-crawler`)\n\n## Troubleshooting\n\n- For connection issues, check your network settings and firewall configuration\n- Logs are available in the console and can be used to diagnose problems\n- For more detailed logging, set the `DEBUG=mcp-rss:*` environment variable",
+    "zh-Hans": "# MCP-RSS-Crawler\n\n一个MCP（消息链协议）服务器，用于抓取RSS源并与LLMs共享。\n\n## 特性\n\n- 抓取和缓存RSS源（SQLite数据库）\n- 实现MCP协议以无缝集成LLM\n- 支持按类别、来源或关键词过滤源\n- 全面的API端点用于管理源\n  - 添加、更新和删除源\n- 支持从Firecrawl获取文章\n\n## 需求\n\n- Bun\n- Firecrawl API密钥\n- Claude Desktop或其他MCP客户端\n\n## 设置为MCP服务器\n\n1. 克隆此仓库\n2. 根据`claude_desktop_config.json.example`创建一个`claude_desktop_config.json`文件，并根据你的配置进行修改\n\n```json\n{\n  \"mcpServers\": {\n    \"rss-crawler\": {\n      \"command\": \"/path/to/bun\",\n      \"args\": [\"run\", \"/path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts\"],\n      \"cwd\": \"/path/to/mcp-rss-crawler\",\n      \"env\": {\n        \"PORT\": \"5556\",\n        \"DB_DIR\": \"/path/to/mcp-rss-crawler\",\n        \"FIRECRAWL_API_KEY\": \"fc-\"\n      }\n    }\n  }\n}\n```\n\n3. 安装依赖项：\n```\n   bun install\n```\n4. 启动Claude Desktop：\n\n## MCP协议\n\n该服务器实现了消息链协议(MCP)，允许LLMs访问你最新的RSS源。MCP端点接受包含消息数组的JSON体的POST请求，并返回包含最新源项目的响应。\n\n示例请求：\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What are the latest news from my RSS feeds?\"\n    }\n  ]\n}\n```\n\n示例响应：\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"assistant\",\n      \"content\": \"Here are the latest articles from your RSS feeds:\",\n      \"name\": \"rss-mcp\"\n    },\n    {\n      \"role\": \"tool\",\n      \"content\": \"[{\\\"title\\\":\\\"Article Title\\\",\\\"summary\\\":\\\"Article summary...\\\",\\\"published\\\":\\\"2025-03-16T04:30:00.000Z\\\",\\\"origin\\\":\\\"Feed Name\\\",\\\"link\\\":\\\"https://example.com/article\\\"}]\",\n      \"name\": \"rss-feeds\"\n    }\n  ]\n}\n```\n\n## 配置选项\n\n可以通过环境变量或`.env`文件来配置服务器：\n\n- `PORT` - 服务器端口（默认：5556）\n- `FIRECRAWL_API_KEY` - Firecrawl API密钥\n- `DB_DIR` - 数据库目录（默认：`~/.mcp-rss-crawler`）\n\n## 故障排除\n\n- 对于连接问题，请检查您的网络设置和防火墙配置\n- 日志可以在控制台中查看，可用于诊断问题\n- 更详细的日志记录，设置环境变量`DEBUG=mcp-rss:*`",
+    "zh-Hant": "# MCP-RSS-Crawler\n\n一个MCP（消息链协议）服务器，用于抓取RSS源并与LLMs共享。\n\n## 特性\n\n- 抓取和缓存RSS源（SQLite数据库）\n- 实现MCP协议以无缝集成LLM\n- 支持按类别、来源或关键词过滤源\n- 全面的API端点用于管理源\n  - 添加、更新和删除源\n- 支持从Firecrawl获取文章\n\n## 需求\n\n- Bun\n- Firecrawl API密钥\n- Claude Desktop或其他MCP客户端\n\n## 设置为MCP服务器\n\n1. 克隆此仓库\n2. 根据`claude_desktop_config.json.example`创建一个`claude_desktop_config.json`文件，并根据你的配置进行修改\n\n```json\n{\n  \"mcpServers\": {\n    \"rss-crawler\": {\n      \"command\": \"/path/to/bun\",\n      \"args\": [\"run\", \"/path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts\"],\n      \"cwd\": \"/path/to/mcp-rss-crawler\",\n      \"env\": {\n        \"PORT\": \"5556\",\n        \"DB_DIR\": \"/path/to/mcp-rss-crawler\",\n        \"FIRECRAWL_API_KEY\": \"fc-\"\n      }\n    }\n  }\n}\n```\n\n3. 安装依赖项：\n```\n   bun install\n```\n4. 启动Claude Desktop：\n\n## MCP协议\n\n该服务器实现了消息链协议(MCP)，允许LLMs访问你最新的RSS源。MCP端点接受包含消息数组的JSON体的POST请求，并返回包含最新源项目的响应。\n\n示例请求：\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What are the latest news from my RSS feeds?\"\n    }\n  ]\n}\n```\n\n示例响应：\n```json\n{\n  \"messages\": [\n    {\n      \"role\": \"assistant\",\n      \"content\": \"Here are the latest articles from your RSS feeds:\",\n      \"name\": \"rss-mcp\"\n    },\n    {\n      \"role\": \"tool\",\n      \"content\": \"[{\\\"title\\\":\\\"Article Title\\\",\\\"summary\\\":\\\"Article summary...\\\",\\\"published\\\":\\\"2025-03-16T04:30:00.000Z\\\",\\\"origin\\\":\\\"Feed Name\\\",\\\"link\\\":\\\"https://example.com/article\\\"}]\",\n      \"name\": \"rss-feeds\"\n    }\n  ]\n}\n```\n\n## 配置选项\n\n可以通过环境变量或`.env`文件来配置服务器：\n\n- `PORT` - 服务器端口（默认：5556）\n- `FIRECRAWL_API_KEY` - Firecrawl API密钥\n- `DB_DIR` - 数据库目录（默认：`~/.mcp-rss-crawler`）\n\n## 故障排除\n\n- 对于连接问题，请检查您的网络设置和防火墙配置\n- 日志可以在控制台中查看，可用于诊断问题\n- 更详细的日志记录，设置环境变量`DEBUG=mcp-rss:*`"
+  },
+  "categories": [
+    "communication"
+  ],
+  "tags": [
+    "search",
+    "communication",
+    "chinese"
+  ],
+  "website": "https://github.com/mshk/mcp-rss-crawler",
+  "icon": "/mcp-icons/default.png",
+  "status": "active",
+  "lastVerifiedAt": "2026-08-30",
+  "mcp": {
+    "type": "stdio",
+    "command": "/path/to/bun",
+    "args": [
+      "run",
+      "/path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts"
+    ],
+    "env": [
+      [
+        "DB_DIR",
+        "/path/to/mcp-rss-crawler"
+      ],
+      [
+        "FIRECRAWL_API_KEY",
+        "fc-<YOUR_FIRECRAWL_API_KEY>"
+      ],
+      [
+        "PORT",
+        "5556"
+      ]
+    ],
+    "requiredInputs": []
+  },
+  "score": 4.07
+}
