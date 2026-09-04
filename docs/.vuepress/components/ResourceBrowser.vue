@@ -53,6 +53,18 @@ const filteredItems = computed(() => {
 const pageCount = computed(() => Math.max(1, Math.ceil(filteredItems.value.length / pageSize)))
 const visibleItems = computed(() => filteredItems.value.slice((page.value - 1) * pageSize, page.value * pageSize))
 
+// Windowed pager: at most 7 numbered buttons = 3 before + current + 3 after, clamped to [1, pageCount].
+const pageWindow = computed(() => {
+  const total = pageCount.value
+  const size = 7
+  const current = Math.min(Math.max(1, page.value), total)
+  let start = Math.max(1, current - 3)
+  const end = Math.min(total, start + size - 1)
+  start = Math.max(1, end - size + 1)
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+})
+const goPage = (n: number) => { page.value = Math.min(Math.max(1, n), pageCount.value) }
+
 const text = (values: Localized) => values['zh-Hans'] || values.en || Object.values(values)[0] || ''
 const channelName = (id: string) => channelMeta[id]?.title || id
 const resetPage = () => { page.value = 1 }
@@ -114,7 +126,13 @@ const initials = (name: string) => name.split(/\s+/).map(part => part[0]).join('
         </div>
         <div v-else class="empty-state"><strong>没有找到匹配资源</strong><span>试试其他关键词或清除筛选条件。</span><button @click="query = ''; setCategory('')">清除筛选</button></div>
 
-        <nav v-if="pageCount > 1" class="pagination" aria-label="资源分页"><button :disabled="page === 1" @click="page--">上一页</button><button v-for="number in pageCount" :key="number" :class="{ current: page === number }" @click="page = number">{{ number }}</button><button :disabled="page === pageCount" @click="page++">下一页</button></nav>
+        <nav v-if="pageCount > 1" class="pagination" aria-label="资源分页">
+          <button v-if="page > 1" @click="goPage(1)">首页</button>
+          <button v-if="page > 1" @click="goPage(page - 1)">上一页</button>
+          <button v-for="number in pageWindow" :key="number" :class="{ current: page === number }" :aria-current="page === number ? 'page' : undefined" @click="goPage(number)">{{ number }}</button>
+          <button v-if="page < pageCount" @click="goPage(page + 1)">下一页</button>
+          <button v-if="page < pageCount" @click="goPage(pageCount)">尾页</button>
+        </nav>
       </section>
     </div>
   </main>

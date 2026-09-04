@@ -22,12 +22,21 @@
   background: #fbf9f6;
 }
 
+/* Full-width resource layout: neutralize the theme's 780px content column so the
+   1200px .resource-shell can span and center on desktop, and shrink responsively.
+   containerClass lands on .theme-container, so target .vp-page as a descendant. */
+.resource-directory .vp-page {
+  --content-width: 1200px;
+  padding-inline: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
 .resource-directory .theme-default-content,
-.resource-directory .page-meta,
-.resource-directory .page-nav,
 .resource-directory .theme-hope-content,
 .resource-directory .theme-hope-content-wrapper,
-.resource-directory .vp-content {
+.resource-directory .vp-content,
+.resource-directory #markdown-content {
   max-width: none;
   padding: 0;
 }
@@ -37,13 +46,19 @@
   margin-top: 0;
 }
 
+/* Hide the documentation chrome that makes the directory look like a doc page:
+   theme page title (2nd h1), breadcrumb, page-info, meta footer and prev/next nav. */
 .resource-directory .vp-page-title,
 .resource-directory .page-title,
 .resource-directory .vp-page-info,
+.resource-directory .page-info,
+.resource-directory .page-info-wrapper,
 .resource-directory .vp-breadcrumb,
 .resource-directory .breadcrumb,
-.resource-directory .page-info,
-.resource-directory .page-info-wrapper {
+.resource-directory .vp-page-meta,
+.resource-directory .page-meta,
+.resource-directory .vp-page-nav,
+.resource-directory .page-nav {
   display: none;
 }
 
@@ -85,8 +100,11 @@
 .resource-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; align-items: stretch; }
 .resource-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--res-line); border-radius: var(--res-radius); padding: 18px 18px 16px; color: inherit; text-decoration: none; background: #fffdfa; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
 .resource-card:hover { border-color: #d89a83; box-shadow: 0 8px 24px rgba(71, 52, 42, .09); transform: translateY(-1px); }
-.resource-card:hover,
-.resource-card:hover * { text-decoration: none; }
+/* The theme sets `a { text-decoration: underline }` and underlines `[vp-content] a:hover`,
+   which leaks an underline across the whole card. Beat it with higher specificity. */
+.resource-directory .resource-shell .resource-card,
+.resource-directory .resource-shell .resource-card:hover,
+.resource-directory .resource-shell .resource-card:hover * { text-decoration: none; }
 .resource-card:focus-visible { outline: 3px solid rgba(184, 92, 61, .28); outline-offset: 2px; }
 .card-top { display: flex; align-items: center; gap: 12px; }
 .resource-avatar { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 11px; background: #f3ded4; color: var(--res-primary); font-size: 14px; font-weight: 800; }
@@ -105,8 +123,8 @@
 .empty-state { display: grid; justify-items: center; gap: 9px; border: 1px dashed var(--res-line); border-radius: var(--res-radius); padding: 50px 20px; color: var(--res-muted); }
 .empty-state strong { color: var(--res-ink); }
 .empty-state button { border: 0; background: none; color: var(--res-primary); cursor: pointer; }
-.pagination { display: flex; justify-content: center; gap: 6px; margin-top: 28px; }
-.pagination button { min-width: 32px; height: 32px; border: 1px solid var(--res-line); border-radius: 7px; background: #fff; color: var(--res-muted); cursor: pointer; }
+.pagination { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-top: 28px; }
+.pagination button { min-width: 34px; height: 34px; padding: 0 10px; border: 1px solid var(--res-line); border-radius: 7px; background: #fff; color: var(--res-muted); font: inherit; font-size: 13px; cursor: pointer; }
 .pagination button:hover:not(:disabled), .pagination button.current { border-color: var(--res-primary); background: var(--res-primary); color: #fff; }
 .pagination button:disabled { cursor: not-allowed; opacity: .45; }
 
