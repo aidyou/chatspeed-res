@@ -62,8 +62,6 @@ const initials = (name: string) => name.split(/\s+/).map(part => part[0]).join('
 
 <template>
   <main class="resource-shell">
-    <div class="resource-breadcrumb"><a href="/">首页</a><span>/</span><span>{{ meta.title }}</span></div>
-
     <section class="resource-heading">
       <div>
         <p class="eyebrow">CHATSPEED RESOURCE CENTER</p>

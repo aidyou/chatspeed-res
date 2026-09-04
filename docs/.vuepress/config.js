@@ -9,7 +9,7 @@ export default defineUserConfig({
   base: '/',
 
   head: [
-    ['meta', { name: 'theme-color', content: '#00d4ff' }],
+    ['meta', { name: 'theme-color', content: '#b85c3d' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }]
   ],
 

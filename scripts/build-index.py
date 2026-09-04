@@ -437,6 +437,7 @@ def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
             f"title: {title}",
             f"description: {intro}",
             "sidebar: false",
+            "pageClass: resource-directory",
             "---",
             "",
             f'<ResourceBrowser channel="{channel}" />',
@@ -446,7 +447,7 @@ def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
         write_text(channel_dir / "README.md", index_text)
         for resource in resources:
             write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource, provider_by_id))
-    write_text(DOCS_ROOT / "README.md", """---\ntitle: ChatSpeed 资源中心\ndescription: MCP、模型供应商和免费 AI 服务目录\nsidebar: false\npageClass: resource-home\n---\n\n<ResourceBrowser />\n""")
+    write_text(DOCS_ROOT / "README.md", """---\ntitle: ChatSpeed 资源中心\ndescription: MCP、模型供应商和免费 AI 服务目录\nsidebar: false\npageClass: resource-directory\n---\n\n<ResourceBrowser />\n""")
 
 
 def output_item(resource: dict) -> dict:
