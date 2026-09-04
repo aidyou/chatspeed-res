@@ -17,7 +17,7 @@ type Resource = {
 }
 
 const props = defineProps<{ channel?: string }>()
-const pageSize = 6
+const pageSize = 10
 const query = ref('')
 const category = ref('')
 const sort = ref<'updated' | 'name'>('updated')
@@ -76,7 +76,6 @@ const initials = (name: string) => name.split(/\s+/).map(part => part[0]).join('
   <main class="resource-shell">
     <section class="resource-heading">
       <div>
-        <p class="eyebrow">CHATSPEED RESOURCE CENTER</p>
         <h1>{{ meta.title }}</h1>
         <p>{{ meta.description }}</p>
       </div>
