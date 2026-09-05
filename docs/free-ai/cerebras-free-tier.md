@@ -39,7 +39,7 @@ Free tier: roughly 1M tokens/day per model (plus per-model RPM/TPM limits); no c
 
 ## ChatSpeed Import
 
-This service is linked to model provider `cerebras`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://api.cerebras.ai/v1`
 - Logo: ![Cerebras](https://www.google.com/s2/favicons?domain=cerebras.ai&sz=64)

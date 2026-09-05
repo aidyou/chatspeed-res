@@ -1,6 +1,6 @@
 ---
 title: "ChatSpeed 资源中心"
-description: "MCP、模型供应商和免费 AI 服务目录"
+description: "MCP 与免费 AI 服务目录"
 sidebar: false
 breadcrumb: false
 pageInfo: false

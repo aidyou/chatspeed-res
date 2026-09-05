@@ -85,13 +85,21 @@
           "zh-Hans": "以 AI Studio 为准"
         }
       }
-    ],
-    "modelProviderRef": "gemini",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "gemini",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "gemini",
+    "name": "Gemini",
+    "logo": "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg",
+    "desc": "Google Gemini API with a generous free tier for Flash/Flash-Lite models.",
+    "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://ai.google.dev/docs",
+    "modelListUrl": "https://ai.google.dev/models/gemini",
+    "keyApplyUrl": "https://aistudio.google.com/app/apikey"
   }
 }

@@ -85,13 +85,21 @@
           "zh-Hans": "按模型按天，平台可能动态调整"
         }
       }
-    ],
-    "modelProviderRef": "modelscope",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "modelscope",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "ModelScope",
+    "logo": "https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico",
+    "desc": "An OpenAI-compatible model inference service from ModelScope.",
+    "baseUrl": "https://api-inference.modelscope.cn/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://modelscope.cn/docs/home",
+    "modelListUrl": "https://modelscope.cn/models",
+    "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
   }
 }

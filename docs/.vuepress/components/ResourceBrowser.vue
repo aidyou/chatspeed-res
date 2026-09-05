@@ -92,26 +92,22 @@ const t = computed(() => UI[locale.value])
 const channelMeta: Record<string, Record<string, { title: string; description: string }>> = {
   en: {
     mcp: { title: 'MCP Servers', description: 'MCP servers you can import into ChatSpeed' },
-    models: { title: 'Model Providers', description: 'Model providers and inference APIs for ChatSpeed' },
-    'free-ai': { title: 'Free AI', description: 'Free AI sites and API services; quotas per official info' },
+    'free-ai': { title: 'Free AI', description: 'Free AI services; entries with a provider config import into ChatSpeed' },
     home: { title: 'Resource Center', description: 'ChatSpeed ecosystem resource catalog' },
   },
   'zh-Hans': {
     mcp: { title: 'MCP 服务', description: '可导入 ChatSpeed 的 MCP 服务目录' },
-    models: { title: '模型供应商', description: '适用于 ChatSpeed 的模型供应商与推理接口' },
-    'free-ai': { title: '免费 AI', description: '免费 AI 网站与 API 服务目录，额度以官方信息为准' },
+    'free-ai': { title: '免费 AI', description: '免费 AI 服务目录；自带供应商配置的服务可直接导入 ChatSpeed' },
     home: { title: '资源中心', description: 'ChatSpeed 生态资源目录' },
   },
 }
 const channelLinks: Record<string, { id: string; label: string; icon: string }[]> = {
   en: [
     { id: 'mcp', label: 'MCP Servers', icon: 'M' },
-    { id: 'models', label: 'Model Providers', icon: 'A' },
     { id: 'free-ai', label: 'Free AI', icon: 'F' },
   ],
   'zh-Hans': [
     { id: 'mcp', label: 'MCP 服务', icon: 'M' },
-    { id: 'models', label: '模型供应商', icon: 'A' },
     { id: 'free-ai', label: '免费 AI', icon: 'F' },
   ],
 }

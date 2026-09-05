@@ -71,13 +71,21 @@
           "zh-Hans": "与 API Key 免费额度相互独立，按自然日"
         }
       }
-    ],
-    "modelProviderRef": "aliyun-bailian",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "aliyun-bailian",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Bailian",
+    "logo": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+    "desc": "Alibaba Cloud Model Studio, OpenAI-compatible, with per-model new-user free quota.",
+    "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://help.aliyun.com/zh/model-studio/getting-started/what-is-model-studio",
+    "modelListUrl": "https://help.aliyun.com/zh/model-studio/models",
+    "keyApplyUrl": "https://bailian.console.aliyun.com/?apiKey=1#/api-key"
   }
 }

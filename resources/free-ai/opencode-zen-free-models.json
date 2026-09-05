@@ -56,13 +56,21 @@
           "zh-Hans": "限时免费，名单轮换，以官方文档为准"
         }
       }
-    ],
-    "modelProviderRef": "opencode-zen",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "opencode-zen",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "OpenCode Zen",
+    "logo": "https://www.google.com/s2/favicons?domain=opencode.ai&sz=64",
+    "desc": "AI gateway with limited-time free models and OpenAI-compatible endpoints.",
+    "baseUrl": "https://opencode.ai/zen/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://opencode.ai/docs/zen/",
+    "modelListUrl": "https://opencode.ai/zen/v1/models",
+    "keyApplyUrl": "https://opencode.ai/zen"
   }
 }

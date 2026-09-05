@@ -70,13 +70,21 @@
           "zh-Hans": "一次性额度，以模型页当前标注为准"
         }
       }
-    ],
-    "modelProviderRef": "nvidia-nim",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "nvidia-nim",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "NVIDIA NIM",
+    "logo": "https://build.nvidia.com/favicon.ico",
+    "desc": "NVIDIA-hosted serverless inference endpoints for development.",
+    "baseUrl": "https://integrate.api.nvidia.com/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+    "modelListUrl": "https://build.nvidia.com/models",
+    "keyApplyUrl": "https://build.nvidia.com/settings/api-keys"
   }
 }

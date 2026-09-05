@@ -99,13 +99,21 @@
           "zh-Hans": "20 次/分钟 / 每天 2,000 次"
         }
       }
-    ],
-    "modelProviderRef": "groq",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "groq",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Groq",
+    "logo": "https://www.google.com/s2/favicons?domain=groq.com&sz=64",
+    "desc": "Ultra-fast OpenAI-compatible inference with a permanent free tier.",
+    "baseUrl": "https://api.groq.com/openai/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://console.groq.com/docs/overview",
+    "modelListUrl": "https://console.groq.com/docs/models",
+    "keyApplyUrl": "https://console.groq.com/keys"
   }
 }

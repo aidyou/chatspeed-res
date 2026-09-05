@@ -40,7 +40,7 @@ Sign-up grants free API credits; some models run free (Agnes 2.0 Flash, Agnes 2.
 
 ## ChatSpeed Import
 
-This service is linked to model provider `agnes-ai`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://apihub.agnes-ai.com/v1`
 - Logo: ![Agnes AI](https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64)

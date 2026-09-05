@@ -39,7 +39,7 @@ Daily free allocation about 10,000 Neurons/day (per official pricing); per-model
 
 ## ChatSpeed Import
 
-This service is linked to model provider `cloudflare`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1`
 - Logo: ![Cloudflare](https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64)

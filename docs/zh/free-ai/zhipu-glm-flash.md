@@ -41,7 +41,7 @@ GLM-4-Flash 永久免费、基本不限调用量（GLM-4.7-Flash 同样免费）
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `zhipu`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://open.bigmodel.cn/api/paas/v4`
 - Logo：![Zhipu GLM](https://z-cdn.chatglm.cn/z-ai/static/logo.svg)

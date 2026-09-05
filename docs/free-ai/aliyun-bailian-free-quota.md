@@ -40,7 +40,7 @@ Per-model new-user quota (usually 1M tokens/model, 90 days, Beijing region) + Qw
 
 ## ChatSpeed Import
 
-This service is linked to model provider `aliyun-bailian`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://dashscope.aliyuncs.com/compatible-mode/v1`
 - Logo: ![Bailian](https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico)

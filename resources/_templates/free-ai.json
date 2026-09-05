@@ -31,6 +31,22 @@
       "zh-Hans": "说明当前免费额度。"
     },
     "availability": "global",
-    "modelProviderRef": null
+    "signupUrl": "https://example.com/signup",
+    "freePolicyUrl": "https://example.com/pricing"
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Example Free AI",
+    "logo": "",
+    "desc": "Example importable provider description",
+    "baseUrl": "https://api.example.com/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://example.com/docs",
+    "modelListUrl": "https://example.com/models",
+    "keyApplyUrl": "https://example.com/keys"
   }
 }

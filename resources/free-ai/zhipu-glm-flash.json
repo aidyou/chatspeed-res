@@ -85,13 +85,21 @@
           "zh-Hans": "每个账号一次，以官方控制台为准"
         }
       }
-    ],
-    "modelProviderRef": "zhipu",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "zhipu",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Zhipu GLM",
+    "logo": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "desc": "OpenAI-compatible MaaS endpoint for Zhipu GLM models, including free Flash tiers.",
+    "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://open.bigmodel.cn/dev/welcome",
+    "modelListUrl": "https://open.bigmodel.cn/dev/api#chatglm_turbo",
+    "keyApplyUrl": "https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys"
   }
 }

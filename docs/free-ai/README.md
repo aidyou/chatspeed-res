@@ -1,6 +1,6 @@
 ---
 title: "Free AI"
-description: "Directory of free AI websites and API services. Free quotas are dynamic; refer to the detail page and official site."
+description: "Free AI services with free-tier details; entries carrying a provider config can be imported into ChatSpeed directly."
 sidebar: false
 breadcrumb: false
 pageInfo: false

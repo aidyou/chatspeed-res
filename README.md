@@ -33,8 +33,7 @@ pnpm build
 资源规范和字段说明见 [`RESOURCE_SPEC.md`](./RESOURCE_SPEC.md)。模板位于：
 
 - `resources/mcp/`：MCP 服务资源。
-- `resources/models/`：模型供应商资源。
-- `resources/free-ai/`：免费 AI/API 服务资源。
+- `resources/free-ai/`：免费 AI/API 服务资源；自带 `provider` 配置的服务可直接导入 ChatSpeed。
 
 添加资源后运行：
 
@@ -51,8 +50,8 @@ pnpm catalog:build  # 校验通过后生成索引
 
 - `GET /catalog/index.json`（频道目录和条数）
 - `GET /catalog/mcp.json`（兼容 `Mcp.vue`）
-- `GET /catalog/model-providers.json`（兼容 `Model.vue`）
-- `GET /catalog/free-ai.json`（免费服务说明）
+- `GET /catalog/model-providers.json`（兼容 `Model.vue`；由自带 `provider` 配置的免费 AI 资源生成，`models.json` 为其兼容别名）
+- `GET /catalog/free-ai.json`（免费服务说明与供应商配置）
 
 索引是公开数据，不得放入 API Key、密码、Bearer Token 或其他用户凭据。需要填写密钥的资源只能声明参数名称和申请地址。
 

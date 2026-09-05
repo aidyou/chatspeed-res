@@ -41,7 +41,7 @@ From 2026-08-28: general-credit pool and Flash-Lite credit pool each give 60,000
 
 ## ChatSpeed Import
 
-This service is linked to model provider `sensenova`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://token.sensenova.cn/v1`
 - Logo: ![SenseNova](https://platform.sensenova.cn/favicon.ico)

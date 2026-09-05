@@ -42,7 +42,7 @@ Groq 通过 OpenAI 兼容 API 提供极速推理（部分模型 500+ tokens/秒�
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `groq`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://api.groq.com/openai/v1`
 - Logo：![Groq](https://www.google.com/s2/favicons?domain=groq.com&sz=64)

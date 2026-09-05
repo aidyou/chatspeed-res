@@ -39,7 +39,7 @@ OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencod
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `opencode-zen`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://opencode.ai/zen/v1`
 - Logo：![OpenCode Zen](https://www.google.com/s2/favicons?domain=opencode.ai&sz=64)

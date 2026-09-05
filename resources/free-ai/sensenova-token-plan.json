@@ -86,13 +86,21 @@
           "zh-Hans": "按模型实际用量扣减积分，以账户页面为准"
         }
       }
-    ],
-    "modelProviderRef": "sensenova",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "sensenova",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "SenseNova",
+    "logo": "https://platform.sensenova.cn/favicon.ico",
+    "desc": "OpenAI-compatible gateway of SenseTime SenseNova; Token Plan is free during open beta.",
+    "baseUrl": "https://token.sensenova.cn/v1",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://platform.sensenova.cn/docs",
+    "modelListUrl": "https://platform.sensenova.cn/docs",
+    "keyApplyUrl": "https://platform.sensenova.cn/console/keys"
   }
 }

@@ -41,7 +41,7 @@ Free tier covers Flash/Flash-Lite models with free input/output tokens; per-mode
 
 ## ChatSpeed Import
 
-This service is linked to model provider `gemini`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `gemini`
 - Base URL: `https://generativelanguage.googleapis.com/v1beta`
 - Logo: ![Gemini](https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg)

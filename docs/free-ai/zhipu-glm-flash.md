@@ -41,7 +41,7 @@ GLM-4-Flash permanent free without call-volume limit (GLM-4.7-Flash also free); 
 
 ## ChatSpeed Import
 
-This service is linked to model provider `zhipu`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://open.bigmodel.cn/api/paas/v4`
 - Logo: ![Zhipu GLM](https://z-cdn.chatglm.cn/z-ai/static/logo.svg)

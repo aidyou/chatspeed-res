@@ -38,7 +38,7 @@ Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `pollinations`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://text.pollinations.ai/openai`
 - Logo：![Pollinations](https://pollinations.ai/favicon-32x32.png)

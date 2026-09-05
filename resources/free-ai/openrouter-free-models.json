@@ -84,13 +84,21 @@
           "zh-Hans": "每天最多 1,000 次"
         }
       }
-    ],
-    "modelProviderRef": "openrouter",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "openrouter",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "OpenRouter",
+    "logo": "https://openrouter.ai/favicon.ico",
+    "desc": "A unified interface for LLMs, including free model variants.",
+    "baseUrl": "https://openrouter.ai/api/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://openrouter.ai/docs",
+    "modelListUrl": "https://openrouter.ai/models",
+    "keyApplyUrl": "https://openrouter.ai/keys"
   }
 }

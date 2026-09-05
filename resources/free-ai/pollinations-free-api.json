@@ -68,13 +68,21 @@
           "zh-Hans": "无需密钥；限速以官方仓库为准"
         }
       }
-    ],
-    "modelProviderRef": "pollinations",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "pollinations",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Pollinations",
+    "logo": "https://pollinations.ai/favicon-32x32.png",
+    "desc": "Free OpenAI-compatible text endpoint; no API key required for free models.",
+    "baseUrl": "https://text.pollinations.ai/openai",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.7,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://github.com/pollinations/pollinations/blob/master/APIDOCS.md",
+    "modelListUrl": "https://text.pollinations.ai/models",
+    "keyApplyUrl": ""
   }
 }

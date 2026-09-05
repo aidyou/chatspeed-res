@@ -56,13 +56,21 @@
           "zh-Hans": "按模型设 RPM/TPM/TPD，见官方文档"
         }
       }
-    ],
-    "modelProviderRef": "cerebras",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "cerebras",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Cerebras",
+    "logo": "https://www.google.com/s2/favicons?domain=cerebras.ai&sz=64",
+    "desc": "Ultra-fast OpenAI-compatible inference with a ~1M tokens/day free tier.",
+    "baseUrl": "https://api.cerebras.ai/v1",
+    "models": [],
+    "maxTokens": 8192,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://inference-docs.cerebras.ai/",
+    "modelListUrl": "https://inference-docs.cerebras.ai/",
+    "keyApplyUrl": "https://cloud.cerebras.ai/"
   }
 }

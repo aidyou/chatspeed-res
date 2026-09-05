@@ -1,9 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T01:44:14Z",
+  "generatedAt": "2026-09-05T02:24:18Z",
   "channels": [
     "mcp",
-    "models",
     "free-ai"
   ],
   "items": [
@@ -38024,53 +38023,6 @@
       }
     },
     {
-      "id": "aliyun-bailian",
-      "channel": "models",
-      "name": {
-        "en": "Alibaba Cloud Model Studio",
-        "zh-Hans": "阿里云百炼"
-      },
-      "description": {
-        "en": "Alibaba Cloud Model Studio (百炼) grants new-user free quota per model (usually 1M tokens, valid 90 days, Beijing region) plus 2,000 free calls/day via Qwen Code OAuth; OpenAI-compatible endpoint.",
-        "zh-Hans": "阿里云百炼为新用户发放各模型独立的免费额度（通常每模型 100 万 Token，有效期 90 天，华北2北京地域），另有 Qwen Code OAuth 每天 2,000 次免费调用；支持 OpenAI 兼容接口。"
-      },
-      "detail": {
-        "en": "Alibaba Cloud Model Studio (百炼) is Alibaba Cloud's model service platform (Qwen and partner models). On first activation it automatically grants new-user free quota to each model (usually 1M tokens per model, valid for 90 days, Beijing region only); no real-name verification is needed to use the free quota, and unverified accounts default to hard stop when the quota runs out. Qwen Code OAuth authentication carries an independent free quota of 2,000 calls/day. The OpenAI-compatible endpoint can be connected to ChatSpeed.",
-        "zh-Hans": "阿里云百炼是阿里云的大模型服务平台（千问 Qwen 及生态模型）。首次开通时自动为各模型发放新人免费额度（通常每模型 100 万 Token，有效期 90 天，仅华北2（北京）地域生效）；使用免费额度无需实名认证，未认证账号额度耗尽后默认触发用完即停（返回 403）。此外，Qwen Code 的 OAuth 认证提供独立于 API Key 体系的免费额度（每天 2,000 次调用）。通过 OpenAI 兼容端点可接入 ChatSpeed 使用。"
-      },
-      "categories": [
-        "general",
-        "coding"
-      ],
-      "tags": [
-        "aliyun",
-        "bailian",
-        "openai-compatible",
-        "free-quota",
-        "china"
-      ],
-      "website": "https://bailian.console.aliyun.com/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
-      "provider": {
-        "protocol": "openai",
-        "name": "Bailian",
-        "logo": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
-        "desc": "Alibaba Cloud Model Studio, OpenAI-compatible, with per-model new-user free quota.",
-        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "models": [],
-        "maxTokens": 8192,
-        "temperature": 0.6,
-        "topP": 0,
-        "topK": 0,
-        "documentationUrl": "https://help.aliyun.com/zh/model-studio/getting-started/what-is-model-studio",
-        "modelListUrl": "https://help.aliyun.com/zh/model-studio/models",
-        "keyApplyUrl": "https://bailian.console.aliyun.com/?apiKey=1#/api-key"
-      },
-      "searchText": "alibaba cloud model studio 阿里云百炼 alibaba cloud model studio (百炼) grants new-user free quota per model (usually 1m tokens, valid 90 days, beijing region) plus 2,000 free calls/day via qwen code oauth; openai-compatible endpoint. 阿里云百炼为新用户发放各模型独立的免费额度（通常每模型 100 万 token，有效期 90 天，华北2北京地域），另有 qwen code oauth 每天 2,000 次免费调用；支持 openai 兼容接口。 general coding aliyun bailian openai-compatible free-quota china",
-      "detailPath": "/models/aliyun-bailian/"
-    },
-    {
       "id": "aliyun-bailian-free-quota",
       "channel": "free-ai",
       "name": {
@@ -38143,63 +38095,25 @@
               "zh-Hans": "与 API Key 免费额度相互独立，按自然日"
             }
           }
-        ],
-        "modelProviderRef": "aliyun-bailian",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "aliyun-bailian",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "alibaba cloud model studio free quota 阿里云百炼新人免费额度 first activation auto-grants per-model new-user free quota (usually 1m tokens per model, valid 90 days, beijing region, no real-name needed); qwen code oauth adds an independent 2,000 calls/day. 首次开通自动发放各模型新人免费额度（通常每模型 100 万 token，有效期 90 天，华北2北京地域，无需实名）；另有 qwen code oauth 独立免费额度每天 2,000 次。 general coding aliyun bailian free-quota api china",
-      "detailPath": "/free-ai/aliyun-bailian-free-quota/"
-    },
-    {
-      "id": "cerebras",
-      "channel": "models",
-      "name": {
-        "en": "Cerebras",
-        "zh-Hans": "Cerebras"
-      },
-      "description": {
-        "en": "OpenAI-compatible wafer-scale inference with a free tier of roughly 1M tokens/day (e.g. Llama 3.3 70B), no credit card required.",
-        "zh-Hans": "OpenAI 兼容的晶圆级推理服务，免费层约 100 万 tokens/天（如 Llama 3.3 70B），无需信用卡。"
-      },
-      "detail": {
-        "en": "Cerebras hosts open LLMs on its wafer-scale hardware at very high throughput (up to ~2,000 tokens/s on some models) behind an OpenAI-compatible API. The free tier provides roughly 1M tokens/day shared per model, with per-model RPM/TPM/TPD limits and no credit card required; exceeding limits returns 429. Paid Developer tier offers ~10x higher limits. Check the official rate-limits doc for current values.",
-        "zh-Hans": "Cerebras 使用晶圆级芯片托管开源 LLM，吞吐极高（部分模型可达约 2,000 tokens/秒），提供 OpenAI 兼容接口。免费层每个模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速，无需信用卡；超限返回 429。付费 Developer 层限速约为免费层 10 倍。当前限速值以官方 rate-limits 文档为准。"
-      },
-      "categories": [
-        "general",
-        "coding"
-      ],
-      "tags": [
-        "cerebras",
-        "openai-compatible",
-        "free-tier",
-        "fast-inference"
-      ],
-      "website": "https://www.cerebras.ai/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "Cerebras",
-        "logo": "https://www.google.com/s2/favicons?domain=cerebras.ai&sz=64",
-        "desc": "Ultra-fast OpenAI-compatible inference with a ~1M tokens/day free tier.",
-        "baseUrl": "https://api.cerebras.ai/v1",
+        "name": "Bailian",
+        "logo": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+        "desc": "Alibaba Cloud Model Studio, OpenAI-compatible, with per-model new-user free quota.",
+        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
         "models": [],
         "maxTokens": 8192,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://inference-docs.cerebras.ai/",
-        "modelListUrl": "https://inference-docs.cerebras.ai/",
-        "keyApplyUrl": "https://cloud.cerebras.ai/"
+        "documentationUrl": "https://help.aliyun.com/zh/model-studio/getting-started/what-is-model-studio",
+        "modelListUrl": "https://help.aliyun.com/zh/model-studio/models",
+        "keyApplyUrl": "https://bailian.console.aliyun.com/?apiKey=1#/api-key"
       },
-      "searchText": "cerebras cerebras openai-compatible wafer-scale inference with a free tier of roughly 1m tokens/day (e.g. llama 3.3 70b), no credit card required. openai 兼容的晶圆级推理服务，免费层约 100 万 tokens/天（如 llama 3.3 70b），无需信用卡。 general coding cerebras openai-compatible free-tier fast-inference",
-      "detailPath": "/models/cerebras/"
+      "searchText": "alibaba cloud model studio free quota 阿里云百炼新人免费额度 first activation auto-grants per-model new-user free quota (usually 1m tokens per model, valid 90 days, beijing region, no real-name needed); qwen code oauth adds an independent 2,000 calls/day. 首次开通自动发放各模型新人免费额度（通常每模型 100 万 token，有效期 90 天，华北2北京地域，无需实名）；另有 qwen code oauth 独立免费额度每天 2,000 次。 general coding aliyun bailian free-quota api china",
+      "detailPath": "/free-ai/aliyun-bailian-free-quota/"
     },
     {
       "id": "cerebras-free-tier",
@@ -38259,64 +38173,25 @@
               "zh-Hans": "按模型设 RPM/TPM/TPD，见官方文档"
             }
           }
-        ],
-        "modelProviderRef": "cerebras",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "cerebras",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "cerebras free tier cerebras 免费层 ultra-fast openai-compatible inference (up to ~2,000 tokens/s) with a free tier of roughly 1m tokens/day per model (e.g. llama 3.3 70b); no credit card required. openai 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 llama 3.3 70b）；无需信用卡。 general coding cerebras free-tier api fast-inference",
-      "detailPath": "/free-ai/cerebras-free-tier/"
-    },
-    {
-      "id": "gemini",
-      "channel": "models",
-      "name": {
-        "en": "Google Gemini",
-        "zh-Hans": "Google Gemini"
-      },
-      "description": {
-        "en": "Google's Gemini API with a free tier covering Flash / Flash-Lite models (free input & output tokens), generous quotas for light daily use, and no credit card needed for the free tier.",
-        "zh-Hans": "Google Gemini API，免费层覆盖 Flash / Flash-Lite 系列模型（输入输出 token 免费），额度较宽裕适合日常使用，免费层无需绑定信用卡。"
-      },
-      "detail": {
-        "en": "The Gemini API offers a free tier for developers and small projects. Free-tier-eligible models include the Flash and Flash-Lite families (e.g. Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, newer 3.x Flash Lite variants), with free input/output tokens and relatively generous RPM/RPD quotas that are shown in Google AI Studio and change over time. The API is available natively and through an OpenAI-compatible endpoint; the free tier requires a Google account but no billing/credit card.",
-        "zh-Hans": "Gemini API 为开发者和小型项目提供免费层。免费层覆盖 Flash 与 Flash-Lite 系列模型（如 Gemini 2.5 Flash、Gemini 2.5 Flash-Lite 以及更新的 3.x Flash Lite 变体），输入输出 token 免费，RPM/RPD 配额相对宽裕，具体数值需在 Google AI Studio 查看且会随时间调整。API 提供原生协议并支持 OpenAI 兼容端点；免费层使用 Google 账号即可，无需绑定账单或信用卡。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "google",
-        "gemini",
-        "free-tier",
-        "multimodal"
-      ],
-      "website": "https://ai.google.dev/gemini-api/docs",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
-        "protocol": "gemini",
-        "name": "Gemini",
-        "logo": "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg",
-        "desc": "Google Gemini API with a generous free tier for Flash/Flash-Lite models.",
-        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "protocol": "openai",
+        "name": "Cerebras",
+        "logo": "https://www.google.com/s2/favicons?domain=cerebras.ai&sz=64",
+        "desc": "Ultra-fast OpenAI-compatible inference with a ~1M tokens/day free tier.",
+        "baseUrl": "https://api.cerebras.ai/v1",
         "models": [],
         "maxTokens": 8192,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://ai.google.dev/docs",
-        "modelListUrl": "https://ai.google.dev/models/gemini",
-        "keyApplyUrl": "https://aistudio.google.com/app/apikey"
+        "documentationUrl": "https://inference-docs.cerebras.ai/",
+        "modelListUrl": "https://inference-docs.cerebras.ai/",
+        "keyApplyUrl": "https://cloud.cerebras.ai/"
       },
-      "searchText": "google gemini google gemini google's gemini api with a free tier covering flash / flash-lite models (free input & output tokens), generous quotas for light daily use, and no credit card needed for the free tier. google gemini api，免费层覆盖 flash / flash-lite 系列模型（输入输出 token 免费），额度较宽裕适合日常使用，免费层无需绑定信用卡。 general coding reasoning google gemini free-tier multimodal",
-      "detailPath": "/models/gemini/"
+      "searchText": "cerebras free tier cerebras 免费层 ultra-fast openai-compatible inference (up to ~2,000 tokens/s) with a free tier of roughly 1m tokens/day per model (e.g. llama 3.3 70b); no credit card required. openai 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 llama 3.3 70b）；无需信用卡。 general coding cerebras free-tier api fast-inference",
+      "detailPath": "/free-ai/cerebras-free-tier/"
     },
     {
       "id": "gemini-api-free-tier",
@@ -38405,64 +38280,25 @@
               "zh-Hans": "以 AI Studio 为准"
             }
           }
-        ],
-        "modelProviderRef": "gemini",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "gemini",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "google gemini api free tier google gemini api 免费层 free tier covers flash / flash-lite family models (e.g. gemini 2.5 flash, gemini 2.5 flash-lite, newer 3.x flash lite) with free input/output tokens; quotas are relatively generous for daily use and shown in ai studio. 免费层覆盖 flash / flash-lite 系列模型（如 gemini 2.5 flash、2.5 flash-lite 及更新的 3.x flash lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 ai studio 查看。 general coding reasoning google gemini free-tier api",
-      "detailPath": "/free-ai/gemini-api-free-tier/"
-    },
-    {
-      "id": "groq",
-      "channel": "models",
-      "name": {
-        "en": "Groq",
-        "zh-Hans": "Groq"
-      },
-      "description": {
-        "en": "OpenAI-compatible ultra-fast inference with a generous free tier (e.g. Llama 3.1 8B: 30 RPM / 14,400 RPD), no credit card required.",
-        "zh-Hans": "OpenAI 兼容的超快推理服务，免费层额度宽裕（如 Llama 3.1 8B：30 次/分钟、每天 14,400 次），无需信用卡。"
-      },
-      "detail": {
-        "en": "Groq runs LLMs on its LPU hardware at very high speeds (500+ tokens/s on some models) and offers an OpenAI-compatible API. The free tier is permanent (rate limits per organization, model by model, e.g. llama-3.1-8b-instant: 30 RPM / 14,400 RPD / 6000 TPM / 500K TPD) and needs no credit card; hitting a limit returns 429 with X-RateLimit headers. Free models include Llama 3.1/3.3/4 Scout, Kimi K2, Qwen3 32B, GPT-OSS 120B/20B and Whisper speech-to-text.",
-        "zh-Hans": "Groq 使用自研 LPU 芯片提供极速 LLM 推理（部分模型 500+ tokens/秒），并提供 OpenAI 兼容接口。免费层长期存在，限速按组织维度、分模型计算（例如 llama-3.1-8b-instant：30 次/分钟、每天 14,400 次、TPM 6,000、TPD 500,000），无需信用卡；超限返回 429 并附 X-RateLimit 响应头。免费模型包括 Llama 3.1/3.3/Llama 4 Scout、Kimi K2、Qwen3 32B、GPT-OSS 120B/20B 以及 Whisper 语音转写等。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "groq",
-        "openai-compatible",
-        "free-tier",
-        "fast-inference"
-      ],
-      "website": "https://groq.com/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
-        "protocol": "openai",
-        "name": "Groq",
-        "logo": "https://www.google.com/s2/favicons?domain=groq.com&sz=64",
-        "desc": "Ultra-fast OpenAI-compatible inference with a permanent free tier.",
-        "baseUrl": "https://api.groq.com/openai/v1",
+        "protocol": "gemini",
+        "name": "Gemini",
+        "logo": "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg",
+        "desc": "Google Gemini API with a generous free tier for Flash/Flash-Lite models.",
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
         "models": [],
-        "maxTokens": 4096,
+        "maxTokens": 8192,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://console.groq.com/docs/overview",
-        "modelListUrl": "https://console.groq.com/docs/models",
-        "keyApplyUrl": "https://console.groq.com/keys"
+        "documentationUrl": "https://ai.google.dev/docs",
+        "modelListUrl": "https://ai.google.dev/models/gemini",
+        "keyApplyUrl": "https://aistudio.google.com/app/apikey"
       },
-      "searchText": "groq groq openai-compatible ultra-fast inference with a generous free tier (e.g. llama 3.1 8b: 30 rpm / 14,400 rpd), no credit card required. openai 兼容的超快推理服务，免费层额度宽裕（如 llama 3.1 8b：30 次/分钟、每天 14,400 次），无需信用卡。 general coding reasoning groq openai-compatible free-tier fast-inference",
-      "detailPath": "/models/groq/"
+      "searchText": "google gemini api free tier google gemini api 免费层 free tier covers flash / flash-lite family models (e.g. gemini 2.5 flash, gemini 2.5 flash-lite, newer 3.x flash lite) with free input/output tokens; quotas are relatively generous for daily use and shown in ai studio. 免费层覆盖 flash / flash-lite 系列模型（如 gemini 2.5 flash、2.5 flash-lite 及更新的 3.x flash lite），输入输出 token 免费；额度相对宽裕、适合日常使用，具体数值需在 ai studio 查看。 general coding reasoning google gemini free-tier api",
+      "detailPath": "/free-ai/gemini-api-free-tier/"
     },
     {
       "id": "groq-free-api",
@@ -38565,64 +38401,25 @@
               "zh-Hans": "20 次/分钟 / 每天 2,000 次"
             }
           }
-        ],
-        "modelProviderRef": "groq",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "groq",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "groq free api groq 免费 api permanent free tier, no credit card required: e.g. llama 3.1 8b gets 30 rpm / 14,400 requests per day; llama 3.3 70b, llama 4 scout, gpt-oss 120b get 30 rpm / 1,000 rpd; kimi k2/qwen3 32b get 60 rpm / 1,000 rpd. 长期免费层、无需信用卡：如 llama 3.1 8b 为 30 次/分钟、每天 14,400 次；llama 3.3 70b、llama 4 scout、gpt-oss 120b 为 30 次/分钟、每天 1,000 次；kimi k2 / qwen3 32b 为 60 次/分钟、每天 1,000 次。 general coding reasoning groq free-tier api fast-inference",
-      "detailPath": "/free-ai/groq-free-api/"
-    },
-    {
-      "id": "openrouter",
-      "channel": "models",
-      "name": {
-        "en": "OpenRouter",
-        "zh-Hans": "OpenRouter"
-      },
-      "description": {
-        "en": "A unified OpenAI-compatible API with multiple free model variants whose availability and rate limits can change.",
-        "zh-Hans": "统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。"
-      },
-      "detail": {
-        "en": "OpenRouter provides one OpenAI-compatible endpoint for models from multiple providers. It can simplify ChatSpeed configuration and routing, including free model variants, but model availability, pricing, provider routing, and free-tier limits can change and must be checked on the selected model page.",
-        "zh-Hans": "OpenRouter 为多个模型供应商提供统一的 OpenAI 兼容接口，可简化 ChatSpeed 的配置和路由，也包含免费模型变体。但模型可用性、价格、供应商路由和免费层限制可能变化，必须在选定的模型页面核验。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "openrouter",
-        "openai-compatible",
-        "free-models",
-        "api"
-      ],
-      "website": "https://openrouter.ai/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-29",
       "provider": {
         "protocol": "openai",
-        "name": "OpenRouter",
-        "logo": "https://openrouter.ai/favicon.ico",
-        "desc": "A unified interface for LLMs, including free model variants.",
-        "baseUrl": "https://openrouter.ai/api/v1",
+        "name": "Groq",
+        "logo": "https://www.google.com/s2/favicons?domain=groq.com&sz=64",
+        "desc": "Ultra-fast OpenAI-compatible inference with a permanent free tier.",
+        "baseUrl": "https://api.groq.com/openai/v1",
         "models": [],
         "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://openrouter.ai/docs",
-        "modelListUrl": "https://openrouter.ai/models",
-        "keyApplyUrl": "https://openrouter.ai/keys"
+        "documentationUrl": "https://console.groq.com/docs/overview",
+        "modelListUrl": "https://console.groq.com/docs/models",
+        "keyApplyUrl": "https://console.groq.com/keys"
       },
-      "searchText": "openrouter openrouter a unified openai-compatible api with multiple free model variants whose availability and rate limits can change. 统一的 openai 兼容 api，提供多个免费模型变体，但可用性和速率限制可能变化。 general coding reasoning openrouter openai-compatible free-models api",
-      "detailPath": "/models/openrouter/"
+      "searchText": "groq free api groq 免费 api permanent free tier, no credit card required: e.g. llama 3.1 8b gets 30 rpm / 14,400 requests per day; llama 3.3 70b, llama 4 scout, gpt-oss 120b get 30 rpm / 1,000 rpd; kimi k2/qwen3 32b get 60 rpm / 1,000 rpd. 长期免费层、无需信用卡：如 llama 3.1 8b 为 30 次/分钟、每天 14,400 次；llama 3.3 70b、llama 4 scout、gpt-oss 120b 为 30 次/分钟、每天 1,000 次；kimi k2 / qwen3 32b 为 60 次/分钟、每天 1,000 次。 general coding reasoning groq free-tier api fast-inference",
+      "detailPath": "/free-ai/groq-free-api/"
     },
     {
       "id": "openrouter-free-models",
@@ -38710,65 +38507,25 @@
               "zh-Hans": "每天最多 1,000 次"
             }
           }
-        ],
-        "modelProviderRef": "openrouter",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "openrouter",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "openrouter free models openrouter 免费模型 free model variants (model ids with the `:free` suffix) can be called free of charge through an openai-compatible api; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/day after $10 in lifetime credit purchases. 免费模型变体（模型 id 加 `:free` 后缀）可通过 openai 兼容 api 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。 general coding reasoning openrouter free-models api",
-      "detailPath": "/free-ai/openrouter-free-models/"
-    },
-    {
-      "id": "sensenova",
-      "channel": "models",
-      "name": {
-        "en": "SenseNova",
-        "zh-Hans": "商汤日日新"
-      },
-      "description": {
-        "en": "SenseTime's SenseNova platform with an OpenAI-compatible gateway covering text chat, multimodal understanding, image generation, tool calling and streaming; the Token Plan is currently in a free open beta (credits-based) with DeepSeek V4 Flash, SenseNova Flash-Lite, GLM-5.2 and more.",
-        "zh-Hans": "商汤科技 SenseNova（日日新）平台；OpenAI 兼容网关支持文本对话、多模态理解、图像生成、工具调用与流式响应；Token Plan 目前公测免费（积分制），提供 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2 等模型（公测免费）。"
-      },
-      "detail": {
-        "en": "SenseNova is SenseTime's large-model platform. Its OpenAI-compatible gateway (https://token.sensenova.cn/v1, set as base_url in the OpenAI SDK) provides text chat, multimodal understanding, image generation, tool calling and streaming responses. Quick start: register an account and complete phone verification, create an sk- prefixed API key in the console (API Keys), then point base_url to https://token.sensenova.cn/v1 (cURL / Python both supported). The Token Plan gateway is currently in a free open beta with a credits system (general + Flash-Lite pools, see the free-ai entry); beta status, model list and quota can change — check the platform page before relying on it.",
-        "zh-Hans": "商汤日日新 SenseNova 是商汤科技的大模型平台。其 OpenAI 兼容网关（https://token.sensenova.cn/v1，在 OpenAI SDK 中作为 base_url 使用）提供文本对话、多模态理解、图像生成、工具调用与流式响应等能力，公测开放 sensenova-6.7、DeepSeek-V4、GLM-5.2 等免费模型。快速开始：注册账号并完成手机号验证，在控制台「API Keys」创建 sk- 开头的密钥，然后将 base_url 指向 https://token.sensenova.cn/v1 即可调用（支持 cURL / Python）。Token Plan 网关当前免费公测中，采用积分制（通用积分与 Flash-Lite 专属积分，详见 free-ai 对应条目）；公测状态、模型名单与额度可能调整，请以平台页面为准。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "sensenova",
-        "sensetime",
-        "openai-compatible",
-        "free-trial",
-        "china"
-      ],
-      "website": "https://www.sensenova.cn/token-plan",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "SenseNova",
-        "logo": "https://platform.sensenova.cn/favicon.ico",
-        "desc": "OpenAI-compatible gateway of SenseTime SenseNova; Token Plan is free during open beta.",
-        "baseUrl": "https://token.sensenova.cn/v1",
+        "name": "OpenRouter",
+        "logo": "https://openrouter.ai/favicon.ico",
+        "desc": "A unified interface for LLMs, including free model variants.",
+        "baseUrl": "https://openrouter.ai/api/v1",
         "models": [],
-        "maxTokens": 8192,
+        "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://platform.sensenova.cn/docs",
-        "modelListUrl": "https://platform.sensenova.cn/docs",
-        "keyApplyUrl": "https://platform.sensenova.cn/console/keys"
+        "documentationUrl": "https://openrouter.ai/docs",
+        "modelListUrl": "https://openrouter.ai/models",
+        "keyApplyUrl": "https://openrouter.ai/keys"
       },
-      "searchText": "sensenova 商汤日日新 sensetime's sensenova platform with an openai-compatible gateway covering text chat, multimodal understanding, image generation, tool calling and streaming; the token plan is currently in a free open beta (credits-based) with deepseek v4 flash, sensenova flash-lite, glm-5.2 and more. 商汤科技 sensenova（日日新）平台；openai 兼容网关支持文本对话、多模态理解、图像生成、工具调用与流式响应；token plan 目前公测免费（积分制），提供 deepseek v4 flash、sensenova 6.7 flash-lite、glm-5.2 等模型（公测免费）。 general coding reasoning sensenova sensetime openai-compatible free-trial china",
-      "detailPath": "/models/sensenova/"
+      "searchText": "openrouter free models openrouter 免费模型 free model variants (model ids with the `:free` suffix) can be called free of charge through an openai-compatible api; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/day after $10 in lifetime credit purchases. 免费模型变体（模型 id 加 `:free` 后缀）可通过 openai 兼容 api 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。 general coding reasoning openrouter free-models api",
+      "detailPath": "/free-ai/openrouter-free-models/"
     },
     {
       "id": "sensenova-token-plan",
@@ -38858,64 +38615,25 @@
               "zh-Hans": "按模型实际用量扣减积分，以账户页面为准"
             }
           }
-        ],
-        "modelProviderRef": "sensenova",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "sensenova",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "sensenova token plan (free beta) 商汤日日新 token plan（免费公测） free open beta: the general-credit pool and the flash-lite credit pool each provide a limited-time supply of 60,000 credits per rolling 5 hours and 600,000 credits per rolling week; flash-lite usage of dedicated credits earns a 1:1 general-credit rebate (rules effective 2026-08-28). 免费公测中：通用积分与 flash-lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；flash-lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。 general coding reasoning sensenova sensetime free-trial api china",
-      "detailPath": "/free-ai/sensenova-token-plan/"
-    },
-    {
-      "id": "siliconflow",
-      "channel": "models",
-      "name": {
-        "en": "SiliconFlow",
-        "zh-Hans": "硅基流动"
-      },
-      "description": {
-        "en": "An OpenAI-compatible inference platform with free sign-up credit (about ¥14 / 20M tokens) and many permanently free open models after real-name verification.",
-        "zh-Hans": "OpenAI 兼容推理平台，新用户注册送约 ¥14（约 2,000 万 tokens）额度，完成实名认证后可使用大量永久免费开源模型。"
-      },
-      "detail": {
-        "en": "SiliconFlow (硅基流动) hosts 200+ open models (DeepSeek, Qwen, Llama, Kimi, MiniMax, GLM etc.) behind one OpenAI-compatible endpoint. New users receive a small credit grant (about ¥14, roughly 20M tokens of Qwen-class models) and can use permanently free model variants after real-name verification; free variants have fixed rate limits and cost 0. The endpoint can be connected to ChatSpeed.",
-        "zh-Hans": "硅基流动（SiliconFlow）提供 200+ 开源模型（DeepSeek、Qwen、Llama、Kimi、MiniMax、GLM 等）的统一 OpenAI 兼容接口。新用户注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用大量免费模型（名称不带 Pro/ 前缀的即免费版，调用费用为 0，限速固定）。该接口可接入 ChatSpeed 使用。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "siliconflow",
-        "openai-compatible",
-        "free-models",
-        "china"
-      ],
-      "website": "https://siliconflow.cn/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "SiliconFlow",
-        "logo": "https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg",
-        "desc": "An OpenAI-compatible hosted inference service with many permanently free open models.",
-        "baseUrl": "https://api.siliconflow.cn/v1",
+        "name": "SenseNova",
+        "logo": "https://platform.sensenova.cn/favicon.ico",
+        "desc": "OpenAI-compatible gateway of SenseTime SenseNova; Token Plan is free during open beta.",
+        "baseUrl": "https://token.sensenova.cn/v1",
         "models": [],
-        "maxTokens": 4096,
+        "maxTokens": 8192,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://docs.siliconflow.cn/cn/userguide/introduction",
-        "modelListUrl": "https://cloud.siliconflow.cn/models",
-        "keyApplyUrl": "https://cloud.siliconflow.cn/account/ak"
+        "documentationUrl": "https://platform.sensenova.cn/docs",
+        "modelListUrl": "https://platform.sensenova.cn/docs",
+        "keyApplyUrl": "https://platform.sensenova.cn/console/keys"
       },
-      "searchText": "siliconflow 硅基流动 an openai-compatible inference platform with free sign-up credit (about ¥14 / 20m tokens) and many permanently free open models after real-name verification. openai 兼容推理平台，新用户注册送约 ¥14（约 2,000 万 tokens）额度，完成实名认证后可使用大量永久免费开源模型。 general coding reasoning siliconflow openai-compatible free-models china",
-      "detailPath": "/models/siliconflow/"
+      "searchText": "sensenova token plan (free beta) 商汤日日新 token plan（免费公测） free open beta: the general-credit pool and the flash-lite credit pool each provide a limited-time supply of 60,000 credits per rolling 5 hours and 600,000 credits per rolling week; flash-lite usage of dedicated credits earns a 1:1 general-credit rebate (rules effective 2026-08-28). 免费公测中：通用积分与 flash-lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；flash-lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。 general coding reasoning sensenova sensetime free-trial api china",
+      "detailPath": "/free-ai/sensenova-token-plan/"
     },
     {
       "id": "siliconflow-free-models",
@@ -39004,64 +38722,25 @@
               "zh-Hans": "IPM 2 / IPD 400"
             }
           }
-        ],
-        "modelProviderRef": "siliconflow",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "siliconflow",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "siliconflow free models & credit 硅基流动免费模型与额度 new users get about ¥14 (≈20m tokens) credit, and after real-name verification can use many permanently free open models (deepseek, qwen, llama, glm etc.); free models cost 0 with fixed rate limits. 新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（deepseek、qwen、llama、glm 等），免费模型费用为 0、限速固定。 general coding reasoning siliconflow free-models api china",
-      "detailPath": "/free-ai/siliconflow-free-models/"
-    },
-    {
-      "id": "zhipu",
-      "channel": "models",
-      "name": {
-        "en": "Zhipu GLM",
-        "zh-Hans": "智谱 GLM"
-      },
-      "description": {
-        "en": "Zhipu AI's MaaS platform with a permanently free GLM Flash tier (GLM-4-Flash / GLM-4.7-Flash) plus sign-up credits for paid GLM models.",
-        "zh-Hans": "智谱 AI 的 MaaS 平台，提供长期免费的 GLM Flash 档位（GLM-4-Flash / GLM-4.7-Flash），注册另有付费 GLM 模型的学习额度。"
-      },
-      "detail": {
-        "en": "Zhipu AI (智谱) offers GLM models through an OpenAI-compatible MaaS endpoint. The GLM-4-Flash text model is announced as permanently free without call-volume restrictions, and the newer GLM-4.7-Flash is also free; GLM-4V-Flash is a free image-understanding model. New accounts get learning credits for paid GLM models (community reports around 20M tokens; check the official console). Free-tier concurrency is generous but check the official rate-limit doc for current values.",
-        "zh-Hans": "智谱 AI 通过兼容 OpenAI 的 MaaS 接口提供 GLM 系列模型。GLM-4-Flash 文本模型已宣布长期免费、基本不限调用量，后续推出的 GLM-4.7-Flash 同样免费；GLM-4V-Flash 是免费的图像理解模型。新账号注册会赠送可用于付费 GLM 模型的学习额度（社区反馈约 2,000 万 tokens，以官方控制台为准）。免费模型并发较高，但当前速率限制请以官方速率限制文档为准。"
-      },
-      "categories": [
-        "general",
-        "coding"
-      ],
-      "tags": [
-        "zhipu",
-        "glm",
-        "openai-compatible",
-        "free-models",
-        "china"
-      ],
-      "website": "https://open.bigmodel.cn/",
-      "status": "active",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "Zhipu GLM",
-        "logo": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
-        "desc": "OpenAI-compatible MaaS endpoint for Zhipu GLM models, including free Flash tiers.",
-        "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+        "name": "SiliconFlow",
+        "logo": "https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg",
+        "desc": "An OpenAI-compatible hosted inference service with many permanently free open models.",
+        "baseUrl": "https://api.siliconflow.cn/v1",
         "models": [],
         "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://open.bigmodel.cn/dev/welcome",
-        "modelListUrl": "https://open.bigmodel.cn/dev/api#chatglm_turbo",
-        "keyApplyUrl": "https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys"
+        "documentationUrl": "https://docs.siliconflow.cn/cn/userguide/introduction",
+        "modelListUrl": "https://cloud.siliconflow.cn/models",
+        "keyApplyUrl": "https://cloud.siliconflow.cn/account/ak"
       },
-      "searchText": "zhipu glm 智谱 glm zhipu ai's maas platform with a permanently free glm flash tier (glm-4-flash / glm-4.7-flash) plus sign-up credits for paid glm models. 智谱 ai 的 maas 平台，提供长期免费的 glm flash 档位（glm-4-flash / glm-4.7-flash），注册另有付费 glm 模型的学习额度。 general coding zhipu glm openai-compatible free-models china",
-      "detailPath": "/models/zhipu/"
+      "searchText": "siliconflow free models & credit 硅基流动免费模型与额度 new users get about ¥14 (≈20m tokens) credit, and after real-name verification can use many permanently free open models (deepseek, qwen, llama, glm etc.); free models cost 0 with fixed rate limits. 新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（deepseek、qwen、llama、glm 等），免费模型费用为 0、限速固定。 general coding reasoning siliconflow free-models api china",
+      "detailPath": "/free-ai/siliconflow-free-models/"
     },
     {
       "id": "zhipu-glm-flash",
@@ -39150,64 +38829,25 @@
               "zh-Hans": "每个账号一次，以官方控制台为准"
             }
           }
-        ],
-        "modelProviderRef": "zhipu",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "zhipu",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "zhipu glm flash free models 智谱 glm flash 免费模型 glm-4-flash is announced as permanently free with basically no call-volume limit (newer glm-4.7-flash is also free); sign-up also grants learning credits for paid glm models (community reports ~20m tokens). glm-4-flash 宣布长期免费、基本不限调用量（后续推出的 glm-4.7-flash 同样免费）；注册另有可用于付费 glm 模型的学习额度（社区反馈约 2,000 万 tokens）。 general coding zhipu glm free-models api china",
-      "detailPath": "/free-ai/zhipu-glm-flash/"
-    },
-    {
-      "id": "agnes-ai",
-      "channel": "models",
-      "name": {
-        "en": "Agnes AI",
-        "zh-Hans": "Agnes AI"
-      },
-      "description": {
-        "en": "OpenAI-compatible multimodal gateway (text/image/video) with free API credits on sign-up, including free Flash-tier models.",
-        "zh-Hans": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，并提供免费 Flash 档模型。"
-      },
-      "detail": {
-        "en": "Agnes AI is an AI gateway providing multimodal model APIs (text, image, video generation/understanding) through a single OpenAI-compatible endpoint (https://apihub.agnes-ai.com/v1). New accounts get free API credits, and several models run free, e.g. Agnes 2.0 Flash (agent), Agnes 2.5 Flash, Agnes Image 2.1 Flash. Free public beta terms can change; check the official docs.",
-        "zh-Hans": "Agnes AI 是一个 AI 网关平台，通过统一的 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型 API。新账号注册即送免费 API 额度，部分模型免费开放（如 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）。免费公测政策可能调整，隐私与合规以官方文档为准。"
-      },
-      "categories": [
-        "general",
-        "reasoning",
-        "vision"
-      ],
-      "tags": [
-        "agnes-ai",
-        "openai-compatible",
-        "free-api",
-        "multimodal"
-      ],
-      "website": "https://agnes-ai.com/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "Agnes AI",
-        "logo": "https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64",
-        "desc": "OpenAI-compatible multimodal gateway with free credits on sign-up.",
-        "baseUrl": "https://apihub.agnes-ai.com/v1",
+        "name": "Zhipu GLM",
+        "logo": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+        "desc": "OpenAI-compatible MaaS endpoint for Zhipu GLM models, including free Flash tiers.",
+        "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
         "models": [],
         "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://wiki.agnes-ai.com/en/docs/overview",
-        "modelListUrl": "https://agnes-ai.com/campaign",
-        "keyApplyUrl": "https://platform.agnes-ai.com/login"
+        "documentationUrl": "https://open.bigmodel.cn/dev/welcome",
+        "modelListUrl": "https://open.bigmodel.cn/dev/api#chatglm_turbo",
+        "keyApplyUrl": "https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys"
       },
-      "searchText": "agnes ai agnes ai openai-compatible multimodal gateway (text/image/video) with free api credits on sign-up, including free flash-tier models. openai 兼容的多模态 ai 网关（文本/图像/视频），注册即送免费 api 额度，并提供免费 flash 档模型。 general reasoning vision agnes-ai openai-compatible free-api multimodal",
-      "detailPath": "/models/agnes-ai/"
+      "searchText": "zhipu glm flash free models 智谱 glm flash 免费模型 glm-4-flash is announced as permanently free with basically no call-volume limit (newer glm-4.7-flash is also free); sign-up also grants learning credits for paid glm models (community reports ~20m tokens). glm-4-flash 宣布长期免费、基本不限调用量（后续推出的 glm-4.7-flash 同样免费）；注册另有可用于付费 glm 模型的学习额度（社区反馈约 2,000 万 tokens）。 general coding zhipu glm free-models api china",
+      "detailPath": "/free-ai/zhipu-glm-flash/"
     },
     {
       "id": "agnes-ai-free-api",
@@ -39295,64 +38935,25 @@
               "zh-Hans": "以官方平台为准"
             }
           }
-        ],
-        "modelProviderRef": "agnes-ai",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "agnes-ai",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "agnes ai free api agnes ai 免费 api openai-compatible multimodal gateway (text/image/video) that grants free api credits on sign-up; several models run free (agnes 2.0/2.5 flash, agnes image 2.1 flash), no credit card required. openai 兼容的多模态 ai 网关（文本/图像/视频），注册即送免费 api 额度，多个模型免费开放（agnes 2.0/2.5 flash、agnes image 2.1 flash 等），无需信用卡。 general image video agnes-ai free-api multimodal api",
-      "detailPath": "/free-ai/agnes-ai-free-api/"
-    },
-    {
-      "id": "cloudflare",
-      "channel": "models",
-      "name": {
-        "en": "Cloudflare Workers AI",
-        "zh-Hans": "Cloudflare Workers AI"
-      },
-      "description": {
-        "en": "Serverless AI inference on Cloudflare's edge network, OpenAI-compatible (base URL contains your account ID), with a daily free allocation of about 10,000 Neurons.",
-        "zh-Hans": "Cloudflare 边缘网络上的无服务器 AI 推理，兼容 OpenAI 接口（Base URL 需带账号 ID），每日免费额度约 10,000 Neurons。"
-      },
-      "detail": {
-        "en": "Cloudflare Workers AI provides serverless model inference on the edge network, covering about 80 models (Llama 3.x/4, Mistral, Qwen, Gemma, GPT-OSS, DeepSeek-R1 distills, FLUX/SD etc.). The OpenAI-compatible endpoint is https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1 where {account_id} must be replaced with your own Cloudflare account ID; authentication uses an API token from the Cloudflare dashboard. A daily free allocation of about 10,000 Neurons applies, with per-model rate limits; usage beyond the free allocation is billed per Neurons unless you set limits in the dashboard. Free allocation and limits change; check the official pricing page.",
-        "zh-Hans": "Cloudflare Workers AI 在边缘网络提供无服务器模型推理，覆盖约 80 个模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）。OpenAI 兼容端点为 https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1，其中 {account_id} 需替换为你自己的 Cloudflare 账号 ID；鉴权使用控制台创建的 API Token。每日免费额度约 10,000 Neurons，并含各模型限速；超出免费额度部分按 Neurons 计费，可在控制台设置限额防止扣费。免费额度与限速会调整，请以官方定价页为准。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "vision"
-      ],
-      "tags": [
-        "cloudflare",
-        "workers-ai",
-        "serverless",
-        "openai-compatible"
-      ],
-      "website": "https://developers.cloudflare.com/workers-ai/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "Cloudflare",
-        "logo": "https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64",
-        "desc": "Serverless edge inference with a daily Neurons-based free allocation.",
-        "baseUrl": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1",
+        "name": "Agnes AI",
+        "logo": "https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64",
+        "desc": "OpenAI-compatible multimodal gateway with free credits on sign-up.",
+        "baseUrl": "https://apihub.agnes-ai.com/v1",
         "models": [],
-        "maxTokens": 2048,
+        "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://developers.cloudflare.com/workers-ai/",
-        "modelListUrl": "https://developers.cloudflare.com/workers-ai/models/",
-        "keyApplyUrl": "https://dash.cloudflare.com/profile/api-tokens"
+        "documentationUrl": "https://wiki.agnes-ai.com/en/docs/overview",
+        "modelListUrl": "https://agnes-ai.com/campaign",
+        "keyApplyUrl": "https://platform.agnes-ai.com/login"
       },
-      "searchText": "cloudflare workers ai cloudflare workers ai serverless ai inference on cloudflare's edge network, openai-compatible (base url contains your account id), with a daily free allocation of about 10,000 neurons. cloudflare 边缘网络上的无服务器 ai 推理，兼容 openai 接口（base url 需带账号 id），每日免费额度约 10,000 neurons。 general coding vision cloudflare workers-ai serverless openai-compatible",
-      "detailPath": "/models/cloudflare/"
+      "searchText": "agnes ai free api agnes ai 免费 api openai-compatible multimodal gateway (text/image/video) that grants free api credits on sign-up; several models run free (agnes 2.0/2.5 flash, agnes image 2.1 flash), no credit card required. openai 兼容的多模态 ai 网关（文本/图像/视频），注册即送免费 api 额度，多个模型免费开放（agnes 2.0/2.5 flash、agnes image 2.1 flash 等），无需信用卡。 general image video agnes-ai free-api multimodal api",
+      "detailPath": "/free-ai/agnes-ai-free-api/"
     },
     {
       "id": "cloudflare-workers-ai-free",
@@ -39413,64 +39014,25 @@
               "zh-Hans": "每日刷新；各模型限速约 150–1,500 次/分钟"
             }
           }
-        ],
-        "modelProviderRef": "cloudflare",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "cloudflare",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "cloudflare workers ai free quota cloudflare workers ai 免费额度 cloudflare workers ai grants a daily free allocation (about 10,000 neurons/day) across ~80 models (llama, mistral, qwen, gemma, gpt-oss, flux etc.); accounts are free and limits can be adjusted to avoid overage. cloudflare workers ai 提供每日免费额度（约 10,000 neurons/天），覆盖约 80 个模型（llama、mistral、qwen、gemma、gpt-oss、flux 等）；注册免费，可设置限额防止超出计费。 general coding image cloudflare workers-ai free-tier api",
-      "detailPath": "/free-ai/cloudflare-workers-ai-free/"
-    },
-    {
-      "id": "modelscope",
-      "channel": "models",
-      "name": {
-        "en": "ModelScope",
-        "zh-Hans": "魔塔社区"
-      },
-      "description": {
-        "en": "An OpenAI-compatible model inference endpoint; free quota and eligibility depend on account verification and current platform policy.",
-        "zh-Hans": "兼容 OpenAI 接口的模型推理服务，免费额度和资格取决于账号认证及平台当前政策。"
-      },
-      "detail": {
-        "en": "ModelScope provides hosted inference APIs for models in its community. The OpenAI-compatible endpoint can be connected to ChatSpeed after obtaining an access token, while available models, account eligibility, regional access, and free quota should be confirmed in the current official documentation.",
-        "zh-Hans": "魔塔社区为平台中的模型提供托管推理 API。获取访问令牌后，可以通过兼容 OpenAI 的接口接入 ChatSpeed；可用模型、账号资格、区域访问和免费额度应以官方最新文档为准。"
-      },
-      "categories": [
-        "general",
-        "coding",
-        "reasoning"
-      ],
-      "tags": [
-        "modelscope",
-        "openai-compatible",
-        "free-quota",
-        "china"
-      ],
-      "website": "https://www.modelscope.cn/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-29",
       "provider": {
         "protocol": "openai",
-        "name": "ModelScope",
-        "logo": "https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico",
-        "desc": "An OpenAI-compatible model inference service from ModelScope.",
-        "baseUrl": "https://api-inference.modelscope.cn/v1",
+        "name": "Cloudflare",
+        "logo": "https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64",
+        "desc": "Serverless edge inference with a daily Neurons-based free allocation.",
+        "baseUrl": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1",
         "models": [],
-        "maxTokens": 4096,
+        "maxTokens": 2048,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://modelscope.cn/docs/home",
-        "modelListUrl": "https://modelscope.cn/models",
-        "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
+        "documentationUrl": "https://developers.cloudflare.com/workers-ai/",
+        "modelListUrl": "https://developers.cloudflare.com/workers-ai/models/",
+        "keyApplyUrl": "https://dash.cloudflare.com/profile/api-tokens"
       },
-      "searchText": "modelscope 魔塔社区 an openai-compatible model inference endpoint; free quota and eligibility depend on account verification and current platform policy. 兼容 openai 接口的模型推理服务，免费额度和资格取决于账号认证及平台当前政策。 general coding reasoning modelscope openai-compatible free-quota china",
-      "detailPath": "/models/modelscope/"
+      "searchText": "cloudflare workers ai free quota cloudflare workers ai 免费额度 cloudflare workers ai grants a daily free allocation (about 10,000 neurons/day) across ~80 models (llama, mistral, qwen, gemma, gpt-oss, flux etc.); accounts are free and limits can be adjusted to avoid overage. cloudflare workers ai 提供每日免费额度（约 10,000 neurons/天），覆盖约 80 个模型（llama、mistral、qwen、gemma、gpt-oss、flux 等）；注册免费，可设置限额防止超出计费。 general coding image cloudflare workers-ai free-tier api",
+      "detailPath": "/free-ai/cloudflare-workers-ai-free/"
     },
     {
       "id": "modelscope-free-quota",
@@ -39559,64 +39121,25 @@
               "zh-Hans": "按模型按天，平台可能动态调整"
             }
           }
-        ],
-        "modelProviderRef": "modelscope",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "modelscope",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "modelscope free inference quota 魔塔免费调用额度 free sign-up; after linking an alibaba cloud account and completing real-name verification, each account gets 2,000 free api-inference calls per day in total, with a per-model cap of usually 500 calls/day (lower for some large models). 免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 api（api-inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。 general coding reasoning modelscope free-quota api china",
-      "detailPath": "/free-ai/modelscope-free-quota/"
-    },
-    {
-      "id": "nvidia-nim",
-      "channel": "models",
-      "name": {
-        "en": "NVIDIA NIM",
-        "zh-Hans": "NVIDIA NIM"
-      },
-      "description": {
-        "en": "NVIDIA-hosted serverless inference endpoints for development, with access and rate limits varying by account and model.",
-        "zh-Hans": "NVIDIA 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。"
-      },
-      "detail": {
-        "en": "NVIDIA NIM provides hosted inference endpoints for selected foundation models. Developers can create an API key and connect the OpenAI-compatible endpoint to ChatSpeed, but the model catalog, availability, request limits, and any free access are account- and model-dependent.",
-        "zh-Hans": "NVIDIA NIM 为部分基础模型提供托管推理接口。开发者可以申请 API Key，并将兼容 OpenAI 的接口接入 ChatSpeed；模型目录、可用性、请求限制以及免费访问情况取决于账号和具体模型。"
-      },
-      "categories": [
-        "general",
-        "reasoning",
-        "vision"
-      ],
-      "tags": [
-        "nvidia",
-        "nim",
-        "api",
-        "free-tier"
-      ],
-      "website": "https://build.nvidia.com/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-29",
       "provider": {
         "protocol": "openai",
-        "name": "NVIDIA NIM",
-        "logo": "https://build.nvidia.com/favicon.ico",
-        "desc": "NVIDIA-hosted serverless inference endpoints for development.",
-        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "name": "ModelScope",
+        "logo": "https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico",
+        "desc": "An OpenAI-compatible model inference service from ModelScope.",
+        "baseUrl": "https://api-inference.modelscope.cn/v1",
         "models": [],
         "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://docs.api.nvidia.com/nim/reference/llm-apis",
-        "modelListUrl": "https://build.nvidia.com/models",
-        "keyApplyUrl": "https://build.nvidia.com/settings/api-keys"
+        "documentationUrl": "https://modelscope.cn/docs/home",
+        "modelListUrl": "https://modelscope.cn/models",
+        "keyApplyUrl": "https://modelscope.cn/my/myaccesstoken"
       },
-      "searchText": "nvidia nim nvidia nim nvidia-hosted serverless inference endpoints for development, with access and rate limits varying by account and model. nvidia 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。 general reasoning vision nvidia nim api free-tier",
-      "detailPath": "/models/nvidia-nim/"
+      "searchText": "modelscope free inference quota 魔塔免费调用额度 free sign-up; after linking an alibaba cloud account and completing real-name verification, each account gets 2,000 free api-inference calls per day in total, with a per-model cap of usually 500 calls/day (lower for some large models). 免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 api（api-inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。 general coding reasoning modelscope free-quota api china",
+      "detailPath": "/free-ai/modelscope-free-quota/"
     },
     {
       "id": "nvidia-nim-free-tier",
@@ -39690,62 +39213,25 @@
               "zh-Hans": "一次性额度，以模型页当前标注为准"
             }
           }
-        ],
-        "modelProviderRef": "nvidia-nim",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "nvidia-nim",
-            "importable": true
-          }
-        }
+        ]
       },
-      "searchText": "nvidia nim apis nvidia nim api sign up a free nvidia developer account and create an api key (nvapi-...) without a credit card to call hosted model endpoints; the common limit is about 40 requests per minute, intended for development and prototyping, with exact quotas shown on each model page. 免费注册 nvidia 开发者账号并申请 api key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。 general coding reasoning nvidia nim free-tier api",
-      "detailPath": "/free-ai/nvidia-nim-free-tier/"
-    },
-    {
-      "id": "opencode-zen",
-      "channel": "models",
-      "name": {
-        "en": "OpenCode Zen",
-        "zh-Hans": "OpenCode Zen"
-      },
-      "description": {
-        "en": "An AI gateway by the OpenCode team with limited-time free models (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free etc.) and OpenAI-compatible endpoints.",
-        "zh-Hans": "OpenCode 团队推出的 AI 网关，提供限时免费模型（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）与 OpenAI 兼容端点。"
-      },
-      "detail": {
-        "en": "OpenCode Zen is an AI gateway maintained by the OpenCode team, primarily used inside the opencode coding CLI (TUI) via /connect + API key, and also exposes OpenAI-compatible endpoints (https://opencode.ai/zen/v1). Currently free (limited-time) models include MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, Nemotron 3.5 Lightning Free, Ling 3.0 Flash Fin Free and Muse Spark 1.2 Contributor Free; the list changes often. Free models are available without billing details; paid models are metered per token with auto-recharge. Check the official docs for the current list.",
-        "zh-Hans": "OpenCode Zen 是 OpenCode 团队维护的 AI 网关，主要在 opencode 编码 CLI（TUI）中通过 /connect 与 API Key 使用，同时暴露 OpenAI 兼容端点（https://opencode.ai/zen/v1）。当前限时免费模型包括 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free 等，名单经常变化。免费模型无需添加账单信息即可使用；付费模型按 token 计费并支持自动充值。当前名单请以官方文档为准。"
-      },
-      "categories": [
-        "coding"
-      ],
-      "tags": [
-        "opencode",
-        "zen",
-        "openai-compatible",
-        "free-models"
-      ],
-      "website": "https://opencode.ai/docs/zen/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-30",
       "provider": {
         "protocol": "openai",
-        "name": "OpenCode Zen",
-        "logo": "https://www.google.com/s2/favicons?domain=opencode.ai&sz=64",
-        "desc": "AI gateway with limited-time free models and OpenAI-compatible endpoints.",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "name": "NVIDIA NIM",
+        "logo": "https://build.nvidia.com/favicon.ico",
+        "desc": "NVIDIA-hosted serverless inference endpoints for development.",
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
         "models": [],
         "maxTokens": 4096,
         "temperature": 0.6,
         "topP": 0,
         "topK": 0,
-        "documentationUrl": "https://opencode.ai/docs/zen/",
-        "modelListUrl": "https://opencode.ai/zen/v1/models",
-        "keyApplyUrl": "https://opencode.ai/zen"
+        "documentationUrl": "https://docs.api.nvidia.com/nim/reference/llm-apis",
+        "modelListUrl": "https://build.nvidia.com/models",
+        "keyApplyUrl": "https://build.nvidia.com/settings/api-keys"
       },
-      "searchText": "opencode zen opencode zen an ai gateway by the opencode team with limited-time free models (mimo-v2.5 free, big pickle, nemotron 3 ultra free etc.) and openai-compatible endpoints. opencode 团队推出的 ai 网关，提供限时免费模型（mimo-v2.5 free、big pickle、nemotron 3 ultra free 等）与 openai 兼容端点。 coding opencode zen openai-compatible free-models",
-      "detailPath": "/models/opencode-zen/"
+      "searchText": "nvidia nim apis nvidia nim api sign up a free nvidia developer account and create an api key (nvapi-...) without a credit card to call hosted model endpoints; the common limit is about 40 requests per minute, intended for development and prototyping, with exact quotas shown on each model page. 免费注册 nvidia 开发者账号并申请 api key（无需信用卡）即可调用托管模型接口，常见限速约 40 次/分钟，面向开发与原型验证，具体额度以模型页为准。 general coding reasoning nvidia nim free-tier api",
+      "detailPath": "/free-ai/nvidia-nim-free-tier/"
     },
     {
       "id": "opencode-zen-free-models",
@@ -39805,63 +39291,25 @@
               "zh-Hans": "限时免费，名单轮换，以官方文档为准"
             }
           }
-        ],
-        "modelProviderRef": "opencode-zen",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "opencode-zen",
-            "importable": true
-          }
-        }
+        ]
+      },
+      "provider": {
+        "protocol": "openai",
+        "name": "OpenCode Zen",
+        "logo": "https://www.google.com/s2/favicons?domain=opencode.ai&sz=64",
+        "desc": "AI gateway with limited-time free models and OpenAI-compatible endpoints.",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "models": [],
+        "maxTokens": 4096,
+        "temperature": 0.6,
+        "topP": 0,
+        "topK": 0,
+        "documentationUrl": "https://opencode.ai/docs/zen/",
+        "modelListUrl": "https://opencode.ai/zen/v1/models",
+        "keyApplyUrl": "https://opencode.ai/zen"
       },
       "searchText": "opencode zen free models opencode zen 免费模型 inside the opencode coding agent, limited-time free models (mimo-v2.5 free, big pickle, nemotron 3 ultra free, etc.) are usable after signing in, without adding billing details. 在 opencode 编码代理中，登录 opencode zen 账号即可限时免费使用 mimo-v2.5 free、big pickle、nemotron 3 ultra free 等模型，无需添加账单信息。 coding opencode zen free-models coding api",
       "detailPath": "/free-ai/opencode-zen-free-models/"
-    },
-    {
-      "id": "pollinations",
-      "channel": "models",
-      "name": {
-        "en": "Pollinations",
-        "zh-Hans": "Pollinations"
-      },
-      "description": {
-        "en": "Open-source generative platform with free text/image/audio/video APIs; the OpenAI-compatible text endpoint works without sign-up or API key.",
-        "zh-Hans": "开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。"
-      },
-      "detail": {
-        "en": "Pollinations is an open-source generative-AI platform exposing simple HTTP APIs for text, image, audio and video. The text endpoint is OpenAI-compatible (https://text.pollinations.ai/openai) and, for free models, requires no sign-up or API key; image generation is available at image.pollinations.ai. Some newer/higher-priority models may require Pollinations tokens/accounts. Rate limits are loose but adjust with load; check the official repo for the current model list and limits.",
-        "zh-Hans": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频的简单 HTTP API。文本端点为 OpenAI 兼容（https://text.pollinations.ai/openai），免费模型无需注册与 API Key 即可调用；图像生成见 image.pollinations.ai。部分较新模型或更高优先级的调用可能需要 Pollinations 账号/token。限速较宽松但会随负载调整，当前模型名单与限制以官方仓库为准。"
-      },
-      "categories": [
-        "general",
-        "vision"
-      ],
-      "tags": [
-        "pollinations",
-        "openai-compatible",
-        "free-api",
-        "no-key"
-      ],
-      "website": "https://pollinations.ai/",
-      "status": "review",
-      "lastVerifiedAt": "2026-08-30",
-      "provider": {
-        "protocol": "openai",
-        "name": "Pollinations",
-        "logo": "https://pollinations.ai/favicon-32x32.png",
-        "desc": "Free OpenAI-compatible text endpoint; no API key required for free models.",
-        "baseUrl": "https://text.pollinations.ai/openai",
-        "models": [],
-        "maxTokens": 4096,
-        "temperature": 0.7,
-        "topP": 0,
-        "topK": 0,
-        "documentationUrl": "https://github.com/pollinations/pollinations/blob/master/APIDOCS.md",
-        "modelListUrl": "https://text.pollinations.ai/models",
-        "keyApplyUrl": ""
-      },
-      "searchText": "pollinations pollinations open-source generative platform with free text/image/audio/video apis; the openai-compatible text endpoint works without sign-up or api key. 开源生成式 ai 平台，提供免费文本/图像/音频/视频 api；openai 兼容文本端点无需注册与 api key 即可使用。 general vision pollinations openai-compatible free-api no-key",
-      "detailPath": "/models/pollinations/"
     },
     {
       "id": "pollinations-free-api",
@@ -39933,14 +39381,22 @@
               "zh-Hans": "无需密钥；限速以官方仓库为准"
             }
           }
-        ],
-        "modelProviderRef": "pollinations",
-        "integrations": {
-          "chatSpeedModel": {
-            "providerRef": "pollinations",
-            "importable": true
-          }
-        }
+        ]
+      },
+      "provider": {
+        "protocol": "openai",
+        "name": "Pollinations",
+        "logo": "https://pollinations.ai/favicon-32x32.png",
+        "desc": "Free OpenAI-compatible text endpoint; no API key required for free models.",
+        "baseUrl": "https://text.pollinations.ai/openai",
+        "models": [],
+        "maxTokens": 4096,
+        "temperature": 0.7,
+        "topP": 0,
+        "topK": 0,
+        "documentationUrl": "https://github.com/pollinations/pollinations/blob/master/APIDOCS.md",
+        "modelListUrl": "https://text.pollinations.ai/models",
+        "keyApplyUrl": ""
       },
       "searchText": "pollinations free api pollinations 免费 api open-source generative api (text/image/audio/video); the openai-compatible text endpoint works without sign-up or api key for free models. 开源生成式 ai api（文本/图像/音频/视频）；免费模型可直接通过 openai 兼容文本端点调用，无需注册与 api key。 general image pollinations free-api no-key multimodal",
       "detailPath": "/free-ai/pollinations-free-api/"

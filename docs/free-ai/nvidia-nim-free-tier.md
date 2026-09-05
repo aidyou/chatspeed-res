@@ -39,7 +39,7 @@ Free API credits are granted on sign-up (commonly reported as around 1,000 credi
 
 ## ChatSpeed Import
 
-This service is linked to model provider `nvidia-nim`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://integrate.api.nvidia.com/v1`
 - Logo: ![NVIDIA NIM](https://build.nvidia.com/favicon.ico)

@@ -6,7 +6,6 @@ import { hopeTheme } from 'vuepress-theme-hope'
 const navbarEn = [
   { text: 'Home', link: '/' },
   { text: 'MCP Servers', link: '/mcp/' },
-  { text: 'Model Providers', link: '/models/' },
   { text: 'Free AI', link: '/free-ai/' },
   { text: 'Guide', link: '/guide/' },
   {
@@ -21,7 +20,6 @@ const navbarEn = [
 const navbarZh = [
   { text: '首页', link: '/zh/' },
   { text: 'MCP 服务', link: '/zh/mcp/' },
-  { text: '模型供应商', link: '/zh/models/' },
   { text: '免费 AI', link: '/zh/free-ai/' },
   { text: '使用说明', link: '/zh/guide/' },
   {

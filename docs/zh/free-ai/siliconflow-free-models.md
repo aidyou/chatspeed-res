@@ -41,7 +41,7 @@ description: "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，�
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `siliconflow`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://api.siliconflow.cn/v1`
 - Logo：![SiliconFlow](https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg)

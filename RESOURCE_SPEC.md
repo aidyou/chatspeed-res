@@ -5,7 +5,7 @@
 | Field | Required | Description |
 | --- | --- | --- |
 | `id` | yes | Globally unique kebab-case identifier. |
-| `channel` | yes | `mcp`, `models`, or `free-ai`. |
+| `channel` | yes | `mcp` or `free-ai`. |
 | `name` | yes | Localized object with `en`, `zh-Hans`, and `zh-Hant`. |
 | `description` | yes | Localized short summary used in import lists. |
 | `detail` | yes | Localized full introduction shown on the standalone detail page. |
@@ -21,8 +21,7 @@
 
 
 - `mcp`：MCP 服务，可导入 `Mcp.vue`。
-- `models`：模型供应商，可导入 `Model.vue`。
-- `free-ai`：免费 AI 网站或免费 API 服务；如果具备 ChatSpeed 模型导入能力，使用 `freeAi.modelProviderRef` 关联 `models` 中的资源。
+- `free-ai`：免费 AI 网站或免费 API 服务；如果具备 ChatSpeed 模型导入能力，在资源顶层附带 `provider` 配置（见下文）。导入接口 `/catalog/model-providers.json` 由这些自带 `provider` 的资源生成。
 
 
 `mcp` contains the transport configuration. The generator also creates the legacy-compatible `config.mcpServers` field in the output index.
@@ -33,9 +32,9 @@
 - `env`: pairs of variable name and placeholder/value. Never use a real secret.
 - `requiredInputs`: optional declarations such as an API key name and application URL.
 
-## Model provider fields
+## Provider fields (free-ai import)
 
-`provider` mirrors the fields currently consumed by `Model.vue`:
+A free-ai resource becomes importable into ChatSpeed when it carries an optional top-level `provider` object. It mirrors the fields currently consumed by `Model.vue`:
 
 - `protocol`: `openai`, `ollama`, `gemini`, `claude`, or `huggingface`.
 - `name`, `logo`, `desc`, `baseUrl`, `models`.
@@ -57,8 +56,7 @@ Every model in `provider.models` must contain a unique `id`. Optional capability
 - `freePolicyUrl`: optional absolute URL of the official page documenting the latest free quota or rate limits; omit when no authoritative page exists.
 - `registrationRestriction`: optional localized text describing sign-up or verification requirements (linking a cloud account, real-name verification, SMS verification, credit-card requirements, etc.).
 - `freeQuotas`: optional non-empty array of per-model/scope free-tier details; each item is an object with localized `model`, `quota`, and `frequency` fields, rendered as a table on the detail page.
-- `modelProviderRef`: optional ID of a model-provider resource when an API import is available.
-- `integrations.chatSpeedModel`: optional object with `providerRef` and `importable`; this is the future bridge to `Model.vue` and must never contain a user API key.
+- Optional top-level `provider`: when present, the service exposes an importable API and its config is published to `/catalog/model-providers.json` for `Model.vue`; it must never contain a user API key.
 
 ## Security rules
 

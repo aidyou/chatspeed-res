@@ -85,13 +85,21 @@
           "zh-Hans": "IPM 2 / IPD 400"
         }
       }
-    ],
-    "modelProviderRef": "siliconflow",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "siliconflow",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "SiliconFlow",
+    "logo": "https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg",
+    "desc": "An OpenAI-compatible hosted inference service with many permanently free open models.",
+    "baseUrl": "https://api.siliconflow.cn/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://docs.siliconflow.cn/cn/userguide/introduction",
+    "modelListUrl": "https://cloud.siliconflow.cn/models",
+    "keyApplyUrl": "https://cloud.siliconflow.cn/account/ak"
   }
 }

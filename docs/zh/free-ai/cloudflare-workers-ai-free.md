@@ -39,7 +39,7 @@ Cloudflare Workers AI 在 Cloudflare 边缘网络提供无服务器推理。免�
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `cloudflare`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1`
 - Logo：![Cloudflare](https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64)

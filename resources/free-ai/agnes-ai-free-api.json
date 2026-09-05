@@ -84,13 +84,21 @@
           "zh-Hans": "以官方平台为准"
         }
       }
-    ],
-    "modelProviderRef": "agnes-ai",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "agnes-ai",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Agnes AI",
+    "logo": "https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64",
+    "desc": "OpenAI-compatible multimodal gateway with free credits on sign-up.",
+    "baseUrl": "https://apihub.agnes-ai.com/v1",
+    "models": [],
+    "maxTokens": 4096,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://wiki.agnes-ai.com/en/docs/overview",
+    "modelListUrl": "https://agnes-ai.com/campaign",
+    "keyApplyUrl": "https://platform.agnes-ai.com/login"
   }
 }

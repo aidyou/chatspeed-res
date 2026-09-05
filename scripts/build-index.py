@@ -25,7 +25,7 @@ LOCALES = ("en", "zh-Hans")
 # localized(...) call site (including ones we must not hand-edit) becomes
 # locale-aware. write_docs sets it per generated locale.
 _LOCALE = "en"
-CHANNELS = ("mcp", "models", "free-ai")
+CHANNELS = ("mcp", "free-ai")
 COMMON_FIELDS = (
     "id",
     "channel",
@@ -196,13 +196,6 @@ def validate_free_ai(path: Path, resource: dict) -> None:
                 fail(path, f"freeAi.freeQuotas[{index}] must be an object")
             for field in ("model", "quota", "frequency"):
                 ensure_localized(path, f"freeAi.freeQuotas[{index}].{field}", quota.get(field))
-    integrations = free_ai.get("integrations", {})
-    if not isinstance(integrations, dict):
-        fail(path, "freeAi.integrations must be an object")
-    chat_speed_model = integrations.get("chatSpeedModel")
-    if chat_speed_model is not None:
-        if not isinstance(chat_speed_model, dict) or not isinstance(chat_speed_model.get("providerRef"), str) or not isinstance(chat_speed_model.get("importable"), bool):
-            fail(path, "freeAi.integrations.chatSpeedModel must contain providerRef and importable")
 
 
 def validate_resource(path: Path, expected_channel: str) -> dict:
@@ -234,10 +227,12 @@ def validate_resource(path: Path, expected_channel: str) -> dict:
         fail(path, "lastVerifiedAt is not a valid date")
     if expected_channel == "mcp":
         validate_mcp(path, value)
-    elif expected_channel == "models":
-        validate_provider(path, value)
     else:
         validate_free_ai(path, value)
+        # Free-ai resources may carry an inline provider config that makes them
+        # importable into ChatSpeed; validate it with the same rules.
+        if "provider" in value:
+            validate_provider(path, value)
     check_secrets(path, value)
     return value
 
@@ -279,17 +274,6 @@ def build_catalog() -> tuple[dict, dict[str, list[dict]]]:
     for channel in CHANNELS:
         by_channel[channel].sort(key=sort_key)
     resources.sort(key=sort_key)
-    for resource in resources:
-        if resource["channel"] != "free-ai":
-            continue
-        free_ai = resource.get("freeAi", {})
-        references = [free_ai.get("modelProviderRef")]
-        integration = free_ai.get("integrations", {}).get("chatSpeedModel")
-        if integration:
-            references.append(integration.get("providerRef"))
-        for ref in filter(None, references):
-            if ref not in {item["id"] for item in resources if item["channel"] == "models"}:
-                fail(RESOURCES / "free-ai" / f"{resource['id']}.json", f"unknown model provider reference: {ref}")
     catalog = {
         "version": 1,
         "generatedAt": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -374,10 +358,8 @@ _DETAIL_LABELS = {
         "mcpConfig": "MCP Configuration", "transport": "Transport", "command": "Command",
         "args": "Args", "argsNone": "none",
         "mcpNote": "This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.",
-        "providerConfig": "Provider Configuration", "protocol": "Protocol", "baseUrl": "Base URL",
-        "modelCount": "Model count", "docs": "Docs", "modelList": "Model list", "apiKey": "API key",
-        "supportedModels": "Supported models", "colModelId": "Model ID", "colName": "Name",
-        "colCaps": "Capabilities", "basicChat": "Basic chat",
+        "protocol": "Protocol", "baseUrl": "Base URL",
+        "docs": "Docs", "modelList": "Model list", "apiKey": "API key",
         "freeUsage": "Free Usage", "access": "Access", "requiresLogin": "Requires login",
         "hasFreeTier": "Has free tier", "availability": "Availability", "yes": "Yes", "no": "No",
         "quotaDetail": "Per-model free quota", "colModel": "Model", "colQuota": "Free quota",
@@ -385,7 +367,7 @@ _DETAIL_LABELS = {
         "regLimits": "Registration & Limits", "signup": "Sign up", "regLimit": "Registration limit",
         "freePolicy": "Free policy doc",
         "csImport": "ChatSpeed Import",
-        "csImportNote": "This service is linked to model provider `{ref}`; import its config from the model provider list. Call entry points:",
+        "csImportNote": "This service includes a ChatSpeed provider config and can be imported directly. Call entry points:",
         "logo": "Logo", "dataSource": "Data source",
         "sourceNote": "Resource file: `resources/{channel}/{id}.json`. Content last verified on `{date}`; free quotas and service limits may change with official policies.",
     },
@@ -395,10 +377,8 @@ _DETAIL_LABELS = {
         "mcpConfig": "MCP 配置", "transport": "传输方式", "command": "启动命令",
         "args": "参数", "argsNone": "无",
         "mcpNote": "该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。",
-        "providerConfig": "供应商配置", "protocol": "协议", "baseUrl": "Base URL",
-        "modelCount": "模型数量", "docs": "文档", "modelList": "模型列表", "apiKey": "密钥申请",
-        "supportedModels": "支持的模型", "colModelId": "模型 ID", "colName": "名称",
-        "colCaps": "能力", "basicChat": "基础对话",
+        "protocol": "协议", "baseUrl": "Base URL",
+        "docs": "文档", "modelList": "模型列表", "apiKey": "密钥申请",
         "freeUsage": "免费使用说明", "access": "访问方式", "requiresLogin": "是否需要登录",
         "hasFreeTier": "是否有免费层", "availability": "可用区域", "yes": "是", "no": "否",
         "quotaDetail": "分模型免费额度明细", "colModel": "模型", "colQuota": "免费额度",
@@ -406,27 +386,25 @@ _DETAIL_LABELS = {
         "regLimits": "注册与限制", "signup": "注册入口", "regLimit": "注册限制",
         "freePolicy": "免费政策文档",
         "csImport": "ChatSpeed 导入",
-        "csImportNote": "该服务关联模型供应商 `{ref}`，可从模型供应商列表导入配置，调用入口如下：",
+        "csImportNote": "该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：",
         "logo": "Logo", "dataSource": "数据来源",
         "sourceNote": "资源文件：`resources/{channel}/{id}.json`。内容最后核验于 `{date}`；免费额度和服务限制可能随官方政策变化。",
     },
 }
 
 _HOME_META = {
-    "en": {"title": "ChatSpeed Resource Center", "description": "A catalog of MCP servers, model providers, and free AI services."},
-    "zh-Hans": {"title": "ChatSpeed 资源中心", "description": "MCP、模型供应商和免费 AI 服务目录"},
+    "en": {"title": "ChatSpeed Resource Center", "description": "A catalog of MCP servers and free AI services."},
+    "zh-Hans": {"title": "ChatSpeed 资源中心", "description": "MCP 与免费 AI 服务目录"},
 }
 
 _CHANNEL_META = {
     "en": {
         "mcp": ("MCP Servers", "MCP servers you can import into ChatSpeed. The list shows a short summary; open a resource for the full configuration and usage."),
-        "models": ("Model Providers", "Model providers compatible with ChatSpeed. The list is for quick selection; detail pages include protocol, endpoints, and model info."),
-        "free-ai": ("Free AI", "Directory of free AI websites and API services. Free quotas are dynamic; refer to the detail page and official site."),
+        "free-ai": ("Free AI", "Free AI services with free-tier details; entries carrying a provider config can be imported into ChatSpeed directly."),
     },
     "zh-Hans": {
         "mcp": ("MCP 服务", "可导入 ChatSpeed 的 MCP 服务。列表展示简要说明，点击资源进入完整配置与使用详情。"),
-        "models": ("模型供应商", "可接入 ChatSpeed 的模型供应商。列表用于快速选择，详情页包含协议、接口和模型信息。"),
-        "free-ai": ("免费 AI", "免费 AI 网站与 API 服务目录。免费额度是动态信息，请以详情页和官方页面为准。"),
+        "free-ai": ("免费 AI", "免费 AI 服务目录，含免费额度明细；自带供应商配置的服务可直接导入 ChatSpeed。"),
     },
 }
 
@@ -441,7 +419,7 @@ sidebar: false
 
 ## Browse resources
 
-Use the top navigation to switch between the MCP Servers, Model Providers, and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time.
+Use the top navigation to switch between the MCP Servers and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time. Free AI entries that include a provider config can be imported into ChatSpeed directly, like model providers.
 
 ## Before importing
 
@@ -463,7 +441,7 @@ sidebar: false
 
 ## 浏览资源
 
-使用顶部导航切换 MCP 服务、模型供应商和免费 AI 频道。频道页支持关键词搜索、分类筛选和按更新时间排序。
+使用顶部导航切换 MCP 服务和免费 AI 频道。频道页支持关键词搜索、分类筛选和按更新时间排序。自带供应商配置的免费 AI 服务可像模型供应商一样直接导入 ChatSpeed。
 
 ## 导入前检查
 
@@ -478,7 +456,7 @@ sidebar: false
 }
 
 
-def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
+def detail_markdown(resource: dict) -> str:
     L = _DETAIL_LABELS[_LOCALE]
     colon = "：" if _LOCALE == "zh-Hans" else ": "
     channel = resource["channel"]
@@ -517,24 +495,6 @@ def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
             "",
             L["mcpNote"],
         ])
-    elif channel == "models":
-        provider = resource["provider"]
-        lines.extend([
-            "",
-            f"## {L['providerConfig']}",
-            "",
-            f"- {L['protocol']}{colon}`{provider['protocol']}`",
-            f"- {L['baseUrl']}{colon}`{provider['baseUrl']}`",
-            f"- {L['modelCount']}{colon}{len(provider['models'])}",
-            f"- {L['docs']}{colon}{markdown_link(provider['documentationUrl'], provider['documentationUrl'])}",
-            f"- {L['modelList']}{colon}{markdown_link(provider['modelListUrl'], provider['modelListUrl'])}",
-            f"- {L['apiKey']}{colon}{markdown_link(provider['keyApplyUrl'], provider['keyApplyUrl'])}",
-        ])
-        if provider["models"]:
-            lines.extend(["", f"### {L['supportedModels']}", "", f"| {L['colModelId']} | {L['colName']} | {L['colCaps']} |", "| --- | --- | --- |"])
-            for model in provider["models"]:
-                capabilities = [key for key in ("reasoning", "functionCall", "imageInput") if model.get(key)]
-                lines.append(f"| `{model['id']}` | {model.get('name', model['id'])} | {', '.join(capabilities) or L['basicChat']} |")
     else:
         free_ai = resource["freeAi"]
         lines.extend([
@@ -568,21 +528,17 @@ def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
                 lines.append(f"- {L['regLimit']}{colon}{localized(free_ai, 'registrationRestriction')}")
             if policy_url:
                 lines.append(f"- {L['freePolicy']}{colon}{markdown_link(policy_url, policy_url)}")
-        integration = free_ai.get("integrations", {}).get("chatSpeedModel")
-        if integration and integration.get("importable"):
-            provider_ref = integration["providerRef"]
-            lines.extend(["", f"## {L['csImport']}", "", L["csImportNote"].format(ref=provider_ref)])
-            provider = provider_by_id.get(provider_ref)
-            if provider:
-                info = provider["provider"]
-                lines.append(f"- {L['protocol']}{colon}`{info['protocol']}`")
-                lines.append(f"- {L['baseUrl']}{colon}`{info['baseUrl']}`")
-                if info.get("logo"):
-                    lines.append(f"- {L['logo']}{colon}![{info.get('name', provider_ref)}]({info['logo']})")
-                for label, field in ((L["docs"], "documentationUrl"), (L["modelList"], "modelListUrl"), (L["apiKey"], "keyApplyUrl")):
-                    url = info.get(field)
-                    if url:
-                        lines.append(f"- {label}{colon}{markdown_link(url, url)}")
+        provider = resource.get("provider")
+        if provider:
+            lines.extend(["", f"## {L['csImport']}", "", L["csImportNote"]])
+            lines.append(f"- {L['protocol']}{colon}`{provider['protocol']}`")
+            lines.append(f"- {L['baseUrl']}{colon}`{provider['baseUrl']}`")
+            if provider.get("logo"):
+                lines.append(f"- {L['logo']}{colon}![{provider.get('name', resource['id'])}]({provider['logo']})")
+            for label, field in ((L["docs"], "documentationUrl"), (L["modelList"], "modelListUrl"), (L["apiKey"], "keyApplyUrl")):
+                url = provider.get(field)
+                if url:
+                    lines.append(f"- {label}{colon}{markdown_link(url, url)}")
     lines.extend(["", f"## {L['dataSource']}", "", L["sourceNote"].format(channel=channel, id=resource["id"], date=resource["lastVerifiedAt"])])
     return "\n".join(lines) + "\n"
 
@@ -605,7 +561,6 @@ def _frontmatter_lines(title: str, description: str) -> list[str]:
 def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
     global _LOCALE
     DOCS_ROOT.mkdir(parents=True, exist_ok=True)
-    provider_by_id = {item["id"]: item for item in by_channel.get("models", [])}
     # English is the default locale at the site root; Chinese lives under /zh/.
     # The ResourceBrowser component reads the active locale from the route path,
     # so the same <ResourceBrowser/> markup serves both locales.
@@ -624,7 +579,7 @@ def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
             index_lines = _frontmatter_lines(title, intro) + [f'<ResourceBrowser channel="{channel}" />', ""]
             write_text(channel_dir / "README.md", "\n".join(index_lines))
             for resource in resources:
-                write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource, provider_by_id))
+                write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource))
 
 
 def output_item(resource: dict) -> dict:
@@ -635,8 +590,6 @@ def output_item(resource: dict) -> dict:
         mcp = resource["mcp"]
         server_name = resource["id"]
         item["config"] = {"mcpServers": {server_name: {key: value for key, value in mcp.items() if key != "requiredInputs"}}}
-    if resource["channel"] == "models":
-        item["provider"] = resource["provider"]
     return item
 
 
@@ -652,9 +605,13 @@ def mcp_compat_item(resource: dict) -> dict:
 
 
 def provider_compat_item(resource: dict) -> dict:
-    """Return the flat provider shape currently consumed by Model.vue."""
+    """Return the flat provider shape currently consumed by Model.vue.
+
+    Source items are free-ai resources that carry an inline ``provider`` config.
+    """
     item = output_item(resource)
     item.pop("detail", None)
+    item.pop("freeAi", None)
     provider = item.pop("provider")
     item["resourceId"] = item["id"]
     item.update(provider)
@@ -664,8 +621,6 @@ def provider_compat_item(resource: dict) -> dict:
 def channel_items(channel: str, resources: list[dict]) -> list[dict]:
     if channel == "mcp":
         return [mcp_compat_item(resource) for resource in resources]
-    if channel == "models":
-        return [provider_compat_item(resource) for resource in resources]
     return [output_item(resource) for resource in resources]
 
 
@@ -675,30 +630,33 @@ def write_channel_catalog(path: Path, catalog: dict, channel: str, items: list[d
 
 def generate(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
     all_items = [output_item(resource) for resource in catalog["resources"]]
+    # ChatSpeed's Model.vue consumes the explicit model-providers filename; its
+    # items are the free-ai resources that carry a provider config, flattened to
+    # the legacy provider shape.
+    importable = [provider_compat_item(r) for r in by_channel.get("free-ai", []) if r.get("provider")]
     public_index = {
         "version": catalog["version"],
         "generatedAt": catalog["generatedAt"],
         "channels": [
             {
                 "id": channel,
-                "url": f"/catalog/{'model-providers' if channel == 'models' else channel}.json",
+                "url": f"/catalog/{channel}.json",
                 "count": len(by_channel[channel]),
             }
             for channel in CHANNELS
-        ],
+        ]
+        + [{"id": "models", "url": "/catalog/model-providers.json", "count": len(importable)}],
     }
     full_index = {"version": catalog["version"], "generatedAt": catalog["generatedAt"], "channels": catalog["channels"], "items": all_items}
     write_json(PUBLIC_CATALOG / "index.json", public_index)
     write_json(GENERATED_DATA / "catalog.json", full_index)
     for channel, resources in by_channel.items():
         items = channel_items(channel, resources)
-        filename = "model-providers.json" if channel == "models" else f"{channel}.json"
-        write_channel_catalog(PUBLIC_CATALOG / filename, catalog, channel, items)
-        if channel == "models":
-            # Keep the internal channel filename as a compatibility alias while
-            # Model.vue consumes the explicit model-providers filename.
-            write_channel_catalog(PUBLIC_CATALOG / "models.json", catalog, channel, items)
+        write_channel_catalog(PUBLIC_CATALOG / f"{channel}.json", catalog, channel, items)
         write_channel_catalog(GENERATED_DATA / f"{channel}.json", catalog, channel, items)
+    write_channel_catalog(PUBLIC_CATALOG / "model-providers.json", catalog, "models", importable)
+    # Legacy alias kept for older ChatSpeed builds that still fetch models.json.
+    write_channel_catalog(PUBLIC_CATALOG / "models.json", catalog, "models", importable)
 
 
 def main() -> int:

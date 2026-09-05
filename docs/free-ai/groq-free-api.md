@@ -42,7 +42,7 @@ Free tier with per-model limits (RPM/RPD/TPM/TPD); e.g. llama-3.1-8b-instant: 30
 
 ## ChatSpeed Import
 
-This service is linked to model provider `groq`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://api.groq.com/openai/v1`
 - Logo: ![Groq](https://www.google.com/s2/favicons?domain=groq.com&sz=64)

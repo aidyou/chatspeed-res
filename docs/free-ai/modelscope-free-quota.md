@@ -41,7 +41,7 @@ After sign-up, Alibaba Cloud account linking and real-name verification: 2,000 A
 
 ## ChatSpeed Import
 
-This service is linked to model provider `modelscope`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://api-inference.modelscope.cn/v1`
 - Logo: ![ModelScope](https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico)

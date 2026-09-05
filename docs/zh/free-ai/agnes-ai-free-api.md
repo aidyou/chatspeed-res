@@ -40,7 +40,7 @@ Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 Open
 
 ## ChatSpeed 导入
 
-该服务关联模型供应商 `agnes-ai`，可从模型供应商列表导入配置，调用入口如下：
+该服务自带 ChatSpeed 供应商配置，可直接导入，调用入口如下：
 - 协议：`openai`
 - Base URL：`https://apihub.agnes-ai.com/v1`
 - Logo：![Agnes AI](https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64)

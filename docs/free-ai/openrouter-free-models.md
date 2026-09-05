@@ -41,7 +41,7 @@ Free variants: 20 requests/minute; accounts with less than $10 in lifetime credi
 
 ## ChatSpeed Import
 
-This service is linked to model provider `openrouter`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://openrouter.ai/api/v1`
 - Logo: ![OpenRouter](https://openrouter.ai/favicon.ico)

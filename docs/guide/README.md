@@ -8,7 +8,7 @@ sidebar: false
 
 ## Browse resources
 
-Use the top navigation to switch between the MCP Servers, Model Providers, and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time.
+Use the top navigation to switch between the MCP Servers and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time. Free AI entries that include a provider config can be imported into ChatSpeed directly, like model providers.
 
 ## Before importing
 

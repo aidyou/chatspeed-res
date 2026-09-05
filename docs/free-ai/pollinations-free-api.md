@@ -38,7 +38,7 @@ Free models are usable without sign-up or API key; rate limits are loose but adj
 
 ## ChatSpeed Import
 
-This service is linked to model provider `pollinations`; import its config from the model provider list. Call entry points:
+This service includes a ChatSpeed provider config and can be imported directly. Call entry points:
 - Protocol: `openai`
 - Base URL: `https://text.pollinations.ai/openai`
 - Logo: ![Pollinations](https://pollinations.ai/favicon-32x32.png)

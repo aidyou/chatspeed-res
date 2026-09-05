@@ -57,13 +57,21 @@
           "zh-Hans": "每日刷新；各模型限速约 150–1,500 次/分钟"
         }
       }
-    ],
-    "modelProviderRef": "cloudflare",
-    "integrations": {
-      "chatSpeedModel": {
-        "providerRef": "cloudflare",
-        "importable": true
-      }
-    }
+    ]
+  },
+  "provider": {
+    "protocol": "openai",
+    "name": "Cloudflare",
+    "logo": "https://www.google.com/s2/favicons?domain=cloudflare.com&sz=64",
+    "desc": "Serverless edge inference with a daily Neurons-based free allocation.",
+    "baseUrl": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1",
+    "models": [],
+    "maxTokens": 2048,
+    "temperature": 0.6,
+    "topP": 0,
+    "topK": 0,
+    "documentationUrl": "https://developers.cloudflare.com/workers-ai/",
+    "modelListUrl": "https://developers.cloudflare.com/workers-ai/models/",
+    "keyApplyUrl": "https://dash.cloudflare.com/profile/api-tokens"
   }
 }
