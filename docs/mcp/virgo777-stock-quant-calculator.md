@@ -7,17 +7,17 @@ description: "Based on the Qwen3 inference engine, the stock quant agent calcula
 
 Based on the Qwen3 inference engine, the stock quant agent calculates the support levels for a specific stock when it is declining and provides recommendations. Detailed usage instructions can be obta…
 
-# 股票量化MCP服务使用手册
+# Stock Quant MCP Service User Manual
 
-## 📌 简介  
-**智能股票量化支撑点位计算服务（MCP）** 是基于Qwen3大模型推理能力与远程量化计算服务器构建的专业金融分析工具，提供以下核心功能：  
-- 目标股票支撑介入价位计算  
-- 标准化API接口与SSE流式数据传输  
+## Introduction
+The **intelligent stock quant support-level calculation service (MCP)** is a professional financial analysis tool built on the Qwen3 large-model reasoning capability and a remote quant calculation server. It provides the following core functions:
+- Calculation of target stock support entry prices
+- Standardized API interface and SSE streaming data transmission
 
 ---
 
-## ⚙️ 服务配置说明  
-在您的系统中添加以下JSON配置启用服务：  
+## Service Configuration
+Add the following JSON configuration to your system to enable the service:
 ```json
 {
     "mcpServers": {
@@ -29,39 +29,37 @@ Based on the Qwen3 inference engine, the stock quant agent calculates the suppor
 }
 ```
 ---
-# 🛠️ 直接使用方法：
-# 建议直接使用上方提供的SSE地址
+# Direct usage:
+# We recommend using the SSE address above directly
 
-| 工具名称             | 使用方法                    | 描述                            |
+| Tool | How to use | Description |
 |:-----------------|:------------------------|:------------------------------|
-| cookbook         | 这个socoo股票MCP服务怎么用？      | 返回socoo量化服务MCP的使用指南           |
-| get_support_quant_price | 帮我计算一下000858.SZ的支撑位是多少？ | 返回特定股票量化计算得到的支撑位（保守位，正常位，极限位） |
-| get-     | 请求...接口                 | 冗余量化计算接口服务                    |
+| cookbook | How do I use this socoo stock MCP service? | Returns the usage guide for the socoo quant service MCP |
+| get_support_quant_price | Help me calculate the support level for 000858.SZ. | Returns the quant-calculated support levels for a specific stock (conservative, normal, extreme) |
+| get- | Request... API | Redundant quant calculation API service |
 
+## FAQ
 
+Q1: How do I get detailed documentation?
 
-## ❓ 常见问题解答
-Q1：如何获取详细文档？
-
-输入示例：
+Sample input:
 ```text
-    股票量化MCP服务的使用方法有哪些？  (在安装MCP服务过多时候，最好带有socoo关键字)
-    这个socoo股票MCP服务怎么用？
-    这个socoo量化怎么用？
-    能否提供一份关于量化交易MCP服务的详细说明文档？
-    我想了解如何使用MCP服务进行股票数据分析。
-    MCP服务支持哪些函数调用，这些函数的功能是什么？
-    给我讲一下这个股票量化MCP服务的使用方法；
-    讲一下这个量化MCP的使用方法；
-    这个股票MCP服务怎么用？
-    这个股票量化怎么用？
+    What are the usage methods of the stock quant MCP service? (when many MCP services are installed, it is best to include the socoo keyword)
+    How do I use this socoo stock MCP service?
+    How do I use this socoo quant service?
+    Can you provide a detailed documentation of the quant trading MCP service?
+    I want to know how to use the MCP service for stock data analysis.
+    What function calls does the MCP service support, and what do these functions do?
+    Tell me how to use this stock quant MCP service;
+    Tell me how to use this quant MCP service;
+    How do I use this stock MCP service?
+    How do I use this stock quant tool?
 ```
 
+## Technical Support:
+Official docs: https://mcp-docs.socoo.xyz
 
-## 技术支持:
-官方文档：https://mcp-docs.socoo.xyz
-  
-开发者邮箱：virgo_wang@qq.com
+Developer email: virgo_wang@qq.com
 
 **Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

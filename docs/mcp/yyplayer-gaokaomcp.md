@@ -1,148 +1,148 @@
 ---
 title: "gaokaomcp"
-description: "高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度…"
+description: "Gaokao (College Entrance Exam) volunteer recommendation system. An intelligent volunteer-filling recommendation system based on historical admission data over the years, helping students choose school…"
 ---
 
 # gaokaomcp
 
-高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度…
+Gaokao (College Entrance Exam) volunteer recommendation system. An intelligent volunteer-filling recommendation system based on historical admission data over the years, helping students choose school…
 
-# 高考志愿推荐系统
+# Gaokao Volunteer Recommendation System
 
-基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。
+An intelligent volunteer-filling recommendation system based on historical college admission data, helping students choose schools and majors scientifically.
 
-## 功能特点
+## Features
 
-- **智能推荐**: 基于2024年及历年录取数据，结合专业热度趋势分析
-- **四类分层**: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空
-- **历史数据估算**: 无历史数据时自动用同校同批次同科类其他专业数据估算
-- **选科要求匹配**: 自动检查选科要求，确保符合报考条件
-- **专业趋势分析**: 分析专业热度变化趋势，提供更精准的推荐
+- **Smart recommendation**: based on 2024 and historical admission data, combined with major popularity trend analysis
+- **Four-tier classification**: automatically computes four recommendation types - Reach, Safety, Stable, and Other - to prevent clustering and gaps
+- **Historical data estimation**: when no historical data exists, automatically estimates using data from other majors at the same school, batch, and subject category
+- **Subject requirement matching**: automatically checks subject selection requirements to ensure eligibility
+- **Major trend analysis**: analyzes popularity trends of majors for more precise recommendations
 
-## 安装和运行
+## Installation and Running
 
-### 1. 安装依赖
+### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. 启动服务
+### 2. Start the service
 ```bash
 uvicorn main:app --reload
 ```
 
-### 3. 访问接口文档
-打开浏览器访问: http://127.0.0.1:8888/docs
+### 3. Access the API docs
+Open your browser and visit: http://127.0.0.1:8888/docs
 
-## API 接口
+## API Endpoints
 
-### 基础推荐
-- **POST** `/recommend` - 获取推荐列表
-- **POST** `/recommend/summary` - 获取推荐摘要
-- **POST** `/recommend/by-type` - 按推荐类型分组推荐
+### Basic recommendations
+- **POST** `/recommend` - get the recommendation list
+- **POST** `/recommend/summary` - get the recommendation summary
+- **POST** `/recommend/by-type` - recommendations grouped by type
 
-### 辅助接口
-- **GET** `/schools` - 获取所有院校列表
-- **GET** `/majors` - 获取所有专业列表
-- **GET** `/subjects` - 获取选科要求列表
+### Helper endpoints
+- **GET** `/schools` - get the list of all schools
+- **GET** `/majors` - get the list of all majors
+- **GET** `/subjects` - get the list of subject requirements
 
-## 使用示例
+## Usage Examples
 
-### 基础推荐请求
+### Basic recommendation request
 ```json
 {
   "user": {
     "score": 600,
     "rank": 1200,
-    "subjects": ["物理", "化学"],
-    "preferred_majors": ["计算机类", "电子信息类"],
-    "preferred_schools": ["北京大学", "清华大学"],
+    "subjects": ["Physics", "Chemistry"],
+    "preferred_majors": ["Computer Science", "Electronic Information"],
+    "preferred_schools": ["Peking University", "Tsinghua University"],
     "risk_preference": "balanced"
   },
   "top_n": 30
 }
 ```
 
-### 推荐结果字段说明
-- `yxmc`: 院校名称
-- `sbzydhmc`: 专业名称
-- `zszymc`: 专业代码
-- `zsjhs`: 招生计划数
-- `kskmyqzw`: 选科要求
-- `last_year_rank`: 2024年最低录取排名
-- `last_year_score`: 2024年最低录取分数
-- `trend`: 专业热度趋势 (rising/stable/declining)
-- `recommendation_type`: 推荐类型 (冲/保/稳/其他)
-- `recommendation_score`: 推荐评分
-- `pcmc`: 批次名称
-- `sfbz`: 学费标准
+### Recommendation result fields
+- `yxmc`: school name
+- `sbzydhmc`: major name
+- `zszymc`: major code
+- `zsjhs`: planned enrollment count
+- `kskmyqzw`: subject requirements
+- `last_year_rank`: lowest admission rank in 2024
+- `last_year_score`: lowest admission score in 2024
+- `trend`: major popularity trend (rising/stable/declining)
+- `recommendation_type`: recommendation type (Reach/Safety/Stable/Other)
+- `recommendation_score`: recommendation score
+- `pcmc`: batch name
+- `sfbz`: tuition standard
 
-## 推荐算法说明
+## Recommendation Algorithm
 
-### 1. 历史数据处理
-- 优先使用2024年录取数据
-- 无数据时用同校同批次同科类其他专业数据估算
-- 支持多年份趋势分析
+### 1. Historical data processing
+- Prioritizes 2024 admission data
+- When no data exists, estimates using other majors at the same school, batch, and subject category
+- Supports multi-year trend analysis
 
-### 2. 推荐类型计算
-- **保**: 排名优势明显（排名差距 > -1500），录取概率很高
-- **稳**: 排名接近（排名差距 -1500 到 -500），录取概率较高
-- **冲**: 排名差距较大（排名差距 > 1500），需要冲刺
-- **其他**: 其他情况或数据不足
+### 2. Recommendation type calculation
+- **Safe (Bao)**: student's rank has a clear advantage (rank gap > -1500), very high admission probability
+- **Stable (Wen)**: ranks are close (rank gap from -1500 to -500), high admission probability
+- **Reach (Chong)**: larger rank gap (rank gap > 1500), requires a stretch
+- **Other**: other situations or insufficient data
 
-### 3. 综合评分算法
-- 排名差距权重: 40%
-- 专业热度趋势: 20%
-- 招生人数: 20%
-- 推荐类型: 20%
+### 3. Composite scoring algorithm
+- Rank gap weight: 40%
+- Major popularity trend: 20%
+- Enrollment size: 20%
+- Recommendation type: 20%
 
-### 4. 选科要求匹配
-- 自动检查物理、化学、生物、政治等选科要求
-- 支持"不提科目要求"的专业
-- 确保考生选科符合报考条件
+### 4. Subject requirement matching
+- Automatically checks subject requirements for physics, chemistry, biology, politics, etc.
+- Supports majors with "no subject requirements"
+- Ensures the student's subject selection matches the eligibility criteria
 
-## 推荐类型说明
+## Recommendation Types
 
-### 保底院校（保）
-- 考生排名明显优于院校录取排名
-- 录取概率很高，建议作为保底选择
-- 适合作为志愿填报的最后几个选择
+### Safe schools (Bao)
+- Student's rank is clearly better than the school's admission rank
+- Very high admission probability, recommended as a safety option
+- Suitable as the last few choices in the volunteer list
 
-### 稳妥院校（稳）
-- 考生排名与院校录取排名接近
-- 录取概率较高，相对安全
-- 适合作为主要志愿选择
+### Stable schools (Wen)
+- Student's rank is close to the school's admission rank
+- High admission probability, relatively safe
+- Suitable as the main volunteer choices
 
-### 冲刺院校（冲）
-- 考生排名低于院校录取排名
-- 有一定风险，但有机会录取
-- 适合作为志愿填报的前几个选择
+### Reach schools (Chong)
+- Student's rank is lower than the school's admission rank
+- Some risk, but there is a chance of admission
+- Suitable as the first few choices in the volunteer list
 
-### 其他类型
-- 数据不足或特殊情况
-- 需要进一步了解和分析
+### Other types
+- Insufficient data or special situations
+- Requires further understanding and analysis
 
-## 注意事项
+## Notes
 
-1. 数据来源为甘肃省2025年招生计划，仅适用于甘肃省考生
-2. 推荐结果仅供参考，最终志愿填报请以官方政策为准
-3. 建议结合个人兴趣、职业规划等因素综合考虑
-4. 定期关注招生政策变化和院校信息更新
+1. The data source is the 2025 Gansu Province enrollment plan and applies to candidates in Gansu Province only
+2. Recommendations are for reference only; final volunteer filling should follow official policies
+3. Consider personal interests, career planning, and other factors comprehensively
+4. Monitor enrollment policy changes and school information updates regularly
 
-## 技术栈
+## Tech Stack
 
-- **后端**: FastAPI + Python
-- **数据处理**: Pandas + NumPy
-- **数据源**: Excel文件 (openpyxl)
-- **API文档**: Swagger UI (自动生成)
+- **Backend**: FastAPI + Python
+- **Data processing**: Pandas + NumPy
+- **Data source**: Excel files (openpyxl)
+- **API docs**: Swagger UI (auto-generated)
 
-## 开发计划
+## Development Plan
 
-- [ ] 添加前端界面
-- [ ] 支持更多省份数据
-- [ ] 增加专业就业前景分析
-- [ ] 支持个性化推荐偏好设置
-- [ ] 添加志愿填报模拟功能
+- [ ] Add a frontend interface
+- [ ] Support data for more provinces
+- [ ] Add major employment outlook analysis
+- [ ] Support personalized recommendation preferences
+- [ ] Add volunteer-filling simulation functionality
 
 **Official site: ** [https://www.modelscope.cn/studios/YYplayer/gaokaomcp](https://www.modelscope.cn/studios/YYplayer/gaokaomcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

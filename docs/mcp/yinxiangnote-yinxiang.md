@@ -1,50 +1,51 @@
 ---
 title: "mcp-server-yinxiang"
-description: "YXBJ-MCP 印象笔记 MCP 服务器，支持通过 Model Context Protocol 保存笔记到印象笔记"
+description: "YXBJ-MCP is an MCP (Model Context Protocol) server that lets AI assistants (such as Cursor) interact directly with Evernote (Yinxiang), enabling note creation and saving. It supports connection testin…"
 ---
 
 # mcp-server-yinxiang
 
-YXBJ-MCP 印象笔记 MCP 服务器，支持通过 Model Context Protocol 保存笔记到印象笔记
+YXBJ-MCP is an MCP (Model Context Protocol) server that lets AI assistants (such as Cursor) interact directly with Evernote (Yinxiang), enabling note creation and saving. It supports connection testin…
 
 # YXBJ-MCP
 
-> 印象笔记 MCP 服务，支持将文本内容保存到您的印象笔记
+> YXBJ-MCP is an MCP service that supports saving text content to your Evernote (Yinxiang)
 
-## 简介
+## Introduction
 
-YXBJ-MCP 是一个 MCP (Model Context Protocol) 服务，可以让您在与 AI 工具（如 Cursor、Claude、Cherry Studio等）聊天交互时，直接将内容保存到印象笔记。
+YXBJ-MCP is an MCP (Model Context Protocol) service that lets you save content directly to Evernote while chatting with AI tools such as Cursor, Claude, Cherry Studio, etc.
 
-## 功能特性
+## Features
 
-- ✅ **连接测试** - 测试 MCP 连接状态
-- ✅ **保存笔记** - 将内容保存到印象笔记
-- ✅ **Markdown 支持** - 支持丰富的文本格式
-- ✅ **环境变量配置** - 安全的认证方式
+- **Connection test** - test the MCP connection status
+- **Save notes** - save content to Evernote
+- **Markdown support** - supports rich text formats
+- **Environment variable configuration** - secure authentication
 
-## 安装和使用
+## Installation and Usage
 
-### 1. 获取授权Token
-- 访问印象笔记OAuth授权页面：https://app.yinxiang.com/third/mcp-oauth/
-- 登录印象笔记账号，并获取获取MCP服务授权Token
+### 1. Get an authorization token
+- Visit the Evernote OAuth authorization page: https://app.yinxiang.com/third/mcp-oauth/
+- Log in to your Evernote account and get the MCP service authorization token
 
-### 2. 使用 npx 安装
+### 2. Use npx to install
 
 ```bash
-# 直接运行，无需安装
+# Run directly, no install needed
 npx yxbj-mcp
 ```
-### 3. 环境配置
-在使用前，需要设置环境变量：
+
+### 3. Environment configuration
+Before using, set the environment variable:
 ```bash
-# 临时设置环境变量并运行
+# Set the environment variable temporarily and run
 YINXIANG_AUTH_TOKEN="your_token" npx yxbj-mcp
 ```
-> "your_token"替换为获取的授权Token
+> Replace "your_token" with the authorization token you obtained
 
-## 在 Cursor 中使用
+## Using in Cursor
 
-1. 在 Cursor 的 MCP 配置中添加：
+1. Add to Cursor's MCP configuration:
 ```json
 {
   "mcpServers": {
@@ -58,39 +59,39 @@ YINXIANG_AUTH_TOKEN="your_token" npx yxbj-mcp
   }
 }
 ```
-> "your_token_here"替换为获取的授权Token
-2. 重启 Cursor，即可在 AI 助手中使用印象笔记功能
+> Replace "your_token_here" with the authorization token you obtained
+2. Restart Cursor to use Evernote features in the AI assistant
 
-## 可用工具
+## Available Tools
 
 ### test-connection
-测试 MCP 连接状态，返回系统信息
+Tests the MCP connection status and returns system info
 
 ### save-note
-保存笔记到印象笔记
-- `title`: 笔记标题
-- `content`: 笔记内容（支持 Markdown）
+Saves a note to Evernote
+- `title`: note title
+- `content`: note content (supports Markdown)
 
-## 开发
+## Development
 
 ```bash
-# 安装依赖
+# Install dependencies
 npm install
 
-# 开发模式（TypeScript）
+# Development mode (TypeScript)
 npm run build
 
-# 测试
+# Tests
 npm test
 ```
 
-## 许可证
+## License
 
 ISC
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
 **Official site: ** [https://github.com/yinxiang-team/YXBJ-MCP](https://github.com/yinxiang-team/YXBJ-MCP)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

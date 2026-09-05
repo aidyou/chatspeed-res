@@ -12,74 +12,74 @@ A sketching server based on MCP (Model Context Protocol) that can convert ordina
 [![PyPI version](/mcp-assets/60b2ff0fafaa82cb0d264614759d0905.svg)](https://badge.fury.io/py/undoom-sketch-mcp)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-一个基于 MCP (Model Context Protocol) 的图片素描化服务器，可以将普通图片转换为多种风格的素描效果。支持单张图片转换、批量处理，以及多种自定义参数调节。
+An image sketch-ification server based on the MCP (Model Context Protocol) that converts ordinary images into sketch effects in multiple styles. It supports single-image conversion, batch processing, and various custom parameter adjustments.
 
-## 🌟 在线体验
+## Online Demo
 
-项目已发布到 PyPI，可以直接使用：
+The project is published on PyPI and can be used directly:
 - **PyPI**: [undoom-sketch-mcp](https://pypi.org/project/undoom-sketch-mcp/)
 - **GitHub**: [undoom-sketch-mcp](https://github.com/kk520879/undoom-sketch-mcp)
 
-## 功能特性
+## Features
 
-- 🎨 **多种素描风格**：支持经典、详细、柔和三种不同的素描风格
-- 📁 **批量处理**：支持批量转换文件夹中的所有图片
-- 🖼️ **多格式支持**：支持 JPG、PNG、BMP、GIF、TIFF、WEBP 等常见图片格式
-- 🌏 **中文路径支持**：完美支持中文文件名和路径
-- ⚙️ **参数可调**：可自定义模糊程度和对比度参数
-- 📊 **图片信息查看**：提供图片基本信息和推荐参数
+- **Multiple sketch styles**: supports three sketch styles - classic, detailed, and soft
+- **Batch processing**: supports batch conversion of all images in a folder
+- **Multi-format support**: supports common image formats including JPG, PNG, BMP, GIF, TIFF, WEBP
+- **Chinese path support**: full support for Chinese file names and paths
+- **Adjustable parameters**: custom blur and contrast parameters
+- **Image info viewer**: provides basic image information and recommended parameters
 
-## 安装要求
+## Requirements
 
 - Python >= 3.13
-- 依赖包：
+- Dependencies:
   - mcp[cli] >= 1.12.3
   - opencv-python >= 4.8.0
   - numpy >= 1.24.0
 
-## 🚀 快速开始
+## Quick Start
 
-### 方法一：直接使用 uvx（推荐）
+### Method 1: Use uvx directly (recommended)
 
 ```bash
-# 使用国内镜像源（推荐）
+# Use a domestic mirror (recommended)
 uvx --index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-sketch-mcp
 
-# 或使用默认源
+# Or use the default source
 uvx undoom-sketch-mcp
 ```
 
-### 方法二：通过 PyPI 安装
+### Method 2: Install via PyPI
 
 ```bash
-# 安装包
+# Install the package
 pip install undoom-sketch-mcp
 
-# 运行服务器
+# Run the server
 python -m undoom_sketch_mcp
 ```
 
-### 方法三：从源码安装
+### Method 3: Install from source
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/kk520879/undoom-sketch-mcp.git
 cd undoom-sketch-mcp
 
-# 使用 uv 安装（推荐）
+# Install with uv (recommended)
 uv sync
 
-# 或使用 pip
+# Or with pip
 pip install -e .
 ```
 
-## 📖 使用方法
+## Usage
 
-### 作为 MCP 服务器使用
+### As an MCP server
 
-#### 1. 配置 MCP 客户端
+#### 1. Configure the MCP client
 
-创建 `mcp_config.json` 配置文件：
+Create an `mcp_config.json` config file:
 
 ```json
 {
@@ -96,21 +96,21 @@ pip install -e .
 }
 ```
 
-#### 2. 直接运行服务器
+#### 2. Run the server directly
 
 ```bash
-# 启动 MCP 服务器
+# Start the MCP server
 python -m undoom_sketch_mcp
 
-# 或使用 uvx
+# Or use uvx
 uvx undoom-sketch-mcp
 ```
 
-### 🛠️ 可用工具
+### Available tools
 
-#### 1. convert_image_to_sketch - 单张图片转换
+#### 1. convert_image_to_sketch - single image conversion
 
-**MCP 调用示例：**
+**MCP call example:**
 ```json
 {
   "tool": "convert_image_to_sketch",
@@ -123,7 +123,7 @@ uvx undoom-sketch-mcp
 }
 ```
 
-**Python 直接调用：**
+**Direct Python call:**
 ```python
 from undoom_sketch_mcp.server import convert_image_to_sketch
 
@@ -136,7 +136,7 @@ result = convert_image_to_sketch(
 print(result)
 ```
 
-#### 2. batch_convert_images - 批量图片转换
+#### 2. batch_convert_images - batch image conversion
 
 ```python
 from undoom_sketch_mcp.server import batch_convert_images
@@ -150,7 +150,7 @@ result = batch_convert_images(
 print(result)
 ```
 
-#### 3. get_image_info - 获取图片信息
+#### 3. get_image_info - get image info
 
 ```python
 from undoom_sketch_mcp.server import get_image_info
@@ -159,68 +159,68 @@ info = get_image_info("D:/photos/image.jpg")
 print(info)
 ```
 
-### 素描风格说明
+### Sketch style description
 
-- **classic**：经典素描风格，平衡的线条和对比度
-- **detailed**：详细素描风格，更清晰的线条和细节
-- **soft**：柔和素描风格，更柔和的效果，适合风景图
+- **classic**: classic sketch style, balanced lines and contrast
+- **detailed**: detailed sketch style, clearer lines and details
+- **soft**: soft sketch style, softer effect, good for landscapes
 
-### 参数说明
+### Parameter description
 
-- `image_path`：图片文件的完整路径（必需）
-- `blur_size`：高斯模糊核大小（3-101，必须为奇数，默认21）
-- `contrast`：对比度参数（50-500，默认256.0）
-- `style`：素描风格（classic/detailed/soft，默认classic）
+- `image_path`: full path to the image file (required)
+- `blur_size`: Gaussian blur kernel size (3-101, must be odd, default 21)
+- `contrast`: contrast parameter (50-500, default 256.0)
+- `style`: sketch style (classic/detailed/soft, default classic)
 
-### 参数建议
+### Parameter suggestions
 
-- **大图片**（>200万像素）：blur_size=31-51，contrast=200-300
-- **中等图片**（50万-200万像素）：blur_size=21-31，contrast=256
-- **小图片**（ 10MP | 30秒+ | blur_size=41-51 |
+- **Large images** (>2MP): blur_size=31-51, contrast=200-300
+- **Medium images** (0.5MP-2MP): blur_size=21-31, contrast=256
+- **Small images** (<0.5MP): blur_size=11-21, contrast=256-300
 
-## 🤝 贡献指南
+## Contributing Guide
 
-我们欢迎各种形式的贡献！
+We welcome all forms of contribution!
 
-### 如何贡献
+### How to contribute
 
-1. Fork 这个仓库
-2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 Pull Request
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### 报告问题
+### Reporting issues
 
-如果你发现了 bug 或有功能建议，请在 [GitHub Issues](https://github.com/kk520879/undoom-sketch-mcp/issues) 中提交。
+If you find a bug or have a feature suggestion, submit it in [GitHub Issues](https://github.com/kk520879/undoom-sketch-mcp/issues).
 
-### 开发环境设置
+### Development environment setup
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/kk520879/undoom-sketch-mcp.git
 cd undoom-sketch-mcp
 
-# 安装开发依赖
+# Install development dependencies
 uv sync --dev
 
-# 运行测试
+# Run tests
 python -m pytest
 ```
 
-## 📄 许可证
+## License
 
-本项目采用 [MIT 许可证](https://github.com/kk520879/undoom-sketch-mcp/blob/HEAD/LICENSE)。
+This project is licensed under the [MIT License](https://github.com/kk520879/undoom-sketch-mcp/blob/HEAD/LICENSE).
 
-## 🙏 致谢
+## Acknowledgments
 
-- [OpenCV](https://opencv.org/) - 强大的计算机视觉库
-- [MCP](https://modelcontextprotocol.io/) - 模型上下文协议
-- [FastMCP](https://github.com/jlowin/fastmcp) - 快速 MCP 实现
+- [OpenCV](https://opencv.org/) - the powerful computer vision library
+- [MCP](https://modelcontextprotocol.io/) - the Model Context Protocol
+- [FastMCP](https://github.com/jlowin/fastmcp) - the fast MCP implementation
 
 ---
 
-**如果这个项目对你有帮助，请给它一个 ⭐ Star！**
+**If this project helps you, please give it a Star!**
 
 **Official site: ** [https://github.com/kk520879/undoom-sketch-mcp](https://github.com/kk520879/undoom-sketch-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

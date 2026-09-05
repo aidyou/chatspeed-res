@@ -1,43 +1,43 @@
 ---
 title: "Windows-MCP.Net"
-description: "Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - W…"
+description: "Windows MCP.Net is a .NET-based Windows desktop automation MCP (Model Context Protocol) server that gives AI assistants the ability to interact with the Windows desktop environment. Table of Contents…"
 ---
 
 # Windows-MCP.Net
 
-Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - W…
+Windows MCP.Net is a .NET-based Windows desktop automation MCP (Model Context Protocol) server that gives AI assistants the ability to interact with the Windows desktop environment. Table of Contents…
 
 # Windows MCP.Net
 
-一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。
+A .NET-based Windows desktop automation MCP (Model Context Protocol) server that gives AI assistants the ability to interact with the Windows desktop environment.
 
-## 📋 目录
+## Table of Contents
 
-- [功能特性](#-功能特性)
-- [使用场景](#-使用场景)
-- [演示截图](#-演示截图)
-- [技术栈](#️-技术栈)
-- [API文档](#-api-文档)
-- [项目结构](#️-项目结构)
-- [功能扩展建议](#-功能扩展建议)
-- [配置](#-配置)
-- [贡献指南](#-贡献指南)
-- [更新日志](#-更新日志)
-- [支持](#-支持)
+- [Features](#features)
+- [Use Cases](#use-cases)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [API Docs](#api-docs)
+- [Project Structure](#project-structure)
+- [Feature Extension Ideas](#feature-extension-ideas)
+- [Configuration](#configuration)
+- [Contribution Guide](#contribution-guide)
+- [Changelog](#changelog)
+- [Support](#support)
 
-## 🚀 快速开始
+## Quick Start
 
-### 前置要求
-- Windows 操作系统
-- .NET 10.0 Runtime 或更高版本
+### Prerequisites
+- Windows operating system
+- .NET 10.0 Runtime or later
 
-**重要提示**: 本项目需要 .NET 10 才能运行，请先确保你的本地安装了 .NET 10。如果尚未安装，请访问 [.NET 10 下载页面](https://dotnet.microsoft.com/zh-cn/download/dotnet/10.0) 进行下载和安装。
+**Important**: This project requires .NET 10 to run. Please make sure .NET 10 is installed locally first. If it is not installed yet, visit the [.NET 10 download page](https://dotnet.microsoft.com/zh-cn/download/dotnet/10.0) to download and install it.
 
-### 1. MCP 客户端配置
+### 1. MCP Client Configuration
 
-在您的 MCP 客户端配置中添加以下配置：
+Add the following configuration to your MCP client:
 
-#### 使用全局安装的工具（推荐）
+#### Using a globally installed tool (recommended)
 ```
 {
     "mcpServers": {
@@ -51,11 +51,11 @@ Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context
 }
 ```
 
-#### 使用项目源码直接运行（开发模式）
+#### Running directly from the project source (development mode)
 
-**方式一：工作区配置**
+**Option 1: Workspace configuration**
 
-在项目根目录创建 `.vscode/mcp.json` 文件：
+Create a `.vscode/mcp.json` file in the project root:
 ```
 {
   "mcpServers": {
@@ -70,9 +70,9 @@ Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context
 }
 ```
 
-**方式二：用户配置**
+**Option 2: User configuration**
 
-通过VS Code命令面板运行 `MCP: Open User Configuration`，添加：
+Run `MCP: Open User Configuration` from the VS Code command palette and add:
 ```
 {
   "mcpServers": {
@@ -86,395 +86,396 @@ Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context
 }
 ```
 
-> **注意**: 使用项目源码方式便于开发调试，修改代码后无需重新安装即可生效。VS Code 1.102+ 版本支持MCP服务器的自动发现和管理。
+> **Note**: Running from source is convenient for development and debugging; changes take effect without reinstalling. VS Code 1.102+ supports automatic discovery and management of MCP servers.
 
-### 2. 安装和运行
+### 2. Installation and Running
 
-#### 方式一：全局安装（推荐）
+#### Option 1: Global install (recommended)
 ```
 dotnet tool install --global WindowsMCP.Net
 ```
 
-#### 方式二：从源码运行
+#### Option 2: Run from source
 ```
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/AIDotNet/Windows-MCP.Net.git
 cd Windows-MCP.Net
 
-# 构建项目
+# Build the project
 dotnet build
 
-# 运行项目
+# Run the project
 dotnet run --project src/Windows-MCP.Net.csproj
 ```
 
-### 3. 开始使用
-配置完成后，重启您的MCP客户端，即可开始使用Windows桌面自动化功能！
+### 3. Getting Started
+After configuration, restart your MCP client and start using Windows desktop automation!
 
-## 🚀 功能特性
+## Features
 
-### 核心功能
-- **应用程序启动**: 通过名称从开始菜单启动应用程序
-- **PowerShell 集成**: 执行 PowerShell 命令并返回结果
-- **桌面状态捕获**: 获取当前桌面状态，包括活动应用、UI 元素等
-- **剪贴板操作**: 复制和粘贴文本内容
-- **鼠标操作**: 点击、拖拽、移动鼠标光标
-- **键盘操作**: 文本输入、按键操作、快捷键组合
-- **窗口管理**: 调整窗口大小、位置，切换应用程序
-- **滚动操作**: 在指定坐标进行滚动操作
-- **网页抓取**: 获取网页内容并转换为 Markdown 格式
-- **浏览器操作**: 在默认浏览器中打开指定URL
-- **截图功能**: 截取屏幕并保存到临时目录
-- **文件系统操作**: 文件和目录的创建、读取、写入、复制、移动、删除等操作
-- **OCR文字识别**: 从屏幕或指定区域提取文字，查找文字位置
-- **系统控制**: 调节屏幕亮度、系统音量、屏幕分辨率等系统设置
-- **等待控制**: 在操作间添加延迟
+### Core Features
+- **App Launch**: Launch applications from the Start menu by name
+- **PowerShell Integration**: Execute PowerShell commands and return results
+- **Desktop State Capture**: Get the current desktop state, including active apps, UI elements, etc.
+- **Clipboard Operations**: Copy and paste text content
+- **Mouse Operations**: Click, drag, and move the mouse cursor
+- **Keyboard Operations**: Text input, key presses, and shortcut combinations
+- **Window Management**: Resize and reposition windows, switch between applications
+- **Scrolling**: Scroll at specified coordinates
+- **Web Scraping**: Fetch webpage content and convert it to Markdown
+- **Browser Operations**: Open a URL in the default browser
+- **Screenshots**: Capture the screen and save to a temporary directory
+- **File System Operations**: Create, read, write, copy, move, and delete files and directories
+- **OCR Text Recognition**: Extract text from the screen or a selected region, and locate text
+- **System Control**: Adjust screen brightness, system volume, screen resolution, and other system settings
+- **Wait Control**: Add delays between operations
 
-### 支持的工具
+### Supported Tools
 
-## Desktop 桌面操作工具
+## Desktop Tools
 
-| 工具名称 | 功能描述 |
+| Tool | Description |
 |---------|----------|
-| **LaunchTool** | 从开始菜单启动应用程序 |
-| **PowershellTool** | 执行 PowerShell 命令并返回状态码 |
-| **StateTool** | 捕获桌面状态信息，包括应用程序和UI元素 |
-| **ClipboardTool** | 剪贴板复制和粘贴操作 |
-| **ClickTool** | 鼠标点击操作（支持左键、右键、中键，单击、双击、三击） |
-| **TypeTool** | 在指定坐标输入文本，支持清除和回车 |
-| **ResizeTool** | 调整窗口大小和位置 |
-| **SwitchTool** | 切换到指定应用程序窗口 |
-| **ScrollTool** | 在指定坐标或当前鼠标位置滚动 |
-| **DragTool** | 从源坐标拖拽到目标坐标 |
-| **MoveTool** | 移动鼠标光标到指定坐标 |
-| **ShortcutTool** | 执行键盘快捷键组合 |
-| **KeyTool** | 按下单个键盘按键 |
-| **WaitTool** | 暂停执行指定秒数 |
-| **ScrapeTool** | 抓取网页内容并转换为Markdown格式 |
-| **ScreenshotTool** | 截取屏幕并保存到临时目录，返回图片路径 |
-| **OpenBrowserTool** | 在默认浏览器中打开指定URL |
+| **LaunchTool** | Launch an application from the Start menu |
+| **PowershellTool** | Execute PowerShell commands and return the exit code |
+| **StateTool** | Capture desktop state information, including apps and UI elements |
+| **ClipboardTool** | Copy and paste to/from the clipboard |
+| **ClickTool** | Mouse clicks (left, right, middle; single, double, triple) |
+| **TypeTool** | Type text at specified coordinates, with clear and Enter support |
+| **ResizeTool** | Resize and reposition windows |
+| **SwitchTool** | Switch to a specified application window |
+| **ScrollTool** | Scroll at specified coordinates or the current mouse position |
+| **DragTool** | Drag from source coordinates to target coordinates |
+| **MoveTool** | Move the mouse cursor to specified coordinates |
+| **ShortcutTool** | Execute keyboard shortcut combinations |
+| **KeyTool** | Press a single keyboard key |
+| **WaitTool** | Pause for a specified number of seconds |
+| **ScrapeTool** | Scrape webpage content and convert it to Markdown |
+| **ScreenshotTool** | Capture the screen, save to a temporary directory, and return the image path |
+| **OpenBrowserTool** | Open a specified URL in the default browser |
 
-## FileSystem 文件系统工具
+## FileSystem Tools
 
-| 工具名称 | 功能描述 |
+| Tool | Description |
 |---------|----------|
-| **ReadFileTool** | 读取指定文件的内容 |
-| **WriteFileTool** | 向文件写入内容 |
-| **CreateFileTool** | 创建新文件并写入指定内容 |
-| **CopyFileTool** | 复制文件到指定位置 |
-| **MoveFileTool** | 移动或重命名文件 |
-| **DeleteFileTool** | 删除指定文件 |
-| **GetFileInfoTool** | 获取文件信息（大小、创建时间等） |
-| **ListDirectoryTool** | 列出目录中的文件和子目录 |
-| **CreateDirectoryTool** | 创建新目录 |
-| **DeleteDirectoryTool** | 删除目录及其内容 |
-| **SearchFilesTool** | 在指定目录中搜索文件 |
+| **ReadFileTool** | Read the content of a specified file |
+| **WriteFileTool** | Write content to a file |
+| **CreateFileTool** | Create a new file and write specified content |
+| **CopyFileTool** | Copy a file to a specified location |
+| **MoveFileTool** | Move or rename a file |
+| **DeleteFileTool** | Delete a specified file |
+| **GetFileInfoTool** | Get file information (size, creation time, etc.) |
+| **ListDirectoryTool** | List files and subdirectories in a directory |
+| **CreateDirectoryTool** | Create a new directory |
+| **DeleteDirectoryTool** | Delete a directory and its contents |
+| **SearchFilesTool** | Search for files in a specified directory |
 
-## OCR 图像识别工具
+## OCR Tools
 
-| 工具名称 | 功能描述 |
+| Tool | Description |
 |---------|----------|
-| **ExtractTextFromScreenTool** | 使用OCR从整个屏幕提取文字 |
-| **ExtractTextFromRegionTool** | 使用OCR从屏幕指定区域提取文字 |
-| **FindTextOnScreenTool** | 使用OCR在屏幕上查找指定文字 |
-| **GetTextCoordinatesTool** | 获取屏幕上文字的坐标位置 |
-| **ExtractTextFromFileTool** | 使用OCR从图像文件中提取文字 |
+| **ExtractTextFromScreenTool** | Extract text from the entire screen using OCR |
+| **ExtractTextFromRegionTool** | Extract text from a specified screen region using OCR |
+| **FindTextOnScreenTool** | Locate specified text on screen using OCR |
+| **GetTextCoordinatesTool** | Get the coordinates of text on screen |
+| **ExtractTextFromFileTool** | Extract text from an image file using OCR |
 
-## UI元素识别工具
+## UI Element Tools
 
-| 工具名称 | 功能描述 |
+| Tool | Description |
 |---------|----------|
-| **FindElementByTextTool** | 通过文本内容查找UI元素 |
-| **FindElementByClassNameTool** | 通过类名查找UI元素 |
-| **FindElementByAutomationIdTool** | 通过自动化ID查找UI元素 |
-| **GetElementPropertiesTool** | 获取指定坐标元素的属性信息 |
-| **WaitForElementTool** | 等待指定元素出现在界面上 |
+| **FindElementByTextTool** | Find a UI element by its text content |
+| **FindElementByClassNameTool** | Find a UI element by its class name |
+| **FindElementByAutomationIdTool** | Find a UI element by its automation ID |
+| **GetElementPropertiesTool** | Get property information for the element at specified coordinates |
+| **WaitForElementTool** | Wait for a specified element to appear on screen |
 
-## SystemControl 系统控制工具
+## SystemControl Tools
 
-| 工具名称 | 功能描述 |
+| Tool | Description |
 |---------|----------|
-| **BrightnessTool** | 调节屏幕亮度，支持增减和设置具体百分比 |
-| **VolumeTool** | 调节系统音量，支持增减和设置具体百分比 |
-| **ResolutionTool** | 设置屏幕分辨率（高、中、低三档） |
+| **BrightnessTool** | Adjust screen brightness, supporting increments and exact percentages |
+| **VolumeTool** | Adjust system volume, supporting increments and exact percentages |
+| **ResolutionTool** | Set screen resolution (high, medium, low) |
 
-## 💡 使用场景
+## Use Cases
 
-### 🤖 AI助手桌面自动化
-- **智能客服机器人**: AI助手可以自动操作Windows应用程序，帮助用户完成复杂的桌面任务
-- **语音助手集成**: 结合语音识别，通过语音指令控制桌面应用程序
-- **智能办公助手**: AI助手自动处理日常办公任务，如文档整理、邮件发送等
+### AI Assistant Desktop Automation
+- **Smart customer service bots**: AI assistants can operate Windows applications automatically to help users complete complex desktop tasks
+- **Voice assistant integration**: Control desktop applications via voice commands combined with speech recognition
+- **Smart office assistant**: AI assistants handle routine office tasks automatically, such as document organization and email sending
 
-### 📊 办公自动化
-- **数据录入自动化**: 自动从网页或文档中提取数据并录入到Excel或其他应用程序
-- **报告生成**: 自动收集系统信息、截图，生成格式化的报告文档
-- **批量文件处理**: 自动整理、重命名、分类大量文件和文档
-- **邮件自动化**: 自动发送定期报告、通知邮件
+### Office Automation
+- **Automated data entry**: Automatically extract data from web pages or documents and enter it into Excel or other applications
+- **Report generation**: Automatically collect system information and screenshots to produce formatted reports
+- **Batch file processing**: Organize, rename, and categorize large numbers of files and documents automatically
+- **Email automation**: Automatically send periodic reports and notification emails
 
-### 🧪 软件测试与质量保证
-- **UI自动化测试**: 模拟用户操作，自动测试桌面应用程序的功能
-- **回归测试**: 自动执行重复性测试用例，确保软件质量
-- **性能监控**: 自动收集应用程序性能数据，生成监控报告
-- **Bug复现**: 自动重现用户报告的问题，辅助开发人员调试
+### Software Testing and QA
+- **UI automation testing**: Simulate user operations to test desktop application features automatically
+- **Regression testing**: Automatically execute repetitive test cases to ensure software quality
+- **Performance monitoring**: Automatically collect application performance data and generate monitoring reports
+- **Bug reproduction**: Automatically reproduce reported issues to assist developers in debugging
 
-### 🎯 业务流程自动化
-- **客户服务**: 自动处理客户请求，更新CRM系统
-- **订单处理**: 自动从多个渠道收集订单信息并录入系统
-- **库存管理**: 自动更新库存数据，生成补货提醒
-- **财务对账**: 自动对比不同系统的财务数据，标记差异
+### Business Process Automation
+- **Customer service**: Automatically handle customer requests and update CRM systems
+- **Order processing**: Automatically collect order information from multiple channels and enter it into systems
+- **Inventory management**: Automatically update inventory data and generate restock reminders
+- **Financial reconciliation**: Automatically compare financial data across systems and flag discrepancies
 
-### 🔍 数据采集与分析
-- **网页数据抓取**: 自动从多个网站收集产品价格、新闻等信息
-- **竞品分析**: 定期收集竞争对手的产品信息和价格数据
-- **市场调研**: 自动收集和整理市场数据，生成分析报告
-- **社交媒体监控**: 监控品牌提及，自动收集用户反馈
+### Data Collection and Analysis
+- **Web data scraping**: Automatically collect product prices, news, and other information from multiple websites
+- **Competitor analysis**: Periodically collect competitor product information and pricing
+- **Market research**: Automatically collect and organize market data to generate analysis reports
+- **Social media monitoring**: Monitor brand mentions and automatically collect user feedback
 
-### 🎮 游戏与娱乐
-- **游戏辅助**: 自动执行重复性游戏任务（请遵守游戏规则）
-- **直播助手**: 自动管理直播软件，切换场景，发送消息
-- **媒体管理**: 自动整理音乐、视频文件，更新媒体库
+### Gaming and Entertainment
+- **Game assistance**: Automate repetitive in-game tasks (please follow game rules)
+- **Streaming assistant**: Automatically manage streaming software, switch scenes, and send messages
+- **Media management**: Automatically organize music and video files and update media libraries
 
-### 🏥 医疗与健康
-- **病历录入**: 自动将纸质病历转换为电子格式
-- **医疗图像分析**: 结合OCR技术，自动提取医疗报告中的关键信息
-- **预约管理**: 自动处理患者预约请求，更新医院管理系统
+### Healthcare
+- **Medical record entry**: Automatically convert paper medical records to electronic format
+- **Medical image analysis**: Automatically extract key information from medical reports using OCR
+- **Appointment management**: Automatically handle patient appointment requests and update hospital systems
 
-### 🏫 教育与培训
-- **在线考试**: 自动批改选择题，生成成绩报告
-- **课程管理**: 自动更新课程信息，发送通知给学生
-- **学习进度跟踪**: 自动记录学生的学习活动，生成进度报告
+### Education and Training
+- **Online exams**: Automatically grade multiple-choice questions and generate score reports
+- **Course management**: Automatically update course information and notify students
+- **Learning progress tracking**: Automatically record student activity and generate progress reports
 
-### 🏭 制造业与物流
-- **生产数据采集**: 自动从生产设备收集数据，更新ERP系统
-- **质量检测**: 结合图像识别，自动检测产品质量
-- **物流跟踪**: 自动更新货物状态，发送跟踪信息给客户
+### Manufacturing and Logistics
+- **Production data collection**: Automatically collect data from production equipment and update ERP systems
+- **Quality inspection**: Detect product quality automatically using image recognition
+- **Logistics tracking**: Automatically update shipment status and send tracking information to customers
 
-### 🔧 系统运维
-- **服务器监控**: 自动检查服务器状态，生成监控报告
-- **日志分析**: 自动分析系统日志，识别异常模式
-- **备份管理**: 自动执行数据备份，验证备份完整性
-- **软件部署**: 自动化软件安装和配置流程
+### System Operations
+- **Server monitoring**: Automatically check server status and generate monitoring reports
+- **Log analysis**: Automatically analyze system logs to identify abnormal patterns
+- **Backup management**: Automatically execute data backups and verify backup integrity
+- **Software deployment**: Automate software installation and configuration processes
 
-## 🛠️ 技术栈
+## Tech Stack
 
-- **.NET 10.0**: 基于最新的 .NET 框架
-- **Model Context Protocol**: 使用 MCP 协议进行通信
-- **Microsoft.Extensions.Hosting**: 应用程序托管框架
-- **Serilog**: 结构化日志记录
-- **HtmlAgilityPack**: HTML 解析和网页抓取
-- **ReverseMarkdown**: HTML 到 Markdown 转换
+- **.NET 10.0**: Built on the latest .NET framework
+- **Model Context Protocol**: Uses the MCP protocol for communication
+- **Microsoft.Extensions.Hosting**: Application hosting framework
+- **Serilog**: Structured logging
+- **HtmlAgilityPack**: HTML parsing and web scraping
+- **ReverseMarkdown**: HTML to Markdown conversion
 
-## 🏗️ 项目结构
+## Project Structure
 
 ```
 src/
-├── Windows-MCP.Net/         # 主项目
-│   ├── .mcp/                # MCP 服务器配置
-│   │   └── server.json      # 服务器配置文件
-│   ├── Exceptions/          # 自定义异常类（待扩展）
-│   ├── Interface/           # 服务接口定义
-│   │   ├── IDesktopService.cs   # 桌面服务接口
-│   │   ├── IFileSystemService.cs # 文件系统服务接口
-│   │   └── IOcrService.cs       # OCR服务接口
-│   ├── Models/              # 数据模型（待扩展）
-│   ├── Prompts/             # 提示模板（待扩展）
-│   ├── Services/            # 核心服务实现
-│   │   ├── DesktopService.cs    # 桌面操作服务
-│   │   ├── FileSystemService.cs # 文件系统服务
-│   │   └── OcrService.cs        # OCR服务
-│   ├── Tools/               # MCP 工具实现
-│   │   ├── Desktop/             # 桌面操作工具
-│   │   │   ├── ClickTool.cs         # 点击工具
-│   │   │   ├── ClipboardTool.cs     # 剪贴板工具
-│   │   │   ├── DragTool.cs          # 拖拽工具
-│   │   │   ├── GetWindowInfoTool.cs # 窗口信息工具
-│   │   │   ├── KeyTool.cs           # 按键工具
-│   │   │   ├── LaunchTool.cs        # 启动应用工具
-│   │   │   ├── MoveTool.cs          # 鼠标移动工具
-│   │   │   ├── OpenBrowserTool.cs   # 浏览器打开工具
-│   │   │   ├── PowershellTool.cs    # PowerShell执行工具
-│   │   │   ├── ResizeTool.cs        # 窗口调整工具
-│   │   │   ├── ScrapeTool.cs        # 网页抓取工具
-│   │   │   ├── ScreenshotTool.cs    # 截图工具
-│   │   │   ├── ScrollTool.cs        # 滚动工具
-│   │   │   ├── ShortcutTool.cs      # 快捷键工具
-│   │   │   ├── StateTool.cs         # 桌面状态工具
-│   │   │   ├── SwitchTool.cs        # 应用切换工具
-│   │   │   ├── TypeTool.cs          # 文本输入工具
-│   │   │   ├── UIElementTool.cs     # UI元素操作工具
-│   │   │   └── WaitTool.cs          # 等待工具
-│   │   ├── FileSystem/          # 文件系统工具
-│   │   │   ├── CopyFileTool.cs      # 文件复制工具
-│   │   │   ├── CreateDirectoryTool.cs # 目录创建工具
-│   │   │   ├── CreateFileTool.cs    # 文件创建工具
-│   │   │   ├── DeleteDirectoryTool.cs # 目录删除工具
-│   │   │   ├── DeleteFileTool.cs    # 文件删除工具
-│   │   │   ├── GetFileInfoTool.cs   # 文件信息工具
-│   │   │   ├── ListDirectoryTool.cs # 目录列表工具
-│   │   │   ├── MoveFileTool.cs      # 文件移动工具
-│   │   │   ├── ReadFileTool.cs      # 文件读取工具
-│   │   │   ├── SearchFilesTool.cs   # 文件搜索工具
-│   │   │   └── WriteFileTool.cs     # 文件写入工具
-│   │   └── OCR/                 # OCR识别工具
-│   │       ├── ExtractTextFromRegionTool.cs # 区域文本提取工具
-│   │       ├── ExtractTextFromScreenTool.cs # 屏幕文本提取工具
-│   │       ├── FindTextOnScreenTool.cs      # 屏幕文本查找工具
-│   │       └── GetTextCoordinatesTool.cs    # 文本坐标获取工具
-│   ├── Program.cs           # 程序入口点
-│   └── Windows-MCP.Net.csproj   # 项目文件
-└── Windows-MCP.Net.Test/    # 测试项目
-    ├── DesktopToolsExtendedTest.cs  # 桌面工具扩展测试
-    ├── FileSystemToolsExtendedTest.cs # 文件系统工具扩展测试
-    ├── OCRToolsExtendedTest.cs      # OCR工具扩展测试
-    ├── ToolTest.cs                  # 工具基础测试
-    ├── UIElementToolTest.cs         # UI元素工具测试
-    └── Windows-MCP.Net.Test.csproj  # 测试项目文件
+├── Windows-MCP.Net/         # Main project
+│   ├── .mcp/                # MCP server configuration
+│   │   └── server.json      # Server configuration file
+│   ├── Exceptions/          # Custom exception classes (to be extended)
+│   ├── Interface/           # Service interface definitions
+│   │   ├── IDesktopService.cs   # Desktop service interface
+│   │   ├── IFileSystemService.cs # File system service interface
+│   │   └── IOcrService.cs       # OCR service interface
+│   ├── Models/              # Data models (to be extended)
+│   ├── Prompts/             # Prompt templates (to be extended)
+│   ├── Services/            # Core service implementations
+│   │   ├── DesktopService.cs    # Desktop operations service
+│   │   ├── FileSystemService.cs # File system service
+│   │   └── OcrService.cs        # OCR service
+│   ├── Tools/               # MCP tool implementations
+│   │   ├── Desktop/             # Desktop operation tools
+│   │   │   ├── ClickTool.cs         # Click tool
+│   │   │   ├── ClipboardTool.cs     # Clipboard tool
+│   │   │   ├── DragTool.cs          # Drag tool
+│   │   │   ├── GetWindowInfoTool.cs # Window info tool
+│   │   │   ├── KeyTool.cs           # Key press tool
+│   │   │   ├── LaunchTool.cs        # App launch tool
+│   │   │   ├── MoveTool.cs          # Mouse move tool
+│   │   │   ├── OpenBrowserTool.cs   # Browser open tool
+│   │   │   ├── PowershellTool.cs    # PowerShell execution tool
+│   │   │   ├── ResizeTool.cs        # Window resize tool
+│   │   │   ├── ScrapeTool.cs        # Web scraping tool
+│   │   │   ├── ScreenshotTool.cs    # Screenshot tool
+│   │   │   ├── ScrollTool.cs        # Scroll tool
+│   │   │   ├── ShortcutTool.cs      # Shortcut tool
+│   │   │   ├── StateTool.cs         # Desktop state tool
+│   │   │   ├── SwitchTool.cs        # App switching tool
+│   │   │   ├── TypeTool.cs          # Text input tool
+│   │   │   ├── UIElementTool.cs     # UI element operation tool
+│   │   │   └── WaitTool.cs          # Wait tool
+│   │   ├── FileSystem/          # File system tools
+│   │   │   ├── CopyFileTool.cs      # File copy tool
+│   │   │   ├── CreateDirectoryTool.cs # Directory creation tool
+│   │   │   ├── CreateFileTool.cs    # File creation tool
+│   │   │   ├── DeleteDirectoryTool.cs # Directory deletion tool
+│   │   │   ├── DeleteFileTool.cs    # File deletion tool
+│   │   │   ├── GetFileInfoTool.cs   # File info tool
+│   │   │   ├── ListDirectoryTool.cs # Directory listing tool
+│   │   │   ├── MoveFileTool.cs      # File move tool
+│   │   │   ├── ReadFileTool.cs      # File read tool
+│   │   │   ├── SearchFilesTool.cs   # File search tool
+│   │   │   └── WriteFileTool.cs     # File write tool
+│   │   └── OCR/                 # OCR tools
+│   │       ├── ExtractTextFromRegionTool.cs # Region text extraction tool
+│   │       ├── ExtractTextFromScreenTool.cs # Screen text extraction tool
+│   │       ├── FindTextOnScreenTool.cs      # Screen text search tool
+│   │       └── GetTextCoordinatesTool.cs    # Text coordinate tool
+│   ├── Program.cs           # Program entry point
+│   └── Windows-MCP.Net.csproj   # Project file
+└── Windows-MCP.Net.Test/    # Test project
+    ├── DesktopToolsExtendedTest.cs  # Desktop tool extension tests
+    ├── FileSystemToolsExtendedTest.cs # File system tool extension tests
+    ├── OCRToolsExtendedTest.cs      # OCR tool extension tests
+    ├── ToolTest.cs                  # Tool base tests
+    ├── UIElementToolTest.cs         # UI element tool tests
+    └── Windows-MCP.Net.Test.csproj  # Test project file
 ```
 
-## 🚧 功能扩展建议
+## Feature Extension Ideas
 
-### 计划中的功能
+### Planned Features
 
-#### 高级UI识别与交互
-- **UI元素识别增强**: 支持更多UI框架（WPF、WinForms、UWP）
-- **OCR文字识别优化**: 多语言支持，提升识别准确率
-- **智能等待机制**: 动态等待元素加载完成
+#### Advanced UI Recognition and Interaction
+- **Enhanced UI element recognition**: Support more UI frameworks (WPF, WinForms, UWP)
+- **Optimized OCR text recognition**: Multi-language support for higher accuracy
+- **Smart wait mechanism**: Dynamically wait for elements to finish loading
 
-#### 文件系统操作增强
-- **高级文件搜索**: 支持内容搜索、正则表达式匹配
-- **批量文件操作**: 支持批量复制、移动、重命名
-- **文件监控**: 实时监控文件系统变化
+#### Enhanced File System Operations
+- **Advanced file search**: Support content search and regular expression matching
+- **Batch file operations**: Support batch copy, move, and rename
+- **File monitoring**: Watch file system changes in real time
 
-#### 系统监控与性能分析
-- **系统资源监控**: CPU、内存、磁盘、网络使用情况
-- **进程管理**: 进程列表获取、性能监控、进程控制
-- **性能分析报告**: 生成详细的系统性能报告
+#### System Monitoring and Performance Analysis
+- **System resource monitoring**: CPU, memory, disk, and network usage
+- **Process management**: Process listing, performance monitoring, and process control
+- **Performance analysis reports**: Generate detailed system performance reports
 
-#### 多媒体处理能力
-- **音频控制**: 系统音量控制、音频设备管理
-- **图像处理**: 图片缩放、裁剪、格式转换
-- **屏幕录制**: 支持屏幕录制和回放
+#### Multimedia Capabilities
+- **Audio control**: System volume control and audio device management
+- **Image processing**: Image scaling, cropping, and format conversion
+- **Screen recording**: Screen recording and playback support
 
-#### 网络与通信功能
-- **网络诊断**: Ping、端口扫描、连通性测试
-- **HTTP客户端**: 支持RESTful API调用
-- **WiFi管理**: WiFi网络扫描和连接管理
+#### Networking and Communication
+- **Network diagnostics**: Ping, port scanning, and connectivity tests
+- **HTTP client**: RESTful API calls
+- **WiFi management**: WiFi network scanning and connection management
 
-#### 安全性与权限管理
-- **权限检查**: 用户权限验证和管理
-- **数据加密**: 敏感数据加密存储
-- **操作审计**: 完整的操作日志和审计追踪
+#### Security and Permission Management
+- **Permission checks**: User permission validation and management
+- **Data encryption**: Encrypted storage for sensitive data
+- **Operation auditing**: Complete operation logs and audit trails
 
-### 开发路线图
+### Development Roadmap
 
-#### 第一阶段（高优先级）- 核心功能增强
-- ✅ UI元素识别工具（已完成Windows API实现）
-- 🔄 文件管理工具增强
-- 📋 系统监控工具
-- 🔒 基础安全工具
+#### Phase 1 (High priority) - Core feature enhancements
+- UI element recognition tools (Windows API implementation complete)
+- File management tool enhancements
+- System monitoring tools
+- Basic security tools
 
-#### 第二阶段（中优先级）- 功能扩展
-- 📋 OCR文字识别优化
-- 📋 高级文件搜索
-- 📋 音频控制工具
-- 📋 网络诊断工具
-- 📋 Excel操作支持
+#### Phase 2 (Medium priority) - Feature extensions
+- OCR text recognition optimization
+- Advanced file search
+- Audio control tools
+- Network diagnostic tools
+- Excel operation support
 
-#### 第三阶段（低优先级）- 高级功能
-- 📋 图像处理工具
-- 📋 任务调度系统
-- 📋 数据库操作支持
-- 📋 宏录制与回放
+#### Phase 3 (Low priority) - Advanced features
+- Image processing tools
+- Task scheduling system
+- Database operation support
+- Macro recording and playback
 
-## 🔧 配置
+## Configuration
 
-### 日志配置
+### Logging Configuration
 
-项目使用 Serilog 进行日志记录，日志文件保存在 `logs/` 目录下：
+The project uses Serilog for logging. Log files are stored in the `logs/` directory:
 
-- 控制台输出：实时日志显示
-- 文件输出：按天滚动，保留 31 天
-- 日志级别：Debug 及以上
+- Console output: real-time log display
+- File output: rotated daily, retained for 31 days
+- Log level: Debug and above
 
-### 环境变量
+### Environment Variables
 
-| 变量名 | 描述 | 默认值 |
+| Variable | Description | Default |
 |--------|------|--------|
-| `ASPNETCORE_ENVIRONMENT` | 运行环境 | `Production` |
+| `ASPNETCORE_ENVIRONMENT` | Runtime environment | `Production` |
 
-## 📝 许可证
+## License
 
-本项目基于 MIT 许可证开源。详情请参阅 LICENSE 文件。
+This project is open source under the MIT License. See the LICENSE file for details.
 
-## 🔗 相关链接
+## Related Links
 
 - [Model Context Protocol](https://modelcontextprotocol.io/)
-- [.NET 文档](https://docs.microsoft.com/dotnet/)
-- [Windows API 文档](https://docs.microsoft.com/windows/win32/)
+- [.NET Documentation](https://docs.microsoft.com/dotnet/)
+- [Windows API Documentation](https://docs.microsoft.com/windows/win32/)
 
-## 🤝 贡献指南
+## Contribution Guide
 
-我们欢迎社区贡献！如果您想为项目做出贡献，请遵循以下步骤：
+We welcome community contributions! If you would like to contribute, follow these steps:
 
-### 开发环境设置
+### Setting Up the Development Environment
 
-1. **克隆仓库**
+1. **Clone the repository**
 ```
    git clone https://github.com/AIDotNet/Windows-MCP.Net.git
    cd Windows-MCP.Net
 ```
 
-2. **安装依赖**
+2. **Install dependencies**
 ```
    dotnet restore
 ```
 
-3. **运行测试**
+3. **Run tests**
 ```
    dotnet test
 ```
 
-4. **构建项目**
+4. **Build the project**
 ```
    dotnet build
 ```
 
-### 贡献流程
+### Contribution Flow
 
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### 代码规范
+### Code Standards
 
-- 遵循 C# 编码规范
-- 为新功能添加单元测试
-- 更新相关文档
-- 确保所有测试通过
+- Follow C# coding conventions
+- Add unit tests for new features
+- Update related documentation
+- Make sure all tests pass
 
-### 问题报告
+### Reporting Issues
 
-在报告问题时，请提供：
-- 操作系统版本
-- .NET 版本
-- 详细的错误信息
-- 重现步骤
+When reporting an issue, please include:
+- Operating system version
+- .NET version
+- Detailed error information
+- Steps to reproduce
 
-## 📞 支持
+## Support
 
-如果您遇到问题或有建议，请：
+If you run into problems or have suggestions:
 
-1. 查看 [Issues](https://github.com/AIDotNet/Windows-MCP.Net/issues)
-2. 创建新的 Issue
-3. 参与讨论
-4. 查看 [Wiki](https://github.com/AIDotNet/Windows-MCP.Net/wiki) 获取更多帮助
+1. Check the [Issues](https://github.com/AIDotNet/Windows-MCP.Net/issues)
+2. Create a new Issue
+3. Join the discussion
+4. Check the [Wiki](https://github.com/AIDotNet/Windows-MCP.Net/wiki) for more help
+
 ---
 
-**注意**: 本工具需要适当的 Windows 权限来执行桌面自动化操作。请确保在受信任的环境中使用。
+**Note**: This tool requires appropriate Windows permissions to perform desktop automation operations. Please make sure you use it in a trusted environment.
 
-**免责声明**: 使用本工具进行自动化操作时，请遵守相关法律法规和软件使用协议。开发者不承担因误用工具而产生的任何责任。
+**Disclaimer**: When using this tool for automation, please comply with applicable laws, regulations, and software license agreements. The developers assume no liability for misuse of the tool.
 
 **Official site: ** [https://github.com/AIDotNet/Windows-MCP.Net](https://github.com/AIDotNet/Windows-MCP.Net)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

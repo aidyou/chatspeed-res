@@ -1,23 +1,22 @@
 ---
 title: "Zlink-prompt-generator"
-description: "功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： ​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { \"mcpServers\": { \"your-server-name…"
+description: "Features: AIGC creators often struggle with writing professional prompts. This MCP uses the Qwen3 model to optimize input prompts, making them more suitable for the specified AI image generation model…"
 ---
 
 # Zlink-prompt-generator
 
-功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： ​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { "mcpServers": { "your-server-name…
+Features: AIGC creators often struggle with writing professional prompts. This MCP uses the Qwen3 model to optimize input prompts, making them more suitable for the specified AI image generation model…
 
-## 功能说明：
-    AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。
+## Features:
+    AIGC creators often struggle with writing professional prompts. This MCP uses the Qwen3 model to optimize input prompts, making them more suitable for the specified AI image generation model.
 
-## 部署指南
+## Deployment Guide
 
-### 环境依赖：
-​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择）
+### Environment dependencies:
+Node.js 18+ or Python 3.8+ (choose according to your runtime environment)
 
-
-### 配置说明
-参考以下 JSON 配置格式（以 SSE 传输为例）：
+### Configuration
+Refer to the following JSON configuration format (SSE transport as an example):
 ```json
 {
   "mcpServers": {
@@ -33,17 +32,18 @@ description: "功能说明： AIGC赛道苦于自己不会写专业提示词，�
   }
 }
 ```
-## 使用示例
 
-### 参数说明：
+## Usage Example
+
+### Parameters:
     Args:
-        original_prompt (str): 用户提供的原始提示词（中/英文均可）。
-        model_name (str): 用户选择的目标图像生成模型。
-    
-    Returns:
-        str: 优化后的英文提示词，结构完整，包含主体、环境、光效、风格等要素。
+        original_prompt (str): the user's original prompt (Chinese or English).
+        model_name (str): the target image generation model selected by the user.
 
-### Example：
+    Returns:
+        str: an optimized English prompt with a complete structure, covering subject, environment, lighting, style, and other elements.
+
+### Example:
 
 **Official site: ** [https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp](https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -1,13 +1,13 @@
 ---
 title: "email-mcp"
-description: "基于 Python 的邮件 MCP (Model Context Protocol) 服务器，为 AI 助手提供邮件发送功能。"
+description: "A Python-based email MCP (Model Context Protocol) server that provides email sending functionality for AI assistants."
 ---
 
 # email-mcp
 
-基于 Python 的邮件 MCP (Model Context Protocol) 服务器，为 AI 助手提供邮件发送功能。
+A Python-based email MCP (Model Context Protocol) server that provides email sending functionality for AI assistants.
 
-基于 Python 的邮件 MCP (Model Context Protocol) 服务器，为 AI 助手提供邮件发送功能。
+A Python-based email MCP (Model Context Protocol) server that provides email sending functionality for AI assistants.
 
 **Official site: ** [https://github.com/wingsky-1/email-mcp-server](https://github.com/wingsky-1/email-mcp-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

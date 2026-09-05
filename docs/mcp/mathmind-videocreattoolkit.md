@@ -14,19 +14,19 @@ MathMind MCP Server provides a series of audio and video creation and synthesis 
 # II. Core Tools
 | No. | Tool Chinese Name | Tool English Name | Tool Description (Chinese) |
 |----|--------------|--------------|------------------|
-| 1  | 多张图片合成视频 | imgs2video | Synthesizes one or more images into a video, supporting the addition of background music and voiceover. |
-| 2  | 多个视频合成视频 | video2video | Synthesizes one or multiple video clips into a single video, supporting the upload of background music (optional) and voiceover (optional) to create a new video. Supports uploading separate head and tail videos, fixing the beginning and end of the video. Supports setting cover images, controlling voiceover volume, and customizing background music volume. |
-| 3  | 视频文案提取 | video2txt | Extracts text from a video in real time; users just need to input the video link. It is recommended to upload videos under 5 minutes. |
-| 4  | 视频字幕识别 | subtitleDynamic | Upload a video, and it will recognize subtitles and output the final video with subtitles. Subtitles support settings for font and position, etc. Supports passing in text. |
-| 5  | 任务查询 | taskFetch2 | Input the traceId output by the subtitleDynamic tool to get the video address after subtitles have been added. |
-| 6  | 视频片段获取 | videoCutRandom | Input the video link and specify the start and end positions to cut out a video segment. |
-| 7  | 图生视频 | imageGenVideo | Upload an image and input prompt words to generate a video, using the VIDU model.
+| 1  | Multiple images into a video | imgs2video | Synthesizes one or more images into a video, supporting the addition of background music and voiceover. |
+| 2  | Multiple videos into one video | video2video | Synthesizes one or multiple video clips into a single video, supporting the upload of background music (optional) and voiceover (optional) to create a new video. Supports uploading separate head and tail videos, fixing the beginning and end of the video. Supports setting cover images, controlling voiceover volume, and customizing background music volume. |
+| 3  | Video script extraction | video2txt | Extracts text from a video in real time; users just need to input the video link. It is recommended to upload videos under 5 minutes. |
+| 4  | Video subtitle recognition | subtitleDynamic | Upload a video, and it will recognize subtitles and output the final video with subtitles. Subtitles support settings for font and position, etc. Supports passing in text. |
+| 5  | Task query | taskFetch2 | Input the traceId output by the subtitleDynamic tool to get the video address after subtitles have been added. |
+| 6  | Video clip extraction | videoCutRandom | Input the video link and specify the start and end positions to cut out a video segment. |
+| 7  | Image to video | imageGenVideo | Upload an image and input prompt words to generate a video, using the VIDU model.
 Supports both real-time and asynchronous generation. For asynchronous generation, you need to call the query tool: videoTaskFetch
 Real-time directly generates a URL;
 Asynchronous first only gives the traceId, and the user needs to call videoTaskFetch. |
-| 8  | 图片画中画 | imgPip | Input a video and add images to it, such as logos or images related to the video content.
+| 8  | Image picture-in-picture | imgPip | Input a video and add images to it, such as logos or images related to the video content.
 Supports customization of the width and height of the material, entry and exit times, animations, and display positions. If not specified, default values are used. |
-| 9 | 画中画任务查询 | cutTaskFetch | The above imgPip will only return ReqId, at which point you need to use the task query tool to actively check the results. |
+| 9 | Picture-in-picture task query | cutTaskFetch | The above imgPip will only return ReqId, at which point you need to use the task query tool to actively check the results. |
 
 # III. Quick Start
 ## Get API Key

@@ -434,7 +434,7 @@ python create_contact.py
 ```
 
 This will create a contact with default values:
-- Account name: "你的账户名"
+- Account name: "YOUR_ACCOUNT_NAME"
 - Account type: "com.google"
 
 ### Advanced Usage

@@ -1,19 +1,21 @@
 ---
 title: "cnbisoft-enterprise-analysis-report"
-description: "经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。 在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf 工具地址 { \"mcpServers\": { \"enterprise-analysis-report-sse\": { \"url\": \"…"
+description: "JingBang Big Data Enterprise Analysis Report - view the latest basic information of an enterprise, including its background, legal proceedings, operating status, intellectual property, and development…"
 ---
 
 # cnbisoft-enterprise-analysis-report
 
-经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。 在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf 工具地址 { "mcpServers": { "enterprise-analysis-report-sse": { "url": "…
+JingBang Big Data Enterprise Analysis Report - view the latest basic information of an enterprise, including its background, legal proceedings, operating status, intellectual property, and development…
 
-经邦大数据企业分析报告查看企业最新的基本情况、企业背景、法律诉讼、经营状态、知识产权、企业发展信息。
+# JingBang Big Data Enterprise Analysis Report
 
-在线申请地址：https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf
+View the latest basic information of an enterprise, including its background, legal proceedings, operating status, intellectual property, and development information.
 
-工具地址
+Online application address: https://ncnro0u5luxw.feishu.cn/share/base/form/shrcnjoaJ5wf4WVg4ISym7wx2Lf
 
+## Tool address
 
+```json
 {
   "mcpServers": {
     "enterprise-analysis-report-sse": {
@@ -21,17 +23,18 @@ description: "经邦大数据企业分析报告查看企业最新的基本情况
     }
   }
 }
+```
 
+## Header request headers
 
-Header请求头
-
-
+```json
 {
     "Headers": {
         "appid": "xxx",
         "appsecret": "xxxx"
     }
 }
+```
 
 **Official site: ** [https://mcp.cnbicloud.cn:8122/mcp/sse/](https://mcp.cnbicloud.cn:8122/mcp/sse/)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

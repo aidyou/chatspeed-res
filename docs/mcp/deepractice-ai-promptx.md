@@ -1,92 +1,59 @@
 ---
 title: "PromptX"
-description: "PromptX · AI应用原生专业能力增强系统 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。 <!-- Badges --"
+description: "PromptX provides professional roles, memory management, and knowledge systems for AI applications through the MCP protocol. With a single command, any AI client instantly becomes a professional."
 ---
 
 # PromptX
 
-PromptX · AI应用原生专业能力增强系统 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。 <!-- Badges --
+PromptX provides professional roles, memory management, and knowledge systems for AI applications through the MCP protocol. With a single command, any AI client instantly becomes a professional.
 
-alt="PromptX Logo" width="120" height="120"/>
-  
-PromptX · AI应用原生专业能力增强系统
+PromptX - AI-Native Professional Capability Enhancement System
 
-  
-通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。
-
-  
-  
-
-    
-
-    
-
-    
-
-    
-
-  
-
-  
-
-    
-
-中文
-
- | 
-    
-English
- | 
-    
-Issues
-
-  
+Through the MCP protocol, PromptX provides professional roles, memory management, and knowledge systems for AI applications. With a single line of command, any AI client instantly turns into a professional.
 
 ---
 
-### ✨ **一眼看懂 PromptX**
+### What PromptX Does at a Glance
 
-PromptX 能做什么？简单来说，它让你的 AI 助手拥有了"大脑"和"记忆"，更让你成为AI能力的创造者。
+What can PromptX do? In short, it gives your AI assistant a "brain" and a "memory", and turns you into a creator of AI capabilities.
 
-- **🎭 专业角色扮演**: 提供覆盖不同领域的专家角色，让 AI 的回答更专业、更深入。
-- **🧠 长期记忆与知识库**: AI能够记住关键信息和你的偏好，在持续的对话和工作中提供连贯、个性化的支持。
-- **✨ AI角色创造工坊**: **2分钟内**将你的想法变成专业AI助手，从使用者到创造者的华丽转身。
-- **🔌 轻松集成**: 只需一行命令，即可为数十种主流 AI 应用（如 Claude、Cursor）无缝启用这些强大功能。
+- **Professional role-playing**: expert roles across different domains, making AI answers more professional and deeper.
+- **Long-term memory and knowledge base**: AI remembers key information and your preferences, providing coherent, personalized support across conversations and work.
+- **AI role creation workshop**: turn your idea into a professional AI assistant **within 2 minutes** - a stunning leap from user to creator.
+- **Easy integration**: enable these powerful features for dozens of mainstream AI apps (such as Claude, Cursor) with just one command.
 
-### 📸 **配置成功后的使用效果**
+### What You Get After Configuration
 
-#### **1. 发现并激活专业角色**
-*使用 `promptx_hello` 发现可用角色，再用 `promptx_action` 激活，AI即刻变身领域专家。*
- alt="角色发现与激活" width="80%">
+#### 1. Discover and activate professional roles
+*Use `promptx_hello` to discover available roles, then `promptx_action` to activate one - your AI instantly becomes a domain expert.*
 
-#### **2. 拥有智能记忆**
-*使用 `promptx_remember` 保存关键信息，AI将在后续的交流中主动运用这些知识。*
- alt="记忆功能" width="80%">
+#### 2. Smart memory
+*Use `promptx_remember` to save key information; the AI will proactively use that knowledge in later conversations.*
 
 ---
 
-## ⚠️ **项目状态说明**
+## Project Status
 
-PromptX 目前处于 **初始开发阶段**，我们正在积极完善功能和修复问题。在达到正式稳定版本之前，您可能会遇到一些使用上的问题或不稳定情况。
+PromptX is currently in its **initial development stage**. We are actively refining features and fixing issues. Until we reach a stable release, you may encounter some usability issues or instability.
 
-**我们诚恳地请求您的理解和支持！** 🙏
+**We sincerely ask for your understanding and support!**
 
-### 📞 **遇到问题？获取帮助！**
+### Need Help?
 
-如果您在使用过程中遇到任何问题，请通过以下方式联系我们：
+If you run into any issues, please reach us through:
 
-- 🐛 **提交 Issue**: [GitHub Issues](https://github.com/Deepractice/PromptX/issues) - 详细描述问题，我们会尽快回复
-- 💬 **直接联系**: 添加开发者微信 `deepracticex` 获取即时帮助
-- 📧 **邮件联系**: 发送邮件至 `sean@deepracticex.com` 获取技术支持
-- 📱 **技术交流群**: 扫描下方二维码加入我们的技术交流群
+- **Submit an Issue**: [GitHub Issues](https://github.com/Deepractice/PromptX/issues) - describe the problem in detail; we will reply as soon as possible
+- **Direct contact**: add the developer's WeChat `deepracticex` for immediate help
+- **Email**: `sean@deepracticex.com` for technical support
+- **Community group**: scan the QR code below to join our tech chat group
 
-您的反馈对我们非常宝贵，帮助我们快速改进产品质量！ ✨
+Your feedback is invaluable and helps us improve quality fast!
 
 ---
 
-## 🚀 **一键启动，30秒完成配置**
+## One-Click Start: Configure in 30 Seconds
 
-打开配置文件，将下面的 `promptx` 配置代码复制进去。这是最简单的 **零配置模式**，PromptX 会自动为您处理一切。
+Open your config file and paste in the `promptx` configuration below. This is the simplest **zero-config mode** - PromptX handles everything automatically.
 
 ```json
 {
@@ -106,179 +73,141 @@ PromptX 目前处于 **初始开发阶段**，我们正在积极完善功能和�
 }
 ```
 
-**配置参数说明：**
-- `command`: 指定使用 npx 运行 promptx 服务
-- `args`: 启动参数配置列表
-  - `-y`: 自动确认
-  - `-f`: 强制刷新缓存
-  - `--registry`: 指定镜像源
-  - `https://registry.npmjs.org`: 使用官方镜像
-  - `dpml-prompt@beta`: 使用稳定测试版
-  - `mcp-server`: 启动服务
+**Configuration notes:**
+- `command`: uses npx to run the promptx service
+- `args`: startup arguments
+  - `-y`: auto-confirm
+  - `-f`: force cache refresh
+  - `--registry`: specify the registry
+  - `https://registry.npmjs.org`: use the official registry
+  - `dpml-prompt@beta`: use the stable beta version
+  - `mcp-server`: start the server
 
-**🎯 就这么简单！** 保存文件并重启您的AI应用，PromptX 就已成功激活。
+**That's it!** Save the file, restart your AI app, and PromptX is active.
 
-> **💡 提示：** 配置中特意指定了官方镜像源 `registry.npmjs.org`，这可以避免因使用非官方镜像导致的安装问题。如果您发现安装很慢，建议使用代理工具加速，而不是切换到其他镜像源。
+> **Tip:** the config deliberately uses the official registry `registry.npmjs.org` to avoid install issues caused by non-official mirrors. If installation is slow, use a proxy to speed it up rather than switching mirrors.
 
-📖 **[完整安装配置指南](https://github.com/Deepractice/PromptX/wiki/PromptX-MCP-Install)** - 包含各种客户端的详细配置方法和故障排除
+**[Complete installation guide](https://github.com/Deepractice/PromptX/wiki/PromptX-MCP-Install)** - detailed configuration and troubleshooting for various clients
 
-### 不知道MCP是怎么？  [点击查看 MCP幼儿园教程 BiliBili](https://www.bilibili.com/video/BV1HFd6YhErb)
+### Don't know what MCP is? [Check out the MCP kindergarten tutorial on Bilibili](https://www.bilibili.com/video/BV1HFd6YhErb)
 
-目前所有支持 MCP 协议的 AI 客户端都可以使用 PromptX。主要包括：**Claude Desktop**、**Cursor**、**Windsurf**、**Cline**、**Zed**、**Continue** 等主流 AI 编程工具，以及更多正在接入中的应用。
-
----
-
-### ⚙️ **工作原理**
-
-PromptX 作为您和AI应用之间的"专业能力中间件"，通过标准的 [MCP协议](https://github.com/metacontroller/mcp) 进行通信。
-
-```mermaid
-graph TD
-    subgraph "Your AI App (Claude,Cursor,etc.)"
-        A[👨‍💻 User Interaction]
-    end
-
-    subgraph "PromptX MCP Server"
-        C{PromptX Engine}
-        D[🎭 Role Library]
-        E[🧠 Memory & Knowledge]
-    end
-
-    A -- "Calls 'promptx_...' tools" --> B(MCP Protocol)
-    B --> C
-    C -- "Accesses" --> D
-    C -- "Accesses" --> E
-
-    subgraph "Enhanced Response"
-        F[✨ Professional Output]
-    end
-    C --> F
-```
-
-当您调用 `promptx_...` 系列工具时，AI应用会将请求通过MCP协议发送给 PromptX。PromptX 引擎会加载相应的专业角色、检索相关记忆，然后返回一个经过专业能力增强的结果给AI应用，最终呈现给您。
+All MCP-protocol AI clients can use PromptX, mainly including: **Claude Desktop**, **Cursor**, **Windsurf**, **Cline**, **Zed**, **Continue** and other mainstream AI coding tools, plus more apps joining all the time.
 
 ---
 
-**🎯 配置完成后，您的AI应用将自动获得6个专业工具：**
-- `promptx_init`: 🏗️ **系统初始化** - 自动准备工作环境。
-- `promptx_hello`: 👋 **角色发现** - 浏览所有可用的专家角色。
-- `promptx_action`: ⚡ **角色激活** - 一键变身指定领域的专家。**（含女娲🎨角色创造顾问）**
-- `promptx_learn`: 📚 **知识学习** - 让AI学习特定的知识或技能。
-- `promptx_recall`: 🔍 **记忆检索** - 从记忆库中查找历史信息。
-- `promptx_remember`: 💾 **经验保存** - 将重要信息存入长期记忆。
+### How It Works
 
-📖 **查看完整MCP集成指南**
+PromptX acts as a "professional capability middleware" between you and the AI app, communicating via the standard [MCP protocol](https://github.com/metacontroller/mcp).
+
+When you call a `promptx_...` tool, the AI app sends the request to PromptX over MCP. The PromptX engine loads the appropriate professional role, retrieves relevant memories, and returns a professionally enhanced result to the AI app, which finally presents it to you.
 
 ---
 
-## 🎨 **女娲创造工坊 - 让每个人都成为AI角色设计师**
+**After configuration, your AI app automatically gets 6 professional tools:**
+- `promptx_init`: **System initialization** - prepares the working environment automatically.
+- `promptx_hello`: **Role discovery** - browse all available expert roles.
+- `promptx_action`: **Role activation** - instantly become an expert in a given domain. **(includes Nvwa, the role-creation advisor)**
+- `promptx_learn`: **Knowledge learning** - teach the AI specific knowledge or skills.
+- `promptx_recall`: **Memory retrieval** - find historical info from the memory store.
+- `promptx_remember`: **Experience saving** - store important info into long-term memory.
 
-   alt="女娲创造工坊" width="120" style="border-radius: 50%; margin: 15px 0 25px 0;">
+---
 
-#### **💫 从想法到现实，只需2分钟**
+## Nvwa Creation Workshop - Let Everyone Be an AI Role Designer
 
-你有没有想过：如果我能为特定工作场景定制一个专业AI助手会怎样？**女娲让这个想法变成现实。**
+#### From Idea to Reality in Just 2 Minutes
 
-> *"每个想法都值得拥有专属的AI助手，技术的门槛不应该限制创意的飞翔。"*
+Have you ever thought: what if I could customize a professional AI assistant for a specific work scenario? **Nvwa turns that idea into reality.**
 
-#### **🎯 核心价值转换**
+> "Every idea deserves its own AI assistant. Technical barriers should not limit the flight of creativity."
 
-- **🚀 零门槛创造**: 无需学习复杂技术，用自然语言描述需求即可
-- **⚡ 极速交付**: 从想法到可用角色，全程2分钟
-- **🎭 专业品质**: 自动生成符合DPML标准的专业AI角色
-- **🔄 即插即用**: 创建完成立即可以激活使用
-- **💝 掌控感**: 从使用者到创造者的华丽转身
+#### Core Value Transformation
 
-#### **✨ 使用场景示例**
+- **Zero-barrier creation**: describe your needs in natural language - no complex tech required
+- **Instant delivery**: from idea to usable role in about 2 minutes
+- **Professional quality**: automatically generates professional AI roles that comply with DPML standards
+- **Plug and play**: activate and use immediately after creation
+- **A sense of ownership**: a brilliant leap from user to creator
 
-| 🎯 **用户需求** | ⚡ **女娲生成** | 🚀 **立即可用** |
+#### Example Use Cases
+
+| User Need | Nvwa Generates | Immediately Usable |
 |---|---|---|
-| 👩‍💼 "我需要一个懂小红书营销的AI助手" | 小红书营销专家角色 | `激活小红书营销专家` |
-| 👨‍💻 "我想要一个Python异步编程专家" | Python异步编程导师角色 | `激活Python异步编程导师` |
-| 🎨 "给我一个UI/UX设计顾问" | UI/UX设计专家角色 | `激活UI/UX设计专家` |
-| 📊 "需要一个数据分析师助手" | 数据分析专家角色 | `激活数据分析专家` |
+| "I need an AI assistant that understands Xiaohongshu marketing" | Xiaohongshu marketing expert role | `Activate Xiaohongshu marketing expert` |
+| "I want a Python async programming expert" | Python async programming tutor role | `Activate Python async programming tutor` |
+| "Give me a UI/UX design consultant" | UI/UX design expert role | `Activate UI/UX design expert` |
+| "I need a data analyst assistant" | Data analysis expert role | `Activate data analysis expert` |
 
-#### **🎪 体验女娲创造力 - 4步创造专属AI助手**
-
-  
-
-   alt="第1步：激活女娲角色创造顾问" width="80%" style="margin: 10px 0;">
-   alt="第2步：向女娲描述你的需求" width="80%" style="margin: 10px 0;">
-   alt="第3步：女娲理解并完善需求" width="80%" style="margin: 10px 0;">
-   alt="第4步：激活新创建的专属角色" width="80%" style="margin: 10px 0;">
+#### Experience Nvwa's Creativity - Create Your Own AI Assistant in 4 Steps
 
 ```bash
-# 1️⃣ 激活女娲角色创造顾问
-"我要女娲帮我创建一个角色"
+# 1. Activate the Nvwa role-creation advisor
+"I want Nvwa to help me create a role"
 
-# 2️⃣ 描述你的需求（自然语言即可）
-"我需要一个[领域]的专业助手，主要用于[具体场景]"
+# 2. Describe your needs (natural language is fine)
+"I need a professional [domain] assistant, mainly for [specific scenario]"
 
-# 3️⃣ 等待2分钟，女娲为你生成专业角色
-# 女娲会创建角色文件、注册到系统、完成质量检查
+# 3. Wait 2 minutes while Nvwa generates your professional role
+# Nvwa creates the role file, registers it, and completes a quality check
 
-# 4️⃣ 立即激活使用你的专属AI助手
-"激活刚刚创建的角色"
+# 4. Activate and use your own AI assistant right away
+"Activate the role that was just created"
 ```
 
-#### **🌟 女娲的设计哲学**
+#### Nvwa's Design Philosophy
 
-- **🎯 无界创造**: 让任何有想法的人都能创造AI助手，打破技术壁垒
-- **⚡ 即时满足**: 满足数字时代对即时性的需求
-- **🧠 成长引导**: 不只是工具使用，更是引导用户理解AI能力边界
-- **🌱 生态共建**: 每个用户创造的角色都可能成为他人的灵感源泉
+- **Boundless creation**: let anyone with an idea create AI assistants, breaking down technical barriers
+- **Instant gratification**: meeting the digital age's demand for immediacy
+- **Growth guidance**: not just tool use, but guiding users to understand the boundaries of AI capabilities
+- **Ecosystem building**: every user-created role can inspire others
 
 ---
 
-## 📋 **实践案例: Legacy Lands Library**
+## Practice Case: Legacy Lands Library
 
-  
+### Project Overview
 
-#### 📖 项目概述
+**Project name:** Legacy Lands Library
+**Project URL:** https://github.com/LegacyLands/legacy-lands-library
+**About:** legacy-lands-library is a developer tool library for modern Minecraft server plugin development. It aims to provide developers with cross-platform, production-ready infrastructure.
 
-**项目名称：** Legacy Lands Library  
-**项目地址：** https://github.com/LegacyLands/legacy-lands-library  
-**项目简介：** legacy-lands-library 是一个面向现代 Minecraft 服务端插件开发的开发工具库。它旨在为开发者提供一个跨平台、生产就绪的基础设施。
+### Organization Info
 
-#### 🏢 组织信息
+**Organization:** Legacy Lands
+**Website:** https://www.legacylands.cn/
+**About:** Legacy Lands is an innovative team focused on building large-scale Minecraft civilization simulation experiences. Participating in the open-source community, it provides elegant, efficient, and reliable solutions for Minecraft server plugin development.
 
-**组织名称：** 遗迹之地制作组 (Legacy Lands)  
-**官方网站：** https://www.legacylands.cn/  
-**组织简介：** 遗迹之地 (Legacy Lands) 是一个专注于构建大型 Minecraft 文明模拟体验的创新团队。参与开源社区，为 Minecraft 服务端插件等领域开发提供优雅、高效且可靠的解决方案。
-
-> #### **💡 核心开发者使用心得**
-> "使用 PromptX 的开发体验真的非常不一样。我们团队基于 Claude Code 并结合 PromptX，**一位开发者仅三天内就完成了超过一万一千行的高质量 Java 代码。**
+> ### Core Developer's Experience
+> "The development experience with PromptX is truly different. Our team uses Claude Code with PromptX, and **one developer wrote more than 11,000 lines of high-quality Java code in just three days.**
 >
-> 这套工作流的价值在实际开发中体现得淋漓尽致。PromptX 解决了 AI 使用时的许多痛点，时刻确保代码风格的统一和质量的达标，大大降低了新成员的学习成本。过去那些需要反复沟通、依靠文档传承的最佳实践，现在能够自然而然地融入到每一次代码生成中。"
+> The value of this workflow showed fully in real development. PromptX solves many pain points of AI usage, consistently ensuring unified code style and quality, and greatly reducing the learning cost for new members. Best practices that previously required repeated communication and documentation inheritance can now be naturally woven into every generation of code."
 
-#### **📚 相关资源**
+### Related Resources
 
-- **AI集成标准与实践指南：** https://github.com/LegacyLands/legacy-lands-library/blob/main/AI_CODE_STANDARDS_ZHCN.md
+- **AI integration standard & practice guide:** https://github.com/LegacyLands/legacy-lands-library/blob/main/AI_CODE_STANDARDS_ZHCN.md
 
 ---
 
-## ⭐ **Star增长趋势**
+## Star Growth Trend
 
 [![Star History Chart](/mcp-assets/7ff5ea12648cd650854ef8cf69c6f49e.svg)](https://star-history.com/#Deepractice/PromptX&Date)
 
 ---
 
-### **🤝 贡献与交流**
+### Contributing & Communication
 
-我们欢迎任何形式的贡献和反馈！
+We welcome any form of contribution and feedback!
 
-- 🌿 **分支策略** - 分支管理和发布流程  
-- 🚀 **发布流程** - 版本管理和发布文档
+- **Branch strategy** - branch management and release process
+- **Release process** - version management and release docs
 
-扫码加入技术交流群：
-
- alt="技术交流群" width="200">
+Scan the QR code to join the tech community group:
 
 ---
 
-## 📄 **许可证**
+## License
 
-[MIT License](https://github.com/Deepractice/PromptX/blob/HEAD/LICENSE) - 让AI专业能力触手可及
+[MIT License](https://github.com/Deepractice/PromptX/blob/HEAD/LICENSE) - making professional AI capabilities accessible to all
 
 **Official site: ** [https://github.com/Deepractice/PromptX](https://github.com/Deepractice/PromptX)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

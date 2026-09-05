@@ -89,14 +89,14 @@ json
 
 | Parameter Name | Type   | Required | Description |
 |----------------|--------|----------|-------------|
-| `stock_name`   | string | ✅        | Stock name, supports approximate input, e.g., "花大基因" will be corrected to "华大基因" |
+| `stock_name`   | string | ✅        | Stock name, supports approximate input, e.g., "HUADAJIYIN" will be corrected to "HUADA JIYIN (BGI)" |
 
 #### Example Response
 
 json
 {
-  "name": "花大基因",
-  "corrected_name": "华大基因",
+  "name": "HUADAJIYIN (mistyped)",
+  "corrected_name": "BGI (HUADAJIYIN corrected)",
   "stock_code": "300676.SZ"
 }
 
@@ -243,7 +243,7 @@ json
 | Parameter Name | Type | Required | Description |
 |----------------|------|----------|-------------|
 | `reportname` | string | ✅ | Report code, e.g., `p03341` (query via the command terminal) |
-| `functionpara_json` | string | ✅ | Report filter parameters, JSON string, e.g., `{"sdate":"20210421","edate":"20211119","xmzt":"全部"}` |
+| `functionpara_json` | string | ✅ | Report filter parameters, JSON string, e.g., `{"sdate":"20210421","edate":"20211119","xmzt":"ALL"}` |
 | `outputpara` | string | ✅ | Output field control, format `field_name:Y`, e.g., `"p03341_f001:Y,p03341_f002:Y"` |
 
 ---
@@ -410,9 +410,9 @@ json
     "thscode": "300033.SZ",
     "query_date": "2026-04-01",
     "data": [
-      {"indicator": "ths_corp_cn_name_stock", "description": "公司中文名称", "value": "同花顺"},
-      {"indicator": "ths_controlling_holder_stock", "description": "控股股东", "value": "易峥"},
-      {"indicator": "ths_the_sw_industry_stock", "description": "所属申万行业", "value": "互联网软件与服务"}
+      {"indicator": "ths_corp_cn_name_stock", "description": "Company Chinese name", "value": "Tonghuashun"},
+      {"indicator": "ths_controlling_holder_stock", "description": "Controlling shareholder", "value": "Yi Zheng"},
+      {"indicator": "ths_the_sw_industry_stock", "description": "SW industry", "value": "Internet software & services"}
     ]
   }
 ]

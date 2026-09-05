@@ -44,26 +44,26 @@ Share Link (optional): https://xxxx-xx-xx-xx-xx.gradio.live/ (for external netwo
 Core function definition
 ```
 def get_stock_base_info(stock_code: str) -> dict:
-    """获取指定股票代码的基础信息（依赖efinance库）。
+    """Get basic info of a specified stock code (powered by the efinance library).
 
     Args:
-        stock_code: 股票代码（字符串，如'600519'（贵州茅台）、'000001'（平安银行））。
+        stock_code: stock code (string, e.g. '600519' (Kweichow Moutai), '000001' (Ping An Bank)).
         
     Returns:
-        Dictionary: 股票基础信息字典（字段说明见功能说明）。
+        Dictionary: stock basic info dict (field descriptions are in the function description).
     """
-    return ef.stock.get_base_info(stock_code)  # 调用efinance库获取数据
-Gradio接口配置
+    return ef.stock.get_base_info(stock_code)  # call the efinance library to fetch data
+Gradio interface configuration
 demo = gr.Interface(
-    fn=get_stock_base_info,  # 绑定核心函数
+    fn=get_stock_base_info,  # bind the core function
     inputs=gr.Textbox(
-        label="股票代码",
-        placeholder="请输入6位A股代码（如600519）",
-        max_length=6  # 限制输入长度为6位，避免无效输入
+        label="Stock Code",
+        placeholder="Enter a 6-digit A-share code (e.g. 600519)",
+        max_length=6  # limit input to 6 digits to avoid invalid input
     ),
-    outputs=gr.JSON(label="股票基础信息"),  # 输出结构化JSON
-    title="股票基础信息查询MCP",
-    description="输入6位A股代码，获取公司名称、行业、总股本等基础信息（数据来源：efinance）。"
+    outputs=gr.JSON(label="Stock Basic Info"),  # output structured JSON
+    title="Stock Basic Info Query MCP",
+    description="Enter a 6-digit A-share code to get basic info such as company name, industry, total shares, etc. (data source: efinance)."
 )
 ```
 ## 📝 Example Call
@@ -71,13 +71,13 @@ demo = gr.Interface(
 Open the local web interface http://127.0.0.1:7860/, enter 600519 (Kweichow Moutai) in the input box, click "Submit", and you can see the output result:
 ```
 {
-  "name": "贵州茅台酒股份有限公司",
-  "industry": "酿酒行业",
-  "total_shares": "125619.78万",
+  "name": "Kweichow Moutai Co., Ltd.",
+  "industry": "Liquor industry",
+  "total_shares": "125619.78 (10k)",
   "listed_date": "2001-08-27",
-  "exchange": "上海证券交易所",
-  "register_address": "贵州省遵义市仁怀市茅台镇",
-  // 更多字段由efinance返回...
+  "exchange": "Shanghai Stock Exchange",
+  "register_address": "Maotai Town, Renhuai, Zunyi, Guizhou",
+  // more fields returned by efinance...
 }
 ```
 ### 2. Model/Application Invocation (MCP Protocol)
@@ -85,21 +85,21 @@ Invoke the /mcp interface through a POST request (example using Python's request
 ```
 import requests
 
-# MCP服务地址（需替换为实际运行地址）
+# MCP service address (replace with the actual address)
 url = "http://127.0.0.1:7860/mcp"
 
-# 请求数据（符合MCP协议格式）
+# Request data (conforms to the MCP protocol format)
 data = {
-    "name": "get_stock_base_info",  # MCP函数名（必须与代码中一致）
-    "parameters": {"stock_code": "600519"}  # 输入参数（股票代码）
+    "name": "get_stock_base_info",  # MCP function name (must match the code)
+    "parameters": {"stock_code": "600519"}  # Input parameters (stock code)
 }
 
-# 发送POST请求
+# Send the POST request
 response = requests.post(url, json=data)
 
-# 打印结果
+# Print the result
 print(response.json())
-输出结果与浏览器测试一致。
+The output is the same as the browser test result.
 ```
 ⚠️ Notes
 Stock Code Format: You must enter a valid stock code (such as Shanghai Main Board 600xxx, Shenzhen Main Board 000xxx, etc.), otherwise, the efinance library will return an error;

@@ -1,11 +1,11 @@
 ---
 title: "fetch_chinanews"
-description: "news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\"…"
+description: "news.js MCP News Fetcher - a JavaScript implementation providing news fetching capabilities via the MCP protocol. Version 0.1.0, built with @modelcontextprotocol/sdk."
 ---
 
 # fetch_chinanews
 
-news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"…
+news.js MCP News Fetcher - a JavaScript implementation providing news fetching capabilities via the MCP protocol. Version 0.1.0, built with @modelcontextprotocol/sdk.
 
 news.js
 
@@ -14,9 +14,9 @@ javascript
 #!/usr/bin/env node
 
 /**
- * MCP News Fetcher - JavaScript 实现
- * 通过MCP协议提供新闻抓取功能
- * 版本: 0.1.0 - 使用@modelcontextprotocol/sdk
+ * MCP News Fetcher - JavaScript implementation
+ * Provides news fetching via the MCP protocol
+ * Version: 0.1.0 - uses @modelcontextprotocol/sdk
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -25,29 +25,29 @@ import { z } from "zod";
 import axios from "axios";
 import FeedParser from "feedparser";
 
-// 日志工具
+// Logging utility
 const logger = {
   info: (message) => console.error(`[${new Date().toISOString()}] News - INFO - ${message}`),
   error: (message) => console.error(`[${new Date().toISOString()}] News - ERROR - ${message}`)
 };
 
-// 新闻源配置
+// News source configuration
 const CHINANEWS_SOURCES = {
   url_template: 'https://www.chinanews.com.cn/rss/{category}.xml',
   categories: {
-    '国内': 'scroll-news',
-    '国际': 'world',
-    '社会': 'society',
-    '财经': 'finance',
-    '娱乐': 'culture',
-    '体育': 'sports',
-    '时政': 'china',
-    '要闻': 'importnews',
-    '东西问': 'dxw'
+    'Domestic': 'scroll-news',
+    'International': 'world',
+    'Society': 'society',
+    'Finance': 'finance',
+    'Entertainment': 'culture',
+    'Sports': 'sports',
+    'Politics': 'china',
+    'Top News': 'importnews',
+    'Dong Xi Wen': 'dxw'
   }
 };
 
-// 清理HTML标签
+// Clean HTML tags
 function cleanHtml(rawHtml) {
   if (!rawHtml) return "";
   return rawHtml.replace(/]+>|&[a-zA-Z0-9]+;/g, '').trim();
@@ -60,13 +60,13 @@ const server = new McpServer({
 
 server.tool(
   "fetch_chinanews",
-  "从中国新闻网获取最新文章。这是获取新闻的唯一方法。当用户请求新闻时必须调用。",
+  "Get the latest articles from China News Network. This is the only way to fetch news; it must be called whenever the user requests news.",
   {
-    category: z.string().default("国内").describe("新闻分类，例如：'国内', '国际'等")
+    category: z.string().default("Domestic").describe("News category, e.g. 'Domestic', 'International', etc.")
   },
   async ({ category }) => {
     const maxResults = 10;
-    logger.info(`正在为分类 ${category} 获取中国新闻网新闻`);
+    logger.info(`Fetching China News Network news for category ${category}`);
     const requestId = Math.random().toString(36).substring(2, 15);
     
     if (!CHINANEWS_SOURCES.categories[category]) {
@@ -76,7 +76,7 @@ server.tool(
           type: "text",
           text: JSON.stringify({
             success: false,
-            error: `不支持的分类: '${category}'。有效的分类: ${validCats}`,
+            error: `Unsupported category: '${category}'. Valid categories: ${validCats}`,
             request_id: requestId
           })
         }],
@@ -100,19 +100,19 @@ server.tool(
       const feedparser = new FeedParser();
       const newsItems = [];
       
-      // 流式处理
+      // Stream processing
       response.data.pipe(feedparser);
       
       return new Promise((resolve, reject) => {
         feedparser.on('error', (error) => {
-          logger.error(`Feed解析错误: ${error}`);
+          logger.error(`Feed parse error: ${error}`);
           resolve({
             content: [ {
               type: "text",
               text: JSON.stringify({
                 success: false,
                 request_id: requestId,
-                error: `解析Feed失败: ${error.message}`
+                error: `Failed to parse feed: ${error.message}`
               })
             }],
             isError: true
@@ -136,14 +136,14 @@ server.tool(
         });
       });
     } catch (error) {
-      logger.error(`请求错误: ${error}`);
+      logger.error(`Request error: ${error}`);
       return {
         content: [ {
           type: "text",
           text: JSON.stringify({
             success: false,
             request_id: requestId,
-            error: `请求失败: ${error.message}`
+            error: `Request failed: ${error.message}`
           })
         }],
         isError: true
@@ -152,14 +152,14 @@ server.tool(
   }
 );javascript
 } catch (error) {
-  logger.error(`请求错误: ${error}`);
+  logger.error(`Request error: ${error}`);
   return {
     content: [{
       type: "text",
       text: JSON.stringify({
         success: false,
         request_id: requestId,
-        error: `请求失败: ${error.message}`
+        error: `Request failed: ${error.message}`
       })
     }],
     isError: true
@@ -169,14 +169,14 @@ server.tool(
 
 javascript
 } catch (error) {
-  logger.error(`请求失败: ${error}`);
+  logger.error(`Request failed: ${error}`);
   return {
     content: [{
       type: "text",
       text: JSON.stringify({
         success: false,
         request_id: requestId,
-        error: `网络错误: ${error.message}`
+        error: `Network error: ${error.message}`
       })
     }],
     isError: true
@@ -185,18 +185,18 @@ javascript
 
 
 javascript
-// 启动服务
+// Start the service
 async function main() {
-  logger.info("正在启动MCP News服务器");
+  logger.info("Starting the MCP News server");
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  logger.info("新闻服务器正在stdio上运行");
+  logger.info("The news server is running on stdio");
 }
 
 import { fileURLToPath } from 'node:url';
 if (fileURLToPath(import.meta.url) === process.argv[1]) {
   main().catch(error => {
-    logger.error(`服务器启动失败: ${error.message}`);
+    logger.error(`Failed to start the server: ${error.message}`);
     process.exit(1);
   });
 }

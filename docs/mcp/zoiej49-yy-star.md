@@ -49,10 +49,10 @@ npm install
 ```
 ### Run the Service
 ```bash
-# 开发模式（自动重启）
+# Development mode (auto-restart)
 npm run dev
 
-# 生产模式
+# Production mode
 npm start
 ```
 ## API Endpoints
@@ -108,13 +108,13 @@ npm start
 {
   name: 'get_rising_sign',
   arguments: {
-    birthHour: 14,        // 出生小时 (0-23)
-    birthMinute: 30,      // 出生分钟 (0-59)
-    latitude: 39.9042,    // 出生地纬度 (-90到90)
-    longitude: 116.4074,  // 出生地经度 (-180到180)
-    birthMonth: 8,        // 出生月份 (1-12)
-    birthDay: 15,         // 出生日期 (1-31)
-    birthYear: 1990       // 出生年份 (1900-2100)
+    birthHour: 14,        // birth hour (0-23)
+    birthMinute: 30,      // birth minute (0-59)
+    latitude: 39.9042,    // birth place latitude (-90 to 90)
+    longitude: 116.4074,  // birth place longitude (-180 to 180)
+    birthMonth: 8,        // birth month (1-12)
+    birthDay: 15,         // birth day (1-31)
+    birthYear: 1990       // birth year (1900-2100)
   }
 }
 ```
@@ -172,21 +172,21 @@ CMD ["npm", "start"]
 
 star/
 
-├── index.js                    # 主服务文件
+├── index.js                    # main service file
 
-├── package.json                # 项目配置
+├── package.json                # project configuration
 
-├── README.md                   # 项目文档
+├── README.md                   # project documentation
 
-├── RISING_SIGN_GUIDE.md        # 上升星座计算使用指南
+├── RISING_SIGN_GUIDE.md        # rising sign calculation guide
 
-├── test.js                     # 测试文件
+├── test.js                     # test file
 
-├── demo.js                     # 演示文件
+├── demo.js                     # demo file
 
-├── simple_test.js              # 简单测试文件
+├── simple_test.js              # simple test file
 
-└── rising_sign_test.js         # 上升星座准确性测试
+└── rising_sign_test.js         # rising sign accuracy test
 
 ```
 ## Development Guide

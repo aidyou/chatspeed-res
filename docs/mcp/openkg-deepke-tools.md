@@ -1,11 +1,11 @@
 ---
 title: "deepke-mcp-tools"
-description: "DeepKE-mcp-tools 为 DeepKE 的四个自然语言处理任务的 standard 的 预测 部分的 mcp 服务，因此前提需要有 DeepKE 对应任务训练好的模型，确保对应的 predict.py 能够运行。"
+description: "MCP service for the prediction part of DeepKE's four NLP tasks (standard version). Requires the DeepKE toolkit (https://github.com/zjunlp/DeepKE) to be installed."
 ---
 
 # deepke-mcp-tools
 
-DeepKE-mcp-tools 为 DeepKE 的四个自然语言处理任务的 standard 的 预测 部分的 mcp 服务，因此前提需要有 DeepKE 对应任务训练好的模型，确保对应的 predict.py 能够运行。
+MCP service for the prediction part of DeepKE's four NLP tasks (standard version). Requires the DeepKE toolkit (https://github.com/zjunlp/DeepKE) to be installed.
 
 # DeepKE-mcp-tools
 

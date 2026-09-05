@@ -1,11 +1,11 @@
 ---
 title: "AlphaVentage-mcp"
-description: "Alpha Vantage MCP Server English 中文 A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical…"
+description: "Alpha Vantage MCP Server A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical financial…"
 ---
 
 # AlphaVentage-mcp
 
-Alpha Vantage MCP Server English 中文 A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical…
+Alpha Vantage MCP Server A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical financial…
 
 # Alpha Vantage MCP Server
 

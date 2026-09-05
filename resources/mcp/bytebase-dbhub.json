@@ -36,7 +36,7 @@
     ],
     "env": [],
     "requiredInputs": [
-      "DSN 数据库连接串"
+      "DSN database connection string"
     ]
   },
   "score": 47.75

@@ -7,125 +7,122 @@ description: "This project is a web application for calculating health parameter
 
 This project is a web application for calculating health parameters based on Gradio. Users can input basic information such as gender, age, height, and weight (required), as well as optional health da…
 
-## 项目简介
+## Project Introduction
 
-想法来源：有时候很想知道输入一些简单的参数，或者我身体的一些指标信息。网上的很多都不是很准，我通过医院医生确认这些指标的计算公式；后想基于大模型来做，以MCP的形式，方便我的一些身体评估；
+Origin of the idea: Sometimes I really want to know what simple parameters or health indicators mean for my body. Many online calculators are not very accurate, so I confirmed the calculation formulas with hospital doctors. I then wanted to build this on large models, in MCP form, to facilitate my body assessments.
 
-目前实现了用户只需输入性别、年龄、身高、体重等基础信息（必填），以及腰围、甘油三酯、HDL胆固醇等可选健康数据，即可一键计算出多项常用健康指标，包括 BMI、BSA、腰高比、CI、CMI、CVAI、LAP、BFR、RFM 等，并给出健康评估建议。
+Currently, users only need to input basic information such as gender, age, height, and weight (required), as well as optional health data like waist circumference, triglycerides, and HDL cholesterol, to instantly calculate multiple commonly used health indicators, including BMI, BSA, waist-to-height ratio, CI, CMI, CVAI, LAP, BFR, RFM, etc., and receive health assessment recommendations.
 
-## 部署指南
+## Deployment Guide
 
+#### What is SSE?
 
+Server-Sent Events (SSE) is an HTTP-based technology that allows the server to push data to clients unidirectionally and in real time. In SSE mode, developers can create an EventSource object on the client to establish a persistent connection with the server; the server then continuously sends a data stream through this connection without the client having to make repeated requests.
 
-#### 什么是 SSE？
+#### Product Features
 
-Server-Sent Events（SSE，服务器发送事件）是一种基于 HTTP 协议的技术，允许服务器向客户端单向、实时地推送数据。在 SSE 模式下，开发者可以在客户端通过创建一个 EventSource 对象与服务器建立持久连接，服务器则通过该连接持续发送数据流，而无需客户端反复发送请求。
+* Easy to use: suitable for everyday users via the MCP (SSE) approach - no local deployment needed, simply configure a URL address.
+* Automatic upgrades: we continuously iterate and update; no extra actions are required from users.
+* Easier for LLMs to understand: we convert the raw JSON results into a semantic form that is easier for large models to understand.
+* Zero operations cost: fully managed cloud architecture - users don't need to worry about server maintenance, resource scaling, or other underlying ops issues.
+* Protocol compatibility: supports SSE long connections, adapting to the technical needs of different business scenarios.
 
-#### 产品特点
-
-* 使用简单：适用普通用户基于MCP（SSE）方式，不必部署本地服务，简单通过 URL 地址配置即可使用。
-* 自动升级：我们会持续进行迭代更新，无须用户自己任何额外操作使用。
-* 更易于大模型理解：我们对原始的JSON结果进行了语义化的转换，更易于大模型理解内容。
-* 零运维成本：采用全托管云服务架构，用户无需关心服务器维护、资源扩容等底层运维问题。
-* 协议兼容：支持SSE长连接，适配不同业务场景的技术需求。
-
-```
-    {
+```json
+{
     "mcpServers": {
         "gradio": {
-        "command": "npx",
-        "args": [
-            "mcp-remote",
-            "https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse",
-            "--transport",
-            "sse-only"
-        ]
-            }
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse",
+                "--transport",
+                "sse-only"
+            ]
         }
     }
+}
 ```
 
+## Usage Example
 
-## 使用示例
+### Input
+This is an MCP that can retrieve health information. Calculate health parameters based on the following information:
+Gender: Male
+Age: 30.0 years
+Height: 175.0 cm
+Weight: 70.0 kg
+Waist circumference: 85.0 cm
+Triglycerides: 150.0 mg/dL
+HDL cholesterol: 45.0 mg/dL
 
-### 输入
-这是一个可以获取健康信息的mcp，根据以下信息计算健康参数 性别: 男
-年龄: 30.0 岁
-身高: 175.0 cm
-体重: 70.0 kg
-腰围: 85.0 cm
-甘油三酯: 150.0 mg/dL
-HDL胆固醇: 45.0 mg/dL
+### Output
+The user needs to have health parameters calculated.
+For this request, I need to call the health calculator tool, which calculates health parameters based on the provided personal information. These parameters may include BMI, metabolic syndrome risk, and more.
 
-### 输出
-用户需要计算健康参数。
-针对该需求，我需要调用健康计算器工具，根据提供的个人信息计算健康参数。这些参数可能包括BMI、代谢综合征风险等。
+First, I should select the dudu007/HealthCalculator:predict tool, since it is dedicated to calculating health parameters and provides the required parameter interface. The tool requires age, gender, HDL cholesterol level (optional), height, triglyceride level (optional), waist circumference (optional), and weight as inputs.
 
-首先我应当选择dudu007/HealthCalculator:predict工具，由于该工具专门用于计算健康参数，且提供了所需的参数接口。该工具的入参需要年龄、性别、HDL胆固醇水平（可选）、身高、甘油三酯水平（可选）、腰围（可选）和体重。
+I need to prepare the input data:
+- Age: 30.0 years
+- Gender: Male
+- Height: 175.0 cm
+- Weight: 70.0 kg
+- Waist circumference: 85.0 cm
+- Triglycerides: 150.0 mg/dL
+- HDL cholesterol: 45.0 mg/dL
 
-我需要准备输入数据：
-- 年龄：30.0 岁
-- 性别：男
-- 身高：175.0 cm
-- 体重：70.0 kg
-- 腰围：85.0 cm
-- 甘油三酯：150.0 mg/dL
-- HDL胆固醇：45.0 mg/dL
+After calling the tool, it will return the calculated health parameters. I need to parse the returned results and report the key information to the user.
 
-调用工具后，将返回计算出的健康参数。我需要解析返回结果，并将关键信息反馈给用户。
+The health parameter calculation is complete. Here are the detailed results:
 
+#### Basic Information:
+- **Gender**: Male
+- **Age**: 30.0 years
+- **Height**: 175.0 cm
+- **Weight**: 70.0 kg
 
-健康参数计算已完成，以下是详细结果：
+#### Health Calculation Parameters:
+1. **BMI (Body Mass Index)**: 22.86 -> **Normal weight**
+   - BMI is an important indicator of whether your weight is normal; the healthy range is 18.5-24.9.
 
-#### 基本信息：
-- **性别**: 男  
-- **年龄**: 30.0 岁  
-- **身高**: 175.0 cm  
-- **体重**: 70.0 kg  
+2. **BSA (Body Surface Area)**: 1.81 m²
+   - Represents the total body surface area; commonly used in medical calculations.
 
-#### 健康计算参数：
-1. **BMI (体重指数)**: 22.86 → **体重正常**  
-   - BMI是衡量体重是否正常的重要指标，正常范围为18.5~24.9。
-   
-2. **BSA (体表面积)**: 1.81 m²  
-   - 表示身体的总表面积，常用于医学计算。
+3. **Waist circumference**: 85.0 cm
+   - The normal range for male waist circumference is below 90 cm; the current value is within normal range.
 
-3. **腰围**: 85.0 cm  
-   - 男性腰围的正常范围应小于90 cm，目前处于正常范围。
+4. **Waist-to-height ratio**: 0.486 -> **Normal waist-to-height ratio**
+   - A waist-to-height ratio below 0.5 is normal, indicating a lower risk of central obesity.
 
-4. **腰高比**: 0.486 → **腰高比正常**  
-   - 腰高比小于0.5为正常，表明中心性肥胖风险较低。
+5. **CI (Conicity Index)**: 1.23
+   - Reflects the shape of fat distribution; lower values are healthier.
 
-5. **CI (圆锥指数)**: 1.23  
-   - 反映脂肪分布形态，值越小越健康。
+6. **Triglycerides**: 150.0 mg/dL
+   - The normal range is below 150 mg/dL; the current value is at the borderline.
 
-6. **甘油三酯**: 150.0 mg/dL  
-   - 正常范围为小于150 mg/dL，目前处于临界值。
+7. **HDL cholesterol**: 45.0 mg/dL
+   - The ideal value for men is above 40 mg/dL; the current value meets the target.
 
-7. **HDL胆固醇**: 45.0 mg/dL  
-   - 男性理想值应高于40 mg/dL，当前值达标。
+8. **CMI (Cardiometabolic Index)**: 1.62
+   - Used to assess cardiovascular disease risk; the lower the value, the lower the risk.
 
-8. **CMI (心血管代谢指数)**: 1.62  
-   - 用于评估心血管疾病风险，数值较低，风险较小。
+9. **CVAI (Chinese Visceral Adiposity Index)**: -531.01
+   - Reflects visceral fat accumulation; a negative value indicates less visceral fat.
 
-9. **CVAI (中国内脏脂肪指数)**: -531.01  
-   - 反映内脏脂肪堆积情况，负值表示内脏脂肪较少。
+10. **LAP (Lipid Accumulation Product)**: 3000.00
+    - Used to predict metabolic risk; the current value is in the lower-risk range.
 
-10. **LAP (脂质蓄积指数)**: 3000.00  
-    - 用于预测代谢风险，当前值处于较低风险范围。
+11. **BFR (Body Fat Rate)**: 18.13%
+    - The normal body fat range for adult men is 15%-20%; the current value is within the healthy range.
 
-11. **BFR (体脂率)**: 18.13%  
-    - 成年男性的正常体脂率范围为15%~20%，当前值在健康范围内。
+12. **RFM (Relative Fat Mass)**: 22.82%
+    - A newer measure of body fat; lower values are better.
 
-12. **RFM (相对脂肪质量指数)**: 22.82%  
-    - 一种新的体脂评估方式，数值越低越好。
+### Health Assessment:
+- **BMI status**: Normal weight
+- **Waist-to-height ratio status**: Normal
+- **Overall assessment**: Current health is good, with no obvious metabolic or obesity-related risks.
 
-### 健康评估：
-- **BMI状态**: 体重正常  
-- **腰高比状态**: 腰高比正常  
-- **综合评估**: 当前健康状况良好，无明显代谢或肥胖相关风险。
-
-如需进一步分析，例如饮食建议或运动方案，可继续提供具体需求。
+If you need further analysis, such as dietary advice or exercise plans, feel free to continue with specific requests.
 
 **Official site: ** [https://www.modelscope.cn/studios/dudu007/HealthCalculator](https://www.modelscope.cn/studios/dudu007/HealthCalculator)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

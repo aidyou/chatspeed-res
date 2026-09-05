@@ -46,13 +46,13 @@ npx playwright install chromium
 
 bash
 ```bash
-# 从 npm 安装
+# Install from npm
 npm install @jinzcdev/markmap-mcp-server -g
 
-# 基本运行
+# Basic run
 npx -y @jinzcdev/markmap-mcp-server
 
-# 指定输出目录并自动打开浏览器
+# Specify an output directory and auto-open the browser
 npx -y @jinzcdev/markmap-mcp-server --output /path/to/output/directory --open always
 ```
 ### Docker
@@ -72,7 +72,7 @@ bash
 git clone https://github.com/jinzcdev/markmap-mcp-server.git
 cd markmap-mcp-server
 npm install && npm run build
-# 可选：启用服务端图片导出
+# Optional: enable server-side image export
 npx playwright install chromium
 node build/index.js
 ```

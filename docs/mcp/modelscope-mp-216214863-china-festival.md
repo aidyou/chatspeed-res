@@ -1,75 +1,75 @@
 ---
 title: "china-festival-mcp"
-description: "一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。西方节日都是固定公历日期，不需要查询工具。 - 节假日查询: 查询中国法定节假日、传统节日和调休安排 - 农历转换: 公历与农历日期相互转换 - 农历信息: 获取详细的农历日期描述，包括生肖、干支等 - 二十四节气: 查询二十四节气信息和季节划分…"
+description: "A Chinese holiday and lunar calendar information server based on the Model Context Protocol (MCP), providing AI assistants with accurate public holidays, holiday workday adjustments, traditional Chine…"
 ---
 
 # china-festival-mcp
 
-一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。西方节日都是固定公历日期，不需要查询工具。 - 节假日查询: 查询中国法定节假日、传统节日和调休安排 - 农历转换: 公历与农历日期相互转换 - 农历信息: 获取详细的农历日期描述，包括生肖、干支等 - 二十四节气: 查询二十四节气信息和季节划分…
+A Chinese holiday and lunar calendar information server based on the Model Context Protocol (MCP), providing AI assistants with accurate public holidays, holiday workday adjustments, traditional Chine…
 
-# 中国节假日MCP服务器
+# China Holiday MCP Server
 
-一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。西方节日都是固定公历日期，不需要查询工具。
+A Chinese holiday and lunar calendar information server based on the Model Context Protocol (MCP), providing AI assistants with accurate public holidays, holiday workday adjustments, traditional Chinese festivals, lunar calendar conversion, the 24 solar terms, and BaZi (Eight Characters) calculation. Western festivals all fall on fixed Gregorian dates, so no lookup tool is needed.
 
-## 🌟 功能特性
+## Features
 
-- **节假日查询**: 查询中国法定节假日、传统节日和调休安排
-- **农历转换**: 公历与农历日期相互转换
-- **农历信息**: 获取详细的农历日期描述，包括生肖、干支等
-- **二十四节气**: 查询二十四节气信息和季节划分
-- **八字计算**: 根据出生日期时间计算四柱八字和五行属性
-- **FastMCP架构**: 基于官方推荐的FastMCP框架，提供更好的性能和稳定性
+- **Holiday lookup**: query Chinese public holidays, traditional festivals, and workday adjustments
+- **Lunar conversion**: convert between Gregorian and lunar dates
+- **Lunar info**: detailed lunar date descriptions including zodiac and Heavenly Stems/Earthly Branches
+- **24 solar terms**: query solar term info and season divisions
+- **BaZi calculation**: compute the Four Pillars and Five Elements based on birth date and time
+- **FastMCP architecture**: built on the officially recommended FastMCP framework for better performance and stability
 
-## 🏗️ 技术架构
+## Technical Architecture
 
-本项目基于官方推荐的FastMCP框架开发，具有以下特性：
+This project is built on the officially recommended FastMCP framework and has the following features:
 
-- **简化的工具注册**: 使用 `@mcp.tool()` 装饰器
-- **自动类型验证**: 自动处理参数验证和类型转换
-- **标准化接口**: 完全符合MCP协议最佳实践
+- **Simplified tool registration**: uses the `@mcp.tool()` decorator
+- **Automatic type validation**: handles parameter validation and type conversion automatically
+- **Standardized interface**: fully conforms to MCP protocol best practices
 
-## 📦 安装
+## Installation
 
-### 环境要求
+### Requirements
 
 - Python 3.8+
-- 支持MCP协议的AI客户端（如Claude Desktop）
+- An MCP-capable AI client (such as Claude Desktop)
 
-### 使用uvx安装（推荐）
+### Install with uvx (recommended)
 
 ```bash
-# 直接从PyPI安装并运行
+# Install and run directly from PyPI
 uvx china-festival-mcp
 ```
 
-### 本地开发安装
+### Local development install
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/your-username/china-festival-mcp.git
 cd china-festival-mcp
 
-# 使用uvx运行（会自动安装依赖）
+# Run with uvx (dependencies are installed automatically)
 uvx --from . python -m src.server_fastmcp
 ```
 
-## 🚀 使用方法
+## Usage
 
 ```bash
-# 从PyPI直接运行
+# Run directly from PyPI
 uvx china-festival-mcp
 
-# 或本地开发运行
+# Or run as local development
 uvx --from . python -m src.server_fastmcp
 ```
 
-## ⚙️ MCP客户端配置
+## MCP Client Configuration
 
-### Claude Desktop配置
+### Claude Desktop configuration
 
-编辑 `~/Library/Application Support/Claude/claude_desktop_config.json`：
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
-#### 从PyPI安装（推荐）
+#### Install from PyPI (recommended)
 
 ```json
 {
@@ -82,7 +82,7 @@ uvx --from . python -m src.server_fastmcp
 }
 ```
 
-#### 本地开发
+#### Local development
 
 ```json
 {
@@ -96,9 +96,9 @@ uvx --from . python -m src.server_fastmcp
 }
 ```
 
-### 其他MCP客户端
+### Other MCP clients
 
-对于其他支持MCP协议的客户端，使用相同的uvx配置方式：
+For other MCP-capable clients, use the same uvx configuration:
 
 ```json
 {
@@ -111,52 +111,52 @@ uvx --from . python -m src.server_fastmcp
 }
 ```
 
-## 📚 API文档
+## API Documentation
 
-### 节假日工具
+### Holiday tools
 
 #### `holiday_info`
-查询指定日期的节假日信息，包含是否为节假日的判断
+Queries holiday info for a specified date, including whether it is a holiday
 
-**返回:**
+**Returns:**
 ```json
 {
   "date": "2024-01-01",
-  "name": "元旦",
+  "name": "New Year's Day",
   "type": "holiday",
   "is_holiday": true,
   "is_work_day": false,
-  "note": "法定节假日",
+  "note": "Public holiday",
   "weekday_name_en": "Monday"
 }
 ```
 
 #### `next_holiday`
-获取下一个节假日
+Gets the next holiday
 
-**返回:**
+**Returns:**
 ```json
 {
-  "name": "春节",
+  "name": "Spring Festival",
   "date": "2024-02-10",
   "days_until": 40,
-  "note": "法定节假日",
+  "note": "Public holiday",
   "weekday_name_en": "Saturday"
 }
 ```
 
 #### `current_year_holidays`
-获取当前年份所有节假日
+Gets all holidays in the current year
 
-**返回:**
+**Returns:**
 ```json
 {
   "year": 2024,
   "holidays": [
     {
       "date": "2024-01-01",
-      "name": "元旦",
-      "note": "法定节假日"
+      "name": "New Year's Day",
+      "note": "Public holiday"
     }
   ],
   "total_count": 1
@@ -164,29 +164,29 @@ uvx --from . python -m src.server_fastmcp
 ```
 
 #### `current_year_work_days`
-获取当前年份调休工作日安排
+Gets the workday adjustment schedule for the current year
 
-**返回:**
+**Returns:**
 ```json
 {
   "year": 2024,
   "work_days": [
     {
       "date": "2024-02-04",
-      "name": "春节调休",
-      "note": "调休工作日"
+      "name": "Spring Festival makeup workday",
+      "note": "Makeup workday"
     }
   ],
   "total_count": 1
 }
 ```
 
-### 农历工具
+### Lunar tools
 
 #### `gregorian_to_lunar`
-公历转农历
+Gregorian to lunar conversion
 
-**返回:**
+**Returns:**
 ```json
 {
   "gregorian_date": "2024-01-01",
@@ -194,17 +194,17 @@ uvx --from . python -m src.server_fastmcp
   "lunar_month": 11,
   "lunar_day": 20,
   "is_leap_month": false,
-  "zodiac": "兔"
+  "zodiac": "Rabbit"
 }
 ```
 
 #### `lunar_to_gregorian`
-农历转公历
+Lunar to Gregorian conversion
 
-**返回:**
+**Returns:**
 ```json
 {
-  "lunar_date": "2023年十一月二十",
+  "lunar_date": "Lunar 11th month, 20th day, 2023",
   "gregorian_year": 2024,
   "gregorian_month": 1,
   "gregorian_day": 1,
@@ -213,9 +213,9 @@ uvx --from . python -m src.server_fastmcp
 ```
 
 #### `get_lunar_string`
-获取农历日期的详细中文描述
+Gets a detailed Chinese description of the lunar date
 
-**返回:**
+**Returns:**
 ```json
 {
   "gregorian_date": "2024-01-01",
@@ -223,103 +223,103 @@ uvx --from . python -m src.server_fastmcp
   "lunar_month": 11,
   "lunar_day": 20,
   "is_leap_month": false,
-  "zodiac": "兔",
+  "zodiac": "Rabbit",
   "year_gan_zhi": "癸卯",
   "tian_gan": "癸",
   "di_zhi": "卯",
-  "lunar_month_name": "十一月",
-  "lunar_day_name": "二十",
-  "lunar_string": "癸卯年 十一月 二十"
+  "lunar_month_name": "Eleventh month",
+  "lunar_day_name": "Twentieth day",
+  "lunar_string": "Gui Mao year, 11th month, 20th day"
 }
 ```
 
 #### `get_24_lunar_feast`
-获取二十四节气信息
+Gets the 24 solar terms info
 
-**返回:**
+**Returns:**
 ```json
 {
   "year": 2024,
   "month": 1,
   "solar_terms": [
     {
-      "name": "小寒",
+      "name": "Minor Cold",
       "date": "2024-01-06",
       "days_until": 5,
-      "season": "冬季"
+      "season": "Winter"
     },
     {
-      "name": "大寒",
+      "name": "Major Cold",
       "date": "2024-01-20",
       "days_until": 19,
-      "season": "冬季"
+      "season": "Winter"
     }
   ]
 }
 ```
 
 #### `get_8zi`
-计算八字（四柱）
+Calculates BaZi (Four Pillars)
 
-**返回:**
+**Returns:**
 ```json
 {
   "eight_characters": "甲辰 丙寅 甲子 庚午"
 }
 ```
 
-### 日期工具
+### Date tools
 
 #### `get_weekday`
-根据公历日期计算星期几
+Calculates the weekday for a Gregorian date
 
-**返回:**
+**Returns:**
 ```json
 {
   "weekday_number": 1,
-  "weekday_name_zh": "星期一",
+  "weekday_name_zh": "Monday",
   "weekday_name_en": "Monday",
   "date": "2024-01-01"
 }
 ```
 
-## 📁 项目结构
+## Project Structure
 
 ```
 china-festival-mcp/
-├── src/                       # 核心源代码
+├── src/                       # Core source code
 │   ├── __init__.py
-│   ├── server_fastmcp.py      # FastMCP服务器主程序
-│   ├── data/                  # 数据模块
-│   │   ├── bazi_calculator.py # 八字计算模块
-│   │   └── solar_terms.py     # 二十四节气数据
-│   ├── tools/                 # 工具模块
+│   ├── server_fastmcp.py      # FastMCP server main program
+│   ├── data/                  # Data modules
+│   │   ├── bazi_calculator.py # BaZi calculation module
+│   │   └── solar_terms.py     # 24 solar terms data
+│   ├── tools/                 # Tool modules
 │   │   ├── __init__.py
-│   │   ├── holiday.py         # 节假日查询工具
-│   │   ├── lunar.py           # 农历转换工具
-│   │   └── weekday.py         # 星期计算工具
-│   └── utils/                 # 工具函数
+│   │   ├── holiday.py         # Holiday lookup tool
+│   │   ├── lunar.py           # Lunar conversion tool
+│   │   └── weekday.py         # Weekday calculation tool
+│   └── utils/                 # Utility functions
 │       ├── __init__.py
-│       ├── date_utils.py      # 日期工具
-│       └── logger.py          # 日志管理
-├── scripts/                   # 发布脚本
-│   └── publish.py             # 自动发布脚本
-├── test_solar_terms.py        # 节气测试脚本
-├── .gitignore                 # Git忽略文件
-├── pyproject.toml             # 项目配置和依赖
-├── README.md                  # 项目说明
-├── LICENSE                    # 许可证
-├── PUBLISH_GUIDE.md           # 发布指南
-└── publish.sh                 # 发布脚本
+│       ├── date_utils.py      # Date utilities
+│       └── logger.py          # Logging
+├── scripts/                   # Publish scripts
+│   └── publish.py             # Auto publish script
+├── test_solar_terms.py        # Solar terms test script
+├── .gitignore                 # Git ignore rules
+├── pyproject.toml             # Project config and dependencies
+├── README.md                  # Project readme
+├── LICENSE                    # License
+├── PUBLISH_GUIDE.md           # Publishing guide
+└── publish.sh                 # Publish script
 ```
 
-## 🙏 致谢
+## Acknowledgments
 
-本项目基于 [PyLunar](https://github.com/swordzjj/PyLunar/tree/master) 项目和 [holiday-cn](https://github.com/NateScarlet/holiday-cn)项目开发，感谢原作者的贡献。
+This project is developed based on the [PyLunar](https://github.com/swordzjj/PyLunar/tree/master) project and the [holiday-cn](https://github.com/NateScarlet/holiday-cn) project. Thanks to the original authors for their contributions.
 
-- 感谢所有贡献者
-- 基于传统农历算法和现代计算方法
-- 参考了多个开源农历转换项目
+- Thanks to all contributors
+- Based on traditional lunar algorithms and modern calculation methods
+- Referenced several open-source lunar conversion projects
 
 **Official site: ** [https://github.com/Eis4TY/china-festival-mcp](https://github.com/Eis4TY/china-festival-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -1,110 +1,92 @@
 ---
 title: "MediaGenMCP"
-description: "Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. 简介 本文档将指导您如何使用阿里云百炼平台的通义万相模型，实现从文本生成图像和视频的功能。通义万相模型是阿里云推出的一种强大的多模态预训练模型，能够根据输…"
+description: "Integrating Alibaba Cloud's Qwen Platform Tongyi Wanxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. Introduction This document will guide you through using the Tongyi Wanxiang…"
 ---
 
 # MediaGenMCP
 
-Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. 简介 本文档将指导您如何使用阿里云百炼平台的通义万相模型，实现从文本生成图像和视频的功能。通义万相模型是阿里云推出的一种强大的多模态预训练模型，能够根据输…
+Integrating Alibaba Cloud's Qwen Platform Tongyi Wanxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. Introduction This document will guide you through using the Tongyi Wanxiang…
 
 # Media Generator MCP Server
 
-集成阿里云百炼平台通义万相模型实现文生图和文生视频功能。
+Integrates the Alibaba Cloud Bailian platform's Tongyi Wanxiang model to implement text-to-image and text-to-video functionality.
 
-## 功能
+## Features
 
-### 1. 生成图片 (`generate_image`)
+### 1. Generate Image (`generate_image`)
 
-根据文本描述生成图片。
+Generates an image from a text description.
 
-**参数：**
-- `prompt` (必填): 图片文本描述
-- `negative_prompt` (可选): 不希望在图片中出现的内容描述
-- `size` (可选): 图片尺寸，可选值：
-  - 1024*1024 (默认)
+**Parameters:**
+- `prompt` (required): image text description
+- `negative_prompt` (optional): description of content you do not want in the image
+- `size` (optional): image size, options:
+  - 1024*1024 (default)
   - 720*1280
   - 1280*720
   - 768*1152
   - 1152*768
   - 512*512
   - 1440*1440
-- `n` (可选): 生成图片数量，1-4，默认1
-- `seed` (可选): 随机种子，用于生成可重复的结果
-- `prompt_extend` (可选): 是否启用提示词智能改写，默认true
-- `watermark` (可选): 是否添加AI生成水印，默认false
+- `n` (optional): number of images to generate, 1-4, default 1
+- `seed` (optional): random seed for reproducible results
+- `prompt_extend` (optional): whether to enable smart prompt rewriting, default true
+- `watermark` (optional): whether to add the AI-generated watermark, default false
 
-### 2. 生成视频 (`generate_video`)
+### 2. Generate Video (`generate_video`)
 
-根据文本描述生成视频。
+Generates a video from a text description.
 
-**参数：**
-- `prompt` (必填): 视频文本描述
-- `negative_prompt` (可选): 不希望在视频中出现的内内容描述
-- `size` (可选): 视频分辨率，可选值：
-  - 1920*1080 (默认，1080P横屏)
-  - 1080*1920 (1080P竖屏)
-  - 1440*1440 (1080P方形)
+**Parameters:**
+- `prompt` (required): video text description
+- `negative_prompt` (optional): description of content you do not want in the video
+- `size` (optional): video resolution, options:
+  - 1920*1080 (default, 1080P landscape)
+  - 1080*1920 (1080P portrait)
+  - 1440*1440 (1080P square)
   - 1632*1248 (1080P 4:3)
   - 1248*1632 (1080P 3:4)
-  - 1280*720 (720P横屏)
-  - 720*1280 (720P竖屏)
-  - 960*960 (720P方形)
+  - 1280*720 (720P landscape)
+  - 720*1280 (720P portrait)
+  - 960*960 (720P square)
   - 1088*832 (720P 4:3)
   - 832*1088 (720P 3:4)
-  - 832*480 (480P横屏)
-  - 480*832 (480P竖屏)
-  - 624*624 (480P方形)
-- `model` (可选): 视频模型，可选值：
-  - wan2.2-t2v-plus (默认)
+  - 832*480 (480P landscape)
+  - 480*832 (480P portrait)
+  - 624*624 (480P square)
+- `model` (optional): video model, options:
+  - wan2.2-t2v-plus (default)
   - wanx2.1-t2v-turbo
   - wanx2.1-t2v-plus
-- `seed` (可选): 随机种子，用于生成可重复的结果
-- `prompt_extend` (可选): 是否启用提示词智能改写，默认true
-- `watermark` (可选): 是否添加AI生成水印，默认false
+- `seed` (optional): random seed for reproducible results
+- `prompt_extend` (optional): whether to enable smart prompt rewriting, default true
+- `watermark` (optional): whether to add the AI-generated watermark, default false
 
+## Examples
 
-## 示例
-
-### 生成图片
-生成一张猫的图片：
+### Generate an image
+Generate a picture of a cat:
 ```json
 {
-  "prompt": "一只可爱的橘猫坐在窗台上晒太阳",
+  "prompt": "A cute orange tabby cat basking in the sun on a windowsill",
   "size": "1024*1024"
 }
 ```
 
-### 生成视频
-生成一只小猫在月光下奔跑的视频：
+### Generate a video
+Generate a video of a little cat running under the moonlight:
 ```json
 {
-  "prompt": "一只小猫在月光下奔跑，水墨画风格，背景是古色古香的中式庭院",
+  "prompt": "A little cat running under the moonlight, ink painting style, set in an atmospheric traditional Chinese courtyard",
   "size": "1920*1080",
   "model": "wan2.2-t2v-plus"
 }
 ```
 
-## MCP服务配置
+## MCP Service Configuration
 
-### Claude Desktop 配置
-在 `claude_desktop_config.json` 中添加：
-
-```json
-{
-  "mcpServers": {
-    "media-gen": {
-      "command": "npx",
-      "args": ["-y", "media-gen-mcp"],
-      "env": {
-        "DASHSCOPE_API_KEY": "你的DashScope_API密钥"
-      }
-    }
-  }
-}
-```
-
-### Cursor 配置
-在 `.cursor/mcp.json` 中添加：
+### Claude Desktop Configuration
+Add the following to `claude_desktop_config.json`:
 
 ```json
 {
@@ -113,15 +95,32 @@ Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-t
       "command": "npx",
       "args": ["-y", "media-gen-mcp"],
       "env": {
-        "DASHSCOPE_API_KEY": "你的DashScope_API密钥"
+        "DASHSCOPE_API_KEY": "your_DashScope_API_key"
       }
     }
   }
 }
 ```
 
-### VS Code 配置
-在 `settings.json` 中添加：
+### Cursor Configuration
+Add the following to `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "media-gen": {
+      "command": "npx",
+      "args": ["-y", "media-gen-mcp"],
+      "env": {
+        "DASHSCOPE_API_KEY": "your_DashScope_API_key"
+      }
+    }
+  }
+}
+```
+
+### VS Code Configuration
+Add the following to `settings.json`:
 
 ```json
 {
@@ -131,7 +130,7 @@ Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-t
         "command": "npx",
         "args": ["-y", "media-gen-mcp"],
         "env": {
-          "DASHSCOPE_API_KEY": "你的DashScope_API密钥"
+          "DASHSCOPE_API_KEY": "your_DashScope_API_key"
         }
       }
     }
@@ -139,14 +138,14 @@ Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-t
 }
 ```
 
-### HTTP模式使用
-如需通过HTTP使用，先运行：
+### HTTP Mode Usage
+To use it over HTTP, first run:
 ```bash
 npm run build
 npm start stream
 ```
 
-然后配置MCP客户端连接到 `http://localhost:8080`
+Then configure the MCP client to connect to `http://localhost:8080`
 
 **Official site: ** [https://github.com/weiwei162/MediaGenMCP.git](https://github.com/weiwei162/MediaGenMCP.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

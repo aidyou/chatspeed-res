@@ -6,7 +6,7 @@
     "zh-Hans": "deepke-mcp-tools"
   },
   "description": {
-    "en": "# DeepKE-mcp-tools\n\n为 `DeepKE` 的四个自然语言处理任务的 **standard** 的 **预测** 部分的 mcp 服务，因此前提需要有 [DeepKE](https://github.com/zjunlp/DeepKE) 对应任务训练好的模型，确保对应的 `predict.py` 能够运行。",
+    "en": "MCP service for the prediction part of DeepKE's four NLP tasks (standard version). Requires the DeepKE toolkit (https://github.com/zjunlp/DeepKE) to be installed.",
     "zh-Hans": "该项目为DeepKE的四个自然语言处理任务的预测部分提供MCP服务。需要预先使用DeepKE训练好的模型，并正确配置环境。"
   },
   "detail": {

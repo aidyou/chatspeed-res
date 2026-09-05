@@ -7,67 +7,63 @@ description: "Let AI help you easily create professional slide presentations!"
 
 Let AI help you easily create professional slide presentations!
 
-## ✨ 项目介绍
+## Project Introduction
 
-slidev-mcp 是一个基于 [Slidev](https://github.com/slidevjs/slidev) 的智能幻灯片生成工具，通过集成大语言模型技术，让用户只需简单描述需求，即可自动生成专业的在线PPT演示文稿。
+slidev-mcp is an intelligent slide generation tool based on [Slidev](https://github.com/slidevjs/slidev). By integrating large language model technology, users only need to describe their requirements briefly to automatically generate professional online PPT presentations.
 
+**Core value**:
+- Significantly lowers the barrier to using Slidev
+- Create slides interactively with natural language
+- Automatically generate professional-grade presentations
 
- **核心价值**：
-- 大幅降低 Slidev 使用门槛
-- 自然语言交互式创建幻灯片
-- 自动化生成专业级演示文稿
+## Demo Video
 
-## 🎥 演示视频
+The video below shows the basic flow of creating a Slidev project with the MCP tools:
 
-下面的视频展示了使用 MCP 工具创建 Slidev 项目的基本流程：
+## Quick Start
 
+For detailed setup and usage instructions, see the [Quick Start Guide](https://github.com/LSTM-Kirigaya/slidev-mcp/blob/main/docs/quickstart.zh.md).
 
+## Available Tools
 
+The MCP server provides the following tools for slide creation and management:
 
-## 🚀 快速开始
+### Environment & Project Management
 
-详细的设置和使用说明，请查看[快速开始指南](https://github.com/LSTM-Kirigaya/slidev-mcp/blob/main/docs/quickstart.zh.md)。
-
-## 🔧 可用工具
-
-MCP 服务器提供以下工具用于幻灯片创建和管理：
-
-### 环境与项目管理
-
-| 工具名称 | 输入参数 | 输出结果 | 作用 |
+| Tool | Input parameters | Output | Purpose |
 |---------|---------|---------|------|
-| `check_environment` | 无 | 环境状态和版本信息 | 验证依赖项是否已安装 |
-| `create_slidev` | `path` (字符串), `title` (字符串), `author` (字符串) | 项目创建状态和路径 | 初始化新的 Slidev 项目 |
-| `load_slidev` | `path` (字符串) | 项目内容和幻灯片数据 | 加载现有演示文稿 |
+| `check_environment` | none | environment status and version info | verify dependencies are installed |
+| `create_slidev` | `path` (string), `title` (string), `author` (string) | project creation status and path | initialize a new Slidev project |
+| `load_slidev` | `path` (string) | project content and slide data | load an existing presentation |
 
-### 幻灯片内容管理
+### Slide Content Management
 
-| 工具名称 | 输入参数 | 输出结果 | 作用 |
+| Tool | Input parameters | Output | Purpose |
 |---------|---------|---------|------|
-| `make_cover` | `title` (字符串), `subtitle` (字符串, 可选), `author` (字符串, 可选), `background` (字符串, 可选), `python_string_template` (字符串, 可选) | 封面创建状态 | 创建/更新封面页 |
-| `add_page` | `content` (字符串), `layout` (字符串, 可选) | 新幻灯片索引 | 向演示文稿添加新幻灯片 |
-| `set_page` | `index` (整数), `content` (字符串), `layout` (字符串, 可选) | 更新状态 | 修改现有幻灯片内容 |
-| `get_page` | `index` (整数) | Markdown 格式的幻灯片内容 | 获取指定幻灯片内容 |
+| `make_cover` | `title` (string), `subtitle` (string, optional), `author` (string, optional), `background` (string, optional), `python_string_template` (string, optional) | cover creation status | create/update the cover page |
+| `add_page` | `content` (string), `layout` (string, optional) | new slide index | add a new slide to the presentation |
+| `set_page` | `index` (integer), `content` (string), `layout` (string, optional) | update status | modify existing slide content |
+| `get_page` | `index` (integer) | slide content in Markdown format | get the content of a specific slide |
 
-### 实用工具
+### Utility Tools
 
-| 工具名称 | 输入参数 | 输出结果 | 作用 |
+| Tool | Input parameters | Output | Purpose |
 |---------|---------|---------|------|
-| `websearch` | `url` (字符串) | 提取的 Markdown 文本 | 从网络收集幻灯片内容 |
-| `get_slidev_usage` | 无 | Slidev 布局指南和模板 | 提供布局文档参考 |
-| `start_slidev` | 无 | 服务器启动命令字符串 | 启动演示文稿服务器 |
+| `websearch` | `url` (string) | extracted Markdown text | collect slide content from the web |
+| `get_slidev_usage` | none | Slidev layout guide and templates | provide layout documentation reference |
+| `start_slidev` | none | server startup command string | start the presentation server |
 
-### AI 助手
+### AI Assistant
 
-| 工具名称 | 输入参数 | 输出结果 | 作用 |
+| Tool | Input parameters | Output | Purpose |
 |---------|---------|---------|------|
-| `guide` | 无 | 系统提示 | 指导 AI 有效使用工具 |
+| `guide` | none | system prompt | guide the AI to use the tools effectively |
 
-> **注释**: `可选` = 可选参数
+> **Note**: `optional` = optional parameter
 
-## 📄 开源协议
+## License
 
-MIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)
+MIT License (c) 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)
 
 **Official site: ** [https://github.com/LSTM-Kirigaya/slidev-mcp](https://github.com/LSTM-Kirigaya/slidev-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`
@@ -81,7 +77,7 @@ MIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)
 
 - Transport: `stdio`
 - Command: `uv`
-- Args: `--directory <替换为你的slidev-mcp路径> run servers\themes\academic\server.py`
+- Args: `--directory <REPLACE_WITH_YOUR_SLIDEV_MCP_PATH> run servers\themes\academic\server.py`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 

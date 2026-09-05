@@ -1,37 +1,37 @@
 ---
 title: "mcp-imagex"
-description: "Volcengine ImageX MCP Volcengine ImageX 的 Model Context Protocol (MCP) Server 实现 项目简介 Volcengine ImageX MCP是一个基于Model Context Protocol的 MCP-server， 它将 Volcengine 服务集成到LLM模型上下文中，使大模型能够直接上传和处理图片资源。 功能特点…"
+description: "Volcengine ImageX MCP is a Model Context Protocol (MCP) Server implementation for Volcengine ImageX. It integrates Volcengine services into the LLM context, enabling large models to upload and process…"
 ---
 
 # mcp-imagex
 
-Volcengine ImageX MCP Volcengine ImageX 的 Model Context Protocol (MCP) Server 实现 项目简介 Volcengine ImageX MCP是一个基于Model Context Protocol的 MCP-server， 它将 Volcengine 服务集成到LLM模型上下文中，使大模型能够直接上传和处理图片资源。 功能特点…
+Volcengine ImageX MCP is a Model Context Protocol (MCP) Server implementation for Volcengine ImageX. It integrates Volcengine services into the LLM context, enabling large models to upload and process…
 
 # Volcengine ImageX MCP
 
-[Volcengine ImageX](https://t.zijieimg.com/MIURnXrQfvU/) 的 Model Context Protocol (MCP) Server 实现
+[Volcengine ImageX](https://t.zijieimg.com/MIURnXrQfvU/) Model Context Protocol (MCP) Server implementation
 
-## 项目简介
+## Project Introduction
 
-Volcengine ImageX MCP是一个基于[Model Context Protocol](https://github.com/modelcontextprotocol/python-sdk)的 MCP-server，
-它将 Volcengine 服务集成到LLM模型上下文中，使大模型能够直接上传和处理图片资源。
+Volcengine ImageX MCP is an MCP-server based on the [Model Context Protocol](https://github.com/modelcontextprotocol/python-sdk).
+It integrates Volcengine services into the LLM context, enabling large models to upload and process image resources directly.
 
-## 功能特点
+## Features
 
-- 提供多种资源访问接口，便于LLM获取veImageX服务信息、图片资源等
-- 实现了多个veImageX功能的工具封装，包括图片资源的管理、文生图、AIGC画质修复、画质评估以及常用的用量、质量查询能力
-- 提供多种预定义提示模板，帮助LLM更好地理解和使用veImageX功能
+- Provides multiple resource access interfaces so LLMs can get veImageX service information, image resources, etc.
+- Implements tool wrappers for multiple veImageX features, including image resource management, text-to-image, AIGC quality repair, quality evaluation, and common usage/quality query capabilities
+- Provides multiple predefined prompt templates to help LLMs better understand and use veImageX features
 
-## 安装
+## Installation
 
-### 环境要求
+### Requirements
 
 - Python 3.11+
-- [火山引擎账号及AccessKey/SecretKey](https://console.volcengine.cn/imagex)
+- [Volcengine account and AccessKey/SecretKey](https://console.volcengine.cn/imagex)
 
-## 使用方法
+## Usage
 
-在 mcp client 中配置 mcp 服务， 配置的 MCP JSON：
+Configure the MCP service in the MCP client. The MCP JSON configuration:
 
 ```json
 {
@@ -45,8 +45,7 @@ Volcengine ImageX MCP是一个基于[Model Context Protocol](https://github.com/
         "VOLCENGINE_SECRET_KEY": "Your Volcengine SK",
         "SERVICE_ID": "Your Service ID",
         "DOMAIN": "Your Domain"
-      },
-      "transportType": "stdio"
+      }
     }
   }
 }

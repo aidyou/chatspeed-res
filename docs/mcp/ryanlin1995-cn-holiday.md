@@ -42,7 +42,7 @@ pip install aiohttp mcp
 3. Install the MCP Inspector tool (used for testing MCP services):
 bash
 ```bash
-# 确保已安装Node.js
+# Make sure Node.js is installed
 npm install -g @modelcontextprotocol/inspector
 ```
 ## Running the Service

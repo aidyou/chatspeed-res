@@ -6,7 +6,7 @@
     "zh-Hans": "哔哩哔哩视频信息获取"
   },
   "description": {
-    "en": "# MCP Server for Bilibili Video Info\n\n这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。",
+    "en": "This is a server based on the MCP (Model Context Protocol) that can fetch the subtitles, danmaku (bullet comments), and comments of Bilibili videos.",
     "zh-Hans": "这是一个基于MCP（模型上下文协议）的服务器，可以获取Bilibili视频的字幕、弹幕和评论信息。"
   },
   "detail": {

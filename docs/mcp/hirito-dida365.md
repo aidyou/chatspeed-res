@@ -7,40 +7,40 @@ description: "Implementing Log CRUD Based on the Official Documentation of TickT
 
 Implementing Log CRUD Based on the Official Documentation of TickTick Introduction This guide will walk you through how to implement basic log operations (Create, Read, Update, Delete) using the offic…
 
-# 滴答清单 MCP 服务
+# Dida365 MCP Service
 
-这是一个为滴答清单（TickTick/Dida365）开发的 Model Context Protocol (MCP) 服务器，使用 TypeScript 编写。该服务允许 AI 助手通过标准化接口与滴答清单 API 进行交互。
+This is a Model Context Protocol (MCP) server developed for TickTick/Dida365, written in TypeScript. This service allows AI assistants to interact with the Dida365 API through a standardized interface.
 
-## 功能特性
+## Features
 
-- ✅ 创建、读取、更新、删除任务
-- ✅ 管理项目和项目列表
-- ✅ 支持任务优先级和截止日期
-- ✅ 通过环境变量安全配置 API Token
-- ✅ 完整的 TypeScript 类型支持
-- ✅ 错误处理和API响应验证
+- Create, read, update, and delete tasks
+- Manage projects and project lists
+- Support task priority and due dates
+- Securely configure API Token via environment variables
+- Complete TypeScript type support
+- Error handling and API response validation
 
-## 快速开始
+## Quick Start
 
-### 使用MCP (Node版本)
+### Using MCP (Node version)
 
-#### DIDA官方获取token
+#### Get the token from the Dida official docs
 
 [OpenAPI - API Doc](https://developer.dida365.com/docs/index.html#/openapi?id=get-access-token)
 
-#### 下载
+#### Download
 
 ```
 npm i dida365-mcp-servers
 ```
 
-##### 配置json文件
+##### Configure the JSON file
 
 ```json
     "dida365": {
       "command": "node",
       "args": [
- 			//your download path ; example:C:\\nvm4w\\nodejs\\node_modules\\dida365-mcp-servers\\dist
+ 			//your download path; example: C:\nvm4w\nodejs\node_modules\dida365-mcp-servers\dist
       ],
       "env": {
         "DIDA365_TOKEN": your TOKEN
@@ -48,179 +48,177 @@ npm i dida365-mcp-servers
     }
 ```
 
+### Using locally
 
-
-### 使用本地
-
-### 1. 安装依赖
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. 配置环境变量
+### 2. Configure environment variables
 
-复制示例环境变量文件：
+Copy the example environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-编辑 `.env` 文件，添加你的滴答清单 API Token：
+Edit the `.env` file and add your Dida365 API Token:
 
 ```bash
 DIDA365_TOKEN=Bearer your_token_here
 ```
 
-### 3. 获取 API Token
+### 3. Get the API Token
 
-1. 访问 [滴答清单开放平台](https://developer.dida365.com/)
-2. 登录你的滴答清单账号
-3. 创建新应用
-4. 获取访问令牌（Access Token）
-5. 将令牌添加到 `.env` 文件中
+1. Visit the [Dida365 Open Platform](https://developer.dida365.com/)
+2. Log in to your Dida365 account
+3. Create a new app
+4. Get the Access Token
+5. Add the token to the `.env` file
 
-### 4. 构建和运行
+### 4. Build and run
 
-开发模式：
+Development mode:
 
 ```bash
 npm run dev
 ```
 
-生产模式：
+Production mode:
 
 ```bash
 npm run build
 npm start
 ```
 
-## 可用工具
+## Available Tools
 
-### 任务管理
+### Task management
 
-#### `create_task` - 创建新任务
+#### `create_task` - create a new task
 
-- **参数**:
-  - `title` (string, 必需): 任务标题
-  - `projectId` (string, 必需): 项目ID
-  - `content` (string): 任务内容描述
-  - `dueDate` (string): 截止日期 (ISO 8601格式)
-  - `priority` (number): 优先级 (0-5)
+- **Parameters**:
+  - `title` (string, required): task title
+  - `projectId` (string, required): project ID
+  - `content` (string): task content description
+  - `dueDate` (string): due date (ISO 8601 format)
+  - `priority` (number): priority (0-5)
 
-#### `get_task_by_projectId_and_taskId` - 通过项目ID和任务ID获取任务
+#### `get_task_by_projectId_and_taskId` - get a task by project ID and task ID
 
-- **参数**:
-  - `projectId` (string, 必需): 项目ID
-  - `taskId` (string, 必需): 任务ID
+- **Parameters**:
+  - `projectId` (string, required): project ID
+  - `taskId` (string, required): task ID
 
-#### `get_tasks_by_projectId` - 通过项目ID获取项目中的任务列表
+#### `get_tasks_by_projectId` - get the task list in a project by project ID
 
-- **参数**:
-  - `projectId` (string, 必需): 项目ID
+- **Parameters**:
+  - `projectId` (string, required): project ID
 
-#### `update_task` - 更新任务
+#### `update_task` - update a task
 
-- **参数**:
-  - `taskId` (string, 必需): 任务ID
-  - `title` (string): 任务标题
-  - `content` (string): 任务内容
-  - `dueDate` (string): 截止日期
-  - `priority` (number): 优先级
-  - `status` (number): 任务状态 (0: 未完成, 1: 已完成)
+- **Parameters**:
+  - `taskId` (string, required): task ID
+  - `title` (string): task title
+  - `content` (string): task content
+  - `dueDate` (string): due date
+  - `priority` (number): priority
+  - `status` (number): task status (0: incomplete, 1: completed)
 
-#### `delete_task` - 删除任务
+#### `delete_task` - delete a task
 
-- **参数**:
-  - `taskId` (string, 必需): 任务ID
-  - `projectId` (string, 必需): 项目ID
+- **Parameters**:
+  - `taskId` (string, required): task ID
+  - `projectId` (string, required): project ID
 
-#### `complete_task` - 完成任务
+#### `complete_task` - complete a task
 
-- **参数**:
-  - `taskId` (string, 必需): 任务ID
-  - `projectId` (string, 必需): 项目ID
+- **Parameters**:
+  - `taskId` (string, required): task ID
+  - `projectId` (string, required): project ID
 
-### 项目管理
+### Project management
 
-#### `get_projects` - 获取项目列表
+#### `get_projects` - get the project list
 
-- **参数**: 无
+- **Parameters**: none
 
-#### `get_project_by_projectId` - 根据项目ID获取项目
+#### `get_project_by_projectId` - get a project by project ID
 
-- **参数**:
-  - `projectId` (string, 必需): 项目ID
+- **Parameters**:
+  - `projectId` (string, required): project ID
 
-#### `create_project` - 创建新项目
+#### `create_project` - create a new project
 
-- **参数**:
-  - `name` (string, 必需): 项目名称
-  - `color` (string): 项目颜色, 例如 "#F18181"
-  - `sortOrder` (integer): 排序值, 默认为0
-  - `viewMode` (string): 视图模式 ("list", "kanban", "timeline")
-  - `kind` (string): 项目类型 ("TASK", "NOTE")
+- **Parameters**:
+  - `name` (string, required): project name
+  - `color` (string): project color, e.g. "#F18181"
+  - `sortOrder` (integer): sort value, default 0
+  - `viewMode` (string): view mode ("list", "kanban", "timeline")
+  - `kind` (string): project type ("TASK", "NOTE")
 
-#### `update_project_by_projectID` - 根据projectId更新项目
+#### `update_project_by_projectID` - update a project by project ID
 
-- **参数**:
-  - `projectId` (string, 必需): 项目ID
-  - `name` (string): 项目名称
-  - `color` (string): 项目颜色
-  - `sortOrder` (integer): 排序值, 默认为0
-  - `viewMode` (string): 视图模式 ("list", "kanban", "timeline")
-  - `kind` (string): 项目类型 ("TASK", "NOTE")
+- **Parameters**:
+  - `projectId` (string, required): project ID
+  - `name` (string): project name
+  - `color` (string): project color
+  - `sortOrder` (integer): sort value, default 0
+  - `viewMode` (string): view mode ("list", "kanban", "timeline")
+  - `kind` (string): project type ("TASK", "NOTE")
 
-#### `update_project_by_projectID` - 根据projectId删除项目
+#### `update_project_by_projectID` - delete a project by project ID
 
-- **参数**:
-  - `projectId` (string, 必需): 项目ID
+- **Parameters**:
+  - `projectId` (string, required): project ID
 
-## 可用资源
+## Available Resources
 
 ### `dida365://tasks`
 
-获取所有任务的JSON格式概览
+Get a JSON overview of all tasks
 
 ### `dida365://projects`
 
-获取所有项目的JSON格式概览
+Get a JSON overview of all projects
 
-## 项目结构
+## Project Structure
 
 ```
 ├── src/
-│   └── index.ts          # 主服务器文件
-├── dist/                 # 编译输出目录
-├── .env.example          # 环境变量示例
-├── package.json          # 项目配置
-├── tsconfig.json        # TypeScript 配置
-└── README.md            # 项目文档
+│   └── index.ts          # Main server file
+├── dist/                 # Compiled output directory
+├── .env.example          # Example environment variables
+├── package.json          # Project config
+├── tsconfig.json         # TypeScript config
+└── README.md             # Project docs
 ```
 
-## API 接口说明
+## API Interface
 
-本服务使用滴答清单官方 API：
+This service uses the official Dida365 API:
 
-- 基础URL: `https://api.dida365.com/open/v1`
-- 认证方式: Bearer Token
-- 请求格式: JSON
-- 官方文档: https://developer.dida365.com/api#/openap
+- Base URL: `https://api.dida365.com/open/v1`
+- Authentication: Bearer Token
+- Request format: JSON
+- Official docs: https://developer.dida365.com/api#/openap
 
-## 错误处理
+## Error Handling
 
-服务包含完整的错误处理机制：
+The service includes complete error handling:
 
-- API 调用失败时返回详细错误信息
-- 网络错误和超时处理
-- 参数验证和类型检查
-- Token 验证
+- Returns detailed error messages when API calls fail
+- Network error and timeout handling
+- Parameter validation and type checking
+- Token validation
 
-## 开发说明
+## Development Notes
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
 **Official site: ** [https://github.com/ZH1754629545/dida365-mcp-servers](https://github.com/ZH1754629545/dida365-mcp-servers)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

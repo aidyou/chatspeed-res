@@ -1,30 +1,30 @@
 ---
 title: "MCP-word"
-description: "DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支…"
+description: "DOCX MCP Service A powerful Word document processing MCP service providing a complete document processing solution including document structure extraction, content modification, and cloud storage inte…"
 ---
 
 # MCP-word
 
-DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支…
+DOCX MCP Service A powerful Word document processing MCP service providing a complete document processing solution including document structure extraction, content modification, and cloud storage inte…
 
-# DOCX MCP 服务
+# DOCX MCP Service
 
-一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。
+A powerful Word document processing MCP service providing a complete document processing solution including document structure extraction, content modification, and cloud storage integration. Supports downloading documents from URLs, batch content modification, and automatic upload to Alibaba Cloud OSS. Fully compatible with the MCP protocol and seamlessly integrable into various AI assistants.
 
-## 🚀 服务功能
+## Service Features
 
-- **📄 文档结构提取**: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID
-- **✏️ 批量内容修改**: 支持基于元素ID的精确文本替换和内容更新
-- **☁️ 云存储集成**: 自动上传修改后的文档到阿里云OSS，提供便捷的下载链接
-- **🔗 URL文档处理**: 直接从网络URL下载、处理并重新上传文档
-- **🛠️ MCP标准兼容**: 完全符合Model Context Protocol规范，支持标准MCP客户端
+- **Document structure extraction**: intelligently parses .docx files, extracting structured content such as paragraphs and tables, and assigns a unique ID to each element
+- **Batch content modification**: precise text replacement and content updates based on element IDs
+- **Cloud storage integration**: automatically uploads modified documents to Alibaba Cloud OSS and provides convenient download links
+- **URL document processing**: downloads, processes, and re-uploads documents directly from a web URL
+- **MCP standard compliance**: fully conforms to the Model Context Protocol specification, supporting standard MCP clients
 
-## 📋 系统要求
+## System Requirements
 
 - Python 3.13+
-- uvx (Python包管理器，推荐)
+- uvx (Python package manager, recommended)
 
-## 🔧 服务配置
+## Service Configuration
 
 ### Server config
 
@@ -35,87 +35,87 @@ DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文�
 }
 ```
 
-## 🛠️ 可用工具
+## Available Tools
 
 ### 1. extract_document_structure
-从URL下载并解析.docx文件的结构
+Downloads a .docx file from a URL and parses its structure
 
-**参数:**
-- `document_url` (string): .docx文件的URL链接
+**Parameters:**
+- `document_url` (string): URL of the .docx file
 
-**返回:** 包含文档结构的字典，每个元素都有唯一ID
+**Returns:** a dict containing the document structure, with a unique ID for each element
 
-### 2. apply_modifications_to_document  
-将修改应用到.docx文件
+### 2. apply_modifications_to_document
+Applies modifications to a .docx file
 
-**参数:**
-- `original_file_content_base64` (string): 原始文件的Base64编码
-- `patches_json` (string): JSON格式的修改指令列表
+**Parameters:**
+- `original_file_content_base64` (string): Base64 encoding of the original file
+- `patches_json` (string): list of modification instructions in JSON format
 
-**返回:** 修改后文件的Base64编码
+**Returns:** Base64 encoding of the modified file
 
 ### 3. get_modified_document
-获取修改后的文档（apply_modifications_to_document的别名）
+Gets the modified document (alias of apply_modifications_to_document)
 
-**参数:** 同apply_modifications_to_document
+**Parameters:** same as apply_modifications_to_document
 
 ### 4. prepare_document_for_download
-将修改后的文档上传到阿里云OSS
+Uploads the modified document to Alibaba Cloud OSS
 
-**参数:**
-- `original_file_content_base64` (string): 原始文件的Base64编码  
-- `patches_json` (string): JSON格式的修改指令
+**Parameters:**
+- `original_file_content_base64` (string): Base64 encoding of the original file
+- `patches_json` (string): modification instructions in JSON format
 
-**返回:** 包含上传结果和下载链接的字典
+**Returns:** a dict containing the upload result and download link
 
 ### 5. process_document_from_url
-从URL下载文档，应用修改，上传到OSS的完整流程
+Complete flow: download the document from a URL, apply modifications, and upload to OSS
 
-**参数:**
-- `document_url` (string): 原始文档的URL
-- `patches_json` (string): JSON格式的修改指令
+**Parameters:**
+- `document_url` (string): URL of the original document
+- `patches_json` (string): modification instructions in JSON format
 
-**返回:** 包含处理结果和下载链接的字典
+**Returns:** a dict containing the processing result and download link
 
-## 📝 使用示例
+## Usage Examples
 
-### 修改指令格式
+### Modification instruction format
 
 ```json
 [
   {
     "element_id": "p_0",
-    "new_content": "新的段落内容"
+    "new_content": "New paragraph content"
   },
   {
-    "element_id": "table_0_cell_0_0", 
-    "new_content": "新的表格单元格内容"
+    "element_id": "table_0_cell_0_0",
+    "new_content": "New table cell content"
   }
 ]
 ```
 
-### 典型工作流程
+### Typical workflow
 
-1. **提取文档结构**: 使用`extract_document_structure`获取文档中所有元素的ID
-2. **准备修改指令**: 根据元素ID创建修改指令JSON
-3. **处理文档**: 使用`process_document_from_url`一键完成下载、修改、上传
-4. **获取结果**: 从返回的下载链接获取处理后的文档
+1. **Extract document structure**: use `extract_document_structure` to get the IDs of all elements in the document
+2. **Prepare modification instructions**: create the modification JSON based on the element IDs
+3. **Process the document**: use `process_document_from_url` to download, modify, and upload in one step
+4. **Get the result**: obtain the processed document from the returned download link
 
-## 🚀 快速开始
+## Quick Start
 
-### 通过uvx运行（推荐）
+### Run via uvx (recommended)
 
 ```bash
-# 直接运行（已发布到PyPI）
+# Run directly (published to PyPI)
 uvx docx-mcp
 
-# 从本地项目运行
+# Run from a local project
 uvx --from . docx-mcp
 ```
 
-### 配置到MCP客户端
+### Configure in an MCP client
 
-在支持MCP的客户端中添加以下配置：
+Add the following config to an MCP-capable client:
 
 ```json
 {
@@ -132,81 +132,81 @@ uvx --from . docx-mcp
 }
 ```
 
-## ✨ 部署优势
+## Deployment Advantages
 
-- **🚀 零配置部署**: 无需配置环境变量，开箱即用
-- **📦 一键安装**: 通过uvx直接运行，自动处理依赖
-- **🔒 内置配置**: OSS存储配置已内置，简化部署流程
-- **⚡ 即时可用**: 安装后立即可以处理文档
+- **Zero-config deployment**: no environment variables needed, works out of the box
+- **One-click install**: runs directly via uvx, dependencies handled automatically
+- **Built-in configuration**: OSS storage config is built in, simplifying deployment
+- **Ready immediately**: can process documents right after installation
 
-## 📁 项目结构
+## Project Structure
 
 ```
 docx_mcp/
-├── core/                    # 核心功能模块
-│   ├── docx_processor.py   # 文档处理器
-│   └── models.py           # 数据模型定义
-├── main.py                 # MCP服务主入口
-├── pyproject.toml         # 项目配置和依赖定义
-├── requirements.txt       # 依赖列表
-├── LICENSE               # MIT许可证
-└── README.md             # 项目文档
+├── core/                    # Core functionality modules
+│   ├── docx_processor.py   # Document processor
+│   └── models.py           # Data model definitions
+├── main.py                 # MCP service main entry
+├── pyproject.toml         # Project config and dependencies
+├── requirements.txt       # Dependency list
+├── LICENSE               # MIT license
+└── README.md             # Project docs
 ```
 
-## 🔧 技术栈
+## Tech Stack
 
-- **MCP框架**: FastMCP - 高性能MCP服务框架
-- **文档处理**: python-docx - Office文档操作库
-- **云存储**: 阿里云OSS Python SDK
-- **包管理**: uvx/uv - 现代Python包管理工具
+- **MCP framework**: FastMCP - high-performance MCP service framework
+- **Document processing**: python-docx - Office document library
+- **Cloud storage**: Alibaba Cloud OSS Python SDK
+- **Package management**: uvx/uv - modern Python package management
 
-## 📊 性能特性
+## Performance Features
 
-- **内存高效**: 流式处理大文档，避免内存溢出
-- **并发安全**: 支持多个客户端同时访问
-- **错误恢复**: 完善的异常处理和错误恢复机制
-- **格式兼容**: 支持Office 2007+的.docx格式
-- **零配置**: 内置云存储配置，无需额外设置
+- **Memory efficient**: streams large documents to avoid out-of-memory issues
+- **Concurrency safe**: supports multiple clients accessing simultaneously
+- **Error recovery**: complete exception handling and recovery mechanisms
+- **Format compatibility**: supports .docx format (Office 2007+)
+- **Zero configuration**: built-in cloud storage config, no extra setup
 
-## 🤝 贡献指南
+## Contribution Guide
 
-1. Fork本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 许可证
+## License
 
-本项目基于MIT许可证开源 - 查看 [LICENSE](https://github.com/taurusduan/Docx_MCP_cj/blob/HEAD/LICENSE) 文件了解详情。
+This project is open source under the MIT License - see the [LICENSE](https://github.com/taurusduan/Docx_MCP_cj/blob/HEAD/LICENSE) file for details.
 
-## 🔗 相关链接
+## Related Links
 
-- [MCP官方文档](https://modelcontextprotocol.io/)
-- [FastMCP框架](https://github.com/pydantic/fastmcp)
-- [python-docx文档](https://python-docx.readthedocs.io/)
-- [阿里云OSS Python SDK](https://help.aliyun.com/document_detail/32026.html)
+- [MCP official docs](https://modelcontextprotocol.io/)
+- [FastMCP framework](https://github.com/pydantic/fastmcp)
+- [python-docx docs](https://python-docx.readthedocs.io/)
+- [Alibaba Cloud OSS Python SDK](https://help.aliyun.com/document_detail/32026.html)
 
-## ❓ 常见问题
+## FAQ
 
-**Q: 需要配置什么环境变量吗？**
-A: 不需要！OSS配置已内置到服务中，开箱即用。
+**Q: Do I need to configure any environment variables?**
+A: No! The OSS configuration is built into the service; it works out of the box.
 
-**Q: 支持哪些文档格式？**
-A: 目前仅支持.docx格式（Office 2007+格式）。
+**Q: Which document formats are supported?**
+A: Currently only .docx format (Office 2007+ format).
 
-**Q: 文档大小限制？**
-A: 建议单个文档不超过50MB，以确保最佳性能。
+**Q: Is there a document size limit?**
+A: We recommend keeping a single document under 50MB for best performance.
 
-**Q: 如何开始使用？**
-A: 只需运行 `uvx docx-mcp` 即可启动服务，无需任何配置。
+**Q: How do I get started?**
+A: Just run `uvx docx-mcp` to start the service; no configuration needed.
 
-**Q: 文档会存储在哪里？**
-A: 处理后的文档会自动上传到预配置的阿里云OSS存储，并提供下载链接。
+**Q: Where are documents stored?**
+A: Processed documents are automatically uploaded to the preconfigured Alibaba Cloud OSS storage, with a download link provided.
 
 ---
 
-💡 **提示**: 如有问题或建议，欢迎提交Issue或Pull Request！
+**Tip**: If you have questions or suggestions, feel free to submit an Issue or Pull Request!
 
 **Official site: ** [https://github.com/taurusduan/Docx_MCP_cj](https://github.com/taurusduan/Docx_MCP_cj)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

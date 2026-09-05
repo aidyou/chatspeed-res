@@ -36,7 +36,7 @@ A server that enhances Claude's reasoning capabilities by integrating DeepSeek R
 ### **Advanced Reasoning Capabilities**
 - Supports intricate multi-step reasoning tasks.
 - Designed for precision and efficiency in generating thoughtful responses.
-- 使用无问芯穹的API
+- Uses the Infini-AI (WenQianXinQiong) API
 
 ---
 

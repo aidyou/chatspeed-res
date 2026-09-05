@@ -1,16 +1,16 @@
 ---
 title: "gemini-mcp-tool-windows"
-description: "🚀 Gemini MCP Tool - Windows Fixed Version 这个 MCP 能让 AI 与Google Gemini CLI 进行交互。 通过利用 Gemini 的强大分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 Latest Version v1.0.21 - Fixed cross-terminal compatibility issue…"
+description: "Gemini MCP Tool - Windows Fixed Version. This MCP lets AI interact with the Google Gemini CLI. By leveraging Gemini's powerful analysis capabilities, this tool can handle large files and codebases, es…"
 ---
 
 # gemini-mcp-tool-windows
 
-🚀 Gemini MCP Tool - Windows Fixed Version 这个 MCP 能让 AI 与Google Gemini CLI 进行交互。 通过利用 Gemini 的强大分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 Latest Version v1.0.21 - Fixed cross-terminal compatibility issue…
+Gemini MCP Tool - Windows Fixed Version. This MCP lets AI interact with the Google Gemini CLI. By leveraging Gemini's powerful analysis capabilities, this tool can handle large files and codebases, es…
 
 # 🚀 Gemini MCP Tool - Windows Fixed Version
-这个 MCP 能让 AI 与Google Gemini CLI 进行交互。
+This MCP lets AI interact with the Google Gemini CLI.
 
-通过利用 Gemini 的强大分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。
+By leveraging Gemini's powerful analysis capabilities, this tool can handle large files and codebases, especially for scenarios requiring extensive context understanding.
 [![npm version](/mcp-assets/8e0b3307ea126d3ba3ece9ceb2260a55.svg)](https://badge.fury.io/js/gemini-mcp-tool-windows-fixed)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 

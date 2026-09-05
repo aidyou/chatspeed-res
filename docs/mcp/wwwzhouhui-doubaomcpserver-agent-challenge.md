@@ -1,11 +1,11 @@
 ---
 title: "DoubaoMCPServer-MCP_Agent_Challenge"
-description: "Doubao MCP Server 项目简介"
+description: "Doubao MCP Server Project Introduction"
 ---
 
 # DoubaoMCPServer-MCP_Agent_Challenge
 
-Doubao MCP Server 项目简介
+Doubao MCP Server Project Introduction
 
 # Doubao MCP Server
 

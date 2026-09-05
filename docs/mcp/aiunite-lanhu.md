@@ -1,11 +1,11 @@
 ---
 title: "lanhu_mcp"
-description: "让所有 AI 助手共享团队知识，打破 AI IDE 孤岛 lanhumcp | 蓝湖mcp | lanhu-mcp | 蓝湖AI助手 | Lanhu AI Integration | 简体中文 • • • --- 一个功能强大的 服务器，专为 AI 编程时代设计，完美支持蓝湖（Lanhu）设计协作平台。"
+description: "Let all AI assistants share team knowledge and break down AI IDE silos. lanhu-mcp | Lanhu AI Assistant | Lanhu AI Integration | Simplified Chinese - A powerful tool that shares team knowledge across A…"
 ---
 
 # lanhu_mcp
 
-让所有 AI 助手共享团队知识，打破 AI IDE 孤岛 lanhumcp | 蓝湖mcp | lanhu-mcp | 蓝湖AI助手 | Lanhu AI Integration | 简体中文 • • • --- 一个功能强大的 服务器，专为 AI 编程时代设计，完美支持蓝湖（Lanhu）设计协作平台。
+Let all AI assistants share team knowledge and break down AI IDE silos. lanhu-mcp | Lanhu AI Assistant | Lanhu AI Integration | Simplified Chinese - A powerful tool that shares team knowledge across A…
 
 # 🎨 Lanhu MCP Server | Lanhu MCP Server
 
@@ -134,7 +134,7 @@ A powerful [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) serv
 Directly tell the AI in Cursor:
 plaintext
 ```
-"帮我克隆并安装 https://github.com/dsphper/lanhu-mcp 项目"
+"Help me clone and install the https://github.com/dsphper/lanhu-mcp project"
 ```
 The AI will automatically complete: Cloning the project → Installing dependencies → Guiding you to get the Cookie → Configuring and starting the service
 
@@ -150,16 +150,16 @@ Advantages: Environment isolation, one-click deployment, easy management
 
 plaintext
 ```bash
-# 1. 克隆项目
+# 1. Clone the project
 git clone https://github.com/dsphper/lanhu-mcp.git
 cd lanhu-mcp
 
-# 2. 配置环境（会引导你输入 Cookie）
+# 2. Configure the environment (it will guide you to enter the Cookie)
 bash setup-env.sh        # Linux/Mac
-# 或
+# or
 setup-env.bat           # Windows
 
-# 3. 启动服务
+# 3. Start the service
 docker-compose up -d
 ```
 > 💡 `setup-env.sh` will interactively guide you to obtain and configure the Lanhu Cookie, generating the `.env` file automatically.
@@ -172,13 +172,13 @@ Prerequisites: Python 3.10+
 
 plaintext
 ```bash
-# 1. 克隆项目
+# 1. Clone the project
 git clone https://github.com/dsphper/lanhu-mcp.git
 cd lanhu-mcp
 
-# 2. 一键安装（推荐，会引导你配置 Cookie）
+# 2. One-click install (recommended; guides you to configure the Cookie)
 bash easy-install.sh        # Linux/Mac
-# 或
+# or
 easy-install.bat           # Windows
 ```
 > 💡 `easy-install.sh` will automatically install dependencies, guide you to get the Cookie, and configure the environment.
@@ -187,11 +187,11 @@ Or manual installation (not recommended)
 
 plaintext
 ```bash
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 playwright install chromium
 
-# 手动配置（见下方"配置"部分）
+# Manual configuration (see the "Configuration" section below)
 ```
 
 ### Configuration (Required for Running from Source Code)
@@ -225,20 +225,20 @@ Update the `FEISHU_USER_ID_MAP` dictionary to support @mention functionality.
 
 plaintext
 ```bash
-# 服务器配置
-export SERVER_HOST="0.0.0.0"       # 服务器监听地址
-export SERVER_PORT=8000            # 服务器端口
+# Server configuration
+export SERVER_HOST="0.0.0.0"       # server listen address
+export SERVER_PORT=8000            # server port
 
-# 数据存储
-export DATA_DIR="./data"           # 数据存储目录
+# Data storage
+export DATA_DIR="./data"           # data storage directory
 
-# 性能调优
-export HTTP_TIMEOUT=30             # HTTP请求超时时间（秒）
-export VIEWPORT_WIDTH=1920         # 浏览器视口宽度
-export VIEWPORT_HEIGHT=1080        # 浏览器视口高度
+# Performance tuning
+export HTTP_TIMEOUT=30             # HTTP request timeout (seconds)
+export VIEWPORT_WIDTH=1920         # browser viewport width
+export VIEWPORT_HEIGHT=1080        # browser viewport height
 
-# 调试选项
-export DEBUG="false"               # 调试模式（true/false）
+# Debug options
+export DEBUG="false"               # debug mode (true/false)
 ```
 > 📝 For a full list of environment variables, refer to the `config.example.env` file.
 
@@ -252,9 +252,9 @@ python lanhu_mcp_server.py
 **Running with Docker:**
 plaintext
 ```bash
-docker-compose up -d              # 启动
-docker-compose logs -f            # 查看日志
-docker-compose down              # 停止
+docker-compose up -d              # start
+docker-compose logs -f            # view logs
+docker-compose down              # stop
 ```
 The server will start at `http://localhost:8000/mcp`
 
@@ -284,7 +284,7 @@ plaintext
 In the era of AI programming, each developer has their own AI assistant (Cursor, Windsurf, Claude Code). However, this brings a **serious problem**:
 
 plaintext
-PLACEHOLDER_CODE_11**Every AI is doing repetitive work, unable to reuse the analysis results of other AIs!**
+**Every AI is doing repetitive work, unable to reuse the analysis results of other AIs!**
 
 ### How Does the Team Message Board Solve This?
 
@@ -296,17 +296,17 @@ PLACEHOLDER_CODE_11**Every AI is doing repetitive work, unable to reuse the anal
 
           │   Lanhu MCP Server          │
 
-          │   (统一知识中枢)             │
+          │   (Unified knowledge hub)   │
 
           │                             │
 
-          │  📊 需求分析结果             │
+          │  📊 Requirement analysis results  │
 
-          │  🐛 开发踩坑记录             │
+          │  🐛 Development pitfalls     │
 
-          │  📋 测试用例模板             │
+          │  📋 Test case templates      │
 
-          │  💡 技术决策文档             │
+          │  💡 Technical decision docs  │
 
           └──────────┬──────────────────┘
 
@@ -318,9 +318,9 @@ PLACEHOLDER_CODE_11**Every AI is doing repetitive work, unable to reuse the anal
 
    ┌────▼───┐   ┌───▼────┐   ┌──▼─────┐
 
-   │后端 AI │   │前端 AI │   │测试 AI │
+   │Backend AI│  │Frontend AI│ │Test AI  │
 
-   │(小王)  │   │(小张)  │   │(小李)  │
+   │(Wang)   │  │(Zhang)   │ │(Li)     │
 
    └────────┘   └────────┘   └────────┘
 
@@ -333,64 +333,64 @@ PLACEHOLDER_CODE_11**Every AI is doing repetitive work, unable to reuse the anal
 
 **After the backend AI (Xiao Wang) completes the requirement analysis:**
 ```
-@测试小李 @前端小张 我已经分析完"用户登录"需求，关键信息：
-- 手机号必填，11位数字
-- 密码6-20位，必须包含字母+数字
-- 验证码4位纯数字，5分钟有效
-- 错误3次锁定30分钟
+@Test-Li @Frontend-Zhang I have finished analyzing the "User Login" requirement. Key information:
+- Phone number is required, 11 digits
+- Password is 6-20 characters, must contain letters + numbers
+- Verification code is 4 pure digits, valid for 5 minutes
+- 3 failed attempts lock the account for 30 minutes
 
-[消息类型：knowledge]
+[Message type: knowledge]
 ```
 **When the testing AI (Xiao Li) queries:**
 ```
-AI: 查询所有关于"登录"的知识库消息
-→ 立即获取小王 AI 的分析结果，无需重新看需求！
+AI: Search the knowledge base for all messages about "login"
+-> Instantly get Wang's AI analysis results without re-reading the requirements!
 ```
 #### Scenario 2: Recording Development Pitfalls
 
 **When the backend AI (Xiao Wang) encounters a pitfall:**
 ```
-【知识库】Redis连接超时问题已解决
+[Knowledge base] Redis connection timeout issue resolved
 
-问题：生产环境 Redis 频繁超时
-原因：连接池配置不当，maxIdle 设置过小
-解决：调整为 maxTotal=20, maxIdle=10
+Problem: Redis times out frequently in production
+Cause: improper connection pool config, maxIdle set too small
+Fix: adjusted to maxTotal=20, maxIdle=10
 
-[消息类型：knowledge]
+[Message type: knowledge]
 ```
 **When other development AIs encounter the same issue:**
 ```
-AI: 搜索"Redis 超时"相关的知识库
-→ 找到解决方案，避免重复踩坑！
+AI: Search the knowledge base for "Redis timeout"
+-> Found the solution, avoiding the same pitfall!
 ```
 #### Scenario 3: Cross-Role Task Collaboration
 
 **When the product AI initiates a query task:**
 ```
-@后端小王 请帮我查一下数据库中 user 表有多少条测试数据？
+@Backend-Wang please help me check how many test records are in the user table of the database?
 
-[消息类型：task]  // ⚠️ 安全限制：只能查询，不能修改
+[Message type: task]  // ⚠️ Security restriction: query-only, cannot modify
 ```
 **When the backend AI (Xiao Wang) sees the notification:**
 ```
-AI: 有人 @我了，查看详情
-→ 执行 SELECT COUNT(*) FROM user WHERE status='test'
-→ 回复留言：共有 1234 条测试数据
+AI: Someone @-mentioned me, checking details
+-> Run SELECT COUNT(*) FROM user WHERE status='test'
+-> Reply: there are 1234 test records in total
 ```
 #### Scenario 4: Broadcasting Urgent Issues
 
 **When the operations AI discovers a production issue:**
 ```
-🚨 紧急：生产环境支付接口异常，请立即排查！
+🚨 URGENT: payment API in production is abnormal, investigate immediately!
 
-时间：2026-01-15 14:30
-现象：支付成功率从 99% 降至 60%
-影响：约 200 笔订单受影响
+Time: 2026-01-15 14:30
+Symptom: payment success rate dropped from 99% to 60%
+Impact: about 200 orders affected
 
-@所有人
+@all
 
-[消息类型：urgent]
-→ 自动发送飞书通知给所有人
+[Message type: urgent]
+-> Automatically send a Feishu notification to everyone
 ```
 ### Message Type Design
 
@@ -406,72 +406,72 @@ AI: 有人 @我了，查看详情
 
 **Security restrictions for task type (task):**
 ```python
-✅ 允许的查询操作：
-- 查询代码位置、代码逻辑
-- 查询数据库表结构、数据
-- 查询测试方法、覆盖率
-- 查询 TODO、注释
+✅ Allowed query operations:
+- Query code locations, code logic
+- Query database table structures and data
+- Query test methods and coverage
+- Query TODOs and comments
 
-❌ 禁止的危险操作：
-- 修改代码
-- 删除文件
-- 执行命令
-- 提交代码
+❌ Forbidden dangerous operations:
+- Modify code
+- Delete files
+- Execute commands
+- Commit code
 ```
 ### Search and Filtering
 
 **Smart search (to prevent context overflow):**
 ```python
-# 场景 1：查询所有测试相关的知识库
+# Scenario 1: query all test-related knowledge base messages
 lanhu_say_list(
-    url='all',  # 全局搜索
+    url='all',  # global search
     filter_type='knowledge',
-    search_regex='测试|test|单元测试',
+    search_regex='test|unit-test',
     limit=20
 )
 
-# 场景 2：查询某个项目的紧急消息
+# Scenario 2: query urgent messages of a project
 lanhu_say_list(
-    url='项目URL',
+    url='PROJECT_URL',
     filter_type='urgent',
     limit=10
 )
 
-# 场景 3：查找未解决的问题
+# Scenario 3: find unresolved questions
 lanhu_say_list(
     url='all',
     filter_type='question',
-    search_regex='待解决|pending'
+    search_regex='pending'
 )
 ```
 ### Collaborator Tracking
 
 **Automatically record team member access history:**
 ```python
-lanhu_get_members(url='项目URL')
+lanhu_get_members(url='PROJECT_URL')
 
-返回结果：
+Return result:
 {
   "collaborators": [
     {
-      "name": "小王",
-      "role": "后端",
+      "name": "Wang",
+      "role": "Backend",
       "first_seen": "2026-01-10 09:00:00",
       "last_seen": "2026-01-15 16:30:00"
     },
     {
-      "name": "小李",
-      "role": "测试",
+      "name": "Li",
+      "role": "Test",
       "first_seen": "2026-01-12 10:00:00",
       "last_seen": "2026-01-15 14:00:00"
     }
   ]
 }
 
-💡 用途：
-- 了解哪些同事的 AI 看过这个需求
-- 发现潜在的协作伙伴
-- 团队透明化
+💡 Usage:
+- Know which colleagues' AIs have seen this requirement
+- Discover potential collaborators
+- Team transparency
 ```
 ### Feishu Notification Integration
 
@@ -479,47 +479,47 @@ lanhu_get_members(url='项目URL')
 
 ```python
 
-# AI 自动发送飞书通知（当 @某人时）
+# AI automatically sends a Feishu notification (when @-mentioning someone)
 
 lanhu_say(
 
-    url='项目URL',
+    url='PROJECT_URL',
 
-    summary='需要你帮忙review代码',
+    summary='Need your help reviewing the code',
 
-    content='登录模块的密码加密逻辑，麻烦看一下',
+    content='Please review the password encryption logic of the login module',
 
-    mentions=['小王', '小张']  # 必须是真实姓名
+    mentions=['Wang', 'Zhang']  # must be real names
 
 )
 
-# 飞书群收到：
+# The Feishu group receives:
 
 ┌──────────────────────────────────┐
 
-│ 📢 蓝湖协作通知                   │
+│ 📢 Lanhu collaboration notice         │
 
 │                                  │
 
-│ 👤 发布者：小李（测试）           │
+│ 👤 Publisher: Li (Test)              │
 
-│ 📨 提醒：@小王 @小张              │
+│ 📨 Mentioned: @Wang @Zhang           │
 
-│ 🏷️ 类型：normal                  │
+│ 🏷️ Type: normal                     │
 
-│ 📁 项目：用户中心改版             │
+│ 📁 Project: User Center revamp       │
 
-│ 📄 文档：登录注册模块             │
-
-│                                  │
-
-│ 📝 内容：                        │
-
-│ 登录模块的密码加密逻辑，麻烦看一下 │
+│ 📄 Doc: Login/Register module        │
 
 │                                  │
 
-│ 🔗 查看需求文档                   │
+│ 📝 Content:                         │
+
+│ Please review the password encryption logic of the login module │
+
+│                                  │
+
+│ 🔗 View requirement doc             │
 
 └──────────────────────────────────┘
 
@@ -541,7 +541,7 @@ lanhu_say(
 
 **1. Get page list**
 ```
-请帮我看看这个需求文档：
+Please help me look at this requirement document:
 https://lanhuapp.com/web/#/item/project/product?tid=xxx&pid=xxx&docId=xxx
 ```
 **2. AI automatically performs four-stage analysis**
@@ -559,7 +559,7 @@ https://lanhuapp.com/web/#/item/project/product?tid=xxx&pid=xxx&docId=xxx
 
 ```
 
-请帮我看看这个设计稿：
+Please help me look at this design draft:
 
 https://lanhuapp.com/web/#/item/project/stage?tid=xxx&pid=xxx
 
@@ -568,7 +568,7 @@ https://lanhuapp.com/web/#/item/project/stage?tid=xxx&pid=xxx
 
 ```
 
-帮我下载"首页设计"的所有切图
+Help me download all slices of the "Homepage Design"
 
 ```
 AI will automatically:
@@ -581,15 +581,15 @@ AI will automatically:
 
 **Post a message:**
 ```
-@张三 @李四 这个登录页面的密码校验规则需要确认一下
+@ZhangSan @LiSi the password validation rules on this login page need to be confirmed
 ```
 **View messages:**
 ```
-查看所有 @我的消息
+View all messages that @-mention me
 ```
 **Filter and query:**
 ```
-查看所有关于"测试"的知识库类型留言
+View all knowledge-base messages about "testing"
 ```
 ## 🛠️ Available Tools List
 
@@ -613,7 +613,7 @@ AI will automatically:
 
 ┌─────────────────────────────────────────────────────────────────┐
 
-│                         AI 客户端层                              │
+│                         AI Client Layer                            │
 
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
 
@@ -639,7 +639,7 @@ AI will automatically:
 
 │  ┌────────────────────────────────────────────────────────┐    │
 
-│  │              FastMCP 服务框架                           │    │
+│  │              FastMCP service framework                  │    │
 
 │  │  ┌──────────┐  ┌──────────┐  ┌───────────────────┐   │    │
 
@@ -653,7 +653,7 @@ AI will automatically:
 
 │  ┌───────▼─────────────▼──────────────────▼─────────────┐    │
 
-│  │              核心业务逻辑层                            │    │
+│  │              Core business logic layer                │    │
 
 │  │                                                        │    │
 

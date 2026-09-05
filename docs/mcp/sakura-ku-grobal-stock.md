@@ -9,189 +9,189 @@ Provides real-time access to global stock market data including current prices, 
 
 # Global MCP Stock Server
 
-グローバル株式市場データと分析のためのModel Context Protocol (MCP) サーバー
+A Model Context Protocol (MCP) server for global stock market data and analysis
 
-## 概要
+## Overview
 
-このプロジェクトは、株式市場データにアクセスするためのMCPサーバーを提供します。AI アシスタントが株価、チャートデータ、企業情報などにリアルタイムでアクセスできるようにします。
+This project provides an MCP server for accessing stock market data. It allows AI assistants to access stock prices, chart data, and company information in real time.
 
-## MCP（Model Context Protocol）とは
+## What is MCP (Model Context Protocol)?
 
-Model Context Protocol（MCP）は、アプリケーションが大規模言語モデル（LLM）にコンテキストを提供するための標準化された方法です。詳細は [Model Context Protocol ウェブサイト](https://modelcontextprotocol.github.io/) をご覧ください。
+The Model Context Protocol (MCP) is a standardized method that allows applications to provide context to large language models (LLMs). See the [Model Context Protocol website](https://modelcontextprotocol.github.io/) for details.
 
-## 機能
+## Features
 
-- リアルタイム株価情報の取得
-- 株価の履歴データとチャート
-- 主要な株式指標のサポート
-- 企業情報と財務データ
-- TypeScriptによる実装と厳格な型チェック
+- Fetch real-time stock price information
+- Historical stock price data and charts
+- Support for major stock market indicators
+- Company information and financial data
+- Implemented in TypeScript with strict type checking
 
-# 利用者向けガイド
+# User Guide
 
-## 前提条件
+## Prerequisites
 
-- Node.js 18 以上
-- npm または yarn
+- Node.js 18 or higher
+- npm or yarn
 
-## インストール方法
+## Installation
 
-1. リポジトリをクローンする:
+1. Clone the repository:
 
 ```bash
    git clone https://github.com/sakura-ku/grobal_mcp_stock_server.git
    cd grobal_mcp_stock_server
 ```
 
-2. 依存関係をインストールする:
+2. Install dependencies:
 
 ```bash
    npm install
 ```
 
-3. サーバーをビルドして実行する:
+3. Build and run the server:
 
 ```bash
    npm run build
    npm start
 ```
 
-## 利用方法
+## Usage
 
-### 1. 環境変数の設定
+### 1. Setting environment variables
 
-初めに、必要な環境変数を設定します。`.env`ファイルを作成するか、既存の`.env.example`ファイルをコピーして使用します：
+First, set the required environment variables. Create a `.env` file or copy the existing `.env.example` file:
 
 ```bash
-# Windows PowerShellの場合
+# Windows PowerShell
 Copy-Item .env.example .env
 
-# UNIX系システムの場合
+# Unix-like systems
 cp .env.example .env
 ```
 
-`.env`ファイルを編集して、必要なAPIキーを設定します：
+Edit the `.env` file to configure the required API keys:
 
 ```
-# 基本設定
+# Basic settings
 PORT=3000
 HOST=localhost
 NODE_ENV=development
 
-# Polygon.io APIキー (株価データ取得用)
+# Polygon.io API key (for stock price data)
 POLYGON_API_KEY=your_polygon_api_key_here
 
-# その他のAPIキー...
+# Other API keys...
 ```
 
-### 2. サーバーの実行
+### 2. Running the server
 
-開発モードでサーバーを起動するには：
+To start the server in development mode:
 
 ```bash
 npm run dev
 ```
 
-本番モードでサーバーを起動するには：
+To start the server in production mode:
 
 ```bash
 npm run build
 npm run start:prod
 ```
 
-### 3. APIの使用方法
+### 3. How to use the API
 
-#### ブラウザから直接アクセス
+#### Access directly from a browser
 
-サーバーが起動したら、ブラウザから以下のURLで株価データにアクセスできます：
+Once the server is running, you can access stock price data from your browser at the following URL:
 
 ```
 http://localhost:3000/api/stock/price?symbol=AAPL
 ```
 
-#### cURLを使用した例
+#### Example using cURL
 
-コマンドラインからcURLを使用してデータを取得できます：
+You can fetch data from the command line using cURL:
 
 ```bash
-# 株価データの取得
+# Get stock price data
 curl "http://localhost:3000/api/stock/price?symbol=AAPL"
 
-# 株価履歴データの取得（過去30日間）
+# Get stock price history (past 30 days)
 curl "http://localhost:3000/api/stock/history?symbol=AAPL&days=30"
 ```
 
-#### プログラムからの使用例
+#### Example of using it programmatically
 
-Node.jsアプリケーションから利用する例：
+Example of using it from a Node.js application:
 
 ```javascript
-// 株価データを取得する関数
+// Function to get stock price data
 async function getStockPrice(symbol) {
   const response = await fetch(`http://localhost:3000/api/stock/price?symbol=${symbol}`);
   const data = await response.json();
   return data;
 }
 
-// 使用例
+// Usage example
 getStockPrice('AAPL').then(data => {
-  console.log(`現在の${data.symbol}の株価: ${data.price} ${data.currency}`);
+  console.log(`Current price of ${data.symbol}: ${data.price} ${data.currency}`);
 });
 ```
 
-### 4. AIアシスタントとの統合
+### 4. Integration with AI assistants
 
-Claude、GPT-4などのAIアシスタントとの統合方法については、「MCPクライアントとの連携」セクションを参照してください。
+For information on integrating with AI assistants such as Claude and GPT-4, see the "Working with MCP clients" section.
 
-#### Claudeでの使用例
+#### Example with Claude
 
-Claudeプロンプトの例：
-
-```
-株価を調べてください。
-テスラ（TSLA）の現在の株価と、過去1週間の動向を教えてください。
-```
-
-#### AIアシスタントの応答例
+Example Claude prompt:
 
 ```
-テスラ（TSLA）の株価情報は以下の通りです：
-
-現在の株価: $248.42 USD
-前日比: +$5.21 (+2.14%)
-取引量: 3,421,532株
-
-過去1週間の動向:
-- 7日前: $230.15
-- 6日前: $232.05
-- 5日前: $235.87
-- 4日前: $239.14
-- 3日前: $242.33
-- 2日前: $243.21
-- 1日前: $248.42
-
-過去1週間で約8%の上昇トレンドを示しています。特に直近3日間で価格の上昇が加速しています。
+Please look up the stock price.
+Tell me the current price of Tesla (TSLA) and its trend over the past week.
 ```
 
-## 利用可能なツール
+#### Example AI assistant response
 
-### 株価情報の取得 (get_stock_price)
+```
+Here is the stock price information for Tesla (TSLA):
 
-指定された銘柄の現在の株価と関連情報を取得します。
+Current price: $248.42 USD
+Change from previous day: +$5.21 (+2.14%)
+Volume: 3,421,532 shares
 
-**パラメータ:**
-- `symbol` (string): 株式の銘柄コード（例: AAPL, MSFT, GOOGL）
+Past week trend:
+- 7 days ago: $230.15
+- 6 days ago: $232.05
+- 5 days ago: $235.87
+- 4 days ago: $239.14
+- 3 days ago: $242.33
+- 2 days ago: $243.21
+- 1 day ago: $248.42
 
-**戻り値:**
-- 株価情報（価格、変動、通貨など）
+The price has shown an upward trend of about 8% over the past week. The price increase has accelerated especially in the last 3 days.
+```
 
-## MCPクライアントとの連携
+## Available Tools
 
-このMCPサーバーをクライアント（Claude, Claude Desktop, その他MCPサポートアプリケーション）で利用するには、mcp.jsonファイルを作成し、MCPサーバーの定義を行います。
+### Get stock price (get_stock_price)
 
-### mcp.json定義例
+Gets the current price and related information for a specified stock symbol.
 
-以下は、このサーバーを利用するためのmcp.json定義例です。この設定をMCPクライアントに追加することで、株価情報にアクセスできるようになります：
+**Parameters:**
+- `symbol` (string): the stock ticker symbol (e.g. AAPL, MSFT, GOOGL)
+
+**Returns:**
+- Stock price information (price, change, currency, etc.)
+
+## Working with MCP Clients
+
+To use this MCP server in a client (Claude, Claude Desktop, or other MCP-supporting applications), create an mcp.json file that defines the MCP server.
+
+### mcp.json definition example
+
+Below is an example mcp.json definition for using this server. Add this configuration to your MCP client to access stock price information:
 
 ```json
 {
@@ -199,18 +199,18 @@ Claudeプロンプトの例：
     {
       "id": "global-stock-server",
       "url": "http://localhost:3000",
-      "description": "株式市場データと分析のためのMCPサーバー",
+      "description": "MCP server for stock market data and analysis",
       "tools": [
         {
           "name": "get_stock_price",
-          "description": "指定された株式銘柄の現在の株価と関連情報を取得します",
+          "description": "Gets the current price and related information for a specified stock symbol",
           "parameters": {
             "type": "object",
             "required": ["symbol"],
             "properties": {
               "symbol": {
                 "type": "string",
-                "description": "株式銘柄コード（例: AAPL, MSFT, GOOGL）"
+                "description": "Stock ticker symbol (e.g. AAPL, MSFT, GOOGL)"
               }
             }
           }
@@ -221,33 +221,33 @@ Claudeプロンプトの例：
 }
 ```
 
-### MCPクライアントでの設定方法
+### How to configure it in an MCP client
 
-1. 上記のmcp.json定義を任意の場所に保存します
-2. MCPクライアント（Claude Desktopなど）の設定画面を開きます
-3. MCP設定セクションで「サーバー追加」または「インポート」オプションを選択します
-4. 保存したmcp.jsonファイルを選択するか、内容をコピー＆ペーストします
-5. 設定を保存し、クライアントを再起動します
+1. Save the mcp.json definition above to any location
+2. Open the settings screen of your MCP client (e.g. Claude Desktop)
+3. In the MCP settings section, select the "Add Server" or "Import" option
+4. Select the saved mcp.json file, or copy and paste its contents
+5. Save the settings and restart the client
 
-これで、MCPクライアントのプロンプトやチャット内で株価情報ツールが利用可能になります。
+The stock price tools will now be available in the MCP client's prompts or chat.
 
-### Cursor IDEでの設定方法
+### How to configure it in Cursor IDE
 
-Cursor IDEでは、settings.jsonファイルにMCPサーバーの設定を追加することで、AIアシスタントがツールを利用できるようになります。
+In Cursor IDE, you can add MCP server settings to the settings.json file so the AI assistant can use the tools.
 
-#### 設定手順
+#### Setup steps
 
-1. Cursorの設定を開きます：
+1. Open Cursor settings:
    - Windows/Linux: `Ctrl+,`
    - macOS: `Cmd+,`
 
-2. "Cursor Settings"を選択し、settings.jsonファイルを編集します
+2. Select "Cursor Settings" and edit the settings.json file
 
-3. `mcpServers`セクションに以下の設定を追加します:
+3. Add the following configuration to the `mcpServers` section:
 
-##### ローカルプロジェクトとして実行する場合（推奨）
+##### When running as a local project (recommended)
 
-このプロジェクトはローカルでの開発・実行を前提としています。npmスクリプトを使用して実行するのが最も確実な方法です：
+This project is intended to be developed and run locally. Using the npm scripts is the most reliable way to run it:
 
 ```json
 {
@@ -267,7 +267,7 @@ Cursor IDEでは、settings.jsonファイルにMCPサーバーの設定を追加
 }
 ```
 
-開発モードで実行する場合:
+When running in development mode:
 
 ```json
 {
@@ -287,34 +287,34 @@ Cursor IDEでは、settings.jsonファイルにMCPサーバーの設定を追加
 }
 ```
 
-##### GitHub Packagesからインストールする方法
+##### How to install from GitHub Packages
 
-このMCPサーバーはGitHub Packagesを使用してプライベートnpmレジストリとして公開されています。以下の手順でインストールできます：
+This MCP server is published as a private npm registry using GitHub Packages. Follow these steps to install it:
 
-1. `.npmrc`ファイルを作成または編集して認証設定を行います：
+1. Create or edit the `.npmrc` file to configure authentication:
 
 ```
 @sakura-ku:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 ```
 
-2. 環境変数`NPM_TOKEN`にGitHubの個人アクセストークンを設定します：
+2. Set your GitHub personal access token as the environment variable `NPM_TOKEN`:
 
 ```bash
-# Windowsの場合
+# Windows
 $env:NPM_TOKEN="your_github_token"
 
-# macOS/Linuxの場合
+# macOS/Linux
 export NPM_TOKEN="your_github_token"
 ```
 
-3. パッケージをインストールします：
+3. Install the package:
 
 ```bash
 npm install @sakura-ku/grobal-mcp-stock-server
 ```
 
-4. Cursor IDEでの設定例：
+4. Example setup in Cursor IDE:
 
 ```json
 {
@@ -332,106 +332,106 @@ npm install @sakura-ku/grobal-mcp-stock-server
 }
 ```
 
-詳細な設定方法はプライベートnpmレジストリの管理方法をご参照ください。
+For more details, refer to how to manage a private npm registry.
 
-#### トラブルシューティング
+#### Troubleshooting
 
-- **サーバーが起動しない場合**:
-  - プロジェクトディレクトリに移動して手動でコマンドを実行し、エラーを確認
-  - 依存関係が正しくインストールされているか確認（`npm install`を実行）
-  - TypeScriptのバージョンが合っているか確認
+- **If the server does not start**:
+  - Navigate to the project directory and run the command manually to check the error
+  - Confirm that dependencies are installed correctly (run `npm install`)
+  - Check whether the TypeScript version matches
 
-- **ツールが見つからない場合**:
-  - サーバーが正常に起動しているか確認
-  - ログ出力で登録されているツール名を確認
-  - 必要なら`npm run dev`でサーバーをデバッグモードで起動
+- **If the tools are not found**:
+  - Confirm that the server started correctly
+  - Check the log output for the registered tool names
+  - If necessary, start the server in debug mode with `npm run dev`
 
-# 開発者向けガイド
+# Developer Guide
 
-## プロジェクト構成
+## Project Structure
 
 ```
 grobal_mcp_stock_server/
-├── build/                # コンパイルされたJavaScriptファイル
+├── build/                # Compiled JavaScript files
 ├── src/
-│   ├── __tests__/        # 統合テストとテストユーティリティ
-│   ├── config/           # 設定ファイル
-│   ├── data/             # データモデルとストレージ
-│   ├── errors/           # カスタムエラークラス
-│   ├── services/         # 外部APIとの連携サービス
-│   ├── tools/            # MCPツール実装
-│   │   └── __tests__/    # ツールユニットテスト
-│   ├── types/            # TypeScript型定義
-│   └── index.ts          # メインサーバーエントリーポイント
-├── package.json          # プロジェクト設定
-├── tsconfig.json         # TypeScript設定
-└── README.md             # プロジェクトドキュメント
+│   ├── __tests__/        # Integration tests and test utilities
+│   ├── config/           # Configuration files
+│   ├── data/             # Data models and storage
+│   ├── errors/           # Custom error classes
+│   ├── services/         # Services for external API integration
+│   ├── tools/            # MCP tool implementations
+│   │   └── __tests__/    # Tool unit tests
+│   ├── types/            # TypeScript type definitions
+│   └── index.ts          # Main server entry point
+├── package.json          # Project settings
+├── tsconfig.json         # TypeScript settings
+└── README.md             # Project documentation
 ```
 
-## 開発環境のセットアップ
+## Setting Up the Development Environment
 
-1. 開発依存関係をインストールする:
+1. Install development dependencies:
 ```bash
    npm install
 ```
 
-2. 開発モードでサーバーを起動する:
+2. Start the server in development mode:
 ```bash
    npm run dev
 ```
 
-## 開発ワークフロー
+## Development Workflow
 
-- TypeScriptコンパイラをウォッチモードで起動: `npm run dev`
-- コードの静的解析: `npm run lint`
-- 静的解析の問題を自動修正: `npm run lint:fix`
-- テストの実行: `npm test`
+- Start the TypeScript compiler in watch mode: `npm run dev`
+- Run static analysis: `npm run lint`
+- Auto-fix static analysis issues: `npm run lint:fix`
+- Run tests: `npm test`
 
-## 使用可能なスクリプト
+## Available Scripts
 
-package.jsonで定義されているスクリプトの詳細説明:
+Detailed description of the scripts defined in package.json:
 
-### ビルドスクリプト
-- `build`: TypeScriptコードをコンパイルし、distディレクトリに出力します
-- `build:dev`: 開発環境用にソースマップ付きでビルドします
-- `build:prod`: 本番環境用にソースマップなしでビルドします
-- `clean`: distディレクトリを削除して清掃します
-- `prebuild`: ビルド前に自動的にcleanスクリプトを実行します
+### Build scripts
+- `build`: compiles the TypeScript code and outputs it to the dist directory
+- `build:dev`: builds for development with source maps
+- `build:prod`: builds for production without source maps
+- `clean`: deletes and cleans the dist directory
+- `prebuild`: automatically runs the clean script before building
 
-### サーバー起動スクリプト
-- `start`: コンパイル済みのサーバーを起動します
-- `start:dev`: 開発環境設定でサーバーを起動します
-- `start:prod`: 本番環境設定でサーバーを起動します
-- `dev`: ソースコードの変更を監視し、自動的にビルドと再起動を行う開発モードです
+### Server startup scripts
+- `start`: starts the compiled server
+- `start:dev`: starts the server with development configuration
+- `start:prod`: starts the server with production configuration
+- `dev`: development mode that watches source changes, and automatically rebuilds and restarts
 
-### コード品質管理スクリプト
-- `lint`: ESLintを使用してTypeScriptコードの静的解析を行います
-- `lint:fix`: ESLintを使用してコードの問題を自動修正します
+### Code quality scripts
+- `lint`: static analysis of TypeScript code with ESLint
+- `lint:fix`: automatically fixes code issues with ESLint
 
-### テストスクリプト
-- `test`: Jestを使用して全てのテストを実行します
-- `test:watch`: テストをウォッチモードで実行し、変更時に再実行します
-- `test:coverage`: テストカバレッジレポートを生成します
-- `test:ci`: CI環境用のテスト設定で実行します
-- `test:unit`: ユニットテストのみを実行します
-- `test:integration`: 統合テストのみを実行します
-- `test:services`: サービステストのみを実行します
-- `test:debug`: デバッグモードでテストを実行します
+### Test scripts
+- `test`: runs all tests with Jest
+- `test:watch`: runs tests in watch mode, re-running on changes
+- `test:coverage`: generates a test coverage report
+- `test:ci`: runs tests with CI environment configuration
+- `test:unit`: runs only unit tests
+- `test:integration`: runs only integration tests
+- `test:services`: runs only service tests
+- `test:debug`: runs tests in debug mode
 
-### デプロイとパッケージング
-- `deploy:staging`: ステージング環境にデプロイします
-- `deploy:production`: 本番環境にデプロイします
-- `publish:package`: npmレジストリにパッケージを公開します
-- `prepare:package`: パッケージング前に本番ビルドを実行し、tarballを作成します
-- `prepublishOnly`: パッケージ公開前に本番用ビルドを実行します
+### Deployment and packaging
+- `deploy:staging`: deploys to the staging environment
+- `deploy:production`: deploys to the production environment
+- `publish:package`: publishes the package to the npm registry
+- `prepare:package`: runs the production build before packaging and creates a tarball
+- `prepublishOnly`: runs the production build before publishing the package
 
-## ライセンス
+## License
 
 ISC
 
-## 貢献
+## Contributing
 
-このプロジェクトへの貢献に興味がある場合は、プルリクエストを送信してください。
+If you are interested in contributing to this project, please submit a pull request.
 
 **Official site: ** [https://github.com/sakura-ku/grobal_mcp_stock_server](https://github.com/sakura-ku/grobal_mcp_stock_server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -1,11 +1,11 @@
 ---
 title: "daily-hot-mcp"
-description: "🔥 Daily Hots 基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现"
+description: "🔥 Daily Hots - Python implementation of a one-stop aggregation service for global hot trends based on the Model Context Protocol (MCP)."
 ---
 
 # daily-hot-mcp
 
-🔥 Daily Hots 基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现
+🔥 Daily Hots - Python implementation of a one-stop aggregation service for global hot trends based on the Model Context Protocol (MCP).
 
 # 🔥 Daily Hots
 

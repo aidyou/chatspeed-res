@@ -21,15 +21,15 @@ A Model Context Protocol (MCP) server that provides real-time hot trending topic
 
 ## Supported Platforms
 
-1. Zhihu Hot List (知乎热榜)
-2. 36Kr Hot List (36氪热榜)
-3. Baidu Hot Discussion (百度热点)
-4. Bilibili Hot List (B站热榜)
-5. Weibo Hot Search (微博热搜)
-6. Douyin Hot List (抖音热点)
-7. Hupu Hot List (虎扑热榜)
-8. Douban Hot List (豆瓣热榜)
-9. IT News (IT新闻)
+1. Zhihu Hot List
+2. 36Kr Hot List
+3. Baidu Hot Discussion
+4. Bilibili Hot List
+5. Weibo Hot Search
+6. Douyin Hot List
+7. Hupu Hot List
+8. Douban Hot List
+9. IT News
 
 > API Source, This project uses the `api.vvhan.com` service for fetching hot topics data.
 

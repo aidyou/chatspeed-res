@@ -35,11 +35,11 @@ To protect your personal information, this service uses environment variables to
 
 ```bash
 
-# 运行交互式配置脚本
+# Run the interactive configuration script
 
 uv run setup_env.py
 
-# 或检查当前配置
+# Or check the current configuration
 
 uv run setup_env.py check
 
@@ -52,10 +52,10 @@ cp .env.example .env
 ```
 2. Edit the `.env` file and fill in your actual configurations:
 ```env
-# 图床 API 基础 URL (可选，默认值如下)
+# Image hosting API base URL (optional, default as below)
 IMGBED_API_BASE=https://imgbed.deepseeking.app
 
-# 图床授权码 (必需，请填写您的实际授权码)
+# Image hosting auth code (required; fill in your actual auth code)
 IMGBED_AUTH_CODE=your_actual_auth_code_here
 ```
 #### Method Three: Set System Environment Variables
@@ -66,7 +66,7 @@ IMGBED_AUTH_CODE=your_actual_auth_code_here
 
 export IMGBED_AUTH_CODE="your_actual_auth_code_here"
 
-export IMGBED_API_BASE="https://imgbed.deepseeking.app"  # 可选
+export IMGBED_API_BASE="https://imgbed.deepseeking.app"  # optional
 
 # Windows
 
@@ -81,11 +81,11 @@ The project has already been set up with its dependencies; you just need to run:
 
 ```bash
 
-# 验证安装和配置
+# Verify the installation and configuration
 
 uv run setup_env.py check
 
-# 启动服务（用于测试）
+# Start the service (for testing)
 
 uv run image_upload.py
 
@@ -136,7 +136,7 @@ Uploads a single image file to the image hosting server.
 
 **Example:**
 ```
-请上传我桌面上的 screenshot.png 文件
+Please upload the screenshot.png file on my desktop
 ```
 ### 2. `upload_multiple_images` - Batch Upload
 
@@ -147,7 +147,7 @@ Uploads multiple image files in batch.
 
 **Example:**
 ```
-请批量上传以下文件：
+Please batch upload the following files:
 - ~/Pictures/photo1.jpg
 - ~/Pictures/photo2.png
 - ~/Pictures/photo3.gif
@@ -161,7 +161,7 @@ Checks the basic information of an image file to verify if it can be uploaded.
 
 **Example:**
 ```
-请检查 ~/Downloads/image.jpg 文件是否可以上传
+Please check whether the ~/Downloads/image.jpg file can be uploaded
 ```
 ## 📝 Usage Examples
 
@@ -169,77 +169,77 @@ Checks the basic information of an image file to verify if it can be uploaded.
 
 ```
 
-用户: 请帮我上传桌面上的 avatar.jpg 文件
+User: Please help me upload the avatar.jpg file on my desktop
 
-助手: [使用 upload_image 工具]
+Assistant: [uses the upload_image tool]
 
-✅ 图像上传成功！
+Image uploaded successfully!
 
-原始文件: avatar.jpg
+Original file: avatar.jpg
 
-文件大小: 245760 bytes
+File size: 245760 bytes
 
-相对路径: /file/1749257735878_avatar.jpg
+Relative path: /file/1749257735878_avatar.jpg
 
-完整访问链接: https://imgbed.deepseeking.app/file/1749257735878_avatar.jpg
+Full access link: https://imgbed.deepseeking.app/file/1749257735878_avatar.jpg
 
-您可以直接使用上述链接访问上传的图像。
+You can directly use the link above to access the uploaded image.
 
 ```
 ### Batch Upload
 
 ```
 
-用户: 请批量上传我照片文件夹中的所有图片
+User: Please batch upload all images in my photo folder
 
-助手: [使用 upload_multiple_images 工具]
+Assistant: [uses the upload_multiple_images tool]
 
-📊 批量上传完成汇总:
+Batch upload summary:
 
-总文件数: 3
+Total files: 3
 
-成功上传: 2
+Uploaded successfully: 2
 
-失败上传: 1
+Failed uploads: 1
 
-成功率: 66.7%
+Success rate: 66.7%
 
-详细结果:
+Detailed results:
 
-[1] ✅ photo1.jpg: 上传成功
+[1] photo1.jpg: upload succeeded
 
-[2] ✅ photo2.png: 上传成功
+[2] photo2.png: upload succeeded
 
-[3] ❌ photo3.bmp: 文件太大
+[3] photo3.bmp: file too large
 
 ```
 ### File Check
 
 ```
 
-用户: 请检查这个文件是否可以上传：~/Downloads/large_image.png
+User: Please check whether this file can be uploaded: ~/Downloads/large_image.png
 
-助手: [使用 check_image_info 工具]
+Assistant: [uses the check_image_info tool]
 
-📋 文件信息检查结果:
+File info check result:
 
-文件名: large_image.png
+File name: large_image.png
 
-文件路径: /Users/username/Downloads/large_image.png
+File path: /Users/username/Downloads/large_image.png
 
-文件大小: 15728640 bytes (15360.0 KB)
+File size: 15728640 bytes (15360.0 KB)
 
-文件格式: .png
+File format: .png
 
-MIME 类型: image/png
+MIME type: image/png
 
-✅ 格式支持: 是
+Format supported: Yes
 
-✅ 大小检查: 超出限制 (最大10MB)
+Size check: over the limit (max 10MB)
 
-🔴 该文件不能上传
+This file cannot be uploaded
 
-支持的格式: .bmp, .gif, .jpg, .jpeg, .png, .svg, .tif, .tiff, .webp
+Supported formats: .bmp, .gif, .jpg, .jpeg, .png, .svg, .tif, .tiff, .webp
 
 ```
 ## 🔧 Technical Details

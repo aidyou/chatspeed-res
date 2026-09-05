@@ -1,26 +1,27 @@
 ---
 title: "smartrui-douyin-mcp-server"
-description: "TikTok Video Text Content Parsing and Watermark-Free Video Download 1. 简介 本文档将介绍如何解析抖音视频中的文本内容，并提供一种方法来下载无水印的抖音视频。 2. 抖音视频文本内容解析 2.1 获取视频链接 首先，你需要获取你想要解析的抖音视频的分享链接。例如： https://v.douyin.com/xxxxxx/ 2.2…"
+description: "TikTok Video Text Content Parsing and Watermark-Free Video Download: this document explains how to parse the text content of Douyin (TikTok China) videos and provides a way to download watermark-free…"
 ---
 
 # smartrui-douyin-mcp-server
 
-TikTok Video Text Content Parsing and Watermark-Free Video Download 1. 简介 本文档将介绍如何解析抖音视频中的文本内容，并提供一种方法来下载无水印的抖音视频。 2. 抖音视频文本内容解析 2.1 获取视频链接 首先，你需要获取你想要解析的抖音视频的分享链接。例如： https://v.douyin.com/xxxxxx/ 2.2…
+TikTok Video Text Content Parsing and Watermark-Free Video Download: this document explains how to parse the text content of Douyin (TikTok China) videos and provides a way to download watermark-free…
 
-TikTok Video Text Content Parsing and Watermark-Free Video Download
+# TikTok Video Text Content Parsing and Watermark-Free Video Download
 
-## 1. 简介
-本文档将介绍如何解析抖音视频中的文本内容，并提供一种方法来下载无水印的抖音视频。
+## 1. Introduction
+This document explains how to parse the text content of Douyin (TikTok China) videos and provides a way to download watermark-free Douyin videos.
 
-## 2. 抖音视频文本内容解析
-### 2.1 获取视频链接
-首先，你需要获取你想要解析的抖音视频的分享链接。例如：
+## 2. Parsing Douyin Video Text Content
+### 2.1 Get the video link
+First, get the share link of the Douyin video you want to parse. For example:
 
 https://v.douyin.com/xxxxxx/
 
-### 2.2 使用API解析
-你可以使用第三方API来解析抖音视频的内容。这里我们以一个假设的API为例：
-python
+### 2.2 Parse with an API
+You can use a third-party API to parse the Douyin video content. Here we use a hypothetical API as an example:
+
+```python
 import requests
 
 def parse_douyin_video(url):
@@ -37,10 +38,12 @@ if result:
     print(result)
 else:
     print("Failed to parse the video.")
+```
 
-### 2.3 解析结果
-解析后的结果通常包含视频标题、描述、作者信息等。例如：
-json
+### 2.3 Parse result
+The parsed result usually contains the video title, description, author info, etc. For example:
+
+```json
 {
     "title": "Amazing Travel Vlog",
     "description": "Join me on this amazing journey through the mountains!",
@@ -51,22 +54,26 @@ json
     "cover_image": "http://example.com/image.jpg",
     "play_addr": "http://example.com/video.mp4"
 }
+```
 
-## 3. 无水印视频下载
-### 3.1 获取无水印视频链接
-通过解析得到的`play_addr`通常是带有水印的视频链接。为了获取无水印的视频链接，可以使用以下方法：
-python
+## 3. Downloading Watermark-Free Videos
+### 3.1 Get the watermark-free video link
+The `play_addr` obtained by parsing is usually a video link with a watermark. To get a watermark-free video link, you can use the following method:
+
+```python
 def get_watermark_free_link(play_addr):
-    # 假设通过某种方式可以转换为无水印链接
+    # Assume there is some way to convert it to a watermark-free link
     watermark_free_link = play_addr.replace("playwm", "play")
     return watermark_free_link
 
 watermark_free_link = get_watermark_free_link(result["play_addr"])
 print(watermark_free_link)
+```
 
-### 3.2 下载无水印视频
-使用Python的`requests`库可以轻松下载视频：
-python
+### 3.2 Download the watermark-free video
+You can easily download the video using Python's `requests` library:
+
+```python
 def download_video(url, filename):
     response = requests.get(url, stream=True)
     if response.status_code == 200:
@@ -79,11 +86,12 @@ def download_video(url, filename):
         print("Failed to download the video.")
 
 download_video(watermark_free_link, "video.mp4")
+```
 
-## 4. 总结
-本文介绍了如何解析抖音视频中的文本内容以及如何下载无水印的抖音视频。希望这些信息对你有所帮助！
+## 4. Summary
+This document introduced how to parse the text content of Douyin videos and how to download watermark-free Douyin videos. We hope this information helps you!
 
-更多关于抖音API的信息，请参考[官方文档](https://developers.douyin.com/)。
+For more information about the Douyin API, refer to the [official documentation](https://developers.douyin.com/).
 
 **Official site: ** [https://github.com/smartruiandqq/douyin-mcp-server.git](https://github.com/smartruiandqq/douyin-mcp-server.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

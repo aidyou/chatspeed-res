@@ -1,24 +1,25 @@
 ---
 title: "finData"
-description: "Can Analyze Recommended Stocks for the Day python def analyzerecommendedstocks(): 这里填写获取并分析当日推荐股票的代码 pass - 该功能允许用户分析系统或分析师为当天推荐的股票。 - 通过调用analyzerecommendedstocks()函数，可以获取到最新的推荐信息，并对其进行深入分析。 - 分析结果可能…"
+description: "Can analyze recommended stocks for the day. This feature allows users to analyze stocks recommended by the system or analysts for the day, covering fundamentals, technical indicators, market sentiment…"
 ---
 
 # finData
 
-Can Analyze Recommended Stocks for the Day python def analyzerecommendedstocks(): 这里填写获取并分析当日推荐股票的代码 pass - 该功能允许用户分析系统或分析师为当天推荐的股票。 - 通过调用analyzerecommendedstocks()函数，可以获取到最新的推荐信息，并对其进行深入分析。 - 分析结果可能…
+Can analyze recommended stocks for the day. This feature allows users to analyze stocks recommended by the system or analysts for the day, covering fundamentals, technical indicators, market sentiment…
 
-Can Analyze Recommended Stocks for the Day
+# Can Analyze Recommended Stocks for the Day
 
-python
+```python
 def analyze_recommended_stocks():
-    # 这里填写获取并分析当日推荐股票的代码
+    # Fill in the code to fetch and analyze today's recommended stocks here
     pass
+```
 
-- 该功能允许用户分析系统或分析师为当天推荐的股票。
-- 通过调用`analyze_recommended_stocks()`函数，可以获取到最新的推荐信息，并对其进行深入分析。
-- 分析结果可能包括但不限于：股票的基本面、技术指标、市场情绪等关键因素。
+- This feature allows users to analyze stocks recommended by the system or analysts for the day.
+- By calling the `analyze_recommended_stocks()` function, you can get the latest recommendation info and analyze it in depth.
+- Analysis results may include, but are not limited to: stock fundamentals, technical indicators, market sentiment, and other key factors.
 
-更多详细信息，请参考[官方文档](https://example.com/official-documentation)。
+For more details, refer to the [official documentation](https://example.com/official-documentation).
 
 **Official site: ** [https://github.com/gptForYou/mcp-gusantong-server](https://github.com/gptForYou/mcp-gusantong-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

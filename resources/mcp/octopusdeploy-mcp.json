@@ -46,7 +46,7 @@
     ],
     "requiredInputs": [
       "Octopus API Key",
-      "Octopus 服务器地址"
+      "Octopus server URL"
     ]
   },
   "score": 55.04

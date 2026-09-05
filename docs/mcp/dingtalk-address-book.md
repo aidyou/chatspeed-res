@@ -1,11 +1,11 @@
 ---
 title: "Address-Book"
-description: "1.什么是钉钉通讯录（应用授权） MCP Server？ 钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。 2.如何使用钉钉通讯录（应用授权） MCP Server？ 钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。 MCP Tool 有： getuserinfo，…"
+description: "DingTalk Address Book (App Authorization) MCP Server: an official MCP from the DingTalk open platform that supports obtaining organizational structure info, querying member details, getting department…"
 ---
 
 # Address-Book
 
-1.什么是钉钉通讯录（应用授权） MCP Server？ 钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。 2.如何使用钉钉通讯录（应用授权） MCP Server？ 钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。 MCP Tool 有： getuserinfo，…
+DingTalk Address Book (App Authorization) MCP Server: an official MCP from the DingTalk open platform that supports obtaining organizational structure info, querying member details, getting department…
 
 # DingTalk Address Book (App Authorization) MCP Server
 
@@ -19,16 +19,16 @@ DingTalk has already deployed the cloud-based DingTalk Address Book (App Authori
 
 ### MCP Tools
 
-- **`get_user_info`**  
+- **`get_user_info`**
   Obtain basic information of a specified user (such as name, employee ID, email, phone number, etc.).
 
-- **`list_departments`**  
+- **`list_departments`**
   List all departments within the enterprise or the sub-departments of a specified department.
 
-- **`get_department_detail`**  
+- **`get_department_detail`**
   Get detailed information about a specified department (including department name, head, number of members, etc.).
 
-- **`list_department_members`**  
+- **`list_department_members`**
   Paginate and obtain all member information under a specified department.
 
 ## User Cases

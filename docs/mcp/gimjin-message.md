@@ -1,81 +1,43 @@
 ---
 title: "message-mcp"
-description: "Desktop notifications, personalized sounds, ntfy mobile app notifications, email notifications, and API push notifications reduce the anxiety of waiting for AI tasks, allowing you to comfortably enjoy…"
+description: "Desktop notifications, personalized sounds, ntfy mobile app notifications, email notifications, and API push - reducing the anxiety of waiting for AI tasks so you can comfortably enjoy a cup of coffee…"
 ---
 
 # message-mcp
 
-Desktop notifications, personalized sounds, ntfy mobile app notifications, email notifications, and API push notifications reduce the anxiety of waiting for AI tasks, allowing you to comfortably enjoy…
+Desktop notifications, personalized sounds, ntfy mobile app notifications, email notifications, and API push - reducing the anxiety of waiting for AI tasks so you can comfortably enjoy a cup of coffee…
 
-💬 Message MCP
+# Message MCP
 
-  
-桌面通知、个性化声音、ntfy 手机应用通知、邮件通知和 API 推送，减少 AI 任务等待焦虑，舒适地享用一杯咖啡。​
+Desktop notifications, personalized sounds, ntfy mobile app notifications, email notifications, and API push to reduce the anxiety of waiting for AI tasks, so you can comfortably enjoy a cup of coffee.
 
-  
+## Improve AI usage efficiency and free up more time
 
-    
+When waiting for AI to finish a task, do you wish you could work on something else at the same time? Now you can rest easy and handle other tasks while the AI executes long-running tasks.
 
-  
-
-  
-
-    
-
-  
-
-  
-
-     title="Visit Count"/>
-  
-
-  
-
-    
-
-  
-
-  
-
-    
-
-  
-
-  
-
-    
-
-  
-
-  
-
-## 🚀 提升 AI 使用效率，释放更多时间
-
-等待 AI 完成任务时，您是否希望能同时处理其他工作？现在可以在 AI 执行长时间任务时，安心去处理其他事务。
-
-**Message MCP 让您的 AI 协作更高效！**
+**Message MCP makes your AI collaboration more efficient!**
 
 ```text
-🧑：做一款俄罗斯方块网页游戏，完成后通知。
-🤖：我将开始做俄罗斯方块游戏
+: Make a Tetris web game and notify me when done.
+: I will start making the Tetris game
    ...
-💬：Message MCP 执行，已发送信息。
+: Message MCP executed, message sent.
 ```
 
-> [!TIP]
+> TIP
 >
-> - 在客户端设置里 **允许 MCP 自动执行**。
-> - 在 **用户规则** 或 **规则文件** 中加入 “完成后通知” 提示，即可避免重复手动提示。
+> - In the client settings, **allow MCP to run automatically**.
+> - Add a "notify me when done" hint in **User Rules** or **Rule Files** to avoid manually repeating the prompt.
 
-### ⚡️ 快速安装
+### Quick Install
 
 [Install in Cursor](https://cursor.com/install-mcp?name=message-mcp&config=eyJjb21tYW5kIjogIm5weCIsImFyZ3MiOiBbIm1lc3NhZ2UtbWNwQGxhdGVzdCJdfQ==) [Open in VS Code](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?{%22name%22:%22message-mcp%22,%22command%22:%22npx%22,%22args%22:[%22message-mcp@latest%22]}) [Open in VS Code](https://insiders.vscode.dev/redirect?url=vscode-insiders:mcp/install?{%22name%22:%22message-mcp%22,%22command%22:%22npx%22,%22args%22:[%22message-mcp@latest%22]}) [Smithery](https://smithery.ai/server/@gimjin/message-mcp)
 
-> 通过 smithery.ai 支持云端安装（如 Dify 等 SaaS 服务），也提供本地一键部署。由于 Message MCP 实际运行于 smithery.ai 云端，暂不支持桌面通知。全程采用端到端加密，保障数据安全。[了解更多](https://smithery.ai/docs/getting_started/quickstart_connect#one-click-connect-to-smithery-servers)
+> Cloud installation (e.g. Dify and other SaaS services) is supported via smithery.ai, and local one-click deployment is also available. Since Message MCP actually runs in the smithery.ai cloud, desktop notifications are not supported there. End-to-end encryption is used throughout to keep data secure. [Learn more](https://smithery.ai/docs/getting_started/quickstart_connect#one-click-connect-to-smithery-servers)
 
-### ⚙️ 标准安装
+### Standard Installation
 
-#### MacOS、Linux、WSL2
+#### MacOS, Linux, WSL2
 
 ```json
 {
@@ -101,9 +63,9 @@ Desktop notifications, personalized sounds, ntfy mobile app notifications, email
 }
 ```
 
-### 🎛️ 可选配置
+### Optional Configuration
 
-#### 修改桌面通知
+#### Customize desktop notifications
 
 ```json
 {
@@ -120,12 +82,12 @@ Desktop notifications, personalized sounds, ntfy mobile app notifications, email
 }
 ```
 
-> - 默认已开启桌面通知
-> - 默认声音 zapsplat 提供。如果不喜欢默认声音，可以到 [zapsplat.com](https://zapsplat.com/) 下载配置。
+> - Desktop notifications are enabled by default
+> - The default sound is provided by zapsplat. If you don't like it, you can download and configure your own at [zapsplat.com](https://zapsplat.com/).
 
-#### ntfy 手机通知
+#### ntfy mobile notifications
 
-安装 App：[App Store](https://apps.apple.com/us/app/ntfy/id1625396347)、[Google Play](https://play.google.com/store/apps/details?id=io.heckel.ntfy)、[F-Droid](https://f-droid.org/en/packages/io.heckel.ntfy/)
+Install the app: [App Store](https://apps.apple.com/us/app/ntfy/id1625396347), [Google Play](https://play.google.com/store/apps/details?id=io.heckel.ntfy), [F-Droid](https://f-droid.org/en/packages/io.heckel.ntfy/)
 
 ```json
 {
@@ -141,7 +103,7 @@ Desktop notifications, personalized sounds, ntfy mobile app notifications, email
 }
 ```
 
-#### 邮件通知
+#### Email notifications
 
 ```json
 {
@@ -161,7 +123,7 @@ Desktop notifications, personalized sounds, ntfy mobile app notifications, email
 }
 ```
 
-#### API 通知
+#### API notifications
 
 ```json
 {
@@ -193,20 +155,20 @@ fetch(API_URL, {
 })
 ```
 
-## 📌 系统要求
+## System Requirements
 
-- Node.js：18 或更高
-- macOS：原生通知需要 >= 10.8 版本
-- Linux：需要安装 notify-osd 或 libnotify-bin（Ubuntu 默认包含）
-- Windows：>= 8 版本，或 Windows  通知和操作 > 获取来自应用和其他发送者的通知 → 启用
+- Node.js: 18 or higher
+- macOS: native notifications require >= 10.8
+- Linux: needs notify-osd or libnotify-bin installed (included by default on Ubuntu)
+- Windows: >= 8, or enable Windows Notifications & Actions > Get notifications from apps and other senders
 
-#### WSL2（Ubuntu）没有通知声音
+#### WSL2 (Ubuntu) has no notification sound
 
 ```bash
 sudo apt install -y pulseaudio mpg123
 ```
 
-#### WSL2 环境缺少操作系统通知
+#### WSL2 environment lacks OS notifications
 
 ```bash
 sudo find / -type f -name "snoretoast-*.exe" 2>/dev/null
@@ -218,7 +180,7 @@ chmod +x /path/to/.../node_modules/snoretoast-*.exe
 
 ---
 
-如果这个项目对你有帮助，请给个 ⭐️ 支持一下，让更多人看到它！
+If this project helps you, please give it a Star so more people can see it!
 
 **Official site: ** [https://github.com/gimjin/message-mcp](https://github.com/gimjin/message-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

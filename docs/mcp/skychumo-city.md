@@ -1,53 +1,54 @@
 ---
 title: "city-mcp"
-description: "Acquiring Life Image 在开始之前，请确保你已经安装了最新版本的我们的软件。如果你还没有安装，可以访问链接下载。 准备工作 - 确认你的设备满足最低系统要求。 - 检查网络连接是否稳定。 步骤 1: 登录账户 打开应用程序后，使用你的账号密码登录。如果是首次使用，请先注册一个新账号。 plaintext 用户名: yourusername 密码: yourpassword 步骤…"
+description: "Acquiring Life Image: Before you begin, make sure you have installed the latest version of our software. If you haven't installed it yet, you can download it from the link. This guide covers: preparat…"
 ---
 
 # city-mcp
 
-Acquiring Life Image 在开始之前，请确保你已经安装了最新版本的我们的软件。如果你还没有安装，可以访问链接下载。 准备工作 - 确认你的设备满足最低系统要求。 - 检查网络连接是否稳定。 步骤 1: 登录账户 打开应用程序后，使用你的账号密码登录。如果是首次使用，请先注册一个新账号。 plaintext 用户名: yourusername 密码: yourpassword 步骤…
+Acquiring Life Image: Before you begin, make sure you have installed the latest version of our software. If you haven't installed it yet, you can download it from the link. This guide covers: preparat…
 
-Acquiring Life Image
+# Acquiring Life Image
 
-在开始之前，请确保你已经安装了最新版本的[我们的软件](https://example.com/download)。如果你还没有安装，可以访问链接下载。
+Before you begin, make sure you have installed the latest version of [our software](https://example.com/download). If you haven't installed it yet, you can download it from the link.
 
-## 准备工作
-- 确认你的设备满足最低系统要求。
-- 检查网络连接是否稳定。
-  
-## 步骤 1: 登录账户
-打开应用程序后，使用你的账号密码登录。如果是首次使用，请先注册一个新账号。
+## Preparation
+- Confirm that your device meets the minimum system requirements.
+- Check that your network connection is stable.
 
-plaintext
-用户名: your_username
-密码: your_password
+## Step 1: Log in to your account
+After opening the app, log in with your account and password. If this is your first time, register a new account first.
 
-## 步骤 2: 选择功能
-登录成功后，在主界面找到并点击“获取人生形象”按钮。
+```
+Username: your_username
+Password: your_password
+```
 
-## 步骤 3: 配置选项
-根据个人偏好调整设置：
-- 分辨率
-- 色彩模式
-- 特效添加
+## Step 2: Select the feature
+After logging in, find and click the "Acquire Life Image" button on the main screen.
 
-这些选项将影响最终生成的形象质量与风格。
+## Step 3: Configure options
+Adjust the settings based on your preferences:
+- Resolution
+- Color mode
+- Effect overlays
 
-## 步骤 4: 开始处理
-一切准备就绪后，点击“开始”按钮。程序将自动开始处理，并可能需要几分钟时间完成。
+These options affect the quality and style of the final generated image.
 
-### 注意事项
-- 处理过程中请勿关闭应用或断开互联网连接。
-- 如果遇到任何问题，请查看帮助文档或联系客服支持。
+## Step 4: Start processing
+Once everything is ready, click the "Start" button. The program will begin processing automatically, which may take a few minutes to complete.
 
-## 常见问题解答
-**Q: 我可以自定义更多细节吗？**
-A: 当前版本提供了基本的定制选项，未来更新中我们将增加更多个性化设置。
+### Notes
+- Do not close the app or disconnect from the internet during processing.
+- If you encounter any issues, check the help documentation or contact customer support.
 
-**Q: 生成的形象可以用于商业用途吗？**
-A: 根据服务条款，除非特别说明，否则默认情况下所有生成的内容仅供个人使用。如需商用，请咨询我们获取许可。
+## FAQ
+**Q: Can I customize more details?**
+A: The current version provides basic customization options; we will add more personalization settings in future updates.
 
-希望这份指南对你有所帮助！如果有其他疑问，欢迎随时联系我们。
+**Q: Can the generated image be used for commercial purposes?**
+A: According to the terms of service, unless otherwise noted, all generated content is for personal use only by default. For commercial use, please contact us for a license.
+
+We hope this guide helps you! If you have other questions, feel free to contact us.
 
 **Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

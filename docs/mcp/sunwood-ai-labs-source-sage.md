@@ -7,71 +7,71 @@ description: "A TypeScript-based server that visualizes project directory struct
 
 A TypeScript-based server that visualizes project directory structures in Markdown format, automatically documenting file contents with syntax highlighting and supporting customizable exclusion patter…
 
-# 🌟 SourceSage MCP
+# SourceSage MCP
 
-## 📖 概要
+## Overview
 
-SourceSageは、プロジェクトのディレクトリ構造を美しいマークダウン形式で可視化するMCPサーバーです。TypeScriptで実装され、高度なカスタマイズ性と柔軟な除外パターン機能を提供します。また、各ファイルの内容を自動的にドキュメント化し、プロジェクトの全体像を把握しやすくします。
+SourceSage is an MCP server that visualizes a project's directory structure in a beautiful Markdown format. Implemented in TypeScript, it offers advanced customization and flexible exclusion pattern support. It also automatically documents the contents of each file, making it easy to grasp the overall picture of a project.
 
-## 🎯 主な特徴
+## Key Features
 
-- 📁 ディレクトリ構造のマークダウン形式での出力
-- 🎨 美しい木構造表示（ASCII art）
-- 📝 ファイル内容の自動ドキュメント化（言語別のシンタックスハイライト付き）
-- 🔍 柔軟な除外パターン（.SourceSageignore）
-- 🚀 ES2022とNode16モジュールシステムによる最新の実装
-- 💫 厳格な型チェックによる高い信頼性
+- Outputs the directory structure in Markdown format
+- Beautiful tree structure display (ASCII art)
+- Automatic documentation of file contents (with language-specific syntax highlighting)
+- Flexible exclusion patterns (.SourceSageignore)
+- Modern implementation with ES2022 and the Node16 module system
+- High reliability through strict type checking
 
-## 🛠️ 技術スタック
+## Tech Stack
 
-- 🔷 TypeScript (ES2022ターゲット)
-- 📦 Model Context Protocol SDK (v0.6.0)
-- 🌐 Node.js (Node16モジュールシステム)
-- 📚 glob (v11.0.0) - ファイルパターンマッチング
-- 🎭 ignore (v6.0.2) - 柔軟なファイル除外機能
+- TypeScript (ES2022 target)
+- Model Context Protocol SDK (v0.6.0)
+- Node.js (Node16 module system)
+- glob (v11.0.0) - file pattern matching
+- ignore (v6.0.2) - flexible file exclusion
 
-## 📂 プロジェクト構造
+## Project Structure
 
 ```plaintext
 source-sage/
 ├── assets/
-│   └── header.svg          # プロジェクトヘッダー画像
+│   └── header.svg          # Project header image
 ├── src/
-│   └── index.ts           # メインサーバー実装
-├── build/                 # コンパイル済みJavaScriptファイル
-├── .gitignore            # Gitの除外設定
-├── .SourceSageignore     # SourceSage固有の除外設定
-├── package.json          # プロジェクト設定・依存関係
-├── README.md            # プロジェクトドキュメント
-└── tsconfig.json        # TypeScript設定
+│   └── index.ts           # Main server implementation
+├── build/                 # Compiled JavaScript files
+├── .gitignore            # Git exclusion settings
+├── .SourceSageignore     # SourceSage-specific exclusion settings
+├── package.json          # Project settings and dependencies
+├── README.md            # Project documentation
+└── tsconfig.json        # TypeScript settings
 ```
 
-## ⚙️ TypeScript設定
+## TypeScript Configuration
 
 ```json
 {
   "compilerOptions": {
-    "target": "ES2022",        // 最新のECMAScript機能を活用
-    "module": "Node16",        // Node.js 16の最新モジュールシステムを使用
+    "target": "ES2022",        // Leverage the latest ECMAScript features
+    "module": "Node16",        // Use Node.js 16's latest module system
     "moduleResolution": "Node16",
-    "outDir": "./build",      // コンパイル済みファイルの出力先
-    "rootDir": "./src",       // ソースファイルのルートディレクトリ
-    "strict": true,           // 厳格な型チェックを有効化
-    "esModuleInterop": true,  // CommonJSモジュールとの相互運用性を確保
-    "skipLibCheck": true,     // 型定義ファイルのチェックをスキップ
-    "forceConsistentCasingInFileNames": true  // ファイル名の大文字小文字を厳格に管理
+    "outDir": "./build",      // Output directory for compiled files
+    "rootDir": "./src",       // Root directory of source files
+    "strict": true,           // Enable strict type checking
+    "esModuleInterop": true,  // Ensure interoperability with CommonJS modules
+    "skipLibCheck": true,     // Skip checking of type definition files
+    "forceConsistentCasingInFileNames": true  // Strictly manage file name casing
   }
 }
 ```
 
-## ⚙️ インストール
+## Installation
 
-### npmからインストール
+### Install from npm
 ```bash
 npm install -g @sunwood-ai-labs/source-sage-mcp-server
 ```
 
-### ソースからビルド
+### Build from source
 ```bash
 git clone https://github.com/sunwood-ai-labs/source-sage-mcp-server.git
 cd source-sage-mcp-server
@@ -79,11 +79,11 @@ npm install
 npm run build
 ```
 
-## 🔧 使用方法
+## Usage
 
-### MCPサーバーとしての設定
+### Configure as an MCP server
 
-1. MCPの設定ファイルに以下を追加:
+1. Add the following to the MCP config file:
 
 ```json
 {
@@ -96,108 +96,108 @@ npm run build
 }
 ```
 
-### 🎮 使用可能なツール
+### Available Tools
 
 #### generate_structure
 
-プロジェクトのディレクトリ構造を生成し、ファイル内容も含めた詳細なドキュメントを作成します。
+Generates the project's directory structure and creates a detailed document that includes file contents.
 
 ```typescript
 interface GenerateStructureArgs {
-  // 構造を生成するディレクトリのパス（必須）
-  // 必ず絶対パスで指定してください
+  // Path of the directory whose structure will be generated (required)
+  // Always specify an absolute path
   path: string;
-  // .SourceSageignoreファイルのパス（オプション）
-  // 指定する場合は絶対パスで指定してください
+  // Path of the .SourceSageignore file (optional)
+  // If specified, use an absolute path
   ignorePath?: string;
 }
 ```
 
-### 使用例
+### Usage example
 
 ```typescript
-// 絶対パスでの使用（推奨）
+// Use with an absolute path (recommended)
 const result = await mcpClient.callTool('source-sage', 'generate_structure', {
   path: 'C:/Users/your-name/path/to/your-project',
   ignorePath: 'C:/Users/your-name/path/to/your-project/.SourceSageignore'
 });
 ```
 
-### 出力サンプル
+### Output sample
 
-実際のプロジェクト構造の出力例：
+Example output of actual project structure:
 
 ```plaintext
-# 📁 Project: source-sage
+# Project: source-sage
 
-## 🌳 ディレクトリ構造
+## Directory Structure
 
 OS: win32
-Directory: C:Usersyour-namesource-sage
+Directory: C:\Users\your-name\source-sage
 
 └─ source-sage/
    ├─ src/
-   │  └─ index.ts          # MCPサーバーの主要な実装
-   ├─ package.json         # プロジェクトの依存関係と設定
-   ├─ README.md           # プロジェクトの詳細な説明
-   └─ tsconfig.json       # TypeScriptのコンパイル設定
+   │  └─ index.ts          # Main implementation of the MCP server
+   ├─ package.json         # Project dependencies and settings
+   ├─ README.md           # Detailed project description
+   └─ tsconfig.json       # TypeScript compilation settings
 ```
 
-この出力には以下の情報が含まれます：
+This output includes the following information:
 
-- 📁 プロジェクト名とOS情報
-- 🌳 ディレクトリツリー構造
-- 📝 各ファイルの役割と説明
-- 🔍 .SourceSageignoreによる不要ファイルの除外
+- Project name and OS info
+- Directory tree structure
+- Role and description of each file
+- Exclusion of unnecessary files via .SourceSageignore
 
-## 📝 .SourceSageignoreの設定
+## Configuring .SourceSageignore
 
-プロジェクトのルートに`.SourceSageignore`ファイルを作成し、除外したいパターンを記述します。デフォルトで以下のような除外パターンが含まれています：
+Create a `.SourceSageignore` file in the project root and write the patterns you want to exclude. The following exclusion patterns are included by default:
 
 ```plaintext
-# バージョン管理システム関連
+# Version control system related
 .git
 .gitignore
 
-# キャッシュファイル
+# Cache files
 __pycache__
 .pytest_cache
 **/__pycache__/**
 *.pyc
 
-# ビルド・配布関連
+# Build / distribution related
 build
 dist
 *.egg-info
 
-# 一時ファイル・出力
+# Temp files / output
 output
 output.md
 test_output
 .SourceSageAssets
 .SourceSageAssetsDemo
 
-# アセット
+# Assets
 *.png
 *.svg
 assets
 
-# その他
+# Other
 LICENSE
 example
 folder
 package-lock.json
 ```
 
-## 🔄 出力例
+## Output Example
 
 ```plaintext
-  # 📁 Project: my-project
+  # Project: my-project
 
-  ## 🌳 ディレクトリ構造
+  ## Directory Structure
 
   OS: win32
-  Directory: C:path	omy-project
+  Directory: C:\path\to\my-project
 
   └─ my-project/
     ├─ src/
@@ -206,79 +206,79 @@ package-lock.json
     │     └─ helper.ts
     └─ package.json
 
-  ## 📄 ファイル内容
+  ## File Contents
 
-  ### 📝 `src/index.ts`
+  ### `src/index.ts`
   **Type**: TypeScript Source File
 
 ```
 
-## 👨‍💻 開発者向け情報
+## Developer Information
 
-### 主要な実装詳細
+### Key implementation details
 
-- **Server Class**: `SourceSageServer`クラスがMCPサーバーの中核機能を提供
-- **Tree Building**: 
-  - `buildTree`メソッドが再帰的にディレクトリ構造を解析
-  - ディレクトリとファイルを適切にソートして表示
-- **File Filtering**: 
-  - `ignore`パッケージを使用して柔軟なファイル除外を実現
-  - 豊富なデフォルト除外パターンとカスタム設定をサポート
+- **Server Class**: the `SourceSageServer` class provides the core functionality of the MCP server
+- **Tree Building**:
+  - The `buildTree` method recursively parses the directory structure
+  - Sorts directories and files appropriately for display
+- **File Filtering**:
+  - Uses the `ignore` package for flexible file exclusion
+  - Supports rich default exclusion patterns and custom settings
 - **Content Generation**:
-  - ファイルタイプに応じた適切なシンタックスハイライト
-  - ファイルの種類に基づく追加情報の提供
-- **Async Processing**: 
-  - `glob`パッケージを使用した効率的なファイル走査
-  - 非同期処理による大規模プロジェクトのサポート
+  - Provides appropriate syntax highlighting based on file type
+  - Offers additional information based on file type
+- **Async Processing**:
+  - Uses the `glob` package for efficient file scanning
+  - Supports large projects through asynchronous processing
 
-### 開発環境のセットアップ
+### Setting up the development environment
 
 ```bash
-# リポジトリのクローン
+# Clone the repository
 git clone https://github.com/sunwood-ai-labs/source-sage-mcp-server.git
 
-# 依存関係のインストール
+# Install dependencies
 npm install
 
-# 開発用ビルド
+# Build for development
 npm run build
 
-# 開発サーバーの起動
+# Start the development server
 npm run inspector
 ```
 
-### 利用可能なnpmスクリプト
+### Available npm scripts
 
-- `npm run build`: TypeScriptのコンパイルと実行権限の設定
-- `npm run prepare`: インストール時の自動ビルド
-- `npm run watch`: 開発時の自動コンパイル
-- `npm run inspector`: MCPインスペクターの起動
+- `npm run build`: compiles TypeScript and sets execute permissions
+- `npm run prepare`: automatic build on install
+- `npm run watch`: automatic compilation during development
+- `npm run inspector`: launch the MCP inspector
 
-## 🤝 コントリビューション
+## Contributing
 
-1. このリポジトリをフォーク
-2. 新しいブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m '✨ feat: 素晴らしい機能を追加'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
+1. Fork this repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add an amazing feature'`)
+4. Push the branch (`git push origin feature/amazing-feature`)
+5. Create a Pull Request
 
-## 📄 ライセンス
+## License
 
-MIT License - 詳細は LICENSE ファイルを参照してください。
+MIT License - see the LICENSE file for details.
 
-## 🔗 関連リンク
+## Related Links
 
 - [npm package](https://www.npmjs.com/package/@sunwood-ai-labs/source-sage-mcp-server)
 - [GitHub repository](https://github.com/sunwood-ai-labs/source-sage-mcp-server)
-- [バグ報告](https://github.com/sunwood-ai-labs/source-sage-mcp-server/issues)
+- [Bug reports](https://github.com/sunwood-ai-labs/source-sage-mcp-server/issues)
 
-## 👥 メンテナー
+## Maintainers
 
 - Sunwood AI Labs Team
 
 ---
 
-Made with ❤️ by Sunwood AI Labs
+Made with <3 by Sunwood AI Labs
 
 **Official site: ** [https://github.com/Sunwood-ai-labs/source-sage-mcp-server](https://github.com/Sunwood-ai-labs/source-sage-mcp-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -1,85 +1,67 @@
 ---
 title: "kfc_v_me_50"
-description: "--- title: 疯狂星期四文案MCP服务 emoji: 🍗 colorFrom: orange colorTo: red sdk: gradio sdkversion: 5.33.0 appfile: app.py pinned: false license: apache-2.0 shortdescription: 基于标签化管理的疯狂星期四文案MCP服务，为AI应用提供精准文案匹配 ta…"
+description: "A tag-based copywriting service built on MCP (Model Context Protocol), providing \"Crazy Thursday\" copy generation and search for AI applications. Designed for role-playing apps, chatbots, social media…"
 ---
 
 # kfc_v_me_50
 
---- title: 疯狂星期四文案MCP服务 emoji: 🍗 colorFrom: orange colorTo: red sdk: gradio sdkversion: 5.33.0 appfile: app.py pinned: false license: apache-2.0 shortdescription: 基于标签化管理的疯狂星期四文案MCP服务，为AI应用提供精准文案匹配 ta…
+A tag-based copywriting service built on MCP (Model Context Protocol), providing "Crazy Thursday" copy generation and search for AI applications. Designed for role-playing apps, chatbots, social media…
 
----
-title: 疯狂星期四文案MCP服务
-emoji: 🍗
-colorFrom: orange
-colorTo: red
-sdk: gradio
-sdk_version: 5.33.0
-app_file: app.py
-pinned: false
-license: apache-2.0
-short_description: 基于标签化管理的疯狂星期四文案MCP服务，为AI应用提供精准文案匹配
-tags:
-    - mcp-server-track
-    - content-generation
-    - chinese
-    - ai-assistant
----
+# Crazy Thursday Copywriting MCP Service
 
-# 🍗 疯狂星期四文案MCP服务
+A tag-based copywriting service built on the Model Context Protocol (MCP), providing Crazy Thursday copy generation and search for AI applications. Designed for role-playing apps, chatbots, social media tools, and similar scenarios.
 
-基于MCP (Model Context Protocol) 的标签化文案服务，为AI应用提供疯狂星期四文案生成和搜索能力。专为角色扮演应用、聊天机器人、社交媒体工具等场景设计。
+## Core Features
 
-## ✨ 核心特性
+### Tag-based Management
+- **Multi-dimensional tag system**: five dimensions - occupation, group, scenario, emotion, and technique
+- **Precise matching**: quickly filter the right copy by tags
+- **Smart categorization**: 329 items of copy classified by writing style and use case
 
-### �️ 标签化管理
-- **多维度标签体系**：职业、群体、场景、情感、技巧五大维度
-- **精准匹配**：根据标签快速筛选合适文案
-- **智能分类**：329条文案按写作手法和使用场景分类
+### MCP Service Interfaces
+- `generate_random_content()` - random copy generation
+- `search_targeted_content()` - tag-based targeted search
+- **Standardized output**: unified data format for easy integration
 
-### 🎯 MCP服务接口
-- `generate_random_content()` - 随机文案生成
-- `search_targeted_content()` - 基于标签的定向搜索
-- **标准化输出**：统一的数据格式，易于集成
+### AI-Application Friendly
+- **Role adaptation guide**: how to use the copy based on the AI character's traits
+- **Scenario matching**: copy recommendations for different use cases
+- **Creative references**: structure and technique analysis of the copy
 
-### 🤖 AI应用友好
-- **角色适配指南**：如何根据AI角色特点使用文案
-- **场景匹配**：针对不同使用场景的文案推荐
-- **创意参考**：提供文案结构和技巧分析
+## Service Positioning
 
-## 🎯 服务定位
+### Empowering AI Applications
+- **Role-playing apps** - copywriting capabilities for AI assistants and chatbots
+- **Social media tools** - content creation and marketing copy
+- **Entertainment and interactive apps** - enhance user interaction
+- **Creative writing tools** - creative reference for copy
 
-### 🤖 为AI应用赋能
-- **角色扮演应用** - 为AI助手、聊天机器人提供文案能力
-- **社交媒体工具** - 内容创作和营销文案生成
-- **娱乐互动应用** - 增强用户互动体验
-- **创意写作工具** - 提供文案创意参考
+### Usage Principles
+This service provides copy as **reference and creative inspiration**. App developers are advised to:
+- Adjust tone and expression to fit the AI character's traits
+- Weave the copy naturally into the conversation context rather than pasting it verbatim
+- Check and update time-sensitive information in the copy
+- Personalize while keeping the character consistent
 
-### 📋 使用原则
-本服务提供文案**参考和创意灵感**，建议应用开发者：
-- 根据AI角色特点调整语气和表达方式
-- 将文案自然融入对话语境，而非生硬复制
-- 检查并更新文案中的时效性信息
-- 保持角色一致性的同时进行个性化改编
+## Installation & Configuration
 
-## 🚀 安装配置
-
-### 1. 克隆项目
+### 1. Clone the project
 ```bash
 git clone https://github.com/whoever01/crazy_v_me_50.git
 cd crazy_v_me_50
 ```
 
-### 2. 安装依赖
+### 2. Install dependencies
 ```bash
 pip install -r requirements.txt
-# 或使用 pyproject.toml
+# Or use pyproject.toml
 pip install -e .
 ```
 
-### 3. MCP客户端配置
+### 3. MCP client configuration
 
-#### Claude Desktop配置
-在 `~/.claude_desktop_config.json` 中添加：
+#### Claude Desktop configuration
+Add the following to `~/.claude_desktop_config.json`:
 
 ```json
 {
@@ -96,231 +78,231 @@ pip install -e .
 }
 ```
 
-#### 其他MCP客户端
-参考上述格式，将路径替换为你的实际项目路径。
+#### Other MCP clients
+Follow the format above and replace the path with your actual project path.
 
-### 4. API密钥配置（可选）
+### 4. API key configuration (optional)
 
-#### 获取API密钥
-- 访问 [硅基流动官网](https://siliconflow.cn/)
-- 注册账号并获取API密钥
-- 用于启用混合搜索功能（语义搜索+标签+内容搜索）
-- 使用先进的BAAI/bge-m3多语言模型进行语义理解
-- 不提供时使用标签+内容搜索（仍然很精准）
+#### Getting an API key
+- Visit the [SiliconFlow website](https://siliconflow.cn/)
+- Register an account and get an API key
+- Used to enable hybrid search (semantic + tag + content search)
+- Uses the advanced BAAI/bge-m3 multilingual model for semantic understanding
+- Without a key, tag + content search is used (still highly accurate)
 
-#### 配置方式
-**方法一：MCP配置中设置**
+#### Configuration methods
+**Method 1: Set it in the MCP configuration**
 ```json
 "env": {
   "SILICONFLOW_API_KEY": "sk-xxxxxxxxxxxxxxxx"
 }
 ```
 
-**方法二：环境变量**
+**Method 2: Environment variable**
 ```bash
 export SILICONFLOW_API_KEY=sk-xxxxxxxxxxxxxxxx
 ```
 
-**方法三：.env文件**
+**Method 3: .env file**
 ```bash
-# 创建.env文件
+# Create a .env file
 echo "SILICONFLOW_API_KEY=sk-xxxxxxxxxxxxxxxx" > .env
 ```
 
-### 5. 验证安装
+### 5. Verify the installation
 ```bash
-# 测试基本功能
+# Test basic functionality
 python -c "from tools import generate_random_content; print(generate_random_content(1))"
 
-# 检查环境变量
-python -c "import os; print(f'API Key: {os.getenv(\"SILICONFLOW_API_KEY\", \"未设置\")}')"
+# Check the environment variable
+python -c "import os; print(f'API Key: {os.getenv(\"SILICONFLOW_API_KEY\", \"not set\")}')"
 ```
 
-## 🛠️ MCP服务接口
+## MCP Service Interfaces
 
-### 📝 可用功能
-- **`generate_random_content(count=3)`**：随机生成文案（默认3条）
-- **`search_targeted_content(query, count=3, api_key="")`**：定向搜索文案
-  - `query`: 搜索关键词
-  - `count`: 返回数量（1-10）
-  - `api_key`: 硅基流动API密钥（可选）
-    - 提供时：使用混合搜索（语义搜索+标签+内容搜索，语义结果权重更高）
-    - 不提供时：使用标签+内容两阶段搜索（快速且精准）
+### Available Features
+- **`generate_random_content(count=3)`**: randomly generate copy (3 items by default)
+- **`search_targeted_content(query, count=3, api_key="")`**: targeted search
+  - `query`: search keyword
+  - `count`: number of results (1-10)
+  - `api_key`: SiliconFlow API key (optional)
+    - When provided: uses hybrid search (semantic + tag + content search, with semantic results weighted higher)
+    - When not provided: uses a two-stage tag + content search (fast and accurate)
 
-### 📋 输出格式
-每次调用返回三部分内容：
-1. **使用说明**：如何根据AI角色使用文案
-2. **改编说明**：个性化改编的具体建议
-3. **原文**：文案标题、分类、内容和标签信息
-- **📦 批量文案生成器**：一次生成多条文案供选择比较
+### Output Format
+Each call returns three parts:
+1. **Usage notes**: how to use the copy based on the AI character
+2. **Adaptation notes**: specific suggestions for personalized adaptation
+3. **Original text**: title, category, content, and tag information
+- **Batch generator**: generates multiple copy items at once for comparison
 
-### 🔍 分析学习工具
-- **📊 文案结构分析器**：分析文案的写作技巧和结构特点
-- **📚 分类信息查询器**：了解各分类的特点和创作要点
+### Analysis & Learning Tools
+- **Copy structure analyzer**: analyzes writing techniques and structural characteristics
+- **Category info viewer**: learn the features and creation points of each category
 
-## 📋 文案分类
+## Copy Categories
 
-### 🎭 角色扮演型 (89条)
-以特定角色身份（如秦始皇、奥特曼、重生少爷等）进行的文案，适合AI角色扮演应用。
+### Role-play (89 items)
+Copy delivered in a specific character's voice (e.g. Qin Shi Huang, Ultraman, a reborn young master), suited to AI role-playing apps.
 
-### 📖 长文故事型 (70条)
-通过完整故事情节、情感铺垫来引出疯狂星期四的文案，适合深度内容创作。
+### Long-form story (70 items)
+Copy that uses a complete storyline and emotional buildup to lead into Crazy Thursday, suited to in-depth content creation.
 
-### 📰 时事型 (61条)
-结合当前热点事件、网络流行语、社会现象的文案，需要定期更新以保持时效性。
+### Current events (61 items)
+Copy tied to trending events, internet memes, and social phenomena; it needs regular updates to stay timely.
 
-### 🔍 悬疑型 (51条)
-通过制造悬念、隐藏信息、谜题等方式吸引注意的文案，增强互动性。
+### Mystery/suspense (51 items)
+Copy that grabs attention through suspense, hidden information, and riddles to boost engagement.
 
-### 📝 未分类 (49条)
-暂未归类的文案，包括简短文案、创意文案等。
+### Uncategorized (49 items)
+Copy not yet categorized, including short copy and creative pieces.
 
-### 💔 emo文学型 (5条)
-情感浓烈、自我表达、忧郁感伤的文学性文案，注重内心独白和情感渲染。
+### Emo literature (5 items)
+Literary copy that is emotionally intense, self-expressive, and melancholic, focused on inner monologue and emotional rendering.
 
-### 🌟 抽象文学型 (4条)
-逻辑跳跃、意识流、超现实的创意文案，具有强烈的想象力和无厘头特色。
+### Abstract literature (4 items)
+Creative copy with non-sequential logic, stream-of-consciousness, and surrealism, packed with imagination and absurdist flair.
 
-## 🔍 定向搜索功能
+## Targeted Search
 
-### 搜索方式
-- **标签+内容搜索**：两阶段智能搜索，无需API密钥，快速精准
-  - 第一阶段：标签匹配筛选候选文案
-  - 第二阶段：全文内容匹配排序
-- **语义搜索**：基于BAAI/bge-m3模型，需要硅基流动API密钥，理解语义关联
-- **混合搜索**：结合语义搜索和标签+内容搜索，提供最佳搜索体验
+### Search modes
+- **Tag + content search**: a two-stage intelligent search that needs no API key - fast and precise
+  - Stage 1: tag matching to filter candidate copy
+  - Stage 2: full-text content matching for ranking
+- **Semantic search**: based on the BAAI/bge-m3 model, requires a SiliconFlow API key, understands semantic relationships
+- **Hybrid search**: combines semantic search with tag + content search for the best experience
 
-### API密钥获取
-1. 访问 [硅基流动官网](https://siliconflow.cn)
-2. 注册账号并获取API密钥
-3. 在定向搜索器中输入密钥即可启用语义搜索
+### Getting an API key
+1. Visit the [SiliconFlow website](https://siliconflow.cn)
+2. Register an account and get an API key
+3. Enter the key in the targeted search tool to enable semantic search
 
-### 搜索技巧
-- **具体主题**：如"工作"、"恋爱"、"游戏"、"学习"
-- **场景描述**：如"公司通知"、"朋友聚会"、"考试"
-- **情感状态**：如"饥寒交迫"、"压力大"、"开心"
-- **角色身份**：如"程序员"、"学生"、"上班族"
-- **组合关键词**：如"程序员 代码"、"学生 考试"、"科幻 星际"
+### Search tips
+- **Concrete topics**: e.g. "work", "dating", "gaming", "studying"
+- **Scenario descriptions**: e.g. "company notice", "friends gathering", "exam"
+- **Emotional states**: e.g. "starving and freezing", "stressed", "happy"
+- **Character identities**: e.g. "programmer", "student", "office worker"
+- **Combined keywords**: e.g. "programmer code", "student exam", "sci-fi interstellar"
 
-### 搜索示例
+### Search examples
 ```
-搜索"科幻" → 找到"星际执行官求助"
-搜索"饥寒交迫" → 找到包含该词的困难求助文案
-搜索"工作压力" → 找到职场相关的吐槽文案
+Search "sci-fi" -> finds "Interstellar Chief of Staff seeks help"
+Search "starving and freezing" -> finds hardship-help copy containing that phrase
+Search "work stress" -> finds workplace complaint copy
 ```
 
-## 💡 使用建议
+## Usage Suggestions
 
-1. **先了解分类**：使用分类信息查询器了解各类型特点
-2. **定向搜索**：根据具体需求使用定向搜索器找到相关文案
-3. **分析学习**：用结构分析器学习优秀文案的写作技巧
-4. **参考创作**：基于生成的参考内容进行原创改编
-5. **批量比较**：使用批量生成器获取多个选项进行比较
+1. **Learn the categories first**: use the category info viewer to understand each type's characteristics
+2. **Targeted search**: use the targeted search tool based on your specific needs
+3. **Analyze and learn**: use the structure analyzer to study the writing techniques of good copy
+4. **Create by reference**: adapt original copy based on the generated references
+5. **Compare in batches**: use the batch generator to get multiple options for comparison
 
-## 🔧 技术架构
+## Tech Architecture
 
-- **框架**：Gradio + MCP
-- **数据管理**：模块化数据文件
-- **工具函数**：完整的类型注解和文档
-- **项目管理**：现代Python项目配置（pyproject.toml）
+- **Framework**: Gradio + MCP
+- **Data management**: modular data files
+- **Utility functions**: full type annotations and documentation
+- **Project management**: modern Python project setup (pyproject.toml)
 
-## 📁 项目结构
+## Project Structure
 
-### 文件夹+YAML架构
+### Folder + YAML architecture
 ```
 crazy_v_me_50/
-├── jokes/              # 🎯 核心数据文件夹（可独立维护）
-│   ├── emo文学型/      # 情感浓烈、忧郁感伤的文学性文案
-│   ├── 抽象文学型/     # 逻辑跳跃、超现实的创意文案
-│   ├── 时事型/         # 结合热点事件的文案
-│   ├── 角色扮演型/     # 适合各种角色身份
-│   ├── 悬疑型/         # 包含谜题和隐藏信息
-│   ├── 长文故事型/     # 完整故事情节
-│   └── 未分类/         # 其他创意文案
-├── app.py             # MCP服务器主程序
-├── data.py            # YAML数据加载器
-├── tools.py           # 核心功能实现
-├── requirements.txt   # 依赖列表
-├── pyproject.toml     # Python项目配置
-├── .gitignore         # Git忽略文件
-└── README.md          # 项目说明文档
+├── jokes/              # Core data folder (maintained independently)
+│   ├── emo-literary/   # Emotionally intense, melancholic literary copy
+│   ├── abstract-literary/ # Non-sequential, surreal creative copy
+│   ├── current-events/ # Copy tied to trending events
+│   ├── roleplay/       # Copy for various character identities
+│   ├── suspense/       # Copy with riddles and hidden info
+│   ├── long-story/     # Full storylines
+│   └── uncategorized/  # Other creative copy
+├── app.py             # MCP server main program
+├── data.py            # YAML data loader
+├── tools.py           # Core feature implementation
+├── requirements.txt   # Dependencies
+├── pyproject.toml     # Python project config
+├── .gitignore         # Git ignore rules
+└── README.md          # Project readme
 ```
 
-### 数据与代码分离
-- `jokes` 文件夹可独立维护和版本控制
-- 支持跨项目复用
-- 便于团队协作（内容团队 vs 技术团队）
+### Data/code separation
+- The `jokes` folder can be maintained and version-controlled independently
+- Reusable across projects
+- Enables team collaboration (content team vs. technical team)
 
-## 🛠️ 故障排除
+## Troubleshooting
 
-### 常见问题
+### Common issues
 
-1. **Python路径问题**
+1. **Python path problems**
 ```bash
-   # 确认Python版本
+   # Check the Python version
    python --version
 
-   # 如果使用虚拟环境
+   # If using a virtual environment
    which python
 ```
 
-2. **依赖安装失败**
+2. **Dependency install failures**
 ```bash
-   # 升级pip
+   # Upgrade pip
    pip install --upgrade pip
 
-   # 重新安装依赖
+   # Reinstall dependencies
    pip install -r requirements.txt --force-reinstall
 ```
 
-3. **MCP服务无法启动**
-   - 检查路径配置是否正确
-   - 确认Python环境是否正确
-   - 查看客户端错误日志
+3. **MCP service won't start**
+   - Check whether the path configuration is correct
+   - Confirm the Python environment is correct
+   - Check the client error logs
 
-4. **API密钥无效**
-   - 确认密钥格式正确（sk-开头）
-   - 验证密钥权限设置
+4. **Invalid API key**
+   - Confirm the key format is correct (starts with sk-)
+   - Verify key permissions
 
-## ⚠️ 使用注意事项
+## Usage Notes
 
-- 本工具提供的是**参考内容**，请进行**原创创作**
-- 保持疯狂星期四的核心主题，不建议替换为其他品牌
-- 使用时请注意场合和对象的适宜性
-- 尊重他人，避免过度打扰
+- This tool provides **reference content**; please create **original work**
+- Keep the Crazy Thursday core theme; switching to another brand is not recommended
+- Mind the context and audience appropriateness
+- Respect others and avoid over-messaging
 
-## 🤝 开源协作
+## Open-Source Collaboration
 
-### 贡献方式
-- **内容贡献** - 提交新的文案内容到 `jokes/` 文件夹
-- **分类优化** - 改进文案分类体系和标签
-- **技术改进** - 优化MCP服务性能
-- **文档完善** - 改进使用文档和示例
+### How to contribute
+- **Content** - submit new copy to the `jokes/` folder
+- **Categorization** - improve the copy classification system and tags
+- **Technical** - optimize MCP service performance
+- **Documentation** - improve docs and examples
 
-### 添加新文案
+### Adding new copy
 ```yaml
-# 在对应分类文件夹创建新的YAML文件
-title: "新文案标题"
-content: "文案内容"
+# Create a new YAML file in the corresponding category folder
+title: "New copy title"
+content: "Copy content"
 tags:
-  职业: ["程序员", "学生"]
-  群体: ["年轻人", "打工人"]
-  场景: ["朋友圈", "群聊"]
-  情感: ["搞笑", "自嘲"]
-  技巧: ["角色扮演", "转折反差"]
-category: "角色扮演型"
-id: "角色扮演型_017"
+  occupation: ["programmer", "student"]
+  group: ["young people", "struggling worker"]
+  scenario: ["moments", "group chat"]
+  emotion: ["funny", "self-deprecating"]
+  technique: ["roleplay", "twist & contrast"]
+category: "roleplay"
+id: "roleplay_017"
 ```
 
-## 📄 许可证
+## License
 
-Apache-2.0 License - 支持商业和非商业用途
+Apache-2.0 License - supports commercial and non-commercial use
 
-## 🙏 致谢
+## Acknowledgments
 
-感谢所有为疯狂星期四文案创作和技术实现做出贡献的开发者们！
-文案来源于各个群聊和社交媒体，如有侵权请联系删除。
-其中有些文案由 bilibili 骚饼猫整理——— 关于肯德基疯狂星期四的文案 系列：https://www.bilibili.com/opus/1012561406475632642?spm_id_from=333.1387.0.0
+Thanks to all developers who contributed to the creation and implementation of Crazy Thursday copy!
+The copy comes from various group chats and social media; please contact us for removal if any copyright issues arise.
+Some copy was curated by Bilibili user Saobingmao, from the series about KFC Crazy Thursday copy: https://www.bilibili.com/opus/1012561406475632642?spm_id_from=333.1387.0.0
 
 **Official site: ** [https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50](https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

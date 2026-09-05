@@ -1,11 +1,11 @@
 ---
 title: "bilibili-video-info-mcp"
-description: "MCP Server for Bilibili Video Info 这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。"
+description: "This is a server based on the MCP (Model Context Protocol) that can fetch the subtitles, danmaku (bullet comments), and comments of Bilibili videos."
 ---
 
 # bilibili-video-info-mcp
 
-MCP Server for Bilibili Video Info 这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。
+This is a server based on the MCP (Model Context Protocol) that can fetch the subtitles, danmaku (bullet comments), and comments of Bilibili videos.
 
 # MCP Server for Bilibili Video Info
 

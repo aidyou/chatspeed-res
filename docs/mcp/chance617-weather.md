@@ -39,7 +39,7 @@ This is a weather query service based on MCP (Minimalist Chat Protocol), allowin
 
 2. Enter your API key in the OpenWeatherMap API configuration section (optional):
    python
-   OPENWEATHER_API_KEY = "你的API密钥"  # Replace with your OpenWeatherMap API key
+   OPENWEATHER_API_KEY = "YOUR_API_KEY"  # Replace with your OpenWeatherMap API key
    
    If no API key is set, the service will use mock data.
 

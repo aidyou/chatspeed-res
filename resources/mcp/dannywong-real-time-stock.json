@@ -38,11 +38,11 @@
     "env": [
       [
         "EASTMONEY_COOKIE",
-        "从浏览器复制的东方财富 Cookie"
+        "Eastmoney Cookie copied from your browser"
       ],
       [
         "XUEQIU_COOKIE",
-        "从浏览器复制的雪球 Cookie"
+        "Xueqiu Cookie copied from your browser"
       ]
     ],
     "requiredInputs": []

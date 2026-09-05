@@ -9,78 +9,77 @@ Financial MCP Server is a financial technical analysis tool based on multimodal 
 
 # Financial MCP Server
 
-Financial MCP Server 是一个基于多模态大模型的金融技术分析工具，能够从 Yahoo Finance 下载股票数据，计算技术指标，生成专业的 K 线图，并利用 Qwen2.5-VL 等多模态大模型对图表进行分析，生成专业的金融分析报告。
+Financial MCP Server is a financial technical analysis tool based on multimodal large models. It can download stock data from Yahoo Finance, calculate technical indicators, generate professional K-line charts, and use multimodal large models such as Qwen2.5-VL to analyze the charts and produce professional financial analysis reports.
 
-## 项目简介
+## Project Introduction
 
-本项目旨在为金融分析师和投资者提供一个自动化技术分析工具，通过以下流程实现智能化金融分析：
+This project aims to provide financial analysts and investors with an automated technical analysis tool, implementing intelligent financial analysis through the following process:
 
-1. 数据获取：从 Yahoo Finance 实时获取股票历史数据
-2. 技术指标计算：计算包括 EMA、SMA、MACD、RSI、KDJ、布林带、ATR、OBV 等多种技术指标
-3. 图表生成：生成包含主图 K 线和多个技术指标副图的专业金融图表
-4. 智能分析：利用多模态大模型（如 Qwen2.5-VL）对生成的图表进行深度分析
-5. 报告生成：输出专业的金融分析报告，包括趋势分析、买卖信号、风险评估等
+1. Data acquisition: fetch real-time historical stock data from Yahoo Finance
+2. Technical indicator calculation: compute various indicators including EMA, SMA, MACD, RSI, KDJ, Bollinger Bands, ATR, OBV, etc.
+3. Chart generation: produce professional financial charts with a main K-line chart and multiple technical indicator sub-charts
+4. Intelligent analysis: use multimodal large models (such as Qwen2.5-VL) to deeply analyze the generated charts
+5. Report generation: output professional financial analysis reports including trend analysis, buy/sell signals, and risk assessment
 
-### 核心特性
+### Core Features
 
-- 多模态分析：支持图像和文本的多模态大模型分析
-- 丰富技术指标：内置多种常用技术指标计算
-- 专业图表：生成符合金融行业标准的专业 K 线图
+- Multimodal analysis: supports image and text multimodal large-model analysis
+- Rich technical indicators: built-in calculation of many commonly used technical indicators
+- Professional charts: generates professional K-line charts that meet financial industry standards
 
-### 工具
-|工具| 说明          |
+### Tools
+| Tool | Description |
 |---|-------------|
-| get_compony_info | 获取公司基本信息    |
-| get_quarterly_balance_sheet | 获取季度资产负债表信息 |
-| get_data | 获取近期的股票数据   |
-| generate_fin_report | 生成专业的金融分析报告       |
+| get_compony_info | Get basic company information |
+| get_quarterly_balance_sheet | Get quarterly balance sheet information |
+| get_data | Get recent stock data |
+| generate_fin_report | Generate a professional financial analysis report |
 
-## 部署指南
+## Deployment Guide
 
-环境要求
+Environment requirements
 
 - Python 3.12+
-- pip 包管理器
-- ta-lib 金融量化技术分析库
+- pip package manager
+- ta-lib financial quantitative technical analysis library
 
-## 配置文件
+## Configuration File
 
-你需要一个 YAML 配置文件来配置服务器,在 config_demo.yml 中提供了一个默认配置文件，内容如下：
+You need a YAML configuration file to configure the server. A default configuration is provided in config_demo.yml, as follows:
 
 ```yaml
-transport: "sse" # 支持stdio、sse、streamable-http
+transport: "sse" # supports stdio, sse, streamable-http
 mcp:
   host: "0.0.0.0"
   port: 8000
 
 stock:
-  source: "yahoo" # 数据源，支持 yahoo 或 local
-  data_dir: /app/data # 存放股票数据、k线图的目录
-  public_base_url: "http://your-domain.com"  # 用于生成图片的 URL
+  source: "yahoo" # data source, supports yahoo or local
+  data_dir: /app/data # directory for stock data and K-line charts
+  public_base_url: "http://your-domain.com"  # URL used for generating images
 llm:
-  base_url: "https://api.openai.com/v1" # API 基础 URL
-  api_key: ${API_KEY} # API 密钥, 请在.env 或 环境变量中设置
-  model: "Qwen/Qwen2.5-VL-72B-Instruct" # 使用的模型
-  temperature: 0.7 # 生成温度
-  max_tokens: 4096 # 最大令牌数
+  base_url: "https://api.openai.com/v1" # API base URL
+  api_key: ${API_KEY} # API key; set it in .env or environment variables
+  model: "Qwen/Qwen2.5-VL-72B-Instruct" # model to use
+  temperature: 0.7 # generation temperature
+  max_tokens: 4096 # max tokens
 ```
 
-### MCP 配置
+### MCP Configuration
 
-你可以将传输协议设置为`stdio`、`sse`、`streamable-http`。
+You can set the transport protocol to `stdio`, `sse`, or `streamable-http`.
 
 #### STDIO
 
-对于 `stdio` 协议，你可以这样设置:
+For the `stdio` protocol, configure it like this:
 
 ```yaml
 transport: "stdio"
-  
 ```
 
 #### SSE
 
-对于 `sse` 协议，你可以这样设置:
+For the `sse` protocol, configure it like this:
 
 ```yaml
 transport: "sse"
@@ -89,53 +88,52 @@ mcp:
   port: 8000
 ```
 
-### LLM 配置
+### LLM Configuration
 
-`model` 是要使用的模型名称, `api_key` 是模型的 API 密钥, `base_url` 是模型的 API 地址。我们支持以下模型。
+`model` is the model name to use, `api_key` is the model's API key, and `base_url` is the model's API address. We support the following models.
 
-- OpenAI 系列：GPT-4, GPT-4o, GPT-4o-mini 等
-- Qwen 系列：Qwen2.5-VL, Qwen-VL 等多模态模型
+- OpenAI series: GPT-4, GPT-4o, GPT-4o-mini, etc.
+- Qwen series: Qwen2.5-VL, Qwen-VL and other multimodal models
 
-## 启动服务
+## Starting the Service
 
 ```
 YML=config.yml python -m fin_mcp_server
 ```
 
-## stock 配置
+## stock Configuration
 ```yaml
 stock:
-  source: "yahoo" #目前只支持 Yahoo Finance
-  data_dir: /app/data # 存放股票数据、k线图的目录
-  public_base_url: "http://your-domain.com"  # 用于生成图片的 URL
+  source: "yahoo" # currently only Yahoo Finance is supported
+  data_dir: /app/data # directory for stock data and K-line charts
+  public_base_url: "http://your-domain.com"  # URL used for generating images
 ```
 
+## Output Example
 
-## 输出示例
+#### The generated analysis report contains the following:
+1. Company information
+2. Recent quarterly balance sheet information
+3. Recent stock data
+4. Recent K-line chart
+5. Price trend analysis: short-term, medium-term, and long-term trend judgments
+6. Technical indicator interpretation: cross-validation of indicators such as MACD, RSI, KDJ
+7. Volume-price analysis: the relationship between trading volume and price
+8. Support and resistance levels: dynamically computed key support and resistance levels
+9. Risk warnings: identification of potential risk signals
+10. Trading strategy: specific entry, stop-loss, and take-profit suggestions
+11. Confidence assessment: A/B/C three-tier confidence rating
 
-#### 生成的分析报告包含以下内容：
-1. 公司信息
-2. 近期季度资产负债信息
-3. 近期股票数据
-4. 近期K线图
-5. 价格趋势分析：短期、中期、长期趋势判断
-6. 技术指标解读：MACD、RSI、KDJ 等指标协同验证
-7. 量价关系分析：成交量与价格的配合关系
-8. 支撑压力位：动态计算关键支撑和阻力位
-9. 风险预警：潜在风险信号识别
-10. 交易策略：具体的入场、止损、止盈建议
-11. 置信度评估：A/B/C 三级置信度评级
+## Notes
 
-## 注意事项
+1. Data source limits: Yahoo Finance rate-limits requests; use it reasonably
+2. API costs: using commercial APIs incurs corresponding fees
+3. Model capabilities: different models vary in image understanding ability
+4. Network environment: make sure the network connection is stable for fetching data and calling APIs
 
-1. 数据源限制：Yahoo Finance 对请求频率有限制，请合理使用
-2. API 成本：使用商业 API 会产生相应费用
-3. 模型能力：不同模型的图像理解能力有所差异
-4. 网络环境：确保网络连接稳定以获取数据和调用 API
+## License
 
-## 许可证
-
-本项目采用`APACHE`许可证，详情请参见 `LICENSE` 文件。
+This project is licensed under the `APACHE` license. See the `LICENSE` file for details.
 
 **Official site: ** [https://github.com/vuca-ian/fin-mcp-server.git](https://github.com/vuca-ian/fin-mcp-server.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

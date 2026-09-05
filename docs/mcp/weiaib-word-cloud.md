@@ -1,11 +1,11 @@
 ---
 title: "word-cloud-mcp"
-description: "一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。 - PDF 文档：支持从 PDF 文件中提取文字内容 - Word 文档：支持 .docx 和 .doc 格式的文档解析 - 文本文件：支持 .txt 纯文本文件 - Markdown：支持 .md 和 .markdown 文件，自动清…"
+description: "An MCP (Model Context Protocol) tool focused on creating word clouds from document content, supporting intelligent text extraction from multiple formats including PDF, Word, TXT, and MD. - PDF documen…"
 ---
 
 # word-cloud-mcp
 
-一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。 - PDF 文档：支持从 PDF 文件中提取文字内容 - Word 文档：支持 .docx 和 .doc 格式的文档解析 - 文本文件：支持 .txt 纯文本文件 - Markdown：支持 .md 和 .markdown 文件，自动清…
+An MCP (Model Context Protocol) tool focused on creating word clouds from document content, supporting intelligent text extraction from multiple formats including PDF, Word, TXT, and MD. - PDF documen…
 
 # @lucianaib/word-cloud-mcp
 

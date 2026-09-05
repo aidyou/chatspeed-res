@@ -126,7 +126,7 @@ ticktick-mcp-enhanced/
 
 - 传输方式：`stdio`
 - 启动命令：`/path/to/uv`
-- 参数：`run --directory /项目/的/绝对路径/ticktick-mcp-enhanced ticktick-mcp run`
+- 参数：`run --directory /absolute/path/to/your/project/ticktick-mcp-enhanced ticktick-mcp run`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

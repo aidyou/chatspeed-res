@@ -6,7 +6,7 @@
     "zh-Hans": "AlphaVentage 股票价格"
   },
   "description": {
-    "en": "Alpha Vantage MCP Server English 中文 A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical financial market data including stock prices, forex rates, ",
+    "en": "Alpha Vantage MCP Server A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data APIs. This server enables AI assistants to fetch real-time and historical financial market data including stock prices, forex rates, ",
     "zh-Hans": "Alpha Vantage MCP 服务器 English 中文 这是一个 Model Context Protocol (MCP) 服务器，提供了对 Alpha Vantage 金融数据 API 的访问。该服务器使 AI 助手能够获取实时和历史金融市场数据，包括股票价格、外汇汇率、加密货币数据以及各种技术指标。 ✨ 特性 - 实时股票数据：获取当前股票价格、报价和市场信息 - 历史数据：访问历史股票价格和交易量 - 技术指标：计算各种技术分析指标（SMA、EMA、RSI、MACD 等） - 外汇数据：实时和历史外"
   },
   "detail": {

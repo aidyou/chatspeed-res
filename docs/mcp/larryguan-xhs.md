@@ -1,11 +1,11 @@
 ---
 title: "xhs-mcp"
-description: "小红书MCP服务 特点 - [x] 采用js逆向出x-s,x-t,直接请求http接口,无须笨重的playwright - [x] 搜索笔记 - [x] 获取笔记内容 - [x] 获取笔记的评论 - [x] 发表评论"
+description: "Xiaohongshu MCP service. Features: uses JS reverse engineering for x-s and x-t tokens, directly calling the HTTP API without the heavy playwright; search notes; get note content; get note comments."
 ---
 
 # xhs-mcp
 
-小红书MCP服务 特点 - [x] 采用js逆向出x-s,x-t,直接请求http接口,无须笨重的playwright - [x] 搜索笔记 - [x] 获取笔记内容 - [x] 获取笔记的评论 - [x] 发表评论
+Xiaohongshu MCP service. Features: uses JS reverse engineering for x-s and x-t tokens, directly calling the HTTP API without the heavy playwright; search notes; get note content; get note comments.
 
 # Xiaohongshu MCP Service
 [Smithery](https://smithery.ai/server/@jobsonlook/xhs-mcp)

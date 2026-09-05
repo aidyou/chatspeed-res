@@ -1,11 +1,11 @@
 ---
 title: "fund-mcp111"
-description: "一个基于 Model Context Protocol (MCP) 的基金知识库服务器，提供基金相关知识的查询和检索功能。 Fund MCP Server 是一个专门为基金投资领域设计的 MCP 服务器，通过集成外部知识库 API，为用户提供基金知识查询服务。该服务器支持多种部署模式，包括标准 MCP 协议、HTTP REST API 和 Server-Sent Events (SSE) 模式。…"
+description: "A fund knowledge base server based on the Model Context Protocol (MCP), providing query and retrieval functions for fund-related knowledge. Fund MCP Server is an MCP server specifically designed for t…"
 ---
 
 # fund-mcp111
 
-一个基于 Model Context Protocol (MCP) 的基金知识库服务器，提供基金相关知识的查询和检索功能。 Fund MCP Server 是一个专门为基金投资领域设计的 MCP 服务器，通过集成外部知识库 API，为用户提供基金知识查询服务。该服务器支持多种部署模式，包括标准 MCP 协议、HTTP REST API 和 Server-Sent Events (SSE) 模式。…
+A fund knowledge base server based on the Model Context Protocol (MCP), providing query and retrieval functions for fund-related knowledge. Fund MCP Server is an MCP server specifically designed for t…
 
 # Fund MCP Server
 
@@ -92,19 +92,19 @@ Create a `llm-config.env` file or set the following environment variables:
 
 ```env
 
-# 知识库 API 配置
+# Knowledge base API configuration
 
 FUND_KB_API_URL=https://report.haiyu.datavita.com.cn/api/admin/knowledge/query
 
-# 服务端口配置
+# Service port configuration
 
 PORT=3000
 
-# 运行环境
+# Runtime environment
 
 NODE_ENV=production
 
-# MCP 传输模式 (可选: sse, http)
+# MCP transport mode (optional: sse, http)
 
 MCP_TRANSPORT=http
 
@@ -126,7 +126,7 @@ MCP_TRANSPORT=http
 
 ```cmd
 
-# 双击运行或在命令行执行
+# Double-click to run, or execute in the command line
 
 deploy.bat
 
@@ -135,7 +135,7 @@ deploy.bat
 
 ```bash
 
-# 给脚本执行权限并运行
+# Give the script execute permission and run it
 
 chmod +x deploy.sh
 
@@ -162,15 +162,15 @@ chmod +x deploy.sh
 
 ```bash
 
-   # HTTP 模式
+   # HTTP mode
 
    npm run start:http
 
-   # SSE 模式
+   # SSE mode
 
    npm run start:sse
 
-   # 标准 MCP 模式
+   # Standard MCP mode
 
    npm start
 
@@ -207,37 +207,37 @@ docker-compose up -d
 
 fund-mcp-server/
 
-├── deploy.bat                    # Windows 部署入口
+├── deploy.bat                    # Windows deployment entry
 
-├── deploy.sh                     # Linux/macOS 部署入口
+├── deploy.sh                     # Linux/macOS deployment entry
 
-├── scripts/                      # 部署脚本文件夹
+├── scripts/                      # Deployment scripts folder
 
-│   ├── README.md                # 脚本说明
+│   ├── README.md                # Script documentation
 
-│   ├── DEPLOYMENT.md            # 详细部署指南
+│   ├── DEPLOYMENT.md            # Detailed deployment guide
 
-│   ├── deploy.sh                # Linux 快速部署
+│   ├── deploy.sh                # Linux quick deployment
 
-│   ├── deploy.bat               # Windows 快速部署
+│   ├── deploy.bat               # Windows quick deployment
 
-│   ├── deploy-production.sh     # 生产环境部署
+│   ├── deploy-production.sh     # Production environment deployment
 
-│   ├── fund-mcp-server.service  # systemd 服务配置
+│   ├── fund-mcp-server.service  # systemd service configuration
 
-│   ├── Dockerfile               # Docker 镜像
+│   ├── Dockerfile               # Docker image
 
 │   └── docker-compose.yml       # Docker Compose
 
-├── tool-registry/               # 工具注册表
+├── tool-registry/               # Tool registry
 
-├── tool-handlers/               # 工具处理器
+├── tool-handlers/               # Tool handlers
 
-├── common/                      # 公共模块
+├── common/                      # Common modules
 
-├── dist/                        # 构建输出
+├── dist/                        # Build output
 
-└── package.json                 # 项目配置
+└── package.json                 # Project configuration
 
 ```
 ## Port Configuration
@@ -283,15 +283,15 @@ npm test
 
 ```bash
 
-# 查看状态
+# Check status
 
 ./scripts/deploy-production.sh status
 
-# 查看日志
+# Check logs
 
 ./scripts/deploy-production.sh logs
 
-# 重启服务
+# Restart the service
 
 ./scripts/deploy-production.sh restart
 
@@ -300,15 +300,15 @@ npm test
 
 ```bash
 
-# 查看状态
+# Check status
 
 docker-compose ps
 
-# 查看日志
+# Check logs
 
 docker-compose logs -f
 
-# 重启服务
+# Restart the service
 
 docker-compose restart
 

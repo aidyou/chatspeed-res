@@ -1,330 +1,330 @@
 ---
 title: "xiaohongshu-automation"
-description: "xiaohongshu-automation"
+description: "xiaohongshu-automation - an automation solution for Xiaohongshu (RED) built on the Model Context Protocol (MCP), providing AI assistants with content publishing, comment management, and system monitor…"
 ---
 
 # xiaohongshu-automation
 
-xiaohongshu-automation
+xiaohongshu-automation - an automation solution for Xiaohongshu (RED) built on the Model Context Protocol (MCP), providing AI assistants with content publishing, comment management, and system monitor…
 
-# 小红书自动化工具
+# Xiaohongshu Automation Tool
 
-基于 Model Context Protocol (MCP) 的小红书自动化解决方案，为 AI 助手提供内容发布、评论管理和系统监控能力。
+An automation solution for Xiaohongshu (RED) built on the Model Context Protocol (MCP), providing AI assistants with content publishing, comment management, and system monitoring capabilities.
 
-## ✨ 新功能：Server-Sent Events (SSE) 支持
+## New Feature: Server-Sent Events (SSE) Support
 
-🎉 **现已支持 SSE 实时数据推送！**
+**SSE real-time data push is now supported!**
 
-新增的 SSE 功能提供：
-- 📡 **实时事件推送**：工具调用、发布状态、监控数据等实时更新
-- 🌐 **Web 客户端**：提供美观的 Web 界面进行实时监控
-- 🔧 **API 接口**：RESTful API 支持多种客户端集成
-- 💬 **多主题订阅**：可选择性订阅感兴趣的事件类型
+The new SSE feature provides:
+- **Real-time event push**: real-time updates for tool calls, publishing status, monitoring data, etc.
+- **Web client**: a polished web interface for real-time monitoring
+- **API endpoints**: RESTful APIs for integration with various clients
+- **Multi-topic subscription**: optionally subscribe to the event types you care about
 
-### 快速启动 SSE 服务
+### Quick start of the SSE service
 
 ```bash
-# 启动 SSE 服务器
+# Start the SSE server
 python mcp_server.py --sse
 
-# 或者直接启动
+# Or start directly
 python mcp_sse_server.py
 ```
 
-### Web 客户端体验
+### Web client experience
 
-在浏览器中打开 `sse_web_client.html` 体验实时监控界面，或查看 SSE_GUIDE.md 获取完整使用指南。
+Open `sse_web_client.html` in your browser for the real-time monitoring interface, or see SSE_GUIDE.md for the full usage guide.
 
-## 🚀 快速开始
+## Quick Start
 
-### 1. 环境准备
+### 1. Environment preparation
 
-**推荐使用 uv 进行环境管理**（更快更现代的Python包管理器）
+**We recommend uv for environment management** (a faster, more modern Python package manager)
 
 ```bash
-# 安装 uv（如果还没安装）
+# Install uv (if not already installed)
 # Windows:
 curl -LsSf https://astral.sh/uv/install.ps1 | powershell
 # macOS/Linux:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 克隆项目
-git clone 
+# Clone the project
+git clone
 cd xiaohongshu-automation
 
-# 方式一：使用 uv（推荐）
-uv venv                    # 创建虚拟环境
-uv sync                    # 安装所有依赖
+# Method 1: use uv (recommended)
+uv venv                    # create a virtual environment
+uv sync                    # install all dependencies
 
-# 方式二：传统方式
+# Method 2: traditional approach
 python -m venv venv
-venvScriptsactivate      # Windows
+venv\Scripts\activate      # Windows
 # source venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 🛠️ 开发环境一键设置
+### One-click dev environment setup
 
-#### 方式一：使用便捷脚本（Windows）
+#### Method 1: convenience script (Windows)
 
 ```bash
-# 一键设置开发环境
-scriptssetup_dev.bat
+# Set up the dev environment with one click
+scripts\setup_dev.bat
 ```
 
-#### 方式二：使用 uvx 快速测试（推荐）
+#### Method 2: quick test with uvx (recommended)
 
-无需克隆代码，直接测试最新版本：
+No need to clone the code; test the latest version directly:
 
 ```bash
-# 快速启动 FastAPI 服务器（从 PyPI）
+# Quickly start the FastAPI server (from PyPI)
 uvx --from xiaohongshu-automation xhs-server
 
-# 快速启动 MCP 服务器（从 PyPI）
+# Quickly start the MCP server (from PyPI)
 uvx --from xiaohongshu-automation xhs-mcp
 
-# 从 Git 仓库直接运行最新开发版
+# Run the latest dev version directly from the Git repo
 uvx --from git+https://github.com/A1721/xiaohongshu-automation.git xhs-server
 
-# 测试特定版本
+# Test a specific version
 uvx --from xiaohongshu-automation==1.0.0 xhs-server
 ```
 
-#### 方式三：传统开发环境
+#### Method 3: traditional dev environment
 
 ```bash
-# 克隆项目
-git clone 
+# Clone the project
+git clone
 cd xiaohongshu-automation
 
-# 使用 uv（推荐）
-uv venv                    # 创建虚拟环境
-uv sync                    # 安装所有依赖
+# Use uv (recommended)
+uv venv                    # create a virtual environment
+uv sync                    # install all dependencies
 
-# 或传统方式
+# Or the traditional way
 python -m venv venv
-venvScriptsactivate      # Windows
+venv\Scripts\activate      # Windows
 # source venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 📦 打包和发布
+### Building and publishing
 
 ```bash
-# 构建包
+# Build the package
 uv build
 
-# 使用 uvx 测试本地构建的包
+# Test the locally built package with uvx
 uvx --from ./dist/xiaohongshu_automation-1.0.0-py3-none-any.whl xhs-server
 uvx --from ./dist/xiaohongshu_automation-1.0.0-py3-none-any.whl xhs-mcp
 
-# 发布到 PyPI（使用便捷脚本）
-scriptspublish.bat
+# Publish to PyPI (using the convenience script)
+scripts\publish.bat
 
-# 或手动发布
+# Or publish manually
 uv pip install twine
 twine upload dist/*
 
-# 测试发布到 TestPyPI
+# Test publishing to TestPyPI
 twine upload --repository testpypi dist/*
 
-# 使用 uvx 测试 TestPyPI 版本
+# Test the TestPyPI version with uvx
 uvx --index-url https://test.pypi.org/simple/ --from xiaohongshu-automation xhs-server
 ```
 
-### 2. 启动服务
+### 2. Start the services
 
-**重要**: 必须按顺序启动两个服务
+**Important**: both services must be started in order
 
 ```bash
-# 第一步：启动 FastAPI 后端服务并且扫码登录小红书
+# Step 1: start the FastAPI backend service and log in to Xiaohongshu by scanning the QR code
 python main.py
 
-# 第二步：启动 MCP 服务器
+# Step 2: start the MCP server
 python mcp_server.py
 ```
 
-### 2. 配置 AI 客户端
+### 3. Configure the AI client
 
-在支持 MCP 的 AI 客户端中配置连接到本地 MCP 服务器。
+Configure the connection to the local MCP server in an MCP-capable AI client.
 
-## 📦 安装发布版本
+## Installing a Release Version
 
-### 方式一：传统安装
+### Method 1: traditional install
 
-如果项目已发布到 PyPI，用户可以直接安装：
+If the project is published on PyPI, users can install it directly:
 
 ```bash
 pip install xiaohongshu-automation
 ```
 
-### 方式二：使用 uvx（推荐）
+### Method 2: use uvx (recommended)
 
-**uvx** 是 uv 的一个强大功能，可以直接运行 Python 包而无需先安装到当前环境，非常适合运行 CLI 工具和一次性任务。
+**uvx** is a powerful feature of uv that runs Python packages directly without installing them into the current environment - great for CLI tools and one-off tasks.
 
-#### 优势
-- 🚀 **无需安装**: 直接运行包，不污染当前环境
-- ⚡ **自动管理**: 自动创建临时环境和依赖管理
-- 🔒 **隔离运行**: 每次运行都在独立环境中
-- 💾 **缓存优化**: 自动缓存环境，再次运行更快
+#### Advantages
+- **No install needed**: run packages directly without polluting the current environment
+- **Automatic management**: automatically creates temporary environments and manages dependencies
+- **Isolated execution**: each run happens in its own environment
+- **Cache optimization**: environments are cached automatically, so subsequent runs are faster
 
-#### 使用方法
+#### Usage
 
 ```bash
-# 直接运行 FastAPI 服务器
+# Run the FastAPI server directly
 uvx --from xiaohongshu-automation xhs-server
 
-# 直接运行 MCP 服务器
+# Run the MCP server directly
 uvx --from xiaohongshu-automation xhs-mcp
 
-# 运行特定脚本（如果包提供）
+# Run a specific script (if provided by the package)
 uvx --from xiaohongshu-automation --help
 
-# 指定版本运行
+# Run a specific version
 uvx --from xiaohongshu-automation==1.0.0 xhs-server
 
-# 从 TestPyPI 运行（测试版本）
+# Run from TestPyPI (test version)
 uvx --index-url https://test.pypi.org/simple/ --from xiaohongshu-automation xhs-server
 ```
 
-#### 开发者使用 uvx
+#### For developers using uvx
 
 ```bash
-# 从本地构建的包运行
+# Run from a locally built package
 uvx --from ./dist/xiaohongshu_automation-1.0.0-py3-none-any.whl xhs-server
 
-# 从 Git 仓库直接运行
+# Run directly from a Git repo
 uvx --from git+https://github.com/A1721/xiaohongshu-automation.git xhs-server
 ```
 
-### 方式三：从源码安装
+### Method 3: install from source
 
 ```bash
-# 克隆项目
-git clone 
+# Clone the project
+git clone
 cd xiaohongshu-automation
 
-# 使用 uv 安装
+# Install with uv
 uv pip install -e .
 
-# 或使用 pip 安装
+# Or install with pip
 pip install -e .
 ```
 
-## 🛠️ 故障排除
+## Troubleshooting
 
-### 常见问题：MCP调用成功但AI显示失败
+### Common issue: MCP call succeeds but AI reports failure
 
-**症状**: MCP服务调用成功，但AI执行结果显示失败
-**原因**: FastAPI后端服务未运行
-**解决**: 运行 `python main.py` 启动后端服务
+**Symptom**: the MCP service call succeeds, but the AI execution result shows failure
+**Cause**: the FastAPI backend service is not running
+**Fix**: run `python main.py` to start the backend service
 
-详细故障排除指南请参考：TIMEOUT_TROUBLESHOOTING.md
+See TIMEOUT_TROUBLESHOOTING.md for the detailed troubleshooting guide.
 
-### 快速诊断
+### Quick diagnosis
 
 ```bash
-# 运行诊断工具
+# Run the diagnostic tool
 python test_timeout_improvements.py
 
-# 或在MCP中调用
+# Or call it through MCP
 xiaohongshu_timeout_diagnostic
 ```
 
-## ⚙️ 功能特性
+## Features
 
-### 🎯 核心工具
+### Core Tools
 
-1. **xiaohongshu_publish** - 发布内容到小红书
-   - 支持多张图片（1-18张）
-   - 内容质量分析和优化建议
-   - 智能话题标签和@用户检测
+1. **xiaohongshu_publish** - publish content to Xiaohongshu
+   - Supports multiple images (1-18)
+   - Content quality analysis and optimization suggestions
+   - Smart topic tags and @user detection
 
-2. **xiaohongshu_get_comments** - 获取评论分析
-   - 情感分析和关键词提取
-   - 评论统计和互动分析
+2. **xiaohongshu_get_comments** - get comment analysis
+   - Sentiment analysis and keyword extraction
+   - Comment statistics and engagement analysis
 
-3. **xiaohongshu_reply_comments** - 批量回复评论
-   - 智能回复建议和内容优化
-   - 批量处理和语调调整
+3. **xiaohongshu_reply_comments** - batch reply to comments
+   - Smart reply suggestions and content optimization
+   - Batch processing and tone adjustment
 
-4. **xiaohongshu_monitor** - 系统监控
-   - 健康状态评分
-   - 服务状态检查
-   - 历史记录分析
+4. **xiaohongshu_monitor** - system monitoring
+   - Health score
+   - Service status checks
+   - History analysis
 
-5. **xiaohongshu_timeout_diagnostic** - 超时诊断 🆕
-   - 网络连接测试
-   - 性能分析
-   - 配置建议
+5. **xiaohongshu_timeout_diagnostic** - timeout diagnosis (new)
+   - Network connectivity tests
+   - Performance analysis
+   - Configuration suggestions
 
-### 📚 资源
+### Resources
 
-- **xiaohongshu://monitor/status** - 实时监控状态
-- **xiaohongshu://posts/history** - 发布历史记录
-- **xiaohongshu://tools/info** - 工具信息总览
+- **xiaohongshu://monitor/status** - real-time monitoring status
+- **xiaohongshu://posts/history** - publishing history
+- **xiaohongshu://tools/info** - tool info overview
 
-### 🎨 提示模板
+### Prompt Templates
 
-- **xiaohongshu_content_template** - 内容创作模板
-- **xiaohongshu_reply_template** - 评论回复模板
-- **xiaohongshu_optimization_tips** - 优化建议模板
+- **xiaohongshu_content_template** - content creation template
+- **xiaohongshu_reply_template** - comment reply template
+- **xiaohongshu_optimization_tips** - optimization suggestion template
 
-## 📋 API 接口
+## API Endpoints
 
-### 发布内容
+### Publish content
 ```http
 POST /publish
 Content-Type: application/json
 
 {
   "pic_urls": ["https://example.com/image1.jpg"],
-  "title": "标题",
-  "content": "内容文本"
+  "title": "Title",
+  "content": "Content text"
 }
 ```
 
-### 获取评论(暂未完善)
+### Get comments (not yet complete)
 ```http
 GET /get_comments?url=https://www.xiaohongshu.com/explore/xxxxx
 ```
 
-### 回复评论(暂未完善)
+### Reply to comments (not yet complete)
 ```http
 POST /post_comments?url=https://www.xiaohongshu.com/explore/xxxxx
 Content-Type: application/json
 
 {
-  "comment_id_1": ["回复内容1", "回复内容2"],
-  "comment_id_2": ["回复内容3"]
+  "comment_id_1": ["reply content 1", "reply content 2"],
+  "comment_id_2": ["reply content 3"]
 }
 ```
 
-## ⚙️ 配置选项
+## Configuration Options
 
-### 超时配置
+### Timeout configuration
 
 ```bash
-# 基本超时设置
-export FASTAPI_TIMEOUT=30          # 默认超时
-export PUBLISH_TIMEOUT=60          # 发布操作超时
-export COMMENTS_TIMEOUT=30         # 评论操作超时
-export MONITOR_TIMEOUT=15          # 监控操作超时
-export HEALTH_CHECK_TIMEOUT=5      # 健康检查超时
+# Basic timeout settings
+export FASTAPI_TIMEOUT=30          # default timeout
+export PUBLISH_TIMEOUT=60          # publish operation timeout
+export COMMENTS_TIMEOUT=30         # comment operation timeout
+export MONITOR_TIMEOUT=15          # monitor operation timeout
+export HEALTH_CHECK_TIMEOUT=5      # health check timeout
 
-# 重试机制
-export ENABLE_AUTO_RETRY=true      # 启用自动重试
-export MAX_RETRIES=3               # 最大重试次数
-export RETRY_DELAY=2               # 重试间隔（秒）
+# Retry mechanism
+export ENABLE_AUTO_RETRY=true      # enable automatic retry
+export MAX_RETRIES=3               # max retry count
+export RETRY_DELAY=2               # retry interval (seconds)
 
-# 日志配置
-export LOG_LEVEL=INFO              # 日志级别
-export DETAILED_ERROR_MSG=true     # 详细错误信息
+# Logging config
+export LOG_LEVEL=INFO              # log level
+export DETAILED_ERROR_MSG=true     # detailed error messages
 ```
 
-### 环境配置示例
+### Example environment configurations
 
-#### 本地开发
+#### Local development
 ```bash
 export FASTAPI_TIMEOUT=30
 export PUBLISH_TIMEOUT=60
@@ -332,7 +332,7 @@ export ENABLE_AUTO_RETRY=true
 export MAX_RETRIES=3
 ```
 
-#### 生产环境
+#### Production
 ```bash
 export FASTAPI_TIMEOUT=60
 export PUBLISH_TIMEOUT=120
@@ -341,102 +341,102 @@ export MAX_RETRIES=5
 export RETRY_DELAY=3
 ```
 
-## 🧪 测试
+## Testing
 
-### 运行测试套件
+### Running the test suites
 
 ```bash
-# 基础功能测试
+# Basic functionality tests
 python test_mcp_server.py
 
-# 超时和诊断测试
+# Timeout and diagnostic tests
 python test_timeout_improvements.py
 
-# 发布功能专项测试
+# Publish-specific tests
 python test_publish_fix.py
 ```
 
-### 性能监控
+### Performance monitoring
 
 ```bash
-# 启用详细日志
+# Enable verbose logging
 export LOG_LEVEL=DEBUG
 python mcp_server.py
 
-# 监控系统状态
+# Monitor system status
 xiaohongshu_monitor
 ```
 
-## 🏗️ 项目结构
+## Project Structure
 
 ```
 xiaohongshu-automation/
-├── main.py                     # FastAPI 主服务
-├── mcp_server.py              # MCP 服务器
-├── config.py                  # 配置管理
+├── main.py                     # FastAPI main service
+├── mcp_server.py              # MCP server
+├── config.py                  # Configuration management
 ├── adapters/
-│   └── xiaohongshu_adapter.py # 服务适配器
-├── tools/                     # MCP 工具
-│   ├── base_tool.py          # 基础工具类
-│   ├── publish_tool.py       # 发布工具
-│   ├── comments_tool.py      # 评论工具
-│   ├── monitor_tool.py       # 监控工具
-│   ├── timeout_diagnostic_tool.py # 诊断工具 🆕
-│   └── tool_manager.py       # 工具管理器
-├── xiaohongshu_tools.py       # 核心功能模块
-├── unti.py                    # 工具函数
-├── requirements.txt           # Python 依赖
-├── TIMEOUT_TROUBLESHOOTING.md # 故障排除指南 🆕
-└── README.md                  # 项目文档
+│   └── xiaohongshu_adapter.py # Service adapter
+├── tools/                     # MCP tools
+│   ├── base_tool.py          # Base tool class
+│   ├── publish_tool.py       # Publish tool
+│   ├── comments_tool.py      # Comments tool
+│   ├── monitor_tool.py       # Monitor tool
+│   ├── timeout_diagnostic_tool.py # Diagnostic tool (new)
+│   └── tool_manager.py       # Tool manager
+├── xiaohongshu_tools.py       # Core functionality module
+├── unti.py                    # Utility functions
+├── requirements.txt           # Python dependencies
+├── TIMEOUT_TROUBLESHOOTING.md # Troubleshooting guide (new)
+└── README.md                  # Project documentation
 ```
 
-## 🔒 依赖
+## Dependencies
 
 - Python 3.8+
-- FastAPI - Web 框架
-- MCP (Model Context Protocol) - AI 集成协议
-- httpx - HTTP 客户端
-- pydantic - 数据验证
-- selenium - 浏览器自动化
-- requests - HTTP 请求
+- FastAPI - web framework
+- MCP (Model Context Protocol) - AI integration protocol
+- httpx - HTTP client
+- pydantic - data validation
+- selenium - browser automation
+- requests - HTTP requests
 
-## 📈 版本历史
+## Version History
 
 ### v1.0.0 (2025-06-01)
-- ✅ 基础 MCP 服务器实现
-- ✅ 核心工具集（发布、评论、监控）
-- ✅ 智能重试和超时配置
-- ✅ 超时诊断工具
-- ✅ 详细的故障排除指南
+- Basic MCP server implementation
+- Core tool set (publish, comments, monitor)
+- Smart retry and timeout configuration
+- Timeout diagnostic tool
+- Detailed troubleshooting guide
 
-## 🤝 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request 来改进项目。
+Issues and Pull Requests are welcome to improve the project.
 
-## 📄 许可证
+## License
 
 MIT License
 
 ---
 
-## 🆘 获取帮助
+## Getting Help
 
-如果遇到问题：
+If you run into problems:
 
-1. **查看故障排除指南**: TIMEOUT_TROUBLESHOOTING.md
-2. **运行诊断工具**: `python test_timeout_improvements.py`
-3. **检查服务状态**: 确保 `python main.py` 正在运行
-4. **查看日志**: 启用 `LOG_LEVEL=DEBUG` 获取详细信息
+1. **Check the troubleshooting guide**: TIMEOUT_TROUBLESHOOTING.md
+2. **Run the diagnostic tool**: `python test_timeout_improvements.py`
+3. **Check the service status**: make sure `python main.py` is running
+4. **Check the logs**: enable `LOG_LEVEL=DEBUG` for details
 
-**快速检查清单**:
-- [ ] FastAPI 服务已启动 (`python main.py`)
-- [ ] MCP 服务器已启动 (`python mcp_server.py`)
-- [ ] 可以访问 http://localhost:8000/docs
-- [ ] AI 客户端正确配置了 MCP 连接
+**Quick checklist**:
+- [ ] FastAPI service started (`python main.py`)
+- [ ] MCP server started (`python mcp_server.py`)
+- [ ] http://localhost:8000/docs is accessible
+- [ ] AI client is configured with the MCP connection
 
 ---
 
-*最后更新: 2025-06-01*
+*Last updated: 2025-06-01*
 
 **Official site: ** [https://pypi.org/project/xiaohongshu-automation/](https://pypi.org/project/xiaohongshu-automation/)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

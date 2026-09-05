@@ -1,80 +1,80 @@
 ---
 title: "NanoBananaMCP"
-description: "Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（Model Context Protocol）服务器，专门用于图像分析和处理。它可以无缝集成到 Claude Desktop、Cursor 等支持 MCP 协议的 AI 助手中，提供强大的视觉理解能力。 - 多模态分析：支持图片内容理解、场景识别、文字提取等 - 灵活输入：支持本地文件路径、网络 UR…"
+description: "Gemini MCP is an MCP (Model Context Protocol) server based on the Google Gemini 2.0 Flash model, dedicated to image analysis and processing. It can be seamlessly integrated into MCP-protocol-supportin…"
 ---
 
 # NanoBananaMCP
 
-Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（Model Context Protocol）服务器，专门用于图像分析和处理。它可以无缝集成到 Claude Desktop、Cursor 等支持 MCP 协议的 AI 助手中，提供强大的视觉理解能力。 - 多模态分析：支持图片内容理解、场景识别、文字提取等 - 灵活输入：支持本地文件路径、网络 UR…
+Gemini MCP is an MCP (Model Context Protocol) server based on the Google Gemini 2.0 Flash model, dedicated to image analysis and processing. It can be seamlessly integrated into MCP-protocol-supportin…
 
-# Gemini MCP - 基于 Gemini 的智能图像分析服务
+# Gemini MCP - Smart Image Analysis Service Based on Gemini
 
-## 项目概述
+## Project Overview
 
-Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（Model Context Protocol）服务器，专门用于图像分析和处理。它可以无缝集成到 Claude Desktop、Cursor 等支持 MCP 协议的 AI 助手中，提供强大的视觉理解能力。
+Gemini MCP is an MCP (Model Context Protocol) server based on the Google Gemini 2.0 Flash model, dedicated to image analysis and processing. It can be seamlessly integrated into MCP-protocol-supporting AI assistants such as Claude Desktop and Cursor, providing powerful visual understanding capabilities.
 
-## 核心特性
+## Core Features
 
-### 🎯 主要功能
-- **多模态分析**：支持图片内容理解、场景识别、文字提取等
-- **灵活输入**：支持本地文件路径、网络 URL、Base64 编码等多种图片输入方式
-- **流式响应**：实时流式输出分析结果，提升用户体验
-- **智能存储**：自动保存处理结果和生成的图片
+### Main Functions
+- **Multimodal analysis**: supports image content understanding, scene recognition, text extraction, etc.
+- **Flexible input**: supports local file paths, web URLs, Base64 encoding, and other image input methods
+- **Streaming responses**: real-time streaming output of analysis results for a better user experience
+- **Smart storage**: automatically saves processing results and generated images
 
-### 🚀 技术优势
-- **零依赖安装**：支持 uvx 直接运行，无需预先安装
-- **跨平台兼容**：支持 macOS、Windows、Linux 等主流操作系统
-- **代理支持**：内置 SOCKS5 代理支持，适应各种网络环境
-- **标准协议**：完全符合 MCP 规范，可与任何 MCP 客户端集成
+### Technical Advantages
+- **Zero-dependency installation**: supports running directly with uvx, no pre-installation needed
+- **Cross-platform compatibility**: supports macOS, Windows, Linux, and other mainstream operating systems
+- **Proxy support**: built-in SOCKS5 proxy support for various network environments
+- **Standard protocol**: fully compliant with MCP specifications, integrable with any MCP client
 
-## 快速开始
+## Quick Start
 
-### API 密钥获取方式
+### Getting an API key
 
-1. **兔子 API**：访问 [兔子API充值平台](https://api.tu-zi.com/topup) 购买兼容官方格式的 API 服务（国内直连，无需梯子，完全兼容 Gemini 官方 API 接口）
+1. **Rabbit API**: visit the [Rabbit API recharge platform](https://api.tu-zi.com/topup) to purchase API services compatible with the official format (direct domestic access, no VPN needed, fully compatible with the official Gemini API interface)
 
-### 方式一：使用 uvx 运行（推荐）
+### Method 1: Run with uvx (recommended)
 
-无需安装，直接运行：
+No installation needed, run directly:
 
 ```bash
-# 设置 API 密钥并启动服务
+# Set the API key and start the service
 GEMINI_API_KEY=your-api-key uvx gemini-mcp
 ```
 
-### 方式二：通过 pip 安装
+### Method 2: Install via pip
 
 ```bash
-# 安装包
+# Install the package
 pip install gemini-mcp
 
-# 运行服务
+# Run the service
 GEMINI_API_KEY=your-api-key gemini-mcp
 ```
 
-### 方式三：从源码运行
+### Method 3: Run from source
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/chengfeng2025/gemini-mcp-python.git
 cd gemini-mcp-python
 
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 运行服务
+# Run the service
 python -m gemini_mcp
 ```
 
-## 客户端配置
+## Client Configuration
 
-### Claude Desktop 配置
+### Claude Desktop Configuration
 
-1. 打开配置文件：
+1. Open the config file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-2. 添加以下配置：
+2. Add the following configuration:
 
 ```json
 {
@@ -86,16 +86,16 @@ python -m gemini_mcp
       ],
       "env": {
         "GEMINI_API_KEY": "API",
-        "GEMINI_MCP_OUTPUT_DIR": "指定下载目录,可不填"
+        "GEMINI_MCP_OUTPUT_DIR": "specify download directory, optional"
       }
     }
   }
 }
 ```
 
-### Cursor 配置
+### Cursor Configuration
 
-编辑 `~/.cursor/mcp.json`:
+Edit `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -111,138 +111,138 @@ python -m gemini_mcp
 }
 ```
 
-## 使用示例
+## Usage Examples
 
-在配置好的 Claude Desktop 或 Cursor 中，你可以：
+In a configured Claude Desktop or Cursor, you can:
 
 ```
-# 分析本地图片
-请分析这张图片：/Users/name/Pictures/photo.jpg
+# Analyze a local image
+Please analyze this image: /Users/name/Pictures/photo.jpg
 
-# 分析网络图片
-描述一下这个图片的内容：https://example.com/image.png
+# Analyze a web image
+Describe the content of this image: https://example.com/image.png
 
-# 提取图片中的文字
-提取图片中的所有文字：/path/to/document.png
+# Extract text from an image
+Extract all text from the image: /path/to/document.png
 
-# 场景理解
-这张图片是在什么场景下拍摄的？/path/to/scene.jpg
+# Scene understanding
+In what scene was this image taken? /path/to/scene.jpg
 ```
 
-## 高级配置
+## Advanced Configuration
 
-### 环境变量
+### Environment Variables
 
-| 变量名 | 说明 | 默认值 |
+| Variable | Description | Default |
 |--------|------|--------|
-| `GEMINI_API_KEY` | Gemini API 密钥（必需） | - |
-| `OUTPUT_DIR` | 输出文件保存目录 | `./outputs` |
-| `ALL_PROXY` | SOCKS5 代理地址 | - |
-| `LOG_LEVEL` | 日志级别 | `INFO` |
+| `GEMINI_API_KEY` | Gemini API key (required) | - |
+| `OUTPUT_DIR` | Output file save directory | `./outputs` |
+| `ALL_PROXY` | SOCKS5 proxy address | - |
+| `LOG_LEVEL` | Log level | `INFO` |
 
-### 命令行参数
+### Command Line Parameters
 
 ```bash
-# 查看所有可用参数
+# View all available parameters
 gemini-mcp --help
 
-# 以 HTTP 服务模式运行
+# Run in HTTP service mode
 gemini-mcp --mode http --port 8080
 
-# 启用调试模式
+# Enable debug mode
 gemini-mcp --debug
 
-# 指定输出目录
+# Specify the output directory
 gemini-mcp --output-dir /custom/path
 ```
 
-## API 参考
+## API Reference
 
-### 支持的工具
+### Supported Tools
 
 #### `analyze_image`
-分析图片内容并返回描述。
+Analyzes image content and returns a description.
 
-**参数：**
-- `image_input`: 图片输入（文件路径、URL 或 Base64）
-- `prompt`: 分析提示词（可选）
+**Parameters:**
+- `image_input`: image input (file path, URL, or Base64)
+- `prompt`: analysis prompt (optional)
 
-**示例：**
+**Example:**
 ```python
 {
   "tool": "analyze_image",
   "arguments": {
     "image_input": "/path/to/image.jpg",
-    "prompt": "描述这张图片中的主要内容"
+    "prompt": "Describe the main content of this image"
   }
 }
 ```
 
-## 开发指南
+## Development Guide
 
-### 本地开发
+### Local development
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/chengfeng2025/gemini-mcp-python.git
 cd gemini-mcp-python
 
-# 创建虚拟环境
+# Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 安装开发依赖
+# Install development dependencies
 pip install -e ".[dev]"
 
-# 运行测试
+# Run tests
 pytest tests/
 ```
 
-### 贡献代码
+### Contributing
 
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
 
-## 故障排除
+## Troubleshooting
 
-### 常见问题
+### Common Issues
 
-**Q: 提示 "API key not found"**
-A: 确保已正确设置 `GEMINI_API_KEY` 环境变量。
+**Q: "API key not found" error**
+A: Make sure the `GEMINI_API_KEY` environment variable is set correctly.
 
-**Q: 连接超时错误**
-A: 检查网络连接，或配置代理：
+**Q: Connection timeout error**
+A: Check the network connection, or configure a proxy:
 ```bash
 ALL_PROXY=socks5://127.0.0.1:1080 gemini-mcp
 ```
 
-**Q: Claude Desktop 无法识别服务**
-A: 重启 Claude Desktop 应用以重新加载配置。
+**Q: Claude Desktop cannot recognize the service**
+A: Restart the Claude Desktop app to reload the configuration.
 
-## 项目信息
+## Project Info
 
-- **作者**: chengfeng2025
-- **许可证**: MIT
-- **版本**: 1.0.0
-- **更新时间**: 2025年1月
+- **Author**: chengfeng2025
+- **License**: MIT
+- **Version**: 1.0.0
+- **Updated**: January 2025
 - **GitHub**: [gemini-mcp-python](https://github.com/chengfeng2025/gemini-mcp-python)
 
-## 相关链接
+## Related Links
 
-- [MCP 协议规范](https://modelcontextprotocol.io/)
-- [Gemini API 文档](https://ai.google.dev/gemini-api/docs)
-- [问题反馈](https://github.com/chengfeng2025/gemini-mcp-python/issues)
+- [MCP protocol spec](https://modelcontextprotocol.io/)
+- [Gemini API docs](https://ai.google.dev/gemini-api/docs)
+- [Issue feedback](https://github.com/chengfeng2025/gemini-mcp-python/issues)
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证。详见 [LICENSE](https://github.com/Ceeon/gemini-mcp/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Ceeon/gemini-mcp/blob/HEAD/LICENSE) file for details.
 
 ---
 
-**注意**：使用本项目需要有效的 Gemini API 密钥。
+**Note**: using this project requires a valid Gemini API key.
 
 **Official site: ** [https://github.com/Ceeon/gemini-mcp](https://github.com/Ceeon/gemini-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

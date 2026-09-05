@@ -9,111 +9,102 @@ A server that connects AI coding assistants like Cursor and Cline to Apifox API 
 
 # Apifox MCP Server
 
-使用 Apifox MCP Server，可以将 Apifox 项目内的接口文档作为数据源提供给 Cursor 等支持 AI 编程的 IDE 工具以便让 AI 能够直接访问项目对应的接口文档数据。
+With the Apifox MCP Server, you can use the API docs in your Apifox project as a data source for AI-coding IDE tools such as Cursor, so the AI can directly access the API documentation data of the corresponding project.
 
-开发者可以通过 AI 助手完成以下工作：根据接口文档生成或修改代码、搜索接口文档内容等等，至于通过这个接口文档数据能让 AI 干什么更多更强大的活，请发挥你和你们团队的想象力😜
+Developers can use the AI assistant to: generate or modify code based on API docs, search API doc content, and more. As for what bigger and more powerful things this API doc data can let the AI do, use your and your team's imagination :)
 
-## 🎯 如何使用
+## How to Use
 
-安装配置好 MCP 后，Apifox MCP Server 会自动读取 Apifox 整个项目里的所有接口文档的数据并缓存在本地电脑，AI 可以通过 MCP 读取项目内所有的接口的接口文档数据。
+After installing and configuring the MCP, the Apifox MCP Server automatically reads the data of all API docs in the entire Apifox project and caches it locally. The AI can read the API documentation data of all endpoints in the project through MCP.
 
-你只要告诉 AI 你想要通过 API 文档做什么即可，示例：
+Just tell the AI what you want to do with the API docs, for example:
 
-1. “通过 MCP 获取 API 文档，然后生成 Product 及其相关模型的定义代码”
-2. “根据 API 文档，在 Product DTO 里添加 API 文档新增的几个字段”
-3. “根据 API 文档给 Product 类的每个字段都加上注释”
-4. “根据 API 文档，生成接口 /users 相关的所有 MVC 代码”
+1. "Get the API docs via MCP, then generate the definition code for Product and its related models"
+2. "Based on the API docs, add the few new fields from the API docs to the Product DTO"
+3. "Add comments to every field of the Product class based on the API docs"
+4. "Based on the API docs, generate all MVC code related to the /users endpoint"
 
-注意：接口文档数据默认是会缓存在本地的，如果 Apifox 内的数据有更新，请告诉 AI 刷新接口文档数据，否则 AI 读到的数据可能不是最新的。
+Note: the API doc data is cached locally by default. If the data in Apifox has been updated, tell the AI to refresh the API doc data, otherwise the AI may not read the latest data.
 
-## 🚀 安装方法
+## Installation
 
-### 前置条件
+### Prerequisites
 
-- 已安装 Node.js 环境（版本号 >= 18，推荐最新的 LTS 版本）
-- 任意一个支持 MCP 的 IDE：
+- Node.js environment installed (version >= 18; we recommend the latest LTS)
+- Any MCP-capable IDE:
   - Cursor
-  - VSCode + Cline 插件
+  - VSCode + Cline plugin
 
-### 安装
+### Installation steps
 
-1. **在 Apifox 生成 Access Token**
-    a. 打开 Apifox，将鼠标悬停在页面右上角的头像上，点击 “账号设置 -> API 访问令牌”
-    b. 创建新的 API 访问令牌，详见帮助文档
-    c. 拿到 API 访问令牌，替换下面配置文件中的 `
-`
-2. **获取 Apifox 项目 ID**
-    a. 打开 Apifox 里对应的项目
-    b. 在左侧边栏点击“项目设置”，在“基本设置”页面即可复制项目 ID
-    c. 拿到项目 ID，替换下面配置文件中的 `
-`
-3. **配置 IDE**
+1. **Generate an Access Token in Apifox**
+   a. Open Apifox, hover over the avatar in the top-right corner, and click "Account Settings -> API Access Token"
+   b. Create a new API access token (see the help docs for details)
+   c. Copy the API access token and replace the `YOUR_APIFOX_ACCESS_TOKEN` placeholder in the config below
 
-将下面 JSON 配置添加到 IDE 对应的 MCP 配置文件里：
+2. **Get the Apifox project ID**
+   a. Open the corresponding project in Apifox
+   b. Click "Project Settings" in the left sidebar and copy the project ID on the "Basic Settings" page
+   c. Copy the project ID and replace the `YOUR_PROJECT_ID` placeholder in the config below
+
+3. **Configure the IDE**
+
+Add the following JSON config to the IDE's MCP config file:
 
 ```json
 {
   "mcpServers": {
-    "API 文档": {
+    "API Docs": {
       "command": "npx",
       "args": [
         "-y",
         "apifox-mcp-server@latest",
-        "--project-id=
-"
+        "--project-id=YOUR_PROJECT_ID"
       ],
       "env": {
-        "APIFOX_ACCESS_TOKEN": "
-"
+        "APIFOX_ACCESS_TOKEN": "YOUR_APIFOX_ACCESS_TOKEN"
       }
     }
   }
 }
 ```
 
-如果使用 Windows 操作系统，而上文的配置文件无法正常工作，请使用如下配置文件：
+If you are on Windows and the config above does not work, use the following:
 
 ```json
 {
   "mcpServers": {
-    "API 文档": {
+    "API Docs": {
       "command": "cmd",
       "args": [
         "/c",
         "npx",
         "-y",
         "apifox-mcp-server@latest",
-        "--project-id=
-"
+        "--project-id=YOUR_PROJECT_ID"
       ],
       "env": {
-        "APIFOX_ACCESS_TOKEN": "
-"
+        "APIFOX_ACCESS_TOKEN": "YOUR_APIFOX_ACCESS_TOKEN"
       }
     }
   }
 }
 ```
 
-- Cursor：添加到全局的 `~/.cursor/mcp.json` 或项目内的 `.cursor/mcp.json`
-- Cline：打开 Cline 面板 > MCP Server > Configure MCP Server
+- Cursor: add it to the global `~/.cursor/mcp.json` or the project-level `.cursor/mcp.json`
+- Cline: open the Cline panel > MCP Server > Configure MCP Server
 
-**注意：**
-1. 请将上面的 `
-` 和 `
-` 替换为你个人的 Apifox API 访问令牌和 Apifox 项目 ID。
-2. 配置文件里 MCP Server 名字建议填写类似“API 文档”或“xxx API 文档”这样的包含“API文档”字眼的名称，这样 AI 更容易正确的识别这个 MCP Server 的用途。不建议填写“Apifox”或“Apifox MCP”，这种写法 AI 不容易识别用途。
-3. 如果需要使用到多个项目的 API 文档，在配置文件里添加配置多个 MCP Server 即可（不同项目有不同的`
-`）， MCP Server 的名字填写“xxx API 文档”。
-4. 如果团队习惯将 MCP 配置文件同步到代码仓库里，建议删除配置里的"APIFOX_ACCESS_TOKEN": "`
-`"，改成每个成员在自己电脑里配置名为 APIFOX_ACCESS_TOKEN 的环境变量，以避免 APIFOX_ACCESS_TOKEN 泄漏问题。
-5. 使用私有化部署版本的用户，请在 IDE 的 MCP 的配置文件添加参数："--apifox-api-base-url=``"。另外，请确保网络可以正常访问 `www.npm.com`。
-6. 除了 Apifox 项目之外，也支持直接读取 Swagger/OAS 文件，请删除 `"--project-id=
-"` 参数，添加 `"--oas="` 参数。如：`npx apifox-mcp-server --oas https://petstore.swagger.io/v2/swagger.json` 或 `npx apifox-mcp-server --oas ～/data/petstore/swagger.json`
+**Notes:**
+1. Replace `YOUR_PROJECT_ID` and `YOUR_APIFOX_ACCESS_TOKEN` with your personal Apifox API access token and project ID.
+2. It is recommended to name the MCP Server something containing "API Docs", like "API Docs" or "xxx API Docs", so the AI can more easily recognize the purpose of this MCP server. Names like "Apifox" or "Apifox MCP" are not recommended, as the AI has a harder time recognizing their purpose.
+3. To use API docs from multiple projects, add multiple MCP Server entries in the config file (each with a different `YOUR_PROJECT_ID`), and name them "xxx API Docs".
+4. If your team syncs the MCP config file to the code repository, we recommend removing `"APIFOX_ACCESS_TOKEN": "YOUR_APIFOX_ACCESS_TOKEN"` from the config and having each member configure an environment variable named APIFOX_ACCESS_TOKEN on their own machine, to avoid token leakage.
+5. For users of the private deployment version, add the parameter `--apifox-api-base-url= ` to the IDE's MCP config file. Also, make sure the network can reach `www.npm.com` normally.
+6. Besides Apifox projects, reading Swagger/OAS files directly is also supported: remove the `--project-id=YOUR_PROJECT_ID` parameter and add the `--oas= ` parameter. For example: `npx apifox-mcp-server --oas https://petstore.swagger.io/v2/swagger.json` or `npx apifox-mcp-server --oas ~/data/petstore/swagger.json`
 
-## ❓帮助与支持
+## Help & Support
 
-Apifox MCP Server 还在内测阶段，欢迎各位给我们提建议和想法，请加内测群：
+The Apifox MCP Server is still in beta. We welcome your suggestions and ideas. Join the beta group:
 
 ![QR Code](/mcp-assets/bf2b2189dfdd5ebdff711874b2ee0807.png)
 

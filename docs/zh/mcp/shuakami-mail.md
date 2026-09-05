@@ -239,7 +239,7 @@ ISC
 
 - 传输方式：`stdio`
 - 启动命令：`pythonw`
-- 参数：`C:/Users/你的用户名/mcp-mail/bridging_mail_mcp.py`
+- 参数：`C:/Users/YOUR_USERNAME/mcp-mail/bridging_mail_mcp.py`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

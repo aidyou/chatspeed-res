@@ -53,13 +53,13 @@ The following tools are exposed to the AI Agent by this server:
 
 ```bash
 
-# 1. 克隆项目
+# 1. Clone the project
 
 git clone https://github.com/Code-MonkeyZhang/netease-mcp-server.git
 
 cd netease-mcp-server
 
-# 2. 创建虚拟环境并安装依赖
+# 2. Create a virtual environment and install dependencies
 
 uv venv
 
@@ -78,7 +78,7 @@ Ensure that your MCP configuration file points to the correct virtual environmen
 
 "netease-music-pro": {
 
-  "command": "/path/to/project/.venv/bin/python", // 指向虚拟环境的 python
+  "command": "/path/to/project/.venv/bin/python", // points to the python of the virtual environment
 
   "args": [
 
@@ -90,9 +90,9 @@ Ensure that your MCP configuration file points to the correct virtual environmen
 
   "env": {
 
-    "PYTHONPATH": "src", // 确保能找到模块
+    "PYTHONPATH": "src", // ensures the modules can be found
 
-    "MCP_LOG_ENABLE": "true" // [可选] 开启日志记录，日志将保存在 logs/ 目录下
+    "MCP_LOG_ENABLE": "true" // [optional] enable log recording; logs are saved under logs/
 
   }
 
@@ -115,7 +115,7 @@ Ensure that your MCP configuration file points to the correct virtual environmen
 ## MCP Configuration
 
 - Transport: `stdio`
-- Command: `/绝对路径/到/您的项目/.venv/bin/python`
+- Command: `/absolute/path/to/YOUR_PROJECT/.venv/bin/python`
 - Args: `src/main.py`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.

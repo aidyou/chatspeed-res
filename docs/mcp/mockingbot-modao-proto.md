@@ -1,63 +1,63 @@
 ---
 title: "modao-proto-mcp"
-description: "基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。 - 🚀 HTML代码生成: 根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局 - 📝 设计描述生成: 基于用"
+description: "A prototype generation service built on the Model Context Protocol, focused on HTML code generation, design description generation, and HTML import. - HTML code generation: generates complete HTML cod…"
 ---
 
 # modao-proto-mcp
 
-基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。 - 🚀 HTML代码生成: 根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局 - 📝 设计描述生成: 基于用
+A prototype generation service built on the Model Context Protocol, focused on HTML code generation, design description generation, and HTML import. - HTML code generation: generates complete HTML cod…
 
 # modao-proto-mcp
 
-基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。
+A prototype generation service built on the Model Context Protocol, focused on HTML code generation, design description generation, and HTML import.
 
-## 功能特性
+## Features
 
-- 🚀 **HTML代码生成**: 根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局
-- 📝 **设计描述生成**: 基于用户简短需求生成详细的设计说明文档
-- 📤 **HTML导入**: 通过key将生成的HTML导入到用户个人空间
-- 🛠️ **MCP协议**: 完全兼容Model Context Protocol标准
-- 🔧 **可扩展**: 易于添加新的工具和功能
-- ⚡ **高效处理**: 支持多种参数格式和错误处理机制
+- **HTML code generation**: generate complete HTML code from user descriptions, supporting modern design and responsive layouts
+- **Design description generation**: generate detailed design specification documents from brief user requirements
+- **HTML import**: import generated HTML into the user's personal space via a key
+- **MCP protocol**: fully compatible with the Model Context Protocol standard
+- **Extensible**: easy to add new tools and features
+- **Efficient handling**: supports multiple parameter formats and an error handling mechanism
 
-## 安装
+## Installation
 
 ```bash
 npm install
 ```
 
-## 构建
+## Build
 
 ```bash
 npm run build
 ```
 
-## 使用方法
+## Usage
 
-### 启动服务
+### Starting the server
 
 ```bash
-# 基本用法
+# Basic usage
 node dist/index.js --token YOUR_API_TOKEN
 
-# 指定API地址
+# Specify the API address
 node dist/index.js --token YOUR_API_TOKEN --url https://modao.cc
 
-# 启用调试模式
+# Enable debug mode
 node dist/index.js --token YOUR_API_TOKEN --debug
 ```
 
-### 参数说明
+### Parameters
 
-- `--token`: API服务的访问token（必需）
-- `--url`: API服务地址（可选，默认：https://modao.cc）
-- `--debug`: 启用调试模式（可选）
+- `--token`: API service access token (required)
+- `--url`: API service address (optional, default: https://modao.cc)
+- `--debug`: enable debug mode (optional)
 
-## MCP客户端配置
+## MCP Client Configuration
 
-### 通用配置
+### Generic configuration
 
-适用于所有支持MCP的客户端：
+Works for all MCP-capable clients:
 
 ```json
 {
@@ -77,8 +77,8 @@ node dist/index.js --token YOUR_API_TOKEN --debug
 
 ### Claude Desktop
 
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`  
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Linux:** `~/.config/claude/claude_desktop_config.json`
 
 ```json
@@ -99,7 +99,7 @@ node dist/index.js --token YOUR_API_TOKEN --debug
 
 ### Cursor
 
-在 `settings.json` 中添加：
+Add to `settings.json`:
 
 ```json
 {
@@ -119,7 +119,7 @@ node dist/index.js --token YOUR_API_TOKEN --debug
 
 ### Windsurf
 
-在 `~/.windsurf/config.json` 中添加：
+Add to `~/.windsurf/config.json`:
 
 ```json
 {
@@ -141,7 +141,7 @@ node dist/index.js --token YOUR_API_TOKEN --debug
 
 ### Claude Code
 
-在 `~/.claude-code/config.json` 中添加：
+Add to `~/.claude-code/config.json`:
 
 ```json
 {
@@ -159,204 +159,204 @@ node dist/index.js --token YOUR_API_TOKEN --debug
 }
 ```
 
-### 常见问题
+### FAQ
 
-**获取 Token：** 如果 token 报错，请登录 [modao.cc](https://modao.cc) 或 [modao.cc/ai](https://modao.cc/ai)，点击右上角头像 → 令牌设置 → 创建令牌
+**Getting a Token:** If the token fails, log in at [modao.cc](https://modao.cc) or [modao.cc/ai](https://modao.cc/ai), click the avatar in the top-right corner -> Token settings -> Create token
 
-**积分不足：** 如果 gen_html 无法生成（积分不够），请到 [modao.cc/ai](https://modao.cc/ai) 进行积分充值
+**Insufficient credits:** If gen_html cannot generate (not enough credits), top up at [modao.cc/ai](https://modao.cc/ai)
 
-## 工具列表
+## Tools
 
 ### 1. gen_html
 
-根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局。
+Generates complete HTML code from user descriptions, supporting modern design and responsive layouts.
 
-**功能描述:**
-- 基于用户的设计需求生成符合描述的HTML文件
-- 支持多种设计风格和布局方式
-- 返回完整的HTML代码，包含真实图片URL
-- 生成的HTML代码会自动包含必要的CSS样式
+**Description:**
+- Generates an HTML file matching the user's design requirements
+- Supports multiple design styles and layout approaches
+- Returns complete HTML code, including real image URLs
+- Generated HTML automatically includes the required CSS styling
 
-**参数:**
-- `user_input` (string, 必需): 用户的设计需求描述，例如：'创建一个现代风格的登录页面'
-- `reference` (string, 可选): 可选的参考信息或上下文
+**Parameters:**
+- `user_input` (string, required): the user's design requirement description, e.g. 'create a modern login page'
+- `reference` (string, optional): optional reference information or context
 
-**返回内容:**
-- 完整的HTML代码（从``到``）
-- 生成的key（用于后续导入操作）
+**Returns:**
+- Complete HTML code (from ` ` to ` `)
+- A generated key (used for subsequent import operations)
 
-**示例:**
+**Example:**
 ```json
 {
   "name": "gen_html",
   "arguments": {
-    "user_input": "创建一个现代风格的登录页面，包含用户名和密码输入框",
-    "reference": "使用Material Design风格，主色调为蓝色"
+    "user_input": "Create a modern login page with username and password input fields",
+    "reference": "Use Material Design style with blue as the primary color"
   }
 }
 ```
 
 ### 2. gen_description
 
-基于用户简短的设计需求生成详细的设计说明文档。
+Generates a detailed design specification document based on brief user design requirements.
 
-**功能描述:**
-- 将用户的简短设计想法扩展为详细的设计规范
-- 支持纯文本需求、参考图片需求，或文本+参考图需求
-- 仅在用户明确提出需要拓展设计需求时使用
+**Description:**
+- Expands a brief design idea into a detailed design spec
+- Supports plain-text requirements, reference-image requirements, or text + reference image
+- Only use it when the user explicitly asks to expand their design requirements
 
-**参数:**
-- `user_input` (string, 必需): 用户的设计想法或需求描述
-- `reference` (string, 可选): 可选的参考信息或上下文
+**Parameters:**
+- `user_input` (string, required): the user's design idea or requirement description
+- `reference` (string, optional): optional reference information or context
 
-**示例:**
+**Example:**
 ```json
 {
   "name": "gen_description",
   "arguments": {
-    "user_input": "电商产品列表页面",
-    "reference": "需要支持筛选、排序和分页功能"
+    "user_input": "E-commerce product list page",
+    "reference": "Needs filtering, sorting and pagination support"
   }
 }
 ```
 
 ### 3. import_html
 
-将通过gen_html工具生成的HTML导入到用户的个人空间中。
+Imports the HTML generated by the gen_html tool into the user's personal space.
 
-**功能描述:**
-- 使用gen_html工具返回的key进行HTML导入操作
-- 将生成的HTML内容保存到用户的个人空间
-- 支持可选的HTML字符串参数作为备用方案
+**Description:**
+- Uses the key returned by the gen_html tool to import HTML
+- Saves the generated HTML content to the user's personal space
+- Supports an optional HTML string parameter as a fallback
 
-**参数:**
-- `key` (string, 推荐): 从gen_html工具响应中获取的key参数，这是导入操作的主要参数
-- `htmlString` (string, 可选): 可选的HTML字符串内容，通常不需要提供
+**Parameters:**
+- `key` (string, recommended): the key obtained from the gen_html tool response; the primary parameter for the import operation
+- `htmlString` (string, optional): optional HTML string content; usually not needed
 
-**使用建议:**
-- 推荐使用gen_html工具返回的key参数进行导入
-- key参数包含了所有必要的导入信息，无需手动提供HTML内容
+**Usage suggestions:**
+- Use the key parameter returned by gen_html for import
+- The key contains all necessary import information, so no manual HTML content is required
 
-**示例:**
+**Example:**
 ```json
 {
   "name": "import_html",
   "arguments": {
-    "key": "从gen_html工具获取的key值"
+    "key": "key value obtained from the gen_html tool"
   }
 }
 ```
 
-## 完整工作流程
+## Complete Workflows
 
-### 基础工作流程
+### Basic workflow
 
-1. **生成HTML**: 使用 `gen_html` 工具根据需求生成HTML代码
-2. **导入HTML**: 使用 `import_html` 工具将生成的HTML导入到个人空间
+1. **Generate HTML**: use the `gen_html` tool to generate HTML code from the requirements
+2. **Import HTML**: use the `import_html` tool to import the generated HTML into your personal space
 
-### 扩展工作流程
+### Extended workflow
 
-如果需要更详细的设计规范：
+If you need a more detailed design spec:
 
-1. **生成设计描述**: 使用 `gen_description` 工具扩展设计需求
-2. **生成HTML**: 使用生成的设计描述作为参考，调用 `gen_html` 工具
-3. **导入HTML**: 使用 `import_html` 工具保存到个人空间
+1. **Generate design description**: use the `gen_description` tool to expand the design requirements
+2. **Generate HTML**: use the generated design description as a reference and call `gen_html`
+3. **Import HTML**: use `import_html` to save it to your personal space
 
-**完整示例:**
+**Complete example:**
 
 ```json
-# 1. 生成HTML（基础流程）
+# 1. Generate HTML (basic flow)
 {
   "name": "gen_html",
   "arguments": {
-    "user_input": "创建一个现代风格的登录页面，包含用户名和密码输入框"
+    "user_input": "Create a modern login page with username and password input fields"
   }
 }
 
-# 2. 导入HTML（使用返回的key）
+# 2. Import HTML (using the returned key)
 {
   "name": "import_html",
   "arguments": {
-    "key": "gen_html工具返回的key值"
+    "key": "key value returned by the gen_html tool"
   }
 }
 ```
 
-**扩展示例（包含设计描述）:**
+**Extended example (with design description):**
 
 ```json
-# 1. 生成详细设计描述
+# 1. Generate a detailed design description
 {
   "name": "gen_description",
   "arguments": {
-    "user_input": "电商产品列表页面",
-    "reference": "需要支持筛选、排序和分页功能"
+    "user_input": "E-commerce product list page",
+    "reference": "Needs filtering, sorting and pagination support"
   }
 }
 
-# 2. 基于设计描述生成HTML
+# 2. Generate HTML based on the design description
 {
   "name": "gen_html",
   "arguments": {
-    "user_input": "电商产品列表页面",
-    "reference": "上一步生成的详细设计描述内容"
+    "user_input": "E-commerce product list page",
+    "reference": "The detailed design description generated in the previous step"
   }
 }
 
-# 3. 导入HTML
+# 3. Import HTML
 {
   "name": "import_html",
   "arguments": {
-    "key": "gen_html工具返回的key值"
+    "key": "key value returned by the gen_html tool"
   }
 }
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 modao-proto-mcp/
 ├── src/
 │   ├── tools/
-│   │   ├── base-tool.ts       # 工具基类，提供通用功能
-│   │   ├── gen-html.ts        # HTML生成工具
-│   │   ├── gen-description.ts # 设计描述生成工具
-│   │   └── import-html.ts     # HTML导入工具
-│   ├── http-util.ts           # HTTP工具类，处理API请求
-│   ├── types.d.ts             # TypeScript类型定义
-│   └── index.ts               # MCP服务器主入口点
+│   │   ├── base-tool.ts       # Tool base class, provides common functionality
+│   │   ├── gen-html.ts        # HTML generation tool
+│   │   ├── gen-description.ts # Design description generation tool
+│   │   └── import-html.ts     # HTML import tool
+│   ├── http-util.ts           # HTTP utility class, handles API requests
+│   ├── types.d.ts             # TypeScript type definitions
+│   └── index.ts               # MCP server main entry point
 ├── bin/
-│   └── cli.js                 # 命令行执行文件
-├── examples/                  # 使用示例和文档
-├── scripts/                   # 构建和发布脚本
-├── build.js                   # 项目构建配置
-├── package.json              # 项目依赖和配置
-├── tsconfig.json             # TypeScript配置
-├── API.md                    # API详细文档
-├── README.md                 # 英文README
-└── README.zh-CN.md           # 中文README（本文件）
+│   └── cli.js                 # CLI executable
+├── examples/                  # Usage examples and docs
+├── scripts/                   # Build and publish scripts
+├── build.js                   # Project build config
+├── package.json              # Project dependencies and config
+├── tsconfig.json             # TypeScript config
+├── API.md                    # Detailed API docs
+├── README.md                 # English README
+└── README.zh-CN.md           # Chinese README
 ```
 
-## 技术架构
+## Technical Architecture
 
 ```
-用户请求 → MCP客户端 → MCP服务器 → HTTP工具类 → 后端API
-                                              ↓
-                     响应处理 ← 结果格式化 ← API响应
+User request -> MCP client -> MCP server -> HTTP utility -> Backend API
+                                                         |
+                        Response handling <- Result formatting <- API response
 ```
 
-## 开发指南
+## Development Guide
 
-### 添加新工具
+### Adding a new tool
 
-1. **创建工具类**: 在 `src/tools/` 目录下创建新的工具类文件
-2. **继承基类**: 继承 `BaseTool` 抽象类
-3. **实现必需方法**:
-   - `getToolDefinition()`: 定义工具的MCP规范
-   - `execute()`: 实现工具的核心功能逻辑
-4. **注册工具**: 在 `src/index.ts` 的 `initializeTools()` 方法中注册新工具
+1. **Create the tool class**: create a new tool class file under `src/tools/`
+2. **Inherit the base class**: extend the `BaseTool` abstract class
+3. **Implement the required methods**:
+   - `getToolDefinition()`: define the tool's MCP spec
+   - `execute()`: implement the tool's core logic
+4. **Register the tool**: register the new tool in the `initializeTools()` method of `src/index.ts`
 
-### 工具开发示例
+### Tool development example
 
 ```typescript
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -367,13 +367,13 @@ export class MyNewTool extends BaseTool {
   getToolDefinition(): Tool {
     return {
       name: "my_new_tool",
-      description: "工具功能描述",
+      description: "Tool description",
       inputSchema: {
         type: "object",
         properties: {
           input_param: {
             type: "string",
-            description: "参数描述"
+            description: "Parameter description"
           }
         },
         required: ["input_param"]
@@ -382,53 +382,53 @@ export class MyNewTool extends BaseTool {
   }
 
   async execute(args: Record): Promise {
-    // 实现工具逻辑
+    // Implement the tool logic
     const result = await this.httpUtil.post('/api/endpoint', args);
     return this.createSuccessResult(result.data);
   }
 }
 ```
 
-### 开发注意事项
+### Development notes
 
-1. **参数验证**: 使用 `validateRequiredArgs()` 方法验证必需参数
-2. **错误处理**: 使用 `createErrorResult()` 和 `formatApiError()` 处理错误
-3. **HTTP请求**: 通过 `this.httpUtil` 发送API请求
-4. **调试模式**: 使用 `--debug` 参数启用详细日志输出
+1. **Parameter validation**: use the `validateRequiredArgs()` method to validate required parameters
+2. **Error handling**: use `createErrorResult()` and `formatApiError()` to handle errors
+3. **HTTP requests**: send API requests through `this.httpUtil`
+4. **Debug mode**: use the `--debug` parameter to enable verbose logging
 
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributing
 
-欢迎提交Issue和Pull Request！
+Issues and Pull Requests are welcome!
 
-## 更新日志
+## Changelog
 
-### v1.3.7 (当前版本)
-- 🔄 优化HTML导入流程，使用key进行导入操作
-- 📝 改进工具描述和参数说明
-- 🛠️ 简化工作流程，移除组织文件树功能
-- 📚 重新编写README文档，更准确地反映实际功能
-- ⚡ 提升错误处理和参数验证机制
+### v1.3.7 (current)
+- Improved the HTML import flow, importing via key
+- Improved tool descriptions and parameter docs
+- Simplified workflows; removed the organization file-tree feature
+- Rewrote the README to more accurately reflect actual functionality
+- Improved error handling and parameter validation
 
 ### v1.2.0
-- 📤 新增HTML导入功能 (`import_html`)
-- 🔄 支持完整的HTML生成到导入工作流程
-- 🛠️ 改进HTTP工具类和错误处理
+- Added HTML import (`import_html`)
+- Full HTML generation-to-import workflow support
+- Improved the HTTP utility class and error handling
 
 ### v1.1.0
-- ✨ 新增设计描述生成功能 (`gen_description`)
-- 🚀 改进HTML生成功能
-- 🛠️ 完善MCP协议兼容性
-- 📚 添加详细的使用文档
+- Added design description generation (`gen_description`)
+- Improved HTML generation
+- Completed MCP protocol compatibility
+- Added detailed usage documentation
 
 ### v1.0.0
-- 🎉 初始版本发布
-- 🚀 支持HTML代码生成 (`gen_html`)
-- 🛠️ 完全兼容Model Context Protocol标准
-- 📦 提供完整的开发和构建工具链
+- Initial release
+- HTML code generation (`gen_html`)
+- Fully compatible with the Model Context Protocol standard
+- Complete development and build toolchain
 
 **Official site: ** [https://github.com/modao-dev/modao-proto-mcp](https://github.com/modao-dev/modao-proto-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -665,7 +665,7 @@ Server 日志：
 
 - 传输方式：`stdio`
 - 启动命令：`uv`
-- 参数：`--directory <你的项目路径> run main.py`
+- 参数：`--directory <YOUR_PROJECT_PATH> run main.py`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

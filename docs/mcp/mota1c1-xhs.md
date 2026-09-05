@@ -1,55 +1,52 @@
 ---
 title: "xhs-mcp"
-description: "xhs-mcp 一个小红书的 MCP 服务器，支持通过对话的方式进行账号登陆、文案生成、以及自动发布。相比于已有的实现，优势在于登陆账号以及文案发布全部可以在对话过程中自动实现，并能支持多个账号批量发布文案。此外，在调用发表文章的接口时，该工具还支持自动根据文案内容生成小红书配图。"
+description: "An MCP server for Xiaohongshu (RED) that supports account login, copywriting generation, and automatic publishing through conversation. It supports automatic login and publishing for multiple accounts…"
 ---
 
 # xhs-mcp
 
-xhs-mcp 一个小红书的 MCP 服务器，支持通过对话的方式进行账号登陆、文案生成、以及自动发布。相比于已有的实现，优势在于登陆账号以及文案发布全部可以在对话过程中自动实现，并能支持多个账号批量发布文案。此外，在调用发表文章的接口时，该工具还支持自动根据文案内容生成小红书配图。
+An MCP server for Xiaohongshu (RED) that supports account login, copywriting generation, and automatic publishing through conversation. It supports automatic login and publishing for multiple accounts…
 
 # xhs-mcp
 
-一个小红书的 MCP 服务器，支持通过对话的方式进行账号登陆、文案生成、以及自动发布。相比于已有的实现，优势在于登陆账号以及文案发布全部可以在对话过程中自动实现，并能支持多个账号批量发布文案。此外，在调用发表文章的接口时，该工具还支持自动根据文案内容生成小红书配图。
+An MCP server for Xiaohongshu (RED) that supports account login, copywriting generation, and automatic publishing through conversation. Compared to existing implementations, the advantage is that account login and post publishing can all be automated within the conversation, and it supports batch publishing across multiple accounts. In addition, when calling the post-publishing API, the tool can automatically generate Xiaohongshu-style cover images based on the copy content.
 
-## 原理
+## How it works
 
-使用浏览器模拟的方式，通过 Chrome 驱动启动浏览器，来自动进行账号登录（会发送验证码到手机上），以及发布文案。登录后，会将 Cookie 保存下来，之后发布文章就不再需要重新登录了。项目已集成 webdriver-manager，无需手动下载和配置 Chrome 驱动，只需下载并安装 Chrome 浏览器本体即可（下载地址：https://www.google.com/intl/zh-CN/chrome/）。
+It uses browser simulation, launching a browser via ChromeDriver to automatically log in to accounts (a verification code is sent to the phone) and publish posts. After login, the Cookie is saved, so subsequent post publishing no longer requires re-login. The project integrates webdriver-manager, so there is no need to manually download and configure ChromeDriver - you only need to download and install the Chrome browser itself (download: https://www.google.com/intl/zh-CN/chrome/).
 
-## 示例
+## Examples
 
+## Environment Setup
 
-
-
-## 环境配置
-
-1. 确保系统已安装 Chrome 浏览器，下载地址（https://www.google.com/intl/zh-CN/chrome/）
-2. 安装 uv
+1. Make sure Chrome is installed on the system (download: https://www.google.com/intl/zh-CN/chrome/)
+2. Install uv
 
 ```
-pip install uv # 注意，如果使用anaconda进行环境管理，需要在base环境中pip
+pip install uv # note: if you use anaconda for environment management, run pip in the base environment
 ```
 
-## 启动服务器
+## Starting the Server
 
-在发布图文时，必须有一张配图才可以发布。所以在调用发布文案工具时会自动根据文案生成一张小红书风格的配图。在生成小配图时，用到了 DeepSeek 的 chat 模型，所以需要配置 DEEPSEEK_API_KEY 这个环境变量。如果需要切换到其它模型，请配置 BASE_URL 环境变量，默认为 DEEPSEEK 的地址。
+When publishing a post with images, at least one cover image is required. So when the post-publishing tool is called, it automatically generates a Xiaohongshu-style cover image based on the copy. The DeepSeek chat model is used to generate the small cover image, so you need to configure the DEEPSEEK_API_KEY environment variable. To switch to another model, configure the BASE_URL environment variable; it defaults to DeepSeek's address.
 
-### 方式 1：直接运行命令
+### Method 1: Run the command directly
 
 ```
 env DEEPSEEK_API_KEY=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
 ```
 
-若切换模型:
+To switch models:
 
 ```
 env DEEPSEEK_API_KEY=xxxx BASE_URL=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
 ```
 
-为避免冗长，下面的方式介绍中会省略掉 BASE_URL 环境变量的配置。
+To keep things concise, the BASE_URL environment variable configuration is omitted from the methods below.
 
-### 方式 2: 配置文件运行
+### Method 2: Run via config file
 
-在配置文件中添加
+Add the following to your config file:
 
 ```
 {
@@ -68,17 +65,17 @@ env DEEPSEEK_API_KEY=xxxx BASE_URL=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
 }
 ```
 
-### 方式 3: 源码安装并运行
+### Method 3: Install from source and run
 
-这种方式能够获得最新的代码。
+This gives you the latest code.
 
 ```
 git clone https://github.com/SoftEgLi/xhs-mcp.git
 cd xhs-mcp
-pip install -e . # 注意，如果安装了anaconda，需要在base环境中进行pip
+pip install -e . # note: if anaconda is installed, run pip in the base environment
 ```
 
-MCP 配置文件:
+MCP config file:
 
 ```
 {
@@ -94,13 +91,13 @@ MCP 配置文件:
 }
 ```
 
-## 注意事项
+## Notes
 
-Cookie 的有效期是一个月，如果你自己在网页上登录了小红书，那么之前的 Cookie 有可能会失效，失效后在发布文章时，会重新走一遍 MCP 的登录流程。
+The Cookie is valid for one month. If you log in to Xiaohongshu on the web yourself, the previous Cookie may become invalid; after it expires, publishing a post will go through the MCP login flow again.
 
-## 开源协议
+## License
 
-使用 MIT 协议。
+MIT
 
 **Official site: ** [https://github.com/SoftEgLi/xhs-mcp](https://github.com/SoftEgLi/xhs-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

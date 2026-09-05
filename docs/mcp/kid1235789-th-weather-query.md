@@ -7,87 +7,88 @@ description: "Query weather conditions by place name, latitude and longitude, ar
 
 Query weather conditions by place name, latitude and longitude, area code and postal code, IP address, or scenic spot name. You can obtain data on the current 24-hour weather, a 7-day forecast, a 15-d…
 
-# 瞳虎-天气预报查询 MCP 服务文档
+# Tonghu Weather Forecast Query MCP Service Documentation
 
-## 什么是 瞳虎-天气预报查询 MCP 服务？
-瞳虎天气预报查询MCP Server提供以下核心功能：
-- 通过地名、经纬度、区号邮编、IP地址、景点名称来查询天气情况。
-- 可查询到当前24小时天气、未来7天、15天的天气预报及历史天气情况的数据。
+## What is the Tonghu Weather Forecast Query MCP Service?
+The Tonghu weather forecast query MCP Server provides the following core features:
+- Query weather conditions by place name, latitude/longitude, area code/postal code, IP address, or scenic spot name.
+- Get data for the current 24-hour weather, 7-day forecast, 15-day forecast, and historical weather conditions.
 
-服务特点：
-- **覆盖信息全**：官方数据直连，数据详细准确，可支持各种维度查询。
-- **实时更新**：实时核验，毫秒响应，精准核验。
-- **应用广泛**：广泛应用于能源、电力、农业、生活服务类应用、智能硬件、航天航海、旅游业、建筑业等领域。
+Service features:
+- **Comprehensive coverage**: direct official data connection, detailed and accurate data, supporting queries across various dimensions.
+- **Real-time updates**: real-time verification, millisecond response, precise validation.
+- **Wide application**: widely used in energy, power, agriculture, life service apps, smart hardware, aerospace, navigation, tourism, construction, and other fields.
 
 ---
 
-## 如何使用 瞳虎-天气预报查询 MCP 服务？
-### API Key 获取方式
-1. 注册登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")
-2. 创建您的 API Key（已创建的可直接使用）
-3. 在[产品中心](https://mcp.tonghu.top/#/layout/prodCenter "瞳虎MCP")开通【天气预报查询】服务
-### 部署方式1（SSE）
+## How to use the Tonghu Weather Forecast Query MCP Service?
+### Getting an API Key
+1. Register and log in to the [Tonghu MCP platform](https://mcp.tonghu.top "Tonghu MCP")
+2. Create your API Key (an existing one can be used directly)
+3. Enable the [Weather Forecast Query] service in the [Product Center](https://mcp.tonghu.top/#/layout/prodCenter "Tonghu MCP")
+
+### Deployment method 1 (SSE)
 ```
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/sse?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/sse?apiKey=YOUR_API_KEY_FROM_TONGHU_MCP"
     }
   }
 }
 ```
-### 部署方式2（Streamable Http）
+
+### Deployment method 2 (Streamable HTTP)
 ```
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/streamable?apiKey=YOUR_API_KEY_FROM_TONGHU_MCP"
     }
   }
 }
 ```
-> **注意事项**：
-- 服务已支持集成到智能体和工作流中
+
+> **Notes**:
+- The service already supports integration into agents and workflows
 
 ---
 
+## Use cases for the Tonghu Weather Forecast Query MCP Service
 
+1. **Smart travel planning**
+   - After the user enters a destination name or selects GPS positioning, the app automatically calls the MCP weather forecast query API to get real-time weather and the forecast for the coming days.
+   - Suggests clothing and items to bring based on the weather.
+   - Improves travel comfort and avoids inconvenience caused by weather changes.
 
-## 瞳虎-天气预报查询 MCP 服务的使用案例
+3. **Agricultural production guidance**
+   - Use the MCP query service to get weather forecasts and historical data for specific farmland locations, combined with agricultural expert systems to provide planting advice.
+   - Increase crop yields and reduce losses from natural disasters.
+   - Manage farm resources scientifically and optimize production processes.
 
-1. **智能出行规划**  
-   - 用户输入目的地名称或选择GPS定位后，应用自动调用 MCP 天气预报查询接口获取实时天气和未来几天的天气预报。
-   - 根据天气情况建议穿着、携带物品等。
-   - 提高出行舒适度，避免因天气变化带来的不便。
-
-3. **农业生产指导**  
-   - 利用 MCP 查询服务获取特定农田位置的天气预报和历史数据，结合农业专家系统提供种植建议。
-   - 提升农作物产量，减少自然灾害损失。
-   - 科学管理农场资源，优化生产流程。
-  
-4. **户外活动组织**  
-   - 使用 MCP 查询目标区域的详细天气信息，包括温度、降水概率、风速等关键指标。
-   - 根据天气预报决定是否按原计划进行活动，或者调整活动日期和地点。
-   - 确保参与者安全，提升活动质量。避免不必要的经济损失，提高组织效率。
+4. **Outdoor event organization**
+   - Use MCP to query detailed weather information for the target area, including temperature, precipitation probability, wind speed, and other key indicators.
+   - Decide whether to proceed with the activity as planned or adjust the date and location based on the forecast.
+   - Ensure participant safety and improve event quality. Avoid unnecessary economic losses and improve organizational efficiency.
 
 ---
 
-## 常见问题解答
+## FAQ
 
-**Q：使用瞳虎-天气预报查询MCP服务是否需要付费？**  
-A：首次开通产品有免费试用额度，额度耗尽可选择：
-- 购买套餐（限时优惠）
-- 充值余额按次扣费
-- 量大可联系客服定制额外优惠
+**Q: Does using the Tonghu Weather Forecast Query MCP Service cost money?**
+A: The first activation of the product includes a free trial quota. When the quota runs out, you can choose:
+- Purchase a package (limited-time discount)
+- Top up your balance and pay per use
+- For large volumes, contact customer service for custom discounts
 
-**Q：使用瞳虎-天气预报查询MCP服务注意事项？**  
-A：首次使用请：
-1. 登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")，使用手机号注册账号
-2. 创建 API Key
-3. 在产品中心开通服务（可额外购买套餐）
+**Q: What should I note when using the Tonghu Weather Forecast Query MCP Service?**
+A: For first-time use:
+1. Log in to the [Tonghu MCP platform](https://mcp.tonghu.top "Tonghu MCP") and register with your phone number
+2. Create an API Key
+3. Enable the service in the Product Center (you can additionally purchase a package)
 
-> **技术支持**  
-联系平台客服或王先生：18363092551（微信同号）
+> **Technical support**
+> Contact platform customer service or Mr. Wang: 18363092551 (also on WeChat)
 
 **Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

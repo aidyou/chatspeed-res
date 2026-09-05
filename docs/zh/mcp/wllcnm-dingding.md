@@ -147,7 +147,7 @@ MIT License
 
 - 传输方式：`stdio`
 - 启动命令：`docker`
-- 参数：`run -i --rm -e DINGDING_APP_KEY=你的AppKey -e DINGDING_APP_SECRET=你的AppSecret ghcr.io/你的用户名/dingding-mcp:latest`
+- 参数：`run -i --rm -e DINGDING_APP_KEY=YOUR_APP_KEY -e DINGDING_APP_SECRET=YOUR_APP_SECRET ghcr.io/YOUR_USERNAME/dingding-mcp:latest`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

@@ -97,7 +97,7 @@ uv pip install -r requirements.txt
 ## MCP 配置
 
 - 传输方式：`stdio`
-- 启动命令：`/绝对路径/到/您的项目/.venv/bin/python`
+- 启动命令：`/absolute/path/to/YOUR_PROJECT/.venv/bin/python`
 - 参数：`src/main.py`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。

@@ -77,7 +77,7 @@ MIT License © 2023 [LSTM-Kirigaya](https://github.com/LSTM-Kirigaya)
 
 - 传输方式：`stdio`
 - 启动命令：`uv`
-- 参数：`--directory <替换为你的slidev-mcp路径> run servers\themes\academic\server.py`
+- 参数：`--directory <REPLACE_WITH_YOUR_SLIDEV_MCP_PATH> run servers\themes\academic\server.py`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

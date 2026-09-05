@@ -6,7 +6,7 @@
     "zh-Hans": "即梦MCP"
   },
   "description": {
-    "en": "# 即梦AI图片生成 MCP 服务\n\n基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。",
+    "en": "# Jimeng AI Image Generation MCP Service\nAn image generation MCP (Model Context Protocol) service based on Volcengine's Jimeng AI.",
     "zh-Hans": "该项目是基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务，支持多种图片比例，并且可以方便地与各种MCP客户端集成。"
   },
   "detail": {
@@ -32,11 +32,11 @@
     "env": [
       [
         "JIMENG_ACCESS_KEY",
-        "你的AccessKey"
+        "YOUR_ACCESS_KEY"
       ],
       [
         "JIMENG_SECRET_KEY",
-        "你的SecretKey"
+        "YOUR_SECRET_KEY"
       ]
     ],
     "requiredInputs": []

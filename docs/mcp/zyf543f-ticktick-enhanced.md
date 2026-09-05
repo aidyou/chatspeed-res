@@ -1,11 +1,11 @@
 ---
 title: "ticktick-mcp-enhanced"
-description: "TickTick MCP Enhanced Version A Model Context Protocol (MCP) server that allows large language models to manage your TickTick to-do items. 🔗 API Documentation: TickTick Official OpenAPI --- 🛠️ Prerequ…"
+description: "TickTick MCP Enhanced Version. A Model Context Protocol (MCP) server that allows large language models to manage your TickTick to-do items. API Documentation: TickTick Official OpenAPI. Prerequisites…"
 ---
 
 # ticktick-mcp-enhanced
 
-TickTick MCP Enhanced Version A Model Context Protocol (MCP) server that allows large language models to manage your TickTick to-do items. 🔗 API Documentation: TickTick Official OpenAPI --- 🛠️ Prerequ…
+TickTick MCP Enhanced Version. A Model Context Protocol (MCP) server that allows large language models to manage your TickTick to-do items. API Documentation: TickTick Official OpenAPI. Prerequisites…
 
 # TickTick MCP Enhanced Version
 
@@ -65,7 +65,7 @@ Using **Claude Desktop** (`claude_desktop_config.json`) as an example:
 
         "--directory",
 
-        "/项目/的/绝对路径/ticktick-mcp-enhanced",
+        "/absolute/path/to/your/project/ticktick-mcp-enhanced",
 
         "ticktick-mcp",
 
@@ -75,15 +75,15 @@ Using **Claude Desktop** (`claude_desktop_config.json`) as an example:
 
       "env": {
 
-        "TICKTICK_ACCOUNT_TYPE": "china", // "china" 或 "global" 选择你滴答清单账户的区域
+        "TICKTICK_ACCOUNT_TYPE": "china", // "china" or "global" - select your TickTick account region
 
-        "TICKTICK_CLIENT_ID": "你的_client_id",
+        "TICKTICK_CLIENT_ID": "YOUR_CLIENT_ID",
 
-        "TICKTICK_CLIENT_SECRET": "你的_client_secret",
+        "TICKTICK_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
 
-        "TICKTICK_REDIRECT_URI": "http://localhost:8000/callback", // 这里填写上一步中你在开发者平台注册的URL
+        "TICKTICK_REDIRECT_URI": "http://localhost:8000/callback", // fill in the URL you registered on the developer platform in the previous step
 
-        "MCP_LOG_ENABLE": "false" // 可选：开启MCP日志记录功能
+        "MCP_LOG_ENABLE": "false" // optional: enable MCP log recording
 
       }
 
@@ -132,19 +132,19 @@ ticktick-mcp-enhanced/
 
 │   ├── src/
 
-│   │   ├── server.py          # MCP 服务入口
+│   │   ├── server.py          # MCP service entry
 
-│   │   ├── auth.py            # OAuth 逻辑与回调服务器
+│   │   ├── auth.py            # OAuth logic and callback server
 
-│   │   ├── tools/             # 各类工具实现
+│   │   ├── tools/             # tool implementations
 
-│   │   └── utils/             # 格式化与校验工具
+│   │   └── utils/             # formatting and validation utilities
 
-│   └── __main__.py            # CLI 启动项
+│   └── __main__.py            # CLI startup entry
 
-├── pyproject.toml             # 项目配置与依赖
+├── pyproject.toml             # project config and dependencies
 
-└── README_en.md               # 英文文档
+└── README_en.md               # English documentation
 
 ```
 
@@ -160,7 +160,7 @@ ticktick-mcp-enhanced/
 
 - Transport: `stdio`
 - Command: `/path/to/uv`
-- Args: `run --directory /项目/的/绝对路径/ticktick-mcp-enhanced ticktick-mcp run`
+- Args: `run --directory /absolute/path/to/your/project/ticktick-mcp-enhanced ticktick-mcp run`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 

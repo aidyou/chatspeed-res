@@ -7,250 +7,27 @@ description: "A Model Context Protocol (MCP) server that provides social media p
 
 A Model Context Protocol (MCP) server that provides social media publishing and account management capabilities for AI-driven content creation and automation.
 
-# AiToEarn MCP(中文文档)
-
-一个模型上下文协议（MCP）服务器，为AI驱动的内容创作和自动化提供社交媒体发布和账户管理功能。
-
-## 🚀 功能特性
-
-- **账户管理**：检索和管理社交媒体账户
-- **内容发布**：将视频和文章内容发布到社交媒体平台
-- **批量操作**：同时将内容发布到多个账户
-- **类型验证**：基于内容类型要求的自动验证
-- **错误处理**：提供详细反馈的综合错误处理
-
-## 📋 系统要求
-
-- Node.js >= 18.0.0
-- npm 或 yarn
-- 有效API密钥的AiToEarn API访问权限
-
-## 🛠️ 安装
-
-### 通过 npm 安装（推荐）
-
-```bash
-npm install aitoearn-mcp
-```
-
-### 通过 GitHub 安装
-
-1. 克隆仓库：
-```bash
-git clone https://github.com/aitoearn/aitoearn-mcp-server.git
-cd aitoearn-mcp
-```
-
-2. 安装依赖：
-```bash
-npm install
-```
-
-3. 构建项目：
-```bash
-npm run build
-```
-
-## 🔧 使用方法
-
-### 作为全局CLI工具使用
-
-全局安装后：
-```bash
-npm install -g aitoearn-mcp
-aitoearn-mcp
-```
-
-### 作为本地包使用
-
-本地安装后：
-```bash
-npm install aitoearn-mcp
-npx aitoearn-mcp
-```
-
-### 编程方式使用
-
-```javascript
-import { spawn } from 'child_process';
-
-// 启动MCP服务器作为子进程
-const server = spawn('npx', ['aitoearn-mcp']);
-
-server.stdout.on('data', (data) => {
-  console.log(`服务器: ${data}`);
-});
-```
-
-### 运行MCP服务器
-
-```bash
-npm start
-```
-
-### 可用工具
-
-#### 1. get-skKey
-打开Aitoearn平台网站进行账户管理和平台访问。
-
-#### 2. create-publish-list
-批量发布内容到与您的API密钥关联的所有账户。
-
-**参数：**
-- `skKey` (字符串)：您的AiToEarn API密钥
-- `type` (字符串)：内容类型（"video" 或 "article"）
-- `title` (字符串)：内容标题
-- `coverUrl` (字符串)：封面图片URL
-- `topics` (字符串)：逗号分隔的话题/标签
-- `desc` (字符串，可选)：内容描述
-- `videoUrl` (字符串)：视频URL（视频类型必需）
-- `imgUrlList` (字符串)：逗号分隔的图片URL（文章类型必需）
-- `publishTime` (字符串，可选)：计划发布时间
-
-**示例（视频）：**
-```json
-{
-  "skKey": "sk-YOUR_API_KEY_HERE",
-  "type": "video",
-  "title": "我的精彩视频",
-  "videoUrl": "https://example.com/video.mp4",
-  "coverUrl": "https://example.com/cover.jpg",
-  "topics": "生活方式,娱乐"
-}
-```
-
-**示例（文章）：**
-```json
-{
-  "skKey": "sk-YOUR_API_KEY_HERE",
-  "type": "article",
-  "title": "我的文章标题",
-  "imgUrlList": "https://example.com/img1.jpg,https://example.com/img2.jpg",
-  "coverUrl": "https://example.com/cover.jpg",
-  "topics": "技术,创新"
-}
-```
-
-#### 3. get-publish-task-list
-获取获取发布任务列表
-
-**参数：**
-- `skKey` (字符串)：您的AiToEarn API密钥
-- `flowId` (字符串)：批量发布时返回的流水ID
-
-**示例**
-```json
-{
-  "skKey": "sk-YOUR_API_KEY_HERE",
-  "flowId": "flowId",
-}
-```
-
-### MCP客户端配置
-
-#### Claude Desktop
-
-将服务器配置添加到您的Claude Desktop配置文件中：
-
-**macOS/Linux：** `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows：** `%APPDATA%/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "aitoearn": {
-      "command": "npx",
-      "args": ["aitoearn-mcp"]
-    }
-  }
-}
-```
-
-或者如果是全局安装：
-
-```json
-{
-  "mcpServers": {
-    "aitoearn": {
-      "command": "aitoearn-mcp"
-    }
-  }
-}
-```
-
-#### 其他MCP客户端
-
-对于其他MCP客户端，请参考其文档了解如何配置MCP服务器。该服务器通过stdio传输运行。
-
-**描述：**
-此工具提供关于AiToEarn平台（https://aitoearn.ai）的信息，包括：
-- 账户管理和配置
-- 内容创建和调度
-- 分析和性能跟踪
-- API密钥管理
-- 社交媒体账户集成
-
-## 🏗️ 内容类型要求
-
-### 视频内容 (`type: "video"`)
-- **必需**：`videoUrl` - 视频文件URL
-- **可选**：`imgUrlList` - 附加图片
-
-### 文章内容 (`type: "article"`)
-- **必需**：`imgUrlList` - 逗号分隔的图片URL列表
-- **可选**：`videoUrl` - 附加视频内容
-
-## 🔍 错误处理
-
-服务器提供包含详细错误消息的综合错误处理：
-
-- **验证错误**：关于缺少必需字段的清晰消息
-- **API错误**：关于API通信问题的详细信息
-- **网络错误**：连接问题的有用指导
-- **认证错误**：关于API密钥问题的清晰反馈
-
-## 🧪 开发
-
-### 构建
-```bash
-npm run build
-```
-
-### 开发模式
-```bash
-npm run dev
-```
-
-## 📄 许可证
-
-本项目采用MIT许可证 - 详情请参阅LICENSE文件。
-
-## 🔗 相关链接
-
-- [ModelScope MCP文档](https://modelscope.cn/docs/mcp/create)
-- [模型上下文协议规范](https://spec.modelcontextprotocol.io/)
-- [AiToEarn平台](https://aitoearn.ai)
-# AiToEarn MCP 
+# AiToEarn MCP
 
 A Model Context Protocol (MCP) server that provides social media publishing and account management capabilities for AI-driven content creation and automation.
 
-## 🚀 Features
+## Features
 
-- **Account Management**: Retrieve and manage social media accounts
-- **Content Publishing**: Publish video and article content to social media platforms
-- **Batch Operations**: Publish content to multiple accounts simultaneously
-- **Type Validation**: Automatic validation based on content type requirements
-- **Error Handling**: Comprehensive error handling with detailed feedback
+- **Account Management**: retrieve and manage social media accounts
+- **Content Publishing**: publish video and article content to social media platforms
+- **Batch Operations**: publish content to multiple accounts simultaneously
+- **Type Validation**: automatic validation based on content type requirements
+- **Error Handling**: comprehensive error handling with detailed feedback
 
-## 📋 Requirements
+## Requirements
 
 - Node.js >= 18.0.0
 - npm or yarn
-- AiToEarn API access with valid API key
+- AiToEarn API access with a valid API key
 
-## 🛠️ Installation
+## Installation
 
-### Via npm (Recommended)
+### Via npm (recommended)
 
 ```bash
 npm install aitoearn-mcp
@@ -274,9 +51,9 @@ npm install
 npm run build
 ```
 
-## 🔧 Usage
+## Usage
 
-### Using as a Global CLI Tool
+### Using as a global CLI tool
 
 After installing globally:
 ```bash
@@ -284,7 +61,7 @@ npm install -g aitoearn-mcp
 aitoearn-mcp
 ```
 
-### Using as a Local Package
+### Using as a local package
 
 After installing locally:
 ```bash
@@ -292,7 +69,7 @@ npm install aitoearn-mcp
 npx aitoearn-mcp
 ```
 
-### Programmatic Usage
+### Programmatic usage
 
 ```javascript
 import { spawn } from 'child_process';
@@ -305,32 +82,32 @@ server.stdout.on('data', (data) => {
 });
 ```
 
-### Running the MCP Server
+### Running the MCP server
 
 ```bash
 npm start
 ```
 
-### Available Tools
+### Available tools
 
 #### 1. get-skKey
-Open Aitoearn platform website for account management and platform access.
+Opens the AiToEarn platform website for account management and platform access.
 
 #### 2. create-publish-list
-Batch publish content to all accounts associated with your API key.
+Batch-publishes content to all accounts associated with your API key.
 
 **Parameters:**
-- `skKey` (string): Your AiToEarn API key
-- `type` (string): Content type ("video" or "article")
-- `title` (string): Content title
-- `coverUrl` (string): Cover image URL
-- `topics` (string): Comma-separated topics/hashtags
-- `desc` (string, optional): Content description
-- `videoUrl` (string): Video URL (required for video type)
-- `imgUrlList` (string): Comma-separated image URLs (required for article type)
-- `publishTime` (string, optional): Scheduled publish time
+- `skKey` (string): your AiToEarn API key
+- `type` (string): content type ("video" or "article")
+- `title` (string): content title
+- `coverUrl` (string): cover image URL
+- `topics` (string): comma-separated topics/hashtags
+- `desc` (string, optional): content description
+- `videoUrl` (string): video URL (required for video type)
+- `imgUrlList` (string): comma-separated image URLs (required for article type)
+- `publishTime` (string, optional): scheduled publish time
 
-**Example (Video):**
+**Example (video):**
 ```json
 {
   "skKey": "sk-YOUR_API_KEY_HERE",
@@ -342,7 +119,7 @@ Batch publish content to all accounts associated with your API key.
 }
 ```
 
-**Example (Article):**
+**Example (article):**
 ```json
 {
   "skKey": "sk-YOUR_API_KEY_HERE",
@@ -355,21 +132,21 @@ Batch publish content to all accounts associated with your API key.
 ```
 
 #### 3. get-publish-task-list
-Get the list of published tasks
+Gets the list of publish tasks.
 
-**参数：**
-- `skKey` (string): Your AiToEarn API key
-- `flowId` (string): The flow ID returned during batch release
+**Parameters:**
+- `skKey` (string): your AiToEarn API key
+- `flowId` (string): the flow ID returned during batch publishing
 
-**示例**
+**Example:**
 ```json
 {
   "skKey": "sk-YOUR_API_KEY_HERE",
-  "flowId": "flowId",
+  "flowId": "flowId"
 }
 ```
 
-### MCP Client Configuration
+### MCP client configuration
 
 #### Claude Desktop
 
@@ -401,54 +178,54 @@ Or if installed globally:
 }
 ```
 
-#### Other MCP Clients
+#### Other MCP clients
 
-For other MCP clients, refer to their documentation on how to configure MCP servers. The server runs over stdio transport.
+For other MCP clients, refer to their documentation on how to configure MCP servers. This server runs over stdio transport.
 
 **Description:**
-This tool provides information about the AiToEarn platform (https://aitoearn.ai) including:
+This tool provides information about the AiToEarn platform (https://aitoearn.ai), including:
 - Account management and configuration
 - Content creation and scheduling
 - Analytics and performance tracking
 - API key management
 - Social media account integration
 
-## 🏗️ Content Type Requirements
+## Content Type Requirements
 
-### Video Content (`type: "video"`)
-- **Required**: `videoUrl` - Video file URL
-- **Optional**: `imgUrlList` - Additional images
+### Video content (`type: "video"`)
+- **Required**: `videoUrl` - video file URL
+- **Optional**: `imgUrlList` - additional images
 
-### Article Content (`type: "article"`)
-- **Required**: `imgUrlList` - Comma-separated list of image URLs
-- **Optional**: `videoUrl` - Additional video content
+### Article content (`type: "article"`)
+- **Required**: `imgUrlList` - comma-separated list of image URLs
+- **Optional**: `videoUrl` - additional video content
 
-## 🔍 Error Handling
+## Error Handling
 
 The server provides comprehensive error handling with detailed error messages:
 
-- **Validation Errors**: Clear messages about missing required fields
-- **API Errors**: Detailed information about API communication issues
-- **Network Errors**: Helpful guidance for connectivity problems
-- **Authentication Errors**: Clear feedback about API key issues
+- **Validation errors**: clear messages about missing required fields
+- **API errors**: detailed information about API communication issues
+- **Network errors**: helpful guidance for connectivity problems
+- **Authentication errors**: clear feedback about API key issues
 
-## 🧪 Development
+## Development
 
 ### Build
 ```bash
 npm run build
 ```
 
-### Development Mode
+### Development mode
 ```bash
 npm run dev
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🔗 Related Links
+## Related Links
 
 - [ModelScope MCP Documentation](https://modelscope.cn/docs/mcp/create)
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/)

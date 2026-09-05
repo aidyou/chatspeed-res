@@ -1,11 +1,11 @@
 ---
 title: "Logo-MCP"
-description: "一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。"
+description: "An intelligent logo extraction and processing MCP (Model Context Protocol) server that supports automatically identifying and extracting logo icons from website URLs, and provides image processing and…"
 ---
 
 # Logo-MCP
 
-一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。
+An intelligent logo extraction and processing MCP (Model Context Protocol) server that supports automatically identifying and extracting logo icons from website URLs, and provides image processing and…
 
 # logo-mcp
 

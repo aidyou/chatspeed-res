@@ -7,54 +7,54 @@ description: "Life Coach Agent, Exploring Life Decisions"
 
 Life Coach Agent, Exploring Life Decisions
 
-# 人生教练 MCP 项目
+# Life Coach MCP Project
 
-一个基于 Model Context Protocol (MCP) 的智能人生教练系统，提供 12 位知名人生教练的专业提示词和智能对话功能。
+An intelligent life coach system based on the Model Context Protocol (MCP), providing professional prompts and intelligent conversation features from 12 well-known life coaches.
 
-## 功能特性
+## Features
 
-- **智能人生教练对话** - 12 位知名人生教练提供专业建议
-- **多角度思考** - 支持多位教练同时分析问题
-- **动态教练选择** - 根据问题类型智能匹配最合适的教练
+- **Intelligent life coach conversations** - professional advice from 12 well-known life coaches
+- **Multi-perspective thinking** - supports multiple coaches analyzing a problem simultaneously
+- **Dynamic coach selection** - intelligently matches the most suitable coach based on the question type
 
-## 可用教练
+## Available Coaches
 
-| 教练 | 专长领域 | 适用场景 |
+| Coach | Specialty | Use cases |
 |------|----------|----------|
-| 李笑来 | 认知科学应用 | 个人成长、学习方法 |
-| 苏格拉底 | 启发式对话 | 思辨、哲学思考 |
-| 杰伊·福雷斯特 | 系统动力学 | 系统思维、反馈机制 |
-| 镜像的我 | 个人记忆分析 | 自我对话、反思 |
-| 思辨之神 | 逆向思考 | 逻辑分析、漏洞发现 |
-| 大卫·休谟 | 真相拷问 | 深度思考、批判性思维 |
-| 问题的考古学家 | 问题本质挖掘 | 复杂问题分析 |
-| 炼金士 | 情绪转化 | 负面情绪处理 |
-| 史蒂夫·乔布斯 | 产品思维 | 用户体验、完美主义 |
-| 查理芒格 | 多元思维 | 投资思维、智慧决策 |
-| CBT心理学家 | 认知行为疗法 | 心理健康、情绪调节 |
-| 埃隆·马斯克 | 第一性原理 | 创新思维、颠覆式思考 |
+| Li Xiaolai | Applied cognitive science | personal growth, learning methods |
+| Socrates | Socratic dialogue | critical thinking, philosophical inquiry |
+| Jay Forrester | System dynamics | systems thinking, feedback mechanisms |
+| Mirror Me | Personal memory analysis | self-dialogue, reflection |
+| God of Dialectics | Reverse thinking | logical analysis, finding flaws |
+| David Hume | Truth interrogation | deep thinking, critical reasoning |
+| Archaeologist of Problems | Uncovering problem essences | complex problem analysis |
+| The Alchemist | Emotional transformation | handling negative emotions |
+| Steve Jobs | Product thinking | user experience, perfectionism |
+| Charlie Munger | Multidisciplinary thinking | investing mindset, wise decisions |
+| CBT Psychologist | Cognitive behavioral therapy | mental health, emotional regulation |
+| Elon Musk | First principles | innovative thinking, disruptive ideas |
 
-## 快速开始
+## Quick Start
 
-### 1. 安装
+### 1. Installation
 
-**通过 npm 安装（推荐）**
+**Install via npm (recommended)**
 ```bash
 npm install -g lifecoach-mcp-server
 ```
 
-**从源码安装**
+**Install from source**
 ```bash
 cd mcp-server
 npm install
 npm start
 ```
 
-### 2. 配置 Claude Desktop
+### 2. Configure Claude Desktop
 
-在 Claude Desktop 设置中添加 MCP 服务器：
+Add the MCP server in Claude Desktop settings:
 
-**全局安装配置：**
+**Global install configuration:**
 ```json
 {
   "mcpServers": {
@@ -65,64 +65,64 @@ npm start
 }
 ```
 
-**配置文件位置：**
+**Config file locations:**
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
-### 3. 开始使用
+### 3. Start using it
 
-在 Claude Desktop 中说：
-- "启动人生教练"
-- "我想要李笑来的建议"
-- "搜索关于思维相关的教练"
+In Claude Desktop, say:
+- "Start life coach"
+- "I want advice from Li Xiaolai"
+- "Search for coaches related to thinking"
 
-## 项目结构
+## Project Structure
 
 ```
-人生教练mcp/
-├── mcp-server/           # MCP 服务器（npm: lifecoach-mcp-server）
+lifecoach-mcp/
+├── mcp-server/           # MCP server (npm: lifecoach-mcp-server)
 ├── worker/              # Cloudflare Worker API
-├── config/              # 配置文档
-└── README.md           # 项目文档
+├── config/              # Configuration docs
+└── README.md           # Project documentation
 ```
 
-## 技术架构
+## Technical Architecture
 
 ```
-用户 → Claude Desktop → MCP Server → Cloudflare Worker → Supabase
+User -> Claude Desktop -> MCP Server -> Cloudflare Worker -> Supabase
 ```
 
-## API 工具
+## API Tools
 
 ### start_lifecoach
-启动人生教练对话模式
+Starts a life coach conversation mode
 
 ### get_lifecoach
-获取特定教练信息
+Gets information about a specific coach
 ```json
 {
   "name": "get_lifecoach",
   "arguments": {
-    "name": "李笑来"
+    "name": "Li Xiaolai"
   }
 }
 ```
 
 ### list_lifecoaches
-获取所有教练列表
+Gets the list of all coaches
 
 ### search_lifecoach
-搜索匹配的教练
+Searches for a matching coach
 ```json
 {
   "name": "search_lifecoach",
   "arguments": {
-    "keyword": "思维"
+    "keyword": "thinking"
   }
 }
 ```
 
-## 许可证
+## License
 
 MIT License
 

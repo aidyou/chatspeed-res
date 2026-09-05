@@ -1,97 +1,96 @@
 ---
 title: "realtime"
-description: "全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如\"Asia/Shanghai\"、\"America/NewYork\"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 -…"
+description: "Global timezone time lookup: a web application built with Python and Gradio that fetches detailed time information for any timezone in the world in real time. Features include: - time lookup using sta…"
 ---
 
 # realtime
 
-全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如"Asia/Shanghai"、"America/NewYork"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 -…
+Global timezone time lookup: a web application built with Python and Gradio that fetches detailed time information for any timezone in the world in real time. Features include: - time lookup using sta…
 
-# 全球时区时间查询器
+# Global Timezone Time Lookup
 
-## 项目介绍
+## Project Introduction
 
-全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点：
+The Global Timezone Time Lookup is a web application built with Python and Gradio that can fetch detailed time information for any timezone in the world in real time. Its features include:
 
-- 支持标准时区格式（如"Asia/Shanghai"、"America/New_York"等）的时间查询
-- 默认显示中国标准时间(UTC+8)
-- 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等
-- 计算并显示与UTC的偏移量，支持中文友好的时差描述
-- 显示一年中的第几天和第几周
-- 具备夏令时检测功能
-- 提供直观的Web界面，支持示例查询
+- Time lookup using standard timezone formats (such as "Asia/Shanghai", "America/New_York", etc.)
+- Default display of China Standard Time (UTC+8)
+- Detailed time information including current time, date, weekday, year, month, hour, minute, second, etc.
+- Computes and displays the UTC offset, with Chinese-friendly time difference descriptions
+- Shows the day of the year and week of the year
+- Daylight saving time detection
+- An intuitive web interface with example queries
 
-该工具不仅可以作为独立的时间查询应用使用，还可以在大模型遇到时间指令不明确（如"最近"、"近期"等）时，帮助大模型获取当前时间，提升时间相关问答的准确性。
+This tool can be used not only as a standalone time lookup app, but also to help LLMs get the current time when their time-related instructions are ambiguous (e.g. "recent", "lately"), improving the accuracy of time-related Q&A.
 
-## 部署指南
+## Deployment Guide
 
-### 环境要求
+### Environment Requirements
 
-- Python 3.9+（推荐Python 3.10或更高版本）
-- pip包管理工具
+- Python 3.9+ (Python 3.10 or higher recommended)
+- pip package manager
 
-### 安装依赖
+### Install Dependencies
 
-项目依赖以下Python库：
-- gradio：用于创建Web界面
-- zoneinfo：用于时区处理（Python 3.9+内置）
-- datetime：用于日期时间处理（Python标准库）
+The project depends on the following Python libraries:
+- gradio: for creating the web interface
+- zoneinfo: for timezone handling (built into Python 3.9+)
+- datetime: for date/time handling (Python standard library)
 
-使用pip安装所需依赖：
+Install the required dependencies with pip:
 
 ```bash
 pip install gradio
 ```
 
-### 运行项目
+### Run the Project
 
-1. 确保已安装所有依赖
-2. 在项目目录下运行以下命令：
+1. Make sure all dependencies are installed
+2. Run the following command in the project directory:
 
 ```bash
 python time2.py
 ```
 
-3. 应用启动后，会在控制台显示本地访问URL（通常为http://127.0.0.1:7863）和公共访问URL
-4. 在浏览器中打开本地访问URL即可使用应用
+3. After the app starts, the console shows the local access URL (usually http://127.0.0.1:7863) and a public access URL
+4. Open the local access URL in your browser to use the app
 
-## 使用案例
+## Usage Examples
 
-### 基础使用
+### Basic usage
 
-1. 打开全球时区时间查询器Web界面
-2. 默认显示中国标准时间(UTC+8)的详细信息
-3. 在输入框中输入其他时区名称（如"America/New_York"），点击提交按钮获取对应时区的时间信息
+1. Open the Global Timezone Time Lookup web interface
+2. It shows detailed info for China Standard Time (UTC+8) by default
+3. Enter another timezone name in the input box (e.g. "America/New_York") and click the submit button to get the time info for that timezone
 
-### 示例查询
+### Example queries
 
-应用提供了几个常用时区的示例查询，点击示例按钮即可快速查看：
+The app provides example queries for several common timezones; click the example buttons to view them quickly:
 
-- UTC：协调世界时
-- Asia/Shanghai：中国标准时间
-- America/New_York：纽约时间
-- Europe/London：伦敦时间
-- Asia/Tokyo：东京时间
+- UTC: Coordinated Universal Time
+- Asia/Shanghai: China Standard Time
+- America/New_York: New York time
+- Europe/London: London time
+- Asia/Tokyo: Tokyo time
 
-### 输出信息解读
+### Interpreting the output
 
-查询结果包含以下信息：
+Query results include:
 
-- 时区名称
-- 时区缩写
-- 当前时间（年月日时分秒格式）
-- 星期几（中文显示）
-- 详细日期信息
-- 详细时间信息
-- 一年中的第几天
-- 一年中的第几周
-- 是否为夏令时
-- 与UTC的偏移量（格式为±HH:MM）
-- 中文友好的时差描述（如"比UTC时间快8.0小时"）
+- Timezone name
+- Timezone abbreviation
+- Current time (YYYY-MM-DD HH:MM:SS format)
+- Weekday (displayed in Chinese)
+- Detailed date info
+- Detailed time info
+- Day of the year
+- Week of the year
+- Whether daylight saving time is in effect
+- UTC offset (format: +-HH:MM)
+- Chinese-friendly time difference description (e.g. "8.0 hours ahead of UTC")
 
-### mcp服务配置
-studio
-```
+### MCP service configuration
+```json
 {
   "mcpServers": {
     "gradio": {

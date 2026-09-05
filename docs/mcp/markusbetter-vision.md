@@ -1,11 +1,11 @@
 ---
 title: "vision-mcp-server"
-description: "| --- 一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。 例如当你在客户端的模型只支持文字输入，这时你可以使用视觉模型mcp来弥补。 这个项目采用了魔搭社区免费的视觉模型Qwen3-VL-30B-A3B-Instruct（你也可以在配置中，使用魔搭社区自行更换为自己想要的视觉模型）。 - 支持本地图片文件和在线图片 URL - 基于…"
+description: "An MCP (Model Context Protocol) server for image analysis, supporting image content analysis and description. For example, when the client model only supports text input, you can use this vision MCP t…"
 ---
 
 # vision-mcp-server
 
-| --- 一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。 例如当你在客户端的模型只支持文字输入，这时你可以使用视觉模型mcp来弥补。 这个项目采用了魔搭社区免费的视觉模型Qwen3-VL-30B-A3B-Instruct（你也可以在配置中，使用魔搭社区自行更换为自己想要的视觉模型）。 - 支持本地图片文件和在线图片 URL - 基于…
+An MCP (Model Context Protocol) server for image analysis, supporting image content analysis and description. For example, when the client model only supports text input, you can use this vision MCP t…
 
 # Vision MCP Server | Visual Analysis MCP Server
 

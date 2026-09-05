@@ -6,7 +6,7 @@
     "zh-Hans": "GitLab MCP"
   },
   "description": {
-    "en": "GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage projec",
+    "en": "GitLab MCP Server 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage projec",
     "zh-Hans": "GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage projec"
   },
   "detail": {
@@ -40,7 +40,7 @@
     "env": [],
     "requiredInputs": [
       "GitLab Token",
-      "GitLab 地址"
+      "GitLab URL"
     ]
   },
   "score": 53.43

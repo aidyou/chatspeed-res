@@ -181,7 +181,7 @@ json
   "mcpServers": {
     "vibedocs-mcp": {
       "command": "npx",
-      "args": ["tsx", "你的项目路径/VibeDocs_MCP/src/index.ts"],
+      "args": ["tsx", "YOUR_PROJECT_PATH/VibeDocs_MCP/src/index.ts"],
       "env": {
         "NODE_ENV": "production"
       }

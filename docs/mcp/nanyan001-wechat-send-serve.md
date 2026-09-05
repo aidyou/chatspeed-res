@@ -1,74 +1,74 @@
 ---
 title: "wechat_send_mcp_serve"
-description: "wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理…"
+description: "wechatsend MCP service: an MCP (Model Context Protocol) service that sends files to WeChat groups through the WeCom bot Webhook interface. Features - Supports multiple file input methods: local files…"
 ---
 
 # wechat_send_mcp_serve
 
-wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理…
+wechatsend MCP service: an MCP (Model Context Protocol) service that sends files to WeChat groups through the WeCom bot Webhook interface. Features - Supports multiple file input methods: local files…
 
-# wechat_send MCP 服务
+# wechat_send MCP Service
 
-一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。
+An MCP (Model Context Protocol) service that sends files to WeChat groups through the WeCom bot Webhook interface.
 
-## 功能特性
+## Features
 
-- 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件
-- 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中
-- 📱 专为企业微信群聊设计，支持文件分享
-- 🛡️ 完善的错误处理和临时文件管理
+- Supports multiple file input methods: local files, network files, and Base64-encoded files
+- Built on the MCP protocol, integrable into various AI assistants and automation tools
+- Designed for WeCom group chats, supporting file sharing
+- Complete error handling and temporary file management
 
-## 安装依赖
+## Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 启动方式
+## Startup
 
-### 1. 作为独立 MCP Server 通过 stdio 启动：
+### 1. Start as a standalone MCP Server via stdio:
 ```bash
 python server.py
 ```
 
-### 2. 作为 HTTP 服务启动（适用于 Dify 等平台）：
+### 2. Start as an HTTP service (for platforms like Dify):
 ```bash
 python server.py --http 8000
 ```
 
-## 工具说明
+## Tools
 
-### send_file 工具
+### send_file tool
 
-通过企业微信机器人发送文件到群聊。
+Sends files to a group chat via the WeCom bot.
 
-**参数说明：**
-- `webhook_url` (必需): 企业微信机器人 Webhook 地址
-- `file_path` (可选): 本地文件路径
-- `file_url` (可选): 通过 HTTP(S) 下载的文件 URL  
-- `file_base64` (可选): 文件内容的 Base64 编码
+**Parameters:**
+- `webhook_url` (required): the WeCom bot Webhook address
+- `file_path` (optional): local file path
+- `file_url` (optional): a file URL downloaded over HTTP(S)
+- `file_base64` (optional): Base64 encoding of the file content
 
-**使用方式：**
-三种文件输入方式三选一：
-- 直接传 `file_path` - 指定本地文件路径
-- 传 `file_url` - 自动下载网络文件到临时目录
-- 传 `file_base64` - 将 Base64 编码的文件内容解码为临时文件
+**Usage:**
+Choose one of three file input methods:
+- Pass `file_path` directly - specify a local file path
+- Pass `file_url` - automatically download the network file to a temporary directory
+- Pass `file_base64` - decode the Base64-encoded file content into a temporary file
 
-## 配置说明
+## Configuration
 
-### 企业微信机器人配置
+### WeCom bot configuration
 
-1. 在企业微信群中添加机器人
-2. 获取 Webhook 地址，格式如：`https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY`
-3. 将 Webhook 地址作为 `webhook_url` 参数传入
+1. Add a bot to the WeCom group
+2. Get the Webhook address, in the format: `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY`
+3. Pass the Webhook address as the `webhook_url` parameter
 
-### 环境变量
+### Environment variables
 
-- `WEBHOOK_URL`: 默认的企业微信机器人 Webhook 地址（可选）
+- `WEBHOOK_URL`: the default WeCom bot Webhook address (optional)
 
-## 使用示例
+## Usage Examples
 
-### MCP 客户端调用示例
+### MCP client call example
 
 ```json
 {
@@ -85,7 +85,7 @@ python server.py --http 8000
 }
 ```
 
-### HTTP API 调用示例
+### HTTP API call example
 
 ```bash
 curl -X POST https://your-server.com/ \
@@ -104,35 +104,35 @@ curl -X POST https://your-server.com/ \
   }'
 ```
 
-## 技术架构
+## Technical Architecture
 
-- **核心模块**: `main.py` - 包含文件发送的核心逻辑
-- **MCP 服务**: `server.py` - 基于 FastMCP 框架的 MCP 服务器
-- **配置管理**: `mcp.json` - 服务配置和元数据
-- **依赖管理**: `requirements.txt` - Python 包依赖
+- **Core module**: `main.py` - contains the core file-sending logic
+- **MCP service**: `server.py` - the MCP server built on the FastMCP framework
+- **Configuration**: `mcp.json` - service config and metadata
+- **Dependencies**: `requirements.txt` - Python package dependencies
 
-## 部署说明
+## Deployment
 
-### 本地部署
+### Local deployment
 ```bash
-git clone 
+git clone
 cd wechat_send
 pip install -r requirements.txt
 python server.py
 ```
 
-### 云平台部署
-- 支持 Railway、Heroku、Docker 等平台
-- 确保安装 Python 3.8+ 和所需依赖
-- 设置必要的环境变量
+### Cloud platform deployment
+- Supports Railway, Heroku, Docker, and other platforms
+- Make sure Python 3.8+ and the required dependencies are installed
+- Set the necessary environment variables
 
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request 来改进这个项目。
+Issues and Pull Requests are welcome to improve this project.
 
 **Official site: ** [https://github.com/NANYAN-01/wechat-send-mcp](https://github.com/NANYAN-01/wechat-send-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

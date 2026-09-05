@@ -1,11 +1,11 @@
 ---
 title: "GaodeMapMCPServer"
-description: "该高德地图 MCP Server 发布在 。 本服务提供以下工具： 将一个高德经纬度坐标转换为行政区划地址信息 参数： - location: 经纬度坐标 将详细的结构化地址转换为经纬度坐标。支持对地标性名胜景区、建筑物名称解析为经纬度坐标 参数： - address: 结构化地址 - city (可选): 指定查询的城市 IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置 参数： -…"
+description: "This is an AMap (Gaode Maps) MCP server, providing tools for geocoding, IP location, weather queries, route planning (cycling, walking, driving, and public transit), distance measurement, and POI sear…"
 ---
 
 # GaodeMapMCPServer
 
-该高德地图 MCP Server 发布在 。 本服务提供以下工具： 将一个高德经纬度坐标转换为行政区划地址信息 参数： - location: 经纬度坐标 将详细的结构化地址转换为经纬度坐标。支持对地标性名胜景区、建筑物名称解析为经纬度坐标 参数： - address: 结构化地址 - city (可选): 指定查询的城市 IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置 参数： -…
+This is an AMap (Gaode Maps) MCP server, providing tools for geocoding, IP location, weather queries, route planning (cycling, walking, driving, and public transit), distance measurement, and POI sear…
 
 # AMap MCP Server
 
@@ -194,7 +194,7 @@ Run `amap-mcp-server` locally with SSE:
 
 ```bash
 
-$ export AMAP_MAPS_API_KEY=你的有效API Key
+$ export AMAP_MAPS_API_KEY=your-valid-api-key
 
 $ uvx amap-mcp-server sse
 
@@ -232,7 +232,7 @@ Run `amap-mcp-server` locally with Streamable HTTP:
 
 ```bash
 
-$ export AMAP_MAPS_API_KEY=你的有效API Key
+$ export AMAP_MAPS_API_KEY=your-valid-api-key
 
 $ uvx amap-mcp-server streamable-http
 

@@ -1,11 +1,11 @@
 ---
 title: "image-video-generation-mcp"
-description: "一个用于图像和视频生成的 MCP (Model Context Protocol) 服务器，支持 BigModel AI 平台的 CogView 和 CogVideoX 模型。"
+description: "An MCP (Model Context Protocol) server for image and video generation, supporting the CogView and CogVideoX models of the BigModel AI platform."
 ---
 
 # image-video-generation-mcp
 
-一个用于图像和视频生成的 MCP (Model Context Protocol) 服务器，支持 BigModel AI 平台的 CogView 和 CogVideoX 模型。
+An MCP (Model Context Protocol) server for image and video generation, supporting the CogView and CogVideoX models of the BigModel AI platform.
 
 # MCP Image Video Generation Server
 
@@ -161,7 +161,7 @@ If you encounter issues connecting to MCP, please check the following:
 
 3. **Version Issues**: Use the latest version
 ```bash
-   # 清除 npm 缓存并使用最新版本
+   # Clear the npm cache and use the latest version
    npm cache clean --force
    npx -y image-video-generation-mcp@latest
 ```

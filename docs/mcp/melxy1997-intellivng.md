@@ -173,7 +173,7 @@ This is a service based on the [Model Context Protocol (MCP)](https://modelconte
 
     "suggestions": [
 
-      "分支分布良好！故事具有较好的非线性叙事结构。"
+      "Branch distribution is good! The story has a solid non-linear narrative structure."
 
     ]
 
@@ -265,7 +265,7 @@ This is a service based on the [Model Context Protocol (MCP)](https://modelconte
 
     "notes": [
 
-      "非线性结构良好，可直接呈现。"
+      "The non-linear structure looks good and can be presented directly."
 
     ]
 
@@ -301,17 +301,17 @@ This design demonstrates:
 
 ```bash
 
-# 在 IntelliVNG monorepo 根目录
+# In the IntelliVNG monorepo root
 
 pnpm install
 
-# 或单独安装本包
+# Or install this package individually
 
 cd packages/mcp-server
 
 pnpm install
 
-# 首次安装后会通过 prepare 自动编译 dist
+# On first install, dist is compiled automatically via prepare
 
 ```
 ---
@@ -322,11 +322,11 @@ pnpm install
 
 ```bash
 
-# 开发模式（便于调试）
+# Development mode (for debugging)
 
 pnpm dev
 
-# 或构建后运行
+# Or run after building
 
 pnpm build
 
@@ -391,13 +391,13 @@ Example of the minimum node format accepted by the tools (the more complete the 
 
 interface StoryNode {
 
-  id: string;                          // 节点唯一标识
+  id: string;                          // unique node identifier
 
-  type?: "scene" | "branch" | "ending"; // 节点类型
+  type?: "scene" | "branch" | "ending"; // node type
 
-  isStart?: boolean;                   // 是否为起始节点
+  isStart?: boolean;                   // whether it is the start node
 
-  isEnding?: boolean;                  // 是否为结局节点
+  isEnding?: boolean;                  // whether it is an ending node
 
   functionTag?:
 
@@ -413,11 +413,11 @@ interface StoryNode {
 
     | "falling"
 
-    | "resolution";                   // 叙事阶段标签（用于分支分布分析）
+    | "resolution";                   // narrative phase label (used for branch distribution analysis)
 
-  nextNodeId?: string;                 // 线性推进下一个节点
+  nextNodeId?: string;                 // linearly advance to the next node
 
-  choices?: {                          // 分支选项（用于非线性和分支分析）
+  choices?: {                          // branch choices (used for non-linearity and branch analysis)
 
     targetNodeId: string;
 
@@ -425,7 +425,7 @@ interface StoryNode {
 
   }[];
 
-  dialogues?: {                        // 对话列表（用于对话质量分析）
+  dialogues?: {                        // dialogue list (used for dialogue quality analysis)
 
     characterName?: string;
 
@@ -435,7 +435,7 @@ interface StoryNode {
 
   }[];
 
-  narration?: string;                  // 旁白
+  narration?: string;                  // narration
 
 }
 
@@ -450,23 +450,23 @@ packages/mcp-server/
 
 ├── src/
 
-│   ├── index.ts                    # MCP Server 入口，注册所有 MCP 工具
+│   ├── index.ts                    # MCP Server entry, registers all MCP tools
 
 │   └── tools/
 
-│       ├── validate-structure.ts   # 结构校验工具
+│       ├── validate-structure.ts   # structure validation tool
 
-│       ├── analyze-paths.ts        # 路径分析工具
+│       ├── analyze-paths.ts        # path analysis tool
 
-│       ├── analyze-dialogue.ts     # 对话质量工具
+│       ├── analyze-dialogue.ts     # dialogue quality tool
 
-│       ├── analyze-branch-distribution.ts  # 分支分布工具
+│       ├── analyze-branch-distribution.ts  # branch distribution tool
 
-│       ├── check-constraints.ts    # 约束合规工具
+│       ├── check-constraints.ts    # constraint compliance tool
 
-│       ├── score-nonlinearity.ts   # 非线性综合评分工具
+│       ├── score-nonlinearity.ts   # non-linearity composite score tool
 
-│       └── index.ts                # 工具导出统一入口
+│       └── index.ts                # unified tool export entry
 
 ├── package.json
 
@@ -514,7 +514,7 @@ To achieve AI logical follow-up capability, we designed the following self-corre
 
 ```typescript
 
-// 伪代码演示：自修正闭环
+// Pseudocode demo: the self-correction loop
 
 async function generatePerfectStory() {
 
@@ -524,7 +524,7 @@ async function generatePerfectStory() {
 
   while (attempts < 3) {
 
-    // 调用 MCP 工具进行"左脑"检查
+    // Call the MCP tool to do the "left brain" check
 
     const compliance = await mcp.check_constraints_compliance({
 
@@ -534,15 +534,15 @@ async function generatePerfectStory() {
 
     });
 
-    // 如果合规分 100，直接通过
+    // If the compliance score is 100, pass directly
 
     if (compliance.data.complianceScore === 100) break;
 
-    // 否则，将违规项喂回给 Agent 进行针对性重写
+    // Otherwise, feed the violations back to the Agent for targeted rewriting
 
-    // 这就是"逻辑跟随"的具体体现
+    // This is the concrete manifestation of "logic following"
 
-    const feedback = `检测到违规：${compliance.data.violations.join(", ")}。请修正这些问题。`;
+    const feedback = `Violations detected: ${compliance.data.violations.join(", ")}. Please fix these issues.`;
 
     story = await writerAgent.regenerate(story, feedback);
 

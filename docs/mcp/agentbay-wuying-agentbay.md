@@ -1,11 +1,11 @@
 ---
 title: "wuying-agentbay-mcp-server"
-description: "无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。"
+description: "Wuying AgentBay is the Agent cloud infrastructure for the AI era. Built for enterprises, developers, and AI vendors, it provides one-click configurable AI Agent task execution tools and execution envi…"
 ---
 
 # wuying-agentbay-mcp-server
 
-无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。
+Wuying AgentBay is the Agent cloud infrastructure for the AI era. Built for enterprises, developers, and AI vendors, it provides one-click configurable AI Agent task execution tools and execution envi…
 
 AgentBay of the Invisible is the AI era's cloud infrastructure for Agents, designed for enterprises, developers, and AI vendors. It provides a one-click configurable AI Agent task execution tool and environment. You can quickly integrate and call related tools to obtain Serverless services through the Invisible API or AgentBay MCP Server.
 

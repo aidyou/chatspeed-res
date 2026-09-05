@@ -7,52 +7,52 @@ description: "A tool that provides MCP (Model Context Protocol) services for WeC
 
 A tool that provides MCP (Model Context Protocol) services for WeChat Reading, enabling the sharing of books, notes, and highlighted text from WeChat Reading with large language model clients that sup…
 
-# 微信读书 MCP Server
+# WeChat Reading MCP Server
 
-一个为微信读书提供MCP（Model Context Protocol）服务的工具，支持将微信读书的书籍、笔记和划线数据提供给支持MCP的大语言模型客户端，如Claude Desktop。
+A tool that provides MCP (Model Context Protocol) services for WeChat Reading, enabling you to share books, notes, and highlights from WeChat Reading with MCP-capable LLM clients such as Claude Desktop.
 
-## 功能特点
+## Features
 
-- 从微信读书获取书架信息
-- 搜索书架中的图书
-- 获取图书的笔记和划线
-- 支持按章节组织笔记和划线
-- 与支持MCP协议的LLM客户端无缝集成
+- Get bookshelf information from WeChat Reading
+- Search books in the bookshelf
+- Get notes and highlights for a book
+- Organize notes and highlights by chapter
+- Seamless integration with MCP-capable LLM clients
 
-## 主要工具
+## Main Tools
 
-1. **get_bookshelf** - 获取用户书架上所有书籍
-   - 返回书籍基本信息，包括书名、作者、译者和分类等
+1. **get_bookshelf** - Get all books on the user's bookshelf
+   - Returns basic book info including title, author, translator, and category
 
-2. **search_books** - 通过关键词检索用户书架上的书籍
-   - 支持模糊匹配和精确匹配
-   - 可选是否包含详细信息
-   - 可设置最大结果数量
+2. **search_books** - Search the user's bookshelf by keyword
+   - Supports fuzzy and exact matching
+   - Optionally includes detailed info
+   - Configurable maximum result count
 
-3. **get_book_notes_and_highlights** - 获取指定书籍的所有划线和笔记
-   - 支持按章节组织结果
-   - 支持筛选划线样式
-   - 返回结构化的数据以便于LLM理解
+3. **get_book_notes_and_highlights** - Get all highlights and notes for a specific book
+   - Supports organizing results by chapter
+   - Supports filtering by highlight style
+   - Returns structured data for easy LLM understanding
 
-## 安装与使用
+## Installation & Usage
 
-### 先决条件
+### Prerequisites
 
-- Node.js 16.x 或更高版本
-- 微信读书账号和有效的Cookie
+- Node.js 16.x or later
+- A WeChat Reading account with a valid Cookie
 
-### 安装教程
+### Installation Guide
 
-详见：[Weread MCP Server 使用指南](https://chenge.ink/article/post20250505)
+See: [Weread MCP Server Usage Guide](https://chenge.ink/article/post20250505)
 
-### 与Claude Desktop集成
+### Integration with Claude Desktop
 
-有多种方式可以与Claude Desktop集成：
+There are several ways to integrate with Claude Desktop:
 
-#### 方式一：通过 npx 使用（最简单，推荐）
-1. 打开Claude Desktop
-2. 进入设置 -> MCP配置
-3. 添加工具，使用以下JSON配置：
+#### Method 1: Via npx (simplest, recommended)
+1. Open Claude Desktop
+2. Go to Settings -> MCP Configuration
+3. Add a tool using the following JSON config:
 ```json
    {
      "mcpServers": {
@@ -60,122 +60,122 @@ A tool that provides MCP (Model Context Protocol) services for WeChat Reading, e
          "command": "npx",
          "args": ["-y", "mcp-server-weread"],
          "env": {
-           // 方式1：使用Cookie Cloud（推荐）
-           "CC_URL": "https://cc.chenge.ink",  // Cookie Cloud的URL
-           "CC_ID": "您的ID",                   // Cookie Cloud的ID
-           "CC_PASSWORD": "您的密码"            // Cookie Cloud的密码
+           // Method 1: Use Cookie Cloud (recommended)
+           "CC_URL": "https://cc.chenge.ink",  // Cookie Cloud URL
+           "CC_ID": "YOUR_ID",                 // Cookie Cloud ID
+           "CC_PASSWORD": "YOUR_PASSWORD"      // Cookie Cloud password
 
-           // 或方式2：直接提供Cookie
-           // "WEREAD_COOKIE": "您的微信读书Cookie"
+           // Or Method 2: Provide the cookie directly
+           // "WEREAD_COOKIE": "YOUR_WEREAD_COOKIE"
          }
        }
      }
    }
 ```
 
-#### 方式二：全局安装后使用
+#### Method 2: Global install
 
-1. 全局安装包：
+1. Install the package globally:
 ```bash
    npm install -g mcp-server-weread
 ```
 
-2. 在Claude配置中使用：
+2. Use it in the Claude config:
 ```json
    {
      "mcpServers": {
        "mcp-server-weread": {
          "command": "mcp-server-weread",
          "env": {
-           // 同上方式配置环境变量
+           // Configure the environment variables as above
          }
        }
      }
    }
 ```
 
-> 提示：直接在Claude配置中提供环境变量的方式更加方便，无需设置.env文件，推荐使用。
+> Tip: providing environment variables directly in the Claude config is more convenient - no .env file is needed. Recommended.
 
-## CookieCloud 配置说明
-为了解决 Cookie 频繁过期，需要重新获取并更新环境变量的问题。本项目支持 [CookieCloud](https://github.com/easychen/CookieCloud) 服务来自动同步和更新 Cookie。CookieCloud 是一个开源的跨浏览器 Cookie 同步工具，支持自建服务器。
+## CookieCloud Configuration
+To avoid cookies expiring frequently and needing to re-fetch and update environment variables, this project supports the [CookieCloud](https://github.com/easychen/CookieCloud) service to sync and update cookies automatically. CookieCloud is an open-source cross-browser cookie sync tool that supports self-hosted servers.
 
-### 配置步骤：
-安装浏览器插件
-Edge商店：[CookieCloud for Edge](https://microsoftedge.microsoft.com/addons/detail/cookiecloud/bffenpfpjikaeocaihdonmgnjjdpjkeo)
-Chrome商店：[CookieCloud for Chrome](https://chromewebstore.google.com/detail/cookiecloud/ffjiejobkoibkjlhjnlgmcnnigeelbdl)
+### Configuration steps:
+Install the browser extension
+Edge Store: [CookieCloud for Edge](https://microsoftedge.microsoft.com/addons/detail/cookiecloud/bffenpfpjikaeocaihdonmgnjjdpjkeo)
+Chrome Web Store: [CookieCloud for Chrome](https://chromewebstore.google.com/detail/cookiecloud/ffjiejobkoibkjlhjnlgmcnnigeelbdl)
 
-### 配置 CookieCloud 插件
-服务器地址：使用默认服务器 https://cc.chenge.ink 或填入自建服务器地址
-点击 "自动生成密码"
-同步域名关键词中填入 "weread"
-点击"保存" ，然后点击 "手动同步"确保配置生效
-[可选] 如果需要插件自动保活，可以在保活中填入 https://weread.qq.com，插件会自动刷新 Cookie
+### Configure the CookieCloud extension
+Server address: use the default server https://cc.chenge.ink or enter your self-hosted server address
+Click "Auto-generate password"
+Enter "weread" in the sync domain keywords field
+Click "Save", then click "Manual sync" to make sure the configuration takes effect
+[Optional] To keep the extension alive automatically, you can enter https://weread.qq.com in the keepalive field; the extension will refresh the cookies automatically
 
-在MCP Json中配置CookieCloud变量：
-CC_URL=你的CookieCloud服务器地址 （或使用我的默认服务器地址 https://cc.chenge.ink ）
-CC_ID=你的CookieCloud用户UUID
-CC_PASSWORD=你的CookieCloud密码
-注意：配置 CookieCloud 后，系统会优先使用 CookieCloud 获取 Cookie，获取失败才会使用 WEREAD_COOKIE 环境变量的值。
+Configure the CookieCloud variables in the MCP JSON:
+CC_URL=your CookieCloud server address (or use the default server address https://cc.chenge.ink)
+CC_ID=your CookieCloud user UUID
+CC_PASSWORD=your CookieCloud password
+Note: after configuring CookieCloud, the system will prefer getting the cookie from CookieCloud; it only falls back to the WEREAD_COOKIE environment variable if that fails.
 
-## Cookie获取方法
-微信读书的Cookie可以通过以下步骤获取：
-1. 使用Chrome浏览器登录[微信读书网页版](https://weread.qq.com/)
-2. 按F12打开开发者工具，切换到Network标签页
-3. 刷新页面，在请求列表中找到weread.qq.com的请求
-4. 在Headers中找到Cookie字段，复制其完整内容
-5. 将复制的内容添加到MCP Json 或 .env文件的WEREAD_COOKIE变量中
+## How to get the Cookie
+You can get your WeChat Reading cookie as follows:
+1. Log in to the [WeChat Reading web version](https://weread.qq.com/) in Chrome
+2. Press F12 to open the developer tools and switch to the Network tab
+3. Refresh the page and find a request to weread.qq.com in the request list
+4. Find the Cookie field in Headers and copy its full content
+5. Add the copied content to the WEREAD_COOKIE variable in the MCP JSON or .env file
 
-## 使用示例
-以下是一些与LLM对话的示例：
+## Usage Examples
+Here are some example LLM conversations:
 
-**获取书架信息**
+**Get bookshelf info**
 ```
-用户: 帮我查看我的微信读书书架
-LLM: 我将获取您的微信读书书架信息。
-[LLM调用get_bookshelf工具]
-我从您的微信读书书架获取到了208本书籍。以下是部分书籍：
-1. 《隐藏的自我》- 大卫·伊格曼
-2. 《思考，快与慢》- 丹尼尔·卡尼曼
-3. 《人类简史》- 尤瓦尔·赫拉利
+User: Help me view my WeChat Reading bookshelf
+LLM: I will fetch your WeChat Reading bookshelf info.
+[LLM calls the get_bookshelf tool]
+I retrieved 208 books from your WeChat Reading bookshelf. Here are some of them:
+1. The Hidden Self - David Eagleman
+2. Thinking, Fast and Slow - Daniel Kahneman
+3. Sapiens: A Brief History of Humankind - Yuval Noah Harari
 ...
 ```
 
-**搜索特定书籍**
+**Search for a specific book**
 ```
-用户: 帮我找关于心理学的书
-LLM: 我将搜索您书架上与心理学相关的书籍。
-[LLM调用search_books工具，参数为keyword="心理学"]
-在您的书架上，我找到了3本与心理学相关的书籍：
-1. 《思考，快与慢》- 丹尼尔·卡尼曼（进度：75%）
-2. 《乌合之众》- 古斯塔夫·勒庞（进度：50%）
-3. 《心理学与生活》- 理查德·格里格（进度：30%）
-您想了解哪一本书的更多信息？
+User: Help me find books about psychology
+LLM: I will search your bookshelf for psychology-related books.
+[LLM calls the search_books tool with keyword="psychology"]
+I found 3 psychology-related books on your bookshelf:
+1. Thinking, Fast and Slow - Daniel Kahneman (progress: 75%)
+2. The Crowd - Gustave Le Bon (progress: 50%)
+3. Psychology and Life - Richard Gerrig (progress: 30%)
+Which book would you like to learn more about?
 ```
 
-**获取笔记和划线**
+**Get notes and highlights**
 ```
-用户: 帮我整理《思考，快与慢》这本书的笔记
-LLM: 我将获取《思考，快与慢》的笔记和划线。
-[LLM调用search_books工具，找到书籍ID]
-[LLM调用get_book_notes_and_highlights工具]
-以下是您在《思考，快与慢》中的笔记和划线（按章节组织）：
+User: Help me organize my notes on Thinking, Fast and Slow
+LLM: I will get the notes and highlights for Thinking, Fast and Slow.
+[LLM calls the search_books tool and finds the book ID]
+[LLM calls the get_book_notes_and_highlights tool]
+Here are your notes and highlights in Thinking, Fast and Slow (organized by chapter):
 
-第一章：系统1和系统2
-- 划线：「系统1的运行是无意识且快速的，不怎么费脑力，没有感觉，完全处于自主控制状态。」
-- 您的笔记：「系统1负责直觉和快速判断，系统2负责缓慢的理性思考。」
+Chapter 1: Two Systems
+- Highlight: "System 1 operates automatically and quickly, with little or no effort and no sense of voluntary control."
+- Your note: "System 1 handles intuition and fast judgments; System 2 handles slow, deliberate reasoning."
 
-第三章：锚定效应
-- 划线：「锚定效应指的是在不确定情境下进行数字估计时，会过度受到事先接触的不相干数字的影响。」
+Chapter 3: Anchoring Effect
+- Highlight: "The anchoring effect refers to the tendency to rely too heavily on an initial piece of information when making estimates in uncertain situations."
 ...
 ```
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎提交Pull Request或Issue来改进此项目。
+Pull requests and issues are welcome to improve this project.
 
 **Official site: ** [https://www.npmjs.com/package/mcp-server-weread?activeTab=readme](https://www.npmjs.com/package/mcp-server-weread?activeTab=readme)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

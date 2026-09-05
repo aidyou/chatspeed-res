@@ -6,7 +6,7 @@
     "zh-Hans": "bing必应搜索增强版"
   },
   "description": {
-    "en": "一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。",
+    "en": "A Chinese Bing search tool based on the MCP (Model Context Protocol) that lets you search Bing and fetch webpage content directly through Claude or other MCP-capable AI.",
     "zh-Hans": "一个基于MCP（模型上下文协议）的中文必应搜索工具，可以直接通过Claude等支持MCP的AI来搜索必应并获取网页内容，无需API密钥。"
   },
   "detail": {

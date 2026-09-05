@@ -1,17 +1,17 @@
 ---
 title: "mcp-server-tapd"
-description: "TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。"
+description: "TAPD is Tencent's agile R&D management platform, covering the entire R&D lifecycle of requirements, planning, development, testing, and release. Supports natural language conversations with TAPD for m…"
 ---
 
 # mcp-server-tapd
 
-TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。
+TAPD is Tencent's agile R&D management platform, covering the entire R&D lifecycle of requirements, planning, development, testing, and release. Supports natural language conversations with TAPD for m…
 
 # TAPD MCP Server
 
-TAPD 是腾讯敏捷研发管理平台，覆盖需求、计划、研发、测试、发布研发全生命周期。支持用自然语言与 TAPD 对话，实现需求、缺陷、任务、迭代等管理。
+TAPD is Tencent's agile R&D management platform, covering the entire R&D lifecycle of requirements, planning, development, testing, and release. It supports natural language conversations with TAPD to manage requirements, defects, tasks, iterations, etc.
 
-* 与 TAPD API 无缝集成，提升开发效率
+* Seamless integration with the TAPD API to improve development efficiency
 
 ## System requirements
 
@@ -29,12 +29,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### Get TAPD API Token
 Get API tokens from: https://www.tapd.cn/open_platform/open_api_redirect
 
-1. 未注册，请前往 [注册](https://www.tapd.cn?from_partner=copilot&source=tapd_operation_copilot)
-2. 已注册但未授权API，请前往API配置：登录TAPD，点击进入[“公司管理-API账号管理”](https://www.tapd.cn/open_platform/open_api_redirect)，复制API账号和API密钥
-3. 参数
-- TAPD_API_USER: API账号 
-- TAPD_API_PASSWORD: API密钥 
-- BOT_URL: 企业微信机器人 webhook 地址，选填，如果需要发送消息到企业微信群才需要填
+1. Not registered yet? Please go to [Register](https://www.tapd.cn?from_partner=copilot&source=tapd_operation_copilot)
+2. Registered but haven't authorized the API? Go to the API configuration: log in to TAPD and click ["Company Management - API Account Management"](https://www.tapd.cn/open_platform/open_api_redirect), then copy the API account and API key.
+3. Parameters
+- TAPD_API_USER: API account
+- TAPD_API_PASSWORD: API key
+- BOT_URL: WeCom bot webhook address, optional; only needed if you want to send messages to a WeCom group
 
 ## Configuration and Usage
 ### Claude Desktop Setup

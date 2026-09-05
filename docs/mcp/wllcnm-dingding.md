@@ -7,44 +7,44 @@ description: "A Model Control Protocol server that provides access to DingDing (
 
 A Model Control Protocol server that provides access to DingDing (Chinese workplace collaboration platform) API features, including retrieving access tokens, department lists, user information, and se…
 
-# 钉钉 MCP 服务
+# DingTalk MCP Service
 
-这是一个基于MCP（Model Control Protocol）的钉钉服务，提供了钉钉API的访问功能。
+This is a DingTalk service based on MCP (Model Control Protocol) that provides access to DingTalk API features.
 
-## 功能特性
+## Features
 
-1. 获取钉钉 Access Token
-2. 获取部门列表
-3. 获取部门用户列表
-4. 根据姓名查询用户详细信息（包括遍历部门查找用户）
+1. Get the DingTalk Access Token
+2. Get the department list
+3. Get the user list of a department
+4. Query user details by name (including traversing departments to find users)
 
-## 环境要求
+## Requirements
 
 - Python 3.12+
-- Docker（推荐）
-- 钉钉应用凭证
+- Docker (recommended)
+- DingTalk app credentials
 
-## 安装和配置
+## Installation and Configuration
 
-### 1. 获取钉钉应用凭证
+### 1. Get DingTalk app credentials
 
-1. 登录[钉钉开放平台](https://open.dingtalk.com/)
-2. 创建企业内部应用
-3. 获取应用的 AppKey 和 AppSecret
+1. Log in to the [DingTalk Open Platform](https://open.dingtalk.com/)
+2. Create an internal enterprise app
+3. Get the app's AppKey and AppSecret
 
-### 2. 配置环境变量
+### 2. Configure environment variables
 
-需要设置以下环境变量：
+Set the following environment variables:
 ```bash
-DINGDING_APP_KEY=你的AppKey
-DINGDING_APP_SECRET=你的AppSecret
+DINGDING_APP_KEY=YOUR_APP_KEY
+DINGDING_APP_SECRET=YOUR_APP_SECRET
 ```
 
-## 使用方法
+## Usage
 
-### 在 Claude 桌面客户端中使用
+### In the Claude Desktop client
 
-1. 在你的 `claude_desktop_config.json` 中添加以下配置：
+1. Add the following configuration to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -54,84 +54,84 @@ DINGDING_APP_SECRET=你的AppSecret
         "run",
         "-i",
         "--rm",
-        "-e", "DINGDING_APP_KEY=你的AppKey",
-        "-e", "DINGDING_APP_SECRET=你的AppSecret",
-        "ghcr.io/你的用户名/dingding-mcp:latest"
+        "-e", "DINGDING_APP_KEY=YOUR_APP_KEY",
+        "-e", "DINGDING_APP_SECRET=YOUR_APP_SECRET",
+        "ghcr.io/YOUR_USERNAME/dingding-mcp:latest"
       ]
     }
   }
 }
 ```
 
-### 本地开发
+### Local development
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
-git clone 
+git clone
 cd dingding_chat
 ```
 
-2. 安装依赖：
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. 运行服务：
+3. Run the service:
 ```bash
 python src/server.py
 ```
 
-### Docker 部署
+### Docker deployment
 
-1. 拉取镜像：
+1. Pull the image:
 ```bash
-docker pull ghcr.io/你的用户名/dingding-mcp:latest
+docker pull ghcr.io/YOUR_USERNAME/dingding-mcp:latest
 ```
 
-2. 运行容器：
+2. Run the container:
 ```bash
-docker run -d --name dingding-mcp 
-  -e DINGDING_APP_KEY=你的AppKey 
-  -e DINGDING_APP_SECRET=你的AppSecret 
-  ghcr.io/你的用户名/dingding-mcp:latest
+docker run -d --name dingding-mcp \
+  -e DINGDING_APP_KEY=YOUR_APP_KEY \
+  -e DINGDING_APP_SECRET=YOUR_APP_SECRET \
+  ghcr.io/YOUR_USERNAME/dingding-mcp:latest
 ```
 
-## API 说明
+## API Description
 
-### 1. 获取 Access Token
-- 功能：获取钉钉API的access token
-- 工具名：`get_access_token`
-- 参数：无
-- 返回：access token字符串
+### 1. Get Access Token
+- Function: get the DingTalk API access token
+- Tool name: `get_access_token`
+- Parameters: none
+- Returns: access token string
 
-### 2. 获取部门列表
-- 功能：获取企业的部门列表
-- 工具名：`get_department_list`
-- 参数：
-  - fetch_child: 是否抓取子部门列表（可选，默认为true）
-- 返回：部门列表信息（包括部门ID、名称、父部门ID等）
+### 2. Get the department list
+- Function: get the enterprise department list
+- Tool name: `get_department_list`
+- Parameters:
+  - fetch_child: whether to fetch the sub-department list (optional, default true)
+- Returns: department list info (including department ID, name, parent department ID, etc.)
 
-### 3. 获取部门用户列表
-- 功能：获取指定部门的用户列表
-- 工具名：`get_department_users`
-- 参数：
-  - department_id: 部门ID（必填）
-- 返回：部门用户列表（包括用户ID、姓名等）
+### 3. Get the user list of a department
+- Function: get the user list of a specified department
+- Tool name: `get_department_users`
+- Parameters:
+  - department_id: department ID (required)
+- Returns: department user list (including user ID, name, etc.)
 
-### 4. 根据姓名查询用户
-- 功能：通过用户姓名查询用户详细信息
-- 工具名：`search_user_by_name`
-- 参数：
-  - name: 用户姓名
-- 返回：用户详细信息（包括用户ID、姓名、手机、邮箱、职位、所属部门等）
+### 4. Search users by name
+- Function: query detailed user information by user name
+- Tool name: `search_user_by_name`
+- Parameters:
+  - name: user name
+- Returns: detailed user info (including user ID, name, phone, email, position, department, etc.)
 
-## 注意事项
+## Notes
 
-1. 确保正确配置钉钉应用的凭证信息
-2. 由于钉钉API的限制，查询用户信息需要遍历所有部门，可能需要一定时间
-3. 建议在生产环境中使用 Docker 部署，以确保环境一致性
+1. Make sure the DingTalk app credentials are configured correctly
+2. Due to DingTalk API limitations, querying user information requires traversing all departments, which may take some time
+3. We recommend using Docker deployment in production to ensure environment consistency
 
-## 许可证
+## License
 
 MIT License
 
@@ -147,7 +147,7 @@ MIT License
 
 - Transport: `stdio`
 - Command: `docker`
-- Args: `run -i --rm -e DINGDING_APP_KEY=你的AppKey -e DINGDING_APP_SECRET=你的AppSecret ghcr.io/你的用户名/dingding-mcp:latest`
+- Args: `run -i --rm -e DINGDING_APP_KEY=YOUR_APP_KEY -e DINGDING_APP_SECRET=YOUR_APP_SECRET ghcr.io/YOUR_USERNAME/dingding-mcp:latest`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 

@@ -1,11 +1,11 @@
 ---
 title: "GitLab MCP"
-description: "GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab…"
+description: "GitLab MCP Server 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage pro…"
 ---
 
 # GitLab MCP
 
-GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab…
+GitLab MCP Server 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage pro…
 
 # GitLab MCP Server
 

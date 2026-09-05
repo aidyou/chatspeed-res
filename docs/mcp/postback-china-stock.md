@@ -189,7 +189,7 @@ Retrieve the chip distribution data of a specified stock.
 **Parameters:**
 - `symbol` (string): Stock code (e.g., '000001')
 - `date` (string): Query date in YYYY-MM-DD format- `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
-### 19. `获取股票研究报告` (get_stock_research_report)
+### 19. `Get stock research reports` (get_stock_research_report)
 
 Retrieve the research report data for a specified stock.
 
@@ -197,7 +197,7 @@ Retrieve the research report data for a specified stock.
 - `symbol` (string): Stock code (e.g., '000001')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 20. `获取流通股东数据` (get_stock_circulate_stock_holder)
+### 20. `Get circulating shareholder data` (get_stock_circulate_stock_holder)
 
 Retrieve the circulating shareholder data for a specified stock.
 
@@ -205,7 +205,7 @@ Retrieve the circulating shareholder data for a specified stock.
 - `symbol` (string): Stock code (e.g., '000001')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 21. `获取高管变动数据` (get_stock_management_change)
+### 21. `Get management change data` (get_stock_management_change)
 
 Retrieve the management change data for a specified stock.
 
@@ -213,7 +213,7 @@ Retrieve the management change data for a specified stock.
 - `symbol` (string): Stock code (e.g., '000001')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 22. `获取限售解禁数据` (get_stock_restricted_release_queue)
+### 22. `Get restricted-share release data` (get_stock_restricted_release_queue)
 
 Retrieve the restricted release data for a specified stock.
 
@@ -221,14 +221,14 @@ Retrieve the restricted release data for a specified stock.
 - `symbol` (string): Stock code (e.g., '000001')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 23. `获取 A 股代码和名称` (get_stock_a_code_name)
+### 23. `Get A-share codes and names` (get_stock_a_code_name)
 
 Retrieve the codes and names of all A-share stocks.
 
 **Parameters:**
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 24. `获取股票估值数据` (get_stock_value)
+### 24. `Get stock valuation data` (get_stock_value)
 
 Retrieve the valuation data for a specified stock.
 
@@ -236,7 +236,7 @@ Retrieve the valuation data for a specified stock.
 - `symbol` (string): Stock code (e.g., '000001')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 25. `计算指定个股的波动率指标` (get_stock_volatility)
+### 25. `Calculate volatility indicators for a stock` (get_stock_volatility)
 
 Calculate the volatility indicators for a specified stock using minute-level historical market data.
 **Parameters:**
@@ -247,14 +247,14 @@ Calculate the volatility indicators for a specified stock using minute-level his
 - `adjust` (string): Adjustment type: none, qfq (forward adjustment), hfq (backward adjustment). Default: none
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 26. `获取所有指数的代码和基本信息` (get_all_cni_indices)
+### 26. `Get codes and basic info of all indices` (get_all_cni_indices)
 
 Retrieve the codes and basic information of all indices, excluding real-time fluctuation data and supporting caching.
 
 **Parameters:**
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 27. `获取指定指数的日频率历史行情数据` (get_cni_index_hist)
+### 27. `Get daily historical market data for an index` (get_cni_index_hist)
 
 Retrieve the daily frequency historical market data for a specified index.
 
@@ -264,7 +264,7 @@ Retrieve the daily frequency historical market data for a specified index.
 - `end_date` (string): End date in YYYYMMDD format (e.g., '20240114')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 28. `获取指定指数的成分股样本详情` (get_cni_index_detail)
+### 28. `Get constituent stock details of an index` (get_cni_index_detail)
 
 Retrieve the detailed constituent stock samples for a specified index.
 
@@ -273,7 +273,7 @@ Retrieve the detailed constituent stock samples for a specified index.
 - `date` (string): Date in YYYYMM format (e.g., '202404')
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json
 
-### 29. `获取技术选股指标数据，包括创新高、创新低、连续上涨、连续下跌、持续放量、持续缩量、向上突破、向下突破、量价齐升、量价齐跌、险资举牌。`(get_stock_technical_rank)
+### 29. `Get technical stock-picking indicators, including new highs, new lows, consecutive rises, consecutive falls, persistent volume increases, persistent volume decreases, upward breakouts, downward breakouts, volume-price double rise, volume-price double fall, and insurance capital stake.` (get_stock_technical_rank)
 
 **Parameters:**- `indicator_name` (string): The name of the technical indicator to be obtained (e.g., New High - Monthly High, New High - Half-Year High, New High - Yearly High, New High - All-Time High, New Low - Monthly Low, New Low - Half-Year Low, New Low - Yearly Low, New Low - All-Time Low, Continuous Rise, Continuous Fall, Persistent Volume Increase, Persistent Volume Decrease, Upward Break - 5-day Moving Average, Upward Break - 10-day Moving Average, Upward Break - 20-day Moving Average, Upward Break - 30-day Moving Average, Upward Break - 60-day Moving Average, Upward Break - 90-day Moving Average, Upward Break - 250-day Moving Average, Upward Break - 500-day Moving Average, Downward Break - 5-day Moving Average, Downward Break - 10-day Moving Average, Downward Break - 20-day Moving Average, Downward Break - 30-day Moving Average, Downward Break - 60-day Moving Average, Downward Break - 90-day Moving Average, Downward Break - 250-day Moving Average, Downward Break - 500-day Moving Average, Volume and Price Both Rising, Volume and Price Both Falling, Insurance Capital Stake)
 - `output_format` (Literal): Output data format: json, csv, xml, excel, markdown, html. Default: json

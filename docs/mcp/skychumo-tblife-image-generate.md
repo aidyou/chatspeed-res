@@ -1,26 +1,26 @@
 ---
 title: "tblife-image-generate"
-description: "Create a Text-to-Image with Taobao Life Character 介绍 本文档将指导您如何使用特定API创建带有淘宝人生人物形象的文生图。淘宝人生是阿里巴巴集团推出的一款虚拟社交应用，用户可以创建自己的虚拟形象，并在虚拟世界中进行互动。 准备工作 - 您需要拥有一个有效的API密钥。 - 确保您的开发环境已经安装了必要的库，如requests等，以便能够发送HTT…"
+description: "Create a Text-to-Image with a Taobao Life character. Introduction This document guides you through using a specific API to create text-to-image outputs with Taobao Life character avatars. Taobao Life…"
 ---
 
 # tblife-image-generate
 
-Create a Text-to-Image with Taobao Life Character 介绍 本文档将指导您如何使用特定API创建带有淘宝人生人物形象的文生图。淘宝人生是阿里巴巴集团推出的一款虚拟社交应用，用户可以创建自己的虚拟形象，并在虚拟世界中进行互动。 准备工作 - 您需要拥有一个有效的API密钥。 - 确保您的开发环境已经安装了必要的库，如requests等，以便能够发送HTT…
+Create a Text-to-Image with a Taobao Life character. Introduction This document guides you through using a specific API to create text-to-image outputs with Taobao Life character avatars. Taobao Life…
 
-Create a Text-to-Image with Taobao Life Character
+# Create a Text-to-Image with a Taobao Life Character
 
-## 介绍
-本文档将指导您如何使用特定API创建带有淘宝人生人物形象的文生图。淘宝人生是阿里巴巴集团推出的一款虚拟社交应用，用户可以创建自己的虚拟形象，并在虚拟世界中进行互动。
+## Introduction
+This document guides you through using a specific API to create text-to-image outputs with Taobao Life character avatars. Taobao Life is a virtual social app launched by Alibaba Group, where users can create their own virtual character and interact in a virtual world.
 
-## 准备工作
-- 您需要拥有一个有效的API密钥。
-- 确保您的开发环境已经安装了必要的库，如`requests`等，以便能够发送HTTP请求。
-- 了解基本的Python编程知识。
+## Preparation
+- You need a valid API key.
+- Make sure your development environment has the required libraries installed, such as `requests`, so you can send HTTP requests.
+- Basic Python programming knowledge.
 
-## API调用示例
-下面是一个简单的Python脚本示例，展示如何通过API调用来生成包含淘宝人生角色的图片。请确保替换`your_api_key`为您的实际API密钥。
+## API Call Example
+Below is a simple Python script example showing how to generate an image containing a Taobao Life character via the API. Make sure to replace `your_api_key` with your actual API key.
 
-python
+```python
 import requests
 import json
 
@@ -43,18 +43,19 @@ if response.status_code == 200:
     print("Image saved successfully.")
 else:
     print(f"Failed to generate image: {response.text}")
+```
 
-### 参数说明
-- `character`: 指定要使用的淘宝人生角色类型。
-- `scene`: 设置场景背景，例如花园派对。
-- `style`: 定义图像的整体风格，比如卡通风格。
+### Parameter description
+- `character`: specifies the Taobao Life character type to use.
+- `scene`: sets the scene background, e.g., garden party.
+- `style`: defines the overall image style, e.g., cartoon.
 
-## 注意事项
-- 在正式使用前，请详细阅读API文档以获取更多关于支持的角色、场景及样式的信息。
-- 保持API密钥的安全性，不要将其公开或分享给他人。
-- 根据API服务提供商的规定，可能需要遵守某些使用限制或条款。
+## Notes
+- Before using it in production, read the API documentation carefully for more information about supported characters, scenes, and styles.
+- Keep your API key secure; do not make it public or share it with others.
+- Depending on the API provider's terms, some usage limits or conditions may apply.
 
-希望这份指南能帮助您快速上手并开始创建有趣的淘宝人生相关图片！如果有任何问题或需要进一步的帮助，请参考官方文档或联系客服支持。
+We hope this guide helps you get started quickly and begin creating fun Taobao Life images! If you have any questions or need further help, refer to the official documentation or contact customer support.
 
 **Official site: ** [https://github.com/driveRoad/city-mcp.git](https://github.com/driveRoad/city-mcp.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

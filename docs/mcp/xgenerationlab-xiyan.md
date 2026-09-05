@@ -262,7 +262,7 @@ Witsy config example
 ## It Does Not Work!
 Contact us:
 
-Ding Group钉钉群
+DingTalk Group
 ｜ 
 
 Follow me on Weibo

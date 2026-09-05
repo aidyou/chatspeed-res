@@ -187,7 +187,7 @@ MIT
 
 - 传输方式：`stdio`
 - 启动命令：`sh`
-- 参数：`-c docker ps -a | grep mcp-dingding-v2 | awk '{print $1}' | xargs -r docker rm -f > /dev/null 2>&1; docker pull ghcr.io/wllcnm/mcp-dingding-v2:latest > /dev/null 2>&1; docker run -i --rm --name mcp-dingding-v2 -e DINGTALK_APP_KEY=你的AppKey -e DINGTALK_APP_SECRET=你的AppSecret ghcr.io/wllcnm/mcp-dingding-v2:latest`
+- 参数：`-c docker ps -a | grep mcp-dingding-v2 | awk '{print $1}' | xargs -r docker rm -f > /dev/null 2>&1; docker pull ghcr.io/wllcnm/mcp-dingding-v2:latest > /dev/null 2>&1; docker run -i --rm --name mcp-dingding-v2 -e DINGTALK_APP_KEY=YOUR_APP_KEY -e DINGTALK_APP_SECRET=YOUR_APP_SECRET ghcr.io/wllcnm/mcp-dingding-v2:latest`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

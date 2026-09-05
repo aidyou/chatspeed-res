@@ -1,11 +1,11 @@
 ---
 title: "mcp-server-alipay"
-description: "@alipay/mcp-server-alipay 是支付宝开放平台提供的 MCP Server，让你可以轻松将支付宝开放平台提供的交易创建、查询、退款等能力集成到你的 LLM 应用中，并进一步创建具备支付能力的智能工具。"
+description: "@alipay/mcp-server-alipay is an MCP Server provided by the Alipay Open Platform, allowing you to easily integrate capabilities such as transaction creation, inquiry, and refund into your LLM applicati…"
 ---
 
 # mcp-server-alipay
 
-@alipay/mcp-server-alipay 是支付宝开放平台提供的 MCP Server，让你可以轻松将支付宝开放平台提供的交易创建、查询、退款等能力集成到你的 LLM 应用中，并进一步创建具备支付能力的智能工具。
+@alipay/mcp-server-alipay is an MCP Server provided by the Alipay Open Platform, allowing you to easily integrate capabilities such as transaction creation, inquiry, and refund into your LLM applicati…
 
 ## 0. One-Stop Access Assistant
 Don't want to read the long README?
@@ -28,21 +28,21 @@ Here is a fictional simplified use case to help understand the tool's capabiliti
 
 ```
 
-     最终用户设备                     Agent 运行环境
+     End-user device                      Agent runtime
 
 +---------------------+        +--------------------------+      +-------------------+
 
-|                     |  交流  |   支付宝 MCP Server +    |      |                   |
+|                     |  chat  |   Alipay MCP Server +   |      |                   |
 
-|    小程序/WebApp    ||   其他 MCP Server +      ||     支付服务      |
+|   Mini Program/WebApp  |   Other MCP Server +     |      |   Payment service  |
 
-|                     |  支付  |   Agent 开发工具         |      |   交易/退款/查询  |
+|                     |  pay  |   Agent dev tools       |      |  Trade/refund/query|
 
 +---------------------+        +--------------------------+      +-------------------+
 
-     创作服务买家                     智能工具开发者                   支付宝开放平台
+     Service buyer                     Intelligent tool developer               Alipay Open Platform
 
-      (最终用户)                         (创作者)
+      (end user)                          (creator)
 
 ```
 For more information and usage guidelines about this tool, including the prerequisite process of preparing a merchant identity for receiving payments, please refer to the [Payment MCP Service Documentation](https://opendocs.alipay.com/open/0go80l) on the Alipay Open Platform.
@@ -79,13 +79,13 @@ Add the following configuration to the `.cursor/mcp.json` file in your Cursor pr
 
         "AP_NOTIFY_URL": "https://your-own-server",
 
-        "...其他参数": "...其他值"
+        "...other params": "...other values"
 
       }
 
     },
 
-    "其他工具": { 
+    "other-tools": { 
 
       "...": "..."
 
@@ -124,7 +124,7 @@ Find the `cline_mcp_settings.json` configuration file in your Cline settings and
 
         "AP_NOTIFY_URL": "https://your-own-server",
 
-        "...其他参数": "...其他值"
+        "...other params": "...other values"
 
       },
 
@@ -134,7 +134,7 @@ Find the `cline_mcp_settings.json` configuration file in your Cline settings and
 
     },
 
-    "其他工具": { 
+    "other-tools": { 
 
       "...": "..."
 
@@ -155,27 +155,27 @@ The Alipay MCP Server receives parameters via environment variables. The paramet
 
 ```shell
 
-# 支付宝开放平台配置
+# Alipay Open Platform configuration
 
-AP_APP_ID=2014...222                    # 商户在开放平台申请的应用 ID（APPID）。必需。
+AP_APP_ID=2014...222                    # Application ID (APPID) applied for on the Open Platform by the merchant. Required.
 
-AP_APP_KEY=MIIE...DZdM=                 # 商户在开放平台申请的应用私钥。必需。
+AP_APP_KEY=MIIE...DZdM=                 # Application private key applied for on the Open Platform by the merchant. Required.
 
-AP_PUB_KEY=MIIB...DAQAB                 # 用于验证支付宝服务端数据签名的支付宝公钥，在开放平台获取。必需。
+AP_PUB_KEY=MIIB...DAQAB                 # Alipay public key used to verify the signature of Alipay server data; obtained from the Open Platform. Required.
 
-AP_RETURN_URL=https://success-page      # 网页支付完成后对付款用户展示的「同步结果返回地址」。
+AP_RETURN_URL=https://success-page      # Synchronous result return address shown to the payer after web payment completes.
 
-AP_NOTIFY_URL=https://your-own-server   # 支付完成后，用于告知开发者支付结果的「异步结果通知地址」。
+AP_NOTIFY_URL=https://your-own-server   # Asynchronous result notification address used to inform the developer of the payment result after payment completes.
 
-AP_ENCRYPTION_ALGO=RSA2                 # 商户在开放平台配置的参数签名方式。可选值为 "RSA2" 或 "RSA"。缺省值为 "RSA2"。
+AP_ENCRYPTION_ALGO=RSA2                 # Parameter signing method configured on the Open Platform by the merchant. Options: "RSA2" or "RSA". Default: "RSA2".
 
-AP_CURRENT_ENV=prod                     # 连接的支付宝开放平台环境。可选值为 "prod"（线上环境）或 "sandbox"（沙箱环境）。缺省值为 "prod"。
+AP_CURRENT_ENV=prod                     # Alipay Open Platform environment to connect to. Options: "prod" (production) or "sandbox". Default: "prod".
 
-# MCP Server 配置
+# MCP Server configuration
 
-AP_SELECT_TOOLS=all                      # 允许使用的工具。可选值为 "all" 或逗号分隔的工具名称列表。工具名称包括 `mobilePay`, `webPagePay`, `queryPay`, `refundPay`, `refundQuery`。缺省值为 "all"。
+AP_SELECT_TOOLS=all                      # Allowed tools. Options: "all" or a comma-separated tool name list. Tool names include `mobilePay`, `webPagePay`, `queryPay`, `refundPay`, `refundQuery`. Default: "all".
 
-AP_LOG_ENABLED=true                      # 是否在 $HOME/mcp-server-alipay.log 中记录日志。默认值为 true。
+AP_LOG_ENABLED=true                      # Whether to log to $HOME/mcp-server-alipay.log. Default: true.
 
 ```
 ## 3. Debugging with MCP Inspector

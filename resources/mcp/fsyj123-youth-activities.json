@@ -6,7 +6,7 @@
     "zh-Hans": "成都线下活动MCP"
   },
   "description": {
-    "en": "一个基于 Model Context Protocol (MCP) 的服务端（Server）， 用于抓取并解析 成都青年之家 的最新活动信息。（后续会扩宽范围）",
+    "en": "A server based on the Model Context Protocol (MCP) for scraping and parsing the latest activity information of the Chengdu Youth Home. (The scope will be expanded later.)",
     "zh-Hans": "一个基于 Model Context Protocol (MCP) 的服务端（Server），用于抓取并解析成都青年之家的最新活动信息。（后续会扩宽范围）"
   },
   "detail": {

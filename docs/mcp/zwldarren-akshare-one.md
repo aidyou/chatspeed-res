@@ -1,11 +1,11 @@
 ---
 title: "akshare-one-mcp"
-description: "AKShare One MCP Server English 中文 An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historic…"
+description: "AKShare One MCP Server An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historical stock da…"
 ---
 
 # akshare-one-mcp
 
-AKShare One MCP Server English 中文 An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historic…
+AKShare One MCP Server An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historical stock da…
 
 # AKShare One MCP Server
 

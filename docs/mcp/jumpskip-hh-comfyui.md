@@ -250,7 +250,7 @@ plaintext
 ### Check if the Service is Running Normally
 
   bash
-  $ uv --directory 你本地安装目录/hh-mcp-comfyui run hh-mcp-comfyui
+  $ uv --directory YOUR_LOCAL_INSTALL_DIR/hh-mcp-comfyui run hh-mcp-comfyui
 
   INFO:__main__:Scanning for workflows in: D:\cygitproject\hh-mcp-comfyui\src\hh_mcp_comfyui\workflows
   INFO:__main__:Registered resource: workflow://t2image_bizyair_flux -> t2image_bizyair_flux.json
@@ -260,7 +260,7 @@ plaintext
 ### Use MCP Inspector to Test the Server Tool
 
   bash
-  $ npx @modelcontextprotocol/inspector uv --directory 你本地安装目录/hh-mcp-comfyui run hh-mcp-comfyui
+  $ npx @modelcontextprotocol/inspector uv --directory YOUR_LOCAL_INSTALL_DIR/hh-mcp-comfyui run hh-mcp-comfyui
   
 
 ### MCP Configuration
@@ -272,7 +272,7 @@ plaintext
         "command": "uv",
         "args": [
           "--directory",
-          "项目绝对路径（例如：D:/hh-mcp-comfyui）",
+          "project absolute path (e.g., D:/hh-mcp-comfyui)",
           "run",
           "hh-mcp-comfyui"
         ],

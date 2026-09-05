@@ -6,7 +6,7 @@
     "zh-Hans": "淘客助手"
   },
   "description": {
-    "en": "In the comprehensive shopping price comparison scenario, searching for coupons and comparing prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo—integrates the understanding capabilities of large models to provide users with the information.\n\n- 代码块和链接保持不变。\n- 格式结构保持一致。\n- 专业术语如“API接口”、“大模型”等确保翻译准确。 \n\nHere is the translation:\n\nIn the comprehensive shopping price comparison scenario, search for coupons and compare prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo. This process integrates the understanding capabilities of large models to output the information to the user.",
+    "en": "In the comprehensive shopping price comparison scenario, searching for coupons and comparing prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo—integrates the understanding capabilities of large models to provide users with the information.",
     "zh-Hans": "综合购物比价场景，搜索优惠券，通过调用三大平台淘宝、京东、拼多多官方API接口，来搜索商品并比价结合大模型的理解能力输出给用户"
   },
   "detail": {
@@ -49,27 +49,27 @@
       ],
       [
         "JD_KEY",
-        "union.jd.com上去取"
+        "get it from union.jd.com"
       ],
       [
         "JD_PID",
-        "union.jd.com上去取"
+        "get it from union.jd.com"
       ],
       [
         "PDD_PID",
-        "拼多多PID"
+        "Pinduoduo PID"
       ],
       [
         "PDD_SESSION_TOKEN",
-        "拼多多授权token，上面有授权链接"
+        "Pinduoduo auth token; the auth link is above"
       ],
       [
         "TAOBAO_PID",
-        "淘宝PID"
+        "Taobao PID"
       ],
       [
         "TAOBAO_SESSION",
-        "淘宝授权token，上面有授权链接，授权后，复制token到这里"
+        "Taobao auth token; the auth link is above. After authorizing, copy the token here"
       ]
     ],
     "requiredInputs": []

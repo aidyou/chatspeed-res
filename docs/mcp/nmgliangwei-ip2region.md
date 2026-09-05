@@ -1,18 +1,18 @@
 ---
 title: "ip2region"
-description: "You can obtain the local public IP and also support querying the归属地 (location) of any IP address. It seems like a part of your sentence was left in Chinese. I assume you meant to say \"querying the loc…"
+description: "Provides 2 free MCP tools - no authentication needed, no payment, ready to use out of the box: 1. ip2region supports geolocation queries for any IP address; 2. getlocalip gets your local public IP. Fo…"
 ---
 
 # ip2region
 
-You can obtain the local public IP and also support querying the归属地 (location) of any IP address. It seems like a part of your sentence was left in Chinese. I assume you meant to say "querying the loc…
+Provides 2 free MCP tools - no authentication needed, no payment, ready to use out of the box: 1. ip2region supports geolocation queries for any IP address; 2. getlocalip gets your local public IP. Fo…
 
-### 提供2个免费mcp工具，无需认证，无需付费，开箱即用
-#### 1. ip2region 支持任意IP地址归属地查询
-#### 2. get_local_ip 获取您本地公网IP
+### Provides 2 free MCP tools - no authentication needed, no payment, ready to use out of the box
+#### 1. ip2region: supports geolocation queries for any IP address
+#### 2. get_local_ip: gets your local public IP
 
-### 非mcp调用，请使用 ifconfig.cc 同样免费
-### 使用方法：将以下json添加到配置文件中
+### For non-MCP calls, use ifconfig.cc - also free
+### Usage: add the following JSON to the config file
 ```
 {
   "mcpServers": {

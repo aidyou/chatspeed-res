@@ -43,7 +43,7 @@
   "lastVerifiedAt": "2026-08-30",
   "mcp": {
     "type": "http",
-    "url": "http://api.kuaidi100.com/mcp/sse?key=您在快递100API开放平台上获取的授权key",
+    "url": "http://api.kuaidi100.com/mcp/sse?key=the authorized key you obtained from the Kuaidi100 API open platform",
     "env": [],
     "requiredInputs": []
   },

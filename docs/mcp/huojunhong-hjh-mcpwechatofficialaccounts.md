@@ -1,11 +1,11 @@
 ---
 title: "MCPWeChatOfficialAccounts"
-description: "MCP WeChat Official Account Crawler A WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…"
+description: "MCP WeChat Official Account Crawler: a WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…"
 ---
 
 # MCPWeChatOfficialAccounts
 
-MCP WeChat Official Account Crawler A WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…
+MCP WeChat Official Account Crawler: a WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…
 
 # MCP WeChat Official Account Crawler
 
@@ -36,50 +36,50 @@ When using AI platforms or agents, we found that these agents could not directly
 
 graph TB
 
-    subgraph "AI智能体层"
+    subgraph "AI Agent Layer"
 
         A[Claude Desktop]
 
         B[ChatGPT]
 
-        C[其他AI智能体]
+        C[Other AI agents]
 
     end
 
     
 
-    subgraph "MCP协议层"
+    subgraph "MCP Protocol Layer"
 
-        D[MCP客户端]
+        D[MCP client]
 
-        E[stdio通信]
+        E[stdio communication]
 
-        F[MCP服务器
+        F[MCP server
 FastMCP]
 
     end
 
     
 
-    subgraph "爬虫引擎层"
+    subgraph "Crawler Engine Layer"
 
         G[Selenium WebDriver]
 
-        H[Chrome浏览器]
+        H[Chrome browser]
 
-        I[图片下载器]
+        I[Image downloader]
 
     end
 
     
 
-    subgraph "数据存储层"
+    subgraph "Data Storage Layer"
 
-        J[JSON文件]
+        J[JSON files]
 
-        K[TXT文件]
+        K[TXT files]
 
-        L[图片文件]
+        L[Image files]
 
     end
 
@@ -140,13 +140,13 @@ FastMCP]
 
 ```bash
 
-# 1. 克隆项目
+# 1. Clone the project
 
 git clone 
 
 cd mcp-weixin
 
-# 2. 安装依赖
+# 2. Install dependencies
 
 pip install -r requirements.txt
 
@@ -157,11 +157,11 @@ pip install -r requirements.txt
 
 ```bash
 
-# 启动MCP服务器
+# Start the MCP server
 
 python -m mcp_weixin_spider
 
-# 启动客户端演示
+# Start the client demo
 
 python -m mcp_weixin_spider.client
 
@@ -180,7 +180,7 @@ python -m mcp_weixin_spider.client
 
       "args": [
 
-        "本地路径/server.py"
+        "LOCAL_PATH/server.py"
 
       ],
 

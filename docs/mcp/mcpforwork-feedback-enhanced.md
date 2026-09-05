@@ -1,15 +1,15 @@
 ---
 title: "feedback-enhanced"
-description: "MCP Feedback Enhanced 🌐 Language / 語言切換: English | 繁體中文 | 简体中文"
+description: "MCP Feedback Enhanced Language switcher: English | 繁體中文 | 简体中文"
 ---
 
 # feedback-enhanced
 
-MCP Feedback Enhanced 🌐 Language / 語言切換: English | 繁體中文 | 简体中文
+MCP Feedback Enhanced Language switcher: English | 繁體中文 | 简体中文
 
 # MCP Feedback Enhanced
 
-**🌐 Language / 語言切換:** **English** | [繁體中文](https://github.com/Minidoracat/mcp-feedback-enhanced/blob/HEAD/README.zh-TW.md) | [简体中文](https://github.com/Minidoracat/mcp-feedback-enhanced/blob/HEAD/README.zh-CN.md)
+**Language switcher:** **English** | [繁體中文](https://github.com/Minidoracat/mcp-feedback-enhanced/blob/HEAD/README.zh-TW.md) | [简体中文](https://github.com/Minidoracat/mcp-feedback-enhanced/blob/HEAD/README.zh-CN.md)
 
 **Original Author:** [Fábio Ferreira](https://x.com/fabiomlferreira) | [Original Project](https://github.com/noopstudios/interactive-feedback-mcp) ⭐
 **Enhanced Fork:** [Minidoracat](https://github.com/Minidoracat)
@@ -47,7 +47,7 @@ This is an [MCP server](https://modelcontextprotocol.io/) that establishes **fee
 - **Auto Processing**: Smart compression to ensure 1MB limit compliance
 
 ### 🌏 Multi-language
-- **Three Languages**: English, Traditional Chinese, Simplified Chinese
+- **Language switcher:**: English, Traditional Chinese, Simplified Chinese
 - **Smart Detection**: Auto-select based on system language
 - **Live Switching**: Change language directly within interface
 

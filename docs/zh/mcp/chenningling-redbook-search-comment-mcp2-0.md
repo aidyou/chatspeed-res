@@ -420,8 +420,8 @@ mkdir -p /项目路径/browser_data
 ## MCP 配置
 
 - 传输方式：`stdio`
-- 启动命令：`/绝对路径/到/venv/bin/python3`
-- 参数：`/绝对路径/到/xiaohongshu_mcp.py --stdio`
+- 启动命令：`/absolute/path/to/venv/bin/python3`
+- 参数：`/absolute/path/to/xiaohongshu_mcp.py --stdio`
 
 该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
 

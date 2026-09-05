@@ -37,19 +37,19 @@
     "env": [
       [
         "APP_ID",
-        "您的APP_ID"
+        "YOUR_APP_ID"
       ],
       [
         "APP_SECRET",
-        "您的APP_SECRET"
+        "YOUR_APP_SECRET"
       ],
       [
         "OPEN_ID",
-        "您的OPEN_ID"
+        "YOUR_OPEN_ID"
       ],
       [
         "ORDER_CITY",
-        "郑州市（您的发单城市，格式：郑州市，‘市’字请不要省略，必须要有）"
+        "Zhengzhou City (your dispatch city; format: \"Zhengzhou City\", do not omit the word \"City\", it is required)"
       ]
     ],
     "requiredInputs": []

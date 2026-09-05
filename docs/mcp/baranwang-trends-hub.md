@@ -7,34 +7,31 @@ description: "A MCP server that aggregates hot trends and rankings from various 
 
 A MCP server that aggregates hot trends and rankings from various Chinese websites and platforms including Weibo, Zhihu, Bilibili, and more.
 
-# 🔥 Trends Hub
+# Trends Hub
 
 [Smithery](https://smithery.ai/server/@baranwang/mcp-trends-hub)
 [![NPM Version](/mcp-assets/bba9ad2fb73b4ccc707c784e8897a0a2.svg)](https://www.npmjs.com/package/mcp-trends-hub)
 ![NPM License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)
 
-基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务
+A one-stop aggregation service for hot trends across the web, built on the Model Context Protocol (MCP).
 
-## 示例效果
+## Example
 
-  
-   alt="Trends Hub 示例">
+## Features
 
-## ✨ 特性
+- **One-stop aggregation** - aggregates hot news from across the web, with 20+ quality data sources
+- **Real-time updates** - keeps hot data in sync with the source sites
+- **MCP protocol support** - fully compatible with Model Context Protocol, easy to integrate into AI applications
+- **Easy to extend** - add custom RSS sources with simple configuration
+- **Flexible customization** - adjust returned fields easily via environment variables
 
-- 📊 **一站式聚合** - 聚合全网热点资讯，20+ 优质数据源
-- 🔄 **实时更新** - 保持与源站同步的最新热点数据
-- 🧩 **MCP 协议支持** - 完全兼容 Model Context Protocol，轻松集成到 AI 应用
-- 🔌 **易于扩展** - 简单配置即可添加自定义 RSS 源
-- 🎨 **灵活定制** - 通过环境变量轻松调整返回字段
+## Usage Guide
 
-## 📖 使用指南
+First, familiarize yourself with the [MCP](https://modelcontextprotocol.io/introduction) protocol, then add the Trends Hub service using the configuration below.
 
-首先需要了解 [MCP](https://modelcontextprotocol.io/introduction) 协议，然后按照以下配置添加 Trends Hub 服务
+Different MCP clients may differ in implementation; here are some common configuration examples:
 
-不同的 MCP 客户端实现可能有所不同，以下是一些常见的配置示例：
-
-### JSON 配置
+### JSON configuration
 
 ```json
 {
@@ -50,52 +47,34 @@ A MCP server that aggregates hot trends and rankings from various Chinese websit
 }
 ```
 
-### 命令行配置
+### Command line configuration
 
 ```bash
 npx -y mcp-trends-hub@1.6.0
 ```
 
-### 安装
+### Installation
 
-#### 使用 Smithery 安装
+#### Install via Smithery
 
-通过 [Smithery](https://smithery.ai/server/@baranwang/mcp-trends-hub) 安装 Trends Hub，适用于 Claude Desktop 客户端：
+Install Trends Hub via [Smithery](https://smithery.ai/server/@baranwang/mcp-trends-hub) for Claude Desktop:
 
 ```bash
 npx -y @smithery/cli install @baranwang/mcp-trends-hub --client claude
 ```
 
-（以下仅适用于 MCP 模型客户端）
+(The following applies to MCP model clients only)
 
-### 配置环境变量
+### Configure environment variables
 
-### `TRENDS_HUB_HIDDEN_FIELDS` - 隐藏的字段列表
+### `TRENDS_HUB_HIDDEN_FIELDS` - hidden field list
 
-通过此环境变量可控制返回数据中的字段显示：
+This environment variable controls which fields appear in the returned data:
 
-- 作用于所有工具：`{field-name}`，例如 `cover`
-- 作用于特定工具：`{tool-name}:{field-name}`，例如 `get-toutiao-trending:cover`
+- Applies to all tools: `{field-name}`, e.g. `cover`
+- Applies to a specific tool: `{tool-name}:{field-name}`, e.g. `get-toutiao-trending:cover`
 
-多个配置用西文逗号分隔，例如：
-
-```jsonc
-{
-  "mcpServers": {
-    "trends-hub": {
-      "command": "npx",
-      "args": ["-y", "mcp-trends-hub"],
-      "env": {
-        "TRENDS_HUB_HIDDEN_FIELDS": "cover,get-nytimes-news:description" // 隐藏所有工具的封面返回和纽约时报新闻的描述
-      }
-    }
-  }
-}
-```
-
-### `TRENDS_HUB_CUSTOM_RSS_URL` - 自定义 RSS 订阅源
-
-Trend Hub 支持通过环境变量添加自定义 RSS 源：
+Separate multiple entries with commas, for example:
 
 ```jsonc
 {
@@ -104,44 +83,62 @@ Trend Hub 支持通过环境变量添加自定义 RSS 源：
       "command": "npx",
       "args": ["-y", "mcp-trends-hub"],
       "env": {
-        "TRENDS_HUB_CUSTOM_RSS_URL": "https://news.yahoo.com/rss" // 添加 Yahoo 新闻 RSS
+        "TRENDS_HUB_HIDDEN_FIELDS": "cover,get-nytimes-news:description" // hide the cover field for all tools and the description for NYTimes news
       }
     }
   }
 }
 ```
 
-配置后将自动添加`custom-rss`工具，用于获取指定的 RSS 订阅源内容
+### `TRENDS_HUB_CUSTOM_RSS_URL` - custom RSS feed
 
-## 🛠️ 支持的工具
+Trends Hub supports adding custom RSS sources via environment variables:
 
-| 工具名称 | 描述 |
+```jsonc
+{
+  "mcpServers": {
+    "trends-hub": {
+      "command": "npx",
+      "args": ["-y", "mcp-trends-hub"],
+      "env": {
+        "TRENDS_HUB_CUSTOM_RSS_URL": "https://news.yahoo.com/rss" // add the Yahoo News RSS feed
+      }
+    }
+  }
+}
+```
+
+After configuration, a `custom-rss` tool is added automatically for fetching the specified RSS feed content.
+
+## Supported Tools
+
+| Tool | Description |
 | --- | --- |
-| get-36kr-trending | 获取 36 氪热榜，提供创业、商业、科技领域的热门资讯，包含投融资动态、新兴产业分析和商业模式创新信息 |
-| get-9to5mac-news | 获取 9to5Mac 苹果相关新闻，包含苹果产品发布、iOS 更新、Mac 硬件、应用推荐及苹果公司动态的英文资讯 |
-| get-bbc-news | 获取 BBC 新闻，提供全球新闻、英国新闻、商业、政治、健康、教育、科技、娱乐等资讯 |
-| get-bilibili-rank | 获取哔哩哔哩视频排行榜，包含全站、动画、音乐、游戏等多个分区的热门视频，反映当下年轻人的内容消费趋势 |
-| get-douban-rank | 获取豆瓣实时热门榜单，提供当前热门的图书、电影、电视剧、综艺等作品信息，包含评分和热度数据 |
-| get-douyin-trending | 获取抖音热搜榜单，展示当下最热门的社会话题、娱乐事件、网络热点和流行趋势 |
-| get-gcores-new | 获取机核网游戏相关资讯，包含电子游戏评测、玩家文化、游戏开发和游戏周边产品的深度内容 |
-| get-ifanr-news | 获取爱范儿科技快讯，包含最新的科技产品、数码设备、互联网动态等前沿科技资讯 |
-| get-infoq-news | 获取 InfoQ 技术资讯，包含软件开发、架构设计、云计算、AI等企业级技术内容和前沿开发者动态 |
-| get-juejin-article-rank | 获取掘金文章榜，包含前端开发、后端技术、人工智能、移动开发及技术架构等领域的高质量中文技术文章和教程 |
-| get-netease-news-trending | 获取网易新闻热点榜，包含时政要闻、社会事件、财经资讯、科技动态及娱乐体育的全方位中文新闻资讯 |
-| get-nytimes-news | 获取纽约时报新闻，包含国际政治、经济金融、社会文化、科学技术及艺术评论的高质量英文或中文国际新闻资讯 |
-| get-smzdm-rank | 获取什么值得买热门，包含商品推荐、优惠信息、购物攻略、产品评测及消费经验分享的实用中文消费类资讯 |
-| get-sspai-rank | 获取少数派热榜，包含数码产品评测、软件应用推荐、生活方式指南及效率工作技巧的优质中文科技生活类内容 |
-| get-tencent-news-trending | 获取腾讯新闻热点榜，包含国内外时事、社会热点、财经资讯、娱乐动态及体育赛事的综合性中文新闻资讯 |
-| get-thepaper-trending | 获取澎湃新闻热榜，包含时政要闻、财经动态、社会事件、文化教育及深度报道的高质量中文新闻资讯 |
-| get-theverge-news | 获取 The Verge 新闻，包含科技创新、数码产品评测、互联网趋势及科技公司动态的英文科技资讯 |
-| get-toutiao-trending | 获取今日头条热榜，包含时政要闻、社会事件、国际新闻、科技发展及娱乐八卦等多领域的热门中文资讯 |
-| get-weibo-trending | 获取微博热搜榜，包含时事热点、社会现象、娱乐新闻、明星动态及网络热议话题的实时热门中文资讯 |
-| get-weread-rank | 获取微信读书排行榜，包含热门小说、畅销书籍、新书推荐及各类文学作品的阅读数据和排名信息 |
-| get-zhihu-trending | 获取知乎热榜，包含时事热点、社会话题、科技动态、娱乐八卦等多领域的热门问答和讨论的中文资讯 |
+| get-36kr-trending | Get the 36Kr hot list with hot news in startup, business, and tech, including funding activity, emerging industry analysis, and business model innovation |
+| get-9to5mac-news | Get Apple-related news from 9to5Mac, including product launches, iOS updates, Mac hardware, app recommendations, and Apple company news in English |
+| get-bbc-news | Get BBC news covering world news, UK news, business, politics, health, education, technology, entertainment, and more |
+| get-bilibili-rank | Get the Bilibili video ranking, including popular videos across the whole site, animation, music, games, and other sections, reflecting what younger audiences are consuming |
+| get-douban-rank | Get Douban's real-time hot lists with currently popular books, movies, TV series, and variety shows, including ratings and popularity data |
+| get-douyin-trending | Get Douyin hot search lists showing the most popular social topics, entertainment events, viral trends, and internet hotspots |
+| get-gcores-new | Get gaming news from Gcores, including in-depth video game reviews, player culture, game development, and game merchandise content |
+| get-ifanr-news | Get tech news from iFanr, including the latest tech products, digital devices, and internet developments |
+| get-infoq-news | Get InfoQ technology news covering software development, architecture design, cloud computing, AI, and other enterprise tech content plus cutting-edge developer updates |
+| get-juejin-article-rank | Get the Juejin article ranking with high-quality Chinese tech articles and tutorials on frontend, backend, AI, mobile development, and technical architecture |
+| get-netease-news-trending | Get the NetEase News hot list with comprehensive Chinese news covering politics, social events, finance, tech, entertainment, and sports |
+| get-nytimes-news | Get New York Times news covering international politics, economics and finance, society and culture, science and technology, and art reviews in high-quality English or Chinese |
+| get-smzdm-rank | Get Smzdm hot items with practical Chinese consumer content including product recommendations, deals, shopping guides, product reviews, and shopping experience sharing |
+| get-sspai-rank | Get the Sspai hot list with quality Chinese tech and lifestyle content including digital product reviews, software recommendations, lifestyle guides, and productivity tips |
+| get-tencent-news-trending | Get the Tencent News hot list with comprehensive Chinese news covering domestic and international affairs, social hotspots, finance, entertainment, and sports |
+| get-thepaper-trending | Get the The Paper hot list with high-quality Chinese news covering politics, finance, social events, culture and education, and in-depth reporting |
+| get-theverge-news | Get The Verge news covering tech innovation, digital product reviews, internet trends, and tech company news in English |
+| get-toutiao-trending | Get the Toutiao hot list with popular Chinese news across politics, social events, international news, tech developments, and entertainment gossip |
+| get-weibo-trending | Get the Weibo hot search list with real-time popular Chinese news covering current events, social phenomena, entertainment news, celebrity updates, and hot online topics |
+| get-weread-rank | Get the WeRead ranking with reading data and rankings for popular novels, bestsellers, new book recommendations, and various literary works |
+| get-zhihu-trending | Get the Zhihu hot list with popular Q&A and discussions in Chinese across current events, social topics, tech news, and entertainment gossip |
 
-更多数据源正在持续增加中
+More data sources are being added continuously.
 
-## 鸣谢
+## Acknowledgments
 
 - [DailyHotApi](https://github.com/imsyy/DailyHotApi)
 - [RSSHub](https://github.com/DIYgod/RSSHub)

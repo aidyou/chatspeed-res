@@ -6,7 +6,7 @@
     "zh-Hans": "科学计算器_kel"
   },
   "description": {
-    "en": "## 计算器 MCP\n基于 Model Context Protocol (MCP) 的数值计算器，提供了简单的加减乘除、幂运算、平方根运算和整数阶乘运算。\n\n\n## 工具列表\n| name | description |\n| ----------- | ----------- |\n| add  | 执行浮点数加法运算 |\n| subtract | 执行浮点数减法运算 |\n| multiply | 执行浮点数乘法运算 |\n| divide|执行浮点数除法运算 Args: b: 除数（必须非零）|\n| power | 计算幂运算 |\n| sqrt | 计算平方根 |\n| factorial | 计算整数阶乘 |",
+    "en": "## Calculator MCP\nA numerical calculator based on the Model Context Protocol (MCP), providing simple operations: addition, subtraction, multiplication, division, power, square root, and integer factorial.\n\n## Tool List\n| name | description |\n| ----------- | ----------- |\n| add | Performs floating-point addition |\n| subtract | Performs floating-point subtraction |\n| multiply | Performs floating-point multiplication |\n| divide | Performs floating-point division. Args: b: divisor (must be non-zero) |\n| power | Calculates exponentiation |\n| sqrt | Calculates square root |\n| factorial | Calculates the factorial of an integer |",
     "zh-Hans": "基于Model Context Protocol (MCP)的数值计算器，提供了简单的加减乘除、幂运算、平方根运算和整数阶乘运算。"
   },
   "detail": {

@@ -1,11 +1,11 @@
 ---
 title: "bing-cn-mcp-enhanced"
-description: "一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。"
+description: "A Chinese Bing search tool based on the MCP (Model Context Protocol) that lets you search Bing and fetch webpage content directly through Claude or other MCP-capable AI."
 ---
 
 # bing-cn-mcp-enhanced
 
-一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。
+A Chinese Bing search tool based on the MCP (Model Context Protocol) that lets you search Bing and fetch webpage content directly through Claude or other MCP-capable AI.
 
 # Bing CN MCP Enhanced
 

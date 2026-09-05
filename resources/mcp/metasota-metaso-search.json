@@ -6,7 +6,7 @@
     "zh-Hans": "秘塔AI搜索"
   },
   "description": {
-    "en": "MCP Service of Mitell AI Search\n\n## 1. 概述\n秘塔AI搜索的MCP（Multi-Cloud Platform）服务是一种多云平台解决方案，旨在帮助企业更高效地管理和利用来自不同云服务商的资源。通过MCP，用户可以轻松地在多个云环境之间迁移应用和服务，同时享受统一的管理和监控体验。\n\n## 2. 功能特点\n- **跨云管理**：支持对阿里云、腾讯云等主流云服务商的资源进行集中管理。\n- **自动化运维**：提供自动化的部署、更新和维护工具，简化日常运维工作。\n- **成本优化**：通过智能分析帮助用户识别并减少不必要的开支。\n- **安全性高**：采用先进的安全技术保护数据免受攻击。\n\n## 3. 快速开始\n### 3.1 创建账户\n访问[秘塔官网](https://www.mitell.com)注册账号，并按照指引完成身份验证流程。\n\n### 3.2 配置云服务\n登录后，在控制台中选择“添加云服务”，根据提示输入您的云服务提供商信息及相应的API密钥。\n\nplaintext\n例如：\n- 云服务提供商: 阿里云\n- API Key: your_api_key_here\n- Secret Key: your_secret_key_here\n\n\n### 3.3 使用MCP\n配置完成后，您就可以开始使用MCP的各项功能了。更多详细操作指南请参阅[官方文档](https://docs.mitell.com/mcp/)。\n\n## 4. 常见问题解答\n- **Q: MCP是否支持所有类型的云服务？**\n  A: 目前MCP主要支持市场上主流的IaaS和PaaS服务。对于特定需求，请联系客服获取更多信息。\n- **Q: 如何保证我的数据安全？**\n  A: 我们采用了包括但不限于加密传输、定期备份以及严格的访问控制在内的多种措施来确保您的信息安全。\n\n## 5. 联系我们\n如果您有任何疑问或需要进一步的帮助，请随时联系我们：\n- 客服邮箱: support@mitell.com\n- 官方网站: [https://www.mitell.com](https://www.mitell.com)\n\n---\n\n希望这份文档能够帮助您更好地了解和使用秘塔AI搜索的MCP服务！",
+    "en": "The Metasota AI Search MCP service is an intelligent search and Q&A service based on the Model Context Protocol (MCP), providing powerful web search, content reading, and intelligent Q&A capabilities for AI assistants. By integrating this service, AI assistants can obtain real-time web information, read web page content, and provide accurate intelligent Q&A based on RAG technology.",
     "zh-Hans": "秘塔AI搜索的MCP服务"
   },
   "detail": {

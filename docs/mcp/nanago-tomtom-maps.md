@@ -1,164 +1,153 @@
 ---
 title: "tomtom-maps"
-description: "tomtom开源的位置服务mcp"
+description: "TomTom open-source location services MCP The TomTom MCP (Map and Content Platform) is an open-source project designed to provide a series of location-related services. It allows developers to build th…"
 ---
 
 # tomtom-maps
 
-tomtom开源的位置服务mcp
+TomTom open-source location services MCP The TomTom MCP (Map and Content Platform) is an open-source project designed to provide a series of location-related services. It allows developers to build th…
+
+# TomTom MCP Server
+
+**TomTom MCP Server** simplifies geospatial development by providing seamless access to TomTom location services. These services include search, route planning, traffic, and static map data. It enables easy integration of precise geographic data into AI workflows and development environments.
 
 ---
 
-# TomTom MCP 服务器
+## Quick Start
 
-**TomTom MCP Server** 通过提供对 TomTom 位置服务的无缝访问，简化了地理空间开发。这些服务包括搜索、路线规划、交通和静态地图数据。它能够将精确的地理位置数据轻松集成到 AI 工作流和开发环境中。
+### Prerequisites
+- Node.js 22 or higher
+- A TomTom API key
 
----
+**How to get a TomTom API key**:
+1. Create a developer account at the [TomTom developer portal](https://developer.tomtom.com/).
+2. Go to **API & SDK Keys** in the left menu.
+3. Click the red **Create Key** button.
+4. Give your key a name, select all available APIs for full access, and click **Create**.
 
-## 快速开始
+For more details, visit the [TomTom API key management documentation](https://developer.tomtom.com/platform/documentation/dashboard/api-key-management).
 
-### 先决条件
-- Node.js 22 或更高版本
-- TomTom API 密钥
-
-**如何获取 TomTom API 密钥**：
-1.  在 [TomTom 开发者门户](https://developer.tomtom.com/) 上创建一个开发者帐户。
-2.  在左侧菜单中转到 **API & SDK Keys**。
-3.  点击 **红色的 Create Key** 按钮。
-4.  选择所有可用的 API 以确保完全访问权限，为您的密钥分配一个名称，然后点击 **Create**。
-
-更多详细信息，请访问 [TomTom API 密钥管理文档](https://developer.tomtom.com/platform/documentation/dashboard/api-key-management)。
-
-### 安装
+### Installation
 ```bash
-# 安装到本地项目
+# Install into a local project
 npm install @tomtom-org/tomtom-mcp@latest
 
-# 或者直接运行而无需安装
+# Or run directly without installing
 npx @tomtom-org/tomtom-mcp@latest
 ```
----
 
-### 配置
-使用以下方法之一设置您的 TomTom API 密钥：
+### Configuration
+Set up your TomTom API key using one of the following methods:
 
 ```bash
-# 选项 1：使用 .env 文件（推荐）
-echo "TOMTOM_API_KEY=你的_api_密钥" > .env
+# Option 1: use a .env file (recommended)
+echo "TOMTOM_API_KEY=YOUR_API_KEY" > .env
 
-# 选项 2：环境变量 (Linux/macOS)
-export TOMTOM_API_KEY=你的_api_密钥
-# Windows CMD: set TOMTOM_API_KEY=你的_api_密钥
-# Windows PowerShell: $env:TOMTOM_API_KEY="你的_api_密钥"
+# Option 2: environment variable (Linux/macOS)
+export TOMTOM_API_KEY=YOUR_API_KEY
+# Windows CMD: set TOMTOM_API_KEY=YOUR_API_KEY
+# Windows PowerShell: $env:TOMTOM_API_KEY="YOUR_API_KEY"
 
-# 选项 3：作为 CLI 参数传递
-npx @tomtom-org/tomtom-mcp@latest --key 你的_api_密钥
+# Option 3: pass it as a CLI argument
+npx @tomtom-org/tomtom-mcp@latest --key YOUR_API_KEY
 ```
----
 
-### 用法
+### Usage
 ```bash
-# 启动 MCP 服务器
+# Start the MCP server
 npx @tomtom-org/tomtom-mcp@latest
-# 获取帮助
+# Get help
 npx @tomtom-org/tomtom-mcp@latest --help
 ```
 
 ---
 
-## 集成指南
+## Integration Guides
 
-TomTom MCP Server 可以轻松集成到各种 AI 开发环境和工具中。
+The TomTom MCP Server can be easily integrated into various AI development environments and tools.
 
-这些指南帮助您将 MCP 服务器与您的工具和环境集成：
-- [Claude Desktop 设置](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/claude-desktop-setup.md) - 配置 Claude Desktop 以使用 TomTom MCP 服务器的说明
-- [VS Code 设置](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/vscode-setup.md) - 在 Visual Studio Code 中设置开发环境
-- [Cursor AI 集成](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/cursor-setup.md) - 将 TomTom MCP 服务器与 Cursor AI 集成的指南
-- [WinSurf 集成](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/windsurf-setup.md) - 配置 WindSurf 使用 TomTom MCP 服务器的说明
-- [Smolagents 集成](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/smolagents/smolagents-setup.md) - 展示如何将 Smolagents AI 代理连接到 TomTom MCP 服务器的示例。
+These guides help you integrate the MCP server with your tools and environments:
+- [Claude Desktop setup](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/claude-desktop-setup.md) - instructions for configuring Claude Desktop to use the TomTom MCP server
+- [VS Code setup](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/vscode-setup.md) - set up the development environment in Visual Studio Code
+- [Cursor AI integration](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/cursor-setup.md) - guide for integrating the TomTom MCP server with Cursor AI
+- [WindSurf integration](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/windsurf-setup.md) - instructions for configuring WindSurf to use the TomTom MCP server
+- [Smolagents integration](https://github.com/tomtom-international/tomtom-mcp/blob/HEAD/docs/smolagents/smolagents-setup.md) - example showing how to connect the Smolagents AI agent to the TomTom MCP server
 
 ---
 
-## 可用工具
+## Available Tools
 
-| 工具 | 描述 | 文档 |
+| Tool | Description | Documentation |
 |------|-------------|---------------|
-| `tomtom-geocode` | 将地址转换为坐标，提供全球覆盖 | https://developer.tomtom.com/geocoding-api/documentation/geocode |
-| `tomtom-reverse-geocode` |  根据 GPS 坐标获取地址 | https://developer.tomtom.com/reverse-geocoding-api/documentation/reverse-geocode |
-| `tomtom-fuzzy-search` | 智能搜索，支持容错（拼写错误） | https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search |
-| `tomtom-poi-search` | 查找特定的商业类别（兴趣点） | https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search |
-| `tomtom-nearby` | 发现指定半径内的服务 | https://developer.tomtom.com/search-api/documentation/search-service/nearby-search |
-| `tomtom-routing` | 计算位置之间的最优路线 | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route |
-| `tomtom-waypoint-routing` | 多站点路线规划 | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route |
-| `tomtom-reachable-range` | 根据时间/距离确定覆盖范围区域 | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range |
-| `tomtom-traffic` | 实时交通事件数据 | https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/traffic-incidents-service  |
-| `tomtom-static-map` | 生成自定义地图图像 | https://developer.tomtom.com/map-display-api/documentation/raster/static-image |
+| `tomtom-geocode` | Converts addresses to coordinates with global coverage | https://developer.tomtom.com/geocoding-api/documentation/geocode |
+| `tomtom-reverse-geocode` | Gets an address from GPS coordinates | https://developer.tomtom.com/reverse-geocoding-api/documentation/reverse-geocode |
+| `tomtom-fuzzy-search` | Smart search with fault tolerance (typos) | https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search |
+| `tomtom-poi-search` | Finds specific business categories (points of interest) | https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search |
+| `tomtom-nearby` | Discovers services within a specified radius | https://developer.tomtom.com/search-api/documentation/search-service/nearby-search |
+| `tomtom-routing` | Computes optimal routes between locations | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route |
+| `tomtom-waypoint-routing` | Multi-stop route planning | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route |
+| `tomtom-reachable-range` | Determines coverage areas by time/distance | https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range |
+| `tomtom-traffic` | Real-time traffic incident data | https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/traffic-incidents-service |
+| `tomtom-static-map` | Generates custom map images | https://developer.tomtom.com/map-display-api/documentation/raster/static-image |
 
 ---
-## 贡献与本地开发
+## Contributing & Local Development
 
-### 设置
+### Setup
 ```bash
-git clone  # 克隆代码库（请替换为实际地址）
-
-cd tomtom-mcp # 进入项目目录
-
-npm install # 安装依赖
-
-cp .env.example .env      # 复制环境变量示例文件，并在 .env 中添加您的 API 密钥
-
-npm run build             # 构建 TypeScript 文件
-
-node ./bin/tomtom-mcp.js   # 启动 MCP 服务器
+git clone <repo-url>  # clone the repository (replace with the actual address)
+cd tomtom-mcp        # enter the project directory
+npm install          # install dependencies
+cp .env.example .env # copy the example env file and add your API key to .env
+npm run build        # build the TypeScript files
+node ./bin/tomtom-mcp.js  # start the MCP server
 ```
 
-### 测试
+### Testing
 ```bash
-npm run build               # 构建 TypeScript
-npm test                    # 运行所有测试
-npm run test:unit           # 仅运行单元测试
-npm run test:comprehensive  # 运行集成测试
+npm run build       # build TypeScript
+npm test            # run all tests
+npm run test:unit   # run only unit tests
+npm run test:comprehensive  # run integration tests
 ```
----
 
-### 测试要求
-⚠️ **重要提示**：所有测试都需要在 `.env` 文件中提供有效的 API 密钥，因为它们会进行真实的 API 调用（非模拟）。这将消耗您的 API 配额。
+### Test requirements
+**Important**: all tests require a valid API key in the `.env` file because they make real API calls (not mocked). This will consume your API quota.
 
-### 项目结构
+### Project structure
 ```
 src/
-├── tools/             # MCP 工具定义
-├── services/          # TomTom API 包装器
-├── schemas/           # 验证模式
-├── utils/             # 工具函数
-└── createServer.ts    # MCP 服务器创建逻辑
-└── index.ts           # 主入口点
+├── tools/             # MCP tool definitions
+├── services/          # TomTom API wrappers
+├── schemas/           # validation schemas
+├── utils/             # utility functions
+└── createServer.ts    # MCP server creation logic
+  └── index.ts         # main entry point
 ```
----
-## 故障排除
 
-### API 密钥问题
+## Troubleshooting
+
+### API key issues
 ```bash
-# Linux/macOS 检查环境变量
+# Linux/macOS: check the environment variable
 echo $TOMTOM_API_KEY
 # Windows CMD: echo %TOMTOM_API_KEY%
 # Windows PowerShell: echo $env:TOMTOM_API_KEY
 ```
 
-### 测试失败
+### Test failures
 ```bash
-ls -la .env          # 验证 .env 文件是否存在 (Linux/macOS)
+ls -la .env          # verify the .env file exists (Linux/macOS)
 # Windows: dir .env
-cat .env             # 检查 API 密钥 (Linux/macOS)
+cat .env             # check the API key (Linux/macOS)
 # Windows: type .env
 ```
 
-### 构建问题
+### Build issues
 ```bash
-npm run build            # 重新构建
-npm cache clean --force  # 清除缓存
+npm run build          # rebuild
+npm cache clean --force  # clear the cache
 ```
----
 
 **Official site: ** [https://github.com/tomtom-international/tomtom-mcp.git](https://github.com/tomtom-international/tomtom-mcp.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

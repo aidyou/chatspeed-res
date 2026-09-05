@@ -420,8 +420,8 @@ This tool is for learning and research purposes only. Users should strictly comp
 ## MCP Configuration
 
 - Transport: `stdio`
-- Command: `/绝对路径/到/venv/bin/python3`
-- Args: `/绝对路径/到/xiaohongshu_mcp.py --stdio`
+- Command: `/absolute/path/to/venv/bin/python3`
+- Args: `/absolute/path/to/xiaohongshu_mcp.py --stdio`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 

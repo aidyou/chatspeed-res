@@ -1,31 +1,31 @@
 ---
 title: "mcp-feishu-proj"
-description: "A Model Context Protocol server that enables AI assistants to interact with Feishu project management systems, allowing retrieval of project views and work items."
+description: "A Model Context Protocol server that enables AI assistants to interact with the Feishu project management system, allowing retrieval of project views and work items."
 ---
 
 # mcp-feishu-proj
 
-A Model Context Protocol server that enables AI assistants to interact with Feishu project management systems, allowing retrieval of project views and work items.
+A Model Context Protocol server that enables AI assistants to interact with the Feishu project management system, allowing retrieval of project views and work items.
 
-# MCP-飞书项目管理工具
+# MCP-Feishu Project Management Tool
 
-基于MCP（Model Context Protocol）协议的飞书项目管理工具，允许AI助手通过MCP协议与飞书项目管理系统进行交互。
+A Feishu project management tool based on the MCP (Model Context Protocol), allowing AI assistants to interact with the Feishu project management system via the MCP protocol.
 
-## 项目简介
+## Project Introduction
 
-本项目是一个MCP服务器实现，它封装了飞书项目管理的Open API，使AI助手能够获取飞书项目的视图列表、视图详情等信息。通过这个工具，AI助手可以帮助用户管理和查询飞书项目中的工作项。
+This project is an MCP server implementation that wraps the Feishu project management Open API, enabling AI assistants to fetch Feishu project view lists, view details, and more. With this tool, AI assistants can help users manage and query work items in Feishu projects.
 
-## 使用方法
+## Usage
 
-在支持MCP协议的客户端（如[Claude桌面客户端](https://claude.ai/download),[Cursor](https://www.cursor.com/),[Cline](https://github.com/cline/cline)等）的配置文件中添加本服务器。
+Add this server to the config file of an MCP-capable client (such as the [Claude Desktop client](https://claude.ai/download), [Cursor](https://www.cursor.com/), [Cline](https://github.com/cline/cline), etc.).
 
-> 更多MCP客户端可参考：https://modelcontextprotocol.io/clients
+> For more MCP clients, see: https://modelcontextprotocol.io/clients
 
-以Claude桌面客户端为例，编辑`claude_desktop_config.json`文件:
+Taking the Claude Desktop client as an example, edit the `claude_desktop_config.json` file:
 - macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
-- Windows: %APPDATA%Claudeclaude_desktop_config.json
+- Windows: %APPDATA%\Claude\claude_desktop_config.json
 
-在`mcpServers`字段中添加以下配置：
+Add the following configuration to the `mcpServers` field:
 
 ```json
 {
@@ -44,137 +44,137 @@ A Model Context Protocol server that enables AI assistants to interact with Feis
 }
 ```
 
-## 已支持功能([欢迎贡献](#贡献指南))
+## Supported Features ([Contributions Welcome](#contribution-guide))
 
-### 登录认证
-- [x] 登录及认证流程
+### Authentication
+- [x] Login and authentication flow
 
-### 视图功能
-- [x] 获取飞书项目视图列表
-- [x] 获取视图工作项列表
-- [ ] 创建固定视图
-- [ ] 更新固定视图
-- [ ] 创建条件视图
-- [ ] 更新条件视图
-- [ ] 删除视图
+### Views
+- [x] Get the Feishu project view list
+- [x] Get the work item list of a view
+- [ ] Create a fixed view
+- [ ] Update a fixed view
+- [ ] Create a condition view
+- [ ] Update a condition view
+- [ ] Delete a view
 
-### 工作项管理
-- [x] 获取工作项详情
-- [x] 获取创建工作项元数据
-- [ ] 创建工作项
-- [ ] 更新工作项
-- [ ] 批量更新工作项字段值
-- [ ] 删除工作项
-- [ ] 终止/恢复工作项
-- [ ] 获取工作项操作记录
+### Work Item Management
+- [x] Get work item details
+- [x] Get metadata for creating a work item
+- [ ] Create a work item
+- [ ] Update a work item
+- [ ] Batch update work item field values
+- [ ] Delete a work item
+- [ ] Terminate/restore a work item
+- [ ] Get work item operation history
 
-### 工作项搜索
-- [ ] 获取指定的工作项列表（单空间）
-- [ ] 获取指定的工作项列表（跨空间）
-- [ ] 获取指定的工作项列表（单空间-复杂传参）
-- [ ] 获取指定的工作项列表（全局搜索）
-- [ ] 获取指定的关联工作项列表
+### Work Item Search
+- [ ] Get a specified work item list (single space)
+- [ ] Get a specified work item list (cross-space)
+- [ ] Get a specified work item list (single space, complex parameters)
+- [ ] Get a specified work item list (global search)
+- [ ] Get a specified list of linked work items
 
-### 附件管理
-- [ ] 添加附件
-- [ ] 文件上传
-- [ ] 下载附件
-- [ ] 删除附件
+### Attachment Management
+- [ ] Add attachments
+- [ ] File upload
+- [ ] Download attachments
+- [ ] Delete attachments
 
-### 空间管理
-- [ ] 获取空间列表
-- [ ] 获取空间详情
-- [ ] 获取空间下业务线详情
-- [ ] 获取空间下工作项类型
-- [ ] 获取空间下团队成员
+### Space Management
+- [ ] Get the space list
+- [ ] Get space details
+- [ ] Get business line details in a space
+- [ ] Get work item types in a space
+- [ ] Get team members in a space
 
-### 用户管理
-- [ ] 获取用户详情
-- [ ] 搜索租户内的用户列表
-- [ ] 创建自定义用户组
-- [ ] 更新用户组成员
-- [ ] 查询用户组成员
+### User Management
+- [ ] Get user details
+- [ ] Search the user list within a tenant
+- [ ] Create a custom user group
+- [ ] Update user group members
+- [ ] Query user group members
 
-### 空间关联
-- [ ] 获取空间关联规则列表
-- [ ] 获取空间关联下的关联工作项实例列表
-- [ ] 绑定空间关联的关联工作项实例
-- [ ] 解绑空间关联的关联工作项实例
+### Space Linkages
+- [ ] Get the space linkage rule list
+- [ ] Get the linked work item instance list under a space linkage
+- [ ] Bind linked work item instances of a space linkage
+- [ ] Unbind linked work item instances of a space linkage
 
-### 流程与节点
-- [ ] 获取工作流详情
-- [ ] 获取工作流详情（WBS）
-- [ ] 更新节点/排期
-- [ ] 节点完成/回滚
-- [ ] 状态流转
+### Workflows and Nodes
+- [ ] Get workflow details
+- [ ] Get workflow details (WBS)
+- [ ] Update nodes/scheduling
+- [ ] Node completion/rollback
+- [ ] Status transitions
 
-### 流程配置
-- [ ] 获取工作项下的流程模板列表
-- [ ] 获取流程模板配置详情
-- [ ] 新增流程模板
-- [ ] 更新流程模板
-- [ ] 删除流程模板
+### Flow Configuration
+- [ ] Get the flow template list under a work item
+- [ ] Get flow template configuration details
+- [ ] Add a flow template
+- [ ] Update a flow template
+- [ ] Delete a flow template
 
-### 子任务
-- [ ] 获取指定的子任务列表
-- [ ] 获取子任务详情
-- [ ] 创建子任务
-- [ ] 更新子任务
-- [ ] 子任务完成/回滚
-- [ ] 删除子任务
+### Subtasks
+- [ ] Get a specified subtask list
+- [ ] Get subtask details
+- [ ] Create a subtask
+- [ ] Update a subtask
+- [ ] Subtask completion/rollback
+- [ ] Delete a subtask
 
-### 评论
-- [ ] 添加评论
-- [ ] 查询评论
-- [ ] 更新评论
-- [ ] 删除评论
+### Comments
+- [ ] Add comments
+- [ ] Query comments
+- [ ] Update comments
+- [ ] Delete comments
 
-### 工作项工时
-- [ ] 获取工作项的工时记录列表
-- [ ] 创建实际工时
-- [ ] 更新实际工时
-- [ ] 删除实际工时
+### Work Item Timesheets
+- [ ] Get the timesheet record list of a work item
+- [ ] Create actual hours
+- [ ] Update actual hours
+- [ ] Delete actual hours
 
-### 评审管理
-- [ ] 批量查询评审意见、评审结论
-- [ ] 修改评审结论和评审意见
-- [ ] 评审结论标签值查询
+### Review Management
+- [ ] Batch query review opinions and conclusions
+- [ ] Modify review conclusions and opinions
+- [ ] Query review conclusion label values
 
-### 其他功能
-- [ ] 拉机器人入群
-- [ ] 获取度量图表明细数据
-- [ ] 获取流程角色配置详情
+### Other Features
+- [ ] Add bots to a group
+- [ ] Get metric chart detail data
+- [ ] Get flow role configuration details
 
-## 开发指南
+## Development Guide
 
-## 开发环境配置
+## Development Environment Setup
 
-1. 克隆本仓库：
+1. Clone this repository:
 
 ```bash
 git clone https://github.com/yourusername/mcp-feishu-proj.git
 cd mcp-feishu-proj
 ```
 
-2. 安装依赖（使用uv）：
+2. Install dependencies (using uv):
 
 ```bash
-# 安装uv（如果尚未安装）
+# Install uv (if not already installed)
 pip install uv
-# 创建虚拟环境并安装依赖
+# Create a virtual environment and install dependencies
 uv venv
 uv pip install -e .
 ```
 
-## 配置说明
+## Configuration
 
-1. 复制环境变量示例文件并进行配置：
+1. Copy the environment variable example file and configure it:
 
 ```bash
 cp .env.example .env
 ```
 
-2. 编辑`.env`文件，填入以下必要的配置信息：
+2. Edit the `.env` file and fill in the following required configuration:
 
 ```
 FS_PROJ_BASE_URL=https://project.feishu.cn/
@@ -184,47 +184,47 @@ FS_PROJ_PLUGIN_ID=your_plugin_id
 FS_PROJ_PLUGIN_SECRET=your_plugin_secret
 ```
 
-其中：
-- `FS_PROJ_BASE_URL`：飞书项目API的基础URL，默认为https://project.feishu.cn/
-- `FS_PROJ_PROJECT_KEY`：飞书项目的标识
-- `FS_PROJ_USER_KEY`：用户标识
-- `FS_PROJ_PLUGIN_ID`：飞书项目Open API的插件ID
-- `FS_PROJ_PLUGIN_SECRET`：飞书项目Open API的插件密钥
+Where:
+- `FS_PROJ_BASE_URL`: base URL of the Feishu project API, default https://project.feishu.cn/
+- `FS_PROJ_PROJECT_KEY`: identifier of the Feishu project
+- `FS_PROJ_USER_KEY`: user identifier
+- `FS_PROJ_PLUGIN_ID`: plugin ID for the Feishu project Open API
+- `FS_PROJ_PLUGIN_SECRET`: plugin secret for the Feishu project Open API
 
-### 添加新功能
+### Adding New Features
 
-要添加新的飞书项目API功能，请按照以下步骤操作：
+To add a new Feishu project API feature, follow these steps:
 
-1. 在`fsprojclient.py`中添加新的API方法
-2. 在`server.py`中使用`@mcp.tool`装饰器注册新的MCP工具
+1. Add a new API method in `fsprojclient.py`
+2. Register the new MCP tool in `server.py` with the `@mcp.tool` decorator
 
-### 飞书项目Open API参考
+### Feishu Project Open API Reference
 
-本项目包含了飞书项目Open API的Postman集合，位于`docs/open-api-postman`目录下，将目录下文件导入Postman可以进行快速调试飞书项目接口：
+This project includes a Postman collection of the Feishu project Open API in the `docs/open-api-postman` directory. Import the files in that directory into Postman for quick debugging of Feishu project endpoints:
 
-- `postman_environment.json`：Postman环境变量配置
-- `postman_collection.json`：Postman API集合
+- `postman_environment.json`: Postman environment variables
+- `postman_collection.json`: Postman API collection
 
-## 容器化部署指南
+## Containerized Deployment Guide
 
-### Docker部署
+### Docker Deployment
 
-本项目提供了Docker部署支持，可以通过Docker容器运行MCP飞书项目服务。
+This project supports Docker deployment; you can run the MCP Feishu project service in a Docker container.
 
-#### 前提条件
+#### Prerequisites
 
-- 安装 [Docker](https://docs.docker.com/get-docker/)
-- 安装 [Docker Compose](https://docs.docker.com/compose/install/)
+- Install [Docker](https://docs.docker.com/get-docker/)
+- Install [Docker Compose](https://docs.docker.com/compose/install/)
 
-#### 使用Docker Compose运行
+#### Run with Docker Compose
 
-1. 创建`.env`文件，设置必要的环境变量
+1. Create a `.env` file and set the required environment variables
 
 ```bash
 cp .env.example .env
 ```
 
-然后编辑`.env`文件，填入你的飞书项目相关信息：
+Then edit the `.env` file and fill in your Feishu project info:
 
 ```
 FS_PROJ_BASE_URL=https://project.feishu.cn/
@@ -234,98 +234,97 @@ FS_PROJ_PLUGIN_ID=your_plugin_id
 FS_PROJ_PLUGIN_SECRET=your_plugin_secret
 ```
 
-2. 使用Docker Compose启动服务
+2. Start the service with Docker Compose
 
 ```bash
 docker-compose -f docker/docker-compose.yml up -d
 ```
 
-这将使用`ghcr.io/astral-sh/uv`镜像，并挂载项目根目录到容器中，直接运行本地代码，便于开发和调试。Docker Compose会自动加载项目根目录中的`.env`文件作为环境变量。
+This uses the `ghcr.io/astral-sh/uv` image and mounts the project root into the container, running the local code directly for easy development and debugging. Docker Compose automatically loads the `.env` file in the project root as environment variables.
 
-3. 查看日志
+3. View logs
 
 ```bash
 docker-compose -f docker/docker-compose.yml logs -f
 ```
 
-4. 停止服务
+4. Stop the service
 
 ```bash
 docker-compose -f docker/docker-compose.yml down
 ```
 
-更多详细信息请参阅[Docker部署文档](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/docker/docker-README.md)。
+For more details, see the [Docker deployment docs](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/docker/docker-README.md).
 
-### Kubernetes部署
+### Kubernetes Deployment
 
-#### 前提条件
+#### Prerequisites
 
-- 一个可用的Kubernetes集群
-- 已安装kubectl命令行工具
-- 具有创建Deployment、ConfigMap和Secret的权限
+- A working Kubernetes cluster
+- The kubectl CLI installed
+- Permission to create Deployments, ConfigMaps, and Secrets
 
-#### 部署步骤
+#### Deployment Steps
 
-1. 准备Secret
+1. Prepare the Secret
 
-首先，需要创建包含敏感信息的Secret。由于Kubernetes Secret需要使用base64编码的值，您需要对敏感信息进行编码：
+First, create a Secret containing the sensitive information. Since Kubernetes Secrets require base64-encoded values, encode the sensitive info:
 
 ```bash
-# 对敏感信息进行base64编码
+# base64-encode the sensitive information
 echo -n "your_project_key" | base64
 echo -n "your_user_key" | base64
 echo -n "your_plugin_id" | base64
 echo -n "your_plugin_secret" | base64
 ```
 
-然后，使用生成的base64编码值更新`k8s-secret.yaml`文件中的相应字段。
+Then update the corresponding fields in the `k8s-secret.yaml` file with the generated base64 values.
 
-2. 应用配置
+2. Apply the configurations
 
-依次应用以下配置文件：
+Apply the following config files in order:
 
 ```bash
-# 创建ConfigMap
+# Create the ConfigMap
 kubectl apply -f k8s-configmap.yaml
 
-# 创建Secret
+# Create the Secret
 kubectl apply -f k8s-secret.yaml
 
-# 创建Deployment
+# Create the Deployment
 kubectl apply -f k8s-deployment.yaml
 ```
 
-3. 验证部署
+3. Verify the deployment
 
-检查部署状态：
+Check the deployment status:
 
 ```bash
-# 查看Deployment状态
+# View Deployment status
 kubectl get deployments
 
-# 查看Pod状态
+# View Pod status
 kubectl get pods
 
-# 查看Pod日志
-kubectl logs -f 
-
+# View Pod logs
+kubectl logs -f
 ```
 
-更多详细信息请参阅[Kubernetes部署文档](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/k8s/k8s-README.md)。
+For more details, see the [Kubernetes deployment docs](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/k8s/k8s-README.md).
 
-## 贡献指南
+## Contribution Guide
 
-欢迎贡献代码、报告问题或提出改进建议。请遵循以下步骤：
+Contributions, bug reports, and improvement suggestions are welcome. Follow these steps:
 
-1. Fork本仓库
-2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 创建一个Pull Request
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Create a Pull Request
 
-## 许可证
+## License
 
-本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/LICENSE) file for details.
 
 **Official site: ** [https://github.com/Roland0511/mcp-feishu-proj](https://github.com/Roland0511/mcp-feishu-proj)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

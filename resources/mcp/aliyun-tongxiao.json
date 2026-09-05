@@ -34,7 +34,7 @@
     "env": [
       [
         "TONGXIAO_API_KEY",
-        "通晓 apikey"
+        "Tongxiao API key"
       ]
     ],
     "requiredInputs": []

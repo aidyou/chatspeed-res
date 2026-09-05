@@ -6,7 +6,7 @@
     "zh-Hans": "无影 Agent 开发套件 AgentBay"
   },
   "description": {
-    "en": "无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。",
+    "en": "Wuying AgentBay is the Agent cloud infrastructure for the AI era. Built for enterprises, developers, and AI vendors, it provides one-click configurable AI Agent task execution tools and execution environments. You can quickly integrate via the Wuying API or the AgentBay MCP Server and call the relevant tools to get Serverless AI Agent services.",
     "zh-Hans": "无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。"
   },
   "detail": {

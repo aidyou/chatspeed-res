@@ -22,121 +22,121 @@ deployspec:
 license: Apache License 2.0
 ---
 
-# 📄 InvoiceLLM - 智能发票识别智能体
+# InvoiceLLM - Intelligent Invoice Recognition Agent
 
-## 📖 项目简介
-InvoiceLLM 是一个智能发票识别智能体，使用先进的OCR技术和本地大模型从发票文档中提取结构化信息。该系统支持图片和PDF格式，为敏感财务文档处理提供注重隐私的解决方案。
+## Project Introduction
+InvoiceLLM is an intelligent invoice recognition agent that uses advanced OCR technology and a local large model to extract structured information from invoice documents. The system supports image and PDF formats, providing a privacy-focused solution for handling sensitive financial documents.
 
-## ✨ 功能特点
-- 📋 **多格式支持**: 处理图片文件（JPG、PNG等）和PDF文档
-- 🔍 **先进OCR技术**: 使用PaddleOCR进行准确的文本提取
-- 🤖 **AI驱动分析**: 利用本地大模型（Qwen3-0.6B）进行智能字段提取
-- 🔒 **隐私保护**: 所有处理都在本地进行，确保敏感发票数据安全
-- 📊 **全面字段提取**: 提取关键发票信息，包括：
-  - 📝 通用字段：发票号码、发票代码、开票日期、金额、税额
-  - 🏢 购买方和销售方信息：公司详情、纳税人识别号、地址、电话、银行账户
-  - 🛍️ 商品信息：商品名称、规格型号、数量、单价、税率
-  - 👤 其他信息：收款人、复核、开票人
+## Features
+- **Multi-format support**: handles image files (JPG, PNG, etc.) and PDF documents
+- **Advanced OCR technology**: uses PaddleOCR for accurate text extraction
+- **AI-driven analysis**: leverages the local large model (Qwen3-0.6B) for intelligent field extraction
+- **Privacy protection**: all processing happens locally, keeping sensitive invoice data secure
+- **Comprehensive field extraction**: extracts key invoice information, including:
+  - General fields: invoice number, invoice code, issue date, amount, tax amount
+  - Buyer and seller info: company details, taxpayer ID, address, phone, bank account
+  - Item info: product name, specification/model, quantity, unit price, tax rate
+  - Other info: payee, reviewer, issuer
 
-## 🏗️ 技术架构
-1. **📄 文档处理**:
-   - 🖼️ 图片：使用PaddleOCR进行OCR处理
-   - 📑 PDF：使用PyMuPDF直接提取文本
-   
-2. **🧠 信息提取**:
-   - 🤖 本地大模型（Qwen3-0.6B）进行智能字段解析
-   - ✅ 高级验证和纠正算法
-   
-3. **💻 用户界面**:
-   - 🌐 基于Gradio的Web界面
-   - ⚡ 实时处理和可视化
+## Technical Architecture
+1. **Document processing**:
+   - Images: OCR processing with PaddleOCR
+   - PDF: direct text extraction with PyMuPDF
 
-## 🚀 使用方法
-1. 📤 上传发票文件（图片或PDF）
-2. ✅ 点击提交处理发票
-3. 📋 以JSON格式查看提取的结构化信息
+2. **Information extraction**:
+   - Local large model (Qwen3-0.6B) for intelligent field parsing
+   - Advanced validation and correction algorithms
 
-## 📦 部署指南
+3. **User interface**:
+   - Gradio-based web interface
+   - Real-time processing and visualization
 
-### 环境要求
-- Python 3.8 或更高版本
-- 操作系统：Linux、macOS 或 Windows
-- 至少 4GB RAM（推荐 8GB 或更多）
-- 至少 2GB 可用磁盘空间（用于模型文件）
+## Usage
+1. Upload an invoice file (image or PDF)
+2. Click submit to process the invoice
+3. View the extracted structured information in JSON format
 
-### 安装步骤
+## Deployment Guide
 
-1. **克隆项目**
+### Requirements
+- Python 3.8 or higher
+- OS: Linux, macOS, or Windows
+- At least 4GB RAM (8GB or more recommended)
+- At least 2GB free disk space (for model files)
+
+### Installation steps
+
+1. **Clone the project**
 ```bash
    git clone https://www.modelscope.cn/studios/megemini/InvoiceLLM.git
    cd InvoiceLLM
 ```
 
-2. **创建虚拟环境（推荐）**
+2. **Create a virtual environment (recommended)**
 ```bash
    python -m venv venv
    source venv/bin/activate  # Linux/macOS
-   # 或
+   # or
    venv\Scripts\activate     # Windows
 ```
 
-3. **安装依赖**
+3. **Install dependencies**
 ```bash
    pip install -r requirements.txt
 ```
 
-4. **下载模型文件**
-   - Qwen3-0.6B 模型将自动在首次运行时下载
-   - 或者手动下载并放置在模型目录中
+4. **Download the model files**
+   - The Qwen3-0.6B model will be downloaded automatically on first run
+   - Or download it manually and place it in the model directory
 
-### 运行应用
+### Running the app
 
-1. **启动 Web 界面**
+1. **Start the web interface**
 ```bash
    python app.py
 ```
 
-2. **访问应用**
-   - 打开浏览器访问 `http://127.0.0.1:7860`
-   - 或使用 Gradio 提供的本地链接
+2. **Access the app**
+   - Open your browser and visit `http://127.0.0.1:7860`
+   - Or use the local link provided by Gradio
 
-3. **作为 MCP Server 使用**
-   - 启动应用后，MCP Server 会自动运行
+3. **Use as an MCP Server**
+   - After the app starts, the MCP Server runs automatically
    - Streamable HTTP URL: `http://127.0.0.1:7860/gradio_api/mcp/`
    - SSE URL: `http://127.0.0.1:7860/gradio_api/mcp/sse`
 
-## 💡 使用示例
+## Usage Examples
 
-### 示例 1：处理图片发票
+### Example 1: Processing an image invoice
 
-1. 点击"选择文件"按钮上传一张发票图片（JPG、PNG等格式）
-2. 点击"开始识别"按钮
-3. 查看识别结果：
-   - 左侧显示 OCR 可视化结果
-   - 右侧显示提取的结构化 JSON 数据
+1. Click the "Choose File" button to upload an invoice image (JPG, PNG, etc.)
+2. Click the "Start Recognition" button
+3. View the recognition results:
+   - The left side shows the OCR visualization
+   - The right side shows the extracted structured JSON data
 
-### 示例 2：处理 PDF 发票
+### Example 2: Processing a PDF invoice
 
-1. 上传 PDF 格式的发票文件
-2. 点击"开始识别"按钮
-3. 系统将自动提取 PDF 中的文本并使用 AI 模型解析
-4. 查看提取的发票信息
+1. Upload an invoice file in PDF format
+2. Click the "Start Recognition" button
+3. The system automatically extracts the text from the PDF and parses it with the AI model
+4. View the extracted invoice information
 
-### 示例 3：使用示例文件
+### Example 3: Using the sample files
 
-1. 在页面底部的"示例"区域，点击任意示例发票图片
-2. 或点击"处理示例"按钮
-3. 系统将自动处理示例文件并显示结果
+1. In the "Examples" section at the bottom of the page, click any sample invoice image
+2. Or click the "Process Example" button
+3. The system automatically processes the sample file and shows the results
 
-## 🛠️ 依赖项
-- 🔧 PaddleOCR：图片处理OCR引擎
-- 📄 PyMuPDF：PDF文本提取
-- 🤖 Qwen3-0.6B：本地大语言模型
-- 🖥️ Gradio：Web界面框架
-- 🖼️ PIL：图像处理
-- 🔥 PyTorch：模型推理后端
+## Dependencies
+- PaddleOCR: OCR engine for image processing
+- PyMuPDF: PDF text extraction
+- Qwen3-0.6B: local large language model
+- Gradio: web interface framework
+- PIL: image processing
+- PyTorch: model inference backend
 
-## 📜 许可证
+## License
 Apache License 2.0
 
 **Official site: ** [https://megemini-invoicellm.ms.show/gradio_api/mcp/](https://megemini-invoicellm.ms.show/gradio_api/mcp/)

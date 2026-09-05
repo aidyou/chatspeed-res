@@ -37,19 +37,19 @@ LeetCode MCP Server is a service based on the [Model Context Protocol (MCP)](htt
 
 ```bash
 
-# 从 npm 安装
+# Install from npm
 
 npm install @jinzcdev/leetcode-mcp-server -g
 
-# 使用中国站点配置运行（stdio 传输，默认）
+# Run with the China site config (stdio transport, default)
 
 npx -y @jinzcdev/leetcode-mcp-server --site cn
 
-# 使用认证运行（访问私有数据）
+# Run with authentication (to access private data)
 
 npx -y @jinzcdev/leetcode-mcp-server --site cn --session 
 
-# 以 Streamable HTTP 服务器模式运行
+# Run as a Streamable HTTP server
 
 npx -y @jinzcdev/leetcode-mcp-server --transport http --port 3000 --site cn
 
@@ -58,23 +58,23 @@ Alternatively, you can clone the repository and run it locally:
 
 ```bash
 
-# 克隆仓库
+# Clone the repository
 
 git clone https://github.com/jinzcdev/leetcode-mcp-server.git
 
-# 导航到项目目录
+# Navigate to the project directory
 
 cd leetcode-mcp-server
 
-# 构建项目
+# Build the project
 
 npm install && npm run build
 
-# 运行服务器（stdio 传输）
+# Run the server (stdio transport)
 
 node build/index.js --site cn
 
-# 或以 Streamable HTTP 服务器模式运行
+# Or run as a Streamable HTTP server
 
 node build/index.js --transport http --port 3000 --site cn
 

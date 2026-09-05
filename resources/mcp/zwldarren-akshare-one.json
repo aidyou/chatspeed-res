@@ -6,7 +6,7 @@
     "zh-Hans": "akshare-one-mcp"
   },
   "description": {
-    "en": "AKShare One MCP Server English 中文 An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historical stock data, real-time data, news data, financial statemen",
+    "en": "AKShare One MCP Server An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historical stock data, real-time data, news data, financial statemen",
     "zh-Hans": "AKShare One MCP 服务器 English 中文 基于 akshare-one 的 MCP 服务器，提供中国股票市场数据接口，包括历史股票数据、实时数据、新闻数据、财务报表等。 工具 gethistdata 获取历史股票数据 输入参数： - symbol (字符串): 股票代码 - interval (字符串): 时间间隔 ('minute','hour','day','week','month','year') - intervalmultiplier (数字, 可选): 间隔倍数 (默认: 1) -"
   },
   "detail": {

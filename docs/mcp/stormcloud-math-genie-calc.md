@@ -1,51 +1,53 @@
 ---
 title: "math_genie_calc"
-description: "math\\genie\\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字…"
+description: "mathgeniecalc is a Python application focused on scientific calculation, providing users with convenient and accurate mathematical operations covering everything from basic arithmetic to complex trigo…"
 ---
 
 # math_genie_calc
 
-math\genie\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字…
+mathgeniecalc is a Python application focused on scientific calculation, providing users with convenient and accurate mathematical operations covering everything from basic arithmetic to complex trigo…
 
-# math\_genie\_calc
+# math_genie_calc
 
-`math_genie_calc`是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。
+`math_genie_calc` is a Python application focused on scientific calculation, providing users with convenient and accurate mathematical operations covering everything from basic arithmetic to complex trigonometric functions. It is suitable for students, researchers, and anyone who needs to perform mathematical calculations.
 
-## 主要功能
+## Main Features
 
-### 基础运算
+### Basic Operations
 
-*   **加法**：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。
-*   **减法**：进行数字间的减法操作，可处理正数与负数的运算。
-*   **乘法**：完成数字的乘法计算，包括多位数相乘。
-*   **除法**：支持除法运算，同时会对除数为 0 的情况进行处理，避免程序错误。
+* **Addition**: adds two or more numbers, supporting integers, floats, and other numeric types.
+* **Subtraction**: subtracts numbers, handling both positive and negative values.
+* **Multiplication**: multiplies numbers, including multi-digit multiplication.
+* **Division**: supports division and handles division-by-zero cases to avoid program errors.
 
-### 三角函数计算
+### Trigonometric Functions
 
-*   提供正弦（sin）、余弦（cos）、正切（tan）函数的计算，输入参数为弧度值。
-*   支持余切（cot）、正割（sec）、余割（csc）函数的计算，通过相应三角函数的倒数推导得出，同样以弧度为输入单位。
+* Provides sine (sin), cosine (cos), and tangent (tan) calculations with radian input.
+* Supports cotangent (cot), secant (sec), and cosecant (csc), derived from the reciprocals of the corresponding trigonometric functions, also with radian input.
 
-### 其他运算
+### Other Operations
 
-*   **幂运算**：能够计算一个数的任意次幂，包括整数幂、小数幂等。
-*   **平方根**：可对非负数字进行平方根计算，返回精确的结果。
-*   **阶乘**：计算非负整数的阶乘，0 的阶乘为 1，对于较大的整数也能准确处理。
+* **Exponentiation**: computes any power of a number, including integer and fractional powers.
+* **Square root**: computes the square root of non-negative numbers with accurate results.
+* **Factorial**: computes the factorial of non-negative integers, where 0! = 1, and handles large integers accurately.
 
-## 安装方法
+## Installation
 
-你可以通过 PyPI 来安装`math_genie_calc`，使用以下命令：
+You can install `math_genie_calc` via PyPI with the following command:
 
-bash
+```bash
 pip install math_genie_calc
+```
 
-## 使用示例
+## Usage Example
 
-bash
+```bash
 npx @modelcontextprotocol/inspector uvx math_genie_calc
+```
 
-## MCP 服务器配置
+## MCP Server Configuration
 
-json
+```json
 {
   "mcpServers": {
     "math_genie_calc": {
@@ -56,6 +58,7 @@ json
     }
   }
 }
+```
 
 **Official site: ** [https://github.com/myailab/math_genie_calc_mcp_server](https://github.com/myailab/math_genie_calc_mcp_server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

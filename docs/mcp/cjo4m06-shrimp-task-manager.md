@@ -152,7 +152,7 @@ Shrimp Task Manager offers two configuration methods: global configuration and p
       "command": "node",
       "args": ["/mcp-shrimp-task-manager/dist/index.js"],
       "env": {
-        "DATA_DIR": "/path/to/project/data" // 必須使用絕對路徑
+        "DATA_DIR": "/path/to/project/data" // must use an absolute path
       }
     }
   }
@@ -203,7 +203,7 @@ or
       "command": "npx",
       "args": ["mcp-shrimp-task-manager"],
       "env": {
-        "DATA_DIR": "/path/to/project/data" // 必須使用絕對路徑
+        "DATA_DIR": "/path/to/project/data" // must use an absolute path
       }
     }
   }

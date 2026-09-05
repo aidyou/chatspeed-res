@@ -39,7 +39,7 @@
     ],
     "env": [],
     "requiredInputs": [
-      "Mapbox 访问令牌"
+      "Mapbox access token"
     ]
   },
   "score": 57.75

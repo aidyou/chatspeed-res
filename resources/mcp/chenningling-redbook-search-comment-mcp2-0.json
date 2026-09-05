@@ -30,9 +30,9 @@
   "lastVerifiedAt": "2026-08-30",
   "mcp": {
     "type": "stdio",
-    "command": "/绝对路径/到/venv/bin/python3",
+    "command": "/absolute/path/to/venv/bin/python3",
     "args": [
-      "/绝对路径/到/xiaohongshu_mcp.py",
+      "/absolute/path/to/xiaohongshu_mcp.py",
       "--stdio"
     ],
     "env": [],

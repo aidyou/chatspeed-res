@@ -70,7 +70,7 @@ The link to Qianxin X Lab's remote MCP service is `https://fdp.qianxin.com/mcp/v
                    api_key="YOUR-LLM-MODEL-API-KEY",
                ),
            )
-           agent.run("查询www.example.com的关联域名，并给根据关联域名的数据对查询的域名可能的业务做一个判断。")
+           agent.run("Query the related domains of www.example.com, and judge the possible business of the queried domain based on the data of the related domains.")
 
    if __name__ == "__main__":
        main()

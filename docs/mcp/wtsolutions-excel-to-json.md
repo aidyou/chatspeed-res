@@ -1,11 +1,11 @@
 ---
 title: "Excel_to_JSON_MCP"
-description: "Excel to JSON MCP（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具： - exceltojsonmcpfromdata：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。 - exceltojsonmcpfromurl：从提供的URL转换Excel文件（.xls…"
+description: "Excel to JSON MCP provides a standardized interface for converting Excel and CSV data into JSON format via the Model Context Protocol. This MCP implementation provides two specific data conversion too…"
 ---
 
 # Excel_to_JSON_MCP
 
-Excel to JSON MCP（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具： - exceltojsonmcpfromdata：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。 - exceltojsonmcpfromurl：从提供的URL转换Excel文件（.xls…
+Excel to JSON MCP provides a standardized interface for converting Excel and CSV data into JSON format via the Model Context Protocol. This MCP implementation provides two specific data conversion too…
 
 # Excel to JSON MCP by WTSolutions
 

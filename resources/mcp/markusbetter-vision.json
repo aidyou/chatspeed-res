@@ -6,7 +6,7 @@
     "zh-Hans": "图片视觉查看分析器"
   },
   "description": {
-    "en": "| --- 一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。 例如当你在客户端的模型只支持文字输入，这时你可以使用视觉模型mcp来弥补。 这个项目采用了魔搭社区免费的视觉模型Qwen3-VL-30B-A3B-Instruct（你也可以在配置中，使用魔搭社区自行更换为自己想要的视觉模型）。 - 支持本地图片文件和在线图片 URL - 基于魔搭社区 AI 模型的智能图像分析 - 完全兼容 MCP 协议 - TypeScript 支持，提供完整的类型定义 无需预先安装，在客户端填写以下内容npx 会自动下载并运行最新版本： 然后在客户端配置中： 然后在客户端配置中： 在使用前，需要设置以下环境变量： - MODELSCOPETOKEN: 魔搭社区的 API 密钥（必需） - 获取方式：访问 → 个人中心 → API令",
+    "en": "An MCP (Model Context Protocol) server for image analysis, supporting image content analysis and description. For example, when the client model only supports text input, you can use this vision MCP to fill the gap. This project uses the free vision model Qwen3-VL-30B-A3B-Instruct from the ModelScope community (you can also change it to the vision model you want via configuration).\n\n- Supports local image files and online image URLs\n- Intelligent image analysis based on ModelScope AI models\n- Fully compatible with the MCP protocol\n- TypeScript support with complete type definitions\n\nNo pre-installation needed; fill in the following in the client and npx will automatically download and run the latest version. Then configure it in the client. Before using, you need to set the following environment variables:\n- MODELSCOPE_TOKEN: the ModelScope API key (required)\n- How to get it: visit ModelScope -> Personal Center -> API Key management",
     "zh-Hans": "一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。它支持本地图片文件和在线图片 URL，基于魔搭社区 AI 模型的智能图像分析，完全兼容 MCP 协议，并提供完整的 TypeScript 类型定义。"
   },
   "detail": {

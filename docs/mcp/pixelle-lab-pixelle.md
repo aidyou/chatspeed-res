@@ -1,73 +1,73 @@
 ---
 title: "Pixelle_MCP"
-description: "🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 Comfy…"
+description: "Pixelle MCP - an all-modal fusion agent framework. An AIGC solution based on the MCP protocol that zero-code converts ComfyUI workflows into MCP Tools, joining forces between LLMs and ComfyUI. Officia…"
 ---
 
 # Pixelle_MCP
 
-🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 Comfy…
+Pixelle MCP - an all-modal fusion agent framework. An AIGC solution based on the MCP protocol that zero-code converts ComfyUI workflows into MCP Tools, joining forces between LLMs and ComfyUI. Officia…
 
-🎨 Pixelle MCP - 全模态融合智能体框架
+# Pixelle MCP - All-Modal Fusion Agent Framework
 
-✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。
+An AIGC solution based on the MCP protocol that zero-code converts ComfyUI workflows into MCP Tools, joining forces between LLMs and ComfyUI.
 
-### 官网地址 https://github.com/AIDC-AI/Pixelle-MCP
-
----
-
-## 🌟 简介
-
-**Pixelle** 是一个开源的全模态代理框架，通过 **模型上下文协议 (MCP)** 将 ComfyUI 与大型语言模型 (LLM) 无缝集成。它允许用户将复杂的 ComfyUI 工作流转换为可调用的 MCP 工具，**无需任何代码**，让 LLM 能够执行包括文本、图像、声音/语音和视频等多种 AIGC 任务。
-
-Pixelle 构建于可扩展的 ComfyUI 生态系统之上，采用强大的客户端-服务器架构，为开发、部署与多模态 AI 生成功能的利用，提供灵活统一的解决方案。
+### Official site: https://github.com/AIDC-AI/Pixelle-MCP
 
 ---
 
-## 🚀 主要特性
+## Introduction
 
-- ✅ **全模态支持**：支持 TISV（Text、Image、Sound/Speech、Video）全模态的互转与生成
-- ✅ **ComfyUI 生态**：底层基于 [ComfyUI](https://github.com/comfyanonymous/ComfyUI)，兼容其开放生态下的所有能力
-- ✅ **零代码开发**：创新性“Workflow 即 MCP Tool”方案，0代码即可动态添加新工具
-- ✅ **MCP Server**：服务端基于 [MCP 协议](https://modelcontextprotocol.io/introduction)，兼容任意 MCP 客户端（如 Cursor、Claude Desktop 等）
-- ✅ **MCP Client**：客户端基于 [Chainlit](https://github.com/Chainlit/chainlit) 框架开发，支持丰富交互控件，可集成多个 MCP Server
-- ✅ **灵活部署**：可独立部署 Server（仅服务端）、Client（仅客户端），或联合部署
-- ✅ **统一配置**：采用 YAML 配置，一个文件管理所有服务
-- ✅ **多 LLM 支持**：支持主流 LLM，包括 OpenAI、Ollama、Gemini、DeepSeek、Claude、Qwen 等
+**Pixelle** is an open-source all-modal agent framework that seamlessly integrates ComfyUI with large language models (LLMs) through the **Model Context Protocol (MCP)**. It allows users to convert complex ComfyUI workflows into callable MCP tools **without any code**, enabling LLMs to perform various AIGC tasks including text, image, sound/speech, and video.
+
+Pixelle is built on the extensible ComfyUI ecosystem and adopts a robust client-server architecture, providing a flexible and unified solution for developing, deploying, and leveraging multimodal AI generation capabilities.
 
 ---
 
-## 🖥️ Demo 演示
+## Key Features
 
-| Demo 名称         | 演示                                                         | 简要描述                      |
+- **All-modal support**: supports the conversion and generation of TISV (Text, Image, Sound/Speech, Video) across all modalities
+- **ComfyUI ecosystem**: built on [ComfyUI](https://github.com/comfyanonymous/ComfyUI), compatible with all capabilities of its open ecosystem
+- **Zero-code development**: an innovative "Workflow-as-MCP-Tool" approach that dynamically adds new tools with 0 code
+- **MCP Server**: server-side based on the [MCP protocol](https://modelcontextprotocol.io/introduction), compatible with any MCP client (such as Cursor, Claude Desktop, etc.)
+- **MCP Client**: client-side built on the [Chainlit](https://github.com/Chainlit/chainlit) framework, supporting rich interactive controls and integration with multiple MCP Servers
+- **Flexible deployment**: can deploy the Server (server only), the Client (client only), or both together
+- **Unified configuration**: YAML configuration manages all services in one file
+- **Multiple LLM support**: supports mainstream LLMs including OpenAI, Ollama, Gemini, DeepSeek, Claude, Qwen, etc.
+
+---
+
+## Demo
+
+| Demo name | Demo | Brief description |
 | ----------------- | ---------------------------------------------------------------- | ----------------------------- |
-| 捣蛋鬼Pixelle       | [demo链接](https://demo.pixelle.ai/?starter=wan)                | 连贯故事情节推理（推理能力及一致性能力）          |
-| 无声航线             | [demo链接](https://demo.pixelle.ai/?starter=silent-route)        | 基于风格参考的转绘视频    |
-| 概念车宣传视频        | [demo链接](http://demo.pixelle.ai/?starter=car)                  | 使用Flux-Krea进行原型概念设计（快速兼容最新模型能力）     |
+| Mischievous Pixelle | [demo link](https://demo.pixelle.ai/?starter=wan) | Coherent story reasoning (reasoning and consistency capabilities) |
+| Silent Route | [demo link](https://demo.pixelle.ai/?starter=silent-route) | Style-reference-based video re-rendering |
+| Concept Car Promo Video | [demo link](http://demo.pixelle.ai/?starter=car) | Prototype concept design with Flux-Krea (fast compatibility with the latest model capabilities) |
 
-> 每个 Demo 提供了不同场景下的全模态智能体能力，欢迎点击体验更多功能！
+> Each demo showcases all-modal agent capabilities in different scenarios; feel free to click and explore more features!
 
 ---
 
-## 📁 项目结构
+## Project Structure
 
-| 模块          | 描述                                                            |
+| Module | Description |
 | ------------- | --------------------------------------------------------------- |
-| `mcp-base`    | 🔧 基础服务，提供文件存储和通用服务能力                         |
-| `mcp-client`  | 🌐 MCP 客户端，基于 Chainlit 构建的 Web 界面                    |
-| `mcp-server`  | 🗄️ MCP 服务端，集成多种 AIGC 工具与服务                         |
+| `mcp-base` | Basic services providing file storage and common service capabilities |
+| `mcp-client` | MCP client, a web interface built on Chainlit |
+| `mcp-server` | MCP server integrating various AIGC tools and services |
 
 ---
 
-## 💡 适用场景
+## Use Cases
 
-- 通用多模态智能体研发
-- 零代码定制 AIGC 工作流
-- 强化 LLM 工具调用能力
-- 灵活部署企业级 AI 服务
+- General multimodal agent development
+- Zero-code customization of AIGC workflows
+- Enhancing LLM tool-calling capabilities
+- Flexible deployment of enterprise-level AI services
 
 ---
 
-> 欢迎 Star ⭐️、Fork 🎉、提交 Issue 或 PR，共同完善 Pixelle MCP！
+> Welcome to Star, Fork, submit Issues or PRs to help improve Pixelle MCP!
 
 **Official site: ** [https://github.com/AIDC-AI/Pixelle-MCP](https://github.com/AIDC-AI/Pixelle-MCP)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

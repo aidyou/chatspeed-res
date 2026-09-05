@@ -1,56 +1,51 @@
 ---
 title: "mogutongxue-mcp-server"
-description: "About what I want to achieve on Windows computer: 'Xiao Ai, open Kuwo Music' and 'Xiao Ai, cut the song' ---关于我想在windows电脑上实现：'小爱同学，打开酷我音乐'与'小爱同学，切歌'这件事- 实现\"蘑菇同学,打开酷我音乐\"与\"蘑菇同学,切歌\"这两件事 实现原理:java运行cmd命令"
+description: "About what I want to achieve on a Windows computer: 'Xiao Ai, open Kuwo Music' and 'Xiao Ai, cut the song'. - Implement 'Mogutongxue, open Kuwo Music' and 'Mogutongxue, cut the song'. Implementation…"
 ---
 
 # mogutongxue-mcp-server
 
-About what I want to achieve on Windows computer: 'Xiao Ai, open Kuwo Music' and 'Xiao Ai, cut the song' ---关于我想在windows电脑上实现：'小爱同学，打开酷我音乐'与'小爱同学，切歌'这件事- 实现"蘑菇同学,打开酷我音乐"与"蘑菇同学,切歌"这两件事 实现原理:java运行cmd命令
+About what I want to achieve on a Windows computer: 'Xiao Ai, open Kuwo Music' and 'Xiao Ai, cut the song'. - Implement 'Mogutongxue, open Kuwo Music' and 'Mogutongxue, cut the song'. Implementation…
 
-# mogutongxue-蘑菇同学-mcp-server
+# mogutongxue-mcp-server
 
-About what I want to achieve on Windows computer: 'Xiao Ai, open Kuwo Music' and 'Xiao Ai, cut the song'
----关于我想在windows电脑上实现：'小爱同学，打开酷我音乐'与'小爱同学，切歌'这件事-
+About what I want to achieve on a Windows computer: "Xiao Ai, open Kuwo Music" and "Xiao Ai, cut the song".
 
-## 演示视频:
+## Demo video:
 https://www.bilibili.com/video/av114929751298782/
 
-## 作用:
+## Purpose:
 
-实现"蘑菇同学,打开酷我音乐"与"蘑菇同学,切歌"这两件事
+Implements two things: "Mogutongxue, open Kuwo Music" and "Mogutongxue, cut the song"
 
 ```
 GET http://localhost:8001/chat/option/call?
-    query=小爱同学,我常用的软件都在C盘rj文件夹内,打开酷我音乐
+    query=Xiao Ai, my commonly used software is all in the rj folder on the C drive, open Kuwo Music
 
 GET http://localhost:8001/chat/option/call?
-    query=小爱同学,切歌
+    query=Xiao Ai, cut the song
 ```
 
-
-
-实现原理:java运行cmd命令与java模拟键盘按键
+Implementation: Java runs CMD commands and Java simulates keyboard key presses
 
 ```java
-//真正干活的两句代码
-//运行cmd
+// The two lines that actually do the work
+// Run cmd
 new ProcessBuilder("cmd", "/c", "start", "\"\"", "\"" + filePath + "\"").start();
 
-//模拟键盘按下
+// Simulate a key press
 robot.keyPress(keyCode);
 ```
 
+## Deployment:
 
+1. Download the source code or git clone
 
-## 部署方式:
+2. Run the code (I ran it with IDEA lol). You probably need Maven and JDK 21 installed locally, then mvn run (roughly, I'm a Java newbie)
 
-1.下载源码 或 git clone
+3. Add the MCP
 
-2.运行代码 (我是用idea运行的qwq) 应该是需要在本机部署maven和jdk21,然后mvn run (大概吧qwq,java萌新哭唧唧)
-
-3.添加mcp
-
-##### json格式:
+##### JSON format:
 
 ```json
 {
@@ -62,29 +57,27 @@ robot.keyPress(keyCode);
 }
 ```
 
-##### 自定义添加:
+##### Custom add:
 
-类型:sse
+Type: sse
 
 url: http://localhost:8083/sse
 
-4.修改一下代码qwq (想着开发个可视化的ui界面,但是感觉太麻烦了,就不想弄了)
+4. Modify the code a bit (I thought about developing a visual UI, but it felt like too much trouble, so I didn't)
 
-修改以下位置
+Modify the following location
 
 ...\mogutongxue-mcp\mogutongxue-api\src\main\resources\config.json
 
-参照'切歌',写一下你想让mcp实现的快捷键功能即可
+Refer to 'cut the song' and write the shortcut key function you want the MCP to implement.
 
-其他的都不用动qwq,当然你想加点其他的东西也可以
+Everything else can stay as is, of course you can also add other things.
 
-5以上,此致敬礼qwq
+5. That's all, best regards
 
+## Afterword:
 
-
-## 写在后面:
-
-java小白,闲着没事写着玩的,希望能给大佬们提供一丢丢思路,希望有一天能真的用自然语言操作计算机
+A Java beginner here, just writing this for fun. I hope it gives the experts a little inspiration, and I hope one day we can really control computers with natural language
 
 **Official site: ** [https://github.com/mogu520999/mogutongxue](https://github.com/mogu520999/mogutongxue)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

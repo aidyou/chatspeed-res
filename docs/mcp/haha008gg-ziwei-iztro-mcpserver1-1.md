@@ -9,52 +9,71 @@ npm version License: MIT Node.js Version TypeScript Based on iztro's Model Conte
 
 npm version License: MIT Node.js Version TypeScript
 
-基于 iztro 的模型上下文协议 (MCP) 服务器
+A Model Context Protocol (MCP) server based on iztro
 
-生成紫微斗数星盘，支持地理编码和真太阳时转换
+Generates Purple Star Astrology (Zi Wei Dou Shu) charts, supporting geocoding and true solar time conversion
 
-✨ 功能特性
-🌟 星盘生成: 根据出生信息生成详细的紫微斗数星盘
-🌍 地理编码服务: 使用高德地图API将地点名称转换为精确坐标
-⏰ 真太阳时转换: 采用天文算法计算高精度真太阳时
-🔌 MCP集成: 与MCP兼容客户端无缝集成
-🔒 安全配置: 支持环境变量和配置文件
-🚀 快速开始
-安装
+## Features
+- **Chart generation**: generate detailed Zi Wei Dou Shu charts based on birth information
+- **Geocoding service**: convert place names to precise coordinates using the AMap API
+- **True solar time conversion**: calculate high-precision true solar time using astronomical algorithms
+- **MCP integration**: seamless integration with MCP-compatible clients
+- **Secure configuration**: supports environment variables and config files
+
+## Quick Start
+
+### Installation
+```
 npm install -g ziwei_iztro-mcpserver
-配置
-⚠️ 重要提示：使用前请配置您自己的API密钥！
+```
 
-方式一：环境变量（推荐）
-# 复制示例环境文件
+### Configuration
+**Important: configure your own API key before use!**
+
+**Method 1: Environment variables (recommended)**
+```bash
+# Copy the example environment file
 cp .env.example .env
 
-# 编辑 .env 文件并添加您的高德地图API密钥
+# Edit the .env file and add your AMap API key
 echo "AMAP_API_KEY=your_actual_api_key_here" > .env
-方式二：配置文件
-# 复制示例配置文件
+```
+
+**Method 2: Config file**
+```bash
+# Copy the example config file
 cp iztro-mcp-config.example.json iztro-mcp-config.json
 
-# 编辑配置文件并添加您的API密钥
-获取高德地图API密钥
-访问 高德开放平台
-注册账号并登录
-创建应用，选择"Web服务"类型
-获取您的API密钥
-自动化设置（推荐）
-# 运行交互式设置脚本
+# Edit the config file and add your API key
+```
+
+### Getting an AMap API key
+1. Visit the [AMap Open Platform](https://lbs.amap.com/)
+2. Register an account and log in
+3. Create an app and select the "Web Service" type
+4. Get your API key
+
+### Automated setup (recommended)
+```bash
+# Run the interactive setup script
 npm run setup
-这将引导您完成配置过程并创建必要的文件。
+```
+This guides you through the configuration process and creates the necessary files.
 
-📋 使用方法
-作为独立服务器
-# 启动MCP服务器
+## Usage
+
+### As a standalone server
+```bash
+# Start the MCP server
 ziwei_iztro-mcpserver
-# 或者
+# or
 npm start
-与MCP客户端集成
-添加到您的MCP客户端配置中：
+```
 
+### Integration with MCP clients
+Add to your MCP client configuration:
+
+```json
 {
   "mcpServers": {
     "iztro": {
@@ -63,8 +82,11 @@ npm start
     }
   }
 }
-或者本地安装：
+```
 
+Or install locally:
+
+```json
 {
   "mcpServers": {
     "iztro": {
@@ -73,112 +95,134 @@ npm start
     }
   }
 }
-🛠️ 可用工具
-1. geocode_location
-将地点名称转换为精确坐标。
+```
 
-参数：
+## Available Tools
 
-location (string, 必需): 地点名称，例如："安徽省合肥市庐江县金牛镇"
-返回：
+### 1. geocode_location
+Converts a place name to precise coordinates.
 
+**Parameters:**
+- `location` (string, required): place name, e.g. "Jinniu Town, Lujiang County, Hefei City, Anhui Province"
+
+**Returns:**
+```json
 {
-  "location": "安徽省合肥市庐江县金牛镇",
+  "location": "Jinniu Town, Lujiang County, Hefei City, Anhui Province",
   "longitude": 117.123456,
   "latitude": 31.654321,
-  "formatted_address": "安徽省合肥市庐江县金牛镇"
+  "formatted_address": "Jinniu Town, Lujiang County, Hefei City, Anhui Province"
 }
-2. convert_to_apparent_solar_time
-根据地理位置将北京时间转换为真太阳时。
+```
 
-参数：
+### 2. convert_to_apparent_solar_time
+Converts Beijing time to true solar time based on the geographic location.
 
-beijingTime (string, 必需): 北京时间，格式为 YYYY-MM-DD HH:mm:ss
-longitude (number, 必需): 经度（东经为正，西经为负）
-latitude (number, 可选): 纬度（北纬为正，南纬为负）
-返回：
+**Parameters:**
+- `beijingTime` (string, required): Beijing time in YYYY-MM-DD HH:mm:ss format
+- `longitude` (number, required): longitude (positive east, negative west)
+- `latitude` (number, optional): latitude (positive north, negative south)
 
+**Returns:**
+```json
 {
   "beijing_time": "2024-01-01 12:00:00",
   "longitude": 117.123456,
   "latitude": 31.654321,
   "apparent_solar_time": "2024-01-01 12:08:30"
 }
-3. generate_astrolabe
-生成紫微斗数星盘，支持基于地点的真太阳时转换。
+```
 
-参数：
+### 3. generate_astrolabe
+Generates a Zi Wei Dou Shu chart, supporting location-based true solar time conversion.
 
-birthday (string, 必需): 出生日期，格式为 YYYY-MM-DD
-birthTime (number, 必需): 出生时辰 (0-11)，其中 0=子时，1=丑时，以此类推
-gender (string, 必需): 性别，'男' 或 '女'
-calendarType (string, 可选): 日历类型，'solar' 或 'lunar'，默认为 'solar'
-isLeapMonth (boolean, 可选): 是否为闰月（仅农历有效）
-language (string, 可选): 输出语言，支持 'zh-CN', 'zh-TW', 'en-US', 'ja-JP', 'ko-KR', 'vi-VN'
-location (string, 可选): 出生地点，用于真太阳时转换
-返回： 完整的星盘数据，如果提供了地点参数，还包含地点处理信息。
+**Parameters:**
+- `birthday` (string, required): birth date in YYYY-MM-DD format
+- `birthTime` (number, required): birth time period (0-11), where 0=Zi hour, 1=Chou hour, and so on
+- `gender` (string, required): gender, 'male' or 'female'
+- `calendarType` (string, optional): calendar type, 'solar' or 'lunar', default 'solar'
+- `isLeapMonth` (boolean, optional): whether it is a leap month (lunar calendar only)
+- `language` (string, optional): output language, supports 'zh-CN', 'zh-TW', 'en-US', 'ja-JP', 'ko-KR', 'vi-VN'
+- `location` (string, optional): birth location, used for true solar time conversion
 
-🛠️ 开发
-前置要求
-Node.js >= 16.0.0
-npm 或 yarn
-TypeScript 5.0+
-本地开发
-# 克隆仓库
+**Returns:** complete chart data; if a location parameter is provided, location processing info is also included.
+
+## Development
+
+### Prerequisites
+- Node.js >= 16.0.0
+- npm or yarn
+- TypeScript 5.0+
+
+### Local development
+```bash
+# Clone the repository
 git clone https://github.com/smogievogie/ziwei_iztro-mcpserver.git
 cd ziwei_iztro-mcpserver
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 构建项目
+# Build the project
 npm run build
 
-# 运行设置脚本
+# Run the setup script
 npm run setup
 
-# 启动开发服务器
+# Start the dev server
 npm run dev
-测试
-# 使用 MCP Inspector 测试
+```
+
+### Testing
+```bash
+# Test with MCP Inspector
 npx @modelcontextprotocol/inspector node dist/index.js
-📚 技术细节
-真太阳时计算
-基于 Jean Meeus《天文算法》
-考虑地球轨道椭圆性和轴倾斜
-与天文年历相比精度在3秒内
-支持早子时和晚子时区分
-地理编码服务
-由高德地图API提供支持
-高精度坐标转换
-支持中国境内详细地址解析
-地理编码失败时自动回退到原始时间
-🤝 贡献
-欢迎贡献！请随时提交Pull Request。
+```
 
-开发指南
-Fork 本仓库
-创建 功能分支：git checkout -b feature/amazing-feature
-提交 您的更改：git commit -m 'Add amazing feature'
-推送 到分支：git push origin feature/amazing-feature
-提交 Pull Request
-代码规范
-使用TypeScript确保类型安全
-遵循ESLint配置
-添加适当的单元测试
-根据需要更新文档
-📄 许可证
-本项目采用MIT许可证 - 详见 LICENSE 文件。
+## Technical Details
 
-🙏 致谢
-iztro - 紫微斗数核心库
-MCP SDK - 模型上下文协议TypeScript SDK
-高德地图API - 地理编码服务提供商
-📞 支持
-问题反馈: GitHub Issues
-讨论: GitHub Discussions
-文档: 项目Wiki
-为紫微斗数爱好者用❤️制作
+### True solar time calculation
+- Based on Jean Meeus' "Astronomical Algorithms"
+- Accounts for the ellipticity of Earth's orbit and axial tilt
+- Accuracy within 3 seconds compared to the astronomical almanac
+- Supports early and late Zi hour distinction
+
+### Geocoding service
+- Powered by the AMap API
+- High-precision coordinate conversion
+- Supports detailed address resolution within China
+- Automatically falls back to the original time if geocoding fails
+
+## Contributing
+Contributions are welcome! Feel free to submit a Pull Request.
+
+### Development guide
+1. Fork this repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Submit a Pull Request
+
+### Code standards
+- Use TypeScript for type safety
+- Follow the ESLint configuration
+- Add appropriate unit tests
+- Update documentation as needed
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/smogievogie/ziwei_iztro-mcpserver/blob/HEAD/LICENSE) file for details.
+
+## Acknowledgments
+- iztro - the core Zi Wei Dou Shu library
+- MCP SDK - the Model Context Protocol TypeScript SDK
+- AMap API - geocoding service provider
+
+## Support
+- Issue feedback: GitHub Issues
+- Discussion: GitHub Discussions
+- Documentation: project Wiki
+
+Made with <3 for Zi Wei Dou Shu enthusiasts
 
 **Official site: ** [https://github.com/smogievogie/ziwei_iztro-mcpserver.git](https://github.com/smogievogie/ziwei_iztro-mcpserver.git)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

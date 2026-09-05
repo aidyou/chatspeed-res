@@ -136,12 +136,12 @@ After configuring the API key, you can directly use the tools in the MCP client 
 
 ### 1. Analyze Web Page and Generate Images
 ```typescript
-// 通过MCP客户端调用
+// Call via the MCP client
 const result = await mcpClient.callTool("analyze-and-generate-webpage-images", {
   html: "
 
-我的网站
- alt='主页图片'>
+My website
+ alt='Homepage image'>
 ",
   generateImages: true
 });
@@ -149,8 +149,8 @@ const result = await mcpClient.callTool("analyze-and-generate-webpage-images", {
 ### 2. Generate Illustrations for an Article
 ```typescript
 const result = await mcpClient.callTool("analyze-and-generate-article-images", {
-  content: "人工智能技术正在快速发展...",
-  title: "AI技术发展趋势"
+  content: "AI technology is developing rapidly...",
+  title: "AI technology development trends"
 });
 ```
 ### 3. Generate a Single Image
@@ -233,7 +233,7 @@ Extend analysis capabilities in the `ContentAnalyzer` class:
 
 private customAnalyzer(content: string): AnalysisResult {
 
-  // 实现自定义分析逻辑
+  // implement custom analysis logic
 
 }
 

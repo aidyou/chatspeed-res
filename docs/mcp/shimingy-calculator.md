@@ -1,11 +1,11 @@
 ---
 title: "calculator"
-description: "MCP Calculator Server 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -…"
+description: "MCP Calculator Server A full-featured Model Context Protocol (MCP) calculator server offering a rich set of mathematical operations across 13 specialized modules: basic arithmetic, roots, trigonometry…"
 ---
 
 # calculator
 
-MCP Calculator Server 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -…
+MCP Calculator Server A full-featured Model Context Protocol (MCP) calculator server offering a rich set of mathematical operations across 13 specialized modules: basic arithmetic, roots, trigonometry…
 
 # MCP Calculator Server
 
@@ -14,213 +14,213 @@ MCP Calculator Server 一个功能完整的基于 Model Context Protocol (MCP) �
 [![TypeScript](/mcp-assets/e2f4f7eb3c57946e147a6d1fb44ccbbc.svg)](https://www.typescriptlang.org/)
 [![Node.js](/mcp-assets/6cb98474e7605f1c68a4efc113f8119a.svg)](https://nodejs.org/)
 
-一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。
+A full-featured Model Context Protocol (MCP) calculator server offering a rich set of mathematical operations across 13 specialized modules: basic arithmetic, roots, trigonometry, logarithms, statistics, combinatorics, number theory, complex numbers, matrix operations, numerical analysis, financial calculations, unit conversions, and geometry.
 
-## 📦 安装
+## Installation
 
-### 通过 npm 安装（推荐）
+### Via npm (recommended)
 
 ```bash
-# 全局安装
+# Global install
 npm install -g mcp-calculator
 
-# 或者本地安装
+# Or local install
 npm install mcp-calculator
 ```
 
-### 从源码安装
+### From source
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/proflulab/mcp-calculator.git
 cd mcp-calculator
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 构建并启动
+# Build and start
 npm start
 ```
 
-## 🚀 快速开始
+## Quick Start
 
-### 全局安装后使用
+### After global install
 
 ```bash
-# 直接启动服务器
+# Start the server directly
 calculator
 ```
 
-### 本地安装后使用
+### After local install
 
 ```bash
-# 使用 npx 运行
+# Run with npx
 npx mcp-calculator
 
-# 或者通过 npm scripts
+# Or via npm scripts
 npm start
 ```
 
-## 🧮 功能特性
+## Features
 
-### 📊 13 个专业数学模块
+### 13 Specialized Math Modules
 
-#### 1. 基础数学 (Basic Math)
+#### 1. Basic Math
 
-- ✅ **加法运算** - 两个数字相加
-- ✅ **减法运算** - 两个数字相减
-- ✅ **乘法运算** - 两个数字相乘
-- ✅ **除法运算** - 两个数字相除（包含除零错误处理）
-- ✅ **求余运算** - 计算两个数的余数
-- ✅ **幂运算** - 计算a的b次方
+- Addition of two numbers
+- Subtraction of two numbers
+- Multiplication of two numbers
+- Division of two numbers (including division-by-zero error handling)
+- Modulo: remainder of two numbers
+- Exponentiation: a raised to the power of b
 
-#### 2. 根式运算 (Root Operations)
+#### 2. Root Operations
 
-- ✅ **平方根** - 计算数字的平方根
-- ✅ **立方根** - 计算数字的立方根
-- ✅ **开多次方** - 计算数字的n次方根
-- ✅ **绝对值** - 计算数字的绝对值
+- Square root
+- Cube root
+- n-th root of a number
+- Absolute value
 
-#### 3. 三角函数 (Trigonometry)
+#### 3. Trigonometry
 
-- ✅ **基本三角函数** - sin, cos, tan
-- ✅ **反三角函数** - asin, acos, atan
-- ✅ **双曲函数** - sinh, cosh, tanh
-- ✅ **角度弧度转换** - 度数与弧度互转
+- Basic trigonometric functions: sin, cos, tan
+- Inverse trigonometric functions: asin, acos, atan
+- Hyperbolic functions: sinh, cosh, tanh
+- Degree/radian conversion
 
-#### 4. 对数函数 (Logarithms)
+#### 4. Logarithms
 
-- ✅ **自然对数** - ln(x)
-- ✅ **常用对数** - log₁₀(x)
-- ✅ **任意底数对数** - log_b(x)
-- ✅ **指数函数** - e^x, 10^x, a^x
+- Natural logarithm: ln(x)
+- Common logarithm: log10(x)
+- Logarithm with arbitrary base: log_b(x)
+- Exponential functions: e^x, 10^x, a^x
 
-#### 5. 统计学 (Statistics)
+#### 5. Statistics
 
-- ✅ **描述统计** - 平均值、中位数、众数
-- ✅ **离散度量** - 标准差、方差、范围
-- ✅ **极值统计** - 最大值、最小值
-- ✅ **聚合运算** - 求和、乘积
+- Descriptive statistics: mean, median, mode
+- Dispersion measures: standard deviation, variance, range
+- Extremes: max, min
+- Aggregations: sum, product
 
-#### 6. 组合数学 (Combinatorics)
+#### 6. Combinatorics
 
-- ✅ **阶乘运算** - n!
-- ✅ **排列组合** - P(n,r), C(n,r)
-- ✅ **斐波那契数列** - 第n项斐波那契数
-- ✅ **卡塔兰数** - 第n个卡塔兰数
+- Factorial: n!
+- Permutations and combinations: P(n,r), C(n,r)
+- Fibonacci sequence: n-th Fibonacci number
+- Catalan numbers: n-th Catalan number
 
-#### 7. 数论 (Number Theory)
+#### 7. Number Theory
 
-- ✅ **最大公约数** - GCD计算
-- ✅ **最小公倍数** - LCM计算
-- ✅ **素数判断** - 质数检测
-- ✅ **质因数分解** - 素因子分解
-- ✅ **欧拉函数** - φ(n)计算
-- ✅ **完全数判断** - 完全数检测
-- ✅ **因子统计** - 因子个数和列表
+- Greatest common divisor (GCD)
+- Least common multiple (LCM)
+- Primality test
+- Prime factorization
+- Euler's totient function: phi(n)
+- Perfect number detection
+- Divisor count and list
 
-#### 8. 复数运算 (Complex Numbers)
+#### 8. Complex Numbers
 
-- ✅ **基本运算** - 加减乘除
-- ✅ **复数属性** - 模长、共轭、幅角
-- ✅ **极坐标形式** - r∠θ 表示
+- Basic operations: add, subtract, multiply, divide
+- Complex properties: magnitude, conjugate, argument
+- Polar form: r phase angle representation
 
-#### 9. 矩阵运算 (Matrix Operations)
+#### 9. Matrix Operations
 
-- ✅ **矩阵运算** - 加法、减法、乘法
-- ✅ **矩阵属性** - 行列式、转置、逆矩阵
-- ✅ **向量运算** - 点积、叉积、模长
+- Matrix arithmetic: addition, subtraction, multiplication
+- Matrix properties: determinant, transpose, inverse
+- Vector operations: dot product, cross product, magnitude
 
-#### 10. 数值分析 (Numerical Analysis)
+#### 10. Numerical Analysis
 
-- ✅ **数值积分** - 梯形法则、辛普森法则
-- ✅ **数值微分** - 数值求导
-- ✅ **方程求根** - 牛顿法、二分法
-- ✅ **插值计算** - 拉格朗日插值
+- Numerical integration: trapezoidal rule, Simpson's rule
+- Numerical differentiation
+- Root finding: Newton's method, bisection method
+- Interpolation: Lagrange interpolation
 
-#### 11. 金融计算 (Financial)
+#### 11. Financial
 
-- ✅ **复利计算** - 投资收益计算
-- ✅ **年金计算** - 现值和未来值
-- ✅ **贷款计算** - 月供计算
-- ✅ **投资分析** - NPV、IRR计算
-- ✅ **债券定价** - 债券价格计算
+- Compound interest: investment returns
+- Annuities: present and future value
+- Loans: monthly payment calculation
+- Investment analysis: NPV, IRR
+- Bond pricing
 
-#### 12. 单位转换 (Conversions)
+#### 12. Conversions
 
-- ✅ **长度转换** - 米、英尺、英寸等
-- ✅ **重量转换** - 千克、磅、盎司等
-- ✅ **温度转换** - 摄氏度、华氏度、开尔文
-- ✅ **面积体积** - 各种单位互转
-- ✅ **时间转换** - 秒、分钟、小时等
+- Length: meters, feet, inches, etc.
+- Weight: kilograms, pounds, ounces, etc.
+- Temperature: Celsius, Fahrenheit, Kelvin
+- Area and volume: conversions between units
+- Time: seconds, minutes, hours, etc.
 
-#### 13. 几何计算 (Geometry)
+#### 13. Geometry
 
-- ✅ **平面几何** - 圆形、矩形、三角形面积周长
-- ✅ **立体几何** - 球体、圆柱、圆锥体积表面积
-- ✅ **坐标几何** - 点距离、直线方程
+- Plane geometry: circle, rectangle, triangle area and perimeter
+- Solid geometry: sphere, cylinder, cone volume and surface area
+- Coordinate geometry: point distance, line equations
 
-### 🔧 系统特性
+### System Features
 
-- ✅ **参数验证** - 使用 Zod 进行输入验证
-- ✅ **错误处理** - 完善的错误处理机制
-- ✅ **模块化设计** - 13个独立数学模块
-- ✅ **类型安全** - 完整的 TypeScript 类型定义
-- ✅ **单元测试** - 266个测试用例，100%覆盖率
+- Parameter validation with Zod
+- Comprehensive error handling
+- Modular design: 13 independent math modules
+- Type safety: complete TypeScript type definitions
+- Unit tests: 266 test cases, 100% coverage
 
-## 安装和使用
+## Installation and Usage
 
-### 1. 安装依赖
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. 构建项目
+### 2. Build the project
 
 ```bash
 npm run build
 ```
 
-### 3. 启动服务器
+### 3. Start the server
 
 ```bash
 npm start
 ```
 
-或者直接运行构建后的文件：
+Or run the built file directly:
 
 ```bash
 node build/index.js
 ```
 
-### 4. 测试服务器
+### 4. Test the server
 
-详细的测试说明和使用方法请参考：[测试文档](https://github.com/proflulab/mcp-calculator/blob/HEAD/tests/README.md)
+For detailed testing instructions and usage, see the [test docs](https://github.com/proflulab/mcp-calculator/blob/HEAD/tests/README.md).
 
-快速运行测试：
+Quick test commands:
 
 ```bash
-# 运行所有测试
+# Run all tests
 npm test
 
-# 运行单元测试
+# Run unit tests
 npm run test:unit
 
-# 运行集成测试
+# Run integration tests
 npm run test:integration
 
-# 生成覆盖率报告
+# Generate coverage report
 npm run test:coverage
 ```
 
-## 💡 使用示例
+## Usage Examples
 
-### 在 MCP 客户端中使用
+### In an MCP client
 
-#### 全局安装配置
+#### Global install configuration
 
-如果你已经全局安装了 `mcp-calculator`，可以这样配置：
+If you installed `mcp-calculator` globally:
 
 ```json
 {
@@ -232,9 +232,9 @@ npm run test:coverage
 }
 ```
 
-#### 本地安装配置
+#### Local install configuration
 
-如果你是本地安装或从源码构建，可以这样配置：
+For a local install or built from source:
 
 ```json
 {
@@ -247,7 +247,7 @@ npm run test:coverage
 }
 ```
 
-#### 使用 npx 配置
+#### Using npx
 
 ```json
 {
@@ -260,201 +260,199 @@ npm run test:coverage
 }
 ```
 
-### 计算器功能示例
+### Calculator examples
 
-- **基础运算**："计算 15 + 27"
-- **三角函数**："计算 sin(π/4) 的值"
-- **对数运算**："计算 log₂(16)"
-- **开方运算**："计算 ∛125"
-- **复合运算**："计算 2^3 + √16 - ln(e)"
+- **Basic operations**: "compute 15 + 27"
+- **Trigonometry**: "compute sin(pi/4)"
+- **Logarithms**: "compute log2(16)"
+- **Roots**: "compute cube root of 125"
+- **Compound expressions**: "compute 2^3 + sqrt(16) - ln(e)"
 
-### 命令行直接使用
+### Using the CLI directly
 
 ```bash
-# 启动服务器
+# Start the server
 node build/index.js
 
-# 在另一个终端发送请求
+# Send a request from another terminal
 echo '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"add","arguments":{"a":10,"b":5}}}' | node build/index.js
 ```
 
-### 安装验证
-
-安装完成后，你可以通过以下方式验证安装是否成功：
+### Verify installation
 
 ```bash
-# 检查版本
+# Check the version
 npm list mcp-calculator
 
-# 运行测试（如果是从源码安装）
+# Run tests (if installed from source)
 npm run test:all
 
-# 启动服务器测试
-calculator  # 全局安装
-# 或
-npx mcp-calculator  # 本地安装
+# Start a server test
+calculator  # global install
+# or
+npx mcp-calculator  # local install
 ```
 
-## 🔧 可用工具
+## Available Tools
 
-本项目提供 **100+** 个数学工具，按 13 个专业模块组织。以下是各模块的主要工具：
+This project provides **100+** math tools organized into 13 specialized modules. Here are the main tools in each module:
 
-### 📐 1. 基础数学 (Basic Math)
+### 1. Basic Math
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
+|--------|------|--------|
+| `add` | Addition | `add(10, 5) = 15` |
+| `subtract` | Subtraction | `subtract(10, 5) = 5` |
+| `multiply` | Multiplication | `multiply(10, 5) = 50` |
+| `divide` | Division | `divide(10, 5) = 2` |
+| `modulo` | Modulo | `modulo(17, 5) = 2` |
+| `power` | Exponentiation | `power(2, 8) = 256` |
+
+### 2. Root Operations
+
+| Tool | Description | Example |
 |--------|------|------|
-| `add` | 加法运算 | `add(10, 5) = 15` |
-| `subtract` | 减法运算 | `subtract(10, 5) = 5` |
-| `multiply` | 乘法运算 | `multiply(10, 5) = 50` |
-| `divide` | 除法运算 | `divide(10, 5) = 2` |
-| `modulo` | 求余运算 | `modulo(17, 5) = 2` |
-| `power` | 幂运算 | `power(2, 8) = 256` |
+| `sqrt` | Square root | `sqrt(16) = 4` |
+| `cbrt` | Cube root | `cbrt(27) = 3` |
+| `nthRoot` | n-th root | `nthRoot(16, 4) = 2` |
+| `abs` | Absolute value | `abs(-25) = 25` |
 
-### 🔢 2. 根式运算 (Root Operations)
+### 3. Trigonometry
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `sqrt` | 平方根 | `sqrt(16) = 4` |
-| `cbrt` | 立方根 | `cbrt(27) = 3` |
-| `nthRoot` | n次方根 | `nthRoot(16, 4) = 2` |
-| `abs` | 绝对值 | `abs(-25) = 25` |
+| `sin` | Sine | `sin(pi/2) = 1` |
+| `cos` | Cosine | `cos(0) = 1` |
+| `tan` | Tangent | `tan(pi/4) = 1` |
+| `asin` | Arc sine | `asin(0.5) = pi/6` |
+| `acos` | Arc cosine | `acos(0.5) = pi/3` |
+| `atan` | Arc tangent | `atan(1) = pi/4` |
+| `sinh` | Hyperbolic sine | `sinh(0) = 0` |
+| `degrees_to_radians` | Degrees to radians | `degrees_to_radians(180) = pi` |
 
-### 📊 3. 三角函数 (Trigonometry)
+### 4. Logarithms
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `sin` | 正弦函数 | `sin(π/2) = 1` |
-| `cos` | 余弦函数 | `cos(0) = 1` |
-| `tan` | 正切函数 | `tan(π/4) = 1` |
-| `asin` | 反正弦函数 | `asin(0.5) = π/6` |
-| `acos` | 反余弦函数 | `acos(0.5) = π/3` |
-| `atan` | 反正切函数 | `atan(1) = π/4` |
-| `sinh` | 双曲正弦 | `sinh(0) = 0` |
-| `degrees_to_radians` | 角度转弧度 | `degrees_to_radians(180) = π` |
+| `ln` | Natural logarithm | `ln(e) = 1` |
+| `log10` | Common logarithm | `log10(100) = 2` |
+| `log` | Arbitrary-base logarithm | `log(8, 2) = 3` |
+| `exp` | Exponential function | `exp(1) = e` |
 
-### 📈 4. 对数函数 (Logarithms)
+### 5. Statistics
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `ln` | 自然对数 | `ln(e) = 1` |
-| `log10` | 常用对数 | `log10(100) = 2` |
-| `log` | 任意底数对数 | `log(8, 2) = 3` |
-| `exp` | 指数函数 | `exp(1) = e` |
+| `mean` | Mean | `mean([1,2,3,4,5]) = 3` |
+| `median` | Median | `median([1,2,3,4,5]) = 3` |
+| `mode` | Mode | `mode([1,1,2,3]) = 1` |
+| `stdDev` | Standard deviation | `stdDev([1,2,3,4,5]) = 1.58` |
+| `variance` | Variance | `variance([1,2,3,4,5]) = 2.5` |
+| `max` | Maximum | `max([1,2,3,4,5]) = 5` |
+| `min` | Minimum | `min([1,2,3,4,5]) = 1` |
+| `sum` | Sum | `sum([1,2,3,4,5]) = 15` |
+| `product` | Product | `product([1,2,3,4,5]) = 120` |
+| `range` | Range | `range([1,2,3,4,5]) = 4` |
 
-### 📊 5. 统计学 (Statistics)
+### 6. Combinatorics
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `mean` | 平均值 | `mean([1,2,3,4,5]) = 3` |
-| `median` | 中位数 | `median([1,2,3,4,5]) = 3` |
-| `mode` | 众数 | `mode([1,1,2,3]) = 1` |
-| `stdDev` | 标准差 | `stdDev([1,2,3,4,5]) = 1.58` |
-| `variance` | 方差 | `variance([1,2,3,4,5]) = 2.5` |
-| `max` | 最大值 | `max([1,2,3,4,5]) = 5` |
-| `min` | 最小值 | `min([1,2,3,4,5]) = 1` |
-| `sum` | 求和 | `sum([1,2,3,4,5]) = 15` |
-| `product` | 乘积 | `product([1,2,3,4,5]) = 120` |
-| `range` | 范围 | `range([1,2,3,4,5]) = 4` |
+| `factorial` | Factorial | `factorial(5) = 120` |
+| `permutation` | Permutation | `permutation(5, 3) = 60` |
+| `combination` | Combination | `combination(5, 3) = 10` |
+| `fibonacci` | Fibonacci | `fibonacci(10) = 55` |
 
-### 🎲 6. 组合数学 (Combinatorics)
+### 7. Number Theory
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `factorial` | 阶乘 | `factorial(5) = 120` |
-| `permutation` | 排列 | `permutation(5, 3) = 60` |
-| `combination` | 组合 | `combination(5, 3) = 10` |
-| `fibonacci` | 斐波那契数 | `fibonacci(10) = 55` |
+| `gcd` | Greatest common divisor | `gcd(12, 18) = 6` |
+| `lcm` | Least common multiple | `lcm(12, 18) = 36` |
+| `isPrime` | Primality test | `isPrime(17) = true` |
+| `primeFactorization` | Prime factorization | `primeFactorization(12) = [2,2,3]` |
+| `eulerTotient` | Euler's totient | `eulerTotient(9) = 6` |
+| `isPerfectNumber` | Perfect number | `isPerfectNumber(6) = true` |
+| `divisorCount` | Divisor count | `divisorCount(12) = 6` |
+| `divisorList` | Divisor list | `divisorList(12) = [1,2,3,4,6,12]` |
 
-### 🔢 7. 数论 (Number Theory)
+### 8. Complex Numbers
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `gcd` | 最大公约数 | `gcd(12, 18) = 6` |
-| `lcm` | 最小公倍数 | `lcm(12, 18) = 36` |
-| `isPrime` | 素数判断 | `isPrime(17) = true` |
-| `primeFactorization` | 质因数分解 | `primeFactorization(12) = [2,2,3]` |
-| `eulerTotient` | 欧拉函数 | `eulerTotient(9) = 6` |
-| `isPerfectNumber` | 完全数判断 | `isPerfectNumber(6) = true` |
-| `divisorCount` | 因子个数 | `divisorCount(12) = 6` |
-| `divisorList` | 因子列表 | `divisorList(12) = [1,2,3,4,6,12]` |
+| `complex_add` | Complex addition | `(3+4i) + (1+2i) = 4+6i` |
+| `complex_subtract` | Complex subtraction | `(3+4i) - (1+2i) = 2+2i` |
+| `complex_multiply` | Complex multiplication | `(3+4i) * (1+2i) = -5+10i` |
+| `complex_divide` | Complex division | `(3+4i) / (1+2i) = 2.2-0.4i` |
+| `complex_magnitude` | Complex magnitude | `\|3+4i\| = 5` |
+| `complex_conjugate` | Complex conjugate | `conj(3+4i) = 3-4i` |
+| `complex_argument` | Complex argument | `arg(3+4i) = 0.927` |
+| `complex_polar` | Polar form | `3+4i = 5 angle 0.927` |
 
-### 🔄 8. 复数运算 (Complex Numbers)
+### 9. Matrix Operations
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `complex_add` | 复数加法 | `(3+4i) + (1+2i) = 4+6i` |
-| `complex_subtract` | 复数减法 | `(3+4i) - (1+2i) = 2+2i` |
-| `complex_multiply` | 复数乘法 | `(3+4i) × (1+2i) = -5+10i` |
-| `complex_divide` | 复数除法 | `(3+4i) ÷ (1+2i) = 2.2-0.4i` |
-| `complex_magnitude` | 复数模长 | `|3+4i| = 5` |
-| `complex_conjugate` | 复数共轭 | `conj(3+4i) = 3-4i` |
-| `complex_argument` | 复数幅角 | `arg(3+4i) = 0.927` |
-| `complex_polar` | 极坐标形式 | `3+4i = 5∠0.927` |
+| `matrix_add` | Matrix addition | `[[1,2],[3,4]] + [[5,6],[7,8]]` |
+| `matrix_subtract` | Matrix subtraction | `[[1,2],[3,4]] - [[5,6],[7,8]]` |
+| `matrix_multiply` | Matrix multiplication | `[[1,2],[3,4]] x [[5,6],[7,8]]` |
+| `matrix_determinant` | Determinant | `det([[1,2],[3,4]]) = -2` |
+| `matrix_transpose` | Transpose | `transpose([[1,2],[3,4]])` |
+| `vector_dot_product` | Vector dot product | `[1,2,3] . [4,5,6] = 32` |
+| `vector_magnitude` | Vector magnitude | `\|[3,4]\| = 5` |
 
-### 🔢 9. 矩阵运算 (Matrix Operations)
+### 10. Numerical Analysis
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `matrix_add` | 矩阵加法 | `[[1,2],[3,4]] + [[5,6],[7,8]]` |
-| `matrix_subtract` | 矩阵减法 | `[[1,2],[3,4]] - [[5,6],[7,8]]` |
-| `matrix_multiply` | 矩阵乘法 | `[[1,2],[3,4]] × [[5,6],[7,8]]` |
-| `matrix_determinant` | 行列式 | `det([[1,2],[3,4]]) = -2` |
-| `matrix_transpose` | 矩阵转置 | `transpose([[1,2],[3,4]])` |
-| `vector_dot_product` | 向量点积 | `[1,2,3] · [4,5,6] = 32` |
-| `vector_magnitude` | 向量模长 | `|[3,4]| = 5` |
+| `numerical_integration` | Numerical integration | Trapezoidal and Simpson's rules |
+| `numerical_derivative` | Numerical differentiation | Numerical derivative |
+| `newton_method` | Newton's method | Root finding |
+| `bisection_method` | Bisection method | Root finding |
+| `lagrange_interpolation` | Lagrange interpolation | Interpolation |
 
-### 📊 10. 数值分析 (Numerical Analysis)
+### 11. Financial
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `numerical_integration` | 数值积分 | 梯形法则、辛普森法则 |
-| `numerical_derivative` | 数值微分 | 数值求导 |
-| `newton_method` | 牛顿法求根 | 方程求根 |
-| `bisection_method` | 二分法求根 | 方程求根 |
-| `lagrange_interpolation` | 拉格朗日插值 | 插值计算 |
+| `compound_interest` | Compound interest | Investment return |
+| `present_value_annuity` | Annuity present value | Present value of an annuity |
+| `future_value_annuity` | Annuity future value | Future value of an annuity |
+| `loan_payment` | Loan payment | Equal monthly installments |
+| `net_present_value` | Net present value | NPV |
+| `internal_rate_of_return` | Internal rate of return | IRR |
+| `bond_price` | Bond price | Bond pricing |
 
-### 💰 11. 金融计算 (Financial)
+### 12. Conversions
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `compound_interest` | 复利计算 | 投资收益计算 |
-| `present_value_annuity` | 年金现值 | 年金现值计算 |
-| `future_value_annuity` | 年金未来值 | 年金未来值计算 |
-| `loan_payment` | 贷款月供 | 等额本息月供 |
-| `net_present_value` | 净现值 | NPV计算 |
-| `internal_rate_of_return` | 内部收益率 | IRR计算 |
-| `bond_price` | 债券价格 | 债券定价 |
+| `length_conversion` | Length conversion | meters, feet, inches |
+| `weight_conversion` | Weight conversion | kilograms, pounds, ounces |
+| `temperature_conversion` | Temperature conversion | Celsius, Fahrenheit, Kelvin |
+| `area_conversion` | Area conversion | square meters, acres, etc. |
+| `time_conversion` | Time conversion | seconds, minutes, hours, etc. |
 
-### 🔄 12. 单位转换 (Conversions)
+### 13. Geometry
 
-| 工具名 | 描述 | 示例 |
+| Tool | Description | Example |
 |--------|------|------|
-| `length_conversion` | 长度转换 | 米、英尺、英寸互转 |
-| `weight_conversion` | 重量转换 | 千克、磅、盎司互转 |
-| `temperature_conversion` | 温度转换 | 摄氏度、华氏度、开尔文 |
-| `area_conversion` | 面积转换 | 平方米、英亩等 |
-| `time_conversion` | 时间转换 | 秒、分钟、小时等 |
+| `circle_area` | Circle area | `pi * r^2` |
+| `rectangle_area` | Rectangle area | `length * width` |
+| `triangle_area` | Triangle area | `1/2 * base * height` |
+| `sphere_volume` | Sphere volume | `4/3 * pi * r^3` |
+| `cylinder_volume` | Cylinder volume | `pi * r^2 * h` |
+| `distance_between_points` | Point distance | Distance between two points |
 
-### 📐 13. 几何计算 (Geometry)
+> **Tip**: Every tool includes full parameter validation, error handling, and detailed usage instructions. Use the `tools/list` method of the MCP protocol to get the complete definitions of all tools.
 
-| 工具名 | 描述 | 示例 |
-|--------|------|------|
-| `circle_area` | 圆形面积 | `π × r²` |
-| `rectangle_area` | 矩形面积 | `length × width` |
-| `triangle_area` | 三角形面积 | `½ × base × height` |
-| `sphere_volume` | 球体体积 | `⁴⁄₃ × π × r³` |
-| `cylinder_volume` | 圆柱体积 | `π × r² × h` |
-| `distance_between_points` | 点距离 | 两点间距离计算 |
+## MCP Protocol Usage
 
-> 💡 **提示**: 每个工具都包含完整的参数验证、错误处理和详细的使用说明。使用 MCP 协议的 `tools/list` 方法可以获取所有工具的完整定义。
+### Connecting to the server
 
-## 📡 MCP 协议使用
+The server communicates over standard input/output (stdio) and supports the JSON-RPC 2.0 protocol.
 
-### 连接服务器
-
-服务器通过标准输入/输出 (stdio) 进行通信，支持 JSON-RPC 2.0 协议。
-
-### 获取工具列表
+### Listing tools
 
 ```json
 {
@@ -464,43 +462,43 @@ npx mcp-calculator  # 本地安装
 }
 ```
 
-## 🛠️ 技术栈
+## Tech Stack
 
-- **TypeScript** - 主要开发语言，提供类型安全
-- **@modelcontextprotocol/sdk** - MCP 协议实现
-- **Zod** - 运行时类型验证和输入校验
-- **Node.js** - 运行环境
+- **TypeScript**: main development language, providing type safety
+- **@modelcontextprotocol/sdk**: MCP protocol implementation
+- **Zod**: runtime type validation and input checking
+- **Node.js**: runtime environment
 
-### 依赖版本
+### Dependency versions
 
 - Node.js >= 16.0.0
 - TypeScript >= 5.0.0
 - @modelcontextprotocol/sdk ^1.17.4
 - Zod ^3.25.76
 
-## 📁 项目结构
+## Project Structure
 
 ```text
 mcp-calculator/
-├── src/                      # 源代码目录
-│   ├── index.ts              # 主服务器文件
-│   ├── types.ts              # 类型定义文件
-│   └── modules/              # 数学模块目录
-│       ├── basicMath.ts      # 基础数学运算
-│       ├── rootOperations.ts # 根式运算
-│       ├── trigonometry.ts   # 三角函数
-│       ├── logarithm.ts      # 对数函数
-│       ├── statistics.ts     # 统计学函数
-│       ├── combinatorics.ts  # 组合数学
-│       ├── numberTheory.ts   # 数论函数
-│       ├── complex.ts        # 复数运算
-│       ├── matrix.ts         # 矩阵运算
-│       ├── numerical.ts      # 数值分析
-│       ├── financial.ts      # 金融计算
-│       ├── conversion.ts     # 单位转换
-│       └── geometry.ts       # 几何计算
-├── tests/                    # 测试文件目录
-│   ├── unit/                 # 单元测试
+├── src/                      # Source directory
+│   ├── index.ts              # Main server file
+│   ├── types.ts              # Type definitions
+│   └── modules/              # Math modules
+│       ├── basicMath.ts      # Basic math
+│       ├── rootOperations.ts # Root operations
+│       ├── trigonometry.ts   # Trigonometry
+│       ├── logarithm.ts      # Logarithms
+│       ├── statistics.ts     # Statistics
+│       ├── combinatorics.ts  # Combinatorics
+│       ├── numberTheory.ts   # Number theory
+│       ├── complex.ts        # Complex numbers
+│       ├── matrix.ts         # Matrices
+│       ├── numerical.ts      # Numerical analysis
+│       ├── financial.ts      # Financial math
+│       ├── conversion.ts     # Unit conversions
+│       └── geometry.ts       # Geometry
+├── tests/                    # Tests
+│   ├── unit/                 # Unit tests
 │   │   ├── basicMath.test.ts
 │   │   ├── rootOperations.test.ts
 │   │   ├── trigonometry.test.ts
@@ -514,123 +512,123 @@ mcp-calculator/
 │   │   ├── financial.test.ts
 │   │   ├── conversion.test.ts
 │   │   └── geometry.test.ts
-│   ├── integration/           # 集成测试
-│   ├── performance/          # 性能测试
-│   ├── jest.config.cjs       # Jest 配置文件
-│   ├── setup.ts              # 测试环境设置
-│   ├── coverage/             # 测试覆盖率报告
-│   └── README.md             # 测试文档
-├── build/                    # 编译输出目录
-├── package.json              # 项目配置和依赖
-├── package-lock.json         # 锁定依赖版本
-├── tsconfig.json             # TypeScript 编译配置
-├── .gitignore                # Git 忽略文件配置
-├── LICENSE                   # MIT 许可证
-└── README.md                 # 项目说明文档
+│   ├── integration/           # Integration tests
+│   ├── performance/          # Performance tests
+│   ├── jest.config.cjs       # Jest config
+│   ├── setup.ts              # Test environment setup
+│   ├── coverage/             # Coverage reports
+│   └── README.md             # Test documentation
+├── build/                    # Compiled output
+├── package.json              # Project config and dependencies
+├── package-lock.json         # Locked dependency versions
+├── tsconfig.json             # TypeScript config
+├── .gitignore                # Git ignore rules
+├── LICENSE                   # MIT license
+└── README.md                 # Project readme
 ```
 
-## 📜 开发脚本
+## Development Scripts
 
-### 构建和运行
+### Build and run
 
-- `npm run build` - 编译 TypeScript 代码
-- `npm start` - 构建并启动服务器
-- `npm run dev` - 开发模式（监听文件变化自动重编译）
+- `npm run build` - compile TypeScript
+- `npm start` - build and start the server
+- `npm run dev` - development mode (auto-recompile on file changes)
 
-## 🤝 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-### 开发流程
+### Development flow
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### 代码规范
+### Code standards
 
-- 使用 TypeScript 进行开发
-- 遵循现有的代码风格
-- 为新功能添加相应的测试
-- 更新文档说明
+- Develop in TypeScript
+- Follow existing code style
+- Add tests for new features
+- Update documentation
 
-## 📄 许可证
+## License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](https://github.com/proflulab/mcp-calculator/blob/HEAD/LICENSE) 文件了解详情
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/proflulab/mcp-calculator/blob/HEAD/LICENSE) file for details.
 
-## 📋 版本信息
+## Version Info
 
-当前版本：**v1.0.1**
+Current version: **v1.0.1**
 
-### 版本历史
+### Changelog
 
-- **v1.0.1** - 初始发布版本
-  - 支持19个数学运算工具
-  - 完整的错误处理机制
-  - 100%测试覆盖率
-  - npm包发布
+- **v1.0.1** - Initial release
+  - Supports 19 math operation tools
+  - Complete error handling
+  - 100% test coverage
+  - Published to npm
 
-## 🔗 相关链接
+## Related Links
 
-- **npm 包**: [mcp-calculator](https://www.npmjs.com/package/mcp-calculator)
-- **GitHub 仓库**: [mcp-calculator](https://github.com/your-username/mcp-calculator)
-- [Model Context Protocol 官方文档](https://modelcontextprotocol.io/)
+- **npm package**: [mcp-calculator](https://www.npmjs.com/package/mcp-calculator)
+- **GitHub repository**: [mcp-calculator](https://github.com/your-username/mcp-calculator)
+- [Model Context Protocol docs](https://modelcontextprotocol.io/)
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
-- [Zod 验证库](https://github.com/colinhacks/zod)
+- [Zod validation library](https://github.com/colinhacks/zod)
 
-## 📊 功能统计
+## Feature Statistics
 
-- **100+** 个数学工具
-- **13** 个专业数学模块
-- **266** 个测试用例
-- **14** 个测试套件
-- **100%** 测试覆盖率
-- **100%** 测试通过率
-- **完整** 的错误处理机制
-- **TypeScript** 类型安全
-- **模块化设计** 架构
+- **100+** math tools
+- **13** specialized math modules
+- **266** test cases
+- **14** test suites
+- **100%** test coverage
+- **100%** test pass rate
+- **Complete** error handling
+- **TypeScript** type safety
+- **Modular** architecture
 
-## 🚀 性能特性
+## Performance Features
 
-- **轻量级**: 编译后体积小，启动快速
-- **内存高效**: 低内存占用，适合长期运行
-- **类型安全**: 完整的 TypeScript 类型定义
-- **错误恢复**: 单个计算错误不影响服务器运行
+- **Lightweight**: small compiled size, fast startup
+- **Memory efficient**: low memory footprint, suitable for long-running processes
+- **Type safe**: complete TypeScript type definitions
+- **Error recovery**: a single calculation error does not affect the server
 
-## 📚 API 参考
+## API Reference
 
-### 模块分类
+### Modules
 
-| 模块 | 工具数量 | 主要功能 |
+| Module | Tools | Main functions |
 |------|----------|----------|
-| 基础数学 | 6 | 加减乘除、求余、幂运算 |
-| 根式运算 | 4 | 平方根、立方根、n次方根、绝对值 |
-| 三角函数 | 8 | 基本三角函数、反三角函数、双曲函数 |
-| 对数函数 | 4 | 自然对数、常用对数、任意底数对数、指数函数 |
-| 统计学 | 10 | 平均值、中位数、标准差、方差等 |
-| 组合数学 | 4 | 阶乘、排列组合、斐波那契、卡塔兰数 |
-| 数论 | 8 | GCD、LCM、素数判断、质因数分解等 |
-| 复数运算 | 8 | 复数四则运算、模长、共轭、极坐标 |
-| 矩阵运算 | 7 | 矩阵运算、行列式、逆矩阵、向量运算 |
-| 数值分析 | 16 | 数值积分、微分、求根、插值 |
-| 金融计算 | 7 | 复利、年金、贷款、NPV、IRR、债券 |
-| 单位转换 | 5 | 长度、重量、温度、面积、时间转换 |
-| 几何计算 | 6 | 平面几何、立体几何、坐标几何 |
+| Basic Math | 6 | add, subtract, multiply, divide, modulo, power |
+| Root Operations | 4 | square root, cube root, n-th root, absolute value |
+| Trigonometry | 8 | basic trig, inverse trig, hyperbolic functions |
+| Logarithms | 4 | natural log, common log, arbitrary-base log, exponentials |
+| Statistics | 10 | mean, median, standard deviation, variance, etc. |
+| Combinatorics | 4 | factorial, permutations, combinations, Fibonacci, Catalan |
+| Number Theory | 8 | GCD, LCM, primality, factorization, etc. |
+| Complex Numbers | 8 | four operations, magnitude, conjugate, polar form |
+| Matrices | 7 | matrix ops, determinant, inverse, vector ops |
+| Numerical Analysis | 16 | integration, differentiation, root finding, interpolation |
+| Financial | 7 | compound interest, annuities, loans, NPV, IRR, bonds |
+| Conversions | 5 | length, weight, temperature, area, time |
+| Geometry | 6 | plane, solid, coordinate geometry |
 
-### 错误类型
+### Error types
 
-| 错误类型 | 触发条件 | 示例 |
+| Error type | Trigger | Example |
 |----------|----------|------|
-| 除零错误 | 除数为0 | `divide(10, 0)` |
-| 数学域错误 | 负数开偶次方根 | `sqrt(-4)` |
-| 范围错误 | 反三角函数输入超出[-1,1] | `asin(2)` |
-| 参数错误 | 对数函数输入非正数 | `ln(-1)` |
+| Division by zero | divisor is 0 | `divide(10, 0)` |
+| Math domain error | even root of a negative | `sqrt(-4)` |
+| Range error | inverse trig input outside [-1,1] | `asin(2)` |
+| Argument error | non-positive log input | `ln(-1)` |
 
-### 返回格式
+### Return format
 
-所有工具调用都返回统一的格式：
+All tool calls return a consistent format:
 
 ```typescript
 interface ToolResult {

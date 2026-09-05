@@ -7,54 +7,50 @@ description: "Implements the Model Context Protocol (MCP) to provide AI models w
 
 Implements the Model Context Protocol (MCP) to provide AI models with a standardized interface for connecting to external data sources and tools like file systems, databases, or APIs.
 
-# Python 从0到1构建MCP Server & Client
+# Building an MCP Server & Client in Python from Scratch
 
-中文 | [English](https://github.com/GobinFan/python-mcp-server-client/blob/HEAD/README_EN.md)
+Chinese | [English](https://github.com/GobinFan/python-mcp-server-client/blob/HEAD/README_EN.md)
 
-## 简介
+## Introduction
 
-MCP Server 是实现模型上下文协议（MCP）的服务器，旨在为 AI 模型提供一个标准化接口，连接外部数据源和工具，例如文件系统、数据库或 API。
+An MCP Server is a server that implements the Model Context Protocol (MCP). It provides AI models with a standardized interface to connect to external data sources and tools, such as file systems, databases, or APIs.
 
-![image](/mcp-assets/3292b5cae3327bbba079d007d4b0af1a.png)
+### Advantages of MCP
 
-### MCP 的优势
+Before MCP, AI tool calling was basically done through Function Call, which had the following problems:
 
-在 MCP 出现前，AI 调用工具基本通过 Function Call 完成，存在以下问题：
+1. Different LLM vendors use inconsistent Function Call formats
+2. Many API tools have inconsistent input/output formats, making wrapping and management tedious
 
-1. 不同的大模型厂商 Function Call 格式不一致
-2. 大量 API 工具的输入和输出格式不一致，封装管理繁琐
+MCP acts like a universal USB-C: it not only unifies the Function Call format across different LLM vendors, but also standardizes how related tools are wrapped.
 
-![image](/mcp-assets/569ec6ce0ef46eed0b0b2130b96e122a.png)
+## MCP Transport Protocols
 
-MCP 相当于一个统一的 USB-C，不仅统一了不同大模型厂商的 Function Call 格式，也对相关工具的封装进行了统一。
+Currently MCP supports two main transport protocols:
 
-## MCP 传输协议
+1. **Stdio transport protocol**
+   - For local use
+   - Requires command-line tools installed on the user's machine
+   - Has specific runtime requirements
 
-目前 MCP 支持两种主要的传输协议：
+2. **SSE (Server-Sent Events) transport protocol**
+   - For cloud deployment
+   - Based on HTTP long connections
 
-1. **Stdio 传输协议**
-   - 针对本地使用
-   - 需要在用户本地安装命令行工具
-   - 对运行环境有特定要求
-
-2. **SSE（Server-Sent Events）传输协议**
-   - 针对云服务部署
-   - 基于 HTTP 长连接实现
-
-## 项目结构
+## Project Structure
 
 ### MCP Server
-- Stdio 传输协议（本地）
-- SSE 传输协议（远程）
+- Stdio transport (local)
+- SSE transport (remote)
 
-### MCP Client（客户端）
-- 自建客户端（Python）
+### MCP Client
+- Self-built client (Python)
 - Cursor
 - Cline
 
-## 环境配置
+## Environment Setup
 
-### 1. 安装 UV 包
+### 1. Install the UV package
 
 **MacOS/Linux:**
 ```bash
@@ -66,30 +62,29 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### 2. 初始化项目
+### 2. Initialize the project
 
 ```bash
-# 创建项目目录
+# Create the project directory
 uv init mcp-server
 cd mcp-server
 
-# 创建并激活虚拟环境
+# Create and activate a virtual environment
 uv venv
-source .venv/bin/activate  # Windows: .venvScriptsactivate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# 安装依赖
+# Install dependencies
 uv add "mcp[cli]" httpx
 
-# 创建服务器实现文件
+# Create the server implementation file
 touch main.py
 ```
 
-## 构建工具函数
-![image](/mcp-assets/c10567279b52eb48f6774b154dc2d821.png)
+## Building the Tool Function
 
-为了让大模型能访问市面上主流框架的技术文档，我们主要通过用户输入的 query，结合指定 site 特定域名的谷歌搜索进行搜索相关网页，并对相关网页进行解析提取网页文本并返回。
+To let LLMs access the technical documentation of mainstream frameworks, we mainly take the user's input query, combine it with a Google search restricted to a specific site domain, find the relevant webpages, parse them to extract the text, and return it.
 
-### 1. 构建相关文档映射字典
+### 1. Build the documentation mapping dict
 
 ```python
 docs_urls = {
@@ -104,7 +99,7 @@ docs_urls = {
 }
 ```
 
-### 2. 构建 MCP 工具
+### 2. Build the MCP tool
 
 ```python
 import json
@@ -144,15 +139,15 @@ async def fetch_url(url: str):
 @tool()
 async def get_docs(query: str, library: str):
     """
-    搜索给定查询和库的最新文档。
-    支持 langchain、llama-index、autogen、agno、openai-agents-sdk、mcp-doc、camel-ai 和 crew-ai。
+    Search the latest docs for the given query and library.
+    Supports langchain, llama-index, autogen, agno, openai-agents-sdk, mcp-doc, camel-ai and crew-ai.
 
-    参数:
-    query: 要搜索的查询 (例如 "React Agent")
-    library: 要搜索的库 (例如 "agno")
+    Args:
+    query: the query to search for (e.g. "React Agent")
+    library: the library to search (e.g. "agno")
 
-    返回:
-    文档中的文本
+    Returns:
+    The text from the docs
     """
     if library not in docs_urls:
         raise ValueError(f"Library {library} not supported by this tool")
@@ -169,7 +164,7 @@ async def get_docs(query: str, library: str):
     return text
 ```
 
-## 封装 MCP Server (基于 Stdio 协议)
+## Wrapping the MCP Server (based on the Stdio protocol)
 
 ### 1. MCP Server (Stdio)
 
@@ -240,15 +235,15 @@ async def fetch_url(url: str):
 @mcp.tool()
 async def get_docs(query: str, library: str):
     """
-    搜索给定查询和库的最新文档。
-    支持 langchain、llama-index、autogen、agno、openai-agents-sdk、mcp-doc、camel-ai 和 crew-ai。
+    Search the latest docs for the given query and library.
+    Supports langchain, llama-index, autogen, agno, openai-agents-sdk, mcp-doc, camel-ai and crew-ai.
 
-    参数:
-    query: 要搜索的查询 (例如 "React Agent")
-    library: 要搜索的库 (例如 "agno")
+    Args:
+    query: the query to search for (e.g. "React Agent")
+    library: the library to search (e.g. "agno")
 
-    返回:
-    文档中的文本
+    Returns:
+    The text from the docs
     """
     if library not in docs_urls:
         raise ValueError(f"Library {library} not supported by this tool")
@@ -268,42 +263,16 @@ if __name__ == "__main__":
     mcp.run(transport="stdio")
 ```
 
-启动命令：
+Startup command:
 ```bash
 uv run main.py
 ```
 
-### 2. 客户端配置
+### 2. Client configuration
 
-#### 2.1 基于 Cline
+#### 2.1 Using Cline
 
-首先在 Visual Studio Code 安装 Cline 插件，然后进行配置 MCP
-
-```json
-{
-  "mcpServers": {
-    "mcp-server": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "",
-        "run",
-        "main.py"
-      ]
-    }
-  }
-}
-```
-
-成功绑定如图（左侧绿灯）：
-![image](/mcp-assets/8e27cf7b4ac784f4839927ae68ebe3c8.png)
-
-#### 2.2 基于 Cursor
-
-项目根目录创建 .cursor 文件夹，并创建 mcp.json 文件，如：
-![image](/mcp-assets/e93cb7903041e8cc8893e1e008c625b1.png)
-
-然后粘贴以下内容到 mcp.json
+First install the Cline extension in Visual Studio Code, then configure MCP:
 
 ```json
 {
@@ -321,18 +290,35 @@ uv run main.py
 }
 ```
 
-成功配置如图：
-![image](/mcp-assets/2e71d90168e080b63741ffeac6a323dd.png)
+A successful connection is shown with a green light on the left.
 
-在 Features 开启 MCP 服务
-![image](/mcp-assets/813c7e512e20ffd95179f95aec1be2b0.png)
+#### 2.2 Using Cursor
 
-通过对话它便通过 MCP 获取相关文档信息进行回答：
-![image](/mcp-assets/2cae1de04a075c512653c981337d6ea6.png)
+Create a `.cursor` folder in the project root and add an `mcp.json` file inside it.
 
-## 构建 SSE MCP Server (基于 SSE 协议)
+Then paste the following content into `mcp.json`:
 
-### 1. 封装 MCP Server
+```json
+{
+  "mcpServers": {
+    "mcp-server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "",
+        "run",
+        "main.py"
+      ]
+    }
+  }
+}
+```
+
+Once configured, enable the MCP service in Features. In conversation, the model then fetches relevant documentation via MCP to answer.
+
+## Building an SSE MCP Server (based on the SSE protocol)
+
+### 1. Wrap the MCP Server
 
 ```python
 from mcp.server.fastmcp import FastMCP
@@ -400,15 +386,15 @@ async def fetch_url(url: str):
 @mcp.tool()
 async def get_docs(query: str, library: str):
     """
-    搜索给定查询和库的最新文档。
-    支持 langchain、llama-index、autogen、agno、openai-agents-sdk、mcp-doc、camel-ai 和 crew-ai。
+    Search the latest docs for the given query and library.
+    Supports langchain, llama-index, autogen, agno, openai-agents-sdk, mcp-doc, camel-ai and crew-ai.
 
-    参数:
-    query: 要搜索的查询 (例如 "React Agent")
-    library: 要搜索的库 (例如 "agno")
+    Args:
+    query: the query to search for (e.g. "React Agent")
+    library: the library to search (e.g. "agno")
 
-    返回:
-    文档中的文本
+    Returns:
+    The text from the docs
     """
     if library not in docs_urls:
         raise ValueError(f"Library {library} not supported by this tool")
@@ -424,7 +410,7 @@ async def get_docs(query: str, library: str):
 
     return text
 
-## sse传输
+## SSE transport
 def create_starlette_app(mcp_server: Server, *, debug: bool = False) -> Starlette:
     """Create a Starlette application that can serve the provided mcp server with SSE."""
     sse = SseServerTransport("/messages/")
@@ -465,14 +451,14 @@ if __name__ == "__main__":
     uvicorn.run(starlette_app, host=args.host, port=args.port)
 ```
 
-启动命令：
+Startup command:
 ```bash
 uv run main.py --host 0.0.0.0 --port 8020
 ```
 
-以上 MCP server 代码直接在你的云服务器跑即可。
+You can run the MCP server code above directly on your cloud server.
 
-### 2. 构建 MCP Client
+### 2. Build the MCP Client
 
 ```python
 import asyncio
@@ -513,8 +499,7 @@ class MCPClient:
         print("Listing tools...")
         response = await self.session.list_tools()
         tools = response.tools
-        print("
-Connected to server with tools:", [tool.name for tool in tools])
+        print("Connected to server with tools:", [tool.name for tool in tools])
 
     async def cleanup(self):
         """Properly clean up the session and streams"""
@@ -533,7 +518,7 @@ Connected to server with tools:", [tool.name for tool in tools])
         ]
 
         response = await self.session.list_tools()
-        available_tools = [{ 
+        available_tools = [{
             "type": "function",
             "function": {
                 "name": tool.name,
@@ -553,9 +538,9 @@ Connected to server with tools:", [tool.name for tool in tools])
         # Process response and handle tool calls
         tool_results = []
         final_text = []
-        
+
         assistant_message = completion.choices[0].message
-        
+
         if assistant_message.tool_calls:
             for tool_call in assistant_message.tool_calls:
                 tool_name = tool_call.function.name
@@ -587,44 +572,40 @@ Connected to server with tools:", [tool.name for tool in tools])
                     model=os.getenv("OPENAI_MODEL"),
                     max_tokens=1000,
                     messages=messages,
-                )  
+                )
                 if isinstance(completion.choices[0].message.content, (dict, list)):
                     final_text.append(str(completion.choices[0].message.content))
                 else:
                     final_text.append(completion.choices[0].message.content)
-        else: 
+        else:
             if isinstance(assistant_message.content, (dict, list)):
                 final_text.append(str(assistant_message.content))
             else:
                 final_text.append(assistant_message.content)
 
-        return "
-".join(final_text)
+        return "\n".join(final_text)
 
     async def chat_loop(self):
         """Run an interactive chat loop"""
-        print("
-MCP Client Started!")
+        print("\nMCP Client Started!")
         print("Type your queries or 'quit' to exit.")
-        
+
         while True:
             try:
-                query = input("
-Query: ").strip()
-                
+                query = input("\nQuery: ").strip()
+
                 if query.lower() == 'quit':
                     break
-                    
+
                 response = await self.process_query(query)
-                print("
-" + response)
-                    
+                print("\n" + response)
+
             except Exception as e:
-                print(f"
-Error: {str(e)}")
+                print(f"\nError: {str(e)}")
 
 async def main():
-    if len(sys.argv) ")
+    if len(sys.argv) != 2:
+        print("Usage: python client.py <server_url>")
         sys.exit(1)
 
     client = MCPClient()
@@ -639,20 +620,14 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-启动命令：
+Startup command:
 ```bash
 uv run client.py http://0.0.0.0:8020/sse
 ```
 
-Client 日志：
-![image](/mcp-assets/85e9b8ae7301b5b13ba5bd423702436f.png)
+That is the complete tutorial for building an MCP Server and MCP Client in Python from scratch. Please point out anything that could be improved.
 
-Server 日志：
-![image](/mcp-assets/8587400be4a0725aa03dbbd5d5ec34cd.png)
-
-以上便是 Python 从 0 到 1 搭建 MCP Server 以及 MCP Client 的完整教程。有不对的地方请多多指教。
-
-参考相关资料：
+References:
 - https://www.youtube.com/watch?v=Ek8JHgZtmcI
 - https://serper.dev/
 - https://modelcontextprotocol.io/quickstart/server
@@ -671,7 +646,7 @@ Server 日志：
 
 - Transport: `stdio`
 - Command: `uv`
-- Args: `--directory <你的项目路径> run main.py`
+- Args: `--directory <YOUR_PROJECT_PATH> run main.py`
 
 This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 

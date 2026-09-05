@@ -1,39 +1,42 @@
 ---
 title: "gd"
-description: "Location Services 位置服务是现代应用程序中不可或缺的一部分，它允许应用程序获取设备的位置信息，并基于此提供更加个性化的服务。本指南将介绍如何在您的应用中集成位置服务。 获取权限 在开始使用位置服务之前，您需要确保您的应用已经获得了必要的权限。对于Android平台，这通常意味着在AndroidManifest.xml文件中声明以下权限： xml 同时，在运行时请求用户授权也很重要…"
+description: "Location services - an indispensable part of modern applications, allowing apps to obtain the device's location information and provide more personalized services based on it. This guide explains how…"
 ---
 
 # gd
 
-Location Services 位置服务是现代应用程序中不可或缺的一部分，它允许应用程序获取设备的位置信息，并基于此提供更加个性化的服务。本指南将介绍如何在您的应用中集成位置服务。 获取权限 在开始使用位置服务之前，您需要确保您的应用已经获得了必要的权限。对于Android平台，这通常意味着在AndroidManifest.xml文件中声明以下权限： xml 同时，在运行时请求用户授权也很重要…
+Location services - an indispensable part of modern applications, allowing apps to obtain the device's location information and provide more personalized services based on it. This guide explains how…
 
-Location Services
+# Location Services
 
-位置服务是现代应用程序中不可或缺的一部分，它允许应用程序获取设备的位置信息，并基于此提供更加个性化的服务。本指南将介绍如何在您的应用中集成位置服务。
+Location services are an indispensable part of modern applications. They allow apps to obtain the device's location information and provide more personalized services based on it. This guide explains how to integrate location services into your application.
 
-## 获取权限
+## Getting Permissions
 
-在开始使用位置服务之前，您需要确保您的应用已经获得了必要的权限。对于Android平台，这通常意味着在`AndroidManifest.xml`文件中声明以下权限：
+Before using location services, you need to make sure your app has the necessary permissions. For the Android platform, this usually means declaring the following permissions in the `AndroidManifest.xml` file:
 
-xml
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
 
-同时，在运行时请求用户授权也很重要，尤其是在Android 6.0 (API level 23)及以上版本中。更多关于权限处理的信息，请参考[官方文档](https://developer.android.com/training/permissions/requesting)。
+It is also important to request user authorization at runtime, especially on Android 6.0 (API level 23) and above. For more information on permission handling, see the [official documentation](https://developer.android.com/training/permissions/requesting).
 
-## 初始化位置客户端
+## Initializing the Location Client
 
-大多数位置服务都需要先初始化一个客户端对象。这里以Google Play services为例，展示如何初始化位置客户端：
+Most location services require you to initialize a client object first. Here we use Google Play services as an example to show how to initialize a location client:
 
-1. 在您的项目中添加Google Play services依赖。
-2. 创建一个`FusedLocationProviderClient`实例：
-   java
-   FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-   
+1. Add the Google Play services dependency to your project.
+2. Create a `FusedLocationProviderClient` instance:
+```java
+FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+```
 
-## 请求最新的位置更新
+## Requesting the Latest Location Update
 
-一旦位置客户端被正确初始化，您就可以请求最新的位置信息了。下面是一个简单的示例，展示了如何获取最后一次已知的位置：
+Once the location client is properly initialized, you can request the latest location information. Below is a simple example of how to get the last known location:
 
-java
+```java
 public void getLastKnownLocation() {
     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
         // TODO: Consider calling
@@ -56,15 +59,16 @@ public void getLastKnownLocation() {
             }
         });
 }
+```
 
-## 处理位置更新
+## Handling Location Updates
 
-如果您的应用需要持续接收位置更新，可以设置位置回调来监听位置变化。例如，您可以设置一个`LocationCallback`来接收位置更新：
+If your app needs to receive location updates continuously, you can set up a location callback to listen for location changes. For example, you can set up a `LocationCallback` to receive location updates:
 
-java
+```java
 LocationRequest locationRequest = LocationRequest.create();
-locationRequest.setInterval(10000); // 设置更新间隔为10秒
-locationRequest.setFastestInterval(5000); // 最快更新频率为5秒
+locationRequest.setInterval(10000); // set update interval to 10 seconds
+locationRequest.setFastestInterval(5000); // fastest update frequency 5 seconds
 locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
 fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
@@ -76,12 +80,13 @@ private final LocationCallback locationCallback = new LocationCallback() {
             return;
         }
         for (Location location : locationResult.getLocations()) {
-            // 更新UI或进行其他操作
+            // update UI or perform other operations
         }
     }
 };
+```
 
-通过上述步骤，您可以在自己的应用中实现基本的位置服务功能。根据具体需求的不同，可能还需要考虑更多的因素如电池消耗、隐私保护等。希望这份简短的指南能够帮助到您！
+With the steps above, you can implement basic location services in your own application. Depending on your specific needs, you may also need to consider other factors such as battery consumption and privacy protection. We hope this short guide helps you!
 
 **Official site: ** [https://mcp.api-inference.modelscope.net/1599d01029a54f/sse](https://mcp.api-inference.modelscope.net/1599d01029a54f/sse)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

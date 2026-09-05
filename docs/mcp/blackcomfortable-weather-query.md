@@ -12,8 +12,8 @@ Obtain weather information based on specified conditions (MCP standardized inter
 
     Args:  
         location (str, required): Specific city/region (e.g., "Chaoyang District, Beijing", "Paris"), needs to be specified at the city level;  
-        time_range (str, optional): Time range, possible values are ["实时", "未来1天", "未来3天"], default is "实时";  
-        need_type (str, optional): Type of requirement, possible values are ["综合", "温度+降水", "风力+空气质量"], default is "综合".
+        time_range (str, optional): Time range, possible values are ["Real-time", "Next 1 day", "Next 3 days"], default is "Real-time";  
+        need_type (str, optional): Type of requirement, possible values are ["Comprehensive", "Temperature + Precipitation", "Wind + Air quality"], default is "Comprehensive".
 
     Returns:  
         tuple[Dict, str]: Structured data (for MCP integration), human-readable feedback (for direct display).

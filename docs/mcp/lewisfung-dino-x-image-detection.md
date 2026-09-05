@@ -1,129 +1,77 @@
 ---
 title: "DINO-X-Image-Detection-MCP"
-description: "DINO-X MCP English | 中文"
+description: "DINO-X MCP enables large language models to perform fine-grained object detection and image understanding through the DINO-X and Grounding DINO 1.6 APIs. It allows precise localization of visual conte…"
 ---
 
 # DINO-X-Image-Detection-MCP
 
-DINO-X MCP English | 中文
+DINO-X MCP enables large language models to perform fine-grained object detection and image understanding through the DINO-X and Grounding DINO 1.6 APIs. It allows precise localization of visual conte…
 
 # DINO-X MCP
 
-[English](https://github.com/IDEA-Research/DINO-X-MCP/blob/HEAD/README.md) | **中文**
+[English](https://github.com/IDEA-Research/DINO-X-MCP/blob/HEAD/README.md) | **Chinese**
 
-DINO-X 官方 MCP 服务器, 基于全球领先的视觉检测模型 DINO-X 和 Grounding DINO 1.6 API，给大模型提供细粒度的目标检测与图像理解能力。
+The official DINO-X MCP server, based on the world-leading visual detection models DINO-X and Grounding DINO 1.6 APIs, providing fine-grained object detection and image understanding capabilities to large models.
 
-## 💡 为什么需要 DINO-X MCP？
+## Why DINO-X MCP?
 
-尽管多模态模型可以理解和描述图像，但它们往往缺乏对视觉内容的精确定位和高质量的结构化输出。
+Although multimodal models can understand and describe images, they often lack precise localization of visual content and high-quality structured output.
 
-而借助 DINO-X MCP 后, 你可以：
+With DINO-X MCP, you can:
 
-🧠 实现图像的细粒度理解: 支持全图识别、定向检测。
+- Achieve fine-grained image understanding: supports whole-image recognition and targeted detection.
+- Precisely obtain object count, location, and attributes, and use them as a basis for image Q&A and other tasks.
+- Combine with other MCP Servers to build multi-step visual workflows.
+- Build natural-language-driven visual agents for automation tasks in real scenarios.
 
-🎯 精准获取目标数量、位置、属性, 并以此为依据进行图像问答等任务。
+## Application Examples
 
-🧩 支持与其他 MCP Server 组合，构建多步视觉工作流。
-
-🛠️ 构建自然语言驱动的视觉智能体，用于真实场景的自动化任务。
-
-## 🎬 应用案例
-
-| 🎯 场景 | 📝 输入 | ✨ 输出 |
+| Scenario | Input | Output |
 |---------|---------|---------|
-| **检测定位** | **💬 提示词：**
-`帮我框选森林里的`
-`着火范围，并用`
-`Canvas 可视化`
+| **Detection & localization** | Prompt: "Help me select the fire-affected area in the forest and visualize it with Canvas" + Input image | Result |
+| **Object counting** | Prompt: "Please analyze this warehouse image, detect all the cardboard boxes in it, and count the total" + Input image | Result |
+| **Feature detection** | Prompt: "Find all the red cars in the image and visualize them with Canvas" + Input image | Result |
+| **Attribute reasoning** | Prompt: "Find the tallest person in the image, describe their clothing, and visualize with Canvas" + Input image | Result |
+| **Whole-image detection** | Prompt: "Find the fruit with the highest vitamin C content in the image" + Input image | Answer: kiwi (93mg/100g) |
+| **Pose analysis** | Prompt: "Please analyze what yoga pose this is and display the key points with Canvas" + Input image | Result |
 
-**🖼️ 输入图片：**
+## Quick Start
 
- | 
- |
-| **物体计数** | **💬 提示词：**
-`请帮我分析这张`
-`仓库图片，检测其中`
-`的所有纸箱，统计`
-`总数量`
+### 1. Environment preparation
 
-**🖼️ 输入图片：**
+You can install Node.js using any of the following methods:
 
- | 
- |
-| **特征检测** | **💬 提示词：**
-`找到图中所有`
-`红色的车，并用`
-`Canvas 可视化展示`
-
-**🖼️ 输入图片：**
-
- | 
- |
-| **属性推理** | **💬 提示词：**
-`找到图中最高的人，`
-`并描述他的着装，`
-`用 Canvas 可视化`
-
-**🖼️ 输入图片：**
-
- | 
- |
-| **全图检测** | **💬 提示词：**
-`找到图中维生素C`
-`含量最高的水果`
-
-**🖼️ 输入图片：**
-
- | 
-
-*答案：猕猴桃（93mg/100g）* |
-| **姿态分析** | **💬 提示词：**
-`请分析这是什么`
-`瑜伽姿势，并用`
-`canvas 显示关键点`
-
-**🖼️ 输入图片：**
-
- | 
- |
-
-## 🚀 快速开始
-
-### 1. 环境准备
-
-你可以选择以下任一方式安装 Node.js：
-
-#### 方式一：使用安装脚本 👍
+#### Method 1: Use the install script
 
 ```bash
-# MacOS 或 Linux 系统
+# MacOS or Linux
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc  # 如果使用 zsh，则运行：source ~/.zshrc
+source ~/.bashrc  # if using zsh, run: source ~/.zshrc
 nvm install --lts
 
-# Windows 系统
+# Windows
 winget install OpenJS.NodeJS.LTS
-# 或使用 PowerShell (管理员权限)
+# or use PowerShell (as administrator)
 iwr -useb https://raw.githubusercontent.com/chocolatey/chocolatey/master/chocolateyInstall/InstallChocolatey.ps1 | iex
 choco install nodejs-lts -y
 ```
 
-#### 方式二：手动下载安装
+#### Method 2: Manual download and install
 
-从 [Node.js 官网](https://nodejs.org/) 下载安装包
+Download the installer from the [Node.js official website](https://nodejs.org/)
 
-同时, 选择一个支持 MCP 协议的 AI 助手或客户端，包括但不限于：
+Also, choose an MCP-protocol-supporting AI assistant or client, including but not limited to:
 
 - [Cursor](https://www.cursor.com/)
 - [WindSurf](https://windsurf.com/)
 - [Trae](https://www.trae.ai/)
 - [Cherry Studio](https://www.cherry-ai.com/)
 
-### 2. 配置 MCP 服务器
+### 2. Configure the MCP server
 
-#### 方式一：使用 NPM 安装包 👍
+#### Method 1: Use the NPM package
 
-在你的 MCP 客户端的配置文件中加入配置：
+Add the configuration to your MCP client's config file:
 
 ```json
 {
@@ -139,23 +87,23 @@ choco install nodejs-lts -y
 }
 ```
 
-#### 方式二：使用本地项目
+#### Method 2: Use a local project
 
-首先，克隆本项目代码到本地并编译
+First, clone this project locally and build it:
 
 ```bash
-# 下载源码
+# Download the source code
 git clone https://github.com/IDEA-Research/DINO-X-MCP.git
 cd DINO-X-MCP
 
-# 安装依赖
+# Install dependencies
 pnpm install
 
-# 编译
+# Build
 pnpm run build
 ```
 
-然后在 MCP 客户端中配置：
+Then configure it in the MCP client:
 
 ```json
 {
@@ -171,49 +119,49 @@ pnpm run build
 }
 ```
 
-### 3. 获取API密钥
+### 3. Get an API key
 
-在 [DINO-X 官网](https://cloud.deepdataspace.com/request_api) 注册账号，新用户有免费 API 额度。
+Register an account at the [DINO-X official website](https://cloud.deepdataspace.com/request_api); new users get free API quota.
 
-获取 API Key 后，把上面配置中的 `you-api-key-here` 替换成真正的密钥。
+After getting the API key, replace `you-api-key-here` in the configuration above with the real key.
 
-### 4. 支持的工具
+### 4. Supported tools
 
-刷新 MCP 配置，就可以在大模型对话中使用以下功能：
+After refreshing the MCP configuration, you can use the following features in large-model conversations:
 
-| 功能                          | 作用                                                                         | 输入            | 输出                      |
+| Feature | Function | Input | Output |
 | ----------------------------- | ---------------------------------------------------------------------------- | ------------------- | ------------------------------- |
-| `全图万物检测`          | 检测并定位图像中所有可识别的物体                                           | 图片链接                | 每个物体的名称 + 2D框 + 详细描述        |
-| `指定目标检测`    | 指定一个或多个目标，检测它们的位置和详细描述                                     | 图片链接 + 目标名字      | 所有指定目标的2D框 + 详细描述              |
-| `人体姿态检测` | 检测图像中每个人的17个关键点，用于姿态动作分析                           | 图片链接                | 关键点坐标 + 描述                |
+| Whole-image detection | Detect and localize all recognizable objects in the image | image link | name of each object + 2D box + detailed description |
+| Targeted object detection | Specify one or more targets and detect their positions and detailed descriptions | image link + target names | 2D boxes of all specified targets + detailed description |
+| Human pose detection | Detect 17 key points of each person in the image for pose/action analysis | image link | key point coordinates + description |
 
-## 📝 使用指引
+## Usage Guide
 
-### 支持哪些图片格式？
+### Which image formats are supported?
 
-- 推荐用 `https://` 开头的图片链接
-- 或用 `file://` 开头的完整路径
-- 常见格式：`jpg、jpeg、png、webp`
+- We recommend image links starting with `https://`
+- Or full paths starting with `file://`
+- Common formats: `jpg`, `jpeg`, `png`, `webp`
 
-### API 使用
+### API usage
 
-可以查看 [DINO-X API 文档](https://cloud.deepdataspace.com/docs)。
+See the [DINO-X API documentation](https://cloud.deepdataspace.com/docs).
 
-## 🛠️ 开发者指引
+## Developer Guide
 
-如果你要修改这个 MCP 服务，可以开启监听模式，代码改动会自动重新编译：
+If you want to modify this MCP service, you can enable watch mode; code changes will be recompiled automatically:
 
 ```bash
 pnpm run watch
 ```
 
-遇到问题时，可以用官方调试工具排查：
+When you run into problems, use the official debug tool:
 
 ```bash
 pnpm run inspector
 ```
 
-## 协议
+## License
 
 Apache License 2.0
 

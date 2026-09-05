@@ -6,7 +6,7 @@
     "zh-Hans": "Arxiv 论文小助手（by 云中江树）"
   },
   "description": {
-    "en": "# ArXiv Paper MCP\n\n一个基于 arXiv 的论文检索与内容解析工具。支持 Model Context Protocol (MCP) 标准，提供论文搜索、PDF链接获取和内容解析功能。",
+    "en": "An arXiv-based paper retrieval and content parsing tool. Supports the Model Context Protocol (MCP) standard, providing paper search, PDF link retrieval, and content parsing.",
     "zh-Hans": "一个基于 arXiv 的论文检索与内容解析工具，支持 Model Context Protocol (MCP) 标准。提供论文搜索、PDF链接获取和内容解析功能。"
   },
   "detail": {

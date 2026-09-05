@@ -1,11 +1,11 @@
 ---
 title: "metaso-search"
-description: "MCP Service of Mitell AI Search 1. 概述 秘塔AI搜索的MCP（Multi-Cloud Platform）服务是一种多云平台解决方案，旨在帮助企业更高效地管理和利用来自不同云服务商的资源。通过MCP，用户可以轻松地在多个云环境之间迁移应用和服务，同时享受统一的管理和监控体验。 2. 功能特点 - 跨云管理：支持对阿里云、腾讯云等主流云服务商的资源进行集中管理。 -…"
+description: "The Metasota AI Search MCP service is an intelligent search and Q&A service based on the Model Context Protocol (MCP), providing powerful web search, content reading, and intelligent Q&A capabilities…"
 ---
 
 # metaso-search
 
-MCP Service of Mitell AI Search 1. 概述 秘塔AI搜索的MCP（Multi-Cloud Platform）服务是一种多云平台解决方案，旨在帮助企业更高效地管理和利用来自不同云服务商的资源。通过MCP，用户可以轻松地在多个云环境之间迁移应用和服务，同时享受统一的管理和监控体验。 2. 功能特点 - 跨云管理：支持对阿里云、腾讯云等主流云服务商的资源进行集中管理。 -…
+The Metasota AI Search MCP service is an intelligent search and Q&A service based on the Model Context Protocol (MCP), providing powerful web search, content reading, and intelligent Q&A capabilities…
 
 # Metasota AI Search MCP Service
 

@@ -1,137 +1,137 @@
 ---
 title: "yijing-bazi-mcp"
-description: "一个基于MCP（Model Context Protocol）协议的专业易经八字分析服务器，为AI助手提供传统中华文化分析能力。本项目集成了易经卦象分析、八字命理推算、综合运势预测等功能，支持多种AI客户端接入。 📢 重要提示： 此项目已发布到 NPM，现在可以： - 在任意目录使用 npx yijing-bazi-mcp 命令 - 通过 npm install -g yijing-bazi-mc…"
+description: "A professional I Ching (Yijing) and BaZi (Eight Characters) analysis server based on the MCP (Model Context Protocol), providing traditional Chinese cultural analysis capabilities for AI assistants. T…"
 ---
 
 # yijing-bazi-mcp
 
-一个基于MCP（Model Context Protocol）协议的专业易经八字分析服务器，为AI助手提供传统中华文化分析能力。本项目集成了易经卦象分析、八字命理推算、综合运势预测等功能，支持多种AI客户端接入。 📢 重要提示： 此项目已发布到 NPM，现在可以： - 在任意目录使用 npx yijing-bazi-mcp 命令 - 通过 npm install -g yijing-bazi-mc…
+A professional I Ching (Yijing) and BaZi (Eight Characters) analysis server based on the MCP (Model Context Protocol), providing traditional Chinese cultural analysis capabilities for AI assistants. T…
 
-# 易经八字分析MCP服务器
+# I Ching & BaZi Analysis MCP Server
 
-一个基于MCP（Model Context Protocol）协议的专业易经八字分析服务器，为AI助手提供传统中华文化分析能力。本项目集成了易经卦象分析、八字命理推算、综合运势预测等功能，支持多种AI客户端接入。
+A professional I Ching (Yijing) and BaZi (Eight Characters) analysis server based on the MCP (Model Context Protocol), providing traditional Chinese cultural analysis capabilities for AI assistants. This project integrates I Ching hexagram analysis, BaZi fortune calculation, and comprehensive fortune prediction, and supports integration with multiple AI clients.
 
-> **📢 重要提示：** 此项目已发布到 NPM，现在可以：
-> - 在任意目录使用 `npx yijing-bazi-mcp` 命令
-> - 通过 `npm install -g yijing-bazi-mcp` 全局安装
-> - 支持版本指定，如 `npx yijing-bazi-mcp@latest`
+> **Important Notice:** This project has been published to NPM, so you can now:
+> - Run the `npx yijing-bazi-mcp` command from any directory
+> - Install it globally via `npm install -g yijing-bazi-mcp`
+> - Pin a version, e.g. `npx yijing-bazi-mcp@latest`
 
-## ✨ 核心特性
+## Core Features
 
-### 🔮 易经分析系统
-- **多种起卦方式**：铜钱法、蓍草法、时间法、数字法
-- **专业卦象解读**：本卦、变卦、互卦全面分析
-- **智能决策建议**：基于卦象提供实用指导
-- **上下文理解**：结合具体问题场景分析
+### I Ching Analysis System
+- **Multiple hexagram casting methods**: coin method, yarrow stalk method, time method, number method
+- **Professional hexagram interpretation**: comprehensive analysis of the primary hexagram, changing hexagram, and nuclear hexagram
+- **Smart decision advice**: practical guidance based on the hexagram
+- **Context awareness**: analysis combined with the specific question scenario
 
-### 🌟 八字命理系统
-- **精准八字排盘**：支持公历/农历转换
-- **全面性格分析**：五行、十神、格局分析
-- **运势预测**：大运、流年、月运详细预测
-- **多维度分析**：事业、财运、感情、健康
+### BaZi (Eight Characters) System
+- **Accurate BaZi chart generation**: supports Gregorian/lunar calendar conversion
+- **Comprehensive personality analysis**: Five Elements, Ten Gods, and chart pattern analysis
+- **Fortune prediction**: detailed prediction of major luck periods, yearly fortunes, and monthly fortunes
+- **Multi-dimensional analysis**: career, wealth, relationships, and health
 
-### 🔄 综合分析引擎
-- **易经八字融合**：传统文化深度结合
-- **智能关联分析**：多系统交叉验证
-- **个性化咨询**：针对性命理建议
-- **案例学习库**：丰富的实战案例
+### Composite Analysis Engine
+- **I Ching + BaZi integration**: deep combination of traditional culture
+- **Smart correlation analysis**: cross-validation across systems
+- **Personalized consultation**: targeted fortune advice
+- **Case study library**: rich real-world case studies
 
-### 🚀 技术架构
-- **标准协议支持**：完全兼容MCP协议规范
-- **模块化设计**：引擎分离，易于扩展
-- **智能缓存**：提升响应速度
-- **完整日志**：便于调试和监控
+### Technical Architecture
+- **Standard protocol support**: fully compatible with the MCP protocol spec
+- **Modular design**: decoupled engines for easy extension
+- **Smart caching**: improved response speed
+- **Complete logging**: easy debugging and monitoring
 
-## 🛠️ 环境要求
+## Environment Requirements
 
-- **Node.js**: 18.0.0 或更高版本
-- **npm**: 最新版本
-- **操作系统**: Windows/macOS/Linux
+- **Node.js**: 18.0.0 or later
+- **npm**: latest version
+- **OS**: Windows/macOS/Linux
 
-## 📦 快速安装
+## Quick Installation
 
-### 方式一：本地安装
+### Option 1: Local install
 
 ```bash
-# 下载项目包
-# 解压到本地目录
+# Download the project package
+# Extract to a local directory
 cd yijing-bazi-mcp
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 验证安装
+# Verify the installation
 node src/index.js --version
 ```
 
-### 方式二：全局安装（推荐）
+### Option 2: Global install (recommended)
 
 ```bash
-# 全局安装
+# Global install
 npm install -g .
 
-# 验证安装
+# Verify the installation
 yijing-bazi-mcp --version
 
-# 本地开发运行（当前推荐）
+# Local development (currently recommended)
 node src/index.js
 
-# 或使用 npm exec（本地项目）
+# Or use npm exec (local project)
 npm exec yijing-bazi-mcp
 
-# 或使用 npx（需要先发布到 NPM）
+# Or use npx (requires publishing to NPM first)
 npx yijing-bazi-mcp
 
-# 注意：这些命令会直接启动 MCP 服务器，而不是显示版本信息
+# Note: these commands start the MCP server directly, they do not print version info
 ```
 
-## 🚀 启动服务
+## Starting the Server
 
-### MCP模式（标准协议）
+### MCP mode (standard protocol)
 
-适用于Claude Desktop、Cherry Studio等MCP客户端：
+For MCP clients such as Claude Desktop and Cherry Studio:
 
 ```bash
-# 开发模式（自动重启）
+# Development mode (auto-restart)
 npm run dev
 
-# 生产模式
+# Production mode
 npm start
 ```
 
-## 🔧 客户端配置
+## Client Configuration
 
 ### Claude Desktop
 
-**第一步：获取项目**
+**Step 1: Get the project**
 
-**选项 A：从 NPM 安装（推荐）**
+**Option A: Install from NPM (recommended)**
 ```bash
-# 全局安装
+# Global install
 npm install -g yijing-bazi-mcp
 
-# 或使用 npx（可在任意目录运行）
+# Or use npx (runs from any directory)
 npx yijing-bazi-mcp@latest
 ```
 
-**选项 B：本地开发/测试（当前推荐）**
+**Option B: Local development/testing (currently recommended)**
 ```bash
-# 克隆或下载项目
-git clone 
+# Clone or download the project
+git clone
 cd yijing-bazi-mcp
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 测试运行
+# Test run
 node src/index.js
 ```
 
-**第二步：配置 Claude Desktop**
+**Step 2: Configure Claude Desktop**
 
-编辑 `claude_desktop_config.json` 文件：
+Edit the `claude_desktop_config.json` file:
 
-**方式一：使用 npx（推荐）**
+**Method 1: Use npx (recommended)**
 ```json
 {
   "mcpServers": {
@@ -147,16 +147,16 @@ node src/index.js
 }
 ```
 
-**注意：** 现在不再需要 `cwd` 参数，可以在任意目录运行
+**Note:** The `cwd` parameter is no longer needed; it can run from any directory.
 
-**方式二：使用本地项目（当前推荐）**
+**Method 2: Use a local project (currently recommended)**
 ```json
 {
   "mcpServers": {
     "yijing-bazi": {
       "command": "node",
       "args": ["src/index.js"],
-      "cwd": "完整路径/yijing-bazi-mcp",
+      "cwd": "/full/path/to/yijing-bazi-mcp",
       "env": {
         "LOG_LEVEL": "info",
         "NODE_ENV": "development"
@@ -166,18 +166,18 @@ node src/index.js
 }
 ```
 
-**配置文件位置：**
+**Config file locations:**
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
-**方式二：直接调用**
+**Method 2 (alt): Direct invocation**
 ```json
 {
   "mcpServers": {
     "yijing-bazi": {
       "command": "node",
-      "args": ["完整路径/yijing-bazi-mcp/src/index.js"],
+      "args": ["/full/path/to/yijing-bazi-mcp/src/index.js"],
       "env": {
         "LOG_LEVEL": "info"
       }
@@ -186,24 +186,24 @@ node src/index.js
 }
 ```
 
-**Windows示例路径**：
+**Windows example path**:
 ```json
-"cwd": "E:\\桌面\\项目资源\\腾讯云\\baidu-netdisk-auto-delete"
-"args": ["E:\\桌面\\项目资源\\腾讯云\\baidu-netdisk-auto-delete\\src\\index.js"]
+"cwd": "E:\\Desktop\\ProjectResources\\TencentCloud\\baidu-netdisk-auto-delete"
+"args": ["E:\\Desktop\\ProjectResources\\TencentCloud\\baidu-netdisk-auto-delete\\src\\index.js"]
 ```
 
 ### Trae AI / Cursor IDE
 
-在IDE的MCP设置中添加：
+Add to the MCP settings in your IDE:
 
-**方式一：使用 npm exec（推荐）**
+**Method 1: Use npm exec (recommended)**
 ```json
 {
   "mcpServers": {
     "yijing-bazi": {
       "command": "npm",
       "args": ["exec", "yijing-bazi-mcp"],
-      "cwd": "项目完整路径",
+      "cwd": "/full/project/path",
       "env": {
         "NODE_ENV": "development"
       }
@@ -212,7 +212,7 @@ node src/index.js
 }
 ```
 
-**方式一备选：使用 npx（推荐）**
+**Method 1 (alt): Use npx (recommended)**
 ```json
 {
   "mcpServers": {
@@ -227,14 +227,14 @@ node src/index.js
 }
 ```
 
-**方式二：直接调用**
+**Method 2: Direct invocation**
 ```json
 {
   "mcpServers": {
     "yijing-bazi": {
       "command": "node",
       "args": ["src/index.js"],
-      "cwd": "项目完整路径",
+      "cwd": "/full/project/path",
       "env": {
         "NODE_ENV": "development"
       }
@@ -245,62 +245,62 @@ node src/index.js
 
 ### Cherry Studio
 
-1. 打开设置 → MCP服务器
-2. 添加新服务器：
-   - **名称**: `易经八字分析服务器`
-   - **类型**: `STDIO`
-   - **命令**: `npm`（推荐）、`npx`（如果可用）或 `node`
-   - **参数**: `exec yijing-bazi-mcp`（npm方式）、`yijing-bazi-mcp`（npx方式）或 `完整路径/yijing-bazi-mcp/src/index.js`（node方式）
-   - **工作目录**: `完整路径/yijing-bazi-mcp`
+1. Open Settings -> MCP Servers
+2. Add a new server:
+   - **Name**: `I Ching BaZi Analysis Server`
+   - **Type**: `STDIO`
+   - **Command**: `npm` (recommended), `npx` (if available), or `node`
+   - **Arguments**: `exec yijing-bazi-mcp` (npm), `yijing-bazi-mcp` (npx), or `/full/path/to/yijing-bazi-mcp/src/index.js` (node)
+   - **Working directory**: `/full/path/to/yijing-bazi-mcp`
 
-## 🛠️ 可用工具
+## Available Tools
 
-### 易经工具
+### I Ching Tools
 
-| 工具名称 | 功能描述 | 主要参数 |
+| Tool | Description | Main parameters |
 |---------|---------|----------|
-| `yijing_generate_hexagram` | 生成卦象 | question, method, context |
-| `yijing_interpret` | 解读卦象 | hexagram, focus, detail_level |
-| `yijing_advise` | 决策建议 | hexagram, question, time_frame |
+| `yijing_generate_hexagram` | Generate a hexagram | question, method, context |
+| `yijing_interpret` | Interpret a hexagram | hexagram, focus, detail_level |
+| `yijing_advise` | Decision advice | hexagram, question, time_frame |
 
-### 八字工具
+### BaZi Tools
 
-| 工具名称 | 功能描述 | 主要参数 |
+| Tool | Description | Main parameters |
 |---------|---------|----------|
-| `bazi_generate_chart` | 生成八字排盘 | birth_time, gender, timezone |
-| `bazi_analyze` | 八字分析 | chart, analysis_type, detail_level |
-| `bazi_forecast` | 运势预测 | chart, period_type, focus_aspects |
+| `bazi_generate_chart` | Generate a BaZi chart | birth_time, gender, timezone |
+| `bazi_analyze` | BaZi analysis | chart, analysis_type, detail_level |
+| `bazi_forecast` | Fortune prediction | chart, period_type, focus_aspects |
 
-### 综合分析
+### Composite Analysis
 
-| 工具名称 | 功能描述 | 主要参数 |
+| Tool | Description | Main parameters |
 |---------|---------|----------|
-| `combined_analysis` | 综合分析 | bazi_chart, hexagram, question |
-| `destiny_consult` | 命理咨询 | birth_info, question, consultation_type |
+| `combined_analysis` | Combined analysis | bazi_chart, hexagram, question |
+| `destiny_consult` | Destiny consultation | birth_info, question, consultation_type |
 
-### 学习功能
+### Learning Features
 
-| 工具名称 | 功能描述 | 主要参数 |
+| Tool | Description | Main parameters |
 |---------|---------|----------|
-| `knowledge_learn` | 知识学习 | topic, level, learning_type |
-| `case_study` | 案例研究 | case_id, system, category |
+| `knowledge_learn` | Knowledge learning | topic, level, learning_type |
+| `case_study` | Case study | case_id, system, category |
 
-## 📖 使用示例
+## Usage Examples
 
-### 易经起卦示例
+### I Ching hexagram example
 
 ```json
 {
   "tool": "yijing_generate_hexagram",
   "params": {
-    "question": "今年是否适合创业？",
+    "question": "Is this year a good time to start a business?",
     "method": "coin",
-    "context": "目前在大公司工作，考虑自主创业"
+    "context": "Currently working at a large company and considering entrepreneurship"
   }
 }
 ```
 
-### 八字分析示例
+### BaZi analysis example
 
 ```json
 {
@@ -314,7 +314,7 @@ node src/index.js
 }
 ```
 
-### 综合分析示例
+### Composite analysis example
 
 ```json
 {
@@ -322,129 +322,126 @@ node src/index.js
   "params": {
     "birth_time": "1990-05-15T10:30:00+08:00",
     "gender": "male",
-    "question": "未来三年的事业发展方向",
+    "question": "Career direction for the next three years",
     "analysis_focus": ["career", "wealth", "timing"]
   }
 }
 ```
 
-## 🏗️ 项目架构
+## Project Architecture
 
 ```
-易经八字分析MCP服务器/
-├── 📁 .promptx/              # PromptX AI配置
-│   ├── pouch.json           # 项目配置
-│   └── resource/            # 资源文件
-├── 📁 src/                  # 源代码目录
-│   ├── 📁 engines/          # 核心分析引擎
-│   │   ├── yijing-engine.js        # 易经分析引擎
-│   │   ├── bazi-engine.js          # 八字分析引擎
-│   │   ├── combined-engine.js      # 综合分析引擎
-│   │   ├── combined-analysis-engine.js # 深度分析引擎
-│   │   └── knowledge-engine.js     # 知识学习引擎
-│   ├── 📁 data/             # 数据库模块
-│   │   ├── hexagram-database.js    # 卦象数据库
-│   │   ├── bazi-database.js        # 八字数据库
-│   │   └── knowledge-database.js   # 知识库
-│   ├── 📁 utils/            # 工具函数
-│   │   ├── logger.js              # 日志系统
-│   │   ├── error-handler.js       # 错误处理
-│   │   ├── validator.js           # 参数验证
-│   │   ├── cache.js               # 缓存管理
-│   │   ├── date-utils.js          # 日期工具
-│   │   ├── yijing-calculator.js   # 易经计算
-│   │   ├── bazi-calculator.js     # 八字计算
-│   │   ├── analysis-integrator.js # 分析整合
-│   │   ├── search-engine.js       # 搜索引擎
-│   │   ├── performance.js         # 性能监控
-│   │   └── validation.js          # 数据验证
-│   ├── 📁 config/           # 配置文件
-│   │   └── config.js              # 主配置文件
-│   ├── index.js             # MCP服务器入口
-
-├── 📄 mcp-config.json       # MCP服务器配置
-├── 📄 start-mcp-servers.js  # 服务器启动脚本
-├── 📄 stop-mcp-servers.js   # 服务器停止脚本
-├── 📄 package.json          # 项目依赖配置
-└── 📄 README.md             # 项目说明文档
+yijing-bazi-mcp/
+├── .promptx/              # PromptX AI configuration
+│   ├── pouch.json         # Project configuration
+│   └── resource/          # Resource files
+├── src/                  # Source code directory
+│   ├── engines/          # Core analysis engines
+│   │   ├── yijing-engine.js        # I Ching analysis engine
+│   │   ├── bazi-engine.js          # BaZi analysis engine
+│   │   ├── combined-engine.js      # Combined analysis engine
+│   │   ├── combined-analysis-engine.js # Deep analysis engine
+│   │   └── knowledge-engine.js     # Knowledge learning engine
+│   ├── data/             # Database modules
+│   │   ├── hexagram-database.js    # Hexagram database
+│   │   ├── bazi-database.js        # BaZi database
+│   │   └── knowledge-database.js   # Knowledge base
+│   ├── utils/            # Utility functions
+│   │   ├── logger.js              # Logging system
+│   │   ├── error-handler.js       # Error handling
+│   │   ├── validator.js           # Parameter validation
+│   │   ├── cache.js               # Cache management
+│   │   ├── date-utils.js          # Date utilities
+│   │   ├── yijing-calculator.js   # I Ching calculations
+│   │   ├── bazi-calculator.js     # BaZi calculations
+│   │   ├── analysis-integrator.js # Analysis integration
+│   │   ├── search-engine.js       # Search engine
+│   │   ├── performance.js         # Performance monitoring
+│   │   └── validation.js          # Data validation
+│   ├── config/           # Configuration files
+│   │   └── config.js              # Main configuration
+│   ├── index.js             # MCP server entry point
+├── mcp-config.json       # MCP server config
+├── start-mcp-servers.js  # Server start script
+├── stop-mcp-servers.js   # Server stop script
+├── package.json          # Project dependency config
+└── README.md             # Project documentation
 ```
 
-## 🧪 测试与调试
+## Testing & Debugging
 
-### 运行测试
+### Running tests
 
 ```bash
-# 测试八字生成功能
-node -e "const { YijingBaziMCPServer } = require('./src/index.js'); const server = new YijingBaziMCPServer(); server.baziEngine.generateChart({birth_datetime: '1990-05-15T10:30:00+08:00', timezone: 'Asia/Shanghai', gender: 'male'}).then(result => console.log('测试成功:', JSON.stringify(result, null, 2))).catch(err => console.error('测试失败:', err.message));"
+# Test the BaZi chart generation
+node -e "const { YijingBaziMCPServer } = require('./src/index.js'); const server = new YijingBaziMCPServer(); server.baziEngine.generateChart({birth_datetime: '1990-05-15T10:30:00+08:00', timezone: 'Asia/Shanghai', gender: 'male'}).then(result => console.log('Test success:', JSON.stringify(result, null, 2))).catch(err => console.error('Test failed:', err.message));"
 
-# 测试易经起卦功能
-node -e "const { YijingBaziMCPServer } = require('./src/index.js'); const server = new YijingBaziMCPServer(); server.yijingEngine.generateHexagram({method: 'random', question: '测试问题'}).then(result => console.log('起卦成功:', JSON.stringify(result, null, 2))).catch(err => console.error('起卦失败:', err.message));"
+# Test the I Ching hexagram function
+node -e "const { YijingBaziMCPServer } = require('./src/index.js'); const server = new YijingBaziMCPServer(); server.yijingEngine.generateHexagram({method: 'random', question: 'test question'}).then(result => console.log('Casting success:', JSON.stringify(result, null, 2))).catch(err => console.error('Casting failed:', err.message));"
 
-# 查看服务器启动状态
+# Check the server startup status
 node src/index.js
 ```
 
-### 调试模式
+### Debug mode
 
 ```bash
-# Windows PowerShell调试
+# Windows PowerShell debugging
 $env:LOG_LEVEL="debug"; node src/index.js
 
-# 查看日志文件
+# View log files
 Get-Content logs/app.log -Wait
 
-# 或使用记事本查看
+# Or view with Notepad
 notepad logs/app.log
 ```
 
-### 故障排除
+### Troubleshooting
 
-#### 常见问题及解决方案
-
-**1. "could not determine executable to run" 错误**
+**1. "could not determine executable to run" error**
 ```bash
-# 解决方案A：使用最新版本
+# Solution A: Use the latest version
 npx yijing-bazi-mcp@latest
 
-# 解决方案B：清除 NPM 缓存
+# Solution B: Clear the NPM cache
 npm cache clean --force
 
-# 解决方案C：使用本地开发方式（如果在项目目录内）
+# Solution C: Use local development mode (if inside the project directory)
 node src/index.js
 ```
 
-**2. "spawn npx ENOENT" 错误**
+**2. "spawn npx ENOENT" error**
 ```bash
-# 解决方案：使用 npm exec 替代 npx
-# 将配置中的 "command": "npx" 改为 "command": "npm"
-# 将 "args": ["yijing-bazi-mcp"] 改为 "args": ["exec", "yijing-bazi-mcp"]
+# Solution: use npm exec instead of npx
+# Change "command": "npx" to "command": "npm"
+# Change "args": ["yijing-bazi-mcp"] to "args": ["exec", "yijing-bazi-mcp"]
 ```
 
-**2. "MCP 服务器启动失败" 错误**
+**3. "MCP server failed to start" error**
 ```bash
-# 检查步骤：
-# 1. 验证 Node.js 版本
-node --version  # 需要 18.0.0+
+# Check the following:
+# 1. Verify the Node.js version
+node --version  # needs 18.0.0+
 
-# 2. 检查项目依赖
+# 2. Check project dependencies
 npm install
 
-# 3. 测试直接启动
+# 3. Test direct startup
 node src/index.js
 
-# 4. 测试 npm exec
+# 4. Test npm exec
 npm exec yijing-bazi-mcp
 ```
 
-**3. 路径配置问题**
+**4. Path configuration issues**
 ```json
-// Windows 路径示例（注意双反斜杠）
+// Windows path example (note the double backslashes)
 {
   "mcpServers": {
     "yijing-bazi": {
       "command": "npm",
       "args": ["exec", "yijing-bazi-mcp"],
-      "cwd": "E:\\桌面\\项目资源\\腾讯云\\baidu-netdisk-auto-delete",
+      "cwd": "E:\\Desktop\\ProjectResources\\TencentCloud\\baidu-netdisk-auto-delete",
       "env": {
         "LOG_LEVEL": "info"
       }
@@ -453,70 +450,70 @@ npm exec yijing-bazi-mcp
 }
 ```
 
-**4. 权限问题**
+**5. Permission issues**
 ```bash
-# 确保有执行权限（Linux/Mac）
+# Make sure the file has execute permissions (Linux/Mac)
 chmod +x src/index.js
 
-# Windows 以管理员身份运行终端
+# On Windows, run the terminal as administrator
 ```
 
-#### 测试配置
+#### Testing the configuration
 
-运行测试脚本验证配置：
+Run the test script to verify your configuration:
 ```bash
-# 运行配置测试
+# Run the configuration test
 node test-npx.js
 
-# 手动测试各种启动方式
-node src/index.js                    # 直接启动
-npm exec yijing-bazi-mcp            # npm exec 方式
-npx yijing-bazi-mcp                 # npx 方式（如果可用）
+# Manually test various startup methods
+node src/index.js                    # direct startup
+npm exec yijing-bazi-mcp            # npm exec method
+npx yijing-bazi-mcp                 # npx method (if available)
 ```
 
-### 环境变量配置
+### Environment variable configuration
 
-可选创建 `.env` 文件（项目已有默认配置）：
+Optionally create a `.env` file (the project ships with defaults):
 
 ```bash
-# 日志配置
+# Logging config
 LOG_LEVEL=info
 NODE_ENV=production
 
-# MCP配置
+# MCP config
 SERVER_NAME=yijing-bazi-mcp-server
 SERVER_VERSION=1.0.0
 
-# 功能开关
+# Feature switches
 ENABLE_CACHE=true
 ENABLE_PERFORMANCE_MONITORING=true
 ```
 
-## 📚 文档资源
+## Documentation Resources
 
-- 📁 [项目结构](#🏗️-项目架构) - 详细的代码组织说明
-- 🛠️ [工具列表](#🛠️-可用工具) - 完整的API工具文档
-- 📖 [使用示例](#📖-使用示例) - 实际调用案例
-- 🔧 [配置指南](#🔧-客户端配置) - 各种客户端配置方法
+- [Project structure](#project-architecture) - detailed code organization
+- [Tool list](#available-tools) - complete API tool documentation
+- [Usage examples](#usage-examples) - real invocation examples
+- [Configuration guide](#client-configuration) - configuration for various clients
 
-## 🚀 发布到魔塔社区
+## Publishing to the ModelScope Community
 
-### NPX 调用方法
+### NPX usage
 
-魔塔社区用户可以直接通过 npx 使用本项目：
+ModelScope community users can use this project directly via npx:
 
 ```bash
-# 直接运行（推荐）
+# Run directly (recommended)
 npx yijing-bazi-mcp@latest
 
-# 或者全局安装后使用
+# Or install globally and use it
 npm install -g yijing-bazi-mcp
 yijing-bazi-mcp
 ```
 
-### 魔塔社区配置示例
+### ModelScope community config example
 
-在您的 AI 客户端中配置 MCP 服务器：
+Configure the MCP server in your AI client:
 
 ```json
 {
@@ -532,62 +529,62 @@ yijing-bazi-mcp
 }
 ```
 
-### 功能特性
+### Features
 
-- 🔮 **八字分析**：基于出生时间进行命理分析
-- 📿 **易经卦象**：提供卦象解读和占卜功能
-- 🧠 **智能问答**：结合传统文化知识的AI对话
-- 🔄 **实时计算**：动态生成个性化分析结果
-- 📊 **详细报告**：提供全面的命理解读报告
+- **BaZi analysis**: fortune analysis based on birth time
+- **I Ching hexagrams**: hexagram interpretation and divination
+- **Smart Q&A**: AI dialogue grounded in traditional cultural knowledge
+- **Real-time calculation**: dynamically generates personalized analysis results
+- **Detailed reports**: comprehensive fortune reading reports
 
-## 🤝 开发贡献
+## Development & Contributions
 
-### 本地开发
+### Local development
 
-1. **修改代码** - 直接编辑源文件
-2. **测试功能** - 使用上述测试命令验证
-3. **查看日志** - 检查 `logs/` 目录下的日志文件
-4. **重启服务** - 重新启动MCP客户端以加载更改
+1. **Edit code** - directly edit the source files
+2. **Test features** - use the test commands above to verify
+3. **View logs** - check the log files in the `logs/` directory
+4. **Restart the service** - restart the MCP client to load changes
 
-### 开发规范
+### Development standards
 
-- 保持代码风格一致
-- 添加必要的错误处理
-- 更新相关注释和文档
-- 测试新功能的稳定性
+- Keep code style consistent
+- Add necessary error handling
+- Update related comments and documentation
+- Test the stability of new features
 
-### 问题反馈
+### Issue reporting
 
-如遇到问题，请检查：
-1. Node.js版本是否符合要求（18+）
-2. 依赖包是否正确安装
-3. 路径配置是否正确
-4. 日志文件中的错误信息
+If you run into problems, check:
+1. Whether the Node.js version meets the requirement (18+)
+2. Whether the dependency packages are installed correctly
+3. Whether the path config is correct
+4. The error messages in the log files
 
-## 📄 版本信息
+## Version Info
 
-- **当前版本**: 1.0.0
-- **发布日期**: 2024年
-- **兼容性**: MCP协议标准
+- **Current version**: 1.0.0
+- **Release date**: 2024
+- **Compatibility**: MCP protocol standard
 - **Node.js**: 18.0.0+
 
-## 🙏 致谢
+## Acknowledgments
 
-- 🔗 [MCP协议](https://modelcontextprotocol.io/) - 提供标准化AI工具协议
-- 📅 [lunar-javascript](https://github.com/6tail/lunar-javascript) - 精确的农历计算库
-- 🎯 [PromptX](https://promptx.ai/) - AI开发工具支持
-- 📚 传统易学文化 - 为项目提供深厚理论基础
-- 👥 开源社区 - 持续的支持和贡献
+- [MCP protocol](https://modelcontextprotocol.io/) - the standardized AI tool protocol
+- [lunar-javascript](https://github.com/6tail/lunar-javascript) - precise lunar calendar library
+- [PromptX](https://promptx.ai/) - AI development tool support
+- Traditional Yijing culture - the deep theoretical foundation of this project
+- The open-source community - continuous support and contributions
 
-## ⚠️ 免责声明
+## Disclaimer
 
-本项目仅供学习研究使用，分析结果仅供参考，不构成任何决策建议。使用者应理性对待分析结果，重要决策请结合实际情况综合考虑。
+This project is for learning and research purposes only. The analysis results are for reference and do not constitute decision-making advice. Users should treat the results rationally and consider practical circumstances for important decisions.
 
 ---
 
-**🌟 专业的易经八字分析MCP服务器 🌟**
+**A professional I Ching & BaZi analysis MCP server**
 
-*传统文化与现代AI技术的完美结合*
+*The perfect combination of traditional culture and modern AI technology*
 
 **Official site: ** [https://github.com/SiwuXue/yijing-bazi-mcp-server](https://github.com/SiwuXue/yijing-bazi-mcp-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

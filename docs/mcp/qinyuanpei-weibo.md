@@ -9,11 +9,11 @@ A Model Context Protocol server for scraping Weibo user information, feeds, and 
 
 # Weibo MCP Server
 
-这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取微博用户的详细信息、动态内容以及进行用户搜索。
+This is a server based on the [Model Context Protocol](https://modelcontextprotocol.io) for scraping Weibo user information, feeds, and search functionality. This server can help obtain detailed Weibo user info, feed content, and perform user searches.
 
-## 安装
+## Installation
 
-从源代码安装：
+Install from source:
 
 ```json
 {
@@ -29,7 +29,8 @@ A Model Context Protocol server for scraping Weibo user information, feeds, and 
     }
 }
 ```
-从包管理器安装：
+
+Install from a package manager:
 
 ```json
 {
@@ -42,34 +43,34 @@ A Model Context Protocol server for scraping Weibo user information, feeds, and 
 }
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
-- `search_users(keyword, limit)`: 用于搜索微博用户
-- `get_profile(uid)`: 获取用户详细信息
-- `get_feeds(uid, limit)`: 获取用户动态
+- `search_users(keyword, limit)`: searches for Weibo users
+- `get_profile(uid)`: gets detailed user info
+- `get_feeds(uid, limit)`: gets user feeds
 
-### 资源   
+### Resources
 
-无
+None
 
-### 提示
+### Prompts
 
-无
+None
 
-## 依赖要求
+## Requirements
 
 - Python >= 3.10
 - httpx >= 0.24.0
 
-## 许可证
+## License
 
-MIT 许可证 - 详见 [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/blob/HEAD/LICENSE) 文件
+MIT License - see the [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/blob/HEAD/LICENSE) file
 
-## 免责声明
+## Disclaimer
 
-本项目与微博官方无关，仅用于学习和研究目的。
+This project is not affiliated with Weibo and is for learning and research purposes only.
 
 **Official site: ** [https://github.com/qinyuanpei/mcp-server-weibo](https://github.com/qinyuanpei/mcp-server-weibo)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

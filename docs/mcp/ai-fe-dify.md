@@ -7,50 +7,50 @@ description: "Integrates Dify AI API to provide code generation for Ant Design c
 
 Integrates Dify AI API to provide code generation for Ant Design components, supporting both text and image inputs with stream processing capabilities.
 
-# dify-server MCP 服务器
+# dify-server MCP Server
 
-一个集成 Dify AI API 的 Model Context Protocol 服务器
+An MCP server that integrates the Dify AI API
 
-这是一个基于 TypeScript 的 MCP 服务器，通过集成 Dify AI API 来提供 Ant Design 业务组件的代码生成能力。它展示了以下核心 MCP 概念：
+This is a TypeScript-based MCP server that provides Ant Design business component code generation by integrating the Dify AI API. It demonstrates the following core MCP concepts:
 
-- 集成 Dify AI API 实现聊天完成功能
-- 支持文本和图片输入
-- 流式响应处理
+- Integrates the Dify AI API to implement chat completion
+- Supports both text and image inputs
+- Streaming response handling
 
-## 功能特性
+## Features
 
 ### Tools
 
-- `antd-component-codegen-mcp-tool` - 生成 Ant Design 业务组件代码
-  - 支持文本和可选的图片输入
-  - 处理图片文件上传
-  - 支持来自 Dify AI API 的流式响应
+- `antd-component-codegen-mcp-tool` - generates Ant Design business component code
+  - Supports text and optional image inputs
+  - Handles image file uploads
+  - Supports streaming responses from the Dify AI API
 
-## 开发指南
+## Development Guide
 
-安装依赖：
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-开发模式（自动重新构建）：
+Development mode (automatic rebuild):
 
 ```bash
 npm run watch
 ```
 
-构建服务器：
+Build the server:
 
 ```bash
 npm run build
 ```
 
-## 安装说明
+## Installation
 
-### 在 Continue 中集成
+### Integrating with Continue
 
-在`~/.continue/config.json`中添加以下配置：
+Add the following configuration to `~/.continue/config.json`:
 
 ```json
 {
@@ -71,9 +71,9 @@ npm run build
 }
 ```
 
-### 在 Cline 中集成
+### Integrating with Cline
 
-在`your/path/cline_mcp_settings.json`中添加以下配置：
+Add the following configuration to `your/path/cline_mcp_settings.json`:
 
 ```json
 {
@@ -89,15 +89,15 @@ npm run build
 }
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过标准输入输出（stdio）进行通信，调试可能会比较困难。我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，可通过以下命令启动：
+Since the MCP server communicates through standard input/output (stdio), debugging can be tricky. We recommend using [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which you can start with:
 
 ```bash
 npm run inspector
 ```
 
-Inspector 将提供一个可在浏览器中访问的调试工具 URL。
+The Inspector provides a debugging tool URL accessible in the browser.
 
 **Official site: ** [https://github.com/AI-FE/dify-mcp-server](https://github.com/AI-FE/dify-mcp-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

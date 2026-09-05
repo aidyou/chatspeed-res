@@ -1,11 +1,11 @@
 ---
 title: "jimengpic-mcp"
-description: "即梦AI图片生成 MCP 服务 基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。"
+description: "Jimeng AI Image Generation MCP Service An image generation MCP (Model Context Protocol) service based on Volcengine's Jimeng AI."
 ---
 
 # jimengpic-mcp
 
-即梦AI图片生成 MCP 服务 基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。
+Jimeng AI Image Generation MCP Service An image generation MCP (Model Context Protocol) service based on Volcengine's Jimeng AI.
 
 # Jimeng AI Image Generation MCP Service
 

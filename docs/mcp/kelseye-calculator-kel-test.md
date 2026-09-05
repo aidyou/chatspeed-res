@@ -1,11 +1,11 @@
 ---
 title: "mcp_calculator_kel_test"
-description: "计算器 MCP 基于 Model Context Protocol (MCP) 的数值计算器，提供了简单的加减乘除、幂运算、平方根运算和整数阶乘运算。 工具列表 | name | description | | ----------- | ----------- | | add | 执行浮点数加法运算 | | subtract | 执行浮点数减法运算 | | multiply | 执行浮点数乘法运…"
+description: "Calculator MCP A numerical calculator based on the Model Context Protocol (MCP), providing simple operations: addition, subtraction, multiplication, division, power, square root, and integer factorial…"
 ---
 
 # mcp_calculator_kel_test
 
-计算器 MCP 基于 Model Context Protocol (MCP) 的数值计算器，提供了简单的加减乘除、幂运算、平方根运算和整数阶乘运算。 工具列表 | name | description | | ----------- | ----------- | | add | 执行浮点数加法运算 | | subtract | 执行浮点数减法运算 | | multiply | 执行浮点数乘法运…
+Calculator MCP A numerical calculator based on the Model Context Protocol (MCP), providing simple operations: addition, subtraction, multiplication, division, power, square root, and integer factorial…
 
 ## Calculator MCP
 A numerical calculator based on the Model Context Protocol (MCP), providing simple operations such as addition, subtraction, multiplication, division, power, square root, and integer factorial.

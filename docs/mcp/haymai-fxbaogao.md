@@ -38,23 +38,23 @@ Searches for a list of research reports based on conditions such as keywords, au
 
 ```python
 
-# 按关键词搜索
+# Search by keyword
 
-search_reports(keywords="人工智能")
+search_reports(keywords="AI")
 
-# 按机构搜索
+# Search by institution
 
-search_reports(org_names=["发现报告"])
+search_reports(org_names=["Discovery Reports"])
 
-# 搜索最近一周某位作者的报告
+# Search reports by a specific author from the last week
 
-search_reports(authors=["王磊"], end_time="last7day")
+search_reports(authors=["Wang Lei"], end_time="last7day")
 
-# 精确时间段搜索
+# Search within an exact time range
 
 search_reports(
 
-    keywords="新能源",
+    keywords="new energy",
 
     start_time=1748707200000,
 
@@ -81,7 +81,7 @@ Fetches detailed content and summary information of a report based on the report
 
 ```python
 
-# 获取该研报的内容
+# Get the content of this report
 
 content = await get_report_content(doc_id)
 

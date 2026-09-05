@@ -6,7 +6,7 @@
     "zh-Hans": "每日热点"
   },
   "description": {
-    "en": "# 🔥 Daily Hots\n\n基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现",
+    "en": "# 🔥 Daily Hots - Python implementation of a one-stop aggregation service for global hot trends based on the Model Context Protocol (MCP).",
     "zh-Hans": "🔥 Daily Hots 是一个基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务，覆盖30个优质数据源，并提供实时更新。该服务使用Python实现，易于维护和扩展，支持自定义RSS订阅源，并且可以轻松集成到AI应用中。"
   },
   "detail": {

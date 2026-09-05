@@ -1,11 +1,11 @@
 ---
 title: "mcp-server-weather"
-description: "MCP Weather Query Server An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information query functionality for AI models. 🌟 Features - Ci…"
+description: "MCP Weather Query Server. An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information queries for AI models. Features: city search (Chi…"
 ---
 
 # mcp-server-weather
 
-MCP Weather Query Server An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information query functionality for AI models. 🌟 Features - Ci…
+MCP Weather Query Server. An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information queries for AI models. Features: city search (Chi…
 
 # MCP Weather Query Server
 
@@ -68,10 +68,10 @@ uv sync
 ```
 ### 2. Start the Server
 ```bash
-# 使用内置API Key
+# Use the built-in API key
 python server.py
 
-# 或使用自定义API Key
+# Or use a custom API key
 python server.py --api_key YOUR_API_KEY
 ```
 ### 3. Configure MCP Client (Cursor Integration)

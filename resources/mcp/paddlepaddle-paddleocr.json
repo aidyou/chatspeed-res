@@ -35,11 +35,11 @@
     "env": [
       [
         "PADDLEOCR_MCP_AISTUDIO_ACCESS_TOKEN",
-        "<星河社区访问令牌>"
+        "<AISTUDIO_ACCESS_TOKEN>"
       ],
       [
         "PADDLEOCR_MCP_PIPELINE",
-        "<产线名称>"
+        "<PRODUCTION_LINE_NAME>"
       ],
       [
         "PADDLEOCR_MCP_PPOCR_SOURCE",
@@ -47,7 +47,7 @@
       ],
       [
         "PADDLEOCR_MCP_SERVER_URL",
-        "<星河社区访问令牌>"
+        "<AISTUDIO_ACCESS_TOKEN>"
       ]
     ],
     "requiredInputs": []

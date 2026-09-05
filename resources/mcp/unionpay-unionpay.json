@@ -34,67 +34,67 @@
     "env": [
       [
         "UP_ACCESS_TYPE",
-        "<必填，0-商户直连|1-收单机构接入|2-平台商户接入>"
+        "<REQUIRED: 0-direct merchant|1-acquirer|2-platform merchant>"
       ],
       [
         "UP_ACQ_INS_CODE",
-        "<机构号，收单机构接入必填>"
+        "<institution number, required for acquirer access>"
       ],
       [
         "UP_BACK_URL",
-        "<后台通知地址，选填>"
+        "<backend notification URL, optional>"
       ],
       [
         "UP_DECRYPT_CERT_PATH",
-        "<如需加解密，解密证书绝对路径，可选>"
+        "<decryption certificate absolute path, if encryption is needed, optional>"
       ],
       [
         "UP_ENCRYPT_CERT_PATH",
-        "<如需加密，加密证书绝对路径，可选>"
+        "<encryption certificate absolute path, if encryption is needed, optional>"
       ],
       [
         "UP_ENCRYPT_CERT_PWD",
-        "<如需加解密，解密证书密码，可选>"
+        "<decryption certificate password, if encryption is needed, optional>"
       ],
       [
         "UP_FRONT_FAIL_URL",
-        "<失败跳转地址，选填>"
+        "<failure redirect URL, optional>"
       ],
       [
         "UP_FRONT_URL",
-        "<前台跳转地址，选填>"
+        "<front-end redirect URL, optional>"
       ],
       [
         "UP_LOG_DIR",
-        "日志打印地址，选填，默认在HOME目录打印日志"
+        "log output path, optional; defaults to the HOME directory"
       ],
       [
         "UP_MER_ID",
-        "<商户号，商户直连接入必填>"
+        "<merchant number, required for direct merchant access>"
       ],
       [
         "UP_NEED_ENCRYPT",
-        "<敏感信息是否加密，0-不加密，1-加密,可选，默认不加密>"
+        "<whether to encrypt sensitive info: 0-no, 1-yes; optional, default no>"
       ],
       [
         "UP_SIGN_CERT_PATH",
-        "<机构/商户签名证书绝对路径,必填>"
+        "<institution/merchant signing certificate absolute path, required>"
       ],
       [
         "UP_SIGN_CERT_PWD",
-        "<签名证书密码,必填>"
+        "<signing certificate password, required>"
       ],
       [
         "UP_TOKEN_TYPE",
-        "<token类型，选填？>"
+        "<token type, optional?>"
       ],
       [
         "UP_TR_ID",
-        "<trId, 必填>"
+        "<trId, required>"
       ],
       [
         "UP_VALIDATE_CERT_DIR",
-        "<延签证书绝对路径,必填>"
+        "<re-signing certificate absolute path, required>"
       ]
     ],
     "requiredInputs": []

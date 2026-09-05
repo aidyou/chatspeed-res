@@ -7,24 +7,24 @@ description: "ZIZAI Recruitment Platform(https://zizai.work) is a core API servi
 
 ZIZAI Recruitment Platform(https://zizai.work) is a core API service that is fully compatible with the MCP protocol, making it the first recruitment platform service provider in China to support this…
 
-# 自在招聘 MCP Server
+# ZIZAI Recruitment MCP Server
 
-MCP Server for 自在招聘 API.
+MCP Server for the ZIZAI Recruitment API.
 
-# 自在招聘
-自在招聘（[https://zizai.work](https://zizai.work)）是一个基于专业测评的新一代智能招聘平台，帮助人才与职位高效、精准的智能匹配。
+# ZIZAI Recruitment
+ZIZAI Recruitment ([https://zizai.work](https://zizai.work)) is a new-generation intelligent recruitment platform based on professional assessment, helping talents and positions match efficiently and accurately.
 
-加入我们，立即体验智能招聘的魅力！
+Join us and experience the power of intelligent recruitment right away!
 
 ## Tools
 
 1. `get-job-list`
-   - 获取推荐的职位列表
+   - Gets the recommended job list
    - Input:
-     - `keyword` (string, 可选): 职位搜索关键词。
-     - `recruitType` (number, 可选): 职位类型，1-社招，2-校招，2-实习
+     - `keyword` (string, optional): job search keyword.
+     - `recruitType` (number, optional): job type, 1-social recruitment, 2-campus recruitment, 3-internship
    - Returns:
-     - Array of {
+     - Array of:
        - `workPin`: string
        - `name`: string
        - `entityName`: string
@@ -34,12 +34,11 @@ MCP Server for 自在招聘 API.
        - `welfare`: string
        - `salary`: { minSalary: number, maxSalary: number } | string
        - `detailUrl`: string
-     }
 
 2. `apply-for-job`
-   - 投递职位
+   - Applies for a job
    - Inputs:
-     - `workPin` (string) 职位唯一码
+     - `workPin` (string): the unique job code
    - Returns:
 
 ## Setup

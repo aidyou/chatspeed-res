@@ -7,329 +7,437 @@ description: "📖 MCP Server is used to fetch the latest knowledge from deepwik
 
 📖 MCP Server is used to fetch the latest knowledge from deepwiki.com and utilize it in Cursor and other code editors.
 
-# Deepwiki MCP 服务器
+# Deepwiki MCP Server
 
-这是一个**非官方的 Deepwiki MCP 服务器**
+This is an **unofficial Deepwiki MCP server**.
 
-它通过 MCP 接收一个 Deepwiki URL，爬取所有相关页面，将其转换为 Markdown 格式，并返回一个文档或按页面列出的列表。
+It receives a Deepwiki URL via MCP, scrapes all related pages, converts them to Markdown format, and returns a document or a list of pages.
 
-## 功能
+## Features
 
-- 🔒 **域名安全**：仅处理来自 deepwiki.org 的 URL
-- 🧹 **HTML 清理**：移除头部、尾部、导航、脚本和广告
-- 🔗 **链接重写**：调整链接以在 Markdown 中工作
-- 📄 **多种输出格式**：获取一个文档或结构化的页面
-- 🚀 **性能**：快速爬取，可调节并发和深度
-- **NLP**：仅用于搜索库名称
+- 🔒 **Domain Security**: Only handles URLs from deepwiki.org
+- 🧹 **HTML Cleanup**: Removes headers, footers, navigation, scripts, and ads
+- 🔗 **Link Rewriting**: Adjusts links to work in Markdown
+- 📄 **Multiple Output Formats**: Get a single document or structured pages
+- 🚀 **Performance**: Fast scraping with adjustable concurrency and depth
+- **NLP**: Used only for library name search
 
-## 使用方法
+## Usage
 
-您可以使用的提示：
+Prompts you can use:
 
 ```
+
 deepwiki fetch how can i use gpt-image-1 with "vercel ai" sdk
 
 deepwiki fetch how can i create new blocks in shadcn?
 
 deepwiki fetch i want to understand how X works
-```
-
-获取完整文档（默认）
 
 ```
+Get the full document (default)
+
+```
+
 use deepwiki https://deepwiki.org/shadcn-ui/ui
+
 use deepwiki multiple pages https://deepwiki.org/shadcn-ui/ui
-```
-
-单个页面
 
 ```
+Single page
+
+```
+
 use deepwiki fetch single page https://deepwiki.org/tailwindlabs/tailwindcss/2.2-theme-system
-```
-
-使用简短形式获取
 
 ```
+Use short form to get
+
+```
+
 use deepwiki fetch tailwindlabs/tailwindcss
 
 deepwiki fetch library
 
 deepwiki fetch url
+
 deepwiki fetch /
 
 deepwiki multiple pages ...
+
 deepwiki single page url ...
+
 ```
+## Cursor
 
-## 光标
-
-将以下内容添加到 `.cursor/mcp.json` 文件中。
+Add the following to your `.cursor/mcp.json` file.
 
 ```json
+
 {
+
   "mcpServers": {
+
     "mcp-deepwiki": {
+
       "command": "npx",
+
       "args": [
+
         "-y",
+
         "mcp-deepwiki@latest"
+
       ]
+
     }
+
   }
+
 }
+
 ```
 
-### MCP 工具集成
+### MCP Tool Integration
 
-该包注册了一个名为 `deepwiki_fetch` 的工具，您可以在任何与 MCP 兼容的客户端中使用它：
+This package registers a tool named `deepwiki_fetch` that you can use in any MCP-compatible client:
 
 ```json
+
 {
+
   "action": "deepwiki_fetch",
+
   "params": {
+
     "url": "https://deepwiki.org/user/repo",
+
     "mode": "aggregate",
+
     "maxDepth": "1"
+
   }
+
 }
+
 ```
+#### Parameters
 
-#### 参数
+- `url` (required): The starting URL of the Deepwiki repository
+- `mode` (optional): Output mode, can be "aggregate" for a single Markdown document (default), or "pages" for structured page data
+- `maxDepth` (optional): Maximum page depth to scrape (default: 10)
 
-- `url`（必需）：Deepwiki 仓库的起始 URL
-- `mode`（可选）：输出模式，可以是 "aggregate" 表示单个 Markdown 文档（默认），或者 "pages" 表示结构化的页面数据
-- `maxDepth`（可选）：要爬取的最大页面深度（默认：10）
+### Response Format
 
-### 响应格式
-
-#### 成功响应（聚合模式）
+#### Successful Response (Aggregate Mode)
 
 ```json
-{
-  "status": "ok",
-  "data": "# 页面标题
 
-页面内容...
+{
+
+  "status": "ok",
+
+  "data": "# Page title
+
+Page content...
 
 ---
 
-# 另一个页面
+# Another page
 
-更多内容...",
+More content...",
+
   "totalPages": 5,
+
   "totalBytes": 25000,
+
   "elapsedMs": 1200
-}
-```
 
-#### 成功响应（页面模式）
+}
+
+```
+#### Successful Response (Pages Mode)
 
 ```json
+
 {
+
   "status": "ok",
+
   "data": [
+
     {
+
       "path": "index",
-      "markdown": "# 主页
 
-欢迎来到仓库。"
+      "markdown": "# Home
+
+Welcome to the repository."
+
     },
+
     {
+
       "path": "section/page1",
-      "markdown": "# 第一页
 
-这是第一页的内容。"
+      "markdown": "# Page 1
+
+This is the content of page 1."
+
     }
+
   ],
+
   "totalPages": 2,
+
   "totalBytes": 12000,
+
   "elapsedMs": 800
-}
-```
 
-#### 错误响应
+}
+
+```
+#### Error Response
 
 ```json
+
 {
+
   "status": "error",
-  "code": "DOMAIN_NOT_ALLOWED",
-  "message": "仅允许 deepwiki.org 域名"
-}
-```
 
-#### 部分成功响应
+  "code": "DOMAIN_NOT_ALLOWED",
+
+  "message": "Only deepwiki.org domains are allowed"
+
+}
+
+```
+#### Partial Success Response
 
 ```json
+
 {
+
   "status": "partial",
-  "data": "# 页面标题
 
-页面内容...",
+  "data": "# Page title
+
+Page content...",
+
   "errors": [
+
     {
+
       "url": "https://deepwiki.org/user/repo/page2",
-      "reason": "HTTP 错误: 404"
+
+      "reason": "HTTP error: 404"
+
     }
+
   ],
+
   "totalPages": 1,
+
   "totalBytes": 5000,
+
   "elapsedMs": 950
+
 }
+
 ```
+### Progress Events
 
-### 进度事件
-
-在使用工具时，您会在爬取过程中收到进度事件：
+While using the tool, you will receive progress events during the scraping process:
 
 Fetched https://deepwiki.org/user/repo: 12500 bytes in 450ms (status: 200)
 Fetched https://deepwiki.org/user/repo/page1: 8750 bytes in 320ms (status: 200)
 Fetched https://deepwiki.org/user/repo/page2: 6200 bytes in 280ms (status: 200)
 
-## 本地开发 - 安装
+## Local Development - Installation
 
-### 本地使用
+### Local Use
 
 ```json
-{
-  "mcpServers": {
-    "mcp-deepwiki": {
-      "command": "node",
-      "args": [
-        "./bin/cli.mjs"
-      ]
-    }
-  }
-}
-```
 
-### 从源代码安装
+{
+
+  "mcpServers": {
+
+    "mcp-deepwiki": {
+
+      "command": "node",
+
+      "args": [
+
+        "./bin/cli.mjs"
+
+      ]
+
+    }
+
+  }
+
+}
+
+```
+### Install from Source
 
 ```bash
-# 克隆仓库
+
+# Clone the repository
+
 git clone https://github.com/regenrek/mcp-deepwiki.git
+
 cd mcp-deepwiki
 
-# 安装依赖
+# Install dependencies
+
 npm install
 
-# 构建包
+# Build the package
+
 npm run build
+
 ```
+#### Direct API Call
 
-#### 直接 API 调用
-
-对于 HTTP 传输，您可以直接进行 API 调用：
+For HTTP transport, you can make a direct API call:
 
 ```bash
+
 curl -X POST http://localhost:3000/mcp 
+
 -H "Content-Type: application/json" 
+
 -d '{
+
 "id": "req-1",
+
 "action": "deepwiki_fetch",
+
 "params": {
+
 "url": "https://deepwiki.org/user/repo",
+
 "mode": "aggregate"
+
 }
+
 }'
+
 ```
+## Configuration
 
-## 配置
+### Environment Variables
 
-### 环境变量
+- `DEEPWIKI_MAX_CONCURRENCY`: Maximum number of concurrent requests (default: 5)
+- `DEEPWIKI_REQUEST_TIMEOUT`: Request timeout in milliseconds (default: 30000)
+- `DEEPWIKI_MAX_RETRIES`: Maximum number of retries for failed requests (default: 3)
+- `DEEPWIKI_RETRY_DELAY`: Base delay for retry backoff in milliseconds (default: 250)
 
-- `DEEPWIKI_MAX_CONCURRENCY`: 最大并发请求数 (默认: 5)
-- `DEEPWIKI_REQUEST_TIMEOUT`: 请求超时时间（毫秒）(默认: 30000)
-- `DEEPWIKI_MAX_RETRIES`: 失败请求的最大重试次数 (默认: 3)
-- `DEEPWIKI_RETRY_DELAY`: 重试退避的基本延迟时间（毫秒）(默认: 250)
-
-要配置这些环境变量，请在项目根目录下创建一个 `.env` 文件：
+To configure these environment variables, create a `.env` file in the root of the project:
 
 DEEPWIKI_MAX_CONCURRENCY=10
 DEEPWIKI_REQUEST_TIMEOUT=60000
 DEEPWIKI_MAX_RETRIES=5
 DEEPWIKI_RETRY_DELAY=500
 
-## Docker 部署（未测试）
+## Docker Deployment (Untested)
 
-构建并运行 Docker 镜像：
+Build and run the Docker image:
 
 ```bash
-# 构建镜像
+
+# Build the image
+
 docker build -t mcp-deepwiki .
 
-# 使用 stdio 传输方式运行（适用于开发）
+# Run with stdio transport (for development)
+
 docker run -it --rm mcp-deepwiki
 
-# 使用 HTTP 传输方式运行（适用于生产）
+# Run with HTTP transport (for production)
+
 docker run -d -p 3000:3000 mcp-deepwiki --http --port 3000
 
-# 使用环境变量运行
-docker run -d -p 3000:3000 
--e DEEPWIKI_MAX_CONCURRENCY=10 
--e DEEPWIKI_REQUEST_TIMEOUT=60000 
-mcp-deepwiki --http --port 3000
-```
+# Run with environment variables
 
-## 开发
+docker run -d -p 3000:3000 
+
+-e DEEPWIKI_MAX_CONCURRENCY=10 
+
+-e DEEPWIKI_REQUEST_TIMEOUT=60000 
+
+mcp-deepwiki --http --port 3000
+
+```
+## Development
 
 ```bash
-# 安装依赖
+
+# Install dependencies
+
 pnpm install
 
-# 使用 stdio 方式以开发模式运行
+# Run in development mode with stdio
+
 pnpm run dev-stdio
 
-# 运行测试
+# Run tests
+
 pnpm test
 
-# 运行代码检查
+# Run lint
+
 pnpm run lint
 
-# 构建包
+# Build the package
+
 pnpm run build
+
 ```
+## Troubleshooting
 
-## 故障排除
+### Common Issues
 
-### 常见问题
-
-1. **权限被拒绝**：如果在运行 CLI 时遇到 EACCES 错误，请确保二进制文件是可执行的：
+1. **Permission Denied**: If you encounter an EACCES error when running the CLI, ensure the binary is executable:
    bash
    chmod +x ./node_modules/.bin/mcp-deepwiki
+   
 
-2. **连接被拒绝**：确保端口可用且未被防火墙阻止：
+2. **Connection Refused**: Ensure the port is available and not blocked by a firewall:
    bash
-   # 检查端口是否正在使用
+   # Check if the port is in use
    lsof -i :3000
+   
 
-3. **超时错误**：对于大型仓库，考虑增加超时时间和并发数：
-
+3. **Timeout Errors**: For large repositories, consider increasing the timeout and concurrency:
+   bash
    DEEPWIKI_REQUEST_TIMEOUT=60000 DEEPWIKI_MAX_CONCURRENCY=10 npx mcp-deepwiki
+   
 
-## 贡献
+## Contributing
 
-我们欢迎贡献！详情请参阅 [CONTRIBUTING.md](https://github.com/regenrek/deepwiki-mcp/blob/HEAD/CONTRIBUTING.md)。
+We welcome contributions! See [CONTRIBUTING.md](https://github.com/regenrek/deepwiki-mcp/blob/HEAD/CONTRIBUTING.md) for details.
 
-## 许可证
+## License
 
 MIT
 
-## 链接
+## Links
 
 - X/Twitter: [@kregenrek](https://x.com/kregenrek)
 - Bluesky: [@kevinkern.dev](https://bsky.app/profile/kevinkern.dev)
 
-## 课程
+## Courses
 
-- 学习 Cursor AI: [Ultimate Cursor Course](https://www.instructa.ai/en/cursor-ai)
-- 学习用 AI 构建软件: [instructa.ai](https://www.instructa.ai)
+- Learn Cursor AI: [Ultimate Cursor Course](https://www.instructa.ai/en/cursor-ai)
+- Learn to Build Software with AI: [instructa.ai](https://www.instructa.ai)
 
-## 查看我的其他项目：
+## Check Out My Other Projects:
 
-* [AI Prompts](https://github.com/instructa/ai-prompts/blob/main/README.md) - 为 Cursor AI、Cline、Windsurf 和 Github
-  Copilot 策划的 AI 提示
-* [codefetch](https://github.com/regenrek/codefetch) - 通过一个简单的终端命令将代码转换为 Markdown 格式，以便于 LLMs 使用
-* [aidex](https://github.com/regenrek/aidex) - 一个 CLI 工具，提供关于 AI 语言模型的详细信息，帮助开发者选择适合他们需求的模型。
+* [AI Prompts](https://github.com/instructa/ai-prompts/blob/main/README.md) - Curated AI prompts for Cursor AI, Cline, Windsurf, and Github Copilot
+* [codefetch](https://github.com/regenrek/codefetch) - Convert code to Markdown format with a simple terminal command, making it easy for LLMs to use* [aidex](https://github.com/regenrek/aidex) - A CLI tool that provides detailed information about AI language models, helping developers choose the right model for their needs.
 
 **Official site: ** [https://github.com/regenrek/deepwiki-mcp](https://github.com/regenrek/deepwiki-mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

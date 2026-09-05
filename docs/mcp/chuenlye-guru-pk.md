@@ -74,7 +74,7 @@ Download the installer package for your platform from the [UV Releases](https://
 
       "env": {
 
-        "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/目录, Windows: %USERPROFILE%目录
+        "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/ directory, Windows: %USERPROFILE% directory
 
       }
 
@@ -121,7 +121,7 @@ Download the installer package for your platform from the [UV Releases](https://
 
       "env": {
 
-        "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/目录, Windows: %USERPROFILE%目录
+        "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/ directory, Windows: %USERPROFILE% directory
 
       }
 
@@ -143,25 +143,25 @@ Restart the MCP client, enter `guru_pk_help` to get help, or start asking questi
 
 ```javascript
 
-// 1. 自然语言提问（最推荐的使用方式）
+// 1. Ask in natural language (the most recommended way)
 
-生成AI的领域，有没有特别适合个人创业的方向？请三个专家PK
+In the field of generative AI, is there a direction especially suitable for personal entrepreneurship? Let three experts debate
 
-// 2. 智能生成候选专家（系统自动执行）
+// 2. Intelligently generate candidate experts (executed automatically by the system)
 
-start_pk_session: 生成AI的领域，有没有特别适合个人创业的方向？
+start_pk_session: In the field of generative AI, is there a direction especially suitable for personal entrepreneurship?
 
-// 3. 智能生成候选专家（用户对期待的专家范围进行限定）
+// 3. Intelligently generate candidate experts (the user limits the expected expert scope)
 
-start_pk_session: 生成AI的领域，有没有特别适合个人创业的方向？ 找两个AI领域的大牛和一个知名的个人创业家来辩论
+start_pk_session: In the field of generative AI, is there a direction especially suitable for personal entrepreneurship? Find two big names in the AI field and a well-known personal entrepreneur to debate
 
 ```
 ### 💡 Usage Tips
 
 **Starting a Debate**:
 
-- 🤖 **`start_pk_session:直接提问`** - Default efficient batch processing mode (recommended)
-- 🔄 **`start_stepwise_pk_session:直接提问`** - Traditional step-by-step dialogue mode
+- **`start_pk_session:direct question`** - Default efficient batch processing mode (recommended)
+- **`start_stepwise_pk_session:direct question`** - Traditional step-by-step dialogue mode
 
 **Tool Functions**:
 
@@ -201,21 +201,21 @@ Supports all MCP-compatible applications: Claude Desktop, Cursor, TRAE, DeepChat
 
 flowchart TD
 
-    A[🤔 提出问题] --> B[🧠 智能分析]
+    A[Ask a question] --> B[Intelligent analysis]
 
-    B --> C[👥 生成候选]
+    B --> C[Generate candidates]
 
-    C --> D[🚀 开始辩论]
+    C --> D[Start the debate]
 
     
 
-    A1[直接向系统提问任何话题]
+    A1[Ask the system any topic directly]
 
-    B1[MCP Host端LLM深度分析问题特征]
+    B1[The MCP Host LLM deeply analyzes the question features]
 
-    C1[动态创建3位最相关的专家]
+    C1[Dynamically create the 3 most relevant experts]
 
-    D1[启动多轮PK流程]
+    D1[Start the multi-round PK flow]
 
     
 
@@ -257,21 +257,21 @@ flowchart TD
 
 flowchart TD
 
-    A[🤔 独立思考] --> B[⚔️ 交叉辩论]
+    A[Independent thinking] --> B[Cross-debate]
 
-    B --> C[🎯 最终立场]
+    B --> C[Final position]
 
-    C --> D[🧠 智慧综合]
+    C --> D[Wisdom synthesis]
 
     
 
-    A1[每位专家独立分析问题]
+    A1[Each expert analyzes the question independently]
 
-    B1[专家间互相质疑和借鉴]
+    B1[Experts question and learn from each other]
 
-    C1[形成各自完善的方案]
+    C1[Form a well-rounded position for each]
 
-    D1[融合各方观点的终极答案]
+    D1[An ultimate answer blending all viewpoints]
 
     
 
@@ -285,7 +285,7 @@ flowchart TD
 
     
 
-    B --> B2[多轮交互]
+    B --> B2[Multi-round interaction]
 
     B2 --> B
 

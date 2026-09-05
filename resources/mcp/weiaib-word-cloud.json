@@ -6,7 +6,7 @@
     "zh-Hans": "词云图 MCP"
   },
   "description": {
-    "en": "一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。 - PDF 文档：支持从 PDF 文件中提取文字内容 - Word 文档：支持 .docx 和 .doc 格式的文档解析 - 文本文件：支持 .txt 纯文本文件 - Markdown：支持 .md 和 .markdown 文件，自动清理 Markdown 语法 - 自动去除无意义的停用词（如\"我\"、\"我们\"、\"的\"、\"了\"等） - 清理标点符号和特殊字符 - 智能分词处理，支持中英文混合文本 - 可自定义停用词列表 - 多种输出格式：SVG、PNG、JPG、WebP 等多种格式支持 - 多种主题：default、warm、",
+    "en": "An MCP (Model Context Protocol) tool focused on creating word clouds from document content, supporting intelligent text extraction from multiple formats including PDF, Word, TXT, and MD.\n\n- **PDF documents**: extracts text content from PDF files\n- **Word documents**: parses .docx and .doc format documents\n- **Text files**: supports .txt plain text files\n- **Markdown**: supports .md and .markdown files, automatically cleans up Markdown syntax\n- Automatically removes meaningless stop words (e.g., \"I\", \"we\", \"of\", \"le\" etc.)\n- Cleans punctuation and special characters\n- Intelligent word segmentation supporting mixed Chinese and English text\n- Customizable stop word list\n- Multiple output formats: SVG, PNG, JPG, WebP and more\n- Multiple themes: default, warm, cool, nature, business",
     "zh-Hans": "一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。\n- **PDF 文档**：支持从 PDF 文件中提取文字内容\n- **Word 文档**：支持 .docx 和 .doc 格式的文档解析\n- **文本文件**：支持 .txt 纯文本文件\n- **Markdown**：支持 .md 和 .markdown 文件，自动清理 Markdown 语法\n- 自动去除无意义的停用词（如\"我\"、\"我们\"、\"的\"、\"了\"等）\n- 清理标点符号和特殊字符\n- 智能分词处理，支持中英文混合文本\n- 可自定义停用词列表\n- 多种输出格式：SVG、PNG、JPG、WebP 等多种格式支持\n- 多种主题：default、warm、"
   },
   "detail": {

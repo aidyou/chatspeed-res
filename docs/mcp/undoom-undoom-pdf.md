@@ -1,11 +1,11 @@
 ---
 title: "undoom-pdf-mcp"
-description: "一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。 - 🔄 PDF转图片: 支持单个/批量PDF转换为高质量图片 - 📄 Office转PDF: Word、Excel、Pow"
+description: "A powerful PDF conversion tool MCP server, based on the Model Context Protocol (MCP), integrating multiple file conversion features. - PDF to images: convert single or batch PDFs to high-quality image…"
 ---
 
 # undoom-pdf-mcp
 
-一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。 - 🔄 PDF转图片: 支持单个/批量PDF转换为高质量图片 - 📄 Office转PDF: Word、Excel、Pow
+A powerful PDF conversion tool MCP server, based on the Model Context Protocol (MCP), integrating multiple file conversion features. - PDF to images: convert single or batch PDFs to high-quality image…
 
 # undoom-pdf-mcp
 
@@ -13,96 +13,96 @@ description: "一个功能强大的PDF转换工具MCP服务器，基于MCP (Mode
 [![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/kk520879/undoom_pdf_mcp/blob/HEAD/LICENSE)
 [![Version](/mcp-assets/4fde9e9f0fdf6455a8458bae4c572d76.svg)](https://github.com/kk520879/undoom_pdf_mcp)
 
-一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。
+A powerful PDF conversion tool MCP server, based on the MCP (Model Context Protocol), integrating multiple file conversion features.
 
-## ✨ 特性
+## Features
 
-- 🔄 **PDF转图片**: 支持单个/批量PDF转换为高质量图片
-- 📄 **Office转PDF**: Word、Excel、PowerPoint文件转PDF
-- 🔒 **PDF加密**: 为PDF文件添加密码保护
-- 🖼️ **图片转PDF**: 单张或多张图片合并为PDF
-- 📊 **PDF信息**: 获取PDF文件详细信息
-- 🚀 **批量处理**: 支持批量文件转换
-- 💾 **内存优化**: 自动内存管理，避免内存泄漏
+- **PDF to images**: convert single or batch PDFs to high-quality images
+- **Office to PDF**: convert Word, Excel, and PowerPoint files to PDF
+- **PDF encryption**: add password protection to PDF files
+- **Images to PDF**: merge single or multiple images into a PDF
+- **PDF info**: get detailed PDF file information
+- **Batch processing**: support batch file conversion
+- **Memory optimization**: automatic memory management to avoid leaks
 
-## 功能特性
+## Feature Details
 
-### PDF转图片功能
-- **单个PDF转图片**: 将PDF文件转换为JPG图片
-- **批量PDF转图片**: 批量处理多个PDF文件
-- **页码选择**: 支持指定转换特定页面
-- **质量控制**: 支持多种图片质量设置
+### PDF to image conversion
+- **Single PDF to image**: convert a PDF file to JPG images
+- **Batch PDF to image**: process multiple PDF files in batch
+- **Page selection**: convert specific pages only
+- **Quality control**: multiple image quality settings
 
-### Office文件转PDF功能
-- **Word转PDF**: 支持.doc和.docx格式
-- **Excel转PDF**: 支持.xls和.xlsx格式
-- **PowerPoint转PDF**: 支持.ppt和.pptx格式
-- **批量转换**: 支持批量转换Office文件
+### Office files to PDF
+- **Word to PDF**: supports .doc and .docx formats
+- **Excel to PDF**: supports .xls and .xlsx formats
+- **PowerPoint to PDF**: supports .ppt and .pptx formats
+- **Batch conversion**: convert Office files in batch
 
-### PDF安全功能
-- **PDF加密**: 为PDF文件设置密码保护
-- **权限控制**: 支持设置PDF文件的访问权限
+### PDF security features
+- **PDF encryption**: set password protection on PDF files
+- **Permission control**: configure access permissions for PDF files
 
-### 图片转PDF功能
-- **单张图片转PDF**: 将单张图片转换为PDF文件
-- **多张图片合并PDF**: 将多张图片合并为一个PDF文件
-- **页面大小设置**: 支持A4、A3、Letter等多种页面大小
+### Images to PDF
+- **Single image to PDF**: convert one image into a PDF file
+- **Multiple images merged into PDF**: merge several images into a single PDF
+- **Page size settings**: supports A4, A3, Letter, and other page sizes
 
-### 其他功能
-- **PDF信息查看**: 获取PDF文件的详细信息
-- **内存优化**: 自动清理内存，避免内存泄漏
+### Other features
+- **PDF info viewer**: get detailed information about a PDF file
+- **Memory optimization**: automatic memory cleanup to avoid leaks
 
-## 🚀 快速开始
+## Quick Start
 
-### 环境要求
+### Requirements
 
 - Python 3.10+
-- Windows系统（Office文件转换功能需要）
-- 已安装Microsoft Office（Word、Excel、PowerPoint）
+- Windows system (required for Office file conversion)
+- Microsoft Office installed (Word, Excel, PowerPoint)
 
-### 安装
+### Installation
 
-#### 方法1: 使用uv（推荐）
+#### Method 1: Use uv (recommended)
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/kk520879/undoom_pdf_mcp.git
 cd undoom_pdf_mcp
 
-# 安装依赖
+# Install dependencies
 uv sync
 ```
 
-#### 方法2: 使用pip
+#### Method 2: Use pip
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/kk520879/undoom_pdf_mcp.git
 cd undoom_pdf_mcp
 
-# 创建虚拟环境
+# Create a virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 
-# 安装依赖
+# Install dependencies
 pip install -e .
 ```
 
-### 启动服务
+### Starting the server
 
 ```bash
-# 使用uv运行
+# Run with uv
 uv run python undoom_pdf_mcp/main.py
 
-# 或直接运行
+# Or run directly
 python undoom_pdf_mcp/main.py
 ```
 
-### MCP客户端配置
+### MCP client configuration
 
-#### 方法1: 使用uvx（推荐）
+#### Method 1: Use uvx (recommended)
 
-包已发布到PyPI，可以直接使用uvx安装：
+The package is published on PyPI and can be used directly via uvx:
 
 ```json
 {
@@ -119,11 +119,11 @@ python undoom_pdf_mcp/main.py
 }
 ```
 
-**注意**: 配置中使用了清华大学PyPI镜像源以提高下载速度和稳定性。
+**Note**: The config uses the Tsinghua University PyPI mirror for faster, more reliable downloads.
 
-#### 方法2: 本地开发配置
+#### Method 2: Local development configuration
 
-如果你是从源码运行，可以使用以下配置：
+If you are running from source, use this config:
 
 ```json
 {
@@ -142,36 +142,36 @@ python undoom_pdf_mcp/main.py
 }
 ```
 
-将上述配置添加到你的MCP客户端配置文件中（如Claude Desktop的配置文件）。
+Add the configuration above to your MCP client config file (such as the Claude Desktop config file).
 
-## 主要依赖
+## Main Dependencies
 
-- `mcp[cli]>=1.12.4` - MCP协议支持
-- `PyMuPDF>=1.23.0` - PDF处理库
-- `Pillow>=10.0.0` - 图像处理库
-- `pywin32>=306` - Windows COM接口（Office文件转换需要）
-- `tkinterdnd2>=0.3.0` - GUI拖拽支持
+- `mcp[cli]>=1.12.4` - MCP protocol support
+- `PyMuPDF>=1.23.0` - PDF processing library
+- `Pillow>=10.0.0` - image processing library
+- `pywin32>=306` - Windows COM interface (needed for Office conversion)
+- `tkinterdnd2>=0.3.0` - GUI drag-and-drop support
 
-## 使用方法
+## Usage
 
-### 启动MCP服务器
+### Starting the MCP server
 
 ```bash
 python main.py
 ```
 
-### 可用工具
+### Available tools
 
 #### 1. pdf_to_images
-将PDF文件转换为图片
+Convert a PDF file to images
 
-**参数:**
-- `pdf_path` (必需): PDF文件的绝对路径
-- `pages` (可选): 要转换的页码，格式如'1,2,3-5'，留空转换所有页
-- `quality` (可选): 图片质量倍数，可选值：0.25, 0.5, 1.0, 2.0, 4.0，默认2.0
-- `output_dir` (可选): 输出目录路径，留空使用PDF同目录
+**Parameters:**
+- `pdf_path` (required): absolute path to the PDF file
+- `pages` (optional): pages to convert, e.g. '1,2,3-5'; leave empty for all pages
+- `quality` (optional): image quality multiplier; options: 0.25, 0.5, 1.0, 2.0, 4.0; default 2.0
+- `output_dir` (optional): output directory; leave empty to use the PDF's directory
 
-**示例:**
+**Example:**
 ```json
 {
   "pdf_path": "C:\\Documents\\example.pdf",
@@ -181,14 +181,14 @@ python main.py
 ```
 
 #### 2. batch_convert_pdfs
-批量转换PDF文件为图片
+Convert multiple PDF files to images in batch
 
-**参数:**
-- `folder_path` (必需): 包含PDF文件的文件夹路径
-- `page_settings` (必需): 文件名到页码设置的映射
-- `quality` (可选): 图片质量倍数，默认2.0
+**Parameters:**
+- `folder_path` (required): path to the folder containing the PDF files
+- `page_settings` (required): mapping of file names to page settings
+- `quality` (optional): image quality multiplier, default 2.0
 
-**示例:**
+**Example:**
 ```json
 {
   "folder_path": "C:\\Documents\\PDFs",
@@ -202,48 +202,48 @@ python main.py
 ```
 
 #### 3. word_to_pdf
-将Word文档转换为PDF
+Convert a Word document to PDF
 
-**参数:**
-- `word_path` (必需): Word文件的绝对路径
-- `output_path` (可选): 输出PDF文件路径，留空自动生成
+**Parameters:**
+- `word_path` (required): absolute path to the Word file
+- `output_path` (optional): output PDF path; leave empty to auto-generate
 
 #### 4. excel_to_pdf
-将Excel文档转换为PDF
+Convert an Excel document to PDF
 
-**参数:**
-- `excel_path` (必需): Excel文件的绝对路径
-- `output_path` (可选): 输出PDF文件路径，留空自动生成
+**Parameters:**
+- `excel_path` (required): absolute path to the Excel file
+- `output_path` (optional): output PDF path; leave empty to auto-generate
 
 #### 5. ppt_to_pdf
-将PowerPoint文档转换为PDF
+Convert a PowerPoint document to PDF
 
-**参数:**
-- `ppt_path` (必需): PowerPoint文件的绝对路径
-- `output_path` (可选): 输出PDF文件路径，留空自动生成
+**Parameters:**
+- `ppt_path` (required): absolute path to the PowerPoint file
+- `output_path` (optional): output PDF path; leave empty to auto-generate
 
 #### 6. batch_office_to_pdf
-批量转换Office文件为PDF
+Convert Office files to PDF in batch
 
-**参数:**
-- `folder_path` (必需): 包含Office文件的文件夹路径
-- `file_types` (可选): 要转换的文件类型列表，默认包含所有Office格式
+**Parameters:**
+- `folder_path` (required): path to the folder containing the Office files
+- `file_types` (optional): list of file types to convert; defaults to all Office formats
 
 #### 7. get_pdf_info
-获取PDF文件信息
+Get PDF file information
 
-**参数:**
-- `pdf_path` (必需): PDF文件的绝对路径
+**Parameters:**
+- `pdf_path` (required): absolute path to the PDF file
 
 #### 8. encrypt_pdf
-加密PDF文件
+Encrypt a PDF file
 
-**参数:**
-- `pdf_path` (必需): PDF文件的绝对路径
-- `password` (必需): 加密密码
-- `output_path` (可选): 输出PDF文件路径，留空自动生成
+**Parameters:**
+- `pdf_path` (required): absolute path to the PDF file
+- `password` (required): encryption password
+- `output_path` (optional): output PDF path; leave empty to auto-generate
 
-**示例:**
+**Example:**
 ```json
 {
   "pdf_path": "C:\\Documents\\example.pdf",
@@ -253,14 +253,14 @@ python main.py
 ```
 
 #### 9. images_to_pdf
-将多张图片合并为PDF
+Merge multiple images into a PDF
 
-**参数:**
-- `image_paths` (必需): 图片文件路径列表
-- `output_path` (必需): 输出PDF文件路径
-- `page_size` (可选): 页面大小，如A4、A3、Letter等，默认A4
+**Parameters:**
+- `image_paths` (required): list of image file paths
+- `output_path` (required): output PDF path
+- `page_size` (optional): page size, e.g. A4, A3, Letter, etc.; default A4
 
-**示例:**
+**Example:**
 ```json
 {
   "image_paths": [
@@ -274,14 +274,14 @@ python main.py
 ```
 
 #### 10. single_image_to_pdf
-将单张图片转换为PDF
+Convert a single image to PDF
 
-**参数:**
-- `image_path` (必需): 图片文件的绝对路径
-- `output_path` (可选): 输出PDF文件路径，留空自动生成
-- `page_size` (可选): 页面大小，如A4、A3、Letter等，默认A4
+**Parameters:**
+- `image_path` (required): absolute path to the image file
+- `output_path` (optional): output PDF path; leave empty to auto-generate
+- `page_size` (optional): page size, e.g. A4, A3, Letter, etc.; default A4
 
-**示例:**
+**Example:**
 ```json
 {
   "image_path": "C:\\Images\\document.jpg",
@@ -289,113 +289,113 @@ python main.py
 }
 ```
 
-## 页码格式说明
+## Page Number Formats
 
-支持以下页码格式：
-- `1` - 单页
-- `1,2,3` - 多个单页
-- `1-5` - 页码范围
-- `1,3-5,7` - 混合格式
-- 留空 - 转换所有页
+Supported page formats:
+- `1` - a single page
+- `1,2,3` - multiple single pages
+- `1-5` - a page range
+- `1,3-5,7` - mixed format
+- empty - convert all pages
 
-## 图片质量说明
+## Image Quality
 
-- `0.25` - 低质量（文件小）
-- `0.5` - 中低质量
-- `1.0` - 原始分辨率
-- `2.0` - 高质量（默认）
-- `4.0` - 超高质量（文件大）
+- `0.25` - low quality (small files)
+- `0.5` - medium-low quality
+- `1.0` - original resolution
+- `2.0` - high quality (default)
+- `4.0` - ultra-high quality (large files)
 
-## 注意事项
+## Notes
 
-1. **Office文件转换**: 需要在Windows系统上安装相应的Office软件（Word、Excel、PowerPoint）
-2. **文件路径**: 所有路径必须使用绝对路径
-3. **权限**: 确保对输入文件有读取权限，对输出目录有写入权限
-4. **内存管理**: 处理大文件时会自动进行内存清理
+1. **Office conversion**: requires the corresponding Office software (Word, Excel, PowerPoint) installed on Windows
+2. **File paths**: all paths must be absolute paths
+3. **Permissions**: ensure read access to input files and write access to the output directory
+4. **Memory management**: memory is automatically cleaned when processing large files
 
-## 错误处理
+## Error Handling
 
-服务器会捕获并返回详细的错误信息，包括：
-- 文件不存在错误
-- 权限错误
-- 格式不支持错误
-- Office应用程序错误
+The server catches and returns detailed error messages, including:
+- File-not-found errors
+- Permission errors
+- Unsupported-format errors
+- Office application errors
 
-## 🛠️ 开发说明
+## Development Notes
 
-本项目基于MCP协议开发，集成了多种PDF和Office文件处理功能：
+This project is built on the MCP protocol and integrates multiple PDF and Office file processing features:
 
-1. **PDF转图片**: 基于PyMuPDF的高质量PDF渲染
-2. **Office转PDF**: 利用Windows COM接口调用Office应用程序
-3. **PDF加密**: 使用PyMuPDF的安全功能
-4. **图片处理**: 基于Pillow的图像处理能力
+1. **PDF to images**: high-quality PDF rendering based on PyMuPDF
+2. **Office to PDF**: calls Office applications via the Windows COM interface
+3. **PDF encryption**: uses PyMuPDF's security features
+4. **Image processing**: uses Pillow's image processing capabilities
 
-所有功能都通过MCP协议暴露，可以被支持MCP的AI助手或应用程序调用。
+All features are exposed through the MCP protocol and can be called by MCP-capable AI assistants or applications.
 
-### 项目结构
+### Project structure
 
 ```
 undoom_pdf_mcp/
 ├── undoom_pdf_mcp/
 │   ├── __init__.py
-│   └── main.py          # 主程序文件
-├── pyproject.toml       # 项目配置
-├── README.md           # 项目说明
-├── LICENSE             # 许可证
-└── test_converter.py   # 测试文件
+│   └── main.py          # Main program file
+├── pyproject.toml       # Project config
+├── README.md           # Project readme
+├── LICENSE             # License
+└── test_converter.py   # Test file
 ```
 
-## 🤝 贡献
+## Contributing
 
-欢迎贡献代码！请遵循以下步骤：
+Contributions are welcome! Follow these steps:
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 更新日志
+## Changelog
 
 ### v0.2.3 (2024-12-19)
-- 🐛 修复uvx运行时的协程错误
-- 🔧 改进异步入口点处理
-- 📦 发布到PyPI，支持uvx直接安装
-- 🚀 优化MCP服务器启动流程
+- Fixed a coroutine error when running via uvx
+- Improved async entry point handling
+- Published to PyPI, supporting direct uvx installation
+- Optimized the MCP server startup flow
 
 ### v0.2.2 (2024-12-19)
-- 🔧 优化MCP配置
-- 📚 更新文档和配置示例
+- Optimized MCP configuration
+- Updated documentation and config examples
 
 ### v0.2.0 (2024-12-19)
-- ✨ 新增PDF加密功能
-- ✨ 新增图片转PDF功能
-- 🐛 修复内存泄漏问题
-- 📚 完善文档和示例
+- Added PDF encryption
+- Added images-to-PDF conversion
+- Fixed a memory leak issue
+- Improved documentation and examples
 
 ### v0.1.0 (2024-12-18)
-- 🎉 初始版本发布
-- ✨ PDF转图片功能
-- ✨ Office文件转PDF功能
-- ✨ 批量处理功能
+- Initial release
+- PDF to images
+- Office files to PDF
+- Batch processing
 
-## 📞 联系方式
+## Contact
 
-- 作者: undoom
-- 邮箱: kaikaihuhu666@163.com
+- Author: undoom
+- Email: kaikaihuhu666@163.com
 - GitHub: [@kk520879](https://github.com/kk520879)
 
-## 📄 许可证
+## License
 
-本项目采用 [MIT License](https://github.com/kk520879/undoom_pdf_mcp/blob/HEAD/LICENSE) 许可证。
+This project is licensed under the [MIT License](https://github.com/kk520879/undoom_pdf_mcp/blob/HEAD/LICENSE).
 
-## ⭐ 支持项目
+## Support the Project
 
-如果这个项目对您有帮助，请给它一个星标 ⭐！
+If this project helps you, please give it a star!
 
 ---
 
-**注意**: 本项目主要在Windows系统上测试，Office文件转换功能需要安装相应的Microsoft Office软件。
+**Note**: This project is mainly tested on Windows; the Office conversion feature requires Microsoft Office to be installed.
 
 **Official site: ** [https://github.com/kk520879/undoom_pdf_mcp](https://github.com/kk520879/undoom_pdf_mcp)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

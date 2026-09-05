@@ -1,11 +1,11 @@
 ---
 title: "Arxiv-Paper-MCP"
-description: "ArXiv Paper MCP 一个基于 arXiv 的论文检索与内容解析工具。支持 Model Context Protocol (MCP) 标准，提供论文搜索、PDF链接获取和内容解析功能。"
+description: "An arXiv-based paper retrieval and content parsing tool. Supports the Model Context Protocol (MCP) standard, providing paper search, PDF link retrieval, and content parsing."
 ---
 
 # Arxiv-Paper-MCP
 
-ArXiv Paper MCP 一个基于 arXiv 的论文检索与内容解析工具。支持 Model Context Protocol (MCP) 标准，提供论文搜索、PDF链接获取和内容解析功能。
+An arXiv-based paper retrieval and content parsing tool. Supports the Model Context Protocol (MCP) standard, providing paper search, PDF link retrieval, and content parsing.
 
 # ArXiv Paper MCP
 

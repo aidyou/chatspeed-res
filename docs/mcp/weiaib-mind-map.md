@@ -1,11 +1,11 @@
 ---
 title: "mind-map-mcp"
-description: "一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。"
+description: "An MCP (Model Context Protocol) server for generating mind maps."
 ---
 
 # mind-map-mcp
 
-一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。
+An MCP (Model Context Protocol) server for generating mind maps.
 
 # mind-map-mcp
 

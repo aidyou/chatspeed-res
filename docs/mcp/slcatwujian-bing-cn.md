@@ -1,11 +1,11 @@
 ---
 title: "bing-cn-mcp-server"
-description: "让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。 MCP（Model Context Protocol）是一个让 AI 助手能够调用外部工具的协议。这个项目提供了一个必应搜索工具，让 AI 可以帮你搜索网络信息并返回结果。"
+description: "A tool that enables AI assistants (such as Claude) to fetch real-time web information using the Bing search engine. It provides a Bing search tool and a web scraping feature, optimized for Chinese sea…"
 ---
 
 # bing-cn-mcp-server
 
-让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。 MCP（Model Context Protocol）是一个让 AI 助手能够调用外部工具的协议。这个项目提供了一个必应搜索工具，让 AI 可以帮你搜索网络信息并返回结果。
+A tool that enables AI assistants (such as Claude) to fetch real-time web information using the Bing search engine. It provides a Bing search tool and a web scraping feature, optimized for Chinese sea…
 
 # Bing Chinese Search MCP Server
 
@@ -195,19 +195,19 @@ bingcnmcp/
 
 ├── src/
 
-│   ├── index.ts         # MCP 服务器入口
+│   ├── index.ts         # MCP server entry
 
-│   ├── bingSearch.ts    # 必应搜索实现
+│   ├── bingSearch.ts    # Bing search implementation
 
-│   ├── crawler.ts       # 网页抓取实现
+│   ├── crawler.ts       # web scraping implementation
 
-│   ├── parser.ts        # HTML 解析器
+│   ├── parser.ts        # HTML parser
 
-│   ├── blacklist.ts     # 黑名单配置
+│   ├── blacklist.ts     # blacklist configuration
 
-│   └── types.ts         # 类型定义
+│   └── types.ts         # type definitions
 
-├── build/               # 编译输出
+├── build/               # build output
 
 ├── package.json
 

@@ -6,7 +6,7 @@
     "zh-Hans": "OpenWebSearch 网络搜索 MCP 服务器"
   },
   "description": {
-    "en": "# Open-WebSearch MCP 服务器\n\n[English](./README.md)",
+    "en": "# Open-WebSearch MCP Server\n\n[English](./README.md)",
     "zh-Hans": "一个基于多引擎搜索结果的模型上下文协议(MCP)服务器，支持免费网络搜索，无需API密钥。它支持多个搜索引擎，并提供带有标题、URL和描述的结构化结果。"
   },
   "detail": {

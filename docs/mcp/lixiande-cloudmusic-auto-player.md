@@ -7,79 +7,79 @@ description: "NetEase Cloud Music Auto Player, supporting all shortcut key opera
 
 NetEase Cloud Music Auto Player, supporting all shortcut key operations, song search and playback, custom playlist playback, daily recommendations, and roaming features.
 
-# 🎵 网易云音乐 MCP 控制器
+# NetEase Cloud Music MCP Controller
 
-一个基于网易云音乐MCP智能控制器，提供全局快捷键、搜索单曲播放、搜索歌单播放、自定义歌单管理、每日推荐和私人漫游等丰富功能。
+An intelligent NetEase Cloud Music MCP controller providing global hotkey support, single-song search & play, playlist search & play, custom playlist management, daily recommendations, and private roaming.
 
-## ✨ 主要特性
+## Key Features
 
-### 🎮 基础控制功能
-- **启动网易云音乐**：支持 URL scheme 快速启动，可选自动最小化窗口
-- **播放控制**：播放/暂停、上一首/下一首、音量调节
-- **界面控制**：切换迷你模式、显示/隐藏歌词
-- **互动功能**：一键喜欢当前歌曲
+### Basic Controls
+- **Launch NetEase Cloud Music**: Quick launch via URL scheme, with optional auto-minimize
+- **Playback control**: Play/pause, previous/next track, volume adjustment
+- **UI control**: Toggle mini mode, show/hide lyrics
+- **Interactions**: Like the current song with one click
 
-### 🎼 音乐搜索与播放
-- **歌曲搜索播放**：直接搜索歌曲名或"歌曲名+歌手"组合播放
-- **歌单搜索播放**：搜索并播放指定歌单
-- **系统预设歌单**：快速播放飙升榜、新歌榜、热歌榜等官方榜单
-- **私人雷达播放**：播放个性化推荐歌单
+### Music Search & Playback
+- **Song search & play**: Search by song name or "song name + artist" and play
+- **Playlist search & play**: Search and play a specified playlist
+- **Built-in playlists**: Quick access to official charts like the Rising Chart, New Song Chart, and Hot Song Chart
+- **Private radar**: Play personalized recommendation playlists
 
-### 📋 歌单管理
-- **自定义歌单管理**：添加、删除、列出用户自定义歌单
-- **歌单配置文件**：支持通过 JSON 文件批量管理歌单
-- **系统歌单集成**：内置官方热门榜单快速访问
+### Playlist Management
+- **Custom playlist management**: Add, remove, and list user-defined playlists
+- **Playlist config files**: Manage playlists in bulk via JSON files
+- **Built-in playlist integration**: Quick access to official hot charts
 
-### 🌟 高级功能
-- **每日推荐播放**：自动播放网易云音乐每日推荐歌单
-- **私人漫游**：启动网易云音乐私人漫游功能
-- **全局快捷键**：支持全局快捷键控制，无需切换到音乐应用，支持按键自定义
+### Advanced Features
+- **Daily recommendations**: Auto-play NetEase Cloud Music's daily recommended playlist
+- **Private roaming**: Start NetEase Cloud Music private roaming
+- **Global hotkeys**: Global hotkey control without switching to the music app; keys are customizable
 
-### ⌨️ 全局快捷键支持
+### Global Hotkey Support
 
-#### Windows 默认快捷键
-- `Ctrl+Alt+P`：播放/暂停
-- `Ctrl+Alt+Left`：上一首
-- `Ctrl+Alt+Right`：下一首  
-- `Ctrl+Alt+Up/Down`：音量加/减
-- `Ctrl+Alt+M`：切换迷你模式
-- `Ctrl+Alt+L`：喜欢当前歌曲
-- `Ctrl+Alt+D`：显示/隐藏歌词
+#### Windows default hotkeys
+- `Ctrl+Alt+P`: play/pause
+- `Ctrl+Alt+Left`: previous track
+- `Ctrl+Alt+Right`: next track
+- `Ctrl+Alt+Up/Down`: volume up/down
+- `Ctrl+Alt+M`: toggle mini mode
+- `Ctrl+Alt+L`: like current song
+- `Ctrl+Alt+D`: show/hide lyrics
 
-#### macOS 默认快捷键
-- `command+option+P`：播放/暂停
-- `command+option+Left`：上一首
-- `command+option+Right`：下一首  
-- `command+option+Up/Down`：音量加/减
-- `command+option+M`：切换迷你模式
-- `command+option+L`：喜欢当前歌曲
-- `command+option+D`：显示/隐藏歌词
+#### macOS default hotkeys
+- `command+option+P`: play/pause
+- `command+option+Left`: previous track
+- `command+option+Right`: next track
+- `command+option+Up/Down`: volume up/down
+- `command+option+M`: toggle mini mode
+- `command+option+L`: like current song
+- `command+option+D`: show/hide lyrics
 
-> 💡 可以在 `src/config/hotkeys.json` 的 `custom_hotkeys` 部分自定义快捷键
+> Hotkeys can be customized in the `custom_hotkeys` section of `src/config/hotkeys.json`
 
-## 🔧 环境要求
+## Environment Requirements
 
-### 通用要求
-- **Python**：3.10+
-- **网易云音乐客户端**：需安装并可正常运行
-- **uv**：现代 Python 包管理器 ([安装指南](https://docs.astral.sh/uv/getting-started/installation/))
+### General requirements
+- **Python**: 3.10+
+- **NetEase Cloud Music client**: installed and working
+- **uv**: modern Python package manager ([installation guide](https://docs.astral.sh/uv/getting-started/installation/))
 
-### 平台要求
-- **Windows 10/11**：完整功能支持 ✅
-  - 全局快捷键控制 ✅
-  - 音乐搜索播放 ✅
-  - 每日推荐功能 ✅
-  - 私人漫游功能 ✅
-  - 内置 ChromeDriver (Windows x64)
-- **macOS 10.15+**：基础功能支持 ⚠️
-  - 全局快捷键控制 ✅
-  - 音乐搜索播放 ✅
-  - 每日推荐功能 ❌ (不支持)
-  - 私人漫游功能 ❌ (不支持)
+### Platform requirements
+- **Windows 10/11**: full feature support
+  - Global hotkey control
+  - Music search & play
+  - Daily recommendations
+  - Private roaming
+  - Bundled ChromeDriver (Windows x64)
+- **macOS 10.15+**: basic feature support
+  - Global hotkey control
+  - Music search & play
+  - Daily recommendations (not supported)
+  - Private roaming (not supported)
 
-## 📦 安装指南
+## Installation Guide
 
-### 1. 安装 uv（如果尚未安装）
+### 1. Install uv (if not already installed)
 ```bash
 # macOS/Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -88,33 +88,33 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### 2. 克隆项目并安装依赖
+### 2. Clone the project and install dependencies
 ```bash
 git clone https://github.com/xiduan/CloudMusic_Auto_Player.git
 cd CloudMusic_Auto_Player
 uv sync
 ```
 
-### 3. macOS 说明
-macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放），不支持每日推荐和私人漫游功能。
+### 3. macOS notes
+The macOS version only supports basic features (global hotkeys, music search & play); daily recommendations and private roaming are not supported.
 
-### 主要依赖
-- `fastmcp>=2.0.0`：MCP 服务器框架
-- `pyautogui>=0.9.54`：跨平台全局快捷键支持
-- `pywin32>=306`：Windows 系统集成（仅 Windows）
-- `psutil>=5.9.0`：进程管理
-- `selenium>=4.0.0`：Web 自动化（每日推荐/漫游功能）
-- `requests>=2.28.0`：HTTP 请求库
+### Main dependencies
+- `fastmcp>=2.0.0`: MCP server framework
+- `pyautogui>=0.9.54`: cross-platform global hotkey support
+- `pywin32>=306`: Windows system integration (Windows only)
+- `psutil>=5.9.0`: process management
+- `selenium>=4.0.0`: web automation (daily recommendations/roaming)
+- `requests>=2.28.0`: HTTP request library
 
-## ⚙️ 配置说明
+## Configuration Guide
 
-### 1. MCP 客户端配置
+### 1. MCP client config
 
-在你的 MCP 客户端配置文件中添加以下配置：
+Add the following to your MCP client config file:
 
-#### 方式一：使用 uvx（推荐）
+#### Option 1: Use uvx (recommended)
 
-直接使用已发布的 PyPI 包，无需下载源码：
+Use the published PyPI package directly - no need to download the source:
 
 ```json
 {
@@ -131,9 +131,9 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-**平台特定配置示例：**
+**Platform-specific configuration examples:**
 
-**Windows 配置：**
+**Windows config:**
 ```json
 {
   "mcpServers": {
@@ -149,7 +149,7 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-**macOS 配置：**
+**macOS config:**
 ```json
 {
   "mcpServers": {
@@ -164,11 +164,11 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-> 📝 **注意**：macOS 不支持每日推荐和私人漫游功能，因此无需配置 `CHROMEDRIVER_PATH`
+> **Note**: macOS does not support daily recommendations or private roaming, so `CHROMEDRIVER_PATH` is not needed.
 
-#### 方式二：本地项目运行
+#### Option 2: Run from a local project
 
-如果你需要修改源码或本地开发，可以下载项目后使用：
+If you need to modify the source or develop locally, download the project and use:
 
 ```json
 {
@@ -191,7 +191,7 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-**Windows 本地项目示例：**
+**Windows local project example:**
 ```json
 {
   "mcpServers": {
@@ -213,7 +213,7 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-**macOS 本地项目示例：**
+**macOS local project example:**
 ```json
 {
   "mcpServers": {
@@ -233,208 +233,208 @@ macOS 版本仅支持基础功能（全局快捷键控制、音乐搜索播放�
 }
 ```
 
-> ⚠️ **重要提示**：
-> - 请将路径替换为你的实际路径
-> - Windows 路径中的反斜杠需要转义为 `\\`
-> - macOS 不支持每日推荐和私人漫游功能
-> - 配置完成后，建议调用 `get_netease_config()` 工具验证环境变量配置是否正确
+> **Important**:
+> - Replace the paths with your actual paths
+> - Backslashes in Windows paths must be escaped as `\\`
+> - macOS does not support daily recommendations or private roaming
+> - After configuration, call `get_netease_config()` to verify the environment variables are set correctly
 
+### 2. Custom playlists
 
-### 2. 自定义歌单配置
-
-#### 上传自定义歌单
-可调用mcp上传自定义歌单，只需要输入歌单名称和歌单id即可（如有对歌单描述可添加）（推荐）
-编辑项目根目录下的 `playlists.json` 文件：
+#### Upload a custom playlist
+You can upload a custom playlist via MCP by providing the playlist name and ID (a description is optional) (recommended)
+Or edit the `playlists.json` file in the project root:
 
 ```json
 {
   "systemPlaylists": {
-    "飙升榜": {"id": "19723756", "name": "音乐飙升榜", "description": "网易云音乐官方飙升榜"},
-    "新歌榜": {"id": "3779629", "name": "音乐新歌榜", "description": "网易云音乐官方新歌榜"},
-    "热歌榜": {"id": "3778678", "name": "音乐热歌榜", "description": "网易云音乐官方热歌榜"}
+    "Rising Chart": {"id": "19723756", "name": "Rising Chart", "description": "Official NetEase rising chart"},
+    "New Song Chart": {"id": "3779629", "name": "New Song Chart", "description": "Official NetEase new song chart"},
+    "Hot Song Chart": {"id": "3778678", "name": "Hot Song Chart", "description": "Official NetEase hot song chart"}
   },
   "userPlaylists": {
-    "我的收藏": {"id": "123456789", "name": "我的收藏歌单", "description": "个人收藏"},
-    "工作音乐": {"id": "987654321", "name": "工作专用歌单", "description": "适合工作时听的音乐"}
+    "My Favorites": {"id": "123456789", "name": "My Favorite Playlist", "description": "Personal favorites"},
+    "Work Music": {"id": "987654321", "name": "Work Playlist", "description": "Music for working"}
   }
 }
 ```
 
-**获取歌单 ID 的方法：**
-1. 在网易云音乐网页版或客户端中打开歌单
-2. 从 URL 中获取歌单 ID（例如：`https://music.163.com/#/playlist?id=123456789` 中的 `123456789`）
-3. 将歌单信息添加到 `userPlaylists` 部分
+**How to get a playlist ID:**
+1. Open the playlist in the NetEase Cloud Music web or desktop client
+2. Get the playlist ID from the URL (e.g. `https://music.163.com/#/playlist?id=123456789` -> `123456789`)
+3. Add the playlist info to the `userPlaylists` section
 
-## 🚀 使用方法
-"""以下方法均推荐使用自然语言从agent调用mcp工具实现"""
+## Usage
 
-### 基础播放控制
+> All the methods below are recommended to be called via the MCP tools from an agent using natural language.
+
+### Basic playback controls
 
 ```python
-# 启动网易云音乐
+# Launch NetEase Cloud Music
 launch_netease_music(minimize_window=True)
 
-# 播放控制
-control_playback(action="play_pause")  # 播放/暂停
-control_playback(action="next")        # 下一首
-control_playback(action="previous")    # 上一首
+# Playback control
+control_playback(action="play_pause")  # play/pause
+control_playback(action="next")        # next track
+control_playback(action="previous")    # previous track
 
-# 音量控制
-control_volume(action="volume_up")     # 音量加
-control_volume(action="volume_down")   # 音量减
+# Volume control
+control_volume(action="volume_up")     # volume up
+control_volume(action="volume_down")   # volume down
 
-# 界面控制
-toggle_mini_mode()  # 切换迷你模式
-toggle_lyrics()     # 切换歌词显示
-like_current_song() # 喜欢当前歌曲
+# UI control
+toggle_mini_mode()  # toggle mini mode
+toggle_lyrics()     # toggle lyrics display
+like_current_song() # like the current song
 ```
 
-### 音乐搜索与播放
+### Music search & play
 
 ```python
-# 搜索并播放歌曲
-search_and_play(query="稻香 周杰伦", minimize_window=True)
+# Search and play a song
+search_and_play(query="Daoxiang Jay Chou", minimize_window=True)
 
-# 播放预设歌单
-search_and_play_playlist(playlist_name="飙升榜", minimize_window=True)
+# Play a built-in playlist
+search_and_play_playlist(playlist_name="Rising Chart", minimize_window=True)
 
-# 播放自定义歌单
-search_and_play_playlist(playlist_name="我的收藏", minimize_window=True)
+# Play a custom playlist
+search_and_play_playlist(playlist_name="My Favorites", minimize_window=True)
 ```
 
-### 高级功能
+### Advanced features
 
 ```python
-# 播放每日推荐（需要先配置网易云音乐路径）
+# Play daily recommendations (requires the NetEase Cloud Music path to be configured)
 play_daily_recommend()
 
-# 启动私人漫游（需要先配置网易云音乐路径）
+# Start private roaming (requires the NetEase Cloud Music path to be configured)
 play_roaming()
 
-# 获取控制器信息和功能列表
+# Get controller info and feature list
 get_controller_info()
 
-# 获取当前配置（验证环境变量配置）
+# Get current config (verify environment variables)
 get_netease_config()
 ```
 
-### 🔍 配置验证
+### Verifying the configuration
 
-配置完成后，强烈建议使用以下工具验证配置是否正确：
+After configuration, we strongly recommend verifying it with:
 
 ```python
-# 验证环境变量和路径配置
+# Verify environment variables and paths
 get_netease_config()
 ```
 
-该工具会返回：
-- 当前网易云音乐路径配置状态
-- ChromeDriver路径配置状态  
-- 各路径文件是否存在
-- 是否满足每日推荐功能的运行条件
+This tool returns:
+- Whether the NetEase Cloud Music path is configured
+- Whether the ChromeDriver path is configured
+- Whether each filesystem path exists
+- Whether the conditions for daily recommendations are met
 
-**示例输出：**
+**Example output:**
 ```json
 {
   "success": true,
   "config": {
-    "netease_music_path": "你配置的网易云音乐路径",
-    "path_status": "✅ 有效",
-    "chromedriver_path": "你配置的chromedriver路径",
-    "chromedriver_status": "✅ 存在",
+    "netease_music_path": "your-configured-netease-music-path",
+    "path_status": "valid",
+    "chromedriver_path": "your-configured-chromedriver-path",
+    "chromedriver_status": "exists",
     "platform": "windows"
   },
   "ready_for_daily_recommend": true
 }
 ```
 
-### 歌单管理
+### Playlist management
 
 ```python
-# 列出所有歌单
+# List all playlists
 manage_custom_playlists(action="list")
 
-# 添加新歌单
+# Add a playlist
 manage_custom_playlists(
     action="add", 
-    playlist_name="新歌单", 
+    playlist_name="New Playlist", 
     playlist_id="123456789", 
-    description="歌单描述"
+    description="Playlist description"
 )
 
-# 删除歌单
-manage_custom_playlists(action="remove", playlist_name="旧歌单")
+# Remove a playlist
+manage_custom_playlists(action="remove", playlist_name="Old Playlist")
 ```
 
-## ⚠️ 注意事项
+## Notes
 
-### 重要提醒
-1. **平台功能差异**：macOS 仅支持基础功能，不支持每日推荐和私人漫游
-2. **网易云音乐路径配置**：Windows 用户使用每日推荐和私人漫游功能前，需要配置网易云音乐客户端路径（通过环境变量 `NETEASE_MUSIC_PATH` 设置）
-3. **ChromeDriver要求**：Windows 每日推荐和漫游功能需要 ChromeDriver，项目已包含 Windows 版本
-4. **VIP功能限制**：私人漫游功能可能需要网易云音乐 VIP 会员
-5. **网络连接**：搜索和播放功能需要稳定的网络连接
-6. **配置验证**：配置完成后，建议调用 `get_netease_config()` 工具验证环境变量配置是否正确
+### Important reminders
+1. **Platform differences**: macOS only supports basic features; daily recommendations and private roaming are not supported
+2. **NetEase Cloud Music path**: Windows users must configure the client path (via the `NETEASE_MUSIC_PATH` environment variable) before using daily recommendations and private roaming
+3. **ChromeDriver requirement**: Windows daily recommendations and roaming require ChromeDriver; the project bundles the Windows version
+4. **VIP limits**: Private roaming may require a NetEase Cloud Music VIP membership
+5. **Network**: Search and playback need a stable network connection
+6. **Config verification**: After configuring, call `get_netease_config()` to verify the environment variables
 
-### 故障排除
-- **快捷键不响应**：确保已安装 `pyautogui` 且没有其他程序占用快捷键
-- **网易云音乐启动失败**：检查 URL scheme 是否正确注册，尝试重新安装网易云音乐
-- **每日推荐无法播放**：确认网易云音乐路径配置正确，检查是否已登录账户
-- **搜索功能异常**：检查网络连接，确认网易云音乐 API 可正常访问
+### Troubleshooting
+- **Hotkeys don't respond**: make sure `pyautogui` is installed and no other program is using the hotkeys
+- **NetEase Cloud Music fails to launch**: check that the URL scheme is registered correctly; try reinstalling NetEase Cloud Music
+- **Daily recommendations won't play**: confirm the NetEase Cloud Music path is correct and you are logged in
+- **Search issues**: check the network connection and confirm the NetEase Cloud Music API is accessible
 
-### 兼容性说明
+### Compatibility
 
-#### 支持的操作系统
-- **Windows 10/11**：完整功能支持 ✅
-  - 全局快捷键控制 ✅
-  - 音乐搜索播放 ✅
-  - 每日推荐功能 ✅
-  - 私人漫游功能 ✅
-  - 内置 ChromeDriver ✅
+#### Supported operating systems
+- **Windows 10/11**: full feature support
+  - Global hotkeys
+  - Music search & play
+  - Daily recommendations
+  - Private roaming
+  - Bundled ChromeDriver
 
-- **macOS 10.15+**：基础功能支持 ⚠️
-  - 全局快捷键控制 ✅
-  - 音乐搜索播放 ✅
-  - 每日推荐功能 ❌ (不支持)
-  - 私人漫游功能 ❌ (不支持)
+- **macOS 10.15+**: basic feature support
+  - Global hotkeys
+  - Music search & play
+  - Daily recommendations (not supported)
+  - Private roaming (not supported)
 
-#### 客户端要求
-- 需要网易云音乐桌面客户端（不支持 UWP 版本）
-- 建议使用最新版本的网易云音乐客户端以获得最佳兼容性
-- macOS 用户推荐从官方网站下载桌面版本
+#### Client requirements
+- Requires the NetEase Cloud Music desktop client (the UWP version is not supported)
+- We recommend the latest NetEase Cloud Music client for best compatibility
+- macOS users are recommended to download the desktop version from the official website
 
-## 📁 项目结构
+## Project Structure
 
 ```
 auto_music/
 ├── src/
-│   ├── server.py              # MCP 服务器主程序
-│   └── chromedriver/          # ChromeDriver 文件
+│   ├── server.py              # MCP server main program
+│   └── chromedriver/          # ChromeDriver binaries
 │       └── win64/
-├── config.json                # MCP 客户端配置示例
-├── netease_config.json        # 网易云音乐配置文件
-├── playlists.json             # 歌单配置文件
-└── README.md                  # 项目文档
+├── config.json                # MCP client config example
+├── netease_config.json        # NetEase Cloud Music config
+├── playlists.json             # Playlist config
+└── README.md                  # Project docs
 ```
 
-## 🤝 技术支持
+## Support
 
-- **项目仓库**：https://github.com/SpongeBaby-124/CloudMusic_Auto_Player
-- **问题反馈**：请在 GitHub Issues 中提交
-- **联系邮箱**：lxd4094@foxmail.com
+- **Repository**: https://github.com/SpongeBaby-124/CloudMusic_Auto_Player
+- **Issues**: file them on GitHub Issues
+- **Email**: lxd4094@foxmail.com
 
-## 📄 许可证
+## License
 
-本项目采用 MIT 许可证开源。
+This project is open source under the MIT License.
 
-## 🔄 更新日志
+## Changelog
 
 ### v1.0.2
-- ✅ 添加uvx配置方式
+- Added uvvx configuration option
 
 ---
 
-**享受音乐，让控制更简单！** 🎵
+**Enjoy the music, control made simple!**
 
 **Official site: ** [https://github.com/SpongeBaby-124/CloudMusic_Auto_Player](https://github.com/SpongeBaby-124/CloudMusic_Auto_Player)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

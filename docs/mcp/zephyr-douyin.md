@@ -1,55 +1,53 @@
 ---
 title: "douyin-mcp-server"
-description: "抖音运营助手，提取抖音无水印视频链接，视频文案， IP文案，素材文案，文案对标改写等。 官方地址：https://github.com/yzfly/douyin-mcp-server"
+description: "Douyin operations assistant: extracts watermark-free Douyin video links, video copywriting, IP copywriting, material copywriting, and copywriting benchmarking/revision. Official site: https://github.c…"
 ---
 
 # douyin-mcp-server
 
-抖音运营助手，提取抖音无水印视频链接，视频文案， IP文案，素材文案，文案对标改写等。 官方地址：https://github.com/yzfly/douyin-mcp-server
+Douyin operations assistant: extracts watermark-free Douyin video links, video copywriting, IP copywriting, material copywriting, and copywriting benchmarking/revision. Official site: https://github.c…
 
-# 抖音无水印视频文本提取 MCP 服务器
+# Douyin Watermark-Free Video Text Extraction MCP Server
 
 [![PyPI version](/mcp-assets/aa79358ec60ce76091d985d146c82353.svg)](https://badge.fury.io/py/douyin-mcp-server)
 [![Python version](/mcp-assets/1828c31a371deac816fc5f6b8a6e3bbb.svg)](https://pypi.org/project/douyin-mcp-server/)
 [![License](/mcp-assets/fa73b4786cfc281bb30f39f895ada091.svg)](https://opensource.org/licenses/Apache-2.0)
 
-一个基于 Model Context Protocol (MCP) 的服务器，可以从抖音分享链接下载无水印视频，提取音频并转换为文本。
+An MCP (Model Context Protocol) server that downloads watermark-free videos from Douyin share links, extracts the audio, and converts it to text.
 
-  
+## Project Statement
 
-## 📋 项目声明
+**Official documentation:** https://github.com/yzfly/douyin-mcp-server
 
-**官方文档地址：** https://github.com/yzfly/douyin-mcp-server
+Refer to this project's [README.md](https://github.com/yzfly/douyin-mcp-server/blob/main/README.md) for detailed feature descriptions, usage, and API configuration.
 
-请以本项目的 [README.md](https://github.com/yzfly/douyin-mcp-server/blob/main/README.md) 文件为准，了解项目的功能特性、使用方法、API 配置说明等详细信息。
+**Important:** If a third-party platform cannot use the server due to its own MCP Server feature limitations, please contact the platform provider. This project provides no technical support or guarantees of any kind. Users bear all losses or damages that may arise from using this project.
 
-**重要提醒：** 第三方平台如因自身 MCP Server 功能支持度限制而无法正常使用，请联系相应平台方。本项目不提供任何形式的技术支持或保证，用户需自行承担使用本项目可能产生的任何损失或损害。
+**Legal statement:**
+1. This project is released under the Apache 2.0 license
+2. This project is for learning and research only; it must not be used for any illegal or non-compliant purpose
+3. Usage of this project must comply with all applicable laws and regulations
+4. The authors and contributors of this project accept no legal liability for any part of the project
 
-**法律声明：**
-1. 本项目基于 Apache 2.0 协议发布
-2. 本项目仅供学习和研究使用，不得用于任何违法或违规目的
-3. 本项目的使用必须遵守相关法律法规
-4. 本项目的作者和贡献者不对项目的任何部分承担法律责任
+## Features
 
-## ✨ 功能特性
+- **Watermark-free video download** - get high-quality watermark-free videos from Douyin share links
+- **Smart audio extraction** - automatically extract the audio from videos
+- **AI text recognition** - extract text using state-of-the-art speech recognition
+- **Automatic cleanup** - intelligently removes temporary files created during processing
+- **Flexible configuration** - supports custom API configuration; defaults to the [Alibaba Cloud Bailian API](https://help.aliyun.com/zh/model-studio/get-api-key?)
 
-- 🎵 **无水印视频获取** - 从抖音分享链接获取高质量无水印视频
-- 🎧 **智能音频提取** - 自动从视频中提取音频内容
-- 📝 **AI 文本识别** - 使用先进的语音识别技术提取文本内容
-- 🧹 **自动清理** - 智能清理处理过程中的临时文件
-- 🔧 **灵活配置** - 支持自定义 API 配置，默认使用 [阿里云百炼 API](https://help.aliyun.com/zh/model-studio/get-api-key?)
+## Quick Start
 
-## 🚀 快速开始
+### Step 1: Get an API key
 
-### 步骤 1：获取 API 密钥
+Visit the [Alibaba Cloud Bailian API](https://help.aliyun.com/zh/model-studio/get-api-key?) page to get your `DASHSCOPE_API_KEY`:
 
-前往 [阿里云百炼 API](https://help.aliyun.com/zh/model-studio/get-api-key?) 获取您的 `DASHSCOPE_API_KEY`：
+![Get Alibaba Cloud Bailian API](/mcp-assets/ff29f237674467956ae8c440d6fdcdd4.png)
 
-![获取阿里云百炼API](/mcp-assets/ff29f237674467956ae8c440d6fdcdd4.png)
+### Step 2: Configure the environment variable
 
-### 步骤 2：配置环境变量
-
-在 Claude Desktop、Cherry Studio 等支持 MCP Server 的应用配置文件中添加以下配置：
+Add the following config to MCP Server-capable apps such as Claude Desktop or Cherry Studio:
 
 ```json
 {
@@ -65,26 +63,26 @@ description: "抖音运营助手，提取抖音无水印视频链接，视频文
 }
 ```
 
-### 步骤 3：开始使用
+### Step 3: Start using it
 
-配置完成后，您就可以在支持的应用中正常调用 MCP 工具了。
+Once configured, you can call the MCP tools normally in supported applications.
 
-## ⚙️ API 配置说明
+## API Configuration
 
-### 当前版本（>= 1.2.0）
+### Current version (>= 1.2.0)
 
-最新版本默认使用阿里云百炼 API，具有以下优势：
-- ✅ 识别效果更好
-- ✅ 处理速度更快
-- ✅ 本地资源消耗更小
+The latest version defaults to the Alibaba Cloud Bailian API, which offers:
+- Better recognition results
+- Faster processing
+- Lower local resource usage
 
-**配置步骤：**
-1. 前往 [阿里云百炼](https://help.aliyun.com/zh/model-studio/get-api-key?) 开通 API 服务
-2. 获取 API Key 并配置到环境变量 `DASHSCOPE_API_KEY` 中
+**Setup:**
+1. Go to [Alibaba Cloud Bailian](https://help.aliyun.com/zh/model-studio/get-api-key?) and enable the API service
+2. Get the API key and set it as the environment variable `DASHSCOPE_API_KEY`
 
-### 旧版本兼容（<= 1.1.0）
+### Legacy compatibility (<= 1.1.0)
 
-如果您需要使用旧版本，请使用以下配置：
+To use an older version, use this configuration:
 
 ```json
 {
@@ -100,95 +98,95 @@ description: "抖音运营助手，提取抖音无水印视频链接，视频文
 }
 ```
 
-**注意：** 旧版本使用硅基流动 API，需要在 [硅基流动](https://cloud.siliconflow.cn/i/TxUlXG3u) 注册账号并获取 API Key。
+**Note:** The old version uses the SiliconFlow API; register an account at [SiliconFlow](https://cloud.siliconflow.cn/i/TxUlXG3u) and get an API key.
 
-📖 [1.1.0 版本文档](https://pypi.org/project/douyin-mcp-server/1.1.0/)
+[1.1.0 documentation](https://pypi.org/project/douyin-mcp-server/1.1.0/)
 
-## 🛠️ 工具说明
+## Tools
 
 ### `get_douyin_download_link`
 
-获取抖音视频的无水印下载链接。
+Gets a watermark-free download link for a Douyin video.
 
-**参数：**
-- `share_link` (string): 抖音分享链接或包含链接的文本
+**Parameters:**
+- `share_link` (string): a Douyin share link or text containing a link
 
-**返回：**
-- JSON 格式的下载链接和视频信息
+**Returns:**
+- Download link and video info in JSON format
 
-**特点：** 无需 API 密钥即可使用
+**Note:** works without an API key.
 
 ### `extract_douyin_text`
 
-完整的文本提取工具，一站式完成视频到文本的转换。
+A full text-extraction tool that handles video-to-text conversion in one step.
 
-**处理流程：**
-1. 解析抖音分享链接
-2. 直接使用视频 URL 进行语音识别
-3. 返回提取的文本内容
+**Pipeline:**
+1. Parse the Douyin share link
+2. Run speech recognition directly on the video URL
+3. Return the extracted text
 
-**参数：**
-- `share_link` (string): 抖音分享链接或包含链接的文本
-- `model` (string, 可选): 语音识别模型，默认使用 `paraformer-v2`
+**Parameters:**
+- `share_link` (string): a Douyin share link or text containing a link
+- `model` (string, optional): speech recognition model; defaults to `paraformer-v2`
 
-**环境变量要求：**
-- `DASHSCOPE_API_KEY`: 阿里云百炼 API 密钥（必需）
+**Environment variable requirements:**
+- `DASHSCOPE_API_KEY`: Alibaba Cloud Bailian API key (required)
 
 ### `parse_douyin_video_info`
 
-轻量级视频信息解析工具。
+A lightweight video info parsing tool.
 
-**参数：**
-- `share_link` (string): 抖音分享链接
+**Parameters:**
+- `share_link` (string): a Douyin share link
 
-**特点：** 仅解析视频基本信息，不下载视频文件
+**Note:** only parses basic video info; does not download the video file.
 
-### 资源访问
+### Resource access
 
-- `douyin://video/{video_id}`: 通过视频 ID 获取详细信息
+- `douyin://video/{video_id}`: get details for a video by ID
 
-## 📦 系统要求
+## System Requirements
 
-### 运行环境
-- **Python**: 3.10 或更高版本
+### Runtime
+- **Python**: 3.10 or later
 
-### 依赖库
-- `requests` - HTTP 请求处理
-- `ffmpeg-python` - 音视频处理
-- `tqdm` - 进度条显示
-- `mcp` - Model Context Protocol 支持
-- `dashscope` - 阿里云百炼 API 客户端
+### Dependencies
+- `requests` - HTTP requests
+- `ffmpeg-python` - audio/video processing
+- `tqdm` - progress bars
+- `mcp` - Model Context Protocol support
+- `dashscope` - Alibaba Cloud Bailian API client
 
-## ⚠️ 注意事项
+## Notes
 
-- 🔑 **API 密钥必需**：文本提取功能需要有效的阿里云百炼 API 密钥
-- 🆓 **部分功能免费**：获取下载链接功能无需 API 密钥
-- 📱 **格式支持**：支持大部分抖音视频格式
-- 🚀 **性能优化**：使用阿里云百炼 API 获得更快更准确的识别效果
+- **API key required**: text extraction needs a valid Alibaba Cloud Bailian API key
+- **Some features are free**: getting download links requires no API key
+- **Format support**: most Douyin video formats are supported
+- **Performance**: the Alibaba Cloud Bailian API provides faster and more accurate recognition
 
-## 🔧 开发指南
+## Development Guide
 
-### 本地开发环境搭建
+### Local development setup
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/yzfly/douyin-mcp-server.git
 cd douyin-mcp-server
 
-# 安装依赖（开发模式）
+# Install dependencies (development mode)
 pip install -e .
 ```
 
-### 运行测试
+### Running tests
 
 ```bash
-# 启动服务器进行测试
+# Start the server for testing
 python -m douyin_mcp_server.server
 ```
 
-### Claude Desktop 本地开发配置
+### Claude Desktop local development config
 
-在 Claude Desktop 配置文件中添加本地开发配置：
+Add the local development config to your Claude Desktop config file:
 
 ```json
 {
@@ -211,78 +209,78 @@ python -m douyin_mcp_server.server
 }
 ```
 
-## ⚠️ 免责声明
+## Disclaimer
 
-### 使用风险
-- 使用者对本项目的使用完全自主决定，并自行承担所有风险
-- 作者对使用者因使用本项目而产生的任何损失、责任或风险概不负责
+### Usage risk
+- Users decide entirely on their own whether to use this project and assume all risk
+- The authors accept no responsibility for any loss, liability, or risk arising from use of the project
 
-### 代码质量
-- 本项目基于现有知识和技术开发，作者努力确保代码的正确性和安全性
-- 但不保证代码完全没有错误或缺陷，使用者需自行评估和测试
+### Code quality
+- This project is developed from existing knowledge and technology; the authors strive to ensure correctness and safety
+- However, no guarantee is made that the code is completely free of errors or defects; users must evaluate and test it themselves
 
-### 第三方依赖
-- 本项目依赖的第三方库、插件或服务遵循各自的开源或商业许可
-- 使用者需自行查阅并遵守相应协议
-- 作者不对第三方组件的稳定性、安全性及合规性承担责任
+### Third-party dependencies
+- Third-party libraries, plugins, and services used by this project are subject to their own open-source or commercial licenses
+- Users must review and comply with the corresponding agreements
+- The authors accept no responsibility for the stability, security, or compliance of third-party components
 
-### 法律合规
-- 使用者必须自行研究相关法律法规，确保使用行为合法合规
-- 任何违反法律法规导致的法律责任和风险，均由使用者自行承担
-- 禁止使用本工具从事任何侵犯知识产权的行为
-- 开发者不参与、不支持、不认可任何非法内容的获取或分发
+### Legal compliance
+- Users must research applicable laws and regulations themselves and ensure their usage is lawful and compliant
+- Legal liability and risk from any violation of law is borne entirely by the user
+- Using this tool for any activity that infringes intellectual property rights is prohibited
+- The developers do not participate in, endorse, or condone the acquisition or distribution of any illegal content
 
-### 数据处理
-- 本项目不对使用者的数据收集、存储、传输等处理活动的合规性承担责任
-- 使用者应自行遵守相关法律法规，确保数据处理行为合法正当
+### Data handling
+- This project accepts no responsibility for the compliance of users' data collection, storage, or transmission activities
+- Users should comply with applicable laws and regulations and ensure lawful, legitimate data handling
 
-### 责任限制
-- 使用者不得将项目作者、贡献者或相关方与使用行为联系起来
-- 不得要求作者对使用项目产生的任何损失或损害负责
-- 基于本项目的二次开发、修改或编译程序与原作者无关
+### Limitation of liability
+- Users may not associate the project authors, contributors, or related parties with their usage
+- Users may not hold the authors liable for any loss or damage arising from use of the project
+- Derivative development, modification, or compilation based on this project is unrelated to the original authors
 
-### 知识产权
-- 本项目不授予使用者任何专利许可
-- 若使用本项目导致专利纠纷或侵权，使用者自行承担全部风险和责任
-- 未经书面授权，不得用于商业宣传、推广或再授权
+### Intellectual property
+- This project grants users no patent license
+- If use of this project leads to patent disputes or infringement, users bear all risk and liability
+- Without written authorization, the project may not be used for commercial promotion, marketing, or sub-licensing
 
-### 服务终止
-- 作者保留随时终止向违反声明的使用者提供服务的权利
-- 可能要求违规使用者销毁已获取的代码及衍生作品
-- 作者保留在不另行通知的情况下更新本声明的权利
+### Service termination
+- The authors reserve the right to stop providing service to users who violate this statement at any time
+- Violating users may be required to destroy code and derivative works already obtained
+- The authors reserve the right to update this statement without notice
 
-**⚠️ 重要提醒：在使用本项目前，请认真阅读并完全理解上述免责声明。如有疑问或不同意任何条款，请勿使用本项目。继续使用即视为完全接受上述声明并自愿承担所有风险和后果。**
+**Important: Please read and fully understand this disclaimer before using this project. If you have questions or do not agree with any term, do not use the project. Continuing to use it means you fully accept the statement and voluntarily assume all risks and consequences.**
 
-## 📄 许可证
+## License
 
 Apache License 2.0
 
-## 👨‍💻 作者
+## Author
 
 - **yzfly** - [yz.liu.me@gmail.com](mailto:yz.liu.me@gmail.com)
 - GitHub: [https://github.com/yzfly](https://github.com/yzfly)
 
-## 🤝 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！我们期待您的参与和贡献。
+Issues and Pull Requests are welcome! We look forward to your participation and contributions.
 
-## 📝 更新日志
+## Changelog
 
-### v1.2.0 (最新)
-- 🚀 **性能提升**：更快、更准确的视频文案提取
-- 🔄 **API 升级**：切换到阿里云百炼 API，显著提升识别准确率
-- 🔧 **配置更新**：环境变量从 `DOUYIN_API_KEY` 更新为 `DASHSCOPE_API_KEY`
+### v1.2.0 (latest)
+- **Performance**: faster, more accurate video copy extraction
+- **API upgrade**: switched to the Alibaba Cloud Bailian API, significantly improving recognition accuracy
+- **Config update**: environment variable changed from `DOUYIN_API_KEY` to `DASHSCOPE_API_KEY`
 
 ### v1.1.0
-- 🐛 **问题修复**：修复提取视频时文件名过长导致的错误
+- **Bug fix**: fixed an error caused by overly long file names when extracting videos
 
 ### v1.0.0
-- 🎉 **首次发布**：初始版本
-- ✨ **核心功能**：支持抖音视频文本提取
-- 🔗 **链接获取**：支持获取无水印视频下载链接
-- 🔐 **环境配置**：从环境变量读取 API 密钥
-- 🧹 **自动清理**：自动清理临时文件
-- ⚙️ **灵活配置**：支持自定义 API 配置
+- **First release**: initial version
+- **Core features**: Douyin video text extraction
+- **Link retrieval**: watermark-free video download links
+- **Environment config**: reads the API key from an environment variable
+- **Automatic cleanup**: removes temporary files automatically
+- **Flexible configuration**: supports custom API configuration
 
 **Official site: ** [https://github.com/yzfly/douyin-mcp-server](https://github.com/yzfly/douyin-mcp-server)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

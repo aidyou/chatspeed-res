@@ -1,11 +1,11 @@
 ---
 title: "auto_video_mcp"
-description: "🛠️ Available Tools The server provides the following tools, which can be directly invoked by LLMs or other clients: Digital Human and Multimedia Creation Tools - Avatar Tools (avatartools): - createpe…"
+description: "Digital Human and Multimedia Creation MCP server. Available tools: Avatar Tools (create personal digital human from photo or video), Voice Tools (clone voice from file or create from text), Video Crea…"
 ---
 
 # auto_video_mcp
 
-🛠️ Available Tools The server provides the following tools, which can be directly invoked by LLMs or other clients: Digital Human and Multimedia Creation Tools - Avatar Tools (avatartools): - createpe…
+Digital Human and Multimedia Creation MCP server. Available tools: Avatar Tools (create personal digital human from photo or video), Voice Tools (clone voice from file or create from text), Video Crea…
 
 ## 🛠️ Available Tools
 
@@ -48,23 +48,23 @@ After installation, you can use the `auto_video_mcp` command line tool to start 
 
 ```bash
 
-# 激活虚拟环境
+# Activate the virtual environment
 
 source .venv/bin/activate
 
-# HTTP 模式 (默认端口 8000)
+# HTTP mode (default port 8000)
 
 python -m auto_video_mcp.server --transport http
 
-# 自定义主机和端口
+# Custom host and port
 
 python -m auto_video_mcp.server --transport http --host 0.0.0.0 --port 8080 
 
-# SSE 模式
+# SSE mode
 
 python -m auto_video_mcp.server --transport sse
 
-# STDIO 模式 (用于 MCP 集成)
+# STDIO mode (for MCP integration)
 
 python -m auto_video_mcp.server --transport stdio
 
@@ -73,19 +73,19 @@ Or use the installed command line tool:
 
 ```bash
 
-# HTTP 模式 (默认端口 8000)
+# HTTP mode (default port 8000)
 
 auto_video_mcp --transport http
 
-# 自定义主机和端口
+# Custom host and port
 
 auto_video_mcp --transport http --host 0.0.0.0 --port 8080 
 
-# SSE 模式
+# SSE mode
 
 auto_video_mcp --transport sse
 
-# STDIO 模式 (用于 MCP 集成)
+# STDIO mode (for MCP integration)
 
 auto_video_mcp --transport stdio
 
@@ -104,10 +104,10 @@ FastMCP supports multiple transport protocols, which you can choose through diff
 
 -   **`http` (default)**: Start a Web server based on Streamable HTTP. This is the recommended way for Web service deployment.
 ```bash
-    # 使用默认配置 (http://127.0.0.1:8000)
+    # Use the default config (http://127.0.0.1:8000)
     python -m auto_video_mcp.server --transport http
 
-    # 自定义主机和端口
+    # Custom host and port
     python -m auto_video_mcp.server --transport http --host 0.0.0.0 --port 8080
 ```
 -   **`sse`**: Start a server based on Server-Sent Events (SSE). This is an older protocol, and new projects are recommended to use `http`.
@@ -156,7 +156,7 @@ This is the most direct way of integration, where Cursor will automatically star
 
           "env": {
 
-            "FLYWORKS_API_TOKEN": "你的API令牌"
+            "FLYWORKS_API_TOKEN": "YOUR_API_TOKEN"
 
           }
 

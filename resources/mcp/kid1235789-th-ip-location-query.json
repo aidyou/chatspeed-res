@@ -31,7 +31,7 @@
   "lastVerifiedAt": "2026-08-30",
   "mcp": {
     "type": "http",
-    "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎MCP平台申请的ApiKey",
+    "url": "https://mcp.tonghu.top/streamable?apiKey=the ApiKey you applied for on the Tonghu MCP platform",
     "env": [],
     "requiredInputs": []
   },

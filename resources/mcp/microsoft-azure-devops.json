@@ -32,7 +32,7 @@
     "url": "https://mcp.dev.azure.com/{organization}",
     "env": [],
     "requiredInputs": [
-      "Azure DevOps 组织名"
+      "Azure DevOps organization name"
     ]
   },
   "score": 53.8

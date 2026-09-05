@@ -1,11 +1,11 @@
 ---
 title: "FlightTicketMCPMCPAgentChallenge1"
-description: "一个基于模型上下文协议(MCP)的航空机票查询服务器。该服务器为AI助手提供标准化的航班实时动态查询功能接口。 Flight Ticket MCP Server 实现了供航空机票相关查询操作的工具和资源。它作为AI助手与航空服务系统之间的桥梁，专注于航班实时动态查询功能。 该服务器采用模块化架构，将核心功能、工具和实用程序分离，使其具有高度的可维护性和可扩展性。 - 根据出发地、目的地和出发日期查…"
+description: "A flight ticket query server based on the Model Context Protocol (MCP). It provides standardized real-time flight dynamic query interfaces for AI assistants, acting as a bridge between AI assistants a…"
 ---
 
 # FlightTicketMCPMCPAgentChallenge1
 
-一个基于模型上下文协议(MCP)的航空机票查询服务器。该服务器为AI助手提供标准化的航班实时动态查询功能接口。 Flight Ticket MCP Server 实现了供航空机票相关查询操作的工具和资源。它作为AI助手与航空服务系统之间的桥梁，专注于航班实时动态查询功能。 该服务器采用模块化架构，将核心功能、工具和实用程序分离，使其具有高度的可维护性和可扩展性。 - 根据出发地、目的地和出发日期查…
+A flight ticket query server based on the Model Context Protocol (MCP). It provides standardized real-time flight dynamic query interfaces for AI assistants, acting as a bridge between AI assistants a…
 
 # Flight Ticket MCP Server
 
@@ -121,28 +121,28 @@ This server supports three transport protocols:
 
 ```bash
 
-# 使用pip安装
+# Install with pip
 
 pip install flight-ticket-mcp-server
 
-# 或使用uvx直接运行（无需安装）
+# Or run directly with uvx (no install needed)
 
 uvx flight-ticket-mcp-server
 
-# 或使用uvx安装后运行
+# Or install with uvx and then run
 
 uvx --install flight-ticket-mcp-server
 
 ```
 ### Method Two: Local Development Installation
 ```bash
-# 克隆或下载项目
+# Clone or download the project
 cd FlightTicketMCP
 
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 或从本地源码安装
+# Or install from local source
 pip install -e .
 ```
 ### uvx Usage Guide
@@ -151,27 +151,27 @@ uvx is a modern Python package running tool that can directly run PyPI packages 
 
 ```bash
 
-# 安装uv（包含uvx工具）
+# Install uv (includes the uvx tool)
 
 pip install uv
 
-# 直接运行MCP服务器（无需安装）
+# Run the MCP server directly (no install needed)
 
 uvx flight-ticket-mcp-server
 
-# 使用最新版本（推荐）
+# Use the latest version (recommended)
 
 uvx flight-ticket-mcp-server@latest
 
-# 带参数运行
+# Run with parameters
 
 uvx flight-ticket-mcp-server --help
 
-# 指定版本运行
+# Run a specific version
 
 uvx flight-ticket-mcp-server==1.0.1
 
-# 强制重新安装最新版本
+# Force reinstall of the latest version
 
 uvx flight-ticket-mcp-server@latest --help
 
@@ -188,11 +188,11 @@ uvx flight-ticket-mcp-server@latest --help
 
 ```bash
 
-# 使用主启动文件（默认启动SSE模式，监听127.0.0.1:8000）
+# Use the main startup file (SSE mode by default, listening on 127.0.0.1:8000)
 
 python flight_ticket_server.py
 
-# 或者直接运行main.py
+# Or run main.py directly
 
 python main.py
 
@@ -201,7 +201,7 @@ python main.py
 
 ```bash
 
-# 启用调试模式，会输出详细日志
+# Enable debug mode; outputs detailed logs
 
 set MCP_DEBUG=true
 
@@ -218,7 +218,7 @@ python flight_ticket_server.py
 
 #### SSE Mode (Default)
 ```bash
-# 直接启动，使用默认SSE配置（127.0.0.1:8000）
+# Start directly with the default SSE config (127.0.0.1:8000)
 python flight_ticket_server.py
 ```
 #### stdio Mode
@@ -253,25 +253,25 @@ The project provides a `.env.example` file as a configuration template:
 
 1. **Copy the Configuration Template**:
 ```bash
-   # 复制配置模板
+   # Copy the configuration template
    cp .env.example .env
 ```
 2. **Edit the Configuration File**:
    Open the `.env` file and modify the configuration values as needed:
 ```env
-   # MCP服务器配置
+   # MCP server configuration
    MCP_TRANSPORT=sse
    MCP_HOST=127.0.0.1
    MCP_PORT=8000
    MCP_SSE_PATH=/sse
    
-   # 日志配置
+   # Logging configuration
    LOG_LEVEL=INFO
    LOG_FILE_PATH=logs/flight_server.log
    LOG_MAX_SIZE=10
    LOG_BACKUP_COUNT=5
    
-   # 开发配置
+   # Development configuration
    MCP_DEBUG=false
 ```
 3. **Configuration Explanation**:
@@ -474,19 +474,19 @@ After configuring, you can test the MCP server connection in the following ways:
 2. **Command Line Test**:
 bash
 ```bash
-   # 使用uvx直接测试
+   # Test directly with uvx
    uvx flight-ticket-mcp-server --help
    
-   # 或使用已安装的包测试
+   # Or test with the installed package
    flight-ticket-mcp-server --help
    
-   # 测试模块化运行
+   # Test the modular run
    python -m flight_ticket_mcp_server --help
 ```
 3. **MCP Protocol Test**:
 bash
 ```bash
-   # 使用MCP inspector工具测试（如果安装了）
+   # Test with the MCP inspector tool (if installed)
    npx @modelcontextprotocol/inspector uvx flight-ticket-mcp-server
 ```
 #### Verify Tool Registration
@@ -511,19 +511,19 @@ If the connection fails, please check:
 1. **uvx Configuration**:
 bash
 ```bash
-   # 检查uv/uvx是否安装
+   # Check whether uv/uvx is installed
    uvx --version
    
-   # 手动测试包运行
+   # Manually test the package run
    uvx flight-ticket-mcp-server@latest
 ```
 2. **Package Version**:
 bash
 ```bash
-   # 强制使用最新版本
+   # Force the latest version
    uvx flight-ticket-mcp-server@latest
    
-   # 清除uvx缓存后重试
+   # Clear the uvx cache and retry
    uv cache clean
    uvx flight-ticket-mcp-server@latest
 ```
@@ -591,7 +591,7 @@ After configuration, you can ask Claude to perform the following operations:
 
 ### Flight Route Query
 ```python
-searchFlightRoutes(departure_city, destination_city, departure_date)  # 根据出发地、目的地和日期查询可用航班
+searchFlightRoutes(departure_city, destination_city, departure_date)  # Query available flights by departure, destination and date
 ```
 Input Parameters:
 - `departure_city`: Departure city name or airport code (e.g., "Chongqing", "CKG", "Chongqing(CKG)")

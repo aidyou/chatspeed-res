@@ -7,63 +7,57 @@ description: "A bridge that connects physical hardware devices with AI large lan
 
 A bridge that connects physical hardware devices with AI large language models via serial communication, allowing users to control hardware using natural language commands.
 
-# MCP2Serial: 连接物理世界与AI大模型的桥梁 
+# MCP2Serial: The Bridge Connecting the Physical World with AI LLMs
 
-[English](https://github.com/mcp2everything/mcp2serial/blob/HEAD/README_EN.md) | 简体中文
+[English](https://github.com/mcp2everything/mcp2serial/blob/HEAD/README_EN.md) | Simplified Chinese
 
-     alt="MCP2Serial Logo" width="200"/>
-    
-通过自然语言控制硬件，开启物联网新纪元
+Control hardware with natural language and open a new era of IoT
 
-## 系统架构
+## System Architecture
 
-     alt="系统架构图" width="800"/>
-    
-MCP2Serial 系统架构图
+MCP2Serial system architecture diagram
 
-## 工作流程
+## Workflow
 
-     alt="工作流程图" width="800"/>
-    
-MCP2Serial 工作流程图
+MCP2Serial workflow diagram
 
-## 项目愿景
+## Project Vision
 
-MCP2Serial 将串口设备接入AI大模型的项目，它通过 Model Context Protocol (MCP) 将物理世界与 AI 大模型无缝连接。最终实现：
-- 用自然语言控制你的硬件设备
-- AI 实时响应并调整物理参数
-- 让你的设备具备理解和执行复杂指令的能力
+MCP2Serial is a project that connects serial devices to AI LLMs. It seamlessly bridges the physical world and AI models through the Model Context Protocol (MCP), ultimately enabling:
+- Control your hardware devices with natural language
+- AI responds in real time and adjusts physical parameters
+- Give your devices the ability to understand and execute complex commands
 
-## 主要特性
+## Key Features
 
-- **智能串口通信**
-  - 自动检测和配置串口设备 用户也可指定串口号
-  - 支持多种波特率（默认 115200）
-  - 实时状态监控和错误处理
+- **Smart Serial Communication**
+  - Auto-detect and configure serial devices; you can also specify the port
+  - Supports multiple baud rates (default 115200)
+  - Real-time status monitoring and error handling
 
-- **MCP 协议集成**
-  - 完整支持 Model Context Protocol
-  - 支持资源管理和工具调用
-  - 灵活的提示词系统
+- **MCP Protocol Integration**
+  - Full Model Context Protocol support
+  - Resource management and tool calls
+  - Flexible prompt system
 
-## 支持的客户端
+## Supported Clients
 
-MCP2Serial 支持所有实现了 MCP 协议的客户端，包括：
+MCP2Serial supports any client implementing the MCP protocol, including:
 
-| 客户端 | 特性支持 | 说明 |
+| Client | Feature Support | Notes |
 |--------|----------|------|
-| Claude Desktop | 完整支持 | 推荐使用，支持所有 MCP 功能 |
-| Continue | 完整支持 | 优秀的开发工具集成 |
-| Cline | 资源+工具 | 支持多种 AI 提供商 |
-| Zed | 基础支持 | 支持提示词命令 |
-| Sourcegraph Cody | 资源支持 | 通过 OpenCTX 集成 |
-| Firebase Genkit | 部分支持 | 支持资源列表和工具 |
+| Claude Desktop | Full support | Recommended; supports all MCP features |
+| Continue | Full support | Great developer-tool integration |
+| Cline | Resources + tools | Supports multiple AI providers |
+| Zed | Basic support | Supports prompt commands |
+| Sourcegraph Cody | Resources | Integrated via OpenCTX |
+| Firebase Genkit | Partial support | Supports resource list and tools |
 
-## 支持的 AI 模型
+## Supported AI Models
 
-得益于灵活的客户端支持，MCP2Serial 可以与多种 AI 模型协同工作：
+Thanks to flexible client support, MCP2Serial works with many AI models:
 
-### 云端模型
+### Cloud models
 - OpenAI (GPT-4, GPT-3.5)
 - Anthropic Claude
 - Google Gemini
@@ -71,62 +65,62 @@ MCP2Serial 支持所有实现了 MCP 协议的客户端，包括：
 - Azure OpenAI
 - Google Cloud Vertex AI
 
-### 本地模型
-- LM Studio 支持的所有模型
-- Ollama 支持的所有模型
-- 任何兼容 OpenAI API 的模型
+### Local models
+- All models supported by LM Studio
+- All models supported by Ollama
+- Any OpenAI API-compatible model
 
-### 准备
-Python3.11 或更高版本
-Claude Desktop 或 Cline
+### Prerequisites
+Python 3.11 or later
+Claude Desktop or Cline
 
-## 快速开始
+## Quick Start
 
-### 1. 安装
+### 1. Installation
 
-#### Windows用户
-下载 [install.py](https://raw.githubusercontent.com/mcp2everything/mcp2serial/main/install.py) 
+#### Windows users
+Download [install.py](https://raw.githubusercontent.com/mcp2everything/mcp2serial/main/install.py)
 ```bash
 python install.py
 ```
-#### macOS用户
+#### macOS users
 ```bash
-# 下载安装脚本
+# Download the installer
 curl -O https://raw.githubusercontent.com/mcp2everything/mcp2serial/main/install_macos.py
 
-# 运行安装脚本
+# Run the installer
 python3 install_macos.py
 ```
 
-#### Ubuntu/Raspberry Pi用户
+#### Ubuntu/Raspberry Pi users
 ```bash
-# 下载安装脚本
+# Download the installer
 curl -O https://raw.githubusercontent.com/mcp2everything/mcp2serial/main/install_ubuntu.py
 
-# 运行安装脚本
+# Run the installer
 python3 install_ubuntu.py
 ```
 
-安装脚本会自动完成以下操作：
-- ✅ 检查系统环境
-- ✅ 安装必要的依赖
-- ✅ 创建默认配置文件
-- ✅ 配置Claude桌面版（如果已安装）
-- ✅ 检查串口设备
+The installer automatically:
+- Checks the system environment
+- Installs required dependencies
+- Creates the default config file
+- Configures Claude Desktop (if installed)
+- Checks serial devices
 
-### 手动分步安装依赖
+### Manual step-by-step dependency install
 ```bash
-windows
+# Windows:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-MacOS
+# macOS:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-主要依赖uv工具，所以当python和uv以及Claude或Cline安装好后就可以了。
+The main dependency is the uv tool, so once Python, uv, and Claude or Cline are installed, you are ready.
 
-### 基本配置
-在你的 MCP 客户端（如 Claude Desktop 或 Cline）配置文件中添加以下内容：
-注意：如果使用的自动安装那么会自动配置Calude Desktop无需此步。
-使用默认配置文件：
+### Basic configuration
+Add the following to your MCP client config (e.g. Claude Desktop or Cline):
+Note: If you used the auto installer it configures Claude Desktop for you, so this step is not needed.
+Using the default config file:
 ```json
 {
     "mcpServers": {
@@ -139,130 +133,127 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
     }
 }
 ```
-> 注意：修改配置后需要重启Cline或者Claude客户端软件
+> Note: Restart Cline or Claude after changing the configuration
 
-配置串口和命令：
-注意下面的配置默认为COM11 需要根据实际进行修改
+Configure the serial port and commands:
+Note: The config below defaults to COM11; adjust it to match your setup
 ```yaml
 # config.yaml
 serial:
-  port: COM11  # 或自动检测
-  baud_rate: 115200  # 可选，默认 115200
-  timeout: 1.0  # 可选，默认 1.0
-  read_timeout: 1.0  # 读取超时时间，1秒内不应答则报错
-  response_start_string: OK  # 可选，串口应答的开始字符串，默认为OK
+  port: COM11  # or auto-detect
+  baud_rate: 115200  # optional, default 115200
+  timeout: 1.0  # optional, default 1.0
+  read_timeout: 1.0  # read timeout; raises an error if no response within 1 second
+  response_start_string: OK  # optional, the start string of the serial response, default OK
 
 commands:
   set_pwm:
-    command: "PWM {frequency}
-"
+    command: "PWM {frequency}\n"
     need_parse: false
     prompts:
-      - "把PWM调到{value}"
+      - "Set PWM to {value}"
 ```
-## 配置说明
-### 配置文件位置
+## Configuration Guide
+### Config file location
 
-配置文件（`config.yaml`）可以放在不同位置，程序会按以下顺序查找：
+The config file (`config.yaml`) can be placed in several locations. The program searches in this order:
 
-#### 1. 当前工作目录（适合开发测试）
-- 路径：`./config.yaml`
-- 示例：如果你在 `C:Projects` 运行程序，它会查找 `C:Projectsconfig.yaml`
-- 适用场景：开发和测试
-- 不需要特殊权限
+#### 1. Current working directory (for development/testing)
+- Path: `./config.yaml`
+- Example: if you run the program from `C:\Projects`, it looks for `C:\Projects\config.yaml`
+- Use case: development and testing
+- No special permissions needed
 
-#### 2. 用户主目录（推荐个人使用）
+#### 2. User home directory (recommended for personal use)
 ```bash
-# Windows系统
-C:Users用户名.mcp2serialconfig.yaml
+# Windows:
+C:\Users\<username>\.mcp2serial\config.yaml
 
-# macOS系统
-/Users/用户名/.mcp2serial/config.yaml
+# macOS:
+/Users/<username>/.mcp2serial/config.yaml
 
-# Linux系统
-/home/用户名/.mcp2serial/config.yaml
+# Linux:
+/home/<username>/.mcp2serial/config.yaml
 ```
-- 适用场景：个人配置
-- 需要创建 `.mcp2serial` 目录：
+- Use case: personal configuration
+- Create the `.mcp2serial` directory:
 ```bash
-  # Windows系统（在命令提示符中）
-  mkdir "%USERPROFILE%.mcp2serial"
+  # Windows (in Command Prompt)
+  mkdir "%USERPROFILE%\.mcp2serial"
   
-  # macOS/Linux系统
+  # macOS/Linux
   mkdir -p ~/.mcp2serial
 ```
 
-#### 3. 系统级配置（适合多用户环境）
+#### 3. System-level config (for multi-user environments)
 ```bash
-# Windows系统（需要管理员权限）
-C:ProgramDatamcp2serialconfig.yaml
+# Windows (requires admin privileges)
+C:\ProgramData\mcp2serial\config.yaml
 
-# macOS/Linux系统（需要root权限）
+# macOS/Linux (requires root)
 /etc/mcp2serial/config.yaml
 ```
-- 适用场景：多用户共享配置
-- 创建目录并设置权限：
+- Use case: shared multi-user configuration
+- Create the directory and set permissions:
 ```bash
-  # Windows系统（以管理员身份运行）
-  mkdir "C:ProgramDatamcp2serial"
+  # Windows (run as administrator)
+  mkdir "C:\ProgramData\mcp2serial"
   
-  # macOS/Linux系统（以root身份运行）
+  # macOS/Linux (run as root)
   sudo mkdir -p /etc/mcp2serial
   sudo chown root:root /etc/mcp2serial
   sudo chmod 755 /etc/mcp2serial
 ```
 
-程序会按照上述顺序查找配置文件，使用找到的第一个有效配置文件。根据你的需求选择合适的位置：
-- 开发测试：使用当前目录
-- 个人使用：建议使用用户主目录（推荐）
-- 多用户环境：使用系统级配置（ProgramData或/etc）
+The program searches the locations in the above order and uses the first valid config file it finds. Pick the location that fits your needs:
+- Development/testing: use the current directory
+- Personal use: use your home directory (recommended)
+- Multi-user environments: use a system-level config (ProgramData or /etc)
 
-### 串口配置 命令配置进阶
-在 `config.yaml` 中添加自定义命令：
-默认不使用真实串口 用模拟串口来演示则无需修改
+### Serial config & advanced command config
+Add custom commands in `config.yaml`:
+By default no real serial port is used; a loopback port is used for demos, so no changes are needed
 ```yaml
 serial:
-  # 串口配置
-  port: LOOP_BACK  # 可选，如果不指定则自动查找。设置为LOOP_BACK时启用回环模式，发送什么就接收什么
-  baud_rate: 115200  # 可选，默认 115200
-  timeout: 1.0  # 可选，默认 1.0
-  read_timeout: 1.0  # 读取超时时间，1秒内不应答则报错
-  response_start_string: CMD  # 可选，串口应答的开始字符串，默认为OK
+  # Serial config
+  port: LOOP_BACK  # optional; auto-detected if not set. LOOP_BACK enables loopback mode: whatever you send comes back
+  baud_rate: 115200  # optional, default 115200
+  timeout: 1.0  # optional, default 1.0
+  read_timeout: 1.0  # read timeout; raises an error if no response within 1 second
+  response_start_string: CMD  # optional, the start string of the serial response, default OK
 
 commands:
-  # PWM控制命令
+  # PWM control command
   set_pwm:
-    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加
-
-    need_parse: false  # 不需要解析响应内容
+    command: "CMD_PWM {frequency}"  # actual command format sent; the server appends the line ending automatically
+    need_parse: false  # no need to parse the response
     prompts:
-      - "把PWM调到最大"
-      - "把PWM调到最小"
-      - "请将PWM设置为{value}"
-      - "关闭PWM"
-      - "把PWM调到一半"
+      - "Set PWM to max"
+      - "Set PWM to min"
+      - "Set PWM to {value}"
+      - "Turn off PWM"
+      - "Set PWM to half"
 ```
 
-使用真实串口
+Using a real serial port
 ```yaml
 # config.yaml
 serial:
-  port: COM11  # 或自动检测
-  baud_rate: 115200  # 可选，默认 115200
-  timeout: 1.0  # 可选，默认 1.0
-  read_timeout: 1.0  # 读取超时时间，1秒内不应答则报错
-  response_start_string: OK  # 可选，串口应答的开始字符串，默认为OK
+  port: COM11  # or auto-detect
+  baud_rate: 115200  # optional, default 115200
+  timeout: 1.0  # optional, default 1.0
+  read_timeout: 1.0  # read timeout; raises an error if no response within 1 second
+  response_start_string: OK  # optional, the start string of the serial response, default OK
 
 commands:
   set_pwm:
-    command: "PWM {frequency}
-"
+    command: "PWM {frequency}\n"
     need_parse: false
     prompts:
-      - "把PWM调到{value}"
+      - "Set PWM to {value}"
 ```
-指定配置文件：
-比如指定加载Pico配置文件：Pico_config.yaml
+Specifying a config file:
+For example, to load the Pico config file: Pico_config.yaml
 ```json
 {
     "mcpServers": {
@@ -271,15 +262,15 @@ commands:
             "args": [
                 "mcp2serial",
                 "--config",
-                "Pico"  //指定配置文件名，不需要添加_config.yaml后缀
+                "Pico"  // config file name; do not include the _config.yaml suffix
             ]
         }
     }
 }
 ```
-为了能使用多个串口，我们可以新增多个mcp2serial的服务 指定不同的配置文件名即可。
-如果要接入多个设备，如有要连接第二个设备：
-指定加载Pico2配置文件：Pico2_config.yaml
+To use multiple serial ports, register additional mcp2serial services pointing at different config files.
+To connect more than one device, e.g. a second device:
+Load the Pico2 config file: Pico2_config.yaml
 ```json
 {
     "mcpServers": {
@@ -288,121 +279,113 @@ commands:
             "args": [
                 "mcp2serial",
                 "--config",
-                "Pico2"  //指定配置文件名，不需要添加_config.yaml后缀
+                "Pico2"  // config file name; do not include the _config.yaml suffix
             ]
         }
     }
 }
 ```
 
-### 响应解析说明
+### Response parsing
 
-1. 简单响应（`need_parse: false`）：
-   - 设备返回 "OK" 开头的消息表示成功
-   - 其他响应将被视为错误
+1. Simple responses (`need_parse: false`):
+   - A message starting with "OK" from the device means success
+   - Other responses are treated as errors
 
-2. 需要解析的响应（`need_parse: true`）：
-   - 完整响应将在 `result.raw` 字段中返回
-   - 可以在应用层进行进一步解析
+2. Responses needing parsing (`need_parse: true`):
+   - The full response is returned in the `result.raw` field
+   - You can parse it further at the application layer
 
-### 硬件连接
+### Hardware connection
 
-1. 将你的设备通过USB连接到电脑
-2. 打开设备管理器，记下设备的COM端口号
-3. 在`config.yaml`中配置正确的端口号和波特率
+1. Connect your device to the computer via USB
+2. Open Device Manager and note the COM port of your device
+3. Configure the correct port and baud rate in `config.yaml`
 
-     alt="硬件连接示例" width="600"/>
-    
-硬件连接和COM端口配置
+Hardware connection and COM port configuration
 
-### 启动客户端Claude 桌面版或Cline
+### Start the client - Claude Desktop or Cline
 
-     alt="Cline Configuration Example" width="600"/>
-    
- Example in Claude
+Example in Claude
 
-     alt="Cline Configuration Example" width="600"/>
-    
 Example in Cline
 
-### 硬件编程
-firmware可以在项目仓库中下载，目前演示的是Pico的micropython代码案例。另存到Pico开发板运行即可。
+### Hardware programming
+Firmware can be downloaded from the project repository. Currently a Pico MicroPython code example is provided. Save it onto the Pico board and run it.
 
-### 从源码快速开始
-1. 从源码安装
+### Quick start from source
+1. Install from source
 ```bash
-# 通过源码安装：
+# Install from source:
 git clone https://github.com/mcp2everything/mcp2serial.git
 cd mcp2serial
 
-# 创建虚拟环境
+# Create a virtual environment
 uv venv .venv
 
-# 激活虚拟环境
+# Activate it
 # Windows:
-.venvScriptsactivate
+.venv\Scripts\activate
 # Linux/macOS:
 source .venv/bin/activate
 
-# 安装开发依赖
+# Install development dependencies
 uv pip install --editable .
 ```
 
-2. 配置串口和命令：
-默认不使用真实串口 用模拟串口来演示
-如果你的电脑没有串口或者目前没有串口可用
-可以将port参数设置为LOOP_BACK，这样就可以在命令行直接发送命令了
-但同时请修改应答OK的命令的起始符需要和发送的命令一样。
-比如发送LED_ON
-那么应答起始符也是LED_ON
+2. Configure the serial port and commands:
+By default no real serial port is used; a loopback port is used for the demo
+If your computer has no serial port or none is currently available,
+set the port parameter to LOOP_BACK so you can send commands directly from the command line.
+In that case also change the response start string so it matches the commands you send.
+For example if you send LED_ON,
+the response start string should also be LED_ON
 ```yaml
 serial:
-  # 串口配置
-  port: LOOP_BACK  # 可选，如果不指定则自动查找。设置为LOOP_BACK时启用回环模式，发送什么就接收什么
-  baud_rate: 115200  # 可选，默认 115200
-  timeout: 1.0  # 可选，默认 1.0
-  read_timeout: 1.0  # 读取超时时间，1秒内不应答则报错
-  response_start_string: CMD  # 可选，串口应答的开始字符串，默认为OK
+  # Serial config
+  port: LOOP_BACK  # optional; auto-detected if not set. LOOP_BACK enables loopback mode: whatever you send comes back
+  baud_rate: 115200  # optional, default 115200
+  timeout: 1.0  # optional, default 1.0
+  read_timeout: 1.0  # read timeout; raises an error if no response within 1 second
+  response_start_string: CMD  # optional, the start string of the serial response, default OK
 
 commands:
-  # PWM控制命令
+  # PWM control command
   set_pwm:
-    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加
-
-    need_parse: false  # 不需要解析响应内容
+    command: "CMD_PWM {frequency}"  # actual command format sent; the server appends the line ending automatically
+    need_parse: false  # no need to parse the response
     prompts:
-      - "把PWM调到最大"
-      - "把PWM调到最小"
-      - "请将PWM设置为{value}"
-      - "关闭PWM"
-      - "把PWM调到一半"
+      - "Set PWM to max"
+      - "Set PWM to min"
+      - "Set PWM to {value}"
+      - "Turn off PWM"
+      - "Set PWM to half"
 ```
 
-如果使用真实串口
+If using a real serial port
 ```yaml
 # config.yaml
 serial:
-  port: COM11  # 或自动检测
-  baud_rate: 115200  # 可选，默认 115200
-  timeout: 1.0  # 可选，默认 1.0
-  read_timeout: 1.0  # 读取超时时间，1秒内不应答则报错
-  response_start_string: OK  # 可选，串口应答的开始字符串，默认为OK
+  port: COM11  # or auto-detect
+  baud_rate: 115200  # optional, default 115200
+  timeout: 1.0  # optional, default 1.0
+  read_timeout: 1.0  # read timeout; raises an error if no response within 1 second
+  response_start_string: OK  # optional, the start string of the serial response, default OK
 
 commands:
   set_pwm:
-    command: "PWM {frequency}
-"
+    command: "PWM {frequency}\n"
     need_parse: false
     prompts:
-      - "把PWM调到{value}"
+      - "Set PWM to {value}"
 ```
 
-### MCP客户端配置
+### MCP client configuration
 
-在使用支持MCP协议的客户端（如Claude Desktop或Cline）时，需要在客户端的配置文件中添加以下内容：
-直接自动安装的配置方式
-源码开发的配置方式
-#### 使用默认演示参数：
+When using an MCP-capable client (e.g. Claude Desktop or Cline), add the following to the client config:
+Config for auto-installed setups
+Config for source development setups
+#### Using the default demo parameters:
 ```json
 {
     "mcpServers": {
@@ -410,7 +393,7 @@ commands:
             "command": "uv",
             "args": [
                 "--directory",
-                "你的实际路径/mcp2serial",  // 例如: "C:/Users/Administrator/Documents/develop/my-mcp-server/mcp2serial"
+                "/your/actual/path/mcp2serial",  // e.g. "C:/Users/Administrator/Documents/develop/my-mcp-server/mcp2serial"
                 "run",
                 "mcp2serial"
             ]
@@ -418,7 +401,7 @@ commands:
     }
 }
 ```
-#### 指定参数文件名
+#### Specifying a config file name
 ```json
 {
     "mcpServers": {
@@ -426,144 +409,144 @@ commands:
             "command": "uv",
             "args": [
                 "--directory",
-                "你的实际路径/mcp2serial",  // 例如: "C:/Users/Administrator/Documents/develop/my-mcp-server/mcp2serial"
+                "/your/actual/path/mcp2serial",  // e.g. "C:/Users/Administrator/Documents/develop/my-mcp-server/mcp2serial"
                 "run",
                 "mcp2serial",
-                "--config", // 可选参数，指定配置文件名
-                "Pico"  // 可选参数，指定配置文件名，不需要添加_config.yaml后缀
+                "--config", // optional, specify the config file name
+                "Pico"  // optional, config file name; do not include the _config.yaml suffix
             ]
         }
     }
 }
 ```
 
-3. 运行服务器：
+3. Run the server:
 ```bash
-# 确保已激活虚拟环境
-.venvScriptsactivate
+# Make sure the virtual environment is active
+.venv\Scripts\activate
 
-# 运行服务器（使用默认配置config.yaml 案例中用的LOOP_BACK 模拟串口，无需真实串口和串口设备）
+# Run the server (uses the default config.yaml; the example uses the LOOP_BACK loopback port, so no real port or device is needed)
 uv run src/mcp2serial/server.py
-或
+or
 uv run mcp2serial
-# 运行服务器（使用指定配置Pico_config.yaml）
+# Run the server (uses the specified Pico_config.yaml)
 uv run src/mcp2serial/server.py --config Pico
-或
+or
 uv run mcp2serial --config Pico
 ```
 
-## 文档
+## Documentation
 
-- [安装指南](https://github.com/mcp2everything/mcp2serial/blob/HEAD/docs/zh/installation.md)
-- API文档
-- 配置说明
+- [Installation guide](https://github.com/mcp2everything/mcp2serial/blob/HEAD/docs/zh/installation.md)
+- API docs
+- Configuration guide
 
-## 应用场景
+## Use Cases
 
-1. **智能家居自动化**
-   - 通过自然语言控制灯光、风扇等设备
-   - AI 根据环境自动调节设备参数
+1. **Smart home automation**
+   - Control lights, fans, and other devices with natural language
+   - AI adjusts device parameters automatically based on the environment
 
-2. **工业自动化**
-   - 智能控制生产线设备
-   - 实时监控和调整工艺参数
+2. **Industrial automation**
+   - Smart control of production line equipment
+   - Real-time monitoring and adjustment of process parameters
 
-3. **教育和研究**
-   - 物联网教学演示
-   - 硬件控制实验平台
+3. **Education and research**
+   - IoT teaching demos
+   - Hardware control experiment platforms
 
-4. **原型开发**
-   - 快速验证硬件控制方案
-   - 简化开发流程
+4. **Prototyping**
+   - Quickly validate hardware control solutions
+   - Simplify the development process
 
-## 🚀 项目发展规划
+## Project Roadmap
 
-### 第一阶段：协议扩展
-- **工业协议支持**
+### Phase 1: Protocol expansion
+- **Industrial protocol support**
   - MODBUS RTU/TCP
   - OPC UA
   - MQTT
   - CoAP
   - TCP/IP Socket
   
-- **硬件接口扩展**
+- **Hardware interface expansion**
   - I2C
   - SPI
   - CAN
   - 1-Wire
   - GPIO
 
-### 第二阶段：MCP2Anything 平台
-- **统一集成平台**
-  - 可视化配置界面
-  - 一键启用各类协议
-  - 实时监控仪表盘
-  - 设备管理系统
+### Phase 2: MCP2Anything platform
+- **Unified integration platform**
+  - Visual configuration UI
+  - One-click enablement for each protocol
+  - Real-time monitoring dashboard
+  - Device management system
 
-- **智能功能**
-  - 协议自动检测
-  - 设备自动发现
-  - 参数智能优化
-  - 异常预警系统
+- **Smart features**
+  - Automatic protocol detection
+  - Automatic device discovery
+  - Smart parameter optimization
+  - Anomaly alerting system
 
-### 第三阶段：生态系统建设
-- **插件市场**
-  - 协议插件
-  - 设备驱动
-  - 自定义功能模块
-  - 社区贡献集成
+### Phase 3: Ecosystem building
+- **Plugin marketplace**
+  - Protocol plugins
+  - Device drivers
+  - Custom feature modules
+  - Community contribution integration
 
-- **云服务集成**
-  - 设备云管理
-  - 远程控制
-  - 数据分析
-  - AI 训练平台
+- **Cloud service integration**
+  - Device cloud management
+  - Remote control
+  - Data analysis
+  - AI training platform
 
-### 第四阶段：行业解决方案
-- **垂直领域适配**
-  - 工业自动化
-  - 智能建筑
-  - 农业物联网
-  - 智慧城市
+### Phase 4: Industry solutions
+- **Vertical domain adaptation**
+  - Industrial automation
+  - Smart buildings
+  - Agricultural IoT
+  - Smart cities
 
-- **定制化服务**
-  - 行业协议适配
-  - 专业技术支持
-  - 解决方案咨询
-  - 培训服务
+- **Custom services**
+  - Industry protocol adaptation
+  - Professional technical support
+  - Solution consulting
+  - Training services
 
-## 🔮 愿景展望
+## Vision
 
-MCP2Serial 正在开启物联网的新篇章：
+MCP2Serial is opening a new chapter in IoT:
 
-- **协议统一**: 通过 MCP2Anything 平台实现全协议支持
-- **即插即用**: 一键配置，自动发现，零门槛使用
-- **AI 赋能**: 深度集成 AI 能力，实现智能决策
-- **开放生态**: 建立活跃的开发者社区和插件市场
+- **Protocol unification**: Full protocol support via the MCP2Anything platform
+- **Plug and play**: One-click configuration, automatic discovery, zero-friction usage
+- **AI empowerment**: Deep AI integration for intelligent decision making
+- **Open ecosystem**: An active developer community and plugin marketplace
 
-## 未来展望
+## Roadmap
 
-MCP2Serial 正在开启物联网的新篇章：
+MCP2Serial is opening a new chapter in IoT:
 
-- **多协议支持**: 计划支持更多通信协议（I2C、SPI等）
-- **设备生态**: 建立开放的设备支持生态系统
-- **AI 增强**: 集成更多 AI 能力，提供更智能的控制逻辑
-- **可视化**: 开发直观的监控和配置界面
+- **Multi-protocol support**: Plans to support more communication protocols (I2C, SPI, etc.)
+- **Device ecosystem**: Building an open device support ecosystem
+- **AI enhancement**: Integrating more AI capabilities for smarter control logic
+- **Visualization**: Developing intuitive monitoring and configuration interfaces
 
-## 相关资源
+## Related Resources
 
-- [MCP 协议规范](https://modelcontextprotocol.io/)
-- 项目文档
-- 示例代码
-- 常见问题
+- [MCP protocol spec](https://modelcontextprotocol.io/)
+- Project docs
+- Example code
+- FAQ
 
-## 参与贡献
+## Contributing
 
-我们欢迎各种形式的贡献，无论是新功能、文档改进还是问题报告。查看 贡献指南 了解更多信息。
+We welcome all forms of contribution, whether new features, documentation improvements, or bug reports. See the contribution guide for more information.
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](https://github.com/mcp2everything/mcp2serial/blob/HEAD/LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mcp2everything/mcp2serial/blob/HEAD/LICENSE) file
 
 **Official site: ** [https://github.com/mcp2everything/mcp2serial](https://github.com/mcp2everything/mcp2serial)
 **Status: ** `active`　**Last verified: ** `2026-08-30`

@@ -1,11 +1,11 @@
 ---
 title: "open-webSearch"
-description: "Open-WebSearch MCP 服务器 English"
+description: "Open-WebSearch MCP Server English"
 ---
 
 # open-webSearch
 
-Open-WebSearch MCP 服务器 English
+Open-WebSearch MCP Server English
 
 # Open-WebSearch MCP Server
 

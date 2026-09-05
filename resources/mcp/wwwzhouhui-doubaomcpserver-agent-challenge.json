@@ -6,7 +6,7 @@
     "zh-Hans": "豆包文生图、图生视频、文生视频MCPServer（MCP&Agent挑战赛）"
   },
   "description": {
-    "en": "# Doubao MCP Server\n\n## 项目简介",
+    "en": "# Doubao MCP Server\n\n## Project Introduction",
     "zh-Hans": "Doubao MCP Server 是一个基于火山引擎豆包API的MCP（Model Context Protocol）服务器，为AI客户端提供强大的多模态生成能力。该项目将火山引擎豆包的先进AI生成能力集成到支持MCP协议的各种AI客户端中，让用户能够在熟悉的开发环境中直接使用文生图、文生视频、图生视频等功能。"
   },
   "detail": {
