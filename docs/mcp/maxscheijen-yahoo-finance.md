@@ -1,35 +1,35 @@
 ---
-title: "MCP Yahoo Finance 股票数据工具"
-description: "一种模型上下文协议服务器，可通过自然语言查询与雅虎财经互动，以获取股票价格、公司信息和历史财务数据。"
+title: "mcp-yahoo-finance"
+description: "A Model Context Protocol server that enables interaction with Yahoo Finance to retrieve stock pricing, company information, and historical financial data through natural language queries."
 ---
 
-# MCP Yahoo Finance 股票数据工具
+# mcp-yahoo-finance
 
-一种模型上下文协议服务器，可通过自然语言查询与雅虎财经互动，以获取股票价格、公司信息和历史财务数据。
+A Model Context Protocol server that enables interaction with Yahoo Finance to retrieve stock pricing, company information, and historical financial data through natural language queries.
 
 # MCP Yahoo Finance
 
-一个用于与Yahoo Finance交互的[Model Context Protocol](https://modelcontextprotocol.io) (MCP) 服务器。该服务器提供了获取定价、公司信息等功能。
+A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for Yahoo Finance interaction. This server provides tools to get pricing, company information and more.
 
-> 请注意，`mcp-yahoo-finance` 目前正处于早期开发阶段。随着我继续开发和改进服务器，其功能和可用工具可能会发生变化和扩展。
+> Please note that `mcp-yahoo-finance` is currently in early development. The functionality and available tools are subject to change and expansion as I continue to develop and improve the server.
 
-## 安装
+## Installation
 
-如果你使用的是[`uv`](https://docs.astral.sh/uv/)，则无需手动安装`mcp-yahoo-finance`。我们将使用[`uvx`](https://docs.astral.sh/uv/guides/tools/)直接运行`mcp-yahoo-finance`。
+You don't need to manually install `mcp-yahoo-finance` if you use [`uv`](https://docs.astral.sh/uv/). We'll use [`uvx`](https://docs.astral.sh/uv/guides/tools/) to directly run `mcp-yahoo-finance`.
 
-如果你只是想使用MCP服务器，我建议你采用这种方法。
+I would recommend using this method if you simply want to use the MCP server.
 
-### 使用pip
+### Using pip
 
-使用`pip`。
+Using `pip`.
 
 ```sh
 pip install mcp-yahoo-finance
 ```
 
-### 使用Git
+### Using Git
 
-您也可以在将仓库克隆到您的机器后安装该软件包。
+You can also install the package after cloning the repository to your machine.
 
 ```sh
 git clone git@github.com:maxscheijen/mcp-yahoo-finance.git
@@ -37,11 +37,11 @@ cd mcp-yahoo-finance
 uv sync
 ```
 
-## 配置
+## Configuration
 
 ### Claude Desktop
 
-在你的`claude_desktop_config.json`中添加以下内容：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -53,7 +53,7 @@ uv sync
     }
 }
 ```
-您还可以使用docker：
+You can also use docker:
 
 ```json
 {
@@ -68,7 +68,7 @@ uv sync
 
 ### VSCode
 
-在你的`.vscode/mcp.json`中添加以下内容：
+Add this to your `.vscode/mcp.json`:
 
 ```json
 {
@@ -81,13 +81,13 @@ uv sync
 }
 ```
 
-## 示例问题
+## Examples of Questions
 
-1. "苹果公司的股价是多少？"
-2. "苹果和谷歌之间的股价差额是多少？"
-3. "从2024-01-01到2025-01-01，苹果公司的股价变化了多少？"
+1. "What is the stock price of Apple?"
+2. "What is the difference in stock price between Apple and Google?"
+3. "How much did the stock price of Apple change between 2024-01-01 and 2025-01-01?"
 
-## 构建
+## Build
 
 Docker:
 
@@ -95,28 +95,28 @@ Docker:
 docker build -t [IMAGE] .
 ```
 
-## 使用MCP Inspector测试
+## Test with MCP Inspector
 
 ```sh
 npx @modelcontextprotocol/inspector uv run mcp-yahoo-finance
 ```
 
-**官方网站：** [https://github.com/maxscheijen/mcp-yahoo-finance](https://github.com/maxscheijen/mcp-yahoo-finance)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/maxscheijen/mcp-yahoo-finance](https://github.com/maxscheijen/mcp-yahoo-finance)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-yahoo-finance`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-yahoo-finance`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/maxscheijen-yahoo-finance.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/maxscheijen-yahoo-finance.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

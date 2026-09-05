@@ -1,285 +1,276 @@
 ---
-title: "必应搜索中文"
-description: "让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。提供了一个必应搜索工具和网页抓取功能，专为中文搜索优化，无需申请 API 密钥。"
+title: "bing-cn-mcp-server"
+description: "让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。 MCP（Model Context Protocol）是一个让 AI 助手能够调用外部工具的协议。这个项目提供了一个必应搜索工具，让 AI 可以帮你搜索网络信息并返回结果。"
 ---
 
-# 必应搜索中文
+# bing-cn-mcp-server
 
-让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。提供了一个必应搜索工具和网页抓取功能，专为中文搜索优化，无需申请 API 密钥。
+让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。 MCP（Model Context Protocol）是一个让 AI 助手能够调用外部工具的协议。这个项目提供了一个必应搜索工具，让 AI 可以帮你搜索网络信息并返回结果。
 
-# 必应中文搜索 MCP 服务器
+# Bing Chinese Search MCP Server
 
-让 AI 助手（如 Claude）能够使用必应搜索引擎实时获取网络信息的工具。
+A tool that enables AI assistants (such as Claude) to fetch real-time web information using the Bing search engine.
 
-## 什么是 MCP 服务器？
+## What is an MCP Server?
 
-MCP（Model Context Protocol）是一个让 AI 助手能够调用外部工具的协议。这个项目提供了一个必应搜索工具，让 AI 可以帮你搜索网络信息并返回结果。
+MCP (Model Context Protocol) is a protocol that allows AI assistants to call external tools. This project provides a Bing search tool, enabling AI to help you search for web information and return results.
 
-## 功能特性
+## Features
 
-- 🔍 **实时搜索**: 使用必应中文搜索引擎获取最新网络信息
-- 📄 **网页抓取**: 自动抓取并提取搜索结果中的网页内容
-- 🌐 **中文优化**: 专为中文搜索优化，支持简体中文结果
-- 🔒 **无需密钥**: 不需要申请 API 密钥，开箱即用
-- 🚫 **智能过滤**: 自动过滤无法抓取的网站（知乎、微信公众号等）
+- 🔍 **Real-time Search**: Use the Bing Chinese search engine to get the latest web information
+- 📄 **Web Scraping**: Automatically scrape and extract content from search result pages
+- 🌐 **Chinese Optimization**: Specifically optimized for Chinese searches, supporting Simplified Chinese results
+- 🔒 **No API Key Required**: No need to apply for an API key, ready to use out of the box
+- 🚫 **Intelligent Filtering**: Automatically filters out unscrapable websites (Zhihu, WeChat Official Accounts, etc.)
 
-## 快速开始
+## Quick Start
 
-### 在 Claude Desktop 中使用（推荐）
+### Using in Claude Desktop (Recommended)
 
-#### 步骤 1: 打开配置文件
+#### Step 1: Open the Configuration File
 
-根据你的操作系统，找到并打开 Claude Desktop 的配置文件：
+Find and open the Claude Desktop configuration file based on your operating system:
 
-**Windows 用户**:
-```
-%AppData%\Claude\claude_desktop_config.json
-```
-直接复制上面的路径到文件资源管理器地址栏，然后用记事本打开 `claude_desktop_config.json` 文件。
+**Windows Users**:
+plaintext
+%APPDATA%\Claude\claude_desktop_config.json
 
-**macOS 用户**:
-```
+Copy the path above into the address bar of the File Explorer, then open the `claude_desktop_config.json` file with Notepad.
+
+**macOS Users**:
+plaintext
 ~/Library/Application Support/Claude/claude_desktop_config.json
-```
-在访达中按 `Cmd + Shift + G`，粘贴上面的路径，然后用文本编辑器打开。
 
-#### 步骤 2: 添加配置
+In Finder, press `Cmd + Shift + G`, paste the path above, and then open the file with a text editor.
 
-在配置文件中添加以下内容（如果文件是空的，直接粘贴；如果已有内容，在 `mcpServers` 部分添加）：
+#### Step 2: Add Configuration
 
-```json
+Add the following content to the configuration file (if the file is empty, just paste; if there is existing content, add it to the `mcpServers` section):
+
+json
 {
-  "mcpServers": {
-    "bing-search": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "bing-cn-mcp"
-      ]
+  "mcpServers": [
+    {
+      "name": "BingSearch",
+      "url": "http://localhost:3000"
     }
-  }
+  ]
 }
-```
 
-注意，windows下，你应该这样配置：
+Note, on Windows, you should configure it like this:
 
-```json
+json
 {
-  "mcpServers": {
-    "bing-search": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "bing-cn-mcp"
-      ]
+  "mcpServers": [
+    {
+      "name": "BingSearch",
+      "url": "http://localhost:3000"
     }
-  }
+  ]
 }
-```
 
-如果配置文件中已经有其他 MCP 服务器，应该像这样：
+If the configuration file already contains other MCP servers, it should look like this:
 
-```json
+json
 {
-  "mcpServers": {
-    "existing-server": {
-      "command": "...",
-      "args": ["..."]
+  "mcpServers": [
+    {
+      "name": "ExistingServer",
+      "url": "http://existingserver.com"
     },
-    "bing-search": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "bing-cn-mcp"
-      ]
+    {
+      "name": "BingSearch",
+      "url": "http://localhost:3000"
     }
-  }
+  ]
 }
-```
 
-#### 步骤 3: 重启 Claude Desktop
+#### Step 3: Restart Claude Desktop
 
-完全退出 Claude Desktop（不是最小化，要完全关闭），然后重新打开。
+Fully exit Claude Desktop (not just minimize, but completely close), then reopen it.
 
-#### 步骤 4: 开始使用
+#### Step 4: Start Using
 
-在 Claude 中，你可以这样提问：
+In Claude, you can ask questions like:
 
-> "帮我搜索一下人工智能的最新进展"
+> "Help me search for the latest developments in artificial intelligence"
 
-> "搜索 Python 异步编程教程"
+> "Search for Python asynchronous programming tutorials"
 
-Claude 会自动调用必应搜索工具并返回结果。
+Claude will automatically call the Bing search tool and return the results.
 
-## 工具说明
+## Tool Description
 
-这个 MCP 服务器提供了两个工具：
+This MCP server provides two tools:
 
-### 1. bing_search - 必应搜索
+### 1. bing_search - Bing Search
 
-使用必应搜索引擎搜索网络信息。
+Uses the Bing search engine to search for web information.
 
-**参数说明**:
-- `query` (必填): 搜索关键词，例如 "人工智能"
-- `count` (可选): 返回多少条结果，默认 10 条，最多 50 条
-- `offset` (可选): 从第几条结果开始，用于翻页，默认 0
+**Parameter Description**:
+- `query` (required): Search keywords, e.g., "artificial intelligence"
+- `count` (optional): Number of results to return, default is 10, maximum is 50
+- `offset` (optional): The starting index of the results, used for pagination, default is 0
 
-**返回内容**:
-搜索结果包括：
-- 搜索到的总结果数量
-- 每条结果的标题、链接和摘要
-- 格式化的易读内容
+**Return Content**:
+The search results include:
+- Total number of search results
+- Title, link, and summary of each result
+- Formatted, readable content
 
-### 2. crawl_webpage - 网页抓取
+### 2. crawl_webpage - Web Page Scraping
 
-抓取并提取网页的文本内容（自动跳过无法访问的网站）。
+Scrapes and extracts the text content of a webpage (automatically skips inaccessible websites).
 
-**参数说明**:
-- `url` (必填): 要抓取的网页地址
+**Parameter Description**:
+- `url` (required): The URL of the webpage to be scraped
 
-**返回内容**:
-- 网页标题
-- 清理后的正文内容（自动去除广告、导航栏等无关内容）
+**Return Content**:
+- Webpage title
+- Cleaned main content (automatically removes ads, navigation bars, etc.)
 
-**黑名单网站**（这些网站会被自动跳过）:
-- 知乎 (zhihu.com)
-- 小红书 (xiaohongshu.com)
-- 微博 (weibo.com)
-- 微信公众号 (weixin.qq.com)
-- 抖音/TikTok (douyin.com, tiktok.com)
-- B站 (bilibili.com)
+**Blacklisted Websites** (these sites will be automatically skipped):
+- Zhihu (zhihu.com)
+- Xiaohongshu (xiaohongshu.com)
+- Weibo (weibo.com)
+- WeChat Official Accounts (weixin.qq.com)
+- Douyin/TikTok (douyin.com, tiktok.com)
+- Bilibili (bilibili.com)
 - CSDN (csdn.net)
 
-## 使用示例
+## Usage Examples
 
-### 示例 1: 基础搜索
+### Example 1: Basic Search
 
-**提问**: "搜索一下 TypeScript 教程"
+**Question**: "Search for TypeScript tutorials"
 
-**AI 会调用**: `bing_search`，参数为 `{ "query": "TypeScript 教程" }`
+**AI will call**: `bing_search` with parameters `{ "query": "TypeScript 教程" }`
 
-**返回结果**:
-```
-搜索关键词: TypeScript 教程
-找到约 1,234,567 条结果
+**Returned Results**:
+json
+{
+  "totalResults": 10,
+  "results": [
+    {
+      "title": "TypeScript Tutorial - W3Schools",
+      "link": "https://www.w3schools.com/typescript/",
+      "summary": "Learn TypeScript with our comprehensive tutorial. Start from the basics and go all the way to advanced topics."
+    },
+    ...
+  ]
+}
 
-返回前 10 条结果:
-================================================================================
+### Example 2: Custom Result Count
 
-[1] TypeScript 中文手册 - 官方文档
-    链接: https://www.tslang.cn/docs/handbook/basic-types.html
-    摘要: TypeScript 是 JavaScript 的超集，为其添加了类型系统...
+**Question**: "Search for Node.js performance optimization, give me 20 results"
 
-[2] TypeScript 入门教程 - 阮一峰
-    链接: https://ts.xcatliu.com/
-    摘要: 从 JavaScript 程序员的角度总结思考，循序渐进讲解 TypeScript...
+**AI will call**: `bing_search` with parameters `{ "query": "Node.js 性能优化", "count": 20 }`
 
-...
-```
+### Example 3: Paginated Search
 
-### 示例 2: 自定义结果数量
+**Question**: "Search for React Hooks tutorials, start displaying from the 11th result"
 
-**提问**: "搜索 Node.js 性能优化，给我 20 条结果"
+**AI will call**: `bing_search` with parameters `{ "query": "React Hooks 教程", "offset": 10 }`
 
-**AI 会调用**: `bing_search`，参数为 `{ "query": "Node.js 性能优化", "count": 20 }`
+### Example 4: Scrape Web Page Content
 
-### 示例 3: 翻页搜索
+**Question**: "Help me scrape the content of this webpage https://example.com/article"
 
-**提问**: "搜索 React Hooks 教程，从第 11 条结果开始显示"
+**AI will call**: `crawl_webpage` with parameters `{ "url": "https://example.com/article" }`
 
-**AI 会调用**: `bing_search`，参数为 `{ "query": "React Hooks 教程", "offset": 10 }`
+## Technical Implementation
 
-### 示例 4: 抓取网页内容
+This project is built using the following technology stack:
 
-**提问**: "帮我抓取这个网页的内容 https://example.com/article"
+- **MCP SDK** (`@modelcontextprotocol/sdk`): Implements the MCP protocol
+- **Axios**: Sends HTTP requests
+- **Cheerio**: Parses HTML pages- **Zod**: Parameter validation
+- **TypeScript**: Type-safe development
 
-**AI 会调用**: `crawl_webpage`，参数为 `{ "url": "https://example.com/article" }`
-
-## 技术实现
-
-本项目使用以下技术栈构建：
-
-- **MCP SDK** (`@modelcontextprotocol/sdk`): 实现 MCP 协议
-- **Axios**: 发送 HTTP 请求
-- **Cheerio**: 解析 HTML 页面
-- **Zod**: 参数验证
-- **TypeScript**: 类型安全开发
-
-### 项目结构
+### Project Structure
 
 ```
+
 bingcnmcp/
+
 ├── src/
+
 │   ├── index.ts         # MCP 服务器入口
+
 │   ├── bingSearch.ts    # 必应搜索实现
+
 │   ├── crawler.ts       # 网页抓取实现
+
 │   ├── parser.ts        # HTML 解析器
+
 │   ├── blacklist.ts     # 黑名单配置
+
 │   └── types.ts         # 类型定义
+
 ├── build/               # 编译输出
+
 ├── package.json
+
 └── tsconfig.json
+
 ```
+## Frequently Asked Questions
 
-## 常见问题
+### Why are the search results empty?
 
-### 为什么搜索结果是空的？
+1. **Network Issues**: Check if you can access cn.bing.com normally.
+2. **Keyword Issues**: Try using a different keyword or a more specific search term.
+3. **Rate Limiting**: Searching too many times in a short period may result in being rate-limited by Bing. Wait a few minutes and try again.
 
-1. **网络问题**: 检查是否能正常访问 cn.bing.com
-2. **关键词问题**: 尝试换个关键词或更具体的搜索词
-3. **被限制**: 短时间内搜索太多次可能被必应限制，等待几分钟再试
+### What if Claude does not call the search tool?
 
-### Claude 没有调用搜索工具怎么办？
+1. Ensure that the configuration file is correctly formatted (JSON format).
+2. Make sure you have fully restarted Claude Desktop.
+3. Try explicitly asking Claude to use the search: "Use the Bing search tool to find..."
 
-1. 确保配置文件格式正确（JSON 格式）
-2. 确保完全重启了 Claude Desktop
-3. 尝试明确要求 Claude 使用搜索："使用必应搜索工具查找..."
+### Some websites cannot be scraped for content
 
-### 某些网站无法抓取内容
+This is normal. Some websites (such as Zhihu, Xiaohongshu, etc.) are blacklisted due to access restrictions or anti-scraping mechanisms. The links to these websites will appear in the search results, but their content will not be automatically scraped.
 
-这是正常的，部分网站（如知乎、小红书等）因为访问限制或反爬虫机制被加入了黑名单。搜索结果中会显示这些网站的链接，但不会自动抓取内容。
+### Windows system prompts that the npx command is not found
 
-### Windows 系统提示找不到 npx 命令
+Ensure that Node.js (version 18 or higher recommended) is installed. After installation, restart your computer or the command line window.
 
-确保已经安装了 Node.js（推荐 18 或更高版本）。安装后重启电脑或命令行窗口。
+Download Node.js: https://nodejs.org/
 
-下载 Node.js: https://nodejs.org/
+## Notes
 
-## 注意事项
+1. **Network Requirements**: You need to be able to access `cn.bing.com`.
+2. **Usage Frequency**: Do not search too frequently; it is recommended to wait at least 1-2 seconds between searches.
+3. **Privacy Protection**: Search requests are sent directly to Bing, and this server does not store any search records.
+4. **Stateless Design**: Each request is independent, and no cookies or session information are saved.
+5. **For Reference Only**: This project is for learning and reference purposes only. Do not use it for illegal activities.
+6. **Incorrect Results**: If the search results are incorrect, it might be due to triggering anti-scraping measures. For more stable needs, [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) is recommended.
 
-1. **网络要求**: 需要能够访问 `cn.bing.com`
-2. **使用频率**: 请勿过于频繁搜索，建议每次搜索间隔至少 1-2 秒
-3. **隐私保护**: 搜索请求直接发送到必应，本服务器不存储任何搜索记录
-4. **无状态设计**: 每次请求都是独立的，不保存 Cookie 或会话信息
-5. **仅供参考**：本项目仅供学习参考，请勿用于非法用途。
-6. **结果不对**：搜索结果出现不对时，可能触发了反爬，如有更稳定需要，更推荐[tavily-mcp](https://github.com/tavily-ai/tavily-mcp)
-
-## 许可证
+## License
 
 [MIT](https://github.com/yan5236/bing-cn-mcp-server/blob/HEAD/LICENSE)
 
-## 贡献
+## Contributions
 
-欢迎提交问题报告和改进建议！
+Feel free to submit bug reports and suggestions for improvements!
 
-**官方网站：** [https://github.com/yan5236/bing-cn-mcp-server](https://github.com/yan5236/bing-cn-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yan5236/bing-cn-mcp-server](https://github.com/yan5236/bing-cn-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y bing-cn-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y bing-cn-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/slcatwujian-bing-cn.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/slcatwujian-bing-cn.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

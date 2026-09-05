@@ -1,120 +1,132 @@
 ---
-title: "哔哩视频提取器"
-description: "BiliBili MCP Processor 一个基于 Model Context Protocol (MCP) 的哔哩哔哩视频内容处理工具，可以加载、分析和导出B站视频的字幕和内容。 功能特性 - 🎥 视频内容加载: 使用LangChain加载器获取B站视频内容和字幕 - 🔍 内容搜索: 在视频内容中进行文本搜索，支持上下文显示 - 📝 智能摘要: 自动生成视频内容摘要 - 📤 多格式导出: 支持导出为TXT、JSON、SRT字幕格式 - 🔐 认证支持: 支持B站登录认证以获取完整内容 - 🌐 MCP协议: 完全"
+title: "BiliBiliMCP"
+description: "BiliBili MCP Processor A Bilibili video content processing tool based on the Model Context Protocol (MCP), capable of loading, analyzing, and exporting Bilibili video subtitles and content. Features -…"
 ---
 
-# 哔哩视频提取器
+# BiliBiliMCP
 
-BiliBili MCP Processor 一个基于 Model Context Protocol (MCP) 的哔哩哔哩视频内容处理工具，可以加载、分析和导出B站视频的字幕和内容。 功能特性 - 🎥 视频内容加载: 使用LangChain加载器获取B站视频内容和字幕 - 🔍 内容搜索: 在视频内容中进行文本搜索，支持上下文显示 - 📝 智能摘要: 自动生成视频内容摘要 - 📤 多格式导出: 支持导出为TXT、JSON、SRT字幕格式 - 🔐 认证支持: 支持B站登录认证以获取完整内容 - 🌐 MCP协议: 完全
+BiliBili MCP Processor A Bilibili video content processing tool based on the Model Context Protocol (MCP), capable of loading, analyzing, and exporting Bilibili video subtitles and content. Features -…
 
-# BiliBili MCP Processor  
-  
-一个基于 Model Context Protocol (MCP) 的哔哩哔哩视频内容处理工具，可以加载、分析和导出B站视频的字幕和内容。  
-  
-## 功能特性  
-  
-- 🎥 **视频内容加载**: 使用LangChain加载器获取B站视频内容和字幕  
-- 🔍 **内容搜索**: 在视频内容中进行文本搜索，支持上下文显示  
-- 📝 **智能摘要**: 自动生成视频内容摘要  
-- 📤 **多格式导出**: 支持导出为TXT、JSON、SRT字幕格式  
-- 🔐 **认证支持**: 支持B站登录认证以获取完整内容  
-- 🌐 **MCP协议**: 完全兼容MCP协议，可与Claude Desktop等客户端集成  
-  
-## 安装依赖  
-  
-### 使用 uv (推荐)  
-  
-```
-uv add "mcp[cli]"  
+# BiliBili MCP Processor
+
+A Bilibili video content processing tool based on the Model Context Protocol (MCP), capable of loading, analyzing, and exporting Bilibili video subtitles and content.
+
+## Features
+
+- 🎥 **Video Content Loading**: Use LangChain loader to fetch Bilibili video content and subtitles
+- 🔍 **Content Search**: Perform text search within video content with context display
+- 📝 **Smart Summarization**: Automatically generate summaries of video content
+- 📤 **Multi-Format Export**: Supports exporting to TXT, JSON, SRT subtitle formats
+- 🔐 **Authentication Support**: Supports Bilibili login authentication for full content access
+- 🌐 **MCP Protocol**: Fully compatible with MCP protocol, integrable with clients like Claude Desktop
+
+## Installation Dependencies
+
+### Using uv (Recommended)
+
+bash
+uv add "mcp[cli]"
 uv add langchain langchain-community bilibili-api-python
-```
-### 使用 pip
-```bash
-pip install -r requirements.txt
-```
-## 环境配置
-为了获取完整的视频内容，需要配置B站认证信息（可选）：
-```bash
-export BILIBILI_SESSDATA="your_sessdata_value"  
-export BILIBILI_BUVID3="your_buvid3_value"   
-export BILIBILI_BILI_JCT="your_bili_jct_value"  
-export BILIBILI_EXPORT_PATH="./export"  # 可选，默认为 ./export
-```
-这些值可以从浏览器登录B站后的Cookie中获取。
 
-## 快速开始
-### 安装到Claude Desktop：
-```bash
+### Using pip
+
+bash
+pip install -r requirements.txt
+
+## Environment Configuration
+
+To obtain complete video content, configure Bilibili authentication information (optional):
+
+bash
+export BILIBILI_SESSDATA="your_sessdata_value"
+export BILIBILI_BUVID3="your_buvid3_value"
+export BILIBILI_BILI_JCT="your_bili_jct_value"
+export BILIBILI_EXPORT_PATH="./export"  # Optional, default is ./export
+
+These values can be obtained from the browser's cookies after logging into Bilibili.
+
+## Quick Start
+
+### Install to Claude Desktop:
+
+bash
 mcp install BiliBiliProcessor.py --name "BiliBili Processor"
-```
-## 工具使用
+
+## Tool Usage
+
 ### 1. load_bilibili_video
-  加载哔哩哔哩视频内容到内存中。
-  
-  参数:
-  
-  video_url (str): B站视频URL
-  use_auth (bool): 是否使用认证信息，默认为True
-  返回: 包含视频ID、文档数量、内容长度等信息的字典
+Loads Bilibili video content into memory.
+
+Parameters:
+
+- `video_url (str)`: Bilibili video URL
+- `use_auth (bool)`: Whether to use authentication information, defaults to True
+
+Returns: A dictionary containing video ID, number of documents, content length, etc.
+
 ### 2. get_video_content
-  获取已加载视频的内容。
-  
-  参数:
-  
-  video_id (str): 视频ID
-  page_index (int, 可选): 页面索引，不指定则返回所有页面
-  返回: 视频内容数据
+Fetches the content of a loaded video.
+
+Parameters:
+
+- `video_id (str)`: Video ID
+- `page_index (int, optional)`: Page index, if not specified, returns all pages
+
+Returns: Video content data
 
 ### 3. search_in_video
-  在视频内容中搜索指定文本。
-  
-  参数:
-  
-  video_id (str): 视频ID
-  query (str): 搜索查询
-  case_sensitive (bool): 是否区分大小写，默认为False
-  返回: 搜索结果，包含匹配位置和上下文
+Searches for specified text within the video content.
+
+Parameters:
+
+- `video_id (str)`: Video ID
+- `query (str)`: Search query
+- `case_sensitive (bool)`: Whether case-sensitive, defaults to False
+
+Returns: Search results, including match positions and context
 
 ### 4. extract_video_summary
-  提取视频内容摘要。
-  
-  参数:
-  
-  video_id (str): 视频ID
-  max_length (int): 摘要最大长度，默认500字符
-  返回: 视频摘要和统计信息
+Extracts a summary of the video content.
+
+Parameters:
+
+- `video_id (str)`: Video ID
+- `max_length (int)`: Maximum summary length, defaults to 500 characters
+
+Returns: Video summary and statistics
 
 ### 5. export_video_content
-  导出视频内容到文件。
-  
-  参数:
-  
-  video_id (str): 视频ID
-  target_format (str): 目标格式 (txt/json/srt)，默认为txt
-  output_path (str, 可选): 输出路径，不指定则自动生成
-  返回: 导出结果信息
+Exports video content to a file.
+
+Parameters:
+
+- `video_id (str)`: Video ID
+- `target_format (str)`: Target format (txt/json/srt), defaults to txt
+- `output_path (str, optional)`: Output path, if not specified, auto-generated
+
+Returns: Export result information
 
 ### 6. get_bilibili_auth_status
-  检查哔哩哔哩认证状态。
-  
-  返回: 认证状态和配置说明
+Checks Bilibili authentication status.
 
-**官方网站：** [https://github.com/TaoPeiLing/BiliBiliMCP](https://github.com/TaoPeiLing/BiliBiliMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+Returns: Authentication status and configuration instructions
 
-## 分类与标签
+**Official site: ** [https://github.com/TaoPeiLing/BiliBiliMCP](https://github.com/TaoPeiLing/BiliBiliMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run --with mcp[cli] --with langchain --with langchain-community --with bilibili-api-python mcp run /path/to/your/BiliBiliProcessor.py`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run --with mcp[cli] --with langchain --with langchain-community --with bilibili-api-python mcp run /path/to/your/BiliBiliProcessor.py`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/taopl1990-bilibilimcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/taopl1990-bilibilimcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

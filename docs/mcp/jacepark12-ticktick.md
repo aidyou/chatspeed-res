@@ -1,113 +1,113 @@
 ---
-title: "滴答-MCP"
-description: "一个用于TickTick的MCP服务器，可以通过Claude和其他MCP客户端直接与您的TickTick任务管理系统进行交互。"
+title: "ticktick-mcp"
+description: "A MCP server for TickTick that enables interacting with your TickTick task management system directly through Claude and other MCP clients."
 ---
 
-# 滴答-MCP
+# ticktick-mcp
 
-一个用于TickTick的MCP服务器，可以通过Claude和其他MCP客户端直接与您的TickTick任务管理系统进行交互。
+A MCP server for TickTick that enables interacting with your TickTick task management system directly through Claude and other MCP clients.
 
-# TickTick MCP 服务器
+# TickTick MCP Server
 
-一个 [模型上下文协议 (MCP)](https://modelcontextprotocol.io/) 服务器，用于通过 Claude 和其他 MCP 客户端直接与您的 TickTick 任务管理系统进行交互。
+A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server for TickTick that enables interacting with your TickTick task management system directly through Claude and other MCP clients.
 
-## 功能
+## Features
 
-- 📋 查看所有 TickTick 项目和任务
-- ✏️ 通过自然语言创建新项目和任务
-- 🔄 更新现有任务详情（标题、内容、日期、优先级）
-- ✅ 将任务标记为完成
-- 🗑️ 删除任务和项目
-- 🔄 与 TickTick 的开放 API 全面集成
-- 🔌 与 Claude 和其他 MCP 客户端无缝集成
+- 📋 View all your TickTick projects and tasks
+- ✏️ Create new projects and tasks through natural language
+- 🔄 Update existing task details (title, content, dates, priority)
+- ✅ Mark tasks as complete
+- 🗑️ Delete tasks and projects
+- 🔄 Full integration with TickTick's open API
+- 🔌 Seamless integration with Claude and other MCP clients
 
-## 前提条件
+## Prerequisites
 
-- Python 3.10 或更高版本
-- [uv](https://github.com/astral-sh/uv) - 快速的 Python 包安装器和解析器
-- 拥有 API 访问权限的 TickTick 账户
-- TickTick API 凭据（客户端 ID、客户端密钥、访问令牌）
+- Python 3.10 or higher
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
+- TickTick account with API access
+- TickTick API credentials (Client ID, Client Secret, Access Token)
 
-## 安装
+## Installation
 
-1. **克隆此仓库**：
+1. **Clone this repository**:
 ```bash
    git clone https://github.com/parkjs814/ticktick-mcp.git
    cd ticktick-mcp
 ```
 
-2. **使用 uv 安装**：
+2. **Install with uv**:
 ```bash
-   # 如果你还没有安装 uv，先安装它
+   # Install uv if you Do not have it already
    curl -LsSf https://astral.sh/uv/install.sh | sh
 
-   # 创建虚拟环境
+   # Create a virtual environment
    uv venv
 
-   # 激活虚拟环境
-   # 在 macOS/Linux 上：
+   # Activate the virtual environment
+   # On macOS/Linux:
    source .venv/bin/activate
-   # 在 Windows 上：
-   .venv\Scripts\activate
+   # On Windows:
+   .venvScriptsactivate
 
-   # 安装包
+   # Install the package
    uv pip install -e .
 ```
 
-3. **与 TickTick 进行身份验证**：
+3. **Authenticate with TickTick**:
 ```bash
-   # 运行身份验证流程
+   # Run the authentication flow
    uv run -m ticktick_mcp.cli auth
 ```
 
-   此操作将：
-   - 请求您的 TickTick 客户端 ID 和客户端密钥
-   - 打开浏览器窗口让您登录到 TickTick
-   - 自动将您的访问令牌保存到 `.env` 文件中
+   This will:
+   - Ask for your TickTick Client ID and Client Secret
+   - Open a browser window for you to log in to TickTick
+   - Automatically save your access tokens to a `.env` file
 
-4. **测试配置**：
+4. **Test your configuration**:
 ```bash
    uv run test_server.py
 ```
-   这将验证您的 TickTick 凭据是否正确工作。
+   This will verify that your TickTick credentials are working correctly.
 
-## 与 TickTick 进行身份验证
+## Authentication with TickTick
 
-此服务器使用 OAuth2 对 TickTick 进行身份验证。设置过程非常简单：
+This server uses OAuth2 to authenticate with TickTick. The setup process is straightforward:
 
-1. 在 [TickTick 开发者中心](https://developer.ticktick.com/manage) 注册您的应用程序
-   - 设置重定向 URI 为 `http://localhost:8000/callback`
-   - 记下您的客户端 ID 和客户端密钥
+1. Register your application at the [TickTick Developer Center](https://developer.ticktick.com/manage)
+   - Set the redirect URI to `http://localhost:8000/callback`
+   - Note your Client ID and Client Secret
 
-2. 运行身份验证命令：
+2. Run the authentication command:
 ```bash
    uv run -m ticktick_mcp.cli auth
 ```
 
-3. 根据提示输入您的客户端 ID 和客户端密钥
+3. Follow the prompts to enter your Client ID and Client Secret
 
-4. 浏览器窗口将打开，以便您使用 TickTick 账户授权该应用程序
+4. A browser window will open for you to authorize the application with your TickTick account
 
-5. 授权后，您将被重定向回应用程序，并且您的访问令牌将自动保存到 `.env` 文件中
+5. After authorizing, you'll be redirected back to the application, and your access tokens will be automatically saved to the `.env` file
 
-服务器会自动处理令牌刷新，因此除非您撤销访问权限或删除 `.env` 文件，否则无需重新进行身份验证。
+The server handles token refresh automatically, so you will not  need to reauthenticate unless you revoke access or delete your `.env` file.
 
-## 与桌面版 Claude 一起使用
+## Usage with Claude for Desktop
 
-1. 安装 [Claude for Desktop](https://claude.ai/download)
-2. 编辑你的 Claude for Desktop 配置文件：
+1. Install [Claude for Desktop](https://claude.ai/download)
+2. Edit your Claude for Desktop configuration file:
 
    **macOS**:
 ```bash
-   nano ~/Library/Application\ Support/Claude/claude_desktop_config.json
+   nano ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
    **Windows**:
 ```bash
-   notepad %APPDATA%\Claude\claude_desktop_config.json
+   notepad %APPDATA%Claudeclaude_desktop_config.json
 ```
 
-3. 添加 TickTick MCP 服务器配置，使用绝对路径：
+3. Add the TickTick MCP server configuration, using absolute paths:
 ```json
    {
       "mcpServers": {
@@ -121,39 +121,39 @@ description: "一个用于TickTick的MCP服务器，可以通过Claude和其他M
    }
 ```
 
-4. 重启 Claude for Desktop
+4. Restart Claude for Desktop
 
-连接成功后，你将在 Claude 中看到带有 🔨 (工具) 图标的 TickTick MCP 服务器工具。
+Once connected, you'll see the TickTick MCP server tools available in Claude, indicated by the 🔨 (tools) icon.
 
-## 可用的 MCP 工具
+## Available MCP Tools
 
-| 工具 | 描述 | 参数 |
+| Tool | Description | Parameters |
 |------|-------------|------------|
-| `get_projects` | 列出所有你的 TickTick 项目 | 无 |
-| `get_project` | 获取特定项目的详细信息 | `project_id` |
-| `get_project_tasks` | 列出项目中的所有任务 | `project_id` |
-| `get_task` | 获取特定任务的详细信息 | `project_id`, `task_id` |
-| `create_task` | 创建新任务 | `title`, `project_id`, `content` (可选), `start_date` (可选), `due_date` (可选), `priority` (可选) |
-| `update_task` | 更新现有任务 | `task_id`, `project_id`, `title` (可选), `content` (可选), `start_date` (可选), `due_date` (可选), `priority` (可选) |
-| `complete_task` | 标记任务为完成 | `project_id`, `task_id` |
-| `delete_task` | 删除任务 | `project_id`, `task_id` |
-| `create_project` | 创建新项目 | `name`, `color` (可选), `view_mode` (可选) |
-| `delete_project` | 删除项目 | `project_id` |
+| `get_projects` | List all your TickTick projects | None |
+| `get_project` | Get details about a specific project | `project_id` |
+| `get_project_tasks` | List all tasks in a project | `project_id` |
+| `get_task` | Get details about a specific task | `project_id`, `task_id` |
+| `create_task` | Create a new task | `title`, `project_id`, `content` (optional), `start_date` (optional), `due_date` (optional), `priority` (optional) |
+| `update_task` | Update an existing task | `task_id`, `project_id`, `title` (optional), `content` (optional), `start_date` (optional), `due_date` (optional), `priority` (optional) |
+| `complete_task` | Mark a task as complete | `project_id`, `task_id` |
+| `delete_task` | Delete a task | `project_id`, `task_id` |
+| `create_project` | Create a new project | `name`, `color` (optional), `view_mode` (optional) |
+| `delete_project` | Delete a project | `project_id` |
 
-## Claude 示例提示
+## Example Prompts for Claude
 
-以下是一些连接 TickTick MCP 服务器后可以使用的示例提示：
+Here are some example prompts to use with Claude after connecting the TickTick MCP server:
 
-- "显示我所有的 TickTick 项目"
-- "在我的工作项目中创建一个名为 'Finish MCP server documentation' 的高优先级新任务"
-- "列出我的个人项目中的所有任务"
-- "将任务 'Buy groceries' 标记为完成"
-- "创建一个名为 'Vacation Planning' 的蓝色新项目"
-- "我的下一个 TickTick 截止日期是什么时候？"
+- "Show me all my TickTick projects"
+- "Create a new task called 'Finish MCP server documentation' in my work project with high priority"
+- "List all tasks in my personal project"
+- "Mark the task 'Buy groceries' as complete"
+- "Create a new project called 'Vacation Planning' with a blue color"
+- "When is my next deadline in TickTick?"
 
-## 开发
+## Development
 
-### 项目结构
+### Project Structure
 
 ```
 ticktick-mcp/
@@ -173,49 +173,49 @@ ticktick-mcp/
         └── ticktick_client.py  # TickTick API client
 ```
 
-### 认证流程
+### Authentication Flow
 
-该项目实现了完整的 TickTick OAuth 2.0 流程：
+The project implements a complete OAuth 2.0 flow for TickTick:
 
-1. **初始设置**：用户提供他们的 TickTick API 客户端 ID 和密钥
-2. **浏览器授权**：用户被重定向到 TickTick 以授予访问权限
-3. **令牌接收**：本地服务器接收包含授权码的 OAuth 回调
-4. **令牌交换**：使用代码交换访问令牌和刷新令牌
-5. **令牌存储**：令牌安全地存储在本地 `.env` 文件中
-6. **令牌刷新**：客户端在访问令牌过期时自动刷新
+1. **Initial Setup**: User provides their TickTick API Client ID and Secret
+2. **Browser Authorization**: User is redirected to TickTick to grant access
+3. **Token Reception**: A local server receives the OAuth callback with the authorization code
+4. **Token Exchange**: The code is exchanged for access and refresh tokens
+5. **Token Storage**: Tokens are securely stored in the local `.env` file
+6. **Token Refresh**: The client automatically refreshes the access token when it expires
 
-这通过编程方式处理整个 OAuth 流程简化了用户体验。
+This simplifies the user experience by handling the entire OAuth flow programmatically.
 
-### 贡献
+### Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork 仓库
-2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详情请参见 LICENSE 文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/jacepark12/ticktick-mcp](https://github.com/jacepark12/ticktick-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jacepark12/ticktick-mcp](https://github.com/jacepark12/ticktick-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`note taking`, `calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `note taking`, `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`<absolute path to uv>`
-- 参数：`run --directory <absolute path to ticktick-mcp directory> -m ticktick_mcp.cli run`
+- Transport: `stdio`
+- Command: `<absolute path to uv>`
+- Args: `run --directory <absolute path to ticktick-mcp directory> -m ticktick_mcp.cli run`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jacepark12-ticktick.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jacepark12-ticktick.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

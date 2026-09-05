@@ -1,61 +1,61 @@
 ---
-title: "Notion MCP 服务器"
-description: "一种模型上下文协议服务器，使克劳德和其他大型语言模型能够与Notion工作区互动，提供搜索、检索、创建和更新页面以及管理数据库等功能。"
+title: "notion-mcp-server"
+description: "A Model Context Protocol server that enables Claude and other LLMs to interact with Notion workspaces, providing capabilities like searching, retrieving, creating and updating pages, as well as managi…"
 ---
 
-# Notion MCP 服务器
+# notion-mcp-server
 
-一种模型上下文协议服务器，使克劳德和其他大型语言模型能够与Notion工作区互动，提供搜索、检索、创建和更新页面以及管理数据库等功能。
+A Model Context Protocol server that enables Claude and other LLMs to interact with Notion workspaces, providing capabilities like searching, retrieving, creating and updating pages, as well as managi…
 
-# Notion MCP 服务器
+# Notion MCP Server
 
-一个用于 Notion 集成的模型上下文协议服务器，允许 Claude 和其他大型语言模型与您的 Notion 工作区进行交互。
+A Model Context Protocol server for Notion integration, allowing Claude and other LLMs to interact with your Notion workspace.
 
-## 功能
+## Features
 
-- **搜索 Notion**：在您的整个 Notion 工作区中进行搜索
-- **获取页面**：从特定的 Notion 页面检索内容
-- **创建页面**：在您的 Notion 工作区中创建新页面
-- **更新页面**：使用新内容或标题更新现有页面
-- **创建数据库**：使用自定义属性创建新的数据库
-- **查询数据库**：通过过滤器和排序来查询数据库
-- **更新数据库条目**：更新数据库条目的属性
-- **创建数据库行**：向现有的数据库添加具有自定义属性的新行
+- **Search Notion**: Search across your entire Notion workspace
+- **Get Page**: Retrieve content from a specific Notion page
+- **Create Page**: Create new pages in your Notion workspace
+- **Update Page**: Update existing pages with new content or titles
+- **Create Database**: Create new databases with custom properties
+- **Query Database**: Query databases with filters and sorting
+- **Update Database Entry**: Update properties of database entries
+- **Create Database Row**: Add new rows to existing databases with custom properties
 
-## 设置
+## Setup
 
-1. **克隆此仓库**
+1. **Clone this repository**
 
-2. **安装依赖**
+2. **Install dependencies**
 ```bash
    npm install
 ```
 
-3. **配置您的 Notion API 密钥**
-   - 在 [Notion 开发者门户](https://www.notion.so/my-integrations) 中创建一个集成
-   - 复制您的 API 密钥
-   - 您可以选择：
-     - 编辑 `.env` 文件并将 `your_notion_api_key_here` 替换为您的实际 API 密钥，或者
-     - 直接在 Claude for Desktop 的配置中传递它（推荐，见下文）
+3. **Configure your Notion API key**
+   - Create an integration in the [Notion Developers portal](https://www.notion.so/my-integrations)
+   - Copy your API key
+   - You can either:
+     - Edit the `.env` file and replace `your_notion_api_key_here` with your actual API key, or
+     - Pass it directly in the Claude for Desktop configuration (recommended, see below)
 
-4. **构建服务器**
+4. **Build the server**
 ```bash
    npm run build
 ```
 
-5. **运行服务器**
+5. **Running the server**
 ```bash
    npm start
 ```
 
-## 与 Claude for Desktop 一起设置
+## Setting up with Claude for Desktop
 
-1. 安装 Claude for Desktop（如果尚未安装）
-2. 打开您的 Claude for Desktop 应用程序配置：
-   - 在 macOS 上: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - 如果文件不存在，请创建该文件
+1. Install Claude for Desktop (if not already installed)
+2. Open your Claude for Desktop App configuration:
+   - On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - Create the file if it does not exist
 
-3. 将 Notion 服务器添加到您的配置中：
+3. Add the Notion server to your configuration:
 ```json
    {
      "mcpServers": {
@@ -69,52 +69,52 @@ description: "一种模型上下文协议服务器，使克劳德和其他大型
      }
    }
 ```
-   替换：
-   - `/Users/shaheerahmad/Documents/notion-mcp-server` 为您的项目目录的完整路径
-   - `YOUR_ACTUAL_API_KEY_HERE` 为您的实际 Notion API 密钥
+   Replace:
+   - `/Users/shaheerahmad/Documents/notion-mcp-server` with the full path to your project directory
+   - `YOUR_ACTUAL_API_KEY_HERE` with your actual Notion API key
 
-4. 重启 Claude for Desktop
+4. Restart Claude for Desktop
 
-## 使用服务器
+## Using the Server
 
-一旦连接到 Claude for Desktop，您可以通过向 Claude 提问来使用服务器，例如：
+Once connected to Claude for Desktop, you can use the server by asking Claude questions like:
 
-- "在我的 Notion 工作区中搜索会议笔记"
-- "获取我的项目规划页面的内容"（您需要页面 ID）
-- "在 Notion 中创建一个包含任务列表的新页面"
-- "将我的 Notion 页面 ID 为 1aaada269d1b8003adceda69cf7bcd97 的内容更新为 'Here is some new content to add to the page.'"
-- "在我的 Notion 页面 ID 为 1aaada269d1b8003adceda69cf7bcd97 中创建一个新的数据库"
-- "查询我的 Notion 数据库 ID 为 1aaada269d1b8003adceda69cf7bcd97 中状态为 'Completed' 的项目"
+- "Search for meeting notes in my Notion workspace"
+- "Get the content of my project planning page" (you'll need the page ID)
+- "Create a new page in Notion with a list of tasks"
+- "Update my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97 with content 'Here is some new content to add to the page.'"
+- "Create a new database in my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97"
+- "Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 for items with status 'Completed'"
 
-Claude 将根据您的请求自动使用适当的工具。
+Claude will automatically use the appropriate tools based on your request.
 
-### 工具使用示例
+### Tool Usage Examples
 
-#### 搜索 Notion
+#### Search Notion
 ```
 Search for "meeting notes" in my Notion workspace
 ```
 
-#### 获取页面内容
+#### Get Page Content
 ```
 Get the content of my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97
 ```
 
-#### 创建新页面
+#### Create a New Page
 ```
 Create a new page in Notion with title "Weekly Report" and content "This week we accomplished the following tasks..."
 ```
 
-#### 更新现有页面
+#### Update an Existing Page
 ```
 Update my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97 with content "Adding this new information to the page."
 ```
-您还可以更新标题：
+You can also update the title:
 ```
 Update my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97 with title "New Title" and content "New content to add."
 ```
 
-#### 创建新数据库
+#### Create a New Database
 ```
 Create a new database in my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97 with title "Task Tracker" and properties {
   "Task Name": { "title": {} },
@@ -140,7 +140,7 @@ Create a new database in my Notion page with ID 1aaada269d1b8003adceda69cf7bcd97
 }
 ```
 
-#### 查询数据库
+#### Query a Database
 ```
 Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with filter {
   "property": "Status",
@@ -150,7 +150,7 @@ Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with filter {
 }
 ```
 
-您还可以添加排序：
+You can also add sorting:
 ```
 Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with sort {
   "property": "Due Date",
@@ -158,9 +158,9 @@ Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with sort {
 }
 ```
 
-#### 更新数据库条目
+#### Update Database Entry
 
-更新现有数据库条目的属性（数据库中的页面）。
+Update properties of an existing database entry (page within a database).
 
 ```json
 {
@@ -188,11 +188,11 @@ Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with sort {
 }
 ```
 
-`properties` 参数应与您的数据库中特定属性类型所期望的 Notion API 结构相匹配。不同的属性类型（文本、选择、日期等）需要不同的格式。
+The `properties` parameter should match the structure expected by the Notion API for the specific property types in your database. Different property types (text, select, date, etc.) require different formats.
 
-#### 创建数据库行
+#### Create Database Row
 
-向现有数据库添加具有自定义属性的新行。
+Add a new row to an existing database with custom properties.
 
 ```json
 {
@@ -238,41 +238,41 @@ Query my Notion database with ID 1aaada269d1b8003adceda69cf7bcd97 with sort {
 }
 ```
 
-`properties` 参数必须包括数据库所需的所有必需属性，并遵循每个属性类型的 Notion API 结构。
+The `properties` parameter must include all required properties for the database and follow the Notion API structure for each property type.
 
-## 故障排除
+## Troubleshooting
 
-- 如果工具未显示，请检查 Claude for Desktop 的日志：
+- If tools aren't showing up, check the Claude for Desktop logs:
 ```bash
   tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
 ```
 
-- 确保您的 Notion API 密钥设置正确，并且您的集成已被授予访问您想要交互的页面的权限。
+- Make sure your Notion API key is correctly set and that your integration has been granted access to the pages you want to interact with.
 
-- 如果在日志中看到 "Unexpected token" 错误，很可能是 console.log 语句干扰了 MCP 协议。此版本的服务器已更新以避免这些问题。
+- If you see "Unexpected token" errors in the logs, it's likely that console.log statements are interfering with the MCP protocol. This version of the server has been updated to avoid those issues.
 
-## 未来改进
+## Future Improvements
 
-- 添加数据库查询功能
-- 实现更好的内容格式化
-- 增加对更多块类型的支持
+- Add database query capabilities
+- Implement better content formatting
+- Add support for more block types
 
-**官方网站：** [https://github.com/SAhmadUmass/notion-mcp-server](https://github.com/SAhmadUmass/notion-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SAhmadUmass/notion-mcp-server](https://github.com/SAhmadUmass/notion-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`note taking`, `databases`, `knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `note taking`, `databases`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/Users/shaheerahmad/Documents/notion-mcp-server/dist/index.js --notion-api-key=YOUR_ACTUAL_API_KEY_HERE`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/Users/shaheerahmad/Documents/notion-mcp-server/dist/index.js --notion-api-key=YOUR_ACTUAL_API_KEY_HERE`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sahmadumass-notion.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sahmadumass-notion.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

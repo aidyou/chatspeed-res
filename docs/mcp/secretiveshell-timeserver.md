@@ -1,40 +1,40 @@
 ---
-title: "MCP时区时间服务器"
-description: "访问任何时区的时间并获取当前本地时间"
+title: "MCP-timeserver"
+description: "Access the time in any timezone and get the current local time"
 ---
-
-# MCP时区时间服务器
-
-访问任何时区的时间并获取当前本地时间
 
 # MCP-timeserver
 
-一个简单的MCP服务器，向代理系统和聊天REPL提供日期时间信息。
+Access the time in any timezone and get the current local time
 
-## 组件
+# MCP-timeserver
 
-### 资源
+A simple MCP server that exposes datetime information to agentic systems and chat REPLs
 
-该服务器实现了一个简单的datetime:// URI方案，用于访问给定时区的当前日期/时间，例如：
+## Components
+
+### Resources
+
+The server implements a simple datetime:// URI scheme for accessing the current date/time in a given timezone, for example:
 ```
 datetime://Africa/Freetown/now
 datetime://Europe/London/now
 datetime://America/New_York/now
 ```
 
-### 工具
+### Tools
 
-该服务器公开了一个工具，用于获取系统时区中的当前本地时间：
+The server exposes a tool to get the current local time in the system timezone:
 ```python
 >>> get_current_time()
 "The current time is 2024-12-18 19:59:36"
 ```
 
-## 快速开始
+## Quickstart
 
-### 安装
+### Install
 
-使用以下json
+use the following json
 
 ```json
 {
@@ -47,22 +47,22 @@ datetime://America/New_York/now
 }
 ```
 
-**官方网站：** [https://github.com/SecretiveShell/MCP-timeserver](https://github.com/SecretiveShell/MCP-timeserver)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SecretiveShell/MCP-timeserver](https://github.com/SecretiveShell/MCP-timeserver)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`MCP-timeserver`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `MCP-timeserver`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/secretiveshell-timeserver.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/secretiveshell-timeserver.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

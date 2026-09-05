@@ -1,50 +1,50 @@
 ---
-title: "Unsplash图片搜索服务端"
-description: "一个轻量级服务器，可实现与Unsplash图像库的无缝集成，使开发人员能够直接从Cursor编辑器中使用各种过滤器搜索高质量照片。"
+title: "unsplash-mcp-server"
+description: "A lightweight server that enables seamless integration with Unsplash's image library, allowing developers to search for high-quality photos with various filters directly from the Cursor editor."
 ---
 
-# Unsplash图片搜索服务端
+# unsplash-mcp-server
 
-一个轻量级服务器，可实现与Unsplash图像库的无缝集成，使开发人员能够直接从Cursor编辑器中使用各种过滤器搜索高质量照片。
+A lightweight server that enables seamless integration with Unsplash's image library, allowing developers to search for high-quality photos with various filters directly from the Cursor editor.
 
 # Unsplash MCP Server
 
 English | [简体中文](https://github.com/hellokaton/unsplash-mcp-server/blob/HEAD/README_zh.md)
 
-> 一个简单的MCP服务器，用于无缝集成Unsplash图片和搜索功能。
+> A simple MCP server for seamless Unsplash image integration and search capabilities.
 
 [![Python 3.9+](/mcp-assets/fc6c1779d629c51ff66ed00bf03ad061.svg)](https://www.python.org/downloads/)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [Smithery](https://smithery.ai/server/@hellokaton/unsplash-mcp-server)
 
-## 📋 概述
+## 📋 Overview
 
-Unsplash MCP Server 用于搜索丰富且高质量的图片。非常适合希望将Unsplash功能集成到自己应用程序中的开发者使用。
+Unsplash MCP Server is used for searching rich, high-quality images. It's ideal for developers who want to integrate Unsplash functionality into their own applications.
 
-## ✨ 特性
+## ✨ Features
 
-- **高级图片搜索**：通过以下过滤条件搜索Unsplash庞大的照片库：
-  - 关键词相关性
-  - 色彩方案
-  - 方向选项
-  - 自定义排序和分页
+- **Advanced Image Search**: Search Unsplash's extensive photo library with filters for:
+  - Keyword relevance
+  - Color schemes
+  - Orientation options
+  - Custom sorting and pagination
 
-## 🔑 获取Unsplash访问密钥
+## 🔑 Obtaining Unsplash Access Key
 
-在安装此服务器之前，您需要获取Unsplash API访问密钥：
+Before installing this server, you'll need to obtain an Unsplash API Access Key:
 
-1. 在[Unsplash](https://unsplash.com/developers)创建一个开发者账户
-2. 注册一个新的应用
-3. 从应用详情页面获取您的访问密钥
-4. 在下面的配置步骤中使用此密钥
+1. Create a developer account at [Unsplash](https://unsplash.com/developers)
+2. Register a new application
+3. Get your Access Key from the application details page
+4. Use this key in the configuration steps below
 
-更多细节，请参考[官方Unsplash API文档](https://unsplash.com/documentation)。
+For more details, refer to the [official Unsplash API documentation](https://unsplash.com/documentation).
 
-## 🚀 安装
+## 🚀 Installation
 
-要通过[Smithery](https://smithery.ai/server/@hellokaton/unsplash-mcp-server)自动为Claude Desktop安装Unsplash图像集成服务器：
+To install Unsplash Image Integration Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@hellokaton/unsplash-mcp-server):
 
-### IDE 设置
+### IDE Setup
 
 **Cursor IDE**
 
@@ -64,7 +64,7 @@ npx -y @smithery/cli@latest install @hellokaton/unsplash-mcp-server --client win
 npx -y @smithery/cli@latest install @hellokaton/unsplash-mcp-server --client cline --key 7558c683-****-****
 ```
 
-### 手动安装
+### Manual Installation
 
 ```bash
 # Clone the repository
@@ -80,16 +80,16 @@ uv venv
 uv pip install .
 ```
 
-**Cursor 编辑器集成**
+**Cursor Editor Integration**
 
-将以下配置添加到您的Cursor编辑器的`settings.json`中：
+Add the following configuration to your Cursor editor's `settings.json`:
 
-⚠️ **注意：** 请根据您的实际安装情况调整以下配置：
+⚠️ **Note:** Please adjust the following configuration according to your actual installation:
 
-- 如果`uv`不在您的系统PATH中，请使用绝对路径（例如`/path/to/uv`）
-- `./server.py`应修改为您服务器脚本的实际位置（可以使用绝对路径或相对于工作区的路径）
+- If `uv` is not in your system PATH, use an absolute path (e.g., `/path/to/uv`)
+- `./server.py` should be modified to the actual location of your server script (can use absolute path or path relative to workspace)
 
- alt="Cursor 配置截图" />
+ alt="Cursor Configuration Screenshot" />
 
 ```json
 {
@@ -105,13 +105,13 @@ uv pip install .
 }
 ```
 
-### 在Cursor中使用
+### Using in Cursor
 
- alt="Cursor 中的Unsplash MCP" />
+ alt="Unsplash MCP in Cursor" />
 
-## 🛠️ 可用工具
+## 🛠️ Available Tools
 
-### 搜索图片
+### Search Photos
 
 ```json
 {
@@ -122,36 +122,36 @@ uv pip install .
 }
 ```
 
-## 🔄 其他实现
+## 🔄 Other Implementations
 
 - Golang: [unsplash-mcp-server](https://github.com/douglarek/unsplash-mcp-server)
 - Java: [unsplash-mcp-server](https://github.com/JavaProgrammerLB/unsplash-mcp-server)
 
-## 📄 许可证
+## 📄 License
 
-[MIT许可证](https://github.com/hellokaton/unsplash-mcp-server/blob/HEAD/LICENSE)
+[MIT License](https://github.com/hellokaton/unsplash-mcp-server/blob/HEAD/LICENSE)
 
-## 📬 联系方式
+## 📬 Contact
 
 - [Twitter/X](https://x.com/hellokaton)
 - [GitHub Issues](https://github.com/hellokaton/unsplash-mcp-server/issues)
 
-**官方网站：** [https://github.com/hellokaton/unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hellokaton/unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `search`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run --with fastmcp fastmcp run ./server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run --with fastmcp fastmcp run ./server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hellokaton-unsplash.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hellokaton-unsplash.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

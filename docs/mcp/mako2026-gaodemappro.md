@@ -1,228 +1,226 @@
 ---
-title: "高德地图全能版"
-description: "🗺️ 高德地图MCP服务 免Key即用的高德地图MCP服务，17项位置能力全覆盖，无需申请高德API Key，开箱即用。 ✨ 核心特性 ▸ 零配置 — 无需申请高德API Key，无需填写任何环境变量，MCP URL直连即用 ▸ 17项能力 — 地理编码、POI搜索、路线规划、天气查询、行政区划等全面覆盖 ▸ 地址版路线 — 直接输入地址即可规划驾车/公交/步行/骑行路线，无需手动转换经纬度 ▸ 独家能力 — 输入提示（搜索框自动补全）、行政区划查询，其他高德MCP均无 ▸ 企业级代理 — 服务端托管API Key"
+title: "GaodeMapPro"
+description: "🗺️ AMap MCP Service The AMap MCP service, ready to use without a key, covers 17 location capabilities, and requires no application for an AMap API Key, making it instantly usable out of the box. ✨ Cor…"
 ---
 
-# 高德地图全能版
+# GaodeMapPro
 
-🗺️ 高德地图MCP服务 免Key即用的高德地图MCP服务，17项位置能力全覆盖，无需申请高德API Key，开箱即用。 ✨ 核心特性 ▸ 零配置 — 无需申请高德API Key，无需填写任何环境变量，MCP URL直连即用 ▸ 17项能力 — 地理编码、POI搜索、路线规划、天气查询、行政区划等全面覆盖 ▸ 地址版路线 — 直接输入地址即可规划驾车/公交/步行/骑行路线，无需手动转换经纬度 ▸ 独家能力 — 输入提示（搜索框自动补全）、行政区划查询，其他高德MCP均无 ▸ 企业级代理 — 服务端托管API Key
+🗺️ AMap MCP Service The AMap MCP service, ready to use without a key, covers 17 location capabilities, and requires no application for an AMap API Key, making it instantly usable out of the box. ✨ Cor…
 
-🗺️ 高德地图MCP服务
+🗺️ AMap MCP Service
 
-免Key即用的高德地图MCP服务，17项位置能力全覆盖，无需申请高德API Key，开箱即用。
+The AMap MCP service, ready to use without a key, covers 17 location capabilities, and requires no application for an AMap API Key, making it instantly usable out of the box.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 零配置 — 无需申请高德API Key，无需填写任何环境变量，MCP URL直连即用
+▸ Zero Configuration — No need to apply for an AMap API Key or fill in any environment variables; directly connect with the MCP URL and start using it.
 
-▸ 17项能力 — 地理编码、POI搜索、路线规划、天气查询、行政区划等全面覆盖
+▸ 17 Capabilities — Comprehensive coverage including geocoding, POI search, route planning, weather query, administrative division queries, and more.
 
-▸ 地址版路线 — 直接输入地址即可规划驾车/公交/步行/骑行路线，无需手动转换经纬度
+▸ Address-based Routes — Directly input addresses to plan driving/public transit/walking/cycling routes without manually converting to latitude and longitude.
 
-▸ 独家能力 — 输入提示（搜索框自动补全）、行政区划查询，其他高德MCP均无
+▸ Exclusive Features — Input suggestions (auto-complete for search boxes) and administrative division queries, which are not available in other AMap MCP services.
 
-▸ 企业级代理 — 服务端托管API Key，稳定可靠，不受个人Key日限额限制
+▸ Enterprise-level Proxy — Server-side hosted API Keys ensure stability and reliability, free from daily limits imposed on personal keys.
 
-🛠 工具
+🛠 Tools
 
-geocode — 地理编码
+geocode — Geocoding
 
-将详细的结构化地址转换为经纬度坐标，支持对地标性名胜景区、建筑物名称解析。
+Converts detailed structured addresses into latitude and longitude coordinates, supporting landmark scenic spots and building name resolution.
 
-▸ address — 结构化地址，如"北京市朝阳区阜通东大街6号"
+▸ address — Structured address, e.g., "No. 6 Futong East Street, Chaoyang District, Beijing"
 
-▸ city — 指定查询的城市（可选），如"北京"
+▸ city — Specified city (optional), e.g., "Beijing"
 
-regeocode — 逆地理编码
+regeocode — Reverse Geocoding
 
-将高德经纬度坐标转换为行政区划地址信息。
+Converts AMap latitude and longitude coordinates into administrative division address information.
 
-▸ location — 经纬度坐标，格式"lng,lat"，如"116.397428,39.90923"
+▸ location — Latitude and longitude coordinates, format "lng,lat", e.g., "116.397428,39.90923"
 
-poi_search — 关键词搜索POI
+poi_search — Keyword Search for POIs
 
-根据关键词搜索POI兴趣点，返回相关的位置信息列表。
+Searches for POIs based on keywords, returning a list of related location information.
 
-▸ keywords — 搜索关键词，如"餐厅"、"如家酒店"
+▸ keywords — Search keywords, such as "restaurant" or "Home Inn"
 
-▸ city — 查询城市（可选），如"北京"
+▸ city — Query city (optional), e.g., "Beijing"
 
-▸ citylimit — 是否限制城市范围内搜索，"true"或"false"，默认"false"
+▸ citylimit — Whether to limit the search within the city range, "true" or "false", default is "false"
 
-poi_around — 周边搜索POI
+poi_around — Nearby POI Search
 
-根据中心点坐标和关键词搜索指定半径范围内的兴趣点。
+Searches for points of interest within a specified radius based on the central point coordinates and keywords.
 
-▸ location — 中心点经纬度，格式"lng,lat"
+▸ location — Central point's latitude and longitude, format "lng,lat"
 
-▸ keywords — 搜索关键词（可选），如"加油站"
+▸ keywords — Search keywords (optional), e.g., "gas station"
 
-▸ radius — 搜索半径，单位米，默认1000，最大50000
+▸ radius — Search radius, in meters, default is 1000, maximum is 50000
 
-poi_detail — POI详情
+poi_detail — POI Details
 
-查询POI的详细信息，需提供关键词搜索或周边搜索获取到的POI ID。
+Queries detailed information about a POI, requiring the POI ID obtained from keyword or nearby searches.
 
-▸ id — POI ID，从关键词搜索或周边搜索结果中获取
+▸ id — POI ID, obtained from the results of keyword or nearby searches
 
-input_tips — 输入提示
+input_tips — Input Suggestions
 
-根据用户输入的关键词返回匹配的POI建议列表，适用于搜索框自动补全场景。
+Returns a list of matching POI suggestions based on user input keywords, suitable for auto-completion in search boxes.
 
-▸ keywords — 输入关键词，如"肯德基"
+▸ keywords — Input keywords, e.g., "KFC"
 
-▸ city — 查询城市（可选）
+▸ city — Query city (optional)
 
-▸ datatype — 数据类型，"all"全部/"poi"仅POI/"bus"仅公交，默认"all"
+▸ datatype — Data type, "all" for all, "poi" for only POIs, "bus" for only buses, default is "all"
 
-driving_route — 驾车路线规划
+driving_route — Driving Route Planning
 
-根据起终点经纬度规划驾车出行方案。
+Plans driving routes based on the origin and destination latitude and longitude.
 
-▸ origin — 起点经纬度，格式"lng,lat"
+▸ origin — Origin's latitude and longitude, format "lng,lat"
 
-▸ destination — 终点经纬度，格式"lng,lat"
+▸ destination — Destination's latitude and longitude, format "lng,lat"
 
-transit_route — 公交路线规划
+transit_route — Public Transit Route Planning
 
-综合火车、公交、地铁等公共交通方式规划出行方案，跨城场景下必须传终点城市。
+Plans travel routes integrating trains, buses, subways, and other public transportation methods. The destination city must be provided for intercity scenarios.
 
-▸ origin — 起点经纬度，格式"lng,lat"
+▸ origin — Origin's latitude and longitude, format "lng,lat"
 
-▸ destination — 终点经纬度，格式"lng,lat"
+▸ destination — Destination's latitude and longitude, format "lng,lat"
 
-▸ city — 起点城市，如"北京"
+▸ city — Origin city, e.g., "Beijing"
 
-▸ cityd — 终点城市（跨城时必填），如"上海"
+▸ cityd — Destination city (required for intercity), e.g., "Shanghai"
 
-walking_route — 步行路线规划
+walking_route — Walking Route Planning
 
-根据起终点经纬度规划100km以内的步行出行方案。
+Plans walking routes up to 100km based on the origin and destination latitude and longitude.
 
-▸ origin — 起点经纬度，格式"lng,lat"
+▸ origin — Origin's latitude and longitude, format "lng,lat"
 
-▸ destination — 终点经纬度，格式"lng,lat"
+▸ destination — Destination's latitude and longitude, format "lng,lat"
 
-cycling_route — 骑行路线规划
+cycling_route — Cycling Route Planning
 
-根据起终点经纬度规划骑行出行方案，最大支持500km。
+Plans cycling routes based on the origin and destination latitude and longitude, supporting up to 500km.
 
-▸ origin — 起点经纬度，格式"lng,lat"
+▸ origin — Origin's latitude and longitude, format "lng,lat"
 
-▸ destination — 终点经纬度，格式"lng,lat"
+▸ destination — Destination's latitude and longitude, format "lng,lat"
 
-driving_route_by_address — 驾车路线（地址版）
+driving_route_by_address — Driving Route (Address Version)
 
-直接输入地址即可规划驾车路线，无需手动转换经纬度，推荐优先使用。
+Directly input addresses to plan driving routes without manually converting to latitude and longitude, recommended for priority use.
 
-▸ origin_address — 起点地址，如"北京市朝阳区阜通东大街6号"
+▸ origin_address — Origin address, e.g., "No. 6 Futong East Street, Chaoyang District, Beijing"
 
-▸ destination_address — 终点地址，如"北京市海淀区上地十街10号"
+▸ destination_address — Destination address, e.g., "No. 10 Shangdi 10th Street, Haidian District, Beijing"
 
-▸ origin_city — 起点城市（可选），用于提高地理编码准确性
+▸ origin_city — Origin city (optional), used to improve geocoding accuracy
 
-▸ destination_city — 终点城市（可选）
+▸ destination_city — Destination city (optional)
 
-transit_route_by_address — 公交路线（地址版）
+transit_route_by_address — Public Transit Route (Address Version)
 
-直接输入地址即可规划公交路线，无需手动转换经纬度，推荐优先使用。
+Directly input addresses to plan public transit routes without manually converting to latitude and longitude, recommended for priority use.▸ origin_address — Origin address
 
-▸ origin_address — 起点地址
+▸ destination_address — Destination address
 
-▸ destination_address — 终点地址
+▸ city — Origin city
 
-▸ city — 起点城市
+▸ cityd — Destination city (required for inter-city routes)
 
-▸ cityd — 终点城市（跨城时必填）
+▸ origin_city — Origin city (for geocoding, optional)
 
-▸ origin_city — 起点城市（地理编码用，可选）
+▸ destination_city — Destination city (for geocoding, optional)
 
-▸ destination_city — 终点城市（地理编码用，可选）
+walking_route_by_address — Walking route (address version)
 
-walking_route_by_address — 步行路线（地址版）
+You can plan a walking route by directly entering the addresses without manually converting them to latitude and longitude.
 
-直接输入地址即可规划步行路线，无需手动转换经纬度。
+▸ origin_address — Origin address
 
-▸ origin_address — 起点地址
+▸ destination_address — Destination address
 
-▸ destination_address — 终点地址
+▸ origin_city — Origin city (optional)
 
-▸ origin_city — 起点城市（可选）
+▸ destination_city — Destination city (optional)
 
-▸ destination_city — 终点城市（可选）
+cycling_route_by_address — Cycling route (address version)
 
-cycling_route_by_address — 骑行路线（地址版）
+You can plan a cycling route by directly entering the addresses without manually converting them to latitude and longitude.
 
-直接输入地址即可规划骑行路线，无需手动转换经纬度。
+▸ origin_address — Origin address
 
-▸ origin_address — 起点地址
+▸ destination_address — Destination address
 
-▸ destination_address — 终点地址
+▸ origin_city — Origin city (optional)
 
-▸ origin_city — 起点城市（可选）
+▸ destination_city — Destination city (optional)
 
-▸ destination_city — 终点城市（可选）
+weather — Weather query
 
-weather — 天气查询
+Query weather information for a specified city based on the city name or adcode.
 
-根据城市名称或adcode查询指定城市的天气信息。
+▸ city — City name or adcode, such as "Beijing" or "110000"
 
-▸ city — 城市名称或adcode，如"北京"或"110000"
+district — Administrative division query
 
-district — 行政区划查询
+Query administrative division information for provinces, cities, and districts. Supports keyword search and level control.
 
-查询省、市、区县的行政区划信息，支持关键词搜索和层级控制。
+▸ keywords — Search keywords (optional), such as "Beijing"; if left blank, it returns a list of all provincial-level divisions
 
-▸ keywords — 查询关键词（可选），如"北京"；留空则返回全国省级列表
+▸ subdistrict — Number of sub-levels, 0 for no return, 1 for one level, 2 for two levels, 3 for three levels, default is 1
 
-▸ subdistrict — 子级层数，0不返回/1返回一级/2返回二级/3返回三级，默认1
+ip_location — IP location
 
-ip_location — IP定位
+Locate the position based on the IP address. If no IP is provided, it will locate the IP of the current request.
 
-根据IP地址定位所在位置，不传IP则定位当前请求的IP。
+▸ ip — IP address (optional), such as "114.247.50.1"; if left blank, it locates the current IP
 
-▸ ip — IP地址（可选），如"114.247.50.1"；留空则定位当前IP
+📝 Usage Examples
 
-📝 使用示例
+▸ "Find the latitude and longitude of Tiananmen in Beijing" → geocode
 
-▸ "帮我查北京天安门的经纬度" → geocode
+▸ "What gas stations are within 3 kilometers?" → poi_around
 
-▸ "附近3公里内有什么加油站" → poi_around
+▸ "How to walk from Beijing Station to Tiananmen" → walking_route_by_address
 
-▸ "从北京站到天安门怎么走" → walking_route_by_address
+▸ "Driving route from Beijing to Shanghai" → driving_route_by_address
 
-▸ "北京到上海驾车路线" → driving_route_by_address
+▸ "What's the weather like in Shanghai tomorrow" → weather
 
-▸ "上海明天天气怎么样" → weather
+▸ "What can be recommended by entering 'KFC'" → input_tips
 
-▸ "输入'肯德'能推荐什么" → input_tips
+Applicable Scenarios
 
-适用场景
+▸ Travel planning agent for location queries and route planning
 
-▸ 旅行规划Agent的位置查询与路线规划
+▸ Local life assistant for POI search and nearby recommendations
 
-▸ 本地生活助手的POI搜索与周边推荐
+▸ Smart customer service for address parsing and weather queries
 
-▸ 智能客服的地址解析与天气查询
+▸ IDE plugin for geocoding and travel suggestions
 
-▸ IDE插件的地理解码与出行建议
+**Official site: ** [https://pypi.org/project/mcp-gaode-map/](https://pypi.org/project/mcp-gaode-map/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://pypi.org/project/mcp-gaode-map/](https://pypi.org/project/mcp-gaode-map/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `高德地图`, `路线规划`, `周边搜索`, `位置服务`, `驾车导航`, `步行导航`, `骑行路线`
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `高德地图`, `路线规划`, `周边搜索`, `位置服务`, `驾车导航`, `步行导航`, `骑行路线`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from mcp-gaode-map==1.2.0 mcp-gaode-map`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from mcp-gaode-map==1.2.0 mcp-gaode-map`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/mako2026-gaodemappro.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-gaodemappro.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

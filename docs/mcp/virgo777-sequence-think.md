@@ -1,32 +1,21 @@
 ---
-title: "项目规划器"
-description: "该工具通过灵活的思维流程帮助分析问题，这种流程能够适应变化并不断演进。随着认知的深入，每个思维节点都可以对先前结论进行补充、质疑或修正。\n\n适用场景\n\n        拆解复杂问题为可执行步骤\n        需要预留修订空间的设计规划\n        可能需要方向调整的深度分析\n        初期范围不明确的探索性问题\n        需多阶段推理的复合型问题\n        多步骤关联的任务场景\n        需过滤干扰信息的决策场景"
+title: "sequence_think"
+description: "This tool aids in problem analysis through a flexible thought process, which can adapt to changes and continuously evolve. As understanding deepens, each node of thought can supplement, question, or r…"
 ---
 
-# 项目规划器
+# sequence_think
 
-该工具通过灵活的思维流程帮助分析问题，这种流程能够适应变化并不断演进。随着认知的深入，每个思维节点都可以对先前结论进行补充、质疑或修正。
-
-适用场景
-
-        拆解复杂问题为可执行步骤
-        需要预留修订空间的设计规划
-        可能需要方向调整的深度分析
-        初期范围不明确的探索性问题
-        需多阶段推理的复合型问题
-        多步骤关联的任务场景
-        需过滤干扰信息的决策场景
+This tool aids in problem analysis through a flexible thought process, which can adapt to changes and continuously evolve. As understanding deepens, each node of thought can supplement, question, or r…
 
 # XH-Plan MCP Server
 
-## 简介
-**智能任务规划MCP服务**  
-基于系统化思维链（Chain-of-Thought）技术的智能规划工具，通过分阶段推理生成结构化旅行方案。支持动态调整思考路径、多轮迭代优化，最终输出包含完整思考过程、执行计划与行动步骤的JSON格式规划文档。
+## Introduction
+**Intelligent Task Planning MCP Service**  
+An intelligent planning tool based on the Chain-of-Thought (CoT) technology, which generates structured travel plans through phased reasoning. It supports dynamic adjustment of the thinking path, multi-round iterative optimization, and ultimately outputs a JSON-formatted planning document containing the complete thought process, execution plan, and action steps.
 
-
-## 使用指引：本地执行SSE流式配置
-本地输入：
-```json
+## Usage Guide: Local Execution with SSE Stream Configuration
+Local Input:
+json
 {
     "mcpServers": {
         "sequence_think": {
@@ -35,55 +24,54 @@ description: "该工具通过灵活的思维流程帮助分析问题，这种流
         }
     }
 }
-```
+
 ---
 
 ## Tools
 
 ### `think_planner`
-**功能特性**  
-- ✅ **多阶段拆解**：1日游/多日游/主题旅行场景全覆盖  
-- 🔁 **动态调整**：支持中途增删改思维节点  
-- 🧪 **假设验证**：自动生成备选方案（如天气备选计划）  
-- 📈 **迭代优化**：从粗略框架到精细执行步骤
+**Features**
+- ✅ **Multi-stage Decomposition**: Covers all scenarios from 1-day tours to multi-day tours and themed travels
+- 🔁 **Dynamic Adjustment**: Supports adding, deleting, or modifying thought nodes mid-process
+- 🧪 **Hypothesis Validation**: Automatically generates alternative plans (e.g., weather contingency plans)
+- 📈 **Iterative Optimization**: Refines from a rough framework to detailed execution steps
 
-**输入参数**  
-- `query` (string): 自然语言描述的旅行需求  
-  *默认示例*: `"南京一日游规划"`
+**Input Parameters**
+- `query` (string): Travel requirements described in natural language
+  *Default Example*: `"Nanjing one-day tour planning"`
 
-**输出格式**  
-```json
+**Output Format**
+json
 {
   "travel_plan": [
     {
       "step": 1,
-      "description": "规划阶段1: 目标分析",
+      "description": "Planning Stage 1: Objective Analysis",
       "parameters": {
-        "thought": "分析用户核心需求",
-        "plan": "确定时间范围与重点景点",
-        "action": "提取地理位置与开放时间数据"
+        "thought": "Analyze user's core needs",
+        "plan": "Determine time frame and key attractions",
+        "action": "Extract geographic location and opening hours data"
       }
     }
   ]
 }
-```
 
-**官方网站：** [http://211.159.225.228:9002/sse](http://211.159.225.228:9002/sse)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [http://211.159.225.228:9002/sse](http://211.159.225.228:9002/sse)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `communication`
-- 标签：`communication`, `developer tools`, `file systems`, `chinese`
+- Categories: `files`, `communication`
+- Tags: `communication`, `developer tools`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/virgo777-sequence-think.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/virgo777-sequence-think.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

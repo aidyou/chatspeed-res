@@ -1,116 +1,116 @@
 ---
-title: "企业工商信息查询"
-description: "瞳虎企业工商信息MCP Server提供企业名称模糊搜索、股东高管信息查询、企业变更信息查询、企业工商信息查询多个服务。覆盖信息全，实时更新，精准查询。"
+title: "th-enterprise-query"
+description: "Tonghu Enterprise Business Information MCP Server provides multiple services including fuzzy search by enterprise name, query of shareholder and executive information, query of enterprise change infor…"
 ---
 
-# 企业工商信息查询
+# th-enterprise-query
 
-瞳虎企业工商信息MCP Server提供企业名称模糊搜索、股东高管信息查询、企业变更信息查询、企业工商信息查询多个服务。覆盖信息全，实时更新，精准查询。
+Tonghu Enterprise Business Information MCP Server provides multiple services including fuzzy search by enterprise name, query of shareholder and executive information, query of enterprise change infor…
 
-# 瞳虎-企业工商信息 MCP 服务文档
+# Tonghu - Enterprise Business Information MCP Service Documentation
 
-## 什么是 瞳虎-企业工商信息 MCP 服务？
-瞳虎企业工商信息MCP Server提供以下核心功能：
-- 企业名称模糊搜索
-- 股东高管信息查询
-- 企业变更信息查询
-- 企业工商信息查询
+## What is the Tonghu - Enterprise Business Information MCP Service?
+The Tonghu Enterprise Business Information MCP Server provides the following core functionalities:
+- Fuzzy search for enterprise names
+- Querying shareholder and executive information
+- Querying enterprise change information
+- Querying enterprise business information
 
-服务特点：
-- **覆盖信息全**：整合企业工商注册、股东结构、高管信息等核心字段
-- **实时更新**：经营状态、电话号码等数据源动态更新
-- **精准查询**：支持通过企业全称/注册号/社会统一信用代码任意一种方式查询
-- **返回字段**：法人、注册资本、信用代码、登记机关、经营状态、电话号码等
+Service Features:
+- **Comprehensive Coverage**: Integrates core fields such as business registration, shareholder structure, and executive information.
+- **Real-time Updates**: Dynamic updates to operational status, telephone numbers, and other data sources.
+- **Precise Queries**: Supports queries through any of the following: full company name, registration number, or social credit code.
+- **Returned Fields**: Legal representative, registered capital, credit code, registration authority, operational status, telephone number, etc.
 
 ---
 
-## 如何使用 瞳虎-企业工商信息 MCP 服务？
-### API Key 获取方式
-1. 注册登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")
-2. 创建您的 API Key（已创建的可直接使用）
-3. 在[产品中心](https://mcp.tonghu.top/#/layout/prodCenter "瞳虎MCP")开通【企业工商查询】服务
-### 部署方式1（SSE）
-```
+## How to Use the Tonghu - Enterprise Business Information MCP Service?
+### API Key Acquisition
+1. Register and log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP").
+2. Create your API Key (if already created, you can use it directly).
+3. Enable the [Enterprise Business Inquiry] service in the [Product Center](https://mcp.tonghu.top/#/layout/prodCenter "Tonghu MCP").
+
+### Deployment Method 1 (SSE)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/sse?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/sse?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-### 部署方式2（Streamable Http）
-```
+
+### Deployment Method 2 (Streamable Http)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/streamable?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-> **注意事项**：
-- 服务已支持集成到智能体和工作流中
+
+> **Note**:
+- The service supports integration into agents and workflows.
 
 ---
 
+## Key Features of the MCP Service
 
-## MCP 服务的关键特性
+- **Multi-dimensional Data Integration**  
+  Covers core fields including business registration, shareholder structure, executive information, and change records. Data sources are updated in real-time (e.g., operational status, telephone numbers).
 
-- **多维度数据整合**  
-  覆盖企业工商注册、股东结构、高管信息、变更记录等核心字段，数据源实时更新（如经营状态、电话号码等）
-
-- **灵活输入方式**  
-  支持通过企业全称、注册号、社会统一信用代码等多种方式精准查询，结合模糊搜索提升容错率（如拼写错误或简称匹配）
-
----
-
-## 瞳虎-企业工商信息 MCP 服务的使用案例
-
-1. **企业风险评估**  
-   AI代理通过MCP服务链式调用“企业变更信息查询”和“股东信息查询”，分析企业股权变动风险
-
-2. **商业合作尽调**  
-   用户输入合作方公司名，系统自动模糊搜索并返回工商信息、经营状态及高管背景
-
-3. **自动化报告生成**  
-   结合MCP服务与AI模型，自动生成企业信用分析报告（如“某公司近一年无行政处罚记录，股东结构稳定”）
+- **Flexible Input Methods**  
+  Supports precise queries via multiple methods such as full company name, registration number, and social credit code. Fuzzy search enhances fault tolerance (e.g., spelling errors or abbreviation matching).
 
 ---
 
-## 常见问题解答
+## Use Cases for the Tonghu - Enterprise Business Information MCP Service
 
-**Q：使用瞳虎-企业工商信息MCP服务是否需要付费？**  
-A：首次开通产品有免费试用额度，额度耗尽可选择：
-- 购买套餐（限时优惠）
-- 充值余额按次扣费
-- 量大可联系客服定制额外优惠
+1. **Enterprise Risk Assessment**  
+   AI agents chain-call the "Enterprise Change Information Query" and "Shareholder Information Query" services to analyze risks associated with changes in corporate equity.
 
-**Q：使用瞳虎-企业工商信息MCP服务注意事项？**  
-A：首次使用请：
-1. 登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")，使用手机号注册账号
-2. 创建 API Key
-3. 在产品中心开通服务（可额外购买套餐）
+2. **Due Diligence for Business Partnerships**  
+   Users input the partner company's name, and the system automatically performs a fuzzy search, returning business information, operational status, and executive backgrounds.
 
-> **技术支持**  
-联系平台客服或王先生：18363092551（微信同号）
+3. **Automated Report Generation**  
+   Combines MCP services with AI models to automatically generate corporate credit analysis reports (e.g., "Company X has had no administrative penalties in the past year, and its shareholder structure is stable").
 
-**官方网站：** [https://mcp.tonghu.top](https://mcp.tonghu.top)
-**状态：** `active`　**最后核验：** `2026-08-30`
+---
 
-## 分类与标签
+## Frequently Asked Questions
 
-- 分类：`productivity`
-- 标签：`other`, `企业服务`, `chinese`
+**Q: Is there a fee for using the Tonghu - Enterprise Business Information MCP Service?**  
+A: There is a free trial quota upon first activation. After the quota is exhausted, you can choose from the following options:
+- Purchase a package (limited-time offer)
+- Recharge balance and pay per use
+- For large volumes, contact customer service for additional discounts
 
-## MCP 配置
+**Q: What should I be aware of when using the Tonghu - Enterprise Business Information MCP Service?**  
+A: For first-time users, please:
+1. Log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP") and register an account with your phone number.
+2. Create an API Key.
+3. Enable the service in the Product Center (additional packages can be purchased).
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+> **Technical Support**  
+Contact platform customer service or Mr. Wang: 18363092551 (WeChat ID same)
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+**Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 数据来源
+## Categories & Tags
 
-资源文件：`resources/mcp/kid1235789-th-enterprise-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+- Categories: `productivity`
+- Tags: `other`, `企业服务`, `chinese`
+
+## MCP Configuration
+
+- Transport: `http`
+- Command: ``
+- Args: none
+
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/kid1235789-th-enterprise-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

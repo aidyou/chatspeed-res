@@ -1,66 +1,66 @@
 ---
-title: "MCP股票数据服务"
-description: "通过为AI助手提供的模型上下文协议（MCP）服务器，实时访问全球股市数据，包括当前价格、历史图表和公司财务信息。"
+title: "grobal_mcp_stock_server"
+description: "Provides real-time access to global stock market data including current prices, historical charts, and company financial information through a Model Context Protocol (MCP) server for AI assistants."
 ---
 
-# MCP股票数据服务
+# grobal_mcp_stock_server
 
-通过为AI助手提供的模型上下文协议（MCP）服务器，实时访问全球股市数据，包括当前价格、历史图表和公司财务信息。
+Provides real-time access to global stock market data including current prices, historical charts, and company financial information through a Model Context Protocol (MCP) server for AI assistants.
 
-# 全球MCP股票服务器
+# Global MCP Stock Server
 
-用于全球股市数据和分析的Model Context Protocol (MCP) 服务器
+グローバル株式市場データと分析のためのModel Context Protocol (MCP) サーバー
 
-## 概述
+## 概要
 
-此项目提供了一个MCP服务器，用于访问股市数据。它使得AI助手能够实时访问股价、图表数据、公司信息等。
+このプロジェクトは、株式市場データにアクセスするためのMCPサーバーを提供します。AI アシスタントが株価、チャートデータ、企業情報などにリアルタイムでアクセスできるようにします。
 
-## MCP（模型上下文协议）是什么？
+## MCP（Model Context Protocol）とは
 
-模型上下文协议（MCP）是一种标准化的方法，允许应用程序向大规模语言模型（LLM）提供上下文。详情请参阅 [Model Context Protocol 网站](https://modelcontextprotocol.github.io/)。
+Model Context Protocol（MCP）は、アプリケーションが大規模言語モデル（LLM）にコンテキストを提供するための標準化された方法です。詳細は [Model Context Protocol ウェブサイト](https://modelcontextprotocol.github.io/) をご覧ください。
 
-## 功能
+## 機能
 
-- 获取实时股价信息
-- 股价历史数据与图表
-- 支持主要股市指标
-- 公司信息与财务数据
-- 使用TypeScript实现并严格类型检查
+- リアルタイム株価情報の取得
+- 株価の履歴データとチャート
+- 主要な株式指標のサポート
+- 企業情報と財務データ
+- TypeScriptによる実装と厳格な型チェック
 
-# 用户指南
+# 利用者向けガイド
 
 ## 前提条件
 
-- Node.js 18 或更高版本
-- npm 或 yarn
+- Node.js 18 以上
+- npm または yarn
 
-## 安装方法
+## インストール方法
 
-1. 克隆仓库:
+1. リポジトリをクローンする:
 
 ```bash
    git clone https://github.com/sakura-ku/grobal_mcp_stock_server.git
    cd grobal_mcp_stock_server
 ```
 
-2. 安装依赖项:
+2. 依存関係をインストールする:
 
 ```bash
    npm install
 ```
 
-3. 构建并运行服务器:
+3. サーバーをビルドして実行する:
 
 ```bash
    npm run build
    npm start
 ```
 
-## 使用方法
+## 利用方法
 
-### 1. 设置环境变量
+### 1. 環境変数の設定
 
-首先，设置必要的环境变量。创建一个`.env`文件或复制现有的`.env.example`文件：
+初めに、必要な環境変数を設定します。`.env`ファイルを作成するか、既存の`.env.example`ファイルをコピーして使用します：
 
 ```bash
 # Windows PowerShellの場合
@@ -70,7 +70,7 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-编辑`.env`文件以配置所需的API密钥：
+`.env`ファイルを編集して、必要なAPIキーを設定します：
 
 ```
 # 基本設定
@@ -84,34 +84,34 @@ POLYGON_API_KEY=your_polygon_api_key_here
 # その他のAPIキー...
 ```
 
-### 2. 运行服务器
+### 2. サーバーの実行
 
-在开发模式下启动服务器：
+開発モードでサーバーを起動するには：
 
 ```bash
 npm run dev
 ```
 
-在生产模式下启动服务器：
+本番モードでサーバーを起動するには：
 
 ```bash
 npm run build
 npm run start:prod
 ```
 
-### 3. API使用方式
+### 3. APIの使用方法
 
-#### 直接从浏览器访问
+#### ブラウザから直接アクセス
 
-服务器启动后，可以通过以下URL直接从浏览器访问股价数据：
+サーバーが起動したら、ブラウザから以下のURLで株価データにアクセスできます：
 
 ```
 http://localhost:3000/api/stock/price?symbol=AAPL
 ```
 
-#### 使用cURL的示例
+#### cURLを使用した例
 
-可以从命令行使用cURL获取数据：
+コマンドラインからcURLを使用してデータを取得できます：
 
 ```bash
 # 株価データの取得
@@ -121,9 +121,9 @@ curl "http://localhost:3000/api/stock/price?symbol=AAPL"
 curl "http://localhost:3000/api/stock/history?symbol=AAPL&days=30"
 ```
 
-#### 从程序中使用的示例
+#### プログラムからの使用例
 
-从Node.js应用程序中使用的例子：
+Node.jsアプリケーションから利用する例：
 
 ```javascript
 // 株価データを取得する関数
@@ -139,20 +139,20 @@ getStockPrice('AAPL').then(data => {
 });
 ```
 
-### 4. 与AI助手集成
+### 4. AIアシスタントとの統合
 
-有关如何与Claude、GPT-4等AI助手集成的信息，请参见“与MCP客户端协作”部分。
+Claude、GPT-4などのAIアシスタントとの統合方法については、「MCPクライアントとの連携」セクションを参照してください。
 
-#### Claude使用示例
+#### Claudeでの使用例
 
-Claude提示的例子：
+Claudeプロンプトの例：
 
 ```
 株価を調べてください。
 テスラ（TSLA）の現在の株価と、過去1週間の動向を教えてください。
 ```
 
-#### AI助手响应示例
+#### AIアシスタントの応答例
 
 ```
 テスラ（TSLA）の株価情報は以下の通りです：
@@ -173,25 +173,25 @@ Claude提示的例子：
 過去1週間で約8%の上昇トレンドを示しています。特に直近3日間で価格の上昇が加速しています。
 ```
 
-## 可用工具
+## 利用可能なツール
 
-### 获取股价信息 (get_stock_price)
+### 株価情報の取得 (get_stock_price)
 
-获取指定股票代码的当前股价及相关信息。
+指定された銘柄の現在の株価と関連情報を取得します。
 
-**参数:**
-- `symbol` (string): 股票代码（例如: AAPL, MSFT, GOOGL）
+**パラメータ:**
+- `symbol` (string): 株式の銘柄コード（例: AAPL, MSFT, GOOGL）
 
-**返回值:**
-- 股价信息（价格、变动、货币等）
+**戻り値:**
+- 株価情報（価格、変動、通貨など）
 
-## 与MCP客户端协作
+## MCPクライアントとの連携
 
-要在客户端（如Claude, Claude Desktop, 其他支持MCP的应用程序）中使用此MCP服务器，需要创建一个mcp.json文件来定义MCP服务器。
+このMCPサーバーをクライアント（Claude, Claude Desktop, その他MCPサポートアプリケーション）で利用するには、mcp.jsonファイルを作成し、MCPサーバーの定義を行います。
 
-### mcp.json定义示例
+### mcp.json定義例
 
-下面是一个使用本服务器的mcp.json定义示例。将此配置添加到MCP客户端中，即可访问股价信息：
+以下は、このサーバーを利用するためのmcp.json定義例です。この設定をMCPクライアントに追加することで、株価情報にアクセスできるようになります：
 
 ```json
 {
@@ -221,33 +221,33 @@ Claude提示的例子：
 }
 ```
 
-### 在MCP客户端中的设置方法
+### MCPクライアントでの設定方法
 
-1. 将上述mcp.json定义保存至任意位置
-2. 打开MCP客户端（如Claude Desktop）的设置界面
-3. 在MCP设置部分选择“添加服务器”或“导入”选项
-4. 选择已保存的mcp.json文件或将内容复制粘贴
-5. 保存设置并重启客户端
+1. 上記のmcp.json定義を任意の場所に保存します
+2. MCPクライアント（Claude Desktopなど）の設定画面を開きます
+3. MCP設定セクションで「サーバー追加」または「インポート」オプションを選択します
+4. 保存したmcp.jsonファイルを選択するか、内容をコピー＆ペーストします
+5. 設定を保存し、クライアントを再起動します
 
-这样，在MCP客户端的提示或聊天中就可以使用股价信息工具了。
+これで、MCPクライアントのプロンプトやチャット内で株価情報ツールが利用可能になります。
 
-### Cursor IDE中的设置方法
+### Cursor IDEでの設定方法
 
-在Cursor IDE中，通过向settings.json文件添加MCP服务器设置，可以使AI助手能够使用这些工具。
+Cursor IDEでは、settings.jsonファイルにMCPサーバーの設定を追加することで、AIアシスタントがツールを利用できるようになります。
 
-#### 设置步骤
+#### 設定手順
 
-1. 打开Cursor设置：
+1. Cursorの設定を開きます：
    - Windows/Linux: `Ctrl+,`
    - macOS: `Cmd+,`
 
-2. 选择"Cursor Settings"并编辑settings.json文件
+2. "Cursor Settings"を選択し、settings.jsonファイルを編集します
 
-3. 在`mcpServers`部分添加以下设置:
+3. `mcpServers`セクションに以下の設定を追加します:
 
-##### 作为本地项目运行（推荐）
+##### ローカルプロジェクトとして実行する場合（推奨）
 
-该项目假设您将在本地进行开发和运行。使用npm脚本来运行是最可靠的方法：
+このプロジェクトはローカルでの開発・実行を前提としています。npmスクリプトを使用して実行するのが最も確実な方法です：
 
 ```json
 {
@@ -267,7 +267,7 @@ Claude提示的例子：
 }
 ```
 
-在开发模式下运行时:
+開発モードで実行する場合:
 
 ```json
 {
@@ -287,18 +287,18 @@ Claude提示的例子：
 }
 ```
 
-##### 从GitHub Packages安装的方法
+##### GitHub Packagesからインストールする方法
 
-这个MCP服务器通过GitHub Packages作为私有npm注册表发布。按照以下步骤进行安装：
+このMCPサーバーはGitHub Packagesを使用してプライベートnpmレジストリとして公開されています。以下の手順でインストールできます：
 
-1. 创建或编辑`.npmrc`文件以进行身份验证设置：
+1. `.npmrc`ファイルを作成または編集して認証設定を行います：
 
 ```
 @sakura-ku:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 ```
 
-2. 将GitHub个人访问令牌设置为环境变量`NPM_TOKEN`：
+2. 環境変数`NPM_TOKEN`にGitHubの個人アクセストークンを設定します：
 
 ```bash
 # Windowsの場合
@@ -308,13 +308,13 @@ $env:NPM_TOKEN="your_github_token"
 export NPM_TOKEN="your_github_token"
 ```
 
-3. 安装包：
+3. パッケージをインストールします：
 
 ```bash
 npm install @sakura-ku/grobal-mcp-stock-server
 ```
 
-4. Cursor IDE中的设置示例：
+4. Cursor IDEでの設定例：
 
 ```json
 {
@@ -332,25 +332,23 @@ npm install @sakura-ku/grobal-mcp-stock-server
 }
 ```
 
-更多详细设置方法请参考管理私有npm注册表。
+詳細な設定方法はプライベートnpmレジストリの管理方法をご参照ください。
 
-#### 故障排除
+#### トラブルシューティング
 
-对于具体的故障排除建议，请参照相关文档或联系技术支持。
+- **サーバーが起動しない場合**:
+  - プロジェクトディレクトリに移動して手動でコマンドを実行し、エラーを確認
+  - 依存関係が正しくインストールされているか確認（`npm install`を実行）
+  - TypeScriptのバージョンが合っているか確認
 
-- **服务器无法启动时**:
-  - 移动到项目目录手动执行命令，检查错误
-  - 确认依赖项已正确安装（运行 `npm install`）
-  - 检查 TypeScript 版本是否匹配
+- **ツールが見つからない場合**:
+  - サーバーが正常に起動しているか確認
+  - ログ出力で登録されているツール名を確認
+  - 必要なら`npm run dev`でサーバーをデバッグモードで起動
 
-- **找不到工具时**:
-  - 确认服务器是否正常启动
-  - 检查日志输出中注册的工具名称
-  - 如有必要，使用 `npm run dev` 以调试模式启动服务器
+# 開発者向けガイド
 
-# 开发者指南
-
-## 项目结构
+## プロジェクト構成
 
 ```
 grobal_mcp_stock_server/
@@ -370,87 +368,87 @@ grobal_mcp_stock_server/
 └── README.md             # プロジェクトドキュメント
 ```
 
-## 设置开发环境
+## 開発環境のセットアップ
 
-1. 安装开发依赖:
+1. 開発依存関係をインストールする:
 ```bash
    npm install
 ```
 
-2. 在开发模式下启动服务器:
+2. 開発モードでサーバーを起動する:
 ```bash
    npm run dev
 ```
 
-## 开发工作流程
+## 開発ワークフロー
 
-- 以监视模式启动 TypeScript 编译器: `npm run dev`
-- 执行代码静态分析: `npm run lint`
-- 自动修复静态分析问题: `npm run lint:fix`
-- 运行测试: `npm test`
+- TypeScriptコンパイラをウォッチモードで起動: `npm run dev`
+- コードの静的解析: `npm run lint`
+- 静的解析の問題を自動修正: `npm run lint:fix`
+- テストの実行: `npm test`
 
-## 可用脚本
+## 使用可能なスクリプト
 
-在 package.json 中定义的脚本详细说明:
+package.jsonで定義されているスクリプトの詳細説明:
 
-### 构建脚本
-- `build`: 编译 TypeScript 代码并输出到 dist 目录
-- `build:dev`: 为开发环境构建，包含源映射
-- `build:prod`: 为生产环境构建，不包含源映射
-- `clean`: 删除 dist 目录进行清理
-- `prebuild`: 在构建前自动执行 clean 脚本
+### ビルドスクリプト
+- `build`: TypeScriptコードをコンパイルし、distディレクトリに出力します
+- `build:dev`: 開発環境用にソースマップ付きでビルドします
+- `build:prod`: 本番環境用にソースマップなしでビルドします
+- `clean`: distディレクトリを削除して清掃します
+- `prebuild`: ビルド前に自動的にcleanスクリプトを実行します
 
-### 服务器启动脚本
-- `start`: 启动已编译的服务器
-- `start:dev`: 以开发环境配置启动服务器
-- `start:prod`: 以生产环境配置启动服务器
-- `dev`: 开发模式，监视源代码更改，并自动重建和重启
+### サーバー起動スクリプト
+- `start`: コンパイル済みのサーバーを起動します
+- `start:dev`: 開発環境設定でサーバーを起動します
+- `start:prod`: 本番環境設定でサーバーを起動します
+- `dev`: ソースコードの変更を監視し、自動的にビルドと再起動を行う開発モードです
 
-### 代码质量控制脚本
-- `lint`: 使用 ESLint 对 TypeScript 代码进行静态分析
-- `lint:fix`: 使用 ESLint 自动修正代码问题
+### コード品質管理スクリプト
+- `lint`: ESLintを使用してTypeScriptコードの静的解析を行います
+- `lint:fix`: ESLintを使用してコードの問題を自動修正します
 
-### 测试脚本
-- `test`: 使用 Jest 运行所有测试
-- `test:watch`: 以监视模式运行测试，在文件变更时重新运行
-- `test:coverage`: 生成测试覆盖率报告
-- `test:ci`: 以 CI 环境配置运行测试
-- `test:unit`: 仅运行单元测试
-- `test:integration`: 仅运行集成测试
-- `test:services`: 仅运行服务测试
-- `test:debug`: 以调试模式运行测试
+### テストスクリプト
+- `test`: Jestを使用して全てのテストを実行します
+- `test:watch`: テストをウォッチモードで実行し、変更時に再実行します
+- `test:coverage`: テストカバレッジレポートを生成します
+- `test:ci`: CI環境用のテスト設定で実行します
+- `test:unit`: ユニットテストのみを実行します
+- `test:integration`: 統合テストのみを実行します
+- `test:services`: サービステストのみを実行します
+- `test:debug`: デバッグモードでテストを実行します
 
-### 部署与打包
-- `deploy:staging`: 部署到预发布环境
-- `deploy:production`: 部署到生产环境
-- `publish:package`: 将包发布到 npm 注册表
-- `prepare:package`: 在打包前执行生产构建并创建 tarball
-- `prepublishOnly`: 在发布包之前执行生产构建
+### デプロイとパッケージング
+- `deploy:staging`: ステージング環境にデプロイします
+- `deploy:production`: 本番環境にデプロイします
+- `publish:package`: npmレジストリにパッケージを公開します
+- `prepare:package`: パッケージング前に本番ビルドを実行し、tarballを作成します
+- `prepublishOnly`: パッケージ公開前に本番用ビルドを実行します
 
-## 许可证
+## ライセンス
 
 ISC
 
-## 贡献
+## 貢献
 
-如果您有兴趣为这个项目做贡献，请发送拉取请求。
+このプロジェクトへの貢献に興味がある場合は、プルリクエストを送信してください。
 
-**官方网站：** [https://github.com/sakura-ku/grobal_mcp_stock_server](https://github.com/sakura-ku/grobal_mcp_stock_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sakura-ku/grobal_mcp_stock_server](https://github.com/sakura-ku/grobal_mcp_stock_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `search`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npm`
-- 参数：`run dev`
+- Transport: `stdio`
+- Command: `npm`
+- Args: `run dev`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sakura-ku-grobal-stock.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sakura-ku-grobal-stock.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

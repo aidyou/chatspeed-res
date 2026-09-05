@@ -1,11 +1,11 @@
 ---
-title: "OpenAI Sora2 MCP"
-description: "MCP API 是一个基于模型上下文协议（MCP）的 Sora2 视频水印移除服务，能够将 Sora2 视频水印移除功能无缝集成到主流的 MCP 兼容工具的工作流程中，如 Claude Desktop、OpenAI、Cursor、Dify、n8n 等。它支持由 AI 驱动的水印移除、快速集成以及安全可靠的使用。"
+title: "Sora2VideoRemoveWatermark"
+description: "Choose your language / 选择语言 / 言語を選択 / Sprache wählen / 언어 선택 / Elige tu idioma / Choisissez votre langue / Escolha seu idioma --- MCP API is a Sora2 video watermark removal service based on Model Cont"
 ---
 
-# OpenAI Sora2 MCP
+# Sora2VideoRemoveWatermark
 
-MCP API 是一个基于模型上下文协议（MCP）的 Sora2 视频水印移除服务，能够将 Sora2 视频水印移除功能无缝集成到主流的 MCP 兼容工具的工作流程中，如 Claude Desktop、OpenAI、Cursor、Dify、n8n 等。它支持由 AI 驱动的水印移除、快速集成以及安全可靠的使用。
+Choose your language / 选择语言 / 言語を選択 / Sprache wählen / 언어 선택 / Elige tu idioma / Choisissez votre langue / Escolha seu idioma --- MCP API is a Sora2 video watermark removal service based on Model Cont
 
 ![English](/mcp-assets/fecd7369c3d0610652a0f2f3830b26f6.svg)
 [GitHub](https://github.com/peizhou/mcp-openai-sora/blob/HEAD/README_ZH.md)
@@ -16,233 +16,213 @@ MCP API 是一个基于模型上下文协议（MCP）的 Sora2 视频水印移�
 [GitHub](https://github.com/peizhou/mcp-openai-sora/blob/HEAD/README_FR.md)
 [GitHub](https://github.com/peizhou/mcp-openai-sora/blob/HEAD/README_PT.md)
 
-**选择语言 / Choose your language / 言語を選択 / Sprache wählen / 언어 선택 / Elige tu idioma / Choisissez votre langue / Escolha seu idioma**
+**Choose your language / 选择语言 / 言語を選択 / Sprache wählen / 언어 선택 / Elige tu idioma / Choisissez votre langue / Escolha seu idioma**
 
 ---
 
-# MCP API - Sora2 视频水印移除服务
+# MCP API - Sora2 Video Watermark Removal Service
 
-## 🎯 产品介绍
+## 🎯 Product Introduction
 
-MCP API 是基于 Model Context Protocol (MCP) 的 Sora2 视频水印移除服务，能够将 Sora2 视频水印移除功能无缝集成到主流的 MCP 兼容工具（如 Claude Desktop、OpenAI、Cursor、Dify、n8n 等）的工作流中。只需几分钟即可通过简单的 API 密钥认证开始使用。
+MCP API is a Sora2 video watermark removal service based on Model Context Protocol (MCP), enabling seamless integration of Sora2 video watermark removal functionality into workflows of mainstream MCP-compatible tools such as Claude Desktop, OpenAI, Cursor, Dify, n8n, and more. Get started in minutes with simple API key authentication.
 
-🌐 **官方文档页面**: [https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp)
+🌐 **Official Documentation Page**: [https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp)
 
-## 🚀 快速入门
+## 🚀 Quick Start
 
-### 第一步：获取 API 密钥
+### Step 1: Get API Key
 
-1. 访问 [MCP API 页面](https://sora.thirdme.com/mcp)
-2. 输入您的电子邮件地址
-3. 点击“生成 API 密钥”按钮
-4. 复制生成的 API 密钥（请妥善保管，它与您的订阅和使用配额相关联）
+1. Visit the [MCP API page](https://sora.thirdme.com/mcp)
+2. Enter your email address
+3. Click the "Generate API Key" button
+4. Copy the generated API key (Keep it secure, it's linked to your subscription and usage quota)
 
-> ⚠️ **重要提示**：请妥善保管您的 API 密钥。生成新的密钥将会替换现有的密钥。如果您重新生成，请更新您的 MCP 配置。
+> ⚠️ **Important**: Keep your API key secure. Generating a new key will replace your existing key. If you regenerate, please update your MCP configuration.
 
-### 第二步：配置 Claude Desktop
+### Step 2: Configure Claude Desktop
 
-在您的 Claude Desktop 配置文件 `mcp.json` 中添加以下配置：
+Add the following configuration to your Claude Desktop config file `mcp.json`:
 
-**配置文件位置:**
+**Config File Locations:**
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
-**配置:**
+**Configuration:**
 
 ```json
-
 {
-
   "mcpServers": {
-
     "sora-watermark-remover": {
-
       "url": "https://sora.thirdme.com/api/mcp-sse?key=YOUR_API_KEY"
-
     }
-
   }
-
 }
-
-```
-> 将 `YOUR_API_KEY` 替换为第一步中获取的实际 API 密钥。
-
-### 第三步：在 Claude 中使用
-
-配置完成后，重启 Claude Desktop，然后您可以直接要求 Claude 移除 Sora2 视频中的水印：
-
-**示例对话:**
-
 ```
 
+> Replace `YOUR_API_KEY` with your actual API key obtained in Step 1.
+
+### Step 3: Use in Claude
+
+After configuration, restart Claude Desktop, then you can directly ask Claude to remove watermarks from Sora2 videos:
+
+**Example Conversation:**
+
+```
 Please remove the watermark from this Sora2 video: https://sora.chatgpt.com/share/xxx
-
-```
-Claude 将自动调用 MCP API 来处理视频，并返回无水印视频的下载链接。
-
-## ✨ 核心功能
-
-### 🤖 基于 AI 的水印移除
-- **智能检测**：AI 自动识别并移除 Sora2 视频中的水印
-- **保持质量**：在移除水印的同时保持原始视频质量
-- **快速处理**：在 5 秒内完成处理，返回无水印视频链接
-
-### 🔧 快速集成
-- **简单配置**：只需添加配置文件和 API 密钥
-- **广泛兼容性**：支持所有 MCP 兼容工具（如 Claude Desktop、OpenAI、Cursor、Dify、n8n 等）
-- **即插即用**：配置后立即可用，无需额外开发
-
-### 🔒 安全可靠
-- **UUID 认证**：基于 UUID 的认证机制
-- **速率限制**：防止滥用并确保服务稳定性
-- **使用跟踪**：实时跟踪 API 使用情况和配额
-
-### 📊 共享订阅
-- **统一配额**：API 访问和网页版共享相同的订阅配额
-- **灵活使用**：在多个平台和工具上使用同一订阅服务
-
-## 📖 API 参考
-
-### 端点
-
 ```
 
+Claude will automatically call the MCP API to process the video and return a download link to the watermark-free video.
+
+## ✨ Core Features
+
+### 🤖 AI-Powered Watermark Removal
+- **Smart Detection**: AI automatically identifies and removes watermarks from Sora2 videos
+- **Preserve Quality**: Maintain original video quality while removing watermarks
+- **Fast Processing**: Complete processing in 5 seconds, return watermark-free video links
+
+### 🔧 Fast Integration
+- **Simple Configuration**: Just add configuration file and API key
+- **Wide Compatibility**: Supports all MCP-compatible tools (Claude Desktop, OpenAI, Cursor, Dify, n8n, etc.)
+- **Plug and Play**: Ready to use immediately after configuration, no additional development required
+
+### 🔒 Secure & Reliable
+- **UUID Authentication**: UUID-based authentication mechanism
+- **Rate Limiting**: Prevents abuse and ensures service stability
+- **Usage Tracking**: Real-time tracking of API usage and quotas
+
+### 📊 Shared Subscription
+- **Unified Quota**: API access and web version share the same subscription quota
+- **Flexible Usage**: Use the same subscription service across multiple platforms and tools
+
+## 📖 API Reference
+
+### Endpoint
+
+```
 GET/POST https://sora.thirdme.com/api/mcp-sse?key=YOUR_API_KEY
-
 ```
-### 可用工具
+
+### Available Tools
 
 #### remove_watermark
 
-从 Sora2 视频中移除水印并获取干净的下载链接。支持 OpenAI Sora 视频 URL。
+Remove watermark from Sora2 video and get the clean download link. Supports OpenAI Sora video URLs.
 
-**输入参数:**
-- `videoUrl` (字符串): 要处理的 Sora2 视频 URL
+**Input Parameters:**
+- `videoUrl` (string): The Sora2 video URL to process
 
-**输出:**
-返回一个 JSON 对象，包含：
-- `videoUrl`: 无水印视频下载链接
-- `thumbnailUrl`: 视频缩略图链接
-- `videoInfo`: 详细的视频信息
+**Output:**
+Returns a JSON object containing:
+- `videoUrl`: Watermark-free video download link
+- `thumbnailUrl`: Video thumbnail link
+- `videoInfo`: Detailed video information
 
-**示例:**
+**Example:**
 
 ```json
-
 {
-
   "videoUrl": "https://example.com/video.mp4",
-
   "thumbnailUrl": "https://example.com/thumbnail.jpg",
-
   "videoInfo": {
-
     "title": "Video Title",
-
     "duration": 30,
-
     "resolution": "1920x1080"
-
   }
-
 }
-
 ```
-### 错误代码
 
-| 错误代码 | 描述 |
+### Error Codes
+
+| Error Code | Description |
 |------------|-------------|
-| -32001 | 用户未找到 |
-| -32003 | 需要订阅或已达到使用限制 |
-| -32004 | 视频处理失败 |
+| -32001 | User not found |
+| -32003 | Subscription required or usage limit reached |
+| -32004 | Failed to process video |
 
-## 🛠️ 支持的平台- ✅ Claude Desktop
+## 🛠️ Supported Platforms
+
+- ✅ Claude Desktop
 - ✅ OpenAI (MCP Compatible)
 - ✅ Cursor
 - ✅ Dify
 - ✅ n8n
-- ✅ 其他兼容MCP的工具
+- ✅ Other MCP-Compatible Tools
 
-## 💡 使用案例
+## 💡 Use Cases
 
-### 用例1：批量处理Sora2视频
-在Claude Desktop中，您可以一次性处理多个Sora2视频：
+### Use Case 1: Batch Process Sora2 Videos
+In Claude Desktop, you can process multiple Sora2 videos at once:
 
 ```
-
 Please process and remove watermarks from the following Sora2 videos:
-
 1. https://sora.chatgpt.com/share/video1
-
 2. https://sora.chatgpt.com/share/video2
-
 3. https://sora.chatgpt.com/share/video3
-
 ```
-### 用例2：集成到自动化工作流
-在n8n或Dify中，您可以将水印移除功能集成到您的自动化工作流中，以进行批量处理和自动化操作。
 
-### 用例3：Cursor开发助手
-在Cursor中开发项目时，您可以直接要求AI助手处理Sora2视频的水印移除任务，而无需离开开发环境。
+### Use Case 2: Integrate into Automation Workflows
+In n8n or Dify, you can integrate watermark removal into your automation workflows for batch processing and automated operations.
 
-## 📝 注意事项
+### Use Case 3: Cursor Development Assistant
+When developing projects in Cursor, you can directly ask the AI assistant to handle Sora2 video watermark removal tasks without leaving the development environment.
 
-1. **API密钥安全**：请确保您的API密钥安全，不要与他人共享或将它提交到公共仓库。
-2. **配额限制**：API使用受订阅配额限制，请负责任地使用。
-3. **视频格式**：目前仅支持Sora2视频URL（sora.chatgpt.com/share/xxx 格式）。
-4. **处理时间**：大多数视频在5秒内处理完成。
-5. **数据安全**：处理后的视频将在24小时后自动从服务器删除。
+## 📝 Notes
 
-## ❓ 常见问题
+1. **API Key Security**: Keep your API key secure, do not share it with others or commit it to public repositories
+2. **Quota Limits**: API usage is subject to subscription quota limits, please use responsibly
+3. **Video Format**: Currently only supports Sora2 video URLs (sora.chatgpt.com/share/xxx format)
+4. **Processing Time**: Most videos are processed within 5 seconds
+5. **Data Security**: Processed videos are automatically deleted from the server after 24 hours
 
-### Q: 我在哪里可以获得API密钥？
-A: 访问[https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp)，输入您的电子邮件地址生成API密钥。
+## ❓ FAQ
 
-### Q: 如何测试API密钥是否有效？
-A: 在MCP API页面上生成密钥后，您可以使用页面上的“测试API密钥”功能来验证密钥的有效性。
+### Q: Where can I get an API key?
+A: Visit [https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp), enter your email address to generate an API key.
 
-### Q: 使用API收费吗？
-A: API使用与网页版共享相同的订阅配额。具体价格请参阅[Pricing page](https://sora.thirdme.com/#pricing)。
+### Q: How to test if the API key is valid?
+A: After generating a key on the MCP API page, you can use the "Test API Key" feature on the page to verify the key's validity.
 
-### Q: 是否支持其他视频平台？
-A: 目前主要支持Sora2视频（sora.chatgpt.com），未来可能会支持更多平台。
+### Q: Is API usage charged?
+A: API usage shares the same subscription quota as the web version. Please refer to the [Pricing page](https://sora.thirdme.com/#pricing) for specific pricing.
 
-### Q: 如何处理订阅和配额问题？
-A: API访问使用与网页版相同的订阅服务。您可以在网页版上管理订阅并查看使用情况。
+### Q: Do you support other video platforms?
+A: Currently mainly supports Sora2 videos (sora.chatgpt.com), more platforms may be supported in the future.
 
-## 📧 支持与反馈
+### Q: How to handle subscription and quota issues?
+A: API access uses the same subscription service as the web version. You can manage subscriptions and view usage on the web version.
 
-如果您在使用过程中遇到任何问题或有任何建议，请联系我们：
+## 📧 Support & Feedback
 
-- 📧 电子邮件：support@thirdme.com
-- 🌐 网站：[https://sora.thirdme.com](https://sora.thirdme.com)
-- 📄 API文档：[https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp)
+If you encounter any issues during use or have any suggestions, please contact us:
 
-## 📄 许可证
+- 📧 Email: support@thirdme.com
+- 🌐 Website: [https://sora.thirdme.com](https://sora.thirdme.com)
+- 📄 API Documentation: [https://sora.thirdme.com/mcp](https://sora.thirdme.com/mcp)
 
-本服务遵循Sora Watermark Remover的服务条款和隐私政策。
+## 📄 License
+
+This service follows Sora Watermark Remover's Terms of Service and Privacy Policy.
 
 ---
 
-**🎉 开始使用MCP API，让您的AI工作流更强大！**
+**🎉 Start using MCP API and make your AI workflows more powerful!**
 
-**官方网站：** [https://github.com/peizhou/mcp-openai-sora](https://github.com/peizhou/mcp-openai-sora)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/peizhou/mcp-openai-sora](https://github.com/peizhou/mcp-openai-sora)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`developer tools`, `art and culture`, `browser automation`, `sora`, `openai`, `cursor`, `claude`, `sora2`
+- Categories: `media`
+- Tags: `developer tools`, `art and culture`, `browser automation`, `sora`, `openai`, `cursor`, `claude`, `sora2`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/thirdme-sora2videoremovewatermark.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/thirdme-sora2videoremovewatermark.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

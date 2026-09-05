@@ -1,0 +1,30 @@
+---
+title: "量化金融mcp"
+description: "一个专门为量化分析设计的 MCP 服务器工具，FinQ4Cn-mcp-server 旨在为大型模型提供方便、免费且开源的金融数据访问。该项目基于 akshare 库，专注于中国的 A 股市场，为用户提供全面的股票及相关金融产品的数据支持。它特别适合从事量化分析的专业人士以及对中国国内股票市场感兴趣的用户，满足他们对中国金融市场数据的需求。作为专为国内投资者设计的理想选择，FinQ4Cn-mcp-s…"
+---
+
+# 量化金融mcp
+
+一个专门为量化分析设计的 MCP 服务器工具，FinQ4Cn-mcp-server 旨在为大型模型提供方便、免费且开源的金融数据访问。该项目基于 akshare 库，专注于中国的 A 股市场，为用户提供全面的股票及相关金融产品的数据支持。它特别适合从事量化分析的专业人士以及对中国国内股票市场感兴趣的用户，满足他们对中国金融市场数据的需求。作为专为国内投资者设计的理想选择，FinQ4Cn-mcp-s…
+
+一个专门为量化分析设计的 MCP 服务器工具，FinQ4Cn-mcp-server 旨在为大型模型提供方便、免费且开源的金融数据访问。该项目基于 akshare 库，专注于中国的 A 股市场，为用户提供全面的股票及相关金融产品的数据支持。它特别适合从事量化分析的专业人士以及对中国国内股票市场感兴趣的用户，满足他们对中国金融市场数据的需求。作为专为国内投资者设计的理想选择，FinQ4Cn-mcp-server 使用户能够轻松访问多维数据，包括但不限于股票价格、财务指标和市场波动性，助力精准决策。
+
+**官方网站：** [https://github.com/jinhongzou/FinQ4Cn-mcp-server](https://github.com/jinhongzou/FinQ4Cn-mcp-server)
+**状态：** `active`　**最后核验：** `2026-08-30`
+
+## 分类与标签
+
+- 分类：`finance`
+- 标签：`finance`, `chinese`
+
+## MCP 配置
+
+- 传输方式：`stdio`
+- 启动命令：`your_path/python.exe`
+- 参数：`your_path/FinQ4Cn-mcp-server/mcp-server/fs_server.py`
+
+该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+
+## 数据来源
+
+资源文件：`resources/mcp/nqzxm0618-finq4cn.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。

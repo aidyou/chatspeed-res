@@ -1,11 +1,11 @@
 ---
-title: "光厂MCP"
-description: "您可以在支持MCP协议的AI模型客户端中搜索授权的高清商业视频素材。"
+title: "VJshi-MCP"
+description: "You can search for licensed high-definition commercial video material in AI model clients that support the MCP protocol."
 ---
 
-# 光厂MCP
+# VJshi-MCP
 
-您可以在支持MCP协议的AI模型客户端中搜索授权的高清商业视频素材。
+You can search for licensed high-definition commercial video material in AI model clients that support the MCP protocol.
 
 # 🎬 光厂 MCP 视频素材搜索工具
 
@@ -42,7 +42,7 @@ description: "您可以在支持MCP协议的AI模型客户端中搜索授权的�
 
 **支持的客户端：** Claude App、Cherry Studio、Cursor、Cline、Windsurf 等
 
-json
+```json
 {
   "mcpServers": {
     "vjshi-video-mcp": {
@@ -59,6 +59,7 @@ json
     }
   }
 }
+```
 
 ---
 
@@ -70,22 +71,22 @@ json
 ## 🤝 联系我们
 如有问题或建议，欢迎访问 [光厂MCP](https://open.vjshi.com/mcp) 获取更多帮助！
 
-**官方网站：** [https://github.com/dioa-design/vjshi-video-mcp](https://github.com/dioa-design/vjshi-video-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/dioa-design/vjshi-video-mcp](https://github.com/dioa-design/vjshi-video-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`search`, `art and culture`, `entertainment and media`, `光厂`, `vj师网`, `视频素材网`, `高清视频素材下载`, `ae模板下载`, `免费视频素材`, `素材搜索推荐`
+- Categories: `media`
+- Tags: `search`, `art and culture`, `entertainment and media`, `光厂`, `vj师网`, `视频素材网`, `高清视频素材下载`, `ae模板下载`, `免费视频素材`, `素材搜索推荐`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @vjshi/vjshi-video-mcp@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @vjshi/vjshi-video-mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/guangchangvjshi-vjshi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/guangchangvjshi-vjshi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

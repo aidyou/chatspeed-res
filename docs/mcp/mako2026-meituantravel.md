@@ -1,68 +1,68 @@
 ---
-title: "美团旅行助手"
-description: "🧳 美团旅行助手 一站式旅行查询MCP服务，支持酒店、机票、火车票、景点门票与行程规划 ✨ 核心特性 ▸ 一站式旅行查询 — 酒店/机票/火车票/景点门票/行程规划，一个工具全覆盖 ▸ 自然语言交互 — 直接说需求即可，如\"北京到上海的机票\"、\"西湖附近500元酒店\" ▸ 全国300+城市覆盖 — 数据来源美团旅行，覆盖主流出行目的地 ▸ 实时价格与预订链接 — 返回实时价格与可直接预订的链接 🛠 工具 meituantravelquery 美团旅行综合查询，支持酒店推荐/机票火车票查询/景点门票/行程规划等一站式"
+title: "MeituanTravel"
+description: "🧳 Meituan Travel Assistant One-stop travel inquiry MCP service, supporting hotel, flight, train ticket, attraction ticket booking, and itinerary planning. ✨ Core Features ▸ One-stop travel inquiry — C…"
 ---
 
-# 美团旅行助手
+# MeituanTravel
 
-🧳 美团旅行助手 一站式旅行查询MCP服务，支持酒店、机票、火车票、景点门票与行程规划 ✨ 核心特性 ▸ 一站式旅行查询 — 酒店/机票/火车票/景点门票/行程规划，一个工具全覆盖 ▸ 自然语言交互 — 直接说需求即可，如"北京到上海的机票"、"西湖附近500元酒店" ▸ 全国300+城市覆盖 — 数据来源美团旅行，覆盖主流出行目的地 ▸ 实时价格与预订链接 — 返回实时价格与可直接预订的链接 🛠 工具 meituantravelquery 美团旅行综合查询，支持酒店推荐/机票火车票查询/景点门票/行程规划等一站式
+🧳 Meituan Travel Assistant One-stop travel inquiry MCP service, supporting hotel, flight, train ticket, attraction ticket booking, and itinerary planning. ✨ Core Features ▸ One-stop travel inquiry — C…
 
-🧳 美团旅行助手
+🧳 Meituan Travel Assistant
 
-一站式旅行查询MCP服务，支持酒店、机票、火车票、景点门票与行程规划
+One-stop travel inquiry MCP service, supporting hotel, flight, train ticket, attraction ticket booking, and itinerary planning.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 一站式旅行查询 — 酒店/机票/火车票/景点门票/行程规划，一个工具全覆盖
+▸ One-stop travel inquiry — Covers hotel/flight/train ticket/attraction ticket/itinerary planning with a single tool
 
-▸ 自然语言交互 — 直接说需求即可，如"北京到上海的机票"、"西湖附近500元酒店"
+▸ Natural language interaction — Simply state your needs, such as "flights from Beijing to Shanghai" or "hotels near West Lake under 500 yuan"
 
-▸ 全国300+城市覆盖 — 数据来源美团旅行，覆盖主流出行目的地
+▸ Coverage of over 300 cities nationwide — Data sourced from Meituan Travel, covering major travel destinations
 
-▸ 实时价格与预订链接 — 返回实时价格与可直接预订的链接
+▸ Real-time pricing and booking links — Provides real-time prices and direct booking links
 
-🛠 工具
+🛠 Tools
 
 meituan_travel_query
 
-美团旅行综合查询，支持酒店推荐/机票火车票查询/景点门票/行程规划等一站式旅行服务
+Comprehensive Meituan Travel inquiry, supporting one-stop travel services including hotel recommendations, flight and train ticket inquiries, attraction tickets, and itinerary planning.
 
-参数：
+Parameters:
 
-▸ city（string，✅必填）：当前所在城市，中文城市名，如"北京"、"上海"、"广州"、"成都"
+▸ city (string, ✅ required): The current city, in Chinese, such as "北京" (Beijing), "上海" (Shanghai), "广州" (Guangzhou), "成都" (Chengdu)
 
-▸ query（string，✅必填）：自然语言查询需求，如"北京到上海的机票"、"杭州西湖附近酒店"、"上海迪士尼门票"、"周末两天成都游玩攻略"
+▸ query (string, ✅ required): Natural language query for your needs, such as "flights from Beijing to Shanghai", "hotels near West Lake in Hangzhou", "tickets for Shanghai Disneyland", "two-day weekend travel guide in Chengdu"
 
-📝 使用示例
+📝 Usage Examples
 
-▸ "帮我查北京到上海的机票" → meituan_travel_query(city="北京", query="北京到上海的机票")
+▸ "Help me find flights from Beijing to Shanghai" → `meituan_travel_query(city="北京", query="北京到上海的机票")`
 
-▸ "杭州西湖附近500元以内的酒店" → meituan_travel_query(city="杭州", query="杭州西湖附近500元以内的酒店")
+▸ "Hotels near West Lake in Hangzhou under 500 yuan" → `meituan_travel_query(city="杭州", query="杭州西湖附近500元以内的酒店")`
 
-▸ "上海迪士尼门票多少钱" → meituan_travel_query(city="上海", query="上海迪士尼门票")
+▸ "How much are the tickets for Shanghai Disneyland" → `meituan_travel_query(city="上海", query="上海迪士尼门票")`
 
-▸ "周末两天成都游玩攻略" → meituan_travel_query(city="成都", query="周末两天成都游玩攻略")
+▸ "Two-day weekend travel guide in Chengdu" → `meituan_travel_query(city="成都", query="周末两天成都游玩攻略")`
 
-▸ "从广州出发去三亚的火车票" → meituan_travel_query(city="广州", query="广州到三亚的火车票")
+▸ "Train tickets from Guangzhou to Sanya" → `meituan_travel_query(city="广州", query="广州到三亚的火车票")`
 
-▸ "带小孩去北京有什么好玩的" → meituan_travel_query(city="北京", query="带小孩去北京旅游推荐")
+▸ "What fun activities are there for kids in Beijing" → `meituan_travel_query(city="北京", query="带小孩去北京旅游推荐")`
 
-**官方网站：** [https://pypi.org/project/mcp-meituan-travel/](https://pypi.org/project/mcp-meituan-travel/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pypi.org/project/mcp-meituan-travel/](https://pypi.org/project/mcp-meituan-travel/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from mcp-meituan-travel==1.1.0 mcp-meituan-travel`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from mcp-meituan-travel==1.1.0 mcp-meituan-travel`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mako2026-meituantravel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-meituantravel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

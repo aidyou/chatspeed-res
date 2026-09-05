@@ -1,11 +1,11 @@
 ---
-title: "网络安全基础数据MCP"
-description: "奇安信X实验室提供的关于网络安全基础数据查询的工具集，包括域名、IP和样本相关信息。该工具集支持本地运行或通过URL远程访问，并需要适当的认证。"
+title: "fdp-mcp-server"
+description: "fdp-mcp-server English version: README.md."
 ---
 
-# 网络安全基础数据MCP
+# fdp-mcp-server
 
-奇安信X实验室提供的关于网络安全基础数据查询的工具集，包括域名、IP和样本相关信息。该工具集支持本地运行或通过URL远程访问，并需要适当的认证。
+fdp-mcp-server English version: README.md.
 
 fdp-mcp-server
 
@@ -159,22 +159,22 @@ fdp-mcp-server提供了不同种类的工具，在使用时可以根据需要，
 	}
 ```
 
-**官方网站：** [https://github.com/qax-xlab/fdp-mcp-server](https://github.com/qax-xlab/fdp-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/qax-xlab/fdp-mcp-server](https://github.com/qax-xlab/fdp-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run --project /PATH/TO/fdp-mcp-server fdp-mcp-server --url https://fdp.qianxin.com/mcp/v1/basic/mcp/`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run --project /PATH/TO/fdp-mcp-server fdp-mcp-server --url https://fdp.qianxin.com/mcp/v1/basic/mcp/`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/isolver-fdp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/isolver-fdp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

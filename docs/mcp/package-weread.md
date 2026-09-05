@@ -1,11 +1,11 @@
 ---
-title: "微信读书"
-description: "一个为微信读书提供MCP（Model Context Protocol）服务的工具，支持将微信读书的书籍、笔记和划线数据提供给支持MCP的大语言模型客户端，如Claude Desktop。"
+title: "mcp-server-weread"
+description: "A tool that provides MCP (Model Context Protocol) services for WeChat Reading, enabling the sharing of books, notes, and highlighted text from WeChat Reading with large language model clients that sup…"
 ---
 
-# 微信读书
+# mcp-server-weread
 
-一个为微信读书提供MCP（Model Context Protocol）服务的工具，支持将微信读书的书籍、笔记和划线数据提供给支持MCP的大语言模型客户端，如Claude Desktop。
+A tool that provides MCP (Model Context Protocol) services for WeChat Reading, enabling the sharing of books, notes, and highlighted text from WeChat Reading with large language model clients that sup…
 
 # 微信读书 MCP Server
 
@@ -177,22 +177,22 @@ MIT
 
 欢迎提交Pull Request或Issue来改进此项目。
 
-**官方网站：** [https://www.npmjs.com/package/mcp-server-weread?activeTab=readme](https://www.npmjs.com/package/mcp-server-weread?activeTab=readme)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/mcp-server-weread?activeTab=readme](https://www.npmjs.com/package/mcp-server-weread?activeTab=readme)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-server-weread`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-server-weread`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/package-weread.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/package-weread.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,88 +1,88 @@
 ---
-title: "MCP Google日历服务"
-description: "提供对Google日历API的无缝访问的模型上下文协议服务器，支持异步操作，通过标准化接口实现高效的日历管理。"
+title: "py-mcp-gcalendar"
+description: "Model Context Protocol server that provides seamless access to Google Calendar API with asynchronous operation support, enabling efficient calendar management through a standardized interface."
 ---
 
-# MCP Google日历服务
+# py-mcp-gcalendar
 
-提供对Google日历API的无缝访问的模型上下文协议服务器，支持异步操作，通过标准化接口实现高效的日历管理。
+Model Context Protocol server that provides seamless access to Google Calendar API with asynchronous operation support, enabling efficient calendar management through a standardized interface.
 
-# Google Calendar MCP Server - 安装和使用指南
+# Google Calendar MCP Server - คู่มือการติดตั้งและการใช้งาน
 
-## 📘 概述
-Model Context Protocol (MCP) 服务器提供对 Google Calendar API 的无缝访问，并支持异步操作，通过标准接口高效管理日历。
+## 📘 ภาพรวม
+Model Context Protocol (MCP) server ที่ให้บริการเข้าถึง Google Calendar API พร้อมรองรับการทำงานแบบ asynchronous operations ช่วยให้การจัดการปฏิทินมีประสิทธิภาพผ่านอินเตอร์เฟซที่เป็นมาตรฐาน
 
-## 🚀 主要特性
-- 无缝连接到 Google Calendar API
-- 支持异步操作以实现最高效率
-- 基于 OAuth 2.0 的认证系统，自动刷新令牌
-- 全面的错误处理和日志记录
-- 简洁的 MCP 接口，适用于 Claude 和其他 AI
+## 🚀 คุณสมบัติหลัก
+- เชื่อมต่อกับ Google Calendar API แบบไร้รอยต่อ
+- รองรับการทำงานแบบ asynchronous สำหรับประสิทธิภาพสูงสุด
+- ระบบ authentication แบบ OAuth 2.0 พร้อมการต่ออายุโทเค็นอัตโนมัติ
+- การจัดการข้อผิดพลาดและการล็อกแบบครอบคลุม
+- อินเทอร์เฟซ MCP ที่เรียบง่ายสำหรับการใช้งานกับ Claude และ AI อื่นๆ
 
-## 🔑 API 工具
-| 工具 | 描述 |
+## 🔑 เครื่องมือ API
+| เครื่องมือ | คำอธิบาย |
 |------------|----------|
-| **list** | 获取日历中的活动列表（过去两年至未来一年） |
-| **create-event** | 在日历中创建新活动 |
-| **delete-duplicates** | 删除重复的活动 |
-| **delete-event** | 删除指定的活动 |
+| **list** | ดึงรายการกิจกรรมในปฏิทิน (2 ปีย้อนหลังถึง 1 ปีล่วงหน้า) |
+| **create-event** | สร้างกิจกรรมใหม่ในปฏิทิน |
+| **delete-duplicates** | ลบกิจกรรมที่ซ้ำกัน |
+| **delete-event** | ลบกิจกรรมที่ระบุ |
 
-## 🛠️ 安装
+## 🛠️ การติดตั้ง
 
-### 先决条件
-- Python 3.9 或更高版本
-- 互联网连接
-- 启用了 Google Calendar API 的 Google Cloud Console 项目
+### สิ่งที่ต้องมีก่อน
+- Python 3.9 หรือสูงกว่า
+- การเชื่อมต่ออินเทอร์เน็ต
+- โปรเจกต์ Google Cloud Console ที่มี Google Calendar API เปิดใช้งาน
 
-### 安装步骤
+### ขั้นตอนการติดตั้ง
 
-1. **克隆项目**
+1. **โคลนโปรเจกต์**
 ```bash
    git clone https://github.com/yourusername/GCalendar.git
    cd GCalendar
 ```
 
-2. **创建虚拟环境（推荐方法）**
+2. **สร้างสภาพแวดล้อมเสมือน (วิธีที่แนะนำ)**
 ```bash
    python -m venv gcalendar_venv
    
-   # 对于 Windows
-   gcalendar_venv\Scripts\activate
+   # สำหรับ Windows
+   gcalendar_venvScriptsactivate
    
-   # 对于 macOS/Linux
+   # สำหรับ macOS/Linux
    source gcalendar_venv/bin/activate
 ```
 
-3. **安装必需的包**
+3. **ติดตั้งแพ็คเกจที่จำเป็น**
 ```bash
    pip install -r requirements.txt
 ```
 
-4. **准备必需的文件夹**
+4. **เตรียมโฟลเดอร์ที่จำเป็น**
 ```bash
    mkdir -p credentials logs
 ```
 
-### 认证设置
+### การตั้งค่า Authentication
 
-1. **创建 Google Cloud Console 项目**
-   - 前往 [Google Cloud Console](https://console.cloud.google.com/)
-   - 创建新项目
-   - 启用 Google Calendar API
-   - 创建 OAuth 2.0 客户端 ID
-   - 将 credentials.json 下载到 credentials/ 文件夹中
+1. **สร้างโปรเจกต์ Google Cloud Console**
+   - ไปที่ [Google Cloud Console](https://console.cloud.google.com/)
+   - สร้างโปรเจกต์ใหม่
+   - เปิดใช้งาน Google Calendar API
+   - สร้าง OAuth 2.0 Client ID
+   - ดาวน์โหลด credentials.json ไปที่โฟลเดอร์ credentials/
 
-2. **生成令牌**
+2. **สร้างโทเค็น**
 ```bash
    python src/create_token.py
 ```
-   - 按照浏览器中的步骤授权访问
-   - 令牌将保存在 credentials/ 文件夹中，命名为 token.json
+   - ทำตามขั้นตอนในเบราว์เซอร์เพื่อให้สิทธิ์การเข้าถึง
+   - โทเค็นจะถูกบันทึกในโฟลเดอร์ credentials/ เป็น token.json
 
-## ⚙️ 技术配置
+## ⚙️ การกำหนดค่าเทคนิค
 
-### 配置 MCP 服务器
-在 `claude_desktop_config.json` 文件中添加：
+### การกำหนดค่า MCP Server
+เพิ่มในไฟล์ `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -96,11 +96,11 @@ Model Context Protocol (MCP) 服务器提供对 Google Calendar API 的无缝访
 }
 ```
 
-替换占位符：
-- `YOUR_PYTHON_PATH`: Python 解释器的路径（来自 venv 或 conda）
-- `YOUR_PATH`: 克隆项目的完整路径
+แทนที่ตัวยึดตำแหน่ง:
+- `YOUR_PYTHON_PATH`: พาธไปยัง Python interpreter (จาก venv หรือ conda)
+- `YOUR_PATH`: พาธเต็มไปยังโฟลเดอร์ที่โคลน
 
-### 项目结构
+### โครงสร้างโปรเจกต์
 ```
 GCalendar/
 ├── credentials/
@@ -119,56 +119,55 @@ GCalendar/
 └── README.md
 ```
 
-## 📋 使用说明
+## 📋 การใช้งาน
 
-### 启动服务器
+### การเริ่มใช้งานเซิร์ฟเวอร์
 
-1. **手动启动服务器**
+1. **เริ่มเซิร์ฟเวอร์ด้วยตนเอง**
 ```bash
    python src/mcp_server.py
 ```
 
-2. **与 Claude Desktop 一起使用**
-   - 按照上面技术配置部分中的说明进行配置
-   - Claude 会在需要时自动启动服务器
+2. **การใช้งานกับ Claude Desktop**
+   - กำหนดค่าตามที่อธิบายในส่วนการกำหนดค่าข้างต้น
+   - Claude จะเริ่มใช้งานเซิร์ฟเวอร์โดยอัตโนมัติเมื่อจำเป็น
 
-### 示例命令
+### ตัวอย่างคำสั่ง
 
-1. **查看日历中的活动列表**
+1. **ดูรายการกิจกรรมในปฏิทิน**
 ```
-   显示我的日历中的活动
-```
-
-2. **创建新活动**
-```
-   创建名为 "团队会议" 的会议，日期为 2025 年 3 月 25 日，时间为 14:00 至 15:00
+   แสดงกิจกรรมในปฏิทินของฉัน
 ```
 
-3. **删除重复的活动**
+2. **สร้างกิจกรรมใหม่**
 ```
-   删除 2025 年 3 月 25 日重复的 "团队会议" 活动
+   สร้างการประชุมชื่อ "ประชุมทีม" วันที่ 25 มีนาคม 2025 เวลา 14:00 น. ถึง 15:00 น.
 ```
 
-## 🔍 故障排除
+3. **ลบกิจกรรมที่ซ้ำกัน**
+```
+   ลบกิจกรรม "ประชุมทีม" ที่ซ้ำกันในวันที่ 25 มีนาคม 2025
+```
 
-### 认证问题
+## 🔍 การแก้ไขปัญหา
 
-1. 检查 credentials.json 和 token.json 文件是否位于 credentials/ 文件夹中。
-2. 删除 token.json 并使用 create_token.py 重新创建它。
+### ปัญหาการรับรองความถูกต้อง
+1. ตรวจสอบว่าไฟล์ credentials.json และ token.json อยู่ในโฟลเดอร์ credentials/
+2. ลบ token.json และสร้างใหม่โดยใช้ create_token.py
 
-### 关于时区的问题
-1. 确认 timezone 库已安装：
+### ปัญหาเกี่ยวกับเขตเวลา
+1. ตรวจสอบว่าไลบรารี timezone ถูกติดตั้งแล้ว:
 ```bash
    pip install pytz tzdata
 ```
 
-### 检查日志
-1. 查看日志文件以获取有关错误的更多信息：
+### การตรวจสอบล็อก
+1. ดูไฟล์ล็อกเพื่อรับข้อมูลเพิ่มเติมเกี่ยวกับข้อผิดพลาด:
 ```bash
    cat logs/calendar_service.log
 ```
 
-## 📚 依赖
+## 📚 การพึ่งพา
 - google-auth-oauthlib==1.0.0
 - google-auth-httplib2==0.1.0
 - google-api-python-client==2.108.0
@@ -177,26 +176,26 @@ GCalendar/
 - pytz==2023.3
 - tzdata==2023.3
 
-## 📄 许可证
-此项目根据 MIT License 发布。请参阅 LICENSE 文件以获取详细信息。
+## 📄 ใบอนุญาต
+โปรเจกต์นี้มีใบอนุญาตภายใต้ MIT License ดูไฟล์ LICENSE สำหรับรายละเอียด
 "# py-mcp-gcalendar"
 
-**官方网站：** [https://github.com/amornpan/py-mcp-gcalendar](https://github.com/amornpan/py-mcp-gcalendar)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/amornpan/py-mcp-gcalendar](https://github.com/amornpan/py-mcp-gcalendar)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`YOUR_PYTHON_PATH`
-- 参数：`YOUR_PATH/GCalendar/src/mcp_server.py`
+- Transport: `stdio`
+- Command: `YOUR_PYTHON_PATH`
+- Args: `YOUR_PATH/GCalendar/src/mcp_server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/amornpan-py-gcalendar.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/amornpan-py-gcalendar.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

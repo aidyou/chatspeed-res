@@ -1,95 +1,109 @@
 ---
-title: "MCP Flomo笔记助手"
-description: "一个基于 TypeScript 的 MCP 服务器，帮助您将笔记写入 Flomo。"
+title: "mcp-server-flomo"
+description: "A TypeScript-based MCP server to help you write notes into Flomo."
 ---
 
-# MCP Flomo笔记助手
+# mcp-server-flomo
 
-一个基于 TypeScript 的 MCP 服务器，帮助您将笔记写入 Flomo。
+A TypeScript-based MCP server to help you write notes into Flomo.
 
-# 正文
-# mcp-server-flomo MCP服务器
+# mcp-server-flomo MCP Server
 
-将笔记写入Flomo。
+Writes notes to Flomo.
 
-这是一个基于TypeScript的MCP服务器，可帮助您将笔记写入Flomo。
+This is a TypeScript-based MCP server that helps you write notes to Flomo.
 
-## 功能
+## Features
 
-### 工具
+### Tools
 
-- `write_note` - 将文本笔记写入Flomo
-  - 需要内容作为必需参数
+- `write_note` - Writes a text note to Flomo
+  - Requires content as a mandatory parameter
 
-## 开发
+## Development
 
-安装依赖项：
+Install dependencies:
 
 ```bash
+
 npm install
-```
 
-构建服务器：
+```
+Build the server:
 
 ```bash
+
 npm run build
-```
 
-用于开发时自动重建：
+```
+For auto-rebuilding during development:
 
 ```bash
+
 npm run watch
+
 ```
+## Installation
 
-## 安装
+To use in Claude Desktop, add the server configuration:
 
-要在Claude桌面版中使用，请添加服务器配置：
-
-在MacOS上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-在Windows上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
+
 {
+
   "mcpServers": {
+
     "mcp-server-flomo": {
+
       "command": "npx",
+
       "args": ["-y", "@chatmcp/mcp-server-flomo"],
+
       "env": {
+
         "FLOMO_API_URL": "https://flomoapp.com/iwh/xxx/xxx/"
+
       }
+
     }
+
   }
+
 }
+
 ```
+Find your Flomo_API_URL [here](https://v.flomoapp.com/mine?source=incoming_webhook)
 
-找到您的Flomo_API_URL [在此处](https://v.flomoapp.com/mine?source=incoming_webhook)
+### Debugging
 
-### 调试
-
-由于MCP服务器通过标准输入输出进行通信，调试可能会具有挑战性。我们建议使用[MCP检查器](https://github.com/modelcontextprotocol/inspector)，它作为包脚本可用：
+Since the MCP server communicates via standard input and output, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
+
 npm run inspector
+
 ```
+The inspector will provide a URL where you can access the debugging tools in your browser.
 
-检查器将提供一个URL，您可以在浏览器中访问调试工具。
+**Official site: ** [https://github.com/chatmcp/mcp-server-flomo](https://github.com/chatmcp/mcp-server-flomo)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/chatmcp/mcp-server-flomo](https://github.com/chatmcp/mcp-server-flomo)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `memory`
+- Tags: `knowledge and memory`, `chinese`
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @chatmcp/mcp-server-flomo`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @chatmcp/mcp-server-flomo`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/chatmcp-flomo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chatmcp-flomo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

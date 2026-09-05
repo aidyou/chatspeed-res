@@ -1,11 +1,11 @@
 ---
-title: "疯狂星期四文案（开发中）"
-description: "基于MCP (Model Context Protocol) 的标签化文案服务，为AI应用提供疯狂星期四文案生成和搜索能力。专为角色扮演应用、聊天机器人、社交媒体工具等场景设计。提供多维度标签体系以实现精准匹配，并支持随机文案生成和基于标签的定向搜索。"
+title: "kfc_v_me_50"
+description: "--- title: 疯狂星期四文案MCP服务 emoji: 🍗 colorFrom: orange colorTo: red sdk: gradio sdkversion: 5.33.0 appfile: app.py pinned: false license: apache-2.0 shortdescription: 基于标签化管理的疯狂星期四文案MCP服务，为AI应用提供精准文案匹配 ta…"
 ---
 
-# 疯狂星期四文案（开发中）
+# kfc_v_me_50
 
-基于MCP (Model Context Protocol) 的标签化文案服务，为AI应用提供疯狂星期四文案生成和搜索能力。专为角色扮演应用、聊天机器人、社交媒体工具等场景设计。提供多维度标签体系以实现精准匹配，并支持随机文案生成和基于标签的定向搜索。
+--- title: 疯狂星期四文案MCP服务 emoji: 🍗 colorFrom: orange colorTo: red sdk: gradio sdkversion: 5.33.0 appfile: app.py pinned: false license: apache-2.0 shortdescription: 基于标签化管理的疯狂星期四文案MCP服务，为AI应用提供精准文案匹配 ta…
 
 ---
 title: 疯狂星期四文案MCP服务
@@ -322,22 +322,22 @@ Apache-2.0 License - 支持商业和非商业用途
 文案来源于各个群聊和社交媒体，如有侵权请联系删除。
 其中有些文案由 bilibili 骚饼猫整理——— 关于肯德基疯狂星期四的文案 系列：https://www.bilibili.com/opus/1012561406475632642?spm_id_from=333.1387.0.0
 
-**官方网站：** [https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50](https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50](https://www.modelscope.cn/studios/modelscope_mp_460196816/V_me_50)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://modelscope-mp-460196816-v-me-50.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://modelscope-mp-460196816-v-me-50.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelscope-mp-460196816-kfc-v-me-50.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelscope-mp-460196816-kfc-v-me-50.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

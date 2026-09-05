@@ -1,29 +1,28 @@
 ---
-title: "真爱之书Lovetell-MCP工具（MCP&Agent挑战赛）"
-description: "项目简介 真爱之书Lovetell 是一款专注于恋爱与婚姻情感咨询的智能体，融合中国传统命理学（包括八字与紫微斗数）与现代心理学知识，为用户提供深入多维的情感分析，帮助用户更全面理解自身情感需求与伴侣关系。 本项目为其开发的 MCP 工具集，涵盖桃花星、配偶星、婚姻宫等核心命理维度，以及结合心理学视角解析情感与互动模式。 工具介绍 - 测算桃花星：分析八字中的“桃花星”，识别个人魅力与异性缘基础，为情感机会提供命理依据。 - 测算配偶星：通过八字中的“配偶星”，解读婚姻伴侣的代表符号，预测正缘特征与婚姻走势。 - "
+title: "LoveTell"
+description: "Project Overview Lovetell, the Book of True Love, is an intelligent agent focused on providing emotional and marital counseling by integrating traditional Chinese astrology (including BaZi and Zi Wei…"
 ---
 
-# 真爱之书Lovetell-MCP工具（MCP&Agent挑战赛）
+# LoveTell
 
-项目简介 真爱之书Lovetell 是一款专注于恋爱与婚姻情感咨询的智能体，融合中国传统命理学（包括八字与紫微斗数）与现代心理学知识，为用户提供深入多维的情感分析，帮助用户更全面理解自身情感需求与伴侣关系。 本项目为其开发的 MCP 工具集，涵盖桃花星、配偶星、婚姻宫等核心命理维度，以及结合心理学视角解析情感与互动模式。 工具介绍 - 测算桃花星：分析八字中的“桃花星”，识别个人魅力与异性缘基础，为情感机会提供命理依据。 - 测算配偶星：通过八字中的“配偶星”，解读婚姻伴侣的代表符号，预测正缘特征与婚姻走势。 - 
+Project Overview Lovetell, the Book of True Love, is an intelligent agent focused on providing emotional and marital counseling by integrating traditional Chinese astrology (including BaZi and Zi Wei…
 
-## 项目简介
+## Project Overview
 
-真爱之书Lovetell 是一款专注于恋爱与婚姻情感咨询的智能体，融合中国传统命理学（包括八字与紫微斗数）与现代心理学知识，为用户提供深入多维的情感分析，帮助用户更全面理解自身情感需求与伴侣关系。
-本项目为其开发的 MCP 工具集，涵盖桃花星、配偶星、婚姻宫等核心命理维度，以及结合心理学视角解析情感与互动模式。
+Lovetell, the Book of True Love, is an intelligent agent focused on providing emotional and marital counseling by integrating traditional Chinese astrology (including BaZi and Zi Wei Dou Shu) with modern psychological knowledge. It offers in-depth, multi-dimensional emotional analysis to help users better understand their own emotional needs and partner relationships. This project develops its MCP (Modelscope Computing Platform) toolkit, which covers core astrological dimensions such as Peach Blossom Star, Spouse Star, and Marriage Palace, along with a psychological perspective for analyzing emotions and interaction patterns.
 
-### 工具介绍
+### Tool Introduction
 
-- 测算桃花星：分析八字中的“桃花星”，识别个人魅力与异性缘基础，为情感机会提供命理依据。
-- 测算配偶星：通过八字中的“配偶星”，解读婚姻伴侣的代表符号，预测正缘特征与婚姻走势。
-- 测算婚姻宫：以日支作为“婚姻宫”，分析夫妻关系质量、婚姻稳定性与家庭相处模式。
-- 测算情感模式：结合心理学方法，解析个人情感底色与深层需求，提升情感自我认知。
-- 测算互动模式：分析用户与伴侣在沟通、社交与责任分工中的互动方式，促进关系和谐。
-- 测算伴侣特质：预测潜在伴侣的外貌、职业、家庭背景、性格与价值观，辅助用户明确择偶方向。
+- **Peach Blossom Star Calculation**: Analyzes the "Peach Blossom Star" in the BaZi to identify the foundation of personal charm and opposite-sex relationships, providing astrological basis for emotional opportunities.
+- **Spouse Star Calculation**: Interprets the "Spouse Star" in the BaZi to predict the characteristics of the right partner and the trend of marriage.
+- **Marriage Palace Calculation**: Uses the day branch as the "Marriage Palace" to analyze the quality of spousal relationships, marital stability, and family interaction patterns.
+- **Emotional Pattern Analysis**: Combines psychological methods to interpret the underlying emotional tone and deep-seated needs, enhancing self-awareness in emotions.
+- **Interaction Pattern Analysis**: Analyzes the ways users and their partners interact in communication, socializing, and division of responsibilities, promoting harmonious relationships.
+- **Partner Traits Prediction**: Predicts potential partner's appearance, occupation, family background, personality, and values, assisting users in clarifying their mate selection direction.
 
-## 部署指南
+## Deployment Guide
     
-```json
+json
 {
     "name": "love-tell-ai-mcp-v2",
     "type": "stdio",
@@ -35,180 +34,177 @@ description: "项目简介 真爱之书Lovetell 是一款专注于恋爱与婚�
         "api_key": "sk-xxx"
     }
 }
-```
 
-## 设计思路
+## Design Philosophy
 
-本项目的MCP工具设计核心是 “融合”：我们不是简单地将八字命理术语进行封装，而是将其背后的逻辑与现代心理学模型进行深度整合。目标是提供一套既符合传统文化认知，又具备现代科学解释性的工具集。
+The core design principle of this project's MCP tools is "integration": we do not simply encapsulate the terms of BaZi astrology but deeply integrate the logic behind them with modern psychological models. The goal is to provide a set of tools that align with traditional cultural understanding while also offering modern scientific explanations.
 
-## 整体架构
+## Overall Architecture
 
-MCP服务采用清晰的分层架构，确保稳定性、可扩展性和易维护性。
-- 协议层：严格遵循MCP协议标准，实现listTools, callTool, readResource等核心接口。
-- 核心计算引擎：使用【百炼应用】构建统一的命理计算模块，能够根据用户的生辰八字排出桃花星、婚姻宫等信息。同时将计算引擎的原始结果进行解析，并与心理学维度进行映射。
-- 知识库和资源：通过MCP的resources功能，向智能体提供静态的、背景性的知识文档。这极大地增强了智能体自身的知识储备，使其能更好地向用户解释我们的分析结果。
-- 上下文感知：工具设计充分考虑了对话的上下文。例如，当智能体连续调用测算配偶星和测算伴侣特质时，服务内部缓存用户的八字信息，避免重复计算保持分析的一致性。
+The MCP service adopts a clear layered architecture to ensure stability, scalability, and maintainability.
+- **Protocol Layer**: Strictly adheres to the MCP protocol standards, implementing core interfaces such as listTools, callTool, and readResource.
+- **Core Calculation Engine**: Utilizes the [Bailian Application] to build a unified astrology calculation module, capable of calculating information like the Peach Blossom Star and Marriage Palace based on the user's birth data. The raw results from the calculation engine are then interpreted and mapped to psychological dimensions.
+- **Knowledge Base and Resources**: Through the MCP's resources function, static, background knowledge documents are provided to the intelligent agent, significantly enhancing its knowledge base and enabling it to better explain our analytical results to users.
+- **Context Awareness**: The tool design fully considers the context of the conversation. For example, when the intelligent agent consecutively calls the Spouse Star Calculation and Partner Traits Prediction, the service internally caches the user's BaZi information to avoid redundant calculations and maintain consistency in the analysis.
 
-## 使用示例
+## Usage Example
 
-- 在魔搭Modelscope上试用MCP工具（需要配置api key，暂未开放服务）
+- Try out the MCP tools on ModelScope (requires API key configuration; service not yet open)
 
  
    
  
 
-## 测试示例
-```
-帮我算下我的姻缘，我的八字信息是：
-  "性别": "男",
-  "阳历": "1998年7月31日 14:10:00",
-  "农历": "农历戊寅年六月初九辛未时",
-  "八字": "戊寅 己未 己卯 辛未",
-  "生肖": "虎",
-  "日主": "己",
-  "年柱": {
-    "天干": {
-      "天干": "戊",
-      "五行": "土",
-      "阴阳": "阳",
-      "十神": "劫财"
+## Test Example
+
+Can you calculate my marriage fate? My BaZi information is:
+  "Gender": "Male",
+  "Gregorian Date": "July 31, 1998 14:10:00",
+  "Lunar Date": "Lunar Year Wuyin, 6th month, 9th day, Xinwei hour",
+  "BaZi": "Wuyin Yiwu Jiyou Xinyou",
+  "Chinese Zodiac": "Tiger",
+  "Day Master": "Ji",
+  "Year Pillar": {
+    "Heavenly Stem": {
+      "Stem": "Wu",
+      "Five Elements": "Earth",
+      "Yin Yang": "Yang",
+      "Ten Gods": "Rob Wealth"
     },
-    "地支": {
-      "地支": "寅",
-      "五行": "木",
-      "阴阳": "阳",
-      "藏干": {
-        "主气": {
-          "天干": "甲",
-          "十神": "正官"
+    "Earthly Branch": {
+      "Branch": "Yin",
+      "Five Elements": "Wood",
+      "Yin Yang": "Yang",
+      "Hidden Stems": {
+        "Main Qi": {
+          "Stem": "Jia",
+          "Ten Gods": "Direct Official"
         },
-        "中气": {
-          "天干": "丙",
-          "十神": "正印"
+        "Middle Qi": {
+          "Stem": "Bing",
+          "Ten Gods": "Direct Seal"
         },
-        "余气": {
-          "天干": "戊",
-          "十神": "劫财"
+        "Remaining Qi": {
+          "Stem": "Wu",
+          "Ten Gods": "Rob Wealth"
         }
       }
     },
-    "纳音": "城头土",
-    "旬": "甲戌",
-    "空亡": "申酉",
-    "星运": "死",
-    "自坐": "长生"
+    "Nayin": "City Wall Earth",
+    "Xun": "Jiaxu",
+    "Kongwang": "Shen You",
+    "Star Fate": "Death",
+    "Self-Sitting": "Longevity"
   },
-  "月柱": {
-    "天干": {
-      "天干": "己",
-      "五行": "土",
-      "阴阳": "阴",
-      "十神": "比肩"
+  "Month Pillar": {
+    "Heavenly Stem": {
+      "Stem": "Yi",
+      "Five Elements": "Earth",
+      "Yin Yang": "Yin",
+      "Ten Gods": "Peer"
     },
-    "地支": {
-      "地支": "未",
-      "五行": "土",
-      "阴阳": "阴",
-      "藏干": {
-        "主气": {
-          "天干": "己",
-          "十神": "比肩"
+    "Earthly Branch": {
+      "Branch": "Wei",
+      "Five Elements": "Earth",
+      "Yin Yang": "Yin",
+      "Hidden Stems": {
+        "Main Qi": {
+          "Stem": "Yi",
+          "Ten Gods": "Peer"
         },
-        "中气": {
-          "天干": "丁",
-          "十神": "偏印"
+        "Middle Qi": {
+          "Stem": "Ding",
+          "Ten Gods": "Indirect Seal"
         },
-        "余气": {
-          "天干": "乙",
-          "十神": "七杀"
+        "Remaining Qi": {
+          "Stem": "Yi",
+          "Ten Gods": "Seven Kill"
         }
       }
     },
-    "纳音": "天上火",
-    "旬": "甲寅",
-    "空亡": "子丑",
-    "星运": "冠带",
-    "自坐": "冠带"
+    "Nayin": "Heavenly Fire",
+    "Xun": "Jia Yin",
+    "Kongwang": "Zi Chou",
+    "Star Fate": "Guan Dai",
+    "Self-Sitting": "Guan Dai"
   },
-  "日柱": {
-    "天干": {
-      "天干": "己",
-      "五行": "土",
-      "阴阳": "阴"
+  "Day Pillar": {
+    "Heavenly Stem": {
+      "Stem": "Ji",
+      "Five Elements": "Earth",
+      "Yin Yang": "Yin"
     },
-    "地支": {
-      "地支": "卯",
-      "五行": "木",
-      "阴阳": "阴",
-      "藏干": {
-        "主气": {
-          "天干": "乙",
-          "十神": "七杀"
+    "Earthly Branch": {
+      "Branch": "Mao",
+      "Five Elements": "Wood",
+      "Yin Yang": "Yin",
+      "Hidden Stems": {
+        "Main Qi": {
+          "Stem": "Yi",
+          "Ten Gods": "Seven Kill"
         }
       }
     },
-    "纳音": "城头土",
-    "旬": "甲戌",
-    "空亡": "申酉",
-    "星运": "病",
-    "自坐": "病"
+    "Nayin": "City Wall Earth",
+    "Xun": "Jia Xu",
+    "Kongwang": "Shen You",
+    "Star Fate": "Illness",
+    "Self-Sitting": "Illness"
   },
-  "时柱": {
-    "天干": {
-      "天干": "辛",
-      "五行": "金",
-      "阴阳": "阴",
-      "十神": "食神"
+  "Hour Pillar": {
+    "Heavenly Stem": {
+      "Stem": "Xin",
+      "Five Elements": "Metal",
+      "Yin Yang": "Yin",
+      "Ten Gods": "Food God"
     },
-    "地支": {
-      "地支": "未",
-      "五行": "土",
-      "阴阳": "阴",
-      "藏干": {
-        "主气": {
-          "天干": "己",
-          "十神": "比肩"
+    "Earthly Branch": {
+      "Branch": "Wei",
+      "Five Elements": "Earth",
+      "Yin Yang": "Yin",
+      "Hidden Stems": {
+        "Main Qi": {
+          "Stem": "Yi",
+          "Ten Gods": "Peer"
         },
-        "中气": {
-          "天干": "丁",
-          "十神": "偏印"
+        "Middle Qi": {
+          "Stem": "Ding",
+          "Ten Gods": "Indirect Seal"
         },
-        "余气": {
-          "天干": "乙",
-          "十神": "七杀"
+        "Remaining Qi": {
+          "Stem": "Yi",
+          "Ten Gods": "Seven Kill"
         }
       }
     },
-    "纳音": "路旁土",
-    "旬": "甲子",
-    "空亡": "戌亥",
-    "星运": "冠带",
-    "自坐": "衰"
-  }
-```
-- 在智能体对接MCP工具，可以把解析结果绘制成html卡片
+    "Nayin": "Roadside Earth",
+    "Xun": "Jia Zi",
+    "Kongwang": "Xu Hai",
+    "Star Fate": "Guan Dai",
+    "Self-Sitting": "Decline"
+  }- When integrating the agent with the MCP tool, the parsing results can be rendered as HTML cards.
 
-## 联系我们
+## Contact Us
 
-- 真爱之书Lovetell 是 re4.ai 创建的智能体项目，如果你有兴趣参与设计，[请给我们留言](https://u1hk68mdmio.feishu.cn/share/base/form/shrcnSiKfeSUaN96xt3zEswdGLc)
-- 访问 https://re4.ai/ 咨询端到端的AI解决方案，帮助企业和创业团队通过人工智能技术解决实际问题，创造显著价值。
+- The Book of True Love Lovetell is an agent project created by re4.ai. If you are interested in participating in the design, [please leave us a message](https://u1hk68mdmio.feishu.cn/share/base/form/shrcnSiKfeSUaN96xt3zEswdGLc).
+- Visit https://re4.ai/ to consult on end-to-end AI solutions that help businesses and startup teams solve real-world problems and create significant value through artificial intelligence technology.
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `art and culture`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`love-tell-ai-mcp-v2`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `love-tell-ai-mcp-v2`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wanghh-lovetell.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wanghh-lovetell.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

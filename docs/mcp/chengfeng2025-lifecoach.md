@@ -1,11 +1,11 @@
 ---
-title: "人生教练Agent（by AI产品自由）"
-description: "人生教练Agent，探讨生活决策"
+title: "lifecoach"
+description: "Life Coach Agent, Exploring Life Decisions"
 ---
 
-# 人生教练Agent（by AI产品自由）
+# lifecoach
 
-人生教练Agent，探讨生活决策
+Life Coach Agent, Exploring Life Decisions
 
 # 人生教练 MCP 项目
 
@@ -126,22 +126,22 @@ npm start
 
 MIT License
 
-**官方网站：** [https://www.npmjs.com/package/lifecoach-mcp-server](https://www.npmjs.com/package/lifecoach-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/lifecoach-mcp-server](https://www.npmjs.com/package/lifecoach-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`
+- Categories: `communication`
+- Tags: `communication`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y lifecoach-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y lifecoach-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chengfeng2025-lifecoach.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chengfeng2025-lifecoach.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

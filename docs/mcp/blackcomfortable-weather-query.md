@@ -1,39 +1,39 @@
 ---
-title: "天气 查询"
-description: "获取指定条件的天气信息（MCP标准化接口）。 解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。 Args: location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级； timerange (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"； needtype (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。 Re"
+title: "weather_query"
+description: "Obtain weather information based on specified conditions (MCP standardized interface). Core pain point addressed: Replaces the repetitive labor of manually checking the weather, supports automation in…"
 ---
 
-# 天气 查询
+# weather_query
 
-获取指定条件的天气信息（MCP标准化接口）。 解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。 Args: location (str, 必填): 具体城市/区域（如"北京市朝阳区"、"巴黎"），需明确到城市级； timerange (str, 可选): 时间范围，可选值为["实时", "未来1天", "未来3天"]，默认"实时"； needtype (str, 可选): 需求类型，可选值为["综合", "温度+降水", "风力+空气质量"]，默认"综合"。 Re
+Obtain weather information based on specified conditions (MCP standardized interface). Core pain point addressed: Replaces the repetitive labor of manually checking the weather, supports automation in…
 
-获取指定条件的天气信息（MCP标准化接口）。  
-    解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。  
+Obtain weather information based on specified conditions (MCP standardized interface).  
+    Core pain point addressed: Replaces the repetitive labor of manually checking the weather, supports automation integration in multiple scenarios (such as travel guides, office reminders, agricultural alerts).
 
     Args:  
-        location (str, 必填): 具体城市/区域（如"北京市朝阳区"、"巴黎"），需明确到城市级；  
-        time_range (str, 可选): 时间范围，可选值为["实时", "未来1天", "未来3天"]，默认"实时"；  
-        need_type (str, 可选): 需求类型，可选值为["综合", "温度+降水", "风力+空气质量"]，默认"综合"。  
+        location (str, required): Specific city/region (e.g., "Chaoyang District, Beijing", "Paris"), needs to be specified at the city level;  
+        time_range (str, optional): Time range, possible values are ["实时", "未来1天", "未来3天"], default is "实时";  
+        need_type (str, optional): Type of requirement, possible values are ["综合", "温度+降水", "风力+空气质量"], default is "综合".
 
     Returns:  
-        tuple[Dict, str]: 结构化数据（用于MCP集成）、人性化反馈（用于直接展示）。
+        tuple[Dict, str]: Structured data (for MCP integration), human-readable feedback (for direct display).
 
-**官方网站：** [https://www.modelscope.cn/studios/blackcomfortable/weather_query](https://www.modelscope.cn/studios/blackcomfortable/weather_query)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/blackcomfortable/weather_query](https://www.modelscope.cn/studios/blackcomfortable/weather_query)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://blackcomfortable-weather-query.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://blackcomfortable-weather-query.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/blackcomfortable-weather-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/blackcomfortable-weather-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,39 +1,39 @@
 ---
-title: "DataV-Atlas地理可视化"
-description: "DataV Atlas MCP服务是阿里云DataV团队提供的地理空间数据可视化MCP服务，提供地理空间数据的大模型可视分析能力，包含地理空间数据处理、地理空间数据生成、地理空间可视化布局算法、地理空间可视化编码工具等。"
+title: "atlas-tools-mcp-server"
+description: "DataV Atlas MCP service is a geospatial data visualization MCP service provided by the Alibaba Cloud DataV team. It offers large-scale model visual analytics capabilities for geospatial data, includin…"
 ---
 
-# DataV-Atlas地理可视化
+# atlas-tools-mcp-server
 
-DataV Atlas MCP服务是阿里云DataV团队提供的地理空间数据可视化MCP服务，提供地理空间数据的大模型可视分析能力，包含地理空间数据处理、地理空间数据生成、地理空间可视化布局算法、地理空间可视化编码工具等。
+DataV Atlas MCP service is a geospatial data visualization MCP service provided by the Alibaba Cloud DataV team. It offers large-scale model visual analytics capabilities for geospatial data, includin…
 
-# 🗺️ Atlas GIS MCP 工具集 🚀
+# 🗺️ Atlas GIS MCP Toolset 🚀
 
-> Atlas GIS MCP 工具集由 DataV 团队打造，专为大模型智能处理地理空间数据所设计，包含地理编码、路径规划、空间数据生成与处理、行政区划解析等常见 GIS 工具。
+> The Atlas GIS MCP Toolset is designed by the DataV team for intelligent processing of geospatial data by large models, including common GIS tools such as geocoding, route planning, spatial data generation and processing, and administrative division parsing.
 
 ---
 
-### ⚙️ 前置条件
+### ⚙️ Prerequisites
 
-**开始前请确保你已获取有效 TOKEN，否则无法正常调用工具。**
+**Please ensure you have obtained a valid TOKEN before starting, otherwise you will not be able to call the tools properly.**
 
-**⚠️ MCP 需要 Node.js v18.x 或更高版本才能正常运行。**
+**⚠️ MCP requires Node.js v18.x or higher to run properly.**
 
-工具调用需要使用 `TOKEN`进行鉴权，可前往 [Atlas 工具官网](https://atlas.datav.aliyun.com/maptool) 页面获取 Token，同时可查看最新的工具列表
+Tool calls require `TOKEN` for authentication. You can obtain a Token from the [Atlas Tools official website](https://atlas.datav.aliyun.com/maptool) page, and you can also view the latest tool list.
 
-### 🖥️ MCP 服务器配置
+### 🖥️ MCP Server Configuration
 
-Atlas GIS MCP 工具集支持两种连接方式：**stdio 模式**（传统方式）和 **HTTP 模式**（新增支持）。
+The Atlas GIS MCP Toolset supports two connection methods: **stdio mode** (traditional) and **HTTP mode** (newly supported).
 
-#### 📡 stdio 模式（推荐用于本地开发）
+#### 📡 stdio Mode (Recommended for Local Development)
 
-> 💡 **提示：** 按照下方 JSON 配置即可快速集成 Atlas GIS 工具集。
+> 💡 **Tip:** Follow the JSON configuration below to quickly integrate the Atlas GIS toolset.
 
 ```json
 {
   "mcpServers": {
     "atlas-gis-tools": {
-      "name": "Atlas GIS 工具集",
+      "name": "Atlas GIS Toolset",
       "type": "stdio",
       "command": "npx",
       "args": ["-y", "atlas-tools-mcp-server@latest"],
@@ -45,25 +45,25 @@ Atlas GIS MCP 工具集支持两种连接方式：**stdio 模式**（传统方�
 }
 ```
 
-#### 🌐 HTTP 模式（推荐用于生产环境和多用户场景）
+#### 🌐 HTTP Mode (Recommended for Production Environments and Multi-user Scenarios)
 
-**启动 HTTP 服务器：**
+**Start HTTP Server:**
 
 ```bash
-# 使用默认端口 3001
+# Using default port 3001
 npx -y atlas-tools-mcp-server --http
 
-# 使用自定义端口
+# Using custom port
 npx -y atlas-tools-mcp-server --http --port 8080
 ```
 
-**MCP 客户端配置：**
+**MCP Client Configuration:**
 
 ```json
 {
   "mcpServers": {
     "atlas-gis-tools": {
-      "name": "Atlas GIS 工具集",
+      "name": "Atlas GIS Toolset",
       "type": "streamableHttp",
       "url": "http://localhost:3001/mcp?token="
     }
@@ -71,241 +71,241 @@ npx -y atlas-tools-mcp-server --http --port 8080
 }
 ```
 
-**认证方式：**
+**Authentication Methods:**
 
-1. **URL 查询参数**（推荐）：
+1. **URL Query Parameters** (Recommended):
 
 ```
    http://localhost:3001/mcp?token=your_token
 ```
 
-2. **HTTP 请求头**：
+2. **HTTP Request Header**:
 
 ```bash
    curl -H "Authorization: Bearer your_token" \
         http://localhost:3001/mcp
 ```
 
-3. **自定义头部**：
+3. **Custom Header**:
 ```bash
    curl -H "X-Atlas-Token: your_token" \
         http://localhost:3001/mcp
 ```
 
-#### 🔄 HTTP 模式 vs stdio 模式
+#### 🔄 HTTP Mode vs stdio Mode
 
-| 特性           | stdio 模式             | HTTP 模式                     |
-| -------------- | ---------------------- | ----------------------------- |
-| **多用户支持** | ❌ 单用户              | ✅ 多用户并发，认证隔离       |
-| **部署方式**   | 每个客户端启动独立进程 | 单一服务器实例                |
-| **资源消耗**   | 高（多进程）           | 低（单进程）                  |
-| **网络访问**   | 仅本地                 | 支持远程访问                  |
-| **负载均衡**   | 不支持                 | 支持                          |
-| **监控和日志** | 分散                   | 集中化                        |
-| **认证方式**   | 环境变量               | 多种方式（URL参数、请求头等） |
-| **适用场景**   | 本地开发、单用户       | 生产环境、多用户、企业部署    |
+| Feature           | stdio Mode             | HTTP Mode                     |
+| ----------------- | ---------------------- | ----------------------------- |
+| **Multi-user**    | ❌ Single user         | ✅ Multi-user concurrency, authentication isolation |
+| **Deployment**    | Each client starts independent process | Single server instance |
+| **Resource Usage** | High (multi-process)   | Low (single process)         |
+| **Network Access** | Local only             | Supports remote access        |
+| **Load Balancing** | Not supported           | Supported                    |
+| **Monitoring & Logs** | Distributed          | Centralized                  |
+| **Authentication** | Environment variables   | Multiple methods (URL params, headers, etc.) |
+| **Use Cases**     | Local development, single user | Production, multi-user, enterprise deployment |
 
-#### 🚀 命令行选项
+#### 🚀 Command Line Options
 
 ```bash
 npx -y atlas-tools-mcp-server [OPTIONS]
 
-选项：
-  --help, -h              显示帮助信息
-  --http                  启用 HTTP 模式（默认：stdio）
-  --stdio                 启用 stdio 模式（默认）
-  --port, -p      HTTP 服务器端口（默认：3001）
+Options:
+  --help, -h              Show help information
+  --http                  Enable HTTP mode (default: stdio)
+  --stdio                 Enable stdio mode (default)
+  --port, -p      HTTP server port (default: 3001)
 
-环境变量：
-  TOKEN, token, ATLAS_TOKEN    Atlas API 令牌
-  PORT                        HTTP 服务器端口
+Environment Variables:
+  TOKEN, token, ATLAS_TOKEN    Atlas API token
+  PORT                        HTTP server port
 ```
 
-#### 🔒 多租户支持
+#### 🔒 Multi-tenant Support
 
-**多租户场景示例：**
+**Multi-tenant Scenario Example:**
 
 ```bash
-# 用户 A 使用自己的令牌
+# User A uses their own token
 curl -X POST "http://localhost:3001/mcp?token=user_a_token" \
      -H "Content-Type: application/json" \
      -H "Accept: application/json, text/event-stream" \
      -d '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}'
 
-# 用户 B 同时使用自己的令牌（不会相互干扰）
+# User B simultaneously uses their own token (no interference)
 curl -X POST "http://localhost:3001/mcp?token=user_b_token" \
      -H "Content-Type: application/json" \
      -H "Accept: application/json, text/event-stream" \
      -d '{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}'
 ```
 
-**迁移指南（从 stdio 到 HTTP）：**
+**Migration Guide (from stdio to HTTP):**
 
-1. **保持向后兼容**：现有的 stdio 配置继续有效
-2. **逐步迁移**：可以同时运行 stdio 和 HTTP 模式
-3. **配置更新**：将 MCP 客户端配置从 `stdio` 改为 `streamableHttp`
-4. **认证调整**：从环境变量改为 URL 参数或请求头
-5. **简化配置**：只需要配置 `token` 参数即可
+1. **Backward Compatibility**: Existing stdio configurations remain valid
+2. **Gradual Migration**: Can run both stdio and HTTP modes simultaneously
+3. **Configuration Update**: Change MCP client configuration from `stdio` to `streamableHttp`
+4. **Authentication Adjustment**: Change from environment variables to URL parameters or request headers
+5. **Simplified Configuration**: Only need to configure the `token` parameter
 
-### 💡 使用案例
+### 💡 Use Cases
 
-**CherryStudio 的实际配置**
+**Actual Configuration for CherryStudio**
 
-![CherryStudio 配置](/mcp-assets/6ae8f5bfc7cacb30116fb4f5c95dba50.jpg)
+![CherryStudio Configuration](/mcp-assets/6ae8f5bfc7cacb30116fb4f5c95dba50.jpg)
 
-**搭配百炼 qwen-max-latest 模型使用效果**
+**Effect when used with Baijian qwen-max-latest model**
 
-![CherryStudio 使用](/mcp-assets/f6e887af6621613d76942eadda6ac7fb.png)
+![CherryStudio Usage](/mcp-assets/f6e887af6621613d76942eadda6ac7fb.png)
 
-### 📝 使用技巧
+### 📝 Usage Tips
 
-可以在 Agent 的系统提示词中添加如下内容，提高工具使用成功率、生成预览工具产出的地理数据链接：
+You can add the following content to the Agent's system prompt to improve tool usage success rate and generate preview links for geographic data output:
 
 ```markdown
-## Atlas GIS 工具使用指南
+## Atlas GIS Tool Usage Guide
 
-### 核心原则
+### Core Principles
 
-1. **工具链式调用**：按数据处理逻辑顺序调用工具，使用前序工具返回的 fileUrl 作为后续输入
-2. **结果可视化**：工具返回 fileUrl 时，生成预览链接：https://datav.aliyun.com/portal/school/atlas/area_generator?fileUrl=
-3. **简明描述**：为预览链接提供简洁标签，如「省级边界」、「简化地图」、「缓冲区分析」
+1. **Tool Chaining**: Call tools in sequence according to data processing logic, using the fileUrl returned by previous tools as subsequent input
+2. **Result Visualization**: When tools return fileUrl, generate preview link: https://datav.aliyun.com/portal/school/atlas/area_generator?fileUrl=
+3. **Concise Description**: Provide concise labels for preview links, such as "Provincial Boundary", "Simplified Map", "Buffer Analysis"
 
-_具体工具列表及参数请参考工具定义 Schema_
+_See tool definition schema for specific tool list and parameters_
 ```
 
-**💡 支持 MCP Prompts 的客户端**
+**💡 Clients Supporting MCP Prompts**
 
-对于支持 MCP Prompts 能力的客户端（如 Claude Desktop、CherryStudio 等），本工具集提供了 `preview-geo` 提示词，包含了完整的工具使用指南。您可以直接调用该提示词，无需手动复制上述内容到系统提示词中。
+For clients with MCP Prompts capabilities (such as Claude Desktop, CherryStudio, etc.), this toolset provides the `preview-geo` prompt that includes a complete tool usage guide. You can directly call this prompt without manually copying the above content to the system prompt.
 
-### 📚 附：工具列表（持续更新中）
+### 📚 Appendix: Tool List (Continuously Updated)
 
-**以下是目前支持的主要工具，持续扩充中，欢迎关注！**
+**The following are the main tools currently supported, continuously expanding. Stay tuned!**
 
-#### 📍 数据获取类
+#### 📍 Data Acquisition
 
-| 工具名称           | 工具描述                                                                                                                                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🧭 GeoCoding       | **地理编码工具**：用于将地址转换为地理坐标                                                                                                                                                                                |
-| 🗺️ NearbySearch    | **周边POI搜索工具**：根据中心点坐标，在指定半径范围内搜索周边的POI信息，返回GeoJSON格式的POI数据，包含名称、地址、营业时间、评分等信息                                                                                    |
-| 🚗 Routing         | **地图路径规划工具**：根据起点、终点和可选途径点规划最佳路线，支持驾车、步行、骑行和电动车模式。返回GeoJSON格式的路径数据。**注意**：途径点功能仅在驾车模式下可用，最多支持16个途径点                                     |
-| 🏷️ AdcodeToGeojson | **行政区划数据获取工具**：根据中国行政区划代码（必须六位编码，多个用英文逗号分隔）获取对应的 GeoJSON 数据。支持省、市、区级别。若需包含所有子级区域，可在编码后加 `_full`，例如：`330000_full` 表示获取浙江省所有子级区划 |
-| 📋 GeoJsonPick     | **GeoJSON要素选取工具**：从文件URL中按索引范围提取指定要素，支持选择性包含属性字段，最大支持1000条记录                                                                                                                    |
+| Tool Name           | Tool Description                                                                                                                                                                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🧭 GeoCoding        | **Geocoding Tool**: Used to convert addresses to geographic coordinates                                                                                                                                                           |
+| 🗺️ NearbySearch     | **Nearby POI Search Tool**: Searches for nearby POI information within a specified radius based on a center point coordinate, returning POI data in GeoJSON format including name, address, business hours, ratings, etc.        |
+| 🚗 Routing          | **Map Route Planning Tool**: Plans the best route based on start point, end point, and optional waypoints, supporting driving, walking, cycling, and electric vehicle modes. Returns path data in GeoJSON format. **Note**: Waypoint function is only available in driving mode, supporting up to 16 waypoints |
+| 🏷️ AdcodeToGeojson  | **Administrative Division Data Acquisition Tool**: Obtains corresponding GeoJSON data based on Chinese administrative division codes (must be six-digit codes, multiple separated by commas). Supports province, city, and district levels. To include all sub-level regions, add `_full` after the code, e.g., `330000_full` to get all sub-divisions of Zhejiang Province |
+| 📋 GeoJsonPick      | **GeoJSON Feature Selection Tool**: Extracts specified features from a file URL by index range, supporting selective inclusion of attribute fields, maximum of 1000 records |
 
-#### 🛠️ 数据生成类
+#### 🛠️ Data Generation
 
-| 工具名称                       | 工具描述                                                                                                                                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 🎯 RandomPointsInPolygon       | **面内随机点生成工具**：在指定面内随机生成点数据，支持随机（random）分布、均匀（uniform）分布、聚类（cluster）分布                               |
-| 📏 RandomPointsAlongLine       | **线周围随机点生成工具**：沿线段周围指定距离内随机生成点数据                                                                                     |
-| 🕸️ Fishnet                     | **矩形网格生成工具**：在指定输入要素数据中根据指定边长创建矩形渔网网格                                                                           |
-| 🟡 DotDensity                  | **点密度地图生成工具**：创建点密度地图，在多边形内部随机分布点来表示数量信息，点的数量与指定字段的数值成比例，常用于人口分布、疾病分布等专题地图 |
-| ⚫ InterpolatedPointsAlongLine | **线上插值点生成工具**：沿线要素按指定距离间隔生成插值点，支持各种要素类型（非线要素自动转换），距离单位为米                                     |
+| Tool Name                       | Tool Description                                                                                                                                         |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🎯 RandomPointsInPolygon        | **Random Point Generation in Polygon Tool**: Randomly generates point data within a specified polygon, supporting random, uniform, and cluster distributions |
+| 📏 RandomPointsAlongLine         | **Random Point Generation Around Line Tool**: Randomly generates point data within a specified distance around line segments                               |
+| 🕸️ Fishnet                      | **Rectangular Grid Generation Tool**: Creates rectangular fishnet grids in specified input feature data according to specified side lengths                |
+| 🟡 DotDensity                   | **Dot Density Map Generation Tool**: Creates dot density maps by randomly distributing points within polygons to represent quantitative information, with point count proportional to specified field values, commonly used for thematic maps such as population distribution and disease distribution |
+| ⚫ InterpolatedPointsAlongLine   | **Interpolated Point Generation on Line Tool**: Generates interpolated points at specified distance intervals along line features, supporting various feature types (non-line features automatically converted), with distance unit in meters |
 
-#### 🧰 数据处理类
+#### 🧰 Data Processing
 
-| 工具名称            | 工具描述                                                                                                                                                                                                                     |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ✂️ Simplify         | **几何简化工具**：简化线或面地理要素数据，在保持基本形状的同时显著减少数据大小                                                                                                                                               |
-| 🧩 Dissolve         | **区域融合工具**：将具有相邻边界的地理要素融合为统一要素，消除内部边界。支持基于属性字段分组融合，主要用于行政区域合并、边界简化等场景。**注意**：用于融合单个数据源内的相邻要素，限制：仅支持线、面要素，要素需具有共享边界 |
-| ➕ AddField         | **字段添加工具**：为地理要素数据添加新字段，支持 JavaScript 表达式计算字段值，可基于现有属性、几何特征进行计算，适用于数据增强、属性计算等场景                                                                               |
-| 🔍 FilterFeatures   | **要素筛选工具**：根据JavaScript布尔表达式筛选地理要素，支持基于属性值、几何特征进行复杂条件筛选，适用于数据过滤、条件查询等场景                                                                                             |
-| ➡️ ConvertToLine    | **点/多边形转线工具**：将点或多边形要素转换为线要素，支持按字段分组。                                                                                                                                                        |
-| ⬛ ConvertToPolygon | **线/点转面工具**：将线或点要素转换为面要素。                                                                                                                                                                                |
+| Tool Name            | Tool Description                                                                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ✂️ Simplify          | **Geometry Simplification Tool**: Simplifies line or polygon geographic feature data, significantly reducing data size while maintaining basic shape                                                                               |
+| 🧩 Dissolve          | **Polygon Dissolve Tool**: Fuses geographic features with adjacent boundaries into unified features, eliminating internal boundaries. Supports grouping-based fusion based on attribute fields, mainly used for administrative region merging and boundary simplification. **Note**: Used to fuse adjacent features within a single data source, limitations: only supports line and polygon features, features must have shared boundaries |
+| ➕ AddField          | **Field Addition Tool**: Adds new fields to geographic feature data, supporting JavaScript expression calculation of field values, can be calculated based on existing attributes and geometric features, suitable for data enhancement and attribute calculation scenarios |
+| 🔍 FilterFeatures    | **Feature Filtering Tool**: Filters geographic features based on JavaScript boolean expressions, supporting complex conditional filtering based on attribute values and geometric features, suitable for data filtering and conditional queries |
+| ➡️ ConvertToLine     | **Point/Polygon to Line Tool**: Converts point or polygon features to line features, supporting grouping by field. |
+| ⬛ ConvertToPolygon   | **Line/Point to Polygon Tool**: Converts line or point features to polygon features. |
 
-#### 🔄 数据转换类
+#### 🔄 Data Conversion
 
-| 工具名称              | 工具描述                                                                                                                                                                                                          |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🔧 GeoFormatConverter | **地理数据格式转换工具**：支持将Shapefile、TopoJSON、KML、CSV等格式转换为GeoJSON。自动识别文件格式，CSV文件需指定经纬度字段名称，可配合FileUrlContentReader预览文件内容选择合适字段                               |
-| 🔗 MergeGeoFile       | **多文件合并工具**：将多个独立的地理数据文件合并为统一的GeoJSON文件。支持Shapefile、GeoJSON、TopoJSON、KML、CSV等格式。**注意**：用于合并多个文件，不是融合单个文件内的要素。限制：只有相同几何类型的图层才能合并 |
+| Tool Name              | Tool Description                                                                                                                                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔧 GeoFormatConverter  | **Geographic Data Format Conversion Tool**: Supports conversion of Shapefile, TopoJSON, KML, CSV and other formats to GeoJSON. Automatically identifies file formats, CSV files need to specify longitude and latitude field names, can be used with FileUrlContentReader to preview file content and select appropriate fields |
+| 🔗 MergeGeoFile        | **Multi-file Merge Tool**: Merges multiple independent geographic data files into a unified GeoJSON file. Supports Shapefile, GeoJSON, TopoJSON, KML, CSV and other formats. **Note**: Used to merge multiple files, not to fuse features within a single file. Limitation: Only layers of the same geometry type can be merged |
 
-#### 🔧 辅助工具类
+#### 🧰 Auxiliary Tools
 
-| 工具名称                | 工具描述                                                                                                                     |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| 📄 FileUrlContentReader | **URL内容读取工具**：读取指定URL文件的前N个字节内容，自动检测字符编码并解析文本，常用于预览CSV文件头部以识别字段名           |
-| 🖼️ SvgRender            | **地理数据渲染工具**：对单个地理数据文件进行 SVG/PNG 渲染，支持多种样式、符号、标签和主流地图投影，适合快速预览与导出。      |
-| 🗺️ CreateMap            | **地图可视化生成工具**：可综合多个地理数据文件，生成临时地图可视化项目预览，支持多图层、样式配置与交互，适合项目级地图展示。 |
+| Tool Name                | Tool Description                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 📄 FileUrlContentReader  | **URL Content Reading Tool**: Reads the first N bytes of content from a specified URL file, automatically detects character encoding and parses text, commonly used to preview CSV file headers to identify field names |
+| 🖼️ SvgRender            | **Geographic Data Rendering Tool**: Renders a single geographic data file as SVG/PNG, supports various styles, symbols, labels and mainstream map projections, suitable for quick preview and export. |
+| 🗺️ CreateMap            | **Map Visualization Generation Tool**: Can comprehensively generate temporary map visualization project previews from multiple geographic data files, supports multi-layers, style configuration and interaction, suitable for project-level map display. |
 
-#### 🔍 空间分析类
+#### 🔍 Spatial Analysis
 
-| 工具名称        | 工具描述                                                                                                                                     |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🔵 Buffer       | **缓冲区分析工具**：为地理要素数据创建缓冲区，支持点、线、面要素，可指定缓冲区半径和距离单位（米或千米）                                     |
-| 🏷️ SymbolPoint  | **多边形标注点工具**：计算多边形的最佳标注点位置，生成的点位于多边形内部，可用于放置标签、图标或进行空间分析，确保标注内容不会超出多边形边界 |
-| 🪢 InnerLines   | **共享边界提取工具**：提取多边形之间的共享边界，创建不含属性数据的线图层，可用于获取行政区划之间的边界线、分析相邻区域的接壤情况等           |
-| 🟢 TrackSurface | **轨迹面生成工具**：通过轨迹点生成轨迹面，支持设置半径参数。                                                                                 |
+| Tool Name        | Tool Description                                                                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔵 Buffer        | **Buffer Analysis Tool**: Creates buffers for geographic feature data, supporting point, line, and polygon features, can specify buffer radius and distance units (meters or kilometers) |
+| 🏷️ SymbolPoint   | **Polygon Label Point Tool**: Calculates the best label point location for polygons, generating points located inside the polygon, can be used to place labels, icons or perform spatial analysis, ensuring label content does not exceed polygon boundaries |
+| 🪢 InnerLines    | **Shared Boundary Extraction Tool**: Extracts shared boundaries between polygons, creating line layers without attribute data, can be used to obtain boundary lines between administrative divisions and analyze adjacent area connections |
+| 🟢 TrackSurface  | **Track Surface Generation Tool**: Generates track surfaces through trajectory points, supports setting radius parameters. |
 
 ---
 
-### ❓ 常见问题解答（FAQ）
+### ❓ Frequently Asked Questions (FAQ)
 
-**Q: 工具调用失败怎么办？**
+**Q: What if tool calls fail?**
 
-> 检查 TOKEN 是否正确并有效、网络是否畅通，以及客户端工具输出的详细报错信息进行排查。
+> Check if the TOKEN is correct and valid, if the network is unimpeded, and troubleshoot based on detailed error information output by the client tool.
 
-**Q: 如何获取最新工具列表？**
+**Q: How to get the latest tool list?**
 
-> 访问 [Atlas 工具官网](https://atlas.datav.aliyun.com/maptool) 查看最新支持工具。
+> Visit [Atlas Tools Official Website](https://atlas.datav.aliyun.com/maptool) to view the latest supported tools.
 
-**Q: 结果数据如何预览？**
+**Q: How to preview result data?**
 
-> 将工具生成的 fileUrl 链接按照规则拼接 `https://datav.aliyun.com/portal/school/atlas/area_generator/?fileUrl=` 即可预览。
+> Splice the tool-generated fileUrl link with the rule `https://datav.aliyun.com/portal/school/atlas/area_generator/?fileUrl=` to preview.
 
-**Q: 生成的文件会保存多长时间？**
+**Q: How long are the generated files kept?**
 
-> 工具生成的文件为临时文件，仅保留一天（24小时）。请在文件过期前及时下载并保存到本地，避免数据丢失。
+> Tool-generated files are temporary files, only kept for one day (24 hours). Please download and save to local storage before the files expire to avoid data loss.
 
-**Q: HTTP 模式和 stdio 模式有什么区别？**
+**Q: What's the difference between HTTP mode and stdio mode?**
 
-> HTTP 模式支持多用户并发访问，每个用户使用独立的认证信息，适合生产环境；stdio 模式适合本地开发和单用户场景。详见上方对比表格。
+> HTTP mode supports multi-user concurrent access, with each user using independent authentication information, suitable for production environments; stdio mode is suitable for local development and single-user scenarios. See the comparison table above for details.
 
-**Q: 如何在 HTTP 模式下处理多用户认证？**
+**Q: How to handle multi-user authentication in HTTP mode?**
 
-> HTTP 模式采用请求级认证隔离，每个请求可以通过 URL 参数、Authorization 头或自定义头部传递独立的认证信息，确保用户间的数据安全。
+> HTTP mode adopts request-level authentication isolation. Each request can pass independent authentication information through URL parameters, Authorization headers, or custom headers to ensure data security between users.
 
-**Q: HTTP 服务器的健康检查端点是什么？**
+**Q: What is the health check endpoint for the HTTP server?**
 
-> 访问 `http://localhost:3001/health` 可以检查服务器状态，返回 JSON 格式的健康信息。
+> Visit `http://localhost:3001/health` to check server status, returning health information in JSON format.
 
-**Q: 如何从 stdio 模式迁移到 HTTP 模式？**
+**Q: How to migrate from stdio mode to HTTP mode?**
 
-> 1. 启动 HTTP 服务器：`npx -y atlas-tools-mcp-server --http`
-> 2. 更新 MCP 客户端配置：将 `type` 从 `stdio` 改为 `streamableHttp`，`url` 设置为 `http://localhost:3001/mcp?token=`
-> 3. 测试连接确保正常工作后，停止 stdio 模式
+> 1. Start HTTP server: `npx -y atlas-tools-mcp-server --http`
+> 2. Update MCP client configuration: Change `type` from `stdio` to `streamableHttp`, set `url` to `http://localhost:3001/mcp?token=`
+> 3. Test connection to ensure it works properly, then stop stdio mode
 
-如有更多疑问，欢迎通过 [Atlas 工具官网](https://atlas.datav.aliyun.com/maptool) 联系我们！
+If you have more questions, feel free to contact us through the [Atlas Tools Official Website](https://atlas.datav.aliyun.com/maptool)!
 
 ---
 
 ### 🗒️ Release Notes
 
-- 2025-07-10：
-  - 新增 **➡️ ConvertToLine** 工具，支持点/多边形转线，支持分组。
-  - 新增 **⬛ ConvertToPolygon** 工具，支持线/点转面。
-  - 新增 **🟢 TrackSurface** 工具，支持轨迹点生成轨迹面，支持设置半径参数。
-- 2025-07-08：
-  - 新增 **🖼️ SvgRender** 工具，支持对单个地理数据文件进行 SVG/PNG 渲染与多样样式配置。
-  - 新增 **🗺️ CreateMap** 工具，支持综合多个地理数据文件生成临时地图可视化项目预览，适合多图层项目级地图展示。
-- 2025-07-21：
-  - 新增 **StreamableHTTP** 模式支持
+- 2025-07-10:
+  - Added **➡️ ConvertToLine** tool, supporting point/polygon to line conversion with grouping.
+  - Added **⬛ ConvertToPolygon** tool, supporting line/point to polygon conversion.
+  - Added **🟢 TrackSurface** tool, supporting trajectory point to trajectory surface generation with radius parameter setting.
+- 2025-07-08:
+  - Added **🖼️ SvgRender** tool, supporting SVG/PNG rendering of single geographic data files with various style configurations.
+  - Added **🗺️ CreateMap** tool, supporting comprehensive temporary map visualization project previews from multiple geographic data files, suitable for multi-layer project-level map display.
+- 2025-07-21:
+  - Added **StreamableHTTP** mode support
 
-**官方网站：** [https://www.npmjs.com/package/atlas-tools-mcp-server](https://www.npmjs.com/package/atlas-tools-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/atlas-tools-mcp-server](https://www.npmjs.com/package/atlas-tools-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `search`, `data`
-- 标签：`search`, `developer tools`, `location services`, `aigc`, `chinese`
+- Categories: `development`, `search`, `data`
+- Tags: `search`, `developer tools`, `location services`, `aigc`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y atlas-tools-mcp-server@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y atlas-tools-mcp-server@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/datav-atlas-atlas-tools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/datav-atlas-atlas-tools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

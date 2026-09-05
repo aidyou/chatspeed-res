@@ -1,46 +1,46 @@
 ---
-title: "Terraform MCP 服务"
-description: "通过 MCP 将 AI 模型连接到 Terraform 注册表，启用提供程序查找、资源使用示例和模块推荐，从而简化 Terraform 工作流。"
+title: "terraform-mcp-server"
+description: "Connects AI models to the Terraform Registry via MCP, enabling provider lookups, resource usage examples, and module recommendations for streamlined Terraform workflows."
 ---
 
-# Terraform MCP 服务
+# terraform-mcp-server
 
-通过 MCP 将 AI 模型连接到 Terraform 注册表，启用提供程序查找、资源使用示例和模块推荐，从而简化 Terraform 工作流。
+Connects AI models to the Terraform Registry via MCP, enabling provider lookups, resource usage examples, and module recommendations for streamlined Terraform workflows.
 
-# Terraform Registry MCP 服务器
+# Terraform Registry MCP Server
 
-这是一个提供与 Terraform Registry API 交互工具的 Model Context Protocol (MCP) 服务器。该服务器使 AI 代理能够查询提供商信息、资源详情和模块元数据。
+A Model Context Protocol (MCP) server that provides tools for interacting with the Terraform Registry API. This server enables AI agents to query provider information, resource details, and module metadata.
 
-## 安装
+## Installation
 
-### 在 Cursor 中安装
+### Installing in Cursor
 
-要在 [Cursor](https://cursor.sh/) 中安装并使用此 MCP 服务器：
+To install and use this MCP server in [Cursor](https://cursor.sh/):
 
-1. 在 Cursor 中，打开设置（⌘+,）并导航到“MCP”选项卡。
+1. In Cursor, open Settings (⌘+,) and navigate to the "MCP" tab.
    
-2. 点击“+ 添加新的 MCP 服务器”。
+2. Click "+ Add new MCP server."
    
-3. 输入以下内容：
-   - 名称：terraform-registry
-   - 类型：command
-   - 命令：npx -y terraform-mcp-server
+3. Enter the following:
+   - Name: terraform-registry
+   - Type: command
+   - Command: npx -y terraform-mcp-server
    
-4. 点击“添加”，然后滚动到服务器并点击“禁用”以启用服务器。
+4. Click "Add" then scroll to the server and click "Disabled" to enable the server.
 
-5. 如果需要，请重启 Cursor 以确保 MCP 服务器正确加载。
+5. Restart Cursor, if needed, to ensure the MCP server is properly loaded.
 
-![terraform-registry MCP 设置 for Cursor](/mcp-assets/af879626225c9e8d31e9162616004abf.png)
+![terraform-registry MCP settings for Cursor](/mcp-assets/af879626225c9e8d31e9162616004abf.png)
 
-### 在 Claude Desktop 中安装
+### Installing in Claude Desktop
 
-要在 Claude Desktop 中安装并使用此 MCP 服务器：
+To install and use this MCP server in Claude Desktop:
 
-1. 在 Claude Desktop 中，打开设置（⌘+,）并导航到“开发者”选项卡。
+1. In Claude Desktop, open Settings (⌘+,) and navigate to the "Developer" tab.
 
-2. 点击窗口底部的“编辑配置”。
+2. Click "Edit Config" at the bottom of the window.
 
-3. 编辑文件（`~/Library/Application Support/Claude/claude_desktop_config.json`）以添加以下代码，然后保存文件。
+3. Edit the file (`~/Library/Application Support/Claude/claude_desktop_config.json`) to add the following code, then Save the file.
 
 ```json
 {
@@ -53,110 +53,110 @@ description: "通过 MCP 将 AI 模型连接到 Terraform 注册表，启用提�
 }
 ```
 
-4. 重启 Claude Desktop 以确保 MCP 服务器正确加载。
+4. Restart Claude Desktop to ensure the MCP server is properly loaded.
 
-## 工具
+## Tools
 
-此 MCP 服务器中提供了以下工具：
+The following tools are available in this MCP server:
 
-### 核心注册表工具
+### Core Registry Tools
 
-| 工具 | 描述 |
+| Tool | Description |
 |------|-------------|
-| `providerDetails` | 获取关于 Terraform 提供商的详细信息 |
-| `resourceUsage` | 获取 Terraform 资源及其相关资源的示例用法 |
-| `moduleSearch` | 根据查询搜索并推荐 Terraform 模块 |
-| `listDataSources` | 列出提供商的所有可用数据源及其基本信息 |
-| `resourceArgumentDetails` | 获取资源类型的参数的全面详细信息 |
-| `moduleDetails` | 获取 Terraform 模块的详细元数据 |
-| `functionDetails` | 获取关于 Terraform 提供商函数的详细信息 |
-| `providerGuides` | 列出并查看特定于提供商的指南和文档 |
-| `policySearch` | 在 Terraform 注册表中搜索策略库 |
-| `policyDetails` | 获取特定策略库的详细信息 |
+| `providerDetails` | Gets detailed information about a Terraform provider |
+| `resourceUsage` | Gets example usage of a Terraform resource and related resources |
+| `moduleSearch` | Searches for and recommends Terraform modules based on a query |
+| `listDataSources` | Lists all available data sources for a provider and their basic details |
+| `resourceArgumentDetails` | Fetches comprehensive details about a resource type's arguments |
+| `moduleDetails` | Retrieves detailed metadata for a Terraform module |
+| `functionDetails` | Gets details about a Terraform provider function |
+| `providerGuides` | Lists and views provider-specific guides and documentation |
+| `policySearch` | Searches for policy libraries in the Terraform Registry |
+| `policyDetails` | Gets detailed information about a specific policy library |
 
-### Terraform Cloud 工具
+### Terraform Cloud Tools
 
-这些工具需要一个 Terraform Cloud API 令牌 (`TFC_TOKEN`)：
+These tools require a Terraform Cloud API token (`TFC_TOKEN`):
 
-| 工具 | 描述 |
+| Tool | Description |
 |------|-------------|
-| `listOrganizations` | 列出经过身份验证的用户有权访问的所有组织 |
-| `privateModuleSearch` | 在组织中搜索私有模块 |
-| `privateModuleDetails` | 获取关于私有模块的详细信息 |
-| `explorerQuery` | 查询 Terraform Cloud Explorer API 以分析数据 |
-| `listWorkspaces` | 列出组织中的工作区 |
-| `workspaceDetails` | 获取特定工作区的详细信息 |
-| `lockWorkspace` | 锁定工作区以防止运行 |
-| `unlockWorkspace` | 解锁工作区以允许运行 |
-| `listRuns` | 列出工作区的运行 |
-| `runDetails` | 获取特定运行的详细信息 |
-| `createRun` | 为工作区创建新的运行 |
-| `applyRun` | 应用已计划的运行 |
-| `cancelRun` | 取消正在进行的运行 |
-| `listWorkspaceResources` | 列出工作区中的资源 |
+| `listOrganizations` | Lists all organizations the authenticated user has access to |
+| `privateModuleSearch` | Searches for private modules in an organization |
+| `privateModuleDetails` | Gets detailed information about a private module |
+| `explorerQuery` | Queries the Terraform Cloud Explorer API to analyze data |
+| `listWorkspaces` | Lists workspaces in an organization |
+| `workspaceDetails` | Gets detailed information about a specific workspace |
+| `lockWorkspace` | Locks a workspace to prevent runs |
+| `unlockWorkspace` | Unlocks a workspace to allow runs |
+| `listRuns` | Lists runs for a workspace |
+| `runDetails` | Gets detailed information about a specific run |
+| `createRun` | Creates a new run for a workspace |
+| `applyRun` | Applies a run that's been planned |
+| `cancelRun` | Cancels a run that's in progress |
+| `listWorkspaceResources` | Lists resources in a workspace |
 
-## 资源
+## Resources
 
-MCP 服务器通过 `resources/*` 方法支持以下用于列出和读取的资源 URI：
+The MCP server supports the following resource URIs for listing and reading via the `resources/*` methods:
 
-| 资源类型 | 示例 URI(s) | 描述 |
+| Resource Type | Example URI(s) | Description |
 |---------------|----------------|-------------|
-| **提供者** | `terraform:providers` | 列出所有命名空间/提供者 |
-|               | `terraform:provider:/` | 获取特定提供者的详细信息 |
-| **提供者版本** | `terraform:provider://versions` | 列出提供者的可用版本 |
-| **提供者资源** | `terraform:provider://resources` | 列出提供者的资源 |
-|                 | `terraform:resource://` | 获取特定资源类型的详细信息 |
-| **提供者数据源** | `terraform:provider://dataSources` | 列出提供者的数据源 |
-|                       | `terraform:dataSource://` | 获取特定数据源的详细信息 |
-| **提供者函数** | `terraform:provider://functions` | 列出提供者的函数 |
-|                      | `terraform:function://` | 获取特定函数的详细信息 |
+| **Providers** | `terraform:providers` | List all namespaces/providers |
+|               | `terraform:provider:/` | Get details for a specific provider |
+| **Provider Versions** | `terraform:provider://versions` | List available versions for a provider |
+| **Provider Resources** | `terraform:provider://resources` | List resources for a provider |
+|                 | `terraform:resource://` | Get details for a specific resource type |
+| **Provider Data Sources** | `terraform:provider://dataSources` | List data sources for a provider |
+|                       | `terraform:dataSource://` | Get details for a specific data source |
+| **Provider Functions** | `terraform:provider://functions` | List functions for a provider |
+|                      | `terraform:function://` | Get details for a specific function |
 
-服务器还支持 `resources/templates/list` 以提供创建以下项的模板：
+The server also supports `resources/templates/list` to provide templates for creating:
 - `terraform:provider`
 - `terraform:resource`
 - `terraform:dataSource`
 
-## 提示
+## Prompts
 
-以下提示可用于生成上下文响应：
+The following prompts are available for generating contextual responses:
 
-| 提示 | 描述 | 必需参数 |
+| Prompt | Description | Required Arguments |
 |--------|-------------|-------------------|
-| `migrate-clouds` | 生成 Terraform 代码以在云服务提供商之间迁移基础设施 | `sourceCloud`, `targetCloud`, `terraformCode` |
-| `generate-resource-skeleton` | 帮助用户快速使用最佳实践搭建新的 Terraform 资源 | `resourceType` |
-| `optimize-terraform-module` | 提供改进 Terraform 代码的具体建议 | `terraformCode` |
-| `migrate-provider-version` | 协助进行提供者版本升级和处理破坏性变更 | `providerName`, `currentVersion`, `targetVersion`, `terraformCode` (可选) |
-| `analyze-workspace-runs` | 分析最近的运行失败并为 Terraform Cloud 工作区提供故障排除指导 | `workspaceId`, `runsToAnalyze` (可选，默认: 5) |
+| `migrate-clouds` | Generate Terraform code to migrate infrastructure between cloud providers | `sourceCloud`, `targetCloud`, `terraformCode` |
+| `generate-resource-skeleton` | Helps users quickly scaffold new Terraform resources with best practices | `resourceType` |
+| `optimize-terraform-module` | Provides actionable recommendations for improving Terraform code | `terraformCode` |
+| `migrate-provider-version` | Assists with provider version upgrades and breaking changes | `providerName`, `currentVersion`, `targetVersion`, `terraformCode` (optional) |
+| `analyze-workspace-runs` | Analyzes recent run failures and provides troubleshooting guidance for Terraform Cloud workspaces | `workspaceId`, `runsToAnalyze` (optional, default: 5) |
 
-### 提示已知问题
+### Known Issues with Prompts
 
-**注意**：`getPrompt` 功能存在一个已知问题，可能会导致服务器崩溃。服务器可以正确注册提示并列出它们，但直接使用 `getPrompt` 方法可能引起连接问题。此问题正在调查中，可能与 SDK 兼容性或实现细节有关。在解决之前，请使用 `listPrompts` 查看可用提示，但避免直接调用 `getPrompt`。
+**Note**: There is a known issue with the `getPrompt` functionality that can cause server crashes. The server properly registers prompts and can list them, but direct requests using the `getPrompt` method may cause connectivity issues. This is being investigated and may be related to SDK compatibility or implementation details. Until resolved, use `listPrompts` to see available prompts but avoid direct `getPrompt` calls. 
 
-## 运行服务器
+## Running the Server
 
-服务器使用 stdio 传输进行 MCP 通信：
+The server runs using stdio transport for MCP communication:
 
 ```bash
 npm install
 npm start
 ```
 
-### 使用环境变量配置
+### Configuration with Environment Variables
 
-可以通过环境变量来配置服务器：
+The server can be configured using environment variables:
 
-| 环境变量 | 描述 | 默认值 |
+| Environment Variable | Description | Default Value |
 |---------------------|-------------|---------------|
-| `TERRAFORM_REGISTRY_URL` | Terraform 注册表 API 的基础 URL | https://registry.terraform.io |
-| `DEFAULT_PROVIDER_NAMESPACE` | 提供者的默认命名空间 | hashicorp |
-| `LOG_LEVEL` | 日志级别（错误、警告、信息、调试） | info |
-| `REQUEST_TIMEOUT_MS` | API 请求的超时时间（毫秒） | 10000 |
-| `RATE_LIMIT_ENABLED` | 启用 API 请求的速率限制 | false |
-| `RATE_LIMIT_REQUESTS` | 时间窗口内允许的请求数量 | 60 |
-| `RATE_LIMIT_WINDOW_MS` | 速率限制的时间窗口（毫秒） | 60000 |
-| `TFC_TOKEN` | 访问私有注册表的 Terraform Cloud API 令牌（可选） | |
+| `TERRAFORM_REGISTRY_URL` | Base URL for Terraform Registry API | https://registry.terraform.io |
+| `DEFAULT_PROVIDER_NAMESPACE` | Default namespace for providers | hashicorp |
+| `LOG_LEVEL` | Logging level (error, warn, info, debug) | info |
+| `REQUEST_TIMEOUT_MS` | Timeout for API requests in milliseconds | 10000 |
+| `RATE_LIMIT_ENABLED` | Enable rate limiting for API requests | false |
+| `RATE_LIMIT_REQUESTS` | Number of requests allowed in time window | 60 |
+| `RATE_LIMIT_WINDOW_MS` | Time window for rate limiting in milliseconds | 60000 |
+| `TFC_TOKEN` | Terraform Cloud API token for private registry access (optional) | |
 
-使用环境变量的示例：
+Example usage with environment variables:
 
 ```bash
 # Set environment variables
@@ -168,26 +168,26 @@ export TFC_TOKEN="your-terraform-cloud-token"
 npm start
 ```
 
-## 测试
+## Testing
 
-关于本项目的测试信息，请参阅 [TESTS.md](https://github.com/thrashr888/terraform-mcp-server/blob/HEAD/TESTS.md) 文件。
+See the [TESTS.md](https://github.com/thrashr888/terraform-mcp-server/blob/HEAD/TESTS.md) file for information about testing this project.
 
-**官方网站：** [https://github.com/thrashr888/terraform-mcp-server](https://github.com/thrashr888/terraform-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/thrashr888/terraform-mcp-server](https://github.com/thrashr888/terraform-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`cloud platforms`, `developer tools`, `other`, `chinese`
+- Categories: `data`, `development`
+- Tags: `cloud platforms`, `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y terraform-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y terraform-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/thrashr888-terraform.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/thrashr888-terraform.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

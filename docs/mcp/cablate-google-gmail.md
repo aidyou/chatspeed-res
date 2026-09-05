@@ -1,47 +1,47 @@
 ---
-title: "Google Gmail 邮件助手"
-description: "提供了与Gmail的全面集成，并具备LLM处理能力，允许用户通过模型上下文协议阅读、搜索、过滤电子邮件和处理附件。"
+title: "mcp-google-gmail"
+description: "Provides comprehensive Gmail integration with LLM processing capabilities, allowing users to read, search, filter emails and handle attachments through the Model Context Protocol."
 ---
 
-# Google Gmail 邮件助手
+# mcp-google-gmail
 
-提供了与Gmail的全面集成，并具备LLM处理能力，允许用户通过模型上下文协议阅读、搜索、过滤电子邮件和处理附件。
+Provides comprehensive Gmail integration with LLM processing capabilities, allowing users to read, search, filter emails and handle attachments through the Model Context Protocol.
 
-# Gmail MCP 服务器
+# Gmail MCP Server
 
-一个强大的模型上下文协议 (MCP) 服务器，提供全面的 Gmail 集成和 LLM 处理能力。
+A powerful Model Context Protocol (MCP) server providing comprehensive Gmail integration with LLM processing capabilities.
 
-## 功能
+## Features
 
-### 邮件管理
+### Email Management
 
-- 读取和搜索邮件
-- 以各种格式处理邮件内容
-- 高级邮件过滤
-- 附件处理
+- Read and search emails
+- Process email content with various formats
+- Advanced email filtering
+- Attachment handling
 
-## 在 Dive Desktop 上的演示
+## Demo on Dive Desktop
 
-## 安装
+## Installation
 
-### 手动安装
+### Manual Installation
 
 ```bash
 npm install -g @cablate/mcp-gmail
 ```
 
-## 使用
+## Usage
 
-### 命令行界面 (CLI)
+### CLI
 
 ```bash
 map-gmail
 ```
 
-### 与 [Dive Desktop](https://github.com/OpenAgentPlatform/Dive) 一起使用
+### With [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)
 
-1. 在 Dive Desktop 中点击 "+ 添加 MCP 服务器"
-2. 复制并粘贴此配置：
+1. Click "+ Add MCP Server" in Dive Desktop
+2. Copy and paste this configuration:
 
 ```json
 {
@@ -60,49 +60,49 @@ map-gmail
 }
 ```
 
-3. 点击“保存”以安装 MCP 服务器
+3. Click "Save" to install the MCP server
 
-## Gmail API 认证设置
+## Gmail API Authentication Setup
 
-有关设置 Gmail API 认证和获取必要凭证的详细说明，请参阅我们的 [Gmail API 设置指南](https://github.com/cablate/mcp-google-gmail/blob/HEAD/guide.md)。
+For detailed instructions on setting up Gmail API authentication and obtaining necessary credentials, please refer to our [Gmail API Setup Guide](https://github.com/cablate/mcp-google-gmail/blob/HEAD/guide.md).
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎社区参与和贡献！以下是贡献的方式：
+Welcome community participation and contributions! Here are ways to contribute:
 
-- ⭐️ 如果你觉得项目有用，请给项目加星标
-- 🐛 提交问题：报告问题或提供建议
-- 🔧 创建拉取请求：提交代码改进
+- ⭐️ Star the project if you find it helpful
+- 🐛 Submit Issues: Report problems or provide suggestions
+- 🔧 Create Pull Requests: Submit code improvements
 
-## 联系
+## Contact
 
-如果你有任何问题或建议，欢迎联系我们：
+If you have any questions or suggestions, feel free to reach out:
 
-- 📧 电子邮件: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
+- 📧 Email: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
 - 📧 GitHub: [CabLate](https://github.com/cablate/)
-- 🤝 合作：欢迎讨论项目合作
-- 📚 技术指导：真诚欢迎提出建议和技术指导
+- 🤝 Collaboration: Welcome to discuss project cooperation
+- 📚 Technical Guidance: Sincere welcome for suggestions and guidance
 
-**官方网站：** [https://github.com/cablate/mcp-google-gmail](https://github.com/cablate/mcp-google-gmail)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cablate/mcp-google-gmail](https://github.com/cablate/mcp-google-gmail)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `search`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @cablate/mcp-gmail`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @cablate/mcp-gmail`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cablate-google-gmail.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cablate-google-gmail.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

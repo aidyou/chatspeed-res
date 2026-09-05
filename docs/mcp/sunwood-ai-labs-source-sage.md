@@ -1,36 +1,36 @@
 ---
-title: "源智 Markdown 文档生成器"
-description: "一个基于 TypeScript 的服务器，可以将项目目录结构以 Markdown 格式可视化，并自动为文件内容添加语法高亮的文档说明，同时支持可自定义的排除模式。"
+title: "source-sage-mcp-server"
+description: "A TypeScript-based server that visualizes project directory structures in Markdown format, automatically documenting file contents with syntax highlighting and supporting customizable exclusion patter…"
 ---
 
-# 源智 Markdown 文档生成器
+# source-sage-mcp-server
 
-一个基于 TypeScript 的服务器，可以将项目目录结构以 Markdown 格式可视化，并自动为文件内容添加语法高亮的文档说明，同时支持可自定义的排除模式。
+A TypeScript-based server that visualizes project directory structures in Markdown format, automatically documenting file contents with syntax highlighting and supporting customizable exclusion patter…
 
 # 🌟 SourceSage MCP
 
 ## 📖 概要
 
-SourceSage 是一个 MCP 服务器，可以将项目的目录结构以美观的 Markdown 格式可视化。它用 TypeScript 实现，提供了高级的自定义选项和灵活的排除模式功能。此外，它还可以自动记录每个文件的内容，帮助您更好地了解整个项目。
+SourceSageは、プロジェクトのディレクトリ構造を美しいマークダウン形式で可視化するMCPサーバーです。TypeScriptで実装され、高度なカスタマイズ性と柔軟な除外パターン機能を提供します。また、各ファイルの内容を自動的にドキュメント化し、プロジェクトの全体像を把握しやすくします。
 
-## 🎯 主要特性
+## 🎯 主な特徴
 
-- 📁 以 Markdown 格式输出目录结构
-- 🎨 美观的树状结构显示（ASCII 艺术）
-- 📝 文件内容的自动文档化（带语言特定的语法高亮）
-- 🔍 灵活的排除模式（.SourceSageignore）
-- 🚀 基于 ES2022 和 Node16 模块系统的最新实现
-- 💫 通过严格的类型检查保证高可靠性
+- 📁 ディレクトリ構造のマークダウン形式での出力
+- 🎨 美しい木構造表示（ASCII art）
+- 📝 ファイル内容の自動ドキュメント化（言語別のシンタックスハイライト付き）
+- 🔍 柔軟な除外パターン（.SourceSageignore）
+- 🚀 ES2022とNode16モジュールシステムによる最新の実装
+- 💫 厳格な型チェックによる高い信頼性
 
-## 🛠️ 技术栈
+## 🛠️ 技術スタック
 
-- 🔷 TypeScript (ES2022 目标)
+- 🔷 TypeScript (ES2022ターゲット)
 - 📦 Model Context Protocol SDK (v0.6.0)
-- 🌐 Node.js (Node16 模块系统)
-- 📚 glob (v11.0.0) - 文件模式匹配
-- 🎭 ignore (v6.0.2) - 灵活的文件排除功能
+- 🌐 Node.js (Node16モジュールシステム)
+- 📚 glob (v11.0.0) - ファイルパターンマッチング
+- 🎭 ignore (v6.0.2) - 柔軟なファイル除外機能
 
-## 📂 项目结构
+## 📂 プロジェクト構造
 
 ```plaintext
 source-sage/
@@ -46,7 +46,7 @@ source-sage/
 └── tsconfig.json        # TypeScript設定
 ```
 
-## ⚙️ TypeScript 配置
+## ⚙️ TypeScript設定
 
 ```json
 {
@@ -64,14 +64,14 @@ source-sage/
 }
 ```
 
-## ⚙️ 安装
+## ⚙️ インストール
 
-### 从 npm 安装
+### npmからインストール
 ```bash
 npm install -g @sunwood-ai-labs/source-sage-mcp-server
 ```
 
-### 从源码构建
+### ソースからビルド
 ```bash
 git clone https://github.com/sunwood-ai-labs/source-sage-mcp-server.git
 cd source-sage-mcp-server
@@ -81,9 +81,9 @@ npm run build
 
 ## 🔧 使用方法
 
-### 作为 MCP 服务器配置
+### MCPサーバーとしての設定
 
-1. 在 MCP 的配置文件中添加以下内容:
+1. MCPの設定ファイルに以下を追加:
 
 ```json
 {
@@ -96,11 +96,11 @@ npm run build
 }
 ```
 
-### 🎮 可用工具
+### 🎮 使用可能なツール
 
 #### generate_structure
 
-生成项目的目录结构，并创建包含文件内容的详细文档。
+プロジェクトのディレクトリ構造を生成し、ファイル内容も含めた詳細なドキュメントを作成します。
 
 ```typescript
 interface GenerateStructureArgs {
@@ -113,7 +113,7 @@ interface GenerateStructureArgs {
 }
 ```
 
-### 使用示例
+### 使用例
 
 ```typescript
 // 絶対パスでの使用（推奨）
@@ -123,9 +123,9 @@ const result = await mcpClient.callTool('source-sage', 'generate_structure', {
 });
 ```
 
-### 输出示例
+### 出力サンプル
 
-实际项目结构的输出示例：
+実際のプロジェクト構造の出力例：
 
 ```plaintext
 # 📁 Project: source-sage
@@ -133,7 +133,7 @@ const result = await mcpClient.callTool('source-sage', 'generate_structure', {
 ## 🌳 ディレクトリ構造
 
 OS: win32
-Directory: C:\Users\your-name\source-sage
+Directory: C:Usersyour-namesource-sage
 
 └─ source-sage/
    ├─ src/
@@ -143,16 +143,16 @@ Directory: C:\Users\your-name\source-sage
    └─ tsconfig.json       # TypeScriptのコンパイル設定
 ```
 
-此输出包括以下信息：
+この出力には以下の情報が含まれます：
 
-- 📁 项目名称和操作系统信息
-- 🌳 目录树结构
-- 📝 各文件的角色和说明
-- 🔍 通过 .SourceSageignore 排除不需要的文件
+- 📁 プロジェクト名とOS情報
+- 🌳 ディレクトリツリー構造
+- 📝 各ファイルの役割と説明
+- 🔍 .SourceSageignoreによる不要ファイルの除外
 
-## 📝 .SourceSageignore 的配置
+## 📝 .SourceSageignoreの設定
 
-在项目的根目录下创建 `.SourceSageignore` 文件，并写入需要排除的模式。默认情况下，包含如下排除模式：
+プロジェクトのルートに`.SourceSageignore`ファイルを作成し、除外したいパターンを記述します。デフォルトで以下のような除外パターンが含まれています：
 
 ```plaintext
 # バージョン管理システム関連
@@ -189,7 +189,7 @@ folder
 package-lock.json
 ```
 
-## 🔄 输出示例
+## 🔄 出力例
 
 ```plaintext
   # 📁 Project: my-project
@@ -197,7 +197,7 @@ package-lock.json
   ## 🌳 ディレクトリ構造
 
   OS: win32
-  Directory: C:\path\to\my-project
+  Directory: C:path	omy-project
 
   └─ my-project/
     ├─ src/
@@ -213,25 +213,25 @@ package-lock.json
 
 ```
 
-## 👨‍💻 开发者信息
+## 👨‍💻 開発者向け情報
 
-### 主要实现细节
+### 主要な実装詳細
 
-- **Server Class**: `SourceSageServer` 类提供 MCP 服务器的核心功能
+- **Server Class**: `SourceSageServer`クラスがMCPサーバーの中核機能を提供
 - **Tree Building**: 
-  - `buildTree` 方法递归解析目录结构
-  - 适当排序目录和文件以进行显示
+  - `buildTree`メソッドが再帰的にディレクトリ構造を解析
+  - ディレクトリとファイルを適切にソートして表示
 - **File Filtering**: 
-  - 使用 `ignore` 包实现灵活的文件排除
-  - 支持丰富的默认排除模式和自定义设置
+  - `ignore`パッケージを使用して柔軟なファイル除外を実現
+  - 豊富なデフォルト除外パターンとカスタム設定をサポート
 - **Content Generation**:
-  - 根据文件类型提供适当的语法高亮
-  - 提供基于文件类型的附加信息
+  - ファイルタイプに応じた適切なシンタックスハイライト
+  - ファイルの種類に基づく追加情報の提供
 - **Async Processing**: 
-  - 使用 `glob` 包进行高效的文件扫描
-  - 通过异步处理支持大型项目
+  - `glob`パッケージを使用した効率的なファイル走査
+  - 非同期処理による大規模プロジェクトのサポート
 
-### 开发环境设置
+### 開発環境のセットアップ
 
 ```bash
 # リポジトリのクローン
@@ -247,55 +247,55 @@ npm run build
 npm run inspector
 ```
 
-### 可用的 npm 脚本
+### 利用可能なnpmスクリプト
 
-- `npm run build`: 编译 TypeScript 并设置执行权限
-- `npm run prepare`: 安装时自动构建
-- `npm run watch`: 开发时自动编译
-- `npm run inspector`: 启动 MCP 检查器
+- `npm run build`: TypeScriptのコンパイルと実行権限の設定
+- `npm run prepare`: インストール時の自動ビルド
+- `npm run watch`: 開発時の自動コンパイル
+- `npm run inspector`: MCPインスペクターの起動
 
-## 🤝 贡献
+## 🤝 コントリビューション
 
-1. Fork 此仓库
-2. 创建新分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m '✨ feat: 添加了很棒的功能'`)
-4. 将分支推送到远程 (`git push origin feature/amazing-feature`)
-5. 创建 Pull Request
+1. このリポジトリをフォーク
+2. 新しいブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m '✨ feat: 素晴らしい機能を追加'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
 
-## 📄 许可证
+## 📄 ライセンス
 
-MIT License - 详情请参阅 LICENSE 文件。
+MIT License - 詳細は LICENSE ファイルを参照してください。
 
-## 🔗 相关链接
+## 🔗 関連リンク
 
-- [npm 包](https://www.npmjs.com/package/@sunwood-ai-labs/source-sage-mcp-server)
-- [GitHub 仓库](https://github.com/sunwood-ai-labs/source-sage-mcp-server)
-- [报告 Bug](https://github.com/sunwood-ai-labs/source-sage-mcp-server/issues)
+- [npm package](https://www.npmjs.com/package/@sunwood-ai-labs/source-sage-mcp-server)
+- [GitHub repository](https://github.com/sunwood-ai-labs/source-sage-mcp-server)
+- [バグ報告](https://github.com/sunwood-ai-labs/source-sage-mcp-server/issues)
 
-## 👥 维护者
+## 👥 メンテナー
 
-- Sunwood AI Labs 团队
+- Sunwood AI Labs Team
 
 ---
 
-由 Sunwood AI Labs 出于热爱制作
+Made with ❤️ by Sunwood AI Labs
 
-**官方网站：** [https://github.com/Sunwood-ai-labs/source-sage-mcp-server](https://github.com/Sunwood-ai-labs/source-sage-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Sunwood-ai-labs/source-sage-mcp-server](https://github.com/Sunwood-ai-labs/source-sage-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`developer tools`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `developer tools`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`C:/path/to/source-sage/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `C:/path/to/source-sage/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sunwood-ai-labs-source-sage.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sunwood-ai-labs-source-sage.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

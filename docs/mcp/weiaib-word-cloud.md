@@ -1,64 +1,51 @@
 ---
-title: "词云图 MCP"
-description: "一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。\n- **PDF 文档**：支持从 PDF 文件中提取文字内容\n- **Word 文档**：支持 .docx 和 .doc 格式的文档解析\n- **文本文件**：支持 .txt 纯文本文件\n- **Markdown**：支持 .md 和 .markdown 文件，自动清理 Markdown 语法\n- 自动去除无意义的停用词（如\"我\"、\"我们\"、\"的\"、\"了\"等）\n- 清理标点符号和特殊字符\n- 智能分词处理，支持中英文混合文本\n- 可自定义停用词列表\n- 多种输出格式：SVG、PNG、JPG、WebP 等多种格式支持\n- 多种主题：default、warm、"
+title: "word-cloud-mcp"
+description: "一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。 - PDF 文档：支持从 PDF 文件中提取文字内容 - Word 文档：支持 .docx 和 .doc 格式的文档解析 - 文本文件：支持 .txt 纯文本文件 - Markdown：支持 .md 和 .markdown 文件，自动清…"
 ---
 
-# 词云图 MCP
+# word-cloud-mcp
 
-一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。
-- **PDF 文档**：支持从 PDF 文件中提取文字内容
-- **Word 文档**：支持 .docx 和 .doc 格式的文档解析
-- **文本文件**：支持 .txt 纯文本文件
-- **Markdown**：支持 .md 和 .markdown 文件，自动清理 Markdown 语法
-- 自动去除无意义的停用词（如"我"、"我们"、"的"、"了"等）
-- 清理标点符号和特殊字符
-- 智能分词处理，支持中英文混合文本
-- 可自定义停用词列表
-- 多种输出格式：SVG、PNG、JPG、WebP 等多种格式支持
-- 多种主题：default、warm、
+一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。 - PDF 文档：支持从 PDF 文件中提取文字内容 - Word 文档：支持 .docx 和 .doc 格式的文档解析 - 文本文件：支持 .txt 纯文本文件 - Markdown：支持 .md 和 .markdown 文件，自动清…
 
 # @lucianaib/word-cloud-mcp
 
-一个专注于从文档内容制作词云图的 MCP (Model Context Protocol) 工具，支持 PDF、Word、TXT、MD 等多种格式的智能文字提取。
+A MCP (Model Context Protocol) tool focused on creating word clouds from document content, supporting intelligent text extraction from various formats such as PDF, Word, TXT, MD, and more.
 
-## 功能特性
+## Features
 
-### 🔍 智能文字提取
-- **PDF 文档**：支持从 PDF 文件中提取文字内容
-- **Word 文档**：支持 .docx 和 .doc 格式的文档解析
-- **文本文件**：支持 .txt 纯文本文件
-- **Markdown**：支持 .md 和 .markdown 文件，自动清理 Markdown 语法
+### 🔍 Intelligent Text Extraction
+- **PDF Documents**: Supports extracting text content from PDF files
+- **Word Documents**: Supports parsing .docx and .doc format documents
+- **Text Files**: Supports .txt plain text files
+- **Markdown**: Supports .md and .markdown files, automatically cleans up Markdown syntax
 
-### 🧹 内容净化
-- 自动去除无意义的停用词（如"我"、"我们"、"的"、"了"等）
-- 清理标点符号和特殊字符
-- 智能分词处理，支持中英文混合文本
-- 可自定义停用词列表
+### 🧹 Content Purification
+- Automatically removes meaningless stop words (e.g., "我", "我们", "的", "了" etc.)
+- Cleans up punctuation and special characters
+- Intelligent word segmentation, supports mixed Chinese and English text
+- Customizable stop word list
 
-### 🎨 词云图生成
-- **多种输出格式**：SVG、PNG、JPG、WebP 等多种格式支持
-- **多种主题**：default、warm、cool、nature、business
-- **灵活配置**：字体大小、文字间隙、角度范围、背景色等
-- **智能布局**：避免文字重叠，优化视觉效果
-- **高质量输出**：支持高分辨率和质量调节
+### 🎨 Word Cloud Generation
+- **Multiple Output Formats**: Supports SVG, PNG, JPG, WebP, and more
+- **Multiple Themes**: default, warm, cool, nature, business
+- **Flexible Configuration**: Font size, word spacing, angle range, background color, etc.
+- **Intelligent Layout**: Avoids text overlap, optimizes visual effects
+- **High-Quality Output**: Supports high resolution and quality adjustment
 
-## 安装
+## Installation
 
-### 全局安装（推荐）
-```bash
+### Global Installation (Recommended)
+bash
 npm install -g @lucianaib/word-cloud-mcp
-```
 
+## Usage
 
+### As an MCP Server
 
-## 使用方法
+1. Add this server to your MCP client configuration:
 
-### 作为 MCP 服务器使用
-
-1. 在你的 MCP 客户端配置中添加此服务器：
-
-**方式一：使用 npx（推荐，适用于全局安装）**
-```json
+**Method 1: Using npx (Recommended, for global installation)**
+json
 {
   "mcpServers": {
     "word-cloud": {
@@ -67,12 +54,11 @@ npm install -g @lucianaib/word-cloud-mcp
     }
   }
 }
-```
 
 
 
-**方式二：使用 node 直接运行（适用于本地开发）**
-```json
+**Method 2: Running directly with node (for local development)**
+json
 {
   "mcpServers": {
     "word-cloud": {
@@ -82,10 +68,9 @@ npm install -g @lucianaib/word-cloud-mcp
     }
   }
 }
-```
 
-**方式三：使用绝对路径（Windows 示例）**
-```json
+**Method 3: Using absolute path (Windows example)**
+json
 {
   "mcpServers": {
     "word-cloud": {
@@ -95,190 +80,177 @@ npm install -g @lucianaib/word-cloud-mcp
     }
   }
 }
-```
 
+2. Restart your MCP client (e.g., CodeBuddy, Cursor, etc.)
 
-
-2. 重启你的 MCP 客户端（如 CodeBuddy、Cursor 等）
-
-### 可用工具
+### Available Tools
 
 #### 1. extract_text_from_file
-从文档文件中提取文字内容
+Extracts text content from a document file
 
-**参数：**
-- `filePath` (string): 文档文件的路径
-- `fileType` (string): 文件类型 ('pdf' | 'docx' | 'txt' | 'md')
+**Parameters:**
+- `filePath` (string): Path to the document file
+- `fileType` (string): File type ('pdf' | 'docx' | 'txt' | 'md')
 
-**示例：**
-```json
+**Example:**
+json
 {
   "filePath": "./documents/sample.pdf",
   "fileType": "pdf"
 }
-```
 
 #### 2. generate_wordcloud
-根据文字内容生成词云图
+Generates a word cloud based on the text content
 
-使用示例：
-```md
-用MCP把下面的内容转换为词云图：Google AI Studio 和 Gemini API 的适用区域
+Usage Example:
+md
+Use MCP to convert the following content into a word cloud: Google AI Studio and Gemini API availability regions
 
 content_copy
 
+If you are redirected to this page after trying to open Google AI Studio, it may be because Google AI Studio is not available in your region, or you do not meet the age requirement (18 years old). For more information on available regions, see below; for other requirements, see the terms of service.
 
-如果您在尝试打开 Google AI Studio 后进入此页面，可能是因为 Google AI Studio 在您所在的地区不可用，或者您未达到访问年龄要求（年满 18 周岁）。如需详细了解可用地区，请参阅下文；如需详细了解其他要求，请参阅服务条款。
+Available Regions
+Note: For Colab users - regional restrictions are applied based on the location of the Colab instance, not the user's location. You can use !curl ipinfo.io
+to check the location of the Colab instance
+Gemini API and Google AI Studio have been launched in the following countries and regions. If you are not in one of these countries or regions, try using the Gemini API in Vertex AI:
 
-可用区域
-注意： 对于 Colab 用户 - 地区限制是根据 Colab 实例所在的地区应用，而不是根据用户所在的地区应用。您可以使用 !curl ipinfo.io
-检查 Colab 实例的位置
-Gemini API 和 Google AI Studio 已在以下国家和地区推出。如果您不在上述国家或地区，请尝试使用 Vertex AI 中的 Gemini API：
-
-阿尔巴尼亚
-阿尔及利亚
-美属萨摩亚
-安哥拉
+Albania
+Algeria
+American Samoa
+Angola
 ....
-```
 
+**Parameters:**
+- `text` (string): Text content used to generate the word cloud
+- `theme` (string, optional): Theme color (default: 'default')
+- `shape` (string, optional): Shape of the word cloud (default: 'rectangle')
+- `wordGap` (number, optional): Word spacing (default: 2)
+- `fontSize` (object, optional): Font size range (default: {min: 10, max: 100})
+- `angleRange` (object, optional): Angle range (default: {min: -90, max: 90})
+- `angleStep` (number, optional): Angle step (default: 45)- `outputPath` (string, optional): Output file path (default: './wordcloud.svg')
+- `format` (string, optional): Output format ('svg' | 'png' | 'jpg' | 'jpeg' | 'webp', default: 'svg')
+- `backgroundColor` (string, optional): Background color (default: '#ffffff')
+- `quality` (number, optional): Quality setting for JPG/WebP formats (1-100, default: 90)
 
-**参数：**
-- `text` (string): 用于生成词云图的文字内容
-- `theme` (string, 可选): 主题色彩 (default: 'default')
-- `shape` (string, 可选): 词云图形状 (default: 'rectangle')
-- `wordGap` (number, 可选): 文字间隙 (default: 2)
-- `fontSize` (object, 可选): 文字大小范围 (default: {min: 10, max: 100})
-- `angleRange` (object, 可选): 角度范围 (default: {min: -90, max: 90})
-- `angleStep` (number, 可选): 角度步长 (default: 45)
-- `outputPath` (string, 可选): 输出文件路径 (default: './wordcloud.svg')
-- `format` (string, 可选): 输出格式 ('svg' | 'png' | 'jpg' | 'jpeg' | 'webp', default: 'svg')
-- `backgroundColor` (string, 可选): 背景颜色 (default: '#ffffff')
-- `quality` (number, 可选): JPG/WebP 格式的质量设置 (1-100, default: 90)
-
-**示例：**
-```json
+**Example:**
+json
 {
-  "text": "这是一段用于生成词云图的示例文字内容",
+  "text": "This is a sample text content for generating a word cloud",
   "theme": "warm",
   "format": "png",
   "fontSize": {"min": 15, "max": 80},
   "backgroundColor": "#f8f9fa",
   "outputPath": "./my-wordcloud.png"
 }
-```
 
 #### 3. create_wordcloud_from_file
-从文档文件直接生成词云图（组合操作）
+Generate a word cloud directly from a document file (combined operation)
 
-**参数：**
-- `filePath` (string): 文档文件的路径
-- `fileType` (string): 文件类型
-- 其他参数同 `generate_wordcloud`
+**Parameters:**
+- `filePath` (string): Path to the document file
+- `fileType` (string): File type
+- Other parameters are the same as in `generate_wordcloud`
 
-**示例：**
-```json
+**Example:**
+json
 {
   "filePath": "./documents/article.md",
   "fileType": "md",
   "theme": "nature",
   "outputPath": "./article-wordcloud.svg"
 }
-```
 
-## 主题样式
+## Theme Styles
 
 ### default
-经典彩色主题，适合大多数场景
+A classic colorful theme suitable for most scenarios.
 
 ### warm
-暖色调主题，营造温馨氛围
+A warm tone theme that creates a cozy atmosphere.
 
 ### cool
-冷色调主题，现代简约风格
+A cool tone theme with a modern and minimalist style.
 
 ### nature
-自然色彩主题，清新自然
+A natural color theme that feels fresh and natural.
 
 ### business
-商务色彩主题，专业正式
+A business color theme that is professional and formal.
 
-## 支持的文件格式
+## Supported File Formats
 
-### 输入文件格式
+### Input File Formats
 
-| 格式 | 扩展名 | 说明 |
-|------|--------|------|
-| PDF | .pdf | 支持文字型 PDF，不支持扫描版 |
-| Word | .docx, .doc | Microsoft Word 文档 |
-| 文本 | .txt | 纯文本文件 |
-| Markdown | .md, .markdown | Markdown 格式文档 |
+| Format | Extension | Description |
+|--------|-----------|-------------|
+| PDF    | .pdf      | Supports text-based PDFs, not scanned versions |
+| Word   | .docx, .doc | Microsoft Word documents |
+| Text   | .txt      | Plain text files |
+| Markdown | .md, .markdown | Markdown formatted documents |
 
-### 输出格式
+### Output Formats
 
-| 格式 | 扩展名 | 特点 | 适用场景 |
-|------|--------|------|----------|
-| **SVG** | .svg | 矢量图形，无损缩放，文件小 | 网页展示、印刷品、需要缩放的场景 |
-| **PNG** | .png | 支持透明背景，无损压缩 | 网页、演示文稿、需要透明背景 |
-| **JPG** | .jpg/.jpeg | 有损压缩，文件小，不支持透明 | 照片处理、社交媒体分享 |
-| **WebP** | .webp | 现代格式，压缩率高，质量好 | 现代网页、移动应用 |
+| Format | Extension | Characteristics | Suitable Scenarios |
+|--------|-----------|-----------------|--------------------|
+| **SVG** | .svg | Vector graphics, lossless scaling, small file size | Web display, print, scenarios requiring scaling |
+| **PNG** | .png | Supports transparent background, lossless compression | Web, presentations, requires transparency |
+| **JPG** | .jpg/.jpeg | Lossy compression, small file size, no transparency support | Photo processing, social media sharing |
+| **WebP** | .webp | Modern format, high compression rate, good quality | Modern web, mobile applications |
 
-## 开发
+## Development
 
-### 本地开发
+### Local Development
 
-```bash
-# 克隆项目
+bash
+# Clone the project
 git clone https://github.com/lfrbmw/word-cloud-mcp.git
 cd word-cloud-mcp
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 构建项目
+# Build the project
 npm run build
 
-# 运行测试
+# Run tests
 npm test
-```
 
-### 项目结构
+### Project Structure
 
-```
 src/
-├── index.ts                 # MCP 服务器主入口
+├── index.ts                 # MCP server main entry point
 ├── extractors/
-│   └── text-extractor.ts    # 文字提取器
+│   └── text-extractor.ts    # Text extractor
 ├── utils/
-│   └── content-cleaner.ts   # 内容清理器
+│   └── content-cleaner.ts   # Content cleaner
 └── wordcloud/
-    └── generator.ts         # 词云图生成器
-```
+    └── generator.ts         # Word cloud generator
 
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributions
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-**官方网站：** [https://github.com/OnePieceLwc/word-cloud-mcp](https://github.com/OnePieceLwc/word-cloud-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/OnePieceLwc/word-cloud-mcp](https://github.com/OnePieceLwc/word-cloud-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `词云图`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `词云图`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@lucianaib/word-cloud-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@lucianaib/word-cloud-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/weiaib-word-cloud.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/weiaib-word-cloud.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

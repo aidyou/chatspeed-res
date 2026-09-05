@@ -1,85 +1,86 @@
 ---
-title: "Blender"
-description: "通过模型上下文协议（MCP）将Blender连接到Claude AI，使Claude能够直接与Blender交互并对其进行控制，从而实现AI辅助的3D建模、场景操作和渲染。"
+title: "blender-mcp"
+description: "Connects Blender to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control Blender for AI-assisted 3D modeling, scene manipulation, and rendering."
 ---
 
-# Blender
+# blender-mcp
 
-通过模型上下文协议（MCP）将Blender连接到Claude AI，使Claude能够直接与Blender交互并对其进行控制，从而实现AI辅助的3D建模、场景操作和渲染。
+Connects Blender to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control Blender for AI-assisted 3D modeling, scene manipulation, and rendering.
 
-# BlenderMCP - Blender 模型上下文协议集成
+# BlenderMCP - Blender Model Context Protocol Integration
 
-BlenderMCP 通过模型上下文协议 (MCP) 将 Blender 连接到 Claude AI，使 Claude 能够直接与 Blender 交互并控制它。此集成支持通过提示辅助进行3D建模、场景创建和操作。
+BlenderMCP connects Blender to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control Blender. This integration enables prompt assisted 3D modeling, scene creation, and manipulation.
 
-[完整教程](https://www.youtube.com/watch?v=lCyQ717DuzQ)
+[Full tutorial](https://www.youtube.com/watch?v=lCyQ717DuzQ)
 
-### 加入社区
+### Join the Community
 
-提供反馈，获取灵感，并在此基础上构建：[Discord](https://discord.gg/xcJxvuW6)
+Give feedback, get inspired, and build on top of the MCP: [Discord](https://discord.gg/xcJxvuW6)
 
-### 支持者
+### Supporters
 
-**主要支持者:**
+**Top supporters:**
 
 [CodeRabbit](https://www.coderabbit.ai/)
 
-**所有支持者:**
+**All supporters:**
 
-[支持此项目](https://github.com/sponsors/ahujasid)
+[Support this project](https://github.com/sponsors/ahujasid)
 
-## 发布说明 (1.1.0)
+## Release notes (1.1.0)
 
-- 通过 Poly Haven API 增加了对 Poly Haven 资源的支持
-- 通过 Hyper3D Rodin 增加了提示3D模型的支持
-- 对于新用户，可以直接跳到安装部分。对于现有用户，请参阅以下几点
-- 下载最新的 addon.py 文件替换旧文件，然后添加到 Blender 中
-- 从 Claude 中删除 MCP 服务器并重新添加，这样应该就可以正常工作了！
+- Added support for Poly Haven assets through their API
+- Added support to prompt 3D models using Hyper3D Rodin
+- For newcomers, you can go straight to Installation. For existing users, see the points below
+- Download the latest addon.py file and replace the older one, then add it to Blender
+- Delete the MCP server from Claude and add it back again, and you should be good to go!
 
-## 功能
+## Features
 
-- **双向通信**：通过基于套接字的服务器将 Claude AI 连接到 Blender
-- **对象操作**：在 Blender 中创建、修改和删除3D对象
-- **材质控制**：应用和修改材质和颜色
-- **场景检查**：获取当前 Blender 场景的详细信息
-- **代码执行**：从 Claude 执行任意 Python 代码
+- **Two-way communication**: Connect Claude AI to Blender through a socket-based server
+- **Object manipulation**: Create, modify, and delete 3D objects in Blender
+- **Material control**: Apply and modify materials and colors
+- **Scene inspection**: Get detailed information about the current Blender scene
+- **Code execution**: Run arbitrary Python code in Blender from Claude
 
-## 组件
+## Components
 
-系统由两个主要组件组成：
+The system consists of two main components:
 
-1. **Blender 插件 (`addon.py`)**：一个 Blender 插件，在 Blender 内部创建一个套接字服务器以接收和执行命令
-2. **MCP 服务器 (`src/blender_mcp/server.py`)**：一个实现模型上下文协议并连接到 Blender 插件的 Python 服务器
+1. **Blender Addon (`addon.py`)**: A Blender addon that creates a socket server within Blender to receive and execute commands
+2. **MCP Server (`src/blender_mcp/server.py`)**: A Python server that implements the Model Context Protocol and connects to the Blender addon
 
-## 安装
+## Installation
 
-### 先决条件
+### Prerequisites
 
-- Blender 3.0 或更高版本
-- Python 3.10 或更高版本
-- uv 包管理器:
+- Blender 3.0 or newer
+- Python 3.10 or newer
+- uv package manager: 
 
-**如果你使用的是 Mac，请按如下方式安装 uv**
+**If you're on Mac, please install uv as**
 ```bash
 brew install uv
 ```
-**在 Windows 上**
+**On Windows**
 ```bash
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex" 
 ```
-然后
+and then
 ```bash
-set Path=C:\Users\nntra\.local\bin;%Path%
+set Path=C:Users
+ntra.localin;%Path%
 ```
 
-其他安装说明请参见其网站：[安装 uv](https://docs.astral.sh/uv/getting-started/installation/)
+Otherwise installation instructions are on their website: [Install uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-**⚠️ 在安装 UV 之前请勿继续**
+**⚠️ Do not proceed before installing UV**
 
-### Claude 桌面集成
+### Claude for Desktop Integration
 
-[观看设置说明视频](https://www.youtube.com/watch?v=neoK_WMq92g)（假设你已经安装了 uv）
+[Watch the setup instruction video](https://www.youtube.com/watch?v=neoK_WMq92g) (Assuming you have already installed uv)
 
-转到 Claude > 设置 > 开发者 > 编辑配置 > claude_desktop_config.json 并包含以下内容：
+Go to Claude > Settings > Developer > Edit Config > claude_desktop_config.json to include the following:
 
 ```json
 {
@@ -94,113 +95,113 @@ set Path=C:\Users\nntra\.local\bin;%Path%
 }
 ```
 
-### 光标集成
+### Cursor integration
 
-通过 uvx 运行 blender-mcp 而不永久安装它。转到光标设置 > MCP 并粘贴此命令。
+Run blender-mcp without installing it permanently through uvx. Go to Cursor Settings > MCP and paste this as a command.
 
 ```bash
 uvx blender-mcp
 ```
 
-[光标设置视频](https://www.youtube.com/watch?v=wgWsJshecac)
+[Cursor setup video](https://www.youtube.com/watch?v=wgWsJshecac)
 
-**⚠️ 仅运行一个 MCP 服务器实例（要么在光标上，要么在 Claude 桌面上），不要同时运行两者**
+**⚠️ Only run one instance of the MCP server (either on Cursor or Claude Desktop), not both**
 
-### 安装 Blender 插件
+### Installing the Blender Addon
 
-1. 从此仓库下载 `addon.py` 文件
-1. 打开 Blender
-2. 转到编辑 > 首选项 > 插件
-3. 点击“安装...”并选择 `addon.py` 文件
-4. 通过选中“界面: Blender MCP”旁边的复选框启用插件
+1. Download the `addon.py` file from this repo
+1. Open Blender
+2. Go to Edit > Preferences > Add-ons
+3. Click "Install..." and select the `addon.py` file
+4. Enable the addon by checking the box next to "Interface: Blender MCP"
 
-## 使用
+## Usage
 
-### 启动连接
+### Starting the Connection
 
-1. 在 Blender 中，转到 3D 视图侧边栏（如果不可见，请按 N 键）
-2. 找到 "BlenderMCP" 标签
-3. 如果你希望从他们的 API 获取资源，请勾选 Poly Haven 复选框（可选）
-4. 点击 "连接到 Claude"
-5. 确保 MCP 服务器在你的终端中运行
+1. In Blender, go to the 3D View sidebar (press N if not visible)
+2. Find the "BlenderMCP" tab
+3. Turn on the Poly Haven checkbox if you want assets from their API (optional)
+4. Click "Connect to Claude"
+5. Make sure the MCP server is running in your terminal
 
-### 与 Claude 一起使用
+### Using with Claude
 
-一旦在 Claude 上设置了配置文件，并且插件在 Blender 上运行，你将在 Blender MCP 中看到带有工具的锤子图标。
+Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP.
 
-#### 功能
+#### Capabilities
 
-- 获取场景和对象信息
-- 创建、删除和修改形状
-- 为对象应用或创建材质
-- 在 Blender 中执行任何 Python 代码
-- 通过 [Poly Haven](https://polyhaven.com/) 下载正确的模型、资产和 HDRIs
-- 通过 [Hyper3D Rodin](https://hyper3d.ai/) 生成 AI 3D 模型
+- Get scene and object information 
+- Create, delete and modify shapes
+- Apply or create materials for objects
+- Execute any Python code in Blender
+- Download the right models, assets and HDRIs through [Poly Haven](https://polyhaven.com/)
+- AI generated 3D models through [Hyper3D Rodin](https://hyper3d.ai/)
 
-### 示例命令
+### Example Commands
 
-以下是一些你可以要求 Claude 执行的示例：
+Here are some examples of what you can ask Claude to do:
 
-- "在一个地牢中创建一个低多边形场景，其中有一条龙守护着一锅金子" [演示](https://www.youtube.com/watch?v=DqgKuLYUv00)
-- "使用 HDRIs、纹理以及来自 Poly Haven 的岩石和植被等模型来创建海滩氛围" [演示](https://www.youtube.com/watch?v=I29rn92gkC4)
-- 提供参考图片，并根据它创建一个 Blender 场景 [演示](https://www.youtube.com/watch?v=FDRb03XPiRo)
-- "通过 Hyper3D 生成一个花园侏儒的 3D 模型"
-- "获取当前场景的信息，并从中制作一个 threejs 草图" [演示](https://www.youtube.com/watch?v=jxbNI5L7AH8)
-- "让这辆车变成红色并且具有金属质感"
-- "创建一个球体并将其放置在立方体上方"
-- "使照明像工作室一样"
-- "将相机对准场景，并使其呈现等距视角"
+- "Create a low poly scene in a dungeon, with a dragon guarding a pot of gold" [Demo](https://www.youtube.com/watch?v=DqgKuLYUv00)
+- "Create a beach vibe using HDRIs, textures, and models like rocks and vegetation from Poly Haven" [Demo](https://www.youtube.com/watch?v=I29rn92gkC4)
+- Give a reference image, and create a Blender scene out of it [Demo](https://www.youtube.com/watch?v=FDRb03XPiRo)
+- "Generate a 3D model of a garden gnome through Hyper3D"
+- "Get information about the current scene, and make a threejs sketch from it" [Demo](https://www.youtube.com/watch?v=jxbNI5L7AH8)
+- "Make this car red and metallic" 
+- "Create a sphere and place it above the cube"
+- "Make the lighting like a studio"
+- "Point the camera at the scene, and make it isometric"
 
-## Hyper3D 集成
+## Hyper3D integration
 
-Hyper3D 的免费试用密钥允许你每天生成有限数量的模型。如果达到每日限制，你可以等待次日重置或从 hyper3d.ai 和 fal.ai 获取自己的密钥。
+Hyper3D's free trial key allows you to generate a limited number of models per day. If the daily limit is reached, you can wait for the next day's reset or obtain your own key from hyper3d.ai and fal.ai.
 
-## 故障排除
+## Troubleshooting
 
-- **连接问题**：确保 Blender 插件服务器正在运行，并且已在 Claude 上配置了 MCP 服务器，不要在终端中运行 uvx 命令。有时第一个命令无法通过，但之后会开始正常工作。
-- **超时错误**：尝试简化你的请求或将它们分解为更小的步骤
-- **Poly Haven 集成**：Claude 有时行为不稳定
-- **是否尝试过重启？**：如果你仍然遇到连接错误，尝试重新启动 Claude 和 Blender 服务器
+- **Connection issues**: Make sure the Blender addon server is running, and the MCP server is configured on Claude, DO NOT run the uvx command in the terminal. Sometimes, the first command won't go through but after that it starts working.
+- **Timeout errors**: Try simplifying your requests or breaking them into smaller steps
+- **Poly Haven integration**: Claude is sometimes erratic with its behaviour
+- **Have you tried turning it off and on again?**: If you're still having connection errors, try restarting both Claude and the Blender server
 
-## 技术细节
+## Technical Details
 
-### 通信协议
+### Communication Protocol
 
-系统使用基于 TCP 套接字的简单 JSON 协议：
+The system uses a simple JSON-based protocol over TCP sockets:
 
-- **命令** 作为包含 `type` 和可选 `params` 的 JSON 对象发送
-- **响应** 是包含 `status` 和 `result` 或 `message` 的 JSON 对象
+- **Commands** are sent as JSON objects with a `type` and optional `params`
+- **Responses** are JSON objects with a `status` and `result` or `message`
 
-## 限制与安全注意事项
+## Limitations & Security Considerations
 
-- `execute_blender_code` 工具允许在Blender中运行任意的Python代码，这可能会非常强大但也具有潜在危险。在生产环境中使用时请务必谨慎。在使用此工具前请**始终**保存您的工作。
-- Poly Haven 需要下载模型、纹理和HDRI图像。如果您不想使用它，请在Blender中的复选框里关闭它。
-- 复杂的操作可能需要分解成更小的步骤
+- The `execute_blender_code` tool allows running arbitrary Python code in Blender, which can be powerful but potentially dangerous. Use with caution in production environments. ALWAYS save your work before using it.
+- Poly Haven requires downloading models, textures, and HDRI images. If you do not want to use it, please turn it off in the checkbox in Blender. 
+- Complex operations might need to be broken down into smaller steps
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 免责声明
+## Disclaimer
 
-这是一个第三方集成，并非由Blender官方制作。由[Siddharth](https://x.com/sidahuj)制作。
+This is a third-party integration and not made by Blender. Made by [Siddharth](https://x.com/sidahuj)
 
-**官方网站：** [https://github.com/ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`image and video processing`, `developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `image and video processing`, `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`blender-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `blender-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ahujasid-blender.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ahujasid-blender.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,54 +1,54 @@
 ---
-title: "硅基流动免费模型与额度"
-description: "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。"
+title: "SiliconFlow Free Models & Credit"
+description: "New users get about ¥14 (≈20M tokens) credit, and after real-name verification can use many permanently free open models (DeepSeek, Qwen, Llama, GLM etc.); free models cost 0 with fixed rate limits."
 ---
 
-# 硅基流动免费模型与额度
+# SiliconFlow Free Models & Credit
 
-新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。
+New users get about ¥14 (≈20M tokens) credit, and after real-name verification can use many permanently free open models (DeepSeek, Qwen, Llama, GLM etc.); free models cost 0 with fixed rate limits.
 
-硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。
+SiliconFlow (硅基流动) is a domestic MaaS platform with 200+ open models behind one OpenAI-compatible endpoint. Free tier: new accounts receive a credit grant of about ¥14 (roughly 20M tokens of Qwen-class models); after real-name verification, all permanent free variants become available (named without the Pro/ prefix), which cost 0 and have fixed per-model rate limits. Text models generally allow RPM 1,000–10,000 and TPM 50,000–5,000,000 depending on the model and usage tier; image models are limited to IPM 2 / IPD 400. Free policy and limits change, so confirm with the official rate-limit and billing docs.
 
-**官方网站：** [https://siliconflow.cn/](https://siliconflow.cn/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://siliconflow.cn/](https://siliconflow.cn/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `coding`, `reasoning`
-- 标签：`siliconflow`, `free-models`, `api`, `china`
+- Categories: `general`, `coding`, `reasoning`
+- Tags: `siliconflow`, `free-models`, `api`, `china`
 
-## 免费使用说明
+## Free Usage
 
-- 访问方式：`api`
-- 是否需要登录：`是`
-- 是否有免费层：`是`
-- 可用区域：`regional`
+- Access: `api`
+- Requires login: `Yes`
+- Has free tier: `Yes`
+- Availability: `regional`
 
-注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。
+Sign-up credit about ¥14 (≈20M tokens); permanent free models cost 0 after real-name verification, text models roughly RPM 1,000–10,000 / TPM 50K–5M, image models IPM 2 / IPD 400. Confirm current values in the official docs.
 
-### 分模型免费额度明细
+### Per-model free quota
 
-| 模型 | 免费额度 | 频率与限速 |
+| Model | Free quota | Rate / frequency |
 | --- | --- | --- |
-| 新用户注册额度（全模型按 token 消耗） | 约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型） | 一次性赠送，具体以官方计费文档为准 |
-| 永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体） | 免费（费用 0） | RPM 1,000–10,000 / TPM 5 万–500 万（按模型） |
-| 图像生成模型 | 免费（费用 0） | IPM 2 / IPD 400 |
+| New-user credit (all models by tokens) | ≈ ¥14 (≈ 20M tokens of Qwen-class models) | One-time grant; exact amount per official billing doc |
+| Permanent free models (text, e.g. DeepSeek, Qwen, Llama, GLM variants) | Free (cost 0) | RPM 1,000–10,000 / TPM 50K–5M (by model) |
+| Image-generation models | Free (cost 0) | IPM 2 / IPD 400 |
 
-## 注册与限制
-- 注册入口：[https://siliconflow.cn/](https://siliconflow.cn/)
-- 注册限制：手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。
-- 免费政策文档：[https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation](https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation)
+## Registration & Limits
+- Sign up: [https://siliconflow.cn/](https://siliconflow.cn/)
+- Registration limit: Sign up with a Chinese phone number/email; real-name verification is required to use all permanent free models. No credit card required.
+- Free policy doc: [https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation](https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation)
 
-## ChatSpeed 导入
+## ChatSpeed Import
 
-该服务关联模型供应商 `siliconflow`，可从模型供应商列表导入配置，调用入口如下：
-- 协议：`openai`
-- Base URL：`https://api.siliconflow.cn/v1`
-- Logo：![SiliconFlow](https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg)
-- 官方文档：[https://docs.siliconflow.cn/cn/userguide/introduction](https://docs.siliconflow.cn/cn/userguide/introduction)
-- 模型列表：[https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)
-- 密钥申请：[https://cloud.siliconflow.cn/account/ak](https://cloud.siliconflow.cn/account/ak)
+This service is linked to model provider `siliconflow`; import its config from the model provider list. Call entry points:
+- Protocol: `openai`
+- Base URL: `https://api.siliconflow.cn/v1`
+- Logo: ![SiliconFlow](https://framerusercontent.com/images/4li2PjWxZJmoGkzXRMJWU1rJmI.svg)
+- Docs: [https://docs.siliconflow.cn/cn/userguide/introduction](https://docs.siliconflow.cn/cn/userguide/introduction)
+- Model list: [https://cloud.siliconflow.cn/models](https://cloud.siliconflow.cn/models)
+- API key: [https://cloud.siliconflow.cn/account/ak](https://cloud.siliconflow.cn/account/ak)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/free-ai/siliconflow-free-models.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/free-ai/siliconflow-free-models.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

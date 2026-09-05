@@ -1,33 +1,33 @@
 ---
-title: "MCP消息网关"
-description: "启用通过 MCP 协议向网络钩子端点发送消息的功能，支持自定义内容、显示名称和头像 URL。"
+title: "mcp-webhook"
+description: "Enables sending messages to webhook endpoints through the MCP protocol, supporting custom content, display names, and avatar URLs."
 ---
 
-# MCP消息网关
+# mcp-webhook
 
-启用通过 MCP 协议向网络钩子端点发送消息的功能，支持自定义内容、显示名称和头像 URL。
+Enables sending messages to webhook endpoints through the MCP protocol, supporting custom content, display names, and avatar URLs.
 
 # MCP Webhook Server
 
-一个与webhooks集成的MCP服务器实现，提供消息发送功能。
+An MCP server implementation that integrates with webhooks, providing message sending capabilities.
 
-## 特性
+## Features
 
-* **通用Webhook支持**：向任意webhook端点发送消息
-* **自定义用户名**：为消息设置自定义显示名称
-* **头像支持**：自定义消息头像
-* **MCP集成**：与Dive及其他兼容MCP的LLM一起工作
+* **Generic Webhook Support**: Send messages to any webhook endpoint
+* **Custom Username**: Set custom display name for messages
+* **Avatar Support**: Customize message avatar
+* **MCP Integration**: Works with Dive and other MCP-compatible LLMs
 
-## 安装
+## Installation
 
 ```bash
 npm install @kevinwatt/mcp-webhook
 ```
 
-## 与[Dive Desktop](https://github.com/OpenAgentPlatform/Dive)配置
+## Configuration with [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)
 
-1. 在Dive Desktop中点击“+ 添加MCP服务器”
-2. 复制并粘贴此配置：
+1. Click "+ Add MCP Server" in Dive Desktop
+2. Copy and paste this configuration:
 
 ```json
 {
@@ -49,47 +49,47 @@ npm install @kevinwatt/mcp-webhook
 }
 ```
 
-3. 点击“保存”以安装MCP服务器
+3. Click "Save" to install the MCP server
 
-## 工具文档
+## Tool Documentation
 
 * **send_message**
-  * 向webhook端点发送消息
-  * 输入参数：
-    * `content` (字符串, 必填): 要发送的消息内容
-    * `username` (字符串, 可选): 显示名称
-    * `avatar_url` (字符串, 可选): 头像URL
+  * Send message to webhook endpoint
+  * Inputs:
+    * `content` (string, required): Message content to send
+    * `username` (string, optional): Display name
+    * `avatar_url` (string, optional): Avatar URL
 
-## 使用示例
+## Usage Examples
 
-让您的LLM执行以下操作：
+Ask your LLM to:
 ```
 "Send a message to webhook: Hello World!"
 "Send a message with custom name: content='Testing', username='Bot'"
 ```
 
-## 手动启动
+## Manual Start
 
-如果需要，可以手动启动服务器：
+If needed, start the server manually:
 
 ```bash
 npx @kevinwatt/mcp-webhook
 ```
 
-## 需求
+## Requirements
 
 * Node.js 18+
-* 兼容MCP的LLM服务
+* MCP-compatible LLM service
 
-## 许可证
+## License
 
 MIT
 
-## 作者
+## Author
 
 kevinwatt
 
-## 关键词
+## Keywords
 
 * mcp
 * webhook
@@ -98,22 +98,22 @@ kevinwatt
 * llm
 * automation
 
-**官方网站：** [https://github.com/kevinwatt/mcp-webhook](https://github.com/kevinwatt/mcp-webhook)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kevinwatt/mcp-webhook](https://github.com/kevinwatt/mcp-webhook)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `other`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @kevinwatt/mcp-webhook`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @kevinwatt/mcp-webhook`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kevinwatt-webhook.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kevinwatt-webhook.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

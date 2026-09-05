@@ -3,21 +3,27 @@
   "channel": "models",
   "name": {
     "en": "NVIDIA NIM",
-    "zh-Hans": "NVIDIA NIM",
-    "zh-Hant": "NVIDIA NIM"
+    "zh-Hans": "NVIDIA NIM"
   },
   "description": {
     "en": "NVIDIA-hosted serverless inference endpoints for development, with access and rate limits varying by account and model.",
-    "zh-Hans": "NVIDIA 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。",
-    "zh-Hant": "NVIDIA 提供的開發用途無伺服器推理介面，具體可用性與速率限制取決於帳號及模型。"
+    "zh-Hans": "NVIDIA 提供的开发用途无服务器推理接口，具体可用性和速率限制取决于账号及模型。"
   },
   "detail": {
     "en": "NVIDIA NIM provides hosted inference endpoints for selected foundation models. Developers can create an API key and connect the OpenAI-compatible endpoint to ChatSpeed, but the model catalog, availability, request limits, and any free access are account- and model-dependent.",
-    "zh-Hans": "NVIDIA NIM 为部分基础模型提供托管推理接口。开发者可以申请 API Key，并将兼容 OpenAI 的接口接入 ChatSpeed；模型目录、可用性、请求限制以及免费访问情况取决于账号和具体模型。",
-    "zh-Hant": "NVIDIA NIM 為部分基礎模型提供託管推理介面。開發者可以申請 API Key，並將相容 OpenAI 的介面接入 ChatSpeed；模型目錄、可用性、請求限制以及免費存取情況取決於帳號與具體模型。"
+    "zh-Hans": "NVIDIA NIM 为部分基础模型提供托管推理接口。开发者可以申请 API Key，并将兼容 OpenAI 的接口接入 ChatSpeed；模型目录、可用性、请求限制以及免费访问情况取决于账号和具体模型。"
   },
-  "categories": ["general", "reasoning", "vision"],
-  "tags": ["nvidia", "nim", "api", "free-tier"],
+  "categories": [
+    "general",
+    "reasoning",
+    "vision"
+  ],
+  "tags": [
+    "nvidia",
+    "nim",
+    "api",
+    "free-tier"
+  ],
   "website": "https://build.nvidia.com/",
   "status": "review",
   "lastVerifiedAt": "2026-08-29",

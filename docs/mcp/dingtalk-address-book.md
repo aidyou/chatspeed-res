@@ -1,59 +1,59 @@
 ---
-title: "通讯录"
-description: "1.什么是钉钉通讯录（应用授权） MCP Server？   钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。    2.如何使用钉钉通讯录（应用授权） MCP Server？   钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。   MCP Tool 有：   get_user_info，获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）   list_departments，列出企业内所有部门或指定部门的子部门列表   get_department_detail，获取指定部门的详细信息（包括部门名称、负责人、成员数量等）   list_department_members，分页获取指定部门下的所有成员信息    用户使用案例：   - 查询公司“技术部”下的所有成员名单及其联系方式   - 获取员工“李四”的详细信息，包括所属部门、职位和入职时间   - 列出企业组织架构中的所有一级部门，并展示每个部门的负责人   - 获取“销售部”（部门ID: 10086）下的成员总数及成员姓名列表"
+title: "Address-Book"
+description: "1.什么是钉钉通讯录（应用授权） MCP Server？ 钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。 2.如何使用钉钉通讯录（应用授权） MCP Server？ 钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。 MCP Tool 有： getuserinfo，…"
 ---
 
-# 通讯录
+# Address-Book
 
-1.什么是钉钉通讯录（应用授权） MCP Server？   钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。    2.如何使用钉钉通讯录（应用授权） MCP Server？   钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。   MCP Tool 有：   get_user_info，获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）   list_departments，列出企业内所有部门或指定部门的子部门列表   get_department_detail，获取指定部门的详细信息（包括部门名称、负责人、成员数量等）   list_department_members，分页获取指定部门下的所有成员信息    用户使用案例：   - 查询公司“技术部”下的所有成员名单及其联系方式   - 获取员工“李四”的详细信息，包括所属部门、职位和入职时间   - 列出企业组织架构中的所有一级部门，并展示每个部门的负责人   - 获取“销售部”（部门ID: 10086）下的成员总数及成员姓名列表
+1.什么是钉钉通讯录（应用授权） MCP Server？ 钉钉通讯录（应用授权）是 开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表、以及管理成员与部门关系等操作。 2.如何使用钉钉通讯录（应用授权） MCP Server？ 钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。 MCP Tool 有： getuserinfo，…
 
-# 钉钉通讯录（应用授权）MCP Server
+# DingTalk Address Book (App Authorization) MCP Server
 
-## 1. 什么是钉钉通讯录（应用授权） MCP Server？
+## 1. What is the DingTalk Address Book (App Authorization) MCP Server?
 
-钉钉通讯录（应用授权）是开放平台官方提供的 MCP，支持获取组织架构信息、查询成员详情、获取部门列表，以及管理成员与部门关系等操作。
+The DingTalk Address Book (App Authorization) is an MCP provided by the official open platform, supporting operations such as obtaining organizational structure information, querying member details, getting department lists, and managing the relationships between members and departments.
 
-## 2. 如何使用钉钉通讯录（应用授权） MCP Server？
+## 2. How to Use the DingTalk Address Book (App Authorization) MCP Server?
 
-钉钉已为你部署好了云端的钉钉通讯录（应用授权）MCP 服务。你可以直接在对话输入框中添加并使用。
+DingTalk has already deployed the cloud-based DingTalk Address Book (App Authorization) MCP service for you. You can directly add and use it in the conversation input box.
 
 ### MCP Tools
 
 - **`get_user_info`**  
-  获取指定用户的基本信息（如姓名、工号、邮箱、手机号等）。
+  Obtain basic information of a specified user (such as name, employee ID, email, phone number, etc.).
 
 - **`list_departments`**  
-  列出企业内所有部门或指定部门的子部门列表。
+  List all departments within the enterprise or the sub-departments of a specified department.
 
 - **`get_department_detail`**  
-  获取指定部门的详细信息（包括部门名称、负责人、成员数量等）。
+  Get detailed information about a specified department (including department name, head, number of members, etc.).
 
 - **`list_department_members`**  
-  分页获取指定部门下的所有成员信息。
+  Paginate and obtain all member information under a specified department.
 
-## 用户使用案例
+## User Cases
 
-- 查询公司 “技术部” 下的所有成员名单及其联系方式。
-- 获取员工 “李四” 的详细信息，包括所属部门、职位和入职时间。
-- 列出企业组织架构中的所有一级部门，并展示每个部门的负责人。
-- 获取 “销售部”（部门 ID: `10086`）下的成员总数及成员姓名列表。
+- Query the list of all members and their contact information under the "Technology Department" in the company.
+- Obtain detailed information about the employee "Li Si", including the department they belong to, position, and start date.
+- List all first-level departments in the corporate organizational structure and display the head of each department.
+- Get the total number of members and the list of member names under the "Sales Department" (Department ID: `10086`).
 
-**官方网站：** [https://mcp.dingtalk.com/#/detail?mcpId=2400&detailType=marketMcpDetail](https://mcp.dingtalk.com/#/detail?mcpId=2400&detailType=marketMcpDetail)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://mcp.dingtalk.com/#/detail?mcpId=2400&detailType=marketMcpDetail](https://mcp.dingtalk.com/#/detail?mcpId=2400&detailType=marketMcpDetail)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`developer tools`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `developer tools`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-fetch`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-fetch`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/dingtalk-address-book.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/dingtalk-address-book.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

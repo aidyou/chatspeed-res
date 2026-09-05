@@ -1,99 +1,95 @@
 ---
-title: "道旅机票查询MCP"
-description: "道旅MCP全球机票MCP服务 机票 MCP 服务暂停通知 机票 MCP 即将进行架构升级改造，具体安排如下： 停服时间：2026年7月27日起，机票 MCP 服务暂停 影响范围：机票查询 MCP 工具调用将无法使用 恢复时间：待定，恢复后会另行通知,敬请您的谅解 - 面向：第三方开发者、AI Agent 构建者、MCP 客户端用户 - 目标：5 分钟内完成第一次 MCP Tool 调用，拿到航班查询结果 - 全球机票预定：提供查询、比价、预订全流程能力，企业个人均可免费一键使用。 核心优势 - 官方出品，全球覆盖："
+title: "RollingGo_Flight"
+description: "DaoLiu MCP Global Flight MCP Service Notice of Suspension of Flight MCP Service The Flight MCP is about to undergo an architectural upgrade. The specific schedule is as follows: - Service Suspension T…"
 ---
 
-# 道旅机票查询MCP
+# RollingGo_Flight
 
-道旅MCP全球机票MCP服务 机票 MCP 服务暂停通知 机票 MCP 即将进行架构升级改造，具体安排如下： 停服时间：2026年7月27日起，机票 MCP 服务暂停 影响范围：机票查询 MCP 工具调用将无法使用 恢复时间：待定，恢复后会另行通知,敬请您的谅解 - 面向：第三方开发者、AI Agent 构建者、MCP 客户端用户 - 目标：5 分钟内完成第一次 MCP Tool 调用，拿到航班查询结果 - 全球机票预定：提供查询、比价、预订全流程能力，企业个人均可免费一键使用。 核心优势 - 官方出品，全球覆盖：
+DaoLiu MCP Global Flight MCP Service Notice of Suspension of Flight MCP Service The Flight MCP is about to undergo an architectural upgrade. The specific schedule is as follows: - Service Suspension T…
 
-# 道旅MCP全球机票MCP服务
-机票 MCP 服务暂停通知
+# DaoLiu MCP Global Flight MCP Service
+Notice of Suspension of Flight MCP Service
 
-机票 MCP 即将进行架构升级改造，具体安排如下：
+The Flight MCP is about to undergo an architectural upgrade. The specific schedule is as follows:
 
-停服时间：2026年7月27日起，机票 MCP 服务暂停
+- **Service Suspension Time**: Starting from July 27, 2026, the Flight MCP service will be suspended.
+- **Affected Scope**: The Flight Query MCP tool will not be available.
+- **Resumption Time**: To be determined; a separate notice will be issued upon resumption. We appreciate your understanding.
 
-影响范围：机票查询 MCP 工具调用将无法使用
+- **Target Audience**: Third-party developers, AI Agent builders, and MCP client users
+- **Objective**: Complete the first MCP Tool call within 5 minutes and obtain flight query results.
+- **Global Flight Booking**: Provides full-process capabilities for querying, comparing prices, and booking flights. Both enterprises and individuals can use it for free with one click.
 
-恢复时间：待定，恢复后会另行通知,敬请您的谅解
+## Core Advantages
+- **Officially Produced, Global Coverage**: 500+ partner airlines, covering 200+ countries and regions, and 1000+ global destinations.
+- **Rich Routes**: Millions of route combinations to meet diverse travel needs, supporting direct flights and connecting flights.
+- **Price Advantage**: Integrates high-quality flight resources globally, providing more competitive real-time prices.
+- **Service Assurance**: Professional team support, 7×24-hour customer service response.
+- **Direct Connection to Airline Supply Chain, Early Bird Ticket Inquiry, Automatic Price Alerts**
 
-- **面向**：第三方开发者、AI Agent 构建者、MCP 客户端用户
-- **目标**：5 分钟内完成第一次 MCP Tool 调用，拿到航班查询结果
-- **全球机票预定**：提供查询、比价、预订全流程能力，企业个人均可免费一键使用。
+## Target Users
+- Individual users with needs for flight monitoring, hotel queries, and hotel price comparisons.
+- Teams or individual developers working on AI Agents.
+- Developers who want to integrate flight booking capabilities into MCP clients.
+- Developers building travel planning, business travel management, OTA, and lifestyle service agents.
+- Product teams looking to validate the commercial transaction loop of AI Agents.
 
-## 核心优势
-- **官方出品，全球覆盖**：500+ 合作航司，覆盖全球 200+ 国家和地区、1000+ 全球目的地
-- **航线丰富**：千万级航线组合，满足多样化出行需求，支持直飞、中转等多种行程类型
-- **价格优势**：整合全球优质机票资源，提供更具竞争力的实时价格
-- **服务保障**：专业团队支持，7×24 小时全天候客户服务响应
-- **直连航司供应链、远期早鸟票查询、自动价格预警**
+## Application Scenarios
+- **General AI Agent**: Enable your large model agent to directly have native flight booking capabilities, allowing users to complete the entire process from understanding needs, intelligent recommendations, price comparisons, to order creation through natural conversation.
+- **AI Travel Assistant**: Precisely recommend flights based on the user's departure location, destination, travel date, budget, and personalized preferences, supporting multi-dimensional demand matching.
+- **Itinerary Planning Tool**: Seamlessly integrate flight search and booking capabilities into conversational itinerary planning, achieving an integrated "plan and book" experience.
+- **MCP / Agent Demo**: Quickly verify the product capability of "AI Agent directly completing flight transactions" and create a demonstrable complete loop.
 
+## Core Features
+- Supports precise searches for airports and flight information using various keywords such as city names, airport codes, airline names, and flight numbers.
+- Provides flexible settings for departure/return dates, cabin class selection (economy/premium economy/business/first class), passenger configuration, direct/connecting flight filters, and airline preferences.
+- Offers personalized recommendations based on user preferences, generating professional lists in multiple dimensions such as cost-effectiveness, fastest arrival, least connections, and popular airlines.
+- Full natural language interaction, intelligently completing the entire loop from location parsing, flight queries, price comparisons, personalized recommendations to order generation.
+- Real-time synchronization of prices and inventory with supplier data to ensure accurate and bookable query results.
 
-## 适用人群
-- 有机票监控、酒店查询、酒店比价需求的个人用户
-- 正在开发 AI Agent 的团队或个人开发者
-- 想在 MCP Client 中接入机票预订能力的开发者
-- 正在构建旅行规划、差旅管理、OTA、生活服务类智能体的开发者
-- 希望验证 AI Agent 商业交易闭环的产品团队
+## You Can Have Your Agent Perform the Following Flight-Related Tasks
+- Search for flights based on departure location, destination, travel date, and number of passengers.
+- Query flight prices, cabin information, and real-time inventory.
+- Determine if a flight or cabin is bookable.
+- Build AI workflows for flight recommendations, price comparisons, and itinerary planning.
+- Integrate flight capabilities into Claude, Cursor, Cherry Studio, ChatGPT MCP Client, or other MCP protocol-supported clients.
 
-## 应用场景
-- **通用 AI Agent**：让你的大模型 Agent 直接拥有原生机票预订能力，用户在自然对话中即可完成从需求理解、智能推荐、比价筛选到订单创建的全流程
-- **AI 旅行助手**：根据用户出发地、目的地、出行日期、预算和个性化偏好精准推荐航班，支持多维度需求匹配
-- **行程规划工具**：把机票搜索和预订能力无缝嵌入对话式行程规划流程，实现 "规划即预订" 的一体化体验
-- **MCP / Agent Demo**：快速验证 "AI Agent 直接完成机票交易" 的产品能力，打造可演示的完整闭环
-
-## 核心功能
-- 支持城市名称、机场代码、航空公司名称、航班号等多种关键字精准搜索机场和航班信息
-- 提供灵活的出发/返程日期设置、舱等选择（经济舱/超级经济舱/商务舱/头等舱）、乘客人数配置、直飞/中转筛选、航空公司偏好等专业筛选功能
-- 基于用户个人偏好提供个性化推荐，生成高性价比、最快到达、最少中转、热门航司等多维度专业榜单
-- 全程自然语言交互，智能完成从地点解析、航班查询、比价筛选、个性化推荐到订单生成的完整闭环
-- 价格和库存实时同步供应商数据，确保查询结果准确可订
-
-## 你可以让 Agent 完成以下机票相关任务
-- 根据出发地、目的地、出行日期和乘客人数搜索航班
-- 查询航班价格、舱位信息和实时库存
-- 判断航班或舱位是否可订
-- 构建航班推荐、比价、行程规划等 AI 工作流
-- 将机票能力接入到 Claude、Cursor、Cherry Studio、ChatGPT MCP Client 或其他支持 MCP 协议的客户端中
-
-- ⚠️如果你使用 ClawHub/扣子/Qclaw等Agent 平台，请使用我们的[Rollinggo全能订机票酒店Skill](https://modelscope.cn/collections/yorklu/RollingGo-quannengdingjiudianjipiao-Skill)。请参考[RollingGo Skill 配置指南](https://rollinggo.store/docs/skill-docs/skill-config).
+- ⚠️ If you are using platforms like ClawHub, Kouzi, or Qclaw, please use our [Rollinggo All-in-One Flight and Hotel Booking Skill](https://modelscope.cn/collections/yorklu/RollingGo-quannengdingjiudianjipiao-Skill). Refer to the [RollingGo Skill Configuration Guide](https://rollinggo.store/docs/skill-docs/skill-config).
 ---
 
-## 🚀快速开始
-> 💡 总结来说，你只需要做两件事：申请API Key+ 在AI助手中一键配置，**无需编写代码**，就能让任何支持MCP的AI助手具备酒店搜索能力，5 分钟内完成第一次 MCP Tool 调用，
+## 🚀 Quick Start
+> 💡 In summary, you only need to do two things: apply for an API Key and configure it in the AI assistant. **No coding required**, and any MCP-supported AI assistant can have flight search capabilities, completing the first MCP Tool call within 5 minutes.
 
-### 第一步：获取API密钥
+### Step 1: Obtain the API Key
 
-1. [点击进入申请地址](https://mcp.agentichotel.cn/apply)
-2. 填写基本信息，自动审核通过，收到邮件包含：
-伙伴中心账号（登录名 + 初始密码），登录后可配置加价比例、查看订单、查询收益
-3. ⚠️ 注意查收邮件，如未收到请检查垃圾邮箱
-4. 为了感谢首批愿意尝鲜、快速行动的开发者，我们特别推出限时福利：**所有收到 API Key 后 3 天内完成第一次工具调用，即可自动解锁永久免费无限制调用额度。**
-我们希望优先支持真正有需求、有执行力的开发者，让大家零成本体验完整的机票 MCP 能力。
+1. [Click to enter the application page](https://mcp.agentichotel.cn/apply)
+2. Fill in the basic information, and after automatic approval, you will receive an email containing:
+   - Partner Center account (login name + initial password)
+   - After logging in, you can configure markup percentages, view orders, and check earnings.
+3. ⚠️ Please check your email, including the spam folder, if you do not receive it.To thank the first batch of developers who are willing to try out and act quickly, we are offering a limited-time benefit: **all those who complete their first tool call within 3 days of receiving the API Key will automatically unlock unlimited free calls forever.** We hope to prioritize support for developers who truly have a need and the ability to execute, allowing everyone to experience the full capabilities of the flight MCP at zero cost.
 
-> 邮件中同时包含酒店MCP端点和机票MCP端点，一个Key即可接入，你可选择性使用。我们同时在魔搭上架了[RollingGo Hotel MCP](https://modelscope.cn/mcp/servers/yorklu/AI_Go_Hotel_MCP)产品介绍。
+> The email includes both the hotel MCP endpoint and the flight MCP endpoint, and you can access both with a single Key. You may choose to use either or both. We have also listed the [RollingGo Hotel MCP](https://modelscope.cn/mcp/servers/yorklu/AI_Go_Hotel_MCP) product introduction on ModelScope.
 
-**为什么需要填写信息申请 KEY**？
+**Why is it necessary to fill in information to apply for a KEY?**
 
-酒店价格、库存和订单能力涉及真实交易链路，因此我们需要为每个开发者开通**免费专属的独立 KEY**。申请 KEY 时仅需填写少量信息，这样做主要是为了：
-- 为你免费开通合适的接口权限
-- 在接入过程中提供技术支持
-- 判断你的使用场景，减少无效配置成本
-- 保护接口稳定性，避免恶意调用或异常流量
-- 在测试订单、价格查询、库存校验等问题上能及时联系到你
+Hotel prices, inventory, and order capabilities involve real transaction processes, so we need to provide each developer with a **free, dedicated, and independent KEY**. When applying for a KEY, you only need to fill in a small amount of information, which is mainly for:
+- Granting you the appropriate interface permissions for free
+- Providing technical support during the integration process
+- Determining your use case to reduce the cost of ineffective configurations
+- Protecting the stability of the interfaces, avoiding malicious calls or abnormal traffic
+- Being able to contact you promptly regarding issues such as test orders, price inquiries, and inventory checks
 
-我们只会将这些信息用于 KEY 开通、接入支持和服务安全，不会对外共享，也不会用于无关用途。若你只是想先体验 MCP，也可以说明你的测试目标，我们会尽量提供轻量的测试支持。
+We will only use this information for KEY activation, integration support, and service security. It will not be shared externally or used for unrelated purposes. If you just want to experience the MCP, you can also specify your testing objectives, and we will try to provide lightweight testing support.
 
-### 第二步：在AI助手中配置
+### Step 2: Configure in the AI Assistant
 
-> 推荐 Claude CLI、Codex、Cursor 三个客户端。其他支持 MCP 的客户端（如 Kiro、豆包等）配置方式类似。
+> We recommend using the Claude CLI, Codex, and Cursor clients. The configuration methods for other MCP-supported clients (such as Kiro, Doupao, etc.) are similar.
 
 ### Claude CLI
 
-在项目根目录创建 `.mcp.json`：
+Create a `.mcp.json` file in the root directory of your project:
 
-```json
+json
 {
   "mcpServers": {
     "RollingGo-Hotel": {
@@ -112,11 +108,10 @@ description: "道旅MCP全球机票MCP服务 机票 MCP 服务暂停通知 机�
     }
   }
 }
-```
 
-也可以通过命令行直接添加：
+You can also add it directly via the command line:
 
-```bash
+bash
 claude mcp add \
   --transport http \
   --header "Authorization: Bearer YOUR_API_KEY" \
@@ -128,13 +123,12 @@ claude mcp add \
   --header "Authorization: Bearer YOUR_API_KEY" \
   RollingGo-Flight \
   https://mcp.rollinggo.cn/mcp/flight
-```
 
 ### Codex
 
-配置文件位置：项目根目录 `.codex/config.json` 或全局 `~/.codex/config.json`
+Configuration file location: `.codex/config.json` in the root directory of your project or globally at `~/.codex/config.json`
 
-```json
+json
 {
   "mcpServers": {
     "RollingGo-Hotel": {
@@ -153,13 +147,12 @@ claude mcp add \
     }
   }
 }
-```
 
 ### Cursor
 
-配置文件位置：项目根目录 `.cursor/mcp.json` 或全局 `~/.cursor/mcp.json`
+Configuration file location: `.cursor/mcp.json` in the root directory of your project or globally at `~/.cursor/mcp.json`
 
-```json
+json
 {
   "mcpServers": {
     "RollingGo-Hotel": {
@@ -178,15 +171,14 @@ claude mcp add \
     }
   }
 }
-```
 
-> 将 `YOUR_API_KEY` 替换为你收到的实际 API Key。酒店和机票使用相同的认证方式，区别仅在于 URL（`/mcp` vs `/mcp/flight`）。
+> Replace `YOUR_API_KEY` with the actual API Key you received. The authentication method for hotels and flights is the same, with the only difference being the URL (`/mcp` vs `/mcp/flight`).
 
-### cURL 直接测试
+### Direct Testing with cURL
 
-> **注意**：cURL 必须带 `-H "Accept: application/json, text/event-stream"` 头，否则服务端返回 400。
+> **Note**: cURL must include the `-H "Accept: application/json, text/event-stream"` header; otherwise, the server will return a 400 error.
 
-```bash
+bash
 curl -X POST https://mcp.rollinggo.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
@@ -211,36 +203,31 @@ curl -X POST https://mcp.rollinggo.cn/mcp \
       }
     },
     "id": 1
-  }'
-```
+  }'---
+## Step 4: First MCP Call
 
----
+After the configuration is complete, say to your AI assistant:
 
-## 第四步：第一次 MCP 调用
+> "Help me search for flights from Hangzhou to Beijing." The AI will automatically call the Tool and return a list of flights.
 
-配置完成后，对你的 AI 助手说：
+### Flight Search Example (Two Steps)
 
-> "帮我搜一下杭州到北京的机票"。AI 会自动调用Tool，返回机票列表。
+**Step 1**: Search for airports to get city codes
 
-### 机票查询示例（两步）
-
-**Step 1**：搜索机场，获取城市代码
-
-```json
+json
 {
   "jsonrpc": "2.0",
   "method": "tools/call",
   "params": {
     "name": "searchAirports",
-    "arguments": { "keyword": "杭州" }
+    "arguments": { "keyword": "Hangzhou" }
   },
   "id": 1
 }
-```
 
-**Step 2**：用城市代码查询航班
+**Step 2**: Use the city codes to query flights
 
-```json
+json
 {
   "jsonrpc": "2.0",
   "method": "tools/call",
@@ -258,124 +245,121 @@ curl -X POST https://mcp.rollinggo.cn/mcp \
   },
   "id": 1
 }
-```
 
 ---
 
-## 第五步：查看结果，展示案例
+## Step 5: View Results, Demonstration Case
 
-### 机票查询结果（实测数据）
+### Flight Search Results (Actual Data)
 
-> 杭州→成都，单程，经济舱，共返回 **95 条航班**：
+> Hangzhou → Chengdu, one-way, economy class, **95 flights returned**:
 
-| 航班号 | 航线 | 时间 | 价格 |
+| Flight Number | Route | Time | Price |
 |--------|------|------|------|
-| CA1741 | 杭州萧山 → 成都天府 | 07:40 - 10:40 | ¥2,869 |
-| CZ6198 | 杭州萧山 → 武汉 | 13:10 - 15:00 | ¥4,631 |
-| CA3338 | 杭州萧山 → 深圳 | 12:55 - 15:15 | ¥5,341 |
+| CA1741 | Hangzhou Xiaoshan → Chengdu Tianfu | 07:40 - 10:40 | ¥2,869 |
+| CZ6198 | Hangzhou Xiaoshan → Wuhan | 13:10 - 15:00 | ¥4,631 |
+| CA3338 | Hangzhou Xiaoshan → Shenzhen | 12:55 - 15:15 | ¥5,341 |
 ---
 
-## 附录
+## Appendix
 
-[mcp tool参考文档](https://rollinggo.store/docs/mcp-docs/mcp-tool-reference)
+[mcp tool reference documentation](https://rollinggo.store/docs/mcp-docs/mcp-tool-reference)
 
-### 推荐调用流程
-**机票查询**
-```
-1. 用户说"帮我查机票"
-2. 调用 searchAirports → 获取城市代码
-3. 调用 searchFlights → 返回航班列表
-4. 展示给用户（⚠️ 价格和库存实时变化）
-```
+### Recommended Call Flow
+**Flight Search**
 
-### 常见问题
+1. User says "Help me search for flights"
+2. Call searchAirports → Get city codes
+3. Call searchFlights → Return flight list
+4. Display to user (⚠️ Prices and inventory change in real-time)
 
-**Q1: 配置后客户端看不到 Tool**
-1. 检查 JSON 配置格式是否正确
-2. 确认 `url` 和 `type` 是否正确
-3. 确认 `Authorization` header 中的 API Key 是否正确
-4. 重启客户端（修改配置后需要重启才能生效）
+### Frequently Asked Questions
 
-**Q2: 返回 401 Unauthorized**
-API Key 无效或格式错误：
-1. API Key 应以 `mcp_` 开头
-2. `Authorization: Bearer YOUR_API_KEY` 中 Bearer 后有一个空格
-3. API Key 是否有多余的空格或换行
+**Q1: Client cannot see Tool after configuration**
+1. Check if the JSON configuration format is correct
+2. Confirm that `url` and `type` are correct
+3. Confirm that the API Key in the `Authorization` header is correct
+4. Restart the client (configuration changes require a restart to take effect)
 
-**Q3: 返回 400 Bad Request**
-cURL 直接调用时常见，检查是否带了 Accept 头：
-```bash
+**Q2: Returns 401 Unauthorized**
+Invalid or incorrectly formatted API Key:
+1. The API Key should start with `mcp_`
+2. There should be a space after `Bearer` in `Authorization: Bearer YOUR_API_KEY`
+3. Ensure there are no extra spaces or line breaks in the API Key
+
+**Q3: Returns 400 Bad Request**
+Common when using cURL directly, check if the Accept header is included:
+bash
 -H "Accept: application/json, text/event-stream"
-```
 
-**Q4: searchHotels 返回空结果**
-1. 检查 `place` 和 `placeType` 是否匹配（如"上海外滩"应配"景点"）
-2. 放宽筛选条件（去掉星级/标签限制）
-3. 确认 `checkInDate` 不是过去的时间
+**Q4: searchHotels returns empty results**
+1. Check if `place` and `placeType` match (e.g., "Shanghai Bund" should be paired with "attraction")
+2. Relax the filter conditions (remove star/rating restrictions)
+3. Ensure `checkInDate` is not in the past
 
-**Q5: searchFlights 报错**
-1. 确认先调用了 `searchAirports` 获取正确的城市代码
-2. 确认 `fromDate` 不是过去的时间
-3. 往返行程必须传 `retDate`
+**Q5: searchFlights returns an error**
+1. Confirm that `searchAirports` was called first to get the correct city codes
+2. Ensure `fromDate` is not in the past
+3. For round trips, `retDate` must be provided
 
-**Q6: 价格和实际不一致**
-搜索结果中的价格是参考价，实时价格可能有变动。当前仅支持查询，暂不支持在线下单。
+**Q6: Prices do not match actual prices**
+The prices in the search results are reference prices, and real-time prices may vary. Currently, only search is supported, and online booking is not available yet.
 
-**Q7: 如何获取 API Key？**
-前往 [https://rollinggo.store/apply](https://rollinggo.store/apply) 提交申请，1-3 分钟内审核通过，免费无限制。
+**Q7: How to obtain an API Key?**
+Go to [https://rollinggo.store/apply](https://rollinggo.store/apply) to submit an application. Approval is automatic within 1-3 minutes, and it's free with no limits.
 
-### 接入门槛与限制
+### Access Thresholds and Restrictions
 
-| 项目 | 说明 |
+| Item | Description |
 |------|------|
-| 是否需要注册 | 是，需要在开发者平台提交申请 |
-| 是否需要 API Key | 是，所有请求需要 `Authorization: Bearer 
+| Registration Required | Yes, an application must be submitted on the developer platform |
+| API Key Required | Yes, all requests need `Authorization: Bearer 
 ` |
-| 调用量限制 | 无限制 |
-| 费用 | 完全免费 |
-| 审核周期 | 1-3 分钟自动通过 |
-| 支持的地区/币种 | 全球酒店和机票，国内用 CNY，海外用 USD |
-| 下单能力 | 当前仅支持查询，不支持在线下单（规划中） |
+| Call Limit | No limit |
+| Cost | Completely free |
+| Review Period | Automatic approval within 1-3 minutes |
+| Supported Regions/Currencies | Global hotels and flights, CNY for domestic, USD for overseas |
+| Booking Capability | Currently supports search only, online booking is planned |
 
-### 联系我们
-加入微信群，获取技术支持
-接入路上有任何问题都别担心！欢迎加入我们的微信技术支持群，我们的核心开发团队会全程在线，手把手帮你搞定环境配置、接口调试，陪你跑通第一个成功的酒店预订调用，让你零障碍快速上线。
+### Contact Us
+Join the WeChat group for technical support
+Don't worry about any issues during the integration process! Join our WeChat technical support group, where our core development team will be available to help you with environment setup, API/MCP call troubleshooting, and guide you through your first successful hotel booking call, ensuring a smooth and quick launch.
 
-你可以在群内获得：
-- 接入配置指导
-- API / MCP 调用问题排查
-- 酒店搜索、价格、预订流程说明
-- 适合你业务场景的集成建议
-- 💬 微信群：[扫码加入](https://raw.githubusercontent.com/young63/dida-picbed/main/groupchat_QR.jpg)
+You can get the following in the group:
+- Integration configuration guidance
+- API/MCP call issue resolution
+- Hotel search, pricing, and booking process explanations
+- Integration suggestions tailored to your business scenario
+---- 💬 WeChat Group: [Scan to Join](https://raw.githubusercontent.com/young63/dida-picbed/main/groupchat_QR.jpg)
 
-| 其他类型 | 方式 |
-|------|------|
-| API Key 申请 | [https://rollinggo.store/apply](https://rollinggo.store/apply) |
-| 商务合作 | contact@rollinggo.cn |
-| 伙伴中心 | [https://travelportal-partner-center.dida.com](https://travelportal-partner-center.dida.com) |
+| Other Types | Method |
+| ------ | ------ |
+| API Key Application | [https://rollinggo.store/apply](https://rollinggo.store/apply) |
+| Business Cooperation | contact@rollinggo.cn |
+| Partner Center | [https://travelportal-partner-center.dida.com](https://travelportal-partner-center.dida.com) |
 | Skill Hub | [https://rollinggo.store/solutions/skills](https://rollinggo.store/solutions/skills) |
 | GitHub | [https://github.com/RollingGo-AI/rollinggo-readme](https://github.com/RollingGo-AI/rollinggo-readme) |
 
 ---
 
-*文档版本：v1.0*
+*Document Version: v1.0*
 
-**官方网站：** [https://rollinggo.store/](https://rollinggo.store/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://rollinggo.store/](https://rollinggo.store/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`search`, `developer tools`, `calendar management`, `机票服务`, `机票查询`, `机票`, `chinese`
+- Categories: `productivity`
+- Tags: `search`, `developer tools`, `calendar management`, `机票服务`, `机票查询`, `机票`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yorklu-rollinggo-flight.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yorklu-rollinggo-flight.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

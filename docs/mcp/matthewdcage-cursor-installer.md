@@ -1,33 +1,33 @@
 ---
-title: "Cursor MCP 安装器"
-description: "用于Cursor IDE的模型上下文协议（MCP）服务器，可简化其他MCP服务器的安装和配置。"
+title: "cursor-mcp-installer"
+description: "A Model Context Protocol (MCP) server for Cursor IDE that simplifies the installation and configuration of other MCP servers."
 ---
 
-# Cursor MCP 安装器
+# cursor-mcp-installer
 
-用于Cursor IDE的模型上下文协议（MCP）服务器，可简化其他MCP服务器的安装和配置。
+A Model Context Protocol (MCP) server for Cursor IDE that simplifies the installation and configuration of other MCP servers.
 
-# Cursor MCP 安装程序
+# Cursor MCP Installer
 
    ___         __  __    ___  __            ___   ___ 
-  / __\/\ /\  /__\/ _\  /___\/__\  /\/\    / __\ / _ \
- / /  / / \ \/ \//\ \  //  // \// /    \  / /   / /_)/
-/ /___\ \_/ / _  \_\ \/ \_// _  \/ /\/\ \/ /___/ ___/ 
-\____/ \___/\/ \_/\__/\___/\/ \_/\/    \/\____/\/     
+  / __/ /  /__/ _  /___/__  //    / __ / _ 
+ / /  / /  / //   //  // // /      / /   / /_)/
+/ /___ \_/ / _  \_ / \_// _  / // / /___/ ___/ 
+\____/ \___// \_/\__/\___// \_//    /\____//     
                                                       
   _____    __  __  _____  _      __    __    __  __   
-  \_   \/\ \ \/ _\/__   \/_\    / /   / /   /__\/__\  
-   / /\/  \/ /\ \   / /\//_\\  / /   / /   /_\ / \//  
-/\/ /_/ /\  / _\ \ / / /  _  \/ /___/ /___//__/ _  \  
-\____/\_\ \/  \__/ \/  \_/ \_/\____/\____/\__/\/ \_/  
+  \_   /  / _/__   /_    / /   / /   /__/__  
+   / //  / /    / ///_\  / /   / /   /_ / //  
+// /_/ /  / _  / / /  _  / /___/ /___//__/ _    
+\____/\_ /  \__/ /  \_/ \_/\____/\____/\__// \_/  
 
 +---------------------------------------------+
 | 🚀 CURSOR MCP INSTALLER 🚀                 |
-| ✨ 轻松魔幻安装MCP服务器 ✨                  |
+| ✨ Magically install MCP servers with ease ✨ |
 +---------------------------------------------+
 
   
-一个用于在Cursor IDE中安装和配置其他MCP服务器的模型上下文协议（MCP）服务器。
+A Model Context Protocol (MCP) server for installing and configuring other MCP servers within Cursor IDE.
 
   
   [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
@@ -42,19 +42,19 @@ description: "用于Cursor IDE的模型上下文协议（MCP）服务器，可�
 
   
 
-> **📢 现已在NPM上可用！** 使用简单的`npm install -g cursor-mcp-installer-free`命令进行安装，或者直接使用`npx cursor-mcp-installer-free`或`uvx cursor-mcp-installer-free`！
+> **📢 NOW AVAILABLE ON NPM!** Install with a simple `npm install -g cursor-mcp-installer-free` command or use directly with `npx cursor-mcp-installer-free` or `uvx cursor-mcp-installer-free`!
 
-> **🔄 最新更新 (v0.1.3):** 改进了所有MCP服务器安装的路径处理、更好的OpenAPI模式检测以及在本地目录中更强大的服务器发现。感谢[@ItzAmirreza](https://github.com/ItzAmirreza)提交了初始安装路径处理问题。详情请参阅CHANGELOG.md。
+> **🔄 Latest Updates (v0.1.3):** Improved path handling for all MCP server installations, better OpenAPI schema detection, and more robust server discovery in local directories. Thanks to [@ItzAmirreza](https://github.com/ItzAmirreza) for submitting the initial installation path handling issue. See CHANGELOG.md for details.
 
-## 快速入门指南
+## Quick Start Guide
 
-### 第一步：添加到Cursor配置
+### Step 1: Add to Cursor Configuration
 
-选择以下方法之一将MCP Installer添加到您的Cursor配置：
+Choose one of these methods to add the MCP Installer to your Cursor configuration:
 
-#### 使用npx（最简单 - 不需要安装）
+#### Using npx (Easiest - No Installation Required)
 
-将此内容添加到您的`~/.cursor/mcp.json`文件中（如果不存在则创建它）：
+Add this to your `~/.cursor/mcp.json` file (create it if it does not exist):
 
 ```json
 {
@@ -71,13 +71,13 @@ description: "用于Cursor IDE的模型上下文协议（MCP）服务器，可�
 }
 ```
 
-#### 使用npm（全局安装）
+#### Using npm (Global Installation)
 
 ```bash
 npm install -g cursor-mcp-installer-free@0.1.3
 ```
 
-然后添加到您的`~/.cursor/mcp.json`：
+Then add to your `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -93,60 +93,60 @@ npm install -g cursor-mcp-installer-free@0.1.3
 }
 ```
 
-### 第二步：重启Cursor
+### Step 2: Restart Cursor
 
-关闭并重新打开Cursor以应用配置更改。
+Close and reopen Cursor to apply the configuration changes.
 
-### 第三步：使用Claude安装服务器
+### Step 3: Use Claude to Install Servers
 
-让Claude为您安装任何MCP服务器：
+Ask Claude to install any MCP server for you:
 
 ```
 Install the web search MCP server
 ```
 
-或
+or
 
 ```
 Install the MCP server for OpenAPI schema exploration with my-schema.yaml
 ```
 
-### 第四步：安装后的显示
+### Step 4: What You'll See When Installed
 
-一旦正确安装并重启Cursor，在使用Claude时您将在侧边栏看到可用的MCP Installer：
+Once properly installed and Cursor is restarted, you'll see the MCP Installer available in the sidebar when using Claude:
 
  alt="MCP Installer Interface" width="500"/>
 
-MCP 安装程序提供了三个主要工具：
-- `install_repo_mcp_server`: 从 npm 包或仓库安装 MCP 服务器
-- `install_local_mcp_server`: 从本地目录安装 MCP 服务器
-- `add_to_cursor_config`: 添加自定义的 MCP 服务器配置
+The MCP Installer provides three main tools:
+- `install_repo_mcp_server`: Install MCP servers from npm packages or repositories
+- `install_local_mcp_server`: Install MCP servers from local directories
+- `add_to_cursor_config`: Add custom MCP server configurations
 
-## 功能
+## Features
 
-- 从 npm 包安装 MCP 服务器
-- 从本地目录安装 MCP 服务器
-- 为 Cursor 配置 MCP 服务器
-- 添加自定义的 MCP 服务器配置
+- Install MCP servers from npm packages
+- Install MCP servers from local directories
+- Configure MCP servers for Cursor
+- Add custom MCP server configurations
 
-## 前提条件
+## Prerequisites
 
-在使用此工具之前，您需要安装以下软件：
+Before using this tool, you need to have installed:
 
-- [Node.js](https://nodejs.org/)（用于 npm 包）
+- [Node.js](https://nodejs.org/) (for npm packages)
 - [Cursor IDE](https://cursor.sh/)
 
-## 安装
+## Installation
 
-有几种方法可以安装和使用 Cursor MCP 安装程序：
+There are several ways to install and use the Cursor MCP Installer:
 
-### 1. 使用 npm（推荐）
+### 1. Using npm (Recommended)
 
 ```bash
 npm install -g cursor-mcp-installer-free@0.1.3
 ```
 
-安装完成后，将其添加到您的 Cursor MCP 配置文件中：
+After installation, add it to your Cursor MCP configuration file:
 
 ```json
 {
@@ -162,9 +162,9 @@ npm install -g cursor-mcp-installer-free@0.1.3
 }
 ```
 
-### 2. 使用 npx（无需全局安装）
+### 2. Using npx (No Installation Required)
 
-您可以使用 npx 运行包而无需全局安装：
+You can use npx to run the package without installing it globally:
 
 ```json
 {
@@ -181,9 +181,9 @@ npm install -g cursor-mcp-installer-free@0.1.3
 }
 ```
 
-### 3. 直接从 GitHub
+### 3. Direct from GitHub
 
-克隆仓库并在本地构建：
+Clone the repository and build it locally:
 
 ```bash
 # Clone the repository
@@ -195,7 +195,7 @@ npm install
 npm run build
 ```
 
-然后配置 Cursor 以使用您的本地安装：
+Then configure Cursor to use your local installation:
 
 ```json
 {
@@ -211,81 +211,81 @@ npm run build
 }
 ```
 
-将 `/path/to/cursor-mcp-installer` 替换为您实际克隆仓库的路径。
+Replace `/path/to/cursor-mcp-installer` with the actual path where you've cloned the repository.
 
-### Cursor MCP 配置文件在哪里？
+### Where is the Cursor MCP Configuration File?
 
-Cursor MCP 配置文件位于：
+The Cursor MCP configuration file is located at:
 
 - **macOS/Linux**: `~/.cursor/mcp.json`
-- **Windows**: `%USERPROFILE%\.cursor\mcp.json`
+- **Windows**: `%USERPROFILE%.cursormcp.json`
 
-如果该文件不存在，您可以根据上述任何一种安装方法创建它。
+If the file does not exist, you can create it with the content from any of the installation methods above.
 
-## v0.1.3 版本中的路径处理改进
+## Path Handling Improvements in v0.1.3
 
-版本 0.1.3 引入了对 MCP 服务器安装路径处理的重大改进：
+Version 0.1.3 introduces significant improvements to path handling for MCP server installations:
 
-### 增强的路径解析
-- 正确地规范化相对路径和绝对路径
-- 处理包含空格和特殊字符的路径
-- 确保不同操作系统之间的一致路径格式
+### Enhanced Path Resolution
+- Properly normalizes both relative and absolute paths
+- Handles paths with spaces and special characters
+- Ensures consistent path formatting across different operating systems
 
-### 更好的模式检测
-- 现在扫描所有参数中的模式文件，而不仅仅是第一个
-- 支持更多模式文件扩展名 (.yaml, .yml, .json, .openapi)
-- 在传递给服务器之前正确地规范化模式文件路径
+### Better Schema Detection
+- Now scans all arguments for schema files, not just the first one
+- Supports more schema file extensions (.yaml, .yml, .json, .openapi)
+- Properly normalizes schema file paths before passing to servers
 
-### 改进的服务器发现
-- 增加了对本地目录中常见服务器入口点的检测
-- 增强了对基于 Python 的 MCP 服务器的支持
-- 对路径相关问题提供更好的错误报告
+### Improved Server Discovery
+- Added detection of common server entry points in local directories
+- Enhanced support for Python-based MCP servers
+- Better error reporting for path-related issues
 
-这些改进使 MCP 安装程序在处理各种类型的服务器安装时更加健壮，特别是在处理自定义文件路径、OpenAPI 模式和本地目录安装时。
+These improvements make the MCP Installer more robust for all types of server installations, especially when dealing with custom file paths, OpenAPI schemas, and local directory installations.
 
-## 使用
+## Usage
 
-安装完成后，您可以使用 Claude 或 Cursor 与 MCP 安装程序交互。以下是一些示例提示：
+Once installed, you can use Claude or Cursor to interact with the MCP Installer. Here are some example prompts:
 
-### 从 npm 包安装 MCP 服务器
+### Install an npm package as an MCP server
 
 ```
 Install the MCP server named mcp-server-fetch
 ```
 
-### 带参数安装
+### Install with arguments
 
 ```
 Install the @modelcontextprotocol/server-filesystem package as an MCP server. Use ['/home/user/documents'] for the arguments
 ```
 
-### 从本地目录安装 MCP 服务器
+### Install a local MCP server
 
 ```
 Install the MCP server at /home/user/projects/my-mcp-server
 ```
 
-### 使用环境变量安装
+### Install with environment variables
 
 ```
 ```
 
-**官方网站：** [https://github.com/matthewdcage/cursor-mcp-installer](https://github.com/matthewdcage/cursor-mcp-installer)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/matthewdcage/cursor-mcp-installer](https://github.com/matthewdcage/cursor-mcp-installer)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `os automation`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `os automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`cursor-mcp-installer-free@0.1.3 index.mjs`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `cursor-mcp-installer-free@0.1.3 index.mjs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/matthewdcage-cursor-installer.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/matthewdcage-cursor-installer.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

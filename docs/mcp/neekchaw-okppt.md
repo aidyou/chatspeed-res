@@ -1,60 +1,60 @@
 ---
-title: "搞定ppt"
-description: "此项目是让大型语言模型（如Claude、GPT等）能够自主设计PowerPoint演示文稿的\"曲线救国\"解决方案。通过让AI生成SVG图像，再借助本工具将其全屏插入PPT幻灯片，我们成功实现了AI完全控制PPT设计的能力，而无需直接操作复杂的PPT对象模型。"
+title: "okppt"
+description: "This project is a creative solution enabling large language models (like Claude, GPT, etc.) to autonomously design PowerPoint presentations. By allowing AI to generate SVG images and using this tool t…"
 ---
 
-# 搞定ppt
+# okppt
 
-此项目是让大型语言模型（如Claude、GPT等）能够自主设计PowerPoint演示文稿的"曲线救国"解决方案。通过让AI生成SVG图像，再借助本工具将其全屏插入PPT幻灯片，我们成功实现了AI完全控制PPT设计的能力，而无需直接操作复杂的PPT对象模型。
+This project is a creative solution enabling large language models (like Claude, GPT, etc.) to autonomously design PowerPoint presentations. By allowing AI to generate SVG images and using this tool t…
 
 # MCP OKPPT Server
 
-切换语言 | Language: 中文 | [English]
+切换语言 | Language: [中文 | English]
 
 [![MCP Compatible](/mcp-assets/0702aa0c36b56660b23d8cf0298b9b37.svg)](https://github.com/anthropics/anthropic-tools)
 
-一个基于Model Context Protocol (MCP)的服务器工具，专门用于将SVG图像插入到PowerPoint演示文稿中。它能够保留SVG的矢量特性，确保在PowerPoint中显示的图像保持高品质和可缩放性。
+A Model Context Protocol (MCP) server tool specifically designed for inserting SVG images into PowerPoint presentations. It preserves the vector properties of SVGs, ensuring that images displayed in PowerPoint maintain high quality and scalability.
 
-## 设计理念
+## Design Philosophy
 
-此项目是让大型语言模型（如Claude、GPT等）能够自主设计PowerPoint演示文稿的"曲线救国"解决方案。通过让AI生成SVG图像，再借助本工具将其全屏插入PPT幻灯片，我们成功实现了AI完全控制PPT设计的能力，而无需直接操作复杂的PPT对象模型。
+This project is a creative solution enabling large language models (like Claude, GPT, etc.) to autonomously design PowerPoint presentations. By allowing AI to generate SVG images and using this tool to insert them full-screen into PPT slides, we've successfully achieved AI's complete control over PPT design without directly manipulating the complex PPT object model.
 
-这种方法带来三大核心优势：
-1. **AI完全控制**：充分发挥现代AI的图形设计能力，同时避开PPT编程的复杂性
-2. **用户可编辑**：Office PowerPoint提供了强大的SVG编辑功能，插入后的SVG元素可以像原生PPT元素一样直接编辑、调整和重新着色，让用户能轻松地在AI生成基础上进行二次修改
-3. **矢量级质量**：保持高品质可缩放的矢量特性，确保演示内容在任何尺寸下都清晰锐利
+This approach offers three core advantages:
+1. **Complete AI Control**: Fully leverages modern AI's graphic design capabilities while avoiding the complexity of PPT programming
+2. **User Editable**: Office PowerPoint provides powerful SVG editing features, allowing inserted SVG elements to be edited, adjusted, and recolored like native PPT elements, enabling users to easily make secondary modifications based on AI-generated content
+3. **Vector Quality**: Maintains high-quality scalable vector properties, ensuring presentation content remains clear and sharp at any size
 
-这一创新思路通过SVG作为AI与PPT之间的桥梁，既保证了设计的高度自由，又兼顾了最终成果的实用性和可维护性。
+This innovative approach uses SVG as a bridge between AI and PPT, guaranteeing both high design freedom and the practicality and maintainability of the final product.
 
-## 功能特点
+## Features
 
-- **矢量图保留**: 将SVG作为真实矢量图插入PPTX，保证高品质和可缩放性
-- **批量批处理**: 支持一次操作多个SVG文件和幻灯片
-- **全新演示文稿**: 直接从SVG文件创建完整的演示文稿
-- **幻灯片复制与替换**: 智能复制SVG幻灯片并替换现有内容
-- **SVG代码处理**: 支持直接从SVG代码创建文件
-- **格式转换支持**: 内置SVG到PNG的转换功能
+- **Vector Preservation**: Inserts SVGs as true vector graphics into PPTX, ensuring high quality and scalability
+- **Batch Processing**: Supports multiple SVG files and slides in a single operation
+- **New Presentations**: Creates complete presentations directly from SVG files
+- **Slide Copying & Replacement**: Intelligently copies SVG slides and replaces existing content
+- **SVG Code Handling**: Supports direct creation of files from SVG code
+- **Format Conversion**: Built-in SVG to PNG conversion functionality
 
-## 安装方法
+## Installation
 
-### 方法一：从PyPI安装
+### Method 1: Install from PyPI
 
 ```bash
-# 使用pip安装
+# Using pip
 pip install mcp-server-okppt
 
-# 或使用uv安装
+# Or using uv
 uv pip install mcp-server-okppt
 ```
 
-### 方法二：配置Claude Desktop
+### Method 2: Configure Claude Desktop
 
-在Claude Desktop配置文件中添加服务器配置：
+Add the server configuration to your Claude Desktop config file:
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%Claudeclaude_desktop_config.json`
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 {
@@ -69,14 +69,14 @@ uv pip install mcp-server-okppt
 }
 ```
 
-### 方法三：从源码安装并配置Cursor本地开发环境
+### Method 3: Install from Source and Configure for Cursor Local Development
 
-在Cursor IDE中，可以通过本地配置文件来设置MCP服务器：
+In Cursor IDE, set up the MCP server via local configuration file:
 
-**Windows**: `C:Users用户名.cursormcp.json`
+**Windows**: `C:Usersusername.cursormcp.json`
 **macOS**: `~/.cursor/mcp.json`
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 {
@@ -85,7 +85,7 @@ uv pip install mcp-server-okppt
       "command": "uv",
       "args": [
         "--directory",
-        "D:\本地项目路径\mcp-server-okppt\src\mcp_server_okppt",
+        "D:\local_project_path\mcp-server-okppt\src\mcp_server_okppt",
         "run",
         "cli.py"
       ]
@@ -94,27 +94,27 @@ uv pip install mcp-server-okppt
 }
 ```
 
-这种配置方式适合本地开发和测试使用，可以直接指向本地代码目录。
+This configuration method is suitable for local development and testing, allowing you to point directly to your local code directory.
 
-## 使用方法
+## Usage
 
-### 使用Claude Desktop
+### Using Claude Desktop
 
-1. 安装并配置Claude Desktop
-2. 在配置文件中添加上述MCP服务器配置
-3. 重启Claude Desktop
-4. 在对话中使用PPTX相关工具
+1. Install and configure Claude Desktop
+2. Add the MCP server configuration above to the config file
+3. Restart Claude Desktop
+4. Use PPTX-related tools in your conversations
 
-### 使用MCP CLI进行开发
+### Using MCP CLI for Development
 
 ```bash
-# 运行测试
+# Run tests
 mcp test server.py
 ```
 
-## 可用工具
+## Available Tools
 
-### 1. 插入SVG图像 (insert_svg)
+### 1. Insert SVG Image (insert_svg)
 
 ```python
 def insert_svg(
@@ -130,22 +130,22 @@ def insert_svg(
 ) -> str
 ```
 
-将SVG图像插入到PPTX文件的指定位置。
+Inserts an SVG image into a specified position in a PPTX file.
 
-**参数**:
-- `pptx_path`: PPTX文件路径
-- `svg_path`: SVG文件路径或路径列表
-- `slide_number`: 要插入的幻灯片编号（从1开始）
-- `x_inches`: X坐标（英寸）
-- `y_inches`: Y坐标（英寸）
-- `width_inches`: 宽度（英寸）
-- `height_inches`: 高度（英寸）
-- `output_path`: 输出文件路径
-- `create_if_not_exists`: 如果PPTX不存在是否创建
+**Parameters**:
+- `pptx_path`: Path to the PPTX file
+- `svg_path`: Path or list of paths to SVG files
+- `slide_number`: Slide number to insert into (starting from 1)
+- `x_inches`: X coordinate (inches)
+- `y_inches`: Y coordinate (inches)
+- `width_inches`: Width (inches)
+- `height_inches`: Height (inches)
+- `output_path`: Output file path
+- `create_if_not_exists`: Whether to create the PPTX if it doesn't exist
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-### 2. 列出目录文件 (list_files)
+### 2. List Directory Files (list_files)
 
 ```python
 def list_files(
@@ -154,15 +154,15 @@ def list_files(
 ) -> str
 ```
 
-列出目录中的文件。
+Lists files in a directory.
 
-**参数**:
-- `directory`: 目录路径
-- `file_type`: 文件类型过滤，可以是"svg"或"pptx"
+**Parameters**:
+- `directory`: Directory path
+- `file_type`: File type filter, can be "svg" or "pptx"
 
-**返回**: 文件列表
+**Returns**: List of files
 
-### 3. 获取文件信息 (get_file_info)
+### 3. Get File Information (get_file_info)
 
 ```python
 def get_file_info(
@@ -170,14 +170,14 @@ def get_file_info(
 ) -> str
 ```
 
-获取文件信息。
+Gets file information.
 
-**参数**:
-- `file_path`: 文件路径
+**Parameters**:
+- `file_path`: Path to the file
 
-**返回**: 文件信息
+**Returns**: File information
 
-### 4. 转换SVG为PNG (convert_svg_to_png)
+### 4. Convert SVG to PNG (convert_svg_to_png)
 
 ```python
 def convert_svg_to_png(
@@ -186,15 +186,15 @@ def convert_svg_to_png(
 ) -> str
 ```
 
-将SVG文件转换为PNG图像。
+Converts an SVG file to a PNG image.
 
-**参数**:
-- `svg_path`: SVG文件路径
-- `output_path`: 输出PNG文件路径
+**Parameters**:
+- `svg_path`: Path to the SVG file
+- `output_path`: Output PNG file path
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-### 5. 获取PPTX信息 (get_pptx_info)
+### 5. Get PPTX Information (get_pptx_info)
 
 ```python
 def get_pptx_info(
@@ -202,14 +202,14 @@ def get_pptx_info(
 ) -> str
 ```
 
-获取PPTX文件的基本信息。
+Gets basic information about a PPTX file.
 
-**参数**:
-- `pptx_path`: PPTX文件路径
+**Parameters**:
+- `pptx_path`: Path to the PPTX file
 
-**返回**: 包含文件信息和幻灯片数量的字符串
+**Returns**: String containing file information and slide count
 
-### 6. 保存SVG代码 (save_svg_code)
+### 6. Save SVG Code (save_svg_code)
 
 ```python
 def save_svg_code(
@@ -217,14 +217,14 @@ def save_svg_code(
 ) -> str
 ```
 
-将SVG代码保存为SVG文件并返回保存的绝对路径。
+Saves SVG code as an SVG file and returns the absolute path.
 
-**参数**:
-- `svg_code`: SVG代码内容
+**Parameters**:
+- `svg_code`: SVG code content
 
-**返回**: 操作结果消息和保存的文件路径
+**Returns**: Operation result message and saved file path
 
-### 7. 删除幻灯片 (delete_slide)
+### 7. Delete Slide (delete_slide)
 
 ```python
 def delete_slide(
@@ -234,16 +234,16 @@ def delete_slide(
 ) -> str
 ```
 
-从PPTX文件中删除指定编号的幻灯片。
+Deletes a specific slide from a PPTX file.
 
-**参数**:
-- `pptx_path`: PPTX文件路径
-- `slide_number`: 要删除的幻灯片编号
-- `output_path`: 输出文件路径
+**Parameters**:
+- `pptx_path`: Path to the PPTX file
+- `slide_number`: Slide number to delete
+- `output_path`: Output file path
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-### 8. 插入空白幻灯片 (insert_blank_slide)
+### 8. Insert Blank Slide (insert_blank_slide)
 
 ```python
 def insert_blank_slide(
@@ -255,18 +255,18 @@ def insert_blank_slide(
 ) -> str
 ```
 
-在PPTX文件的指定位置插入一个空白幻灯片。
+Inserts a blank slide at a specified position in a PPTX file.
 
-**参数**:
-- `pptx_path`: PPTX文件路径
-- `slide_number`: 插入位置
-- `layout_index`: 幻灯片布局索引，默认为6（空白布局）
-- `output_path`: 输出文件路径
-- `create_if_not_exists`: 如果PPTX不存在是否创建
+**Parameters**:
+- `pptx_path`: Path to the PPTX file
+- `slide_number`: Position to insert the slide
+- `layout_index`: Slide layout index, default is 6 (blank layout)
+- `output_path`: Output file path
+- `create_if_not_exists`: Whether to create the PPTX if it doesn't exist
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-### 9. 复制SVG幻灯片 (copy_svg_slide)
+### 9. Copy SVG Slide (copy_svg_slide)
 
 ```python
 def copy_svg_slide(
@@ -279,19 +279,19 @@ def copy_svg_slide(
 ) -> str
 ```
 
-复制包含SVG图像的幻灯片。
+Copies a slide containing an SVG image.
 
-**参数**:
-- `source_pptx_path`: 源PPTX文件路径
-- `target_pptx_path`: 目标PPTX文件路径
-- `source_slide_number`: 要复制的源幻灯片编号
-- `target_slide_number`: 要插入到目标文件的位置
-- `output_path`: 输出文件路径
-- `create_if_not_exists`: 如果目标PPTX不存在是否创建
+**Parameters**:
+- `source_pptx_path`: Source PPTX file path
+- `target_pptx_path`: Target PPTX file path
+- `source_slide_number`: Source slide number to copy
+- `target_slide_number`: Position to insert in target file
+- `output_path`: Output file path
+- `create_if_not_exists`: Whether to create the target PPTX if it doesn't exist
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-### 10. 从SVG创建PPTX (create_pptx_from_svg)
+### 10. Create PPTX from SVG (create_pptx_from_svg)
 
 ```python
 def create_pptx_from_svg(
@@ -305,118 +305,118 @@ def create_pptx_from_svg(
 ) -> str
 ```
 
-直接从SVG文件创建PPTX文件，每个SVG对应一页幻灯片。
+Creates a PPTX file directly from SVG files, with each SVG corresponding to one slide.
 
-**参数**:
-- `svg_paths`: SVG文件路径列表
-- `pptx_path`: 初始PPTX文件路径
-- `output_path`: 输出文件路径
-- `width_inches`: 图像宽度（英寸）
-- `height_inches`: 图像高度（英寸）
-- `x_inches`: X坐标（英寸）
-- `y_inches`: Y坐标（英寸）
+**Parameters**:
+- `svg_paths`: List of SVG file paths
+- `pptx_path`: Initial PPTX file path
+- `output_path`: Output file path
+- `width_inches`: Image width (inches)
+- `height_inches`: Image height (inches)
+- `x_inches`: X coordinate (inches)
+- `y_inches`: Y coordinate (inches)
 
-**返回**: 操作结果消息
+**Returns**: Operation result message
 
-## 最佳实践
+## Best Practices
 
-### 替换幻灯片内容的推荐方法
+### Recommended Methods for Replacing Slide Content
 
-#### 方法一：完全替换法（最可靠）
+#### Method 1: Complete Replacement (Most Reliable)
 
 ```python
-# 步骤1：删除要替换的幻灯片
+# Step 1: Delete the slide to be replaced
 delete_slide(
-    pptx_path="演示文稿.pptx",
+    pptx_path="presentation.pptx",
     slide_number=3,
-    output_path="临时文件.pptx"
+    output_path="temp_file.pptx"
 )
 
-# 步骤2：在同一位置插入空白幻灯片
+# Step 2: Insert a blank slide at the same position
 insert_blank_slide(
-    pptx_path="临时文件.pptx",
+    pptx_path="temp_file.pptx",
     slide_number=3,
-    output_path="临时文件2.pptx"
+    output_path="temp_file2.pptx"
 )
 
-# 步骤3：将新SVG插入到空白幻灯片
+# Step 3: Insert the new SVG into the blank slide
 insert_svg(
-    pptx_path="临时文件2.pptx",
-    svg_path=["新内容.svg"],
+    pptx_path="temp_file2.pptx",
+    svg_path=["new_content.svg"],
     slide_number=3,
-    output_path="最终文件.pptx"
+    output_path="final_file.pptx"
 )
 ```
 
-#### 方法二：新文件法（适合多页修改）
+#### Method 2: New File Method (Suitable for Multi-Page Modifications)
 
 ```python
-# 一次性创建包含所有SVG的新PPTX文件
+# Create a new PPTX file with all SVGs at once
 create_pptx_from_svg(
-    svg_paths=["第1页.svg", "第2页.svg", "修改后的第3页.svg", "第4页.svg"],
-    output_path="全新演示文稿.pptx"
+    svg_paths=["page1.svg", "page2.svg", "modified_page3.svg", "page4.svg"],
+    output_path="new_presentation.pptx"
 )
 ```
 
-## 注意事项
+## Important Notes
 
-1. **避免内容叠加**：直接对现有幻灯片插入SVG会导致新内容叠加在原内容上，而非替换
-2. **批量处理**：批量插入SVG时，`svg_path`参数必须是数组形式，即使只有一个文件
-3. **SVG代码转义**：在使用`save_svg_code`时，特殊字符（如"&"）需要正确转义为"&amp;"
-4. **文件路径**：尽量使用英文路径，避免路径中出现特殊字符
-5. **检查结果**：每次操作后应检查输出文件以确认修改是否成功
+1. **Avoid Content Overlay**: Inserting SVGs directly into existing slides will cause new content to overlay the original content rather than replace it
+2. **Batch Processing**: When batch inserting SVGs, the `svg_path` parameter must be in array format, even if there's only one file
+3. **SVG Code Escaping**: When using `save_svg_code`, special characters (like "&") need to be properly escaped as "&amp;"
+4. **File Paths**: Try to use English paths and avoid special characters in paths
+5. **Check Results**: Always check the output file after each operation to confirm the modifications were successful
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### Q: SVG插入后变成了位图而非矢量图？
-A: 请确保使用`copy_svg_slide`或`create_pptx_from_svg`函数，这些函数专门设计用于保留SVG的矢量特性。
+### Q: The SVG is inserted as a bitmap rather than a vector graphic?
+A: Make sure to use the `copy_svg_slide` or `create_pptx_from_svg` functions, which are specifically designed to preserve the vector properties of SVGs.
 
-### Q: 如何批量处理多个SVG文件？
-A: 可以使用`insert_svg`函数并将多个SVG路径作为列表传入，或者使用`create_pptx_from_svg`一次性创建包含多个SVG的演示文稿。
+### Q: How can I process multiple SVG files in batch?
+A: You can use the `insert_svg` function and pass multiple SVG paths as a list, or use `create_pptx_from_svg` to create a presentation with multiple SVGs at once.
 
-### Q: 文件名变得很长且复杂？
-A: 这是因为每次操作都会添加时间戳。建议使用"新文件法"一次性创建最终文件，或在最后一步操作中指定简洁的输出文件名。
+### Q: The filenames are becoming long and complex?
+A: This happens because each operation adds a timestamp. We recommend using the "New File Method" to create the final file at once, or specifying a concise output filename in the last operation.
 
-## 版本信息
+## Version Information
 
-当前最新版本: v0.1.4
+Current latest version: v0.1.4
 
-查看所有版本和更新信息: [GitHub Releases](https://github.com/NeekChaw/mcp-server-okppt/releases)
+View all versions and update information: [GitHub Releases](https://github.com/NeekChaw/mcp-server-okppt/releases)
 
-## 致谢
+## Acknowledgements
 
-本项目在开发过程中受益于[Model Context Protocol(MCP) 编程极速入门](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide)这一优质资源。该项目提供了全面而清晰的MCP开发指南，涵盖了从基础概念到实际部署的各个方面，极大地降低了开发者学习MCP协议的门槛。特别感谢其在服务配置、工具开发和部署流程等方面的详细示例和说明，为MCP生态的发展和普及做出了宝贵贡献。推荐所有对MCP开发感兴趣的开发者参考这份指南，它将帮助你快速掌握MCP服务器的开发与配置技能。
+This project benefited from the excellent resource [Model Context Protocol(MCP) Quick Start Guide in Chinese](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) during its development. This resource provides comprehensive and clear guidance for MCP development, covering everything from basic concepts to practical deployment, greatly reducing the learning curve for developers learning the MCP protocol. Special thanks for the detailed examples and explanations regarding service configuration, tool development, and deployment processes, making valuable contributions to the development and popularization of the MCP ecosystem. We recommend this guide to all developers interested in MCP development, as it will help you quickly master the skills of developing and configuring MCP servers.
 
-## 贡献指南
+## Contribution Guidelines
 
-欢迎提交问题和拉取请求到[项目仓库](https://github.com/NeekChaw/mcp-server-okppt)！以下是一些潜在的改进方向：
+Issues and pull requests are welcome at the [project repository](https://github.com/NeekChaw/mcp-server-okppt)! Here are some potential areas for improvement:
 
-- 添加更多幻灯片布局支持
-- 增强SVG处理和兼容性
-- 添加批量SVG处理的进度报告
-- 改进错误处理和诊断功能
-- 添加图表和表格的特殊处理功能
+- Add support for more slide layouts
+- Enhance SVG processing and compatibility
+- Add progress reporting for batch SVG processing
+- Improve error handling and diagnostics
+- Add special handling for charts and tables
 
-## 许可证
+## License
 
-本项目采用MIT许可证。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/NeekChaw/mcp-server-okppt](https://github.com/NeekChaw/mcp-server-okppt)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/NeekChaw/mcp-server-okppt](https://github.com/NeekChaw/mcp-server-okppt)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`, `data`
-- 标签：`communication`, `research and data`, `chinese`
+- Categories: `communication`, `data`
+- Tags: `communication`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-okppt`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-okppt`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/neekchaw-okppt.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/neekchaw-okppt.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

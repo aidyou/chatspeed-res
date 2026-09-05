@@ -1,69 +1,69 @@
 ---
-title: "Windows命令行MCP服务器"
-description: "一种模型上下文协议（MCP）服务器，提供对Windows系统的安全命令行访问，允许像Claude Desktop这样的MCP客户端在PowerShell、CMD和Git Bash shell中安全地执行命令，并带有可配置的安全控制。"
+title: "win-cli-mcp-server"
+description: "A Model Context Protocol server that provides secure command-line access to Windows systems, allowing MCP clients like Claude Desktop to safely execute commands in PowerShell, CMD, and Git Bash shells…"
 ---
 
-# Windows命令行MCP服务器
+# win-cli-mcp-server
 
-一种模型上下文协议（MCP）服务器，提供对Windows系统的安全命令行访问，允许像Claude Desktop这样的MCP客户端在PowerShell、CMD和Git Bash shell中安全地执行命令，并带有可配置的安全控制。
+A Model Context Protocol server that provides secure command-line access to Windows systems, allowing MCP clients like Claude Desktop to safely execute commands in PowerShell, CMD, and Git Bash shells…
 
-# Windows CLI MCP 服务器
-[![NPM 下载量](/mcp-assets/105e24710c8fb4bfe089a461707ec204.svg)](https://www.npmjs.com/package/@simonb97/server-win-cli)
-[![NPM 版本](/mcp-assets/3dda89a8f1f4e0585d74025330935cb8.svg)](https://www.npmjs.com/package/@simonb97/server-win-cli?activeTab=versions)
+# Windows CLI MCP Server
+[![NPM Downloads](/mcp-assets/105e24710c8fb4bfe089a461707ec204.svg)](https://www.npmjs.com/package/@simonb97/server-win-cli)
+[![NPM Version](/mcp-assets/3dda89a8f1f4e0585d74025330935cb8.svg)](https://www.npmjs.com/package/@simonb97/server-win-cli?activeTab=versions)
 [Smithery](https://smithery.ai/server/@simonb97/server-win-cli)
 
-用于在 Windows 系统上进行安全命令行交互的 [MCP 服务器](https://modelcontextprotocol.io/introduction)，它允许受控访问 PowerShell、CMD、Git Bash 命令行以及通过 SSH 访问远程系统。它使 MCP 客户端（如 [Claude Desktop](https://claude.ai/download)）能够对您的系统执行操作，类似于 [Open Interpreter](https://github.com/OpenInterpreter/open-interpreter)。
+[MCP server](https://modelcontextprotocol.io/introduction) for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, Git Bash shells, and remote systems via SSH. It allows MCP clients (like [Claude Desktop](https://claude.ai/download)) to perform operations on your system, similar to [Open Interpreter](https://github.com/OpenInterpreter/open-interpreter).
 
 >[!IMPORTANT]
-> 该 MCP 服务器提供了直接访问您系统的命令行接口和通过 SSH 访问远程系统的权限。启用后，它将授予访问您的文件、环境变量、命令执行能力和远程服务器管理的权限。
+> This MCP server provides direct access to your system's command line interface and remote systems via SSH. When enabled, it grants access to your files, environment variables, command execution capabilities, and remote server management.
 >
-> - 审查并限制允许的路径和 SSH 连接
-> - 启用目录限制
-> - 配置命令阻止
-> - 考虑安全性影响
+> - Review and restrict allowed paths and SSH connections
+> - Enable directory restrictions
+> - Configure command blocks
+> - Consider security implications
 >
-> 有关更多详细信息，请参阅 [配置](#configuration)。
+> See [Configuration](#configuration) for more details.
 
-- [功能](#features)
-- [与 Claude Desktop 的使用](#usage-with-claude-desktop)
-- [配置](#configuration)
-  - [配置位置](#configuration-locations)
-  - [默认配置](#default-configuration)
-  - [配置设置](#configuration-settings)
-    - [安全设置](#security-settings)
-    - [Shell 配置](#shell-configuration)
-    - [SSH 配置](#ssh-configuration)
+- [Features](#features)
+- [Usage with Claude Desktop](#usage-with-claude-desktop)
+- [Configuration](#configuration)
+  - [Configuration Locations](#configuration-locations)
+  - [Default Configuration](#default-configuration)
+  - [Configuration Settings](#configuration-settings)
+    - [Security Settings](#security-settings)
+    - [Shell Configuration](#shell-configuration)
+    - [SSH Configuration](#ssh-configuration)
 - [API](#api)
-  - [工具](#tools)
-  - [资源](#resources)
-- [安全注意事项](#security-considerations)
-- [许可证](#license)
+  - [Tools](#tools)
+  - [Resources](#resources)
+- [Security Considerations](#security-considerations)
+- [License](#license)
 
-## 功能
+## Features
 
-- **多 Shell 支持**：在 PowerShell、命令提示符 (CMD) 和 Git Bash 中执行命令
-- **SSH 支持**：通过 SSH 在远程系统上执行命令
-- **资源暴露**：将 SSH 连接、当前目录和配置作为 MCP 资源查看
-- **安全控制**：
-  - 命令和 SSH 命令阻止（完整路径、大小写变化）
-  - 工作目录验证
-  - 最大命令长度限制
-  - 命令日志记录和历史跟踪
-  - 智能参数验证
-- **可配置性**：
-  - 自定义安全规则
-  - 特定于 Shell 的设置
-  - SSH 连接配置文件
-  - 路径限制
-  - 阻止命令列表
+- **Multi-Shell Support**: Execute commands in PowerShell, Command Prompt (CMD), and Git Bash
+- **SSH Support**: Execute commands on remote systems via SSH
+- **Resource Exposure**: View SSH connections, current directory, and configuration as MCP resources
+- **Security Controls**:
+  - Command and SSH command blocking (full paths, case variations)
+  - Working directory validation
+  - Maximum command length limits
+  - Command logging and history tracking
+  - Smart argument validation
+- **Configurable**:
+  - Custom security rules
+  - Shell-specific settings
+  - SSH connection profiles
+  - Path restrictions
+  - Blocked command lists
 
-有关服务器向 MCP 客户端提供的工具和资源的更多详细信息，请参阅 [API](#api) 部分。
+See the [API](#api) section for more details on the tools and resources the server provides to MCP clients.
 
-**注意**：服务器仅允许在已配置的目录内、使用允许的命令以及在已配置的 SSH 连接上执行操作。
+**Note**: The server will only allow operations within configured directories, with allowed commands, and on configured SSH connections.
 
-## 与 Claude Desktop 的使用
+## Usage with Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -76,7 +76,7 @@ description: "一种模型上下文协议（MCP）服务器，提供对Windows�
 }
 ```
 
-如果要使用特定配置文件，请添加 `--config` 标志：
+For use with a specific config file, add the `--config` flag:
 
 ```json
 {
@@ -94,40 +94,40 @@ description: "一种模型上下文协议（MCP）服务器，提供对Windows�
 }
 ```
 
-配置完成后，您可以：
-- 使用可用工具直接执行命令
-- 在“资源”部分查看已配置的 SSH 连接和服务器配置
-- 通过提供的工具管理 SSH 连接
+After configuring, you can:
+- Execute commands directly using the available tools
+- View configured SSH connections and server configuration in the Resources section
+- Manage SSH connections through the provided tools
 
-## 配置
+## Configuration
 
-服务器使用 JSON 配置文件来自定义其行为。您可以为安全控制、shell 配置和 SSH 连接指定设置。
+The server uses a JSON configuration file to customize its behavior. You can specify settings for security controls, shell configurations, and SSH connections.
 
-1. 要创建默认配置文件，可以：
+1. To create a default config file, either:
 
-**a)** 将 `config.json.example` 复制为 `config.json`，或者
+**a)** copy `config.json.example` to `config.json`, or
 
-**b)** 运行：
+**b)** run:
 
 ```bash
 npx @simonb97/server-win-cli --init-config ./config.json
 ```
 
-2. 然后按照 [Usage with Claude Desktop](#usage-with-claude-desktop) 部分的描述设置 `--config` 标志以指向您的配置文件。
+2. Then set the `--config` flag to point to your config file as described in the [Usage with Claude Desktop](#usage-with-claude-desktop) section.
 
-### 配置位置
+### Configuration Locations
 
-服务器按以下顺序查找配置：
+The server looks for configuration in the following locations (in order):
 
-1. 由 `--config` 标志指定的路径
-2. 当前目录下的 ./config.json
-3. 用户主目录下的 ~/.win-cli-mcp/config.json
+1. Path specified by `--config` flag
+2. ./config.json in current directory
+3. ~/.win-cli-mcp/config.json in user's home directory
 
-如果未找到配置文件，服务器将使用默认（受限）配置：
+If no configuration file is found, the server will use a default (restricted) configuration:
 
-### 默认配置
+### Default Configuration
 
-**注意**：默认配置旨在具有限制性和安全性。有关每个设置的更多详细信息，请参阅 [Configuration Settings](#configuration-settings) 部分。
+**Note**: The default configuration is designed to be restrictive and secure. Find more details on each setting in the [Configuration Settings](#configuration-settings) section.
 
 ```json
 {
@@ -181,7 +181,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
     },
     "gitbash": {
       "enabled": true,
-      "command": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "command": "C:\Program Files\Git\bin\bash.exe",
       "args": ["-c"],
       "blockedOperators": ["&", "|", ";", "`"]
     }
@@ -198,11 +198,11 @@ npx @simonb97/server-win-cli --init-config ./config.json
 }
 ```
 
-### 配置设置
+### Configuration Settings
 
-配置文件分为三个主要部分：`security`、`shells` 和 `ssh`。
+The configuration file is divided into three main sections: `security`, `shells`, and `ssh`.
 
-#### 安全设置
+#### Security Settings
 
 ```json
 {
@@ -211,7 +211,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
     "maxCommandLength": 1000,
 
     // Commands to block - blocks both direct use and full paths
-    // Example: "rm" blocks both "rm" and "C:\\Windows\\System32\\rm.exe"
+    // Example: "rm" blocks both "rm" and "C:\Windows\System32\rm.exe"
     // Case-insensitive: "del" blocks "DEL.EXE", "del.cmd", etc.
     "blockedCommands": [
       "rm", // Delete files
@@ -229,7 +229,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
     ],
 
     // Arguments that will be blocked when used with any command
-    // Note: Checks each argument independently - "cd warm_dir" won't be blocked just because "rm" is in blockedCommands
+    // Note: Checks each argument independently - "cd warm_dir" Will not  be blocked just because "rm" is in blockedCommands
     "blockedArguments": [
       "--exec", // Execution flags
       "-e", // Short execution flags
@@ -244,7 +244,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
     ],
 
     // List of directories where commands can be executed
-    "allowedPaths": ["C:\\Users\\YourUsername", "C:\\Projects"],
+    "allowedPaths": ["C:\Users\YourUsername", "C:\Projects"],
 
     // If true, commands can only run in allowedPaths
     "restrictWorkingDirectory": true,
@@ -258,13 +258,13 @@ npx @simonb97/server-win-cli --init-config ./config.json
     // Timeout for command execution in seconds (default: 30)
     "commandTimeout": 30,
 
-    // Enable or disable protection against command injection (covers ;, &, |, \`)
+    // Enable or disable protection against command injection (covers ;, &, |, `)
     "enableInjectionProtection": true
   }
 }
 ```
 
-#### Shell 配置
+#### Shell Configuration
 
 ```json
 {
@@ -287,7 +287,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
     },
     "gitbash": {
       "enabled": true,
-      "command": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "command": "C:\Program Files\Git\bin\bash.exe",
       "args": ["-c"],
       "blockedOperators": ["&", "|", ";", "`"]  // Block all command chaining
     }
@@ -295,7 +295,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
 }
 ```
 
-#### SSH 配置
+#### SSH Configuration
 
 ```json
 {
@@ -336,7 +336,7 @@ npx @simonb97/server-win-cli --init-config ./config.json
         "host": "dev.example.com",
         "port": 22,
         "username": "admin",
-        "privateKeyPath": "C:\\Users\\YourUsername\\.ssh\\id_rsa", // Path to private key
+        "privateKeyPath": "C:\Users\YourUsername\.ssh\id_rsa", // Path to private key
         "keepaliveInterval": 10000,
         "keepaliveCountMax": 3,
         "readyTimeout": 20000
@@ -348,140 +348,140 @@ npx @simonb97/server-win-cli --init-config ./config.json
 
 ## API
 
-### 工具
+### Tools
 
 - **execute_command**
 
-  - 在指定的 shell 中执行命令
-  - 输入：
-    - `shell` (字符串)：要使用的 shell ("powershell", "cmd" 或 "gitbash")
-    - `command` (字符串)：要执行的命令
-    - `workingDir` (可选字符串)：工作目录
-  - 返回命令输出文本，如果执行失败则返回错误消息
+  - Execute a command in the specified shell
+  - Inputs:
+    - `shell` (string): Shell to use ("powershell", "cmd", or "gitbash")
+    - `command` (string): Command to execute
+    - `workingDir` (optional string): Working directory
+  - Returns command output as text, or error message if execution fails
 
 - **get_command_history**
 
-  - 获取已执行命令的历史记录
-  - 输入：`limit` (可选数字)
-  - 返回带时间戳的命令历史记录及其输出
+  - Get the history of executed commands
+  - Input: `limit` (optional number)
+  - Returns timestamped command history with outputs
 
 - **ssh_execute**
 
-  - 通过 SSH 在远程系统上执行命令
-  - 输入：
-    - `connectionId` (字符串)：要使用的 SSH 连接的 ID
-    - `command` (字符串)：要执行的命令
-  - 返回命令输出文本，如果执行失败则返回错误消息
+  - Execute a command on a remote system via SSH
+  - Inputs:
+    - `connectionId` (string): ID of the SSH connection to use
+    - `command` (string): Command to execute
+  - Returns command output as text, or error message if execution fails
 
 - **ssh_disconnect**
-  - 断开与 SSH 服务器的连接
-  - 输入：
-    - `connectionId` (字符串)：要断开的 SSH 连接的 ID
-  - 返回确认消息
+  - Disconnect from an SSH server
+  - Input:
+    - `connectionId` (string): ID of the SSH connection to disconnect
+  - Returns confirmation message
 
 - **create_ssh_connection**
-  - 创建一个新的 SSH 连接
-  - 输入：
-    - `connectionId` (字符串)：新 SSH 连接的 ID
-    - `connectionConfig` (对象)：连接配置详情，包括主机、端口、用户名以及密码或私钥路径
-  - 返回确认消息
+  - Create a new SSH connection
+  - Inputs:
+    - `connectionId` (string): ID for the new SSH connection
+    - `connectionConfig` (object): Connection configuration details including host, port, username, and either password or privateKeyPath
+  - Returns confirmation message
 
 - **read_ssh_connections**
-  - 读取所有配置的 SSH 连接
-  - 返回配置中的所有 SSH 连接列表
+  - Read all configured SSH connections
+  - Returns a list of all SSH connections from the configuration
 
 - **update_ssh_connection**
-  - 更新现有的 SSH 连接
-  - 输入：
-    - `connectionId` (字符串)：要更新的 SSH 连接的 ID
-    - `connectionConfig` (对象)：新的连接配置详情
-  - 返回确认消息
+  - Update an existing SSH connection
+  - Inputs:
+    - `connectionId` (string): ID of the SSH connection to update
+    - `connectionConfig` (object): New connection configuration details
+  - Returns confirmation message
 
 - **delete_ssh_connection**
-  - 删除一个 SSH 连接
-  - 输入：
-    - `connectionId` (字符串)：要删除的 SSH 连接的 ID
-  - 返回确认消息
+  - Delete an SSH connection
+  - Input:
+    - `connectionId` (string): ID of the SSH connection to delete
+  - Returns confirmation message
 
 - **get_current_directory**
-  - 获取服务器的当前工作目录
-  - 返回当前工作目录路径
+  - Get the current working directory of the server
+  - Returns the current working directory path
 
-### 资源
+### Resources
 
-- **SSH 连接**
-  - URI 格式：`ssh://{connectionId}`
-  - 包含连接详情，敏感信息被屏蔽
-  - 每个配置的 SSH 连接都有一个资源
-  - 示例：`ssh://raspberry-pi` 显示 "raspberry-pi" 连接的配置
+- **SSH Connections**
+  - URI format: `ssh://{connectionId}`
+  - Contains connection details with sensitive information masked
+  - One resource for each configured SSH connection
+  - Example: `ssh://raspberry-pi` shows configuration for the "raspberry-pi" connection
 
-- **SSH 配置**
+- **SSH Configuration**
   - URI: `ssh://config`
-  - 包含总体 SSH 配置和所有连接（密码被屏蔽）
-  - 显示设置如 defaultTimeout, maxConcurrentSessions 和连接列表
+  - Contains overall SSH configuration and all connections (with passwords masked)
+  - Shows settings like defaultTimeout, maxConcurrentSessions, and the list of connections
 
-- **当前目录**
+- **Current Directory**
   - URI: `cli://currentdir`
-  - 包含 CLI 服务器的当前工作目录
-  - 显示默认执行命令的路径
+  - Contains the current working directory of the CLI server
+  - Shows the path where commands will execute by default
 
-- **CLI 配置**
+- **CLI Configuration**
   - URI: `cli://config`
-  - 包含 CLI 服务器配置（不包括敏感数据）
-  - 显示安全设置、shell 配置和 SSH 设置
+  - Contains the CLI server configuration (excluding sensitive data)
+  - Shows security settings, shell configurations, and SSH settings
 
-## 安全考虑
+## Security Considerations
 
-### 内置安全特性（始终激活）
+### Built-in Security Features (Always Active)
 
-以下安全特性被硬编码到服务器中，无法禁用：
+The following security features are hard-coded into the server and cannot be disabled:
 
-- **不区分大小写的命令拦截**：所有命令拦截都是不区分大小写的（例如，如果"del"在blockedCommands中，则"DEL.EXE", "del.cmd"等都会被拦截）
-- **智能路径解析**：服务器解析完整的命令路径以防止绕过尝试（如果"rm"被拦截，则会拦截"C:\\Windows\\System32\\rm.exe"）
-- **命令解析智能**：避免误报（例如，不会因为"rm"在blockedCommands中就拦截"warm_dir"）
-- **输入验证**：所有用户输入在执行前都会进行验证
-- **Shell 进程管理**：进程在执行完毕或超时后会被正确终止
-- **敏感数据掩码**：密码在资源中自动被掩码处理（替换为********）
+- **Case-insensitive command blocking**: All command blocking is case-insensitive (e.g., "DEL.EXE", "del.cmd", etc. are all blocked if "del" is in blockedCommands)
+- **Smart path parsing**: The server parses full command paths to prevent bypass attempts (blocking "C:\Windows\System32\rm.exe" if "rm" is blocked)
+- **Command parsing intelligence**: false positives are avoided (e.g., "warm_dir" is not blocked just because "rm" is in blockedCommands)
+- **Input validation**: All user inputs are validated before execution
+- **Shell process management**: Processes are properly terminated after execution or timeout
+- **Sensitive data masking**: Passwords are automatically masked in resources (replaced with ********)
 
-### 可配置的安全特性（默认激活）
+### Configurable Security Features (Active by Default)
 
-这些安全特性可以通过config.json文件进行配置：
+These security features are configurable through the config.json file:
 
-- **命令拦截**：在`blockedCommands`数组中指定的命令将被拦截（默认包括像rm, del, format这样的危险命令）
-- **参数拦截**：在`blockedArguments`数组中指定的参数将被拦截（默认包括潜在危险的标志）
-- **命令注入保护**：防止命令链（通过设置`enableInjectionProtection: true`默认启用）
-- **工作目录限制**：限制命令执行到指定目录（通过设置`restrictWorkingDirectory: true`默认启用）
-- **命令长度限制**：限制最大命令长度（默认：2000个字符）
-- **命令超时**：终止运行时间过长的命令（默认：30秒）
-- **命令日志记录**：记录命令历史（通过设置`logCommands: true`默认启用）
+- **Command blocking**: Commands specified in `blockedCommands` array are blocked (default includes dangerous commands like rm, del, format)
+- **Argument blocking**: Arguments specified in `blockedArguments` array are blocked (default includes potentially dangerous flags)
+- **Command injection protection**: Prevents command chaining (enabled by default through `enableInjectionProtection: true`)
+- **Working directory restriction**: Limits command execution to specified directories (enabled by default through `restrictWorkingDirectory: true`)
+- **Command length limit**: Restricts maximum command length (default: 2000 characters)
+- **Command timeout**: Terminates commands that run too long (default: 30 seconds)
+- **Command logging**: Records command history (enabled by default through `logCommands: true`)
 
-### 重要安全警告
+### Important Security Warnings
 
-以下不是功能特性，但是一些需要注意的重要安全考虑事项：
+These are not features but important security considerations to be aware of:
 
-- **环境访问**：命令可能有权访问环境变量，其中可能包含敏感信息
-- **文件系统访问**：命令可以在允许的路径内读写文件——请仔细配置`allowedPaths`以防止访问敏感数据
+- **Environment access**: Commands may have access to environment variables, which could contain sensitive information
+- **File system access**: Commands can read/write files within allowed paths - carefully configure `allowedPaths` to prevent access to sensitive data
 
-## 许可证
+## License
 
-本项目根据MIT许可证发布 - 详情请参阅[LICENSE](https://github.com/SimonB97/win-cli-mcp-server/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SimonB97/win-cli-mcp-server/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/SimonB97/win-cli-mcp-server](https://github.com/SimonB97/win-cli-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SimonB97/win-cli-mcp-server](https://github.com/SimonB97/win-cli-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`os automation`, `file systems`, `developer tools`, `chinese`
+- Categories: `files`
+- Tags: `os automation`, `file systems`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @simonb97/server-win-cli`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @simonb97/server-win-cli`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/simonb97-win-cli.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/simonb97-win-cli.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

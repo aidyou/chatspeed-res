@@ -1,30 +1,30 @@
 ---
-title: "微软Playwright"
-description: "一种模型上下文协议服务器，它使大型语言模型能够通过结构化的可访问性快照与网页交互，而无需使用视觉模型或截图。"
+title: "playwright-mcp"
+description: "A Model Context Protocol server that enables LLMs to interact with web pages through structured accessibility snapshots without requiring vision models or screenshots."
 ---
 
-# 微软Playwright
+# playwright-mcp
 
-一种模型上下文协议服务器，它使大型语言模型能够通过结构化的可访问性快照与网页交互，而无需使用视觉模型或截图。
+A Model Context Protocol server that enables LLMs to interact with web pages through structured accessibility snapshots without requiring vision models or screenshots.
 
 ## Playwright MCP
 
-一个使用 [Playwright](https://playwright.dev) 提供浏览器自动化功能的 Model Context Protocol (MCP) 服务器。该服务器使 LLM 能够通过结构化的无障碍快照与网页进行交互，从而绕过了对屏幕截图或视觉调优模型的需求。
+A Model Context Protocol (MCP) server that provides browser automation capabilities using [Playwright](https://playwright.dev). This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
 
-### 主要特性
+### Key Features
 
-- **快速且轻量**：使用 Playwright 的无障碍树，而不是基于像素的输入。
-- **LLM 友好**：无需视觉模型，纯粹基于结构化数据操作。
-- **确定性的工具应用**：避免了基于屏幕截图方法常见的歧义。
+- **Fast and lightweight**: Uses Playwright's accessibility tree, not pixel-based input.
+- **LLM-friendly**: No vision models needed, operates purely on structured data.
+- **Deterministic tool application**: Avoids ambiguity common with screenshot-based approaches.
 
-### 使用场景
+### Use Cases
 
-- 网页导航和表单填写
-- 从结构化内容中提取数据
-- 由 LLM 驱动的自动化测试
-- 适用于代理的一般用途浏览器交互
+- Web navigation and form-filling
+- Data extraction from structured content
+- Automated testing driven by LLMs
+- General-purpose browser interaction for agents
 
-### 示例配置
+### Example config
 
 ```js
 {
@@ -39,14 +39,14 @@ description: "一种模型上下文协议服务器，它使大型语言模型能
 }
 ```
 
-#### 在 VS Code 中安装
+#### Installation in VS Code
 
-使用以下按钮之一在 VS Code 中安装 Playwright MCP 服务器：
+Install the Playwright MCP server in VS Code using one of these buttons:
 
 [
 ](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522playwright%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522%2540playwright%252Fmcp%2540latest%2522%255D%257D)
 
-或者，您可以使用 VS Code CLI 安装 Playwright MCP 服务器：
+Alternatively, you can install the Playwright MCP server using the VS Code CLI:
 
 ```bash
 # For VS Code
@@ -58,43 +58,43 @@ code --add-mcp '{"name":"playwright","command":"npx","args":["@playwright/mcp@la
 code-insiders --add-mcp '{"name":"playwright","command":"npx","args":["@playwright/mcp@latest"]}'
 ```
 
-安装后，您可以在 VS Code 中使用 GitHub Copilot 代理来使用 Playwright MCP 服务器。
+After installation, the Playwright MCP server will be available for use with your GitHub Copilot agent in VS Code.
 
-### 命令行选项
+### CLI Options
 
-Playwright MCP 服务器支持以下命令行选项：
+The Playwright MCP server supports the following command-line options:
 
 - `--browser 
-`：使用的浏览器或 Chrome 通道。可能的值：
+`: Browser or chrome channel to use. Possible values:
   - `chrome`, `firefox`, `webkit`, `msedge`
-  - Chrome 通道：`chrome-beta`, `chrome-canary`, `chrome-dev`
-  - Edge 通道：`msedge-beta`, `msedge-canary`, `msedge-dev`
-  - 默认值：`chrome`
-- `--cdp-endpoint `：连接到的 CDP 端点
+  - Chrome channels: `chrome-beta`, `chrome-canary`, `chrome-dev`
+  - Edge channels: `msedge-beta`, `msedge-canary`, `msedge-dev`
+  - Default: `chrome`
+- `--cdp-endpoint `: CDP endpoint to connect to
 - `--executable-path 
-`：浏览器可执行文件的路径
-- `--headless`：以无头模式运行浏览器（默认为有头模式）
+`: Path to the browser executable
+- `--headless`: Run browser in headless mode (headed by default)
 - `--port 
-`：监听的端口用于 SSE 传输
+`: Port to listen on for SSE transport
 - `--user-data-dir 
-`：用户数据目录的路径
-- `--vision`：运行使用屏幕截图的服务器（默认使用 Aria 快照）
+`: Path to the user data directory
+- `--vision`: Run server that uses screenshots (Aria snapshots are used by default)
 
-### 用户数据目录
+### User data directory
 
-Playwright MCP 将使用新的配置文件启动浏览器，位于
+Playwright MCP will launch the browser with the new profile, located at
 
 ```
-- `%USERPROFILE%\AppData\Local\ms-playwright\mcp-chrome-profile` on Windows
+- `%USERPROFILE%AppDataLocalms-playwrightmcp-chrome-profile` on Windows
 - `~/Library/Caches/ms-playwright/mcp-chrome-profile` on macOS
 - `~/.cache/ms-playwright/mcp-chrome-profile` on Linux
 ```
 
-所有登录信息将存储在该配置文件中，您可以在会话之间删除它以清除离线状态。
+All the logged in information will be stored in that profile, you can delete it between sessions if you'd like to clear the offline state.
 
-### 运行无头浏览器（无 GUI 的浏览器）。
+### Running headless browser (Browser without GUI).
 
-此模式对于后台或批处理操作非常有用。
+This mode is useful for background or batch operations.
 
 ```js
 {
@@ -110,15 +110,16 @@ Playwright MCP 将使用新的配置文件启动浏览器，位于
 }
 ```
 
-### 在没有 DISPLAY 的 Linux 上运行有头浏览器
+### Running headed browser on Linux w/o DISPLAY
 
-当在没有显示的系统上运行有头浏览器或从IDE的工作进程中运行时，请在具有DISPLAY环境的环境中运行MCP服务器，并传递`--port`标志以启用SSE传输。
+When running headed browser on system w/o display or from worker processes of the IDEs,
+run the MCP server from environment with the DISPLAY and pass the `--port` flag to enable SSE transport.
 
 ```bash
 npx @playwright/mcp@latest --port 8931
 ```
 
-然后，在MCP客户端配置中，将`url`设置为SSE端点：
+And then in MCP client config, set the `url` to the SSE endpoint:
 
 ```js
 {
@@ -130,14 +131,14 @@ npx @playwright/mcp@latest --port 8931
 }
 ```
 
-### 工具模式
+### Tool Modes
 
-这些工具提供两种模式：
+The tools are available in two modes:
 
-1. **快照模式**（默认）：使用可访问性快照以提高性能和可靠性
-2. **视觉模式**：使用屏幕截图进行基于视觉的交互
+1. **Snapshot Mode** (default): Uses accessibility snapshots for better performance and reliability
+2. **Vision Mode**: Uses screenshots for visual-based interactions
 
-要使用视觉模式，在启动服务器时添加`--vision`标志：
+To use Vision Mode, add the `--vision` flag when starting the server:
 
 ```js
 {
@@ -153,9 +154,10 @@ npx @playwright/mcp@latest --port 8931
 }
 ```
 
-视觉模式最适合那些能够根据提供的屏幕截图使用X Y坐标空间与元素交互的计算机使用模型。
+Vision Mode works best with the computer use models that are able to interact with elements using
+X Y coordinate space, based on the provided screenshot.
 
-### 使用自定义传输的编程用法
+### Programmatic usage with custom transports
 
 ```js
 import { createServer } from '@playwright/mcp';
@@ -169,9 +171,9 @@ transport = new SSEServerTransport("/messages", res);
 server.connect(transport);
 ```
 
-### 快照模式
+### Snapshot Mode
 
-Playwright MCP 提供了一组用于浏览器自动化的工具。以下是所有可用工具：
+The Playwright MCP provides a set of tools for browser automation. Here are all available tools:
 
 - **browser_navigate**
   - Description: Navigate to a URL
@@ -253,92 +255,92 @@ Playwright MCP 提供了一组用于浏览器自动化的工具。以下是所�
   - Description: Close the page
   - Parameters: None
 
-### 视觉模式
+### Vision Mode
 
-视觉模式提供了使用屏幕截图进行基于视觉的交互的工具。以下是所有可用工具：
+Vision Mode provides tools for visual-based interactions using screenshots. Here are all available tools:
 
 - **browser_navigate**
-  - 描述：导航到指定URL
-  - 参数：
-    - `url` (字符串): 要导航到的URL
+  - Description: Navigate to a URL
+  - Parameters:
+    - `url` (string): The URL to navigate to
 
 - **browser_go_back**
-  - 描述：返回上一页
-  - 参数：无
+  - Description: Go back to the previous page
+  - Parameters: None
 
 - **browser_go_forward**
-  - 描述：前进到下一页
-  - 参数：无
+  - Description: Go forward to the next page
+  - Parameters: None
 
 - **browser_screenshot**
-  - 描述：捕获当前页面的截图
-  - 参数：无
+  - Description: Capture screenshot of the current page
+  - Parameters: None
 
 - **browser_move_mouse**
-  - 描述：将鼠标移动到指定坐标
-  - 参数：
-    - `x` (数字): X 坐标
-    - `y` (数字): Y 坐标
+  - Description: Move mouse to specified coordinates
+  - Parameters:
+    - `x` (number): X coordinate
+    - `y` (number): Y coordinate
 
 - **browser_click**
-  - 描述：在指定坐标点击
-  - 参数：
-    - `x` (数字): 点击的X坐标
-    - `y` (数字): 点击的Y坐标
+  - Description: Click at specified coordinates
+  - Parameters:
+    - `x` (number): X coordinate to click at
+    - `y` (number): Y coordinate to click at
 
 - **browser_drag**
-  - 描述：执行拖放操作
-  - 参数：
-    - `startX` (数字): 开始X坐标
-    - `startY` (数字): 开始Y坐标
-    - `endX` (数字): 结束X坐标
-    - `endY` (数字): 结束Y坐标
+  - Description: Perform drag and drop operation
+  - Parameters:
+    - `startX` (number): Start X coordinate
+    - `startY` (number): Start Y coordinate
+    - `endX` (number): End X coordinate
+    - `endY` (number): End Y coordinate
 
 - **browser_type**
-  - 描述：在指定坐标输入文本
-  - 参数：
-    - `text` (字符串): 要输入的文本
-    - `submit` (布尔值): 是否提交输入的文本（输入后按Enter键）
+  - Description: Type text at specified coordinates
+  - Parameters:
+    - `text` (string): Text to type
+    - `submit` (boolean): Whether to submit entered text (press Enter after)
 
 - **browser_press_key**
-  - 描述：按下键盘上的某个键
-  - 参数：
-    - `key` (字符串): 要按下的键名或要生成的字符，例如 `ArrowLeft` 或 `a`
+  - Description: Press a key on the keyboard
+  - Parameters:
+    - `key` (string): Name of the key to press or a character to generate, such as `ArrowLeft` or `a`
 
 - **browser_choose_file**
-  - 描述：选择一个或多个文件上传
-  - 参数：
-    - `paths` (数组): 要上传文件的绝对路径。可以是一个文件或多文件。
+  - Description: Choose one or multiple files to upload
+  - Parameters:
+    - `paths` (array): The absolute paths to the files to upload. Can be a single file or multiple files.
 
 - **browser_save_as_pdf**
-  - 描述：将页面保存为PDF
-  - 参数：无
+  - Description: Save page as PDF
+  - Parameters: None
 
 - **browser_wait**
-  - 描述：等待指定秒数
-  - 参数：
-    - `time` (数字): 等待的时间（以秒为单位，上限为10秒）
+  - Description: Wait for a specified time in seconds
+  - Parameters:
+    - `time` (number): The time to wait in seconds (capped at 10 seconds)
 
 - **browser_close**
-  - 描述：关闭页面
-  - 参数：无
+  - Description: Close the page
+  - Parameters: None
 
-**官方网站：** [https://github.com/microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `browser`
-- 标签：`browser automation`, `developer tools`, `chinese`
+- Categories: `development`, `browser`
+- Tags: `browser automation`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@playwright/mcp@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@playwright/mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/microsoft-playwright.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/microsoft-playwright.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,51 +1,51 @@
 ---
-title: "鸣潮"
-description: "一个提供查询鸣潮角色信息、配队、声骸及攻略的MCP server。"
+title: "wuwa-mcp-server"
+description: "A MCP server providing information on Wuthering Waves characters, team compositions, Echoes, and guides Data sourced from community."
 ---
 
-# 鸣潮
+# wuwa-mcp-server
 
-一个提供查询鸣潮角色信息、配队、声骸及攻略的MCP server。
+A MCP server providing information on Wuthering Waves characters, team compositions, Echoes, and guides Data sourced from community.
 
-# 鸣潮 MCP Server
+# Wuthering Waves MCP Server
 
 [Smithery](https://smithery.ai/server/@jacksmith3888/wuwa-mcp-server)
 
-一个 Model Context Protocol (MCP) 服务器，用于获取《鸣潮》游戏的角色和声骸信息，并以 Markdown 格式返回，方便大型语言模型使用。
+A Model Context Protocol (MCP) server for retrieving character and echo information from the game *Wuthering Waves* and returning it in Markdown format, optimized for use by large language models.
 
-## 功能特点
+## Features
 
-- **角色信息查询**：获取《鸣潮》游戏中角色的详细信息
-- **声骸信息查询**：获取《鸣潮》游戏中声骸套装的详细信息
-- **角色档案查询**：获取《鸣潮》游戏中角色的档案信息
-- **LLM 友好输出**：结果格式特别为大型语言模型优化
+- **Character Information Query**: Retrieve detailed information about characters in *Wuthering Waves*
+- **Echo Information Query**: Retrieve detailed information about echo sets in *Wuthering Waves*
+- **Character Profile Query**: Retrieve profile information about characters in *Wuthering Waves*
+- **LLM-Friendly Output**: Results are formatted specifically for optimization with large language models
 
-## 安装方法
+## Installation Methods
 
-### 通过 Smithery 安装
+### Install via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@jason/wuwa-mcp-server) 自动安装 WuWa MCP Server：
+To automatically install WuWa MCP Server via [Smithery](https://smithery.ai/server/@jason/wuwa-mcp-server):
 
 ```bash
 npx -y @smithery/cli@latest install @jacksmith3888/wuwa-mcp-server --client claude --key YOUR_SMITHERY_KEYs
 ```
 
-### 通过 `uv` 安装
+### Install via `uv`
 
-直接从 PyPI 安装：
+Install directly from PyPI:
 
 ```bash
 uv pip install wuwa-mcp-server
 ```
 
-## 使用方法
+## Usage
 
-### 与 Cherry Studio 一起运行
+### Running with Cherry Studio
 
-1. 下载 [Cherry Studio](https://github.com/CherryHQ/cherry-studio)
-2. 在设置中点击 MCP 服务器
+1. Download [Cherry Studio](https://github.com/CherryHQ/cherry-studio)
+2. Click on MCP Server in the settings
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 {
@@ -58,14 +58,14 @@ uv pip install wuwa-mcp-server
 }
 ```
 
-### 与 Claude Desktop 一起运行
+### Running with Claude Desktop
 
-1. 下载 [Claude Desktop](https://claude.ai/download)
-2. 创建或编辑您的 Claude Desktop 配置文件：
+1. Download [Claude Desktop](https://claude.ai/download)
+2. Create or edit your Claude Desktop configuration file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 {
@@ -78,90 +78,90 @@ uv pip install wuwa-mcp-server
 }
 ```
 
-3. 重启 Claude Desktop
+3. Restart Claude Desktop
 
-## 可用工具
+## Available Tools
 
-### 1. 角色信息工具
+### 1. Character Information Tool
 
 ```python
 async def get_character_info(character_name: str) -> str
 ```
 
-在库街区上查询角色详细信息并以 Markdown 格式返回。
+Queries detailed character information on the database block and returns it in Markdown format.
 
-**参数：**
+**Parameters:**
 
-- `character_name`: 要查询的角色的中文名称
+- `character_name`: The Chinese name of the character to query
 
-**返回：**
-包含角色信息的 Markdown 字符串，或者在找不到角色或获取数据失败时返回错误消息。
+**Returns:**
+A Markdown string containing the character information, or an error message if the character is not found or data retrieval fails.
 
-### 2. 声骸信息工具
+### 2. Echo Information Tool
 
 ```python
 async def get_artifact_info(artifact_name: str) -> str
 ```
 
-在库街区上查询声骸详细信息并以 Markdown 格式返回。
+Queries detailed echo information on the database block and returns it in Markdown format.
 
-**参数：**
+**Parameters:**
 
-- `artifact_name`: 要查询的声骸套装的中文名称
+- `artifact_name`: The Chinese name of the echo set to query
 
-**返回：**
-包含声骸信息的 Markdown 字符串，或者在找不到声骸或获取数据失败时返回错误消息。
+**Returns:**
+A Markdown string containing the echo information, or an error message if the echo is not found or data retrieval fails.
 
-### 3. 角色档案工具
+### 3. Character Profile Tool
 
 ```python
 async def get_character_profile(character_name: str) -> str
 ```
 
-在库街区上查询角色档案信息并以 Markdown 格式返回。
+Queries character profile information on the database block and returns it in Markdown format.
 
-**参数：**
+**Parameters:**
 
-- `character_name`: 要查询的角色的中文名称
+- `character_name`: The Chinese name of the character to query
 
-**返回：**
-包含角色档案信息的 Markdown 字符串，或者在找不到角色或获取数据失败时返回错误消息。
+**Returns:**
+A Markdown string containing the character profile information, or an error message if the character is not found or data retrieval fails.
 
-## 详细功能
+## Detailed Features
 
-### 结果处理
+### Result Processing
 
-- 清理和格式化库街区数据
-- 为 LLM 消费优化格式
+- Cleans and formats database block data
+- Optimizes format for LLM consumption
 
-## 贡献
+## Contribution
 
-欢迎提出问题和拉取请求！一些潜在的改进领域：
+Issues and pull requests are welcome! Some potential areas for improvement:
 
-- 增加对更多《鸣潮》游戏内容的支持
-- 增强内容解析选项
-- 增加对频繁访问内容的缓存层
+- Add support for more *Wuthering Waves* game content
+- Enhance content parsing options
+- Add a caching layer for frequently accessed content
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/jacksmith3888/wuwa-mcp-server](https://github.com/jacksmith3888/wuwa-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jacksmith3888/wuwa-mcp-server](https://github.com/jacksmith3888/wuwa-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `search`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`wuwa-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `wuwa-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jacksmith3888-wuwa.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jacksmith3888-wuwa.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

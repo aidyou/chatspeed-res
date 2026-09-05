@@ -1,125 +1,150 @@
 ---
-title: "bing必应搜索增强版"
-description: "一个基于MCP（模型上下文协议）的中文必应搜索工具，可以直接通过Claude等支持MCP的AI来搜索必应并获取网页内容，无需API密钥。"
+title: "bing-cn-mcp-enhanced"
+description: "一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。"
 ---
 
-# bing必应搜索增强版
+# bing-cn-mcp-enhanced
 
-一个基于MCP（模型上下文协议）的中文必应搜索工具，可以直接通过Claude等支持MCP的AI来搜索必应并获取网页内容，无需API密钥。
+一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。
 
 # Bing CN MCP Enhanced
 
-一个基于 MCP (Model Context Protocol) 的中文必应搜索工具，可以直接通过 Claude 或其他支持 MCP 的 AI 来搜索必应并获取网页内容。
-解决了市面上BingMcp搜索工具都存在的因为反扒机制而返回随机数据的问题。但因为modelscope.cn托管不支持playwright，所以只能用stdio方案。
+A Chinese Bing search tool based on MCP (Model Context Protocol) that can directly search Bing and fetch web content through Claude or other AI supporting MCP. It solves the issue of random data return due to anti-scraping mechanisms, which is common in existing BingMcp search tools. However, because modelscope.cn hosting does not support playwright, only the stdio solution can be used.
 
-## 特点
-- 使用页面解析方式完成bing查询和内容快速获取
-- 修复其他bing 查询的各类bug，尤其是bing如果识别你是个机器人会随机给数据，导致搜索失败问题
-- 持续维护 有问题提gh issues 
-- 无需 API 密钥，直接爬取必应搜索结果
-- 轻量级，易于安装和使用
-- 支持 Claude 等 AI 工具调用
+## Features
+- Completes Bing queries and quickly acquires content using page parsing methods
+- Fixes various bugs in other Bing queries, especially the issue where Bing randomly provides data if it identifies you as a bot, leading to failed searches
+- Continuously maintained; report issues via GitHub
+- No API key required, directly scrapes Bing search results
+- Lightweight, easy to install and use
+- Supports invocation by AI tools like Claude
 
-## 安装
-背后依托playwright， 开始的时候会自己下载
-所以请保持使用的机器有网络
+## Installation
+Relying on playwright, it will automatically download at the start. Please ensure your machine has internet access.
 
-### 全局安装
+### Global Installation
 
 ```bash
+
 npm install -g bing-cn-mcp-enhanced
-```
 
-### 或者直接通过 npx 运行
+```
+### Or run directly with npx
 
 ```bash
+
 npx bing-cn-mcp-enhanced
+
 ```
+## Usage
 
-## 使用方法
-
-### 启动服务器
+### Start the Server
 
 ```bash
+
 bing-cn-mcp-enhanced
-```
 
-或者使用 npx：
+```
+Or use npx:
 
 ```bash
+
 npx bing-cn-mcp-enhanced
+
 ```
+### Use in MCP Supported Environments
 
-### 在支持 MCP 的环境中使用
+In an environment that supports MCP (such as Cursor), configure the MCP server to use it:
 
-在支持 MCP 的环境（如 Cursor）中，配置 MCP 服务器来使用它：
-
-1. 找到 MCP 配置文件（例如 `.cursor/mcp.json`）
-2. 添加服务器配置：
+1. Locate the MCP configuration file (e.g., `.cursor/mcp.json`)
+2. Add the server configuration:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "EnhancedBing": {
+
       "args": [
+
         "bing-cn-mcp-enhanced"
+
       ],
+
       "command": "npx"
+
     }
+
   }
+
 }
+
 ```
-Windows用户的配置
+Configuration for Windows users
 
 ```json
+
 {
+
   "mcpServers": {
+
     "EnhancedBing": {
+
         "command": "cmd",
+
         "args": [
+
           "/c",
+
           "npx",
+
           "bing-cn-mcp-enhanced"
+
       ]
+
     }
+
   }
+
 }
+
 ```
+3. You can now use the `mcp__bing_search` and `mcp__fetch_webpage` tools in Claude
 
-3. 现在你可以在 Claude 中使用 `mcp__bing_search` 和 `mcp__fetch_webpage` 工具了
+4. You can also use Lynxe to utilize this tool  [Lynxe github](https://github.com/spring-ai-alibaba/Lynxe)
 
-4. 你也可以使用 Lynxe 来使用这个工具  [Lynxe github](https://github.com/spring-ai-alibaba/Lynxe)
+### View Logs
 
-### 查看日志
+The MCP server logs are output to stderr. If you want to save the logs to a file for viewing, you can achieve this by modifying the MCP configuration:
 
-MCP 服务器的日志输出到 stderr。如果你想将日志保存到文件以便查看，可以通过修改 MCP 配置来实现：
+Logs from Lynxe can be viewed directly in the background log
 
-Lynxe则可以在后台日志直接看到
-
-## 作者
+## Author
 
 Lynxe
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/Lynxe-public/bing-mcp-cn-enhanced](https://github.com/Lynxe-public/bing-mcp-cn-enhanced)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Lynxe-public/bing-mcp-cn-enhanced](https://github.com/Lynxe-public/bing-mcp-cn-enhanced)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `bing mcp 持续维护 增强`, `chinese`
+- Categories: `search`
+- Tags: `search`, `bing mcp 持续维护 增强`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`bing-cn-mcp-enhanced`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `bing-cn-mcp-enhanced`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/rainerwjy-bing-cn-enhanced.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/rainerwjy-bing-cn-enhanced.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

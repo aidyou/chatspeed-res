@@ -1,165 +1,225 @@
 ---
-title: "MCP微信公众号爬虫"
-description: "MCP微信公众号爬虫 基于 FastMCP 框架构建的微信公众号文章爬虫系统，让AI智能体能够直接访问和分析微信公众号内容。通过MCP (Model Context Protocol) 标准协议，实现AI智能体与Selenium爬虫的无缝集成。 🎯 项目背景 在使用AI平台或智能体时，我们发现智能体无法直接访问微信公众号文章内容。为了解决这个问题，我们开发了这个基于MCP协议的爬虫服务，让AI智能体能够获取和分析微信公众号的内容。 ✨ 核心特性 - 🤖 FastMCP框架 - 基于FastMCP高级封装，简化MCP"
+title: "MCPWeChatOfficialAccounts"
+description: "MCP WeChat Official Account Crawler A WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…"
 ---
 
-# MCP微信公众号爬虫
+# MCPWeChatOfficialAccounts
 
-MCP微信公众号爬虫 基于 FastMCP 框架构建的微信公众号文章爬虫系统，让AI智能体能够直接访问和分析微信公众号内容。通过MCP (Model Context Protocol) 标准协议，实现AI智能体与Selenium爬虫的无缝集成。 🎯 项目背景 在使用AI平台或智能体时，我们发现智能体无法直接访问微信公众号文章内容。为了解决这个问题，我们开发了这个基于MCP协议的爬虫服务，让AI智能体能够获取和分析微信公众号的内容。 ✨ 核心特性 - 🤖 FastMCP框架 - 基于FastMCP高级封装，简化MCP
+MCP WeChat Official Account Crawler A WeChat official account article crawler system built on the FastMCP framework, enabling AI agents to directly access and analyze WeChat official account content…
 
-# MCP微信公众号爬虫
+# MCP WeChat Official Account Crawler
 
 [![Python](/mcp-assets/d59218ebaf72462fc74fe3c1ee52295b.svg)](https://python.org)
 [![MCP](/mcp-assets/c56f5f4d83b01dc20d77e4e6b62b8d82.svg)](https://github.com/modelcontextprotocol)
 [![FastMCP](/mcp-assets/8bb5e1d955292db8ba472ab7db933f7d.svg)](https://github.com/jlowin/fastmcp)
 ![License](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)
 
-基于 **FastMCP** 框架构建的微信公众号文章爬虫系统，让AI智能体能够直接访问和分析微信公众号内容。通过MCP (Model Context Protocol) 标准协议，实现AI智能体与Selenium爬虫的无缝集成。
+A WeChat official account article crawler system built on the **FastMCP** framework, enabling AI agents to directly access and analyze WeChat official account content. Through the MCP (Model Context Protocol) standard, seamless integration between AI agents and Selenium crawlers is achieved.
 
-## 🎯 项目背景
+## 🎯 Project Background
 
-在使用AI平台或智能体时，我们发现智能体无法直接访问微信公众号文章内容。为了解决这个问题，我们开发了这个基于MCP协议的爬虫服务，让AI智能体能够获取和分析微信公众号的内容。
+When using AI platforms or agents, we found that these agents could not directly access the content of WeChat official account articles. To solve this problem, we developed this MCP-protocol-based crawler service, allowing AI agents to fetch and analyze the content of WeChat official accounts.
 
-## ✨ 核心特性
+## ✨ Core Features
 
-- 🤖 **FastMCP框架** - 基于FastMCP高级封装，简化MCP服务器开发
-- 🕷️ **智能爬虫** - 使用Selenium自动化浏览器，支持动态内容抓取
-- 🖼️ **图片处理** - 自动下载文章图片并转换为本地文件
-- 📊 **内容分析** - 提供文章统计、关键词提取等分析功能
-- 🔌 **标准协议** - 完全兼容MCP 1.0+规范，支持stdio通信
-- 🎯 **AI集成** - 可与Claude Desktop、ChatGPT等AI智能体无缝集成
-- 💻 **多种接口** - 提供Python API和交互式命令行界面
+- 🤖 **FastMCP Framework** - Advanced encapsulation based on FastMCP, simplifying MCP server development
+- 🕷️ **Smart Crawler** - Uses Selenium for browser automation, supporting dynamic content scraping
+- 🖼️ **Image Processing** - Automatically downloads article images and converts them into local files
+- 📊 **Content Analysis** - Provides article statistics, keyword extraction, and other analytical functions
+- 🔌 **Standard Protocol** - Fully compatible with MCP 1.0+ specifications, supporting stdio communication
+- 🎯 **AI Integration** - Seamless integration with AI agents like Claude Desktop, ChatGPT, etc.
+- 💻 **Multiple Interfaces** - Offers Python API and an interactive command-line interface
 
-## 🏗️ 系统架构
+## 🏗️ System Architecture
 
 ```mermaid
+
 graph TB
+
     subgraph "AI智能体层"
+
         A[Claude Desktop]
+
         B[ChatGPT]
+
         C[其他AI智能体]
+
     end
+
     
+
     subgraph "MCP协议层"
+
         D[MCP客户端]
+
         E[stdio通信]
+
         F[MCP服务器
 FastMCP]
+
     end
+
     
+
     subgraph "爬虫引擎层"
+
         G[Selenium WebDriver]
+
         H[Chrome浏览器]
+
         I[图片下载器]
+
     end
+
     
+
     subgraph "数据存储层"
+
         J[JSON文件]
+
         K[TXT文件]
+
         L[图片文件]
+
     end
+
     
+
     A --> D
+
     B --> D
+
     C --> D
+
     D  E
+
     E  F
+
     F --> G
+
     G --> H
+
     F --> I
+
     G --> J
+
     G --> K
+
     I --> L
+
 ```
+### 🔧 Core Components
 
-### 🔧 核心组件
+#### 1. FastMCP Server (`server.py`)
+- Advanced encapsulation based on the FastMCP framework
+- Provides 3 core tools: article crawling, content analysis, and statistical information
+- Singleton pattern management for Selenium crawler instances
+- Comprehensive error handling and parameter validation
 
-#### 1. FastMCP服务器 (`server.py`)
-- 基于FastMCP框架的高级封装
-- 提供3个核心工具：文章爬取、内容分析、统计信息
-- 单例模式管理Selenium爬虫实例
-- 完整的错误处理和参数验证
+#### 2. MCP Standard Client (`client.py`)
+- Implementation of a standard MCP protocol client
+- Asynchronous communication and session management
+- Interactive command-line interface
+- Python API interface
 
-#### 2. MCP标准客户端 (`client.py`)
-- 标准MCP协议客户端实现
-- 异步通信和会话管理
-- 交互式命令行界面
-- Python API接口
+#### 3. Selenium Crawler Engine (`weixin_spider_simple.py`)
+- Automation control of Chrome browsers
+- Anti-crawling mechanism handling
+- Image downloading and format conversion
+- Multi-format file saving
 
-#### 3. Selenium爬虫引擎 (`weixin_spider_simple.py`)
-- Chrome浏览器自动化控制
-- 反爬虫机制处理
-- 图片下载和格式转换
-- 多格式文件保存
+## 🚀 Quick Start
 
-## 🚀 快速开始
+### 📋 Environment Requirements
 
-### 📋 环境要求
+- **Python**: 3.8+ (recommended 3.10+)
+- **Browser**: Chrome/Chromium (automatically manages ChromeDriver)
+- **System**: macOS/Windows/Linux
 
-- **Python**: 3.8+ (推荐 3.10+)
-- **浏览器**: Chrome/Chromium (自动管理ChromeDriver)
-- **系统**: macOS/Windows/Linux
-
-### 📦 安装步骤
+### 📦 Installation Steps
 
 ```bash
+
 # 1. 克隆项目
+
 git clone 
+
 cd mcp-weixin
 
 # 2. 安装依赖
+
 pip install -r requirements.txt
+
 ```
+### 🎮 Launch Methods
 
-### 🎮 启动方式
-
-#### 模块化启动（推荐）
+#### Modular Launch (Recommended)
 
 ```bash
+
 # 启动MCP服务器
+
 python -m mcp_weixin_spider
 
 # 启动客户端演示
-python -m mcp_weixin_spider.client
-```
 
-## 🛠️ MCP工具接口
+python -m mcp_weixin_spider.client
+
+```
+## 🛠️ MCP Tool Interface
 
 ```yaml
+
 {
+
   "mcpServers": {
+
     "weixin_spider": {
+
       "command": "python",
+
       "args": [
+
         "本地路径/server.py"
+
       ],
+
       "env": {
+
         "ARTICLES_DIR": "articles",
+
         "DOWNLOAD_IMAGES": "true",
+
         "HEADLESS": "true",
+
         "WAIT_TIME": "10"
+
       }
+
     }
+
   }
+
 }
+
 ```
 
-**官方网站：** [https://github.com/ditingdapeng/MCPWeChatOfficialAccounts](https://github.com/ditingdapeng/MCPWeChatOfficialAccounts)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ditingdapeng/MCPWeChatOfficialAccounts](https://github.com/ditingdapeng/MCPWeChatOfficialAccounts)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`server.py`
+- Transport: `stdio`
+- Command: `python`
+- Args: `server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/huojunhong-hjh-mcpwechatofficialaccounts.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/huojunhong-hjh-mcpwechatofficialaccounts.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

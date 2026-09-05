@@ -1,11 +1,11 @@
 ---
-title: "JSON转Excel CSV by WTSolutions"
-description: "JSON转Excel MCP（模型上下文协议）提供了一个标准化的接口，用于将JSON数据转换为CSV格式字符串。它包括两个工具：json_to_excel_mcp_from_data和json_to_excel_mcp_from_url，可以将JSON数据或来自URL的JSON文件转换为CSV格式。"
+title: "JSON_to_Excel_MCP"
+description: "The JSON to Excel MCP (Model Context Protocol) provides a standardized interface for converting JSON data into CSV format string using the Model Context Protocol."
 ---
 
-# JSON转Excel CSV by WTSolutions
+# JSON_to_Excel_MCP
 
-JSON转Excel MCP（模型上下文协议）提供了一个标准化的接口，用于将JSON数据转换为CSV格式字符串。它包括两个工具：json_to_excel_mcp_from_data和json_to_excel_mcp_from_url，可以将JSON数据或来自URL的JSON文件转换为CSV格式。
+The JSON to Excel MCP (Model Context Protocol) provides a standardized interface for converting JSON data into CSV format string using the Model Context Protocol.
 
 # JSON to Excel MCP by WTSolutions
 
@@ -164,22 +164,22 @@ Free for now.
 
 [https://buymeacoffee.com/wtsolutions](https://buymeacoffee.com/wtsolutions)
 
-**官方网站：** [https://github.com/he-yang/json-to-excel-mcp](https://github.com/he-yang/json-to-excel-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/he-yang/json-to-excel-mcp](https://github.com/he-yang/json-to-excel-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `communication`
-- 标签：`developer tools`, `communication`, `file systems`, `json`, `excel`, `csv`, `wtsolutions`, `mcp`
+- Categories: `files`, `communication`
+- Tags: `developer tools`, `communication`, `file systems`, `json`, `excel`, `csv`, `wtsolutions`, `mcp`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://mcp2.wtsolutions.cn/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://mcp2.wtsolutions.cn/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wtsolutions-json-to-excel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wtsolutions-json-to-excel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

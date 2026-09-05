@@ -1,11 +1,11 @@
 ---
-title: "网易云音乐自动播放器"
-description: "网易云音乐自动播放器，支持所有快捷键操作、搜索歌曲播放、自定义歌单播放、每日推荐和漫游功能"
+title: "CloudMusic_Auto_Player"
+description: "NetEase Cloud Music Auto Player, supporting all shortcut key operations, song search and playback, custom playlist playback, daily recommendations, and roaming features."
 ---
 
-# 网易云音乐自动播放器
+# CloudMusic_Auto_Player
 
-网易云音乐自动播放器，支持所有快捷键操作、搜索歌曲播放、自定义歌单播放、每日推荐和漫游功能
+NetEase Cloud Music Auto Player, supporting all shortcut key operations, song search and playback, custom playlist playback, daily recommendations, and roaming features.
 
 # 🎵 网易云音乐 MCP 控制器
 
@@ -436,22 +436,22 @@ auto_music/
 
 **享受音乐，让控制更简单！** 🎵
 
-**官方网站：** [https://github.com/SpongeBaby-124/CloudMusic_Auto_Player](https://github.com/SpongeBaby-124/CloudMusic_Auto_Player)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SpongeBaby-124/CloudMusic_Auto_Player](https://github.com/SpongeBaby-124/CloudMusic_Auto_Player)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `音乐自动播放`
+- Categories: `media`
+- Tags: `entertainment and media`, `音乐自动播放`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`cloudmusic-auto-player==1.0.2`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `cloudmusic-auto-player==1.0.2`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/lixiande-cloudmusic-auto-player.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/lixiande-cloudmusic-auto-player.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

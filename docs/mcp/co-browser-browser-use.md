@@ -1,17 +1,18 @@
 ---
-title: "MCP Browser 控制器"
-description: "一个MCP服务器，它通过自然语言命令使AI助手能够控制网络浏览器，允许它们通过SSE传输浏览网站和提取信息。"
+title: "browser-use-mcp-server"
+description: "An MCP server that enables AI assistants to control a web browser through natural language commands, allowing them to navigate websites and extract information via SSE transport."
 ---
 
-# MCP Browser 控制器
+# browser-use-mcp-server
 
-一个MCP服务器，它通过自然语言命令使AI助手能够控制网络浏览器，允许它们通过SSE传输浏览网站和提取信息。
+An MCP server that enables AI assistants to control a web browser through natural language commands, allowing them to navigate websites and extract information via SSE transport.
 
 # ➡️ browser-use mcp server
 
-[browser-use](https://github.com/browser-use/browser-use) MCP Server with SSE transport
+[browser-use](https://github.com/browser-use/browser-use) MCP Server with SSE
+transport
 
-### 要求
+### requirements
 
 - uv
 
@@ -19,7 +20,7 @@ description: "一个MCP服务器，它通过自然语言命令使AI助手能够�
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 快速开始
+### quickstart
 
 ```
 uv sync
@@ -28,7 +29,7 @@ uv run playwright install --with-deps --no-shell chromium
 uv run server --port 8000
 ```
 
-- .env 文件需要以下内容：
+- the .env requires the following:
 
 ```
 OPENAI_API_KEY=[your api key]
@@ -36,9 +37,10 @@ CHROME_PATH=[only change this if you have a custom chrome build]
 PATIENT=false # Set to true if you want api calls to wait for tasks to complete (default is false)
 ```
 
-- 我们将增加对其他 LLM 提供商的支持，以支持 browser-use（例如 Claude, Grok, Bedrock 等）
+- we will be adding support for other LLM providers to power browser-use
+  (claude, grok, bedrock, etc)
 
-在构建 Docker 镜像时，您可以使用 Docker 秘钥来设置 VNC 密码：
+when building the docker image, you can use Docker secrets for VNC password:
 
 ```
 # With Docker secrets (recommended for production)
@@ -49,16 +51,17 @@ docker run -v $(pwd)/vnc_password.txt:/run/secrets/vnc_password your-image-name
 docker build .
 ```
 
-### 工具
+### tools
 
-- [x] SSE 传输
-- [x] browser_use - 使用 URL 和操作启动浏览器任务
-- [x] browser_get_result - 获取异步浏览器任务的结果
-- [x] VNC 服务器 - 将容器化的浏览器流式传输到客户端
+- [x] SSE transport
+- [x] browser_use - Initiates browser tasks with URL and action
+- [x] browser_get_result - Retrieves results of async browser tasks
+- [x] VNC server - stream the dockerized browser to your client
 
 ### VNC
 
-Dockerfile 中包含一个默认密码为 `browser-use` 的 VNC 服务器。连接方法如下：
+the dockerfile has a vnc server with a default password of browser-use. connect
+to it:
 
 ```
 docker build -t  browser-use-mcp-server .
@@ -68,16 +71,18 @@ cd noVNC
 ./utils/novnc_proxy --vnc localhost:5900
 ```
 
-### 支持的客户端
+### supported clients
 
 - cursor.ai
 - claude desktop
 - claude code
-- windsurf ([windsurf](https://codeium.com/windsurf) 目前还不支持 SSE)
+- windsurf ([windsurf](https://codeium.com/windsurf) does not support SSE
+  yet)
 
-### 使用方法
+### usage
 
-运行服务器后，在您的客户端界面中添加 [http://localhost:8000/sse](http://localhost:8000/sse)，或者在 mcp.json 文件中添加：
+after running the server, add http://localhost:8000/sse to your client UI, or in
+a mcp.json file:
 
 ```json
 {
@@ -100,34 +105,34 @@ cd noVNC
 #### claude
 
 - `~/Library/Application Support/Claude/claude_desktop_config.json`
-- `%APPDATA%\Claude\claude_desktop_config.json`
+- `%APPDATA%Claudeclaude_desktop_config.json`
 
-然后尝试向您的 LLM 提出以下请求：
+then try asking your LLM the following:
 
-`打开 https://news.ycombinator.com 并返回排名最高的文章`
+`open https://news.ycombinator.com and return the top ranked article`
 
-### 帮助
+### help
 
-对于问题或兴趣，请联系 @ [https://cobrowser.xyz](https://cobrowser.xyz)
+for issues or interest reach out @ https://cobrowser.xyz
 
-# 星标
+# stars
 
-**官方网站：** [https://github.com/co-browser/browser-use-mcp-server](https://github.com/co-browser/browser-use-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/co-browser/browser-use-mcp-server](https://github.com/co-browser/browser-use-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/co-browser-browser-use.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/co-browser-browser-use.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

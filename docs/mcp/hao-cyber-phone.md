@@ -1,39 +1,39 @@
 ---
-title: "MCP手机控制插件"
-description: "一个用于MCP的插件，它使人工智能助手能够控制安卓手机，通过自然语言命令实现打电话、发信息、截屏和访问联系人等功能。"
+title: "phone-mcp"
+description: "A plugin for MCP that enables AI assistants to control Android phones, allowing functions like making calls, sending messages, taking screenshots, and accessing contacts through natural language comma…"
 ---
 
-# MCP手机控制插件
+# phone-mcp
 
-一个用于MCP的插件，它使人工智能助手能够控制安卓手机，通过自然语言命令实现打电话、发信息、截屏和访问联系人等功能。
+A plugin for MCP that enables AI assistants to control Android phones, allowing functions like making calls, sending messages, taking screenshots, and accessing contacts through natural language comma…
 
-# 📱 手机MCP插件
+# 📱 Phone MCP Plugin
 ![Downloads](/mcp-assets/4d1f3086984595e9109c4d2031038cd5.svg)
 
-🌟 一个强大的MCP插件，通过ADB命令轻松控制你的Android手机。
+🌟 A powerful MCP plugin that lets you control your Android phone with ease through ADB commands.
 
-## 示例
-- 根据浏览器中的今日天气，自动选择并播放网易音乐，无需确认
+## Example
+- Based on today's weather by browser, automatically select and play netease music, no confirmation needed
 ![play_mucic_x2](/mcp-assets/7ffd54c65ff5e102cecec104ce488286.gif)
 
-- 从联系人中呼叫Hao。如果他不接电话，发送短信告诉他来101会议室。
+- Call Hao from the contacts. If he doesn't answer, send a text message telling him to come to Meeting Room 101.
 ![call_sms_x2](/mcp-assets/0ca7d3fcf13379dd8980c9a9cea21e5e.gif)
 
 [中文文档](https://github.com/hao-cyber/phone-mcp/blob/HEAD/README_zh.md)
 
-## ⚡ 快速开始
+## ⚡ Quick Start
 
-### 📥 安装
+### 📥 Installation
 ```bash
 pip install phone-mcp
 # or use uvx
 uvx phone-mcp
 ```
 
-### 🔧 配置
+### 🔧 Configuration
 
-#### Cursor设置
-在`~/.cursor/mcp.json`中配置：
+#### Cursor Setup
+Configure in `~/.cursor/mcp.json`:
 ```json
 {
     "mcpServers": {
@@ -47,8 +47,8 @@ uvx phone-mcp
 }
 ```
 
-#### Claude设置
-添加到Claude配置中：
+#### Claude Setup
+Add to Claude configuration:
 ```json
 {
     "mcpServers": {
@@ -62,42 +62,42 @@ uvx phone-mcp
 }
 ```
 
-使用方法：
-- 直接在Claude对话中使用命令，例如：
+Usage:
+- Use commands directly in Claude conversation, for example:
 ```
-  请呼叫联系人hao
+  Please call contact hao
 ```
 
-⚠️ 使用前，请确保：
-- ADB已正确安装和配置
-- 你的Android设备上已启用USB调试
-- 设备通过USB连接到电脑
+⚠️ Before using, ensure:
+- ADB is properly installed and configured
+- USB debugging is enabled on your Android device
+- Device is connected to computer via USB
 
-## 🎯 主要功能
+## 🎯 Key Features
 
-- 📞 **通话功能**：拨打电话、结束通话、接听来电
-- 💬 **消息**：发送和接收短信、获取原始消息
-- 👥 **联系人**：访问手机联系人、通过自动化UI交互创建新联系人
-- 📸 **媒体**：截屏、屏幕录制、媒体控制
-- 📱 **应用程序**：启动应用、通过意图启动特定活动、列出已安装的应用、终止应用
-- 🔧 **系统**：窗口信息、应用快捷方式
-- 🗺️ **地图**：根据电话号码搜索兴趣点
-- 🖱️ **UI交互**：点击、滑动、输入文本、按键
-- 🔍 **UI检查**：按文本、ID、类或描述查找元素
-- 🤖 **UI自动化**：等待元素、滚动查找元素
-- 🧠 **屏幕分析**：结构化的屏幕信息和统一的交互
-- 🌐 **网络浏览器**：在设备默认浏览器中打开URL
-- 🔄 **UI监控**：监控UI变化，并等待特定元素出现或消失
+- 📞 **Call Functions**: Make calls, end calls, receive incoming calls
+- 💬 **Messaging**: Send and receive SMS, get raw messages
+- 👥 **Contacts**: Access phone contacts, create new contacts with automated UI interaction
+- 📸 **Media**: Screenshots, screen recording, media control
+- 📱 **Apps**: Launch applications, launch specific activities with intents, list installed apps, terminate apps
+- 🔧 **System**: Window info, app shortcuts
+- 🗺️ **Maps**: Search POIs with phone numbers
+- 🖱️ **UI Interaction**: Tap, swipe, type text, press keys
+- 🔍 **UI Inspection**: Find elements by text, ID, class or description
+- 🤖 **UI Automation**: Wait for elements, scroll to find elements
+- 🧠 **Screen Analysis**: Structured screen information and unified interaction
+- 🌐 **Web Browser**: Open URLs in device's default browser
+- 🔄 **UI Monitoring**: Monitor UI changes and wait for specific elements to appear or disappear
 
-## 🛠️ 要求
+## 🛠️ Requirements
 
 - Python 3.7+
-- 启用了USB调试的Android设备
-- ADB工具
+- Android device with USB debugging enabled
+- ADB tools
 
-## 📋 基本命令
+## 📋 Basic Commands
 
-### 设备与连接
+### Device & Connection
 ```bash
 # Check device connection
 phone-cli check
@@ -106,7 +106,7 @@ phone-cli check
 phone-cli screen-interact find method=clickable
 ```
 
-### 通讯
+### Communication
 ```bash
 # Make a call
 phone-cli call 1234567890
@@ -130,7 +130,7 @@ phone-cli contacts --limit 20
 phone-cli create-contact "John Doe" "1234567890"
 ```
 
-### 媒体与应用
+### Media & Apps
 ```bash
 # Take screenshot
 phone-cli screenshot
@@ -172,7 +172,7 @@ phone-cli launch com.android.dialer/com.android.dialer.DialtactsActivity
 phone-cli open-url google.com
 ```
 
-### 屏幕分析与交互
+### Screen Analysis & Interaction
 ```bash
 # Analyze current screen with structured information
 phone-cli analyze-screen
@@ -224,122 +224,121 @@ phone-cli monitor-ui --watch-for class_appears --class-name "android.widget.Butt
 phone-cli monitor-ui --raw
 ```
 
-### 位置与地图
+### Location & Maps
 ```bash
 # Search nearby POIs with phone numbers
 phone-cli get-poi 116.480053,39.987005 --keywords restaurant --radius 1000
 ```
 
-## 📚 高级用法
+## 📚 Advanced Usage
 
-### 应用程序和活动启动
+### App and Activity Launch
 
-该插件提供了多种方式来启动应用程序和活动：
+The plugin provides multiple ways to launch apps and activities:
 
-1. **通过应用名称** (两种方法)：
+1. **By App Name** (Two Methods): 
 ```bash
-   # 方法 1: 使用 app 命令（可能在某些设备上不起作用）
+   # Method 1: Using app command (may not work on all devices)
    phone-cli app camera
    
-   # 方法 2: 使用 open_app 命令（如果 app 命令失败时的替代方案）
+   # Method 2: Using open_app command (alternative if app command fails)
    phone-cli open_app camera
 ```
 
-2. **通过包名** (两种方法)：
+2. **By Package Name** (Two Methods): 
 ```bash
-   # 方法 1: 使用 app 命令（可能在某些设备上不起作用）
+   # Method 1: Using app command (may not work on all devices)
    phone-cli app com.android.contacts
    
-   # 方法 2: 使用 open_app 命令（如果 app 命令失败时的替代方案）
+   # Method 2: Using open_app command (alternative if app command fails)
    phone-cli open_app com.android.contacts
 ```
 
-3. **通过包名和活动名** (最可靠的方法)：
+3. **By Package and Activity** (Most Reliable Method):
 ```bash
-   # 此方法适用于所有设备
+   # This method works on all devices
    phone-cli launch com.android.dialer/com.android.dialer.DialtactsActivity
 ```
 
-> **注意**：如果您遇到 `app` 或 `open_app` 命令的问题，请始终使用带有完整组件名称（包/活动）的 `launch` 命令以获得最可靠的运行。
+> **Note**: If you encounter issues with the `app` or `open_app` commands, always use the `launch` command with the full component name (package/activity) for the most reliable operation.
 
-### 通过UI自动化创建联系人
+### Contact Creation with UI Automation
 
-插件提供了一种通过UI交互创建联系人的方式：
+The plugin provides a way to create contacts through UI interaction:
 
 ```bash
 # Create a new contact with UI automation
 phone-cli create-contact "John Doe" "1234567890"
 ```
 
-该命令将执行以下操作：
-1. 打开联系人应用程序
-2. 导航到联系人创建界面
-3. 填写姓名和电话号码字段
-4. 自动保存联系人
+This command will:
+1. Open the contacts app
+2. Navigate to the contact creation interface
+3. Fill in the name and phone number fields
+4. Save the contact automatically
 
-### 基于屏幕的自动化
+### Screen-Based Automation
 
-统一的屏幕交互接口使智能代理能够轻松地：
+The unified screen interaction interface allows intelligent agents to easily:
 
-1. **分析屏幕**：获取UI元素和文本的结构化分析
-2. **做出决策**：基于检测到的UI模式和可用操作
-3. **执行交互**：通过一致的参数系统
+1. **Analyze screens**: Get structured analysis of UI elements and text
+2. **Make decisions**: Based on detected UI patterns and available actions
+3. **Execute interactions**: Through a consistent parameter system
 
-### UI监控与自动化
+### UI Monitoring and Automation
 
-插件提供了强大的UI监控功能，用于检测界面变化：
+The plugin provides powerful UI monitoring capabilities to detect interface changes:
 
-1. **基本UI监控**：
+1. **Basic UI monitoring**:
 ```bash
-   # 以自定义间隔（秒）监控任何UI变化
+   # Monitor any UI changes with custom interval (seconds)
    phone-cli monitor-ui --interval 0.5 --duration 30
 ```
 
-2. **等待特定元素出现**：
+2. **Wait for specific elements to appear**:
 ```bash
-   # 等待文本出现（对自动化测试有用）
-   phone-cli monitor-ui --watch-for text_appears --text "登录成功"
+   # Wait for text to appear (useful for automated testing)
+   phone-cli monitor-ui --watch-for text_appears --text "Login successful"
    
-   # 等待特定ID出现
+   # Wait for specific ID to appear
    phone-cli monitor-ui --watch-for id_appears --id "confirmation_dialog"
 ```
 
-3. **监控元素消失**：
+3. **Monitor elements disappearing**:
 ```bash
-   # 等待文本消失
-   phone-cli monitor-ui --watch-for text_disappears --text "加载中..."
+   # Wait for text to disappear
+   phone-cli monitor-ui --watch-for text_disappears --text "Loading..."
 ```
 
-4. **获取详细的UI变化报告**：
+4. **Get detailed UI change reports**:
 ```bash
-   # 获取包含所有UI变化信息的原始JSON数据
+   # Get raw JSON data with all UI change information
    phone-cli monitor-ui --raw
 ```
 
-> **提示**：UI监控对于自动化脚本特别有用，可以等待加载屏幕完成或确认UI中的动作已生效。
+> **Tip**: UI monitoring is especially useful for automation scripts to wait for loading screens to complete or confirm that actions have taken effect in the UI.
 
-## 📚 详细文档
+## 📚 Detailed Documentation
 
-有关完整的文档和配置详情，请访问我们的 [GitHub仓库](https://github.com/hao-cyber/phone-mcp)。
+For complete documentation and configuration details, visit our [GitHub repository](https://github.com/hao-cyber/phone-mcp).
 
-## 🧰 工具文档
+## 🧰 Tool Documentation
 
-### 屏幕接口API
+### Screen Interface API
 
-插件提供了强大的屏幕接口，并具有全面的API来与设备进行交互。以下是关键功能及其参数：
+The plugin provides a powerful screen interface with comprehensive APIs for interacting with the device. Below are the key functions and their parameters:
 
 #### interact_with_screen
 ```python
 async def interact_with_screen(action: str, params: Dict[str, Any] = None) -> str:
     """Execute screen interaction actions"""
 ```
+- **Parameters:**
+  - `action`: Type of action ("tap", "swipe", "key", "text", "find", "wait", "scroll")
+  - `params`: Dictionary with parameters specific to each action type
+- **Returns:** JSON string with operation results
 
-- **参数:**
-  - `action`: 动作类型 ("tap", "swipe", "key", "text", "find", "wait", "scroll")
-  - `params`: 与每种动作类型相关的参数字典
-- **返回:** 包含操作结果的 JSON 字符串
-
-**示例:**
+**Examples:**
 ```python
 # Tap by coordinates
 result = await interact_with_screen("tap", {"x": 100, "y": 200})
@@ -371,126 +370,126 @@ result = await interact_with_screen("scroll", {"method": "text", "value": "Priva
 async def analyze_screen(include_screenshot: bool = False, max_elements: int = 50) -> str:
     """Analyze the current screen and provide structured information about UI elements"""
 ```
-- **参数:**
-  - `include_screenshot`: 结果中是否包含 base64 编码的截图
-  - `max_elements`: 要处理的最大 UI 元素数量
-- **返回:** 包含详细屏幕分析的 JSON 字符串
+- **Parameters:**
+  - `include_screenshot`: Whether to include base64-encoded screenshot in result
+  - `max_elements`: Maximum number of UI elements to process
+- **Returns:** JSON string with detailed screen analysis
 
 #### create_contact
 ```python
 async def create_contact(name: str, phone: str) -> str:
     """Create a new contact with the given name and phone number"""
 ```
-- **参数:**
-  - `name`: 联系人的全名
-  - `phone`: 联系人的电话号码
-- **返回:** 包含操作结果的 JSON 字符串
-- **位置:** 该函数位于 'contacts.py' 模块中，并实现了用于创建联系人的 UI 自动化
+- **Parameters:**
+  - `name`: The contact's full name
+  - `phone`: The phone number for the contact
+- **Returns:** JSON string with operation result
+- **Location:** This function is found in the 'contacts.py' module and implements UI automation to create contacts
 
 #### launch_app_activity
 ```python
 async def launch_app_activity(package_name: str, activity_name: Optional[str] = None) -> str:
     """Launch an app using package name and optionally an activity name"""
 ```
-- **参数:**
-  - `package_name`: 要启动的应用程序包名
-  - `activity_name`: 要启动的具体活动（可选）
-- **返回:** 包含操作结果的 JSON 字符串
-- **位置:** 该函数位于 'apps.py' 模块中
+- **Parameters:**
+  - `package_name`: The package name of the app to launch
+  - `activity_name`: The specific activity to launch (optional)
+- **Returns:** JSON string with operation result
+- **Location:** This function is found in the 'apps.py' module
 
 #### launch_intent
 ```python
 async def launch_intent(intent_action: str, intent_type: Optional[str] = None, extras: Optional[Dict[str, str]] = None) -> str:
     """Launch an activity using Android intent system"""
 ```
-- **参数:**
-  - `intent_action`: 要执行的动作
-  - `intent_type`: 意图的 MIME 类型（可选）
-  - `extras`: 随意图传递的额外数据（可选）
-- **返回:** 包含操作结果的 JSON 字符串
-- **位置:** 该函数位于 'apps.py' 模块中
+- **Parameters:**
+  - `intent_action`: The action to perform
+  - `intent_type`: The MIME type for the intent (optional)
+  - `extras`: Extra data to pass with the intent (optional)
+- **Returns:** JSON string with operation result
+- **Location:** This function is found in the 'apps.py' module
 
-## 📄 许可证
+## 📄 License
 
 Apache License, Version 2.0
 
-# 联系人创建工具
+# Contact Creation Tool
 
-此工具提供了一种使用 ADB 在 Android 设备上简单创建联系人的方法。
+This tool provides a simple way to create contacts on an Android device using ADB.
 
-## 前提条件
+## Prerequisites
 
 - Python 3.x
-- 已安装并配置好的 ADB (Android Debug Bridge)
-- 连接并授权 ADB 的 Android 设备
+- ADB (Android Debug Bridge) installed and configured
+- Android device connected and authorized for ADB
 
-## 使用方法
+## Usage
 
-### 基本用法
+### Basic Usage
 
-只需运行脚本：
+Simply run the script:
 
 ```bash
 python create_contact.py
 ```
 
-这将使用默认值创建一个联系人：
-- 账户名: "你的账户名"
-- 账户类型: "com.google"
+This will create a contact with default values:
+- Account name: "你的账户名"
+- Account type: "com.google"
 
-### 高级用法
+### Advanced Usage
 
-您可以使用 JSON 字符串提供自定义账户名和类型：
+You can provide custom account name and type using a JSON string:
 
 ```bash
 python create_contact.py '{"account_name": "your_account", "account_type": "com.google"}'
 ```
 
-### 输出
+### Output
 
-脚本输出一个包含以下内容的 JSON 对象：
-- `success`: 表示操作是否成功的布尔值
-- `message`: 从命令中获取的任何输出或错误消息
+The script outputs a JSON object with:
+- `success`: boolean indicating if the operation was successful
+- `message`: any output or error message from the command
 
-成功输出示例：
+Example success output:
 ```json
 {"success": true, "message": ""}
 ```
 
-## 错误处理
+## Error Handling
 
-- 如果 ADB 不可用或设备未连接，脚本将返回错误
-- 无效的 JSON 输入将导致错误消息
-- 任何 ADB 命令错误都将被捕获并在 message 字段中返回
+- If ADB is not available or device is not connected, the script will return an error
+- Invalid JSON input will result in an error message
+- Any ADB command errors will be captured and returned in the message field
 
-## 注意事项
+## Notes
 
-- 确保您的 Android 设备已连接并授权使用 ADB
-- 运行命令时，设备屏幕应处于解锁状态
-- 某些设备可能需要额外权限才能修改联系人
+- Make sure your Android device is connected and authorized for ADB use
+- The device screen should be unlocked when running the command
+- Some devices might require additional permissions to modify contacts
 
-### 应用程序和快捷方式
+### Apps & Shortcuts
 ```bash
 # Get app shortcuts (with pagination)
 phone-cli shortcuts --package "com.example.app"
 ```
 
-**官方网站：** [https://github.com/hao-cyber/phone-mcp](https://github.com/hao-cyber/phone-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hao-cyber/phone-mcp](https://github.com/hao-cyber/phone-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`os automation`, `communication`, `chinese`
+- Categories: `communication`
+- Tags: `os automation`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`phone-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `phone-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hao-cyber-phone.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hao-cyber-phone.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

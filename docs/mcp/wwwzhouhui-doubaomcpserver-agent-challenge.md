@@ -1,60 +1,58 @@
 ---
-title: "豆包文生图、图生视频、文生视频MCPServer（MCP&Agent挑战赛）"
-description: "Doubao MCP Server 是一个基于火山引擎豆包API的MCP（Model Context Protocol）服务器，为AI客户端提供强大的多模态生成能力。该项目将火山引擎豆包的先进AI生成能力集成到支持MCP协议的各种AI客户端中，让用户能够在熟悉的开发环境中直接使用文生图、文生视频、图生视频等功能。"
+title: "DoubaoMCPServer-MCP_Agent_Challenge"
+description: "Doubao MCP Server 项目简介"
 ---
 
-# 豆包文生图、图生视频、文生视频MCPServer（MCP&Agent挑战赛）
+# DoubaoMCPServer-MCP_Agent_Challenge
 
-Doubao MCP Server 是一个基于火山引擎豆包API的MCP（Model Context Protocol）服务器，为AI客户端提供强大的多模态生成能力。该项目将火山引擎豆包的先进AI生成能力集成到支持MCP协议的各种AI客户端中，让用户能够在熟悉的开发环境中直接使用文生图、文生视频、图生视频等功能。
+Doubao MCP Server 项目简介
 
 # Doubao MCP Server
 
-## 项目简介
+## Project Overview
 
-Doubao MCP Server 是一个基于火山引擎豆包API的MCP（Model Context Protocol）服务器，为AI客户端提供强大的多模态生成能力。该项目的开发初衷是为了将火山引擎豆包的先进AI生成能力集成到支持MCP协议的各种AI客户端中，让用户能够在熟悉的开发环境中直接使用文生图、文生视频、图生视频等功能。
+Doubao MCP Server is an MCP (Model Context Protocol) server based on the Volcano Engine Doubao API, providing powerful multimodal generation capabilities for AI clients. The project was developed with the aim of integrating the advanced AI generation capabilities of Volcano Engine Doubao into various AI clients that support the MCP protocol, allowing users to directly use features such as text-to-image, text-to-video, and image-to-video in their familiar development environments.
 
-**核心功能特性：**
+**Core Functional Features:**
 
-- **文生图**：根据文本描述生成高质量图片
-- **文生视频**：根据文本描述生成视频内容
-- **图生视频**：基于图片和文本描述生成动态视频
-- **图片编码**：支持本地图片文件转换为base64编码
-- **模型配置**：支持多种豆包AI模型选择
+- **Text-to-Image**: Generate high-quality images based on textual descriptions
+- **Text-to-Video**: Generate video content based on textual descriptions
+- **Image-to-Video**: Generate dynamic videos based on images and textual descriptions
+- **Image Encoding**: Support conversion of local image files to base64 encoding
+- **Model Configuration**: Support selection from multiple Doubao AI models
 
-**支持的AI模型：**
+**Supported AI Models:**
 
-- 文生图模型：`doubao-seedream-3-0-t2i-250415`
-- 图生视频模型：`doubao-seedance-1-0-lite-i2v-250428`
-- 文生视频模型：`doubao-seedance-1-0-lite-t2v-250428`
+- Text-to-Image Model: `doubao-seedream-3-0-t2i-250415`
+- Image-to-Video Model: `doubao-seedance-1-0-lite-i2v-250428`
+- Text-to-Video Model: `doubao-seedance-1-0-lite-t2v-250428`
 
-## 部署指南
+## Deployment Guide
 
-### **环境依赖**
+### **Environment Dependencies**
 
 - Python >= 3.13
-- 火山引擎豆包API密钥
+- Volcano Engine Doubao API Key
 
-### **安装方式**
+### **Installation Methods**
 
-**方式一：使用pip安装**
+**Method One: Install using pip**
 
-```bash
+bash
 pip install doubao-mcp-server
-```
 
-**方式二：使用uvx安装（推荐）**
+**Method Two: Install using uvx (Recommended)**
 
-```bash
+bash
 uvx doubao-mcp-server
-```
 
-### **客户端配置**
+### **Client Configuration**
 
-#### **Cursor配置**
+#### **Cursor Configuration**
 
-在 `~/.cursor/mcp.json` 文件中添加以下配置：
+Add the following configuration to the `~/.cursor/mcp.json` file:
 
-```json
+json
 {
   "mcpServers": {
     "doubao-mcp-server": {
@@ -68,39 +66,38 @@ uvx doubao-mcp-server
     }
   }
 }
-```
 
-#### **Cherry Studio配置**
+#### **Cherry Studio Configuration**
 
-1. 打开 Cherry Studio
+1. Open Cherry Studio
 
-2. 进入 **设置 → MCP Servers → 添加服务器**
+2. Go to **Settings → MCP Servers → Add Server**
 
-3. 配置参数：
-   - **名称**: `doubao-mcp-server`
-   - **描述**: `豆包AI生成服务`
-   - **类型**: `STDIO`
-   - **命令**: `uvx`
-   - **参数**: `doubao-mcp-server`
-   - **环境变量**: `DOUBAO_API_KEY=your-api-key-here`
+3. Configure the parameters:
+   - **Name**: `doubao-mcp-server`
+   - **Description**: `Doubao AI Generation Service`
+   - **Type**: `STDIO`
+   - **Command**: `uvx`
+   - **Arguments**: `doubao-mcp-server`
+   - **Environment Variables**: `DOUBAO_API_KEY=your-api-key-here`
    
-4. 点击保存并启用
+4. Click Save and Enable
 
-   详细图解
+   Detailed Diagrams
 
    ![image-20250615165107667](/mcp-assets/e99fa0dc242f4458043f32eab6f491c7.png)
 
 ![image-20250615165205135](/mcp-assets/bc21e97a249a4dc5eabc56c2bee8b6bd.png)
 
-配置好后，可以检查到工具有哪些
+After configuration, you can check which tools are available
 
 ![image-20250615165249803](/mcp-assets/7be6db8636e04a55c5b7c0405a430ab9.png)
 
-#### **Claude Desktop配置**
+#### **Claude Desktop Configuration**
 
-在 `claude_desktop_config.json` 文件中添加：
+Add the following to the `claude_desktop_config.json` file:
 
-```json
+json
 {
   "mcpServers": {
     "doubao-mcp-server": {
@@ -112,13 +109,12 @@ uvx doubao-mcp-server
     }
   }
 }
-```
 
-#### **Continue.dev配置**
+#### **Continue.dev Configuration**
 
-在 `config.json` 文件中添加：
+Add the following to the `config.json` file:
 
-```json
+json
 {
   "mcpServers": [
     {
@@ -131,155 +127,146 @@ uvx doubao-mcp-server
     }
   ]
 }
-```
 
-### **API密钥获取**
+### **API Key Acquisition**
 
-1. 访问 [火山引擎控制台](https://console.volcengine.com/)
+1. Visit the [Volcano Engine Console](https://console.volcengine.com/)
 
-2. 注册并登录账户
+2. Register and log in to your account
 
-3. 开通豆包大模型服务（需要分别授权开通各个模型）
+3. Activate the Doubao large model service (you need to authorize each model separately)
 
-   火山引擎模型，需要分别授权开通，点击开通管理
+   For Volcano Engine models, you need to authorize each one separately. Click on the management link to activate.
 
    ![image-20250614201840722](/mcp-assets/614d57a29c6e627aa0e2f4bd29ac1cf6.png)
 
-4. 在API管理中创建API密钥
+4. Create an API key in the API Management section
 
-   API 管理
+   API Management
 
    ![image-20250614201758573](/mcp-assets/b93179c87ed7356f066ab2da6c3a447c.png)
 
-## 可用工具
+## Available Tools
 
 ### **1. set_api_key**
 
-设置豆包API密钥
+Set the Doubao API key
 
-- `api_key` (string): 豆包API密钥
+- `api_key` (string): Doubao API key
 
 ### **2. text_to_image**
 
-根据文本描述生成图片
+Generate an image based on a textual description
 
-- `prompt` (string): 图片描述提示词
-- `size` (string, 可选): 图片尺寸，默认"1024x1024"
-- `model` (string, 可选): 模型名称
+- `prompt` (string): Description prompt for the image
+- `size` (string, optional): Image size, default is "1024x1024"
+- `model` (string, optional): Model name
 
-**支持的图片尺寸**: 512x512, 768x768, 1024x1024, 1024x1792, 1792x1024
+**Supported Image Sizes**: 512x512, 768x768, 1024x1024, 1024x1792, 1792x1024
 
 ### **3. text_to_video**
 
-根据文本描述生成视频
+Generate a video based on a textual description
 
-- `prompt` (string): 视频描述提示词
-- `duration` (string, 可选): 视频时长（秒），默认"5"
-- `ratio` (string, 可选): 视频比例，默认"16:9"
-- `model` (string, 可选): 模型名称
+- `prompt` (string): Description prompt for the video- `duration` (string, optional): Video duration in seconds, default "5"
+- `ratio` (string, optional): Video aspect ratio, default "16:9"
+- `model` (string, optional): Model name
 
-**支持的视频比例**: 16:9, 9:16, 1:1
+**Supported video ratios**: 16:9, 9:16, 1:1
 
 ### **4. image_to_video**
 
-根据图片和文本描述生成视频
+Generates a video based on an image and a text description.
 
-- `prompt` (string): 视频描述提示词
-- `image_base64` (string): 图片的base64编码字符串
-- `duration` (string, 可选): 视频时长（秒），默认"5"
-- `ratio` (string, 可选): 视频比例，默认"16:9"
-- `model` (string, 可选): 模型名称
+- `prompt` (string): Prompt for the video description
+- `image_base64` (string): Base64 encoded string of the image
+- `duration` (string, optional): Video duration in seconds, default "5"
+- `ratio` (string, optional): Video aspect ratio, default "16:9"
+- `model` (string, optional): Model name
 
 ### **5. encode_image_to_base64**
 
-将本地图片文件编码为base64字符串
+Encodes a local image file into a base64 string.
 
-- `image_path` (string): 图片文件路径
+- `image_path` (string): Path to the image file
 
-## 使用示例
+## Usage Examples
 
-### **文生图示例**
+### **Text-to-Image Example**
 
-```
-请使用text_to_image工具生成一张"夕阳下的海边风景"图片
-```
+Use the text_to_image tool to generate an image of "sunset by the seaside".
 
-### **文生视频示例**
+### **Text-to-Video Example**
 
-```
-请使用text_to_video工具生成一个"猫咪在花园里玩耍"的5秒视频
-```
+Use the text_to_video tool to generate a 5-second video of "a cat playing in the garden".
 
-### **图生视频示例**
+### **Image-to-Video Example**
 
-```
-首先使用encode_image_to_base64将图片编码，然后使用image_to_video生成视频
-```
+First, use encode_image_to_base64 to encode the image, then use image_to_video to generate the video.
 
-  图解案例（文生生图）
+  Illustrative case (text-to-image)
 
   ![image-20250615165711353](/mcp-assets/cea13a747b0ab53f739e9ef3863cfaee.png)
 
-文生视频
+Text-to-video
 
 ![image-20250615165906609](/mcp-assets/c26cb67a405392321c30401d037ce070.png)
 
-生成的视频
+Generated video
 
 ![image-20250615170034340](/mcp-assets/1018befe1bbf7c254299dfa65df85f7b.png)
 
-## 注意事项
+## Notes
 
-- 视频生成任务可能需要较长时间完成，请耐心等待
-- 确保API密钥有足够的配额
-- 生成的内容URL有时效性，请及时保存
+- Video generation tasks may take a long time to complete, please be patient.
+- Ensure that your API key has sufficient quota.
+- The URLs of generated content are time-limited, please save them promptly.
 
-## 故障排除
+## Troubleshooting
 
-### **常见问题**
+### **Common Issues**
 
-1. **API密钥错误**: 确保API密钥正确且有效
-2. **网络连接问题**: 检查网络连接和防火墙设置
-3. **模型不可用**: 确认使用的模型名称正确
+1. **API Key Error**: Make sure the API key is correct and valid.
+2. **Network Connection Issue**: Check your network connection and firewall settings.
+3. **Model Unavailable**: Confirm that the model name is correct.
 
-### **调试模式**
+### **Debug Mode**
 
-启用详细日志输出：
+Enable detailed log output:
 
-```bash
+bash
 uvx doubao-mcp-server --verbose
-```
 
-## 项目信息
+## Project Information
 
-**许可证**: MIT License
+**License**: MIT License
 
-**作者**: wwzhouhui - [75271002@qq.com](mailto:75271002@qq.com)
+**Author**: wwzhouhui - [75271002@qq.com](mailto:75271002@qq.com)
 
-**版本**: v0.1.0
+**Version**: v0.1.0
 
-- 初始版本发布
-- 支持文生图、文生视频、图生视频功能
-- 集成火山引擎豆包API
+- Initial version release
+- Supports text-to-image, text-to-video, and image-to-video functionalities
+- Integrated with Volcano Engine Doubao API
 
-**贡献**: 欢迎提交Issue和Pull Request来改进这个项目
+**Contributions**: Feel free to submit Issues and Pull Requests to improve this project.
 
-**官方网站：** [https://github.com/wwwzhouhui/doubao_mcp_server](https://github.com/wwwzhouhui/doubao_mcp_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wwwzhouhui/doubao_mcp_server](https://github.com/wwwzhouhui/doubao_mcp_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`doubao-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `doubao-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wwwzhouhui-doubaomcpserver-agent-challenge.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wwwzhouhui-doubaomcpserver-agent-challenge.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

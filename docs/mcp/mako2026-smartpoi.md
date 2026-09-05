@@ -1,114 +1,106 @@
 ---
-title: "景点智能推荐"
-description: "景点智能推荐 MCP Server（mcp-poi-smart-recommend） 一、产品介绍 以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。 二、工具能力 ▸ recommendpoi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接 ▸ searchpoi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选 ▸ searchfast"
+title: "SmartPoi"
+description: "Intelligent Attraction Recommendation MCP Server (mcp-poi-smart-recommend) I. Product Introduction A 6-in-1 intelligent recommendation service centered on attraction recommendations, covering the enti…"
 ---
 
-# 景点智能推荐
+# SmartPoi
 
-景点智能推荐 MCP Server（mcp-poi-smart-recommend） 一、产品介绍 以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。 二、工具能力 ▸ recommendpoi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接 ▸ searchpoi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选 ▸ searchfast
+Intelligent Attraction Recommendation MCP Server (mcp-poi-smart-recommend) I. Product Introduction A 6-in-1 intelligent recommendation service centered on attraction recommendations, covering the enti…
 
-景点智能推荐 MCP Server（mcp-poi-smart-recommend）
+Intelligent Attraction Recommendation MCP Server (mcp-poi-smart-recommend)
 
-一、产品介绍
+I. Product Introduction
 
-以景点推荐为核心的 6 合 1 智能推荐服务，覆盖从「想去哪玩」到「怎么去」的全流程。结合飞猪旅行门票数据与高德地图位置服务，提供 AI 推荐、结构化搜索、周边发现、天气预报、交通规划等能力。
+A 6-in-1 intelligent recommendation service centered on attraction recommendations, covering the entire process from "where to go" to "how to get there." By integrating Fliggy travel ticket data with AMap location services, it provides capabilities such as AI recommendations, structured search, nearby discovery, weather forecasting, and transportation planning.
 
-二、工具能力
+II. Tool Capabilities
 
-▸ recommend_poi：AI 智能推荐景点，自然语言描述即可返回最合适的景点及门票价格与预订链接
+▸ recommend_poi: AI intelligent attraction recommendation, where a natural language description returns the most suitable attractions along with ticket prices and booking links
 
-▸ search_poi：结构化搜索景点门票，支持按城市、关键词、类型、等级多维筛选
+▸ search_poi: Structured search for attraction tickets, supporting multi-dimensional filtering by city, keyword, type, and level
 
-▸ search_fast：极速搜索，快速查询景点、门票、线路等信息
+▸ search_fast: Rapid search, quickly querying information about attractions, tickets, and routes
 
-▸ nearby_poi：周边景点发现，基于位置搜索附近景点，返回距离、评分、地址
+▸ nearby_poi: Nearby attraction discovery, searching for nearby attractions based on location, returning distance, rating, and address
 
-▸ search_weather：查询目的地天气预报，辅助出行决策
+▸ search_weather: Querying destination weather forecasts to assist in travel decision-making
 
-▸ search_transport：交通方案规划，含打车预估、地铁/公交换乘方案 + 一键打车链接
+▸ search_transport: Transportation planning, including taxi fare estimates, subway/bus transfer plans, and one-click taxi booking links
 
-三、使用场景
+III. Usage Scenarios
 
-▸ 出行规划：根据兴趣偏好推荐目的地景点
+▸ Travel Planning: Recommending destination attractions based on interest preferences
 
-▸ 门票查询：按城市、类型、等级搜索景点门票价格和预订链接
+▸ Ticket Inquiry: Searching for attraction ticket prices and booking links by city, type, and level
 
-▸ 周边游玩：基于当前位置发现附近隐藏好去处
+▸ Nearby Exploration: Discovering hidden gems near the current location
 
-▸ 出行准备：提前了解目的地天气和交通方案
+▸ Travel Preparation: Getting ahead of the game by understanding the destination's weather and transportation options
 
-四、使用方式
+IV. Usage Instructions
 
-本 MCP 服务通过 PyPI 分发，使用以下命令安装：
+This MCP service is distributed via PyPI. Install it using the following command:
 
 bash
-1
-2
 pip install mcp-poi-smart-recommend
 
-
-
-安装后在 MCP 客户端配置中添加 Server 命令：
+After installation, add the Server command in the MCP client configuration:
 
 bash
-1
-2
 mcp-poi-smart-recommend
 
+V. Parameter Explanation
 
+recommend_poi (AI Intelligent Recommendation)
 
-五、参数说明
+▸ query (required): Description for attraction recommendation, in natural language, e.g., "seaside attractions suitable for families in Sanya," "5A scenic spots recommended in Hangzhou"
 
-recommend_poi（AI 智能推荐）
+search_poi (Structured Search for Attraction Tickets)
 
-▸ query（必填）：景点推荐描述，自然语言，如「三亚适合亲子的海边景点」「杭州 5A 景区推荐」
+▸ cityName (required): City name, such as Hangzhou, Xi'an
 
-search_poi（结构化搜索景点门票）
+▸ keyword (optional): Keywords for the attraction name, such as the Forbidden City, the Great Wall, Disneyland
 
-▸ cityName（必填）：城市名，如杭州、西安
+▸ category (optional): Type of attraction, such as natural scenery, theme parks, cultural relics
 
-▸ keyword（可选）：景点名称关键词，如故宫、长城、迪士尼
+▸ poiLevel (optional): Attraction level 1-5 (5 being 5A), 0 indicates no limit
 
-▸ category（可选）：景点类型，如自然风光、主题乐园、人文古迹
+search_fast (Rapid Search)
 
-▸ poiLevel（可选）：景点等级 1-5（5 为 5A），0 表示不限
+▸ query (required): Search term, such as "Sanya attractions," "Beijing Forbidden City tickets," "Shanghai Disneyland"
 
-search_fast（极速搜索）
+nearby_poi (Nearby Attraction Discovery)
 
-▸ query（必填）：搜索词，如三亚景点、北京故宫门票、上海迪士尼
+▸ location (required): Current location or landmark, such as West Lake, The Bund, the Forbidden City
 
-nearby_poi（周边景点发现）
+▸ city (optional): City, such as Hangzhou, Shanghai, Beijing
 
-▸ location（必填）：当前位置或地标，如西湖、外滩、故宫
+▸ radius (optional): Search radius (in meters), default is 3000
 
-▸ city（可选）：所在城市，如杭州、上海、北京
+search_weather (Weather Forecast)
 
-▸ radius（可选）：搜索半径（米），默认 3000
+▸ query (required): Weather query description, such as "Sanya weather forecast," "Hangzhou weather tomorrow"
 
-search_weather（天气预报）
+search_transport (Transportation Planning)
 
-▸ query（必填）：天气查询描述，如三亚天气预报、杭州明天天气
+▸ query (required): Transportation query description, such as "Pudong Airport to The Bund (Shanghai)," "Beijing South Railway Station to the Forbidden City"
 
-search_transport（交通方案）
+**Official site: ** [https://pypi.org/project/mcp-poi-smart-recommend/](https://pypi.org/project/mcp-poi-smart-recommend/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-▸ query（必填）：交通查询描述，如「浦东机场到外滩（上海）」「北京南站到故宫」
+## Categories & Tags
 
-**官方网站：** [https://pypi.org/project/mcp-poi-smart-recommend/](https://pypi.org/project/mcp-poi-smart-recommend/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `景点推荐`, `chinese`
 
-## 分类与标签
+## MCP Configuration
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `景点推荐`, `chinese`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-poi-smart-recommend==5.0.1`
 
-## MCP 配置
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-poi-smart-recommend==5.0.1`
+## Data source
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/mako2026-smartpoi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-smartpoi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

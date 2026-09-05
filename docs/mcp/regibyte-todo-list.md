@@ -1,45 +1,45 @@
 ---
-title: "MCP任务清单"
-description: "一个模型上下文协议（MCP）服务器，提供管理待办事项的工具，包括创建、更新、完成、删除、搜索和汇总任务。"
+title: "todo-list-mcp"
+description: "A Model Context Protocol (MCP) server that provides tools for managing todo items, including creation, updating, completion, deletion, searching, and summarizing tasks."
 ---
 
-# MCP任务清单
+# todo-list-mcp
 
-一个模型上下文协议（MCP）服务器，提供管理待办事项的工具，包括创建、更新、完成、删除、搜索和汇总任务。
+A Model Context Protocol (MCP) server that provides tools for managing todo items, including creation, updating, completion, deletion, searching, and summarizing tasks.
 
-# 待办事项 MCP 服务器
+# Todo List MCP Server
 
-这是一个提供全面 API 的 Model Context Protocol (MCP) 服务器，用于管理待办事项。
+A Model Context Protocol (MCP) server that provides a comprehensive API for managing todo items.
 
   
 
-> **📚 学习资源**：此项目设计为 MCP 实现的教育示例。请参阅 [GUIDE.md](https://github.com/RegiByte/todo-list-mcp/blob/HEAD/GUIDE.md) 以了解项目的详细工作原理及其实现方式。
+> **📚 Learning Resource**: This project is designed as an educational example of MCP implementation. See [GUIDE.md](https://github.com/RegiByte/todo-list-mcp/blob/HEAD/GUIDE.md) for a comprehensive explanation of how the project works and why things are implemented the way they are.
 
-## 功能
+## Features
 
-- **创建待办事项**：添加带有标题和 Markdown 描述的新任务
-- **更新待办事项**：修改现有任务
-- **完成待办事项**：标记任务为已完成
-- **删除待办事项**：从列表中移除任务
-- **搜索待办事项**：按标题或创建日期查找任务
-- **总结待办事项**：快速概览活动任务
+- **Create todos**: Add new tasks with title and markdown description
+- **Update todos**: Modify existing tasks
+- **Complete todos**: Mark tasks as done
+- **Delete todos**: Remove tasks from the list
+- **Search todos**: Find tasks by title or creation date
+- **Summarize todos**: Get a quick overview of active tasks
 
-## 工具
+## Tools
 
-此 MCP 服务器提供了以下工具：
+This MCP server exposes the following tools:
 
-1. `create-todo`：创建一个新的待办事项
-2. `list-todos`：列出所有待办事项
-3. `get-todo`：通过 ID 获取特定的待办事项
-4. `update-todo`：更新待办事项的标题或描述
-5. `complete-todo`：标记待办事项为已完成
-6. `delete-todo`：删除一个待办事项
-7. `search-todos-by-title`：按标题搜索待办事项（不区分大小写的部分匹配）
-8. `search-todos-by-date`：按创建日期搜索待办事项（格式：YYYY-MM-DD）
-9. `list-active-todos`：列出所有未完成的待办事项
-10. `summarize-active-todos`：生成所有活动（未完成）待办事项的摘要
+1. `create-todo`: Create a new todo item
+2. `list-todos`: List all todos
+3. `get-todo`: Get a specific todo by ID
+4. `update-todo`: Update a todo's title or description
+5. `complete-todo`: Mark a todo as completed
+6. `delete-todo`: Delete a todo
+7. `search-todos-by-title`: Search todos by title (case-insensitive partial match)
+8. `search-todos-by-date`: Search todos by creation date (format: YYYY-MM-DD)
+9. `list-active-todos`: List all non-completed todos
+10. `summarize-active-todos`: Generate a summary of all active (non-completed) todos
 
-## 安装
+## Installation
 
 ```bash
 # Clone the repository
@@ -53,19 +53,19 @@ npm install
 npm run build
 ```
 
-## 使用方法
+## Usage
 
-### 启动服务器
+### Starting the Server
 
 ```bash
 npm start
 ```
 
-### 与 Claude 桌面版配置
+### Configuring with Claude for Desktop
 
-#### Claude 桌面版
+#### Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -80,24 +80,24 @@ npm start
 
 #### Cursor
 
-- 前往“光标设置” -> MCP
-- 添加一个新的命令类型的 MCP 服务器
-- 添加服务器的绝对路径并使用 node 运行
-- 示例：node /absolute/path/to/todo-list-mcp/dist/index.js
+- Go to "Cursor Settings" -> MCP
+- Add a new MCP server with a "command" type
+- Add the absolute path of the server and run it with node
+- Example: node /absolute/path/to/todo-list-mcp/dist/index.js
 
-### 示例命令
+### Example Commands
 
-当与 Claude 桌面版或 Cursor 一起使用时，您可以尝试：
+When using with Claude for Desktop or Cursor, you can try:
 
-- “创建一个学习 MCP 的待办事项，并附上说明为什么 MCP 是有用的描述”
-- “列出我所有的活动待办事项”
-- “为明天的会议创建一个待办事项，并在 Markdown 中包含议程详情”
-- “将我的学习 MCP 待办事项标记为已完成”
-- “总结我所有的活动待办事项”
+- "Create a todo to learn MCP with a description explaining why MCP is useful"
+- "List all my active todos"
+- "Create a todo for tomorrow's meeting with details about the agenda in markdown"
+- "Mark my learning MCP todo as completed"
+- "Summarize all my active todos"
 
-## 项目结构
+## Project Structure
 
-此项目遵循清晰的关注点分离原则，使代码易于理解：
+This project follows a clear separation of concerns to make the code easy to understand:
 
 ```
 src/
@@ -109,49 +109,49 @@ src/
 └── index.ts      # Main entry point with MCP tool definitions
 ```
 
-## 从此项目中学习
+## Learning from This Project
 
-此项目设计为教育资源。为了最大限度地利用它：
+This project is designed as an educational resource. To get the most out of it:
 
-1. 阅读 [GUIDE.md](https://github.com/RegiByte/todo-list-mcp/blob/HEAD/GUIDE.md) 以获得设计的全面解释
-2. 研究源代码中的注释以了解实现细节
-3. 使用测试客户端查看服务器的实际运行情况
-4. 尝试添加自己的工具或扩展现有工具
+1. Read the [GUIDE.md](https://github.com/RegiByte/todo-list-mcp/blob/HEAD/GUIDE.md) for a comprehensive explanation of the design
+2. Study the heavily commented source code to understand implementation details
+3. Use the test client to see how the server works in practice
+4. Experiment with adding your own tools or extending the existing ones
 
-## 开发
+## Development
 
-### 构建
+### Building
 
 ```bash
 npm run build
 ```
 
-### 以开发模式运行
+### Running in Development Mode
 
 ```bash
 npm run dev
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/RegiByte/todo-list-mcp](https://github.com/RegiByte/todo-list-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/RegiByte/todo-list-mcp](https://github.com/RegiByte/todo-list-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`note taking`, `knowledge and memory`, `other`, `chinese`
+- Categories: `memory`
+- Tags: `note taking`, `knowledge and memory`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/absolute/path/to/todo-list-mcp/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/absolute/path/to/todo-list-mcp/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/regibyte-todo-list.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/regibyte-todo-list.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

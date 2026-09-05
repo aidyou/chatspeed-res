@@ -1,57 +1,73 @@
 ---
-title: "淡墨水字帖"
-description: "淡墨水字帖MCP远程服务器可免费生成/制作高清PDF格式的汉字字帖、词语默写/注音练习字帖、数学口算练习题、衡水体英文字帖和英语单词表。\n\nSSE地址：https://danmoshui.com/sse"
+title: "Worksheets_generator"
+description: "The Danmoshui MCP remote server can generate and create high-definition PDF format Chinese character sheets, word dictation/pinyin practice sheets, math mental arithmetic exercises, Hengshui-style Eng…"
 ---
 
-# 淡墨水字帖
+# Worksheets_generator
 
-淡墨水字帖MCP远程服务器可免费生成/制作高清PDF格式的汉字字帖、词语默写/注音练习字帖、数学口算练习题、衡水体英文字帖和英语单词表。
+The Danmoshui MCP remote server can generate and create high-definition PDF format Chinese character sheets, word dictation/pinyin practice sheets, math mental arithmetic exercises, Hengshui-style Eng…
 
-SSE地址：https://danmoshui.com/sse
+Light Ink Character Sheet MCP Remote Service, after configuration, can directly generate and download character sheets in AI conversations.
 
-淡墨水字帖MCP远程服务，配置后可以直接在AI对话中生成并下载字帖。
+SSE address: https://danmoshui.com/sse
 
-SSE地址：https://danmoshui.com/sse
+Kouzi Space configuration example:
 
-扣子空间配置示例：
 ```
+
 {
+
   "mcpServers": {
+
     "淡墨水字帖": {
+
       "url": "https://danmoshui.com/sse"
+
     }
+
   }
+
 }
+
+```
+Cherry-Studio configuration example:
+
 ```
 
-Cherry-Studio配置示例：
-```
 {
+
   "mcpServers": {
+
     "淡墨水字帖": {
+
       "type": "sse",
+
       "url": "https://danmoshui.com/sse"
+
     }
+
   }
+
 }
+
 ```
 
-**官方网站：** [https://danmoshui.com/software](https://danmoshui.com/software)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://danmoshui.com/software](https://danmoshui.com/software)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`knowledge and memory`, `art and culture`, `字帖生成`, `chinese`
+- Categories: `media`
+- Tags: `knowledge and memory`, `art and culture`, `字帖生成`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hanyoud-worksheets-generator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hanyoud-worksheets-generator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

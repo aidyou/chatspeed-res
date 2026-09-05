@@ -1,55 +1,55 @@
 ---
-title: "随申行mcp服务"
-description: "产品介绍 本目前支持查询坐标在上海市内的公交、地铁信息。 商务合作 1. 商务合作需求，请发送邮件至 databd@shmaas.cn 。 2. 商务合作完成后，系统会为商户配置商户id及盐值，用于请求鉴权。 发送请求 - 请求过程：连接初始化、发送业务请求 - 请求地址：https://apigtw.shmaas.net/ai-biz 连接初始化接口文档 - 请求地址: https://apigtw.shmaas.net/ai-biz/sse - 请求方式：GET - 返回示例： id:ba9de9a6-2ba6"
+title: "mcp-shmaas"
+description: "Product Introduction This currently supports querying bus and subway information for coordinates within Shanghai. Business Cooperation 1. For business cooperation inquiries, please send an email to da…"
 ---
 
-# 随申行mcp服务
+# mcp-shmaas
 
-产品介绍 本目前支持查询坐标在上海市内的公交、地铁信息。 商务合作 1. 商务合作需求，请发送邮件至 databd@shmaas.cn 。 2. 商务合作完成后，系统会为商户配置商户id及盐值，用于请求鉴权。 发送请求 - 请求过程：连接初始化、发送业务请求 - 请求地址：https://apigtw.shmaas.net/ai-biz 连接初始化接口文档 - 请求地址: https://apigtw.shmaas.net/ai-biz/sse - 请求方式：GET - 返回示例： id:ba9de9a6-2ba6
+Product Introduction This currently supports querying bus and subway information for coordinates within Shanghai. Business Cooperation 1. For business cooperation inquiries, please send an email to da…
 
-## 产品介绍
-本目前支持查询坐标在上海市内的公交、地铁信息。
+## Product Introduction
+This  currently supports querying bus and subway information for coordinates within Shanghai.
 
-### 商务合作
-1. 商务合作需求，请发送邮件至 databd@shmaas.cn 。
-2. 商务合作完成后，系统会为商户配置商户id及盐值，用于请求鉴权。
+### Business Cooperation
+1. For business cooperation inquiries, please send an email to databd@shmaas.cn.
+2. After the business cooperation is completed, the system will configure a merchant ID and salt value for the merchant, which will be used for request authentication.
 
-#### 发送请求
-- 请求过程：连接初始化、发送业务请求
-- 请求地址：`https://apigtw.shmaas.net/ai-biz`
+#### Sending Requests
+- Request process: Connection initialization, sending business requests
+- Request URL: `https://apigtw.shmaas.net/ai-biz`
 
-##### 连接初始化接口文档
-- 请求地址: `https://apigtw.shmaas.net/ai-biz/sse`
-- 请求方式：GET
-- 返回示例：
-```
+##### Connection Initialization API Documentation
+- Request URL: `https://apigtw.shmaas.net/ai-biz/sse`
+- Request Method: GET
+- Response Example:
+ 
 id:ba9de9a6-2ba6-4a00-a43e-7ef941891a94
 event:endpoint
 data:/mcp?sessionId=ba9de9a6-2ba6-4a00-a43e-7ef941891a94
-```
-其中`data:`后的path及查询参数作为业务请求的path及参数，示例拼接地址：`https://apigtw.shmaas.net/ai-biz/sse/mcp?sessionId=ba9de9a6-2ba6-4a00-a43e-7ef941891a94`
 
-##### 发送业务请求接口文档
-- 请求地址：与上述连接初始化接口返回的`data`拼接后的地址
-- 请求方式：POST
-- 请求参数：包含根级参数与`params`参数，具体如下
+The path and query parameters after `data:` are used as the path and parameters for the business request. Example concatenated URL: `https://apigtw.shmaas.net/ai-biz/sse/mcp?sessionId=ba9de9a6-2ba6-4a00-a43e-7ef941891a94`
 
-###### 根级参数
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
+##### Sending Business Request API Documentation
+- Request URL: The URL concatenated with the `data` returned from the connection initialization interface
+- Request Method: POST
+- Request Parameters: Include root-level parameters and `params` parameters, as detailed below
+
+###### Root-Level Parameters
+| Parameter Name | Type | Required | Description | Example Value |
 | --- | --- | --- | --- | --- |
-| jsonrpc | string | 是 | JSON-RPC协议版本 | "2.0" |
-| method | string | 是 | 调用的方法名 | "tools/call" |
-| id | string | 是 | 请求唯一标识符 | "e3f3b929-1" |
-| params | object | 是 | 方法参数对象 | - |
+| jsonrpc | string | Yes | JSON-RPC protocol version | "2.0" |
+| method | string | Yes | The name of the method being called | "tools/call" |
+| id | string | Yes | Unique identifier for the request | "e3f3b929-1" |
+| params | object | Yes | Object containing method parameters | - |
 
-###### params 参数
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
+###### params Parameters
+| Parameter Name | Type | Required | Description | Example Value |
 | --- | --- | --- | --- | --- |
-| name | string | 是 | 实际业务方法名 | "findNearByTrafficBus" |
-| arguments | object | 是 | 业务参数 | {"nearRadiusDistance":500,"cityCode":"310100","lat":"39.9042","lon":116.4074} |
+| name | string | Yes | Actual business method name | "findNearByTrafficBus" |
+| arguments | object | Yes | Business parameters | {"nearRadiusDistance":500,"cityCode":"310100","lat":"39.9042","lon":116.4074} |
 
-###### 请求体组装参数示例
-```json
+###### Example of Assembling Request Body Parameters
+json
 {
     "jsonrpc":"2.0",
     "method":"tools/call",
@@ -64,12 +64,11 @@ data:/mcp?sessionId=ba9de9a6-2ba6-4a00-a43e-7ef941891a94
         }
     }
 }
-```
 
-###### 请求头参数
-参考开放平台接入网关（地址：https://open-web.shmaas.cn/docs/guide ），需将请求的`arguments`原始报文按如下工具排序，根据排序后的网关计算`X-Sign`：
+###### Request Header Parameters
+Refer to the Open Platform Access Gateway (URL: https://open-web.shmaas.cn/docs/guide), you need to sort the original message of the `arguments` in the request as follows, and calculate the `X-Sign` based on the sorted gateway:
 
-```java
+java
 package com.maas.ai.util;
 
 import com.alibaba.fastjson2.JSON;
@@ -77,15 +76,15 @@ import com.alibaba.fastjson2.JSON;
 import java.util.*;
 
 /**
- * Map排序工具类
- * 用于将Map中的参数按key的ASCII码排序，并递归处理嵌套的Map
+ * Map sorting utility class
+ * Used to sort the parameters in the Map by ASCII code of the key, and recursively handle nested Maps
  */
 public class MapSortUtil {
 
     /**
-     * 将Map中的参数按key的ASCII码排序，并递归处理嵌套的Map
-     * @param params 参数Map
-     * @return 排序后的JSON字符串
+     * Sorts the parameters in the Map by ASCII code of the key, and recursively handles nested Maps
+     * @param params Parameter Map
+     * @return Sorted JSON string
      */
     public static String sortAndConvertToJson(Map params) {
         Map sortedMap = sortMapByKey(params);
@@ -93,9 +92,9 @@ public class MapSortUtil {
     }
 
     /**
-     * 递归排序Map，处理嵌套的Map和List
-     * @param map 待排序的Map
-     * @return 排序后的Map
+     * Recursively sorts the Map, handling nested Maps and Lists
+     * @param map Map to be sorted
+     * @return Sorted Map
      */
     @SuppressWarnings("unchecked")
     public static Map sortMapByKey(Map map) {
@@ -103,17 +102,17 @@ public class MapSortUtil {
             return null;
         }
         
-        // 使用TreeMap按key的ASCII码自动排序
+        // Use TreeMap to automatically sort by ASCII code of the key
         Map sortedMap = new TreeMap();
         
         for (Map.Entry entry : map.entrySet()) {
             Object value = entry.getValue();
             
             if (value instanceof Map) {
-                // 递归处理嵌套的Map
+                // Recursively handle nested Maps
                 sortedMap.put(entry.getKey(), sortMapByKey((Map) value));
             } else if (value instanceof List) {
-                // 处理List中可能嵌套的Map
+                // Handle possibly nested Maps in the List
                 List list = (List) value;
                 List processedList = new ArrayList();
                 for (Object item : list) {
@@ -131,180 +130,149 @@ public class MapSortUtil {
         
         return sortedMap;
     }
-}
-```
-
-## 能力介绍
-### 现有MCP协议功能
-目前提供2款MCP协议的功能，具体信息如下：
-#### 根据经纬度及距离查询附近公交
+}## Capability Introduction
+### Existing MCP Protocol Features
+Currently, two MCP protocol features are provided. The specific information is as follows:
+#### Query Nearby Buses Based on Latitude, Longitude, and Distance
 **params.name=findNearByTrafficBus**
-##### 业务参数说明
-**请求参数**
+##### Business Parameter Description
+**Request Parameters**
 
-| 名称              | 参数类型 | 描述               | 是否必须 | 说明                                   |
-| ----------------- | -------- | ------------------ | -------- | -------------------------------------- |
-| cityCode          | string   | 城市编码           | 是       | 默认310100；                           |
-| isGetStopArrive   | string   | 是否获取到站信息   | 否       | 1-获取，其他不获取；默认不获取；       |
-| lon               | string   | 经度               | 是       |                                        |
-| lat               | string   | 纬度               | 是       |                                        |
-| nearRadiusDistance| string   | 半径（单位：米）| 否       | 默认1000；                             |
-| coordinateType    | string   | 坐标类型           | 否       | 1：WGS-84，2：GC-J02，默认WGS-84；|
+| Name              | Parameter Type | Description               | Required | Notes                                   |
+| ----------------- | -------------- | ------------------------- | -------- | --------------------------------------- |
+| cityCode          | string         | City code                 | Yes      | Default 310100;                         |
+| isGetStopArrive   | string         | Whether to get arrival info| No       | 1 - Get, otherwise not; default not;    |
+| lon               | string         | Longitude                 | Yes      |                                         |
+| lat               | string         | Latitude                  | Yes      |                                         |
+| nearRadiusDistance| string         | Radius (unit: meters)     | No       | Default 1000;                           |
+| coordinateType    | string         | Coordinate type           | No       | 1: WGS-84, 2: GC-J02, default WGS-84;  |
 
+**Response Parameters**
 
-**响应参数**
+| Name                | Parameter Type | Description                                   | Notes                                  |
+| ------------------- | -------------- | --------------------------------------------- | -------------------------------------- |
+| retCode             | int            | Response code                                 | 0 indicates success                    |
+| retMsg              | string         | Response message                              |                                        |
+| - nearByTrafficLineStop | object        | Information about bus/subway line stops       |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int            | Unique data identifier                        |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineId        | string         | Line number                                   |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string         | Line name                                     |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;stopId        | string         | Stop number                                   |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;stopName      | string         | Stop name                                     |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string         | Starting stop name                            |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string         | Ending stop name                              |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string    | Earliest departure time - latest departure time | Format hh:mm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string      | Earliest arrival time - latest arrival time    | Format hh:mm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | string         | Up or down direction                          | 0 - Up, 1 - Down;                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;type          | string         | Public transport type                         | 1 - Bus, 2 - Subway, 3 - Ferry;        |
+| - point             | object         | Current stop's latitude and longitude         |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;lon          | string         | Longitude                                     |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;lat          | string         | Latitude                                      |                                        |
+| - sai               | object         | Vehicle arrival information                   |                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;currentBusDistance | string    | Distance of the nearest vehicle from this stop (unit: meters)| || &nbsp;&nbsp;&nbsp;&nbsp;currentBusArriveTime | string | Estimated time of arrival for the nearest bus (unit: minutes) |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;currentBusComfort | string | Crowding level of the nearest bus | 0-Unknown, 1-Comfortable, 2-Somewhat Comfortable, 3-Crowded |
+| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | string   | Up or down direction | 0-Up, 1-Down; |
+| &nbsp;&nbsp;&nbsp;&nbsp;currentBusStopCount | string | Number of stops remaining until the nearest bus arrives |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;currentLicensePlate | string | License plate of the nearest bus |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;currentBarrierFree | string | Whether the nearest bus is accessible | Boolean type, true/false; |
+| &nbsp;&nbsp;&nbsp;&nbsp;nextBusDistance | string | Distance to the next bus from the current station (unit: meters) |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;nextBusArriveTime | string | Estimated time of arrival for the next bus (unit: minutes) |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;nextBusStopCount | string | Number of stops remaining until the next bus arrives |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;nextLicensePlate | string | License plate of the next bus |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;nextBarrierFree | string | Whether the next bus is accessible | Boolean type, true/false; |
+| - dispatchCarSchedule | object   | Bus schedule |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineId        | string   | Line number |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | Line name |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;direction     | string   | Up or down direction | 0-Up, 1-Down; |
+| &nbsp;&nbsp;&nbsp;&nbsp;scheduleCode  | int      | Dispatch code | -1-Not in operation, 0-No real-time data, 1-Waiting for regular departure; |
+| &nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgDefault | string | Dispatch message |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgShort | string | Dispatch message |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;- dispatchCars | object   | Departure details |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vehicle    | string   | Vehicle license plate |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time       | string   | Departure time |                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countdown  | string   | Countdown |                                       |
 
-| 名称                | 参数类型 | 描述                                   | 说明                                  |
-| ------------------- | -------- | -------------------------------------- | ------------------------------------- |
-| retCode             | int      | 响应编码                               | 0代表调用成功                         |
-| retMsg              | string   | 响应信息                               |                                       |
-| - nearByTrafficLineStop | object   | 公交地铁线路的站点信息                 |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | 数据唯一标识                           |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineId        | string   | 线路编号                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | 线路名称                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;stopId        | string   | 站点编号                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | 站点名称                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | 线路起点站名称                         |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | 线路终点站名称                         |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 最早始发时间-最晚始发时间               | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 最早到站时间-最晚到站时间               | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | string   | 上下行                                 | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;type          | string   | 公共交通类型                           | 1-公交，2-地铁，3-轮渡；|
-| - point             | object   | 当前站点经纬度                         |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lon          | string   | 经度                                   |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lat          | string   | 纬度                                   |                                       |
-| - sai               | object   | 车辆到站信息                           |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;currentBusDistance | string | 最近一辆车距离本站距离（单位：米）|                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;currentBusArriveTime | string | 最近一辆车预计多久后到达（单位：分钟） |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;currentBusComfort | string | 最近一辆车拥挤程度                     | 0-未知，1-舒适，2-较舒适，3-拥挤|
-| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | string   | 上下行                                 | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;currentBusStopCount | string | 最近一辆车距离当前还有几站             |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;currentLicensePlate | string | 最近一辆车车牌                         |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;currentBarrierFree | string | 最近一辆车是否无障碍                   | bool类型，true/false；|
-| &nbsp;&nbsp;&nbsp;&nbsp;nextBusDistance | string | 下一辆车距离本站距离（单位：米）|                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;nextBusArriveTime | string | 下一辆车预计多久后到达（单位：分钟）|                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;nextBusStopCount | string | 下一辆车距离当前还有几站               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;nextLicensePlate | string | 下一辆车车牌                           |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;nextBarrierFree | string | 下一辆车是否无障碍                     | bool类型，true/false；|
-| - dispatchCarSchedule | object   | 车辆发车时刻表                         |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineId        | string   | 线路编号                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | 线路名称                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;direction     | string   | 上下行                                 | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;scheduleCode  | int      | 调度编码                               | -1-不在运营时间，0-暂无实时数据，1-等待常规发车； |
-| &nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgDefault | string | 调度提示                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgShort | string | 调度提示                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;- dispatchCars | object   | 发车明细                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vehicle    | string   | 车牌号                                 |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time       | string   | 发车时间                               |                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countdown  | string   | 倒计时                                 |                                       |
-
-#### 根据经纬度及距离查询地铁信息
+#### Query Metro Information Based on Latitude, Longitude, and Distance
 **params.name=queryNearByMetro**
-##### 业务参数说明
-**请求参数**
+##### Business Parameter Description
+**Request Parameters**
 
-| 名称                | 参数类型 | 描述         | 是否必须 | 说明                          |
-| ------------------- | -------- | ------------ | -------- | ----------------------------- |
-| cityCode            | string   | 城市编码     | 是       | 仅输入310100；|
-| lon                 | string   | 经度         | 是       |                                |
-| lat                 | string   | 纬度         | 是       |                                |
-| coordinateType      | int      | 坐标系类型   | 否       | 1-WGS-84，2-GCJ02；默认2；|
-| nearRadiusDistance  | int      | 半径（单位：米） | 否       | 默认1000，最大3000；|
+| Name                | Parameter Type | Description         | Required | Notes                          |
+| ------------------- | -------------- | ------------------- | -------- | ----------------------------- |
+| cityCode            | string         | City code           | Yes      | Only input 310100; |
+| lon                 | string         | Longitude           | Yes      |                                |
+| lat                 | string         | Latitude            | Yes      |                                |
+| coordinateType      | int            | Coordinate system type | No      | 1-WGS-84, 2-GCJ02; Default is 2; || nearRadiusDistance  | int      | Radius (unit: meters) | Optional       | Default is 1000, maximum is 3000;|
 
-**响应参数**
+**Response Parameters**
 
-| 名称                | 参数类型 | 描述                 | 说明                                                         |
+| Name                | Data Type | Description                 | Remarks                                                         |
 | ------------------- | -------- | -------------------- | ------------------------------------------------------------ |
-| retCode             | int      | 响应编码             | 0表示调用成功，其余失败；|
-| retMsg              | string   | 响应信息             |                                                              |
-| - normalMetroList   | object   | 普通地铁信息         |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | 数据库唯一id         |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineNo        | string   | 线路编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | 线路名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | int      | 上下行               | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | 线路起点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | 线路终点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 首班车时间           | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 末班车时间           | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;priceRange    | string   | 票价范围（单位：元） | eg：3-7；|
-| &nbsp;&nbsp;&nbsp;&nbsp;lineType      | int      | 线路类型             | 0-普通车，1-夜班车，2-临时保障车（暂无信息），3-区间车，4-大站车； |
-| &nbsp;&nbsp;&nbsp;&nbsp;- station     | object   | 站点信息             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopNo        | string   | 站点编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | 站点名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 站点首班车时间       | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 站点末班车时间       | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type          | int      | 上下客协议           | 0或者空表示可上下，1表示仅下；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- point       | object   | 站点位置             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon        | string   | 经度                 |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat        | string   | 纬度                 |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- dispatchCarSchedule | object   | 间隔信息             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleCode  | int      | 调度编码             | -1表示不在运营时间，0表示暂无实时数据，1表示数据正常；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleType  | int      | 调度类型             | 0表示间隔xx分钟到站，1表示xx点到站；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleTime  | string   | 调度时间             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsg   | string   | 调度提示             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgDefault | string   | 调度提示             |                                                              |
-| - bigStationMetroList | object   | 大站地铁信息         |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | 数据库唯一id         |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineNo        | string   | 线路编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | 线路名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | int      | 上下行               | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | 线路起点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | 线路终点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 首班车时间           | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 末班车时间           | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;priceRange    | string   | 票价范围（单位：元） | eg：3-7；|
-| &nbsp;&nbsp;&nbsp;&nbsp;lineType      | int      | 线路类型             | 0-普通车，1-夜班车，2-临时保障车（暂无信息），3-区间车，4-大站车； |
-| &nbsp;&nbsp;&nbsp;&nbsp;- station     | object   | 站点信息             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopNo        | string   | 站点编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | 站点名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 站点首班车时间       | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 站点末班车时间       | 格式hhmm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type          | int      | 上下客协议           | 0或者空表示可上下，1表示仅下；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- point       | object   | 站点位置             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon        | string   | 经度                 |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat        | string   | 纬度                 |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- dispatchCarSchedule | object   | 间隔信息             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleCode  | int      | 调度编码             | -1表示不在运营时间，0表示暂无实时数据，1表示数据正常；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleType  | int      | 调度类型             | 0表示间隔xx分钟到站，1表示xx点到站；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleTime  | string   | 调度时间             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsg   | string   | 调度提示             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgDefault | string   | 调度提示             |                                                              |
-| - fixedStationMetroList | object   | 定点上下车地铁信息   |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | 数据库唯一id         |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineNo        | string   | 线路编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | 线路名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | int      | 上下行               | 0-上行，1-下行；|
-| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | 线路起点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | 线路终点站名称       |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 首班车时间           | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 末班车时间           | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;priceRange    | string   | 票价范围（单位：元） | eg：3-7；|
-| &nbsp;&nbsp;&nbsp;&nbsp;lineType      | int      | 线路类型             | 0-普通车，1-夜班车，2-临时保障车（暂无信息），3-区间车，4-大站车； |
-| &nbsp;&nbsp;&nbsp;&nbsp;- station     | object   | 站点信息             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopNo        | string   | 站点编号             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | 站点名称             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | 站点首班车时间       | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | 站点末班车时间       | 格式hh:mm；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type          | int      | 上下客协议           | 0或者空表示可上下，1表示仅下；|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- point       | object   | 站点位置             |                                                              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon        | string   | 经度    
+| retCode             | int      | Response code             | 0 indicates success, others indicate failure;|
+| retMsg              | string   | Response message             |                                                              |
+| - normalMetroList   | object   | Normal metro information         |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | Unique database ID         |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineNo        | string   | Line number             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | Line name             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | int      | Up or down               | 0-Up, 1-Down;|
+| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | Starting station name       |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | Ending station name       |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | First train time           | Format hhmm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | Last train time           | Format hhmm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;priceRange    | string   | Fare range (unit: yuan) | e.g., 3-7;|
+| &nbsp;&nbsp;&nbsp;&nbsp;lineType      | int      | Line type             | 0-Regular, 1-Night, 2-Temporary (no info currently), 3-Section, 4-Major stops; |
+| &nbsp;&nbsp;&nbsp;&nbsp;- station     | object   | Station information             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopNo        | string   | Station number             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | Station name             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | Station first train time       | Format hhmm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | Station last train time       | Format hhmm;|
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type          | int      | Boarding and alighting agreement           | 0 or null means both boarding and alighting allowed, 1 means alighting only;|
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- point       | object   | Station location             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon        | string   | Longitude                 |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat        | string   | Latitude                 |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- dispatchCarSchedule | object   | Interval information             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleCode  | int      | Dispatch code             | -1 indicates not in operation, 0 indicates no real-time data, 1 indicates normal data;|| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleType  | int      | Scheduling type      | 0 indicates arriving every xx minutes, 1 indicates arriving at xx o'clock; |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleTime  | string   | Scheduling time      |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsg   | string   | Scheduling message   |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scheduleMsgDefault | string   | Default scheduling message |                                                              |
+| - bigStationMetroList | object   | Major station metro information |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;indexId       | int      | Unique database ID   |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineNo        | string   | Line number          |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineName      | string   | Line name            |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;upDown        | int      | Up or down direction | 0 - Up, 1 - Down; |
+| &nbsp;&nbsp;&nbsp;&nbsp;startStopName | string   | Starting station name |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;endStopName   | string   | Ending station name  |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | First train time     | Format: hhmm; |
+| &nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | Last train time      | Format: hhmm; |
+| &nbsp;&nbsp;&nbsp;&nbsp;priceRange    | string   | Fare range (unit: yuan) | e.g., 3-7; |
+| &nbsp;&nbsp;&nbsp;&nbsp;lineType      | int      | Line type            | 0 - Regular, 1 - Night, 2 - Temporary (no information available), 3 - Sectional, 4 - Major stations; |
+| &nbsp;&nbsp;&nbsp;&nbsp;- station     | object   | Station information  |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopNo        | string   | Station number       |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopName      | string   | Station name         |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startEarlyLateTime | string | First train time at the station | Format: hhmm; |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endEarlyLateTime | string | Last train time at the station | Format: hhmm; |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type          | int      | Boarding and alighting agreement | 0 or empty means both boarding and alighting allowed, 1 means alighting only; |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- point       | object   | Station location     |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lon        | string   | Longitude            |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lat        | string   | Latitude             |                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
 
-**官方网站：** [https://www.shmaas.cn/](https://www.shmaas.cn/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.shmaas.cn/](https://www.shmaas.cn/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shmaas-shmaas.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shmaas-shmaas.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

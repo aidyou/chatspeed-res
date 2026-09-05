@@ -1,41 +1,41 @@
 ---
-title: "Bonsai IFC分析器"
-description: "一种集成了 Claude 和 Blender 的模型上下文协议服务器，允许用户通过自然语言命令分析和交互 IFC（工业基础类）建筑模型。"
+title: "Bonsai_mcp"
+description: "A Model Context Protocol server that integrates Claude with Blender, enabling users to analyze and interact with IFC (Industry Foundation Classes) building models through natural language commands."
 ---
 
-# Bonsai IFC分析器
+# Bonsai_mcp
 
-一种集成了 Claude 和 Blender 的模型上下文协议服务器，允许用户通过自然语言命令分析和交互 IFC（工业基础类）建筑模型。
+A Model Context Protocol server that integrates Claude with Blender, enabling users to analyze and interact with IFC (Industry Foundation Classes) building models through natural language commands.
 
-# Bonsai-mcp - 通过 IfcOpenShell 实现的 Blender 模型上下文协议 IFC 集成
+# Bonsai-mcp - Blender Model Context Protocol Integration for IFC through IfcOpenShell
 
-Bonsai-mcp 是 [BlenderMCP](https://github.com/ahujasid/blender-mcp) 的一个分支，它通过 Bonsai 扩展了原有的功能，特别支持 IFC（Industry Foundation Classes）模型。此集成是一个快速的概念验证，旨在展示将 Claude 或任何 LLM（尽管仅使用 Claude Desktop Client 进行过测试）连接到 Blender 以执行 IfcOpenShell 命令的能力。
+Bonsai-mcp is a fork of [BlenderMCP](https://github.com/ahujasid/blender-mcp) that extends the original functionality with dedicated support for IFC (Industry Foundation Classes) models through Bonsai. This integration is a quick proof of concept aimed at exemplifying the capabilites of connecting Claude, or any LLM (though this was only tested using the Claude Desktop Client), to Blender in order to execute IfcOpenShell commands.
 
-## 特性
+## Features
 
-- **IFC 特定功能**：查询 IFC 模型、分析空间结构和检查建筑元素
-- **五个强大的 IFC 工具**：检查项目信息、列出实体、检查属性、探索空间结构和分析关系
-- **顺序思考**：包含来自 [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) 的顺序思考工具，用于结构化问题解决
-- **从原始 BlenderMCP 实现中的执行代码工具**：在 Blender 中创建和修改对象、应用材质以及执行 Python 代码
-- **使用标准模型进行测试**：已验证与默认 ifcopenshell 房屋模型 ([AC20-FZK-Haus.ifc](https://www.ifcwiki.org/images/e/e3/AC20-FZK-Haus.ifc)) 兼容
+- **IFC-specific functionality**: Query IFC models, analyze spatial structures, and examine building elements
+- **Five powerful IFC tools**: Inspect project info, list entities, examine properties, explore spatial structure, and analyze relationships
+- **Sequential Thinking**: Includes the sequential thinking tool from [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) for structured problem solving
+- **Execute Code tool from the original BlenderMCP implementation**: Create and modify objects, apply materials, and execute Python code in Blender
+- **Tested with standard models**: Verified working with the default ifcopenshell house model ([AC20-FZK-Haus.ifc](https://www.ifcwiki.org/images/e/e3/AC20-FZK-Haus.ifc))
 
-## 组件
+## Components
 
-系统由两个主要组件组成：
+The system consists of two main components:
 
-1. **Blender 插件 (`addon.py`)**：一个 Blender 插件，在 Blender 内创建一个套接字服务器以接收和执行命令，包括特定于 IFC 的操作
-2. **MCP 服务器 (`blender_mcp_tools.py`)**：一个实现 Model Context Protocol 并连接到 Blender 插件的 Python 服务器
+1. **Blender Addon (`addon.py`)**: A Blender addon that creates a socket server within Blender to receive and execute commands, including IFC-specific operations
+2. **MCP Server (`blender_mcp_tools.py`)**: A Python server that implements the Model Context Protocol and connects to the Blender addon
 
-## 安装
+## Installation
 
-### 前提条件
+### Prerequisites
 
-- Blender 3.0 或更新版本
-- Python 3.10 或更新版本
-- uv 包管理器
-- 用于 Blender 的 Bonsai BIM 插件（用于 IFC 功能）
+- Blender 3.0 or newer
+- Python 3.10 or newer
+- uv package manager
+- Bonsai BIM addon for Blender (for IFC functionality)
 
-**安装 uv：**
+**Installing uv:**
 
 **Mac:**
 ```bash
@@ -45,20 +45,20 @@ brew install uv
 **Windows:**
 ```bash
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex" 
-set Path=C:\Users\[username]\.local\bin;%Path%
+set Path=C:Users[username].localin;%Path%
 ```
 
-对于其他平台，请参阅 [uv 安装指南](https://docs.astral.sh/uv/getting-started/installation/)。
+For other platforms, see the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
 
-### 克隆仓库
+### Clone the repository
 
 ```bash
 git clone https://github.com/JotaDeRodriguez/Bonsai_mcp
 ```
 
-### Claude for Desktop 集成
+### Claude for Desktop Integration
 
-编辑您的 `claude_desktop_config.json` 文件（Claude > 设置 > 开发者 > 编辑配置），添加以下内容：
+Edit your `claude_desktop_config.json` file (Claude > Settings > Developer > Edit Config) to include:
 
 ```json
 {
@@ -67,7 +67,7 @@ git clone https://github.com/JotaDeRodriguez/Bonsai_mcp
             "command": "uv",
             "args": [
               "--directory",
-              "\\your\\path\\to\\Bonsai_mcp",
+              "\your\path\to\Bonsai_mcp",
               "run",
               "tools.py"
           ]
@@ -76,134 +76,136 @@ git clone https://github.com/JotaDeRodriguez/Bonsai_mcp
 }
 ```
 
-### 安装 Blender 插件
+### Installing the Blender Addon
 
-1. 从此仓库下载 `addon.py` 文件
-2. 打开 Blender
-3. 转到“编辑”>“偏好设置”>“插件”
-4. 点击“安装...”并选择 `addon.py` 文件
-5. 通过勾选“界面：Blender MCP - IFC”旁边的复选框来启用插件
+1. Download the `addon.py` file from this repo
+2. Open Blender
+3. Go to Edit > Preferences > Add-ons
+4. Click "Install..." and select the `addon.py` file
+5. Enable the addon by checking the box next to "Interface: Blender MCP - IFC"
 
-## 使用
+## Usage
 
-### 启动连接
+### Starting the Connection
 
-1. 在 Blender 中，转到 3D 视图侧边栏（如果不可见，请按 N 键）
-2. 找到“Blender MCP - IFC”选项卡
-3. 点击“连接到 Claude”
-4. 确保 MCP 服务器正在运行
+1. In Blender, go to the 3D View sidebar (press N if not visible)
+2. Find the "Blender MCP - IFC" tab
+3. Click "Connect to Claude"
+4. Make sure the MCP server is running
 
-### 与 Claude 一起使用
+### Using with Claude
 
-连接后，您将在 Claude 的界面中看到一个锤子图标，其中包含用于 Blender MCP IFC 集成的工具。
+Once connected, you'll see a hammer icon in Claude's interface with tools for the Blender MCP IFC integration.
 
-## IFC 工具
+## IFC Tools
 
-此分支增加了五个强大的 IFC 特定工具：
+This fork adds five powerful IFC-specific tools:
 
 ### 1. get_ifc_project_info
 
-获取有关 IFC 项目的基本信息，包括名称、描述和不同实体类型的数量。
+Get basic information about the IFC project, including name, description, and counts of different entity types.
+
+Example: "What is the basic information about this IFC project?"
 
 ### 2. list_ifc_entities
 
-列出特定类型的 IFC 实体（墙、门、空间等）。
+List IFC entities of a specific type (walls, doors, spaces, etc.).
 
-示例： "列出此 IFC 模型中的所有墙壁" 或 "显示这栋建筑中的窗户"
+Example: "List all the walls in this IFC model" or "Show me the windows in this building"
 
 ### 3. get_ifc_properties
 
-通过 GlobalId 获取特定 IFC 实体的所有属性。
+Get all properties of a specific IFC entity by its GlobalId.
 
-示例： "ID 为 1Dvrgv7Tf5IfTEapMkwDQY 的墙有哪些属性？"
+Example: "What are the properties of this wall with ID 1Dvrgv7Tf5IfTEapMkwDQY?"
 
 ### 4. get_ifc_spatial_structure
 
-获取 IFC 模型的空间层次结构（场地、建筑、楼层、空间）。
+Get the spatial hierarchy of the IFC model (site, building, storeys, spaces).
 
-示例： "显示这栋建筑的空间结构"
+Example: "Show me the spatial structure of this building"
 
 ### 5. get_ifc_relationships
 
-获取特定 IFC 实体的所有关系。
+Get all relationships for a specific IFC entity.
 
-示例： "入口门有哪些关系？"
+Example: "What are the relationships of the entrance door?"
 
-## 执行 Blender 代码
+## Excecute Blender Code
 
-这是从原始 MCP 实现中继承的功能。允许 Claude 在 Blender 中执行任意 Python 代码。请谨慎使用。
+Legacy feature from the original MCP implementation. Allows Claude to execute arbitrary Python code in Blender. Use with caution.
 
-## 顺序思维工具
+## Sequential Thinking Tool
 
-此集成还包括顺序思维工具，该工具有助于详细、逐步地进行问题解决和分析。
+This integration also includes the Sequential Thinking tool, which facilitates a detailed, step-by-step thinking process for problem-solving and analysis.
 
-### 工具参数：
+### Tool parameters:
 
-- `thought` (字符串)：当前思考步骤
-- `nextThoughtNeeded` (布尔值)：是否需要另一个思考步骤
-- `thoughtNumber` (整数)：当前思考步骤编号
-- `totalThoughts` (整数)：估计所需的总思考步骤数
-- `isRevision` (布尔值, 可选)：是否修订了之前的思考
-- `revisesThought` (整数, 可选)：正在重新考虑哪个思考步骤
-- `branchFromThought` (整数, 可选)：分支点的思考步骤编号
-- `branchId` (字符串, 可选)：分支标识符
-- `needsMoreThoughts` (布尔值, 可选)：是否需要更多思考步骤
+- `thought` (string): The current thinking step
+- `nextThoughtNeeded` (boolean): Whether another thought step is needed
+- `thoughtNumber` (integer): Current thought number
+- `totalThoughts` (integer): Estimated total thoughts needed
+- `isRevision` (boolean, optional): Whether this revises previous thinking
+- `revisesThought` (integer, optional): Which thought is being reconsidered
+- `branchFromThought` (integer, optional): Branching point thought number
+- `branchId` (string, optional): Branch identifier
+- `needsMoreThoughts` (boolean, optional): If more thoughts are needed
 
-示例： "使用顺序思维来分析这座建筑的能源效率"
+Example: "Use sequential thinking to analyze this building's energy efficiency"
 
-## 示例命令
+## Example Commands
 
-以下是一些你可以要求 Claude 对 IFC 模型执行的操作示例：
+Here are some examples of what you can ask Claude to do with IFC models:
 
-- "分析这个 IFC 模型并告诉我它有多少面墙、门和窗户"
-- "显示这个建筑模型的空间结构"
-- "列出此 IFC 模型中的所有空间及其属性"
-- "识别这栋建筑中的所有结构元素"
-- "这面墙与其他元素之间有什么关系？"
-- "使用顺序思维根据 IFC 模型为这栋建筑创建维护计划"
+- "Analyze this IFC model and tell me how many walls, doors and windows it has"
+- "Show me the spatial structure of this building model"
+- "List all spaces in this IFC model and their properties"
+- "Identify all structural elements in this building"
+- "What are the relationships between this wall and other elements?"
+- "Use sequential thinking to create a maintenance plan for this building based on the IFC model"
 
-## 故障排除
+## Troubleshooting
 
-- **连接问题**：确保 Blender 插件服务器正在运行，并且 MCP 服务器已在 Claude 中配置
-- **IFC 模型未加载**：验证你已安装 Bonsai BIM 插件并且已加载 IFC 文件
-- **超时错误**：尝试简化你的请求或将它们分解成更小的步骤
+- **Connection issues**: Make sure the Blender addon server is running, and the MCP server is configured in Claude
+- **IFC model not loading**: Verify that you have the Bonsai BIM addon installed and that an IFC file is loaded
+- **Timeout errors**: Try simplifying your requests or breaking them into smaller steps
 
-## 技术细节
+## Technical Details
 
-IFC 集成使用 Bonsai BIM 模块在 Blender 中访问 ifcopenshell 功能。通信采用与原始 BlenderMCP 相同的基于 JSON 的 TCP 套接字协议。
+The IFC integration uses the Bonsai BIM module to access ifcopenshell functionality within Blender. The communication follows the same JSON-based protocol over TCP sockets as the original BlenderMCP.
 
-## 限制与安全注意事项
+## Limitations & Security Considerations
 
-- 原项目中的 `execute_blender_code` 工具仍然可用，允许在 Blender 中运行任意 Python 代码。请谨慎使用并始终保存您的工作。
-- 复杂的 IFC 模型可能需要将操作分解为更小的步骤。
-- IFC 查询性能取决于模型的大小和复杂性。
+- The `execute_blender_code` tool from the original project is still available, allowing running arbitrary Python code in Blender. Use with caution and always save your work.
+- Complex IFC models may require breaking down operations into smaller steps.
+- IFC query performance depends on model size and complexity.
 
-## 致谢
+## Credits
 
-- 原始 BlenderMCP 由 [Siddharth Ahuja](https://github.com/ahujasid/blender-mcp)
-- 顺序思维工具来自 [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking)
-- IFC 集成基于 Bonsai BIM 插件为 Blender 构建
+- Original BlenderMCP by [Siddharth Ahuja](https://github.com/ahujasid/blender-mcp)
+- Sequential Thinking tool from [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking)
+- IFC integration built upon the Bonsai BIM addon for Blender
 
-## 待办事项
-- 光标实现
-- 添加 'get_selected_ifc_elements' 的描述
+## TODO
+Cursor implementation
+Add 'get_selected_ifc_elements' description
 
-**官方网站：** [https://github.com/JotaDeRodriguez/Bonsai_mcp](https://github.com/JotaDeRodriguez/Bonsai_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JotaDeRodriguez/Bonsai_mcp](https://github.com/JotaDeRodriguez/Bonsai_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `developer tools`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory \your\path\to\Bonsai_mcp run tools.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory \your\path\to\Bonsai_mcp run tools.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jotaderodriguez-bonsai.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jotaderodriguez-bonsai.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

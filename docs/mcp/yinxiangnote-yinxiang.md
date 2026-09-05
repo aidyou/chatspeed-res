@@ -1,11 +1,11 @@
 ---
-title: "印象笔记MCP"
-description: "YXBJ-MCP 是一个 MCP (Model Context Protocol) 服务器，可以让 AI 助手（如 Cursor）直接与印象笔记进行交互，实现笔记的创建和保存功能。它支持连接测试、保存笔记、Markdown 格式以及通过环境变量进行安全认证。"
+title: "mcp-server-yinxiang"
+description: "YXBJ-MCP 印象笔记 MCP 服务器，支持通过 Model Context Protocol 保存笔记到印象笔记"
 ---
 
-# 印象笔记MCP
+# mcp-server-yinxiang
 
-YXBJ-MCP 是一个 MCP (Model Context Protocol) 服务器，可以让 AI 助手（如 Cursor）直接与印象笔记进行交互，实现笔记的创建和保存功能。它支持连接测试、保存笔记、Markdown 格式以及通过环境变量进行安全认证。
+YXBJ-MCP 印象笔记 MCP 服务器，支持通过 Model Context Protocol 保存笔记到印象笔记
 
 # YXBJ-MCP
 
@@ -92,22 +92,22 @@ ISC
 
 欢迎提交 Issue 和 Pull Request！
 
-**官方网站：** [https://github.com/yinxiang-team/YXBJ-MCP](https://github.com/yinxiang-team/YXBJ-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yinxiang-team/YXBJ-MCP](https://github.com/yinxiang-team/YXBJ-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`
+- Categories: `memory`
+- Tags: `knowledge and memory`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`yxbj-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `yxbj-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yinxiangnote-yinxiang.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yinxiangnote-yinxiang.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

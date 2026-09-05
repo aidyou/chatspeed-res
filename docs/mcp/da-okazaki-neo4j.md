@@ -1,26 +1,26 @@
 ---
-title: "Neo4j连接器"
-description: "该服务器启用了Neo4j数据库和Claude Desktop之间的交互，允许用户执行Cypher查询、创建节点以及在数据库中建立关系。"
+title: "mcp-neo4j-server"
+description: "This server enables interaction between Neo4j databases and Claude Desktop, allowing users to execute Cypher queries, create nodes, and establish relationships in the database."
 ---
 
-# Neo4j连接器
+# mcp-neo4j-server
 
-该服务器启用了Neo4j数据库和Claude Desktop之间的交互，允许用户执行Cypher查询、创建节点以及在数据库中建立关系。
+This server enables interaction between Neo4j databases and Claude Desktop, allowing users to execute Cypher queries, create nodes, and establish relationships in the database.
 
-# MCP Neo4j 服务器
+# MCP Neo4j Server
 [Smithery](https://smithery.ai/server/@alanse/mcp-neo4j-server)
 
-一个MCP服务器，提供Neo4j图形数据库与Claude桌面之间的集成，通过自然语言交互实现图形数据库操作。
+An MCP server that provides integration between Neo4j graph database and Claude Desktop, enabling graph database operations through natural language interactions.
 
-## 快速开始
+## Quick Start
 
-你可以直接使用npx运行此MCP服务器：
+You can run this MCP server directly using npx:
 
 ```bash
 npx @alanse/mcp-neo4j
 ```
 
-或者将其添加到你的Claude桌面配置中：
+Or add it to your Claude Desktop configuration:
 
 ```json
 {
@@ -38,75 +38,75 @@ npx @alanse/mcp-neo4j
 }
 ```
 
-## 功能
+## Features
 
-该服务器提供了与Neo4j数据库交互的工具：
+This server provides tools for interacting with a Neo4j database:
 
-### 工具
+### Tools
 
-- `execute_query`：在Neo4j数据库上执行Cypher查询
-  - 支持所有类型的Cypher查询（读取、创建、更新、删除）
-  - 以结构化格式返回查询结果
-  - 可传递参数以防止注入攻击
+- `execute_query`: Execute Cypher queries on the Neo4j database
+  - Supports all types of Cypher queries (READ, CREATE, UPDATE, DELETE)
+  - Returns query results in a structured format
+  - Parameters can be passed to prevent injection attacks
 
-- `create_node`：在图形数据库中创建新节点
-  - 指定节点标签和属性
-  - 返回带有内部ID的创建节点
-  - 支持所有Neo4j数据类型作为属性
+- `create_node`: Create a new node in the graph database
+  - Specify node labels and properties
+  - Returns the created node with its internal ID
+  - Supports all Neo4j data types for properties
 
-- `create_relationship`：在两个现有节点之间创建关系
-  - 定义关系类型和方向
-  - 向关系添加属性
-  - 需要源节点和目标节点的ID
+- `create_relationship`: Create a relationship between two existing nodes
+  - Define relationship type and direction
+  - Add properties to relationships
+  - Requires node IDs for source and target nodes
 
-## 安装
+## Installation
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/@alanse/mcp-neo4j-server)自动为Claude桌面安装MCP Neo4j服务器：
+To install MCP Neo4j Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@alanse/mcp-neo4j-server):
 
 ```bash
 npx -y @smithery/cli install @alanse/mcp-neo4j-server --client claude
 ```
 
-### 开发环境
+### For Development
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/da-okazaki/mcp-neo4j-server.git
 cd mcp-neo4j-server
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-## 配置
+## Configuration
 
-服务器需要以下环境变量：
+The server requires the following environment variables:
 
-- `NEO4J_URI`：Neo4j数据库URI（默认：bolt://localhost:7687）
-- `NEO4J_USERNAME`：Neo4j用户名（默认：neo4j）
-- `NEO4J_PASSWORD`：Neo4j密码（必需）
+- `NEO4J_URI`: Neo4j database URI (default: bolt://localhost:7687)
+- `NEO4J_USERNAME`: Neo4j username (default: neo4j)
+- `NEO4J_PASSWORD`: Neo4j password (required)
 
-## 使用示例
+## Usage Examples
 
-这里是如何使用自然语言与Neo4j数据库进行交互的一些例子：
+Here are examples of how you can interact with the Neo4j database using natural language:
 
-### 查询数据
+### Querying Data
 
-你可以问这样的问题：
-- "显示销售部门的所有员工"
-- "找到最老的前5名客户"
-- "谁在过去一个月内购买了超过3种产品？"
+You can ask questions like:
+- "Show me all employees in the Sales department"
+- "Find the top 5 oldest customers"
+- "Who has purchased more than 3 products in the last month?"
 
-示例：
+Example:
 ```
 User: "Show me all employees in the Sales department"
 
@@ -120,14 +120,14 @@ Result:
 - Mike Brown (Account Executive)
 ```
 
-### 创建数据
+### Creating Data
 
-你可以给出这样的指示：
-- "添加一个名叫John Doe的新人员，年龄30岁"
-- "创建一个名为'Premium Coffee'的产品，价格$24.99"
-- "添加一个名为'研究与发展'的新部门"
+You can give instructions like:
+- "Add a new person named John Doe who is 30 years old"
+- "Create a product called 'Premium Coffee' with price $24.99"
+- "Add a new department called 'Research & Development'"
 
-示例：
+Example:
 ```
 User: "Add a new person named John Doe who is 30 years old"
 
@@ -138,14 +138,14 @@ Claude: I'll create a new Person node with the provided information.
 Result: Created new person node with ID: 123
 ```
 
-### 创建关系
+### Creating Relationships
 
-你可以请求这样的关系：
-- "让John Doe成为Jane Smith的朋友"
-- "将产品A设置为产品B的组成部分"
-- "指派John Doe到销售部门"
+You can request relationships like:
+- "Make John Doe friends with Jane Smith"
+- "Set Product A as a component of Product B"
+- "Assign John Doe to the Sales department"
 
-示例：
+Example:
 ```
 User: "Make John Doe friends with Jane Smith"
 
@@ -157,14 +157,14 @@ CREATE (a)-[:FRIENDS_WITH {since: '2024-01-05'}]->(b)]
 Result: Created friendship relationship between John Doe and Jane Smith
 ```
 
-### 复杂操作
+### Complex Operations
 
-你可以用自然语言执行更复杂的操作：
-- "找到居住在纽约的客户所购买的所有产品"
-- "显示John Doe朋友的朋友"
-- "计算每个部门员工的平均年龄"
+You can perform more complex operations with natural language:
+- "Find all products purchased by customers who live in New York"
+- "Show me friends of friends of John Doe"
+- "Calculate the average age of employees in each department"
 
-示例：
+Example:
 ```
 User: "Find all products purchased by customers who live in New York"
 
@@ -179,34 +179,34 @@ Result:
 - Bob Miller: [Premium Coffee, Water Bottle]
 ```
 
-## 测试
+## Testing
 
-运行测试套件：
+Run the test suite:
 
 ```bash
 npm test
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/da-okazaki/mcp-neo4j-server](https://github.com/da-okazaki/mcp-neo4j-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/da-okazaki/mcp-neo4j-server](https://github.com/da-okazaki/mcp-neo4j-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`databases`, `developer tools`, `other`, `chinese`
+- Categories: `data`, `development`
+- Tags: `databases`, `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@alanse/mcp-neo4j-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@alanse/mcp-neo4j-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/da-okazaki-neo4j.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/da-okazaki-neo4j.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

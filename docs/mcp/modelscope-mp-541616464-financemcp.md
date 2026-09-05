@@ -1,11 +1,11 @@
 ---
-title: "金融MCP"
-description: "基于MCP协议的专业金融数据服务器，集成Tushare API，为Claude等AI助手提供实时金融数据和技术指标分析。 - - - - - - - - - 🎉 开箱即用，无需部署！ 我们提供多种免费公共云服务选项： 🚀 最简单的使用方式！ 访问我们的在线体验网站： - ✨ 零配置体验 - 无需任何设置，打开网页即用 - 🤖 集成大模型 - 直接与AI助手对话，获取金融分析 - 💬 智能交互 - 自然语言提问，实时获取金融数据 - 📱 多端适配 - 支持电脑、手机、平板访问 > ⚠️ 服务说明: 这是个人小服务器，请合理使用，勿攻击滥"
+title: "FinanceMCP"
+description: "Professional financial data server based on the MCP protocol, integrating Tushare API, provides real-time financial data and technical indicator analysis for AI assistants like Claude. - - - - - - - -…"
 ---
 
-# 金融MCP
+# FinanceMCP
 
-基于MCP协议的专业金融数据服务器，集成Tushare API，为Claude等AI助手提供实时金融数据和技术指标分析。 - - - - - - - - - 🎉 开箱即用，无需部署！ 我们提供多种免费公共云服务选项： 🚀 最简单的使用方式！ 访问我们的在线体验网站： - ✨ 零配置体验 - 无需任何设置，打开网页即用 - 🤖 集成大模型 - 直接与AI助手对话，获取金融分析 - 💬 智能交互 - 自然语言提问，实时获取金融数据 - 📱 多端适配 - 支持电脑、手机、平板访问 > ⚠️ 服务说明: 这是个人小服务器，请合理使用，勿攻击滥
+Professional financial data server based on the MCP protocol, integrating Tushare API, provides real-time financial data and technical indicator analysis for AI assistants like Claude. - - - - - - - -…
 
 ![English](/mcp-assets/b9a78e1b7835d058a9d2196a4c747d2d.svg)
 
@@ -475,22 +475,22 @@ npm run start:sse
 
 ⭐ 如果这个项目对您有帮助，请给我们一个Star！
 
-**官方网站：** [https://github.com/guangxiangdebizi/FinanceMCP](https://github.com/guangxiangdebizi/FinanceMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/guangxiangdebizi/FinanceMCP](https://github.com/guangxiangdebizi/FinanceMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `tushare`, `mcp`, `llm`, `fintech`, `stock`, `index`
+- Categories: `finance`
+- Tags: `finance`, `tushare`, `mcp`, `llm`, `fintech`, `stock`, `index`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelscope-mp-541616464-financemcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelscope-mp-541616464-financemcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,24 +1,24 @@
 ---
-title: "EverArt生成器"
-description: "用于Claude桌面端的图像生成服务器，采用EverArt的API。"
+title: "everart"
+description: "Image generation server for Claude Desktop using EverArt's API."
 ---
 
-# EverArt生成器
+# everart
 
-用于Claude桌面端的图像生成服务器，采用EverArt的API。
+Image generation server for Claude Desktop using EverArt's API.
 
-# EverArt MCP 服务器
+# EverArt MCP Server
 
-为使用 EverArt API 的 Claude 桌面端提供的图像生成服务器。
+Image generation server for Claude Desktop using EverArt's API.
 
-## 安装
+## Install
 ```bash
 npm install
 export EVERART_API_KEY=your_key_here
 ```
 
-## 配置
-添加到 Claude 桌面端配置：
+## Config
+Add to Claude Desktop config:
 
 ### Docker
 ```json
@@ -51,76 +51,76 @@ export EVERART_API_KEY=your_key_here
 }
 ```
 
-## 工具
+## Tools
 
 ### generate_image
-生成具有多种模型选项的图像。在浏览器中打开结果并返回 URL。
+Generates images with multiple model options. Opens result in browser and returns URL.
 
-参数：
+Parameters:
 ```typescript
 {
-  prompt: string,       // 图像描述
-  model?: string,       // 模型 ID（默认值："207910310772879360"）
-  image_count?: number  // 图像数量（默认值：1）
+  prompt: string,       // Image description
+  model?: string,       // Model ID (default: "207910310772879360")
+  image_count?: number  // Number of images (default: 1)
 }
 ```
 
-模型：
-- 5000: FLUX1.1（标准）
+Models:
+- 5000: FLUX1.1 (standard)
 - 9000: FLUX1.1-ultra
 - 6000: SD3.5
 - 7000: Recraft-Real
 - 8000: Recraft-Vector
 
-所有生成的图像尺寸为 1024x1024。
+All images generated at 1024x1024.
 
-示例用法：
+Sample usage:
 ```javascript
 const result = await client.callTool({
   name: "generate_image",
   arguments: {
-    prompt: "一只优雅坐着的猫",
+    prompt: "A cat sitting elegantly",
     model: "7000",
     image_count: 1
   }
 });
 ```
 
-响应格式：
+Response format:
 ```
-图像生成成功！
-图像已在您的默认浏览器中打开。
+Image generated successfully!
+The image has been opened in your default browser.
 
-生成详情：
-- 模型：7000
-- 提示词： "一只优雅坐着的猫"
-- 图像 URL：https://storage.googleapis.com/...
+Generation details:
+- Model: 7000
+- Prompt: "A cat sitting elegantly"
+- Image URL: https://storage.googleapis.com/...
 
-您也可以点击上方的 URL 再次查看图像。
+You can also click the URL above to view the image again.
 ```
 
-## 使用 Docker 构建
+## Building w/ Docker
 
 ```sh
 docker build -t mcp/everart -f src/everart/Dockerfile . 
 ```
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/everart](https://github.com/modelcontextprotocol/servers/tree/main/src/everart)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/everart](https://github.com/modelcontextprotocol/servers/tree/main/src/everart)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-everart`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-everart`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-everart.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-everart.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

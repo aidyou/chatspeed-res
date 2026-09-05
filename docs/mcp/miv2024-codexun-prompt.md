@@ -1,104 +1,76 @@
 ---
-title: "EasyPrompt--Prompt管理工具"
-description: "前言 这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。 使用很简单，所以叫EasyPrompt 使用环境 - EasyPrompt支持在CherryStdio和Chatbox里面使用 - EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用 - EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！） 使用方法 1. 先去官网https://prompt.cod"
+title: "codexun-prompt-mcp"
+description: "Preface This is a tool for managing your prompts, allowing you to search for your own prompts directly within AI conversations. It's very simple to use, hence the name EasyPrompt. Usage Environment -…"
 ---
 
-# EasyPrompt--Prompt管理工具
+# codexun-prompt-mcp
 
-前言 这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。 使用很简单，所以叫EasyPrompt 使用环境 - EasyPrompt支持在CherryStdio和Chatbox里面使用 - EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用 - EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！） 使用方法 1. 先去官网https://prompt.cod
+Preface This is a tool for managing your prompts, allowing you to search for your own prompts directly within AI conversations. It's very simple to use, hence the name EasyPrompt. Usage Environment -…
 
-# 前言
+# Preface
 
+This is a tool for managing your prompts, allowing you to search for your own prompts directly within AI conversations. It's very simple to use, hence the name EasyPrompt.
 
-这是一个管理你 prompt 的工具，直接你在 ai 对话里面搜索你自己的 prompt。
+# Usage Environment
+- EasyPrompt supports usage in CherryStdio and Chatbox.
+- EasyPrompt supports usage in programming tools like Trae and Cursor that support mcp.
+- EasyPrompt can be used in Chrome browser and Doupao PC browser environments. Through a browser extension, you can easily access your own prompts with one click. (Recommended for beginners!)
 
-使用很简单，所以叫EasyPrompt~
+# How to Use
 
-# 使用环境
+1. First, go to the official website https://prompt.code2ai.top and register an account.
+2. Click on [Avatar] -> [User Center] -> api-keys.
+3. Create an API key.
 
-- EasyPrompt支持在CherryStdio和Chatbox里面使用
-- EasyPrompt支持在Trae，Cursor等支持mcp的编程工具中使用
-- EasyPrompt支持在Chrome浏览器，豆包PC端浏览器环境使用。通过浏览器插件，一键获取你自己的Prompt。（小白用户推荐用这种方式！）
-
-# 使用方法
-
-
-1. 先去官网https://prompt.code2ai.top  注册一个用户
-
-2. 点击【头像】->【User Center】 -> api-keys
-
-3. 创建一个 API key
-
-
-# 配置 mcp
-
-
-```
+# Configuring mcp
 
 {
-
   "mcpServers": {
-
     "codexun-prompt": {
-
       "command": "npx",
-
       "args": [
-
         "codexun-prompt-mcp@1.0.11",
-
         "--token",
-
         "sk-you-api-key"
-
       ],
-
       "disabled": false,
-
       "alwaysAllow": []
-
     }
-
   }
-
 }
 
-```
+When configuring, replace `sk-you-api-key` with your actual API key.
 
-配置的时候需要把 sk-you-api-key 体会成你自己申请的 api-key
+Note: `codexun-prompt-mcp` may have updates, so it's recommended to use the latest version.
 
-备注：codexun-prompt-mcp 有可能更新版本，建议使用最新版本
-
-
-
-# 使用教程
+# Tutorial
 
 https://mp.weixin.qq.com/s/Sm58jONFtsLEa38aF0rkPQ
 
-# 浏览器插件
+# Browser Extension
 
 https://prompt.code2ai.top/posts/prompt-browser-ext
 
-# 官网
+# Official Website
 
 https://prompt.code2ai.top/
 
-**官方网站：** [https://www.npmjs.com/package/codexun-prompt-mcp?activeTab=code](https://www.npmjs.com/package/codexun-prompt-mcp?activeTab=code)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/codexun-prompt-mcp?activeTab=code](https://www.npmjs.com/package/codexun-prompt-mcp?activeTab=code)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`, `media`
-- 标签：`developer tools`, `browser automation`, `entertainment and media`, `prompt`, `prompt管理`, `prompt收藏`, `prompt插件`, `chinese`
+- Categories: `browser`, `media`
+- Tags: `developer tools`, `browser automation`, `entertainment and media`, `prompt`, `prompt管理`, `prompt收藏`, `prompt插件`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`codexun-prompt-mcp@1.0.11 --token sk-you-api-key`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `codexun-prompt-mcp@1.0.11 --token sk-you-api-key`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/miv2024-codexun-prompt.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/miv2024-codexun-prompt.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

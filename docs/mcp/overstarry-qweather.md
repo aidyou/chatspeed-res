@@ -1,32 +1,32 @@
 ---
-title: "QWeather气象控制平台"
-description: "请提供具体的正文内容，目前的内容“qweather mcp”不足以进行准确的语言识别和翻译。如果这是特定术语或代码，请给予更多上下文信息。"
+title: "qweather-mcp"
+description: "qweather mcp"
 ---
 
-# QWeather气象控制平台
+# qweather-mcp
 
-请提供具体的正文内容，目前的内容“qweather mcp”不足以进行准确的语言识别和翻译。如果这是特定术语或代码，请给予更多上下文信息。
+qweather mcp
 
 # qweather-mcp
 [Smithery](https://smithery.ai/server/@overstarry/qweather-mcp)
 
-用于 [QWeather](https://www.qweather.com/) API 的 MCP 服务器。
+MCP server for [QWeather](https://www.qweather.com/) API.
 
-该项目通过模型上下文协议（MCP）提供天气信息查询功能。
+This project provides weather information query capabilities through Model Context Protocol (MCP).
 
-## 使用方法
+## Usage
 
-在这里获取您的 API 密钥 [here](https://console.qweather.com/)。
+Get your API Key [here](https://console.qweather.com/).
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@overstarry/qweather-mcp) 自动为 Claude Desktop 安装 qweather-mcp：
+To install qweather-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@overstarry/qweather-mcp):
 
 ```bash
 npx -y @smithery/cli install @overstarry/qweather-mcp --client claude
 ```
 
-### 手动配置
+### Configure manually
 
 ```bash
 # stdio server
@@ -34,14 +34,14 @@ npx -y qweather-mcp
 
 ```
 
-环境变量：
+Environment variables:
 
 ```
 QWEATHER_API_BASE=https://api.qweather.com
 QWEATHER_API_KEY=
 ```
 
-### JSON 配置
+### JSON config
 
 ```json
 {
@@ -58,31 +58,31 @@ QWEATHER_API_KEY=
 }
 ```
 
-### 可用工具
+### Available Tools
 
-- `lookup-city`: 根据名称查找城市信息
-- `get-weather-now`: 获取某个地点的当前天气
+- `lookup-city`: Look up city information by name
+- `get-weather-now`: Get current weather for a location
 
-## 许可证
+## License
 
-MIT。
+MIT.
 
-**官方网站：** [https://github.com/overstarry/qweather-mcp](https://github.com/overstarry/qweather-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/overstarry/qweather-mcp](https://github.com/overstarry/qweather-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `other`, `chinese`
+- Categories: `search`
+- Tags: `search`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y qweather-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y qweather-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/overstarry-qweather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/overstarry-qweather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

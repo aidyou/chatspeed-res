@@ -1,11 +1,11 @@
 ---
-title: "模型上下文协议股票工具"
-description: "一种模型上下文协议服务器，提供与雅虎财经互动的工具，允许用户检索股票价格、公司信息并进行财务数据比较。"
+title: "no-use-tools"
+description: "A Model Context Protocol server that provides tools for interacting with Yahoo Finance, allowing users to retrieve stock prices, company information, and perform financial data comparisons."
 ---
 
-# 模型上下文协议股票工具
+# no-use-tools
 
-一种模型上下文协议服务器，提供与雅虎财经互动的工具，允许用户检索股票价格、公司信息并进行财务数据比较。
+A Model Context Protocol server that provides tools for interacting with Yahoo Finance, allowing users to retrieve stock prices, company information, and perform financial data comparisons.
 
 # MCP Yahoo Finance
 
@@ -104,22 +104,22 @@ npx @modelcontextprotocol/inspector uv run mcp-yahoo-finance
 
 - Original project by [Max Scheijen](https://github.com/maxscheijen)
 
-**官方网站：** [https://github.com/marckwei/no-use-tools](https://github.com/marckwei/no-use-tools)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/marckwei/no-use-tools](https://github.com/marckwei/no-use-tools)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `search`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-yahoo-finance`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-yahoo-finance`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/marckwei-no-use-tools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/marckwei-no-use-tools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

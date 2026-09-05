@@ -1,101 +1,101 @@
 ---
-title: "MCP文件系统服务器"
-description: "用于文件系统操作的Go语言服务器，实现了模型上下文协议（MCP）。"
+title: "mcp-filesystem-server"
+description: "Go server implementing Model Context Protocol (MCP) for filesystem operations."
 ---
 
-# MCP文件系统服务器
+# mcp-filesystem-server
 
-用于文件系统操作的Go语言服务器，实现了模型上下文协议（MCP）。
+Go server implementing Model Context Protocol (MCP) for filesystem operations.
 
 [Smithery](https://smithery.ai/server/@mark3labs/mcp-filesystem-server)
 
-# 文件系统 MCP 服务器
+# Filesystem MCP Server
 
-实现用于文件系统操作的模型上下文协议 (MCP) 的 Go 语言服务器。
+Go server implementing Model Context Protocol (MCP) for filesystem operations.
 
-## 特性
+## Features
 
-- 读写文件
-- 创建/列出/删除目录
-- 移动文件/目录
-- 搜索文件
-- 获取文件元数据
+- Read/write files
+- Create/list/delete directories
+- Move files/directories
+- Search files
+- Get file metadata
 
-**注意**：服务器仅允许在通过 `args` 指定的目录内进行操作。
+**Note**: The server will only allow operations within directories specified via `args`.
 
 ## API
 
-### 资源
+### Resources
 
-- `file://system`: 文件系统操作接口
+- `file://system`: File system operations interface
 
-### 工具
+### Tools
 
 - **read_file**
-  - 读取文件的全部内容
-  - 输入: `path` (字符串)
-  - 使用 UTF-8 编码读取整个文件的内容
+  - Read complete contents of a file
+  - Input: `path` (string)
+  - Reads complete file contents with UTF-8 encoding
 
 - **read_multiple_files**
-  - 同时读取多个文件
-  - 输入: `paths` (字符串数组)
-  - 单个文件读取失败不会停止整个操作
+  - Read multiple files simultaneously
+  - Input: `paths` (string[])
+  - Failed reads Will not  stop the entire operation
 
 - **write_file**
-  - 创建新文件或覆盖现有文件（使用此功能时需谨慎）
-  - 输入:
-    - `path` (字符串): 文件位置
-    - `content` (字符串): 文件内容
+  - Create new file or overwrite existing (exercise caution with this)
+  - Inputs:
+    - `path` (string): File location
+    - `content` (string): File content
 
 - **create_directory**
-  - 创建新目录或确保其存在
-  - 输入: `path` (字符串)
-  - 如需要则创建父目录
-  - 如果目录已存在，则静默成功
+  - Create new directory or ensure it exists
+  - Input: `path` (string)
+  - Creates parent directories if needed
+  - Succeeds silently if directory exists
 
 - **list_directory**
-  - 列出带有 [FILE] 或 [DIR] 前缀的目录内容
-  - 输入: `path` (字符串)
+  - List directory contents with [FILE] or [DIR] prefixes
+  - Input: `path` (string)
 
 - **move_file**
-  - 移动或重命名文件和目录
-  - 输入:
-    - `source` (字符串)
-    - `destination` (字符串)
-  - 如果目标已存在则失败
+  - Move or rename files and directories
+  - Inputs:
+    - `source` (string)
+    - `destination` (string)
+  - Fails if destination exists
 
 - **search_files**
-  - 递归搜索文件/目录
-  - 输入:
-    - `path` (字符串): 起始目录
-    - `pattern` (字符串): 搜索模式
-  - 不区分大小写的匹配
-  - 返回匹配项的完整路径
+  - Recursively search for files/directories
+  - Inputs:
+    - `path` (string): Starting directory
+    - `pattern` (string): Search pattern
+  - Case-insensitive matching
+  - Returns full paths to matches
 
 - **get_file_info**
-  - 获取详细的文件/目录元数据
-  - 输入: `path` (字符串)
-  - 返回:
-    - 大小
-    - 创建时间
-    - 修改时间
-    - 访问时间
-    - 类型 (文件/目录)
-    - 权限
+  - Get detailed file/directory metadata
+  - Input: `path` (string)
+  - Returns:
+    - Size
+    - Creation time
+    - Modified time
+    - Access time
+    - Type (file/directory)
+    - Permissions
 
 - **list_allowed_directories**
-  - 列出服务器允许访问的所有目录
-  - 无需输入
-  - 返回:
-    - 该服务器可以从中读取/写入的目录
+  - List all directories the server is allowed to access
+  - No input required
+  - Returns:
+    - Directories that this server can read/write from
 
-## 与 Claude Desktop 一起使用
-安装服务器
+## Usage with Claude Desktop
+Install the server
 ```bash
 go install github.com/mark3labs/mcp-filesystem-server
 ```
 
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+Add this to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -110,26 +110,26 @@ go install github.com/mark3labs/mcp-filesystem-server
 }
 ```
 
-## 许可证
+## License
 
-本 MCP 服务器根据 MIT 许可证授权。这意味着您可以在遵守 MIT 许可证条款和条件的前提下自由使用、修改和分发软件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/mark3labs/mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mark3labs/mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`mcp-filesystem-server`
-- 参数：`/Users/username/Desktop /path/to/other/allowed/dir`
+- Transport: `stdio`
+- Command: `mcp-filesystem-server`
+- Args: `/Users/username/Desktop /path/to/other/allowed/dir`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mark3labs-filesystem.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mark3labs-filesystem.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

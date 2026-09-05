@@ -1,11 +1,11 @@
 ---
-title: "八字MCP"
-description: "为AI提供精准的八字排盘信息"
+title: "Bazi-MCP"
+description: "Provide precise Bazi (Chinese Horoscope) knowledge to empower AI agents with accurate personality and destiny insights."
 ---
 
-# 八字MCP
+# Bazi-MCP
 
-为AI提供精准的八字排盘信息
+Provide precise Bazi (Chinese Horoscope) knowledge to empower AI agents with accurate personality and destiny insights.
 
 # Bazi MCP (八字 MCP) by Cantian AI
 
@@ -396,7 +396,6 @@ npx -y @smithery/cli install @cantian-ai/bazi-mcp --client claude
     }
   }
 }
-
 ```
 
 ### getSolarTimes
@@ -498,22 +497,22 @@ npx -y @smithery/cli install @cantian-ai/bazi-mcp --client claude
 
 **Keywords**: Bazi MCP, Bazi AI Agent, Fengshui AI Agent, Bazi Calculator MCP, Bazi Calculator AI, Cantian AI
 
-**官方网站：** [https://github.com/cantian-ai/bazi-mcp](https://github.com/cantian-ai/bazi-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cantian-ai/bazi-mcp](https://github.com/cantian-ai/bazi-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `art and culture`
+- Categories: `media`
+- Tags: `entertainment and media`, `art and culture`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`bazi-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `bazi-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cantian-ai-bazi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cantian-ai-bazi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

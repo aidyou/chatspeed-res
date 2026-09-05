@@ -1,41 +1,41 @@
 ---
-title: "MCP-Postman API测试工具"
-description: "启用通过Newman运行Postman集合，以进行API测试并通过对标准化接口获取详细的结果分析。"
+title: "mcp-postman"
+description: "Enables running Postman collections using Newman for conducting API tests and obtaining detailed result analysis via a standardized interface."
 ---
 
-# MCP-Postman API测试工具
+# mcp-postman
 
-启用通过Newman运行Postman集合，以进行API测试并通过对标准化接口获取详细的结果分析。
+Enables running Postman collections using Newman for conducting API tests and obtaining detailed result analysis via a standardized interface.
 
-# Postman MCP 服务器
+# Postman MCP Server
 [Smithery](https://smithery.ai/server/mcp-postman)
 
-这是一个 MCP（Model Context Protocol）服务器，它通过 Newman 运行 Postman 集合。此服务器允许 LLMs 通过标准化接口执行 API 测试并获取详细结果。
+An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.
 
 [Watch video](https://youtu.be/d1WgTqwMsog)
 
-## 功能
+## Features
 
-- 使用 Newman 运行 Postman 集合
-- 支持环境文件
-- 支持全局变量
-- 详细的测试结果包括：
-  - 总体成功/失败状态
-  - 测试摘要（总数、通过数、失败数）
-  - 详细的失败信息
-  - 执行时间
+- Run Postman collections using Newman
+- Support for environment files
+- Support for global variables
+- Detailed test results including:
+  - Overall success/failure status
+  - Test summary (total, passed, failed)
+  - Detailed failure information
+  - Execution timings
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/mcp-postman) 自动安装 Claude 桌面版的 Postman Runner：
+To install Postman Runner for Claude Desktop automatically via [Smithery](https://smithery.ai/server/mcp-postman):
 
 ```bash
 npx -y @smithery/cli install mcp-postman --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```bash
 # Clone the repository
 git clone 
@@ -48,11 +48,11 @@ pnpm install
 pnpm build
 ```
 
-## 使用
+## Usage
 
-### 配置
+### Configuration
 
-将服务器添加到你的 Claude 桌面配置文件 `~/Library/Application Support/Claude/claude_desktop_config.json` 中：
+Add the server to your Claude desktop configuration file at `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
 ```json
 {
@@ -65,20 +65,20 @@ pnpm build
 }
 ```
 
-### 可用工具
+### Available Tools
 
 #### run-collection
 
-运行一个 Postman 集合并返回测试结果。
+Runs a Postman collection and returns the test results.
 
-**参数：**
+**Parameters:**
 
-- `collection` (必需): Postman 集合的路径或 URL
-- `environment` (可选): 环境文件的路径或 URL
-- `globals` (可选): 全局变量文件的路径或 URL
-- `iterationCount` (可选): 要运行的迭代次数
+- `collection` (required): Path or URL to the Postman collection
+- `environment` (optional): Path or URL to environment file
+- `globals` (optional): Path or URL to globals file
+- `iterationCount` (optional): Number of iterations to run
 
-**示例响应：**
+**Example Response:**
 
 ```json
 {
@@ -97,21 +97,21 @@ pnpm build
 }
 ```
 
-### 在 Claude 中使用示例
+### Example Usage in Claude
 
-你可以通过让 Claude 运行一个 Postman 集合来使用该服务器：
+You can use the server in Claude by asking it to run a Postman collection:
 
-"运行位于 /path/to/collection.json 的 Postman 集合并告诉我所有测试是否通过"
+"Run the Postman collection at /path/to/collection.json and tell me if all tests passed"
 
-Claude 将会：
+Claude will:
 
-1. 使用 run-collection 工具
-2. 分析测试结果
-3. 提供易于理解的执行摘要
+1. Use the run-collection tool
+2. Analyze the test results
+3. Provide a human-friendly summary of the execution
 
-## 开发
+## Development
 
-### 项目结构
+### Project Structure
 
 ```
 src/
@@ -128,7 +128,7 @@ test/
       └── sample-collection.json
 ```
 
-### 运行测试
+### Running Tests
 
 ```bash
 # Run tests
@@ -138,7 +138,7 @@ pnpm test
 pnpm test:coverage
 ```
 
-### 构建
+### Building
 
 ```bash
 # Build the project
@@ -148,34 +148,34 @@ pnpm build
 pnpm clean
 ```
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
 ISC
 
-**官方网站：** [https://github.com/shannonlal/mcp-postman](https://github.com/shannonlal/mcp-postman)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shannonlal/mcp-postman](https://github.com/shannonlal/mcp-postman)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/absolute/path/to/mcp-postman/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/absolute/path/to/mcp-postman/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shannonlal-postman.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shannonlal-postman.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

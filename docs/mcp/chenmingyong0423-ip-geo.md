@@ -1,29 +1,28 @@
 ---
-title: "IP 地理位置查询"
-description: "mcp-ip-geo 是一个 MCP (Model Context Protocol) 服务器，基于 ip-api.com 提供 IP 地理位置查询服务，可获取 IP 地址对应的国家、省份、城市等地理信息。"
+title: "mcp-ip-geo"
+description: "mcp-ip-geo"
 ---
 
-# IP 地理位置查询
+# mcp-ip-geo
 
-mcp-ip-geo 是一个 MCP (Model Context Protocol) 服务器，基于 ip-api.com 提供 IP 地理位置查询服务，可获取 IP 地址对应的国家、省份、城市等地理信息。
+mcp-ip-geo
 
 📝 mcp-ip-geo
 
-  
-English
- | 中文
+  English | 
+简体中文
 
 ---
 
-`mcp-ip-geo` 是一个 `MCP` (`Model Context Protocol`) 服务器，基于 `ip-api.com` 提供 `IP` 地理位置查询服务，可获取 `IP` 地址对应的国家、省份、城市等地理信息。
+`mcp-ip-geo` is an `MCP` (`Model Context Protocol`) server that provides IP geolocation lookup services (country, region, city, etc.) using the ip-api.com service.
 
-# 🔌 MCP 集成
+# 🔌 MCP Integration
 
-您可以通过以下两种方式集成 `mcp-ip-geo` 服务：
+You can integrate the `mcp-ip-geo` service in two ways:
 
-## 方式一：使用 go run 命令集成（Stdio 标准输入输出）
+## Method 1: Using the go run command (Stdio)
 
-通过在 `MCP` 配置中添加以下内容，可直接从 `GitHub` 运行最新版本：
+Add the following to your `MCP` configuration to run the latest version directly from GitHub:
 
 ```json
 {
@@ -39,39 +38,39 @@ English
 }
 ```
 
-## 方式二：使用 Docker 命令部署服务（Streamable HTTP）
+## Method 2: Using Docker (Streamable HTTP)
 
-### 🐳 使用 Docker 部署
+### 🐳 Docker Deployment
 
-#### 步骤 1: 克隆仓库
+#### Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/chenmingyong0423/mcp-ip-geo.git
 cd mcp-ip-geo
 ```
 
-#### 步骤 2: 构建 Docker 镜像
+#### Step 2: Build the Docker image
 
 ```bash
 docker build -t mcp-ip-geo-server .
 ```
 
-#### 步骤 3: 运行容器
+#### Step 3: Run the container
 
 ```bash
 docker run -d --name mcp-ip-geo-server -p 8000:8000 mcp-ip-geo-server
 ```
 
-成功运行后，服务将在容器内以 `0.0.0.0:8000` 监听（即监听所有网络接口），可通过 `http://:8000/mcp` 访问，其中``可以是：
-- 本地开发环境：使用 `localhost` 或 `127.0.0.1`
-- 局域网环境：使用服务器的内网IP地址（如 `192.168.x.x`）
-- 公网环境：使用服务器的公网 `IP` 地址或域名
+Once running successfully, the service will listen on `0.0.0.0:8000` within the container (listening on all network interfaces), and can be accessed via `http://:8000/mcp`, where `` can be:
+- Local development environment: Use `localhost` or `127.0.0.1`
+- LAN environment: Use the server's internal IP address (e.g., `192.168.x.x`)
+- Public network environment: Use the server's public IP address or domain name
 
-> 注意：服务在容器内配置为监听 `0.0.0.0` 地址，这是容器化应用的标准做法，确保服务可以从容器外部访问。
+> Note: The service is configured to listen on the `0.0.0.0` address inside the container, which is standard practice for containerized applications, ensuring the service can be accessed from outside the container.
 
-#### 步骤 4: 配置 MCP
+#### Step 4: Configure MCP
 
-在 `MCP` 配置中添加以下内容：
+Add the following to your `MCP` configuration:
 
 ```json
 {
@@ -83,28 +82,28 @@ docker run -d --name mcp-ip-geo-server -p 8000:8000 mcp-ip-geo-server
 }
 ```
 
-请将 `` 替换为实际部署环境的服务器 `IP` 地址或域名。
+Replace `` with the actual server IP address or domain name of your deployment environment.
 
-# ⚠️ 许可说明
+# ⚠️ License Notice
 
-> 注意：本项目使用了 ip-api.com 免费版本，其 API 服务**仅限非商业用途**。若您打算将本项目用于商业目的，请务必遵守其服务条款，或购买其付费版本：https://ip-api.com/
+> Note: This project uses the free version of ip-api.com, which is **for non-commercial use only**. If you intend to use this project for commercial purposes, please comply with their terms of service or purchase the paid version: https://ip-api.com/
 
-**官方网站：** [https://github.com/chenmingyong0423/mcp-ip-geo](https://github.com/chenmingyong0423/mcp-ip-geo)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/chenmingyong0423/mcp-ip-geo](https://github.com/chenmingyong0423/mcp-ip-geo)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`go`
-- 参数：`run github.com/chenmingyong0423/mcp-ip-geo/cmd/mcp-ip-geo@latest`
+- Transport: `stdio`
+- Command: `go`
+- Args: `run github.com/chenmingyong0423/mcp-ip-geo/cmd/mcp-ip-geo@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chenmingyong0423-ip-geo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chenmingyong0423-ip-geo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

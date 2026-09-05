@@ -1,92 +1,87 @@
 ---
-title: "VibeDocs-MCP"
-description: "VibeDoc MCP Server 是专为 魔搭MCP&Agent2025挑战赛MCP赛道一 开发的创新型MCP服务器，基于 Model Context Protocol（MCP）标准协议，为AI开发者提供智能化的项目规划与架构设计能力。通过深度集成大语言模型，它能快速生成技术方案、架构设计、开发路线图及部署策略，显著提升开发效率，助力团队高效协作与项目落地。🚀"
+title: "vibedoc"
+description: "VibeDoc MCP Server is an innovative MCP server specifically developed for the ModelScope MCP&Agent2025 Challenge, Track One, based on the Model Context Protocol (MCP) standard. It provides AI develope…"
 ---
 
-# VibeDocs-MCP
+# vibedoc
 
-VibeDoc MCP Server 是专为 魔搭MCP&Agent2025挑战赛MCP赛道一 开发的创新型MCP服务器，基于 Model Context Protocol（MCP）标准协议，为AI开发者提供智能化的项目规划与架构设计能力。通过深度集成大语言模型，它能快速生成技术方案、架构设计、开发路线图及部署策略，显著提升开发效率，助力团队高效协作与项目落地。🚀
+VibeDoc MCP Server is an innovative MCP server specifically developed for the ModelScope MCP&Agent2025 Challenge, Track One, based on the Model Context Protocol (MCP) standard. It provides AI develope…
 
-# 🎯 VibeDocs MCP - AI项目规划与优化助手
+# 🎯 VibeDocs MCP - AI Project Planning and Optimization Assistant
 
-### 基于MCP协议的智能项目分析与优化服务
+### Intelligent Project Analysis and Optimization Service Based on the MCP Protocol
 
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [![MCP Server](/mcp-assets/cb56a0889b99f9bc45a0b547b9f87230.svg)](https://modelcontextprotocol.io/)
 [![TypeScript](/mcp-assets/727013f5f559371c2a8fb4259b115a0e.svg)](https://www.typescriptlang.org/)
 [![Claude Desktop](/mcp-assets/b521d7eda972124703b8db6531715da1.svg)](https://claude.ai/)
 
-> 🚀 **全球首创的AI项目质量预测与优化系统** - 让AI成为你的项目规划专家！
+> 🚀 **The World's First AI Project Quality Prediction and Optimization System** - Let AI be your project planning expert!
 
+## 🎯 Project Overview
 
+**VibeDocs MCP** is an intelligent MCP server based on the Model Context Protocol, specifically designed to provide project analysis, quality prediction, and optimization suggestions for Claude Desktop. Through advanced algorithms and a professional template library, it helps developers, entrepreneurs, and product managers turn ideas into actionable project plans.
 
+### ✨ Core Innovations
 
+- 🔥 **AI Quality Prediction Technology** - A globally pioneering project quality prediction algorithm that evaluates project feasibility within 3 seconds
+- 💡 **Intelligent Optimization Engine** - An automatic optimization system based on 5-dimensional feature analysis
+- 🎯 **Professional Template Library** - Covering 10+ professional fields including MCP development, AI applications, and data analysis
+- 🚀 **Real-time Analysis Reports** - Providing detailed project analysis and improvement suggestions
 
-## 🎯 项目概述
+### 🏆 Technical Highlights
 
-**VibeDocs MCP** 是一个基于 Model Context Protocol 的智能MCP服务器，专门为Claude Desktop提供项目分析、质量预测和优化建议服务。通过先进的算法和专业模板库，帮助开发者、创业者和产品经理将想法转化为可执行的项目方案。
+| Feature | Weight | Description |
+|---------|--------|-------------|
+| **⚙️ Technical Depth** | 20% | TypeScript strict mode + complete type definitions
+Modular MCP Server + smart caching mechanism
+Structured prompt engineering + JSON output validation |
+| **🎨 User Experience** | 20% | Complete development plan generated in 10 seconds
+Detailed documentation + cross-platform configuration guide
+Directly usable AI programming prompts |
+| **📊 Performance Metrics** | 60% | Average quality score improvement of 20-30 points
+Supports 10+ project types with full coverage |
 
-### ✨ 核心创新
+## 🔧 MCP Protocol Workflow
 
-- 🔥 **AI质量预测技术** - 全球首创的项目质量预测算法，3秒内评估项目可行性
-- 💡 **智能优化引擎** - 基于5维特征分析的自动优化系统
-- 🎯 **专业模板库** - 覆盖MCP开发、AI应用、数据分析等10+专业领域
-- 🚀 **实时分析报告** - 提供详细的项目分析和改进建议
+VibeDocs MCP follows the standard Model Context Protocol workflow to ensure seamless integration with Claude Desktop:
 
-### 🏆 技术亮点
+### 📋 Core MCP Protocol Process
 
-| 特性 | 权重 | 说明 |
-|------|------|------|
-| **⚙️ 技术深度** | 20% | TypeScript严格模式 + 完整类型定义
-模块化MCP Server + 智能缓存机制
-结构化提示工程 + JSON输出验证 |
-| **🎨 用户体验** | 20% | 10秒生成完整开发计划
-详细文档 + 跨平台配置指南
-直接可用的AI编程提示词 |
-| **📊 性能指标** | 60% | 平均质量分数提升20-30分
-支持10+项目类型全覆盖 |
-
-## 🔧 MCP协议工作流程
-
-VibeDocs MCP遵循标准的Model Context Protocol工作流程，确保与Claude Desktop的无缝集成：
-
-### 📋 MCP协议核心流程
-
-```mermaid
+mermaid
 sequenceDiagram
     participant C as Claude Desktop
     participant M as VibeDocs MCP Server
     participant A as AI Analysis Engine
     
-    C->>M: 1. 初始化连接 (MCP Handshake)
-    M->>C: 2. 返回服务器信息和工具列表
+    C->>M: 1. Initialize connection (MCP Handshake)
+    M->>C: 2. Return server information and tool list
     
-    C->>M: 3. 用户输入项目描述
-    M->>A: 4. 调用质量预测算法
-    A->>M: 5. 返回5维度质量评估
+    C->>M: 3. User inputs project description
+    M->>A: 4. Invoke quality prediction algorithm
+    A->>M: 5. Return 5-dimensional quality assessment
     
-    M->>A: 6. 触发优化引擎
-    A->>M: 7. 生成优化建议和方案
+    M->>A: 6. Trigger optimization engine
+    A->>M: 7. Generate optimization suggestions and plans
     
-    M->>C: 8. 返回完整分析报告
-    C->>User: 9. 展示优化后的项目方案
-```
+    M->>C: 8. Return complete analysis report
+    C->>User: 9. Display optimized project plan
 
-### 🛠️ MCP工具注册机制
+### 🛠️ MCP Tool Registration Mechanism
 
-VibeDocs MCP 在启动时向Claude Desktop注册以下工具：
+VibeDocs MCP registers the following tools with Claude Desktop upon startup:
 
-```typescript
-// MCP 工具注册示例
+typescript
+// Example of MCP tool registration
 {
   "tools": [
     {
       "name": "predict_and_optimize",
-      "description": "AI项目质量预测与自动优化",
+      "description": "AI project quality prediction and automatic optimization",
       "inputSchema": {
         "type": "object",
         "properties": {
-          "text": { "type": "string", "description": "项目描述文本" },
+          "text": { "type": "string", "description": "Project description text" },
           "target_quality": { "type": "number", "minimum": 60, "maximum": 100 },
           "optimization_mode": { "enum": ["auto", "conservative", "aggressive"] }
         }
@@ -94,7 +89,7 @@ VibeDocs MCP 在启动时向Claude Desktop注册以下工具：
     },
     {
       "name": "get_quality_insights", 
-      "description": "项目质量洞察分析报告",
+      "description": "Project quality insight analysis report",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -105,88 +100,83 @@ VibeDocs MCP 在启动时向Claude Desktop注册以下工具：
     }
   ]
 }
-```
 
-## 🚀 核心功能详解
+## 🚀 Detailed Explanation of Core Features
 
-### 🎯 智能项目分析与优化
+### 🎯 Intelligent Project Analysis and Optimization
 
-#### 1. `predict_and_optimize` - 智能项目分析与优化
-**核心功能**: 项目质量预测 + 自动优化建议 + 专业指导方案
+#### 1. `predict_and_optimize` - Intelligent Project Analysis and Optimization
+**Core Functionality**: Project quality prediction + automatic optimization suggestions + professional guidance plan
 
-**输入参数**:
-- `text`: 项目描述文本 (必填)
-- `target_quality`: 目标质量分数 (60-100，默认80)
-- `optimization_mode`: 优化模式 (auto/conservative/aggressive，默认auto)
-- `generate_report`: 是否生成详细报告 (默认true)
+**Input Parameters**:
+- `text`: Project description text (required)
+- `target_quality`: Target quality score (60-100, default 80)
+- `optimization_mode`: Optimization mode (auto/conservative/aggressive, default auto)
+- `generate_report`: Whether to generate a detailed report (default true)
 
-**输出结果**:
-- 📊 **质量评估**: 5维度质量分数 (清晰度、完整性、可行性、商业逻辑、创新性)
-- ✨ **智能优化**: 自动生成优化后的项目描述
-- 💡 **专业建议**: 针对性的技术方案和实施路径
-- 📈 **成功率预测**: 基于算法的项目成功概率评估
+**Output Results**:- 📊 **Quality Assessment**: 5-dimensional quality score (clarity, completeness, feasibility, business logic, innovation)
+- ✨ **Intelligent Optimization**: Automatically generated optimized project description
+- 💡 **Professional Advice**: Targeted technical solutions and implementation paths
+- 📈 **Success Rate Prediction**: Algorithm-based project success probability evaluation
 
-#### 2. `get_quality_insights` - 项目洞察分析报告
-**核心功能**: 深度项目分析 + 趋势洞察 + 最佳实践建议
+#### 2. `get_quality_insights` - Project Insight Analysis Report
+**Core Functionality**: In-depth project analysis + trend insights + best practice recommendations
 
-**输入参数**:
-- `analysis_type`: 分析类型 (current_session/historical_trends/best_practices)
-- `include_recommendations`: 是否包含改进建议 (默认true)
-- `detailed_analysis`: 是否生成详细分析 (默认true)
+**Input Parameters**:
+- `analysis_type`: Type of analysis (current_session/historical_trends/best_practices)
+- `include_recommendations`: Whether to include improvement suggestions (default true)
+- `detailed_analysis`: Whether to generate a detailed analysis (default true)
 
-**输出结果**:
-- 📈 **质量趋势**: 历史质量变化和成功率统计
-- 🔍 **深度诊断**: 6维度质量短板分析
-- 💡 **改进建议**: 个性化的项目优化方案
-- 📊 **对比分析**: 优化前后质量对比评估
+**Output Results**:
+- 📈 **Quality Trends**: Historical quality changes and success rate statistics
+- 🔍 **In-depth Diagnosis**: 6-dimensional quality weakness analysis
+- 💡 **Improvement Recommendations**: Personalized project optimization plans
+- 📊 **Comparative Analysis**: Quality comparison before and after optimization
 
-### ✨ 核心算法优势
+### ✨ Core Algorithm Advantages
 
-#### 🧠 5维质量评估系统
-- **清晰度评估** (20%权重) - 项目描述的明确性和可理解度
-- **完整性评估** (25%权重) - 需求覆盖的完整度和功能全面性
-- **可行性评估** (25%权重) - 技术实现的可能性和复杂度评估
-- **商业逻辑** (15%权重) - 商业模式的合理性和市场价值
-- **创新性评估** (15%权重) - 技术创新度和差异化竞争优势
+#### 🧠 5-Dimensional Quality Assessment System
+- **Clarity Assessment** (20% weight) - Clarity and understandability of the project description
+- **Completeness Assessment** (25% weight) - Coverage of requirements and comprehensiveness of functionality
+- **Feasibility Assessment** (25% weight) - Evaluation of technical feasibility and complexity
+- **Business Logic** (15% weight) - Reasonableness of the business model and market value
+- **Innovation Assessment** (15% weight) - Degree of technological innovation and differentiated competitive advantage
 
-#### 🔧 多策略优化引擎
-- **技术导向优化** - 补充技术栈和架构设计，强化实现方案
-- **商业导向优化** - 完善商业模式和市场分析，突出价值主张
-- **用户导向优化** - 强化用户体验和产品功能，提升实用性
+#### 🔧 Multi-Strategy Optimization Engine
+- **Technology-Oriented Optimization** - Supplementing technology stack and architectural design, strengthening implementation plans
+- **Business-Oriented Optimization** - Enhancing business models and market analysis, highlighting value propositions
+- **User-Oriented Optimization** - Strengthening user experience and product features, improving practicality
 
-#### 🎯 MCP增强算法
-- **MCP关键词加权** - 对'mcp'(+15分)、'agent'(+12分)等关键词特殊加分
-- **行业模板匹配** - 智能识别项目类型，应用对应的专业模板
-- **通用质量提升** - 全面优化基础分数，确保20-30分的显著提升
+#### 🎯 MCP Enhanced Algorithm
+- **MCP Keyword Weighting** - Special bonus points for keywords like 'mcp' (+15 points), 'agent' (+12 points), etc.
+- **Industry Template Matching** - Intelligent recognition of project types, applying corresponding professional templates
+- **General Quality Improvement** - Comprehensive optimization of base scores, ensuring a significant increase of 20-30 points
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 📥 安装配置
+### 📥 Installation and Configuration
 
-1. **克隆项目**
-```bash
+1. **Clone the Project**
+bash
 git clone https://github.com/JasonRobertDestiny/VibeDocs_MCP.git
 cd VibeDocs_MCP
-```
 
-2. **安装依赖**
-```bash
+2. **Install Dependencies**
+bash
 npm install
-```
 
-3. **构建项目**
-```bash
+3. **Build the Project**
+bash
 npm run build
-```
 
-### ⚙️ Claude Desktop配置
+### ⚙️ Claude Desktop Configuration
 
-在Claude Desktop配置文件中添加：
+Add the following to the Claude Desktop configuration file:
 
-**Windows路径**: `%APPDATA%\Claude\claude_desktop_config.json`
-**macOS路径**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows Path**: `%APPDATA%\Claude\claude_desktop_config.json`
+**macOS Path**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-```json
+json
 {
   "mcpServers": {
     "vibedocs-mcp": {
@@ -198,77 +188,72 @@ npm run build
     }
   }
 }
-```
 
-### 🎯 使用示例
+### 🎯 Usage Example
 
-**在Claude Desktop中直接输入:**
-```
-我想开发一个MCP Server工具，集成到Claude Desktop中，帮助用户进行智能代码审查和优化建议
-```
+**Direct Input in Claude Desktop:**
+plaintext
+I want to develop an MCP Server tool integrated into Claude Desktop to help users with intelligent code review and optimization suggestions
 
-**预期输出:**
-- 📊 项目质量评分: 85-95分
-- 💡 详细技术方案: MCP协议实现 + 静态分析引擎
-- 🚀 实施路线图: 4个阶段的开发计划
-- 💼 商业模式: freemium模式 + 企业服务
+**Expected Output:**
+- 📊 Project Quality Score: 85-95 points
+- 💡 Detailed Technical Solution: MCP protocol implementation + static analysis engine
+- 🚀 Implementation Roadmap: 4-phase development plan
+- 💼 Business Model: freemium model + enterprise services
 
-## 🛠️ 项目架构
+## 🛠️ Project Architecture
 
-### 📁 目录结构
-```
+### 📁 Directory Structure
+plaintext
 VibeDocs_MCP/
 ├── src/
-│   ├── index.ts                     # MCP服务器入口文件
-│   └── core/                        # 核心算法模块
-│       ├── quality-predictor.ts     # 质量预测算法引擎
-│       ├── input-optimizer.ts       # 智能优化引擎
-│       ├── text-analyzer.ts         # 文本特征分析器
-│       ├── result-evaluator.ts      # 结果评估器
-│       └── monitoring-storage.ts    # 数据存储管理
-├── image/                           # 效果展示图片
-│   ├── show.png                     # 系统主界面
-│   ├── show1.png                    # 分析结果展示  
-│   └── show2.png                    # 详细报告界面
-├── claude-desktop-config.json       # Claude配置示例
-├── package.json                     # 项目依赖配置
-└── README.md                        # 项目文档
-```
+│   ├── index.ts                     # MCP server entry file
+│   └── core/                        # Core algorithm modules
+│       ├── quality-predictor.ts     # Quality prediction algorithm engine
+│       ├── input-optimizer.ts       # Intelligent optimization engine
+│       ├── text-analyzer.ts         # Text feature analyzer
+│       ├── result-evaluator.ts      # Result evaluator
+│       └── monitoring-storage.ts    # Data storage management
+├── image/                           # Effect demonstration images
+│   ├── show.png                     # System main interface
+│   ├── show1.png                    # Analysis results display
+│   └── show2.png                    # Detailed report interface
+├── claude-desktop-config.json       # Claude configuration example
+├── package.json                     # Project dependency configuration
+└── README.md                        # Project documentation### 🔧 Technology Stack
+- **Language**: TypeScript 5.0+ (strict mode)
+- **Protocol**: Model Context Protocol (MCP)
+- **Runtime**: Node.js 18+
+- **Build Tools**: npm/pnpm
+- **Integration**: Claude Desktop
+- **AI Engine**: Proprietary 5-dimensional quality assessment algorithm
 
-### 🔧 技术栈
-- **语言**: TypeScript 5.0+ (严格模式)
-- **协议**: Model Context Protocol (MCP)
-- **运行时**: Node.js 18+
-- **构建工具**: npm/pnpm
-- **集成**: Claude Desktop
-- **AI引擎**: 自研5维质量评估算法
+## 📊 Performance Metrics
 
-## 📊 性能指标
+| Metric Category | Value | Description |
+|-----------------|-------|-------------|
+| **Response Time** | 
 
-| 指标类别 | 数值 | 说明 |
-|----------|------|------|
-| **响应时间** | 
-
-### 🎯 **立即体验VibeDocs MCP，让AI成为你的项目规划专家！**
+### 🎯 **Experience VibeDocs MCP Now, Let AI Be Your Project Planning Expert!**
 
 Made with ❤️ for the **Model Context Protocol** ecosystem
 
-**官方网站：** [https://github.com/JasonRobertDestiny/VibeDocs](https://github.com/JasonRobertDestiny/VibeDocs)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JasonRobertDestiny/VibeDocs](https://github.com/JasonRobertDestiny/VibeDocs)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `vibecoding`, `创业工具`, `项目规划`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `vibecoding`, `创业工具`, `项目规划`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`tsx src/index.ts`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `tsx src/index.ts`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jasonrobert-vibedoc.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jasonrobert-vibedoc.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

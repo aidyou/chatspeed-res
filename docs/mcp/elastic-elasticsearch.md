@@ -1,48 +1,48 @@
 ---
-title: "Elasticsearch"
-description: "将Claude和其他MCP客户端连接到Elasticsearch数据，允许用户通过自然语言对话与其Elasticsearch索引进行交互。"
+title: "mcp-server-elasticsearch"
+description: "Connects Claude and other MCP clients to Elasticsearch data, allowing users to interact with their Elasticsearch indices through natural language conversations."
 ---
 
-# Elasticsearch
+# mcp-server-elasticsearch
 
-将Claude和其他MCP客户端连接到Elasticsearch数据，允许用户通过自然语言对话与其Elasticsearch索引进行交互。
+Connects Claude and other MCP clients to Elasticsearch data, allowing users to interact with their Elasticsearch indices through natural language conversations.
 
-# Elasticsearch MCP 服务器
+# Elasticsearch MCP Server
 
-通过模型上下文协议 (MCP) 直接从任何 MCP 客户端（如 Claude Desktop）连接到您的 Elasticsearch 数据。
+Connect to your Elasticsearch data directly from any MCP Client (like Claude Desktop) using the Model Context Protocol (MCP).
 
-此服务器使用 Model Context Protocol 将代理连接到您的 Elasticsearch 数据。它允许您通过自然语言对话与您的 Elasticsearch 索引进行交互。
+This server connects agents to your Elasticsearch data using the Model Context Protocol. It allows you to interact with your Elasticsearch indices through natural language conversations.
 
   
 
-## 可用工具
+## Available Tools
 
-* `list_indices`: 列出所有可用的 Elasticsearch 索引
-* `get_mappings`: 获取特定 Elasticsearch 索引的字段映射
-* `search`: 使用提供的查询 DSL 执行 Elasticsearch 搜索
-* `get_shards`: 获取所有或特定索引的分片信息
+* `list_indices`: List all available Elasticsearch indices
+* `get_mappings`: Get field mappings for a specific Elasticsearch index
+* `search`: Perform an Elasticsearch search with the provided query DSL
+* `get_shards`: Get shard information for all or specific indices
 
-## 前提条件
+## Prerequisites
 
-* 一个 Elasticsearch 实例
-* Elasticsearch 身份验证凭据（API 密钥或用户名/密码）
-* MCP 客户端（例如 Claude Desktop）
+* An Elasticsearch instance
+* Elasticsearch authentication credentials (API key or username/password)
+* MCP Client (e.g. Claude Desktop)
 
-## 演示
+## Demo
 
-[https://github.com/user-attachments/assets/5dd292e1-a728-4ca7-8f01-1380d1bebe0c](https://github.com/user-attachments/assets/5dd292e1-a728-4ca7-8f01-1380d1bebe0c)
+https://github.com/user-attachments/assets/5dd292e1-a728-4ca7-8f01-1380d1bebe0c
 
-## 安装与设置
+## Installation & Setup
 
-### 使用已发布的 NPM 包
+### Using the Published NPM Package
 
 > [!TIP]
-> 使用 Elasticsearch MCP 服务器最简单的方法是通过已发布的 npm 包。
+> The easiest way to use Elasticsearch MCP Server is through the published npm package.
 
-1. **配置 MCP 客户端**
-   - 打开您的 MCP 客户端。请参阅 [MCP 客户端列表](https://modelcontextprotocol.io/clients)，这里我们正在配置 Claude Desktop。
-   - 转到 **设置 > 开发者 > MCP 服务器**
-   - 单击 `编辑配置` 并添加一个新的 MCP 服务器，配置如下：
+1. **Configure MCP Client**
+   - Open your MCP Client. See the [list of MCP Clients](https://modelcontextprotocol.io/clients), here we are configuring Claude Desktop.
+   - Go to **Settings > Developer > MCP Servers**
+   - Click `Edit Config` and add a new MCP Server with the following configuration:
 
 ```json
    {
@@ -62,50 +62,50 @@ description: "将Claude和其他MCP客户端连接到Elasticsearch数据，允�
    }
 ```
 
-2. **开始对话**
-   - 在您的 MCP 客户端中打开一个新的对话
-   - MCP 服务器应自动连接
-   - 现在您可以询问关于您的 Elasticsearch 数据的问题了
+2. **Start a Conversation**
+   - Open a new conversation in your MCP Client
+   - The MCP server should connect automatically
+   - You can now ask questions about your Elasticsearch data
 
-### 配置选项
+### Configuration Options
 
-Elasticsearch MCP 服务器支持配置选项以连接到您的 Elasticsearch：
+The Elasticsearch MCP Server supports configuration options to connect to your Elasticsearch:
 
 > [!NOTE]
-> 您必须提供 API 密钥或同时提供用户名和密码进行身份验证。
+> You must provide either an API key or both username and password for authentication.
 
-| 环境变量 | 描述 | 是否必需 |
+| Environment Variable | Description | Required |
 |---------------------|-------------|----------|
-| `ES_URL` | 您的 Elasticsearch 实例 URL | 是 |
-| `ES_API_KEY` | 用于身份验证的 Elasticsearch API 密钥 | 否 |
-| `ES_USERNAME` | 用于基本身份验证的 Elasticsearch 用户名 | 否 |
-| `ES_PASSWORD` | 用于基本身份验证的 Elasticsearch 密码 | 否 |
-| `ES_CA_CERT` | 自定义 CA 证书路径，用于 Elasticsearch SSL/TLS | 否 |
+| `ES_URL` | Your Elasticsearch instance URL | Yes |
+| `ES_API_KEY` | Elasticsearch API key for authentication | No |
+| `ES_USERNAME` | Elasticsearch username for basic authentication | No |
+| `ES_PASSWORD` | Elasticsearch password for basic authentication | No |
+| `ES_CA_CERT` | Path to custom CA certificate for Elasticsearch SSL/TLS | No |
 
-### 本地开发
+### Developing Locally
 
 > [!NOTE]
-> 如果您想要修改或扩展 MCP 服务器，请遵循以下本地开发步骤。
+> If you want to modify or extend the MCP Server, follow these local development steps.
 
-1. **使用正确的 Node.js 版本**
+1. **Use the correct Node.js version**
 ```bash
    nvm use
 ```
 
-2. **安装依赖项**
+2. **Install Dependencies**
 ```bash
    npm install
 ```
 
-3. **构建项目**
+3. **Build the Project**
 ```bash
    npm run build
 ```
 
-4. **在 Claude Desktop App 中本地运行**
-   - 打开 **Claude Desktop App**
-   - 进入 **设置 > 开发者 > MCP 服务器**
-   - 点击 `编辑配置` 并添加一个新的 MCP 服务器，配置如下：
+4. **Run locally in Claude Desktop App**
+   - Open **Claude Desktop App**
+   - Go to **Settings > Developer > MCP Servers**
+   - Click `Edit Config` and add a new MCP Server with the following configuration:
 
 ```json
    {
@@ -124,12 +124,12 @@ Elasticsearch MCP 服务器支持配置选项以连接到您的 Elasticsearch：
    }
 ```
 
-5. **使用 MCP 检查器进行调试**
+5. **Debugging with MCP Inspector**
 ```bash
    ES_URL=your-elasticsearch-url ES_API_KEY=your-api-key npm run inspector
 ```
 
-   这将启动 MCP 检查器，允许您调试和分析请求。您应该会看到：
+   This will start the MCP Inspector, allowing you to debug and analyze requests. You should see:
 
 ```bash
    Starting MCP inspector...
@@ -138,32 +138,32 @@ Elasticsearch MCP 服务器支持配置选项以连接到您的 Elasticsearch：
    🔍 MCP Inspector is up and running at http://localhost:5173 🚀
 ```
 
-## 贡献
+## Contributing
 
-我们欢迎社区的贡献！有关如何贡献的详细信息，请参阅 [贡献指南](https://github.com/elastic/mcp-server-elasticsearch/blob/HEAD/docs/CONTRIBUTING.md)。
+We welcome contributions from the community! For details on how to contribute, please see [Contributing Guidelines](https://github.com/elastic/mcp-server-elasticsearch/blob/HEAD/docs/CONTRIBUTING.md).
 
-## 示例问题
+## Example Questions
 
 > [!TIP]
-> 以下是一些您可以使用 MCP 客户端尝试的自然语言查询。
+> Here are some natural language queries you can try with your MCP Client.
 
-* "我的 Elasticsearch 集群中有哪些索引？"
-* "显示 'products' 索引的字段映射。"
-* "查找上个月超过 $500 的所有订单。"
-* "哪些产品获得了最多的五星评价？"
+* "What indices do I have in my Elasticsearch cluster?"
+* "Show me the field mappings for the 'products' index."
+* "Find all orders over $500 from last month."
+* "Which products received the most 5-star reviews?"
 
-## 工作原理
+## How It Works
 
-1. MCP 客户端分析您的请求并确定需要哪些 Elasticsearch 操作。
-2. MCP 服务器执行这些操作（列出索引、获取映射、执行搜索）。
-3. MCP 客户端处理结果并以用户友好的格式呈现。
+1. The MCP Client analyzes your request and determines which Elasticsearch operations are needed.
+2. The MCP server carries out these operations (listing indices, fetching mappings, performing searches).
+3. The MCP Client processes the results and presents them in a user-friendly format.
 
-## 安全最佳实践
+## Security Best Practices
 
 > [!WARNING]
-> 避免使用集群管理员权限。创建具有有限范围的专用 API 密钥，并在索引级别应用细粒度的访问控制，以防止未经授权的数据访问。
+> Avoid using cluster-admin privileges. Create dedicated API keys with limited scope and apply fine-grained access control at the index level to prevent unauthorized data access.
 
-您可以创建一个具有最小权限的专用 Elasticsearch API 密钥来控制对数据的访问：
+You can create a dedicated Elasticsearch API key with minimal permissions to control access to your data:
 
 ```
 POST /_security/api_key
@@ -192,36 +192,36 @@ POST /_security/api_key
 }
 ```
 
-## 许可证
+## License
 
-该项目根据 Apache License 2.0 许可。
+This project is licensed under the Apache License 2.0.
 
-## 故障排除
+## Troubleshooting
 
-* 确保您的 MCP 配置正确。
-* 验证您的 Elasticsearch URL 是否可以从您的机器访问。
-* 检查您的身份验证凭据（API 密钥或用户名/密码）是否具有必要的权限。
-* 如果使用带有自定义 CA 的 SSL/TLS，请验证证书路径是否正确且文件可读。
-* 查看终端输出中的错误消息。
+* Ensure your MCP configuration is correct.
+* Verify that your Elasticsearch URL is accessible from your machine.
+* Check that your authentication credentials (API key or username/password) have the necessary permissions.
+* If using SSL/TLS with a custom CA, verify that the certificate path is correct and the file is readable.
+* Look at the terminal output for error messages.
 
-如果您遇到问题，请随时在 GitHub 仓库中打开一个 issue。
+If you encounter issues, feel free to open an issue on the GitHub repository.
 
-**官方网站：** [https://github.com/elastic/mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/elastic/mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `databases`, `chinese`
+- Categories: `search`
+- Tags: `search`, `databases`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @elastic/mcp-server-elasticsearch`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @elastic/mcp-server-elasticsearch`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/elastic-elasticsearch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/elastic-elasticsearch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "MCP-八字命理"
-description: "通过Bazi MCP解锁精准的八字洞见，这是首个由AI驱动的八字计算器。"
+title: "MCP-cantian-baizi"
+description: "Unlock precise Bazi insights with the Bazi MCP, the first AI-powered Bazi calculator."
 ---
 
-# MCP-八字命理
+# MCP-cantian-baizi
 
-通过Bazi MCP解锁精准的八字洞见，这是首个由AI驱动的八字计算器。
+Unlock precise Bazi insights with the Bazi MCP, the first AI-powered Bazi calculator.
 
 # Bazi MCP (八字 MCP) by Cantian AI
 
@@ -499,22 +499,22 @@ npx -y @smithery/cli install @cantian-ai/bazi-mcp --client claude
 
 **Keywords**: Bazi MCP, Bazi AI Agent, Fengshui AI Agent, Bazi Calculator MCP, Bazi Calculator AI, Cantian AI
 
-**官方网站：** [https://github.com/taurusduan/bazi-mcp](https://github.com/taurusduan/bazi-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/taurusduan/bazi-mcp](https://github.com/taurusduan/bazi-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`
+- Categories: `memory`
+- Tags: `knowledge and memory`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`bazi-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `bazi-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chevalblanc-cantian-baizi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chevalblanc-cantian-baizi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

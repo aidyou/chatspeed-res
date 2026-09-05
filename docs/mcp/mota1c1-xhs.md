@@ -1,11 +1,11 @@
 ---
-title: "小红书自动发布文案MCP"
-description: "一个小红书的MCP服务器，支持通过对话的方式进行账号登陆、文案生成以及自动发布。它可以为多个账号自动登录并发布内容，并且根据文案自动生成小红书风格的配图。"
+title: "xhs-mcp"
+description: "xhs-mcp 一个小红书的 MCP 服务器，支持通过对话的方式进行账号登陆、文案生成、以及自动发布。相比于已有的实现，优势在于登陆账号以及文案发布全部可以在对话过程中自动实现，并能支持多个账号批量发布文案。此外，在调用发表文章的接口时，该工具还支持自动根据文案内容生成小红书配图。"
 ---
 
-# 小红书自动发布文案MCP
+# xhs-mcp
 
-一个小红书的MCP服务器，支持通过对话的方式进行账号登陆、文案生成以及自动发布。它可以为多个账号自动登录并发布内容，并且根据文案自动生成小红书风格的配图。
+xhs-mcp 一个小红书的 MCP 服务器，支持通过对话的方式进行账号登陆、文案生成、以及自动发布。相比于已有的实现，优势在于登陆账号以及文案发布全部可以在对话过程中自动实现，并能支持多个账号批量发布文案。此外，在调用发表文章的接口时，该工具还支持自动根据文案内容生成小红书配图。
 
 # xhs-mcp
 
@@ -17,13 +17,17 @@ description: "一个小红书的MCP服务器，支持通过对话的方式进行
 
 ## 示例
 
+
+
+
 ## 环境配置
 
 1. 确保系统已安装 Chrome 浏览器，下载地址（https://www.google.com/intl/zh-CN/chrome/）
 2. 安装 uv
 
- 
+```
 pip install uv # 注意，如果使用anaconda进行环境管理，需要在base环境中pip
+```
 
 ## 启动服务器
 
@@ -31,13 +35,15 @@ pip install uv # 注意，如果使用anaconda进行环境管理，需要在base
 
 ### 方式 1：直接运行命令
 
- 
+```
 env DEEPSEEK_API_KEY=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
+```
 
 若切换模型:
 
- 
+```
 env DEEPSEEK_API_KEY=xxxx BASE_URL=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
+```
 
 为避免冗长，下面的方式介绍中会省略掉 BASE_URL 环境变量的配置。
 
@@ -45,7 +51,7 @@ env DEEPSEEK_API_KEY=xxxx BASE_URL=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
 
 在配置文件中添加
 
- 
+```
 {
   "mcpServers": {
     "xhs": {
@@ -60,19 +66,21 @@ env DEEPSEEK_API_KEY=xxxx BASE_URL=xxxx uvx --from lcl_xhs_mcp@latest xhs-server
     }
   }
 }
+```
 
 ### 方式 3: 源码安装并运行
 
 这种方式能够获得最新的代码。
 
- 
+```
 git clone https://github.com/SoftEgLi/xhs-mcp.git
 cd xhs-mcp
 pip install -e . # 注意，如果安装了anaconda，需要在base环境中进行pip
+```
 
 MCP 配置文件:
 
- 
+```
 {
   "mcpServers": {
     "xhs-test": {
@@ -84,6 +92,7 @@ MCP 配置文件:
     }
   }
 }
+```
 
 ## 注意事项
 
@@ -93,22 +102,22 @@ Cookie 的有效期是一个月，如果你自己在网页上登录了小红书�
 
 使用 MIT 协议。
 
-**官方网站：** [https://github.com/SoftEgLi/xhs-mcp](https://github.com/SoftEgLi/xhs-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SoftEgLi/xhs-mcp](https://github.com/SoftEgLi/xhs-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`
+- Categories: `communication`
+- Tags: `communication`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`env`
-- 参数：`DEEPSEEK_API_KEY=xxxx uvx --from lcl_xhs_mcp@latest xhs-server`
+- Transport: `stdio`
+- Command: `env`
+- Args: `DEEPSEEK_API_KEY=xxxx uvx --from lcl_xhs_mcp@latest xhs-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mota1c1-xhs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mota1c1-xhs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

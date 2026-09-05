@@ -1,31 +1,31 @@
 ---
-title: "通晓"
-description: "通晓是阿里云信息查询服务为大模型应用打造的实时搜索引擎，通过网络公开域、垂域知识库以及多种生态数据源检索，满足大模型实时问答的数据需求。"
+title: "Tongxiao"
+description: "\"Tongxiao\" is a real-time search engine developed by Alibaba Cloud's information query service for large model applications. It retrieves data from publicly available web domains, vertical domain know…"
 ---
 
-# 通晓
+# Tongxiao
 
-通晓是阿里云信息查询服务为大模型应用打造的实时搜索引擎，通过网络公开域、垂域知识库以及多种生态数据源检索，满足大模型实时问答的数据需求。
+"Tongxiao" is a real-time search engine developed by Alibaba Cloud's information query service for large model applications. It retrieves data from publicly available web domains, vertical domain know…
 
-通晓 是阿里云信息查询服务为大模型应用打造的实时搜索引擎，通过网络公开域、垂域知识库以及多种生态数据源检索，满足大模型实时问答的数据需求。
+"Tongxiao" is a real-time search engine developed by Alibaba Cloud's information query service for large model applications. It retrieves data from publicly available web domains, vertical domain knowledge bases, and various ecosystem data sources to meet the real-time Q&A data needs of large models.
 
-# 通晓 MCP 服务的关键特性
-- *实时*：集成多个信息源的实时搜索功能，为大模型提供最新的信息和数据。
-- *准确性*：通过Query改写、搜索条件优化、摘要增强、结果精排等方法，提高搜索精准度，降低模型调优工作量。
-- *多样性*：集成多个垂域数据源，提供更全面、个性化的搜索体验，满足多样化信息需求。
-- *高质量*：结合高质量的行业知识库进行搜索，提供搜索原文，并对结果进行处理（如去除商业化内容、合规性检查和Markdown格式呈现），以提供高可信度和高完整度的结构化查询结果。
+# Key Features
+- *Real-time*: Offers real-time search capabilities by integrating multiple information sources, providing the latest information and data for large models.
+- *Accuracy*: Enhances search precision and reduces the workload of model tuning through methods like query rewriting, search condition optimization, summary enhancement, and result ranking.
+- *Diversity*: Integrates multiple vertical domain data sources to offer a more comprehensive and personalized search experience, meeting diverse information needs.
+- *High Quality*: Combines searches with high-quality industry knowledge bases, providing original search text and processing results (such as removing commercial content, compliance checks, and Markdown format presentation) to deliver highly credible and complete structured query results.
 
-# 应用场景
-- *智能客服*： 为智能客服机器人提供实时知识库和问答能力，提升客服效率和用户体验。
-- *智能助手*： 为智能语音助手、智能搜索引擎等应用提供实时信息和问答服务，增强用户体验和应用价值。
-- *内容创作*： 为新闻媒体、自媒体等内容创作者提供实时素材和灵感，提升内容创作效率和质量。
-- *数据分析*： 为市场调研、舆情监测等数据分析应用提供实时数据支持，提升分析效率和洞察力。
+# Application Scenarios
+- *Intelligent Customer Service*: Provides real-time knowledge base and Q&A capabilities for intelligent customer service robots, enhancing service efficiency and user experience.
+- *Smart Assistant*: Offers real-time information and Q&A services for applications like smart voice assistants and intelligent search engines to enhance user experience and application value.
+- *Content Creation*: Supplies real-time materials and inspiration for content creators like news media and social media, improving content creation efficiency and quality.
+- *Data Analysis*: Provides real-time data support for applications such as market research and public opinion monitoring to enhance analysis efficiency and insights.
 
-# 如何使用 ‘通晓’ MCP 服务？
-1. 开通通晓 apikey
-    - 开通 [阿里云信息查询服务](https://help.aliyun.com/document_detail/2870227.html?spm=a2c4g.11186623.help-menu-2837261.d_1.adfe3350nzdbvw)
-    - 前往 [控制台](https://ipaas.console.aliyun.com/api-key) 开通 apikey
-2. 完成 mcp 服务配置
+# How to use the "Tongxiao" MCP service
+1. Activate Tongxiao API key
+    - Activate [AliCloud IQS](https://help.aliyun.com/document_detail/2870227.html?spm=a2c4g.11186623.help-menu-2837261.d_1.adfe3350nzdbvw)
+    - Go to the [Console](https://ipaas.console.aliyun.com/api-key) to activate apikey
+2. Complete the MCP service configuration.
 
 ```
 {
@@ -34,31 +34,31 @@ description: "通晓是阿里云信息查询服务为大模型应用打造的实
       "command": "npx",
       "args": ["-y", "@tongxiao/common-search-mcp-server"],
       "env": {
-        "TONGXIAO_API_KEY": "通晓 apikey"
+        "TONGXIAO_API_KEY": "Tongxiao apikey"
       }
     }
   }
 }
 ```
 
-3. 更多信息参考[文档](https://help.aliyun.com/document_detail/2881063.html?spm=a2c4g.11186623.help-menu-2837261.d_3_1.4be16dd4aG7QLH)
+3. For more information, refer to the [Documentation](https://help.aliyun.com/document_detail/2881063.html?spm=a2c4g.11186623.help-menu-2837261.d_3_1.4be16dd4aG7QLH)
 
-**官方网站：** [https://www.npmjs.com/package/@tongxiao/common-search-mcp-server](https://www.npmjs.com/package/@tongxiao/common-search-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/@tongxiao/common-search-mcp-server](https://www.npmjs.com/package/@tongxiao/common-search-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @tongxiao/common-search-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @tongxiao/common-search-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/aliyun-tongxiao.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/aliyun-tongxiao.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

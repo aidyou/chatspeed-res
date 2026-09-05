@@ -1,93 +1,90 @@
 ---
-title: "质数幻方-企业数据MCP 1.0"
-description: "质数幻方 MCP 使用文档 --- 接入指南 以下为任何支持 MCP 协议的 AI 工具（如 WorkBuddy、ClaudeCode、QoderWork 等）的通用接入方式。 接入步骤如下： 获取 MCP 接入凭证 在质数幻方官方平台（https://mcp.yidian.cn/）完成账号注册并登录，进入「API KEY 服务」生成新密钥，在「一键使用」区域获取全套 MCP 配置内容（带上你的 API Key），可直接复制使用。 配置 MCP 服务 在智能体客户端找到「添加 MCP 服务 / MCP 配置」入口，"
+title: "PrimeMatrixData"
+description: "Prime Magic Square MCP Usage Documentation --- Access Guide The following is a general access method for any AI tool that supports the MCP protocol (such as WorkBuddy, ClaudeCode, QoderWork, etc.). Ac…"
 ---
 
-# 质数幻方-企业数据MCP 1.0
+# PrimeMatrixData
 
-质数幻方 MCP 使用文档 --- 接入指南 以下为任何支持 MCP 协议的 AI 工具（如 WorkBuddy、ClaudeCode、QoderWork 等）的通用接入方式。 接入步骤如下： 获取 MCP 接入凭证 在质数幻方官方平台（https://mcp.yidian.cn/）完成账号注册并登录，进入「API KEY 服务」生成新密钥，在「一键使用」区域获取全套 MCP 配置内容（带上你的 API Key），可直接复制使用。 配置 MCP 服务 在智能体客户端找到「添加 MCP 服务 / MCP 配置」入口，
+Prime Magic Square MCP Usage Documentation --- Access Guide The following is a general access method for any AI tool that supports the MCP protocol (such as WorkBuddy, ClaudeCode, QoderWork, etc.). Ac…
 
-# 质数幻方 MCP 使用文档
-
----
-
-## 接入指南
-
-以下为任何支持 MCP 协议的 AI 工具（如 WorkBuddy、ClaudeCode、QoderWork 等）的通用接入方式。
-
-接入步骤如下：
-
-### 获取 MCP 接入凭证
-
-在质数幻方官方平台（[https://mcp.yidian.cn/](https://mcp.yidian.cn/?ref=alimoda)）完成账号注册并登录，进入「API KEY 服务」生成新密钥，在「一键使用」区域获取全套 MCP 配置内容（带上你的 API Key），可直接复制使用。
-
-### 配置 MCP 服务
-
-在智能体客户端找到「添加 MCP 服务 / MCP 配置」入口，粘贴上面复制的 JSON，保存并重启；或者在智能体对话框中输入「请配置质数幻方 MCP」，并粘贴上面复制的 JSON，智能体即可自动完成 MCP 配置。
-
-### 验证 MCP 接入效果
-
-在对话中输入企业查询问题，例如“请查询华为技术有限公司的企业主体信息”。若正常返回企业工商信息，即说明 MCP 接入成功，可正常使用全部服务能力。
+# Prime Magic Square MCP Usage Documentation
 
 ---
 
-## 产品介绍
+## Access Guide
 
-质数幻方提供企业主体、风险信息、经营情况、财务数据、知识产权五大 MCP 核心能力，助力 AI 商查场景。通过标准化的 MCP（Model Context Protocol）工具，开发者可以快速将企业信息查询能力集成到各类 AI 应用中，实现智能化企业查询、风险评估、商业决策支持等场景。
+The following is a general access method for any AI tool that supports the MCP protocol (such as WorkBuddy, ClaudeCode, QoderWork, etc.).
+
+Access steps are as follows:
+
+### Obtain MCP Access Credentials
+
+Complete account registration and log in on the official Prime Magic Square platform ([https://mcp.yidian.cn/](https://mcp.yidian.cn/)). Enter the "API KEY Service" to generate a new key. In the "One-Click Use" area, obtain the complete set of MCP configuration content (including your API Key), which can be directly copied and used.
+
+### Configure MCP Service
+
+In the agent client, find the "Add MCP Service / MCP Configuration" entry, paste the JSON copied above, save and restart; or input "Please configure Prime Magic Square MCP" in the agent dialog box, and paste the JSON copied above. The agent will automatically complete the MCP configuration.
+
+### Verify MCP Access Effectiveness
+
+Input an enterprise query question in the conversation, such as "Please query the corporate entity information of Huawei Technologies Co., Ltd." If the enterprise business information is returned normally, it indicates that the MCP has been successfully connected and all service capabilities can be used normally.
 
 ---
 
-## 接入配置
+## Product Introduction
 
-### 认证方式
+Prime Magic Square provides five core MCP capabilities: corporate entities, risk information, operational status, financial data, and intellectual property, to support AI-based business inquiry scenarios. Through standardized MCP (Model Context Protocol) tools, developers can quickly integrate corporate information query capabilities into various AI applications, enabling intelligent enterprise queries, risk assessments, and business decision support, among other scenarios.
 
-所有 MCP 请求需在 HTTP Header 中携带 `Authorization` 认证头，格式为 `Bearer 
-`。API Key 可在控制台"API 密钥"页面创建和管理。
+---
 
-```text
+## Access Configuration
+
+### Authentication Method
+
+All MCP requests must carry the `Authorization` authentication header in the HTTP Header, with the format `Bearer 
+`. The API Key can be created and managed on the "API Key" page of the console.
+
+text
 "Authorization": "Bearer 
 "
-```
 
-所有 MCP 请求需在服务地址中携带服务代码：
+All MCP requests must include the service code in the service address:
 
-```text
+text
 https://mcp.yidian.cn/mcp/{service_code}
-```
 
-### 传输协议
+### Transport Protocol
 
-```text
+text
 Transport: streamable-http
-```
 
 ---
 
-## 入参/出参规范
+## Input/Output Specifications
 
-以下为各工具可能使用的入参说明，具体每个工具支持的参数详见工具列表。
+The following are possible input parameters that may be used by each tool. For specific parameters supported by each tool, see the tool list.
 
-### 入参规范
+### Input Specifications
 
-| 参数名 | 类型 | 说明 |
+| Parameter Name | Type | Description |
 | --- | --- | --- |
-| `ent_name` | String | 企业名称或统一社会信用代码（大部分工具通用，建议传入准确企业全称） |
-| `credit_code` | String | 统一社会信用代码（18位） |
+| `ent_name` | String | Enterprise name or Unified Social Credit Code (commonly used in most tools, it is recommended to pass the full and accurate enterprise name) |
+| `credit_code` | String | Unified Social Credit Code (18 digits) |
 
-### 出参规范
+### Output Specifications
 
-所有 MCP 工具的返回结果均遵循 MCP 协议标准响应格式。
+All MCP tools' return results follow the standard response format of the MCP protocol.
 
-| 参数名 | 类型 | 说明 |
+| Parameter Name | Type | Description |
 | --- | --- | --- |
-| `content` | Array | 响应内容数组 |
-| `content[].type` | String | 内容类型，固定值为 text |
-| `content[].text` | String | 返回的业务数据内容，通常为 JSON 格式字符串 |
-| `isError` | Boolean | 是否发生错误，true 表示错误，false 表示成功 |
+| `content` | Array | Response content array |
+| `content[].type` | String | Content type, fixed value is text |
+| `content[].text` | String | Returned business data content, usually in JSON string format |
+| `isError` | Boolean | Whether an error occurred, true indicates an error, false indicates success |
 
-响应示例：
+Response example:
 
-```json
+json
 {
   "content": [
     {
@@ -97,231 +94,213 @@ Transport: streamable-http
   ],
   "isError": false
 }
-```
 
 ---
 
-## MCP 工具列表
+## MCP Tool List
 
-### 主体识别与查询
+### Entity Recognition and Query
 
-提供企业主体的身份识别与基础信息查询服务，包含企业模糊搜索、受益所有人结果、企业基本信息、变更信息、企业联系方式、主要人员信息、企业股东信息等工具。
+Provides identity recognition and basic information query services for corporate entities, including fuzzy search of enterprises, beneficial owner results, basic enterprise information, change information, enterprise contact information, key personnel information, and shareholder information.
 
-| 工具名称 | 中文名称 | 功能描述 | 入参说明 |
+| Tool Name | Chinese Name | Function Description | Input Parameters |
 | --- | --- | --- | --- |
-| `get_company_precise_name` | 企业精准匹配 | 根据企业简称或关键词模糊搜索，返回唯一精确匹配主体或候选清单。 | ent_name (String, 必填): 企业简称或关键词 |
-| `get_registration_info` | 核心登记信息 | 查询企业核心工商登记信息，包括法定代表人、注册资本、成立日期、登记状态等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_branches` | 分支机构 | 查询企业分支机构名称、负责人、地区、成立日期、登记状态等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_company_profile` | 企业简介 | 查询企业简介和主体概况，快速了解企业经营与基础画像。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_change_records` | 变更记录 | 查询企业历史变更事项、变更前后内容及变更日期。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_shareholder_info` | 股东信息 | 查询企业股东及出资信息，上市企业可返回十大股东信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_listing_info` | 上市信息 | 查询上市企业股票代码、上市日期、交易所、板块、总市值等信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_external_investments` | 对外投资 | 查询企业对外投资信息，包括被投资企业名称、经营状态、成立日期、注册资本、持股比例等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
+| `get_company_precise_name` | Precise Enterprise Matching | Based on the abbreviation or keyword of the enterprise, returns a unique exact match or a candidate list. | ent_name (String, required): Abbreviation or keyword of the enterprise |
+| `get_registration_info` | Core Registration Information | Queries the core business registration information of the enterprise, including legal representative, registered capital, establishment date, registration status, etc. | ent_name (String, required): Enterprise name or Unified Social Credit Code |
+| `get_branches` | Branches | Queries the names, responsible persons, regions, establishment dates, and registration statuses of the enterprise's branches. | ent_name (String, required): Enterprise name or Unified Social Credit Code || `get_company_profile` | Company Profile | Query the company profile and main body overview, to quickly understand the company's operations and basic portrait. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_change_records` | Change Records | Query the historical changes of the company, including the content before and after the change and the date of change. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_shareholder_info` | Shareholder Information | Query the shareholder and capital contribution information of the company. For listed companies, it can return the top ten shareholders' information. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_listing_info` | Listing Information | Query the stock code, listing date, exchange, sector, total market value, and other information of listed companies. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_external_investments` | External Investments | Query the external investment information of the company, including the name of the invested company, business status, establishment date, registered capital, shareholding ratio, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
 
-### 风险信息
+### Risk Information
 
-获取企业司法风险、运营风险及资产风险，覆盖失信被执行、裁判文书、经营异常、行政处罚、股权冻结等风险场景。
+Obtain judicial risks, operational risks, and asset risks of the company, covering risk scenarios such as dishonesty in execution, court judgments, business abnormalities, administrative penalties, and equity freezes.
 
-| 工具名称 | 中文名称 | 功能描述 | 入参说明 |
+| Tool Name | Chinese Name | Function Description | Input Parameters |
 | --- | --- | --- | --- |
-| `get_dishonest_info` | 失信被执行人 | 查询失信被执行人名称、涉案金额、执行法院、发布日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_judgment_debtor_info` | 被执行人 | 查询被执行人案件信息，包括立案日期、执行标的、执行法院等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_high_consumption_restriction` | 限制高消费 | 查询限制高消费记录，包括限制对象、立案日期和发布法院等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_terminated_execution` | 终本案件 | 查询终本案件，包括终本日期、执行标的、未履行金额等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_judicial_auction` | 司法拍卖 | 查询司法拍卖信息，包括标题、评估价、起拍价、拍卖时间等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_bankruptcy_info` | 破产信息 | 查询企业破产重组、破产清算等破产相关信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_case_filing_info` | 立案信息 | 查询法院立案信息，包括案号、案由、立案日期、原被告信息等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_hearing_notice` | 开庭公告 | 查询开庭公告，包括案号、案由、开庭时间、当事人身份等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_court_notice` | 法院公告 | 查询法院公告，包括公告类型、案由、原被告信息等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_judicial_documents` | 裁判文书 | 查询裁判文书，包括案号、案由、裁判结果、涉案金额等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_service_notice` | 送达公告 | 查询送达公告，包括案号、案由、法院、发布日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_business_exception` | 经营异常 | 查询经营异常名录，包括列入日期、移除原因和决定机关等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_serious_violation` | 严重违法 | 查询严重违法失信名单记录及对应监管信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_cancellation_record_info` | 注销备案 | 查询注销备案情况，包括注销原因、注销日期、注销状态等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_simple_cancellation_info` | 简易注销 | 查询简易注销信息，包括注销结果、登记机关、公告期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_administrative_penalty` | 行政处罚 | 查询行政处罚，包括处罚结果、处罚单位、金额、日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_environmental_penalty` | 环保处罚 | 查询环保行政处罚，包括处罚结果、处罚单位、金额、日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_procurement_debarment_list` | 失信名单 | 查询企业是否被列入政府采购严重违法失信名单，包括列入原因、处罚结果、处罚时间、执法单位等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_tax_abnormal` | 税务非正常 | 查询税务非正常户记录及相关税务监管信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_tax_arrears_notice` | 欠税公告 | 查询欠税税种、欠税金额、发布单位、发布日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_tax_violation` | 税收违法 | 查询税收违法案件性质、税务机关、发布日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_chattel_mortgage_info` | 动产抵押 | 查询动产抵押登记编号、抵押权人、金额、状态、登记日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_equity_freeze` | 股权冻结 | 查询股权司法冻结，包括冻结数额、期限、执行法院等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_stock_pledge_info` | 股权质押 | 查询上市企业股权质押，包括质押人、质权人、股份数额、市值等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_equity_pledge_info` | 股权出质 | 查询股权出质人、质权人、股权数额、状态、登记日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_ipr_pledge` | 知识产权出质 | 查询知识产权出质类型、名称、期限、公告日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
+| `get_dishonest_info` | Dishonest Executed Person | Query the name of the dishonest executed person, case amount, executing court, release date, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_judgment_debtor_info` | Judgment Debtor | Query the case information of the judgment debtor, including the filing date, execution subject, executing court, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_high_consumption_restriction` | High Consumption Restriction | Query the high consumption restriction records, including the restricted party, filing date, and releasing court, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_terminated_execution` | Terminated Case | Query the terminated cases, including the termination date, execution subject, unfulfilled amount, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_judicial_auction` | Judicial Auction | Query the judicial auction information, including the title, appraised value, starting bid, auction time, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_bankruptcy_info` | Bankruptcy Information | Query the bankruptcy-related information of the company, including restructuring, liquidation, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_case_filing_info` | Case Filing Information | Query the court case filing information, including the case number, cause of action, filing date, plaintiff and defendant information, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_hearing_notice` | Hearing Notice | Query the hearing notices, including the case number, cause of action, hearing time, identity of the parties, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_court_notice` | Court Notice | Query the court notices, including the type of notice, cause of action, plaintiff and defendant information, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_judicial_documents` | Judicial Documents | Query the judicial documents, including the case number, cause of action, judgment result, case amount, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_service_notice` | Service Notice | Query the service notices, including the case number, cause of action, court, release date, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_business_exception` | Business Abnormality | Query the list of business abnormalities, including the inclusion date, removal reason, and decision-making authority, etc. | ent_name (String, Required): Company name or Unified Social Credit Code |
+| `get_serious_violation` | Serious Violation | Query the records of serious illegal and dishonest lists and corresponding regulatory information. | ent_name (String, Required): Company name or Unified Social Credit Code || `get_cancellation_record_info` | Cancellation Record | Query cancellation record information, including reasons for cancellation, cancellation date, and cancellation status. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_simple_cancellation_info` | Simplified Cancellation | Query simplified cancellation information, including cancellation result, registration authority, and announcement period. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_administrative_penalty` | Administrative Penalty | Query administrative penalties, including penalty results, penalizing units, amount, and date. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_environmental_penalty` | Environmental Penalty | Query environmental administrative penalties, including penalty results, penalizing units, amount, and date. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_procurement_debarment_list` | Dishonesty List | Query if the enterprise is listed on the serious illegal and dishonest list of government procurement, including reasons for listing, penalty results, penalty time, and enforcement unit. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_tax_abnormal` | Tax Abnormality | Query tax abnormal records and related tax supervision information. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_tax_arrears_notice` | Tax Arrears Notice | Query types of taxes in arrears, amounts, issuing units, and issue dates. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_tax_violation` | Tax Violation | Query the nature of tax violation cases, tax authorities, and issue dates. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_chattel_mortgage_info` | Chattel Mortgage | Query chattel mortgage registration number, mortgagee, amount, status, and registration date. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_equity_freeze` | Equity Freeze | Query judicial equity freeze, including the amount frozen, duration, and executing court. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_stock_pledge_info` | Stock Pledge | Query stock pledge of listed companies, including pledgor, pledgee, number of shares, and market value. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_equity_pledge_info` | Equity Pledge | Query equity pledgor, pledgee, equity amount, status, and registration date. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_ipr_pledge` | IPR Pledge | Query intellectual property rights pledge type, name, term, and announcement date. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
 
-### 经营情况
+### Business Operations
 
-洞察企业真实经营活力，涵盖资质许可、招投标动态、融资历程、信用评级、新闻舆情与招聘信息。
+Gain insights into the real business vitality of an enterprise, covering qualifications and permits, bidding and tendering dynamics, financing history, credit ratings, news and public opinion, and recruitment information.
 
-| 工具名称 | 中文名称 | 功能描述 | 入参说明 |
+| Tool Name | Chinese Name | Function Description | Input Parameters |
 | --- | --- | --- | --- |
-| `get_administrative_license` | 行政许可 | 查询企业行政许可信息及许可事项。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_qualifications` | 资质证书 | 查询资质名称、证书编号、类别、等级、有效期、状态等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_honor_info` | 荣誉信息 | 查询荣誉名称、类型、级别、发布日期、发布单位等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_credit_evaluation` | 信用评级 | 查询官方信用评级、纳税信用等级等评价信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_financing_records` | 融资信息 | 查询创投融资、上市融资、增发融资等融资记录。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_bidding_info` | 招投标信息 | 查询招投标项目名称、中标情况、金额、招标单位等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_random_check` | 双随机检查 | 查询双随机抽查检查记录及检查结果。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_spot_check_info` | 抽查检查 | 查询检查实施机关、类型、日期、结果等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_news_sentiment` | 新闻舆情 | 查询新闻标题、发布时间、情感类型等舆情信息。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_taxpayer_qualification` | 纳税人资质 | 查询纳税人识别号、资格类型、主管税务机关、有效期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_recruitment_info` | 招聘信息 | 查询职位、月薪、学历、经验、办公地点、发布日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
+| `get_administrative_license` | Administrative License | Query enterprise administrative license information and licensed items. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_qualifications` | Qualification Certificates | Query qualification names, certificate numbers, categories, levels, validity periods, and status. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_honor_info` | Honor Information | Query honor names, types, levels, issue dates, and issuing units. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_credit_evaluation` | Credit Rating | Query official credit ratings, tax credit ratings, and other evaluation information. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_financing_records` | Financing Information | Query venture capital financing, IPO financing, additional issuance financing, and other financing records. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_bidding_info` | Bidding Information | Query bidding project names, winning bid situations, amounts, and bidding units. | ent_name (String, Required): Enterprise name or Unified Social Credit Code || `get_random_check` | Dual Random Check | Query records and results of dual random spot checks. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_spot_check_info` | Spot Check | Query information on the implementing agency, type, date, result, etc. of inspections. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_news_sentiment` | News Sentiment | Query news titles, publication dates, sentiment types, and other public opinion information. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_taxpayer_qualification` | Taxpayer Qualification | Query taxpayer identification number, qualification type, competent tax authority, validity period, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_recruitment_info` | Recruitment Information | Query job positions, monthly salary, education level, experience, office location, publication date, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
 
-### 财务数据
+### Financial Data
 
-结构化输出上市企业核心财务数据及分析指标，覆盖资产负债表、现金流量表、利润表及综合财务指标。
+Structured output of core financial data and analysis indicators for listed companies, covering balance sheets, cash flow statements, income statements, and comprehensive financial indicators.
 
-| 工具名称 | 中文名称 | 功能描述 | 入参说明 |
+| Tool Name | Chinese Name | Function Description | Input Parameters |
 | --- | --- | --- | --- |
-| `get_financial_data` | 核心财务指标 | 查询上市企业的核心财务数据和分析指标 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_balance_sheet` | 资产负债表 | 查询上市公司资产负债表数据。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_cash_flow_statement` | 现金流量表 | 查询上市公司现金流量表数据。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_income_statement` | 利润表 | 查询上市公司利润表数据。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
+| `get_financial_data` | Core Financial Indicators | Query core financial data and analysis indicators of listed companies | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_balance_sheet` | Balance Sheet | Query balance sheet data of listed companies. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_cash_flow_statement` | Cash Flow Statement | Query cash flow statement data of listed companies. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_income_statement` | Income Statement | Query income statement data of listed companies. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
 
-### 知识产权
+### Intellectual Property
 
-评估企业科创硬实力，提供专利、商标、软件著作权、作品著作权及网络备案等知识产权信息。
+Evaluate the hard power of enterprise innovation and technology, providing intellectual property information such as patents, trademarks, software copyrights, work copyrights, and internet filings.
 
-| 工具名称 | 中文名称 | 功能描述 | 入参说明 |
+| Tool Name | Chinese Name | Function Description | Input Parameters |
 | --- | --- | --- | --- |
-| `get_patent_info` | 专利信息 | 查询专利总数、授权总数及不超过 20 条专利详情。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_copyright_work_info` | 作品著作权 | 查询作品名称、类别、登记号、登记日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_software_copyright_info` | 软件著作权 | 查询软件全称、简称、版本号、登记号、登记时间等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_trademark_info` | 商标信息 | 查询商标名称、国际分类、状态、申请号、注册号、申请日期等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
-| `get_internet_service_info` | 网络备案 | 查询网站 ICP 备案、APP 备案、小程序备案、算法备案等。 | ent_name (String, 必填): 企业名称或统一社会信用代码 |
+| `get_patent_info` | Patent Information | Query total number of patents, total number of authorizations, and up to 20 detailed patent entries. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_copyright_work_info` | Work Copyright | Query work name, category, registration number, registration date, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_software_copyright_info` | Software Copyright | Query full software name, abbreviation, version number, registration number, registration time, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_trademark_info` | Trademark Information | Query trademark name, international classification, status, application number, registration number, application date, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
+| `get_internet_service_info` | Internet Filing | Query ICP filing, APP filing, mini-program filing, algorithm filing, etc. | ent_name (String, Required): Enterprise name or Unified Social Credit Code |
 
 ---
 
-## 调用示例
+## Example Calls
 
-以下展示用户与 AI 交互时，MCP 工具的实际调用效果。
+The following demonstrates the actual call effects of MCP tools during user-AI interactions.
 
-### 示例1：工商股东查询
+### Example 1: Business Registration and Shareholder Information Query
 
-> 问题：帮我查一下腾讯的工商信息和股东信息
+> Question: Can you help me check the business registration and shareholder information of Tencent?
 
-**AI 应用调用流程：**
+**AI Application Call Process:**
 
-**步骤1：** 调用 `get_company_precise_name`
+**Step 1:** Call `get_company_precise_name`
 
-```json
+json
 {
-  "ent_name": "腾讯"
+  "ent_name": "Tencent"
 }
-```
 
-结果：返回匹配企业列表，确认全称为「深圳市腾讯计算机系统有限公司」
+Result: Returns a list of matching enterprises, confirming the full name as "Shenzhen Tencent Computer Systems Co., Ltd."
 
-**步骤2：** 调用 `get_registration_info`
+**Step 2:** Call `get_registration_info`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
+  "ent_name": "Shenzhen Tencent Computer Systems Co., Ltd."
 }
-```
 
-结果：返回企业工商登记信息，包括法定代表人、注册资本、成立日期、经营状态等
+Result: Returns the business registration information of the enterprise, including legal representative, registered capital, establishment date, business status, etc.
 
-**步骤3：** 调用 `get_shareholder_info`
+**Step 3:** Call `get_shareholder_info`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
+  "ent_name": "Shenzhen Tencent Computer Systems Co., Ltd."
 }
-```
 
-结果：返回企业股东及出资信息，辅助识别股权结构
+Result: Returns the shareholder and capital contribution information of the enterprise, assisting in identifying the equity structure.
 
-### 示例2：风险信息查询
+### Example 2: Risk Information Query> Issue: Query whether Tencent has any business anomalies, administrative penalties, and equity freeze risks.
 
-> 问题：查询腾讯是否存在经营异常、行政处罚和股权冻结风险
+**AI Application Call Process:**
 
-**AI 应用调用流程：**
+**Step 1:** Call `get_company_precise_name`
 
-**步骤1：** 调用 `get_company_precise_name`
-
-```json
+json
 {
-  "ent_name": "腾讯"
+  "ent_name": "Tencent"
 }
-```
 
-结果：返回匹配企业列表，确认全称为「深圳市腾讯计算机系统有限公司」
+Result: Returns a list of matching companies, confirming the full name as "Shenzhen Tencent Computer Systems Co., Ltd."
 
-**步骤2：** 调用 `get_business_exception`
+**Step 2:** Call `get_business_exception`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
+  "ent_name": "Shenzhen Tencent Computer Systems Co., Ltd."
 }
-```
 
-结果：返回经营异常记录，如无记录则返回空结果
+Result: Returns records of business anomalies; if no records are found, an empty result is returned.
 
-**步骤3：** 调用 `get_administrative_penalty`
+**Step 3:** Call `get_administrative_penalty`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
+  "ent_name": "Shenzhen Tencent Computer Systems Co., Ltd."
 }
-```
 
-结果：返回行政处罚记录，包含处罚决定、处罚机关、处罚日期等
+Result: Returns records of administrative penalties, including the penalty decision, penalizing authority, date of penalty, etc.
 
-**步骤4：** 调用 `get_equity_freeze`
+**Step 4:** Call `get_equity_freeze`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
+  "ent_name": "Shenzhen Tencent Computer Systems Co., Ltd."
 }
-```
 
-结果：返回股权司法冻结信息，用于辅助判断资产风险
+Result: Returns information on judicial equity freezes, which can be used to assist in assessing asset risks.
 
-### 示例3：招投标信息查询
+### Example 3: Bidding Information Inquiry
 
-> 问题：帮我查一下腾讯最近的招投标信息
+> Issue: Please help me find the latest bidding information for Tencent.
 
-**AI 应用调用流程：**
+**AI Application Call Process:**
 
-**步骤1：** 调用 `get_company_precise_name`
+**Step 1:** Call `get_company_precise_name`
 
-```json
+json
 {
-  "ent_name": "腾讯"
+  "ent_name": "Tencent"
 }
-```
 
-结果：返回匹配企业列表，确认全称为「深圳市腾讯计算机系统有限公司」
+Result: Returns a list of matching companies, confirming the full name as "Shenzhen Tencent Computer Systems Co., Ltd."
 
-**步骤2：** 调用 `get_bidding_info`
+**Step 2:** Call `get_bidding_info`
 
-```json
+json
 {
-  "ent_name": "深圳市腾讯计算机系统有限公司"
-}
-```
+  "
 
-结果：返回招投标项目名称、中标情况、金额、招标单位等信息
+**Official site: ** [https://mcp.yidian.cn](https://mcp.yidian.cn)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://mcp.yidian.cn](https://mcp.yidian.cn)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `finance`, `data`
+- Tags: `research and data`, `search`, `finance`, `mcp`, `chinese`
 
-- 分类：`finance`, `data`
-- 标签：`research and data`, `search`, `finance`, `mcp`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `http`
+- Command: ``
+- Args: none
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/primematrix-primematrixdata.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/primematrix-primematrixdata.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

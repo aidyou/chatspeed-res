@@ -1,59 +1,59 @@
 ---
-title: "Resend邮件工具"
-description: "一种工具集成，使 Claude 能够通过 Resend API 撰写和发送电子邮件，支持定时发送和文件附件等功能。"
+title: "resend-mcp"
+description: "A tool integration that enables Claude to compose and send emails through the Resend API, supporting features like scheduled delivery and file attachments."
 ---
 
-# Resend邮件工具
+# resend-mcp
 
-一种工具集成，使 Claude 能够通过 Resend API 撰写和发送电子邮件，支持定时发送和文件附件等功能。
+A tool integration that enables Claude to compose and send emails through the Resend API, supporting features like scheduled delivery and file attachments.
 
 # MCP Server Resend
 
-用于 Resend API 的 MCP 服务器。让大语言模型为您撰写和发送电子邮件。
+A MCP server for Resend API. Let LLMs compose and send emails for you.
 
-## 环境变量
+## Environment Variables
 
-- `RESEND_API_KEY` (字符串，必填)：您的 Resend API 密钥
-- `SENDER_EMAIL_ADDRESS` (字符串，必填)：发件人电子邮件地址
-- `REPLY_TO_EMAIL_ADDRESSES` (字符串，可选)：逗号分隔的回复至电子邮件地址列表
+- `RESEND_API_KEY` (string, required): Your Resend API key
+- `SENDER_EMAIL_ADDRESS` (string, required): Sender email address
+- `REPLY_TO_EMAIL_ADDRESSES` (string, optional): Comma-separated list of reply-to email addresses
 
-## 可用工具
+## Available Tools
 
-- `send_email` - 使用 Resend API 发送电子邮件
-  - 输入：
-    - `to` (字符串)：收件人电子邮件地址
-    - `subject` (字符串)：邮件主题行
-    - `content` (字符串)：纯文本邮件内容
-    - `from` (字符串，可选)：发件人电子邮件地址（如果未提供则使用 SENDER_EMAIL_ADDRESS）
-    - `replyTo` (数组，可选)：回复至电子邮件地址（如果未提供则使用 REPLY_TO_EMAIL_ADDRESSES）
-    - `scheduledAt` (字符串，可选)：预定邮件发送时间
-    - `attachments` (数组，可选)：附件列表，每个附件必须包含：
-      - `filename` (字符串)：附件文件名
-      - `localPath` (字符串)：用户计算机上的本地文件绝对路径（如果未提供 remoteUrl 则为必填项）
-      - `remoteUrl` (字符串)：互联网上的文件 URL（如果未提供 localPath 则为必填项）
+- `send_email` - Send an email using the Resend API
+  - Inputs:
+    - `to` (string): Recipient email address
+    - `subject` (string): Email subject line
+    - `content` (string): Plain text email content
+    - `from` (string, optional): Sender email address (uses SENDER_EMAIL_ADDRESS if not provided)
+    - `replyTo` (array, optional): Reply-to email addresses (uses REPLY_TO_EMAIL_ADDRESSES if not provided)
+    - `scheduledAt` (string, optional): Scheduled email delivery time
+    - `attachments` (array, optional): List of attachments, each attachment must have:
+      - `filename` (string): Name of the attachment file
+      - `localPath` (string): Absolute path to a local file on user's computer (required if remoteUrl not provided)
+      - `remoteUrl` (string): URL to a file on the internet (required if localPath not provided)
 
-## 获取 API 密钥
+## Getting an API Key
 
-1. 注册 [Resend 账户](https://resend.com/)
-2. 从 [Resend 控制台](https://resend.com/api-keys) 生成您的 API 密钥
+1. Sign up for a [Resend account](https://resend.com/)
+2. Generate your API key from the [Resend dashboard](https://resend.com/api-keys)
 
-**注意：免费层级每月可用 3000 封邮件。**
+**Note: Free tier available with 3000 emails per month.**
 
-## 安装
+## Installation
 
-### 使用 [ClaudeMind](https://claudemind.com/) (推荐)
+### Using [ClaudeMind](https://claudemind.com/) (recommended)
 
-使用 Resend MCP 服务器最简单的方法是通过 ClaudeMind 桌面应用程序。只需下载并安装 ClaudeMind，然后：
+The easiest way to use Resend MCP Server is through the ClaudeMind desktop app. Simply download and install ClaudeMind, then:
 
-1. 打开 ClaudeMind 应用程序
-2. 导航到 Servers 页面
-3. 找到 resend-mcp 并点击 Install
+1. Open the ClaudeMind app
+2. Navigate to the Servers page
+3. Find resend-mcp and click Install
 
-就这样！无需任何技术知识 - ClaudeMind 无缝地为您处理所有安装和配置。
+That's it! No technical knowledge required - ClaudeMind handles all the installation and configuration for you seamlessly.
 
-### 使用 Claude Desktop
+### Using Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -74,26 +74,26 @@ description: "一种工具集成，使 Claude 能够通过 Resend API 撰写和�
 }
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证授权。这意味着您可以在遵守 MIT 许可证条款和条件的前提下自由使用、修改和分发该软件。更多详情，请参见项目仓库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/hawstein/resend-mcp](https://github.com/hawstein/resend-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hawstein/resend-mcp](https://github.com/hawstein/resend-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y resend-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y resend-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hawstein-resend.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hawstein-resend.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

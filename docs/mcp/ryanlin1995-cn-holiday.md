@@ -1,138 +1,136 @@
 ---
-title: "中国节日"
-description: "# 中国节假日查询 MCP 服务\n\n这是一个基于 MCP (Message Control Protocol) 的中国节假日查询服务，提供节假日和工作日的查询功能。数据来源于 [holiday-cn](https://github.com/NateScarlet/holiday-cn) 项目。"
+title: "mcp_cn_holiday"
+description: "China Holiday Inquiry MCP Service This is a China holiday inquiry service based on MCP (Message Control Protocol), providing the functionality to query holidays and working days. The data is sourced f…"
 ---
 
-# 中国节日
+# mcp_cn_holiday
 
-# 中国节假日查询 MCP 服务
+China Holiday Inquiry MCP Service This is a China holiday inquiry service based on MCP (Message Control Protocol), providing the functionality to query holidays and working days. The data is sourced f…
 
-这是一个基于 MCP (Message Control Protocol) 的中国节假日查询服务，提供节假日和工作日的查询功能。数据来源于 [holiday-cn](https://github.com/NateScarlet/holiday-cn) 项目。
+# China Holiday Query MCP Service
 
-# 中国节假日查询 MCP 服务
+This is a China holiday and workday query service based on MCP (Message Control Protocol), providing functionalities to check if a specific date is a holiday or a workday. The data source is from the [holiday-cn](https://github.com/NateScarlet/holiday-cn) project.
 
-这是一个基于 MCP (Message Control Protocol) 的中国节假日查询服务，提供节假日和工作日的查询功能。数据来源于 [holiday-cn](https://github.com/NateScarlet/holiday-cn) 项目。
+## Features
 
-## 功能特点
+- Supports querying whether a specified date is a holiday
+- Supports querying whether a specified date is a workday
+- Automatically caches and updates holiday data
+- Asynchronous processing for efficient response
+- Uses the FastMCP framework, making it easy to integrate
 
-- 支持查询指定日期是否为节假日
-- 支持查询指定日期是否为工作日
-- 自动缓存和更新节假日数据
-- 异步处理，高效响应
-- 使用 FastMCP 框架，易于集成
-
-## 安装要求
+## Installation Requirements
 
 - Python 3.7+
 - aiohttp
 - mcp
-- Node.js (用于运行MCP Inspector)
+- Node.js (for running MCP Inspector)
 
-## 安装方法
+## Installation Steps
 
-1. 克隆仓库：
+1. Clone the repository:
+bash
 ```bash
 git clone [repository-url]
 cd mcp_holiday
 ```
-
-2. 安装依赖：
+2. Install dependencies:
+bash
 ```bash
 pip install aiohttp mcp
 ```
-
-3. 安装MCP Inspector工具（用于测试MCP服务）：
+3. Install the MCP Inspector tool (used for testing MCP services):
+bash
 ```bash
 # 确保已安装Node.js
 npm install -g @modelcontextprotocol/inspector
 ```
+## Running the Service
 
-## 运行服务
-
-1. 启动Holiday MCP服务：
+1. Start the Holiday MCP service:
+bash
 ```bash
 python holiday_mcp_server.py
 ```
-
-2. 使用MCP Inspector测试服务：
+2. Test the service using MCP Inspector:
+bash
 ```bash
 npx @modelcontextprotocol/inspector python holiday_mcp_server
 ```
+This will launch the MCP Inspector interface, through which you can test and debug various interfaces of the Holiday MCP service.
 
-这将启动MCP Inspector界面，您可以通过它来测试和调试Holiday MCP服务的各个接口。
+### API Documentation:
 
-### API 接口说明：
+### Check if a Date is a Holiday
 
-### 查询节假日
+- Resource: `date://is_holiday/{date}`
+- Parameters:
+  - `date`: Date string (format: YYYY-MM-DD), optional, defaults to the current date
+- Return Value:
+  - `true`: It is a holiday
+  - `false`: It is not a holiday
+- Exceptions:
+  - `ValueError`: Incorrect date format
+  - `Exception`: Failed to fetch holiday data
 
-- 资源：`date://is_holiday/{date}`
-- 参数：
-  - `date`: 日期字符串（格式：YYYY-MM-DD），可选，默认为当前日期
-- 返回值：
-  - `true`: 是节假日
-  - `false`: 不是节假日
-- 异常：
-  - `ValueError`: 日期格式错误
-  - `Exception`: 获取节假日数据失败
+### Check if a Date is a Workday
 
-### 查询工作日
+- Resource: `date://is_workday/{date}`
+- Parameters:
+  - `date`: Date string (format: YYYY-MM-DD), optional, defaults to the current date
+- Return Value:
+  - `true`: It is a workday
+  - `false`: It is not a workday
+- Exceptions:
+  - `ValueError`: Incorrect date format
+  - `Exception`: Failed to fetch holiday data
 
-- 资源：`date://is_workday/{date}`
-- 参数：
-  - `date`: 日期字符串（格式：YYYY-MM-DD），可选，默认为当前日期
-- 返回值：
-  - `true`: 是工作日
-  - `false`: 不是工作日
-- 异常：
-  - `ValueError`: 日期格式错误
-  - `Exception`: 获取节假日数据失败
+### Get Detailed Information of a Date
 
-### 获取日期详细信息
+- Resource: `date://get_holiday_info/{date}`
+- Parameters:
+  - `date`: Date string (format: YYYY-MM-DD), optional, defaults to the current date
+- Return Value: A JSON object containing the following fields
+  - `date`: The queried date
+  - `is_holiday`: Whether it is a holiday
+  - `is_workday`: Whether it is a workday
+  - `weekday`: Day of the week (0-6, 0 represents Monday)
+  - `weekday_name`: Chinese name of the day of the week (e.g., "周一")
+- Exceptions:
+  - `ValueError`: Incorrect date format
+  - `Exception`: Failed to fetch holiday data
 
-- 资源：`date://get_holiday_info/{date}`
-- 参数：
-  - `date`: 日期字符串（格式：YYYY-MM-DD），可选，默认为当前日期
-- 返回值：包含以下字段的JSON对象
-  - `date`: 查询的日期
-  - `is_holiday`: 是否为节假日
-  - `is_workday`: 是否为工作日
-  - `weekday`: 星期几（0-6，0表示周一）
-  - `weekday_name`: 星期几的中文名称（如"周一"）
-- 异常：
-  - `ValueError`: 日期格式错误
-  - `Exception`: 获取节假日数据失败
+## Data Caching
 
-## 数据缓存
+- Holiday data is cached in the `holiday_data/holiday_data.json` file
+- Data is automatically updated once a year
+- If the cache file is corrupted or fails to read, it will be automatically re-downloaded
 
-- 节假日数据会被缓存在 `holiday_data/holiday_data.json` 文件中
-- 每年自动更新一次数据
-- 如果缓存文件损坏或读取失败，会自动重新下载
+## License
 
-## 许可证
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/RyanLin1995/mcp_cn_holiday/blob/HEAD/LICENSE) file for details
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](https://github.com/RyanLin1995/mcp_cn_holiday/blob/HEAD/LICENSE) 文件了解详细信息
+## Acknowledgements
 
-## 致谢
+- [holiday-cn](https://github.com/NateScarlet/holiday-cn) - Source of holiday data
+- [FastMCP](https://github.com/MCP-Foundation/FastMCP) - MCP service framework
 
-- [holiday-cn](https://github.com/NateScarlet/holiday-cn) - 节假日数据来源
-- [FastMCP](https://github.com/MCP-Foundation/FastMCP) - MCP 服务框架
+**Official site: ** [https://github.com/RyanLin1995/mcp_cn_holiday](https://github.com/RyanLin1995/mcp_cn_holiday)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/RyanLin1995/mcp_cn_holiday](https://github.com/RyanLin1995/mcp_cn_holiday)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@modelcontextprotocol/inspector python holiday_mcp_server`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@modelcontextprotocol/inspector python holiday_mcp_server`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/ryanlin1995-cn-holiday.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ryanlin1995-cn-holiday.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

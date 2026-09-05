@@ -1,48 +1,48 @@
 ---
-title: "PDF2MD PDF转Markdown工具"
-description: "PDF转Markdown转换工具"
+title: "mcp-pdf2md"
+description: "PDF to Markdown conversion tool"
 ---
 
-# PDF2MD PDF转Markdown工具
+# mcp-pdf2md
 
-PDF转Markdown转换工具
+PDF to Markdown conversion tool
 
 # MCP-PDF2MD
 
 [Smithery](https://smithery.ai/server/@FutureUnreal/mcp-pdf2md)
 [English](#pdf2md-service) | [中文](https://github.com/FutureUnreal/mcp-pdf2md/blob/HEAD/README_CN.md)
 
-# MCP-PDF2MD 服务
+# MCP-PDF2MD Service
 
-基于 MinerU API 的高性能 PDF 转 Markdown 服务，支持本地文件和 URL 链接的批量处理，并提供结构化输出。
+An MCP-based high-performance PDF to Markdown conversion service powered by MinerU API, supporting batch processing for local files and URL links with structured output.
 
-## 主要功能
+## Key Features
 
-- 格式转换：将 PDF 文件转换为结构化的 Markdown 格式。
-- 多源支持：处理本地 PDF 文件和 URL 链接。
-- 智能处理：自动选择最佳处理方法。
-- 批量处理：支持多文件批量转换，高效处理大量 PDF 文件。
-- MCP 集成：无缝集成到 Claude Desktop 等 LLM 客户端。
-- 结构保留：保持原始文档结构，包括标题、段落、列表等。
-- 智能布局：以人类可读顺序输出文本，适用于单列、多列和复杂布局。
-- 公式转换：自动识别并转换文档中的公式为 LaTeX 格式。
-- 表格提取：自动识别并转换文档中的表格为结构化格式。
-- 清理优化：移除页眉、页脚、脚注、页码等，确保语义连贯。
-- 高质量提取：从 PDF 文档中高质量提取文本、图像和布局信息。
+- Format Conversion: Convert PDF files to structured Markdown format.
+- Multi-source Support: Process both local PDF files and URL links.
+- Intelligent Processing: Automatically select the best processing method.
+- Batch Processing: Support multi-file batch conversion for efficient handling of large volumes of PDF files.
+- MCP Integration: Seamless integration with LLM clients like Claude Desktop.
+- Structure Preservation: Maintain the original document structure, including headings, paragraphs, lists, etc.
+- Smart Layout: Output text in human-readable order, suitable for single-column, multi-column, and complex layouts.
+- Formula Conversion: Automatically recognize and convert formulas in the document to LaTeX format.
+- Table Extraction: Automatically recognize and convert tables in the document to structured format.
+- Cleanup Optimization: Remove headers, footers, footnotes, page numbers, etc., to ensure semantic coherence.
+- High-Quality Extraction: High-quality extraction of text, images, and layout information from PDF documents.
 
-## 系统要求
+## System Requirements
 
-- 软件：Python 3.10+
+- Software: Python 3.10+
 
-## 快速开始
+## Quick Start
 
-1. 克隆仓库并进入目录：
+1. Clone the repository and enter the directory:
 ```bash
    git clone https://github.com/FutureUnreal/mcp-pdf2md.git
    cd mcp-pdf2md
 ```
 
-2. 创建虚拟环境并安装依赖项：
+2. Create a virtual environment and install dependencies:
    
    **Linux/macOS**:
 ```bash
@@ -54,13 +54,13 @@ PDF转Markdown转换工具
    **Windows**:
 ```bash
    uv venv
-   .venv\Scripts\activate
+   .venvScriptsactivate
    uv pip install -e .
 ```
 
-3. 配置环境变量：
+3. Configure environment variables:
 
-   在项目根目录创建一个 `.env` 文件，并设置以下环境变量：
+   Create a `.env` file in the project root directory and set the following environment variables:
 ```
    MINERU_API_BASE=https://mineru.net/api/v4/extract/task
    MINERU_BATCH_API=https://mineru.net/api/v4/extract/task/batch
@@ -68,18 +68,18 @@ PDF转Markdown转换工具
    MINERU_API_KEY=your_api_key_here
 ```
 
-4. 启动服务：
+4. Start the service:
 ```bash
    uv run pdf2md
 ```
 
-## 命令行参数
+## Command Line Arguments
 
-服务器支持以下命令行参数：
+The server supports the following command line arguments:
 
-## Claude Desktop 配置
+## Claude Desktop Configuration
 
-在 Claude Desktop 中添加以下配置：
+Add the following configuration in Claude Desktop:
 
 **Windows**:
 ```json
@@ -89,11 +89,11 @@ PDF转Markdown转换工具
             "command": "uv",
             "args": [
                 "--directory",
-                "C:\\path\\to\\mcp-pdf2md",
+                "C:\path\to\mcp-pdf2md",
                 "run",
                 "pdf2md",
                 "--output-dir",
-                "C:\\path\\to\\output"
+                "C:\path\to\output"
             ],
             "env": {
                 "MINERU_API_KEY": "your_api_key_here"
@@ -125,63 +125,63 @@ PDF转Markdown转换工具
 }
 ```
 
-**关于 API 密钥配置的说明：**
-您可以使用两种方式设置 API 密钥：
-1. 在项目目录内的 `.env` 文件中（推荐用于开发）
-2. 如上所示，在 Claude Desktop 配置中（推荐用于常规使用）
+**Note about API Key Configuration:**
+You can set the API key in two ways:
+1. In the `.env` file within the project directory (recommended for development)
+2. In the Claude Desktop configuration as shown above (recommended for regular use)
 
-如果您在两个地方都设置了 API 密钥，则 Claude Desktop 配置中的密钥优先。
+If you set the API key in both places, the one in the Claude Desktop configuration will take precedence.
 
-## MCP 工具
+## MCP Tools
 
-服务器提供了以下 MCP 工具：
+The server provides the following MCP tools:
 
-- **convert_pdf_url**: 将PDF URL转换为Markdown
-- **convert_pdf_file**: 将本地PDF文件转换为Markdown
+- **convert_pdf_url**: Convert PDF URL to Markdown
+- **convert_pdf_file**: Convert local PDF file to Markdown
 
-## 获取MinerU API密钥
+## Getting MinerU API Key
 
-此项目依赖于MinerU API来提取PDF内容。要获取API密钥：
+This project relies on the MinerU API for PDF content extraction. To obtain an API key:
 
-1. 访问[MinerU官方网站](https://mineru.net/)并注册一个账户
-2. 登录后，通过[此链接](https://mineru.net/apiManage/docs?openApplyModal=true)申请API测试资格
-3. 一旦您的申请被批准，您可以访问[API管理](https://mineru.net/apiManage/token)页面
-4. 按照提供的说明生成您的API密钥
-5. 复制生成的API密钥
-6. 使用此字符串作为`MINERU_API_KEY`的值
+1. Visit [MinerU official website](https://mineru.net/) and register for an account
+2. After logging in, apply for API testing qualification at [this link](https://mineru.net/apiManage/docs?openApplyModal=true)
+3. Once your application is approved, you can access the [API Management](https://mineru.net/apiManage/token) page
+4. Generate your API key following the instructions provided
+5. Copy the generated API key
+6. Use this string as the value for `MINERU_API_KEY`
 
-请注意，目前访问MinerU API处于测试阶段，需要获得MinerU团队的批准。审批过程可能需要一些时间，请相应地做好计划。
+Note that access to the MinerU API is currently in testing phase and requires approval from the MinerU team. The approval process may take some time, so plan accordingly.
 
-## 演示
+## Demo
 
-### 输入PDF
+### Input PDF
 
-### 输出Markdown
+### Output Markdown
 
-## 许可证
+## License
 
-MIT许可证 - 详情请参阅LICENSE文件。
+MIT License - see the LICENSE file for details.
 
-## 致谢
+## Credits
 
-本项目基于[MinerU](https://github.com/opendatalab/MinerU/tree/master)的API。
+This project is based on the API from [MinerU](https://github.com/opendatalab/MinerU/tree/master).
 
-**官方网站：** [https://github.com/FutureUnreal/mcp-pdf2md](https://github.com/FutureUnreal/mcp-pdf2md)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/FutureUnreal/mcp-pdf2md](https://github.com/FutureUnreal/mcp-pdf2md)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `developer tools`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory C:\path\to\mcp-pdf2md run pdf2md --output-dir C:\path\to\output`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory C:\path\to\mcp-pdf2md run pdf2md --output-dir C:\path\to\output`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/futureunreal-pdf2md.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/futureunreal-pdf2md.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

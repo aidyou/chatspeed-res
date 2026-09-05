@@ -1,11 +1,11 @@
 ---
-title: "djalal"
-description: "MCP Server for Quran.com API MCP 服务器通过官方 REST API v4 与 Quran.com 语料库进行交互。 概述 这是一个从 OpenAPI 规范 生成的 Model Context Protocol (MCP) 服务器。 端点 以下 API 端点已作为工具提供，LLMs 可以通过兼容的客户端使用这些工具。 章节 GET /chapters - 列出章节 GET /chapters/{id} - 获取章节 GET /chapters/{chapterid}/info - 获取"
+title: "quran-mcp-server"
+description: "MCP Server for Quran.com API MCP server to interact with Quran.com corpus via the official REST API v4. Overview This is a Model Context Protocol (MCP) server generated from the OpenAPI specification…"
 ---
 
-# djalal
+# quran-mcp-server
 
-MCP Server for Quran.com API MCP 服务器通过官方 REST API v4 与 Quran.com 语料库进行交互。 概述 这是一个从 OpenAPI 规范 生成的 Model Context Protocol (MCP) 服务器。 端点 以下 API 端点已作为工具提供，LLMs 可以通过兼容的客户端使用这些工具。 章节 GET /chapters - 列出章节 GET /chapters/{id} - 获取章节 GET /chapters/{chapterid}/info - 获取
+MCP Server for Quran.com API MCP server to interact with Quran.com corpus via the official REST API v4. Overview This is a Model Context Protocol (MCP) server generated from the OpenAPI specification…
 
 # MCP Server for Quran.com API
 
@@ -164,22 +164,22 @@ npm test
 
 This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/djalal/quran-mcp-server](https://github.com/djalal/quran-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/djalal/quran-mcp-server](https://github.com/djalal/quran-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `search`
+- Categories: `media`
+- Tags: `art and culture`, `search`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm --init -e API_KEY=your_api_key_if_needed -e VERBOSE_MODE=true quran-mcp-server`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm --init -e API_KEY=your_api_key_if_needed -e VERBOSE_MODE=true quran-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/djalal-quran.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/djalal-quran.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

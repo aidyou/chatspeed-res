@@ -1,11 +1,11 @@
 ---
-title: "aitoearn社交媒体MCP"
-description: "这是一个模型上下文协议（MCP）服务器，为AI驱动的内容创建和自动化提供社交媒体发布和账户管理功能。它支持账户管理、内容发布、批量操作、类型验证和错误处理等功能。"
+title: "aitoearn"
+description: "A Model Context Protocol (MCP) server that provides social media publishing and account management capabilities for AI-driven content creation and automation."
 ---
 
-# aitoearn社交媒体MCP
+# aitoearn
 
-这是一个模型上下文协议（MCP）服务器，为AI驱动的内容创建和自动化提供社交媒体发布和账户管理功能。它支持账户管理、内容发布、批量操作、类型验证和错误处理等功能。
+A Model Context Protocol (MCP) server that provides social media publishing and account management capabilities for AI-driven content creation and automation.
 
 # AiToEarn MCP(中文文档)
 
@@ -454,22 +454,22 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/)
 - [AiToEarn Platform](https://aitoearn.ai)
 
-**官方网站：** [https://github.com/yikart/aitoearn-mcp-server](https://github.com/yikart/aitoearn-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yikart/aitoearn-mcp-server](https://github.com/yikart/aitoearn-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`, `media`
-- 标签：`communication`, `entertainment and media`, `娱乐与多媒体`, `社交媒体发布工具`, `矩阵工具`
+- Categories: `communication`, `media`
+- Tags: `communication`, `entertainment and media`, `娱乐与多媒体`, `社交媒体发布工具`, `矩阵工具`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`aitoearn-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `aitoearn-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/whh826219822-aitoearn.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/whh826219822-aitoearn.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

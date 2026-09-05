@@ -1,53 +1,53 @@
 ---
-title: "Agnes AI 免费 API"
-description: "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。"
+title: "Agnes AI Free API"
+description: "OpenAI-compatible multimodal gateway (text/image/video) that grants free API credits on sign-up; several models run free (Agnes 2.0/2.5 Flash, Agnes Image 2.1 Flash), no credit card required."
 ---
 
-# Agnes AI 免费 API
+# Agnes AI Free API
 
-OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。
+OpenAI-compatible multimodal gateway (text/image/video) that grants free API credits on sign-up; several models run free (Agnes 2.0/2.5 Flash, Agnes Image 2.1 Flash), no credit card required.
 
-Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。
+Agnes AI is an AI gateway and free-API platform (launched 2026) providing multimodal models — text, image and video generation/understanding — through a single OpenAI-compatible endpoint (https://apihub.agnes-ai.com/v1). New accounts receive free API credits, and a free tier covers models such as Agnes 2.0 Flash (agent), Agnes 2.5 Flash and Agnes Image 2.1 Flash. As a young beta-style platform, terms, quota and availability can change quickly; check the official docs and confirm current limits before relying on it.
 
-**官方网站：** [https://agnes-ai.com/](https://agnes-ai.com/)
-**状态：** `review`　**最后核验：** `2026-08-30`
+**Official site: ** [https://agnes-ai.com/](https://agnes-ai.com/)
+**Status: ** `review`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `image`, `video`
-- 标签：`agnes-ai`, `free-api`, `multimodal`, `api`
+- Categories: `general`, `image`, `video`
+- Tags: `agnes-ai`, `free-api`, `multimodal`, `api`
 
-## 免费使用说明
+## Free Usage
 
-- 访问方式：`api`
-- 是否需要登录：`是`
-- 是否有免费层：`是`
-- 可用区域：`global`
+- Access: `api`
+- Requires login: `Yes`
+- Has free tier: `Yes`
+- Availability: `global`
 
-注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。
+Sign-up grants free API credits; some models run free (Agnes 2.0 Flash, Agnes 2.5 Flash, Agnes Image 2.1 Flash). Exact credit amounts are not published; check the official platform.
 
-### 分模型免费额度明细
+### Per-model free quota
 
-| 模型 | 免费额度 | 频率与限速 |
+| Model | Free quota | Rate / frequency |
 | --- | --- | --- |
-| Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent） | 注册额度内免费 | 按额度扣减，以官方平台为准 |
-| Agnes Image 2.1 Flash（图像生成） | 注册额度内免费 | 按额度扣减，以官方平台为准 |
-| 视频及其他多模态模型 | 免费档范围内可用 | 以官方平台为准 |
+| Agnes 2.0 Flash / Agnes 2.5 Flash (text & agent) | Free within sign-up credits | Metered by credits; check official platform |
+| Agnes Image 2.1 Flash (image generation) | Free within sign-up credits | Metered by credits; check official platform |
+| Video and other multimodal models | Within free tier where available | Check official platform |
 
-## 注册与限制
-- 注册入口：[https://platform.agnes-ai.com/login](https://platform.agnes-ai.com/login)
-- 注册限制：邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。
+## Registration & Limits
+- Sign up: [https://platform.agnes-ai.com/login](https://platform.agnes-ai.com/login)
+- Registration limit: Sign up with email; no credit card required. Free terms vary by model; confirm availability and compliance on the official docs.
 
-## ChatSpeed 导入
+## ChatSpeed Import
 
-该服务关联模型供应商 `agnes-ai`，可从模型供应商列表导入配置，调用入口如下：
-- 协议：`openai`
-- Base URL：`https://apihub.agnes-ai.com/v1`
-- Logo：![Agnes AI](https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64)
-- 官方文档：[https://wiki.agnes-ai.com/en/docs/overview](https://wiki.agnes-ai.com/en/docs/overview)
-- 模型列表：[https://agnes-ai.com/campaign](https://agnes-ai.com/campaign)
-- 密钥申请：[https://platform.agnes-ai.com/login](https://platform.agnes-ai.com/login)
+This service is linked to model provider `agnes-ai`; import its config from the model provider list. Call entry points:
+- Protocol: `openai`
+- Base URL: `https://apihub.agnes-ai.com/v1`
+- Logo: ![Agnes AI](https://www.google.com/s2/favicons?domain=agnes-ai.com&sz=64)
+- Docs: [https://wiki.agnes-ai.com/en/docs/overview](https://wiki.agnes-ai.com/en/docs/overview)
+- Model list: [https://agnes-ai.com/campaign](https://agnes-ai.com/campaign)
+- API key: [https://platform.agnes-ai.com/login](https://platform.agnes-ai.com/login)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/free-ai/agnes-ai-free-api.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/free-ai/agnes-ai-free-api.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

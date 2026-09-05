@@ -1,55 +1,55 @@
 ---
-title: "飞行雷达24实时航班追踪"
-description: "一个基于Claude桌面的MCP服务器，它可以帮助您使用Flightradar24数据实时跟踪航班。非常适合航空爱好者、旅行规划师或任何对头顶航班好奇的人！"
+title: "flightradar24-mcp-server"
+description: "A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!"
 ---
 
-# 飞行雷达24实时航班追踪
+# flightradar24-mcp-server
 
-一个基于Claude桌面的MCP服务器，它可以帮助您使用Flightradar24数据实时跟踪航班。非常适合航空爱好者、旅行规划师或任何对头顶航班好奇的人！
+A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!
 
-# Flightradar24 MCP 服务器 🛩️
+# Flightradar24 MCP Server 🛩️
 
-一个 Claude 桌面 MCP 服务器，利用 Flightradar24 的数据帮助你实时跟踪航班。非常适合航空爱好者、旅行规划者或任何对头顶飞行感兴趣的人！
+A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!
 
-## 这个功能可以做什么？ ✨
+## What Can This Do? ✨
 
-- 🔍 实时跟踪任何航班
-- ⏰ 获取特定航班的到达和出发时间
-- 🌉 查看机场内航班的状态
-- 🚨 监控紧急航班
+- 🔍 Track any flight in real-time
+- ⏰ Get arrival and departure times for specific flights
+- 🌉 View the status of flights at an airport
+- 🚨 Monitor emergency flights
 
-## 设置指南 🚀
+## Setup Guide 🚀
 
-### 1. 前提条件
-- 在您的计算机上安装 [Claude Desktop](https://claude.ai/desktop)
-- 一个 Flightradar24 API 密钥（从 [Flightradar24 的网站](https://www.flightradar24.com/premium) 获取）*
+### 1. Prerequisites
+- [Claude Desktop](https://claude.ai/desktop) installed on your computer
+- A Flightradar24 API key (get one from [Flightradar24's website](https://www.flightradar24.com/premium))*
 
-### 2. 安装步骤
+### 2. Installation
 
-1. 将此仓库克隆到您计算机上的某个位置：
+1. Clone this repository somewhere on your computer:
 ```bash
    git clone https://github.com/sunsetcoder/flightradar24-mcp-server.git
 ```
 
-2. 安装依赖并构建项目：
+2. Install dependencies & build the project:
 ```bash
    cd flightradar24-mcp-server
    npm install
    npm run build
 ```
 
-### 3. 与 Claude Desktop 集成
+### 3. Integration with Claude Desktop
 
-1. 打开您的 Claude Desktop 配置文件：
+1. Open your Claude Desktop configuration file:
 ```
-   # 在 Mac 上：
+   # On Mac:
    ~/Library/Application Support/Claude/claude_desktop_config.json
    
-   # 在 Windows 上：
+   # On Windows:
    %APPDATA%/Claude/claude_desktop_config.json
 ```
 
-2. 在配置文件中的 `mcpServers` 对象下添加以下内容：
+2. Add the following to the `mcpServers` object in your config:
 ```json
    {
      "mcpServers": {
@@ -67,92 +67,92 @@ description: "一个基于Claude桌面的MCP服务器，它可以帮助您使用
    }
 ```
 
-3. 重要步骤：
-   - 将 `/FULL/PATH/TO/flightradar24-mcp-server` 替换为您实际克隆仓库的完整路径
-   - 在 `env` 部分添加您的 Flightradar24 API 密钥
-   - 确保在路径中使用正斜杠 (`/`)，即使是在 Windows 上也是如此
+3. Important Steps:
+   - Replace `/FULL/PATH/TO/flightradar24-mcp-server` with the actual full path to where you cloned the repository
+   - Add your Flightradar24 API key in the `env` section
+   - Make sure to use forward slashes (`/`) in the path, even on Windows
 
-4. 重启 Claude Desktop 使更改生效
+4. Restart Claude Desktop for the changes to take effect
 
-## 环境设置
+## Environment Setup
 
-1. 将 `.env.example` 复制为 `.env`：
+1. Copy `.env.example` to `.env`:
 ```bash
    cp .env.example .env
 ```
 
-2. 更新 `.env` 文件，填入您的实际 Flightradar24 API 密钥：
+2. Update the `.env` file with your actual Flightradar24 API key:
 ```env
    FR24_API_KEY=your_actual_api_key_here
 ```
 
-注意：切勿将实际 API 密钥提交到版本控制系统。出于安全考虑，`.env` 文件被 git 忽略。
+Note: Never commit your actual API key to version control. The `.env` file is ignored by git for security reasons.
 
-## 让我们试一试！ 🎮
+## Let's Try It Out! 🎮
 
-一旦服务器配置完成，您可以向 Claude 提出如下问题：
+Once the server is configured, you can ask Claude questions like:
 
-1. “联合航空公司航班 UA123 的预计到达时间是什么时候？”
-2. “显示 SFO 当前的所有航班”
-3. “这个区域内是否有紧急航班？”
-4. “显示接下来 2 小时内抵达 SFO 的所有国际航班”
-5. “目前有多少商业航班正在太平洋上空飞行？”
-6. “识别加利福尼亚地区内已宣布紧急情况的所有航班”
+1. "What's the ETA for United Airlines flight UA123?"
+2. "Show me all flights currently at SFO"
+3. "Are there any emergency flights in the area?"
+4. "Show me all international flights arriving at SFO in the next 2 hours"
+5. "How many commercial flights are currently over the Pacific Ocean?"
+6. "Identify any flights that have declared an emergency in the California region"
 
-与 Claude 的示例对话：
+Example conversation with Claude:
 ```
 You: What's the status of flight UA123?
 Claude: Let me check that for you...
 [Claude will use the MCP server to fetch real-time flight information]
 ```
 
-## 常见问题与故障排除 🤔
+## Common Questions & Troubleshooting 🤔
 
-### "Claude 无法连接到服务器"
-- 检查 `claude_desktop_config.json` 中的路径是否正确
-- 确保您使用的是完整的绝对路径
-- 验证您的 API 密钥是否正确
-- 尝试重启 Claude Desktop
+### "Claude can't connect to the server"
+- Check if the path in `claude_desktop_config.json` is correct
+- Make sure you're using the full absolute path
+- Verify your API key is correct
+- Try restarting Claude Desktop
 
-### "服务器没有响应"
-- 确保您的 Flightradar24 API 密钥有效
-- 检查 API URL 是否正确
-- 查看服务器日志中是否有任何错误信息
+### "The server isn't responding"
+- Make sure your Flightradar24 API key is valid
+- Check if the API URL is correct
+- Look for any error messages in server logs
 
-### FlightRadar API 访问
-- 注意：使用 Flightradar24 的 API 需要 [订阅](https://fr24api.flightradar24.com/subscriptions-and-credits)
+### FlightRadar API Access
+- Note: Using Flightradar24's API requires a [subscription](https://fr24api.flightradar24.com/subscriptions-and-credits)
 
-## 需要更多帮助？ 🆘
+## Need More Help? 🆘
 
-1. 确保 Claude Desktop 已正确安装
-2. 验证您的 Flightradar24 API 密钥是活跃状态
-3. 检查配置文件中的路径是否正确
-4. 查看 MCP 服务器日志中的错误信息
+1. Make sure Claude Desktop is properly installed
+2. Verify your Flightradar24 API key is active
+3. Check the path in your configuration file is correct
+4. Look for error messages in MCP server logs
 
-## 许可证 📄
+## License 📄
 
 MIT
 
 ---
 
-为航空爱好者用心制作 ❤️
+Made with ❤️ for aviation enthusiasts
 
-**官方网站：** [https://github.com/sunsetcoder/flightradar24-mcp-server](https://github.com/sunsetcoder/flightradar24-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sunsetcoder/flightradar24-mcp-server](https://github.com/sunsetcoder/flightradar24-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`travel and transportation`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `travel and transportation`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sunsetcoder-flightradar24.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sunsetcoder-flightradar24.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

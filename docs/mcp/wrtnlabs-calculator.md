@@ -1,24 +1,24 @@
 ---
-title: "MCP计算器"
-description: "一种为LLM提供基本计算器功能的模型上下文协议服务器，使它们能够执行加法、减法、乘法、除法、模运算和平方根等数学运算。"
+title: "calculator-mcp"
+description: "A Model Context Protocol server that provides basic calculator functionality for LLMs, enabling them to perform mathematical operations like addition, subtraction, multiplication, division, modulo, an…"
 ---
 
-# MCP计算器
+# calculator-mcp
 
-一种为LLM提供基本计算器功能的模型上下文协议服务器，使它们能够执行加法、减法、乘法、除法、模运算和平方根等数学运算。
+A Model Context Protocol server that provides basic calculator functionality for LLMs, enabling them to perform mathematical operations like addition, subtraction, multiplication, division, modulo, an…
 
-## 计算 MCP
+## Calculate MCP
 
-一个提供基本计算器功能的 Model Context Protocol (MCP) 服务器，该服务器能够实现浏览器自动化能力。
-此服务器使 LLMs 能够与计算器交互。
-（实际上我是为一个测试程序制作的）
+A Model Context Protocol (MCP) server that provides browser automation capabilities using basic calculator feature.
+This server enables LLMs to interact with calculator.
+(I actually made it for a test program)
 
-### 使用案例
+### Use Cases
 
-- 测试代码以连接 MCP 功能。
-- 玩具项目
+- The test code for to connect MCP feature.
+- The toy projects
 
-### 示例配置
+### Example config
 
 ```js
 {
@@ -34,9 +34,9 @@ description: "一种为LLM提供基本计算器功能的模型上下文协议服
 }
 ```
 
-#### 在 VS Code 中安装
+#### Installation in VS Code
 
-或者，您可以使用 VS Code CLI 安装 Playwright MCP 服务器：
+Alternatively, you can install the Playwright MCP server using the VS Code CLI:
 
 ```bash
 # For VS Code
@@ -48,25 +48,25 @@ code --add-mcp '{"name":"calculator","command":"npx","args":["-y", "@wrtnlabs/ca
 code-insiders --add-mcp '{"name":"calculator","command":"npx","args":["-y", "@wrtnlabs/calculator-mcp@latest"]}'
 ```
 
-安装后，Calculator MCP 服务器将可以在 VS Code 中与您的 GitHub Copilot 代理一起使用。
+After installation, the Calculator MCP server will be available for use with your GitHub Copilot agent in VS Code.
 
-### 命令行选项
+### CLI Options
 
-Calculator MCP 服务器支持以下命令行选项：
+The Calculator MCP server supports the following command-line options:
 
 - `--port 
-`: 监听 SSE 传输的端口
+`: Port to listen on for SSE transport
 
-### 在没有 DISPLAY 的 Linux 上运行有头浏览器
+### Running headed browser on Linux w/o DISPLAY
 
-当在没有显示或从 IDE 的工作进程运行有头浏览器时，
-请从具有 DISPLAY 的环境中运行 MCP 服务器，并传递 `--port` 标志以启用 SSE 传输。
+When running headed browser on system w/o display or from worker processes of the IDEs,
+run the MCP server from environment with the DISPLAY and pass the `--port` flag to enable SSE transport.
 
 ```bash
 npx @wrtnlabs/calculator-mcp@latest --port 8931
 ```
 
-然后在 MCP 客户端配置中，将 `url` 设置为 SSE 端点：
+And then in MCP client config, set the `url` to the SSE endpoint:
 
 ```js
 {
@@ -78,7 +78,7 @@ npx @wrtnlabs/calculator-mcp@latest --port 8931
 }
 ```
 
-### 使用自定义传输的编程用法
+### Programmatic usage with custom transports
 
 ```js
 import { createServer } from "@wrtnlabs/calculator-mcp";
@@ -102,7 +102,7 @@ await Promise.all([
 ]);
 ```
 
-### 工具
+### Tools
 
 - **add**
 - **sub**
@@ -111,22 +111,22 @@ await Promise.all([
 - **mod**
 - **sqrt**
 
-**官方网站：** [https://github.com/wrtnlabs/calculator-mcp](https://github.com/wrtnlabs/calculator-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wrtnlabs/calculator-mcp](https://github.com/wrtnlabs/calculator-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @wrtnlabs/calculator@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @wrtnlabs/calculator@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wrtnlabs-calculator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wrtnlabs-calculator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

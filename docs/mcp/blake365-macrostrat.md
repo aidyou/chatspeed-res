@@ -1,40 +1,40 @@
 ---
-title: "地质搜索"
-description: "使克劳德能够通过自然语言查询Macrostrat API的综合地质数据，包括地质单元、地层柱、矿物和时间尺度。"
+title: "macrostrat-mcp"
+description: "Enables Claude to query comprehensive geologic data from the Macrostrat API, including geologic units, columns, minerals, and timescales through natural language."
 ---
 
-# 地质搜索
+# macrostrat-mcp
 
-使克劳德能够通过自然语言查询Macrostrat API的综合地质数据，包括地质单元、地层柱、矿物和时间尺度。
+Enables Claude to query comprehensive geologic data from the Macrostrat API, including geologic units, columns, minerals, and timescales through natural language.
 
 # macrostrat-mcp
-用于 Macrostrat API 的 Claude MCP 服务器
+Claude MCP server for Macrostrat API
 
 [Smithery](https://smithery.ai/server/@blake365/macrostrat-mcp)
 
   
 
-这是一个 Model Context Protocol (MCP) 服务器的实现，用于在 [Claude Desktop](https://claude.ai/download) 中提供对 [Macrostrat API](https://macrostrat.org/api) 的访问。
+An MCP server implementation for providing access to the [Macrostrat API](https://macrostrat.org/api) within [Claude Desktop](https://claude.ai/download).
 
-## 概述
+## Overview
 
-这个 Model Context Protocol (MCP) 服务器使 AI 助手和应用程序能够：
+This Model Context Protocol (MCP) server enables AI assistants and applications to:
 
-- 查询由 Macrostrat API 提供的全面地质数据和信息
-- 访问地质单元、地层柱、矿物、时间尺度等
-- 分析地质数据以提高地质理解
-- 从数据中创建图形并进行数据分析
+- Query comprehensive geologic data and information provided by the Macrostrat API
+- Access geologic units, columns, minerals, timescales, and more
+- Analyze geologic data to improve geological understanding
+- Create graphics and perform data analysis from the data
 
-用户可以使用自然语言运行查询。
+Users can run queries using natural language.
 
-## 示例输出
+## Sample Output
 
-**Q. 纳什维尔（田纳西州）的地质历史是什么？**
+**Q. What is the geologic history of Nashville, TN?**
 
-A.
-让我检查一下纳什维尔所在位置的地质数据。
+A. 
+Let me check the geological data for Nashville's location.
 
-从 macrostrat（本地）查看 find-units 的结果
+View Result from find-units from macrostrat (local)
 ```json
 {
   "lat": 36.1627,
@@ -43,99 +43,98 @@ A.
 }
 ```
 
-### 纳什维尔（田纳西州）的地质历史
-1. 中元古代基底（16-11亿年前）
-- 火成岩基底岩石（花岗岩和流纹岩）
-- 古老北美克拉通的一部分
+### Geological History of Nashville, Tennessee
+1. Mesoproterozoic Basement (1.6-1.1 billion years ago)
+- Igneous basement rocks (granite and rhyolite)
+- Part of the ancient North American craton
 
-2. 早-中寒武纪（5.18-5.04亿年前）
-- 罗马组：混合碳酸盐-硅质碎屑沉积物
-- 浅海环境
-- 发展中的大陆架的一部分
+2. Early-Middle Cambrian (518-504 million years ago)
+- Rome Formation: Mixed carbonate-siliciclastic sediments
+- Shallow marine environment
+- Part of the developing continental shelf
 
-3. 中-晚寒武纪（5.04-4.98亿年前）
-- 康萨加组：石灰岩和混合沉积物
-- 继续海洋沉积
-- 交替出现的石灰岩和页岩表明海平面波动
+3. Middle-Late Cambrian (504-498 million years ago)
+- Conasauga Formation: Limestone and mixed sediments
+- Continued marine deposition
+- Alternating limestone and shale indicating fluctuating sea levels
 
-4. 晚寒武纪-早奥陶纪（4.98-4.70亿年前）
-- 诺克斯白云岩：巨大的白云岩序列
-- 广泛的浅海平台
-- 厚度可达1200米
-- 代表了长期稳定的海洋条件
+4. Late Cambrian-Early Ordovician (498-470 million years ago)
+- Knox Dolomite: Massive dolomite sequence
+- Extensive shallow marine platform
+- Up to 1,200 meters thick
+- Represents long period of stable marine conditions
 
-5. 中-晚奥陶纪（4.70-4.43亿年前）
-几个重要的地层：
-- 斯通河组（包括墨菲斯伯勒、皮尔斯、黎巴嫩石灰岩）
-- 纳什维尔组（包括赫米塔奇、比格比-坎农、卡瑟斯地层）
-- 主要是石灰岩沉积
-- 富含化石
-- 浅海环境
-- 多次海平面变化周期
+5. Middle-Late Ordovician (470-443 million years ago)
+Several important formations:
+- Stones River Group (including Murfreesboro, Pierce, Lebanon Limestones)
+- Nashville Group (including Hermitage, Bigby-Cannon, Catheys Formations)
+- Primarily limestone deposits
+- Rich in fossils
+- Shallow marine environment
+- Multiple cycles of sea level change
 
-6. 早-中志留纪（4.43-4.23亿年前）
-- 从布拉斯菲尔德到迪凯特组
-- 继续海洋石灰岩沉积
-- 从浅水到深水的各种海洋环境
+6. Early-Middle Silurian (443-423 million years ago)
+- Brassfield through Decatur Formations
+- Continued marine limestone deposition
+- Various marine environments from shallow to deeper water
 
-7. 中泥盆纪-早密西西比纪（3.90-3.57亿年前）
-- 佩格拉姆组到查塔努加页岩
-- 转向更多的碎屑（页岩）沉积
-- 查塔努加页岩代表了更深、缺氧的条件
+7. Middle Devonian-Early Mississippian (390-357 million years ago)
+- Pegram Formation through Chattanooga Shale
+- Shift to more clastic (shale) deposition
+- Chattanooga Shale represents deeper, oxygen-poor conditions
 
-8. 早-晚密西西比纪（3.57-3.31亿年前）
-几个石灰岩地层：
-- 福特佩恩组
-- 华沙石灰岩
-- 圣路易斯石灰岩
-- 蒙特格尔石灰岩
-- 哈特斯尔组
-- 回归碳酸盐台地条件
-- 多样的海洋环境
+8. Early-Late Mississippian (357-331 million years ago)
+Several limestone formations:
+- Fort Payne Formation
+- Warsaw Limestone
+- St. Louis Limestone
+- Monteagle Limestone
+- Hartselle Formation
+- Return to carbonate platform conditions
+- Diverse marine environments
 
-9. 新生代至今
+9. Cenozoic to Present
+- Long period of erosion and exposure
+- Development of the current landscape
+- Formation of the Nashville Dome structure
+- River and stream deposits
 
-- 长期的侵蚀和暴露
-- 当前地貌的发展
-- 纳什维尔穹顶结构的形成
-- 河流和溪流沉积
+### Key Features
+- The area was predominantly a marine environment for most of its geological history
+- Dominated by limestone formations indicating warm, shallow seas
+- Multiple cycles of sea level change
+- Rich fossil record, especially in Ordovician rocks
+- Part of the Nashville Dome structural feature
+- Long periods of erosion have removed younger rocks
+- Current topography shaped by differential erosion of various limestone units
 
-### 主要特征
-- 该地区在其大部分地质历史中主要是一个海洋环境
-- 以石灰岩构造为主，表明温暖浅海的存在
-- 多次海平面变化周期
-- 丰富的化石记录，尤其是在奥陶纪岩石中
-- 纳什维尔穹顶构造特征的一部分
-- 长期的侵蚀作用移除了较年轻的岩石
-- 当前地形由各种石灰岩单位的不同侵蚀程度塑造而成
+### Present Day Bedrock
+The bedrock of Nashville today consists primarily of Ordovician limestone formations exposed at the surface, particularly the Stones River and Nashville Group limestones. These rocks are well exposed in many areas and have influenced the development of local karst topography, including caves and sinkholes that are common in the region.
 
-### 当今基岩
-纳什维尔今天的基岩主要由暴露在地表的奥陶纪石灰岩构成，尤其是斯通河组和纳什维尔组石灰岩。这些岩石在许多地方都有很好的暴露，并影响了当地喀斯特地形的发展，包括该地区常见的洞穴和天坑。
+## Installation
 
-## 安装
+### Installing via Smithery
 
-### 通过 Smithery 安装
-
-要通过 [Smithery](https://smithery.ai/server/@blake365/macrostrat-mcp) 自动安装适用于 Claude Desktop 的 Macrostrat API 服务器：
+To install Macrostrat API Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@blake365/macrostrat-mcp):
 
 ```bash
 npx -y @smithery/cli install @blake365/macrostrat-mcp --client claude
 ```
 
-### 额外步骤
+### Extra Steps
 
-如果您想对服务器进行修改，可以通过编辑 `src/index.ts` 文件来实现。
-- 运行 `npm install` 来安装依赖项
-- 运行 `npm run build` 来构建服务器
-- 在进行更改后退出并重新启动 Claude Desktop
+If you want to make changes to the server you can do so by editing the `src/index.ts` file.
+- Run `npm install` to install dependencies
+- Run `npm run build` to build the server
+- Quit and restart Claude Desktop after making changes
 
-## 与 Claude Desktop 连接
+## Connecting with Claude Desktop
 
-1. 打开您的 Claude Desktop 配置文件：
+1. Open your Claude Desktop configuration at:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-2. 添加服务器配置：
+2. Add the server configuration:
 ```json
 {
     "mcpServers": {
@@ -149,30 +148,30 @@ npx -y @smithery/cli install @blake365/macrostrat-mcp --client claude
 }
 ```
 
-3. 关闭/退出然后重新启动 Claude Desktop
+3. Close/Quit then restart Claude Desktop
 
-重新启动后，您应该会在文本框右下角看到一个小锤子图标。将鼠标悬停在图标上时，您会看到可用的 MCP 工具数量。
+Once you restart you should see a small hammer icon in the lower right corner of the textbox. If you hover over the icon you'll see the number of MCP tools available.
 
-## 故障排除
+## Troubleshooting
 
-如果在运行服务器时遇到错误，可能需要提供 `node` 命令的完整路径。例如，在 macOS 上：`/usr/local/bin/node`
+If you get errors when running the server you may need to provide the full path to the `node` command. For example, on macOS: `/usr/local/bin/node`
 
-**官方网站：** [https://github.com/blake365/macrostrat-mcp](https://github.com/blake365/macrostrat-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/blake365/macrostrat-mcp](https://github.com/blake365/macrostrat-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/Full/Route/to/Folder/macrostrat/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/Full/Route/to/Folder/macrostrat/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/blake365-macrostrat.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/blake365-macrostrat.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

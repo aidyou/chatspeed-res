@@ -1,39 +1,35 @@
 ---
-title: "Figma 资源访问器"
-description: "允许您的AI编码代理直接访问Figma文件和原型。有关任何问题/改进建议，可以给我发私信：https://x.com/jasonzhou1993\n\n1. 访问所有Figma页面\n2. 访问所有Figma组件\n3. 访问Figma原型流程"
+title: "figma-mcp"
+description: "Allow your AI coding agents to access Figma files & prototypes directly. You can DM me for any issues / improvements: https://x.com/jasonzhou1993 1. Access all figma pages 2. Access all figma componen…"
 ---
 
-# Figma 资源访问器
+# figma-mcp
 
-允许您的AI编码代理直接访问Figma文件和原型。有关任何问题/改进建议，可以给我发私信：https://x.com/jasonzhou1993
-
-1. 访问所有Figma页面
-2. 访问所有Figma组件
-3. 访问Figma原型流程
+Allow your AI coding agents to access Figma files & prototypes directly. You can DM me for any issues / improvements: https://x.com/jasonzhou1993 1. Access all figma pages 2. Access all figma componen…
 
 # Figma MCP Python
 
 [![PyPI version](/mcp-assets/dec8b35f184274331a6b0bde60435e1d.svg)](https://badge.fury.io/py/figma-mcp)
 
-允许您的AI编码代理直接访问Figma文件和原型。
-如果您有任何问题或改进建议，可以私信我：[https://x.com/jasonzhou1993](https://x.com/jasonzhou1993)
+Allow your AI coding agents to access Figma files & prototypes directly.
+You can DM me for any issues / improvements: https://x.com/jasonzhou1993
 
   
 
-## 使用pipx快速安装
+## Quick Installation with pipx
 
 ```bash
 pipx install figma-mcp
 ```
 
-### 对于Cursor：
+### For Cursor:
 
-1. 在设置中，使用以下命令添加一个MCP服务器：
+1. In settings, add an MCP server using the command:
 ```shell
 figma-mcp --figma-api-key=your_figma_key
 ```
 
-2. 或者在项目中添加一个`.cursor/mcp.json`文件：
+2. OR Add a `.cursor/mcp.json` file in your project:
 
 ```json
 {
@@ -48,7 +44,7 @@ figma-mcp --figma-api-key=your_figma_key
 }
 ```
 
-### 对于像Windsurf这样的其他IDE，使用MCP配置文件（例如`mcp_config.json`）：
+### For other IDEs like Windsurf, use an MCP configuration file (e.g., `mcp_config.json`):
 
 ```json
 {
@@ -63,7 +59,7 @@ figma-mcp --figma-api-key=your_figma_key
 }
 ```
 
-## 安装uv并设置环境
+## Install uv and set up the environment
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
@@ -71,27 +67,27 @@ source .venv/bin/activate
 uv sync
 ```
 
-## 本地测试
+## Test locally
 ```bash
 python -m figma_mcp.main
 ```
 
-**官方网站：** [https://github.com/JayZeeDesign/figma-mcp](https://github.com/JayZeeDesign/figma-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JayZeeDesign/figma-mcp](https://github.com/JayZeeDesign/figma-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `image and video processing`, `developer tools`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `image and video processing`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`figma-mcp`
-- 参数：`--figma-api-key=your_figma_key`
+- Transport: `stdio`
+- Command: `figma-mcp`
+- Args: `--figma-api-key=your_figma_key`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jayzeedesign-figma.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jayzeedesign-figma.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

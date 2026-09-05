@@ -1,49 +1,49 @@
 ---
-title: "Notion AI 交互服务器"
-description: "一个模型上下文协议（MCP）服务器，它公开了官方的Notion SDK，允许人工智能模型与Notion工作区进行交互。"
+title: "mcp-server-notion"
+description: "A Model Context Protocol (MCP) server that exposes the official Notion SDK, allowing AI models to interact with Notion workspaces."
 ---
 
-# Notion AI 交互服务器
+# mcp-server-notion
 
-一个模型上下文协议（MCP）服务器，它公开了官方的Notion SDK，允许人工智能模型与Notion工作区进行交互。
+A Model Context Protocol (MCP) server that exposes the official Notion SDK, allowing AI models to interact with Notion workspaces.
 
-# Notion MCP 服务器
+# Notion MCP Server
 
-这是一个模型上下文协议 (MCP) 服务器，它暴露了官方的 Notion SDK，允许 AI 模型与 Notion 工作区进行交互。
+A Model Context Protocol (MCP) server that exposes the official Notion SDK, allowing AI models to interact with Notion workspaces.
 
   
 
-## 快速开始
+## Quick Start
 
-### 1. 设置您的 Notion 集成
+### 1. Set up your Notion integration
 
-1. 前往 [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
-2. 创建一个新的集成
-3. 复制 API 密钥
+1. Go to [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
+2. Create a new integration
+3. Copy the API key
 
-### 2. 将您的 Notion 页面连接到集成
+### 2. Connect your Notion pages to the integration
 
-为了让您的集成能够访问 Notion 内容，您需要明确地将页面或数据库共享给它：
+For your integration to access Notion content, you need to explicitly share your pages or databases with it:
 
-1. 导航到您希望通过集成访问的 Notion 页面或数据库
-2. 点击右上角的“分享”按钮
-3. 在“添加人员、群组或集成”字段中，从下拉列表中选择您的集成
-4. 点击“邀请”
-5. 对于每个您希望使其可访问的页面或数据库重复上述步骤
+1. Navigate to the Notion page or database you want to access through the integration
+2. Click the "Share" button in the top-right corner
+3. In the "Add people, groups, or integrations" field, select your integration from the dropdown list
+4. Click "Invite"
+5. Repeat for each page or database you want to make accessible
 
-**注意：** 集成只能访问已明确与其共享的页面和数据库。子页面会自动继承父页面的访问权限。
+**Note:** An integration only has access to pages and databases that have been explicitly shared with it. Child pages automatically inherit access from parent pages.
 
-### 3. 添加到您的 AI 助手中
+### 3. Add to your AI assistant
 
-您可以使用以下任一配置格式将此 MCP 服务器添加到 Claude Desktop、Cursor AI 或 Claude.ai 中：
+You can add this MCP server to Claude Desktop, Cursor AI, or Claude.ai using either of these configuration formats:
 
-#### 命令行格式
+#### Command Line Format
 
 ```bash
 npx @ramidecodes/mcp-server-notion@latest -y --api-key=your-notion-integration-key
 ```
 
-#### JSON 配置格式
+#### JSON Configuration Format
 
 ```json
 {
@@ -60,47 +60,47 @@ npx @ramidecodes/mcp-server-notion@latest -y --api-key=your-notion-integration-k
 }
 ```
 
-将 `your-notion-integration-key` 替换为步骤 1 中的 API 密钥。
+Replace `your-notion-integration-key` with the API key from step 1.
 
-### 设置说明
+### Setup Instructions
 
-- **Claude Desktop**: 设置 > 高级 > 模型上下文协议
-- **Cursor AI**: 设置 > AI > MCP 服务器
-- **Claude.ai (Web)**: 个人资料 > 设置 > API & 集成 > 模型上下文协议
+- **Claude Desktop**: Settings > Advanced > Model Context Protocol
+- **Cursor AI**: Settings > AI > MCP Servers
+- **Claude.ai (Web)**: Profile > Settings > API & Integrations > Model Context Protocol
 
-## 可用工具
+## Available Tools
 
-该服务器提供了用于与 Notion 交互的工具：
+The server provides tools for interacting with Notion:
 
-- **搜索**: 查找页面或数据库
-- **数据库**: 查询和检索数据库条目
-- **页面**: 创建、检索和更新页面
-- **块**: 管理内容块（段落、列表等）
-- **用户**: 列出用户并获取用户信息
-- **评论**: 创建和列出评论
-- **链接预览**: 为 URL 创建链接预览
+- **Search**: Find pages or databases
+- **Databases**: Query and retrieve database entries
+- **Pages**: Create, retrieve, and update pages
+- **Blocks**: Manage content blocks (paragraphs, lists, etc.)
+- **Users**: List users and get user information
+- **Comments**: Create and list comments
+- **Link Previews**: Create link previews for URLs
 
-## 替代设置方法
+## Alternative Setup Methods
 
-### 使用环境变量
+### Using Environment Variables
 
-您可以使用 `.env` 文件而不是直接传递 API 密钥：
+Instead of passing the API key directly, you can use a `.env` file:
 
-1. 创建一个包含以下内容的 `.env` 文件：
+1. Create a `.env` file with:
 
 ```
 NOTION_API_KEY=your-notion-integration-key
 ```
 
-2. 运行服务器：
+2. Run the server:
 
 ```bash
 npx @ramidecodes/mcp-server-notion@latest -y
 ```
 
-#### 使用环境变量的 JSON 配置格式（适用于 Claude Desktop）
+#### JSON Configuration with Environment Variables (for Claude Desktop)
 
-您还可以在 JSON 配置格式中使用环境变量：
+You can also use environment variables in the JSON configuration format:
 
 ```json
 {
@@ -117,7 +117,7 @@ npx @ramidecodes/mcp-server-notion@latest -y
 }
 ```
 
-### 命令行选项
+### Command Line Options
 
 ```
 OPTIONS:
@@ -130,50 +130,50 @@ OPTIONS:
   -y                      Skip confirmation prompts
 ```
 
-## 故障排除
+## Troubleshooting
 
-如果您遇到“创建客户端失败”的错误：
+If you encounter "Failed to create client" errors:
 
-- 在 Windows 上，尝试在 npx 命令前使用 `cmd /c`
-- 在 macOS/Linux 上，尝试使用 npx 的完整路径
-- 在将其添加到您的 AI 助手之前，在终端中测试命令
+- On Windows, try using `cmd /c` before the npx command
+- On macOS/Linux, try using the full path to npx
+- Test the command in a terminal before adding it to your AI assistant
 
-### 常见问题
+### Common Issues
 
-- **"无法访问资源"错误**：请确保您已将特定的 Notion 页面或数据库与您的集成共享（参见步骤 2）
-- **集成未出现在分享菜单中**：尝试刷新页面或重启浏览器
-- **功能受限**：检查您的集成是否已在 Notion 集成设置中启用了适当的功能
+- **"No access to resource" errors**: Make sure you've shared the specific Notion page or database with your integration (see step 2)
+- **Integration not appearing in share menu**: Try refreshing the page or restarting your browser
+- **Limited capabilities**: Check that your integration has the appropriate capabilities enabled in the Notion integration settings
 
-## 功能
+## Features
 
-- 通过官方 SDK 支持完整的 Notion API
-- 符合 MCP 标准，实现无缝 AI 集成
-- 提供全面的工具以支持所有 Notion 操作
-- 强大的错误处理机制，并附带详细的错误信息
-- 可通过环境变量轻松配置
+- Full Notion API support through the official SDK
+- MCP compliant for seamless AI integration
+- Comprehensive tools for all Notion operations
+- Robust error handling with detailed messages
+- Easy configuration with environment variables
 
-有关每个工具的详细文档，请参阅 [工具文档](https://github.com/ramidecodes/mcp-server-notion/blob/HEAD/docs/TOOLS.md)。
+For detailed documentation on each tool, see the [Tools Documentation](https://github.com/ramidecodes/mcp-server-notion/blob/HEAD/docs/TOOLS.md).
 
-## 许可证
+## License
 
-本项目根据 Apache License 2.0 许可发布 - 详情请参阅 [LICENSE](https://github.com/ramidecodes/mcp-server-notion/blob/HEAD/LICENSE) 文件。
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/ramidecodes/mcp-server-notion/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/ramidecodes/mcp-server-notion](https://github.com/ramidecodes/mcp-server-notion)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ramidecodes/mcp-server-notion](https://github.com/ramidecodes/mcp-server-notion)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`note taking`, `knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `note taking`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@ramidecodes/mcp-server-notion@latest -y --api-key=your-notion-integration-key`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@ramidecodes/mcp-server-notion@latest -y --api-key=your-notion-integration-key`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ramidecodes-notion.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ramidecodes-notion.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

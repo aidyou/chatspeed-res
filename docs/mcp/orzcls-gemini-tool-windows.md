@@ -1,11 +1,11 @@
 ---
-title: "gemini-mcp-tool的windows版本"
-description: "🚀 Gemini MCP 工具 - Windows 修复版 这个 MCP 能让 AI 与 Google Gemini CLI 进行交互。 通过利用 Gemini 强大的分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 最新版本 v1.0.21 - 修复了跨终端兼容性问题和 fetch-chunk 格式错误 一个 兼容 Windows 的模型上下文协议 (MCP) 服务器，使 AI 助手能够与 Google 的 Gemini CLI 交互。这是一个专门为 Windows 环境设计的修复版"
+title: "gemini-mcp-tool-windows"
+description: "🚀 Gemini MCP Tool - Windows Fixed Version 这个 MCP 能让 AI 与Google Gemini CLI 进行交互。 通过利用 Gemini 的强大分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 Latest Version v1.0.21 - Fixed cross-terminal compatibility issue…"
 ---
 
-# gemini-mcp-tool的windows版本
+# gemini-mcp-tool-windows
 
-🚀 Gemini MCP 工具 - Windows 修复版 这个 MCP 能让 AI 与 Google Gemini CLI 进行交互。 通过利用 Gemini 强大的分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 最新版本 v1.0.21 - 修复了跨终端兼容性问题和 fetch-chunk 格式错误 一个 兼容 Windows 的模型上下文协议 (MCP) 服务器，使 AI 助手能够与 Google 的 Gemini CLI 交互。这是一个专门为 Windows 环境设计的修复版
+🚀 Gemini MCP Tool - Windows Fixed Version 这个 MCP 能让 AI 与Google Gemini CLI 进行交互。 通过利用 Gemini 的强大分析能力，这个工具可以处理大型文件和代码库，尤其适合需要大量上下文理解的场景。 Latest Version v1.0.21 - Fixed cross-terminal compatibility issue…
 
 # 🚀 Gemini MCP Tool - Windows Fixed Version
 这个 MCP 能让 AI 与Google Gemini CLI 进行交互。
@@ -404,22 +404,22 @@ If you encounter any issues or have questions:
 
 **Note**: This is a Windows-optimized fork of the original gemini-mcp-tool. For other platforms, consider using the [original version](https://github.com/jamubc/gemini-mcp-tool).
 
-**官方网站：** [https://github.com/orzcls/gemini-mcp-tool-windows-fixed](https://github.com/orzcls/gemini-mcp-tool-windows-fixed)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/orzcls/gemini-mcp-tool-windows-fixed](https://github.com/orzcls/gemini-mcp-tool-windows-fixed)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `developer tools`, `search`
+- Categories: `communication`
+- Tags: `communication`, `developer tools`, `search`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y gemini-mcp-tool-windows-fixed@1.0.21`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y gemini-mcp-tool-windows-fixed@1.0.21`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/orzcls-gemini-tool-windows.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/orzcls-gemini-tool-windows.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
 title: "Desktop Commander"
-description: "Desktop Commander MCP Search, update, manage files and run terminal commands with AI Work with code and text, run processes, and automate tasks, going far beyond other AI editors - while using host client subscriptions i"
+description: "Desktop Commander MCP Search, update, manage files and run terminal commands with AI Work with code and text, run processes, and automate tasks, going far beyond other AI editors - while using host cl…"
 ---
 
 # Desktop Commander
 
-Desktop Commander MCP Search, update, manage files and run terminal commands with AI Work with code and text, run processes, and automate tasks, going far beyond other AI editors - while using host client subscriptions i
+Desktop Commander MCP Search, update, manage files and run terminal commands with AI Work with code and text, run processes, and automate tasks, going far beyond other AI editors - while using host cl…
 
 # Desktop Commander MCP
 ### Search, update, manage files and run terminal commands with AI
@@ -513,22 +513,22 @@ The server provides a comprehensive set of tools organized into several categori
 | | `stop_search` | Stop an active search gracefully |
 | | `list_searches` | List all active search sessions 
 
-**官方网站：** [https://github.com/wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`
+- Categories: `files`
+- Tags: `file systems`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@wonderwhy-er/desktop-commander@0.2.34`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@wonderwhy-er/desktop-commander@0.2.34`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wonderwhy-er-desktop-commander.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wonderwhy-er-desktop-commander.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

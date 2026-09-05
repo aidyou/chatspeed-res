@@ -1,22 +1,22 @@
 ---
-title: "MCP音乐分析工具"
-description: "MCP将分析本地音频文件。"
+title: "mcp-music-analysis"
+description: "MCP to analyse local audio file."
 ---
 
-# MCP音乐分析工具
+# mcp-music-analysis
 
-MCP将分析本地音频文件。
+MCP to analyse local audio file.
 
-# MCP 音乐分析
+# MCP Music Analysis
 
-此仓库包含一个**模型上下文提供者 (MCP)**，它使用 MCP 和 [librosa](https://librosa.org/) 对本地音频、YouTube 链接或音频链接中的音频进行分析。
+This repository contains a **Model Context Provider (MCP)** that uses MCP and [librosa](https://librosa.org/) for audio analysis on audio in local, youtube link, or audio link.
 
-## 与 Claude Desktop 一起使用
+## Usage with Claude Desktop
 
    alt="alt text" width="40%">
    alt="alt text" width="40%">
 
-## 安装
+## Installation
 
 ```bash
 # Clone repository
@@ -25,24 +25,24 @@ cd mcp-music-analysis
 
 # Create virtual environment and install
 uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate  # On Windows: .venvScriptsactivate
 uv pip install -e .
 ```
 
-### 与 Claude Desktop 一起使用
+### Usage with Claude Desktop
 
-#### 定位配置文件
+#### Locate Configuration File
 
-配置文件的位置取决于您的操作系统：
+The configuration file location depends on your operating system:
 
 - **macOS**:
 ```
-  ~/Library/Application\ Support/Claude/claude_desktop_config.json
+  ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
 - **Windows**:
 ```
-  %APPDATA%\Claude\claude_desktop_config.json
+  %APPDATA%Claudeclaude_desktop_config.json
 ```
 
 - **Linux**:
@@ -50,7 +50,7 @@ uv pip install -e .
   ~/.config/Claude/claude_desktop_config.json
 ```
 
-在 `claude_desktop_config.json` 中添加以下内容：
+Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -63,9 +63,9 @@ uv pip install -e .
 }
 ```
 
-## 示例提示
+## Example Prompts
 
-这里是一些示例提示，您可以在服务器运行后在对话或聊天环境中使用。MCP 将理解这些请求并执行相关工具：
+Here are some sample prompts you might use in a conversational or chat-based context once the server is running. The MCP will understand these requests and execute the relevant tools:
 
 ```
 Can you analyze the beat of /Users/hugohow-choong/Desktop/sample-6s.mp3?
@@ -75,35 +75,35 @@ What are the spectral centroid values for /path/to/music.wav?
 I'd like to know the onset times for https://www.youtube.com/watch?v=8HFiFd9vx1c
 ```
 
-## 待办事项列表
+## To-Do List
 
-- [x] 添加音频文件下载的 URL
-- [x] 添加 YouTube 转换为音频文件
-- [ ] 试验多个 Python 环境（测试中）
-- [ ] 改进安装指南
-- [ ] 集成 Whisper 用于歌词
-- [ ] 实现 Docker 解决方案
+- [x] Add URL to audio file download
+- [x] Add YouTube to audio file transformation
+- [ ] Experiment with multiple Python environments (testing)
+- [ ] Improve installation guide
+- [ ] Integrate Whisper for lyrics
+- [ ] Implement a Docker solution
 
-## 作者
+## Author
 
 Hugo How-Choong
 
-**官方网站：** [https://github.com/hugohow/mcp-audio-analysis](https://github.com/hugohow/mcp-audio-analysis)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hugohow/mcp-audio-analysis](https://github.com/hugohow/mcp-audio-analysis)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `image and video processing`, `other`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `image and video processing`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`-n mcp-music-analysis`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `-n mcp-music-analysis`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hugohow-music-analysis.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hugohow-music-analysis.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

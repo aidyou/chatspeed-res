@@ -1,11 +1,11 @@
 ---
-title: "MCP邮件助手"
-description: "一种基于MCP的电子邮件工具，它通过标准化接口使人工智能模型能够访问电子邮件服务，允许人工智能助手执行各种电子邮件操作，例如发送电子邮件、阅读收件箱和处理附件。"
+title: "mcp-mail"
+description: "An MCP-based email tool that enables AI models to access email services through standardized interfaces, allowing AI assistants to perform various email operations like sending emails, reading inboxes…"
 ---
 
-# MCP邮件助手
+# mcp-mail
 
-一种基于MCP的电子邮件工具，它通过标准化接口使人工智能模型能够访问电子邮件服务，允许人工智能助手执行各种电子邮件操作，例如发送电子邮件、阅读收件箱和处理附件。
+An MCP-based email tool that enables AI models to access email services through standardized interfaces, allowing AI assistants to perform various email operations like sending emails, reading inboxes…
 
 # Mail MCP 工具
 
@@ -14,7 +14,7 @@ description: "一种基于MCP的电子邮件工具，它通过标准化接口使
 [![TypeScript](/mcp-assets/722312b2deefe5976cd4c92516fa3afb.svg)](https://www.typescriptlang.org/)
 [![Mail](/mcp-assets/fd7c9ae04250a10869facd4a0383c766.svg)](https://github.com/shuakami/mcp-mail)
 
-[英文版 (https://github.com/shuakami/mcp-mail/blob/HEAD/README-EN.md)](https://github.com/shuakami/mcp-mail/blob/HEAD/README-EN.md)
+[English Version (https://github.com/shuakami/mcp-mail/blob/HEAD/README-EN.md)](https://github.com/shuakami/mcp-mail/blob/HEAD/README-EN.md)
 
 ## 这是什么
 
@@ -98,7 +98,7 @@ npm run build
 Windows 配置
  (点击展开)
 
-1. 在 Cursor 中，打开或创建 MCP 配置文件：`C:\\Users\\你的用户名\\.cursor\\mcp.json`
+1. 在 Cursor 中，打开或创建 MCP 配置文件：`C:\Users\你的用户名\.cursor\mcp.json`
    - 注意：请将 `你的用户名` 替换为你的 Windows 用户名
 
 2. 添加或修改配置如下：
@@ -227,22 +227,22 @@ ISC
 
 如果这个项目对你有帮助，欢迎给个 Star ⭐️ (｡♥‿♥｡)
 
-**官方网站：** [https://github.com/shuakami/mcp-mail](https://github.com/shuakami/mcp-mail)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shuakami/mcp-mail](https://github.com/shuakami/mcp-mail)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`pythonw`
-- 参数：`C:/Users/你的用户名/mcp-mail/bridging_mail_mcp.py`
+- Transport: `stdio`
+- Command: `pythonw`
+- Args: `C:/Users/你的用户名/mcp-mail/bridging_mail_mcp.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shuakami-mail.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shuakami-mail.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

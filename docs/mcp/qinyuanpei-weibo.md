@@ -1,13 +1,13 @@
 ---
-title: "mcp-server微博抓取器"
-description: "一种用于抓取微博用户信息、动态和搜索功能的模型上下文协议服务器。它有助于获取详细的用户资料、时间线内容，并在微博上执行用户搜索。"
+title: "mcp-server-weibo"
+description: "A Model Context Protocol server for scraping Weibo user information, feeds, and search functionality. It helps retrieve detailed user profiles, timeline content, and perform user searches on Weibo."
 ---
 
-# mcp-server微博抓取器
+# mcp-server-weibo
 
-一种用于抓取微博用户信息、动态和搜索功能的模型上下文协议服务器。它有助于获取详细的用户资料、时间线内容，并在微博上执行用户搜索。
+A Model Context Protocol server for scraping Weibo user information, feeds, and search functionality. It helps retrieve detailed user profiles, timeline content, and perform user searches on Weibo.
 
-# 微博 MCP 服务器
+# Weibo MCP Server
 
 这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取微博用户的详细信息、动态内容以及进行用户搜索。
 
@@ -29,7 +29,6 @@ description: "一种用于抓取微博用户信息、动态和搜索功能的模
     }
 }
 ```
-
 从包管理器安装：
 
 ```json
@@ -72,22 +71,22 @@ MIT 许可证 - 详见 [LICENSE](https://github.com/qinyuanpei/mcp-server-weibo/
 
 本项目与微博官方无关，仅用于学习和研究目的。
 
-**官方网站：** [https://github.com/qinyuanpei/mcp-server-weibo](https://github.com/qinyuanpei/mcp-server-weibo)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/qinyuanpei/mcp-server-weibo](https://github.com/qinyuanpei/mcp-server-weibo)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `social media`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `social media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from git+https://github.com/qinyuanpei/mcp-server-weibo.git mcp-server-weibo`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from git+https://github.com/qinyuanpei/mcp-server-weibo.git mcp-server-weibo`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/qinyuanpei-weibo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/qinyuanpei-weibo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

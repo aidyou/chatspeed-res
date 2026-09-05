@@ -1,46 +1,46 @@
 ---
-title: "MCP-Py"
-description: "一种模型上下文协议服务器，允许大型语言模型与Python环境交互、执行代码以及在指定的工作目录内管理文件。"
+title: "mcp-python-interpreter"
+description: "A Model Context Protocol server that allows LLMs to interact with Python environments, execute code, and manage files within a specified working directory."
 ---
 
-# MCP-Py
+# mcp-python-interpreter
 
-一种模型上下文协议服务器，允许大型语言模型与Python环境交互、执行代码以及在指定的工作目录内管理文件。
+A Model Context Protocol server that allows LLMs to interact with Python environments, execute code, and manage files within a specified working directory.
 
-# MCP Python 解释器
+# MCP Python Interpreter
 
-一个 Model Context Protocol (MCP) 服务器，允许大型语言模型（LLMs）与 Python 环境交互，读写文件，执行 Python 代码，并管理开发工作流。
+A Model Context Protocol (MCP) server that allows LLMs to interact with Python environments, read and write files, execute Python code, and manage development workflows.
 
-## 特性
+## Features
 
-- **环境管理**：列出并使用不同的 Python 环境（系统和 conda）
-- **代码执行**：在任何可用环境中运行 Python 代码或脚本
-- **包管理**：列出已安装的包并安装新的包
-- **文件操作**：
-  - 读取任意类型的文件（文本、源代码、二进制）
-  - 写入文本和二进制文件
-- **Python 提示**：常见 Python 任务模板，如函数创建和调试
+- **Environment Management**: List and use different Python environments (system and conda)
+- **Code Execution**: Run Python code or scripts in any available environment
+- **Package Management**: List installed packages and install new ones
+- **File Operations**: 
+  - Read files of any type (text, source code, binary)
+  - Write text and binary files
+- **Python Prompts**: Templates for common Python tasks like function creation and debugging
 
-## 安装
+## Installation
 
-您可以使用 pip 安装 MCP Python 解释器：
+You can install the MCP Python Interpreter using pip:
 
 ```bash
 pip install mcp-python-interpreter
 ```
 
-或者使用 uv：
+Or with uv:
 
 ```bash
 uv install mcp-python-interpreter
 ```
 
-## 与 Claude Desktop 一起使用
+## Usage with Claude Desktop
 
-1. 安装 [Claude Desktop](https://claude.ai/download)
-2. 打开 Claude Desktop，点击菜单，然后选择设置
-3. 转到开发者选项卡并点击“编辑配置”
-4. 将以下内容添加到您的 `claude_desktop_config.json` 中：
+1. Install [Claude Desktop](https://claude.ai/download)
+2. Open Claude Desktop, click on menu, then Settings
+3. Go to Developer tab and click "Edit Config"
+4. Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -62,7 +62,7 @@ uv install mcp-python-interpreter
 }
 ```
 
-对于 Windows：
+For Windows:
 
 ```json
 {
@@ -72,7 +72,7 @@ uv install mcp-python-interpreter
       "args": [
         "mcp-python-interpreter",
         "--dir",
-        "C:\\path\\to\\your\\working\\directory",
+        "C:\path\to\your\working\directory",
         "--python-path",
         "/path/to/your/python"
       ],
@@ -84,108 +84,108 @@ uv install mcp-python-interpreter
 }
 ```
 
-5. 重启 Claude Desktop
-6. 您现在应该能在聊天界面中看到 MCP 工具图标
+5. Restart Claude Desktop
+6. You should now see the MCP tools icon in the chat interface
 
-`--dir` 参数是**必需的**，它指定了所有文件将被保存和执行的位置。这有助于通过隔离 MCP 服务器到特定目录来维护安全性。
+The `--dir` parameter is **required** and specifies where all files will be saved and executed. This helps maintain security by isolating the MCP server to a specific directory.
 
-### 先决条件
+### Prerequisites
 
-- 确保您已经安装了 `uv`。如果没有，请使用以下命令安装：
+- Make sure you have `uv` installed. If not, install it using:
 ```bash
   curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-- 对于 Windows：
+- For Windows:
 ```powershell
   powershell -ExecutionPolicy Bypass -Command "iwr -useb https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## 可用工具
+## Available Tools
 
-Python 解释器提供了以下工具：
+The Python Interpreter provides the following tools:
 
-### 环境和包管理
-- **list_python_environments**：列出所有可用的 Python 环境（系统和 conda）
-- **list_installed_packages**：列出特定环境中已安装的包
-- **install_package**：在特定环境中安装 Python 包
+### Environment and Package Management
+- **list_python_environments**: List all available Python environments (system and conda)
+- **list_installed_packages**: List packages installed in a specific environment
+- **install_package**: Install a Python package in a specific environment
 
-### 代码执行
-- **run_python_code**：在特定环境中执行 Python 代码
-- **run_python_file**：在特定环境中执行 Python 文件
+### Code Execution
+- **run_python_code**: Execute Python code in a specific environment
+- **run_python_file**: Execute a Python file in a specific environment
 
-### 文件操作
-- **read_file**：读取任意类型文件的内容，带有大小和安全限制
-  - 支持带语法高亮的文本文件
-  - 显示二进制文件的十六进制表示
-- **write_file**：创建或覆盖包含文本或二进制内容的文件
-- **write_python_file**：特别地创建或覆盖 Python 文件
-- **list_directory**：列出目录中的 Python 文件
+### File Operations
+- **read_file**: Read contents of any file type, with size and safety limits
+  - Supports text files with syntax highlighting
+  - Displays hex representation for binary files
+- **write_file**: Create or overwrite files with text or binary content
+- **write_python_file**: Create or overwrite a Python file specifically
+- **list_directory**: List Python files in a directory
 
-## 可用资源
+## Available Resources
 
-- **python://environments**：列出所有可用的 Python 环境
-- **python://packages/{env_name}**：列出特定环境中的已安装包
-- **python://file/{file_path}**：获取 Python 文件的内容
-- **python://directory/{directory_path}**：列出目录中的所有 Python 文件
+- **python://environments**: List all available Python environments
+- **python://packages/{env_name}**: List installed packages for a specific environment
+- **python://file/{file_path}**: Get the content of a Python file
+- **python://directory/{directory_path}**: List all Python files in a directory
 
-## 提示
+## Prompts
 
-- **python_function_template**: 生成 Python 函数的模板
-- **refactor_python_code**: 帮助重构 Python 代码
-- **debug_python_error**: 帮助调试 Python 错误
+- **python_function_template**: Generate a template for a Python function
+- **refactor_python_code**: Help refactor Python code
+- **debug_python_error**: Help debug a Python error
 
-## 示例用法
+## Example Usage
 
-以下是一些你可以要求 Claude 使用此 MCP 服务器执行的操作示例：
+Here are some examples of what you can ask Claude to do with this MCP server:
 
-- "显示我系统中所有可用的 Python 环境"
-- "在我的 conda-base 环境中运行这段 Python 代码：`print('Hello, world!')`"
-- "创建一个名为 'hello.py' 的新 Python 文件，其中包含一个打招呼的函数"
-- "读取我的 'data.json' 文件的内容"
-- "使用这些设置编写一个新的配置文件..."
-- "列出系统 Python 环境中安装的所有包"
-- "在我的系统 Python 环境中安装 requests 包"
-- "使用这些参数运行 data_analysis.py: --input=data.csv --output=results.csv"
+- "Show me all available Python environments on my system"
+- "Run this Python code in my conda-base environment: print('Hello, world!')"
+- "Create a new Python file called 'hello.py' with a function that says hello"
+- "Read the contents of my 'data.json' file"
+- "Write a new configuration file with these settings..."
+- "List all packages installed in my system Python environment"
+- "Install the requests package in my system Python environment"
+- "Run data_analysis.py with these arguments: --input=data.csv --output=results.csv"
 
-## 文件处理能力
+## File Handling Capabilities
 
-MCP Python 解释器现在支持全面的文件操作：
-- 读取最大 1MB 的文本和二进制文件
-- 写入文本和二进制文件
-- 源代码文件的语法高亮
-- 二进制文件的十六进制表示
-- 严格的文件路径安全（仅限于工作目录内）
+The MCP Python Interpreter now supports comprehensive file operations:
+- Read text and binary files up to 1MB
+- Write text and binary files
+- Syntax highlighting for source code files
+- Hex representation for binary files
+- Strict file path security (only within the working directory)
 
-## 安全考虑
+## Security Considerations
 
-此 MCP 服务器可以访问你的 Python 环境和文件系统。关键的安全特性包括：
-- 隔离的工作目录
-- 文件大小限制
-- 防止在工作目录外写入文件
-- 显式的覆盖保护
+This MCP server has access to your Python environments and file system. Key security features include:
+- Isolated working directory
+- File size limits
+- Prevented writes outside the working directory
+- Explicit overwrite protection
 
-始终要谨慎对待你完全不了解的代码或文件操作。
+Always be cautious about running code or file operations that you don't fully understand.
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/yzfly/mcp-python-interpreter](https://github.com/yzfly/mcp-python-interpreter)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yzfly/mcp-python-interpreter](https://github.com/yzfly/mcp-python-interpreter)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`developer tools`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `developer tools`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-python-interpreter --dir C:\path\to\your\working\directory --python-path /path/to/your/python`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-python-interpreter --dir C:\path\to\your\working\directory --python-path /path/to/your/python`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yzfly-python-interpreter.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yzfly-python-interpreter.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

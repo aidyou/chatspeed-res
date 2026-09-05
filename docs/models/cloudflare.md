@@ -1,31 +1,31 @@
 ---
 title: "Cloudflare Workers AI"
-description: "Cloudflare 边缘网络上的无服务器 AI 推理，兼容 OpenAI 接口（Base URL 需带账号 ID），每日免费额度约 10,000 Neurons。"
+description: "Serverless AI inference on Cloudflare's edge network, OpenAI-compatible (base URL contains your account ID), with a daily free allocation of about 10,000 Neurons."
 ---
 
 # Cloudflare Workers AI
 
-Cloudflare 边缘网络上的无服务器 AI 推理，兼容 OpenAI 接口（Base URL 需带账号 ID），每日免费额度约 10,000 Neurons。
+Serverless AI inference on Cloudflare's edge network, OpenAI-compatible (base URL contains your account ID), with a daily free allocation of about 10,000 Neurons.
 
-Cloudflare Workers AI 在边缘网络提供无服务器模型推理，覆盖约 80 个模型（Llama 3.x/4、Mistral、Qwen、Gemma、GPT-OSS、DeepSeek-R1 蒸馏版、FLUX/SD 等）。OpenAI 兼容端点为 https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1，其中 {account_id} 需替换为你自己的 Cloudflare 账号 ID；鉴权使用控制台创建的 API Token。每日免费额度约 10,000 Neurons，并含各模型限速；超出免费额度部分按 Neurons 计费，可在控制台设置限额防止扣费。免费额度与限速会调整，请以官方定价页为准。
+Cloudflare Workers AI provides serverless model inference on the edge network, covering about 80 models (Llama 3.x/4, Mistral, Qwen, Gemma, GPT-OSS, DeepSeek-R1 distills, FLUX/SD etc.). The OpenAI-compatible endpoint is https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1 where {account_id} must be replaced with your own Cloudflare account ID; authentication uses an API token from the Cloudflare dashboard. A daily free allocation of about 10,000 Neurons applies, with per-model rate limits; usage beyond the free allocation is billed per Neurons unless you set limits in the dashboard. Free allocation and limits change; check the official pricing page.
 
-**官方网站：** [https://developers.cloudflare.com/workers-ai/](https://developers.cloudflare.com/workers-ai/)
-**状态：** `review`　**最后核验：** `2026-08-30`
+**Official site: ** [https://developers.cloudflare.com/workers-ai/](https://developers.cloudflare.com/workers-ai/)
+**Status: ** `review`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `coding`, `vision`
-- 标签：`cloudflare`, `workers-ai`, `serverless`, `openai-compatible`
+- Categories: `general`, `coding`, `vision`
+- Tags: `cloudflare`, `workers-ai`, `serverless`, `openai-compatible`
 
-## 供应商配置
+## Provider Configuration
 
-- 协议：`openai`
-- Base URL：`https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1`
-- 模型数量：0
-- 文档：[https://developers.cloudflare.com/workers-ai/](https://developers.cloudflare.com/workers-ai/)
-- 模型列表：[https://developers.cloudflare.com/workers-ai/models/](https://developers.cloudflare.com/workers-ai/models/)
-- 密钥申请：[https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
+- Protocol: `openai`
+- Base URL: `https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1`
+- Model count: 0
+- Docs: [https://developers.cloudflare.com/workers-ai/](https://developers.cloudflare.com/workers-ai/)
+- Model list: [https://developers.cloudflare.com/workers-ai/models/](https://developers.cloudflare.com/workers-ai/models/)
+- API key: [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/models/cloudflare.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/models/cloudflare.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

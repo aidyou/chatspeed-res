@@ -1,195 +1,194 @@
 ---
-title: "MCP思维原子"
-description: "AoT MCP服务器通过将复杂推理问题分解为独立的、可重用的思维原子单元，使人工智能模型能够解决复杂推理问题。其强大的分解-收缩机制能够在深入探索问题空间的同时，保持对结论的高度信心。"
+title: "MCP_Atom_of_Thoughts"
+description: "AoT MCP server enables AI models to solve complex reasoning problems by decomposing them into independent, reusable atomic units of thought, featuring a powerful decomposition-contraction mechanism th…"
 ---
 
-# MCP思维原子
+# MCP_Atom_of_Thoughts
 
-AoT MCP服务器通过将复杂推理问题分解为独立的、可重用的思维原子单元，使人工智能模型能够解决复杂推理问题。其强大的分解-收缩机制能够在深入探索问题空间的同时，保持对结论的高度信心。
+AoT MCP server enables AI models to solve complex reasoning problems by decomposing them into independent, reusable atomic units of thought, featuring a powerful decomposition-contraction mechanism th…
 
-# 思维原子 (AoT)
+# Atom of Thoughts (AoT)
 
 [Smithery](https://smithery.ai/server/@kbsooo/mcp_atom_of_thoughts)
-基于分解推理框架的思维原子 (AoT) 的模型上下文协议 (MCP) 服务器实现。
+A Model Context Protocol (MCP) server implementation of Atom of Thoughts, a decomposition-based reasoning framework.
 
-> **注意**: 该实现基于研究论文 ["用于马尔可夫 LLM 测试时间扩展的思维原子"](https://arxiv.org/abs/2502.12018) (Teng 等人，2025)。
+> **Note**: This implementation is based on the research paper ["Atom of Thoughts for Markov LLM Test-Time Scaling"](https://arxiv.org/abs/2502.12018) (Teng et al., 2025).
 
   
 
 [MCP.so](https://mcp.so/server/atom-of-thoughts/kbsooo)
 
-[韩语说明](https://github.com/kbsooo/MCP_Atom_of_Thoughts?tab=readme-ov-file#%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%84%A4%EB%AA%85)
+[한국어 설명](https://github.com/kbsooo/MCP_Atom_of_Thoughts?tab=readme-ov-file#%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%84%A4%EB%AA%85)
 
-## 英文文档
+## English Documentation
 
-本仓库实现了思维原子 (AoT)，这是一个基于分解的推理框架，作为模型上下文协议 (MCP) 服务器。该实现基于论文 ["用于马尔可夫 LLM 测试时间扩展的思维原子"](https://arxiv.org/abs/2502.12018) (Teng 等人，2025) 中提出的概念。
+This repository implements Atom of Thoughts (AoT), a decomposition-based reasoning framework, as a Model Context Protocol (MCP) server. This implementation is based on the concepts presented in the paper ["Atom of Thoughts for Markov LLM Test-Time Scaling"](https://arxiv.org/abs/2502.12018) (Teng et al., 2025).
 
-### 可用工具
+### Available Tools
 
-提供了两个主要工具：
+Two main tools are provided:
 
-1. **AoT（完整版）**：一个具有深度分析和复杂问题解决能力的完整思维原子工具。
-2. **AoT-light（轻量版）**：优化处理速度和快速结果的简化版本。
+1. **AoT (Full Version)**: A complete Atom of Thoughts tool with full capabilities for deep analysis and complex problem solving.
+2. **AoT-light (Lightweight Version)**: A streamlined version optimized for faster processing and quicker results.
 
-### AoT-light: 轻量版
+### AoT-light: Lightweight Version
 
-AoT-light 旨在在时间敏感的情况下加快处理速度：
+AoT-light is designed for faster processing in time-sensitive situations:
 
-- **关键特性**：
-  - 较低的最大深度（3 而不是 5），以加快处理速度
-  - 简化的验证过程
-  - 对高置信度假设立即提出结论建议
-  - 减少计算开销和响应负载
-  - 优化速度而非详尽分析
+- **Key Features**:
+  - Lower maximum depth (3 instead of 5) for faster processing
+  - Simplified verification process
+  - Immediate conclusion suggestion for high-confidence hypotheses
+  - Reduced computational overhead and response payload
+  - Optimized for speed rather than exhaustive analysis
 
-- **使用场景**：
-  - 需要原子思维组织的快速头脑风暴会议
-  - 优先考虑速度而非详尽分析的时间敏感问题解决
-  - 不需要深入分解的简单推理任务
-  - 在使用完整版 AoT 进行深入分析之前进行初步探索
-  - 响应时间重要的学习或演示目的
+- **Use Cases**:
+  - Quick brainstorming sessions requiring atomic thought organization
+  - Time-sensitive problem solving where speed is prioritized over exhaustive analysis
+  - Simpler reasoning tasks that don't require deep decomposition
+  - Initial exploration before using the full AoT for deeper analysis
+  - Learning or demonstration purposes where response time is important
 
-### 使用场景
+### Use Cases
 
-思维原子在以下场景中有效：
-- 解决需要复杂推理的问题
-- 生成需要从多个角度验证的假设
-- 在准确性至关重要的情况下得出高置信度结论
-- 在关键任务中最小化逻辑错误
-- 需要多个验证步骤的决策
+Atom of Thoughts is effective in the following scenarios:
+- Solving problems requiring complex reasoning
+- Generating hypotheses that need verification from multiple perspectives
+- Deriving high-confidence conclusions in scenarios where accuracy is crucial
+- Minimizing logical errors in critical tasks
+- Decision-making requiring multiple verification steps
 
-### 原子类型
+### Atom Types
 
-AoT 使用五种类型的原子：
+AoT uses five types of atoms:
 
-1. **前提**：解决问题的基本假设或给定信息
-2. **推理**：基于其他原子的逻辑推理过程
-3. **假设**：提出的解决方案或中间结论
-4. **验证**：评估其他原子（特别是假设）有效性的过程
-5. **结论**：经过验证的假设或最终问题解决方案
+1. **premise**: Basic assumptions or given information for problem solving
+2. **reasoning**: Logical reasoning process based on other atoms
+3. **hypothesis**: Proposed solutions or intermediate conclusions
+4. **verification**: Process to evaluate the validity of other atoms (especially hypotheses)
+5. **conclusion**: Verified hypotheses or final problem solutions
 
-### 核心特性
+### Core Features
 
-#### 1. 分解-收缩机制
+#### 1. Decomposition-Contraction Mechanism
 
-一种机制，用于将原子分解为更小的子原子，并在验证后重新组合。
+A mechanism to decompose atoms into smaller sub-atoms and contract them back after verification.
 
-- **分解**：将复杂的原子分解为更小的子原子。
-  - `startDecomposition(atomId)`: 开始原子分解
-  - `addToDecomposition(decompositionId, atomId)`: 将子原子添加到分解中
-  - `completeDecomposition(decompositionId)`: 完成分解过程
+- **Decomposition**: Breaking complex atoms into smaller sub-atoms.
+  - `startDecomposition(atomId)`: Start atom decomposition
+  - `addToDecomposition(decompositionId, atomId)`: Add sub-atom to decomposition
+  - `completeDecomposition(decompositionId)`: Complete decomposition process
 
-- **重组**：一旦所有子原子被验证，则重组回原始原子。
-  - 根据子原子的信心水平计算原始原子的信心
-  - 自动建议高信心验证假设的结论
+- **Contraction**: Contract back to the original atom once all sub-atoms are verified.
+  - Calculate confidence of the original atom based on sub-atoms' confidence levels
+  - Automatically suggest conclusions for high-confidence verified hypotheses
 
-#### 2. 自动终止机制
+#### 2. Automatic Termination Mechanism
 
-- 当达到最大深度或找到高信心结论时自动终止。
-- `getTerminationStatus()`: 返回当前终止状态和原因
-- `getBestConclusion()`: 返回具有最高信心的结论
+- Automatically terminates when reaching maximum depth or finding a high-confidence conclusion.
+- `getTerminationStatus()`: Return current termination status and reason
+- `getBestConclusion()`: Return the conclusion with highest confidence
 
-### 参数描述
+### Parameter Descriptions
 
-- **atomId**: 原子的唯一标识符（例如，'A1', 'H2'）
-- **content**: 原子的实际内容
-- **atomType**: 原子类型（其中之一：前提、推理、假设、验证、结论）
-- **dependencies**: 该原子依赖的其他原子ID列表
-- **confidence**: 该原子的信心水平（0到1之间的值）
-- **isVerified**: 该原子是否已被验证
-- **depth**: 该原子在分解-重组过程中的深度级别
+- **atomId**: Unique identifier for the atom (e.g., 'A1', 'H2')
+- **content**: Actual content of the atom
+- **atomType**: Type of atom (one of: premise, reasoning, hypothesis, verification, conclusion)
+- **dependencies**: List of IDs of other atoms this atom depends on
+- **confidence**: Confidence level of this atom (value between 0-1)
+- **isVerified**: Whether this atom has been verified
+- **depth**: Depth level of this atom in the decomposition-contraction process
 
-### 使用方法
+### Usage Method
 
-1. 理解问题并定义必要的前提原子
-2. 基于前提创建推理原子
-3. 基于推理创建假设原子
-4. 创建验证原子以验证假设
-5. 基于已验证的假设得出结论原子
-6. 在必要时使用原子分解进行深入探索
-7. 将高信心结论原子作为最终答案展示
+1. Understand the problem and define necessary premise atoms
+2. Create reasoning atoms based on premises
+3. Create hypothesis atoms based on reasoning
+4. Create verification atoms to verify hypotheses
+5. Derive conclusion atoms based on verified hypotheses
+6. Use atom decomposition to explore deeper when necessary
+7. Present the high-confidence conclusion atom as the final answer
 
-### 顺序思维与思维原子对比（需要更多测试）
+### Comparing Sequential Thinking and Atom of Thoughts (More Testing Needed)
 
-在对同一主题应用这两种思维工具后，观察到了以下差异和性能特点：
+After applying both thinking tools to the same topic, the following differences and performance characteristics were observed:
 
-#### 结构差异
+#### Structural Differences
 
-**顺序思维:**
-- 线性思维过程：按顺序从一个想法进展到下一个
-- 提前预测总的想法数量
-- 每个思考阶段都基于前一阶段构建
+**Sequential Thinking:**
+- Linear thinking process: progresses sequentially from one thought to the next
+- Predicts the total number of thoughts in advance
+- Each thinking stage is built upon previous stages
 
-**思维原子:**
-- 非线性的网络结构：多个思想单元（原子）通过依赖关系相互连接
-- 根据原子类型（前提、推理、假设、验证、结论）形成系统结构
-- 明确评估每个原子的信心水平
+**Atom of Thoughts:**
+- Non-linear, network structure: multiple thought units (atoms) interconnect with dependencies
+- Forms systematic structure according to atom types (premise, reasoning, hypothesis, verification, conclusion)
+- Explicitly evaluates the confidence level of each atom
 
-#### 比较优势
+#### Comparative Strengths
 
-**顺序思维的优势:**
-- 直观流程：类似于自然的人类思维过程
-- 简单性：简单的结构允许快速应用于简单问题
-- 灵活性：可以在思考过程中修改之前的阶段或改变方向
+**Sequential Thinking Strengths:**
+- Intuitive flow: similar to natural human thinking processes
+- Simplicity: simple structure allows quick application to straightforward problems
+- Flexibility: can modify previous stages or change direction during the thinking process
 
-**思维原子的优势:**
+**Atom of Thoughts Strengths:**
+- Confidence evaluation: explicitly measures the confidence of each thought to improve conclusion validity
+- Verification process: evaluates hypotheses through systematic verification stages
+- Dependency tracking: clearly tracks which premises or reasoning influenced specific conclusions
+- Parallel processing: can consider multiple thought atoms simultaneously
 
-- 信心评估：明确衡量每个想法的信心度以提高结论的有效性
-- 验证过程：通过系统的验证阶段来评估假设
-- 依赖跟踪：清晰地追踪哪些前提或推理影响了特定的结论
-- 并行处理：可以同时考虑多个思维原子
+#### Efficiency and Accuracy
 
-#### 效率与准确性
+**Efficiency:**
+- Sequential Thinking: more efficient for simple problems, with faster progression of thought
+- Atom of Thoughts: more efficient for complex problems, but has initial overhead in building systematic structures
 
-**效率：**
-- 顺序思维：对于简单问题更高效，思维进展更快
-- 思维原子：对于复杂问题更高效，但在构建系统结构方面有初始开销
+**Accuracy:**
+- Sequential Thinking: possibility of error accumulation from previous stages as the thinking process deepens
+- Atom of Thoughts: reduced error possibility through verification stages and confidence assessment, leading to more reliable conclusions
 
-**准确性：**
-- 顺序思维：随着思维过程的深入，从前一阶段累积错误的可能性增加
-- 思维原子：通过验证阶段和信心评估减少错误可能性，从而得出更可靠的结论
+#### Suitability by Purpose
 
-#### 适用场景
+**Cases Suitable for Sequential Thinking:**
+- Simple to moderately complex problems
+- Time-constrained situations
+- When natural storytelling or explanation is needed
 
-**适合顺序思维的情况：**
-- 简单到中等复杂的问题
-- 时间受限的情况
-- 需要自然叙述或解释时
+**Cases Suitable for Atom of Thoughts:**
+- Highly complex problems
+- Situations where accuracy and reliability are crucial
+- Hypotheses requiring verification from multiple perspectives
+- Reasoning with complex dependency relationships
 
-**适合思维原子的情况：**
-- 高度复杂的问题
-- 准确性和可靠性至关重要的情况
-- 需要从多角度验证的假设
-- 具有复杂依赖关系的推理
+#### Conclusion
+Both tools can contribute to improving artificial intelligence's reasoning abilities, but the appropriate tool varies depending on the nature of the problem and requirements. Sequential Thinking is useful when intuitive and quick thinking processes are needed, while Atom of Thoughts is more suitable for complex problems requiring systematic verification and high reliability.
 
-#### 结论
-这两种工具都可以帮助提高人工智能的推理能力，但根据问题的性质和需求选择合适的工具。当需要直观快速的思考过程时，顺序思维很有用；而当面对需要系统验证和高可靠性的复杂问题时，思维原子更为合适。
+### Command Tool (atomcommands)
 
-### 命令工具 (atomcommands)
+A command tool to control the decomposition-contraction mechanism and automatic termination of Atom of Thoughts.
 
-一个用于控制分解-收缩机制和自动终止思维原子的命令工具。
+**Available Commands**:
+1. **decompose**: Decompose a specified atom into smaller sub-atoms
+   - Required parameter: `atomId`
+2. **complete_decomposition**: Complete an ongoing decomposition process
+   - Required parameter: `decompositionId`
+3. **termination_status**: Check the termination status of the current AoT process
+4. **best_conclusion**: Get the verified conclusion with the highest confidence
+5. **set_max_depth**: Change the maximum depth limit
+   - Required parameter: `maxDepth`
 
-**可用命令**：
-1. **decompose**: 将指定的原子分解为更小的子原子
-   - 必需参数: `atomId`
-2. **complete_decomposition**: 完成正在进行的分解过程
-   - 必需参数: `decompositionId`
-3. **termination_status**: 检查当前AoT进程的终止状态
-4. **best_conclusion**: 获取具有最高信心度的验证结论
-5. **set_max_depth**: 更改最大深度限制
-   - 必需参数: `maxDepth`
+### Installing via Smithery
 
-### 通过Smithery安装
-
-要通过[Smithery](https://smithery.ai/server/@kbsooo/mcp_atom_of_thoughts)自动为Claude Desktop安装思维原子，请执行以下命令：
+To install Atom of Thoughts for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kbsooo/mcp_atom_of_thoughts):
 
 ```bash
 npx -y @smithery/cli install @kbsooo/mcp_atom_of_thoughts --client claude
 ```
 
-### MCP服务器配置
+### MCP Server Configuration
 
-要使用思维原子MCP服务器，您需要在您的Claude Desktop或Cline MCP设置中注册它。这里是一个示例配置：
+To use the Atom of Thoughts MCP server, you need to register it in your Claude Desktop or Cline MCP settings. Here is an example configuration:
 
 ```json
 { 
@@ -204,182 +203,181 @@ npx -y @smithery/cli install @kbsooo/mcp_atom_of_thoughts --client claude
 }
 ```
 
-请将`/ABSOLUTE/PATH/TO/PARENT/FOLDER`替换为您系统上项目的实际绝对路径。保存配置后，重启Claude Desktop或Cline即可使用思维原子MCP服务器。
+Replace `/ABSOLUTE/PATH/TO/PARENT/FOLDER` with the actual absolute path to the project on your system. After saving the configuration, restart Claude Desktop or Cline to use the Atom of Thoughts MCP server.
 
-有关详细的实现和代码级文档，请参阅此存储库中的源代码。
+For detailed implementation and code-level documentation, please refer to the source code in this repository.
 
-## 韩语说明
+## 한국어 설명
 
-### 什么是思维原子？
+### Atom of Thoughts란?
 
-思维原子（AoT）是一种工具，它通过将复杂问题分解为独立且可重用的思维原子单位来解决问题。与传统的顺序思维模式不同，这种工具由被称为“原子”的基本思维单元组成，这些单元相互依赖，从而实现更强大的问题解决能力。该实现基于论文“Atom of Thoughts for Markov LLM Test-Time Scaling”(Teng et al., 2025)中的概念。
+Atom of Thoughts(AoT)는 복잡한 문제를 독립적이고 재사용 가능한 원자 단위의 사고로 분해하여 문제를 해결하는 도구입니다. 이 도구는 전통적인 순차적 사고 방식과 달리, 사고의 기본 단위인 '원자'들이 서로 의존성을 갖고 구성되어 더 강력한 문제 해결을 가능하게 합니다. 이 구현은 "Atom of Thoughts for Markov LLM Test-Time Scaling"(Teng et al., 2025) 논문의 개념을 기반으로 합니다.
 
-### 提供的工具
+### 제공되는 도구
 
-目前提供以下两种主要工具：
+현재 다음과 같은 두 가지 주요 도구가 제공됩니다:
 
-1. **AoT (完整版)**：具备全部功能的思维原子工具，适用于深度分析和复杂问题解决。
-2. **AoT-light (轻量版)**：优化了处理速度以快速得出结果的轻量版本。
+1. **AoT (전체 버전)**: 심층적인 분석과 복잡한 문제 해결을 위한 완전한 기능을 갖춘 Atom of Thoughts 도구입니다.
+2. **AoT-light (경량 버전)**: 더 빠른 처리와 신속한 결과를 위해 최적화된 경량 버전입니다.
 
-### AoT-light: 轻量版
+### AoT-light: 경량 버전
 
-AoT-light 是为了在时间紧迫的情况下提供更快处理而设计的轻量版本：
+AoT-light는 시간이 중요한 상황에서 더 빠른 처리를 위해 설계된 경량 버전입니다:
 
-- **主要特点**：
-  - 通过设置较低的最大深度（从5改为3）加快处理速度
-  - 简化的验证过程
-  - 对高置信度假设立即提出结论建议
-  - 减少计算开销及响应数据
-  - 相比于深入分析，更侧重于速度优化
+- **주요 특징**:
+  - 낮은 최대 깊이 (5 대신 3) 설정으로 빠른 처리
+  - 간소화된 검증 프로세스
+  - 높은 신뢰도의 가설에 대한 즉각적인 결론 제안
+  - 축소된 계산 오버헤드 및 응답 데이터
+  - 철저한 분석보다 속도에 최적화
 
-- **使用场景**：
-  - 需要快速形成原子思维结构的头脑风暴会议
-  - 在时间敏感的问题解决中，速度比详尽分析更重要
-  - 不需要深入分解的简单推理任务
-  - 在进行AoT全面分析之前的初步探索
-  - 响应时间至关重要的学习或演示目的
+- **사용 시나리오**:
+  - 원자적 사고 구성이 필요한 빠른 브레인스토밍 세션
+  - 철저한 분석보다 속도가 중요한 시간에 민감한 문제 해결
+  - 깊은 분해가 필요하지 않은 단순한 추론 작업
+  - 전체 AoT를 사용한 심층 분석 전 초기 탐색
+  - 응답 시간이 중요한 학습 또는 시연 목적
 
-### 使用场景
+### 사용 시나리오
 
-在以下情况下使用思维原子会非常有效：
-- 解决需要复杂推理的问题
-- 生成需从多个角度验证的假设
-- 在准确性至关重要的问题上得出高可信度结论
-- 需要最小化逻辑错误的工作
-- 需要多步骤验证的决策过程
+다음과 같은 경우에 Atom of Thoughts를 사용하면 효과적입니다:
+- 복잡한 추론이 필요한 문제 해결
+- 여러 관점에서 검증이 필요한 가설 생성
+- 정확도가 중요한 문제에서 신뢰도 높은 결론 도출
+- 논리적 오류를 최소화해야 하는 작업
+- 여러 단계의 검증이 필요한 의사결정
 
-### 原子类型
+### 원자 유형
 
-在思维原子中，我们使用五种类型的原子：
+Atom of Thoughts에서는 다섯 가지 유형의 원자를 사용합니다:
 
-1. **premise (前提)**：解决问题所需的基本假设或给定信息
-2. **reasoning (推理)**：基于其他原子的逻辑推理过程
-3. **hypothesis (假设)**：可能解决方案或中间结论的提议
-4. **verification (验证)**：评估其他原子（特别是假设）有效性的过程
-5. **conclusion (结论)**：经过验证的假设或最终问题解决方案
+1. **premise (전제)**: 문제 해결을 위한 기본 가정이나 주어진 정보
+2. **reasoning (추론)**: 다른 원자들을 기반으로 한 논리적 추론 과정
+3. **hypothesis (가설)**: 가능한 해결책이나 중간 결론에 대한 제안
+4. **verification (검증)**: 다른 원자(특히 가설)의 유효성을 평가하는 과정
+5. **conclusion (결론)**: 검증된 가설이나 최종 문제 해결책
 
-### 核心功能
+### 핵심 기능
 
-#### 1. 分解-收缩机制 (Decomposition-Contraction)
+#### 1. 분해-수축 메커니즘 (Decomposition-Contraction)
 
-这是一种将原子分解为更小的子原子并在验证后重新组合的机制。
+원자를 더 작은 하위 원자로 분해하고 검증 후 다시 수축하는 메커니즘입니다.
 
-- **原子分解 (Decomposition)**：将复杂的原子分解为更小的子原子。
-  - `startDecomposition(atomId)`：开始原子分解
-  - `addToDecomposition(decompositionId, atomId)`：向分解添加子原子
-  - `completeDecomposition(decompositionId)`：完成分解过程
+- **원자 분해 (Decomposition)**: 복잡한 원자를 더 작은 하위 원자로 분해합니다.
+  - `startDecomposition(atomId)`: 원자 분해 시작
+  - `addToDecomposition(decompositionId, atomId)`: 분해에 하위 원자 추가
+  - `completeDecomposition(decompositionId)`: 분해 과정 완료
 
-- **原子收缩 (Contraction)**：当所有子原子都经过验证后，再将其重组回原始原子。
-  - 根据子原子的置信度计算原始原子的置信度
-  - 如果验证过的假设具有高度置信度，则自动提出结论
+- **원자 수축 (Contraction)**: 하위 원자들이 모두 검증되면 원래 원자로 다시 수축합니다.
+  - 하위 원자들의 신뢰도에 기반하여 원래 원자의 신뢰도를 계산
+  - 검증된 가설이 고신뢰도를 가지면 자동으로 결론을 제안
 
-#### 2. 自动终止机制 (Automatic Termination)
+#### 2. 자동 종료 메커니즘 (Automatic Termination)
 
-- 当达到最大深度(depth)或找到高置信度结论时自动终止。
-- `getTerminationStatus()`：返回当前终止状态及其原因
-- `getBestConclusion()`：返回最高置信度的结论
+- 최대 깊이(depth)에 도달하거나 높은 신뢰도의 결론을 찾으면 자동 종료됩니다.
+- `getTerminationStatus()`: 현재 종료 상태와 이유를 반환
+- `getBestConclusion()`: 가장 높은 신뢰도의 결론을 반환
 
-### 参数说明
+### 매개변수 설명
 
-- **atomId**：原子的唯一标识符（例如 'A1', 'H2' 等）
-- **content**：原子的实际内容
-- **atomType**：原子的类型（premise, reasoning, hypothesis, verification, conclusion 中的一种）
-- **dependencies**：此原子所依赖的其他原子ID列表
-- **confidence**：此原子的置信度（介于0到1之间的值）
-- **isVerified**：此原子是否已验证
-- **depth**：此原子的深度（在分解-收缩过程中所在的层级）
+- **atomId**: 원자의 고유 식별자 (예: 'A1', 'H2' 등)
+- **content**: 원자의 실제 내용
+- **atomType**: 원자의 유형 (premise, reasoning, hypothesis, verification, conclusion 중 하나)
+- **dependencies**: 이 원자가 의존하는 다른 원자들의 ID 목록
+- **confidence**: 이 원자의 신뢰도 (0~1 사이의 값)
+- **isVerified**: 이 원자가 검증되었는지 여부
+- **depth**: 이 원자의 깊이 (분해-수축 프로세스에서의 깊이 수준)
 
-### 使用方法
+### 사용 방법
 
-1. 理解问题并定义所需的前提交子(premise)
-2. 基于前提生成推理(reasoning)原子
-3. 基于推理生成假设(hypothesis)原子
-4. 生成验证(verification)假设的原子
-5. 基于验证过的假设推导出结论(conclusion)原子
-6. 如有必要，使用原子分解(decomposition)深入探索
-7. 将高置信度的结论原子作为最终答案提出
+1. 문제를 이해하고 필요한 전제(premise) 원자들을 정의
+2. 전제를 바탕으로 추론(reasoning) 원자 생성
+3. 추론을 바탕으로 가설(hypothesis) 원자 생성
+4. 가설을 검증(verification)하는 원자 생성
+5. 검증된 가설을 바탕으로 결론(conclusion) 원자 도출
+6. 필요시 원자 분해(decomposition)를 사용하여 더 깊이 탐색
+7. 높은 신뢰도의 결론 원자를 최종 답변으로 제시
 
-### 顺序思维与思维原子对比（需要进一步测试）
+### Sequential Thinking과 Atom of Thoughts 비교 (조금 더 테스트가 필요함)
 
-将这两种思维工具应用于同一主题后观察到的区别和性能特征如下：
+두 가지 사고 도구를 동일한 주제에 적용한 후 관찰된 차이점과 성능 특성은 다음과 같습니다:
 
-#### 结构性差异
+#### 구조적 차이점
 
-**顺序思维：**
-- 线性思维过程：一个思维接一个地按顺序进行
-- 可预先预测整个思维数量
-- 每个思维阶段都是基于前一阶段构建的
+**Sequential Thinking:**
+- 선형적 사고 과정: 한 사고에서 다음 사고로 순차적으로 진행
+- 전체 사고 수를 미리 예측
+- 각 사고 단계는 이전 단계를 기반으로 구축됨
 
-**思维原子：**
-- 非线性、网络结构：多个思维单元（原子）以依赖关系相连
-- 根据原子类型（前提、推理、假设、验证、结论）形成系统结构
-- 明确评估每个原子的置信度水平
+**Atom of Thoughts:**
+- 비선형, 네트워크 구조: 여러 사고 단위(원자)가 의존성을 가지고 연결됨
+- 원자 유형(전제, 추론, 가설, 검증, 결론)에 따라 체계적인 구조 형성
+- 각 원자의 신뢰도 수준을 명시적으로 평가
 
-#### 比较优势
+#### 비교 강점
 
-**顺序思维的优势：**
+**Sequential Thinking 강점:**
+- 직관적 흐름: 자연스러운 인간의 사고 과정과 유사
+- 단순성: 간단한 구조로 직관적인 문제에 빠르게 적용 가능
+- 유연성: 사고 과정 중에 이전 단계를 수정하거나 방향을 변경할 수 있음
 
-- 直观流程：与自然的人类思维过程相似
-- 简单性：结构简单，可以快速应用于直观问题
-- 灵活性：在思维过程中可以修改先前的步骤或改变方向
+**Atom of Thoughts 강점:**
+- 신뢰도 평가: 각 사고의 신뢰도를 명시적으로 측정하여 결론의 유효성 개선
+- 검증 과정: 체계적인 검증 단계를 통해 가설 평가
+- 의존성 추적: 어떤 전제나 추론이 특정 결론에 영향을 미쳤는지 명확하게 추적
+- 병렬 처리: 여러 사고 원자를 동시에 고려 가능
 
-**Atom of Thoughts 的优点：**
-- 可靠性评估：明确测量每个思维的可靠性，提高结论的有效性
-- 验证过程：通过系统的验证阶段来评估假设
-- 依赖关系追踪：清楚地追踪哪些前提或推论对特定结论产生了影响
-- 并行处理：能够同时考虑多个思维原子
+#### 효율성과 정확성
 
-#### 效率与准确性
+**효율성:**
+- Sequential Thinking: 단순한 문제에 더 효율적이며, 사고가 빠르게 진행됨
+- Atom of Thoughts: 복잡한 문제에 더 효율적이지만, 체계적인 구조를 만드는 초기 오버헤드가 있음
 
-**效率：**
-- 顺序思考：对于简单的问题更有效率，思维进展迅速
-- Atom of Thoughts：对于复杂问题更有效，但创建系统结构时有初始开销
+**정확성:**
+- Sequential Thinking: 사고 과정이 깊어질수록 이전 단계에서의 오류 누적 가능성
+- Atom of Thoughts: 검증 단계와 신뢰도 평가를 통해 오류 가능성 감소, 더 신뢰할 수 있는 결론 도출
 
-**准确性：**
-- 顺序思考：随着思维过程深入，早期步骤中的错误累积的可能性增加
-- Atom of Thoughts：通过验证阶段和可靠性评估减少错误可能性，得出更可靠的结论
+#### 목적별 적합성
 
-#### 根据目的选择适合的方法
+**Sequential Thinking에 적합한 경우:**
+- 단순하거나 중간 정도 복잡한 문제
+- 시간 제약이 있는 상황
+- 자연스러운 스토리텔링이나 설명이 필요한 경우
 
-**适合使用顺序思考的情况：**
-- 简单到中等复杂度的问题
-- 时间有限的情境
-- 需要自然叙述或解释的情况
+**Atom of Thoughts에 적합한 경우:**
+- 매우 복잡한 문제
+- 정확성과 신뢰성이 중요한 상황
+- 여러 관점에서 검증이 필요한 가설
+- 복잡한 의존 관계가 있는 추론
 
-**适合使用Atom of Thoughts的情况：**
-- 极其复杂的问题
-- 准确性和可靠性至关重要的情境
-- 需要从多个角度验证的假设
-- 存在复杂依赖关系的推理
+#### 결론
+두 도구 모두 인공 지능의 추론 능력을 향상시키는 데 기여할 수 있지만, 적절한 도구는 문제의 특성과 요구 사항에 따라 달라집니다. Sequential Thinking은 직관적이고 빠른 사고 과정이 필요할 때 유용하며, Atom of Thoughts는 체계적인 검증과 높은 신뢰성이 필요한 복잡한 문제에 더 적합합니다.
 
-#### 结论
-这两种工具都可以提高人工智能的推理能力，但根据问题的特点和需求选择合适的工具是不同的。当需要直观且快速的思维过程时，顺序思考很有用；而当面对需要系统验证和高可靠性的复杂问题时，Atom of Thoughts更为合适。
+### 명령어 도구 (atomcommands)
 
-### 命令工具 (atomcommands)
+Atom of Thoughts의 분해-수축 메커니즘과 자동 종료를 제어하는 명령어 도구입니다.
 
-用于控制Atom of Thoughts的分解-收缩机制和自动终止的命令工具。
+**사용 가능한 명령어**:
+1. **decompose**: 지정된 원자를 더 작은 하위 원자로 분해합니다.
+   - 필요 매개변수: `atomId`
+2. **complete_decomposition**: 진행 중인 분해 프로세스를 완료합니다.
+   - 필요 매개변수: `decompositionId`
+3. **termination_status**: 현재 AoT 프로세스의 종료 상태를 확인합니다.
+4. **best_conclusion**: 가장 높은 신뢰도의 검증된 결론을 가져옵니다.
+5. **set_max_depth**: 최대 깊이 제한을 변경합니다.
+   - 필요 매개변수: `maxDepth`
 
-**可用命令**：
-1. **decompose**：将指定的原子分解为更小的子原子。
-   - 必需参数：`atomId`
-2. **complete_decomposition**：完成正在进行的分解过程。
-   - 必需参数：`decompositionId`
-3. **termination_status**：检查当前AoT进程的终止状态。
-4. **best_conclusion**：获取验证过的最高可信度的结论。
-5. **set_max_depth**：更改最大深度限制。
-   - 必需参数：`maxDepth`
+### Installing via Smithery
 
-### 通过Smithery安装
-
-要通过[Smithery](https://smithery.ai/server/@kbsooo/mcp_atom_of_thoughts)自动为Claude Desktop安装Atom of Thoughts，请执行以下操作：
+To install Atom of Thoughts for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kbsooo/mcp_atom_of_thoughts):
 
 ```bash
 npx -y @smithery/cli install @kbsooo/mcp_atom_of_thoughts --client claude
 ```
 
-### 设置MCP服务器
+### MCP 서버 설정 방법
 
-为了使用Atom of Thoughts MCP服务器，您需要在Claude Desktop或Cline的MCP设置中注册服务器。以下是一个配置示例：
+Atom of Thoughts MCP 서버를 사용하기 위해서는 Claude Desktop 또는 Cline의 MCP 설정에 서버를 등록해야 합니다. 다음은 서버 구성의 예시입니다:
 
 ```json
 { 
@@ -394,24 +392,24 @@ npx -y @smithery/cli install @kbsooo/mcp_atom_of_thoughts --client claude
 }
 ```
 
-请将上面配置中的`/ABSOLUTE/PATH/TO/PARENT/FOLDER`替换为您项目所在的绝对路径。保存设置后，重启Claude Desktop或Cline即可使用Atom of Thoughts MCP服务器。
+위 설정에서 `/ABSOLUTE/PATH/TO/PARENT/FOLDER`는 실제 프로젝트가 위치한 절대 경로로 변경해주세요. 설정을 저장한 후 Claude Desktop 또는 Cline을 재시작하면 Atom of Thoughts MCP 서버를 사용할 수 있습니다.
 
-**官方网站：** [https://github.com/kbsooo/MCP_Atom_of_Thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kbsooo/MCP_Atom_of_Thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `data`
-- 标签：`knowledge and memory`, `research and data`, `chinese`
+- Categories: `memory`, `data`
+- Tags: `knowledge and memory`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/ABSOLUTE/PATH/TO/PARENT/FOLDER/atom-of-thoughts/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/ABSOLUTE/PATH/TO/PARENT/FOLDER/atom-of-thoughts/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kbsooo-atom-of-thoughts.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kbsooo-atom-of-thoughts.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

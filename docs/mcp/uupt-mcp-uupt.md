@@ -1,156 +1,52 @@
 ---
-title: "UU跑腿MCP"
-description: "现已支持5个核心API接口和MCP协议的对接， 涵盖询价、发单、查询详情等，是国内首家兼容MCP协议的配送服务商。"
+title: "uupt-mcp-server"
+description: "We now support the integration of 5 core API interfaces and the MCP protocol, covering inquiries, order placement, detail queries, etc. We are the first domestic delivery service provider to be compat…"
 ---
 
-# UU跑腿MCP
+# uupt-mcp-server
 
-现已支持5个核心API接口和MCP协议的对接， 涵盖询价、发单、查询详情等，是国内首家兼容MCP协议的配送服务商。
+We now support the integration of 5 core API interfaces and the MCP protocol, covering inquiries, order placement, detail queries, etc. We are the first domestic delivery service provider to be compat…
 
-# UU跑腿 MCP Server
+## What is UUPT MCP?
+UUPT MCP is a core API service that is fully compatible with the MCP protocol.
 
-一个轻量级的MCP Server，用于通过MCP协议在uupt.com开放平台创建订单
-https://open.uupt.com/
+## How to use UUPT MCP?
+To use UUPT MCP, you need to create a server-side API key (AK) on the UUPT Open Platform and then integrate the API using Python SDKs.
 
-## 产品介绍
+## Key Features of UUPT MCP?
+- Check Order Price
+- Create Order
+- Check Order details
+- Cacel Order
+- Supports integration with intelligent assistants that are compatible with the MCP protocol.
 
-UU跑腿核心API现已全面兼容MCP协议，是国内首家兼容MCP协议的配送服务商。UU跑腿已经完成核心API接口和MCP协议的对接，涵盖询价、发单、订单详情、配送员实时位置等功能。作为国内首家支持MCP协议的配送服务商，UU跑腿MCP Server发布后，智能体开发者仅需简单配置，就可以在大模型中快速接入配送服务，实现一句话发单的能力，大幅降低了智能体应用开发过程中调用配送服务相关能力的门槛，显著提升了智能体应用的开发效率。
+## Use Cases of UUPT MCP?
+- Create order  check order details，or cancel order with intelligent assistants.
 
-## 功能介绍
+## FAQ from UUPT MCP?
+- **What is the MCP protocol?**
+  The MCP protocol is a standard for integrating various services and tools in a unified manner. More details can be found in the official MCP documentation.
+- **Is there a cost to use UUPT API?**
+  The usage of UUPT API may vary; please check the UUPT Open Platform for pricing details.
+- **How can I troubleshoot issues with the API?**
+  You can refer to the official documentation or community forums for troubleshooting tips.
 
-### 地址询价
+**Official site: ** [https://github.com/uupt-mcp/uupt-mcp-server](https://github.com/uupt-mcp/uupt-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-获取订单价格。
+## Categories & Tags
 
-#### 输入参数
+- Categories: `productivity`, `data`
+- Tags: `developer tools`, `location services`, `calendar management`, `chinese`
 
-- `fromAddress`：发货地址
-- `toAddress`：收货人地址
-- `adCode`：订单区域编码
-- `sendType`：订单类型
+## MCP Configuration
 
-#### 输出参数
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m uupt_mcp_server`
 
-- `priceToken`：金额令牌（提交订单使用）
-- `needPayMoney`：实际支付金额
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-### 地址发单
+## Data source
 
-#### 输入参数
-
-- `priceToken`：金额令牌（计算订单价格接口返回的`price_token`）
-- `receiverPhone`：收件人电话（手机号码）
-
-#### 输出参数
-
-- `orderCode`：UU订单号
-
-### 取消订单
-
-#### 输入参数
-
-- `orderCode`：UU订单号
-- `reason`：取消原因
-
-#### 输出参数
-
-- `deductFee`：扣除费用（单位：分）
-
-### 查询订单
-
-#### 输入参数
-
-- `orderCode`：UU订单号
-
-#### 输出参数
-
-- `fromAddress`：发货地址
-- `toAddress`：收货人地址
-- `distance`：配送距离
-- `state`：当前状态
-
-## 创建应用和秘钥
-
-### 注册开放平台
-
-1. 注册UU跑腿开放平台账号。
-2. 注册成功后登录，进入“我的首页”。
-
-### 添加应用
-
-1. 点击左侧菜单栏“我的应用”。
-2. 创建应用并获得秘钥。
-
-### 查看应用秘钥
-
-1. 系统已集成UU跑腿配送，应用秘钥配置至发单系统即可使用。
-2. 未集成开发者进行接口对接。
-
-## 快速开始
-
-### 配置Python本地环境
-
-建议使用Python 3.11版本。
-
-### 安装命令
-
-```bash
-pip3 install -i https://mirrors.aliyun.com/pypi/simple/ uupt-mcp-server
-```
-
-### 更新命令
-
-```bash
-pip3 install -U -i https://mirrors.aliyun.com/pypi/simple/ uupt-mcp-server
-```
-
-### 查看安装是否成功
-
-```bash
-pip3 list
-```
-
-### 配置`mcpService`
-
-```json
-{
-  "mcpServers": {
-    "uupt-mcp-server": {
-      "disabled": false,
-      "timeout": 60,
-      "command": "python",
-      "args": [
-        "-m",
-        "uupt-mcp-server"
-      ],
-      "env": {
-        "APP_ID": "您的APP_ID",
-        "APP_SECRET": "您的APP_SECRET",
-        "OPEN_ID": "您的OPEN_ID",
-        "OPENAPI_URL_BASE": "https://openapi.uupt.com/v2_0/"
-      },
-      "transportType": "stdio"
-    }
-  }
-}
-```
-
-**官方网站：** [https://github.com/uupt-mcp/uupt-mcp-server](https://github.com/uupt-mcp/uupt-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
-
-## 分类与标签
-
-- 分类：`productivity`, `data`
-- 标签：`developer tools`, `location services`, `calendar management`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m uupt_mcp_server`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/uupt-mcp-uupt.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/uupt-mcp-uupt.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

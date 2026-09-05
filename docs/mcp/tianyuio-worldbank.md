@@ -1,138 +1,111 @@
 ---
-title: "World Bank MCP - 世界银行 MCP"
-description: "世界银行MCP 🌐 基于世界银行开放数据API的世界银行模型上下文协议服务，提供全球经济发展数据的查询功能。 📋 功能 - ✅ 国家信息查询 - ✅ 指标搜索（教育、健康、环境等） - ✅ 经济数据查询（GDP、通货膨胀、失业率等） - ✅ 社会发展数据查询（人口、预期寿命、互联网使用情况等） - ✅ 教育数据查询（识字率、入学率等） - ✅ 健康与营养数据查询（医院、免疫接种、HIV感染率、营养不良等） - ✅ 实时世界银行API集成 - ✅ 模型上下文协议兼容性 📦 安装 使用npm全局安装 bash npm "
+title: "worldbank-mcp"
+description: "World Bank MCP 🌐 World Bank Model Context Protocol service based on World Bank Open Data API, which provides query capabilities for global economic and social development data. 📋 Features - ✅ Country…"
 ---
 
-# World Bank MCP - 世界银行 MCP
+# worldbank-mcp
 
-世界银行MCP 🌐 基于世界银行开放数据API的世界银行模型上下文协议服务，提供全球经济发展数据的查询功能。 📋 功能 - ✅ 国家信息查询 - ✅ 指标搜索（教育、健康、环境等） - ✅ 经济数据查询（GDP、通货膨胀、失业率等） - ✅ 社会发展数据查询（人口、预期寿命、互联网使用情况等） - ✅ 教育数据查询（识字率、入学率等） - ✅ 健康与营养数据查询（医院、免疫接种、HIV感染率、营养不良等） - ✅ 实时世界银行API集成 - ✅ 模型上下文协议兼容性 📦 安装 使用npm全局安装 bash npm 
+World Bank MCP 🌐 World Bank Model Context Protocol service based on World Bank Open Data API, which provides query capabilities for global economic and social development data. 📋 Features - ✅ Country…
 
-# 世界银行MCP 🌐
+# World Bank MCP 🌐
 
 [![npm version](/mcp-assets/85282d2522c3ad09bd6756ee61e7d586.svg)](https://www.npmjs.com/package/worldbank-mcp)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [![GitHub issues](/mcp-assets/a5455c15cf287264ca31cd6dbdf53fd3.svg)](https://github.com/tianyuio/worldbank-mcp/issues)
 
-基于世界银行开放数据API的世界银行模型上下文协议服务，提供全球经济发展数据的查询功能。
+World Bank Model Context Protocol service based on World Bank Open Data API, which provides query capabilities for global economic and social development data.
 
-## 📋 功能
+## 📋 Features
 
-- ✅ 国家信息查询
-- ✅ 指标搜索（教育、健康、环境等）
-- ✅ 经济数据查询（GDP、通货膨胀、失业率等）
-- ✅ 社会发展数据查询（人口、预期寿命、互联网使用情况等）
-- ✅ 教育数据查询（识字率、入学率等）
-- ✅ 健康与营养数据查询（医院、免疫接种、HIV感染率、营养不良等）
-- ✅ 实时世界银行API集成
-- ✅ 模型上下文协议兼容性
+- ✅ Country information query
+- ✅ Indicator search (education, health, environment, etc.)
+- ✅ Economic data query (GDP, inflation, unemployment, etc.)
+- ✅ Social development data query (population, life expectancy, internet usage, etc.)
+- ✅ Education data query (literacy rate, school enrollment, etc.)
+- ✅ Health and nutrition data query (hospitals, immunization, HIV prevalence, malnutrition, etc.)
+- ✅ Real-time World Bank API integration
+- ✅ Model Context Protocol compatibility
 
-## 📦 安装
+## 📦 Installation
 
-### 使用npm全局安装
+### Install globally with npm
 ```bash
 npm install -g worldbank-mcp
 ```
-### 使用npx即时运行
+
+### Run instantly with npx
 ```bash
 npx worldbank-mcp
 ```
-## 💻 在MCP客户端中的使用
 
-要在支持MCP的客户端（如Claude Desktop、Cursor、Cherry Studio等）中使用此服务，您需要按如下方式配置：
+## 💻 Usage in MCP Clients
 
-配置示例：
+To use this service in MCP-compatible clients (such as Claude Desktop, Cursor, Cherry Studio, etc.), you need to configure it as follows:
 
-### 如果已全局安装，请使用npm运行：
+Configuration example:
+
+### Run with npm if you have installed it globally:
 
 ```json
-
 {
-
   "mcpServers": {
-
     "worldbank-mcp": {
-
       "name": "World Bank Data",
-
       "command": "worldbank-mcp",
-
       "description": "World Bank Open Data MCP Server"
-
     }
-
   }
-
 }
-
 ```
-### 使用npx即时运行：
+
+### Run instantly with npx:
 
 ```json
-
 {
-
   "mcpServers": {
-
     "worldbank-mcp": {
-
       "name": "World Bank Data",
-
       "command": "npx",
-
       "args": ["worldbank-mcp"],
-
       "description": "World Bank Open Data MCP Server"
-
     }
-
   }
-
 }
-
 ```
-### 直接使用node运行：
+
+### Run directly with node:
 
 ```json
-
 {
-
   "mcpServers": {
-
     "worldbank-mcp": {
-
       "name": "World Bank Data",
-
       "command": "node",
-
       "args": ["path/to/worldbank-mcp/build/index.js"],
-
       "description": "World Bank Open Data MCP Server"
-
     }
-
   }
-
 }
-
 ```
-将`path/to/`替换为您的项目目录的实际路径。
 
-## 📎 使用示例
+Replace `path/to/` with the actual path to your project directory.
 
-### 🧑‍💻 用户
-> 用表格比较中国和美国的经济
+## 📎 Usage Example
 
-### 🤖 助手
-> 我将帮助你用详细的表格比较中国和美国的经济。让我收集两国的综合经济数据。
+### 🧑‍💻 User
+> Compare the economics of China and US with tables
 
-> *世界银行数据 : 获取经济数据* ✅
+### 🤖 Assistant
+> I'll help you compare the economics of China and US with detailed tables. Let me gather comprehensive economic data for both countries.
 
-> #### **中国与美国经济对比 (2010-2024)**
+> *World Bank Data : get-economic-data* ✅
+
+> #### **China vs US Economic Comparison (2010-2024)**
 > 
-> 根据世界银行的数据，以下是中美两国经济的详细对比表：
+> Based on World Bank data, here's a comprehensive comparison of the ecomonics of Chinese and American with detailed tables:
 > 
-> ##### **表1：GDP对比（万亿美元）**
-> | 年份 | 中国GDP | 美国GDP | 美国占中国的百分比 | 中国增长率 |
+> ##### **Table 1: GDP Comparison (Trillion USD)**
+> | Year | China GDP | US GDP | US as % of China | China Growth Rate |
 > |------|-----------|--------|------------------|-------------------|
 > | 2024 | 18.74 | 29.18 | 156% | 2.6% |
 > | 2023 | 18.27 | 27.72 | 152% | 6.2% |
@@ -150,44 +123,45 @@ npx worldbank-mcp
 > | 2011 | 7.67 | 15.60 | 203% | 19.1% |
 > | 2010 | 6.19 | 15.05 | 243% | - |
 > 
-> **关键见解：**
-> - 美国经济仍然显著更大（2024年大56%）
-> - 自2010年以来，中国的GDP增长了203%
-> - 两国经济差距正在缩小
+> **Key Insights:**
+> - US economy remains significantly larger (56% larger in 2024)
+> - China's GDP has grown 203% since 2010
+> - Gap between the two economies has been narrowing
 > 
-> ##### **表2：人均GDP（美元）**
-> ##### **表3：GDP增长率（%）**
-> ##### **表4：通货膨胀率（%）**
-> ##### **表5：失业率（%）**
-> ##### **表6：出口占GDP的百分比**
-> ##### **表7：外国直接投资净流入（十亿美元）**
+> ##### **Table 2: GDP Per Capita (USD)**
+> ##### **Table 3: GDP Growth Rate (%)**
+> ##### **Table 4: Inflation Rate (%)**
+> ##### **Table 5: Unemployment Rate (%)**
+> ##### **Table 6: Exports as % of GDP**
+> ##### **Table 7: Foreign Direct Investment - Net Inflows (Billion USD)**
 >
-> ##### **总结分析**
+> ##### **Summary Analysis**
 > 
-> ###### **经济规模与增长**
-> - **美国**：经济规模更大，成熟增长（每年2-3%）
-> - **中国**：规模较小但增长更快（最近5-6%），正在追赶
+> ###### **Economic Size & Growth**
+> - **US**: Larger economy, mature growth (2-3% annually)
+> - **China**: Smaller but growing faster (5-6% recently), catching up
 > 
-> ###### **发展水平**
-> - **美国**：高收入发达国家（人均85,000美元）
-> - **中国**：上中等收入发展中国家（人均13,000美元）
+> ###### **Development Level**
+> - **US**: High-income developed economy ($85K per capita)
+> - **China**: Upper-middle income developing economy ($13K per capita)
 >
-> ###### **经济稳定性**
-> - **中国**：通胀和失业更稳定
-> - **美国**：波动较大，但在繁荣期实现更低的失业率
+> ###### **Economic Stability**
+> - **China**: More stable inflation and unemployment
+> - **US**: More volatile but achieves lower unemployment during booms
 > 
-> ###### **经济结构**
-> - **中国**：出口导向型，以制造业为基础
-> - **美国**：消费导向型，以服务业为基础
+> ###### **Economic Structure**
+> - **China**: Export-oriented, manufacturing-based
+> - **US**: Consumption-oriented, service-based
 > 
-> ###### **投资流动**> - **中国**: 传统上的净资本输出国，最近吸引了更多的外国直接投资
-> - **美国**: 模式混合，在有利条件下吸引大量投资
+> ###### **Investment Flows**
+> - **China**: Traditionally net capital exporter, recently attracting more FDI
+> - **US**: Mixed pattern, attracts significant investment during favorable conditions
+> 
+> This comparison highlights two economic superpowers at different stages of development, each with distinct strengths, challenges, and economic structures.
 
-这种比较突出了两个处于不同发展阶段的经济超级大国，每个国家都有其独特的优势、挑战和经济结构。
+## 🔧 MCP Tools
 
-## 🔧 MCP 工具
-
-### 1. 获取国家列表
+### 1. Get Countries List
 ```json
 {
   "name": "get-countries",
@@ -198,7 +172,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 2. 获取国家信息
+
+### 2. Get Country Information
 ```json
 {
   "name": "get-country-info", 
@@ -208,7 +183,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 3. 搜索指标
+
+### 3. Search Indicators
 ```json
 {
   "name": "search-indicators",
@@ -218,7 +194,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 4. 获取经济数据
+
+### 4. Get Economic Data
 ```json
 {
   "name": "get-economic-data",
@@ -230,7 +207,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 5. 获取社会发展数据
+
+### 5. Get Social Development Data
 ```json
 {
   "name": "get-social-data",
@@ -242,7 +220,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 6. 获取教育数据
+
+### 6. Get Education Data
 ```json
 {
   "name": "get-education-data",
@@ -254,7 +233,8 @@ npx worldbank-mcp
   }
 }
 ```
-### 7. 获取健康与营养数据
+
+### 7. Get Health and Nutrition Data
 ```json
 {
   "name": "get-health-data",
@@ -266,121 +246,114 @@ npx worldbank-mcp
   }
 }
 ```
-## 📖 支持的指标
 
-### 经济指标
+## 📖 Supported Indicators
 
-| 指标代码 | 描述 | 单位 |
+### Economic Indicators
+
+| Indicator Code | Description | Unit |
 |---------|------|------|
-| GDP | 国内生产总值 | 当前美元 |
-| GDP_GROWTH | GDP 增长率 | 年度 % |
-| GDP_PER_CAPITA | 人均GDP | 当前美元 |
-| GNI | 国民总收入 | 当前美元 |
-| GNI_PER_CAPITA | 人均国民总收入 | 当前美元 |
-| EXPORTS_GDP | 货物和服务出口 | 占GDP的百分比 |
-| FDI_NET | 净流入的外国直接投资 | 当前美元 |
-| INFLATION | 通货膨胀率 | 年度 % |
-| UNEMPLOYMENT | 失业率 | 占总劳动力的百分比 |
+| GDP | Gross Domestic Product | Current US$ |
+| GDP_GROWTH | GDP growth rate | Annual % |
+| GDP_PER_CAPITA | GDP per capita | Current US$ |
+| GNI | Gross National Income | Current US$ |
+| GNI_PER_CAPITA | GNI per capita | Current US$ |
+| EXPORTS_GDP | Exports of goods and services | % of GDP |
+| FDI_NET | Foreign direct investment, net inflows | Current US$ |
+| INFLATION | Inflation rate | Annual % |
+| UNEMPLOYMENT | Unemployment rate | % of total labor force |
 
-### 社会指标
+### Social Indicators
 
-| 指标代码 | 描述 | 单位 |
+| Indicator Code | Description | Unit |
 |---------|------|------|
-| POPULATION | 总人口 | 人 |
-| LIFE_EXPECTANCY | 出生时预期寿命 | 年 |
-| BIRTH_RATE | 出生率 | 每千人 |
-| DEATH_RATE | 死亡率 | 每千人 |
-| INTERNET_USERS | 互联网用户 | 占总人口的百分比 |
+| POPULATION | Population, total | People |
+| LIFE_EXPECTANCY | Life expectancy at birth | Years |
+| BIRTH_RATE | Birth rate | per 1,000 people |
+| DEATH_RATE | Death rate | per 1,000 people |
+| INTERNET_USERS | Internet users | % of population |
 
-### 教育指标
+### Education Indicators
 
-| 指标代码 | 描述 | 单位 |
+| Indicator Code | Description | Unit |
 |---------|------|------|
-| LITERACY_RATE | 识字率 | 占15岁及以上人口的百分比 |
-| SCHOOL_ENROLLMENT | 小学入学率 | 毛入学率 % |
-| SCHOOL_COMPLETION | 小学完成率 | 相关年龄组的百分比 |
-| TEACHERS_PRIMARY | 小学教师人数 | 数量 |
-| EDUCATION_EXPENDITURE | 政府教育支出 | 占GDP的百分比 |
+| LITERACY_RATE | Literacy rate | % of people ages 15 and above |
+| SCHOOL_ENROLLMENT | School enrollment, primary | % gross |
+| SCHOOL_COMPLETION | Primary completion rate | % of relevant age group |
+| TEACHERS_PRIMARY | Teachers in primary education | Count |
+| EDUCATION_EXPENDITURE | Government expenditure on education | % of GDP |
 
-### 健康与营养指标
+### Health and Nutrition Indicators
 
-| 指标代码 | 描述 | 单位 |
+| Indicator Code | Description | Unit |
 |---------|------|------|
-| HEALTH_EXPENDITURE | 当前卫生支出 | 占GDP的百分比 |
-| PHYSICIANS | 医生数量 | 每千人 |
-| HOSPITAL_BEDS | 医院床位数 | 每千人 |
-| IMMUNIZATION | 麻疹免疫接种率 | 占12-23个月儿童的百分比 |
-| HIV_PREVALENCE | 艾滋病患病率 | 占15-49岁人口的百分比 |
-| MALNUTRITION | 营养不良发生率 | 占总人口的百分比 |
-| TUBERCULOSIS | 结核病发病率 | 每十万人 |
+| HEALTH_EXPENDITURE | Current health expenditure | % of GDP |
+| PHYSICIANS | Physicians | per 1,000 people |
+| HOSPITAL_BEDS | Hospital beds | per 1,000 people |
+| IMMUNIZATION | Immunization, measles | % of children ages 12-23 months |
+| HIV_PREVALENCE | Prevalence of HIV | % of population ages 15-49 |
+| MALNUTRITION | Prevalence of undernourishment | % of population |
+| TUBERCULOSIS | Incidence of tuberculosis | per 100,000 people |
 
-### 常见国家代码
+### Common Country Codes
 
-| 国家 | 代码 | 国家 | 代码 |
+| Country | Code | Country | Code |
 |------|------|------|------|
-| 中国 | CN | 美国 | US |
-| 日本 | JP | 德国 | DE |
-| 英国 | GB | 法国 | FR |
-| 印度 | IN | 巴西 | BR |
-| 俄罗斯 | RU | 澳大利亚 | AU |
+| China | CN | United States | US |
+| Japan | JP | Germany | DE |
+| United Kingdom | GB | France | FR |
+| India | IN | Brazil | BR |
+| Russia | RU | Australia | AU |
 
-## 项目结构
+## Project Structure
 
 ```
-
 worldbank-mcp/
-
 ├── src/
-
 │   ├── index.ts      # Main entry file
-
 │   └── types.ts      # Type definitions
-
 ├── build/            # Compiled output
-
 ├── package.json      # Project configuration
-
 ├── tsconfig.json     # TypeScript configuration
-
 └── README.md         # Documentation
-
 ```
-## 技术栈
 
-- **TypeScript** - 类型安全的开发语言
-- **Model Context Protocol SDK** - MCP协议实现
-- **Axios** - HTTP客户端
-- **Zod** - 数据验证
-- **Commander** - 命令行工具
+## Technology Stack
 
-## API端点
+- **TypeScript** - Type-safe development language
+- **Model Context Protocol SDK** - MCP protocol implementation
+- **Axios** - HTTP client
+- **Zod** - Data validation
+- **Commander** - Command-line tool
 
-项目使用世界银行开放数据API：
-- 基础URL: `https://api.worldbank.org/v2`
-- 国家数据: `/countries`
-- 指标数据: `/indicators`
-- 国家指标数据: `/country/{code}/indicator/{id}`
+## API Endpoints
 
-## 许可证
+Project uses World Bank Open Data API:
+- Base URL: `https://api.worldbank.org/v2`
+- Country data: `/countries`
+- Indicator data: `/indicators`
+- Country indicator data: `/country/{code}/indicator/{id}`
 
-该项目采用**MIT许可证** - 详情请参阅[LICENSE](https://github.com/tianyuio/worldbank-mcp/blob/HEAD/LICENSE)文件。
+## License
 
-**官方网站：** [https://github.com/tianyuio/worldbank-mcp](https://github.com/tianyuio/worldbank-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+This project is licensed under the **MIT License** - see the [LICENSE](https://github.com/tianyuio/worldbank-mcp/blob/HEAD/LICENSE) file for details.
 
-## 分类与标签
+**Official site: ** [https://github.com/tianyuio/worldbank-mcp](https://github.com/tianyuio/worldbank-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`search`, `finance`, `data`
-- 标签：`search`, `finance`, `research and data`, `world bank`, `世界银行`, `数据`, `经济`, `社会`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `search`, `finance`, `data`
+- Tags: `search`, `finance`, `research and data`, `world bank`, `世界银行`, `数据`, `经济`, `社会`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`worldbank-mcp`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `worldbank-mcp`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/tianyuio-worldbank.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/tianyuio-worldbank.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

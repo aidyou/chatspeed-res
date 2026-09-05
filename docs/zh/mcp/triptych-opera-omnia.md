@@ -1,0 +1,253 @@
+---
+title: "triptych"
+description: "Opera Omnia MCP 服务器 一个MCP服务器，提供对Opera Omnia项目中丰富的JSON数据集的访问。该项目是一个面向游戏、故事讲述和机器人开发的创意内容综合库。 功能 - 访问所有Opera Omnia数据集 - 从数据集中随机选择 - 按条件筛选数据集 - 组合多个数据集 - 使用模板生成创意内容 安装 1. 克隆此仓库 2. 安装依赖项： bash npm install…"
+---
+
+# triptych
+
+Opera Omnia MCP 服务器 一个MCP服务器，提供对Opera Omnia项目中丰富的JSON数据集的访问。该项目是一个面向游戏、故事讲述和机器人开发的创意内容综合库。 功能 - 访问所有Opera Omnia数据集 - 从数据集中随机选择 - 按条件筛选数据集 - 组合多个数据集 - 使用模板生成创意内容 安装 1. 克隆此仓库 2. 安装依赖项： bash npm install…
+
+# Opera Omnia MCP Server
+
+An MCP server that provides access to the rich collection of JSON datasets from the [Opera Omnia](https://github.com/triptych/opera-omnia) project, a comprehensive library of creative content for games, storytelling, and bot development.
+
+## Features
+
+- Access to all Opera Omnia datasets
+- Random selection from datasets
+- Filtering datasets by criteria
+- Combining multiple datasets
+- Generating creative content using templates
+
+## Installation
+
+1. Clone this repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Build the project:
+
+```bash
+npm run build
+```
+
+## Usage
+
+### Running the Server
+
+```bash
+npm start
+```
+
+### MCP Configuration
+
+Add the following to your MCP settings file:
+
+```json
+{
+  "mcpServers": {
+    "opera-omnia": {
+      "command": "node",
+      "args": ["path/to/opera-omnia-mcp/build/index.js"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+Replace `path/to/opera-omnia-mcp` with the actual path to this project.
+
+## Available Tools
+
+### list_categories
+
+List all available data categories.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "list_categories",
+  arguments: {}
+});
+```
+
+### list_datasets
+
+List all datasets within a category.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "list_datasets",
+  arguments: {
+    category: "characters"
+  }
+});
+```
+
+### get_dataset
+
+Get the complete contents of a specific dataset.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "get_dataset",
+  arguments: {
+    category: "characters",
+    dataset: "personalities"
+  }
+});
+```
+
+### get_random_item
+
+Get a random item from a specific dataset.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "get_random_item",
+  arguments: {
+    category: "characters",
+    dataset: "personalities"
+  }
+});
+```
+
+### get_filtered_items
+
+Get items from a dataset that match specific criteria.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "get_filtered_items",
+  arguments: {
+    category: "characters",
+    dataset: "personalities",
+    filter: "brave"
+  }
+});
+```
+
+### combine_datasets
+
+Combine multiple datasets and get random selections.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "combine_datasets",
+  arguments: {
+    datasets: [
+      { category: "characters", dataset: "personalities" },
+      { category: "characters", dataset: "backstories" }
+    ],
+    count: 3
+  }
+});
+```
+
+### generate_content
+
+Generate creative content based on multiple datasets.
+
+```javascript
+const result = await use_mcp_tool({
+  server_name: "opera-omnia",
+  tool_name: "generate_content",
+  arguments: {
+    template: "A {adjective} {class} must {quest} to obtain {artifact}",
+    datasets: {
+      adjective: { category: "attributes", dataset: "adjectives" },
+      class: { category: "rpg", dataset: "classes" },
+      quest: { category: "situations", dataset: "quests" },
+      artifact: { category: "equipment", dataset: "artifacts" }
+    }
+  }
+});
+```
+
+## Available Resources
+
+### opera-omnia://categories
+
+List of all available data categories.
+
+```javascript
+const result = await access_mcp_resource({
+  server_name: "opera-omnia",
+  uri: "opera-omnia://categories"
+});
+```
+
+### opera-omnia://category/{category}
+
+List of datasets available in a specific category.
+
+```javascript
+const result = await access_mcp_resource({
+  server_name: "opera-omnia",
+  uri: "opera-omnia://category/characters"
+});
+```
+
+### opera-omnia://dataset/{category}/{dataset}
+
+Contents of a specific dataset.
+
+```javascript
+const result = await access_mcp_resource({
+  server_name: "opera-omnia",
+  uri: "opera-omnia://dataset/characters/personalities"
+});
+```
+
+## Future Enhancements
+
+We have several ideas for future enhancements to the Opera Omnia MCP server:
+
+1. **Advanced Content Generation**: Add more sophisticated content generation capabilities beyond simple template substitution.
+
+2. **Improved Caching**: Implement better caching mechanisms for improved performance, especially for frequently accessed datasets.
+
+3. **User-Contributed Datasets**: Add support for user-contributed datasets, allowing users to extend the available content.
+
+4. **Visualization Tools**: Create visualization tools for exploring the data and understanding relationships between different datasets.
+
+5. **Local Data Files**: Add support for local data files as an alternative to fetching from GitHub.
+
+6. **Integration Examples**: Provide more examples of integrating the MCP server with different applications and frameworks.
+
+## Release Notes
+
+For detailed information about the current and past releases, see the [RELEASE_NOTES.md](https://github.com/triptych/opera-omnia-mcp/blob/HEAD/RELEASE_NOTES.md) file.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/triptych/opera-omnia-mcp/blob/HEAD/LICENSE.md) file for details.
+
+**官方网站：** [https://github.com/triptych/opera-omnia-mcp](https://github.com/triptych/opera-omnia-mcp)
+**状态：** `active`　**最后核验：** `2026-08-30`
+
+## 分类与标签
+
+- 分类：`media`
+- 标签：`art and culture`, `games and gamification`, `content management systems`
+
+## MCP 配置
+
+- 传输方式：`stdio`
+- 启动命令：`node`
+- 参数：`path/to/opera-omnia-mcp/build/index.js`
+
+该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+
+## 数据来源
+
+资源文件：`resources/mcp/triptych-opera-omnia.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。

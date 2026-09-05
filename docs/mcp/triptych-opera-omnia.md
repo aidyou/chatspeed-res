@@ -1,11 +1,11 @@
 ---
-title: "triptych"
-description: "Opera Omnia MCP 服务器 一个MCP服务器，提供对Opera Omnia项目中丰富的JSON数据集的访问。该项目是一个面向游戏、故事讲述和机器人开发的创意内容综合库。 功能 - 访问所有Opera Omnia数据集 - 从数据集中随机选择 - 按条件筛选数据集 - 组合多个数据集 - 使用模板生成创意内容 安装 1. 克隆此仓库 2. 安装依赖项： bash npm install 3. 构建项目： bash npm run build 使用 运行服务器 bash npm start MCP 配置 在"
+title: "opera-omnia-mcp"
+description: "Opera Omnia MCP Server An MCP server that provides access to the rich collection of JSON datasets from the Opera Omnia project, a comprehensive library of creative content for games, storytelling, and…"
 ---
 
-# triptych
+# opera-omnia-mcp
 
-Opera Omnia MCP 服务器 一个MCP服务器，提供对Opera Omnia项目中丰富的JSON数据集的访问。该项目是一个面向游戏、故事讲述和机器人开发的创意内容综合库。 功能 - 访问所有Opera Omnia数据集 - 从数据集中随机选择 - 按条件筛选数据集 - 组合多个数据集 - 使用模板生成创意内容 安装 1. 克隆此仓库 2. 安装依赖项： bash npm install 3. 构建项目： bash npm run build 使用 运行服务器 bash npm start MCP 配置 在
+Opera Omnia MCP Server An MCP server that provides access to the rich collection of JSON datasets from the Opera Omnia project, a comprehensive library of creative content for games, storytelling, and…
 
 # Opera Omnia MCP Server
 
@@ -232,22 +232,22 @@ For detailed information about the current and past releases, see the [RELEASE_N
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/triptych/opera-omnia-mcp/blob/HEAD/LICENSE.md) file for details.
 
-**官方网站：** [https://github.com/triptych/opera-omnia-mcp](https://github.com/triptych/opera-omnia-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/triptych/opera-omnia-mcp](https://github.com/triptych/opera-omnia-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `games and gamification`, `content management systems`
+- Categories: `media`
+- Tags: `art and culture`, `games and gamification`, `content management systems`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/opera-omnia-mcp/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/opera-omnia-mcp/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/triptych-opera-omnia.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/triptych-opera-omnia.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

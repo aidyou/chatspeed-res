@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "world_bank_mcp_server",
-    "zh-Hans": "世界银行指标服务",
-    "zh-Hant": "世界银行指标服务"
+    "zh-Hans": "世界银行指标服务"
   },
   "description": {
     "en": "Enables AI assistants to interact with the World Bank open data API, allowing for listing and analysis of indicators across available countries.",
-    "zh-Hans": "启用AI助手与世界银行开放数据API交互，允许列出并分析可用国家的指标。",
-    "zh-Hant": "启用AI助手与世界银行开放数据API交互，允许列出并分析可用国家的指标。"
+    "zh-Hans": "启用AI助手与世界银行开放数据API交互，允许列出并分析可用国家的指标。"
   },
   "detail": {
     "en": "# World Bank MCP Server\n[Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server)\n\nA Model Context Protocol (MCP) server that enables interaction with the open World Bank data API. This server allows AI assistants to list indicators and analyse those indicators for the countries that are available with the World Bank.\n\n## Features\n\n- List available countries in the World Bank open data API\n- List available indicators in the World Bank open data API\n- Analyse indicators, such as population segments, poverty numbers etc, for countries\n- Comprehensive logging\n\n## Usage\n\n### With Claude Desktop\n\nAdd this to your `claude_desktop_config.json`:\n\n```json\n{\n  \"mcpServers\": {\n    \"world_bank\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \n        \"path/to/world_bank_mcp_server\",\n        \"run\",\n        \"world_bank_mcp_server\"\n      ]\n    }\n  }\n}\n```\n\n### Installing via Smithery\n\nTo install World Bank Data Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server):\n\n```bash\nnpx -y @smithery/cli install @anshumax/world_bank_mcp_server --client claude\n```",
-    "zh-Hans": "# 世界银行 MCP 服务器\n[Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server)\n\n这是一个模型上下文协议（MCP）服务器，能够与开放的世界银行数据 API 进行交互。该服务器允许 AI 助手列出指标，并对世界银行中可用国家的这些指标进行分析。\n\n## 功能\n\n- 列出世界银行开放数据 API 中可用的国家\n- 列出世界银行开放数据 API 中可用的指标\n- 分析各国的指标，如人口细分、贫困人口数量等\n- 全面的日志记录\n\n## 使用方法\n\n### 在 Claude Desktop 上使用\n\n将以下内容添加到您的 `claude_desktop_config.json` 文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"world_bank\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \n        \"path/to/world_bank_mcp_server\",\n        \"run\",\n        \"world_bank_mcp_server\"\n      ]\n    }\n  }\n}\n```\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server) 自动为 Claude Desktop 安装世界银行数据服务器，请执行以下命令：\n\n```bash\nnpx -y @smithery/cli install @anshumax/world_bank_mcp_server --client claude\n```",
-    "zh-Hant": "# 世界银行 MCP 服务器\n[Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server)\n\n这是一个模型上下文协议（MCP）服务器，能够与开放的世界银行数据 API 进行交互。该服务器允许 AI 助手列出指标，并对世界银行中可用国家的这些指标进行分析。\n\n## 功能\n\n- 列出世界银行开放数据 API 中可用的国家\n- 列出世界银行开放数据 API 中可用的指标\n- 分析各国的指标，如人口细分、贫困人口数量等\n- 全面的日志记录\n\n## 使用方法\n\n### 在 Claude Desktop 上使用\n\n将以下内容添加到您的 `claude_desktop_config.json` 文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"world_bank\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \n        \"path/to/world_bank_mcp_server\",\n        \"run\",\n        \"world_bank_mcp_server\"\n      ]\n    }\n  }\n}\n```\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server) 自动为 Claude Desktop 安装世界银行数据服务器，请执行以下命令：\n\n```bash\nnpx -y @smithery/cli install @anshumax/world_bank_mcp_server --client claude\n```"
+    "zh-Hans": "# 世界银行 MCP 服务器\n[Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server)\n\n这是一个模型上下文协议（MCP）服务器，能够与开放的世界银行数据 API 进行交互。该服务器允许 AI 助手列出指标，并对世界银行中可用国家的这些指标进行分析。\n\n## 功能\n\n- 列出世界银行开放数据 API 中可用的国家\n- 列出世界银行开放数据 API 中可用的指标\n- 分析各国的指标，如人口细分、贫困人口数量等\n- 全面的日志记录\n\n## 使用方法\n\n### 在 Claude Desktop 上使用\n\n将以下内容添加到您的 `claude_desktop_config.json` 文件中：\n\n```json\n{\n  \"mcpServers\": {\n    \"world_bank\": {\n      \"command\": \"uv\",\n      \"args\": [\n        \"--directory\", \n        \"path/to/world_bank_mcp_server\",\n        \"run\",\n        \"world_bank_mcp_server\"\n      ]\n    }\n  }\n}\n```\n\n### 通过 Smithery 安装\n\n要通过 [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server) 自动为 Claude Desktop 安装世界银行数据服务器，请执行以下命令：\n\n```bash\nnpx -y @smithery/cli install @anshumax/world_bank_mcp_server --client claude\n```"
   },
   "categories": [
     "finance",

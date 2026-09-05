@@ -1,263 +1,263 @@
 ---
-title: "Markdown 转换器"
-description: "一种将各种文件格式（PDF、文档、图像、音频、网页内容）转换为Markdown的文档转换服务器，具有改进的多语言和UTF-8支持。"
+title: "markdownify-mcp-utf8"
+description: "A document conversion server that transforms various file formats (PDFs, documents, images, audio, web content) to Markdown with improved multilingual and UTF-8 support."
 ---
 
-# Markdown 转换器
+# markdownify-mcp-utf8
 
-一种将各种文件格式（PDF、文档、图像、音频、网页内容）转换为Markdown的文档转换服务器，具有改进的多语言和UTF-8支持。
+A document conversion server that transforms various file formats (PDFs, documents, images, audio, web content) to Markdown with improved multilingual and UTF-8 support.
 
-# Markdownify MCP Server - UTF-8 增强版
+# Markdownify MCP Server - UTF-8 Enhanced
 
-这是 [原始的 Markdownify MCP 项目](https://github.com/cursor-ai/markdownify-mcp) 的增强版本，改进了对 UTF-8 编码的支持，并优化了多语言内容的处理。
+This is an enhanced version of the [original Markdownify MCP project](https://github.com/cursor-ai/markdownify-mcp), with improved UTF-8 encoding support and optimized handling of multilingual content.
 
 [中文文档](https://github.com/JDJR2024/markdownify-mcp-utf8/blob/HEAD/README-CN.md)
 
-## 增强功能
+## Enhancements
 
-- 添加了全面的 UTF-8 编码支持
-- 优化了多语言内容的处理
-- 修复了 Windows 系统上的编码问题
-- 改进了错误处理机制
+- Added comprehensive UTF-8 encoding support
+- Optimized handling of multilingual content
+- Fixed encoding issues on Windows systems
+- Improved error handling mechanisms
 
-## 与原项目的主要区别
+## Key Differences from Original Project
 
-1. 增强的编码支持：
-   - 在所有操作中完全支持 UTF-8
-   - 正确处理中文、日文、韩文及其他非 ASCII 字符
-   - 修复了特定于 Windows 的编码问题（cmd.exe 和 PowerShell 兼容性）
+1. Enhanced Encoding Support:
+   - Full UTF-8 support across all operations
+   - Proper handling of Chinese, Japanese, Korean and other non-ASCII characters
+   - Fixed Windows-specific encoding issues (cmd.exe and PowerShell compatibility)
 
-2. 改进的错误处理：
-   - 提供英文和中文的详细错误信息
-   - 更好的网络问题异常处理
-   - 转换失败时的优雅回退机制
+2. Improved Error Handling:
+   - Detailed error messages in both English and Chinese
+   - Better exception handling for network issues
+   - Graceful fallback mechanisms for conversion failures
 
-3. 扩展的功能：
-   - 支持批量处理多个文件
-   - 增强了 YouTube 视频字幕的处理
-   - 从各种文件格式中改进了元数据提取
-   - 更好地保留了文档格式
+3. Extended Functionality:
+   - Added support for batch processing multiple files
+   - Enhanced YouTube video transcript handling
+   - Improved metadata extraction from various file formats
+   - Better preservation of document formatting
 
-4. 性能优化：
-   - 优化了大文件转换时的内存使用
-   - 加快了多语言内容的处理速度
-   - 减少了依赖冲突
+4. Performance Optimizations:
+   - Optimized memory usage for large file conversions
+   - Faster processing of multilingual content
+   - Reduced dependency conflicts
 
-5. 更好的开发体验：
-   - 全面的调试选项
-   - 详细的日志系统
-   - 针对不同环境的配置支持
-   - 英文和中文的清晰文档
+5. Better Development Experience:
+   - Comprehensive debugging options
+   - Detailed logging system
+   - Environment-specific configuration support
+   - Clear documentation in both English and Chinese
 
-## 功能
+## Features
 
-支持将各种文件类型转换为 Markdown：
-- PDF 文件
-- 图像（带元数据）
-- 音频（带转录）
-- Word 文档（DOCX）
-- Excel 电子表格（XLSX）
-- PowerPoint 演示文稿（PPTX）
-- 网络内容：
-  - YouTube 视频字幕
-  - 搜索结果
-  - 一般网页
-- 已有的 Markdown 文件
+Supports converting various file types to Markdown:
+- PDF files
+- Images (with metadata)
+- Audio (with transcription)
+- Word documents (DOCX)
+- Excel spreadsheets (XLSX)
+- PowerPoint presentations (PPTX)
+- Web content:
+  - YouTube video transcripts
+  - Search results
+  - General web pages
+- Existing Markdown files
 
-## 快速开始
+## Quick Start
 
-1. 克隆此仓库：
+1. Clone this repository:
 ```bash
    git clone https://github.com/JDJR2024/markdownify-mcp-utf8.git
    cd markdownify-mcp-utf8
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
    pnpm install
 ```
-   注意：这也会安装 `uv` 及相关的 Python 依赖项。
+   Note: This will also install `uv` and related Python dependencies.
 
-3. 构建项目：
+3. Build the project:
 ```bash
    pnpm run build
 ```
 
-4. 启动服务器：
+4. Start the server:
 ```bash
    pnpm start
 ```
 
-## 系统要求
+## Requirements
 
-- Node.js 16.0 或更高版本
-- Python 3.8 或更高版本
-- pnpm 包管理器
+- Node.js 16.0 or higher
+- Python 3.8 or higher
+- pnpm package manager
 - Git
 
-## 详细安装指南
+## Detailed Installation Guide
 
-### 1. 环境设置
+### 1. Environment Setup
 
-1. 安装 Node.js:
-   - 从 [Node.js 官方网站](https://nodejs.org/) 下载
-   - 验证安装: `node --version`
+1. Install Node.js:
+   - Download from [Node.js official website](https://nodejs.org/)
+   - Verify installation: `node --version`
 
-2. 安装 pnpm:
+2. Install pnpm:
 ```bash
    npm install -g pnpm
    pnpm --version
 ```
 
-3. 安装 Python:
-   - 从 [Python 官方网站](https://www.python.org/downloads/) 下载
-   - 确保在安装过程中将 Python 添加到 PATH
-   - 验证安装: `python --version`
+3. Install Python:
+   - Download from [Python official website](https://www.python.org/downloads/)
+   - Ensure Python is added to PATH during installation
+   - Verify installation: `python --version`
 
-4. (仅限 Windows) 配置 UTF-8 支持:
+4. (Windows Only) Configure UTF-8 Support:
 ```bash
-   # 设置系统范围的 UTF-8
+   # Set system-wide UTF-8
    setx PYTHONIOENCODING UTF-8
-   # 设置当前会话的 UTF-8
+   # Set current session UTF-8
    set PYTHONIOENCODING=UTF-8
-   # 在命令提示符中启用 UTF-8
+   # Enable UTF-8 in command prompt
    chcp 65001
 ```
 
-### 项目设置
+### 2. Project Setup
 
-1. 克隆仓库:
+1. Clone the repository:
 ```bash
    git clone https://github.com/JDJR2024/markdownify-mcp-utf8.git
    cd markdownify-mcp-utf8
 ```
 
-2. 创建并激活 Python 虚拟环境:
+2. Create and activate Python virtual environment:
 ```bash
    # Windows
    python -m venv .venv
-   .venv\Scripts\activate
+   .venvScriptsactivate
 
    # Linux/macOS
    python3 -m venv .venv
    source .venv/bin/activate
 ```
 
-3. 安装项目依赖:
+3. Install project dependencies:
 ```bash
-   # 安装 Node.js 依赖
+   # Install Node.js dependencies
    pnpm install
 
-   # 安装 Python 依赖（将由 setup.sh 处理）
+   # Install Python dependencies (will be handled by setup.sh)
    ./setup.sh
 ```
 
-4. 构建项目:
+4. Build the project:
 ```bash
    pnpm run build
 ```
 
-### 验证
+### 3. Verification
 
-1. 启动服务器:
+1. Start the server:
 ```bash
    pnpm start
 ```
 
-2. 测试安装:
+2. Test the installation:
 ```bash
-   # 转换网页
+   # Convert a web page
    python convert_utf8.py "https://example.com"
 
-   # 转换本地文件
+   # Convert a local file
    python convert_utf8.py "path/to/your/file.docx"
 ```
 
-## 使用指南
+## Usage Guide
 
-### 基本使用
+### Basic Usage
 
-1. 转换网页:
+1. Converting Web Pages:
 ```bash
    python convert_utf8.py "https://example.com"
 ```
-   转换后的 Markdown 将保存为 `converted_result.md`
+   The converted markdown will be saved as `converted_result.md`
 
-2. 转换本地文件:
+2. Converting Local Files:
 ```bash
-   # 转换 DOCX
+   # Convert DOCX
    python convert_utf8.py "document.docx"
 
-   # 转换 PDF
+   # Convert PDF
    python convert_utf8.py "document.pdf"
 
-   # 转换 PowerPoint
+   # Convert PowerPoint
    python convert_utf8.py "presentation.pptx"
 
-   # 转换 Excel
+   # Convert Excel
    python convert_utf8.py "spreadsheet.xlsx"
 ```
 
-3. 转换 YouTube 视频:
+3. Converting YouTube Videos:
 ```bash
    python convert_utf8.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-### 高级使用
+### Advanced Usage
 
-1. 环境变量:
+1. Environment Variables:
 ```bash
-   # 设置自定义 UV 路径
+   # Set custom UV path
    export UV_PATH="/custom/path/to/uv"
 
-   # 设置自定义输出目录
+   # Set custom output directory
    export MARKDOWN_OUTPUT_DIR="/custom/output/path"
 ```
 
-2. 批量处理:
-   创建一个批处理文件（例如 `convert_batch.txt`），包含 URL 或文件路径:
+2. Batch Processing:
+   Create a batch file (e.g., `convert_batch.txt`) with URLs or file paths:
 ```text
    https://example1.com
    https://example2.com
    file1.docx
    file2.pdf
 ```
-   然后运行:
+   Then run:
 ```bash
    while read -r line; do python convert_utf8.py "$line"; done < convert_batch.txt
 ```
 
-### 故障排除
+### Troubleshooting
 
-1. 常见问题:
-   - 如果看到编码错误，请确保正确设置了 UTF-8
-   - 对于 Windows 上的权限问题，请以管理员身份运行
-   - 对于 Python 路径问题，请确保已激活虚拟环境
+1. Common Issues:
+   - If you see encoding errors, ensure UTF-8 is properly set
+   - For permission issues on Windows, run as Administrator
+   - For Python path issues, ensure virtual environment is activated
 
-2. 调试:
+2. Debugging:
 ```bash
-   # 启用调试输出
+   # Enable debug output
    export DEBUG=true
    python convert_utf8.py "your_file.docx"
 ```
 
-## 使用
+## Usage
 
-### 命令行
+### Command Line
 
-将网页转换为 Markdown：
+Convert web page to Markdown:
 ```bash
 python convert_utf8.py "https://example.com"
 ```
 
-转换本地文件：
+Convert local file:
 ```bash
 python convert_utf8.py "path/to/your/file.docx"
 ```
 
-### 桌面应用程序集成
+### Desktop App Integration
 
-要将此服务器与桌面应用程序集成，请在您的应用程序的服务器配置中添加以下内容：
+To integrate this server with a desktop app, add the following to your app's server configuration:
 
 ```js
 {
@@ -275,54 +275,54 @@ python convert_utf8.py "path/to/your/file.docx"
 }
 ```
 
-## 故障排除
+## Troubleshooting
 
-1. 编码问题
-   - 如果遇到字符编码问题，请确保 `PYTHONIOENCODING` 环境变量设置为 `utf-8`
-   - Windows 用户可能需要运行 `chcp 65001` 以启用 UTF-8 支持
+1. Encoding Issues
+   - If you encounter character encoding issues, ensure the `PYTHONIOENCODING` environment variable is set to `utf-8`
+   - Windows users may need to run `chcp 65001` to enable UTF-8 support
 
-2. 权限问题
-   - 确保您有足够的文件读/写权限
-   - 在 Windows 上，您可能需要以管理员身份运行
+2. Permission Issues
+   - Ensure you have sufficient file read/write permissions
+   - On Windows, you may need to run as administrator
 
-## 致谢
+## Acknowledgments
 
-本项目基于 Zach Caceres 的原始工作。感谢原作者的杰出贡献。
+This project is based on the original work by Zach Caceres. Thanks to the original author for their outstanding contribution.
 
-## 许可证
+## License
 
-本项目继续使用 MIT 许可证。详情请参阅 [LICENSE](https://github.com/JDJR2024/markdownify-mcp-utf8/blob/HEAD/LICENSE) 文件。
+This project continues to be licensed under the MIT License. See the [LICENSE](https://github.com/JDJR2024/markdownify-mcp-utf8/blob/HEAD/LICENSE) file for details.
 
-## 贡献
+## Contributing
 
-欢迎贡献！在提交 Pull Request 之前，请：
-1. 确保您的代码遵循项目的编码标准
-2. 添加必要的测试和文档
-3. 更新 README 中的相关部分
+Contributions are welcome! Before submitting a Pull Request, please:
+1. Ensure your code follows the project's coding standards
+2. Add necessary tests and documentation
+3. Update relevant sections in the README
 
-## 联系方式
+## Contact
 
-对于问题或建议：
-1. 提交 Issue: https://github.com/JDJR2024/markdownify-mcp-utf8/issues
-2. 创建 Pull Request: https://github.com/JDJR2024/markdownify-mcp-utf8/pulls
-3. 电子邮件: jdidndosmmxmx@gmail.com
+For issues or suggestions:
+1. Submit an Issue: https://github.com/JDJR2024/markdownify-mcp-utf8/issues
+2. Create a Pull Request: https://github.com/JDJR2024/markdownify-mcp-utf8/pulls
+3. Email: jdidndosmmxmx@gmail.com
 
-**官方网站：** [https://github.com/JDJR2024/markdownify-mcp-utf8](https://github.com/JDJR2024/markdownify-mcp-utf8)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JDJR2024/markdownify-mcp-utf8](https://github.com/JDJR2024/markdownify-mcp-utf8)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `developer tools`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`{ABSOLUTE_PATH}/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `{ABSOLUTE_PATH}/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jdjr2024-markdownify-utf8.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jdjr2024-markdownify-utf8.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

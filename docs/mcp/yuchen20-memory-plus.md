@@ -1,43 +1,49 @@
 ---
 title: "memory-plus"
-description: "🧠 **Memory-Plus** 是一种轻量级的本地 RAG（检索增强生成）内存存储，适用于 MCP 代理。可以轻松地在会话之间记录、检索、更新、删除和可视化持久化的“记忆”——非常适合与多个 AI 编码工具（如 Windsurf、Cursor 或 Copilot）一起工作的开发者，或者任何希望他们的 AI 能真正记住他们的人。"
+description: "🧠 𝑴𝒆𝒎𝒐𝒓𝒚-𝑷𝒍𝒖𝒔 is a lightweight, local RAG memory store for MCP agents. Easily record, retrieve, update, delete, and visualize persistent \"memories\" across sessions—perfect for developers working with…"
 ---
 
 # memory-plus
 
-🧠 **Memory-Plus** 是一种轻量级的本地 RAG（检索增强生成）内存存储，适用于 MCP 代理。可以轻松地在会话之间记录、检索、更新、删除和可视化持久化的“记忆”——非常适合与多个 AI 编码工具（如 Windsurf、Cursor 或 Copilot）一起工作的开发者，或者任何希望他们的 AI 能真正记住他们的人。
+🧠 𝑴𝒆𝒎𝒐𝒓𝒚-𝑷𝒍𝒖𝒔 is a lightweight, local RAG memory store for MCP agents. Easily record, retrieve, update, delete, and visualize persistent "memories" across sessions—perfect for developers working with…
+
+![memory_plus](/mcp-assets/7c95c8bc326938da59fafe6e439bc006.png)
+
+![pretty image](/mcp-assets/b3c81be0fd912605262378a5a7e7bcdb.png)
+
+[![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://github.com/Yuchen20/Memory-Plus/blob/HEAD/LICENSE)   ![visitors](/mcp-assets/e313702c34482a95db17201b0a6ad472.svg) [![PyPI version](/mcp-assets/f2aea42ab22706e20399b130533018f1.svg)](https://pypi.org/project/memory-plus/) [![PyPI Downloads](/mcp-assets/312a17759276daee22f10a20f1598578.svg)](https://pepy.tech/projects/memory-plus)
 
 # Memory-Plus
 
-一个轻量级的本地检索增强生成（RAG）内存存储，用于MCP代理。Memory-Plus允许您的代理在运行过程中记录、检索、更新和可视化持久的“记忆”——包括笔记、想法和会话上下文。
+A lightweight, local Retrieval-Augmented Generation (RAG) memory store for MCP agents. Memory-Plus lets your agent record, retrieve, update, and visualize persistent "memories"—notes, ideas, and session context—across runs.
 
-> 🏆 在[Infosys剑桥AI中心黑客松](https://infosys-cam-ai-centre.github.io/Infosys-Cambridge-Hackathon/)中获得**第一名**！
+> 🏆 **First Place** at the [Infosys Cambridge AI Centre Hackathon](https://infosys-cam-ai-centre.github.io/Infosys-Cambridge-Hackathon/)!
 
-## 主要功能
+## Key Features
 
-* **记录记忆**：保存用户数据、想法和重要上下文。
-* **检索记忆**：通过关键词或主题搜索过去的条目。
-* **最近记忆**：快速获取最后 *N* 项。
-* **更新记忆**：无缝追加或修改现有条目。
-* **可视化记忆**：揭示关系的交互式图集群。
-* **文件导入** (*自v0.1.2起*)：直接将文档摄入内存。
-* **删除记忆** (*自v0.1.2起*)：移除不需要的条目。
-* **记忆的记忆** (*自v0.1.4起*)：现在我们使用`资源`来教导您的AI何时（以及何时不）回忆过去的互动。
-* **记忆版本控制** (*自v0.1.4起*)：当记忆被更新时，我们会保留旧版本以提供完整的记录历史。
+* **Record Memories**：Save user data, ideas, and important context.
+* **Retrieve Memories**：Search by keywords or topics over past entries.
+* **Recent Memories**：Fetch the last *N* items quickly.
+* **Update Memories**：Append or modify existing entries seamlessly.
+* **Visualize Memories**：Interactive graph clusters revealing relationships.
+* **File Import** (*since v0.1.2*)：Ingest documents directly into memory.
+* **Delete Memories** (*since v0.1.2*)：Remove unwanted entries.
+* **Memory for Memories** (*since v0.1.4*)：Now we use `resources` to teach your AI exactly when (and when not) to recall past interactions.
+* **Memory Versioning** (*since v0.1.4*)：When memories are updated, we keep the old versions to provide a full history.
 
 ---
 
 ![alt text](/mcp-assets/346961ce5284e34085dbbb87c6d340a6.png)
 
-## 安装
+## Installation
 
-### 1. 先决条件
+### 1. Prerequisites
 
-**Google API密钥**
-从[Google AI Studio](https://aistudio.google.com/apikey)获取并设置为环境中的`GOOGLE_API_KEY`。
-> 注意，我们将仅使用此API密钥的`Gemini嵌入API`，因此对您来说是**完全免费**的！
+**Google API Key**
+Obtain from [Google AI Studio](https://aistudio.google.com/apikey) and set as `GOOGLE_API_KEY` in your environment.
+> Note that we will only use the `Gemini Embedding API` with this API key, so it is **Entirely Free** for you to use!
 
-设置Google API密钥示例
+Setup Google API Key Example
 
 ```bash
   # macOS/Linux
@@ -47,16 +53,16 @@ description: "🧠 **Memory-Plus** 是一种轻量级的本地 RAG（检索增�
   setx GOOGLE_API_KEY ""
 ```
 
-**UV运行时**
-用于提供MCP插件。
+**UV Runtime**
+Required to serve the MCP plugin.
 
-安装UV运行时
+Install UV Runtime
 
 ```bash
 pip install uv
 ```
 
-或者通过shell脚本安装：
+Or install via shell scripts:
 
 ```bash
 # macOS/Linux
@@ -66,18 +72,18 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### VS Code一键设置
+### VS Code One-Click Setup
 
-点击下面的徽章以自动在VS Code中安装和配置Memory-Plus：
+Click the badge below to automatically install and configure Memory-Plus in VS Code:
 
-[![VS Code一键安装](/mcp-assets/ff0c64ea4d3a42e6aeccd71c5a5b6a57.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=memory-plus&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22-q%22%2C%22memory-plus%40latest%22%5D%7D)
+[![One Click Install in VS Code](/mcp-assets/ff0c64ea4d3a42e6aeccd71c5a5b6a57.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=memory-plus&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22-q%22%2C%22memory-plus%40latest%22%5D%7D)
 
-这将在您的`settings.json`中添加以下内容：
+This will add the following to your `settings.json`:
 
 ```json
   {
     "mcpServers": {
-      //...,  您的其他MCP服务器
+      //...,  your other MCP servers
       "memory-plus": {
         "command": "uvx",
         "args": [
@@ -89,20 +95,20 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
   }
 ```
 
-对于`cursor`，转到`文件 -> 首选项 -> 光标设置 -> MCP`并添加上述配置。
-如果您没有将`GOOGLE_API_KEY`添加到您的秘密/环境变量中，可以添加：
+For `cursor`, go to `file -> Preferences -> Cursor Settings -> MCP` and add the above config.
+If you didn't add the `GOOGLE_API_KEY` to your secrets / environment variables, you can add it with:
 ```json
 "env": {
         "GOOGLE_API_KEY": ""
       }
 ```
-就在`memory-plus`字典中的`args`数组之后。
+just after the `args` array with in the `memory-plus` dictionary.
 
-对于`Cline`，在您的`cline_mcp_settings.json`中添加以下内容：
+For `Cline` add the following to your `cline_mcp_settings.json`:
 ```json
 {
   "mcpServers": {
-    //...,  您的其他MCP服务器
+    //...,  your other MCP servers
     "memory-plus": {
       "disabled": false,
       "timeout": 300,
@@ -120,11 +126,11 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 }
 ```
 
-对于其他IDE，它应该与上述内容大致相同。
+For other IDEs it should be mostly similar to the above.
 
-## 本地测试和开发
+## Local Testing and Development
 
-使用MCP检查器，您可以本地测试memory-plus服务器。
+Using MCP Inspector, you can test the memory-plus server locally.
 
 ```bash
 git clone https://github.com/Yuchen20/Memory-Plus.git
@@ -132,65 +138,65 @@ cd Memory-Plus
 npx @modelcontextprotocol/inspector fastmcp run run .\memory_plus\mcp.py
 ```
 
-或者，如果您更喜欢在实际聊天会话中使用此MCP。`agent.py`中有一个模板聊天机器人。
+Or If you prefer using this MCP in an actual Chat Session. There is a template chatbot in `agent.py`.
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/Yuchen20/Memory-Plus.git
 cd Memory-Plus
 
-# 安装依赖
+# Install dependencies
 pip install uv
 uv pip install fast-agent-mcp
 uv run fast-agent setup
 ```
-用您自己的API密钥设置`fastagent.config.yaml`和`fastagent.secrets.yaml`。
+setup the `fastagent.config.yaml` and `fastagent.secrets.yaml` with your own API keys.
 ```bash
-# 运行代理
+# Run the agent
 uv run agent_memory.py
 ```
 
-## 路线图
-- [x] 内存更新
-- [x] 改进记忆记录的提示工程
-- [x] 更好的记忆图可视化
-- [x] 文件导入
-- [ ] 远程备份！
-- [ ] 内存管理的Web UI
+## RoadMap
+- [x] Memory Update
+- [x] Improved prompt engineering for memory recording
+- [x] Better Visualization of Memory Graph
+- [x] File Import
+- [ ] Remote backup!
+- [ ] Web UI for Memory Management
 
-> 如果您有任何功能请求，请随时通过添加新问题或在[功能请求](https://voltaic-shell-9af.notion.site/1f84e395c1d18059849ce844fcbba903?pvs=105)中添加新条目来提出。
+> If you have any feature requests, please feel free to add them by adding a new issue or by adding a new entry in the [Feature Request](https://voltaic-shell-9af.notion.site/1f84e395c1d18059849ce844fcbba903?pvs=105)
 
-## 许可证
+## License
 
-本项目根据**Apache License 2.0**授权。详情请参阅[LICENSE](https://github.com/Yuchen20/Memory-Plus/blob/HEAD/LICENSE)。
+This project is licensed under the **Apache License 2.0**. See [LICENSE](https://github.com/Yuchen20/Memory-Plus/blob/HEAD/LICENSE) for details.
 
-## 常见问题解答
+## FAQ
 
-### 1. 为什么memory-plus无法工作？
-- memory-plus有几个依赖项，首次下载可能较慢。通常需要大约1分钟来获取所有所需的内容。
-- 一旦依赖项安装完成，后续使用将会快得多。
-- 如果遇到其他问题，请随时在仓库中开启新问题。
+### 1. Why is memory-plus not working?
+- Memory-plus has a few dependencies that can be slow to download the first time. It typically takes around 1 minute to fetch everything needed.
+- Once dependencies are installed, subsequent usage will be much faster.
+- If you experience other issues, please feel free to open a new issue on the repository.
 
-### 2. 如何在真实的聊天会话中使用memory-plus？
-- 只需将MCP JSON文件添加到您的MCP设置中。
-- 添加后，memory-plus将在需要时自动激活。
+### 2. How do I use memory-plus in a real chat session?
+- Simply add the MCP JSON file to your MCP setup.
+- Once added, memory-plus will automatically activate when needed.
 
-**官方网站：** [https://github.com/Yuchen20/Memory-Plus](https://github.com/Yuchen20/Memory-Plus)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Yuchen20/Memory-Plus](https://github.com/Yuchen20/Memory-Plus)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`-q memory-plus@latest`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `-q memory-plus@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yuchen20-memory-plus.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yuchen20-memory-plus.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

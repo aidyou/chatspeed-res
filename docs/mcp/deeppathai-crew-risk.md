@@ -1,184 +1,184 @@
 ---
-title: "爬虫风险评估师"
-description: "爬虫合规风险评估体系说明 本体系旨在为爬虫开发者和运营者提供一套综合性的自动化合规检测工具，帮助评估目标网站的爬虫友好度及潜在风险，涵盖法律、社会伦理和技术三大维度。通过多层次风险提示和具体建议，辅助合理规划爬虫策略，避免法律纠纷和社会负面影响，同时提升技术稳定性和效率。 --- 评估体系结构 1. 法律风险 (Legal Risk) 检测内容 - 是否存在明确的服务条款（Terms of Service）声明限制爬虫行为 - 网站是否声明版权信息，内容是否受版权保护 - 页面中是否包含敏感个人数据（如邮箱、电话、"
+title: "mcp-crew-risk"
+description: "Explanation of the Web Crawler Compliance Risk Assessment System This system aims to provide a comprehensive automated compliance detection tool for web crawler developers and operators, helping to as…"
 ---
 
-# 爬虫风险评估师
+# mcp-crew-risk
 
-爬虫合规风险评估体系说明 本体系旨在为爬虫开发者和运营者提供一套综合性的自动化合规检测工具，帮助评估目标网站的爬虫友好度及潜在风险，涵盖法律、社会伦理和技术三大维度。通过多层次风险提示和具体建议，辅助合理规划爬虫策略，避免法律纠纷和社会负面影响，同时提升技术稳定性和效率。 --- 评估体系结构 1. 法律风险 (Legal Risk) 检测内容 - 是否存在明确的服务条款（Terms of Service）声明限制爬虫行为 - 网站是否声明版权信息，内容是否受版权保护 - 页面中是否包含敏感个人数据（如邮箱、电话、
+Explanation of the Web Crawler Compliance Risk Assessment System This system aims to provide a comprehensive automated compliance detection tool for web crawler developers and operators, helping to as…
 
-# 爬虫合规风险评估体系说明
+# Explanation of the Web Crawler Compliance Risk Assessment System
 
-本体系旨在为爬虫开发者和运营者提供一套综合性的自动化合规检测工具，帮助评估目标网站的爬虫友好度及潜在风险，涵盖法律、社会伦理和技术三大维度。通过多层次风险提示和具体建议，辅助合理规划爬虫策略，避免法律纠纷和社会负面影响，同时提升技术稳定性和效率。
-
----
-
-## 评估体系结构
-
-### 1. 法律风险 (Legal Risk)
-
-#### 检测内容
-- 是否存在明确的服务条款（Terms of Service）声明限制爬虫行为
-- 网站是否声明版权信息，内容是否受版权保护
-- 页面中是否包含敏感个人数据（如邮箱、电话、身份证号等）
-
-#### 风险意义
-违反网站服务条款可能导致合同违约、侵权或刑事责任；抓取敏感数据可能违反 GDPR、CCPA 等隐私法规。
-
-#### 检测示例
-- 检测 `` 标签及页面内容关键字
-- 邮箱、电话号码正则匹配
+This system aims to provide a comprehensive automated compliance detection tool for web crawler developers and operators, helping to assess the crawler-friendliness and potential risks of target websites. It covers three major dimensions: legal, social ethics, and technical. Through multi-level risk alerts and specific recommendations, it assists in the rational planning of crawler strategies, avoiding legal disputes and negative social impacts, while enhancing technical stability and efficiency.
 
 ---
 
-### 2. 社会伦理风险 (Social/Ethical Risk)
+## Structure of the Assessment System
 
-#### 检测内容
-- robots.txt 文件中是否禁止爬虫访问特定路径
-- 站点部署的反爬虫技术（如 Cloudflare JS Challenge）
-- 涉及用户隐私或敏感信息的收集风险
+### 1. Legal Risk (Legal Risk)
 
-#### 风险意义
-过度抓取可能破坏用户体验和信任，采集个人隐私信息存在伦理风险，违反社会责任。
+#### Detection Content
+- Whether there are clear Terms of Service (ToS) statements that restrict crawling behavior
+- Whether the website declares copyright information, and whether the content is protected by copyright
+- Whether the page contains sensitive personal data (such as email, phone number, ID number, etc.)
 
-#### 检测示例
-- robots.txt 访问及解析
-- 检测反爬机制及JS挑战
-- 敏感信息提取提示
+#### Significance of Risks
+Violating the website's terms of service may lead to breach of contract, infringement, or criminal liability; scraping sensitive data may violate privacy laws such as GDPR, CCPA, etc.
 
----
-
-### 3. 技术风险 (Technical Risk)
-
-#### 检测内容
-- 访问过程中是否遇到重定向、验证码、JS渲染障碍
-- 是否能成功访问 robots.txt 以获取爬虫规则
-- 目标 API 路径的暴露情况，可能存在权限或限流限制
-
-#### 风险意义
-技术层面风险可能导致爬虫失败、IP被封禁或数据不完整，影响业务稳定性。
-
-#### 检测示例
-- HTTP 状态码及响应头分析
-- 反爬技术检测
-- API路径扫描
+#### Example Detection
+- Check `` tags and page content keywords
+- Regular expression matching for emails and phone numbers
 
 ---
 
-## 评分体系
+### 2. Social/Ethical Risk (Social/Ethical Risk)
 
-- **allowed（允许）**：无明显限制和风险，基本可安全爬取
-- **partial（部分限制）**：存在部分限制（如robots.txt禁止部分路径、反爬措施），需谨慎操作
-- **blocked（禁止）**：严重限制或高风险（如大量反爬JS挑战、敏感数据保护），不建议抓取
+#### Detection Content
+- Whether the `robots.txt` file prohibits crawlers from accessing specific paths
+- Anti-crawling technologies deployed on the site (e.g., Cloudflare JS Challenge)
+- Risks associated with collecting user privacy or sensitive information
+
+#### Significance of Risks
+Excessive crawling can damage user experience and trust, and collecting personal privacy information poses ethical risks, violating social responsibilities.
+
+#### Example Detection
+- Access and parse `robots.txt`
+- Detect anti-crawling mechanisms and JS challenges
+- Sensitive information extraction prompts
 
 ---
 
-## 使用建议
+### 3. Technical Risk (Technical Risk)
 
-| 风险维度 | 建议摘要 |
+#### Detection Content
+- Whether redirects, CAPTCHAs, or JS rendering obstacles are encountered during access
+- Whether `robots.txt` can be successfully accessed to obtain crawler rules
+- Exposure of target API paths, which may have permission or rate-limiting restrictions
+
+#### Significance of Risks
+Technical risks can lead to crawler failures, IP bans, or incomplete data, affecting business stability.
+
+#### Example Detection
+- HTTP status code and response header analysis
+- Anti-crawling technology detection
+- API path scanning
+
+---
+
+## Scoring System
+
+- **allowed (Allowed)**: No obvious restrictions or risks, generally safe to crawl
+- **partial (Partially Restricted)**: Some restrictions exist (e.g., `robots.txt` forbids some paths, anti-crawling measures), proceed with caution
+- **blocked (Prohibited)**: Severe restrictions or high risks (e.g., extensive anti-crawling JS challenges, sensitive data protection), not recommended for crawling
+
+---
+
+## Usage Recommendations
+
+| Risk Dimension | Summary of Recommendations |
 | -------- | -------- |
-| 法律风险 | 认真阅读并遵守目标网站的服务条款，避免爬取敏感或个人隐私数据，必要时咨询法律顾问。 |
-| 社会伦理风险 | 控制爬取频率，避免对网站服务器和用户体验造成影响，透明公开数据来源和用途。 |
-| 技术风险 | 采用合适的爬虫框架和策略，支持动态渲染和反爬绕过，及时处理异常和监控访问健康。 |
+| Legal Risk | Carefully read and comply with the terms of service of the target website, avoid scraping sensitive or personal privacy data, and consult a legal advisor if necessary. |
+| Social/Ethical Risk | Control the frequency of crawling to avoid impacting the website server and user experience, and transparently disclose the source and use of the data. |
+| Technical Risk | Use appropriate crawler frameworks and strategies, support dynamic rendering and anti-crawling bypass, and promptly handle exceptions and monitor access health. |
 
 ---
 
-## 实施流程
+## Implementation Process
 
-1. **预爬取检测**  
-   先对目标站点运行合规评估，确认风险级别及限制。
+1. **Pre-Crawling Detection**  
+   First, run a compliance assessment on the target site to confirm the risk level and restrictions.
 
-2. **合规策略制定**  
-   根据检测结果调整爬虫访问频率、抓取内容范围，避免违约或违法。
+2. **Compliance Strategy Development**  
+   Adjust the crawler's access frequency and scope of content based on the detection results to avoid breaches or violations.
 
-3. **爬虫执行与监控**  
-   运行爬虫过程中持续监测技术异常及风险变化，定期重新评估。
+3. **Crawler Execution and Monitoring**  
+   Continuously monitor technical anomalies and risk changes during the crawling process, and re-evaluate periodically.
 
-4. **数据处理与保护**  
-   确保抓取数据符合隐私保护要求，进行必要的匿名化处理。
-
----
-
-## 技术实现简述
-
-- 使用 Axios + node-fetch 进行 HTTP 请求，支持超时和重定向控制。
-- 解析 `robots.txt` 及页面 `meta` 标签，自动识别爬虫规则。
-- 利用正则表达式识别隐私敏感信息（邮箱、电话、身份证号等）。
-- 检测反爬虫技术（如 Cloudflare JS Challenge）和 API 端点暴露情况。
-- 通过风险判断函数分别给出法律、社会、技术风险提示及综合建议。
+4. **Data Processing and Protection**  
+   Ensure that the scraped data complies with privacy protection requirements and perform necessary anonymization.
 
 ---
 
-## 未来扩展
+## Brief Description of Technical Implementation
 
-- 集成 Puppeteer/Playwright 支持 JavaScript 渲染页面检测。
-- 自动化解析并提醒服务条款文本更新。
-- 增加针对GDPR、CCPA等地区性法律的专项检测模块。
-- 联合机器学习模型提升隐私敏感数据识别准确度。
-- 提供 Web UI 展示合规检测报告和风险建议。
+- Use Axios + node-fetch for HTTP requests, supporting timeout and redirect control.
+- Parse `robots.txt` and page `` tags to automatically identify crawler rules.
+- Use regular expressions to identify sensitive personal information (emails, phone numbers, ID numbers, etc.).
+- Detect anti-crawling technologies (e.g., Cloudflare JS Challenge) and API endpoint exposure.
+- Provide legal, social, and technical risk alerts and comprehensive recommendations through risk judgment functions.
 
 ---
 
-## 总结
+## Future Extensions
 
-本合规风险评估体系为爬虫开发和运营提供了基础且全面的风险判断框架，帮助团队在遵守法律法规与伦理原则前提下，提升技术效率和数据质量，降低潜在法律和社会风险。
+- Integrate Puppeteer/Playwright to support JavaScript-rendered page detection.
+- Automatically parse and alert for updates to terms of service text.
+- Add specialized detection modules for regional laws such as GDPR, CCPA, etc.
 
-✅ 1. 技术层面检查
+- Federated machine learning models improve the accuracy of identifying privacy-sensitive data.
+- Provide a Web UI to display compliance check reports and risk recommendations.
 
-| 检查项                    | 描述                                                         | 建议                               |
-| ---------------------- | ---------------------------------------------------------- | -------------------------------- |
-| `robots.txt` 是否存在      | 访问 `https://example.com/robots.txt`                        | 若存在，解析并严格遵守规则                    |
-| `robots.txt` 中是否允许爬该路径 | 检查对指定 User-Agent 的规则（如 `Disallow`, `Allow`）                | 设定合适的 `User-Agent` 进行匹配          |
-| meta robots 标签         | 页面中是否存在 `` | 若存在，避免抓取/索引页面内容                  |
-| X-Robots-Tag 响应头       | 响应头中是否含有 `X-Robots-Tag`（例如：`noindex`）                      | 遵循相应指令                           |
-| 动态渲染内容                 | 页面是否依赖 JS 加载内容（如 React/Vue）                                | 可能需要使用 headless 浏览器（如 Puppeteer） |
-| IP 限速 / WAF            | 是否存在访问频率限制、IP 封锁、验证码等                                      | 实现限速、重试、代理池                      |
-| 反爬机制识别                 | 检查是否有 token 校验、Referer 检查、JS 混淆等                           | 可用网络分析工具排查                       |
-| 是否支持 API 获取            | 页面数据是否也通过公开 API 提供                                         | 若有 API，优先使用，效率更高                 |
+---
 
-2. 法律与道德层面
+## Summary
 
-| 检查项                       | 描述                                | 建议               |
-| ------------------------- | --------------------------------- | ---------------- |
-| 是否有用户协议（Terms of Service） | 查看 ToS 中是否禁止自动化抓取行为               | 若明确禁止，不应抓取       |
-| 网站是否拥有版权声明                | 页面底部是否声明内容版权                      | 避免抓取有版权的数据用于商业用途 |
-| 网站是否公开数据开放政策              | 有些网站提供 Open Data / 数据使用授权         | 遵守授权协议或开源许可      |
-| 是否曾因爬虫行为被诉讼               | 一些网站（如 LinkedIn、Facebook）对爬虫持强硬立场 | 若有前例，风险更高，应避免    |
+This compliance risk assessment system provides a fundamental and comprehensive risk judgment framework for web scraping development and operations. It helps teams to enhance technical efficiency and data quality while adhering to legal, regulatory, and ethical principles, thereby reducing potential legal and social risks.
 
-3. 数据保护与隐私
+✅ 1. Technical Level Checks
 
-| 检查项                       | 描述                  | 建议                 |
-| ------------------------- | ------------------- | ------------------ |
-| 页面是否包含用户生成内容              | 比如评论、头像、电话、邮件、位置等   | 抓取这些内容可能违反隐私法规     |
-| 是否有用户隐私政策（Privacy Policy） | 检查数据使用边界和限制         | 应遵循政策中关于数据处理的条款    |
-| 是否涉及欧盟或加州用户               | 受 GDPR 或 CCPA 管控的数据 | 不能保存、分析个人数据，或需获得同意 |
-| 是否抓取了可识别用户的信息             | 如手机号、身份证、邮箱、IP      | 非必要情况建议过滤/脱敏       |
-| 是否抓取敏感领域信息                | 医疗、金融、未成年人等         | 需极高合规性，建议避免或匿名处理   |
+| Check Item                   | Description                                                      | Recommendation                                |
+| ------------------------- | ------------------------------------------------------------- | ------------------------------------------ |
+| `robots.txt` existence      | Access `https://example.com/robots.txt`                          | If it exists, parse and strictly follow the rules                 |
+| Path allowed in `robots.txt` | Check the rules for the specified User-Agent (e.g., `Disallow`, `Allow`) | Set an appropriate `User-Agent` for matching                    |
+| Meta robots tag             | Whether the page contains `` | If present, avoid crawling/indexing the page content              |
+| X-Robots-Tag response header | Whether the response header contains `X-Robots-Tag` (e.g., `noindex`)        | Follow the corresponding instructions                             |
+| Dynamically rendered content | Whether the page relies on JS to load content (e.g., React/Vue)               | May need to use a headless browser (e.g., Puppeteer)              |
+| IP rate limiting / WAF       | Whether there are access frequency limits, IP blocking, CAPTCHAs, etc.         | Implement rate limiting, retries, and proxy pools                 |
+| Anti-scraping mechanism detection | Check for token verification, Referer checks, JS obfuscation, etc.           | Use network analysis tools for investigation                      |
+| API availability             | Whether the page data is also provided through public APIs                     | If APIs are available, prefer using them for higher efficiency    |
 
-4. 实际操作建议（合规友好策略）
+2. Legal and Ethical Considerations
 
-| 检查项                       | 描述                                                 | 建议             |
+| Check Item                        | Description                                 | Recommendation                |
+| ------------------------------ | ----------------------------------------- | --------------------------- |
+| Terms of Service (ToS) presence | Check if ToS explicitly prohibits automated scraping activities | If clearly prohibited, do not scrape   |
+| Copyright notice on the website  | Whether the bottom of the page declares content copyright            | Avoid scraping copyrighted data for commercial use |
+| Open Data policy availability   | Some websites provide Open Data or data usage licenses               | Adhere to license agreements or open-source licenses |
+| History of litigation over scraping | Some sites (e.g., LinkedIn, Facebook) take a hard stance on scraping | If there are precedents, the risk is higher; avoid scraping |
+
+3. Data Protection and Privacy
+
+| Check Item                        | Description                  | Recommendation                  |
+| ------------------------------ | ------------------------- | ---------------------------- |
+| User-generated content on the page | Such as comments, avatars, phone numbers, emails, locations, etc. | Scraping this content may violate privacy laws     |
+| Presence of a Privacy Policy     | Check the boundaries and restrictions on data use          | Follow the terms regarding data processing in the policy |
+| Involvement of EU or California users | Data subject to GDPR or CCPA regulations | Do not store or analyze personal data, or obtain consent |
+| Collection of personally identifiable information | Such as phone numbers, ID cards, emails, IPs          | Suggest filtering/anonymizing unless necessary       |
+| Scraping sensitive information   | Medical, financial, minors, etc.                       | Requires extremely high compliance; suggest avoiding or anonymizing |
+
+4. Practical Operation Recommendations (Compliance-Friendly Strategies)
+| Check Item                       | Description                                                 | Recommendation             |
 | ------------------------- | -------------------------------------------------- | -------------- |
-| 设置合理 `User-Agent`         | 明确说明工具来源，如 `MyCrawlerBot/1.0 (+email@example.com)` | 提高可信度，便于站点识别   |
-| 设置访问频率限制                  | 避免过快访问（如 1\~2 次/秒）                                 | 减轻目标服务器负担，防止被封 |
-| 添加 `Referer` 和 `Accept` 头 | 模拟正常浏览器行为                                          | 防止反爬拦截         |
-| 支持失败重试机制                  | 应对 503、429、断线等异常                                   | 提高鲁棒性          |
-| 日志记录与抓取时间控制               | 保存抓取日志，设置夜间爬取                                      | 可配合站点维护时间段调整频率 |
-| 抓取数据注明来源                  | 数据用于展示或研究时建议注明来源                                   | 避免版权纠纷         |
-| 数据储存匿名化、脱敏                | 特别是包含个人信息的内容                                       | 避免触犯隐私法律       |
+| Set a Reasonable `User-Agent`         | Clearly indicate the source of the tool, such as `MyCrawlerBot/1.0 (+email@example.com)` | Increases credibility and facilitates site recognition   |
+| Set Access Frequency Limit                  | Avoid too frequent access (e.g., 1~2 times/sec)                                 | Reduces the burden on the target server and prevents being blocked |
+| Add `Referer` and `Accept` Headers | Mimic normal browser behavior                                          | Prevents anti-crawling interception         |
+| Support Retry Mechanism for Failures                  | Handle exceptions like 503, 429, disconnection, etc.                                   | Improves robustness          |
+| Log Recording and Crawl Time Control               | Keep crawl logs and set night-time crawling                                      | Can adjust frequency according to the site's maintenance period |
+| Cite Data Sources                  | When data is used for display or research, it is recommended to cite the source                                   | Avoids copyright disputes         |
+| Anonymize and Desensitize Data Storage                | Especially for content containing personal information                                       | Avoids privacy law violations       |
 
-##  🧠 一句话总结：
+##  🧠 Summary in One Sentence:
 
-没有 robots.txt ≠ 可以任意抓；技术可以爬 ≠ 法律允许爬；尊重数据、尊重网站、尊重用户，才是合规爬虫的基础。
+The absence of a robots.txt file does not mean you can crawl at will; just because a technology allows crawling does not mean it is legally permissible; respecting data, websites, and users is the foundation of compliant web crawling.
 
-## 部署指南
+## Deployment Guide
 
 ### CLI
 ~~~bash
 npx -y mcp-crew-risk
 ~~~
 
-### MCP sever configuration
+### MCP Server Configuration
 
 ~~~json
 {
@@ -194,15 +194,15 @@ npx -y mcp-crew-risk
 }
 ~~~
 
-## 使用示例
+## Usage Example
 
-帮我评估下 https://beian.miit.gov.cn/ 的爬虫风险
+Help me assess the crawling risk of https://beian.miit.gov.cn/
 
 # ai-deeppath
 
-> 人工智能 · 深度路径探索  
+> Artificial Intelligence · Deep Path Exploration  
 
-🌐 **官网地址**  
+🌐 **Official Website**  
 [https://www.ai-deeppath.com](https://www.ai-deeppath.com)
 
 ##  Contact：
@@ -211,22 +211,22 @@ npx -y mcp-crew-risk
 
 * [GitHub](https://github.com/deeppath-ai/mcp-crew-risk)
 
-**官方网站：** [https://github.com/deeppath-ai/mcp-crew-risk.git](https://github.com/deeppath-ai/mcp-crew-risk.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/deeppath-ai/mcp-crew-risk.git](https://github.com/deeppath-ai/mcp-crew-risk.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-crew-risk`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-crew-risk`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/deeppathai-crew-risk.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/deeppathai-crew-risk.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

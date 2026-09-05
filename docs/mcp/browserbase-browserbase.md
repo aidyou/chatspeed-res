@@ -1,19 +1,19 @@
 ---
-title: "BrowserBase云浏览器自动化"
-description: "该服务器使用 Browserbase、Puppeteer 和 Stagehand 提供云浏览器自动化功能。此服务器使大型语言模型（LLMs）能够与网页交互、截屏以及在云浏览器环境中执行 JavaScript。"
+title: "mcp-server-browserbase"
+description: "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in…"
 ---
 
-# BrowserBase云浏览器自动化
+# mcp-server-browserbase
 
-该服务器使用 Browserbase、Puppeteer 和 Stagehand 提供云浏览器自动化功能。此服务器使大型语言模型（LLMs）能够与网页交互、截屏以及在云浏览器环境中执行 JavaScript。
+This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in…
 
-# Browserbase MCP 服务器
+# Browserbase MCP Server
 
-## 开始使用
+## Get Started
 
-1. 运行 `npm install` 安装必要的依赖项，然后运行 `npm run build` 以获取 `dist/index.js`。
+1. Run `npm install` to install the necessary dependencies, then run `npm run build` to get `dist/index.js`.
 
-2. 设置你的 Claude Desktop 配置以使用该服务器。  
+2. Set up your Claude Desktop configuration to use the server.  
 
 ```json
 {
@@ -30,105 +30,105 @@ description: "该服务器使用 Browserbase、Puppeteer 和 Stagehand 提供云
 }
 ```
 
-3. 重启你的 Claude Desktop 应用程序，你应该会看到点击 🔨 图标后可用的工具。
+3. Restart your Claude Desktop app and you should see the tools available clicking the 🔨 icon.
 
-4. 开始使用这些工具！下面是一张 Claude 关闭浏览器会话的图片。
+4. Start using the tools! Below is an image of Claude closing a browser session.
 
    alt="demo" width="600"/>
 
-## 工具
+## Tools
 
 ### Browserbase API
 
 - **browserbase_create_session**
 
-  - 使用 Browserbase 创建一个新的云浏览器会话
-  - 不需要输入
+  - Create a new cloud browser session using Browserbase
+  - No required inputs
 
 - **browserbase_navigate**
 
-  - 在浏览器中导航到任何 URL
-  - 输入: `url` (字符串)
+  - Navigate to any URL in the browser
+  - Input: `url` (string)
 
 - **browserbase_screenshot**
 
-  - 捕获整个页面或特定元素的截图
-  - 输入:
-    - `name` (字符串, 必需): 截图名称
-    - `selector` (字符串, 可选): 要截取的元素的 CSS 选择器
-    - `width` (数字, 可选, 默认: 800): 截图宽度
-    - `height` (数字, 可选, 默认: 600): 截图高度
+  - Capture screenshots of the entire page or specific elements
+  - Inputs:
+    - `name` (string, required): Name for the screenshot
+    - `selector` (string, optional): CSS selector for element to screenshot
+    - `width` (number, optional, default: 800): Screenshot width
+    - `height` (number, optional, default: 600): Screenshot height
 
 - **browserbase_click**
 
-  - 点击页面上的元素
-  - 输入: `selector` (字符串): 要点击的元素的 CSS 选择器
+  - Click elements on the page
+  - Input: `selector` (string): CSS selector for element to click
 
 - **browserbase_fill**
 
-  - 填写输入字段
-  - 输入:
-    - `selector` (字符串): 输入字段的 CSS 选择器
-    - `value` (字符串): 要填写的值
+  - Fill out input fields
+  - Inputs:
+    - `selector` (string): CSS selector for input field
+    - `value` (string): Value to fill
 
 - **browserbase_evaluate**
 
-  - 在浏览器控制台中执行 JavaScript
-  - 输入: `script` (字符串): 要执行的 JavaScript 代码
+  - Execute JavaScript in the browser console
+  - Input: `script` (string): JavaScript code to execute
 
 - **browserbase_get_content**
 
-  - 从当前页面提取所有内容
-  - 输入: `selector` (字符串, 可选): 从特定元素获取内容的 CSS 选择器
+  - Extract all content from the current page
+  - Input: `selector` (string, optional): CSS selector to get content from specific elements
 
 - **browserbase_parallel_sessions**
-  - 创建多个浏览器会话并导航到不同的 URL
-  - 输入: `sessions` (数组): 包含以下对象的数组：
-    - `url` (字符串): 要导航到的 URL
-    - `id` (字符串): 会话标识符
+  - Create multiple browser sessions and navigate to different URLs
+  - Input: `sessions` (array): Array of objects containing:
+    - `url` (string): URL to navigate to
+    - `id` (string): Session identifier
 
-### 资源
+### Resources
 
-该服务器提供了两种类型的资源访问：
+The server provides access to two types of resources:
 
-1. **控制台日志** (`console://logs`)
+1. **Console Logs** (`console://logs`)
 
-   - 文本格式的浏览器控制台输出
-   - 包括来自浏览器的所有控制台消息
+   - Browser console output in text format
+   - Includes all console messages from the browser
 
-2. **截图** (`screenshot://`)
-   - 捕获的 PNG 格式的截图
-   - 可通过捕获时指定的截图名称访问
+2. **Screenshots** (`screenshot://`)
+   - PNG images of captured screenshots
+   - Accessible via the screenshot name specified during capture
 
-## 主要功能
+## Key Features
 
-- 云端浏览器自动化
-- 网页数据提取
-- 控制台日志监控
-- 截图功能
-- JavaScript 执行
-- 基本的网页交互（导航、点击、表单填写）
+- Cloud browser automation
+- Web data extraction
+- Console log monitoring
+- Screenshot capabilities
+- JavaScript execution
+- Basic web interaction (navigation, clicking, form filling)
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证许可。这意味着你可以在遵守 MIT 许可证条款和条件的前提下自由使用、修改和分发该软件。有关更多详细信息，请参见项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/browserbase/mcp-server-browserbase/tree/main/browserbase](https://github.com/browserbase/mcp-server-browserbase/tree/main/browserbase)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/browserbase/mcp-server-browserbase/tree/main/browserbase](https://github.com/browserbase/mcp-server-browserbase/tree/main/browserbase)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/mcp-server-browserbase/browserbase/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/mcp-server-browserbase/browserbase/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/browserbase-browserbase.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/browserbase-browserbase.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

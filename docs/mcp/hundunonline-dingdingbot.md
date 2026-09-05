@@ -1,16 +1,15 @@
 ---
-title: "钉钉Webhook MCP服"
-description: "语言类型：英语  \n翻译结果：钉钉 webhook MCP 服务器"
+title: "mcp-dingdingbot-server"
+description: "dingding webhook mcp server"
 ---
 
-# 钉钉Webhook MCP服
+# mcp-dingdingbot-server
 
-语言类型：英语  
-翻译结果：钉钉 webhook MCP 服务器
+dingding webhook mcp server
 
 ## 🚀 mcp-dingdingbot-server
 
-一个可以向钉钉群机器人发送各种类型消息的MCP服务器应用程序。
+An MCP server application that sends various types of messages to the DingDing group robot.
 
 [English](#english) | [中文](#chinese)
 
@@ -108,7 +107,7 @@ Upload a file to DingDing
 ### DingDing Robot
 
 DingDing group robot configuration guide can be referred to:
-[https://open.dingtalk.com/document/robots/custom-robot-access](https://open.dingtalk.com/document/robots/custom-robot-access)
+https://open.dingtalk.com/document/robots/custom-robot-access
 
 > DINGDING_BOT_WEBHOOK_KEY is the robot webhook key
 For example：
@@ -125,12 +124,12 @@ For example：
 
 ### 概述
 
-这是一个MCP（消息控制协议）服务器应用程序，允许您向钉钉群机器人发送各种类型的消息。它支持文本、Markdown、图片、图文和模板卡片消息，以及文件上传。
+这是一个 MCP（消息控制协议）服务器应用程序，允许您向钉钉群机器人发送各种类型的消息。它支持文本、Markdown、图片、图文和模板卡片消息，以及文件上传。
 
 ### 功能
 
 - 文本消息支持
-- Markdown消息支持
+- Markdown 消息支持
 - 图片消息支持
 - 图文消息支持
 - 模板卡片消息支持
@@ -170,7 +169,7 @@ $ sudo ln -s $PWD/dist/mcp-dingdingbot-server_xxx_xxxx /usr/local/bin/mcp-dingdi
 
 ## 环境变量
 
-- `DINGDING_BOT_WEBHOOK_KEY`: 钉钉机器人的webhook密钥。这是必需的。
+- `DINGDING_BOT_WEBHOOK_KEY`: 钉钉机器人的 webhook 密钥。这是必需的。
 - `DINGDING_BOT_SIGN_KEY`: 钉钉机器人签名验证的签名密钥。这是可选的，但建议用于增强安全性。
 
 ### 使用方法
@@ -181,7 +180,7 @@ $ sudo ln -s $PWD/dist/mcp-dingdingbot-server_xxx_xxxx /usr/local/bin/mcp-dingdi
 
 - **send_markdown**
 
-向钉钉群组发送markdown消息
+向钉钉群组发送 markdown 消息
 
 - **send_image**
 
@@ -189,7 +188,7 @@ $ sudo ln -s $PWD/dist/mcp-dingdingbot-server_xxx_xxxx /usr/local/bin/mcp-dingdi
 
 - **send_news**
 
-向钉钉群组发送图文消息，图文消息包括标题、描述、URL和图片URL
+向钉钉群组发送图文消息，图文消息包括标题、描述、URL 和图片 URL
 
 - **send_template_card**
 
@@ -202,7 +201,7 @@ $ sudo ln -s $PWD/dist/mcp-dingdingbot-server_xxx_xxxx /usr/local/bin/mcp-dingdi
 ### 钉钉机器人
 
 钉钉群机器人配置指南可参考：
-[https://open.dingtalk.com/document/robots/custom-robot-access](https://open.dingtalk.com/document/robots/custom-robot-access)
+https://open.dingtalk.com/document/robots/custom-robot-access
 
 > DINGDING_BOT_WEBHOOK_KEY 是机器人的 webhook 密钥
 例如：
@@ -215,22 +214,22 @@ $ sudo ln -s $PWD/dist/mcp-dingdingbot-server_xxx_xxxx /usr/local/bin/mcp-dingdi
 > 当在钉钉机器人安全设置中启用时，您需要提供此密钥来验证请求。
 > 签名验证使用 HMAC-SHA256 算法，结合时间戳和密钥。
 
-**官方网站：** [https://github.com/HundunOnline/mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/HundunOnline/mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`mcp-dingdingbot-server`
-- 参数：无
+- Transport: `stdio`
+- Command: `mcp-dingdingbot-server`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hundunonline-dingdingbot.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hundunonline-dingdingbot.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

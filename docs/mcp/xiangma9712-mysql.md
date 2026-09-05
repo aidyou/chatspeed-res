@@ -1,25 +1,25 @@
 ---
-title: "MySQL MCP服务"
-description: "通过JSON命令启用与MySQL数据库的交互，支持只读查询、写查询的测试执行以及通过Docker进行的表信息检索。"
+title: "mysql-mcp-server"
+description: "Enables interaction with a MySQL database via JSON commands, supporting read-only queries, test execution of write queries, and table information retrieval through Docker."
 ---
 
-# MySQL MCP服务
+# mysql-mcp-server
 
-通过JSON命令启用与MySQL数据库的交互，支持只读查询、写查询的测试执行以及通过Docker进行的表信息检索。
+Enables interaction with a MySQL database via JSON commands, supporting read-only queries, test execution of write queries, and table information retrieval through Docker.
 
-# MySQL MCP 服务器
+# MySQL MCP Server
 
-一个用于与 MySQL 数据库交互的 MCP 服务器。
+An MCP server for interacting with MySQL databases.
 
-该服务器支持执行只读查询（query）和最终会被回滚的写查询（test_execute）。
+This server supports executing read-only queries (query) and write queries that are ultimately rolled back (test_execute).
 
   
 
-## 设置
+## Setup
 
-### 环境变量
+### Environment Variables
 
-将以下环境变量添加到 `~/.mcp/.env` 文件中：
+Add the following environment variables to `~/.mcp/.env`:
 
 ```
 MYSQL_HOST=host.docker.internal  # Hostname to access host services from Docker container
@@ -28,11 +28,11 @@ MYSQL_USER=root
 MYSQL_PASSWORD=your_password
 ```
 
-> **注意**：`host.docker.internal` 是一个特殊的 DNS 名称，用于从 Docker 容器访问主机服务。
-> 当连接到运行在您主机上的 MySQL 服务器时，请使用此设置。
-> 如果连接到其他 MySQL 服务器，请更改为主机名。
+> **Note**: `host.docker.internal` is a special DNS name for accessing host machine services from Docker containers.
+> Use this setting when connecting to a MySQL server running on your host machine.
+> If connecting to a different MySQL server, change to the appropriate hostname.
 
-### mcp.json 配置
+### mcp.json Configuration
 
 ```json
 {
@@ -53,20 +53,20 @@ MYSQL_PASSWORD=your_password
 }
 ```
 
-## 使用方法
+## Usage
 
-### 启动服务器
+### Starting the Server
 
 ```sh
 docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mcp/.env ghcr.io/xiangma9712/mcp/mysql
 ```
 
-> **注意**：如果您使用 OrbStack，`host.docker.internal` 会自动支持，因此可以省略 `--add-host` 选项。
-> 虽然 Docker Desktop 通常也会自动支持这一点，但为了更好的可靠性，建议添加 `--add-host` 选项。
+> **Note**: If you're using OrbStack, `host.docker.internal` is automatically supported, so the `--add-host` option can be omitted.
+> While Docker Desktop also typically supports this automatically, adding the `--add-host` option is recommended for better reliability.
 
-### 可用命令
+### Available Commands
 
-#### 1. 执行只读查询
+#### 1. Execute Read-only Query
 
 ```json
 {
@@ -77,7 +77,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-响应：
+Response:
 ```json
 {
   "success": true,
@@ -90,7 +90,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-#### 2. 测试查询执行
+#### 2. Test Query Execution
 
 ```json
 {
@@ -101,7 +101,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-响应：
+Response:
 ```json
 {
   "success": true,
@@ -109,7 +109,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-#### 3. 列出表
+#### 3. List Tables
 
 ```json
 {
@@ -117,7 +117,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-响应：
+Response:
 ```json
 {
   "success": true,
@@ -125,7 +125,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-#### 4. 描述表
+#### 4. Describe Table
 
 ```json
 {
@@ -136,7 +136,7 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-响应：
+Response:
 ```json
 {
   "success": true,
@@ -161,38 +161,38 @@ docker run -i --rm --add-host=host.docker.internal:host-gateway --env-file ~/.mc
 }
 ```
 
-## 实现细节
+## Implementation Details
 
-- 用 TypeScript 实现
-- 使用 mysql2 包
-- 作为 Docker 容器运行
-- 通过标准输入接收 JSON 命令
-- 通过标准输出返回 JSON 响应
-- 使用 `host.docker.internal` 连接到主机 MySQL（兼容 OrbStack 和 Docker Desktop）
+- Implemented in TypeScript
+- Uses mysql2 package
+- Runs as a Docker container
+- Accepts JSON commands through standard input
+- Returns JSON responses through standard output
+- Uses `host.docker.internal` to connect to host MySQL (compatible with both OrbStack and Docker Desktop)
 
-## 安全注意事项
+## Security Considerations
 
-- 使用环境变量管理敏感信息
-- SQL 注入预防是实施者的责任
-- 生产环境中需要正确的网络配置
-- 连接到主机服务时需要适当的防火墙设置
+- Uses environment variables for sensitive information management
+- SQL injection prevention is the implementer's responsibility
+- Proper network configuration required for production use
+- Appropriate firewall settings needed when connecting to host machine services
 
-**官方网站：** [https://github.com/xiangma9712/mysql-mcp-server](https://github.com/xiangma9712/mysql-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/xiangma9712/mysql-mcp-server](https://github.com/xiangma9712/mysql-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`databases`, `developer tools`, `virtualization`, `chinese`
+- Categories: `development`
+- Tags: `databases`, `developer tools`, `virtualization`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm --add-host=host.docker.internal:host-gateway --env-file /Users/username/.mcp/.env ghcr.io/xiangma9712/mcp/mysql`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm --add-host=host.docker.internal:host-gateway --env-file /Users/username/.mcp/.env ghcr.io/xiangma9712/mcp/mysql`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xiangma9712-mysql.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xiangma9712-mysql.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

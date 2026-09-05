@@ -1,11 +1,11 @@
 ---
-title: "纸牌魔术大师"
-description: "一个实现Chico & Dico卡片魔术的模型上下文协议（MCP）服务器，能够在被告知前四张牌的特定顺序后猜出第五张牌。"
+title: "card-magic-mcp"
+description: "card-magic-mcp"
 ---
 
-# 纸牌魔术大师
+# card-magic-mcp
 
-一个实现Chico & Dico卡片魔术的模型上下文协议（MCP）服务器，能够在被告知前四张牌的特定顺序后猜出第五张牌。
+card-magic-mcp
 
 # card-magic-mcp
 
@@ -107,22 +107,22 @@ The MCP Server provides two tools for card magic:
 - **Ranks**: `A，2，3，4，5，6，7，8，9，10，J，Q，K`
 - **Format**: Each card should be written as `{suit}{rank}` with spaces separating multiple cards
 
-**官方网站：** [https://github.com/luochang212/card-magic-mcp](https://github.com/luochang212/card-magic-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/luochang212/card-magic-mcp](https://github.com/luochang212/card-magic-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`
+- Categories: `media`
+- Tags: `entertainment and media`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from card-magic-mcp card_magic_stdio`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from card-magic-mcp card_magic_stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/fmoball-card-magic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/fmoball-card-magic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

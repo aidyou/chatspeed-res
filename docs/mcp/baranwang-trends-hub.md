@@ -1,13 +1,13 @@
 ---
-title: "MCP 中文趋势聚合"
-description: "一个MCP服务器，聚合了来自新浪微博、知乎、Bilibili等中国各大网站和平台的热门趋势和排行榜。"
+title: "mcp-trends-hub"
+description: "A MCP server that aggregates hot trends and rankings from various Chinese websites and platforms including Weibo, Zhihu, Bilibili, and more."
 ---
 
-# MCP 中文趋势聚合
+# mcp-trends-hub
 
-一个MCP服务器，聚合了来自新浪微博、知乎、Bilibili等中国各大网站和平台的热门趋势和排行榜。
+A MCP server that aggregates hot trends and rankings from various Chinese websites and platforms including Weibo, Zhihu, Bilibili, and more.
 
-# 🔥 趋势中心
+# 🔥 Trends Hub
 
 [Smithery](https://smithery.ai/server/@baranwang/mcp-trends-hub)
 [![NPM Version](/mcp-assets/bba9ad2fb73b4ccc707c784e8897a0a2.svg)](https://www.npmjs.com/package/mcp-trends-hub)
@@ -146,22 +146,22 @@ Trend Hub 支持通过环境变量添加自定义 RSS 源：
 - [DailyHotApi](https://github.com/imsyy/DailyHotApi)
 - [RSSHub](https://github.com/DIYgod/RSSHub)
 
-**官方网站：** [https://github.com/baranwang/mcp-trends-hub](https://github.com/baranwang/mcp-trends-hub)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/baranwang/mcp-trends-hub](https://github.com/baranwang/mcp-trends-hub)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `browser`
-- 标签：`search`, `browser automation`, `chinese`
+- Categories: `search`, `browser`
+- Tags: `search`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-trends-hub@1.6.0`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-trends-hub@1.6.0`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/baranwang-trends-hub.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/baranwang-trends-hub.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

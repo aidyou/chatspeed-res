@@ -1,11 +1,11 @@
 ---
-title: "Apifox MCP服务端"
-description: "一个将像Cursor和Cline这样的AI代码助手连接到Apifox API定义的服务器，允许开发人员通过自然语言命令实现API接口。"
+title: "apifox-mcp-server"
+description: "A server that connects AI coding assistants like Cursor and Cline to Apifox API definitions, allowing developers to implement API interfaces through natural language commands."
 ---
 
-# Apifox MCP服务端
+# apifox-mcp-server
 
-一个将像Cursor和Cline这样的AI代码助手连接到Apifox API定义的服务器，允许开发人员通过自然语言命令实现API接口。
+A server that connects AI coding assistants like Cursor and Cline to Apifox API definitions, allowing developers to implement API interfaces through natural language commands.
 
 # Apifox MCP Server
 
@@ -117,22 +117,22 @@ Apifox MCP Server 还在内测阶段，欢迎各位给我们提建议和想法�
 
 ![QR Code](/mcp-assets/bf2b2189dfdd5ebdff711874b2ee0807.png)
 
-**官方网站：** [https://github.com/apifox/apifox-mcp-server](https://github.com/apifox/apifox-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/apifox/apifox-mcp-server](https://github.com/apifox/apifox-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `browser`
-- 标签：`developer tools`, `browser automation`, `chinese`
+- Categories: `development`, `browser`
+- Tags: `developer tools`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y apifox-mcp-server@latest --project-id=<project-id>`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y apifox-mcp-server@latest --project-id=<project-id>`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/apifox-apifox.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/apifox-apifox.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,70 +1,70 @@
 ---
-title: "MCP官方示例"
-description: "这个MCP服务器试图运用MCP协议的所有功能。它并不是一个实用的服务器，而是为MCP客户端开发者提供的测试服务器。它实现了提示、工具、资源、采样等功能，以展示MCP的能力。"
+title: "everything"
+description: "This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools…"
 ---
 
-# MCP官方示例
+# everything
 
-这个MCP服务器试图运用MCP协议的所有功能。它并不是一个实用的服务器，而是为MCP客户端开发者提供的测试服务器。它实现了提示、工具、资源、采样等功能，以展示MCP的能力。
+This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools…
 
-# Everything MCP 服务器
+# Everything MCP Server
 
-这个MCP服务器尝试使用MCP协议的所有功能。它并不打算成为一个有用的服务器，而是为MCP客户端的开发者提供一个测试服务器。它实现了提示、工具、资源、采样等功能，以展示MCP的能力。
+This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 1. `echo`
-   - 简单工具，用于回显输入消息
-   - 输入：
-     - `message` (字符串): 要回显的消息
-   - 返回: 包含回显消息的文本内容
+   - Simple tool to echo back input messages
+   - Input:
+     - `message` (string): Message to echo back
+   - Returns: Text content with echoed message
 
 2. `add`
-   - 将两个数字相加
-   - 输入：
-     - `a` (数字): 第一个数字
-     - `b` (数字): 第二个数字
-   - 返回: 加法结果的文本形式
+   - Adds two numbers together
+   - Inputs:
+     - `a` (number): First number
+     - `b` (number): Second number
+   - Returns: Text result of the addition
 
 3. `longRunningOperation`
-   - 演示长时间操作的进度通知
-   - 输入：
-     - `duration` (数字, 默认值: 10): 操作持续时间（秒）
-     - `steps` (数字, 默认值: 5): 进度步骤数
-   - 返回: 包含持续时间和步骤数的完成消息
-   - 在执行过程中发送进度通知
+   - Demonstrates progress notifications for long operations
+   - Inputs:
+     - `duration` (number, default: 10): Duration in seconds
+     - `steps` (number, default: 5): Number of progress steps
+   - Returns: Completion message with duration and steps
+   - Sends progress notifications during execution
 
 4. `sampleLLM`
-   - 使用MCP采样功能演示LLM采样能力
-   - 输入：
-     - `prompt` (字符串): 发送给LLM的提示
-     - `maxTokens` (数字, 默认值: 100): 生成的最大令牌数
-   - 返回: 生成的LLM响应
+   - Demonstrates LLM sampling capability using MCP sampling feature
+   - Inputs:
+     - `prompt` (string): The prompt to send to the LLM
+     - `maxTokens` (number, default: 100): Maximum tokens to generate
+   - Returns: Generated LLM response
 
 5. `getTinyImage`
-   - 返回一个小的测试图片
-   - 不需要输入
-   - 返回: Base64编码的PNG图片数据
+   - Returns a small test image
+   - No inputs required
+   - Returns: Base64 encoded PNG image data
 
 6. `printEnv`
-   - 打印所有环境变量
-   - 对于调试MCP服务器配置非常有用
-   - 不需要输入
-   - 返回: 所有环境变量的JSON字符串
+   - Prints all environment variables
+   - Useful for debugging MCP server configuration
+   - No inputs required
+   - Returns: JSON string of all environment variables
 
 7. `annotatedMessage`
-   - 演示如何使用注释来提供关于内容的元数据
-   - 输入：
-     - `messageType` (枚举: "error" | "success" | "debug"): 消息类型，用于演示不同的注释模式
-     - `includeImage` (布尔, 默认值: false): 是否包含示例图片
-   - 返回: 带有不同注释的内容：
-     - 错误消息: 高优先级(1.0)，对用户和助手可见
-     - 成功消息: 中等优先级(0.7)，面向用户
-     - 调试消息: 低优先级(0.3)，面向助手
-     - 可选图片: 中等优先级(0.5)，面向用户
-   - 示例注释:
+   - Demonstrates how annotations can be used to provide metadata about content
+   - Inputs:
+     - `messageType` (enum: "error" | "success" | "debug"): Type of message to demonstrate different annotation patterns
+     - `includeImage` (boolean, default: false): Whether to include an example image
+   - Returns: Content with varying annotations:
+     - Error messages: High priority (1.0), visible to both user and assistant
+     - Success messages: Medium priority (0.7), user-focused
+     - Debug messages: Low priority (0.3), assistant-focused
+     - Optional image: Medium priority (0.5), user-focused
+   - Example annotations:
 ```json
      {
        "priority": 1.0,
@@ -73,71 +73,71 @@ description: "这个MCP服务器试图运用MCP协议的所有功能。它并不
 ```
 
 8. `getResourceReference`
-   - 返回一个可以被MCP客户端使用的资源引用
-   - 输入：
-     - `resourceId` (数字, 1-100): 要引用的资源ID
-   - 返回: 包含以下内容的资源引用：
-     - 文本介绍
-     - 嵌入式资源，`type: "resource"`
-     - 使用资源URI的文本说明
+   - Returns a resource reference that can be used by MCP clients
+   - Inputs:
+     - `resourceId` (number, 1-100): ID of the resource to reference
+   - Returns: A resource reference with:
+     - Text introduction
+     - Embedded resource with `type: "resource"`
+     - Text instruction for using the resource URI
 
-### 资源
+### Resources
 
-服务器提供了100个测试资源，分为两种格式：
-- 偶数编号资源：
-  - 纯文本格式
-  - URI模式: `test://static/resource/{even_number}`
-  - 内容: 简单的文本描述
+The server provides 100 test resources in two formats:
+- Even numbered resources:
+  - Plaintext format
+  - URI pattern: `test://static/resource/{even_number}`
+  - Content: Simple text description
 
-- 奇数编号资源：
-  - 二进制块格式
-  - URI模式: `test://static/resource/{odd_number}`
-  - 内容: Base64编码的二进制数据
+- Odd numbered resources:
+  - Binary blob format
+  - URI pattern: `test://static/resource/{odd_number}`
+  - Content: Base64 encoded binary data
 
-资源特性：
-- 支持分页（每页10项）
-- 允许订阅资源更新
-- 展示资源模板
-- 每5秒自动更新已订阅的资源
+Resource features:
+- Supports pagination (10 items per page)
+- Allows subscribing to resource updates
+- Demonstrates resource templates
+- Auto-updates subscribed resources every 5 seconds
 
-### 提示词
+### Prompts
 
 1. `simple_prompt`
-   - 基础提示，无参数
-   - 返回：单条消息交换
+   - Basic prompt without arguments
+   - Returns: Single message exchange
 
 2. `complex_prompt`
-   - 高级提示，展示参数处理
-   - 必需参数：
-     - `temperature` (数字)：温度设置
-   - 可选参数：
-     - `style` (字符串)：输出样式偏好
-   - 返回：包含图片的多轮对话
+   - Advanced prompt demonstrating argument handling
+   - Required arguments:
+     - `temperature` (number): Temperature setting
+   - Optional arguments:
+     - `style` (string): Output style preference
+   - Returns: Multi-turn conversation with images
 
 3. `resource_prompt`
-   - 展示如何在提示中嵌入资源引用
-   - 必需参数：
-     - `resourceId` (数字)：要嵌入资源的ID（1-100）
-   - 返回：带有嵌入资源引用的多轮对话
-   - 展示了如何直接在提示消息中包含资源
+   - Demonstrates embedding resource references in prompts
+   - Required arguments:
+     - `resourceId` (number): ID of the resource to embed (1-100)
+   - Returns: Multi-turn conversation with an embedded resource reference
+   - Shows how to include resources directly in prompt messages
 
-### 日志记录
+### Logging
 
-服务器每隔15秒发送随机级别的日志消息，例如：
+The server sends random-leveled log messages every 15 seconds, e.g.:
 
 ```json
 {
   "method": "notifications/message",
   "params": {
-    "level": "info",
-    "data": "Info-level message"
+	"level": "info",
+	"data": "Info-level message"
   }
 }
 ```
 
-## 与Claude桌面版一起使用
+## Usage with Claude Desktop
 
-在您的`claude_desktop_config.json`中添加：
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -153,22 +153,22 @@ description: "这个MCP服务器试图运用MCP协议的所有功能。它并不
 }
 ```
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/everything](https://github.com/modelcontextprotocol/servers/tree/main/src/everything)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/everything](https://github.com/modelcontextprotocol/servers/tree/main/src/everything)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-everything`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-everything`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-everything.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-everything.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

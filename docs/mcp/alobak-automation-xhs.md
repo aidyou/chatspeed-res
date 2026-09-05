@@ -1,91 +1,80 @@
 ---
-title: "小红书一站式自动化MCP（10月17可用）"
-description: "小红书mcp服务，\n1. 支持自动发布\n2. 支持搜索笔记\n3. 支持分析笔记内容\n4. 支持多账户管理\n5. 支持预发布（人工审核后发布）\n6. 支持评论特定笔记引流，支持@指定人\n\n支持mcp，api调用"
+title: "automation-xhs"
+description: "Xiaohongshu MCP Service, 1. Supports automatic publishing 2. Supports searching for notes 3. Supports analyzing note content 4. Supports multi-account management 5. Supports pre-publishing (publish af…"
 ---
 
-# 小红书一站式自动化MCP（10月17可用）
+# automation-xhs
 
-小红书mcp服务，
-1. 支持自动发布
-2. 支持搜索笔记
-3. 支持分析笔记内容
-4. 支持多账户管理
-5. 支持预发布（人工审核后发布）
-6. 支持评论特定笔记引流，支持@指定人
+Xiaohongshu MCP Service, 1. Supports automatic publishing 2. Supports searching for notes 3. Supports analyzing note content 4. Supports multi-account management 5. Supports pre-publishing (publish af…
 
-支持mcp，api调用
+# Xiaohongshu Automation Tool - Simple User Manual
 
-# 小红书自动化工具 - 简易使用手册
+This manual will guide you through the quick setup and usage of the Xiaohongshu automation tool.
+Advanced version support (updated to PyPI, ready for use!!!):
 
-本手册将指导您快速配置和使用小红书自动化工具。
-高级版本支持(已更新到pypi，可直接使用！！！）：
+1. Multiple accounts (manage multiple accounts, isolated individually, with IP isolation options)
+2. Automatic note commenting for traffic generation (supports @mentions)
+3. Pre-publishing feature, where AI-generated notes can be added to the pre-publish interface, reviewed manually, and then published directly.
 
-1. 多账号（可管理多个账号，单独隔离，可设置ip隔离）
-2. 自动评论笔记引流（支持@人）
-3. 可添加预发布，AI自动生成笔记到预发布界面，人工审核后直接发布。
+Tested and confirmed working on 2025.8.21
 
-2025.8.21 亲测可用
+## 1. Download Google Chrome and Browser Driver
 
-## 1. 下载谷歌浏览器和浏览器驱动
+### Download Google Chrome
+1. Visit [Google Chrome Official Website](https://www.google.com/chrome/)
+2. Click "Download Chrome" and install it
 
-### 下载谷歌浏览器
-1. 访问 [Google Chrome 官网](https://www.google.com/chrome/)
-2. 点击"下载Chrome"并安装
+### Download Browser Driver
+1. Open Chrome browser, enter `chrome://version/` to check the version number
+2. Visit [ChromeDriver Download Page](https://chromedriver.chromium.org/downloads)
+3. Download the corresponding version of ChromeDriver
+4. Extract `chromedriver.exe` to a system PATH directory (e.g., `C:\Windows\System32\`)
 
-### 下载浏览器驱动
-1. 打开Chrome浏览器，输入 `chrome://version/` 查看版本号
-2. 访问 [ChromeDriver 下载页面](https://chromedriver.chromium.org/downloads)
-3. 下载对应版本的 ChromeDriver
-4. 将 `chromedriver.exe` 解压到系统PATH路径中（如 `C:\Windows\System32\`）
+> **Tip**: Ensure that the ChromeDriver version matches your Chrome browser version
 
-> **提示**: 确保ChromeDriver版本与Chrome浏览器版本匹配
+## 2. Install Python
 
-## 2. 安装Python
+### Windows System
+1. Visit [Python Official Website](https://www.python.org/downloads/)
+2. Download Python 3.8 or higher
+3. During installation, check "Add Python to PATH"
 
-### Windows系统
-1. 访问 [Python官网](https://www.python.org/downloads/)
-2. 下载Python 3.8或更高版本
-3. 安装时勾选"Add Python to PATH"
-
-### 验证安装
-打开命令提示符（CMD）或PowerShell，输入：
-```bash
+### Verify Installation
+Open Command Prompt (CMD) or PowerShell, and type:
+bash
 python --version
-```
 
-### 安装uv包管理器
-```bash
+### Install uv Package Manager
+bash
 # Windows PowerShell
 curl -LsSf https://astral.sh/uv/install.ps1 | powershell
-```
 
-## 3. 运行小红书自动化服务
+## 3. Run Xiaohongshu Automation Service
 
-### 快速启动（推荐）
-使用uvx直接运行，无需下载源码：
+### Quick Start (Recommended)
+Use uvx to run directly without downloading the source code:
 
-```bash
-# 启动FastAPI服务器
+bash
+# Start FastAPI server
 uvx --from xiaohongshu-automation xhs-server
-```
 
-### 启动步骤
-1. 运行上述命令后，系统会自动下载依赖
-2. 服务启动后会打开浏览器窗口
-3. **重要**: 需要扫码登录小红书账号
-4. 登录成功后，服务将在 `http://localhost:8001` 运行
+### Startup Steps
+1. After running the above command, the system will automatically download dependencies
+2. Once the service starts, it will open a browser window
+3. **Important**: You need to scan the QR code to log in to your Xiaohongshu account
+4. After successful login, the service will run at `http://localhost:8001`
 
-> **注意**: 首次运行可能需要一些时间下载依赖包
+> **Note**: The first run may take some time to download the dependency packages
 
-## 4. 添加MCP配置
+## 4. Add MCP Configuration
 
-### 配置AI客户端
-如果您使用支持MCP的AI客户端（如Claude Desktop），需要添加以下配置：
+### Configure AI Client
+If you are using an AI client that supports MCP (such as Claude Desktop), add the following configuration:
 
-#### Claude Desktop配置示例
-在Claude Desktop的配置文件中添加：
+#### Example Configuration for Claude Desktop
+Add the following to the Claude Desktop configuration file:
 
-```json
+json
 {
   "mcpServers": {
     "xiaohongshu-automation": {
@@ -97,72 +86,69 @@ uvx --from xiaohongshu-automation xhs-server
     }
   }
 }
-```
 
-#### 配置文件位置
+#### Configuration File Location
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
-### 启动MCP服务
-在AI客户端配置完成后，MCP服务会自动启动。您也可以手动测试：
+### Start MCP Service
+After configuring the AI client, the MCP service will start automatically. You can also test it manually:
 
-```bash
+bash
 uvx --from xiaohongshu-automation xhs-mcp
-```
 
-## ✅ 验证安装
+## ✅ Verify Installation
 
-### 检查服务状态
-1. 访问 `http://localhost:8001/docs` 查看API文档
-2. 在AI客户端中尝试调用小红书相关功能
+### Check Service Status
+1. Visit `http://localhost:8001/docs` to view the API documentation
+2. Try calling Xiaohongshu-related functions in the AI client
 
-### 常见问题
-- **ChromeDriver错误**: 确保驱动版本与浏览器版本匹配
-- **Python错误**: 确保Python已正确安装并添加到PATH
-- **网络错误**: 检查网络连接，确保可以访问PyPI
+### Common Issues
+- **ChromeDriver Error**: Ensure the driver version matches the browser version
+- **Python Error**: Ensure Python is correctly installed and added to the PATH
+- **Network Error**: Check your network connection and ensure access to PyPI
 
-## 🎉 开始使用
+## 🎉 Get Started
 
-配置完成后，您可以在AI客户端中使用以下功能：
-- 发布内容到小红书
-- 搜索和分析笔记
-- 获取和回复评论
-- 系统监控和诊断
+After configuration, you can use the following features in the AI client:
+- Post content to Xiaohongshu
+- Search and analyze notes
+- Retrieve and reply to comments
+- System monitoring and diagnostics
 
 ---
 
-**技术支持**: 如遇问题，请联系微信号：vasst888
-高级版本支持(已更新到pypi，可直接使用！！！）：
+**Technical Support**: If you encounter any issues, please contact WeChat ID: vasst888
+Advanced version support (updated to PyPI, ready for use!!!):
 
-1. 多账号（可管理多个账号，单独隔离，可设置ip隔离）
-2. 自动评论笔记引流（支持@人）
-3. 可添加预发布，AI自动生成笔记到预发布界面，人工审核后直接发布。
+1. Multiple accounts (manage multiple accounts, isolated individually, with IP isolation options)
+2. Automatic note commenting for traffic generation (supports @mentions)
+3. Pre-publishing feature, where AI-generated notes can be added to the pre-publish interface, reviewed manually, and then published directly.
 
-2025.8.21 亲测可用
+Tested and confirmed working on 2025.8.21
 
-演示视频：
-96 Vastt.发布了一篇小红书笔记，快来看吧！ 😆 6miBi42Dm1f 😆 http://xhslink.com/m/2IS3575CL6b 复制本条信息，打开【小红书】App查看精彩内容！
+Demo Video:
+96 Vastt. posted a Xiaohongshu note, come and check it out! 😆 6miBi42Dm1f 😆 http://xhslink.com/m/2IS3575CL6b Copy this message and open the 【Xiaohongshu】App to view the exciting content!
 
+This MCP server is for research purposes only and is prohibited from being used for commercial purposes.
 
-此 MCP 服务器仅限研究用途，禁止用于商业目的。
+**Official site: ** [https://pypi.org/project/xiaohongshu-automation/](https://pypi.org/project/xiaohongshu-automation/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://pypi.org/project/xiaohongshu-automation/](https://pypi.org/project/xiaohongshu-automation/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `browser`, `media`
+- Tags: `browser automation`, `entertainment and media`, `小红书`, `chinese`
 
-- 分类：`browser`, `media`
-- 标签：`browser automation`, `entertainment and media`, `小红书`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx --from xiaohongshu-automation`
+- Args: `xhs-mcp`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx --from xiaohongshu-automation`
-- 参数：`xhs-mcp`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/alobak-automation-xhs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alobak-automation-xhs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

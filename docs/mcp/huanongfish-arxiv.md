@@ -1,11 +1,11 @@
 ---
-title: "arXiv-MCP工具"
-description: "通过简单的消息控制协议接口，使人工智能助手能够搜索和访问arXiv研究论文，从而实现论文的搜索、下载、列出和阅读功能。"
+title: "arxiv-mcp"
+description: "Enables AI assistants to search and access arXiv research papers through a simple Message Control Protocol interface, allowing for paper search, download, listing, and reading capabilities."
 ---
 
-# arXiv-MCP工具
+# arxiv-mcp
 
-通过简单的消息控制协议接口，使人工智能助手能够搜索和访问arXiv研究论文，从而实现论文的搜索、下载、列出和阅读功能。
+Enables AI assistants to search and access arXiv research papers through a simple Message Control Protocol interface, allowing for paper search, download, listing, and reading capabilities.
 
 [![Twitter Follow](/mcp-assets/3e82fabdd3d7f3c8bffecf68b940346e.svg)](https://twitter.com/JoeBlazick)
 [Smithery](https://smithery.ai/server/arxiv-mcp-server)
@@ -14,42 +14,42 @@ description: "通过简单的消息控制协议接口，使人工智能助手能
 [![PyPI Downloads](/mcp-assets/b34bb44d64ff71c74ae1877588884af5.svg)](https://pypi.org/project/arxiv-mcp-server/)
 [![PyPI Version](/mcp-assets/d8e739c53aee35cbca3756a05279530b.svg)](https://pypi.org/project/arxiv-mcp-server/)
 
-# ArXiv MCP 服务器
+# ArXiv MCP Server
 
-> 🔍 通过简单的MCP接口，使AI助手能够搜索和访问arXiv论文。
+> 🔍 Enable AI assistants to search and access arXiv papers through a simple MCP interface.
 
-ArXiv MCP 服务器通过消息控制协议（MCP）在AI助手与arXiv研究库之间提供了一个桥梁。它允许AI模型以编程方式搜索论文并访问其内容。
+The ArXiv MCP Server provides a bridge between AI assistants and arXiv's research repository through the Message Control Protocol (MCP). It allows AI models to search for papers and access their content in a programmatic way.
 
   
-🤝 **[贡献](https://github.com/blazickjp/arxiv-mcp-server/blob/main/CONTRIBUTING.md)** • 
-📝 **[报告错误](https://github.com/blazickjp/arxiv-mcp-server/issues)**
+🤝 **[Contribute](https://github.com/blazickjp/arxiv-mcp-server/blob/main/CONTRIBUTING.md)** • 
+📝 **[Report Bug](https://github.com/blazickjp/arxiv-mcp-server/issues)**
 
-## ✨ 核心功能
+## ✨ Core Features
 
-- 🔎 **论文搜索**：使用日期范围和类别筛选器查询arXiv论文
-- 📄 **论文访问**：下载并阅读论文内容
-- 📋 **论文列表**：查看所有已下载的论文
-- 🗃️ **本地存储**：论文保存在本地以加快访问速度
-- 📝 **提示**：一组研究提示
+- 🔎 **Paper Search**: Query arXiv papers with filters for date ranges and categories
+- 📄 **Paper Access**: Download and read paper content
+- 📋 **Paper Listing**: View all downloaded papers
+- 🗃️ **Local Storage**: Papers are saved locally for faster access
+- 📝 **Prompts**: A Set of Research Prompts
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/arxiv-mcp-server)自动为Claude桌面安装ArXiv服务器：
+To install ArXiv Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/arxiv-mcp-server):
 
 ```bash
 npx -y @smithery/cli install arxiv-mcp-server --client claude
 ```
 
-### 手动安装
-使用uv进行安装：
+### Installing Manually
+Install using uv:
 
 ```bash
 uv tool install arxiv-mcp-server
 ```
 
-开发用途：
+For development:
 
 ```bash
 # Clone and set up development environment
@@ -64,9 +64,9 @@ source .venv/bin/activate
 uv pip install -e ".[test]"
 ```
 
-### 🔌 MCP 集成
+### 🔌 MCP Integration
 
-将此配置添加到您的MCP客户端配置文件中：
+Add this configuration to your MCP client config file:
 
 ```json
 {
@@ -84,7 +84,7 @@ uv pip install -e ".[test]"
 }
 ```
 
-开发用途：
+For Development:
 
 ```json
 {
@@ -103,12 +103,12 @@ uv pip install -e ".[test]"
 }
 ```
 
-## 💡 可用工具
+## 💡 Available Tools
 
-服务器提供了四个主要工具：
+The server provides four main tools:
 
-### 1. 论文搜索
-带有可选筛选器的论文搜索：
+### 1. Paper Search
+Search for papers with optional filters:
 
 ```python
 result = await call_tool("search_papers", {
@@ -119,8 +119,8 @@ result = await call_tool("search_papers", {
 })
 ```
 
-### 2. 论文下载
-通过arXiv ID下载论文：
+### 2. Paper Download
+Download a paper by its arXiv ID:
 
 ```python
 result = await call_tool("download_paper", {
@@ -128,15 +128,15 @@ result = await call_tool("download_paper", {
 })
 ```
 
-### 3. 列出论文
-查看所有已下载的论文：
+### 3. List Papers
+View all downloaded papers:
 
 ```python
 result = await call_tool("list_papers", {})
 ```
 
-### 4. 阅读论文
-访问已下载论文的内容：
+### 4. Read Paper
+Access the content of a downloaded paper:
 
 ```python
 result = await call_tool("read_paper", {
@@ -144,46 +144,46 @@ result = await call_tool("read_paper", {
 })
 ```
 
-## ⚙️ 配置
+## ⚙️ Configuration
 
-通过环境变量进行配置：
+Configure through environment variables:
 
-| 变量 | 用途 | 默认值 |
+| Variable | Purpose | Default |
 |----------|---------|---------|
-| `ARXIV_STORAGE_PATH` | 论文存储位置 | ~/.arxiv-mcp-server/papers |
+| `ARXIV_STORAGE_PATH` | Paper storage location | ~/.arxiv-mcp-server/papers |
 
-## 🧪 测试
+## 🧪 Testing
 
-运行测试套件：
+Run the test suite:
 
 ```bash
 python -m pytest
 ```
 
-## 📄 许可证
+## 📄 License
 
-根据MIT许可证发布。详情请参见LICENSE文件。
+Released under the MIT License. See the LICENSE file for details.
 
 ---
 
-由Pear Labs团队用心制作
+Made with ❤️ by the Pear Labs Team
 
-**官方网站：** [https://github.com/huanongfish/arxiv-mcp](https://github.com/huanongfish/arxiv-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/huanongfish/arxiv-mcp](https://github.com/huanongfish/arxiv-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `note taking`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `note taking`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`tool run arxiv-mcp-server --storage-path /path/to/paper/storage`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `tool run arxiv-mcp-server --storage-path /path/to/paper/storage`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/huanongfish-arxiv.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/huanongfish-arxiv.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

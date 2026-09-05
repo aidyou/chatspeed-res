@@ -1,11 +1,11 @@
 ---
-title: "剪映mcp"
-description: "JianYing MCP - 剪映视频制作 MCP 服务器 一个基于 Model Context Protocol (MCP) 的剪映视频制作自动化工具，让 AI 助手能够通过自然语言创建专业的视频内容。 🎯 项目简介 jianying mcp 是一个强大的视频制作自动化工具，通过 MCP 协议让 AI 能够： - 🎬 自动创建剪映草稿项目 - 🎵 智能添加音频、视频、文本素材 - ✨ 应用各种特效、滤镜、动画 - 🎨 自动化视频编辑流程 - 📤 导出为剪映可编辑的项目文件 🚀 核心功能 📋 草稿管理 - rule"
+title: "jianying-mcp"
+description: "JianYing MCP - 剪映视频制作 MCP 服务器 一个基于 Model Context Protocol (MCP) 的剪映视频制作自动化工具，让 AI 助手能够通过自然语言创建专业的视频内容。 🎯 项目简介 jianying mcp是一个强大的视频制作自动化工具，通过mcp协议让AI能够： - 🎬 自动创建剪映草稿项目 - 🎵 智能添加音频、视频、文本素材 - ✨ 应用各种特效、滤镜、…"
 ---
 
-# 剪映mcp
+# jianying-mcp
 
-JianYing MCP - 剪映视频制作 MCP 服务器 一个基于 Model Context Protocol (MCP) 的剪映视频制作自动化工具，让 AI 助手能够通过自然语言创建专业的视频内容。 🎯 项目简介 jianying mcp 是一个强大的视频制作自动化工具，通过 MCP 协议让 AI 能够： - 🎬 自动创建剪映草稿项目 - 🎵 智能添加音频、视频、文本素材 - ✨ 应用各种特效、滤镜、动画 - 🎨 自动化视频编辑流程 - 📤 导出为剪映可编辑的项目文件 🚀 核心功能 📋 草稿管理 - rule
+JianYing MCP - 剪映视频制作 MCP 服务器 一个基于 Model Context Protocol (MCP) 的剪映视频制作自动化工具，让 AI 助手能够通过自然语言创建专业的视频内容。 🎯 项目简介 jianying mcp是一个强大的视频制作自动化工具，通过mcp协议让AI能够： - 🎬 自动创建剪映草稿项目 - 🎵 智能添加音频、视频、文本素材 - ✨ 应用各种特效、滤镜、…
 
 # JianYing MCP - 剪映视频制作 MCP 服务器
 
@@ -132,22 +132,22 @@ uv run mcp dev jianyingdraft/server.py
 
 ⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！
 
-**官方网站：** [https://github.com/hey-jian-wei/jianying-mcp](https://github.com/hey-jian-wei/jianying-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hey-jian-wei/jianying-mcp](https://github.com/hey-jian-wei/jianying-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `剪辑`
+- Categories: `media`
+- Tags: `entertainment and media`, `剪辑`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /your-path/jianying-mcp/jianyingdraft run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /your-path/jianying-mcp/jianyingdraft run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/heyboy-jianying.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/heyboy-jianying.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,85 +1,85 @@
 ---
-title: "Todoist-MCP 服务器（待办事项自然语言管理工具）"
-description: "一个集成了Claude与Todoist的MCP服务器，支持使用自然语言进行任务管理，包括创建、更新、完成和删除任务。"
+title: "todoist-mcp-server"
+description: "An MCP server that integrates Claude with Todoist, enabling natural language task management including creating, updating, completing, and deleting tasks."
 ---
 
-# Todoist-MCP 服务器（待办事项自然语言管理工具）
+# todoist-mcp-server
 
-一个集成了Claude与Todoist的MCP服务器，支持使用自然语言进行任务管理，包括创建、更新、完成和删除任务。
+An MCP server that integrates Claude with Todoist, enabling natural language task management including creating, updating, completing, and deleting tasks.
 
-# Todoist MCP 服务器
+# Todoist MCP Server
 [Smithery](https://smithery.ai/server/@abhiz123/todoist-mcp-server)
 
-这是一个实现了 MCP（Model Context Protocol）协议的服务器，它将 Claude 与 Todoist 集成在一起，从而实现自然语言任务管理。该服务器允许 Claude 使用日常语言与您的 Todoist 任务进行交互。
+An MCP (Model Context Protocol) server implementation that integrates Claude with Todoist, enabling natural language task management. This server allows Claude to interact with your Todoist tasks using everyday language.
 
   
 
-## 功能
+## Features
 
-* **自然语言任务管理**：使用日常语言创建、更新、完成和删除任务
-* **智能任务搜索**：通过部分名称匹配查找任务
-* **灵活的过滤**：按截止日期、优先级和其他属性筛选任务
-* **丰富的任务详情**：支持描述、截止日期和优先级级别
-* **直观的错误处理**：清晰的反馈以提供更好的用户体验
+* **Natural Language Task Management**: Create, update, complete, and delete tasks using everyday language
+* **Smart Task Search**: Find tasks using partial name matches
+* **Flexible Filtering**: Filter tasks by due date, priority, and other attributes
+* **Rich Task Details**: Support for descriptions, due dates, and priority levels
+* **Intuitive Error Handling**: Clear feedback for better user experience
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@abhiz123/todoist-mcp-server) 自动为 Claude 桌面版安装 Todoist MCP 服务器：
+To install Todoist MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@abhiz123/todoist-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @abhiz123/todoist-mcp-server --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```bash
 npm install -g @abhiz123/todoist-mcp-server
 ```
 
-## 工具
+## Tools
 
 ### todoist_create_task
-创建具有各种属性的新任务：
-* 必填项：内容（任务标题）
-* 可选项：描述、截止日期、优先级（1-4）
-* 示例：“创建名为'Team Meeting'的任务，描述为'Weekly sync'，截止日期为明天”
+Create new tasks with various attributes:
+* Required: content (task title)
+* Optional: description, due date, priority level (1-4)
+* Example: "Create task 'Team Meeting' with description 'Weekly sync' due tomorrow"
 
 ### todoist_get_tasks
-检索并筛选任务：
-* 按截止日期、优先级或项目筛选
-* 自然语言日期筛选
-* 可选结果限制
-* 示例：“显示本周到期的高优先级任务”
+Retrieve and filter tasks:
+* Filter by due date, priority, or project
+* Natural language date filtering
+* Optional result limit
+* Example: "Show high priority tasks due this week"
 
 ### todoist_update_task
-使用自然语言搜索更新现有任务：
-* 通过部分名称匹配找到任务
-* 更新任何任务属性（内容、描述、截止日期、优先级）
-* 示例：“将会议任务的截止日期改为下周一”
+Update existing tasks using natural language search:
+* Find tasks by partial name match
+* Update any task attribute (content, description, due date, priority)
+* Example: "Update meeting task to be due next Monday"
 
 ### todoist_complete_task
-使用自然语言搜索标记任务为已完成：
-* 通过部分名称匹配找到任务
-* 确认完成状态
-* 示例：“将文档任务标记为已完成”
+Mark tasks as complete using natural language search:
+* Find tasks by partial name match
+* Confirm completion status
+* Example: "Mark the documentation task as complete"
 
 ### todoist_delete_task
-使用自然语言搜索移除任务：
-* 通过名称找到并删除任务
-* 确认消息
-* 示例：“删除 PR 审核任务”
+Remove tasks using natural language search:
+* Find and delete tasks by name
+* Confirmation messages
+* Example: "Delete the PR review task"
 
-## 设置
+## Setup
 
-### 获取 Todoist API 令牌
-1. 登录您的 Todoist 账户
-2. 导航到设置 → 集成
-3. 在“开发者”下找到您的 API 令牌
+### Getting a Todoist API Token
+1. Log in to your Todoist account
+2. Navigate to Settings → Integrations
+3. Find your API token under "Developer"
 
-### 与 Claude 桌面版一起使用
+### Usage with Claude Desktop
 
-添加到您的 `claude_desktop_config.json` 文件中：
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -95,16 +95,16 @@ npm install -g @abhiz123/todoist-mcp-server
 }
 ```
 
-## 示例用法
+## Example Usage
 
-### 创建任务
+### Creating Tasks
 ```
 "Create task 'Team Meeting'"
 "Add task 'Review PR' due tomorrow at 2pm"
 "Create high priority task 'Fix bug' with description 'Critical performance issue'"
 ```
 
-### 获取任务
+### Getting Tasks
 ```
 "Show all my tasks"
 "List tasks due today"
@@ -112,28 +112,28 @@ npm install -g @abhiz123/todoist-mcp-server
 "Show tasks due this week"
 ```
 
-### 更新任务
+### Updating Tasks
 ```
 "Update documentation task to be due next week"
 "Change priority of bug fix task to urgent"
 "Add description to team meeting task"
 ```
 
-### 完成任务
+### Completing Tasks
 ```
 "Mark the PR review task as complete"
 "Complete the documentation task"
 ```
 
-### 删除任务
+### Deleting Tasks
 ```
 "Delete the PR review task"
 "Remove meeting prep task"
 ```
 
-## 开发
+## Development
 
-### 从源代码构建
+### Building from source
 ```bash
 # Clone the repository
 git clone https://github.com/abhiz123/todoist-mcp-server.git
@@ -148,31 +148,31 @@ npm install
 npm run build
 ```
 
-## 贡献
-欢迎贡献！随时提交 Pull Request。
+## Contributing
+Contributions are welcome! Feel free to submit a Pull Request.
 
-## 许可证
-本项目根据 MIT 许可证发布 - 详见 [LICENSE](https://github.com/abhiz123/todoist-mcp-server/blob/HEAD/LICENSE) 文件。
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/abhiz123/todoist-mcp-server/blob/HEAD/LICENSE) file for details.
 
-## 问题和支持
-如果您遇到任何问题或需要支持，请在 [GitHub 仓库](https://github.com/abhiz123/todoist-mcp-server/issues)上提交一个 issue。
+## Issues and Support
+If you encounter any issues or need support, please file an issue on the [GitHub repository](https://github.com/abhiz123/todoist-mcp-server/issues).
 
-**官方网站：** [https://github.com/abhiz123/todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/abhiz123/todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`note taking`, `calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `note taking`, `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @abhiz123/todoist-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @abhiz123/todoist-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/abhiz123-todoist.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/abhiz123-todoist.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

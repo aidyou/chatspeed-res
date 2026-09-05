@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "whattimeisit-mcp",
-    "zh-Hans": "MCP时钟",
-    "zh-Hant": "MCP时钟"
+    "zh-Hans": "MCP时钟"
   },
   "description": {
     "en": "A lightweight mcp server that tells you exactly what time is it based on your IP.",
-    "zh-Hans": "一个轻量级的MCP服务器，可以根据你的IP地址告诉你确切的时间。",
-    "zh-Hant": "一个轻量级的MCP服务器，可以根据你的IP地址告诉你确切的时间。"
+    "zh-Hans": "一个轻量级的MCP服务器，可以根据你的IP地址告诉你确切的时间。"
   },
   "detail": {
     "en": "# WhatTimeIsIt MCP Server\n\nA lightweight mcp server that tells you exactly what time is it, powered by [World Time](http://worldtimeapi.org/).\n\n![GitHub](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) \n![GitHub last commit](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)\n\n## Installation\n\n1. **Clone the Repository**\n```bash\n   git clone https://github.com/kukapay/whattimeisit-mcp.git\n```\n\n2. **Client Configuration**\n```json\n    {\n      \"mcpServers\": {\n        \"whattimeisit\": {\n          \"command\": \"uv\",\n          \"args\": [\"--directory\", \"path/to/whattimeisit-mcp\", \"run\", \"main.py\"]\n        }\n      }\n    }\n```\n   \n## Usage\n\n### MCP Tool\nThe server provides a single tool:\n- **Tool Name**: `what_time_is_it`\n- **Description**: Returns the current time string based on the your current IP.\n- **Output**: A string in ISO 8601 format (e.g., `\"2025-03-17T03:17:00+11:00\"`).\n\n## License\nThis project is licensed under the MIT License. See the [LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE) file for details.",
-    "zh-Hans": "# WhatTimeIsIt MCP 服务器\n\n一个轻量级的MCP服务器，能够准确告诉你当前时间，由[World Time](http://worldtimeapi.org/)提供支持。\n\n![GitHub](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) \n![GitHub 最后一次提交](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)\n\n## 安装\n\n1. **克隆仓库**\n```bash\n   git clone https://github.com/kukapay/whattimeisit-mcp.git\n```\n\n2. **客户端配置**\n```json\n    {\n      \"mcpServers\": {\n        \"whattimeisit\": {\n          \"command\": \"uv\",\n          \"args\": [\"--directory\", \"path/to/whattimeisit-mcp\", \"run\", \"main.py\"]\n        }\n      }\n    }\n```\n\n## 使用方法\n\n### MCP 工具\n该服务器提供了一个工具：\n- **工具名称**: `what_time_is_it`\n- **描述**: 根据您的当前IP返回当前时间字符串。\n- **输出**: 以ISO 8601格式的字符串（例如，`\"2025-03-17T03:17:00+11:00\"`）。\n\n## 许可证\n本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE)文件。",
-    "zh-Hant": "# WhatTimeIsIt MCP 服务器\n\n一个轻量级的MCP服务器，能够准确告诉你当前时间，由[World Time](http://worldtimeapi.org/)提供支持。\n\n![GitHub](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) \n![GitHub 最后一次提交](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)\n\n## 安装\n\n1. **克隆仓库**\n```bash\n   git clone https://github.com/kukapay/whattimeisit-mcp.git\n```\n\n2. **客户端配置**\n```json\n    {\n      \"mcpServers\": {\n        \"whattimeisit\": {\n          \"command\": \"uv\",\n          \"args\": [\"--directory\", \"path/to/whattimeisit-mcp\", \"run\", \"main.py\"]\n        }\n      }\n    }\n```\n\n## 使用方法\n\n### MCP 工具\n该服务器提供了一个工具：\n- **工具名称**: `what_time_is_it`\n- **描述**: 根据您的当前IP返回当前时间字符串。\n- **输出**: 以ISO 8601格式的字符串（例如，`\"2025-03-17T03:17:00+11:00\"`）。\n\n## 许可证\n本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE)文件。"
+    "zh-Hans": "# WhatTimeIsIt MCP 服务器\n\n一个轻量级的MCP服务器，能够准确告诉你当前时间，由[World Time](http://worldtimeapi.org/)提供支持。\n\n![GitHub](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) \n![GitHub 最后一次提交](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)\n\n## 安装\n\n1. **克隆仓库**\n```bash\n   git clone https://github.com/kukapay/whattimeisit-mcp.git\n```\n\n2. **客户端配置**\n```json\n    {\n      \"mcpServers\": {\n        \"whattimeisit\": {\n          \"command\": \"uv\",\n          \"args\": [\"--directory\", \"path/to/whattimeisit-mcp\", \"run\", \"main.py\"]\n        }\n      }\n    }\n```\n\n## 使用方法\n\n### MCP 工具\n该服务器提供了一个工具：\n- **工具名称**: `what_time_is_it`\n- **描述**: 根据您的当前IP返回当前时间字符串。\n- **输出**: 以ISO 8601格式的字符串（例如，`\"2025-03-17T03:17:00+11:00\"`）。\n\n## 许可证\n本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE)文件。"
   },
   "categories": [
     "data"

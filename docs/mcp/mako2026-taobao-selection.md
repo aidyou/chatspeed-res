@@ -1,114 +1,114 @@
 ---
-title: "淘宝精选"
-description: "🛒 淘宝精选 搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。 ✨ 核心特性 ▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤 ▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件 ▸ 到手价展示 — 返回最终到手价，有券自动折算 ▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买 ▸ 配置即接入 — 无需申请Key，Stdio配置即可使用 🛠 工具 searchstandard — 标品搜索 搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天"
+title: "taobao-selection"
+description: "🛒 Taobao Selection MCP service for searching and recommending quality products on Taobao. Input your shopping needs, and get a selection of high-quality goods. Users can click on the short link to mak…"
 ---
 
-# 淘宝精选
+# taobao-selection
 
-🛒 淘宝精选 搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。 ✨ 核心特性 ▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤 ▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件 ▸ 到手价展示 — 返回最终到手价，有券自动折算 ▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买 ▸ 配置即接入 — 无需申请Key，Stdio配置即可使用 🛠 工具 searchstandard — 标品搜索 搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天
+🛒 Taobao Selection MCP service for searching and recommending quality products on Taobao. Input your shopping needs, and get a selection of high-quality goods. Users can click on the short link to mak…
 
-🛒 淘宝精选
+🛒 Taobao Selection
 
-搜索与推荐淘宝好货的MCP服务。输入购物需求，返回精选优质商品，用户点击短链即可购买。
+MCP service for searching and recommending quality products on Taobao. Input your shopping needs, and get a selection of high-quality goods. Users can click on the short link to make a purchase.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 精选好货 — 只推荐靠谱商品，低质量商品自动过滤
+▸ Curated Quality Goods — Only reliable products are recommended, with low-quality items automatically filtered out
 
-▸ 精准搜索 — 搜什么出什么，不会搜手机出来一堆配件
+▸ Precise Search — Get exactly what you search for, no more results showing accessories when you search for a phone
 
-▸ 到手价展示 — 返回最终到手价，有券自动折算
+▸ Final Price Display — Shows the final price after discounts, with coupons automatically applied
 
-▸ 可点击短链 — 返回推广短链，微信/浏览器均可打开，直达淘宝购买
+▸ Clickable Short Links — Provides promotional short links that can be opened in WeChat or any browser, leading directly to the purchase page on Taobao
 
-▸ 配置即接入 — 无需申请Key，Stdio配置即可使用
+▸ Configuration-Ready Access — No need to apply for a Key; just configure in Stdio to start using
 
-🛠 工具
+🛠 Tools
 
-search_standard — 标品搜索
+**search_standard — Standard Product Search**
 
-搜索3C数码、家电等品牌型号明确的商品，按到手价排序，优先天猫。
+Search for 3C electronics, home appliances, and other clearly branded and model-specified products, sorted by final price, prioritizing Tmall.
 
-参数：
+Parameters:
 
-▸ keyword（必填）— 搜索关键词，如"iPhone 16 Pro Max 256G"、"戴森吹风机HD15"
+▸ **keyword (required)** — Search keyword, such as "iPhone 16 Pro Max 256G", "Dyson Hair Dryer HD15"
 
-▸ price_min（可选）— 最低价格
+▸ **price_min (optional)** — Minimum price
 
-▸ price_max（可选）— 最高价格
+▸ **price_max (optional)** — Maximum price
 
-▸ is_tmall（可选）— 仅天猫，默认true
+▸ **is_tmall (optional)** — Tmall only, default is true
 
-▸ page（可选）— 页码，默认1
+▸ **page (optional)** — Page number, default is 1
 
-search_lifestyle — 非标品搜索
+**search_lifestyle — Non-Standard Product Search**
 
-搜索服饰、美妆、家居等看销量和口碑的商品，按销量排序。
+Search for clothing, beauty, home furnishings, and other products that rely on sales volume and reputation, sorted by sales volume.
 
-参数：
+Parameters:
 
-▸ keyword（必填）— 搜索关键词，如"夏季连衣裙"、"男士运动鞋"
+▸ **keyword (required)** — Search keyword, such as "summer dress", "men's sports shoes"
 
-▸ category（可选）— 一级类目，如"服饰鞋包"
+▸ **category (optional)** — Primary category, such as "clothing, shoes, and bags"
 
-▸ price_min（可选）— 最低价格
+▸ **price_min (optional)** — Minimum price
 
-▸ price_max（可选）— 最高价格
+▸ **price_max (optional)** — Maximum price
 
-▸ is_tmall（可选）— 仅天猫，默认不限
+▸ **is_tmall (optional)** — Tmall only, default is not limited
 
-▸ page（可选）— 页码，默认1
+▸ **page (optional)** — Page number, default is 1
 
-shop_search — 店铺搜索
+**shop_search — Shop Search**
 
-搜索品牌官方旗舰店或知名店铺。
+Search for official brand flagship stores or well-known shops.
 
-参数：
+Parameters:
 
-▸ keyword（必填）— 店铺名关键词，如"优衣库官方旗舰店"
+▸ **keyword (required)** — Shop name keyword, such as "Uniqlo Official Flagship Store"
 
-▸ page（可选）— 页码，默认1
+▸ **page (optional)** — Page number, default is 1
 
-📝 使用示例
+📝 Usage Examples
 
-▸ "帮我推荐一款iPhone 16" → search_standard
+▸ "Recommend an iPhone 16 for me" → `search_standard`
 
-▸ "扫地机器人哪款好" → search_standard
+▸ "Which robot vacuum is good" → `search_standard`
 
-▸ "戴森吹风机HD15多少钱" → search_standard
+▸ "How much is the Dyson Hair Dryer HD15" → `search_standard`
 
-▸ "夏季连衣裙推荐" → search_lifestyle
+▸ "Summer dress recommendation" → `search_lifestyle`
 
-▸ "男士运动鞋200以内" → search_lifestyle，price_max=200
+▸ "Men's sports shoes under 200" → `search_lifestyle`, `price_max=200`
 
-▸ "找一下优衣库旗舰店" → shop_search
+▸ "Find the Uniqlo flagship store" → `shop_search`
 
-适用场景
+Applicable Scenarios
 
-▸ AI助手/智能体为用户推荐淘宝好货
+▸ AI assistants/smart agents recommending quality products from Taobao to users
 
-▸ 购物比价Agent搜索并比较价格
+▸ Shopping comparison agents searching and comparing prices
 
-▸ 旅行/生活类Agent集成商品推荐能力
+▸ Travel/lifestyle agents integrating product recommendation capabilities
 
-▸ IDE中快速查找商品信息
+▸ Quickly finding product information in an IDE
 
-**官方网站：** [https://pypi.org/project/taobao-selection-mcp/](https://pypi.org/project/taobao-selection-mcp/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pypi.org/project/taobao-selection-mcp/](https://pypi.org/project/taobao-selection-mcp/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `development`
-- 标签：`search`, `developer tools`, `other`, `淘宝精选`, `淘宝搜索`, `淘宝推荐`, `淘宝购物`, `好货推荐`, `智能购物`, `淘宝mcp`
+- Categories: `search`, `development`
+- Tags: `search`, `developer tools`, `other`, `淘宝精选`, `淘宝搜索`, `淘宝推荐`, `淘宝购物`, `好货推荐`, `智能购物`, `淘宝mcp`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`taobao-selection-mcp==0.2.3`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `taobao-selection-mcp==0.2.3`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mako2026-taobao-selection.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-taobao-selection.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

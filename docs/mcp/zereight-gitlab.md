@@ -1,11 +1,11 @@
 ---
 title: "GitLab MCP"
-description: "GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage projec"
+description: "GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab…"
 ---
 
 # GitLab MCP
 
-GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab MCP — manage projec
+GitLab MCP Server English 한국어 简体中文 📖 Documentation → Setup guides, environment variables, and the full tool reference live on the hosted docs site. @zereight/mcp-gitlab Agent-workflow-optimized GitLab…
 
 # GitLab MCP Server
 
@@ -395,22 +395,22 @@ The reference document also covers:
 
 For callback proxy mode details, see 
 
-**官方网站：** [https://github.com/zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `gitlab`, `version control`, `ci/cd`
+- Categories: `development`
+- Tags: `developer tools`, `gitlab`, `version control`, `ci/cd`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @zereight/mcp-gitlab --token YOUR_GITLAB_TOKEN --url https://gitlab.com`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @zereight/mcp-gitlab --token YOUR_GITLAB_TOKEN --url https://gitlab.com`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zereight-gitlab.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zereight-gitlab.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

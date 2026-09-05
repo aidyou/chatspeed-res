@@ -1,11 +1,11 @@
 ---
-title: "微信公众号创作助手（MCP&Agent挑战赛）"
-description: "--- name: 微信公众号内容创作助手 version: 1.0 description: 基于多模态AI的微信公众号内容自动化生成与发布辅助工具 author: AI Assistant --- 微信公众号内容自动化助手 一个基于Python和MCP（Model Control Plane）服务的微信公众号内容自动化生成工具，实现从素材生成到草稿创建的完整流程自动化。 使用说明视频（参照） B站：https://www.bilibili.com/video/BV1iEhzzaEKr/ 抖音：https://w"
+title: "Wechat_Official_Account"
+description: "--- name: 微信公众号内容创作助手 version: 1.0 description: 基于多模态AI的微信公众号内容自动化生成与发布辅助工具 author: AI Assistant --- 微信公众号内容自动化助手 一个基于Python和MCP（Model Control Plane）服务的微信公众号内容自动化生成工具，实现从素材生成到草稿创建的完整流程自动化。 使用说明视频（参照）…"
 ---
 
-# 微信公众号创作助手（MCP&Agent挑战赛）
+# Wechat_Official_Account
 
---- name: 微信公众号内容创作助手 version: 1.0 description: 基于多模态AI的微信公众号内容自动化生成与发布辅助工具 author: AI Assistant --- 微信公众号内容自动化助手 一个基于Python和MCP（Model Control Plane）服务的微信公众号内容自动化生成工具，实现从素材生成到草稿创建的完整流程自动化。 使用说明视频（参照） B站：https://www.bilibili.com/video/BV1iEhzzaEKr/ 抖音：https://w
+--- name: 微信公众号内容创作助手 version: 1.0 description: 基于多模态AI的微信公众号内容自动化生成与发布辅助工具 author: AI Assistant --- 微信公众号内容自动化助手 一个基于Python和MCP（Model Control Plane）服务的微信公众号内容自动化生成工具，实现从素材生成到草稿创建的完整流程自动化。 使用说明视频（参照）…
 
 ---
 name: 微信公众号内容创作助手
@@ -149,22 +149,22 @@ def add_wechat_draft(access_token, title, content, thumb_media_id):
 
 Apache 2.0
 
-**官方网站：** [https://modelscope.cn/studios/EddieZhou/Wechat_Official_Account](https://modelscope.cn/studios/EddieZhou/Wechat_Official_Account)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://modelscope.cn/studios/EddieZhou/Wechat_Official_Account](https://modelscope.cn/studios/EddieZhou/Wechat_Official_Account)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`
+- Categories: `communication`
+- Tags: `communication`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://eddiezhou-wechat-official-account.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://eddiezhou-wechat-official-account.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/eddiezhou-wechat-official-account.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/eddiezhou-wechat-official-account.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

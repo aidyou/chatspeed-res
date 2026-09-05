@@ -1,11 +1,11 @@
 ---
-title: "PromptX · AI应用原生专业能力增强系统"
-description: "PromptX 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。"
+title: "PromptX"
+description: "PromptX · AI应用原生专业能力增强系统 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。 <!-- Badges --"
 ---
 
-# PromptX · AI应用原生专业能力增强系统
+# PromptX
 
-PromptX 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。
+PromptX · AI应用原生专业能力增强系统 通过MCP协议为AI应用提供专业角色、记忆管理和知识体系，一行命令，让任何 AI 客户端秒变专业选手。 <!-- Badges --
 
 alt="PromptX Logo" width="120" height="120"/>
   
@@ -280,22 +280,22 @@ graph TD
 
 [MIT License](https://github.com/Deepractice/PromptX/blob/HEAD/LICENSE) - 让AI专业能力触手可及
 
-**官方网站：** [https://github.com/Deepractice/PromptX](https://github.com/Deepractice/PromptX)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Deepractice/PromptX](https://github.com/Deepractice/PromptX)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `communication`
-- 标签：`developer tools`, `knowledge and memory`, `communication`, `chinese`
+- Categories: `memory`, `communication`
+- Tags: `developer tools`, `knowledge and memory`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y -f --registry https://registry.npmjs.org dpml-prompt@beta mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y -f --registry https://registry.npmjs.org dpml-prompt@beta mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/deepractice-ai-promptx.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/deepractice-ai-promptx.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

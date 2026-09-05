@@ -1,42 +1,42 @@
 ---
-title: "ClickUp 任务管理 AI 推荐"
-description: "启用与 ClickUp 任务的 AI 集成，支持资源管理、任务操作、工作区组织以及通过标准化协议进行的 AI 驱动的任务推荐。"
+title: "clickup-mcp-server"
+description: "Enables AI integrations with ClickUp tasks, supporting resource management, task operations, workspace organization, and AI-powered task recommendations through a standardized protocol."
 ---
 
-# ClickUp 任务管理 AI 推荐
+# clickup-mcp-server
 
-启用与 ClickUp 任务的 AI 集成，支持资源管理、任务操作、工作区组织以及通过标准化协议进行的 AI 驱动的任务推荐。
+Enables AI integrations with ClickUp tasks, supporting resource management, task operations, workspace organization, and AI-powered task recommendations through a standardized protocol.
 
 alt="ClickUp MCP Server" width="100%">
 
 [![GitHub Stars](/mcp-assets/c8ab93d8df15924ea3f3648c84d5a38e.svg)](https://github.com/TaazKareem/clickup-mcp-server/stargazers)
 [![Maintenance](/mcp-assets/c7778e30c5b75ad6bdf042640f8a94d9.svg)](https://github.com/TaazKareem/clickup-mcp-server/graphs/commit-activity)
 
-一个用于将 ClickUp 任务与 AI 应用程序集成的 Model Context Protocol (MCP) 服务器。此服务器允许 AI 代理通过标准化协议与 ClickUp 任务、空间、列表和文件夹进行交互。
+A Model Context Protocol (MCP) server for integrating ClickUp tasks with AI applications. This server allows AI agents to interact with ClickUp tasks, spaces, lists, and folders through a standardized protocol.
 
-> 🚧 **状态更新：** 推出 v0.6.8 版本将增加全局任务查找功能（智能消歧）、支持使用自然语言表达的任务开始日期、完整的标签支持（包括自然语言标签颜色命令）、子任务支持、自定义 ID 支持以及日志修复
+> 🚧 **Status Update:** Rolling out v0.6.8 will add Global Task Lookup with smart disambiguation, Start Date Support for tasks with natural language expressions, Complete Tag Support including natural language tag color commands, Subtasks Support, Custom ID Support, and Logging Fixes
 
-## 设置
+## Setup
 
-1. 获取您的凭据：
-   - 从 [ClickUp 设置](https://app.clickup.com/settings/apps) 中获取 ClickUp API 密钥
-   - 从您的 ClickUp 工作区 URL 中获取团队 ID
-2. 选择托管安装（发送 Webhook）或 NPX 安装（下载到本地路径并安装依赖项）
-3. 使用自然语言管理您的工作区！
+1. Get your credentials:
+   - ClickUp API key from [ClickUp Settings](https://app.clickup.com/settings/apps)
+   - Team ID from your ClickUp workspace URL
+2. Choose either hosted installation (sends webhooks) or NPX installation (downloads to local path and installs dependencies)
+3. Use natural language to manage your workspace!
 
-## Smithery 安装（快速启动）
+## Smithery Installation (Quick Start)
 
 [Smithery](https://smithery.ai/server/@TaazKareem/clickup-mcp-server)
 
-该服务器托管在 [Smithery](https://smithery.ai/server/@taazkareem/clickup-mcp-server) 上。在那里，您可以预览可用工具或复制要在特定客户端应用程序上运行的命令。
+The server is hosted on [Smithery](https://smithery.ai/server/@taazkareem/clickup-mcp-server). There, you can preview the available tools or copy the commands to run on your specific client app. 
 
-## NPX 安装
+## NPX Installation
 
 [![NPM Version](/mcp-assets/63a09ba3381401ee3ab91cb41b16156b.svg)](https://www.npmjs.com/package/@taazkareem/clickup-mcp-server)
 [![Dependency Status](/mcp-assets/80a22720777445f6d9736d2023c537c2.svg)](https://github.com/TaazKareem/clickup-mcp-server/blob/main/package.json)
 [![NPM Downloads](/mcp-assets/b5f06d7741a799aa895607d5a3ccc7bd.svg)](https://npmcharts.com/compare/@taazkareem/clickup-mcp-server?minimal=true)
 
-将此条目添加到您的客户端 MCP 设置 JSON 文件中：
+Add this entry to your client's MCP settings JSON file:
 
 ```json
 {
@@ -56,40 +56,39 @@ alt="ClickUp MCP Server" width="100%">
 }
 ```
 
-或者使用此 npx 命令：
+Or use this npx command:
 
 `npx -y @taazkareem/clickup-mcp-server@latest --env CLICKUP_API_KEY=your-api-key --env CLICKUP_TEAM_ID=your-team-id`
 
-## 功能
+## Features
 
-| 📝 任务管理 | 🏷️ 标签管理 |
+| 📝 Task Management | 🏷️ Tag Management |
 |----------------------------|----------------------------|
-| • 创建、更新和删除任务
-• 在任何地方移动和复制任务
-• 支持单个和批量操作
-• 使用自然语言设置开始/截止日期
-• 创建和管理子任务
-• 添加评论和附件 | • 创建、更新和删除空间标签
-• 向任务添加或移除标签
-• 使用自然语言颜色命令
-• 自动对比前景色
-• 查看所有空间标签
-• 基于标签的任务组织跨越工作区 |
+| • Create, update, and delete tasks
+• Move and duplicate tasks anywhere
+• Support for single and bulk operations
+• Set start/due dates with natural language
+• Create and manage subtasks
+• Add comments and attachments | • Create, update, and delete space tags
+• Add and remove tags from tasks
+• Use natural language color commands
+• Automatic contrasting foreground colors
+• View all space tags
+• Tag-based task organization across workspace |
+| 🌳 **Workspace Organization** | ⚡ **Integration Features** |
+| • Navigate spaces, folders, and lists
+• Create and manage folders
+• Organize lists within spaces
+• Create lists in folders
+• View workspace hierarchy
+• Efficient path navigation | • Global name or ID-based lookups
+• Case-insensitive matching
+• Markdown formatting support
+• Built-in rate limiting
+• Error handling and validation
+• Comprehensive API coverage |
 
-| 🌳 **工作区组织** | ⚡ **集成特性** |
-| • 导航空间、文件夹和列表
-• 创建和管理文件夹
-• 在空间内组织列表
-• 在文件夹中创建列表
-• 查看工作区层次结构
-• 高效路径导航 | • 全局名称或基于ID的查找
-• 不区分大小写的匹配
-• Markdown格式支持
-• 内置速率限制
-• 错误处理和验证
-• 全面的API覆盖 |
-
-## 可用工具
+## Available Tools
 
 | Tool | Description | Required Parameters |
 |------|-------------|-------------------|
@@ -125,73 +124,77 @@ alt="ClickUp MCP Server" width="100%">
 | add_tag_to_task | Add tag to task | `tagName`, `taskId`/(`taskName`+`listName`) |
 | remove_tag_from_task | Remove tag from task | `tagName`, `taskId`/(`taskName`+`listName`) |
 
-请参阅完整文档以获取可选参数和高级用法。
+See full documentation for optional parameters and advanced usage.
 
-## 提示
-尚未实现，并且不是所有客户端应用程序都支持。请求一个对您的工作流程最有益的提示实现（不要太具体）。示例：
+## Prompts
+Not yet implemented and not supported by all client apps. Request a feature for a Prompt implementation that would be most beneficial for your workflow (without it being too specific). Examples:
 
-| 提示 | 目的 | 功能 |
+| Prompt | Purpose | Features |
 |--------|---------|----------|
-| summarize_tasks | 任务概览 | 状态总结、优先级、关系 |
-| analyze_priorities | 优先级优化 | 分布分析、排序 |
-| generate_description | 任务描述创建 | 目标、标准、依赖 |
+| summarize_tasks | Task overview | Status summary, priorities, relationships |
+| analyze_priorities | Priority optimization | Distribution analysis, sequencing |
+| generate_description | Task description creation | Objectives, criteria, dependencies |
 
-## 错误处理
+## Error Handling
 
-服务器为以下情况提供清晰的错误消息：
-- 缺少必需参数
-- 无效的ID或名称
-- 项目未找到
-- 权限问题
-- API错误
-- 速率限制
+The server provides clear error messages for:
+- Missing required parameters
+- Invalid IDs or names
+- Items not found
+- Permission issues
+- API errors
+- Rate limiting
 
-可以通过设置`LOG_LEVEL`环境变量来控制服务器日志的详细程度。有效值包括 `trace`, `debug`, `info`, `warn`, 和 `error`（默认）。
-这也可以通过命令行指定，例如 `--env LOG_LEVEL=info`。
+The `LOG_LEVEL` environment variable can be specified to control the verbosity of server logs. Valid values are `trace`, `debug`, `info`, `warn`, and `error` (default).
+This can be also be specified on the command line as, e.g. `--env LOG_LEVEL=info`.
 
-## 支持开发者
+## Support the Developer
 
-在使用此服务器时，您可能会偶尔看到一个小赞助信息，其中包含工具响应中的指向本仓库的链接。希望您可以支持该项目！
-如果您认为这个项目有用，请考虑支持：
+When using this server, you may occasionally see a small sponsor message with a link to this repository included in tool responses. I hope you can support the project!
+If you find this project useful, please consider supporting:
 
 [![Sponsor TaazKareem](/mcp-assets/76fc25891c633e752edf4505b06e8874.svg)](https://github.com/sponsors/TaazKareem)
 
   
 
-## 致谢
+## Acknowledgements
 
-特别感谢[ClickUp](https://clickup.com)提供的优秀API和服务，使这一集成成为可能。
+Special thanks to [ClickUp](https://clickup.com) for their excellent API and services that make this integration possible.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请阅读我们的贡献指南了解详情。
+Contributions are welcome! Please read our Contributing Guide for details.
 
-## 许可证
+## License
 
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-本项目采用MIT许可证 - 详情请见[LICENSE](https://github.com/TaazKareem/clickup-mcp-server/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/TaazKareem/clickup-mcp-server/blob/HEAD/LICENSE) file for details.
 
-## 免责声明
+## Disclaimer
 
-本软件使用了第三方API，并可能引用第三方拥有的商标或品牌。使用这些API或引用并不意味着与相关公司有任何关联或得到其认可。所有商标和品牌名称均为各自所有者的财产。此项目是独立作品，与文中提及的任何第三方公司无官方关联或赞助。
+This software makes use of third-party APIs and may reference trademarks
+or brands owned by third parties. The use of such APIs or references does not imply 
+any affiliation with or endorsement by the respective companies. All trademarks and 
+brand names are the property of their respective owners. This project is an independent
+work and is not officially associated with or sponsored by any third-party company mentioned.
 
-**官方网站：** [https://github.com/TaazKareem/clickup-mcp-server](https://github.com/TaazKareem/clickup-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/TaazKareem/clickup-mcp-server](https://github.com/TaazKareem/clickup-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `browser`
-- 标签：`developer tools`, `os automation`, `other`, `chinese`
+- Categories: `development`, `browser`
+- Tags: `developer tools`, `os automation`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @taazkareem/clickup-mcp-server@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @taazkareem/clickup-mcp-server@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/taazkareem-clickup.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/taazkareem-clickup.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
 title: "mcp-server-gemini-image-generator"
-description: "此MCP服务器允许任何AI助手使用Google的Gemini AI模型生成和转换图像。它支持文本到图像生成、图像到图像转换，并提供了基于文本提示生成和转换图像的工具。"
+description: "Gemini Image Generator MCP Server"
 ---
 
 # mcp-server-gemini-image-generator
 
-此MCP服务器允许任何AI助手使用Google的Gemini AI模型生成和转换图像。它支持文本到图像生成、图像到图像转换，并提供了基于文本提示生成和转换图像的工具。
+Gemini Image Generator MCP Server
 
 [![MseeP Badge](/mcp-assets/a6dc8511619cd251e387c0e267f4dfb8.jpg)](https://mseep.ai/app/qhdrl12-mcp-server-gemini-image-generator)
 [Smithery](https://smithery.ai/server/@qhdrl12/mcp-server-gemini-image-gen)
@@ -247,22 +247,22 @@ You can enter text prompts, execute the tool, and see the results immediately, w
 
 MIT License
 
-**官方网站：** [https://github.com/qhdrl12/mcp-server-gemini-image-generator](https://github.com/qhdrl12/mcp-server-gemini-image-generator)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/qhdrl12/mcp-server-gemini-image-generator](https://github.com/qhdrl12/mcp-server-gemini-image-generator)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`
+- Categories: `media`
+- Tags: `art and culture`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /absolute/path/to/gemini-image-generator run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /absolute/path/to/gemini-image-generator run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/inklee-gemini-image-generator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/inklee-gemini-image-generator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

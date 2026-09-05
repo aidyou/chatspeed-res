@@ -3,21 +3,27 @@
   "channel": "free-ai",
   "name": {
     "en": "Agnes AI Free API",
-    "zh-Hans": "Agnes AI 免费 API",
-    "zh-Hant": "Agnes AI 免费 API"
+    "zh-Hans": "Agnes AI 免费 API"
   },
   "description": {
     "en": "OpenAI-compatible multimodal gateway (text/image/video) that grants free API credits on sign-up; several models run free (Agnes 2.0/2.5 Flash, Agnes Image 2.1 Flash), no credit card required.",
-    "zh-Hans": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。",
-    "zh-Hant": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。"
+    "zh-Hans": "OpenAI 兼容的多模态 AI 网关（文本/图像/视频），注册即送免费 API 额度，多个模型免费开放（Agnes 2.0/2.5 Flash、Agnes Image 2.1 Flash 等），无需信用卡。"
   },
   "detail": {
     "en": "Agnes AI is an AI gateway and free-API platform (launched 2026) providing multimodal models — text, image and video generation/understanding — through a single OpenAI-compatible endpoint (https://apihub.agnes-ai.com/v1). New accounts receive free API credits, and a free tier covers models such as Agnes 2.0 Flash (agent), Agnes 2.5 Flash and Agnes Image 2.1 Flash. As a young beta-style platform, terms, quota and availability can change quickly; check the official docs and confirm current limits before relying on it.",
-    "zh-Hans": "Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。",
-    "zh-Hant": "Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。"
+    "zh-Hans": "Agnes AI 是 2026 年推出的 AI 网关与免费 API 平台，通过统一 OpenAI 兼容端点（https://apihub.agnes-ai.com/v1）提供文本、图像、视频生成与理解等多模态模型。新账号注册即送免费 API 额度，免费层覆盖 Agnes 2.0 Flash（Agent）、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等模型。作为较新的公测型平台，免费条款、额度和可用性可能快速变化，正式依赖前请查看官方文档并确认当前限制。"
   },
-  "categories": ["general", "image", "video"],
-  "tags": ["agnes-ai", "free-api", "multimodal", "api"],
+  "categories": [
+    "general",
+    "image",
+    "video"
+  ],
+  "tags": [
+    "agnes-ai",
+    "free-api",
+    "multimodal",
+    "api"
+  ],
   "website": "https://agnes-ai.com/",
   "status": "review",
   "lastVerifiedAt": "2026-08-30",
@@ -27,66 +33,55 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "Sign-up grants free API credits; some models run free (Agnes 2.0 Flash, Agnes 2.5 Flash, Agnes Image 2.1 Flash). Exact credit amounts are not published; check the official platform.",
-      "zh-Hans": "注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。",
-      "zh-Hant": "注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。"
+      "zh-Hans": "注册即送免费 API 额度，部分模型免费开放（Agnes 2.0 Flash、Agnes 2.5 Flash、Agnes Image 2.1 Flash 等）；具体额度未公开，以官方平台为准。"
     },
     "availability": "global",
     "signupUrl": "https://platform.agnes-ai.com/login",
     "registrationRestriction": {
       "en": "Sign up with email; no credit card required. Free terms vary by model; confirm availability and compliance on the official docs.",
-      "zh-Hans": "邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。",
-      "zh-Hant": "邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。"
+      "zh-Hans": "邮箱注册即可，无需信用卡；各模型免费条款不同，可用性与合规情况以官方文档为准。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "Agnes 2.0 Flash / Agnes 2.5 Flash (text & agent)",
-          "zh-Hans": "Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent）",
-          "zh-Hant": "Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent）"
+          "zh-Hans": "Agnes 2.0 Flash / Agnes 2.5 Flash（文本与 Agent）"
         },
         "quota": {
           "en": "Free within sign-up credits",
-          "zh-Hans": "注册额度内免费",
-          "zh-Hant": "注册额度内免费"
+          "zh-Hans": "注册额度内免费"
         },
         "frequency": {
           "en": "Metered by credits; check official platform",
-          "zh-Hans": "按额度扣减，以官方平台为准",
-          "zh-Hant": "按额度扣减，以官方平台为准"
+          "zh-Hans": "按额度扣减，以官方平台为准"
         }
       },
       {
         "model": {
           "en": "Agnes Image 2.1 Flash (image generation)",
-          "zh-Hans": "Agnes Image 2.1 Flash（图像生成）",
-          "zh-Hant": "Agnes Image 2.1 Flash（图像生成）"
+          "zh-Hans": "Agnes Image 2.1 Flash（图像生成）"
         },
         "quota": {
           "en": "Free within sign-up credits",
-          "zh-Hans": "注册额度内免费",
-          "zh-Hant": "注册额度内免费"
+          "zh-Hans": "注册额度内免费"
         },
         "frequency": {
           "en": "Metered by credits; check official platform",
-          "zh-Hans": "按额度扣减，以官方平台为准",
-          "zh-Hant": "按额度扣减，以官方平台为准"
+          "zh-Hans": "按额度扣减，以官方平台为准"
         }
       },
       {
         "model": {
           "en": "Video and other multimodal models",
-          "zh-Hans": "视频及其他多模态模型",
-          "zh-Hant": "视频及其他多模态模型"
+          "zh-Hans": "视频及其他多模态模型"
         },
         "quota": {
           "en": "Within free tier where available",
-          "zh-Hans": "免费档范围内可用",
-          "zh-Hant": "免费档范围内可用"
+          "zh-Hans": "免费档范围内可用"
         },
         "frequency": {
           "en": "Check official platform",
-          "zh-Hans": "以官方平台为准",
-          "zh-Hant": "以官方平台为准"
+          "zh-Hans": "以官方平台为准"
         }
       }
     ],

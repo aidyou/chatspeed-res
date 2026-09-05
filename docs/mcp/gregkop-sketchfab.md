@@ -1,100 +1,100 @@
 ---
-title: "Sketchfab模型平台"
-description: "允许通过克劳德或光标与Sketchfab的3D模型平台进行交互，使用户能够直接从人工智能界面搜索、查看详细信息和下载3D模型。"
+title: "sketchfab-mcp-server"
+description: "Allows interaction with Sketchfab's 3D model platform through Claude or Cursor, enabling users to search, view details, and download 3D models directly from the AI interface."
 ---
 
-# Sketchfab模型平台
+# sketchfab-mcp-server
 
-允许通过克劳德或光标与Sketchfab的3D模型平台进行交互，使用户能够直接从人工智能界面搜索、查看详细信息和下载3D模型。
+Allows interaction with Sketchfab's 3D model platform through Claude or Cursor, enabling users to search, view details, and download 3D models directly from the AI interface.
 
-# Sketchfab MCP 服务器
+# Sketchfab MCP Server
 
-一个用于与 Sketchfab 的 3D 模型平台交互的模型上下文协议 (MCP) 服务器。此 MCP 允许您通过 Claude 或 Cursor 直接搜索、查看详细信息和下载 Sketchfab 上的 3D 模型。
+A Model Context Protocol (MCP) server for interacting with Sketchfab's 3D model platform. This MCP allows you to search, view details, and download 3D models from Sketchfab directly through Claude or Cursor.
 
-## 功能
+## Features
 
-- **搜索 3D 模型**：使用关键字、标签和类别在 Sketchfab 上查找模型
-- **查看模型详细信息**：获取关于特定模型的全面信息
-- **下载模型**：以各种格式（gltf, glb, usdz, source）下载模型
+- **Search for 3D Models**: Find models on Sketchfab using keywords, tags, and categories
+- **View Model Details**: Get comprehensive information about specific models
+- **Download Models**: Download models in various formats (gltf, glb, usdz, source)
 
-## 前提条件
+## Prerequisites
 
-- Node.js 18 或更高版本
-- 一个 Sketchfab API 密钥（用于身份验证）
+- Node.js 18 or higher
+- A Sketchfab API key (for authentication)
 
-## 安装
+## Installation
 
-1. 克隆此仓库
-2. 安装依赖项：
+1. Clone this repository
+2. Install dependencies:
 ```
    npm install
 ```
-3. 构建项目：
+3. Build the project:
 ```
    npm run build
 ```
 
-## 使用
+## Usage
 
-### 运行 MCP 服务器
+### Running the MCP Server
 
 ```
 npm start
 ```
 
-要提供您的 Sketchfab API 密钥，请使用 `--api-key` 参数：
+To provide your Sketchfab API key, use the `--api-key` parameter:
 
 ```
 node build/index.js --api-key YOUR_API_KEY
 ```
 
-或者，您可以设置 `SKETCHFAB_API_KEY` 环境变量：
+Alternatively, you can set the `SKETCHFAB_API_KEY` environment variable:
 
 ```
 export SKETCHFAB_API_KEY=YOUR_API_KEY
 npm start
 ```
 
-### 可用工具
+### Available Tools
 
 #### 1. sketchfab-search
 
-根据关键词和过滤器在 Sketchfab 上搜索 3D 模型。
+Search for 3D models on Sketchfab based on keywords and filters.
 
-参数：
-- `query`（可选）：文本搜索查询（例如："car", "house", "character"）
-- `tags`（可选）：按特定标签过滤（例如：["animated", "rigged", "pbr"]）
-- `categories`（可选）：按类别过滤（例如：["characters", "architecture", "vehicles"]）
-- `downloadable`（可选）：设置为 true 以仅显示可下载的模型
-- `limit`（可选）：返回的最大结果数量（1-24，默认值：10）
+Parameters:
+- `query` (optional): Text search query (e.g., "car", "house", "character")
+- `tags` (optional): Filter by specific tags (e.g., ["animated", "rigged", "pbr"])
+- `categories` (optional): Filter by categories (e.g., ["characters", "architecture", "vehicles"])
+- `downloadable` (optional): Set to true to show only downloadable models
+- `limit` (optional): Maximum number of results to return (1-24, default: 10)
 
 #### 2. sketchfab-model-details
 
-获取有关特定 Sketchfab 模型的详细信息。
+Get detailed information about a specific Sketchfab model.
 
-参数：
-- `modelId`：Sketchfab 模型的唯一 ID
+Parameters:
+- `modelId`: The unique ID of the Sketchfab model
 
 #### 3. sketchfab-download
 
-从 Sketchfab 下载 3D 模型。
+Download a 3D model from Sketchfab.
 
-参数：
-- `modelId`：要下载的 Sketchfab 模型的唯一 ID
-- `format`（可选）：下载模型的首选格式（gltf, glb, usdz, source）
-- `outputPath`（可选）：保存下载文件的本地目录或文件路径
+Parameters:
+- `modelId`: The unique ID of the Sketchfab model to download
+- `format` (optional): Preferred format to download the model in (gltf, glb, usdz, source)
+- `outputPath` (optional): Local directory or file path to save the downloaded file
 
-## 与 Cursor 一起使用
+## Using with Cursor
 
-1. 转到 Cursor 设置 -> MCP -> 添加新的 MCP 服务器
-2. 配置您的 MCP：
-   - 名称：Sketchfab MCP
-   - 类型：command
-   - 命令：`node /path/to/build/index.js --api-key YOUR_API_KEY`
+1. Go to Cursor Settings -> MCP -> Add new MCP server
+2. Configure your MCP:
+   - Name: Sketchfab MCP
+   - Type: command
+   - Command: `node /path/to/build/index.js --api-key YOUR_API_KEY`
 
-## 与 Claude Desktop 一起使用
+## Using with Claude Desktop
 
-将以下 MCP 配置添加到您的 Claude Desktop 配置中：
+Add the following MCP config to your Claude Desktop configuration:
 
 ```json
 {
@@ -107,32 +107,32 @@ npm start
 }
 ```
 
-## 环境变量
+## Environment Variables
 
-您可以设置以下环境变量：
+You can set the following environment variables:
 
-- `SKETCHFAB_API_KEY`：您的 Sketchfab API 密钥（作为传递 `--api-key` 参数的替代方案）
+- `SKETCHFAB_API_KEY`: Your Sketchfab API key (alternative to passing it with the --api-key parameter)
 
-## 许可证
+## License
 
 ISC
 
-**官方网站：** [https://github.com/gregkop/sketchfab-mcp-server](https://github.com/gregkop/sketchfab-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/gregkop/sketchfab-mcp-server](https://github.com/gregkop/sketchfab-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/build/index.js --api-key YOUR_API_KEY`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/build/index.js --api-key YOUR_API_KEY`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gregkop-sketchfab.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gregkop-sketchfab.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

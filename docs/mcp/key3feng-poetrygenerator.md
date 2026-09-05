@@ -1,30 +1,30 @@
 ---
-title: "诗词生成助手(MCP&Agent挑战赛)"
-description: "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。"
+title: "PoetryGenerator"
+description: "A smart creation tool that not only automatically generates five-character or seven-character quatrains based on keywords provided by the user but also further transforms these verses into artistic vi…"
 ---
 
-# 诗词生成助手(MCP&Agent挑战赛)
+# PoetryGenerator
 
-一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。
+A smart creation tool that not only automatically generates five-character or seven-character quatrains based on keywords provided by the user but also further transforms these verses into artistic vi…
 
-一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。
+A smart creation tool that not only automatically generates five-character or seven-character quatrains based on keywords provided by the user but also further transforms these verses into artistic video works.
 
-**官方网站：** [https://www.modelscope.cn/studios/key3feng/PoetryGenerator](https://www.modelscope.cn/studios/key3feng/PoetryGenerator)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/key3feng/PoetryGenerator](https://www.modelscope.cn/studios/key3feng/PoetryGenerator)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://key3feng-poetrygenerator.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://key3feng-poetrygenerator.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/key3feng-poetrygenerator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/key3feng-poetrygenerator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

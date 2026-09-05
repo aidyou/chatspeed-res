@@ -1,49 +1,49 @@
 ---
-title: "Excel文件服务"
-description: "一个模型上下文协议服务器，使人工智能助手能够读取和写入Microsoft Excel文件，支持xlsx、xlsm、xltx和xltm等格式。"
+title: "excel-mcp-server"
+description: "A Model Context Protocol server that enables AI assistants to read from and write to Microsoft Excel files, supporting formats like xlsx, xlsm, xltx, and xltm."
 ---
 
-# Excel文件服务
+# excel-mcp-server
 
-一个模型上下文协议服务器，使人工智能助手能够读取和写入Microsoft Excel文件，支持xlsx、xlsm、xltx和xltm等格式。
+A Model Context Protocol server that enables AI assistants to read from and write to Microsoft Excel files, supporting formats like xlsx, xlsm, xltx, and xltm.
 
-# Excel MCP 服务器
+# Excel MCP Server
 
  width="128">
 
-[![NPM 版本](/mcp-assets/2676ce9d04906ee62bf588f55bb53df6.svg)](https://www.npmjs.com/package/@negokaz/excel-mcp-server)
+[![NPM Version](/mcp-assets/2676ce9d04906ee62bf588f55bb53df6.svg)](https://www.npmjs.com/package/@negokaz/excel-mcp-server)
 [Smithery](https://smithery.ai/server/@negokaz/excel-mcp-server)
 
-一个读写 MS Excel 数据的 Model Context Protocol (MCP) 服务器。
+A Model Context Protocol (MCP) server that reads and writes MS Excel data.
 
-## 功能
+## Features
 
-- 从 MS Excel 文件中读取文本值
-- 向 MS Excel 文件中写入文本值
-- 从 MS Excel 文件中读取公式
-- 向 MS Excel 文件中写入公式
-- 从 MS Excel 文件中捕获屏幕图像（仅限 Windows）
+- Read text values from MS Excel file
+- Write text values to MS Excel file
+- Read formulas from MS Excel file
+- Write formulas to MS Excel file
+- Capture screen image from MS Excel file (Windows only)
 
-更多详情，请参见[工具](#tools)部分。
+For more details, see the [tools](#tools) section.
 
-## 要求
+## Requirements
 
-- Node.js 20.x 或更高版本
+- Node.js 20.x or later
 
-## 支持的文件格式
+## Supported file formats
 
-- xlsx（Excel 工作簿）
-- xlsm（启用宏的 Excel 工作簿）
-- xltx（Excel 模板）
-- xltm（启用宏的 Excel 模板）
+- xlsx (Excel book)
+- xlsm (Excel macro-enabled book)
+- xltx (Excel template)
+- xltm (Excel macro-enabled template)
 
-## 安装
+## Installation
 
-### 通过 NPM 安装
+### Installing via NPM
 
-通过在 MCP 服务器配置中添加以下配置，将自动安装 excel-mcp-server。
+excel-mcp-server is automatically installed by adding the following configuration to the MCP servers configuration.
 
-对于 Windows：
+For Windows:
 ```json
 {
     "mcpServers": {
@@ -58,7 +58,7 @@ description: "一个模型上下文协议服务器，使人工智能助手能够
 }
 ```
 
-对于其他平台：
+For other platforms:
 ```json
 {
     "mcpServers": {
@@ -73,126 +73,125 @@ description: "一个模型上下文协议服务器，使人工智能助手能够
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@negokaz/excel-mcp-server) 自动为 Claude Desktop 安装 Excel MCP 服务器：
+To install Excel MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@negokaz/excel-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @negokaz/excel-mcp-server --client claude
 ```
 
-工具
+Tools
 
 ### `read_sheet_names`
 
-列出 Excel 文件中的所有工作表名称。
+List all sheet names in an Excel file.
 
-**参数：**
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 
 ### `read_sheet_data`
 
-分页从 Excel 工作表中读取数据。
+Read data from Excel sheet with pagination.
 
-**参数：**
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 - `sheetName`
-    - Excel 文件中的工作表名称
+    - Sheet name in the Excel file
 - `range`
-    - 要在 Excel 工作表中读取的单元格范围（例如："A1:C10"）。[默认：第一个分页范围]
+    - Range of cells to read in the Excel sheet (e.g., "A1:C10"). [default: first paging range]
 - `knownPagingRanges`
-    - 已读取的分页范围列表
+    - List of already read paging ranges
 
 ### `read_sheet_formula`
 
-分页从 Excel 工作表中读取公式。
+Read formulas from Excel sheet with pagination.
 
-**参数：**
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 - `sheetName`
-    - Excel 文件中的工作表名称
+    - Sheet name in the Excel file
 - `range`
-    - 要在 Excel 工作表中读取的单元格范围（例如："A1:C10"）。[默认：第一个分页范围]
+    - Range of cells to read in the Excel sheet (e.g., "A1:C10"). [default: first paging range]
 - `knownPagingRanges`
-    - 已读取的分页范围列表
+    - List of already read paging ranges
 
 ### `read_sheet_image`
 
-**[仅限 Windows]** 分页从 Excel 工作表中以图像形式读取数据。
+**[Windows only]** Read data as an image from the Excel sheet with pagination.
 
-**参数：**
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 - `sheetName`
-    - Excel 文件中的工作表名称
+    - Sheet name in the Excel file
 - `range`
-    - 要在 Excel 工作表中读取的单元格范围（例如："A1:C10"）。[默认：第一个分页范围]
+    - Range of cells to read in the Excel sheet (e.g., "A1:C10"). [default: first paging range]
 - `knownPagingRanges`
-    - 已读取的分页范围列表
+    - List of already read paging ranges
 
 ### `write_sheet_data`
 
-向 Excel 工作表中写入数据。
+Write data to the Excel sheet.
 
-**参数：**
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 - `sheetName`
-    - Excel 文件中的工作表名称
+    - Sheet name in the Excel file
 - `range`
-    - 要在 Excel 工作表中读取的单元格范围（例如："A1:C10"）。
+    - Range of cells to read in the Excel sheet (e.g., "A1:C10").
 - `data`
-    - 要写入 Excel 工作表的数据
+    - Data to write to the Excel sheet
 
 ### `write_sheet_formula`
 
-向 Excel 工作表中写入公式。
+Write formulas to the Excel sheet.
 
-**参数：**
-
+**Arguments:**
 - `fileAbsolutePath`
-    - Excel 文件的绝对路径
+    - Absolute path to the Excel file
 - `sheetName`
-    - Excel 文件中的工作表名称
+    - Sheet name in the Excel file
 - `range`
-    - 要在 Excel 工作表中读取的单元格范围（例如，"A1:C10"）
+    - Range of cells to read in the Excel sheet (e.g., "A1:C10").
 - `formulas`
-    - 要写入 Excel 工作表的公式（例如，"=A1+B1"）
+    - Formulas to write to the Excel sheet (e.g., "=A1+B1")
 
-配置
+Configuration
 
-您可以通过以下环境变量更改 MCP 服务器的行为：
+You can change the MCP Server behaviors by the following environment variables:
 
 ### `EXCEL_MCP_PAGING_CELLS_LIMIT`
 
-单次分页操作中读取的最大单元格数。  
-[默认值：4000]
+The maximum number of cells to read in a single paging operation.  
+[default: 4000]
 
-## 许可证
+## License
 
-版权所有 (c) 2025 Kazuki Negoro
+Copyright (c) 2025 Kazuki Negoro
 
-excel-mcp-server 在 [MIT License](https://github.com/negokaz/excel-mcp-server/blob/HEAD/LICENSE) 下发布
+excel-mcp-server is released under the [MIT License](https://github.com/negokaz/excel-mcp-server/blob/HEAD/LICENSE)
 
-**官方网站：** [https://github.com/negokaz/excel-mcp-server](https://github.com/negokaz/excel-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/negokaz/excel-mcp-server](https://github.com/negokaz/excel-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`--yes @negokaz/excel-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `--yes @negokaz/excel-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/negokaz-excel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/negokaz-excel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

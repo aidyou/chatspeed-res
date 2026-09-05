@@ -1,14 +1,11 @@
 ---
-title: "Excel CSV 转JSON MCP by WTSolutions"
-description: "**Excel到JSON MCP**（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具：\n\n- **excel_to_json_mcp_from_data**：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。\n- **excel_to_json_mcp_from_url**：从提供的URL转换Excel文件（.xlsx）"
+title: "Excel_to_JSON_MCP"
+description: "Excel to JSON MCP（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具： - exceltojsonmcpfromdata：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。 - exceltojsonmcpfromurl：从提供的URL转换Excel文件（.xls…"
 ---
 
-# Excel CSV 转JSON MCP by WTSolutions
+# Excel_to_JSON_MCP
 
-**Excel到JSON MCP**（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具：
-
-- **excel_to_json_mcp_from_data**：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。
-- **excel_to_json_mcp_from_url**：从提供的URL转换Excel文件（.xlsx）
+Excel to JSON MCP（模型上下文协议）提供了一个标准化接口，用于通过模型上下文协议将Excel和CSV数据转换为JSON格式。此MCP实现提供了两个特定的数据转换工具： - exceltojsonmcpfromdata：将制表符分隔的Excel数据或逗号分隔的CSV文本数据转换为JSON格式。 - exceltojsonmcpfromurl：从提供的URL转换Excel文件（.xls…
 
 # Excel to JSON MCP by WTSolutions
 
@@ -203,22 +200,22 @@ Free for now.
 
 [https://buymeacoffee.com/wtsolutions](https://buymeacoffee.com/wtsolutions)
 
-**官方网站：** [https://github.com/he-yang/excel-to-json-mcp](https://github.com/he-yang/excel-to-json-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/he-yang/excel-to-json-mcp](https://github.com/he-yang/excel-to-json-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `communication`
-- 标签：`communication`, `developer tools`, `file systems`, `excel`, `json`, `csv`, `wtsolutions`
+- Categories: `files`, `communication`
+- Tags: `communication`, `developer tools`, `file systems`, `excel`, `json`, `csv`, `wtsolutions`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://mcp.wtsolutions.cn/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://mcp.wtsolutions.cn/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wtsolutions-excel-to-json.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wtsolutions-excel-to-json.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,67 +1,63 @@
 ---
 title: "deepke-mcp-tools"
-description: "该项目为DeepKE的四个自然语言处理任务的预测部分提供MCP服务。需要预先使用DeepKE训练好的模型，并正确配置环境。"
+description: "DeepKE-mcp-tools 为 DeepKE 的四个自然语言处理任务的 standard 的 预测 部分的 mcp 服务，因此前提需要有 DeepKE 对应任务训练好的模型，确保对应的 predict.py 能够运行。"
 ---
 
 # deepke-mcp-tools
 
-该项目为DeepKE的四个自然语言处理任务的预测部分提供MCP服务。需要预先使用DeepKE训练好的模型，并正确配置环境。
+DeepKE-mcp-tools 为 DeepKE 的四个自然语言处理任务的 standard 的 预测 部分的 mcp 服务，因此前提需要有 DeepKE 对应任务训练好的模型，确保对应的 predict.py 能够运行。
 
 # DeepKE-mcp-tools
 
-为 `DeepKE` 的四个自然语言处理任务的 **standard** 的 **预测** 部分的 mcp 服务，因此前提需要有 [DeepKE](https://github.com/zjunlp/DeepKE) 对应任务训练好的模型，确保对应的 `predict.py` 能够运行。
+This is the **standard** **prediction** part of the mcp service for the four natural language processing tasks in `DeepKE`. Therefore, it is necessary to have a [DeepKE](https://github.com/zjunlp/DeepKE) model trained for the corresponding task, ensuring that the corresponding `predict.py` can run.
 
-## 下载代码
+## Download the Code
 
-```bash
+bash
 cd DeepKE
 git clone https://github.com/Shotsuke/deepke-mcp-tools.git
-```
 
-## 配置 `.env` 环境变量
+## Configure `.env` Environment Variables
 
-- 配置deepke / deepke-ee虚拟环境
-- 如果在训练模型时已配好环境，那么可以跳过这一部分。
+- Set up the deepke / deepke-ee virtual environment.
+- If the environment has already been set up during model training, this section can be skipped.
 
-```bash
+bash
 cd DeepKE
 conda create -n deepke python=3.8 -y
 conda activate deepke
 
-pip install pip==24.0.0 # 要求 pip<=24.0
+pip install pip==24.0.0 # Requires pip<=24.0
 pip install -r requirements.txt
-pip install -U transformers==4.36.2 # 有若干库指定`transformers == 3.4.0`这个版本，但实际上没法运行
+pip install -U transformers==4.36.2 # Some libraries specify `transformers == 3.4.0`, but it actually doesn't work
 
-# `requirements.txt`不会检查`torch`和`cuda`版本，因此需要手动检查
+# `requirements.txt` does not check `torch` and `cuda` versions, so you need to manually check them
 # conda list | grep "torch"
 # nvidia-smi
-# 根据`nvidia`适合的`cuda`来到([Start Locally | PyTorch](https://pytorch.org/get-started/locally/))选择合适的版本下载，例如：
+# Choose the appropriate version to download based on the `nvidia` compatible `cuda` from ([Start Locally | PyTorch](https://pytorch.org/get-started/locally/)), for example:
 pip install torch==2.4.1
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 python setup.py install
 python setup.py develop
-```
 
-配置完deepke后再来配置deepke-ee，基本是相同的，不过多加一条 `pip install hydra-core==1.3.1` ， `EE` 任务使用版本更高的 `hydra` 。
+After setting up deepke, configure deepke-ee, which is essentially the same, but with an additional `pip install hydra-core==1.3.1` as the `EE` task uses a higher version of `hydra`.
 
-将 `conda` 对应的包含 `PY` 的目录和 `DeepKE` 目录放入 `.env` 中，例如：
+Add the `conda` directory containing `PY` and the `DeepKE` directory to the `.env` file, for example:
 
-```
 DEEPKE_PATH="~/DeepKE"
 CONDA_PY="/home/user_name/anaconda3/envs/deepke/bin/"
 CONDA_EE_PY="/home/user_name/anaconda3/envs/deepke-ee/bin/"
-```
 
 - API_KEY
 
-使用了阿里的qwen大模型，更改 `DASHSCOPE_API_KEY` 即可
+The project uses Alibaba's Qwen large model. You can change `DASHSCOPE_API_KEY` accordingly.
 
-## 配置mcp项目uv环境
+## Configure the MCP Project UV Environment
 
-```bash
-# curl -LsSf https://astral.sh/uv/install.sh | sh # 安装uv
-# pipx install uv # 反正选一个安装uv
+bash
+# curl -LsSf https://astral.sh/uv/install.sh | sh # Install uv
+# pipx install uv # Choose one method to install uv
 pip install uv
 
 # Now in: DeepKE/
@@ -69,31 +65,29 @@ cd deepke-mcp-tools
 uv venv
 source .venv/bin/activate
 uv add "mcp[cli]" httpx openai pyyaml
-```
 
-## 运行
+## Run
 
-```bash
+bash
 # Now in: DeepKE/deepke-mcp-tools/
 python run.py
-```
 
-**官方网站：** [https://github.com/Shotsuke/deepke-mcp-tools](https://github.com/Shotsuke/deepke-mcp-tools)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Shotsuke/deepke-mcp-tools](https://github.com/Shotsuke/deepke-mcp-tools)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory absolute/path/to/DeepKE/deepke-mcp-tools/tools run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory absolute/path/to/DeepKE/deepke-mcp-tools/tools run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/openkg-deepke-tools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/openkg-deepke-tools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "Microsoft Dev Box MCP 服务器"
-description: "🏢 Dev Box MCP Server This is a Model Context Protocol (MCP) server for Microsoft Dev Box, providing seamless integration between AI agents and Microsoft Dev Box services. This server enables natural language interactions"
+title: "Microsoft Dev Box MCP Server"
+description: "🏢 Dev Box MCP Server This is a Model Context Protocol (MCP) server for Microsoft Dev Box, providing seamless integration between AI agents and Microsoft Dev Box services. This server enables natural l…"
 ---
 
-# Microsoft Dev Box MCP 服务器
+# Microsoft Dev Box MCP Server
 
-🏢 Dev Box MCP Server This is a Model Context Protocol (MCP) server for Microsoft Dev Box, providing seamless integration between AI agents and Microsoft Dev Box services. This server enables natural language interactions
+🏢 Dev Box MCP Server This is a Model Context Protocol (MCP) server for Microsoft Dev Box, providing seamless integration between AI agents and Microsoft Dev Box services. This server enables natural l…
 
 # 🏢 Dev Box MCP Server
 
@@ -196,22 +196,22 @@ If you encounter authentication errors, try:
 
 Copyright (c) Microsoft Corporation. All rights reserved.
 
-**官方网站：** [https://github.com/microsoft/devbox-mcp-server](https://github.com/microsoft/devbox-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/microsoft/devbox-mcp-server](https://github.com/microsoft/devbox-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `microsoft`, `dev box`, `cloud development`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `microsoft`, `dev box`, `cloud development`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @microsoft/devbox-mcp@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @microsoft/devbox-mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/microsoft-devbox-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/microsoft-devbox-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

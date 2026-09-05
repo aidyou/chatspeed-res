@@ -68,22 +68,22 @@ type: command
 command: uvx mcp-server-tapd --api-user=your_api_user --api-password=your_api_password --api-base-url=https://api.tapd.cn --tapd-base-url=https://www.tapd.cn  --bot-url=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=XXX
 ```
 
-**官方网站：** [https://cnb.cool/tapd_mcp/mcp-server-tapd](https://cnb.cool/tapd_mcp/mcp-server-tapd)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://cnb.cool/tapd_mcp/mcp-server-tapd](https://cnb.cool/tapd_mcp/mcp-server-tapd)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-tapd`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-tapd`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tapd-mcp-tapd.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tapd-mcp-tapd.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

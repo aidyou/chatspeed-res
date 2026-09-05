@@ -1,132 +1,105 @@
 ---
-title: "ECharts 图表可视化 MCP"
-description: "使用AI MCP动态生成Apache ECharts图表。支持所有ECharts功能，导出为png、svg和option格式，轻量且安全。"
+title: "MCP-ECharts"
+description: "MCP ECharts Generate Apache ECharts diagram and chart with AI MCP dynamically. Using for chart generation and data analysis."
 ---
 
-# ECharts 图表可视化 MCP
+# MCP-ECharts
 
-使用AI MCP动态生成Apache ECharts图表。支持所有ECharts功能，导出为png、svg和option格式，轻量且安全。
+MCP ECharts Generate Apache ECharts diagram and chart with AI MCP dynamically. Using for chart generation and data analysis.
 
 # MCP ECharts
 
 ![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP Server')
 
-使用AI MCP动态生成[Apache ECharts](https://echarts.apache.org/)图表和图形。用于图表生成和数据分析。
+Generate [Apache ECharts](https://echarts.apache.org/) diagram and chart with AI MCP dynamically. Using for chart generation and data analysis.
 
   
 
-## ✨ 特性
+## ✨ Features
 
-- 完全支持`ECharts`的所有特性和语法，包括数据、样式、主题等。
-- 支持导出为`png`、`svg`和`option`格式，并对`ECharts`进行验证，以便模型多轮输出正确的语法和图形。
-- 轻量级，可以使用`零依赖`安装。
-- 极其`安全`，完全在本地生成，不依赖任何远程服务。
+- Fully support all features and syntax of `ECharts`, include data, style, theme and so on.
+- Support exporting to `png`, `svg`, and `option` formats, with validation for `ECharts` to facilitate the model's multi-round output of correct syntax and graphics.
+- Lightweight, we can install it with `zero dependence`.
+- Extremely `secure`, fully generated locally, without relying on any remote services.
 
-## 🤖 使用方法
+## 🤖 Usage
 
-与`桌面应用程序`一起使用，如Claude、VSCode、Cline、Cherry Studio等，添加以下MCP服务器配置。在Mac系统上：
+To use with `Desktop APP`, such as Claude, VSCode, Cline, Cherry Studio, and so on, add the  MCP server config below. On Mac system:
 
 ```json
-
 {
-
   "mcpServers": {
-
     "mcp-echarts": {
-
       "command": "npx",
-
       "args": [
-
         "-y",
-
         "mcp-echarts"
-
       ]
-
     }
-
   }
-
 }
-
 ```
-在Windows系统上：
+
+On Window system:
 
 ```json
-
 {
-
   "mcpServers": {
-
     "mcp-echarts": {
-
       "command": "cmd",
-
       "args": [
-
         "/c",
-
         "npx",
-
         "-y",
-
         "mcp-echarts"
-
       ]
-
     }
-
   }
-
 }
-
 ```
-此外，您还可以通过HTTP、SSE协议在阿里云、modelscope、glama.ai、smithery.ai或其他平台上使用它。
 
-## 🔨 开发
+Also, you can use it on aliyun, modelscope, glama.ai, smithery.ai or others with HTTP, SSE Protocol.
 
-安装依赖项：
+## 🔨 Development
+
+Install dependencies:
 
 ```bash
-
 npm install
-
 ```
-构建服务器：
+
+Build the server:
 
 ```bash
-
 npm run build
-
 ```
-启动MCP服务器：
+
+Start the MCP server:
 
 ```bash
-
 npm run start
-
 ```
-## 📄 许可证
 
-MIT@[hustcc](https://github.com/hustcc)
+## 📄 License
 
-**官方网站：** [https://github.com/hustcc/mcp-echarts](https://github.com/hustcc/mcp-echarts)
-**状态：** `active`　**最后核验：** `2026-08-30`
+MIT@[hustcc](https://github.com/hustcc).
 
-## 分类与标签
+**Official site: ** [https://github.com/hustcc/mcp-echarts](https://github.com/hustcc/mcp-echarts)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`development`
-- 标签：`developer tools`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `development`
+- Tags: `developer tools`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-echarts`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-echarts`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/hustcc-echarts.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/hustcc-echarts.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

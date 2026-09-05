@@ -1,11 +1,11 @@
 ---
-title: "图片视频生成"
-description: "集成阿里云百炼平台通义万相模型实现文生图和文生视频功能"
+title: "MediaGenMCP"
+description: "Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. 简介 本文档将指导您如何使用阿里云百炼平台的通义万相模型，实现从文本生成图像和视频的功能。通义万相模型是阿里云推出的一种强大的多模态预训练模型，能够根据输…"
 ---
 
-# 图片视频生成
+# MediaGenMCP
 
-集成阿里云百炼平台通义万相模型实现文生图和文生视频功能
+Integrating Alibaba Cloud's Qwen Platform Tongyi Wuxiang Model to Achieve Text-to-Image and Text-to-Video Functionality 1. 简介 本文档将指导您如何使用阿里云百炼平台的通义万相模型，实现从文本生成图像和视频的功能。通义万相模型是阿里云推出的一种强大的多模态预训练模型，能够根据输…
 
 # Media Generator MCP Server
 
@@ -148,22 +148,22 @@ npm start stream
 
 然后配置MCP客户端连接到 `http://localhost:8080`
 
-**官方网站：** [https://github.com/weiwei162/MediaGenMCP.git](https://github.com/weiwei162/MediaGenMCP.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/weiwei162/MediaGenMCP.git](https://github.com/weiwei162/MediaGenMCP.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`
+- Categories: `development`
+- Tags: `developer tools`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y media-gen-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y media-gen-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/weiwei162-mediagenmcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/weiwei162-mediagenmcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

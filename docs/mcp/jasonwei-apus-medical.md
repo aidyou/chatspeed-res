@@ -1,87 +1,85 @@
 ---
-title: "奇黄&智草MCP医疗助手"
-description: "奇黄&智草MCP医疗助手 apus-medical-mcp-server 版本信息 v1.0.0 产品描述 短描述 奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务，提供中西医结合的智能医疗咨询服务，帮助用户获取专业的医疗建议和诊断。 长描述 奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务器，集成了西医和中医两个专业的医疗咨询系统。通过MCP提供智能化的医疗咨询服务，能够根据用户的具体症状和问题，提供专业的医疗建议和诊断。其背后是APUS公司训练的岐黄（医疗）和智草（中医）大模型。 快速体验："
+title: "apus-medical-mcp"
+description: "Qihuang & Zhicao MCP Medical Assistant apus-medical-mcp-server Version Information v1.0.0 Product Description Short Description Qihuang & Zhicao MCP Medical Assistant is a medical consultation service…"
 ---
 
-# 奇黄&智草MCP医疗助手
+# apus-medical-mcp
 
-奇黄&智草MCP医疗助手 apus-medical-mcp-server 版本信息 v1.0.0 产品描述 短描述 奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务，提供中西医结合的智能医疗咨询服务，帮助用户获取专业的医疗建议和诊断。 长描述 奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务器，集成了西医和中医两个专业的医疗咨询系统。通过MCP提供智能化的医疗咨询服务，能够根据用户的具体症状和问题，提供专业的医疗建议和诊断。其背后是APUS公司训练的岐黄（医疗）和智草（中医）大模型。 快速体验：
+Qihuang & Zhicao MCP Medical Assistant apus-medical-mcp-server Version Information v1.0.0 Product Description Short Description Qihuang & Zhicao MCP Medical Assistant is a medical consultation service…
 
-# 奇黄&智草MCP医疗助手
+# Qihuang & Zhicao MCP Medical Assistant
 
 apus-medical-mcp-server
 
-## 版本信息
+## Version Information
 
 v1.0.0
 
-## 产品描述
+## Product Description
 
-### 短描述
+### Short Description
 
-奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务，提供中西医结合的智能医疗咨询服务，帮助用户获取专业的医疗建议和诊断。
+Qihuang & Zhicao MCP Medical Assistant is a medical consultation service based on the MCP protocol, providing intelligent medical consultation services that integrate both Western and Traditional Chinese Medicine, helping users to obtain professional medical advice and diagnoses.
 
-### 长描述
+### Long Description
 
-奇黄&智草MCP医疗助手是一个基于MCP协议的医疗咨询服务器，集成了西医和中医两个专业的医疗咨询系统。通过MCP提供智能化的医疗咨询服务，能够根据用户的具体症状和问题，提供专业的医疗建议和诊断。其背后是APUS公司训练的岐黄（医疗）和智草（中医）大模型。
+Qihuang & Zhicao MCP Medical Assistant is a medical consultation server based on the MCP protocol, integrating two specialized medical consultation systems: Western Medicine and Traditional Chinese Medicine. It provides intelligent medical consultation services through MCP, capable of offering professional medical advice and diagnoses based on the user's specific symptoms and issues. Behind this service are the large models trained by APUS, namely Qihuang (for Western Medicine) and Zhicao (for Traditional Chinese Medicine).
 
-### 快速体验：
-APUS大模型、岐黄西医大模型、智草中医大模型统一入口：
+### Quick Experience:
+Unified entry for APUS large models, Qihuang Western Medicine large model, and Zhicao Traditional Chinese Medicine large model:
 https://chat.apusai.com
 
-## 分类
+## Category
 
-医疗咨询
+Medical Consultation
 
-## 标签
+## Tags
 
-医疗, 中医, 西医, 智能诊断
+Medical, Traditional Chinese Medicine, Western Medicine, Intelligent Diagnosis
 
 ## Tools
 
-### Tool1: 西医咨询（奇黄）
+### Tool1: Western Medicine Consultation (Qihuang)
 
-#### 详细描述
+#### Detailed Description
 
-提供西医相关的医疗建议和诊断，包括症状分析、治疗方案、用药建议等。
+Provides Western medicine-related medical advice and diagnoses, including symptom analysis, treatment plans, and medication recommendations.
 
-#### 调试所需要的参数
+#### Parameters Required for Debugging
 
-输入:
-* query: 用户的问题(必填)
-* conversation_id: 会话ID (可选)
-* user_id: 用户ID (可选)
+Input:
+* query: User's question (required)
+* conversation_id: Conversation ID (optional)
+* user_id: User ID (optional)
 
-输出:
-* 西医相关的医疗建议和诊断
+Output:
+* Western medicine-related medical advice and diagnosis
 
-### Tool2: 中医咨询（智草）
+### Tool2: Traditional Chinese Medicine Consultation (Zhicao)
 
-#### 详细描述
+#### Detailed Description
 
-提供中国传统中医相关的医疗建议和诊断，包括中医辨证、中药处方、养生建议等。
+Provides Traditional Chinese Medicine-related medical advice and diagnoses, including TCM syndrome differentiation, herbal prescriptions, and health preservation suggestions.
 
-#### 调试所需要的参数
+#### Parameters Required for Debugging
 
-输入:
-* query: 用户的问题(必填)
-* conversation_id: 会话ID (可选)
-* user_id: 用户ID (可选)
+Input:
+* query: User's question (required)
+* conversation_id: Conversation ID (optional)
+* user_id: User ID (optional)
 
-输出:
-* 中医相关的医疗建议和诊断
+Output:
+* Traditional Chinese Medicine-related medical advice and diagnosis
 
-
-## 鉴权方式
+## Authentication Method
 
 API Key
 
+## Usage
 
-## 使用
+### Method 1: Download Code to Local
 
-### 方式一：下载代码至本地
-
-```bash
+bash
 git clone https://github.com/AiLMe-AI/apus-medical-mcp-server
 
 cd mcp-server-doctor
@@ -89,13 +87,11 @@ cd mcp-server-doctor
 uv pip install -e .
 
 npx -y @modelcontextprotocol/inspector uv run mcp-server-doctor
-```
 
-访问页面，开始使用奇黄、智草MCP服务
+Access the page to start using the Qihuang and Zhicao MCP services.
 
-
-### 方式二：在客户端中配置
-```
+### Method 2: Configure in Client
+json
   "mcpServers": {
     "mcp-server-doctor": {
       "command": "uv",
@@ -110,28 +106,27 @@ npx -y @modelcontextprotocol/inspector uv run mcp-server-doctor
       }
     }
   }
-```
 
-## API Key 获取
+## API Key Acquisition
 
-需要 API Key 请联系：bd [at] apusai.com
+To obtain an API Key, please contact: bd [at] apusai.com
 
-**官方网站：** [https://github.com/AiLMe-AI/apus-medical-mcp-server](https://github.com/AiLMe-AI/apus-medical-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/AiLMe-AI/apus-medical-mcp-server](https://github.com/AiLMe-AI/apus-medical-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`
+- Categories: `productivity`
+- Tags: `other`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /path/to/mcp-server-doctor run mcp-server-doctor`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /path/to/mcp-server-doctor run mcp-server-doctor`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jasonwei-apus-medical.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jasonwei-apus-medical.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

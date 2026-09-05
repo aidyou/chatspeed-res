@@ -1,94 +1,85 @@
 ---
-title: "机票比价"
-description: "✈️ 跨平台机票比价 MCP v4.0.0 五大平台直飞机票实时比价，自动按航班号跨平台匹配，预订链接跟随最低价。无需申请 Key，URL 直连即用。 ✨ 核心特性 ▸ 最低价优先 — 同一航班跨平台匹配，预订链接自动跟最低价走 ▸ 时段筛选 — 支持早班机/上午/中午/下午/傍晚/晚上/红眼，或指定具体时间（前后45min浮动） ▸ 多机场标注 — 北京（首都/大兴）、上海（虹桥/浦东）、成都（双流/天府）自动识别 ▸ 价格异常检测 — 最低价低于次低价60%时自动提醒，避免异常低价陷阱 ▸ 仅展示直飞 — 自动"
+title: "FlightPriceCompare"
+description: "✈️ Cross-Platform Flight Price Comparison MCP v4.0.0 Real-time price comparison for direct flights across five major platforms, automatically matched by flight number across platforms, with booking li…"
 ---
 
-# 机票比价
+# FlightPriceCompare
 
-✈️ 跨平台机票比价 MCP v4.0.0 五大平台直飞机票实时比价，自动按航班号跨平台匹配，预订链接跟随最低价。无需申请 Key，URL 直连即用。 ✨ 核心特性 ▸ 最低价优先 — 同一航班跨平台匹配，预订链接自动跟最低价走 ▸ 时段筛选 — 支持早班机/上午/中午/下午/傍晚/晚上/红眼，或指定具体时间（前后45min浮动） ▸ 多机场标注 — 北京（首都/大兴）、上海（虹桥/浦东）、成都（双流/天府）自动识别 ▸ 价格异常检测 — 最低价低于次低价60%时自动提醒，避免异常低价陷阱 ▸ 仅展示直飞 — 自动
+✈️ Cross-Platform Flight Price Comparison MCP v4.0.0 Real-time price comparison for direct flights across five major platforms, automatically matched by flight number across platforms, with booking li…
 
-✈️ 跨平台机票比价 MCP v4.0.0
+✈️ Cross-Platform Flight Price Comparison MCP v4.0.0
 
-五大平台直飞机票实时比价，自动按航班号跨平台匹配，预订链接跟随最低价。无需申请 Key，URL 直连即用。
+Real-time price comparison for direct flights across five major platforms, automatically matched by flight number across platforms, with booking links following the lowest price. No need to apply for a Key; use it directly via URL.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 最低价优先 — 同一航班跨平台匹配，预订链接自动跟最低价走
+▸ Lowest Price Priority — Automatically matches the same flight across platforms, and the booking link follows the lowest price
 
-▸ 时段筛选 — 支持早班机/上午/中午/下午/傍晚/晚上/红眼，或指定具体时间（前后45min浮动）
+▸ Time Slot Filtering — Supports early morning/AM/midday/PM/evening/night/red-eye, or specify a specific time (with a 45-minute buffer)
 
-▸ 多机场标注 — 北京（首都/大兴）、上海（虹桥/浦东）、成都（双流/天府）自动识别
+▸ Multiple Airport Recognition — Automatically identifies Beijing (Capital/Daxing), Shanghai (Hongqiao/Pudong), Chengdu (Shuangliu/Tianfu)
 
-▸ 价格异常检测 — 最低价低于次低价60%时自动提醒，避免异常低价陷阱
+▸ Price Anomaly Detection — Automatically alerts when the lowest price is 60% lower than the second-lowest price, avoiding abnormally low-price traps
 
-▸ 仅展示直飞 — 自动过滤中转航班，结果更干净
+▸ Direct Flights Only — Automatically filters out connecting flights, resulting in cleaner results
 
-▸ 排序模式 — 默认按平台数量+价格 / cheapest最低价 / earliest最早起飞
+▸ Sorting Modes — Default sorting by platform coverage + price / cheapest (lowest price) / earliest (earliest departure)
 
-🛠 工具
+🛠 Tools
 
-flight_compare — 跨平台机票比价
+flight_compare — Cross-Platform Flight Price Comparison
 
-同时搜索飞猪、途牛、同程、美团、RG五大平台直飞机票价格，按航班号跨平台匹配，预订链接跟随最低价。
+Simultaneously searches for direct flight prices on Feizhu, Tuniu, Tongcheng, Meituan, and RG, matching by flight number across platforms, with booking links following the lowest price.
 
-参数：
+Parameters:
 
-▸ fromCity（必填）— 出发城市，如"上海"、"北京"、"广州"
+▸ fromCity (required) — Departure city, e.g., "Shanghai", "Beijing", "Guangzhou"
 
-▸ toCity（必填）— 到达城市，如"三亚"、"广州"、"上海"
+▸ toCity (required) — Arrival city, e.g., "Sanya", "Guangzhou", "Shanghai"
 
-▸ date（必填）— 出发日期，格式 YYYY-MM-DD，如"2026-07-10"
+▸ date (required) — Departure date, format YYYY-MM-DD, e.g., "2026-07-10"
 
-▸ timePref（可选）— 时段偏好：早班机/上午/中午/下午/傍晚/晚上/红眼，或具体时间如"10点"（前后45min浮动匹配）
+▸ timePref (optional) — Time preference: early morning/AM/midday/PM/evening/night/red-eye, or specific time like "10:00" (with a 45-minute buffer)
 
-▸ sortMode（可选）— 排序模式：cheapest（最低价优先）、earliest（最早起飞优先），默认按平台覆盖数量+价格综合排序
+▸ sortMode (optional) — Sorting mode: cheapest (lowest price priority), earliest (earliest departure priority), default sorting by platform coverage + price
 
-数据源：
+Data Sources:
 
-▸ 飞猪 — 阿里旗下，国内最大OTA之一
+▸ Feizhu — One of the largest OTAs in China, under Alibaba
 
-▸ 途牛 — 综合旅行平台，覆盖面广
+▸ Tuniu — Comprehensive travel platform with broad coverage
 
-▸ 同程 — 腾讯系，价格有竞争力
+▸ Tongcheng — Part of Tencent, competitive pricing
 
-▸ 美团 — 本地生活+旅行（起步价）
+▸ Meituan — Local life + travel (starting price)
 
-▸ RG — 全球旅行预订（全价票参考）
+▸ RG — Global travel booking (full-price ticket reference)
 
-📝 使用示例
+📝 Usage Examples
 
-▸ "明天上海飞北京机票多少钱" → flight_compare(fromCity="上海", toCity="北京", date="2026-07-01")
+▸ "How much is a flight from Shanghai to Beijing tomorrow?" → flight_compare(fromCity="上海", toCity="北京", date="2026-07-01")
 
-▸ "查一下7月10号广州飞三亚上午的航班" → flight_compare(fromCity="广州", toCity="三亚", date="2026-07-10", timePref="上午")
+▸ "Check the morning flights from Guangzhou to Sanya on July 10th" → flight_compare(fromCity="广州", toCity="三亚", date="2026-07-10", timePref="上午")
 
-▸ "下周五北京飞成都，按最低价排序" → flight_compare(fromCity="北京", toCity="成都", date="2026-07-04", sortMode="cheapest")
+▸ "Flights from Beijing to Chengdu next Friday, sorted by lowest price" → flight_compare(fromCity="北京", toCity="成都", date="2026-07-04", sortMode="cheapest")
 
-▸ "国庆深圳飞杭州有没有红眼航班" → flight_compare(fromCity="深圳", toCity="杭州", date="2026-10-01", timePref="红眼")
+▸ "Are there any red-eye flights from Shenzhen to Hangzhou on National Day?" → flight_compare(fromCity="深圳", toCity="杭州", date="2026-10-01", timePref="红眼")
 
-🎯 适用场景
+🎯 Use Cases
 
-▸ 出差比价 — 同时查五大平台，一键找出最低价，省去逐个APP切换的麻烦
+▸ Business Travel Comparison — Simultaneously checks five platforms, finds the lowest price with one click, saving the trouble of switching between apps
 
-▸ 假期出行 — 指定时段偏好筛选，快速定位符合时间安排航班
+▸ Holiday Travel — Filters by specified time preferences, quickly locates flights that fit your schedule
 
-▸ 多机场城市 — 自动识别北京/上海/成都多机场，标注出发到达机场一目了然
+▸ Multi-Airport Cities — Automatically recognizes multiple airports in Beijing, Shanghai, and Chengdu, clearly marking departure and arrival airports
 
-▸ 价格监控 — 价格异常检测提醒，避免买到异常低价问题票
+▸ Price Monitoring — Alerts for price anomalies, avoiding problematic tickets with abnormally low prices
 
-⚙️ MCP Server 配置
+⚙️ MCP Server Configuration
 
-标准版（Mac/Linux）：
+Standard Edition (Mac/Linux):
 
 plaintext
-1
-2
-3
-4
-5
-6
-7
-8
-9
 {
   "mcpServers": {
     "flight-price-compare": {
@@ -98,20 +89,9 @@ plaintext
   }
 }
 
-
-
-Windows 版：
+Windows Edition:
 
 plaintext
-1
-2
-3
-4
-5
-6
-7
-8
-9
 {
   "mcpServers": {
     "flight-price-compare": {
@@ -121,28 +101,26 @@ plaintext
   }
 }
 
-
-
 📄 License
 
 MIT
 
-**官方网站：** [https://pypi.org/project/flight-price-compare-mcp/](https://pypi.org/project/flight-price-compare-mcp/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pypi.org/project/flight-price-compare-mcp/](https://pypi.org/project/flight-price-compare-mcp/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `development`
-- 标签：`search`, `developer tools`, `other`, `chinese`
+- Categories: `search`, `development`
+- Tags: `search`, `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`flight-price-compare-mcp==4.0.2`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `flight-price-compare-mcp==4.0.2`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mako2026-flightpricecompare.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-flightpricecompare.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,54 +1,54 @@
 ---
-title: "魔塔免费调用额度"
-description: "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。"
+title: "ModelScope Free Inference Quota"
+description: "Free sign-up; after linking an Alibaba Cloud account and completing real-name verification, each account gets 2,000 free API-Inference calls per day in total, with a per-model cap of usually 500 calls…"
 ---
 
-# 魔塔免费调用额度
+# ModelScope Free Inference Quota
 
-免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。
+Free sign-up; after linking an Alibaba Cloud account and completing real-name verification, each account gets 2,000 free API-Inference calls per day in total, with a per-model cap of usually 500 calls…
 
-魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。注意：未完成账号关联时调用会收到 401 提示，免费额度按自然日重新计算。
+ModelScope (魔搭) is Alibaba's model community and hosted-inference platform, providing free API-Inference for 60,000+ models (Qwen, DeepSeek, Tongyi and more) plus image-generation capabilities. The API is OpenAI-compatible and also offers an Anthropic-compatible endpoint (used by Claude Code style tools), which suits users who want to evaluate popular open models over an API and connect the provider to ChatSpeed. The currently callable (free) models can be listed through the OpenAI-compatible endpoint `GET /v1/models`; models returned there are callable under the free quota. The free quota is stable, but popular models occasionally get removed or adjusted, and the official side does not publish a per-model quota table — confirm with the official limits document and model pages before relying on it. Note: calls fail with 401 until the account is linked, and the free quota resets per calendar day.
 
-**官方网站：** [https://modelscope.cn/docs](https://modelscope.cn/docs)
-**状态：** `review`　**最后核验：** `2026-08-30`
+**Official site: ** [https://modelscope.cn/docs](https://modelscope.cn/docs)
+**Status: ** `review`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `coding`, `reasoning`
-- 标签：`modelscope`, `free-quota`, `api`, `china`
+- Categories: `general`, `coding`, `reasoning`
+- Tags: `modelscope`, `free-quota`, `api`, `china`
 
-## 免费使用说明
+## Free Usage
 
-- 访问方式：`api`
-- 是否需要登录：`是`
-- 是否有免费层：`是`
-- 可用区域：`regional`
+- Access: `api`
+- Requires login: `Yes`
+- Has free tier: `Yes`
+- Availability: `regional`
 
-注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。
+After sign-up, Alibaba Cloud account linking and real-name verification: 2,000 API-Inference calls/day in total; a single model is usually capped at 500 calls/day, and some large models are currently capped at 200 calls/day (community-reported; the official side does not publish a per-model table). The callable model list is available via `GET /v1/models`. Limits may be adjusted dynamically; follow the official limits documentation.
 
-### 分模型免费额度明细
+### Per-model free quota
 
-| 模型 | 免费额度 | 频率与限速 |
+| Model | Free quota | Rate / frequency |
 | --- | --- | --- |
-| 全部模型（API-Inference 每日总额） | 每天总计 2,000 次 | 全模型合计，按自然日 |
-| 单个一般模型（如 Qwen 系列） | 每个模型每天不超过 500 次 | 按模型按天 |
-| deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型 | 每个模型每天 200 次（当前） | 按模型按天，平台可能动态调整 |
+| All models (API-Inference, daily total) | 2,000 calls / day in total | Shared by all models per day |
+| Single general model (e.g. Qwen series) | Up to 500 calls / day per model | Per model per day |
+| Large models such as deepseek-ai/DeepSeek-R1-0528, DeepSeek-V3.1 | 200 calls / day per model (current) | Per model per day; may change dynamically |
 
-## 注册与限制
-- 注册入口：[https://modelscope.cn/](https://modelscope.cn/)
-- 注册限制：手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。
-- 免费政策文档：[https://modelscope.cn/docs/model-service/API-Inference/limits](https://modelscope.cn/docs/model-service/API-Inference/limits)
+## Registration & Limits
+- Sign up: [https://modelscope.cn/](https://modelscope.cn/)
+- Registration limit: Sign up with a phone number/email, then link an Alibaba Cloud account and complete Alibaba Cloud real-name verification before the API works; no credit card is required. Unlinked or unverified accounts receive 401 errors from the API.
+- Free policy doc: [https://modelscope.cn/docs/model-service/API-Inference/limits](https://modelscope.cn/docs/model-service/API-Inference/limits)
 
-## ChatSpeed 导入
+## ChatSpeed Import
 
-该服务关联模型供应商 `modelscope`，可从模型供应商列表导入配置，调用入口如下：
-- 协议：`openai`
-- Base URL：`https://api-inference.modelscope.cn/v1`
-- Logo：![ModelScope](https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico)
-- 官方文档：[https://modelscope.cn/docs/home](https://modelscope.cn/docs/home)
-- 模型列表：[https://modelscope.cn/models](https://modelscope.cn/models)
-- 密钥申请：[https://modelscope.cn/my/myaccesstoken](https://modelscope.cn/my/myaccesstoken)
+This service is linked to model provider `modelscope`; import its config from the model provider list. Call entry points:
+- Protocol: `openai`
+- Base URL: `https://api-inference.modelscope.cn/v1`
+- Logo: ![ModelScope](https://g.alicdn.com/sail-web/maas/2.7.13/favicon/128.ico)
+- Docs: [https://modelscope.cn/docs/home](https://modelscope.cn/docs/home)
+- Model list: [https://modelscope.cn/models](https://modelscope.cn/models)
+- API key: [https://modelscope.cn/my/myaccesstoken](https://modelscope.cn/my/myaccesstoken)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/free-ai/modelscope-free-quota.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/free-ai/modelscope-free-quota.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

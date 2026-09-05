@@ -1,29 +1,29 @@
 ---
-title: "旅行规划器 MCP 服务端"
-description: "通过与Google Maps和旅行规划服务交互，使大型语言模型能够执行与旅行相关的任务，包括地点搜索、地点详情和旅行时间计算。"
+title: "TRAVEL-PLANNER-MCP-Server"
+description: "Enables LLMs to perform travel-related tasks by interacting with Google Maps and travel planning services including location search, place details, and travel time calculations."
 ---
 
-# 旅行规划器 MCP 服务端
+# TRAVEL-PLANNER-MCP-Server
 
-通过与Google Maps和旅行规划服务交互，使大型语言模型能够执行与旅行相关的任务，包括地点搜索、地点详情和旅行时间计算。
+Enables LLMs to perform travel-related tasks by interacting with Google Maps and travel planning services including location search, place details, and travel time calculations.
 
-# 旅行规划 MCP 服务器 (@gongrzhe/server-travelplanner-mcp)
+# Travel Planner MCP Server (@gongrzhe/server-travelplanner-mcp)
 [Smithery](https://smithery.ai/server/@GongRzhe/TRAVEL-PLANNER-MCP-Server)
 
-这是一个用于与 Google 地图和旅行规划服务交互的旅行规划模型上下文协议 (MCP) 服务器实现。该服务器使 LLM 能够执行与旅行相关的任务，如地点搜索、地点详情查询和旅行时间计算。
+A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.
 
   
 
-## 安装与使用
-### 通过 Smithery 安装
+## Installation & Usage
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@GongRzhe/TRAVEL-PLANNER-MCP-Server) 自动为 Claude Desktop 安装旅行规划器：
+To install Travel Planner for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@GongRzhe/TRAVEL-PLANNER-MCP-Server):
 
 ```bash
 npx -y @smithery/cli install @GongRzhe/TRAVEL-PLANNER-MCP-Server --client claude
 ```
 
-### 手动安装
+### Installing Manually
 ```bash
 # Using npx (recommended)
 npx @gongrzhe/server-travelplanner-mcp
@@ -32,7 +32,7 @@ npx @gongrzhe/server-travelplanner-mcp
 GOOGLE_MAPS_API_KEY=your_api_key npx @gongrzhe/server-travelplanner-mcp
 ```
 
-或者全局安装：
+Or install globally:
 
 ```bash
 # Install globally
@@ -42,40 +42,40 @@ npm install -g @gongrzhe/server-travelplanner-mcp
 GOOGLE_MAPS_API_KEY=your_api_key @gongrzhe/server-travelplanner-mcp
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 - **searchPlaces**
-  - 使用 Google Places API 搜索地点
-  - 输入：
-    - `query` (字符串): 地点搜索查询
-    - `location` (可选): 用于偏置结果的纬度和经度
-    - `radius` (可选): 搜索半径（米）
+  - Search for places using Google Places API
+  - Input:
+    - `query` (string): Search query for places
+    - `location` (optional): Latitude and longitude to bias results
+    - `radius` (optional): Search radius in meters
 
 - **getPlaceDetails**
-  - 获取特定地点的详细信息
-  - 输入：
-    - `placeId` (字符串): 用于检索详情的 Google Place ID
+  - Get detailed information about a specific place
+  - Input:
+    - `placeId` (string): Google Place ID to retrieve details for
 
 - **calculateRoute**
-  - 计算两个地点之间的路线
-  - 输入：
-    - `origin` (字符串): 出发地
-    - `destination` (字符串): 目的地
-    - `mode` (可选): 旅行模式（驾车、步行、骑自行车、公共交通）
+  - Calculate route between two locations
+  - Input:
+    - `origin` (string): Starting location
+    - `destination` (string): Ending location
+    - `mode` (optional): Travel mode (driving, walking, bicycling, transit)
 
 - **getTimeZone**
-  - 获取地点的时区信息
-  - 输入：
-    - `location`: 纬度和经度坐标
-    - `timestamp` (可选): 用于时区计算的时间戳
+  - Get timezone information for a location
+  - Input:
+    - `location`: Latitude and longitude coordinates
+    - `timestamp` (optional): Timestamp for time zone calculation
 
-## 配置
+## Configuration
 
-### 与 Claude Desktop 一起使用
+### Usage with Claude Desktop
 
-要将此服务器与 Claude Desktop 应用程序一起使用，请在您的 `claude_desktop_config.json` 文件的 "mcpServers" 部分添加以下配置：
+To use this server with the Claude Desktop app, add the following configuration to the "mcpServers" section of your `claude_desktop_config.json`:
 
 ```json
 {
@@ -91,7 +91,7 @@ GOOGLE_MAPS_API_KEY=your_api_key @gongrzhe/server-travelplanner-mcp
 }
 ```
 
-或者，如果您已安装了包，可以直接使用节点命令：
+Alternatively, you can use the node command directly if you have the package installed:
 
 ```json
 {
@@ -107,48 +107,48 @@ GOOGLE_MAPS_API_KEY=your_api_key @gongrzhe/server-travelplanner-mcp
 }
 ```
 
-## 开发
+## Development
 
-### 从源代码构建
+### Building from Source
 
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 ```bash
    npm install
 ```
-3. 构建项目：
+3. Build the project:
 ```bash
    npm run build
 ```
 
-### 环境变量
+### Environment Variables
 
-- `GOOGLE_MAPS_API_KEY` (必需): 您的 Google 地图 API 密钥，并启用以下 API：
+- `GOOGLE_MAPS_API_KEY` (required): Your Google Maps API key with the following APIs enabled:
   - Places API
   - Directions API
   - Geocoding API
   - Time Zone API
 
-## 许可证
+## License
 
-此 MCP 服务器采用 MIT 许可证。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server](https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server](https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`travel and transportation`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `travel and transportation`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@gongrzhe/server-travelplanner-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@gongrzhe/server-travelplanner-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gongrzhe-travel-planner.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gongrzhe-travel-planner.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

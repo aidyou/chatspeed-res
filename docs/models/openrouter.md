@@ -1,31 +1,31 @@
 ---
 title: "OpenRouter"
-description: "统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。"
+description: "A unified OpenAI-compatible API with multiple free model variants whose availability and rate limits can change."
 ---
 
 # OpenRouter
 
-统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。
+A unified OpenAI-compatible API with multiple free model variants whose availability and rate limits can change.
 
-OpenRouter 为多个模型供应商提供统一的 OpenAI 兼容接口，可简化 ChatSpeed 的配置和路由，也包含免费模型变体。但模型可用性、价格、供应商路由和免费层限制可能变化，必须在选定的模型页面核验。
+OpenRouter provides one OpenAI-compatible endpoint for models from multiple providers. It can simplify ChatSpeed configuration and routing, including free model variants, but model availability, pricing, provider routing, and free-tier limits can change and must be checked on the selected model page.
 
-**官方网站：** [https://openrouter.ai/](https://openrouter.ai/)
-**状态：** `active`　**最后核验：** `2026-08-29`
+**Official site: ** [https://openrouter.ai/](https://openrouter.ai/)
+**Status: ** `active`　**Last verified: ** `2026-08-29`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `coding`, `reasoning`
-- 标签：`openrouter`, `openai-compatible`, `free-models`, `api`
+- Categories: `general`, `coding`, `reasoning`
+- Tags: `openrouter`, `openai-compatible`, `free-models`, `api`
 
-## 供应商配置
+## Provider Configuration
 
-- 协议：`openai`
-- Base URL：`https://openrouter.ai/api/v1`
-- 模型数量：0
-- 文档：[https://openrouter.ai/docs](https://openrouter.ai/docs)
-- 模型列表：[https://openrouter.ai/models](https://openrouter.ai/models)
-- 密钥申请：[https://openrouter.ai/keys](https://openrouter.ai/keys)
+- Protocol: `openai`
+- Base URL: `https://openrouter.ai/api/v1`
+- Model count: 0
+- Docs: [https://openrouter.ai/docs](https://openrouter.ai/docs)
+- Model list: [https://openrouter.ai/models](https://openrouter.ai/models)
+- API key: [https://openrouter.ai/keys](https://openrouter.ai/keys)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/models/openrouter.json`。内容最后核验于 `2026-08-29`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/models/openrouter.json`. Content last verified on `2026-08-29`; free quotas and service limits may change with official policies.

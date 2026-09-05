@@ -1,36 +1,36 @@
 ---
-title: "MCP 城市天气查询"
-description: "MCP天气查询服务器 基于天行数据API的MCP（模型上下文协议）天气查询服务器，为AI模型提供实时天气信息查询功能。 🌟 功能特性 - 城市搜索: 支持中文和英文城市名称搜索 - 实时天气: 获取当前天气、温度、湿度、风力等详细信息 - 空气质量: 提供AQI指数和空气质量等级 - 生活提示: 根据天气情况提供穿衣和出行建议 - 丰富展示: 使用emoji图标，信息展示直观友好 🛠️ MCP工具函数 1. queryweather(city: str) 根据城市名称查询天气信息。 参数: - city: 城市名称"
+title: "mcp-server-weather"
+description: "MCP Weather Query Server An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information query functionality for AI models. 🌟 Features - Ci…"
 ---
 
-# MCP 城市天气查询
+# mcp-server-weather
 
-MCP天气查询服务器 基于天行数据API的MCP（模型上下文协议）天气查询服务器，为AI模型提供实时天气信息查询功能。 🌟 功能特性 - 城市搜索: 支持中文和英文城市名称搜索 - 实时天气: 获取当前天气、温度、湿度、风力等详细信息 - 空气质量: 提供AQI指数和空气质量等级 - 生活提示: 根据天气情况提供穿衣和出行建议 - 丰富展示: 使用emoji图标，信息展示直观友好 🛠️ MCP工具函数 1. queryweather(city: str) 根据城市名称查询天气信息。 参数: - city: 城市名称
+MCP Weather Query Server An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information query functionality for AI models. 🌟 Features - Ci…
 
-# MCP天气查询服务器
+# MCP Weather Query Server
 
-基于天行数据API的MCP（模型上下文协议）天气查询服务器，为AI模型提供实时天气信息查询功能。
+An MCP (Model Context Protocol) weather query server based on the Tianxing Data API, providing real-time weather information query functionality for AI models.
 
-## 🌟 功能特性
+## 🌟 Features
 
-- **城市搜索**: 支持中文和英文城市名称搜索
-- **实时天气**: 获取当前天气、温度、湿度、风力等详细信息
-- **空气质量**: 提供AQI指数和空气质量等级
-- **生活提示**: 根据天气情况提供穿衣和出行建议
-- **丰富展示**: 使用emoji图标，信息展示直观友好
+- **City Search**: Supports searching by city names in both Chinese and English
+- **Real-Time Weather**: Retrieves detailed information such as current weather, temperature, humidity, wind conditions, etc.
+- **Air Quality**: Provides AQI index and air quality level
+- **Life Tips**: Offers clothing and travel advice based on weather conditions
+- **Rich Display**: Uses emoji icons for an intuitive and friendly display of information
 
-## 🛠️ MCP工具函数
+## 🛠️ MCP Tool Functions
 
 ### 1. `query_weather(city: str)`
-根据城市名称查询天气信息。
+Queries weather information based on the city name.
 
-**参数:**
-- `city`: 城市名称（支持中文和英文，如：广州、北京、shanghai等）
+**Parameters:**
+- `city`: City name (supports both Chinese and English, e.g., Guangzhou, Beijing, shanghai, etc.)
 
-**返回:**
-- 格式化的天气信息字符串，包含温度、湿度、风力、空气质量等
+**Returns:**
+- A formatted string of weather information, including temperature, humidity, wind conditions, air quality, etc.
 
-**示例:**
+**Example:**
 ```python
 result = await query_weather("广州")
 # 返回:
@@ -40,17 +40,16 @@ result = await query_weather("广州")
 # 📊 温度范围: 24℃ ~ 30℃
 # ...
 ```
-
 ### 2. `search_city_info(city: str)`
-搜索城市的详细信息。
+Searches for detailed information about a city.
 
-**参数:**
-- `city`: 城市名称（支持中文和英文）
+**Parameters:**
+- `city`: City name (supports both Chinese and English)
 
-**返回:**
-- 城市详细信息字符串，包含中英文名称、省份、经纬度、城市代码等
+**Returns:**
+- A string containing detailed city information, including Chinese and English names, province, latitude and longitude, city code, etc.
 
-**示例:**
+**Example:**
 ```python
 result = await search_city_info("广州")
 # 返回:
@@ -60,16 +59,14 @@ result = await search_city_info("广州")
 # 🗺️ 所属省份: 广东 (guangdong)
 # ...
 ```
+## 📦 Installation and Usage
 
-## 📦 安装和使用
-
-### 1. 安装依赖
+### 1. Install Dependencies
 ```bash
 cd mcp-weather/mcp-server-weather
 uv sync
 ```
-
-### 2. 启动服务器
+### 2. Start the Server
 ```bash
 # 使用内置API Key
 python server.py
@@ -77,107 +74,124 @@ python server.py
 # 或使用自定义API Key
 python server.py --api_key YOUR_API_KEY
 ```
-
-### 3. 配置MCP客户端（Cursor集成）
-在Cursor的`.cursor/mcp.json`文件中添加如下配置：
+### 3. Configure MCP Client (Cursor Integration)
+Add the following configuration to the `.cursor/mcp.json` file in Cursor:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "weather": {
+
       "command": "uv",
+
       "args": [
+
         "--directory",
+
         "/Users/luoshui/Documents/Cursor/MCP/mcp-weather/mcp-server-weather",
+
         "run",
+
         "server.py"
+
       ],
+
       "disabled": false,
+
       "autoApprove": [
+
         "query_weather",
+
         "search_city_info"
+
       ]
+
     }
+
   }
+
 }
+
 ```
+**Parameter Explanation:**
+- `command`: Run using `uv` as the package manager
+- `--directory`: Specifies the service directory
+- `run server.py`: Starts the weather service
+- `autoApprove`: Automatically approves tool function calls without manual confirmation
+- `disabled`: Whether to disable this service
 
-**参数说明：**
-- `command`: 使用`uv`作为包管理器运行
-- `--directory`: 指定服务目录
-- `run server.py`: 启动天气服务
-- `autoApprove`: 自动批准工具函数调用，无需手动确认
-- `disabled`: 是否禁用该服务
+> **Note:** Please adjust the paths according to your local setup.
 
-> **注意：** 路径请根据你本地实际情况调整。
+### 4. Usage
+- In Cursor, directly ask about the weather in natural language, such as "查询广州天气" or "北京空气质量如何", and the AI will automatically call the MCP tools.
+- Supports querying detailed city information, such as "广州的城市代码是多少".
 
-### 4. 使用方法
-- 在Cursor中直接用自然语言提问天气，如"查询广州天气""北京空气质量如何"等，AI会自动调用MCP工具。
-- 支持城市详细信息查询，如"广州的城市代码是多少"。
+## 🔧 Technical Implementation
 
-## 🔧 技术实现
+- **API Provider**: Tianxing Data (tianapi.com)
+- **HTTP Client**: httpx
+- **MCP Framework**: FastMCP
+- **Asynchronous Support**: Fully asynchronous implementation, supporting concurrent requests
+- **Error Handling**: Comprehensive error handling with user-friendly error messages
 
-- **API提供商**: 天行数据 (tianapi.com)
-- **HTTP客户端**: httpx
-- **MCP框架**: FastMCP
-- **异步支持**: 完全异步实现，支持并发请求
-- **错误处理**: 完善的错误处理和用户友好的错误信息
+## 📊 API Endpoints
 
-## 📊 API接口
-
-### 城市搜索接口
+### City Search Endpoint
 - **URL**: `https://apis.tianapi.com/citylookup/index`
-- **方法**: GET
-- **参数**: `key`, `area`
+- **Method**: GET
+- **Parameters**: `key`, `area`
 
-### 天气查询接口
+### Weather Query Endpoint
 - **URL**: `https://apis.tianapi.com/tianqi/index`
-- **方法**: GET
-- **参数**: `key`, `city`, `type`
+- **Method**: GET
+- **Parameters**: `key`, `city`, `type`
 
-## 🧪 测试结果
+## 🧪 Test Results
 
-✅ 所有功能测试通过：
-- API连接正常
-- 城市搜索功能正常
-- 天气查询功能正常
-- 数据格式化正常
-- MCP工具函数正常
+✅ All features tested successfully:
+- API connection is normal
+- City search function works normally
+- Weather query function works normally
+- Data formatting is correct
+- MCP tool functions work normally
 
-## 📝 注意事项
+## 📝 Notes
 
-1. **城市名称**: 支持中文城市名称，英文名称支持有限
-2. **API限制**: 使用免费API Key，可能有请求频率限制
-3. **网络依赖**: 需要稳定的网络连接访问天行数据API
-4. **数据准确性**: 天气数据来源于天行数据，准确性依赖于数据提供商
+1. **City Names**: Supports Chinese city names; support for English names is limited
+2. **API Limitations**: Uses a free API key, which may have request frequency limits
+3. **Network Dependency**: Requires a stable internet connection to access the Tianxing Data API
+4. **Data Accuracy**: Weather data is sourced from Tianxing Data, and accuracy depends on the data provider
 
-## 🔄 更新日志
+## 🔄 Changelog
 
-- **v0.1.0**: 初始版本，实现基本天气查询功能
-- 支持城市搜索和天气查询
-- 完善的错误处理和数据格式化
-- MCP工具函数集成
+- **v0.1.0**: Initial version, implementing basic weather query functionality
+- Supports city search and weather queries
+- Comprehensive error handling and data formatting
+- MCP tool function integration
 
-## 📄 许可证
+## 📄 License
 
-本项目遵循MIT许可证。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/luoshui-coder/mcp-server-weather.git](https://github.com/luoshui-coder/mcp-server-weather.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/luoshui-coder/mcp-server-weather.git](https://github.com/luoshui-coder/mcp-server-weather.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `location services`, `天气`, `chinese`
+- Categories: `data`
+- Tags: `search`, `location services`, `天气`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /Users/luoshui/Documents/Cursor/MCP/mcp-weather/mcp-server-weather run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /Users/luoshui/Documents/Cursor/MCP/mcp-weather/mcp-server-weather run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/luoshui2025-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/luoshui2025-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

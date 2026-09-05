@@ -1,11 +1,11 @@
 ---
-title: "分析师"
-description: "Financial MCP Server 是一个基于多模态大模型的金融技术分析工具，能够从 Yahoo Finance 下载股票数据，计算技术指标，生成专业的 K 线图，并利用 Qwen2.5-VL 等多模态大模型对图表进行分析，生成专业的金融分析报告。"
+title: "fin-mcp-server"
+description: "Financial MCP Server is a financial technical analysis tool based on multimodal large models, capable of downloading stock data from Yahoo Finance, calculating technical indicators, generating profess…"
 ---
 
-# 分析师
+# fin-mcp-server
 
-Financial MCP Server 是一个基于多模态大模型的金融技术分析工具，能够从 Yahoo Finance 下载股票数据，计算技术指标，生成专业的 K 线图，并利用 Qwen2.5-VL 等多模态大模型对图表进行分析，生成专业的金融分析报告。
+Financial MCP Server is a financial technical analysis tool based on multimodal large models, capable of downloading stock data from Yahoo Finance, calculating technical indicators, generating profess…
 
 # Financial MCP Server
 
@@ -137,22 +137,22 @@ stock:
 
 本项目采用`APACHE`许可证，详情请参见 `LICENSE` 文件。
 
-**官方网站：** [https://github.com/vuca-ian/fin-mcp-server.git](https://github.com/vuca-ian/fin-mcp-server.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/vuca-ian/fin-mcp-server.git](https://github.com/vuca-ian/fin-mcp-server.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `金融`, `分析报告`
+- Categories: `finance`
+- Tags: `finance`, `金融`, `分析报告`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m fin_mcp_server`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m fin_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/vucaian-fin.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/vucaian-fin.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

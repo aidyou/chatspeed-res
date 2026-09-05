@@ -1,110 +1,110 @@
 ---
-title: "数据集浏览器"
-description: "启用与 Hugging Face 数据集查看器 API 的交互，允许用户浏览、搜索、过滤和分析托管在 Hugging Face Hub 上的数据集。"
+title: "dataset-viewer"
+description: "Enables interaction with the Hugging Face Dataset Viewer API, allowing users to browse, search, filter, and analyze datasets hosted on the Hugging Face Hub."
 ---
 
-# 数据集浏览器
+# dataset-viewer
 
-启用与 Hugging Face 数据集查看器 API 的交互，允许用户浏览、搜索、过滤和分析托管在 Hugging Face Hub 上的数据集。
+Enables interaction with the Hugging Face Dataset Viewer API, allowing users to browse, search, filter, and analyze datasets hosted on the Hugging Face Hub.
 
 # Dataset Viewer MCP Server
 
-一个用于与 [Hugging Face Dataset Viewer API](https://huggingface.co/docs/dataset-viewer) 交互的MCP服务器，提供了浏览和分析托管在Hugging Face Hub上的数据集的功能。
+An MCP server for interacting with the [Hugging Face Dataset Viewer API](https://huggingface.co/docs/dataset-viewer), providing capabilities to browse and analyze datasets hosted on the Hugging Face Hub.
 
-## 功能
+## Features
 
-### 资源
+### Resources
 
-- 使用 `dataset://` URI 方案访问 Hugging Face 数据集
-- 支持数据集配置和分割
-- 提供分页访问数据集内容
-- 处理私有数据集的身份验证
-- 支持搜索和过滤数据集内容
-- 提供数据集统计和分析
+- Uses `dataset://` URI scheme for accessing Hugging Face datasets
+- Supports dataset configurations and splits
+- Provides paginated access to dataset contents
+- Handles authentication for private datasets
+- Supports searching and filtering dataset contents
+- Provides dataset statistics and analysis
 
-### 工具
+### Tools
 
-服务器提供以下工具：
+The server provides the following tools:
 
 1. **validate**
-   - 检查数据集是否存在且可访问
-   - 参数：
-     - `dataset`: 数据集标识符（例如 'stanfordnlp/imdb'）
-     - `auth_token` (可选): 用于私有数据集
+   - Check if a dataset exists and is accessible
+   - Parameters:
+     - `dataset`: Dataset identifier (e.g. 'stanfordnlp/imdb')
+     - `auth_token` (optional): For private datasets
 
 2. **get_info**
-   - 获取关于数据集的详细信息
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `auth_token` (可选): 用于私有数据集
+   - Get detailed information about a dataset
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `auth_token` (optional): For private datasets
 
 3. **get_rows**
-   - 获取数据集的分页内容
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `config`: 配置名称
-     - `split`: 分割名称
-     - `page` (可选): 页码（从0开始）
-     - `auth_token` (可选): 用于私有数据集
+   - Get paginated contents of a dataset
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `config`: Configuration name
+     - `split`: Split name
+     - `page` (optional): Page number (0-based)
+     - `auth_token` (optional): For private datasets
 
 4. **get_first_rows**
-   - 从数据集分割中获取前几行
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `config`: 配置名称
-     - `split`: 分割名称
-     - `auth_token` (可选): 用于私有数据集
+   - Get first rows from a dataset split
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `config`: Configuration name
+     - `split`: Split name
+     - `auth_token` (optional): For private datasets
 
 5. **get_statistics**
-   - 获取关于数据集分割的统计信息
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `config`: 配置名称
-     - `split`: 分割名称
-     - `auth_token` (可选): 用于私有数据集
+   - Get statistics about a dataset split
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `config`: Configuration name
+     - `split`: Split name
+     - `auth_token` (optional): For private datasets
 
 6. **search_dataset**
-   - 在数据集中搜索文本
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `config`: 配置名称
-     - `split`: 分割名称
-     - `query`: 要搜索的文本
-     - `auth_token` (可选): 用于私有数据集
+   - Search for text within a dataset
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `config`: Configuration name
+     - `split`: Split name
+     - `query`: Text to search for
+     - `auth_token` (optional): For private datasets
 
 7. **filter**
-   - 使用类似SQL的条件过滤行
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `config`: 配置名称
-     - `split`: 分割名称
-     - `where`: SQL WHERE 子句（例如 "score > 0.5"）
-     - `orderby` (可选): SQL ORDER BY 子句
-     - `page` (可选): 页码（从0开始）
-     - `auth_token` (可选): 用于私有数据集
+   - Filter rows using SQL-like conditions
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `config`: Configuration name
+     - `split`: Split name
+     - `where`: SQL WHERE clause (e.g. "score > 0.5")
+     - `orderby` (optional): SQL ORDER BY clause
+     - `page` (optional): Page number (0-based)
+     - `auth_token` (optional): For private datasets
 
 8. **get_parquet**
-   - 以Parquet格式下载整个数据集
-   - 参数：
-     - `dataset`: 数据集标识符
-     - `auth_token` (可选): 用于私有数据集
+   - Download entire dataset in Parquet format
+   - Parameters:
+     - `dataset`: Dataset identifier
+     - `auth_token` (optional): For private datasets
 
-## 安装
+## Installation
 
-### 前提条件
+### Prerequisites
 
-- Python 3.12 或更高版本
-- [uv](https://github.com/astral-sh/uv) - 快速的Python包安装器和解析器
+- Python 3.12 or higher
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
 
-### 设置
+### Setup
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/privetin/dataset-viewer.git
 cd dataset-viewer
 ```
 
-2. 创建虚拟环境并安装：
+2. Create a virtual environment and install:
 ```bash
 # Create virtual environment
 uv venv
@@ -119,19 +119,19 @@ source .venv/bin/activate
 uv add -e .
 ```
 
-## 配置
+## Configuration
 
-### 环境变量
+### Environment Variables
 
-- `HUGGINGFACE_TOKEN`: 用于访问私有数据集的Hugging Face API令牌
+- `HUGGINGFACE_TOKEN`: Your Hugging Face API token for accessing private datasets
 
-### Claude Desktop集成
+### Claude Desktop Integration
 
-将以下内容添加到您的Claude Desktop配置文件中：
+Add the following to your Claude Desktop config file:
 
-在 Windows 上: `%APPDATA%\Claude\claude_desktop_config.json`
+On Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-在 MacOS 上: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -147,23 +147,23 @@ uv add -e .
 }
 ```
 
-## 使用示例
+## Usage Examples
 
-1. 验证数据集：
+1. Validate a dataset:
 ```json
 {
   "dataset": "stanfordnlp/imdb"
 }
 ```
 
-2. 获取数据集信息：
+2. Get dataset information:
 ```json
 {
   "dataset": "stanfordnlp/imdb"
 }
 ```
 
-3. 搜索数据集内容：
+3. Search dataset contents:
 ```json
 {
   "dataset": "stanfordnlp/imdb",
@@ -173,7 +173,7 @@ uv add -e .
 }
 ```
 
-4. 筛选并排序行：
+4. Filter and sort rows:
 ```json
 {
   "dataset": "stanfordnlp/imdb",
@@ -185,7 +185,7 @@ uv add -e .
 }
 ```
 
-5. 获取数据集统计信息：
+5. Get dataset statistics:
 ```json
 {
   "dataset": "stanfordnlp/imdb",
@@ -194,26 +194,26 @@ uv add -e .
 }
 ```
 
-## 许可证
+## License
 
-MIT 许可证 - 详情请参阅 [LICENSE](https://github.com/privetin/dataset-viewer/blob/HEAD/LICENSE)
+MIT License - see [LICENSE](https://github.com/privetin/dataset-viewer/blob/HEAD/LICENSE) for details
 
-**官方网站：** [https://github.com/privetin/dataset-viewer](https://github.com/privetin/dataset-viewer)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/privetin/dataset-viewer](https://github.com/privetin/dataset-viewer)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run dataset-viewer`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run dataset-viewer`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/privetin-dataset-viewer.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/privetin-dataset-viewer.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

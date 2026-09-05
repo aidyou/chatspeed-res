@@ -1,124 +1,140 @@
 ---
-title: "MCP文档增强"
-description: "一种MCP服务器实现，它提供了通过向量搜索检索和处理文档的工具，使人工智能助手能够用相关的文档上下文来增强其响应。"
+title: "mcp-ragdocs"
+description: "An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation contex…"
 ---
 
-# MCP文档增强
+# mcp-ragdocs
 
-一种MCP服务器实现，它提供了通过向量搜索检索和处理文档的工具，使人工智能助手能够用相关的文档上下文来增强其响应。
+An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation contex…
 
-# RAG 文档 MCP 服务器
+# RAG Documentation MCP Server
 
-一个MCP服务器实现，提供通过向量搜索检索和处理文档的工具，使AI助手能够利用相关文档上下文增强其响应。
+An MCP server implementation that provides tools for retrieving and processing documents through vector search, enabling AI assistants to enhance their responses with relevant document context.
 
-## 功能
+## Features
 
-- 基于向量的文档搜索和检索
-- 支持多个文档源
-- 语义搜索能力
-- 自动化文档处理
-- 实时为LLM提供上下文增强
+- Vector-based document search and retrieval
+- Support for multiple document sources
+- Semantic search capabilities
+- Automated document processing
+- Real-time context enhancement for LLMs
 
-## 工具
+## Tools
 
 ### search_documentation
-使用自然语言查询搜索存储的文档。返回按相关性排序的带有上下文的匹配摘录。
+Searches stored documents using a natural language query. Returns matching excerpts with context, sorted by relevance.
 
-**输入:**
-- `query` (字符串): 在文档中搜索的文本。可以是自然语言查询、特定术语或代码片段。
-- `limit` (数字, 可选): 返回的最大结果数量（1-20，默认：5）。较高的限制提供了更全面的结果，但可能需要更长的处理时间。
+**Inputs:**
+- `query` (string): The text to search within the documents. Can be a natural language query, specific term, or code snippet.
+- `limit` (number, optional): The maximum number of results to return (1-20, default: 5). A higher limit provides more comprehensive results but may require longer processing time.
 
 ### list_sources
-列出系统中当前存储的所有文档源。返回所有已索引文档的综合列表，包括来源URL、标题和最后更新时间。使用此功能来了解可搜索的文档有哪些，或者验证特定来源是否已被索引。
+Lists all document sources currently stored in the system. Returns a comprehensive list of all indexed documents, including source URL, title, and last updated time. Use this function to see what documents are searchable or to verify if a specific source has been indexed.
 
 ### extract_urls
-从给定网页提取并分析所有URL。该工具会爬取指定的网页，识别所有超链接，并可以选择将它们添加到处理队列中。
+Extracts and analyzes all URLs from a given web page. This tool crawls the specified web page, identifies all hyperlinks, and can optionally add them to the processing queue.
 
-**输入:**
-- `url` (字符串): 要分析的网页的完整URL（必须包含协议，例如https://）。页面必须是公开可访问的。
-- `add_to_queue` (布尔值, 可选): 如果为true，则自动将提取的URL添加到处理队列以供稍后索引。对于大型站点，请谨慎使用以避免过度排队。
+**Inputs:**
+- `url` (string): The full URL of the web page to analyze (must include the protocol, e.g., https://). The page must be publicly accessible.
+- `add_to_queue` (boolean, optional): If true, automatically adds the extracted URLs to the processing queue for later indexing. Use with caution for large sites to avoid over-queueing.
 
 ### remove_documentation
-通过其URL从系统中删除特定的文档源。移除是永久性的，并将影响未来的搜索结果。
+Removes a specific document source from the system by its URL. Removal is permanent and will affect future search results.
 
-**输入:**
-- `urls` (字符串数组): 要从数据库中删除的URL数组。每个URL必须与添加文档时使用的URL完全匹配。
+**Inputs:**
+- `urls` (array of strings): An array of URLs to be removed from the database. Each URL must exactly match the one used when adding the document.
 
 ### list_queue
-列出当前等待在文档处理队列中的所有URL。显示将在调用run_queue时被处理的待处理文档源。使用此功能监控队列状态，验证URL是否正确添加，或检查处理积压情况。
+Lists all URLs currently waiting in the document processing queue. Displays the pending document sources that will be processed when calling run_queue. Use this function to monitor queue status, verify that URLs were added correctly, or check for backlog.
 
 ### run_queue
-处理并索引文档队列中的所有URL。每个URL按顺序处理，具有适当的错误处理和重试逻辑。处理过程中提供进度更新。长时间运行的操作将持续处理直到队列为空或发生无法恢复的错误为止。
+Processes and indexes all URLs in the document queue. Each URL is processed in order, with appropriate error handling and retry logic. Progress updates are provided during processing. Long-running operations will continue until the queue is empty or an unrecoverable error occurs.
 
 ### clear_queue
-从文档处理队列中移除所有待处理的URL。当您想要重新开始、移除不需要的URL或取消待处理的处理时，使用此功能。此操作立即生效且不可逆——如果您希望以后再处理这些URL，需要重新添加。
+Removes all pending URLs from the document processing queue. Use this function when you want to start over, remove unwanted URLs, or cancel pending processing. This operation takes effect immediately and is irreversible—if you wish to process these URLs later, you will need to re-add them.
 
-## 使用说明
+## Usage Instructions
 
-请注意，原文档在这里结束，并没有进一步提供具体的使用示例或指南。如果需要关于如何配置或具体命令行参数等信息，请参照相关章节或联系支持团队获取更多帮助。
+Please note that the original document ends here and does not provide specific usage examples or guides. For information on how to configure or specific command-line parameters, please refer to the relevant sections or contact the support team for further assistance.
 
-RAG 文档工具旨在实现以下功能：
+The RAG documentation tools are designed to achieve the following:
 
-- 通过相关文档增强 AI 响应
-- 构建具有文档意识的 AI 助手
-- 为开发者创建上下文感知工具
-- 实现语义文档搜索
-- 增强现有知识库
+- Enhance AI responses with relevant documents
+- Build document-aware AI assistants
+- Create context-aware tools for developers
+- Implement semantic document search
+- Augment existing knowledge bases
 
-## 配置
+## Configuration
 
-### 在 Claude Desktop 中使用
+### Using in Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add the following to your `claude_desktop_config.json` file:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "rag-docs": {
+
       "command": "npx",
+
       "args": [
+
         "-y",
+
         "@hannesrudolph/mcp-ragdocs"
+
       ],
+
       "env": {
+
         "OPENAI_API_KEY": "",
+
         "QDRANT_URL": "",
+
         "QDRANT_API_KEY": ""
+
       }
+
     }
+
   }
+
 }
+
 ```
+You need to provide values for the following environment variables:
+- `OPENAI_API_KEY`: OpenAI API key for generating embeddings
+- `QDRANT_URL`: URL of your Qdrant vector database instance
+- `QDRANT_API_KEY`: API key for authenticating with Qdrant
 
-您需要为以下环境变量提供值：
-- `OPENAI_API_KEY`：用于生成嵌入的 OpenAI API 密钥
-- `QDRANT_URL`：您的 Qdrant 向量数据库实例的 URL
-- `QDRANT_API_KEY`：与 Qdrant 认证的 API 密钥
+## License
 
-## 许可证
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please refer to the LICENSE file in the project repository.
 
-此 MCP 服务器采用 MIT 许可证。这意味着您可以自由地使用、修改和分发该软件，但需遵守 MIT 许可证的条款和条件。更多详情，请参阅项目仓库中的 LICENSE 文件。
+## Acknowledgments
 
-## 致谢
+This project is a fork of [qpd-v/mcp-ragdocs](https://github.com/qpd-v/mcp-ragdocs), originally developed by qpd-v. The original project provided the foundation for this implementation.
 
-该项目是 [qpd-v/mcp-ragdocs](https://github.com/qpd-v/mcp-ragdocs) 的一个分支，最初由 qpd-v 开发。原项目为此实现提供了基础。
+**Official site: ** [https://github.com/hannesrudolph/mcp-ragdocs](https://github.com/hannesrudolph/mcp-ragdocs)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/hannesrudolph/mcp-ragdocs](https://github.com/hannesrudolph/mcp-ragdocs)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `development`, `search`, `memory`
+- Tags: `search`, `knowledge and memory`, `developer tools`, `chinese`
 
-- 分类：`development`, `search`, `memory`
-- 标签：`search`, `knowledge and memory`, `developer tools`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @hannesrudolph/mcp-ragdocs`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @hannesrudolph/mcp-ragdocs`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/hannesrudolph-ragdocs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hannesrudolph-ragdocs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

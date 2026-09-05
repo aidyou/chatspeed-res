@@ -1,141 +1,147 @@
 ---
-title: "Kuaizi-视频创作"
-description: "Kuaizi MCP Server 打造了LLM Agent与Kuaizi SaaS平台能力的无缝融合，通过6大核心服务接口，全方位赋能商业视频制作流程。从AI脚本生成、灵光索创意挖掘、智镜视频结构解析，到一键成片自动合成、长视频智能切片及多语言AI配音，为用户提供端到端的视频内容生产解决方案。"
+title: "Kuaizi-MCP"
+description: "Kuaizi MCP Server has created a seamless integration of LLM Agents and the capabilities of the Kuaizi SaaS platform. Through six core service interfaces, it empowers the commercial video production pr…"
 ---
 
-# Kuaizi-视频创作
+# Kuaizi-MCP
 
-Kuaizi MCP Server 打造了LLM Agent与Kuaizi SaaS平台能力的无缝融合，通过6大核心服务接口，全方位赋能商业视频制作流程。从AI脚本生成、灵光索创意挖掘、智镜视频结构解析，到一键成片自动合成、长视频智能切片及多语言AI配音，为用户提供端到端的视频内容生产解决方案。
+Kuaizi MCP Server has created a seamless integration of LLM Agents and the capabilities of the Kuaizi SaaS platform. Through six core service interfaces, it empowers the commercial video production pr…
 
-## 产品介绍
+## Product Introduction
 
-Kuaizi MCP Server 打造了LLM Agent与Kuaizi SaaS平台能力的无缝融合，通过6大核心服务接口，全方位赋能商业视频制作流程。从AI脚本生成、灵光索创意挖掘、智镜视频结构解析，到一键成片自动合成、长视频智能切片及多语言AI配音，为用户提供端到端的视频内容生产解决方案。
+Kuaizi MCP Server has created a seamless integration of LLM Agents and the capabilities of the Kuaizi SaaS platform.  Through six core service interfaces, it empowers the commercial video production process in all aspects.  From AI script generation, Lingguangsuo creative mining, Zhijing video structure analysis, to one-click automatic synthesis of finished videos, intelligent slicing of long videos and multi-language AI dubbing, we provide users with end-to-end video content production solutions.
 
-以下是一个虚拟的简化使用场景，以帮助用户理解Kuaizi MCP服务各个工具的能力：
+Below is a virtual simplified usage scenario to help users understand the capabilities of various tools in Kuaizi MCP service:
 
-> 传统工作流
+> Traditional Workflow
 >
-> 剪辑师小林接到美妆客户需求后，手动搜索热门视频灵感，花3小时撰写分镜脚本，因不熟悉实验室镜头拍摄，额外租借显微设备重拍产品特写。剪辑时反复调试转场特效，导出后又针对抖音、小红书分别调整视频尺寸和字幕位置，全程耗时48小时。
+> After receiving a beauty client's request, editor Xiao Lin manually searches for popular video inspirations, spends 3 hours writing storyboard scripts, and rents additional microscopic equipment to reshoot product close-ups due to unfamiliarity with laboratory shots. During editing, he repeatedly adjusts transition effects, and after exporting, he adjusts video dimensions and subtitle positions for Douyin and Xiaohongshu respectively, taking a total of 48 hours.
 >
-> Agent智能工作流
+> Agent Intelligent Workflow
 >
-> 1.  小林将客户需求输入给Agent，Agent使用灵光索自动生成关键词"口罩压妆测试/油皮极限挑战"
-> 2.  导入竞品爆款视频输入给Agent，Agent使用智镜解析工具，拆解出"痛点放大+数据背书+素人对比"结构
-> 3.  Agent基于小林的需求，使用AI脚本生成工具生成输出分镜：虚拟实验室显微动画开场（0-3秒）+ 博主戴口罩运动实拍（4-12秒）+ AI生成的12小时持妆数据动态图表（13-15秒）
-> 4.  最终Agent使用一键成片自动合成横竖双版本，同步添加"蹭妆音效"和动态大字幕，抖音版额外生成川渝方言配音
+> 1.  Xiao Lin inputs the client's requirements to the Agent, and the Agent uses Inspiration Search to automatically generate keywords "mask makeup test/oily skin extreme challenge"
+> 2.  After importing competitive hit videos to the Agent, the Agent uses the Smart Mirror analysis tool to break down the "pain point amplification + data endorsement + ordinary person comparison" structure
+> 3.  Based on Xiao Lin's requirements, the Agent uses the AI script generation tool to output storyboards: virtual laboratory microscopic animation opening (0-3 seconds) + blogger wearing mask sports footage (4-12 seconds) + AI-generated 12-hour makeup retention dynamic chart (13-15 seconds)
+> 4.  Finally, the Agent uses one-click video creation to automatically compose horizontal and vertical versions, simultaneously adding "makeup smudge sound effects" and dynamic large subtitles, with the Douyin version additionally generating Sichuan-Chongqing dialect dubbing
 >
-> 效率跃迁
+> Efficiency Leap
 >
-> 原需2天的制作压缩至90分钟，且成片同时登上抖音美妆榜和小红书热门搜索。
+> The production time is compressed from 2 days to 90 minutes, and the finished video simultaneously tops Douyin's beauty rankings and Xiaohongshu's popular searches.
 
-## 能力介绍
+## Capability Introduction
 
-### AI脚本生成
+### AI Script Generation
 
-输入视频主题和关键词，自动生成包含镜头分组、画面描述和口播台词的结构化视频脚本。
+Input video topics and keywords to automatically generate structured video scripts including shot grouping, scene descriptions, and voice-over scripts.
 
-*   输入
+*   Input
 
-    *   input：脚本主题、商品卖点、促销机制等信息（字符串，必传）
-    *   language: 视频脚本语言（字符串，非必传，默认中文）
-*   输出
+    *   input: Script topic, product selling points, promotional mechanisms, and other information (string, required)
+    *   language: video script language (string, not required, default Chinese)
+*   Output
 
-    *   script：包含镜头分组、画面描述和口播台词的结构化视频脚本（字符串）
+    *   script: Structured video script containing shot grouping, scene descriptions, and voice-over scripts (string)
 
-### 灵光索
+### Inspiration Search
 
-输入产品或行业关键词，通过全网数据AI分析生成相关营销灵感和内容策略报告。
+Input product or industry keywords to generate relevant marketing inspirations and content strategy reports through AI analysis of internet-wide data.
 
-*   输入
+*   Input
 
-    *   query：检索内容，如产品或行业关键词（字符串，必传）
-*   输出
+    *   query: Search content, such as product or industry keywords (string, required)
+*   Output
 
-    *   content：营销灵感和内容策略报告（字符串）
-    *   image\_list：策略报告相关图片（数组）
+    *   content: Marketing inspiration and content strategy report (string)
+    *   image_list: Strategy report related images (array)
 
-        *   url：图片URL（字符串）
-    *   video\_list：策略报告相关视频（数组）
+        *   url: Image URL (string)
+    *   video_list: Strategy report related videos (array)
 
-        *   url：图片URL（字符串）
+        *   url: Image URL (string)
 
-### 智镜视频解析
+### Smart Mirror Video Analysis
 
-输入爆款视频链接，智能解析视频结构并生成可复用的创作脚本模板。
+Input popular video links to intelligently analyze video structure and generate reusable creative script templates.
 
-*   输入
+*   Input
 
-    *   vedio\_url：解析视频链接（字符串）
-*   输出
+    *   vedio_url: Analysis video link (string, required)
+*   Output
 
-    *   content：视频解析脚本markdown文本（字符串）
+    *   content: Video analysis script markdown text (string)
 
-### 一键成片
+### One-Click Video Creation
 
-输入产品素材和核心卖点，自动合成带AI配音、字幕和背景音乐的多版本营销视频。
+Input product materials and core selling points to automatically compose multiple versions of marketing videos with AI dubbing, subtitles, and background music.
 
-*   输入
+*   Input
 
-    *   input：营销视频关键词，品牌名、产品品、产品卖点等（字符串）
-    *   material\_list：用于合成识破的图片或视频素材（字符串）
+    *   input: Marketing video keywords, brand name, product name, product selling points, etc. (string, required)
+    *   material_list: Images or video materials used for composition (string)
 
-        *   type：素材类型，图片 pic、视频 video（字符串）
-        *   value：素材链接URL（字符串）
-*   输出
+        *   type: Material type, picture pic, video video (string, required)
+        *   value: Material link URL (string, required)
+*   Output
 
-    *   video\_list：合成后的营销视频信息（数组）
+    *   video_list: Composed marketing video information (array)
 
-        *   cover\_url：视频封面图（字符串）
-        *   video\_url：视频链接（字符串）
-        *   video\_name：视频名称（字符串）
-        *   video\_duration：视频时长（浮点数）
+        *   cover_url: Video cover image (string)
+        *   video_url: Video link (string)
+        *   video_name: Video name (string)
+        *   video_duration: Video duration (float)
 
-## 使用方式
+## Usage Methods
 
-### 在 Cursor 中使用
+### Using in Cursor
 
-在 Cursor 项目中的 `.cursor/mcp.json` 加入如下配置：
+Add the following configuration to `.cursor/mcp.json` in your Cursor project:
 
     {
       "mcpServers": {
         "mcp-server-kuaizi": {
-          "url": "http://mcp-video.kuaizi.co/sse"
+          "url": "http://dev-mcp-video.kuaizi.co/sse"
+        },
+        "Other tools": {
+          "...": "..."
         }
       }
     }
 
-### 在 Trae 中使用
+### Using in Trae
 
-在你的 Trae 的AI助手设置中中找到MCP配置页面，手动添加自定义MCP配置json 如下：
+Find the MCP configuration page in your Trae AI assistant settings and manually add the custom MCP configuration JSON as follows:
 
     {
       "mcpServers": {
         "mcp-server-kuaizi": {
-          "url": "http://mcp-video.kuaizi.co/sse"
+          "url": "http://dev-mcp-video.kuaizi.co/sse"
+        },
+        "Other tools": {
+          "...": "..."
         }
       }
     }
 
-### 在其他 MCP Client 中使用
+### Using in Other MCP Clients
 
-你也可以在任何其它 MCP Client 中使用，合理配置 Server SSE连接为 http://dev-mcp-video.kuaizi.co/sse 即可连接Kuaizi MCP Server使用。
+You can also use it in any other MCP Client by properly configuring the Server SSE connection as http://dev-mcp-video.kuaizi.co/sse to connect to the Kuaizi MCP Server.
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `art and culture`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kuaizi-kuaizi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kuaizi-kuaizi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

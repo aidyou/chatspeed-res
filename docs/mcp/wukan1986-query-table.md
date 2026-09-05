@@ -1,11 +1,11 @@
 ---
-title: "QueryTable 股票数据查询工具"
-description: "一个实现了模型上下文协议的金融表格数据网络爬虫，允许用户从多个中国金融网站（包括同花顺、通达信和东方财富）查询股票数据。"
+title: "query_table"
+description: "A web scraper for financial table data that implements the Model Context Protocol, allowing users to query stock data from multiple Chinese financial websites including THS, TDX, and EastMoney."
 ---
 
-# QueryTable 股票数据查询工具
+# query_table
 
-一个实现了模型上下文协议的金融表格数据网络爬虫，允许用户从多个中国金融网站（包括同花顺、通达信和东方财富）查询股票数据。
+A web scraper for financial table data that implements the Model Context Protocol, allowing users to query stock data from multiple Chinese financial websites including THS, TDX, and EastMoney.
 
 # mcp_query_table
 
@@ -39,7 +39,7 @@ import asyncio
 from mcp_query_table import *
 
 async def main() -> None:
-    async with BrowserManager(cdp_endpoint="http://127.0.0.1:9222", executable_path=None, debug=True) as bm:
+    async with BrowserManager(cdp_endpoint="http://127.0.0.1:9222", executable_path=None, debug=true) as bm:
         # 问财需要保证浏览器宽度>768，防止界面变成适应手机
         page = await bm.get_page()
         df = await query(page, '收益最好的200只ETF', query_type=QueryType.ETF, max_page=1, site=Site.THS)
@@ -54,7 +54,7 @@ async def main() -> None:
 
         output = await chat(page, "1+2等于多少？", provider=Provider.YuanBao)
         print(output)
-        output = await chat(page, "3+4等于多少？", provider=Provider.YuanBao, create=True)
+        output = await chat(page, "3+4等于多少？", provider=Provider.YuanBao, create=true)
         print(output)
 
         print('done')
@@ -110,7 +110,7 @@ if __name__ == '__main__':
   "mcpServers": {
     "mcp_query_table": {
       "timeout": 300,
-      "command": "D:\\Users\\Kan\\miniconda3\\envs\\py312\\python.exe",
+      "command": "D:\Users\Kan\miniconda3\envs\py312\python.exe",
       "args": [
         "-m",
         "mcp_query_table",
@@ -119,7 +119,7 @@ if __name__ == '__main__':
         "--cdp_endpoint",
         "http://127.0.0.1:9222",
         "--executable_path",
-        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        "C:\Program Files\Google\Chrome\Application\chrome.exe"
       ]
     }
   }
@@ -178,22 +178,22 @@ npx @modelcontextprotocol/inspector python -m mcp_query_table --format markdown
 - [Playwright](https://playwright.dev/python/docs/intro)
 - [Selenium webdriver无法附加到edge实例，edge的--remote-debugging-port选项无效](https://blog.csdn.net/qq_30576521/article/details/142370538)
 
-**官方网站：** [https://github.com/wukan1986/query_table](https://github.com/wukan1986/query_table)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wukan1986/query_table](https://github.com/wukan1986/query_table)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `browser`, `finance`
-- 标签：`finance`, `browser automation`, `search`, `chinese`
+- Categories: `search`, `browser`, `finance`
+- Tags: `finance`, `browser automation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`D:\Users\Kan\miniconda3\envs\py312\python.exe`
-- 参数：`-m mcp_query_table --format markdown --endpoint http://127.0.0.1:9222 --executable_path C:\Program Files\Google\Chrome\Application\chrome.exe`
+- Transport: `stdio`
+- Command: `D:\Users\Kan\miniconda3\envs\py312\python.exe`
+- Args: `-m mcp_query_table --format markdown --endpoint http://127.0.0.1:9222 --executable_path C:\Program Files\Google\Chrome\Application\chrome.exe`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wukan1986-query-table.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wukan1986-query-table.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

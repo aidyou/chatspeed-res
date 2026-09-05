@@ -1,220 +1,218 @@
 ---
-title: "飞猪旅行"
-description: "✈️ 飞猪旅行 一站式旅行 MCP 服务，覆盖机票、酒店、火车票、景点、美食、市内交通、万豪酒店等 11 个工具，与飞猪官方 MCP schema 100% 兼容。 ✨ 核心特性 ▸ 官方兼容 — 飞猪工具参数名与官方 MCP 完全一致（camelCase），可无缝切换 endpoint ▸ 零配置接入 — 内置代理服务，无需申请 API Key，配置即用 ▸ 九重安全防护 — 限频、缓存、日限、日志脱敏等多重加固，稳定可靠 ▸ 多数据源 — 飞猪旅行 + 高德地图，覆盖出行全场景 ▸ 11 个工具 — 机票/酒店"
+title: "FliggyTravel"
+description: "✈️ Fliggy Travel One-stop travel MCP service, covering 11 tools such as flights, hotels, train tickets, attractions, food, and in-city transportation, fully compatible with the official Fliggy MCP sch…"
 ---
 
-# 飞猪旅行
+# FliggyTravel
 
-✈️ 飞猪旅行 一站式旅行 MCP 服务，覆盖机票、酒店、火车票、景点、美食、市内交通、万豪酒店等 11 个工具，与飞猪官方 MCP schema 100% 兼容。 ✨ 核心特性 ▸ 官方兼容 — 飞猪工具参数名与官方 MCP 完全一致（camelCase），可无缝切换 endpoint ▸ 零配置接入 — 内置代理服务，无需申请 API Key，配置即用 ▸ 九重安全防护 — 限频、缓存、日限、日志脱敏等多重加固，稳定可靠 ▸ 多数据源 — 飞猪旅行 + 高德地图，覆盖出行全场景 ▸ 11 个工具 — 机票/酒店
+✈️ Fliggy Travel One-stop travel MCP service, covering 11 tools such as flights, hotels, train tickets, attractions, food, and in-city transportation, fully compatible with the official Fliggy MCP sch…
 
-✈️ 飞猪旅行
+✈️ Fliggy Travel
 
-一站式旅行 MCP 服务，覆盖机票、酒店、火车票、景点、美食、市内交通、万豪酒店等 11 个工具，与飞猪官方 MCP schema 100% 兼容。
+One-stop travel MCP service, covering 11 tools such as flights, hotels, train tickets, attractions, food, and in-city transportation, fully compatible with the official Fliggy MCP schema.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 官方兼容 — 飞猪工具参数名与官方 MCP 完全一致（camelCase），可无缝切换 endpoint
+▸ Official Compatibility — Fliggy tool parameter names are exactly the same (camelCase) as the official MCP, allowing seamless endpoint switching
 
-▸ 零配置接入 — 内置代理服务，无需申请 API Key，配置即用
+▸ Zero-Configuration Access — Built-in proxy service, no need to apply for an API Key, ready to use upon configuration
 
-▸ 九重安全防护 — 限频、缓存、日限、日志脱敏等多重加固，稳定可靠
+▸ Nine Layers of Security — Multiple reinforcements including rate limiting, caching, daily limits, and log desensitization, ensuring stability and reliability
 
-▸ 多数据源 — 飞猪旅行 + 高德地图，覆盖出行全场景
+▸ Multiple Data Sources — Fliggy Travel + Amap, covering all travel scenarios
 
-▸ 11 个工具 — 机票/酒店/火车/景点/美食/交通/万豪/行程规划/极速搜索
+▸ 11 Tools — Flights/Hotels/Trains/Attractions/Food/Transport/Marriott/Travel Planning/Rapid Search
 
-🛠 工具
+🛠 Tools
 
-travel_plan — 行程规划
+travel_plan — Travel Planning
 
-根据目的地和出行需求，智能生成个性化旅行方案，包含行程安排、景点推荐、住宿建议等。
+Generates personalized travel plans based on destination and travel needs, including itinerary arrangements, attraction recommendations, and accommodation suggestions.
 
-参数：
+Parameters:
 
-▸ query（必填）— 行程规划描述，自然语言，含目的地+天数+偏好，如"三亚5日游亲子攻略"
+▸ query (required) — Description of the travel plan in natural language, including destination + days + preferences, e.g., "Sanya 5-day family travel guide"
 
-search_flight — 机票查询
+search_flight — Flight Search
 
-查询国内航班实时票价、航班号、起降时间。支持按出发地、目的地、日期、舱位等级精确筛选，返回实时价格和预订链接。
+Queries real-time ticket prices, flight numbers, and departure/arrival times for domestic flights. Supports precise filtering by origin, destination, date, and cabin class, returning real-time prices and booking links.
 
-参数：
+Parameters:
 
-▸ origin（必填）— 出发地，城市名，如"上海"
+▸ origin (required) — Origin city name, e.g., "Shanghai"
 
-▸ destination（可选）— 目的地，城市名，如"三亚"
+▸ destination (optional) — Destination city name, e.g., "Sanya"
 
-▸ depDate（可选）— 出发日期，格式 YYYY-MM-DD，不填默认今天
+▸ depDate (optional) — Departure date, format YYYY-MM-DD, defaults to today if not provided
 
-▸ backDate（可选）— 回程日期，格式 YYYY-MM-DD，不填为单程
+▸ backDate (optional) — Return date, format YYYY-MM-DD, single trip if not provided
 
-▸ seatClassName（可选）— 舱位等级，如"经济舱""公务舱""头等舱"
+▸ seatClassName (optional) — Cabin class, e.g., "Economy", "Business", "First Class"
 
-▸ journeyType（可选）— 行程类型，0=单程，1=直飞，2=中转，默认0
+▸ journeyType (optional) — Journey type, 0=one-way, 1=direct, 2=transfer, default is 0
 
-search_train — 火车票查询
+search_train — Train Ticket Search
 
-查询国内火车票实时票价、车次、出发到达时间。支持按出发地、目的地、日期、座席等级精确筛选。
+Queries real-time ticket prices, train numbers, and departure/arrival times for domestic trains. Supports precise filtering by origin, destination, date, and seat class.
 
-参数：
+Parameters:
 
-▸ origin（必填）— 出发地，城市名，如"上海"
+▸ origin (required) — Origin city name, e.g., "Shanghai"
 
-▸ destination（可选）— 目的地，城市名，如"杭州"
+▸ destination (optional) — Destination city name, e.g., "Hangzhou"
 
-▸ depDate（可选）— 出发日期，格式 YYYY-MM-DD，不填默认今天
+▸ depDate (optional) — Departure date, format YYYY-MM-DD, defaults to today if not provided
 
-▸ backDate（可选）— 回程日期，格式 YYYY-MM-DD，不填为单程
+▸ backDate (optional) — Return date, format YYYY-MM-DD, single trip if not provided
 
-▸ seatClassName（可选）— 座席等级，如"二等座""一等座""商务座"
+▸ seatClassName (optional) — Seat class, e.g., "Second Class", "First Class", "Business Class"
 
-▸ journeyType（可选）— 行程类型，0=单程，1=往返，2=中转，默认0
+▸ journeyType (optional) — Journey type, 0=one-way, 1=round-trip, 2=transfer, default is 0
 
-search_hotel — 酒店搜索
+search_hotel — Hotel Search
 
-搜索酒店，返回实时价格和预订链接。支持按目的地、星级、价格、关键词等多维筛选。
+Searches for hotels, returning real-time prices and booking links. Supports multi-dimensional filtering by destination, star rating, price, keywords, etc.
 
-参数：
+Parameters:
 
-▸ destName（必填）— 目的地，城市或区域名，如"三亚""杭州西湖"
+▸ destName (required) — Destination, city or area name, e.g., "Sanya", "West Lake, Hangzhou"
 
-▸ checkInDate（可选）— 入住日期，格式 YYYY-MM-DD
+▸ checkInDate (optional) — Check-in date, format YYYY-MM-DD
 
-▸ checkOutDate（可选）— 退房日期，格式 YYYY-MM-DD
+▸ checkOutDate (optional) — Check-out date, format YYYY-MM-DD
 
-▸ keyWords（可选）— 关键词，如"亲子""商务""海景"
+▸ keyWords (optional) — Keywords, e.g., "family-friendly", "business", "sea view"
 
-▸ hotelStars（可选）— 酒店星级，1-5，多选用逗号分隔，如"4,5"
+▸ hotelStars (optional) — Hotel star ratings, 1-5, multiple selections separated by commas, e.g., "4,5"
 
-▸ maxPrice（可选）— 最高价格（元）
+▸ maxPrice (optional) — Maximum price (CNY)
 
-▸ hotelTypes（可选）— 酒店类型：酒店、民宿、客栈
+▸ hotelTypes (optional) — Hotel types: hotel, homestay, inn
 
-▸ hotelBedTypes（可选）— 床型：大床房、双床房、多床房
+▸ hotelBedTypes (optional) — Bed types: king bed, twin beds, multiple beds
 
-search_poi — 景点门票
+search_poi — Attraction Tickets
 
-搜索景点门票，返回门票价格和购票链接。支持按关键词、城市、类型、等级筛选。
+Searches for attraction tickets, returning ticket prices and booking links. Supports filtering by keywords, city, type, and level.
 
-参数：
+Parameters:
 
-▸ keyword（可选）— 景点名称关键词，如"故宫""长城"
+▸ keyword (optional) — Keyword for the attraction name, e.g., "Forbidden City", "Great Wall"
 
-▸ cityName（可选）— 城市名，如"杭州""西安"
+▸ cityName (optional) — City name, e.g., "Hangzhou", "Xi'an"
 
-▸ category（可选）— 景点类型，如"自然风光""主题乐园""人文古迹"
+▸ category (optional) — Attraction type, e.g., "natural scenery", "theme park", "cultural heritage"
 
-▸ poiLevel（可选）— 景点等级 1-5（5 为 5A）
+▸ poiLevel (optional) — Attraction level 1-5 (5 being 5A)
 
-search_food — 美食推荐
+search_food — Food Recommendations
 
-基于位置搜索周边餐厅美食，支持菜系筛选。返回餐厅名称、评分、人均消费和地址。
+Searches for nearby restaurants and food based on location, supporting cuisine filtering. Returns restaurant name, rating, average cost per person, and address.
 
-参数：
+Parameters:
 
-▸ query（必填）— 美食查询描述，自然语言，含地点+可选菜系，如"上海南京路附近火锅"
+▸ query (required) — Food search description in natural language, including location + optional cuisine, e.g., "hotpot near Nanjing Road, Shanghai"
 
-search_transport — 市内交通
+search_transport — In-City TransportationQuery the estimated taxi fare and public transportation routes from A to B. Returns driving distance/time/cost and public transit options.
 
-查询从 A 到 B 的打车预估和公交地铁路线。返回驾车距离/时间/费用和公共交通方案。
+Parameters:
 
-参数：
+▸ query (required) — Description of the transportation query in natural language, including city + departure point + destination, e.g., "Shanghai Pudong Airport to the Bund"
 
-▸ query（必填）— 交通查询描述，自然语言，含城市+出发地+目的地，如"上海浦东机场到外滩"
+search_fast — Fast Search
 
-search_fast — 极速搜索
+Fliggy's general fast search, quickly queries information on attractions, hotels, tickets, and travel packages. Suitable for simple keyword searches, faster than AI search.
 
-飞猪通用搜索极速版，快速查询景点、酒店、门票、线路等商品信息。适合简单关键词查询，速度比 AI 搜索更快。
+Parameters:
 
-参数：
+▸ query (required) — Search term, such as "Sanya hotel", "Beijing Forbidden City ticket", "Shanghai Disneyland"
 
-▸ query（必填）— 搜索词，如"三亚酒店""北京故宫门票""上海迪士尼"
+search_marriott_hotel — Marriott Hotel Search
 
-search_marriott_hotel — 万豪酒店搜索
+Searches for hotels under the Marriott Group (including Marriott, Sheraton, Westin, Ritz-Carlton, etc.). Supports filtering by destination, date, and price.
 
-搜索万豪集团旗下酒店（包括万豪、喜来登、威斯汀、丽思卡尔顿等品牌）。支持按目的地、日期、价格筛选。
+Parameters:
 
-参数：
+▸ destName (required) — Destination, city or area name, e.g., "Shanghai", "Sanya"
 
-▸ destName（必填）— 目的地，城市或区域名，如"上海""三亚"
+▸ checkInDate (optional) — Check-in date, format YYYY-MM-DD
 
-▸ checkInDate（可选）— 入住日期，格式 YYYY-MM-DD
+▸ checkOutDate (optional) — Check-out date, format YYYY-MM-DD
 
-▸ checkOutDate（可选）— 退房日期，格式 YYYY-MM-DD
+▸ keyWords (optional) — Keywords, such as "business", "vacation"
 
-▸ keyWords（可选）— 关键词，如"商务""度假"
+▸ maxPrice (optional) — Maximum price (CNY)
 
-▸ maxPrice（可选）— 最高价格（元）
+▸ hotelBedTypes (optional) — Bed types: King Room, Twin Room
 
-▸ hotelBedTypes（可选）— 床型：大床房、双床房
+get_marriott_hotel_info — Marriott Hotel Details
 
-get_marriott_hotel_info — 万豪酒店详情
+Fetches detailed information about a specific hotel under the Marriott Group, including facilities, ratings, room types, etc.
 
-获取万豪集团旗下某家酒店的详细信息，包括设施、评分、房型等。
+Parameters:
 
-参数：
+▸ hotelName (optional) — Hotel name, e.g., "W Shanghai - The Bund". At least one of hotelName or shId must be provided.
 
-▸ hotelName（可选）— 酒店名称，如"上海外滩W酒店"，hotelName 和 shId 至少填一个
+▸ shId (optional) — Hotel ID (if available). At least one of hotelName or shId must be provided.
 
-▸ shId（可选）— 酒店 ID（如有），hotelName 和 shId 至少填一个
+▸ reviewKeyword (optional) — Review keywords, such as "breakfast", "service", "location"
 
-▸ reviewKeyword（可选）— 评论关键词，如"早餐""服务""位置"
+search_marriott_package — Marriott Package Search
 
-search_marriott_package — 万豪套餐搜索
+Searches for hotel package products offered by the Marriott Group (e.g., breakfast included, vacation packages, etc.).
 
-搜索万豪集团旗下在售的酒店套餐商品（如含早餐套餐、度假套餐等）。
+Parameters:
 
-参数：
+▸ keyword (optional) — Search keyword
 
-▸ keyword（可选）— 搜索关键词
+▸ hotelName (optional) — Hotel name
 
-▸ hotelName（可选）— 酒店名称
+▸ provinceOrCity (optional) — Province or city
 
-▸ provinceOrCity（可选）— 省份或城市
+📝 Usage Examples
 
-📝 使用示例
+▸ "Honeymoon in Sanya for 5 days with a budget of 10,000 CNY" → travel_plan(query="Honeymoon in Sanya for 5 days with a budget of 10,000 CNY")
 
-▸ "三亚度蜜月5天预算1万" → travel_plan(query="三亚度蜜月5天预算1万")
+▸ "Flights from Shanghai to Beijing tomorrow" → search_flight(origin="Shanghai", destination="Beijing", depDate="2026-08-27")
 
-▸ "上海到北京明天的机票" → search_flight(origin="上海", destination="北京", depDate="2026-08-27")
+▸ "Hotels near West Lake in Hangzhou within 500 CNY" → search_hotel(destName="West Lake, Hangzhou", maxPrice=500)
 
-▸ "杭州西湖附近500元以内的酒店" → search_hotel(destName="杭州西湖", maxPrice=500)
+▸ "Hotpot near Nanjing Road in Shanghai" → search_food(query="Hotpot near Nanjing Road in Shanghai")
 
-▸ "上海南京路附近火锅" → search_food(query="上海南京路附近火锅")
+▸ "How to get from Pudong Airport to the Bund" → search_transport(query="Pudong Airport to the Bund, Shanghai")
 
-▸ "浦东机场到外滩怎么走" → search_transport(query="上海浦东机场到外滩")
+▸ "Marriott Hotel in Shanghai within 1000 CNY" → search_marriott_hotel(destName="Shanghai", maxPrice=1000)
 
-▸ "上海万豪酒店 1000元以内" → search_marriott_hotel(destName="上海", maxPrice=1000)
+🎯 Use Cases
 
-🎯 适用场景
+▸ Travel Agent — Provides full-scenario travel query capabilities for agents
 
-▸ 旅行智能体 — 为 Agent 提供全场景旅行查询能力
+▸ IDE Assistant — Quickly queries travel information in IDEs like Cursor/Cherry Studio/Windsurf
 
-▸ IDE 助手 — 在 Cursor/Cherry Studio/Windsurf 等 IDE 中快速查询出行信息
+▸ Price Comparison System — Serves as a Fliggy data source for multi-source price comparison platforms
 
-▸ 比价系统 — 作为多源比价平台的飞猪数据源
-
-▸ 客服机器人 — 为电商/旅游客服提供实时旅行信息查询
+▸ Customer Service Robot — Provides real-time travel information queries for e-commerce and travel customer service
 
 📄 License
 
 MIT
 
-**官方网站：** [https://pypi.org/project/mcp-fliggy-travel/](https://pypi.org/project/mcp-fliggy-travel/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pypi.org/project/mcp-fliggy-travel/](https://pypi.org/project/mcp-fliggy-travel/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `飞猪旅行`, `旅行规划`, `火车票查询`, `机票查询`, `酒店搜索`, `景点门票`, `美食推荐`
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `飞猪旅行`, `旅行规划`, `火车票查询`, `机票查询`, `酒店搜索`, `景点门票`, `美食推荐`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-fliggy-travel==0.4.1`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-fliggy-travel==0.4.1`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mako2026-fliggytravel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-fliggytravel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

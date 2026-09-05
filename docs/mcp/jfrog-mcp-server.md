@@ -1,11 +1,11 @@
 ---
-title: "JFrog MCP 服务器"
-description: "JFrog Remote MCP Server The Model Context Protocol (MCP) connects AI systems with external tools, data, and services using a standardized, lightweight interface. JFrog MCP Server empowers developers, bringing the advance"
+title: "JFrog MCP Server"
+description: "JFrog Remote MCP Server The Model Context Protocol (MCP) connects AI systems with external tools, data, and services using a standardized, lightweight interface. JFrog MCP Server empowers developers…"
 ---
 
-# JFrog MCP 服务器
+# JFrog MCP Server
 
-JFrog Remote MCP Server The Model Context Protocol (MCP) connects AI systems with external tools, data, and services using a standardized, lightweight interface. JFrog MCP Server empowers developers, bringing the advance
+JFrog Remote MCP Server The Model Context Protocol (MCP) connects AI systems with external tools, data, and services using a standardized, lightweight interface. JFrog MCP Server empowers developers…
 
 ![MCP Client](https://avatars.githubusercontent.com/u/499942?s=200&v=4)
 
@@ -97,22 +97,22 @@ See the full reference in [`TOOLS.md`](https://github.com/jfrog/jfrog-mcp-server
 * [Add the JFrog MCP Server to an MCP client](https://docs.jfrog.com/integrations/docs/add-the-jfrog-mcp-server-to-an-mcp-client)
 * [Self-Managed MCP Server Installation (Beta)](https://docs.jfrog.com/installation/docs/mcp)
 
-**官方网站：** [https://github.com/jfrog/jfrog-mcp-server](https://github.com/jfrog/jfrog-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jfrog/jfrog-mcp-server](https://github.com/jfrog/jfrog-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `jfrog`, `artifact`, `devops`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `jfrog`, `artifact`, `devops`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jfrog-mcp-server.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jfrog-mcp-server.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

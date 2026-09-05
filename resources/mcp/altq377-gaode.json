@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "gaode",
-    "zh-Hans": "高德",
-    "zh-Hant": "高德"
+    "zh-Hans": "高德"
   },
   "description": {
     "en": "Location Services 位置服务是现代应用程序中不可或缺的一部分，它们允许应用根据用户的位置提供定制化的内容和服务。本指南将帮助开发者了解如何在自己的应用中集成位置服务。 1. 准备工作 - 确保您的开发环境已经设置好。 - 您需要一个有效的API密钥来访问位置服务API。您可以从这里获取它。 2. 添加依赖 对于Android项目，在build.gradle文件中添加以下依赖： gradle implementation 'com.example:location-services:1.0.0' 3.",
-    "zh-Hans": "位置服务",
-    "zh-Hant": "位置服务"
+    "zh-Hans": "位置服务"
   },
   "detail": {
     "en": "Location Services\n\n位置服务是现代应用程序中不可或缺的一部分，它们允许应用根据用户的位置提供定制化的内容和服务。本指南将帮助开发者了解如何在自己的应用中集成位置服务。\n\n### 1. 准备工作\n- 确保您的开发环境已经设置好。\n- 您需要一个有效的API密钥来访问位置服务API。您可以从[这里](https://example.com/get-api-key)获取它。\n\n### 2. 添加依赖\n对于Android项目，在`build.gradle`文件中添加以下依赖：\ngradle\nimplementation 'com.example:location-services:1.0.0'\n\n### 3. 请求权限\n为了能够使用设备的位置信息，您的应用必须请求相应的权限。对于Android 6.0 (API level 23)及以上版本，您还需要在运行时动态请求这些权限。\nxml\n\n并且在代码中检查并请求权限：\njava\nif (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)\n        != PackageManager.PERMISSION_GRANTED) {\n    ActivityCompat.requestPermissions(this,\n            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},\n            MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);\n}\n\n### 4. 获取当前位置\n一旦获得了必要的权限，就可以开始获取用户的当前位置了。下面是一个简单的例子展示如何通过GPS获取位置：\njava\nLocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);\nLocationListener locationListener = new LocationListener() {\n    public void onLocationChanged(Location location) {\n        // 当位置改变时调用\n        double latitude = location.getLatitude();\n        double longitude = location.getLongitude();\n    }\n\n    public void onStatusChanged(String provider, int status, Bundle extras) {}\n\n    public void onProviderEnabled(String provider) {}\n\n    public void onProviderDisabled(String provider) {}\n};\n\ntry {\n    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);\n} catch (SecurityException e) {\n    Log.e(\"Exception: %s\", e.getMessage());\n}\n\n### 5. 显示地图\n利用获取到的坐标数据，可以很容易地将其显示在一个地图上。推荐使用Google Maps API或其他第三方地图库来实现这一功能。\n- 参考文档：[Google Maps Android API](https://developers.google.com/maps/documentation/android-sdk/start)\n\n### 6. 注意事项\n- 在处理敏感信息如地理位置时，请始终遵循最佳安全实践。\n- 考虑到电池寿命问题，不要过于频繁地请求位置更新。\n- 提供给用户关闭位置跟踪的功能选项。\n\n通过遵循上述步骤，您可以为您的应用程序添加强大的位置感知能力，从而提升用户体验。",
-    "zh-Hans": "位置服务",
-    "zh-Hant": "位置服务"
+    "zh-Hans": "位置服务"
   },
   "categories": [
     "data"

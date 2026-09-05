@@ -1,11 +1,11 @@
 ---
-title: "Mapbox MCP 服务器"
-description: "Mapbox MCP Server Node.js server implementing Model Context Protocol (MCP) for Mapbox APIs. Unlock Geospatial Intelligence for Your AI Applications The Mapbox MCP Server transforms any AI agent or application into a geos"
+title: "Mapbox MCP Server"
+description: "Mapbox MCP Server Node.js server implementing Model Context Protocol (MCP) for Mapbox APIs. Unlock Geospatial Intelligence for Your AI Applications The Mapbox MCP Server transforms any AI agent or app…"
 ---
 
-# Mapbox MCP 服务器
+# Mapbox MCP Server
 
-Mapbox MCP Server Node.js server implementing Model Context Protocol (MCP) for Mapbox APIs. Unlock Geospatial Intelligence for Your AI Applications The Mapbox MCP Server transforms any AI agent or application into a geos
+Mapbox MCP Server Node.js server implementing Model Context Protocol (MCP) for Mapbox APIs. Unlock Geospatial Intelligence for Your AI Applications The Mapbox MCP Server transforms any AI agent or app…
 
 # Mapbox MCP Server
 
@@ -451,22 +451,22 @@ Answers "what's near this coordinate" questions in a single call — place name,
 - Nearby POI search by category, when requested
 -
 
-**官方网站：** [https://github.com/mapbox/mcp-server](https://github.com/mapbox/mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mapbox/mcp-server](https://github.com/mapbox/mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`mapbox`, `maps`, `geolocation`, `official`
+- Categories: `data`
+- Tags: `mapbox`, `maps`, `geolocation`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm --env MAPBOX_ACCESS_TOKEN=YOUR_TOKEN mapbox-mcp-server`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm --env MAPBOX_ACCESS_TOKEN=YOUR_TOKEN mapbox-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mapbox-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mapbox-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,56 +1,56 @@
 ---
-title: "Confluence MCP Server工具"
-description: "启用通过CQL搜索和页面内容提取从Confluence查询和检索内容，使Claude能够无缝访问存储在Confluence工作区中的信息。"
+title: "confluence-mcp-server"
+description: "Enables querying and retrieving content from Confluence through CQL searches and page content fetching, allowing Claude to seamlessly access information stored in Confluence workspaces."
 ---
 
-# Confluence MCP Server工具
+# confluence-mcp-server
 
-启用通过CQL搜索和页面内容提取从Confluence查询和检索内容，使Claude能够无缝访问存储在Confluence工作区中的信息。
+Enables querying and retrieving content from Confluence through CQL searches and page content fetching, allowing Claude to seamlessly access information stored in Confluence workspaces.
 
-# Confluence 通信服务器 MCP 服务器
+# Confluence Communication Server MCP Server
 
-与 Confluence 交互
+Interact with Confluence
 
-这是一个基于 TypeScript 的 MCP 服务器，提供了与 Confluence 交互的工具。它通过提供以下功能来展示核心的 MCP 概念：
+This is a TypeScript-based MCP server that provides tools to interact with Confluence. It demonstrates core MCP concepts by providing:
 
-- 执行 CQL 查询以搜索页面的工具
-- 获取 Confluence 页面内容的工具
+- Tools for executing CQL queries to search pages
+- Tools for retrieving the content of Confluence pages
 
-## 功能
+## Features
 
-## Confluence 工具
+## Confluence Tools
 
 ### `execute_cql_search`
-- **目的**：运行 CQL 查询以搜索 Confluence 页面。
-- **参数**：`cql`，`limit`（默认值：10）。
+- **Purpose**: Run a CQL query to search for Confluence pages.
+- **Parameters**: `cql`, `limit` (default: 10).
 
 ### `get_page_content`
-- **目的**：获取 Confluence 页面的内容。
-- **参数**：`pageId`。
+- **Purpose**: Fetch the content of a Confluence page.
+- **Parameters**: `pageId`.
 
-## 开发
+## Development
 
-安装依赖：
+Install dependencies:
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 ```bash
 npm run build
 ```
 
-对于带有自动重建的开发：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-## 安装
+## Installation
 
-要与 Claude Desktop 一起使用，请添加服务器配置：
+To use with Claude Desktop, add the server config:
 
-在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -70,32 +70,32 @@ npm run watch
 }
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过 stdio 进行通信，调试可能会比较困难。我们建议使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为包脚本可用：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 npm run inspector
 ```
 
-Inspector 将提供一个 URL，以便您可以在浏览器中访问调试工具。
+The Inspector will provide a URL to access debugging tools in your browser.
 
-**官方网站：** [https://github.com/KS-GEN-AI/confluence-mcp-server](https://github.com/KS-GEN-AI/confluence-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/KS-GEN-AI/confluence-mcp-server](https://github.com/KS-GEN-AI/confluence-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `communication`
-- 标签：`communication`, `knowledge and memory`, `search`, `chinese`
+- Categories: `memory`, `communication`
+- Tags: `communication`, `knowledge and memory`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/PATH_TO_THE_PROJECT/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/PATH_TO_THE_PROJECT/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ks-gen-ai-confluence.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ks-gen-ai-confluence.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

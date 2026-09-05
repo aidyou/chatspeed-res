@@ -1,56 +1,52 @@
 ---
-title: "思维导图 MCP"
-description: "一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。 \n\n看起来您的请求中没有提供具体的英文技术文档内容以供翻译。如果您能分享更多详细信息或具体段落，我将能够帮助您将其准确地翻译成中文，同时保留代码块、链接、格式结构和专业术语的准确性。请提供需要翻译的具体文本。"
+title: "mind-map-mcp"
+description: "一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。"
 ---
-
-# 思维导图 MCP
-
-一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。 
-
-看起来您的请求中没有提供具体的英文技术文档内容以供翻译。如果您能分享更多详细信息或具体段落，我将能够帮助您将其准确地翻译成中文，同时保留代码块、链接、格式结构和专业术语的准确性。请提供需要翻译的具体文本。
 
 # mind-map-mcp
 
 一个用于生成思维导图的 MCP (Model Context Protocol) 服务器。
 
-## 功能特性
+# mind-map-mcp
 
-- 🧠 根据文本内容自动生成思维导图
-- 🔗 返回可访问的思维导图图片链接
-- 🚀 支持 CodeBuddy、Cursor、Qoder 等 MCP 客户端
-- 🌐 基于 Coze API 的强大思维导图生成能力
+A MCP (Model Context Protocol) server for generating mind maps.
 
-## 创新点
+## Features
 
-首次使用 Coze 作为核心工作流制作MCP：
+- 🧠 Automatically generate mind maps based on text content
+- 🔗 Return accessible mind map image links
+- 🚀 Supports MCP clients such as CodeBuddy, Cursor, Qoder
+- 🌐 Powerful mind map generation capabilities based on the Coze API
 
-- 无需考虑报错。报错可以直接通过 Coze 找到对应原因
-- 逻辑处理。可以任意修改 Coze 的工作流，更新发布即可，无需重新修改mcp
-- 已于维护
+## Innovations
 
-## 安装
+First use of Coze as the core workflow for MCP:
 
-### 通过 NPM 安装
+- No need to worry about errors. Errors can be directly traced to their cause through Coze.
+- Logic processing. You can modify the Coze workflow arbitrarily, and simply update and publish without needing to re-modify the MCP.
+- Already maintained
 
-```bash
+## Installation
+
+### Install via NPM
+
+bash
 npm install -g @lucianaib/mind-map-mcp
-```
 
-### 通过 npx 直接使用
+### Use directly with npx
 
-```bash
+bash
 npx @lucianaib/mind-map-mcp
-```
 
-## 配置
+## Configuration
 
-### 在 CodeBuddy、 Qoder中配置
+### Configure in CodeBuddy, Qoder
 
-1. 打开 CodeBuddy 设置
-2. 找到 MCP 服务器配置
-3. 添加新的服务器：
+1. Open CodeBuddy settings
+2. Find the MCP server configuration
+3. Add a new server:
 
-```json
+json
 {
   "mcpServers": {
     "mind-map": {
@@ -59,151 +55,137 @@ npx @lucianaib/mind-map-mcp
     }
   }
 }
-```
 
 
 
-### 在 Cursor 中配置
+### Configure in Cursor
 
-1. 打开 Cursor 设置 (Ctrl/Cmd + ,)
-2. 搜索 "MCP"
-3. 在 MCP 服务器配置中添加：
+1. Open Cursor settings (Ctrl/Cmd + ,)
+2. Search for "MCP"
+3. Add in the MCP server configuration:
 
-```json
+json
 {
   "mind-map": {
     "command": "npx",
     "args": ["@lucianaib/mind-map-mcp"]
   }
 }
-```
 
-## 使用方法
+## Usage
 
-配置完成后，你可以在支持 MCP 的工具中使用以下功能：
+After configuration, you can use the following features in MCP-supported tools:
 
-### 生成思维导图
+### Generate Mind Map
 
-```
-用 MCP 帮我生成一个关于"分布式系统架构"的思维导图
-```
+Use MCP to help me generate a mind map about "distributed system architecture"
 
+Or call the tool directly:
 
+Use the generate_mindmap tool, content: "basic concepts and applications of machine learning"
 
-或者直接调用工具：
-
-```
-使用 generate_mindmap 工具，内容为："机器学习的基本概念和应用"
-```
-
-## 可用工具
+## Available Tools
 
 ### generate_mindmap
 
-根据输入内容生成思维导图。
+Generates a mind map based on the input content.
 
-**参数：**
+**Parameters:**
 
-- `content` (string, 必需): 要转换为思维导图的内容描述
+- `content` (string, required): Description of the content to be converted into a mind map
 
-**返回：**
+**Returns:**
 
-- 思维导图的图片链接
-- 生成状态信息
+- Link to the mind map image
+- Generation status information
 
-## 开发
+## Development
 
-### 本地开发
+### Local Development
 
-1. 克隆仓库：
+1. Clone the repository:
 
-```bash
+bash
 git clone git@github.com:OnePieceLwc/mind-map-mcp.git
 cd mind-map-mcp
-```
 
-2. 安装依赖：
+2. Install dependencies:
 
-```bash
+bash
 npm install
-```
 
-3. 构建项目：
+3. Build the project:
 
-```bash
+bash
 npm run build
-```
 
-4. 启动开发模式：
+4. Start the development mode:
 
-```bash
+bash
 npm run dev
-```
 
-### 项目结构
+### Project Structure
 
-```
 Mind-map-mcp/
 ├── src/
-│   └── index.ts          # 主要的 MCP 服务器代码
-├── dist/                 # 编译后的 JavaScript 文件
-├── package.json          # 项目配置
-├── tsconfig.json         # TypeScript 配置
-└── README.md            # 项目说明
-```
+│   └── index.ts          # Main MCP server code
+├── dist/                 # Compiled JavaScript files
+├── package.json          # Project configuration
+├── tsconfig.json         # TypeScript configuration
+└── README.md            # Project documentation
 
-## API 说明
+## API Documentation
 
-本工具使用 Coze API 来生成思维导图。API 详情：
+This tool uses the Coze API to generate mind maps. API details:
 
-- **端点**: `https://api.coze.cn/v1/workflow/run`
-- **方法**: POST
-- **认证**: Bearer Token
-- **返回**: 思维导图图片链接
+- **Endpoint**: `https://api.coze.cn/v1/workflow/run`
+- **Method**: POST
+- **Authentication**: Bearer Token
+- **Return**: Link to the mind map image
 
-## 故障排除
+## Troubleshooting
 
-### 常见问题
+### Common Issues
 
-1. **"未知工具" 错误**
-   - 确保 MCP 服务器正确配置
-   - 检查工具名称是否正确 (`generate_mindmap`)
+1. **"Unknown Tool" Error**
+   - Ensure the MCP server is correctly configured
+   - Check if the tool name is correct (`generate_mindmap`)
 
-2. **API 请求失败**
-   - 检查网络连接
-   - 确认 API 服务状态
+2. **API Request Failure**
+   - Check network connection
+   - Confirm the API service status
 
-3. **中文编码问题**
-   - 本工具已处理中文编码，支持中文内容输入
+3. **Chinese Encoding Issue**
+   - This tool has already handled Chinese encoding and supports Chinese content input
 
-### 调试模式
+### Debug Mode
 
-启动时会在 stderr 输出调试信息，可以通过查看日志来诊断问题。
+Debugging information will be output to stderr when starting. You can diagnose issues by checking the logs.
 
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributions
 
-欢迎提交 Issue 和 Pull Request！
+Feel free to submit Issues and Pull Requests!
 
-**官方网站：** [https://github.com/OnePieceLwc/mind-map-mcp](https://github.com/OnePieceLwc/mind-map-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/OnePieceLwc/mind-map-mcp](https://github.com/OnePieceLwc/mind-map-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `files`, `communication`
-- 标签：`developer tools`, `file systems`, `communication`, `思维导图`, `chinese`
+- Categories: `development`, `files`, `communication`
+- Tags: `developer tools`, `file systems`, `communication`, `思维导图`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@lucianaib/mind-map-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@lucianaib/mind-map-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/weiaib-mind-map.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/weiaib-mind-map.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

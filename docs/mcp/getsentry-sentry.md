@@ -1,11 +1,11 @@
 ---
-title: "Sentry MCP 服务器"
-description: "sentry-mcp Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than providing a general-pur"
+title: "Sentry MCP Server"
+description: "sentry-mcp Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than pro…"
 ---
 
-# Sentry MCP 服务器
+# Sentry MCP Server
 
-sentry-mcp Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than providing a general-pur
+sentry-mcp Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than pro…
 
 # sentry-mcp
 
@@ -285,22 +285,22 @@ When addressing automated feedback, focus on the underlying concerns rather than
 
 Looking to contribute or explore the full documentation map? See `CLAUDE.md` (also available as `AGENTS.md`) for contributor workflows and the complete docs index. The `docs/` folder contains the per-topic guides and tool-integrated `.md` files.
 
-**官方网站：** [https://github.com/getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `error monitoring`, `sentry`, `observability`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `error monitoring`, `sentry`, `observability`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@sentry/mcp-server@latest --access-token=YOUR_TOKEN`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@sentry/mcp-server@latest --access-token=YOUR_TOKEN`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/getsentry-sentry.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/getsentry-sentry.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

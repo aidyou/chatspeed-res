@@ -1,13 +1,13 @@
 ---
-title: "RollingGo酒店MCP"
-description: "RollingGo酒店MCP RollingGo— Hotel Search & Booking MCP 🏠 官网🚀 快速开始📚 使用示例💬 技术支持📚 接入视频(0基础0代码可实操) 📚 接入文档 · 💰开发者变现 项目简介 RollingGo酒店MCP为 AI Agent 和 MCP 客户端提供酒店预订能力，它适合希望在 AI 产品中接入酒店交易能力的开发者、Agent 构建者、旅游产品团队和企业差旅场景，企业和个人均可完全免费一键接入，无调用量限制。 🔍 按需求智能筛选和比价，省心挑酒店 📋 实时查房型、报价"
+title: "AI_Go_Hotel_MCP"
+description: "RollingGo Hotel MCP RollingGo— Hotel Search & Booking MCP 🏠 Official Website 🚀 Quick Start 📚 Usage Examples 💬 Technical Support 📚 Integration Video (No Coding Required, Practical Operation) 📚 Integrat…"
 ---
 
-# RollingGo酒店MCP
+# AI_Go_Hotel_MCP
 
-RollingGo酒店MCP RollingGo— Hotel Search & Booking MCP 🏠 官网🚀 快速开始📚 使用示例💬 技术支持📚 接入视频(0基础0代码可实操) 📚 接入文档 · 💰开发者变现 项目简介 RollingGo酒店MCP为 AI Agent 和 MCP 客户端提供酒店预订能力，它适合希望在 AI 产品中接入酒店交易能力的开发者、Agent 构建者、旅游产品团队和企业差旅场景，企业和个人均可完全免费一键接入，无调用量限制。 🔍 按需求智能筛选和比价，省心挑酒店 📋 实时查房型、报价
+RollingGo Hotel MCP RollingGo— Hotel Search & Booking MCP 🏠 Official Website 🚀 Quick Start 📚 Usage Examples 💬 Technical Support 📚 Integration Video (No Coding Required, Practical Operation) 📚 Integrat…
 
-# RollingGo酒店MCP | RollingGo— Hotel Search & Booking MCP
+# RollingGo Hotel MCP | RollingGo— Hotel Search & Booking MCP
 
 [![Version](/mcp-assets/b3bf466f985d1cb8019f262681fdd935.svg)](https://github.com/DIDA-AI/DIDA-Hotel-MCP-CN/releases)
 [![ModelScope](/mcp-assets/87931ea64ccd51f78d3b55f9a464e457.svg)](https://modelscope.cn/)
@@ -15,89 +15,80 @@ RollingGo酒店MCP RollingGo— Hotel Search & Booking MCP 🏠 官网🚀 快�
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](/mcp-assets/d52fa8fd608496fb7cb57d905d36fafc.svg)](https://www.python.org/downloads/)
 
-🏠 [官网](https://rollinggo.store/)🚀[ 快速开始](#快速开始)📚[ 使用示例](#使用示例)💬[ 技术支持](#技术支持)📚 [接入视频(0基础0代码可实操)](https://www.xiaohongshu.com/discovery/item/6a22affe0000000017029504?app_platform=ios&app_version=9.33.4&share_from_user_hidden=true&xsec_source=app_share&type=video&xsec_token=CBwWFsJ1iLP0QLjYWHV4RatLComUk4vekr3adma28ssMU=&author_share=1&xhsshare=CopyLink&shareRedId=NzxGN0RLSTo-O0pGTEwzOTszTkBGSUlM&apptime=1782376771&share_id=09ec1dc114174939916826fc8471d07a&code=051iMqFa1D1hXL08HNGa1Eq5Jb3iMqF7&state=wx_oauth)
-📚 [接入文档](https://rollinggo.store/docs/mcp-docs/quick-start) · 💰[开发者变现](https://rollinggo.store/docs/partnerdoc/partner1) 
+🏠 [Official Website](https://rollinggo.store/) 🚀 [Quick Start](#快速开始) 📚 [Usage Examples](#使用示例) 💬 [Technical Support](#技术支持) 📚 [Integration Video (No Coding Required, Practical Operation)](https://www.xiaohongshu.com/discovery/item/6a22affe0000000017029504?app_platform=ios&app_version=9.33.4&share_from_user_hidden=true&xsec_source=app_share&type=video&xsec_token=CBwWFsJ1iLP0QLjYWHV4RatLComUk4vekr3adma28ssMU=&author_share=1&xhsshare=CopyLink&shareRedId=NzxGN0RLSTo-O0pGTEwzOTszTkBGSUlM&apptime=1782376771&share_id=09ec1dc114174939916826fc8471d07a&code=051iMqFa1D1hXL08HNGa1Eq5Jb3iMqF7&state=wx_oauth)
+📚 [Integration Documentation](https://rollinggo.store/docs/mcp-docs/quick-start) · 💰 [Developer Monetization](https://rollinggo.store/docs/partnerdoc/partner1)
 
+## Project Overview
+**RollingGo Hotel MCP** provides hotel booking capabilities for AI Agents and MCP clients. It is suitable for developers, Agent builders, travel product teams, and corporate travel scenarios who wish to integrate hotel transaction capabilities into their AI products. Both enterprises and individuals can connect for free with no call volume limits.
 
+🔍 **Intelligent filtering and price comparison** based on needs, making hotel selection hassle-free
 
-## 项目简介
-**RollingGo酒店MCP**为 AI Agent 和 MCP 客户端提供酒店预订能力，它适合希望在 AI 产品中接入酒店交易能力的开发者、Agent 构建者、旅游产品团队和企业差旅场景，企业和个人均可完全免费一键接入，无调用量限制。
+📋 Real-time checks on **room types, quotes, and cancellation policies**, ensuring transparency and avoiding pitfalls
 
-🔍 按需求**智能筛选和比价**，省心挑酒店
+🛏️ **Lock in** your preferred room type in advance, eliminating the worry of late bookings
 
-📋 实时查**房型、报价和退改规则**，明明白白不踩坑
+💳 Simply say "place order" to confirm inventory and prices in real-time and **pay directly**
 
-🛏️ 心仪房型提前**锁定**，不用愁晚订没房
+📑 Check order status anytime, ensuring a worry-free experience throughout
 
-💳 说句“下单”就实时确认库存和价格**直接付**
+💴 Set up 24-hour automatic **price monitoring**, and get **notifications** immediately if there's a price drop
 
-📑 订单状态随时能查，全程都省心
+| Service | Endpoint | Available Tools | Authentication |
+|---------|----------|-----------------|----------------|
+| Hotel MCP | `https://mcp.rollinggo.cn/mcp` | searchHotels, getHotelDetail, getHotelSearchTags | `Authorization: Bearer ` |
 
-💴 还能设置24 小时自动**盯价**，降价马上**提醒**
+- **Transport Protocol**: `streamable-http`
+- **Price**: Completely free, with no call volume limits
+- **Integration Method**: Self-service integration as per this document, suitable for rapid prototyping and tool development
 
+Dida MCP also offers OAuth 2.0 authorization code mode, providing 7 tools including: getHotelSearchTags, searchHotels, getHotelDetail, hotelPriceConfirm, searchHotelOrders, etc. This mode is suitable for deep integration in enterprise-level production applications and requires business coordination via contact@rollinggo.ai.
+> If you are an international user or your target users are from countries outside China, please refer to [Dida-Hotel-MCP-Global](https://github.com/DIDA-AI/Dida-Hotel-MCP-Global). This version supports credit card payments and is suitable for business scenarios outside mainland China.
 
+## MCP Highlights
+- ✅ **Real-time Inventory and Price Confirmation** - Direct inventory connection + real-time price confirmation, zero information delay, all query results can be booked directly
+- ✅ **Mature Supply Chain Assurance** - The world's third-largest official B2B data source for travel products, with 14 years of supply chain experience, full-link API direct connection
+- ✅ **Massive Hotel Coverage** - Access to over 2 million hotels, covering major destinations globally
+- ✅ **Directly Signed Hotel Resources** - Over 110,000 directly signed hotels, with real-time price and inventory response, ensuring accurate and bookable query results
+- ✅ **Diverse Supply System** - Integration of over 500 global suppliers, covering various hotel brands, meeting different user booking needs
+- ✅ **Differentiated Price Advantage** - Anchored to upstream OTA supply, significant price advantages for overseas hotels and popular destinations such as Shanghai, Hong Kong, Japan, and Korea
+- ✅ **Compatibility** - Supports over 40 mainstream large model agents including Cursor, Claude Code, Codex, Windsurf, Copilot, etc. For Agent platforms like ClawHub, Kouzi, Qclaw, etc., it also provides an [All-in-One Hotel Booking Skill](https://rollinggo.store/solutions/skills)
+- ✅ **Developer Rebate** - Set markup percentages by country upon integration. When users complete bookings through your tool, the corresponding amount will be rebated. Order, revenue, and withdrawal status can be checked in real-time, with flexible withdrawals
 
-| 服务 | 端点 | 已上线 Tool | 认证 |
-|------|------|------------|------|
-| 酒店 MCP | `https://mcp.rollinggo.cn/mcp` | searchHotels, getHotelDetail, getHotelSearchTags | `Authorization: Bearer ` |
+## Suitable Users
+- Teams or individual developers working on AI Agents
+- Developers looking to integrate hotel booking capabilities into MCP Clients
+- Developers building travel planning, business travel management, OTA, and lifestyle service agents
+- Product teams hoping to validate the commercial transaction loop of AI Agents
+- Users with needs for hotel inquiries, price comparisons, and price drop notifications
 
-- **传输协议**：`streamable-http`
-- **价格**：完全免费，无调用量限制
-- **接入方式**：参考本文档可自助完成，适合需要短时间完成快速原型验证和工具开发
+## Application Scenarios- **Universal Agent**: Enables the Agent to natively handle hotel booking capabilities, allowing users to complete the entire process from price comparison and selection to order creation through natural conversation.
+- **AI Travel Assistant**: Precisely recommends hotels based on the user's destination, dates, budget, and personalized preferences, supporting multi-dimensional demand matching.
+- **MCP / Agent Demo**: Quickly validate the product capability of "AI Agents directly completing hotel transactions" and create a fully demonstrable closed loop.
 
-道旅MCP还提供OAuth 2.0 授权码模式，提供7个工具，包括：getHotelSearchTags, searchHotels, getHotelDetail, hotelPriceConfirm, searchHotelOrders等。该模式适合企业级生产应用深度集成，需商务对接contact@rollinggo.ai。
-> 如果你是国际用户，或者你的目标用户为中国以外的国际化国家，请参考 [Dida-Hotel-MCP-Global](https://github.com/DIDA-AI/Dida-Hotel-MCP-Global)。该版本支持信用卡支付，适合非中国大陆地区的业务场景。
+## Core Features
+- Supports precise search for 6 types of target locations including **city names, popular attractions, transportation hubs, hotel names, and specific addresses**.
+- Provides flexible professional filtering functions such as **star rating filters, check-in date settings, accommodation duration configuration, and price range filtering**.
+- Offers **personalized recommendations** based on user preferences, generating multi-dimensional professional lists such as high cost-performance, highly-rated popular, and popular selections.
+- Full natural language interaction, intelligently completing the entire closed loop from **location parsing, screening and price comparison, personalized recommendations to order generation**.
 
+## Quick Start
+> 💡 In summary, you only need to do two things: apply for an API Key + one-click configuration in the AI assistant. Without writing any code, you can enable any MCP-supported AI assistant with hotel search capabilities, and complete your first MCP Tool call within 5 minutes.
 
+### Step 1: Obtain API Key
 
-## MCP亮点
-- ✅ **实时库存价确** - 库存直连+实时价格确认能力，信息零延迟，查询结果均可直接预订
-- ✅ **成熟供应链保障** - 全球第三大酒旅B2B官方数据源，14年旅行产品供应链积累，全链路API直连
-- ✅ **海量酒店覆盖** - 坐拥200万+酒店资源，覆盖全球主要目的地
-- ✅ **直签酒店资源** - 11万+直签酒店直连，价格库存实时响应，确保查询结果准确可订
-- ✅ **多元供应体系** - 整合500+全球供应商，涵盖各类酒店品牌，满足不同用户预订需求
-- ✅ **差异化价格优势** - 锚定OTA上游供应，海外酒店及上海、香港、日韩等热门目的地价格优势显著
-- ✅ **兼容性** - 支持 Cursor、Claude Code、Codex、Windsurf、Copilot 等 40 多种主流大模型代理，针对ClawHub/扣子/Qclaw等Agent 平台，还提供[全能订酒店Skill](https://rollinggo.store/solutions/skills)
-- ✅ **开发者返佣** - 接入即可按国家设置加价比例，当用户通过你的工具完成预订，对应金额将作为返佣，订单、收益、提现状态实时可查，灵活提现
-  
-## 适合用户
-- 正在开发 AI Agent 的团队或个人开发者
-- 想在 MCP Client 中接入酒店预订能力的开发者
-- 正在构建旅行规划、差旅管理、OTA、生活服务类智能体的开发者
-- 希望验证 AI Agent 商业交易闭环的产品团队
-- 有酒店查询、酒店比价、盯价提醒接入需求的用户
+1. [Click to Apply](https://travelportal-partner-center.dida.com/register?lang=zh)
+2. Fill in basic information, no waiting, get it immediately upon application.
+3. Why is it necessary to fill in information to apply for a KEY? Hotel prices, inventory, and order capabilities involve real transaction chains, so we need to provide each developer with a dedicated independent KEY. When applying for a KEY, only a small amount of information needs to be filled out. This is mainly to reduce the cost of invalid configurations, protect interface stability, prevent malicious calls or abnormal traffic, and allow us to contact you promptly regarding test orders, price inquiries, and inventory checks.
 
-## 应用场景
-- **通用Agent**：让Agent 直接拥有原生酒店预订能力，用户在自然对话中即可完成从比价筛选到订单创建的全流程
-- **AI旅行助手**：根据用户目的地、日期、预算和个性化偏好精准推荐酒店，支持多维度需求匹配
-- **MCP / Agent Demo**：快速验证 "AI Agent 直接完成酒店交易" 的产品能力，打造可演示的完整闭环
+### Step 2: Integrate Agent Tools
 
-## 核心功能
-- 支持**城市名称、热门景点、交通枢纽、酒店名称、具体地址**等 6 种目标地点类型精准搜索
-- 提供灵活的**星级筛选、入住日期设置、住宿天数配置、价格区间过滤**等专业筛选功能
-- 基于用户个人偏好提供**个性化推荐，生成高性价比、好评热门、人气精选**等多维度专业榜单
-- 全程自然语言交互，智能完成从**地点解析、筛选比价、个性化推荐到订单生成**的完整闭环
-
-
-
-## 快速开始
-> 💡 总结来说，你只需要做两件事：申请API Key+ 在AI助手中一键配置，无需编写代码，就能让任何支持MCP的AI助手具备酒店搜索能力，5 分钟内完成第一次 MCP Tool 调用
-
-### 第一步：获取API密钥
-
-1. [点击申请](https://travelportal-partner-center.dida.com/register?lang=zh)
-2. 填写基本信息，0等待，申领即得。
-3. 为什么需要填写信息申请 KEY？酒店价格、库存和订单能力涉及真实交易链路，因此我们需要为每个开发者开通专属的独立KEY。申请 KEY 时仅需填写少量信息，这样做主要是为了减少无效配置成本，保护接口稳定性，避免恶意调用或异常流量，在测试订单、价格查询、库存校验等问题上能及时联系到你。
-
-### 第二步：接入 Agent 工具
-
-> 推荐 Claude CLI、Codex、Cursor 三个客户端。其他支持 MCP 的客户端（如 Kiro、豆包等）配置方式类似。
+> We recommend using Claude CLI, Codex, and Cursor clients. Other MCP-supported clients (such as Kiro, Doupao, etc.) have similar configuration methods.
 
 ### Claude CLI
 
-在项目根目录创建 `.mcp.json`：
+Create `.mcp.json` in the project root directory:
 
-```json
+json
 {
   "mcpServers": {
     "DIDA-Hotel": {
@@ -109,24 +100,21 @@ RollingGo酒店MCP RollingGo— Hotel Search & Booking MCP 🏠 官网🚀 快�
     }
   }
 }
-```
 
-也可以通过命令行直接添加：
+You can also add it directly via the command line:
 
-```bash
+bash
 claude mcp add \
   --transport http \
   --header "Authorization: Bearer YOUR_API_KEY" \
   DIDA-Hotel \
   https://mcp.rollinggo.cn/mcp
 
-```
-
 ### Codex
 
-配置文件位置：项目根目录 `.codex/config.json` 或全局 `~/.codex/config.json`
+Configuration file location: Project root directory `.codex/config.json` or global `~/.codex/config.json`
 
-```json
+json
 {
   "mcpServers": {
     "DIDA-Hotel": {
@@ -138,13 +126,12 @@ claude mcp add \
     }
   }
 }
-```
 
 ### Cursor
 
-配置文件位置：项目根目录 `.cursor/mcp.json` 或全局 `~/.cursor/mcp.json`
+Configuration file location: Project root directory `.cursor/mcp.json` or global `~/.cursor/mcp.json`
 
-```json
+json
 {
   "mcpServers": {
     "DIDA-Hotel": {
@@ -156,15 +143,14 @@ claude mcp add \
     }
   }
 }
-```
 
-> 将 `YOUR_API_KEY` 替换为你收到的实际 API Key。酒店和机票使用相同的认证方式，区别仅在于 URL（`/mcp` vs `/mcp/flight`）。
+> Replace `YOUR_API_KEY` with the actual API Key you received. Hotels and flights use the same authentication method, with the only difference being the URL (`/mcp` vs `/mcp/flight`).
 
-### cURL 直接测试
+### Direct Testing with cURL
 
-> **注意**：cURL 必须带 `-H "Accept: application/json, text/event-stream"` 头，否则服务端返回 400。
+> **Note**: cURL must include the `-H "Accept: application/json, text/event-stream"` header; otherwise, the server will return a 400 error.
 
-```bash
+bash
 curl -X POST https://mcp.rollinggo.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
@@ -175,9 +161,9 @@ curl -X POST https://mcp.rollinggo.cn/mcp \
     "params": {
       "name": "searchHotels",
       "arguments": {
-        "originQuery": "上海外滩五星酒店",
-        "place": "上海外滩",
-        "placeType": "景点",
+        "originQuery": "Shanghai Bund five-star hotel",
+        "place": "Shanghai Bund",
+        "placeType": "attraction",
         "checkInParam": {
           "checkInDate": "2026-06-01",
           "stayNights": 2
@@ -189,31 +175,27 @@ curl -X POST https://mcp.rollinggo.cn/mcp \
       }
     },
     "id": 1
-  }'
-```
+  }'---
+## Step 3: First MCP Call
 
----
+After the configuration is complete, say to your AI assistant:
 
-## 第三步：第一次 MCP 调用
+> "Help me find a five-star hotel near the Bund in Shanghai for check-in the day after tomorrow."
 
-配置完成后，对你的 AI 助手说：
+The AI will automatically call the `searchHotels` Tool and return a list of hotels.
 
-> "帮我搜一下上海外滩附近后天入住的五星酒店"
+### Hotel Search Example
 
-AI 会自动调用 `searchHotels` Tool，返回酒店列表。
-
-### 酒店搜索示例
-
-```json
+json
 {
   "jsonrpc": "2.0",
   "method": "tools/call",
   "params": {
     "name": "searchHotels",
     "arguments": {
-      "originQuery": "上海外滩五星酒店",
-      "place": "上海外滩",
-      "placeType": "景点",
+      "originQuery": "five-star hotel near the Bund in Shanghai",
+      "place": "the Bund in Shanghai",
+      "placeType": "attraction",
       "checkInParam": {
         "checkInDate": "2026-06-01",
         "stayNights": 2
@@ -226,162 +208,149 @@ AI 会自动调用 `searchHotels` Tool，返回酒店列表。
   },
   "id": 1
 }
-```
 
+## Usage Examples
+### Example 1: Hotel Price Monitoring
+> "Help me monitor the price of this hotel near Xixi Wetland in Hangzhou."
 
-## 使用示例
-### 示例1：酒店盯价提醒
-> "帮我监控杭州西溪湿地附近这家酒店"
-
-### 示例2：城市酒店搜索
-> "帮我看看未来三天内，杭州有哪些4星以上的酒店推荐？"
+### Example 2: City Hotel Search
+> "Help me find recommended hotels with 4 stars or above in Hangzhou for the next three days?"
 
 ![showcase1](/mcp-assets/1805e9718782362661722aea3f2b8ed3.png)
 ![showcase2](/mcp-assets/356dd2f74a890f60a14c09fd6ade3fb0.png)
 
+### Example 3: Search Around Attractions
+> "For Qixi Festival in 2026, I want to find a cost-effective hotel near Hong Kong Disneyland."
 
-
-### 示例2：景点周边搜索
-> "2026年七夕节，想在香港迪士尼附近找个性价比高的酒店"
-
-![showcase3](https://raw.githubusercontent.com/young63/dida-picbed/main/showcase3.png )
+![showcase3](/mcp-assets/ff25b475c60c8479353f2a0ae3a43df0.png)
 ![showcase5](/mcp-assets/3635a531c31e164f5e44b58189837765.png)
 ---
 
+## ✨ Features
 
-## ✨ 功能特性
+| Feature | Description |
+|---------|-------------|
+| 🏙️ **Multi-location Search** | Supports cities, attractions, airports, train stations, subway stations, etc. |
+| 📅 **Date Filtering** | Specify check-in date and number of nights |
+| ⭐ **Star Rating Filter** | Supports 0-5 star filtering, precise to 0.5 star increments |
+| 📍 **Distance Search** | Centered on an attraction, limit the radius (in meters) |
+| 🛏️ **Facility Details** | Optional return of hotel facilities and room amenities information |
+| 🌐 **Multilingual Support** | Supports Chinese, English, and other language environments |
 
-| 功能 | 说明 |
-|------|------|
-| 🏙️ **多地点搜索** | 支持城市、景点、机场、火车站、地铁站等 |
-| 📅 **日期筛选** | 指定入住日期和住宿天数 |
-| ⭐ **星级过滤** | 支持0-5星筛选，精确到0.5星梯度 |
-| 📍 **距离搜索** | 以景点为中心，限定半径范围（米） |
-| 🛏️ **设施详情** | 可选返回酒店设施、房间设施信息 |
-| 🌐 **多语言** | 支持中文、英文等语言环境 |
+### Configuration Parameter Explanation
 
+#### Common Core Parameters
 
-### 配置参数说明
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| place | ✅ | Search location | Hangzhou, Disneyland |
+| placeType | ✅ | Location type | City, attraction, airport, subway station, district/county... |
+| originQuery | ✅ | Your original request description | Help me find a hotel |
+| checkIn | ❌ | Check-in date (yyyy-MM-dd) | 2026-05-01 |
+| stayNights | ❌ | Number of nights | 2 |
+| starRatings | ❌ | Star rating range | [4, 5] indicates 4-5 stars |
+| size | ❌ | Number of results to return (default 10), maximum 20 | 5 |
 
-#### 常用核心参数
+> Note:
+> - The actual fields are based on the data returned by the API; the examples above show only some of the fields.
+> - As backend capabilities evolve, fields may be added or adjusted. It is recommended that MCP clients handle these changes by using available fields and ignoring missing ones.
 
-| 参数 | 必填 | 说明 | 示例 |
-|------|------|------|------|
-| place | ✅ | 搜索地点 | 杭州、迪士尼 |
-| placeType | ✅ | 地点类型 | 城市、景点、机场、地铁站、区/县... |
-| originQuery | ✅ | 你的原始需求描述 | 帮我找酒店 |
-| checkIn | ❌ | 入住日期(yyyy-MM-dd) | 2026-05-01 |
-| stayNights | ❌ | 住宿天数 | 2 |
-| starRatings | ❌ | 星级范围 | [4, 5] 表示4-5星 |
-| size | ❌ | 返回数量(默认10)，最大20 | 5 |
+## ❓ Frequently Asked Questions
+### Q: Which AI assistants/IDEs are supported?
 
-> 注意：
-> - 实际字段以接口数据返回为准，上述示例仅展示部分字段。
-> -   随着后端能力演进，字段可能会新增或调整，MCP 客户端侧建议按"有则使用、无则忽略"的方式做兼容。
-
-
-## ❓ 常见问题
-### Q: 支持哪些AI助手/IDE？
-
-**A:** 目前支持以下平台：
+**A:** Currently supported platforms include:
 - Cursor
 - Windsurf
 - Antigravity
 - Claude Desktop
-- Cherry studio等其他支持MCP协议的客户端
+- Cherry studio and other clients that support the MCP protocol
 
-### Q: 搜索结果包含哪些信息？
+### Q: What information is included in the search results?
 
-**A:** 默认返回酒店名称、星级、价格、地址、预订链接，酒店图片、酒店设施等。(具体可参考实际返回数据)
-### Q: 有调用次数限制吗？
+**A:** By default, the results include the hotel name, star rating, price, address, booking link, hotel images, and hotel facilities. (Refer to the actual returned data for specifics.)
 
-**A:** 目前阶段免费使用。
+### Q: Are there any call limits?
 
+**A:** It is currently free to use.
 
-## 🔒 安全与鉴权
+## 🔒 Security and Authentication
 
-### 认证方式
+### Authentication Methods
 
-| 环境 | 认证方式 | Header |
-|------|----------|--------|
-| 远程(云端) | Bearer Token | \Authorization: Bearer YOUR_API_KEY\ |
-| 本地服务 | Secret Key | \X-Secret-Key: YOUR_API_KEY\ |
+| Environment | Authentication Method | Header |
+|-------------|-----------------------|--------|
+| Remote (cloud) | Bearer Token | \Authorization: Bearer YOUR_API_KEY\ |
+| Local service | Secret Key | \X-Secret-Key: YOUR_API_KEY\ |
 
-### 安全建议
+### Security Recommendations
 
-- API Key请妥善保管，不要硬编码在代码中
-- 生产环境建议使用环境变量管理
-- 公网访问请使用HTTPS协议
+- Safeguard your API Key and do not hard-code it in your code.
+- Use environment variables for managing keys in production.
+- Use HTTPS for public network access.
 
+## 🤝 Technical Support
+Thank you to every developer for their communication, sharing, and feedback, which makes DIDA's iterations more efficient.
 
+Join the WeChat group, where the core development team will be online to assist with environment setup, API debugging, and help you successfully make your first hotel booking call, ensuring a smooth and fast deployment.
 
-## 🤝技术支持
-感谢每一位开发者的交流、分享与反馈，让DIDA的迭代更高效。
+You can get the following in the group:
+- ✅ Configuration guidance
+- ✅ API / MCP call troubleshooting
+- ✅ Explanations of hotel search, pricing, and booking processes
+- ✅ Integration suggestions suitable for your business scenario
+---Email: [york.lu@dida.com](mailto:york.lu@dida.com)
 
-加入微信群，核心开发团队会全程在线，协助搞定环境配置、接口调试，一起跑通第一个成功的酒店预订调用，零障碍快速上线。
+## ⚠ Appendix: DIDA Hotel MCP (OAuth) v2.3 Update Notes
 
-
-
-你可以在群内获得：
-- ✅ 接入配置指导
-- ✅ API / MCP 调用问题排查
-- ✅ 酒店搜索、价格、预订流程说明
-- ✅ 适合你业务场景的集成建议
-
-邮箱：[york.lu@dida.com](mailto:york.lu@dida.com)
-
-## ⚠ 附录：道旅Hotel MCP (OAuth) v2.3 更新说明
-
-v2.3 优化了订单查询结构，新增多个订单详情字段，帮助 Agent 更好地处理入住、支付和取消场景。注：此更新仅适用于 OAuth 接入版本，非本文档所述的 API Key 版本。OAuth 版本需商务对接。
+v2.3 optimizes the order query structure and adds multiple new order detail fields, helping Agents to better handle check-in, payment, and cancellation scenarios. Note: This update is applicable only to the OAuth integration version, not the API Key version described in this document. The OAuth version requires a business connection.
 
 ### What changed
 
 #### Unchanged tools (4)
 
-- `getHotelSearchTags` — 获取所有可用酒店筛选标签
-- `searchHotels` — 按条件搜索全球酒店列表
-- `getHotelDetail` — 获取指定酒店的可用房型及价格
-- `hotelPriceConfirm` — 锁定选中房型的实时最终零售价
+- `getHotelSearchTags` — Retrieve all available hotel filter tags
+- `searchHotels` — Search for a list of global hotels based on conditions
+- `getHotelDetail` — Get available room types and prices for a specified hotel
+- `hotelPriceConfirm` — Lock in the real-time final retail price for the selected room type
 
 #### Modified tools (2)
 
-- `createHotelBookingWithPaymentURL` — 移除 `alipayUrlScene` 参数；`bookingResult.paymentUrl` 统一为通用收银台
-- `searchHotelOrders` — 输出精简为 9 个核心字段（`orderNo`、`hotelName`、`roomName`、`orderStatus`、`totalPrice` 等），仅用于列表展示；完整详情移至独立接口查询
+- `createHotelBookingWithPaymentURL` — Removed the `alipayUrlScene` parameter; `bookingResult.paymentUrl` is now a unified checkout page
+- `searchHotelOrders` — Output is streamlined to 9 core fields (`orderNo`, `hotelName`, `roomName`, `orderStatus`, `totalPrice`, etc.), used only for list display; full details are moved to a separate query interface
 
 #### New tools (1)
 
-- `getHotelOrderDetail` — 按 `orderNo` 查询完整订单详情，包含 `hotelConfirmationNo`、入住人名单、床型、联系电话、经纬度、支付/取消截止时间、政策标识等
+- `getHotelOrderDetail` — Query complete order details by `orderNo`, including `hotelConfirmationNo`, guest list, bed type, contact phone number, latitude and longitude, payment/cancellation deadline, policy indicators, etc.
 
 #### New fields
 
-- `hotelConfirmationNo` — 酒店侧真实确认号，供前台查询入住
-- `stayInfo.bedTypeStr` — 床型中文描述（如 `"1张特大床 (1.8m)"`）
-- `stayInfo.guestNames` — 入住人拼音/英文姓名列表，用于入住核验
-- `priceInfo.paymentDeadline` — 支付截止时间（`YYYY-MM-DD HH:mm:ss`），用于倒计时提醒
-- `policyInfo.freeCancelDeadline` — 免费取消截止时间，用于判断退款窗口
-- `policyInfo.isCancelable` — 当前时刻是否仍可免费取消
+- `hotelConfirmationNo` — The actual confirmation number from the hotel, for front desk check-in inquiries
+- `stayInfo.bedTypeStr` — Chinese description of the bed type (e.g., `"1张特大床 (1.8m)"`)
+- `stayInfo.guestNames` — List of guests' pinyin/English names, for check-in verification
+- `priceInfo.paymentDeadline` — Payment deadline (`YYYY-MM-DD HH:mm:ss`), for countdown reminders
+- `policyInfo.freeCancelDeadline` — Free cancellation deadline, for determining the refund window
+- `policyInfo.isCancelable` — Whether it can still be canceled for free at the current time
 
-
-#### **工具总数**： 7 个（V2.2 为 6 个）—— 新增 1 个，变更 2 个，未变更 4 个。
+#### **Total number of tools**: 7 (6 in V2.2) — 1 new, 2 modified, 4 unchanged.
 ---
 **Made with ❤️ by DIDA Team**
 
-**官方网站：** [https://rollinggo.store/](https://rollinggo.store/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://rollinggo.store/](https://rollinggo.store/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `search`, `data`
-- 标签：`search`, `developer tools`, `location services`, `全球酒店预订`, `全球酒店查询`, `酒店分佣`, `酒店mcp`, `旅行mcp`, `酒店预订mcp`, `旅行规划mcp`
+- Categories: `development`, `search`, `data`
+- Tags: `search`, `developer tools`, `location services`, `全球酒店预订`, `全球酒店查询`, `酒店分佣`, `酒店mcp`, `旅行mcp`, `酒店预订mcp`, `旅行规划mcp`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yorklu-ai-go-hotel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yorklu-ai-go-hotel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

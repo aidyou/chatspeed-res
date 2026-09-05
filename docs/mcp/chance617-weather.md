@@ -1,94 +1,94 @@
 ---
-title: "天气查询"
-description: "MCP 天气查询服务 这是一个基于MCP (Minimalist Chat Protocol) 的天气查询服务，允许用户通过简单的命令查询不同城市的天气信息。 功能特点 - 支持查询全球主要城市的天气信息 - 提供温度、天气状况、湿度和风速等详细信息 - 使用异步处理提高响应速度 - 完善的错误处理机制 - 支持模拟数据模式，无需API密钥即可测试 安装要求 - Python 3.13 或更高版本 - 依赖包： - httpx = 0.28.1 - mcp = 1.11.0 使用方法 1. 确保已安装所有依赖： p"
+title: "Weather"
+description: "MCP Weather Query Service This is a weather query service based on MCP (Minimalist Chat Protocol), allowing users to query weather information for different cities through simple commands. Features -…"
 ---
 
-# 天气查询
+# Weather
 
-MCP 天气查询服务 这是一个基于MCP (Minimalist Chat Protocol) 的天气查询服务，允许用户通过简单的命令查询不同城市的天气信息。 功能特点 - 支持查询全球主要城市的天气信息 - 提供温度、天气状况、湿度和风速等详细信息 - 使用异步处理提高响应速度 - 完善的错误处理机制 - 支持模拟数据模式，无需API密钥即可测试 安装要求 - Python 3.13 或更高版本 - 依赖包： - httpx = 0.28.1 - mcp = 1.11.0 使用方法 1. 确保已安装所有依赖： p
+MCP Weather Query Service This is a weather query service based on MCP (Minimalist Chat Protocol), allowing users to query weather information for different cities through simple commands. Features -…
 
-# MCP 天气查询服务
+# MCP Weather Query Service
 
-这是一个基于MCP (Minimalist Chat Protocol) 的天气查询服务，允许用户通过简单的命令查询不同城市的天气信息。
+This is a weather query service based on MCP (Minimalist Chat Protocol), allowing users to query weather information for different cities through simple commands.
 
-## 功能特点
+## Features
 
-- 支持查询全球主要城市的天气信息
-- 提供温度、天气状况、湿度和风速等详细信息
-- 使用异步处理提高响应速度
-- 完善的错误处理机制
-- 支持模拟数据模式，无需API密钥即可测试
+- Supports querying weather information for major cities globally
+- Provides detailed information such as temperature, weather conditions, humidity, and wind speed
+- Uses asynchronous processing to improve response speed
+- Comprehensive error handling mechanism
+- Supports a mock data mode, enabling testing without an API key
 
-## 安装要求
+## Installation Requirements
 
-- Python 3.13 或更高版本
-- 依赖包：
+- Python 3.13 or higher
+- Dependencies:
   - httpx >= 0.28.1
   - mcp >= 1.11.0
 
-## 使用方法
+## Usage
 
-1. 确保已安装所有依赖：
-```
+1. Ensure all dependencies are installed:
+   
    pip install -r requirements.txt
-```
-   或使用项目配置：
-```
+   
+   Or use the project configuration:
+   
    pip install -e .
-```
+   
 
-2. 在OpenWeatherMap API配置部分填入你的API密钥（可选）：
-```python
-   OPENWEATHER_API_KEY = "你的API密钥"  # 替换为你的OpenWeatherMap API密钥
-```
-   如果不设置API密钥，服务将使用模拟数据。
+2. Enter your API key in the OpenWeatherMap API configuration section (optional):
+   python
+   OPENWEATHER_API_KEY = "你的API密钥"  # Replace with your OpenWeatherMap API key
+   
+   If no API key is set, the service will use mock data.
 
-3. 运行服务器：
-```
+3. Run the server:
+   
    python main.py
-```
+   
 
-4. 使用以下命令查询天气：
-```
+4. Use the following command to query the weather:
+   
    /weather 城市名
-```
-   例如：`/weather 北京`
+   
+   For example: `/weather 北京`
 
-## 获取OpenWeatherMap API密钥
+## Getting an OpenWeatherMap API Key
 
-1. 访问 [OpenWeatherMap官网](https://openweathermap.org/) 并注册账号
-2. 登录后，进入API密钥页面
-3. 创建一个新的API密钥
-4. 将获取的API密钥复制到代码中的`OPENWEATHER_API_KEY`变量
+1. Visit the [OpenWeatherMap official website](https://openweathermap.org/) and register an account
+2. Log in and go to the API key page
+3. Create a new API key
+4. Copy the obtained API key into the `OPENWEATHER_API_KEY` variable in the code
 
-## 开发说明
+## Development Notes
 
-- `main.py` - 主程序文件，包含MCP服务器和天气查询功能
-- 使用FastMCP框架处理请求和响应
-- 通过OpenWeatherMap API获取天气数据
-- 支持模拟数据模式，便于开发和测试
+- `main.py` - The main program file, containing the MCP server and weather query functionality
+- Uses the FastMCP framework to handle requests and responses
+- Retrieves weather data via the OpenWeatherMap API
+- Supports a mock data mode for ease of development and testing
 
-## 注意事项
+## Important Notes
 
-- 免费的OpenWeatherMap API有请求次数限制，请合理使用
-- 如果不设置API密钥，服务将使用模拟数据
+- The free OpenWeatherMap API has request limits; please use it reasonably
+- If no API key is set, the service will use mock data
 
-**官方网站：** [https://www.modelscope.cn/studios/chance617/Weather](https://www.modelscope.cn/studios/chance617/Weather)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/chance617/Weather](https://www.modelscope.cn/studios/chance617/Weather)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory D:\MCP\MCP_Minimalist_Development\example run main.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory D:\MCP\MCP_Minimalist_Development\example run main.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chance617-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chance617-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

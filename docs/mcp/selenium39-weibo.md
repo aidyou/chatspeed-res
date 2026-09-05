@@ -1,21 +1,21 @@
 ---
-title: "mcp微博服务器"
-description: "一个用于抓取微博的模型上下文协议服务器，提供搜索用户、获取详细用户资料和提取用户动态的工具。"
+title: "mcp-server-weibo"
+description: "A Model Context Protocol server for scraping Weibo that provides tools to search users, retrieve detailed user profiles, and fetch user feeds."
 ---
 
-# mcp微博服务器
+# mcp-server-weibo
 
-一个用于抓取微博的模型上下文协议服务器，提供搜索用户、获取详细用户资料和提取用户动态的工具。
+A Model Context Protocol server for scraping Weibo that provides tools to search users, retrieve detailed user profiles, and fetch user feeds.
 
-# 微博 MCP 服务器 (TypeScript 版本)
+# Weibo MCP Server (TypeScript Version)
 
-这是一个基于 [Model Context Protocol](https://modelcontextprotocol.io) 的服务器，用于抓取微博用户信息、动态和搜索功能。该服务器可以帮助获取关于微博用户的详细信息、动态内容以及执行用户搜索。
+This is a server based on the [Model Context Protocol](https://modelcontextprotocol.io) for scraping Weibo user information, feeds, and search functionality. This server can help retrieve detailed information about Weibo users, feed content, and perform user searches.
 
   
 
-## 安装
+## Installation
 
-从源代码安装：
+Install from source code:
 
 ```json
 {
@@ -32,7 +32,7 @@ description: "一个用于抓取微博的模型上下文协议服务器，提供
 }
 ```
 
-通过包管理器安装：
+Install from package manager:
 
 ```json
 {
@@ -45,9 +45,9 @@ description: "一个用于抓取微博的模型上下文协议服务器，提供
 }
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 - `search_users(keyword, limit)`: 根据关键词搜索微博用户
 - `get_profile(uid)`: 获取用户详细资料信息
@@ -55,42 +55,42 @@ description: "一个用于抓取微博的模型上下文协议服务器，提供
 - `get_hot_search(limit)`: 获取微博热搜榜
 - `search_content(keyword, limit, page?)`: 根据关键词搜索微博内容
 
-### 资源
+### Resources
 
-无
+None
 
-### 提示词
+### Prompts
 
-无
+None
 
-## 要求
+## Requirements
 
 - Node.js >= 18.0.0
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-## 免责声明
+## Disclaimer
 
-此项目与微博无关，仅供学习和研究用途。
+This project is not affiliated with Weibo and is for learning and research purposes only.
 
-**官方网站：** [https://github.com/Selenium39/mcp-server-weibo](https://github.com/Selenium39/mcp-server-weibo)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Selenium39/mcp-server-weibo](https://github.com/Selenium39/mcp-server-weibo)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `social media`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `social media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`--from git+https://github.com/Selenium39/mcp-server-weibo.git mcp-server-weibo`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `--from git+https://github.com/Selenium39/mcp-server-weibo.git mcp-server-weibo`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/selenium39-weibo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/selenium39-weibo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

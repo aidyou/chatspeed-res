@@ -1,44 +1,44 @@
 ---
-title: "Alpha Vantage股票数据服务器"
-description: "一个模型上下文协议（MCP）服务器，通过免费的Alpha Vantage API提供对金融市场数据的实时访问。该服务器实现了一个标准化的接口，用于检索股票报价和公司信息。"
+title: "alpha-vantage-mcp"
+description: "A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free Alpha Vantage API. This server implements a standardized interface for retrieving stock q…"
 ---
 
-# Alpha Vantage股票数据服务器
+# alpha-vantage-mcp
 
-一个模型上下文协议（MCP）服务器，通过免费的Alpha Vantage API提供对金融市场数据的实时访问。该服务器实现了一个标准化的接口，用于检索股票报价和公司信息。
+A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free Alpha Vantage API. This server implements a standardized interface for retrieving stock q…
 
-# Alpha Vantage MCP 服务器
+# Alpha Vantage MCP Server
 [Smithery](https://smithery.ai/server/@berlinbra/alpha-vantage-mcp)
 
-一个模型上下文协议 (MCP) 服务器，通过免费的 [Alpha Vantage API](https://www.alphavantage.co/documentation/) 提供实时访问金融市场数据的功能。此服务器实现了用于检索股票报价和公司信息的标准接口。
+A Model Context Protocol (MCP) server that provides real-time access to financial market data through the free [Alpha Vantage API](https://www.alphavantage.co/documentation/). This server implements a standardized interface for retrieving stock quotes and company information.
 
-# 特性
+# Features
 
-- 实时股票报价，包括价格、成交量和变化数据
-- 详细的公司信息，包括行业、板块和市值
-- 实时加密货币汇率，包括买入/卖出价格
-- 历史期权链数据，支持高级过滤和排序
-- 内置错误处理和速率限制管理
+- Real-time stock quotes with price, volume, and change data
+- Detailed company information including sector, industry, and market cap
+- Real-time cryptocurrency exchange rates with bid/ask prices
+- Historical options chain data with advanced filtering and sorting
+- Built-in error handling and rate limit management
 
-## 安装
+## Installation
 
-### 使用 Claude 桌面版
+### Using Claude Desktop
 
-#### 通过 Docker 安装
+#### Installing via Docker
 
-- 克隆仓库并构建本地镜像以供您的 Claude 桌面客户端使用
+- Clone the repository and build a local image to be utilized by your Claude desktop client
 
 ```sh
 cd alpha-vantage-mcp
 docker build -t mcp/alpha-vantage .
 ```
 
-- 修改 `claude_desktop_config.json` 使其与以下内容匹配，将 `REPLACE_API_KEY` 替换为您的实际密钥：
+- Change your `claude_desktop_config.json` to match the following, replacing `REPLACE_API_KEY` with your actual key:
 
- > `claude_desktop_config.json` 路径
+ > `claude_desktop_config.json` path
  >
- > - 在 MacOS 上: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
- > - 在 Windows 上: `%APPDATA%/Claude/claude_desktop_config.json`
+ > - On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+ > - On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -60,16 +60,16 @@ docker build -t mcp/alpha-vantage .
 }
 ```
 
-#### 通过 Smithery 安装
+#### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@berlinbra/alpha-vantage-mcp) 自动安装 Alpha Vantage MCP 服务器到 Claude 桌面版:
+To install Alpha Vantage MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@berlinbra/alpha-vantage-mcp):
 
 ```bash
 npx -y @smithery/cli install @berlinbra/alpha-vantage-mcp --client claude
 ```
 
  
- 开发/未发布服务器配置 
+ Development/Unpublished Servers Configuration 
  
 
 ```json
@@ -91,40 +91,41 @@ npx -y @smithery/cli install @berlinbra/alpha-vantage-mcp --client claude
  }
 }
 ```
+        
 
-#### 安装包
+#### Install packages
 
 ```
 uv install -e .
 ```
 
-#### 运行
+#### Running
 
-在通过 json 文件连接 Claude 客户端与 MCP 工具并安装包后，Claude 应该能看到服务器的 MCP 工具：
+After connecting Claude client with the MCP tool via json file and installing the packages, Claude should see the server's mcp tools:
 
-您可以自己运行服务器：
-在 alpha-vantage-mcp 仓库中:
+You can run the sever yourself via:
+In alpha-vantage-mcp repo: 
 ```
 uv run src/alpha_vantage_mcp/server.py
 ```
 
-使用 inspector
+with inspector
 ```
 * npx @modelcontextprotocol/inspector uv --directory /Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp run src/alpha_vantage_mcp/server.py `
 ```
 
-## 可用工具
+## Available Tools
 
-服务器实现了五个工具：
-- `get-stock-quote`: 获取特定公司的最新股票报价
-- `get-company-info`: 获取特定公司的股票相关信息
-- `get-crypto-exchange-rate`: 获取当前加密货币汇率
-- `get-time-series`: 获取股票的历史每日价格数据
-- `get-historical-options`: 获取具有排序功能的历史期权链数据
+The server implements five tools:
+- `get-stock-quote`: Get the latest stock quote for a specific company
+- `get-company-info`: Get stock-related information for a specific company
+- `get-crypto-exchange-rate`: Get current cryptocurrency exchange rates
+- `get-time-series`: Get historical daily price data for a stock
+- `get-historical-options`: Get historical options chain data with sorting capabilities
 
 ### get-stock-quote
 
-**输入模式:**
+**Input Schema:**
 ```json
 {
     "symbol": {
@@ -134,7 +135,7 @@ uv run src/alpha_vantage_mcp/server.py
 }
 ```
 
-**示例响应:**
+**Example Response:**
 ```
 Stock quote for AAPL:
 
@@ -147,9 +148,9 @@ Low: $197.20
 
 ### get-company-info
 
-获取给定符号的详细公司信息。
+Retrieves detailed company information for a given symbol.
 
-**输入模式:**
+**Input Schema:**
 ```json
 {
     "symbol": {
@@ -159,7 +160,7 @@ Low: $197.20
 }
 ```
 
-**示例响应:**
+**Example Response:**
 ```
 Company information for AAPL:
 
@@ -174,9 +175,9 @@ Currency: USD
 
 ### get-crypto-exchange-rate
 
-获取带有额外市场数据的实时加密货币汇率。
+Retrieves real-time cryptocurrency exchange rates with additional market data.
 
-**输入模式:**
+**Input Schema:**
 ```json
 {
     "crypto_symbol": {
@@ -191,7 +192,7 @@ Currency: USD
 }
 ```
 
-**示例响应:**
+**Example Response:**
 ```
 Cryptocurrency exchange rate for BTC/USD:
 
@@ -205,9 +206,9 @@ Ask Price: 43522.00000
 
 ### get-time-series
 
-获取每日时间序列（OHLCV）数据。
+Retrieves daily time series (OHLCV) data.
 
-**输入模式:**
+**Input Schema:**
 ```json
 {
     "symbol": {
@@ -221,8 +222,7 @@ Ask Price: 43522.00000
     }
 }
 ```
-
-**示例响应:**
+**Example Response:**
 ```
 Time Series Data for AAPL (Last Refreshed: 2024-12-17 16:00:00):
 
@@ -236,9 +236,9 @@ Volume: 55,751,011
 
 ### get-historical-options
 
-检索具有高级排序和过滤功能的历史期权链数据。
+Retrieves historical options chain data with advanced sorting and filtering capabilities.
 
-**输入模式:**
+**Input Schema:**
 ```json
 {
     "symbol": {
@@ -271,7 +271,7 @@ Volume: 55,751,011
 }
 ```
 
-**示例响应:**
+**Example Response:**
 ```
 Historical Options Data for AAPL (2024-02-20):
 
@@ -295,53 +295,53 @@ Contract 2:
 ...
 ```
 
-## 错误处理
+## Error Handling
 
-服务器包括针对各种情况的全面错误处理：
+The server includes comprehensive error handling for various scenarios:
 
-- 超出速率限制
-- 无效的 API 密钥
-- 网络连接问题
-- 超时处理
-- 格式错误的响应
+- Rate limit exceeded
+- Invalid API key
+- Network connectivity issues
+- Timeout handling
+- Malformed responses
 
-错误消息以清晰、易读的格式返回。
+Error messages are returned in a clear, human-readable format.
 
-## 前提条件
+## Prerequisites
 
-- Python 3.12 或更高版本
+- Python 3.12 or higher
 - httpx
 - mcp
 
-## 贡献者
+## Contributors
 
 - [berlinbra](https://github.com/berlinbra)
 - [zzulanas](https://github.com/zzulanas)
 
-## 贡献指南
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
-此 MCP 服务器根据 MIT 许可证许可。
-这意味着您可以自由使用、修改和分发该软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目仓库中的 LICENSE 文件。
+## License
+This MCP server is licensed under the MIT License. 
+This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/berlinbra/alpha-vantage-mcp](https://github.com/berlinbra/alpha-vantage-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/berlinbra/alpha-vantage-mcp](https://github.com/berlinbra/alpha-vantage-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp run alpha-vantage-mcp`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /Users/{INSERT_USER}/YOUR/PATH/TO/alpha-vantage-mcp run alpha-vantage-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/berlinbra-alpha-vantage.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/berlinbra-alpha-vantage.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,13 +1,13 @@
 ---
-title: "Unity AI桥接服务"
-description: "一种服务器，它使人工智能助手能够实时理解并与Unity项目互动，提供对场景层次结构、项目设置的访问，并能够在Unity编辑器中直接执行代码。"
+title: "UnityMCPIntegration"
+description: "A server that enables AI assistants to understand and interact with Unity projects in real-time, providing access to scene hierarchy, project settings, and the ability to execute code directly in the…"
 ---
 
-# Unity AI桥接服务
+# UnityMCPIntegration
 
-一种服务器，它使人工智能助手能够实时理解并与Unity项目互动，提供对场景层次结构、项目设置的访问，并能够在Unity编辑器中直接执行代码。
+A server that enables AI assistants to understand and interact with Unity projects in real-time, providing access to scene hierarchy, project settings, and the ability to execute code directly in the…
 
-# 🚀 高级 Unity MCP 集成
+# 🚀 Advacned Unity MCP Integration 
 
 [![MCP](/mcp-assets/4ac9d1cb3d9e4c6281ed9c3ef4fdeb70.svg)](https://modelcontextprotocol.io/introduction)
 [Smithery](https://smithery.ai/server/@quazaai/unitymcpintegration)
@@ -20,63 +20,63 @@ description: "一种服务器，它使人工智能助手能够实时理解并与
 [![Forks](/mcp-assets/eac4d6eec7e3b730931b041a26b0af0b.svg)](https://github.com/quazaai/UnityMCPIntegration/network/members)
 [![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/quazaai/UnityMCPIntegration/blob/main/LICENSE)
 
-   alt="Unity MCP 检视器" width="400" align="right" style="margin-left: 20px; margin-bottom: 20px;"/>
+   alt="Unity MCP Inspector" width="400" align="right" style="margin-left: 20px; margin-bottom: 20px;"/>
 
-此包提供了 [模型上下文协议 (MCP)](https://modelcontextprotocol.io/) 与 Unity 编辑器之间的无缝集成，使 AI 助手能够实时理解和交互您的 Unity 项目。通过这种集成，AI 助手可以访问关于您的场景层次结构、项目设置的信息，并直接在 Unity 编辑器环境中执行代码。
+This package provides a seamless integration between [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) and Unity Editor, allowing AI assistants to understand and interact with your Unity projects in real-time. With this integration, AI assistants can access information about your scene hierarchy, project settings, and execute code directly in the Unity Editor context.
 
-## 📚 特性
-- 直接浏览和操作项目文件
-- 访问有关您的 Unity 项目的实时信息
-- 理解您的场景层次结构和游戏对象
-- 直接在 Unity 编辑器中执行 C# 代码
-- 监控日志和错误
-- 控制编辑器的播放模式
-- 等待代码执行
+## 📚 Features
+- Browse and manipulate project files directly
+- Access real-time information about your Unity project
+- Understand your scene hierarchy and game objects
+- Execute C# code directly in the Unity Editor
+- Monitor logs and errors
+- Control the Editor's play mode
+- Wait For Code Execution
 
-## 🚀 入门指南
+## 🚀 Getting Started
 
-### 前提条件
+### Prerequisites
 
-- Unity 2021.3 或更高版本
-- Node.js 18+（用于运行 MCP 服务器）
+- Unity 2021.3 or later
+- Node.js 18+ (for running the MCP server)
 
-### 安装
+### Installation
 
-#### 1. 安装 Unity 包
+#### 1. Install Unity Package
 
-您有几种选项来安装 Unity 包：
+You have several options to install the Unity package:
 
-**选项 A：包管理器（Git URL）**
-1. 打开 Unity 包管理器 (`Window > Package Manager`)
-2. 单击 `+` 按钮并选择 `Add package from git URL...`
-3. 输入仓库 URL: `https://github.com/quazaai/UnityMCPIntegration.git`
-4. 单击 `Add`
+**Option A: Package Manager (Git URL)**
+1. Open the Unity Package Manager (`Window > Package Manager`)
+2. Click the `+` button and select `Add package from git URL...`
+3. Enter the repository URL: `https://github.com/quazaai/UnityMCPIntegration.git`
+4. Click `Add`
 
-**选项 B：导入自定义包**
-1. 克隆此仓库或 [下载为 unityPackage](https://github.com/quazaai/UnityMCPIntegration/releases)
-2. 在 Unity 中，转到 `Assets > Import Package > Custom Package`
-3. 选择 `UnityMCPIntegration.unitypackage` 文件
+**Option B: Import Custom Package**
+1. Clone this repository or [download it as a unityPackage](https://github.com/quazaai/UnityMCPIntegration/releases)
+2. In Unity, go to `Assets > Import Package > Custom Package`
+3. Select the `UnityMCPIntegration.unitypackage` file
 
-#### 2. 设置 MCP 服务器
+#### 2. Set up the MCP Server
 
-您有两种选项来运行 MCP 服务器：
+You have two options to run the MCP server:
 
-**选项 A：直接运行服务器**
+**Option A: Run the server directly**
 
-1. 导航到 `mcpServer (可能位于 
-\Library\PackageCache\com.quaza.unitymcp@d2b8f1260bca\mcpServer\)` 目录
-2. 安装依赖项：
+1. Navigate to the `mcpServer (likely 
+LibraryPackageCachecom.quaza.unitymcp@d2b8f1260bcamcpServer)` directory
+2. Install dependencies:
 ```
    npm install
 ```
-3. 运行服务器：
+3. Run the server:
 ```
    node build/index.js
 ```
 
-**选项 B：添加到 MCP 主机配置**
+**Option B: Add to MCP Host configuration**
 
-将服务器添加到您的 MCP 主机配置中，适用于 Claude Desktop、自定义实现等
+Add the server to your MCP Host configuration for Claude Desktop, Custom Implementation etc
 
 ```json
 {
@@ -84,7 +84,7 @@ description: "一种服务器，它使人工智能助手能够实时理解并与
     "unity-mcp-server": {
       "command": "node",
       "args": [
-        "path-to-project>\\Library\\PackageCache\\com.quaza.unitymcp@d2b8f1260bca\\mcpServer\\mcpServer\\build\\index.js"
+        "path-to-project>\Library\PackageCache\com.quaza.unitymcp@d2b8f1260bca\mcpServer\mcpServer\build\index.js"
       ],
       "env": {
         "MCP_WEBSOCKET_PORT": "5010"
@@ -93,134 +93,132 @@ description: "一种服务器，它使人工智能助手能够实时理解并与
   }
 }
 ```
-### 演示视频
-
+### Demo Video
 [Watch video](https://www.youtube.com/watch?v=GxTlahBXs74)
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@quazaai/unitymcpintegration) 自动安装 Unity MCP Integration for Claude Desktop：
+To install Unity MCP Integration for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@quazaai/unitymcpintegration):
 
 ```bash
 npx -y @smithery/cli install @quazaai/unitymcpintegration --client claude
 ```
 
-### 🔧 使用方法
+### 🔧 Usage
 
-#### 调试和监控
+#### Debugging and Monitoring
 
-您可以在 Unity 中打开 MCP 调试窗口来监控连接并测试功能：
+You can open the MCP Debug window in Unity to monitor the connection and test features:
 
-1. 转到 `Window > MCP Debug`
-2. 使用调试窗口：
-   - 检查连接状态
-   - 测试代码执行
-   - 查看日志
-   - 监控事件
+1. Go to `Window > MCP Debug`
+2. Use the debug window to:
+   - Check connection status
+   - Test code execution
+   - View logs
+   - Monitor events
 
-#### 可用工具
+#### Available Tools
 
-Unity MCP 集成提供了多种工具给 AI 助手使用：
+The Unity MCP integration provides several tools to AI assistants:
 
-##### Unity 编辑器工具
-- **get_editor_state**: 获取有关 Unity 项目和编辑器状态的全面信息
-- **get_current_scene_info**: 获取当前场景的详细信息
-- **get_game_objects_info**: 获取场景中特定 GameObject 的信息
-- **execute_editor_command**: 在 Unity 编辑器中直接执行 C# 代码
-- **get_logs**: 检索并过滤 Unity 控制台日志
-- **verify_connection**: 检查是否与 Unity 编辑器有活动连接
+##### Unity Editor Tools
+- **get_editor_state**: Get comprehensive information about the Unity project and editor state
+- **get_current_scene_info**: Get detailed information about the current scene
+- **get_game_objects_info**: Get information about specific GameObjects in the scene
+- **execute_editor_command**: Execute C# code directly in the Unity Editor
+- **get_logs**: Retrieve and filter Unity console logs
+- **verify_connection**: Check if there's an active connection to Unity Editor
 
-##### 文件系统工具
-- **read_file**: 读取 Unity 项目中文件的内容
-- **read_multiple_files**: 一次性读取多个文件
-- **write_file**: 创建或覆盖带有新内容的文件
-- **edit_file**: 对现有文件进行有针对性的编辑，并提供差异预览
-- **list_directory**: 列出目录中的文件和文件夹
-- **directory_tree**: 获取目录和文件的分层视图
-- **search_files**: 查找匹配搜索模式的文件
-- **get_file_info**: 获取特定文件或目录的元数据
-- **find_assets_by_type**: 查找所有特定类型的资源（例如 Material, Prefab）
-- **list_scripts**: 获取项目中所有 C# 脚本的列表
+##### Filesystem Tools
+- **read_file**: Read contents of a file in your Unity project
+- **read_multiple_files**: Read multiple files at once
+- **write_file**: Create or overwrite a file with new content
+- **edit_file**: Make targeted edits to existing files with diff preview
+- **list_directory**: Get a listing of files and folders in a directory
+- **directory_tree**: Get a hierarchical view of directories and files
+- **search_files**: Find files matching a search pattern
+- **get_file_info**: Get metadata about a specific file or directory
+- **find_assets_by_type**: Find all assets of a specific type (e.g. Material, Prefab)
+- **list_scripts**: Get a listing of all C# scripts in the project
 
-文件路径可以是绝对路径，也可以是相对于 Unity 项目 Assets 文件夹的相对路径。例如，`"Scenes/MyScene.unity"` 指的是 `
-/Assets/Scenes/MyScene.unity`。
+File paths can be absolute or relative to the Unity project's Assets folder. For example, `"Scenes/MyScene.unity"` refers to `
+/Assets/Scenes/MyScene.unity`.
 
-## 🛠️ 架构
+## 🛠️ Architecture
 
-该集成由两个主要组件组成：
+The integration consists of two main components:
 
-1. **Unity 插件 (C#)**: 位于 Unity 编辑器中，提供对编辑器 API 的访问
-2. **MCP 服务器 (TypeScript/Node.js)**: 实现 MCP 协议并与 Unity 插件通信
+1. **Unity Plugin (C#)**: Resides in the Unity Editor and provides access to Editor APIs
+2. **MCP Server (TypeScript/Node.js)**: Implements the MCP protocol and communicates with the Unity plugin
 
-它们之间的通信通过 WebSocket 进行，传输 JSON 消息以执行命令和数据交换。
+Communication between them happens via WebSocket, transferring JSON messages for commands and data.
 
-## 文件系统访问
+## File System Access
 
-Unity MCP 集成现在包括强大的文件系统工具，允许 AI 助手：
+The Unity MCP integration now includes powerful filesystem tools that allow AI assistants to:
 
-- 浏览、读取和编辑 Unity 项目中的文件
-- 创建新的文件和目录
-- 搜索特定文件或资源类型
-- 分析项目结构
-- 通过差异预览进行有针对性的代码更改
+- Browse, read, and edit files in your Unity project
+- Create new files and directories
+- Search for specific files or asset types
+- Analyze your project structure
+- Make targeted code changes with diff previews
 
-所有文件操作都限制在 Unity 项目目录内以确保安全。系统智能地处理绝对路径和相对路径，始终将它们解析为相对于项目的 Assets 文件夹，以便于使用。
+All file operations are restricted to the Unity project directory for security. The system intelligently handles both absolute and relative paths, always resolving them relative to your project's Assets folder for convenience.
 
-示例用法：
+Example usages:
+- Get a directory listing: `list_directory(path: "Scenes")`
+- Read a script file: `read_file(path: "Scripts/Player.cs")`
+- Edit a configuration file: `edit_file(path: "Resources/config.json", edits: [{oldText: "value: 10", newText: "value: 20"}], dryRun: true)`
+- Find all materials: `find_assets_by_type(assetType: "Material")`
 
-- 获取目录列表：`list_directory(path: "Scenes")`
-- 读取脚本文件：`read_file(path: "Scripts/Player.cs")`
-- 编辑配置文件：`edit_file(path: "Resources/config.json", edits: [{oldText: "value: 10", newText: "value: 20"}], dryRun: true)`
-- 查找所有材质：`find_assets_by_type(assetType: "Material")`
+## 👥 Contributing
 
-## 👥 贡献
+Contributions are welcome! Here's how you can contribute:
 
-欢迎贡献！以下是如何贡献的方法：
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add some amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-1. 叉出仓库
-2. 创建一个功能分支 (`git checkout -b feature/amazing-feature`)
-3. 进行你的更改
-4. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-5. 推送到该分支 (`git push origin feature/amazing-feature`)
-6. 打开一个拉取请求
+### Development Setup
 
-### 开发设置
+**Unity Side**:
+- Open the project in Unity
+- Modify the C# scripts in the `UnityMCPConnection/Editor` directory
 
-**Unity 端**：
-- 在 Unity 中打开项目
-- 修改 `UnityMCPConnection/Editor` 目录下的 C# 脚本
+**Server Side**:
+- Navigate to the `mcpServer` directory
+- Install dependencies: `npm install`
+- Make changes to the TypeScript files in the `src` directory
+- Build the server: `npm run build`
+- Run the server: `node build/index.js`
 
-**服务器端**：
-- 导航到 `mcpServer` 目录
-- 安装依赖项：`npm install`
-- 对 `src` 目录下的 TypeScript 文件进行修改
-- 构建服务器：`npm run build`
-- 运行服务器：`node build/index.js`
+## 📄 License
 
-## 📄 许可证
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-此项目根据 MIT 许可证发布 - 详情请参阅 LICENSE 文件。
+## 📞 Support
 
-## 📞 支持
+If you encounter any issues or have questions, please file an issue on the GitHub repository.
 
-如果您遇到任何问题或有疑问，请在 GitHub 仓库中提交一个问题。
+**Official site: ** [https://github.com/quazaai/UnityMCPIntegration](https://github.com/quazaai/UnityMCPIntegration)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/quazaai/UnityMCPIntegration](https://github.com/quazaai/UnityMCPIntegration)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `files`
+- Tags: `developer tools`, `file systems`, `chinese`
 
-- 分类：`files`
-- 标签：`developer tools`, `file systems`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `node`
+- Args: `path-to-project>\Library\PackageCache\com.quaza.unitymcp@d2b8f1260bca\mcpServer\mcpServer\build\index.js`
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path-to-project>\Library\PackageCache\com.quaza.unitymcp@d2b8f1260bca\mcpServer\mcpServer\build\index.js`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/quazaai-unitymcpintegration.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/quazaai-unitymcpintegration.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

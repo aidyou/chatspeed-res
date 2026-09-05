@@ -1,44 +1,42 @@
 ---
-title: "北大法宝法条识别—法律MCP"
-description: "自动从文本中识别并提取法律条文，例如在合同、案件描述或法律文书中，精准定位涉及的具体法律条文（如“《民法典》第585条”），并将文本中的法律问题与对应法条内容关联，提取法规名称的服务。"
+title: "mcp_server_law_recognition"
+description: "Automatically identify and extract legal provisions from texts (e.g., contracts, case descriptions, legal documents), accurately pinpoint specific provisions (such as \"Article 585 of the Civil Code\")…"
 ---
 
-# 北大法宝法条识别—法律MCP
+# mcp_server_law_recognition
 
-自动从文本中识别并提取法律条文，例如在合同、案件描述或法律文书中，精准定位涉及的具体法律条文（如“《民法典》第585条”），并将文本中的法律问题与对应法条内容关联，提取法规名称的服务。
+Automatically identify and extract legal provisions from texts (e.g., contracts, case descriptions, legal documents), accurately pinpoint specific provisions (such as "Article 585 of the Civil Code")…
 
-# 项目描述
-北大法宝法条识别MCP是一个动态的、实时的分析引擎，实现自动从文本中识别并提取法律条文，接受输入文本，运用模型推理和词典精准匹配，实时识别出其中提及的法律名称和具体条文（款、项），并进行标准化验证和推荐。
+# Project description
+[Chinalawinfo Co. Ltd.](https://www.pkulaw.com/) Treasure Legal Article Recognition MCP is a dynamic, real-time analysis engine that automatically recognizes and extracts legal provisions from text. It accepts input text, uses model reasoning and dictionary precise matching, and recognizes the legal names and specific provisions (clauses, items) mentioned in it in real time, and performs standardized verification and recommendation.
 
-使用场景： 
-1、从文本段落中提取法规名称和条款，例如在合同、案件描述或法律文书中，精准定位涉及的具体法律条文（如“《民法典》第585条”） 
-2、将提取的法规名称与法律数据库中的标准名称及条款，进行校验匹配
+Usage scenarios:
+1. Extract legal names and clauses from text paragraphs, such as in contracts, case descriptions or legal documents, accurately locate the specific legal provisions involved (such as "Article 585 of the Civil Code")
+2. Verify and match the extracted legal names with the standard names and clauses in the legal database
 
-# 要求
+# Requirements
 - requires-python = ">=3.10"
 - mcp>=1.0.0
-
-# 安装
+# Installation
 - pip install mcp_server_law_recognition
-
-# 使用方法
-## 示例
+# Usage
+## Sample
     from mcp import ClientSession, StdioServerParameters, types
     from mcp.client.stdio import stdio_client
     server_params = StdioServerParameters(
-        command="python",  # 可执行文件
-        args=["-m","mcp_server_law_recognition"],  # 可选命令行参数
+        command="python",  # Executable
+        args=["-m","mcp_server_law_recognition"],  # Optional command line arguments
         env={
             "pkulaw_api_key": "da9629867ee841518***********"
-        }  # 可选环境变量
-    ) 
-    
+        }  # Optional environment variables
+    )
+
     async def run():
         async with stdio_client(server_params) as (read, write):
             async with ClientSession(
                 read, write
             ) as session:
-                # 初始化连接
+                # Initialize the connection
                 await session.initialize()
 
             tools = await session.list_tools()
@@ -48,34 +46,32 @@ description: "自动从文本中识别并提取法律条文，例如在合同、
 
     if __name__ == "__main__":
         import asyncio
-    
+
         asyncio.run(run())
+# Return result
+- Text: Name in the original text for model recognition
+- Original: Standard regulatory names in the pkulaw database
+- Full-text: Regulatory content in pkulaw database
+- source: Pkulaw url
+# Contact US
+- Apply for an APIKEY:fxtj@chinalawinfo.com
 
-# 返回结果
-- Text: 模型识别用的原始文本中的名称
-- Original: pkulaw 数据库中的标准法规名称
-- Full-text: pkulaw 数据库中的法规内容
-- source: Pkulaw 网址
+**Official site: ** [https://pypi.org/project/mcp-server-law-recognition](https://pypi.org/project/mcp-server-law-recognition)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-# 联系我们
-- 申请 APIKEY: fxtj@chinalawinfo.com
+## Categories & Tags
 
-**官方网站：** [https://pypi.org/project/mcp-server-law-recognition](https://pypi.org/project/mcp-server-law-recognition)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## 分类与标签
+## MCP Configuration
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m mcp_server_law_recognition`
 
-## MCP 配置
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m mcp_server_law_recognition`
+## Data source
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/pkulaw-ai-law-recognition.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/pkulaw-ai-law-recognition.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

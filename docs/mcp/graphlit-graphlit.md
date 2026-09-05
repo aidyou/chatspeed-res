@@ -1,61 +1,59 @@
 ---
-title: "图灵知识桥"
-description: "模型上下文协议（MCP）服务器实现了MCP客户端与Graphlit服务之间的集成。\n\n将从Slack到Gmail再到播客订阅源的内容，以及网络爬虫获取的内容，全部导入到Graphlit项目中——然后通过MCP客户端检索相关的内容。"
+title: "graphlit-mcp-server"
+description: "The Model Context Protocol (MCP) Server enables integration between MCP clients and the Graphlit service. Ingest anything from Slack to Gmail to podcast feeds, in addition to web crawling, into a Grap…"
 ---
 
-# 图灵知识桥
+# graphlit-mcp-server
 
-模型上下文协议（MCP）服务器实现了MCP客户端与Graphlit服务之间的集成。
-
-将从Slack到Gmail再到播客订阅源的内容，以及网络爬虫获取的内容，全部导入到Graphlit项目中——然后通过MCP客户端检索相关的内容。
+The Model Context Protocol (MCP) Server enables integration between MCP clients and the Graphlit service. Ingest anything from Slack to Gmail to podcast feeds, in addition to web crawling, into a Grap…
 
 [![npm version](/mcp-assets/75a1729d773d8f5a7b9ad62669fc1b8d.svg)](https://badge.fury.io/js/graphlit-mcp-server)
 [Smithery](https://smithery.ai/server/@graphlit/graphlit-mcp-server)
 
-# Graphlit 平台的 Model Context Protocol (MCP) 服务器
+# Model Context Protocol (MCP) Server for Graphlit Platform
 
-## 概述
+## Overview
 
-Model Context Protocol (MCP) 服务器实现了 MCP 客户端与 Graphlit 服务之间的集成。本文档概述了设置过程，并提供了使用客户端的基本示例。
+The Model Context Protocol (MCP) Server enables integration between MCP clients and the Graphlit service. This document outlines the setup process and provides a basic example of using the client.
 
-您可以从 Slack、Discord、网站、Google Drive、电子邮件、Jira、Linear 或 GitHub 中导入任何内容到 Graphlit 项目中，然后在像 Cursor、Windsurf 或 Cline 这样的 MCP 客户端中搜索和检索相关知识。
+Ingest anything from Slack, Discord, websites, Google Drive, email, Jira, Linear or GitHub into a Graphlit project - and then search and retrieve relevant knowledge within an MCP client like Cursor, Windsurf or Cline.
 
-文档（PDF、DOCX、PPTX 等）和 HTML 网页将在导入时被提取为 Markdown 格式。
+Documents (PDF, DOCX, PPTX, etc.) and HTML web pages will be extracted to Markdown upon ingestion. 
 
-音频和视频文件将在导入时转录。
+Audio and video files will be transcribed upon ingestion.
 
-Web 爬虫和网络搜索作为 MCP 工具内置，无需单独集成如 Firecrawl、Exa 等其他工具。
+Web crawling and web search are built-in as MCP tools, with no need to integrate other tools like Firecrawl, Exa, etc. separately.
 
-您可以在我们的 [博客](https://www.graphlit.com/blog/graphlit-mcp-server) 上了解更多关于 MCP 服务器用例和功能的信息。
+You can read more about the MCP Server use cases and features on our [blog](https://www.graphlit.com/blog/graphlit-mcp-server).
 
   
 
-## 工具
+## Tools
 
-### 检索
+### Retrieval
 
-- 查询内容
-- 查询集合
-- 检索相关源
-- 检索相似图片
-- 图片视觉描述
+- Query Contents
+- Query Collections
+- Retrieve Relevant Sources
+- Retrieve Similar Images
+- Visually Describe Image
 
-### 提取
+### Extraction
 
-- 从文本中提取结构化的 JSON
+- Extract Structured JSON from Text
 
-### 导入
+### Ingestion
 
-- 文件
-- 网页
-- 消息
-- 帖子
-- 电子邮件
-- 问题
-- 文本
+- Files
+- Web Pages
+- Messages
+- Posts
+- Emails
+- Issues
+- Text
 
-### 数据连接器
-- Microsoft Outlook 电子邮件
+### Data Connectors
+- Microsoft Outlook email
 - Google Mail
 - Notion
 - Reddit
@@ -72,77 +70,77 @@ Web 爬虫和网络搜索作为 MCP 工具内置，无需单独集成如 Firecra
 - Microsoft Teams
 - Discord
 - Twitter/X
-- 播客 (RSS)
+- Podcasts (RSS)
 
 ### Web
-- Web 爬虫
-- Web 搜索（包括播客搜索）
-- Web 映射
-- 截图页面
+- Web Crawling
+- Web Search (including Podcast Search)
+- Web Mapping
+- Screenshot Page
 
-### 通知
+### Notifications
 - Slack
-- 电子邮件
+- Email
 - Webhook
 
-### 操作
+### Operations
 
-- 配置项目
-- 创建集合
-- 向集合添加内容
-- 从集合中移除内容
-- 删除集合
-- 删除订阅
-- 删除内容
-- 订阅完成了吗？
-- 内容完成了吗？
+- Configure Project
+- Create Collection
+- Add Contents to Collection
+- Remove Contents from Collection
+- Delete Collection
+- Delete Feed(s)
+- Delete Content(s)
+- Is Feed Done?
+- Is Content Done?
 
-### 枚举
+### Enumerations
 
-- 列出 Slack 频道
-- 列出 Microsoft Teams 团队
-- 列出 Microsoft Teams 频道
-- 列出 SharePoint 库
-- 列出 SharePoint 文件夹
-- 列出 Linear 项目
+- List Slack Channels
+- List Microsoft Teams Teams
+- List Microsoft Teams Channels
+- List SharePoint Libraries
+- List SharePoint Folders
+- List Linear Projects
 
-## 资源
+## Resources
 
-- 项目
-- 内容
-- 订阅
-- 内容集合
-- 工作流
-- 规范
+- Project
+- Contents
+- Feeds
+- Collections (of Content)
+- Workflows
+- Specifications
 
-## 前提条件
+## Prerequisites
 
-在开始之前，请确保您具备以下条件：
+Before you begin, ensure you have the following:
 
-- 您的系统上安装了 Node.js（建议版本 18.x 或更高）。
-- 在 [Graphlit 平台](https://portal.graphlit.dev) 上拥有一个活跃帐户，并可以访问 API 设置仪表板。
+- Node.js installed on your system (recommended version 18.x or higher).
+- An active account on the [Graphlit Platform](https://portal.graphlit.dev) with access to the API settings dashboard.
 
-## 配置
+## Configuration
 
-Graphlit MCP 服务器支持通过设置环境变量来进行身份验证和配置：
+The Graphlit MCP Server supports environment variables to be set for authentication and configuration:
 
-- `GRAPHLIT_ENVIRONMENT_ID`：您的环境 ID。
-- `GRAPHLIT_ORGANIZATION_ID`：您的组织 ID。
-- `GRAPHLIT_JWT_SECRET`：用于签署 JWT 令牌的 JWT 密钥。
+- `GRAPHLIT_ENVIRONMENT_ID`: Your environment ID.
+- `GRAPHLIT_ORGANIZATION_ID`: Your organization ID.
+- `GRAPHLIT_JWT_SECRET`: Your JWT secret for signing the JWT token.
 
-你可以在 [Graphlit 平台](https://portal.graphlit.dev) 的 API 设置仪表板中找到这些值。
+You can find these values in the API settings dashboard on the [Graphlit Platform](https://portal.graphlit.dev).
 
-## 安装
+## Installation
 
-### 通过 Windsurf 安装
+### Installing via Windsurf
 
-要在 Windsurf IDE 应用程序中安装 graphlit-mcp-server，Cline 应该使用 NPX：
+To install graphlit-mcp-server in Windsurf IDE application, Cline should use NPX:
 
 ```bash
 npx -y graphlit-mcp-server
 ```
 
-你的 mcp_config.json 文件应该配置如下：
+Your mcp_config.json file should be configured similar to:
 
 ```
 {
@@ -163,15 +161,15 @@ npx -y graphlit-mcp-server
 }
 ```
 
-### 通过 Cline 安装
+### Installing via Cline
 
-要在 Cline IDE 应用程序中安装 graphlit-mcp-server，Cline 应该使用 NPX：
+To install graphlit-mcp-server in Cline IDE application, Cline should use NPX:
 
 ```bash
 npx -y graphlit-mcp-server
 ```
 
-你的 cline_mcp_settings.json 文件应该配置如下：
+Your cline_mcp_settings.json file should be configured similar to:
 
 ```
 {
@@ -192,15 +190,15 @@ npx -y graphlit-mcp-server
 }
 ```
 
-### 通过 Cursor 安装
+### Installing via Cursor
 
-要在 Cursor IDE 应用程序中安装 graphlit-mcp-server，Cline 应该使用 NPX：
+To install graphlit-mcp-server in Cursor IDE application, Cline should use NPX:
 
 ```bash
 npx -y graphlit-mcp-server
 ```
 
-你的 mcp.json 文件应该配置如下：
+Your mcp.json file should be configured similar to:
 
 ```
 {
@@ -221,17 +219,17 @@ npx -y graphlit-mcp-server
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@graphlit/graphlit-mcp-server) 自动为 Claude 桌面版安装 graphlit-mcp-server：
+To install graphlit-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@graphlit/graphlit-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @graphlit/graphlit-mcp-server --client claude
 ```
 
-### 手动安装
+### Installing manually
 
-要在任何 MCP 客户端应用程序中使用 Graphlit MCP Server，请使用：
+To use the Graphlit MCP Server in any MCP client application, use:
 
 ```
 {
@@ -252,7 +250,8 @@ npx -y @smithery/cli install @graphlit/graphlit-mcp-server --client claude
 }
 ```
 
-可选地，你可以配置数据连接器的凭证，如 Slack、Google 邮件和 Notion。仅需要 GRAPHLIT_ORGANIZATION_ID、GRAPHLIT_ENVIRONMENT_ID 和 GRAPHLIT_JWT_SECRET。
+Optionally, you can configure the credentials for data connectors, such as Slack, Google Email and Notion. 
+Only GRAPHLIT_ORGANIZATION_ID, GRAPHLIT_ENVIRONMENT_ID and GRAPHLIT_JWT_SECRET are required.
 
 ```
 {
@@ -285,30 +284,30 @@ npx -y @smithery/cli install @graphlit/graphlit-mcp-server --client claude
 }
 ```
 
-## 支持
+## Support
 
-请参考 [Graphlit API 文档](https://docs.graphlit.dev/)。
+Please refer to the [Graphlit API Documentation](https://docs.graphlit.dev/).
 
-对于 Graphlit MCP Server 的支持，请提交一个 [GitHub Issue](https://github.com/graphlit/graphlit-mcp-server/issues)。
+For support with the Graphlit MCP Server, please submit a [GitHub Issue](https://github.com/graphlit/graphlit-mcp-server/issues).  
 
-对于 Graphlit 平台的进一步支持，请加入我们的 [Discord](https://discord.gg/ygFmfjy3Qx) 社区。
+For further support with the Graphlit Platform, please join our [Discord](https://discord.gg/ygFmfjy3Qx) community.
 
-**官方网站：** [https://github.com/graphlit/graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/graphlit/graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `communication`
-- 标签：`knowledge and memory`, `communication`, `chinese`
+- Categories: `memory`, `communication`
+- Tags: `knowledge and memory`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y graphlit-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y graphlit-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/graphlit-graphlit.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/graphlit-graphlit.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

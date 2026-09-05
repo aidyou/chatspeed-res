@@ -1,11 +1,11 @@
 ---
-title: "健康指标评估-MCP&Agent挑战赛"
-description: "本项目是一个基于 Gradio 的健康参数计算器 Web 应用。用户只需输入性别、年龄、身高、体重等基础信息（必填），以及腰围、甘油三酯、HDL胆固醇等可选健康数据，即可一键计算出多项常用健康指标，包括 BMI、BSA、腰高比、CI、CMI、CVAI、LAP、BFR、RFM 等，并给出健康评估建议。"
+title: "HealthCalculator"
+description: "This project is a web application for calculating health parameters based on Gradio. Users can input basic information such as gender, age, height, and weight (required), as well as optional health da…"
 ---
 
-# 健康指标评估-MCP&Agent挑战赛
+# HealthCalculator
 
-本项目是一个基于 Gradio 的健康参数计算器 Web 应用。用户只需输入性别、年龄、身高、体重等基础信息（必填），以及腰围、甘油三酯、HDL胆固醇等可选健康数据，即可一键计算出多项常用健康指标，包括 BMI、BSA、腰高比、CI、CMI、CVAI、LAP、BFR、RFM 等，并给出健康评估建议。
+This project is a web application for calculating health parameters based on Gradio. Users can input basic information such as gender, age, height, and weight (required), as well as optional health da…
 
 ## 项目简介
 
@@ -14,6 +14,8 @@ description: "本项目是一个基于 Gradio 的健康参数计算器 Web 应�
 目前实现了用户只需输入性别、年龄、身高、体重等基础信息（必填），以及腰围、甘油三酯、HDL胆固醇等可选健康数据，即可一键计算出多项常用健康指标，包括 BMI、BSA、腰高比、CI、CMI、CVAI、LAP、BFR、RFM 等，并给出健康评估建议。
 
 ## 部署指南
+
+
 
 #### 什么是 SSE？
 
@@ -27,32 +29,33 @@ Server-Sent Events（SSE，服务器发送事件）是一种基于 HTTP 协议�
 * 零运维成本：采用全托管云服务架构，用户无需关心服务器维护、资源扩容等底层运维问题。
 * 协议兼容：支持SSE长连接，适配不同业务场景的技术需求。
 
-json
-{
+```
+    {
     "mcpServers": {
         "gradio": {
-            "command": "npx",
-            "args": [
-                "mcp-remote",
-                "https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse",
-                "--transport",
-                "sse-only"
-            ]
+        "command": "npx",
+        "args": [
+            "mcp-remote",
+            "https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse",
+            "--transport",
+            "sse-only"
+        ]
+            }
         }
     }
-}
+```
+
 
 ## 使用示例
 
 ### 输入
-这是一个可以获取健康信息的MCP，根据以下信息计算健康参数：
-- 性别: 男
-- 年龄: 30.0 岁
-- 身高: 175.0 cm
-- 体重: 70.0 kg
-- 腰围: 85.0 cm
-- 甘油三酯: 150.0 mg/dL
-- HDL胆固醇: 45.0 mg/dL
+这是一个可以获取健康信息的mcp，根据以下信息计算健康参数 性别: 男
+年龄: 30.0 岁
+身高: 175.0 cm
+体重: 70.0 kg
+腰围: 85.0 cm
+甘油三酯: 150.0 mg/dL
+HDL胆固醇: 45.0 mg/dL
 
 ### 输出
 用户需要计算健康参数。
@@ -70,6 +73,7 @@ json
 - HDL胆固醇：45.0 mg/dL
 
 调用工具后，将返回计算出的健康参数。我需要解析返回结果，并将关键信息反馈给用户。
+
 
 健康参数计算已完成，以下是详细结果：
 
@@ -99,7 +103,9 @@ json
    - 正常范围为小于150 mg/dL，目前处于临界值。
 
 7. **HDL胆固醇**: 45.0 mg/dL  
-   - 男性理想值应高于40 mg/dL，当前值达标。8. **CMI (心血管代谢指数)**: 1.62  
+   - 男性理想值应高于40 mg/dL，当前值达标。
+
+8. **CMI (心血管代谢指数)**: 1.62  
    - 用于评估心血管疾病风险，数值较低，风险较小。
 
 9. **CVAI (中国内脏脂肪指数)**: -531.01  
@@ -121,22 +127,22 @@ json
 
 如需进一步分析，例如饮食建议或运动方案，可继续提供具体需求。
 
-**官方网站：** [https://www.modelscope.cn/studios/dudu007/HealthCalculator](https://www.modelscope.cn/studios/dudu007/HealthCalculator)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/dudu007/HealthCalculator](https://www.modelscope.cn/studios/dudu007/HealthCalculator)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `data`
-- 标签：`developer tools`, `research and data`, `search`, `健康`, `bmi`, `ci`, `bfr`
+- Categories: `search`, `data`
+- Tags: `developer tools`, `research and data`, `search`, `健康`, `bmi`, `ci`, `bfr`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://dudu007-healthcalculator.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/dudu007-healthcalculator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/dudu007-healthcalculator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

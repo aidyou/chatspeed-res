@@ -1,11 +1,11 @@
 ---
-title: "MCP内容搜索"
-description: "一个支持使用Tavily API进行高级搜索和内容提取的模型上下文协议服务器，具有丰富的定制和集成选项。"
+title: "mcp-tavily"
+description: "A Model Context Protocol server enabling advanced search and content extraction using the Tavily API, with rich customization and integration options."
 ---
 
-# MCP内容搜索
+# mcp-tavily
 
-一个支持使用Tavily API进行高级搜索和内容提取的模型上下文协议服务器，具有丰富的定制和集成选项。
+A Model Context Protocol server enabling advanced search and content extraction using the Tavily API, with rich customization and integration options.
 
 # MCP Tavily
 
@@ -13,20 +13,20 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 
 [中文文档](https://github.com/kshern/mcp-tavily/blob/HEAD/readme.zh-CN.md)
 
-一个为 Tavily API 实现的 Model Context Protocol (MCP) 服务器，提供高级搜索和内容提取功能。
+A Model Context Protocol (MCP) server implementation for Tavily API, providing advanced search and content extraction capabilities.
 
-## 功能
+## Features
 
-- **多种搜索工具**：
-  - `search`：具有可定制选项的基本搜索功能
-  - `searchContext`：上下文感知搜索以提高相关性
-  - `searchQNA`：专注于问答的搜索
-- **内容提取**：从 URL 中提取内容，并支持配置选项
-- **丰富的配置选项**：广泛的搜索深度、过滤和内容包含选项
+- **Multiple Search Tools**:
+  - `search`: Basic search functionality with customizable options
+  - `searchContext`: Context-aware search for better relevance
+  - `searchQNA`: Question and answer focused search
+- **Content Extraction**: Extract content from URLs with configurable options
+- **Rich Configuration Options**: Extensive options for search depth, filtering, and content inclusion
 
-### 使用 MCP
+### Usage with MCP
 
-将 Tavily MCP 服务器添加到您的 MCP 配置中：
+Add the Tavily MCP server to your MCP configuration:
 
 ```json
 {
@@ -42,15 +42,15 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 }
 ```
 
-> 注意：请确保将 `your-api-key` 替换为您实际的 Tavily API 密钥。您也可以在运行服务器之前将其设置为环境变量 `TAVILY_API_KEY`。
+> Note: Make sure to replace `your-api-key` with your actual Tavily API key. You can also set it as an environment variable `TAVILY_API_KEY` before running the server.
 
-## API 参考
+## API Reference
 
-### 搜索工具
+### Search Tools
 
-服务器通过 MCP 提供了三个可以调用的搜索工具：
+The server provides three search tools that can be called through MCP:
 
-#### 1. 基本搜索
+#### 1. Basic Search
 ```typescript
 // Tool name: search
 {
@@ -63,7 +63,7 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 }
 ```
 
-#### 2. 上下文搜索
+#### 2. Context Search
 ```typescript
 // Tool name: searchContext
 {
@@ -75,7 +75,7 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 }
 ```
 
-#### 3. 问答搜索
+#### 3. Q&A Search
 ```typescript
 // Tool name: searchQNA
 {
@@ -87,7 +87,7 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 }
 ```
 
-### 提取工具
+### Extract Tool
 
 ```typescript
 // Tool name: extract
@@ -100,9 +100,9 @@ description: "一个支持使用Tavily API进行高级搜索和内容提取的�
 }
 ```
 
-### 搜索选项
+### Search Options
 
-所有搜索工具共享以下选项：
+All search tools share these options:
 
 ```typescript
 interface SearchOptions {
@@ -121,7 +121,7 @@ interface SearchOptions {
 }
 ```
 
-### 提取选项
+### Extract Options
 
 ```typescript
 interface ExtractOptions {
@@ -130,9 +130,9 @@ interface ExtractOptions {
 }
 ```
 
-## 响应格式
+## Response Format
 
-所有工具返回的响应格式如下：
+All tools return responses in the following format:
 
 ```typescript
 {
@@ -140,112 +140,111 @@ interface ExtractOptions {
 }
 ```
 
-对于搜索结果，每个条目包括：
-- 标题
-- 内容
+For search results, each item includes:
+- Title
+- Content
 - URL
 
-对于提取的内容，每个条目包括：
+For extracted content, each item includes:
 - URL
-- 原始内容
-- 失败的 URL 列表（如果有）
+- Raw content
+- Failed URLs list (if any)
 
-## 错误处理
+## Error Handling
 
-所有工具都包含适当的错误处理，并在出现问题时抛出描述性的错误消息。
+All tools include proper error handling and will throw descriptive error messages if something goes wrong.
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@kshern/mcp-tavily) 自动安装适用于 Claude Desktop 的 Tavily API 服务器：
+To install Tavily API Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kshern/mcp-tavily):
 
 ```bash
 npx -y @smithery/cli install @kshern/mcp-tavily --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```bash
 npm install @mcptools/mcp-tavily
 ```
 
-或者直接使用 npx：
+Or use it directly with npx:
 
 ```bash
 npx @mcptools/mcp-tavily
 ```
 
-### 先决条件
+### Prerequisites
 
-- Node.js 16 或更高版本
-- npm 或 yarn
-- Tavily API 密钥（从 [Tavily](https://tavily.com) 获取）
+- Node.js 16 or higher
+- npm or yarn
+- Tavily API key (get one from [Tavily](https://tavily.com))
 
-### 设置
+### Setup
 
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 ```bash
 npm install
 ```
-3. 设置您的 Tavily API 密钥：
+3. Set your Tavily API key:
 ```bash
 export TAVILY_API_KEY=your_api_key
 ```
 
-### 构建
+### Building
 
 ```bash
 npm run build
 ```
 
-## 使用 MCP Inspector 调试
+## Debugging with MCP Inspector
 
-对于开发和调试，我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，这是一个强大的 MCP 服务器开发工具。
+For development and debugging, we recommend using [MCP Inspector](https://github.com/modelcontextprotocol/inspector), a powerful development tool for MCP servers.
 
-Inspector 提供了一个用户界面用于：
-- 测试工具调用
-- 查看服务器响应
-- 调试工具执行
-- 监控服务器状态
+The Inspector provides a user interface for:
+- Testing tool calls
+- Viewing server responses
+- Debugging tool execution
+- Monitoring server state
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. 分叉仓库
-2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-此项目根据 MIT 许可证发布。
+This project is licensed under the MIT License.
 
-## 支持
+## Support
 
-对于任何问题或问题：
+For any questions or issues:
+- Tavily API: refer to the [Tavily documentation](https://docs.tavily.com/)
+- MCP integration: refer to the [MCP documentation](https://modelcontextprotocol.io//)
 
-- Tavily API: 请参考[Tavily文档](https://docs.tavily.com/)
-- MCP集成: 请参考[MCP文档](https://modelcontextprotocol.io//)
+**Official site: ** [https://github.com/kshern/mcp-tavily](https://github.com/kshern/mcp-tavily)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/kshern/mcp-tavily](https://github.com/kshern/mcp-tavily)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `browser`
+- Tags: `search`, `browser automation`, `other`, `chinese`
 
-- 分类：`browser`
-- 标签：`search`, `browser automation`, `other`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @mcptools/mcp-tavily`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @mcptools/mcp-tavily`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/kshern-tavily.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kshern-tavily.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

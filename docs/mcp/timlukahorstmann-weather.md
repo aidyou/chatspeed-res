@@ -1,11 +1,11 @@
 ---
-title: "MCP天气"
-description: "MCP天气"
+title: "mcp-weather"
+description: "MCP Weather"
 ---
 
-# MCP天气
+# mcp-weather
 
-MCP天气
+MCP Weather
 
 # MCP Weather Server
 
@@ -157,22 +157,22 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/TimLukaHorstmann/mcp-weather/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/TimLukaHorstmann/mcp-weather](https://github.com/TimLukaHorstmann/mcp-weather)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/TimLukaHorstmann/mcp-weather](https://github.com/TimLukaHorstmann/mcp-weather)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`weather services`, `other`, `chinese`
+- Categories: `productivity`
+- Tags: `weather services`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @timlukahorstmann/mcp-weather`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @timlukahorstmann/mcp-weather`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/timlukahorstmann-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/timlukahorstmann-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

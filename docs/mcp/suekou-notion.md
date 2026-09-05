@@ -1,136 +1,182 @@
 ---
-title: "Notion MCP"
-description: "用于Notion API的MCP服务器，使Claude能够与Notion工作区进行交互。"
+title: "mcp-notion-server"
+description: "MCP Server for the Notion API, enabling Claude to interact with Notion workspaces."
 ---
 
-# Notion MCP
+# mcp-notion-server
 
-用于Notion API的MCP服务器，使Claude能够与Notion工作区进行交互。
+MCP Server for the Notion API, enabling Claude to interact with Notion workspaces.
 
-# Notion MCP 服务器
+# Notion MCP Server
 
-Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互。
+Notion API's MCP server, enabling Claude to interact with Notion workspaces.
 
-## 设置
+## Setup
 
-以下文章中详细解释了上述步骤：
+The steps above are explained in detail in the following articles:
 
-- 英文版：https://dev.to/suekou/operating-notion-via-claude-desktop-using-mcp-c0h
-- 日文版：https://qiita.com/suekou/items/44c864583f5e3e6325d9
+- English: https://dev.to/suekou/operating-notion-via-claude-desktop-using-mcp-c0h
+- Japanese: https://qiita.com/suekou/items/44c864583f5e3e6325d9
 
-1. **创建 Notion 集成**：
+1. **Create a Notion Integration**:
 
-   - 访问 [Notion 您的集成页面](https://www.notion.so/profile/integrations)。
-   - 点击“新建集成”。
-   - 为您的集成命名并选择适当的权限（例如，“读取内容”，“更新内容”）。
+   - Visit [Notion Your Integrations Page](https://www.notion.so/profile/integrations).
+   - Click on "New integration".
+   - Name your integration and select the appropriate permissions (e.g., "Read content", "Update content").
 
-2. **获取密钥**：
+2. **Get the Token**:
 
-   - 从您的集成中复制“内部集成令牌”。
-   - 此令牌将用于身份验证。
+   - Copy the "Internal Integration Token" from your integration.
+   - This token will be used for authentication.
 
-3. **将集成添加到您的工作区**：
+3. **Add the Integration to Your Workspace**:
 
-   - 在 Notion 中打开您希望集成访问的页面或数据库。
-   - 点击右上角的“...”按钮。
-   - 点击“连接”按钮，并选择您在上面第 1 步中创建的集成。
+   - In Notion, open the page or database you want the integration to access.
+   - Click on the "..." button in the top right corner.
+   - Click on the "Connect" button and select the integration you created in step 1 above.
 
-4. **配置 Claude 桌面**：
-   将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+4. **Configure Claude Desktop**:
+   Add the following to your `claude_desktop_config.json` file:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "notion": {
+
       "command": "npx",
+
       "args": ["-y", "@suekou/mcp-notion-server"],
-      "env": {
-        "NOTION_API_TOKEN": "your-integration-token"
-      }
-    }
-  }
-}
-```
 
-或
+      "env": {
+
+        "NOTION_API_TOKEN": "your-integration-token"
+
+      }
+
+    }
+
+  }
+
+}
+
+```
+or
 
 ```json
+
 {
+
   "mcpServers": {
+
     "notion": {
+
       "command": "node",
+
       "args": ["your-built-file-path"],
+
       "env": {
+
         "NOTION_API_TOKEN": "your-integration-token"
+
       }
+
     }
+
   }
+
 }
+
 ```
+## Environment Variables
 
-## 环境变量
+- `NOTION_API_TOKEN` (required): Your Notion API integration token.
+- `NOTION_MARKDOWN_CONVERSION`: Set to "true" to enable experimental Markdown conversion. This can significantly reduce token consumption when viewing content but may cause issues when attempting to edit page content.
 
-- `NOTION_API_TOKEN`（必需）：您的 Notion API 集成令牌。
-- `NOTION_MARKDOWN_CONVERSION`：设置为 "true" 以启用实验性的 Markdown 转换。这可以在查看内容时显著减少 token 消耗，但在尝试编辑页面内容时可能会出现问题。
+## Advanced Configuration
 
-## 高级配置
+### Markdown Conversion
 
-### Markdown 转换
-
-默认情况下，所有响应都以 JSON 格式返回。您可以启用实验性的 Markdown 转换以减少 token 消耗：
+By default, all responses are returned in JSON format. You can enable experimental Markdown conversion to reduce token consumption:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "notion": {
+
       "command": "npx",
-      "args": ["-y", "@suekou/mcp-notion-server"],
-      "env": {
-        "NOTION_API_TOKEN": "your-integration-token",
-        "NOTION_MARKDOWN_CONVERSION": true
-      }
-    }
-  }
-}
-```
 
-或
+      "args": ["-y", "@suekou/mcp-notion-server"],
+
+      "env": {
+
+        "NOTION_API_TOKEN": "your-integration-token",
+
+        "NOTION_MARKDOWN_CONVERSION": true
+
+      }
+
+    }
+
+  }
+
+}
+
+```
+or
 
 ```json
+
 {
+
   "mcpServers": {
+
     "notion": {
+
       "command": "node",
+
       "args": ["your-built-file-path"],
+
       "env": {
+
         "NOTION_API_TOKEN": "your-integration-token",
+
         "NOTION_MARKDOWN_CONVERSION": true
+
       }
+
     }
+
   }
+
 }
+
 ```
+When `NOTION_MARKDOWN_CONVERSION` is set to `"true"`, responses will be converted to Markdown format (when the `format` parameter is set to `"markdown"`), making them more readable and significantly reducing token consumption. However, since this feature is experimental, it may cause issues when trying to edit page content because the original structure is lost during conversion.
 
-当 `NOTION_MARKDOWN_CONVERSION` 设置为 `"true"` 时，响应将转换为 Markdown 格式（当 `format` 参数设置为 `"markdown"` 时），使其更易于阅读，并显著减少 token 消耗。但是，由于此功能是实验性的，在尝试编辑页面内容时可能会出现问题，因为原始结构在转换过程中会丢失。
+You can control the format on a per-request basis by setting the `format` parameter in the tool call to `"json"` or `"markdown"`:
 
-您可以通过在工具调用中将 `format` 参数设置为 `"json"` 或 `"markdown"` 来逐个请求控制格式：
+- Use `"markdown"` for improved readability when only viewing content.
+- Use `"json"` when you need to modify the returned content.
 
-- 使用 `"markdown"` 可以在仅查看内容时提高可读性
-- 使用 `"json"` 当您需要修改返回的内容时
+## Troubleshooting
 
-## 故障排除
+If you encounter permission errors:
 
-如果您遇到权限错误：
+1. Ensure the integration has the required permissions.
+2. Confirm that the integration has been invited to the relevant pages or databases.
+3. Verify that the token and configuration are correctly set in `claude_desktop_config.json`.
 
-1. 确保集成具有所需的权限。
-2. 确认该集成已被邀请到相关的页面或数据库。
-3. 确认在 `claude_desktop_config.json` 中正确设置了令牌和配置。
+## Tools
 
-## 工具
+All tools support the following optional parameters:
 
-所有工具都支持以下可选参数：
-
-- `format` (字符串, "json" 或 "markdown", 默认: "markdown"): 控制响应格式。使用 "markdown" 以获得人类可读的输出，使用 "json" 以便程序化访问原始数据结构。注意：Markdown 转换仅在 `NOTION_MARKDOWN_CONVERSION` 环境变量设置为 "true" 时有效。
+- `format` (string, "json" or "markdown", default: "markdown"): Controls the response format. Use "markdown" for human-readable output and "json" for programmatic access to the raw data structure. Note: Markdown conversion is only effective if the `NOTION_MARKDOWN_CONVERSION` environment variable is set to "true".
 
 1. `notion_append_block_children`
 
@@ -168,8 +214,7 @@ Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互
 
    - Retrieve information about a specific page.
    - Required inputs:
-     - `page_id` (string): The ID of the page to retrieve.
-   - Returns: Detailed information about the page.
+     - `page_id` (string): The ID of the page to retrieve.- Returns: Detailed information about the page.
 
 6. `notion_update_page_properties`
 
@@ -242,8 +287,8 @@ Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互
     - List all users in the Notion workspace.
     - Note: This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
     - Optional inputs:
-      - start_cursor (string): Pagination start cursor for listing users.
-      - page_size (number, max: 100): Number of users to retrieve.
+      - `start_cursor` (string): Pagination start cursor for listing users.
+      - `page_size` (number, max: 100): Number of users to retrieve.
     - Returns: A paginated list of all users in the workspace.
 
 14. `notion_retrieve_user`
@@ -251,7 +296,7 @@ Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互
     - Retrieve a specific user by user_id in Notion.
     - Note: This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
     - Required inputs:
-      - user_id (string): The ID of the user to retrieve.
+      - `user_id` (string): The ID of the user to retrieve.
     - Returns: Detailed information about the specified user.
 
 15. `notion_retrieve_bot_user`
@@ -267,9 +312,8 @@ Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互
     - Required inputs:
       - `rich_text` (array): Array of rich text objects representing the comment content.
     - Optional inputs:
-      - `parent` (object): Must include `page_id` if used.
-      - `discussion_id` (string): An existing discussion thread ID.
-    - Returns: Information about the created comment.
+      - `parent` (object): Must include `page_id` if used.- `discussion_id` (string): An existing discussion thread ID.
+- Returns: Information about the created comment.
 
 17. `notion_retrieve_comments`
     - Retrieve a list of unresolved comments from a Notion page or block.
@@ -281,26 +325,26 @@ Notion API 的 MCP 服务器，使 Claude 能够与 Notion 工作区进行交互
       - `page_size` (number, max: 100): Number of comments to retrieve.
     - Returns: A paginated list of comments associated with the specified block or page.
 
-## 许可
+## License
 
-此 MCP 服务器依据 MIT 许可证进行授权。这意味着您可以在遵守 MIT 许可证的条款和条件的前提下自由使用、修改和分发该软件。更多详情，请参阅项目仓库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software as long as you comply with the terms and conditions of the MIT License. For more details, please refer to the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/suekou/mcp-notion-server](https://github.com/suekou/mcp-notion-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/suekou/mcp-notion-server](https://github.com/suekou/mcp-notion-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`note taking`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `note taking`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @suekou/mcp-notion-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @suekou/mcp-notion-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/suekou-notion.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/suekou-notion.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

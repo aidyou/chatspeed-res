@@ -1,29 +1,29 @@
 ---
-title: "麦当劳MCP Server"
-description: "介绍 什么是麦当劳 MCP 服务? - 麦当劳 MCP 服务是一个遵循 Model Context Protocol（MCP）标准的数据交互接口服务，由麦当劳中国提供，面向中国大陆地区（不含港澳台）使用。 - 麦当劳MCP服务现已覆盖麦乐送点餐、积分兑换券、活动日历查询等业务场景。更多实用工具正在持续开发上线。 新闻 - [2026-02] 功能: 我们新增了\"麦乐送点餐\"与\"积分兑换券\"功能模块，支持完整的外送点餐与积分兑换服务。查看工具详情 - [2026-01] 功能: 我们新增了“餐品营养信息列表”工具，用"
+title: "mcd_mcp_server"
+description: "Introduction What is McDonald's MCP Service? - McDonald's MCP Service is a data interaction interface service that adheres to the Model Context Protocol (MCP) standard, provided by McDonald's China fo…"
 ---
 
-# 麦当劳MCP Server
+# mcd_mcp_server
 
-介绍 什么是麦当劳 MCP 服务? - 麦当劳 MCP 服务是一个遵循 Model Context Protocol（MCP）标准的数据交互接口服务，由麦当劳中国提供，面向中国大陆地区（不含港澳台）使用。 - 麦当劳MCP服务现已覆盖麦乐送点餐、积分兑换券、活动日历查询等业务场景。更多实用工具正在持续开发上线。 新闻 - [2026-02] 功能: 我们新增了"麦乐送点餐"与"积分兑换券"功能模块，支持完整的外送点餐与积分兑换服务。查看工具详情 - [2026-01] 功能: 我们新增了“餐品营养信息列表”工具，用
+Introduction What is McDonald's MCP Service? - McDonald's MCP Service is a data interaction interface service that adheres to the Model Context Protocol (MCP) standard, provided by McDonald's China fo…
 
-# 介绍
+# Introduction
 
-**什么是麦当劳 MCP 服务?**
-- 麦当劳 MCP 服务是一个遵循 Model Context Protocol（MCP）标准的数据交互接口服务，由麦当劳中国提供，面向中国大陆地区（不含港澳台）使用。
-- 麦当劳MCP服务现已覆盖麦乐送点餐、积分兑换券、活动日历查询等业务场景。更多实用工具正在持续开发上线。
+**What is McDonald's MCP Service?**
+- McDonald's MCP Service is a data interaction interface service that adheres to the Model Context Protocol (MCP) standard, provided by McDonald's China for use in mainland China (excluding Hong Kong, Macau, and Taiwan).
+- The McDonald's MCP Service now covers business scenarios such as McDelivery ordering, points redemption coupons, and event calendar queries. More practical tools are continuously being developed and launched.
 
-# 新闻
-- **[2026-02] `功能`:** 我们新增了"麦乐送点餐"与"积分兑换券"功能模块，支持完整的外送点餐与积分兑换服务。[查看工具详情](#4-工具) 
-- **[2026-01] `功能`:** 我们新增了“餐品营养信息列表”工具，用户可以查询麦当劳常见餐品的营养成分数据,咨询麦当劳餐品的热量、营养。[查看工具详情](#4-工具)
-- **[2025-12] `发布`:** 我们发布了麦当劳 MCP Server 1.0.0 版本，提供了活动日历查询和麦麦省领券功能，快来试试吧！接入教程请看下文[快速开始](#2-快速开始)部分
+# News
+- **[2026-02] `Feature`:** We have added the "McDelivery Ordering" and "Points Redemption Coupons" feature modules, supporting complete delivery ordering and points redemption services. [View Tool Details](#4-Tools)
+- **[2026-01] `Feature`:** We have added the "Nutrition Information List of Meals" tool, allowing users to query nutritional data for common McDonald's meals, including calories and nutrition. [View Tool Details](#4-Tools)
+- **[2025-12] `Release`:** We released McDonald's MCP Server version 1.0.0, providing event calendar queries and coupon redemption features. Give it a try! For integration tutorials, see the [Quick Start](#2-Quick-Start) section below.
 
-# 如何在魔搭上使用麦当劳 MCP 服务？
-我们已为您部署好了云端的麦当劳 MCP 服务，您需要前往[麦当劳MCP平台](https://open.mcd.cn/mcp)，登录后获取 MCP Token。目前 MCP 服务已支持添加到智能体和工作流中。
+# How to Use McDonald's MCP Service on ModelScope?
+We have already deployed the McDonald's MCP Service in the cloud for you. You need to go to the [McDonald's MCP Platform](https://open.mcd.cn/mcp), log in, and obtain an MCP Token. The MCP Service currently supports adding to agents and workflows.
 
-MCP Token获取操作详见[麦当劳MCP平台](https://open.mcd.cn/mcp)
+For detailed instructions on obtaining an MCP Token, see the [McDonald's MCP Platform](https://open.mcd.cn/mcp).
 
-# 麦当劳 MCP 服务的工具列表
+# List of Tools in McDonald's MCP Service
 
   
 
@@ -53,10 +53,10 @@ Description
 list-nutrition-foods
 
       
-餐品营养信息列表
+Nutrition Information List of Meals
 
       
-获取麦当劳常见餐品的营养成分数据，包括能量、蛋白质、脂肪、碳水化合物、钠、钙等信息，当用户咨询麦当劳餐品的热量、营养，帮助用户搭配指定热量套餐时有用
+Obtain nutritional data for common McDonald's meals, including energy, protein, fat, carbohydrates, sodium, calcium, etc. This is useful when users inquire about the calories and nutrition of McDonald's meals and need to pair them with specific calorie meal sets.
 
     
 
@@ -66,10 +66,10 @@ list-nutrition-foods
 delivery-query-addresses
 
       
-获取用户可配送地址列表
+Get User's Deliverable Address List
 
       
-查询用户已创建的配送地址列表，用于外送点餐时选择配送地址，并获取对应门店信息（storeCode、beCode）
+Query the list of delivery addresses created by the user, used for selecting a delivery address during McDelivery ordering and obtaining corresponding store information (storeCode, beCode).
 
     
 
@@ -79,10 +79,10 @@ delivery-query-addresses
 delivery-create-address
 
       
-新增配送地址
+Add Delivery Address
 
       
-当用户无可配送地址或需新增收货地址时使用，用于创建新的可配送地址
+Used when the user has no deliverable address or needs to add a new delivery address, for creating a new deliverable address.
 
     
 
@@ -92,10 +92,10 @@ delivery-create-address
 query-usable-coupons
 
       
-查询用户在当前门店可用券
+Query Usable Coupons at Current Store
 
       
-查询用户在当前门店下可使用的优惠券列表，用于点餐时选择可用优惠
+Query the list of usable coupons for the user at the current store, used for selecting available discounts during ordering.
 
     
 
@@ -105,10 +105,10 @@ query-usable-coupons
 query-meals
 
       
-查询当前门店可售卖的餐品列表
+Query List of Sellable Meals at Current Store
 
       
-查询当前门店可售卖的餐品菜单（分类、餐品编码、标签等），用于点餐选品
+Query the menu of sellable meals at the current store (categories, meal codes, tags, etc.), used for meal selection during ordering.
 
     
 
@@ -118,10 +118,10 @@ query-meals
 meal-detail
 
       
-查询餐品详情
+Query Meal Details
 
       
-根据餐品编码查询餐品详情（套餐组成、默认选择等），用于查看套餐包含内容
+Query meal details based on the meal code (meal composition, default selections, etc.), used for viewing the contents of a meal set.
 
     
 
@@ -131,10 +131,10 @@ meal-detail
 calculate-price
 
       
-商品价格计算
+Calculate Product Price
 
       
-根据用户选购商品列表（可含优惠券）计算商品金额、配送费、优惠金额及应付总价
+Calculate the total amount, delivery fee, discount amount, and payable total based on the user's selected product list (which may include coupons).
 
     
 
@@ -144,10 +144,10 @@ calculate-price
 create-order
 
       
-创建外送订单
+Create Delivery Order
 
       
-根据门店信息、配送地址、商品列表创建外送订单，返回订单详情与支付链接
+Create a delivery order based on store information, delivery address, and product list, returning order details and payment link.
 
     
 
@@ -157,10 +157,13 @@ create-order
 query-order
 
       
-查询订单详情
+Query Order Details
 
-      
-查询订单状态、订单内容、配送信息等，用于用户查看订单进度或确认订单信息
+    
+
+  
+
+Query order status, order details, delivery information, etc., for users to check order progress or confirm order information
 
     
 
@@ -170,10 +173,10 @@ query-order
 campaign-calendar
 
       
-活动日历查询工具
+Campaign calendar query tool
 
       
-查询麦当劳中国当月的营销活动日历，返回进行中、往期和未来日期的活动
+Query McDonald's China's marketing campaign calendar for the current month, returning ongoing, past, and future events
 
     
 
@@ -183,10 +186,10 @@ campaign-calendar
 available-coupons
 
       
-麦麦省券列表查询
+McSavings coupon list query
 
       
-查询用户当前可领取的麦麦省的优惠券列表
+Query the list of McSavings coupons that the user can currently claim
 
     
 
@@ -196,10 +199,10 @@ available-coupons
 auto-bind-coupons
 
       
-麦麦省一键领券
+One-click McSavings coupon claiming
 
       
-自动领取麦麦省所有当前可用的麦当劳优惠券。无需指定具体的优惠券和couponId，系统会自动领取用户可领的所有券
+Automatically claim all currently available McDonald's coupons from McSavings. No need to specify individual coupons or coupon IDs; the system will automatically claim all eligible coupons for the user
 
     
 
@@ -209,10 +212,10 @@ auto-bind-coupons
 my-coupons
 
       
-我的优惠券查询
+My coupons query
 
       
-查询我有哪些可用的优惠券。就像打开麦当劳App的"我的优惠券"页面，能看到所有可以用来点餐的优惠券列表
+Query which coupons are available for use. Similar to opening the "My Coupons" page in the McDonald's App, where you can see a list of all coupons that can be used for ordering
 
     
 
@@ -222,10 +225,10 @@ my-coupons
 query-my-account
 
       
-我的积分查询
+My points query
 
       
-查询用户积分账户信息，包括可用积分、累计积分、冻结积分、即将过期积分等
+Query the user's points account information, including available points, accumulated points, frozen points, and points about to expire
 
     
 
@@ -235,10 +238,10 @@ query-my-account
 mall-points-products
 
       
-积分兑换商品列表
+Points redeemable product list
 
       
-查询麦麦商城内可以用积分兑换的餐品券（不包含积分兑换的实物或者积分兑换的第三方码）
+Query the list of meal vouchers that can be redeemed with points in the McSavings Mall (excluding physical items or third-party codes redeemable with points)
 
     
 
@@ -248,10 +251,10 @@ mall-points-products
 mall-product-detail
 
       
-积分兑换商品详情
+Points redeemable product detail
 
       
-查询指定积分兑换商品券的详细信息（图片、积分、有效期、说明、详情等）
+Query detailed information about a specific points-redeemable meal voucher (images, points required, validity period, description, details, etc.)
 
     
 
@@ -261,10 +264,10 @@ mall-product-detail
 mall-create-order
 
       
-积分兑换商品下单
+Points redeemable product order creation
 
       
-使用积分兑换指定餐品券，完成积分扣减并发放券码，返回兑换订单号与券码信息
+Use points to redeem a specific meal voucher, complete the points deduction, and issue the voucher code, returning the redemption order number and voucher code information
 
     
 
@@ -274,55 +277,55 @@ mall-create-order
 now-time-info
 
       
-获取当前时间信息
+Get current time information
 
       
-返回当前的完整时间信息，以便于 LLM 知道当前的时间和日期
+Return the full current time information so that the LLM knows the current time and date
 
     
 
   
 
-# 常见问题解答
-Q：使用麦当劳 MCP 服务是否收费？\
-A：不收费
+# Frequently Asked Questions
+Q: Is there a charge for using McDonald's MCP services?\
+A: No, it is free.
 
-# 版本日志
+# Version Log
 
 |    Date    | Version | Description                        |
 |:----------:|:-------:|------------------------------------|
-| 2025-12-09 |  1.0.0  | 麦麦日历和麦麦省领券 MCP Server              |
-| 2026-01-23 |  1.0.1  | 增加了“餐品营养信息列表”Tool，我们缩短了URL 以便于大家连接 |
-| 2026-02-13 |  1.0.2  | 增加了麦乐送点餐与积分兑换券场景的Tools             |
+| 2025-12-09 |  1.0.0  | McCalendar and McSavings Coupon MCP Server              |
+| 2026-01-23 |  1.0.1  | Added "Nutritional Information List" Tool, shortened URL for easier access |
+| 2026-02-13 |  1.0.2  | Added Tools for McDelivery ordering and points redemption scenarios             |
 
 ---
 
-# 注意事项
-1. 允许个人以非商业用途复制并使用麦当劳 MCP 平台说明中的示例配置、参数、JSON 或示例代码，并仅限用于实现与麦当劳MCP服务的连接与使用。
-2. 使用 麦当劳MCP 服务须遵守麦当劳中国的《使用条款》及《麦当劳MCP 服务规则》，并在申请MCP Token时同意前述条款。
-3. 未经书面授权，不得将本说明内容用于商业售卖、付费分发、引流变现或任何暗示官方背书、误导公众的用途；亦不得用于任何违法、违规或黑灰产相关行为。
-4. 本说明内容按“现状”提供，不构成任何形式的保证或承诺。
-5. 本说明不构成对麦当劳及其关联方商标的任何授权。
-6. 请妥善保管您的MCP Token，避免泄露或被他人使用。
+# Notes
+1. Individuals are allowed to copy and use the example configurations, parameters, JSON, or sample code in the McDonald's MCP platform documentation for non-commercial purposes, solely for connecting and using the McDonald's MCP services.
+2. Use of the McDonald's MCP service must comply with McDonald's China's "Terms of Use" and "McDonald's MCP Service Rules," and you must agree to these terms when applying for an MCP Token.
+3. Without written authorization, the content of this document may not be used for commercial sales, paid distribution, traffic monetization, or any purpose that implies official endorsement or misleads the public; nor may it be used for any illegal, non-compliant, or black/gray market activities.
+4. The content of this document is provided "as is" and does not constitute any form of warranty or commitment.
+5. This document does not constitute any authorization for the trademarks of McDonald's and its affiliates.
+6. Please keep your MCP Token secure to prevent leakage or unauthorized use.
 
 © 2026 McDonald’s. All Rights Reserved.
 
-**官方网站：** [https://open.mcd.cn/mcp](https://open.mcd.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://open.mcd.cn/mcp](https://open.mcd.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`, `data`
-- 标签：`other`, `calendar management`, `location services`, `麦当劳`, `美食`, `餐饮`, `生活服务`, `chinese`
+- Categories: `productivity`, `data`
+- Tags: `other`, `calendar management`, `location services`, `麦当劳`, `美食`, `餐饮`, `生活服务`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mchina-mcd.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mchina-mcd.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,52 +1,65 @@
 ---
-title: "析言MCP"
-description: "一种自然语言交互的数据库查询MCP服务，嵌入专用text-to-sql的SOTA模型获得更高的查询精度"
+title: "xiyan_mcp_server"
+description: "A Model Context Protocol (MCP) server that enables natural language queries to databases"
 ---
 
-# 析言MCP
+# xiyan_mcp_server
 
-一种自然语言交互的数据库查询MCP服务，嵌入专用text-to-sql的SOTA模型获得更高的查询精度
+A Model Context Protocol (MCP) server that enables natural language queries to databases
 
-## 功能
-- 🌐 通过 [XiYanSQL](https://github.com/XGenerationLab/XiYan-SQL) 以自然语言获取数据
-- 🖱️ 列出可用的 MySQL 表作为资源
-- 🔧 读取表内容
+## Features
+- 🌐 Fetch data by natural language through [XiYanSQL](https://github.com/XGenerationLab/XiYan-SQL)
+- 🤖 Support general LLMs (GPT,qwenmax), Text-to-SQL SOTA model
+- 💻 Support pure local mode (high security!)
+- 📝 Support MySQL and PostgreSQL.
+- 🖱️ List available tables as resources
+- 🔧 Read table contents
 
-## 工具预览
-- 工具 ``get_data`` 提供了一个自然语言接口，用于从数据库中检索数据。该服务器将输入的自然语言转换为 SQL，并调用数据库以返回查询结果。
+## Preview
+### Architecture
+There are two ways to integrate this server in your project, as shown below:
+The left is remote mode, which is the default mode. It requires an API key to access the xiyanSQL-qwencoder-32B model from service provider (see [Configuration](#Configuration)).
+Another mode is local mode, which is more secure. It does not require an API key.
 
-- ``mysql://{table_name}`` 资源允许在指定特定表名时从数据库中获取一部分示例数据供模型参考。
-- ``mysql://`` 资源将列出当前数据库的名称。
+### Best practice
 
-## 安装
-### 通过 pip 安装
+[Build a local data assistant using MCP + Modelscope API-Inference without writing a single line of code](https://mp.weixin.qq.com/s/tzDelu0W4w6t9C0_yYRbHA)
 
-需要 Python 3.11 及以上版本。
-您可以通过 pip 安装服务器，它将安装最新版本。
+### Tools Preview
+ - The tool ``get_data`` provides a natural language interface for retrieving data from a database. This server will convert the input natural language into SQL using a built-in model and call the database to return the query results.
+
+ - The ``{dialect}://{table_name}`` resource allows obtaining a portion of sample data from the database for model reference when a specific table_name is specified. 
+- The ``{dialect}://`` resource will list the names of the current databases
+
+## Installation
+### Installing from pip
+
+Python 3.11+ is required. 
+You can install the server through pip, and it will install the latest version:
 
 ```bash
 pip install xiyan-mcp-server
 ```
 
-安装后，您可以直接运行服务器：
+After that you can directly run the server by:
 ```bash
 python -m xiyan_mcp_server
 ```
-但在完成以下配置之前，它不会提供任何功能。
-您会得到一个 yml 文件。之后，您可以通过以下命令运行服务器：
+But it does not provide any functions until you complete following config.
+You will get a yml file. After that you can run the server by:
 ```yaml
 env YML=path/to/yml python -m xiyan_mcp_server
 ```
 
-### 通过 Smithery.ai 安装
-请参见 [@XGenerationLab/xiyan_mcp_server](https://smithery.ai/server/@XGenerationLab/xiyan_mcp_server)
+### Installing from Smithery.ai
+See [@XGenerationLab/xiyan_mcp_server](https://smithery.ai/server/@XGenerationLab/xiyan_mcp_server)
 
-尚未完全测试。
+Not fully tested.
 
-## 配置
+## Configuration
 
-您需要一个 yml 配置文件来配置服务器。
-在 config_demo.yml 中提供了默认配置文件，内容如下：
+You need a YAML config file to configure the server.
+A default config file is provided in config_demo.yml which looks like this:
 
 ```yaml
 model:
@@ -62,42 +75,42 @@ database:
   database: ""
 ```
 
-### LLM 配置
-``Name`` 是要使用的模型名称，``key`` 是模型的 API 密钥，``url`` 是模型的 API URL。我们支持以下模型。
+### LLM Configuration
+``Name`` is the name of the model to use, ``key`` is the API key of the model, ``url`` is the API url of the model. We support following models.
 
-| 版本      | 通用 LLMs (GPT, qwenmax)                              | Modelscope 的前沿模型                        | Dashscope 的前沿模型                                 | 本地 LLMs            |
-|-----------|---------------------------------------------------|-------------------------------------|--------------------------------------------------|---------------------|
-| 描述      | 基本，易于使用                                      | 性能最佳，稳定，推荐                     | 性能最佳，试用                                     | 缓慢，高安全性      |
-| 名称      | 官方模型名称 (如 gpt-3.5-turbo,qwen-max)            | XGenerationLab/XiYanSQL-QwenCoder-32B-2412  | xiyansql-qwencoder-32b                           | xiyansql-qwencoder-3b |
-| 密钥      | 服务提供商的 API 密钥 (如 OpenAI, 阿里云)             | 模型的 API 密钥                           | 通过电子邮件获取的 API 密钥                          | ""                  |
-| URL       | 服务提供商的端点 (如 "https://api.openai.com/v1") | https://api-inference.modelscope.cn/v1/ | https://xiyan-stream.biz.aliyun.com/service/api/xiyan-sql | http://localhost:5090 |
+| versions | general LLMs(GPT,qwenmax)                                             | SOTA model by Modelscope                   | SOTA model by Dashscope                                   | Local LLMs            |
+|----------|-------------------------------|--------------------------------------------|-----------------------------------------------------------|-----------------------|
+| description| basic, easy to use | best performance, stable, recommand        | best performance, for trial                               | slow, high-security   |
+| name     | the official model name (e.g. gpt-3.5-turbo,qwen-max)                 | XGenerationLab/XiYanSQL-QwenCoder-32B-2412 | xiyansql-qwencoder-32b                                    | xiyansql-qwencoder-3b |
+| key      | the API key of the service provider (e.g. OpenAI, Alibaba Cloud)      | the API key of modelscope                  | the API key via email                                     | ""                    |
+| url      | the endpoint of the service provider (e.g."https://api.openai.com/v1") | https://api-inference.modelscope.cn/v1/    | https://xiyan-stream.biz.aliyun.com/service/api/xiyan-sql | http://localhost:5090 |
 
-#### 通用 LLMs
-如果您希望使用通用 LLMs，例如 gpt3.5，可以直接进行如下配置：
+#### General LLMs
+If you want to use the general LLMs, e.g. gpt3.5, you can directly config like this:
 ```yaml
 model:
   name: "gpt-3.5-turbo"
-  key: "YOUR KEY"
+  key: "YOUR KEY "
   url: "https://api.openai.com/v1"
 database:
 ```
 
-如果您希望使用来自阿里巴巴的 Qwen，例如 Qwen-max，可以使用以下配置。
+If you want to use Qwen from Alibaba, e.g. Qwen-max, you can use following config:
 ```yaml
 model:
   name: "qwen-max"
-  key: "YOUR KEY"
+  key: "YOUR KEY "
   url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
 database:
 ```
-#### 文本到 SQL 的前沿模型
-我们推荐使用 XiYanSQL-qwencoder-32B (https://github.com/XGenerationLab/XiYanSQL-QwenCoder)，这是文本到 SQL 的前沿模型，详细见 [Bird 基准](https://bird-bench.github.io/)。
-使用该模型有两种方式。您可以使用以下任一方式。
-(1) [Modelscope](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-32B-2412)，  (2) 阿里巴巴云 DashScope。
+#### Text-to-SQL SOTA model
+We recommend the XiYanSQL-qwencoder-32B (https://github.com/XGenerationLab/XiYanSQL-QwenCoder), which is the SOTA model in text-to-sql, see [Bird benchmark](https://bird-bench.github.io/).
+There are two ways to use the model. You can use either of them.
+(1) [Modelscope](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-32B-2412),  (2) Alibaba Cloud DashScope.
 
-##### (1) Modelscope 版本
-您需要申请 Modelscope 的 ``key`` 用于 API 推断，网址为 https://www.modelscope.cn/docs/model-service/API-Inference/intro。
-然后您可以使用以下配置：
+##### (1) Modelscope version
+You need to apply a ``key`` of API-inference from Modelscope, https://www.modelscope.cn/docs/model-service/API-Inference/intro
+Then you can use the following config:
 ```yaml
 model:
   name: "XGenerationLab/XiYanSQL-QwenCoder-32B-2412"
@@ -105,20 +118,20 @@ model:
   url: "https://api-inference.modelscope.cn/v1/"
 ```
 
-查看我们的 [模型描述](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-32B-2412) 获取更多细节。 
+Read our [model description](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-32B-2412) for more details. 
 
-##### (2) Dashscope 版本
+##### (2) Dashscope version
 
-我们已在阿里巴巴云 DashScope 上部署该模型，因此您需要设置以下环境变量：
-将您的电子邮件发送给我以获取 ``key``。 (godot.lzl@alibaba-inc.com)
-在电子邮件中，请附上以下信息：
+We deployed the model on Alibaba Cloud DashScope, so you need to set the following environment variables:
+Send me your email to get the ``key``. ( godot.lzl@alibaba-inc.com )
+In the email, please attach the following information:
 ```yaml
 name: "YOUR NAME",
 email: "YOUR EMAIL",
 organization: "your college or Company or Organization"
 ```
-我们将根据您的电子邮件向您发送 ``key``。您可以在 yml 文件中填写该 ``key``。
-该 ``key`` 有效期为 1 个月或 200 次查询或其他法律限制。
+We will send you a ``key`` according to your email. And you can fill the ``key`` in the yml file.
+The ``key`` will be expired by  1 month or 200 queries or other legal restrictions.
 
 ```yaml
 model:
@@ -128,52 +141,55 @@ model:
 database:
 ```
 
-注意：该模型服务仅供试用，如果您需要在生产环境中使用，请与我们联系。
+Note: this model service is just for trial, if you need to use it in production, please contact us.
 
-另外，您也可以在自己的服务器上部署模型 [XiYanSQL-qwencoder-32B](https://github.com/XGenerationLab/XiYanSQL-QwenCoder)。
+Alternatively, you can also deploy the model [XiYanSQL-qwencoder-32B](https://github.com/XGenerationLab/XiYanSQL-QwenCoder) on your own server.
 
-#### 本地模型
-注意：本地模型较慢（在我的 MacBook 上每次查询约 12 秒）。
-如果您需要稳定和快速的服务，我们仍然推荐使用 Modelscope 版本。
+#### Local Model
+Note: the local model is slow (about 12 seconds per query on my macbook).
+If you need a stable and fast service, we still recommend to use the modelscope version.
 
-在本地模式下运行 xiyan_mcp_server，您需要：
-1) 一台至少 16GB RAM 的 PC/Mac
-2) 6GB 磁盘空间
+To run xiyan_mcp_server in local mode, you need 
+1) a PC/Mac with at least 16GB RAM
+2) 6GB disk space
 
-步骤 1：安装额外的 Python 包
+Step 1: Install additional Python packages
 ```bash
 pip install flask modelscope torch==2.2.2 accelerate>=0.26.0 numpy=2.2.3
 ```
 
-步骤 2：（可选）手动下载模型
-我们推荐 [xiyansql-qwencoder-3b](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-3B-2502/)。
-您可以通过以下方式手动下载该模型：
+Step 2: (optional) manually download the model
+We recommend [xiyansql-qwencoder-3b](https://www.modelscope.cn/models/XGenerationLab/XiYanSQL-QwenCoder-3B-2502/).
+You can manually download the model by
 ```bash
 modelscope download --model XGenerationLab/XiYanSQL-QwenCoder-3B-2502
 ```
-这将占用您 6GB 的磁盘空间。
+It will take you 6GB disk space.
 
-步骤 3：下载脚本并运行服务器 src/xiyan_mcp_server/local_xiyan_server.py
+Step 3: download the script and run server. src/xiyan_mcp_server/local_xiyan_server.py
+
 ```bash
 python local_xiyan_server.py
 ```
-服务器将运行在 http://localhost:5090/
+The server will be running on http://localhost:5090/
 
-步骤 4：准备配置并运行 xiyan_mcp_server
-config.yml 应如下所示：
-```yaml
+Step 4: prepare config and run xiyan_mcp_server
+the config.yml should be like:
+```yml
 model:
   name: "xiyansql-qwencoder-3b"
   key: "KEY"
   url: "http://127.0.0.1:5090"
 ```
 
-到此为止，本地模式已准备就绪。
+Till now the local mode is ready.
 
-### 数据库配置
-``host``、``port``、``user``、``password`` 和 ``database`` 是 MySQL 数据库的连接信息。
+### Database Configuration
+``host``, ``port``, ``user``, ``password``, ``database`` are the connection information of the database.
 
-您可以使用本地或任何远程数据库。目前我们支持 MySQL（未来将支持更多方言）。
+You can use local or any remote databases. Now we support MySQL and PostgreSQL(more dialects soon).
+
+#### MySQL
 
 ```yaml
 database:
@@ -183,12 +199,28 @@ database:
   password: ""
   database: ""
 ```
+#### PostgreSQL
+Step 1: Install Python packages
+```bash
+pip install psycopg2
+```
+Step 2: prepare the config.yml like this:
+```yaml
+database:
+  dialect: "postgresql"
+  host: "localhost"
+  port: 5432
+  user: ""
+  password: ""
+  database: ""
+```
 
-## 启动
-### Claude 桌面
-在您的 Claude 桌面配置文件中添加以下内容，参考 
-Claude 桌面配置示例
-。
+Note that ``dialect`` should be ``postgresql`` for postgresql.
+## Launch
+### Claude Desktop
+Add this in your Claude Desktop config file, ref 
+Claude Desktop config example
+
 ```json
 {
     "mcpServers": {
@@ -206,38 +238,37 @@ Claude 桌面配置示例
 }
 ```
 ### Cline
-准备与 [Claude 桌面](#claude-desktop) 相同的配置。
+Prepare the config like [Claude Desktop](#claude-desktop)
 
 ### Goose
-在配置中添加以下命令，参考 
-Goose 配置示例
-。
+Add following command in the config, ref 
+Goose config example
+
 ```yaml
 env YML=path/to/yml python -m xiyan_mcp_server
 ```
 ### Cursor
-使用与 [Goose](#goose) 相同的命令。
+Use the same command like [Goose](#goose).
 
 ### Witsy
-在命令中添加以下内容。
+Add following in command:
 ```yaml
 python -m xiyan_mcp_server
 ```
-添加一个环境变量：键为 YML，值为您 yml 文件的路径。
-参考 
-Witsy 配置示例
-。
+Add an env: key is YML and value is the path to your yml file.
+Ref 
+Witsy config example
 
-## 无法正常工作！
-请联系我们：
+## It Does Not Work!
+Contact us:
 
-钉钉群
+Ding Group钉钉群
 ｜ 
 
-在微博上关注我
+Follow me on Weibo
 
-## 引用
-如果您认为我们的工作对您有帮助，请随意引用我们。
+## Citation
+If you find our work helpful, feel free to give us a cite.
 ```bib
 @article{xiyansql,
       title={A Preview of XiYan-SQL: A Multi-Generator Ensemble Framework for Text-to-SQL}, 
@@ -249,22 +280,22 @@ Witsy 配置示例
 }
 ```
 
-**官方网站：** [https://github.com/XGenerationLab/xiyan_mcp_server](https://github.com/XGenerationLab/xiyan_mcp_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/XGenerationLab/xiyan_mcp_server](https://github.com/XGenerationLab/xiyan_mcp_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m xiyan_mcp_server`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m xiyan_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xgenerationlab-xiyan.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xgenerationlab-xiyan.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

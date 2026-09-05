@@ -1,70 +1,70 @@
 ---
-title: "Firecrawl"
-description: "一个模型上下文协议服务器，通过Firecrawl API使人工智能助手能够进行高级的网络抓取、爬取、搜索和数据提取。"
+title: "firecrawl-mcp-server"
+description: "A Model Context Protocol server that enables AI assistants to perform advanced web scraping, crawling, searching, and data extraction through the Firecrawl API."
 ---
 
-# Firecrawl
+# firecrawl-mcp-server
 
-一个模型上下文协议服务器，通过Firecrawl API使人工智能助手能够进行高级的网络抓取、爬取、搜索和数据提取。
+A Model Context Protocol server that enables AI assistants to perform advanced web scraping, crawling, searching, and data extraction through the Firecrawl API.
 
-# Firecrawl MCP 服务器
+# Firecrawl MCP Server
 
-这是一个与 [Firecrawl](https://github.com/mendableai/firecrawl) 集成的模型上下文协议 (MCP) 服务器实现，用于网页抓取功能。
+A Model Context Protocol (MCP) server implementation that integrates with [Firecrawl](https://github.com/mendableai/firecrawl) for web scraping capabilities.
 
-特别感谢 [@vrknetha](https://github.com/vrknetha), [@cawstudios](https://caw.tech) 的初始实现！
+Big thanks to [@vrknetha](https://github.com/vrknetha), [@cawstudios](https://caw.tech) for the initial implementation!
 
-## 功能
+## Features
 
-- 支持抓取、爬行、搜索、提取、深度研究和批量抓取
-- 带有 JS 渲染的网页抓取
-- URL 发现和爬行
-- 带内容提取的网页搜索
-- 指数退避自动重试
-- 内置速率限制的高效批处理
-- 云 API 信用使用监控
-- 全面的日志系统
-- 支持云端和自托管的 FireCrawl 实例
-- 移动/桌面视口支持
-- 通过标签包含/排除的智能内容过滤
+- Scrape, crawl, search, extract, deep research and batch scrape support
+- Web scraping with JS rendering
+- URL discovery and crawling
+- Web search with content extraction
+- Automatic retries with exponential backoff
+- - Efficient batch processing with built-in rate limiting
+- Credit usage monitoring for cloud API
+- Comprehensive logging system
+- Support for cloud and self-hosted FireCrawl instances
+- Mobile/Desktop viewport support
+- Smart content filtering with tag inclusion/exclusion
 
-## 安装
+## Installation
 
-### 使用 npx 运行
+### Running with npx
 
 ```bash
 env FIRECRAWL_API_KEY=fc-YOUR_API_KEY npx -y firecrawl-mcp
 ```
 
-### 手动安装
+### Manual Installation
 
 ```bash
 npm install -g firecrawl-mcp
 ```
 
-### 在 Cursor 上运行
+### Running on Cursor
 
-配置 Cursor 🖥️
-注意：需要 Cursor 版本 0.45.6+
+Configuring Cursor 🖥️
+Note: Requires Cursor version 0.45.6+
 
-要在 Cursor 中配置 FireCrawl MCP：
+To configure FireCrawl MCP in Cursor:
 
-1. 打开 Cursor 设置
-2. 转到 功能 > MCP 服务器
-3. 点击 "+ 添加新的 MCP 服务器"
-4. 输入以下内容：
-   - 名称: "firecrawl-mcp"（或您偏好的名称）
-   - 类型: "command"
-   - 命令: `env FIRECRAWL_API_KEY=your-api-key npx -y firecrawl-mcp`
+1. Open Cursor Settings
+2. Go to Features > MCP Servers 
+3. Click "+ Add New MCP Server"
+4. Enter the following:
+   - Name: "firecrawl-mcp" (or your preferred name)
+   - Type: "command"
+   - Command: `env FIRECRAWL_API_KEY=your-api-key npx -y firecrawl-mcp`
 
-> 如果您使用的是 Windows 并遇到问题，请尝试 `cmd /c "set FIRECRAWL_API_KEY=your-api-key && npx -y firecrawl-mcp"`
+> If you are using Windows and are running into issues, try `cmd /c "set FIRECRAWL_API_KEY=your-api-key && npx -y firecrawl-mcp"`
 
-将 `your-api-key` 替换为您的 FireCrawl API 密钥。
+Replace `your-api-key` with your FireCrawl API key.
 
-添加后，刷新 MCP 服务器列表以查看新工具。作曲家代理将在适当时候自动使用 FireCrawl MCP，但您也可以通过描述您的网页抓取需求来明确请求它。通过 Command+L (Mac) 访问作曲家，在提交按钮旁边的“代理”中选择，并输入您的查询。
+After adding, refresh the MCP server list to see the new tools. The Composer Agent will automatically use FireCrawl MCP when appropriate, but you can explicitly request it by describing your web scraping needs. Access the Composer via Command+L (Mac), select "Agent" next to the submit button, and enter your query.
 
-### 在 Windsurf 上运行
+### Running on Windsurf
 
-将以下内容添加到您的 `./codeium/windsurf/model_config.json` 文件中：
+Add this to your `./codeium/windsurf/model_config.json`:
 
 ```json
 {
@@ -80,44 +80,44 @@ npm install -g firecrawl-mcp
 }
 ```
 
-### 通过 Smithery（旧版）安装
+### Installing via Smithery (Legacy)
 
-要通过 [Smithery](https://smithery.ai/server/@mendableai/mcp-server-firecrawl) 自动为 Claude Desktop 安装 FireCrawl：
+To install FireCrawl for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@mendableai/mcp-server-firecrawl):
 
 ```bash
 npx -y @smithery/cli install @mendableai/mcp-server-firecrawl --client claude
 ```
 
-## 配置
+## Configuration
 
-### 环境变量
+### Environment Variables
 
-#### 云 API 必需
+#### Required for Cloud API
 
-- `FIRECRAWL_API_KEY`: 您的 FireCrawl API 密钥
-  - 使用云 API 时必需（默认）
-  - 当使用带有 `FIRECRAWL_API_URL` 的自托管实例时可选
-- `FIRECRAWL_API_URL` (可选): 自托管实例的自定义 API 端点
-  - 示例: `https://firecrawl.your-domain.com`
-  - 如果未提供，则使用云 API（需要 API 密钥）
+- `FIRECRAWL_API_KEY`: Your FireCrawl API key
+  - Required when using cloud API (default)
+  - Optional when using self-hosted instance with `FIRECRAWL_API_URL`
+- `FIRECRAWL_API_URL` (Optional): Custom API endpoint for self-hosted instances
+  - Example: `https://firecrawl.your-domain.com`
+  - If not provided, the cloud API will be used (requires API key)
 
-#### 可选配置
+#### Optional Configuration
 
-##### 重试配置
+##### Retry Configuration
 
-- `FIRECRAWL_RETRY_MAX_ATTEMPTS`: 最大重试次数（默认：3）
-- `FIRECRAWL_RETRY_INITIAL_DELAY`: 第一次重试前的初始延迟（毫秒，默认：1000）
-- `FIRECRAWL_RETRY_MAX_DELAY`: 重试之间的最大延迟（毫秒，默认：10000）
-- `FIRECRAWL_RETRY_BACKOFF_FACTOR`: 指数退避乘数（默认：2）
+- `FIRECRAWL_RETRY_MAX_ATTEMPTS`: Maximum number of retry attempts (default: 3)
+- `FIRECRAWL_RETRY_INITIAL_DELAY`: Initial delay in milliseconds before first retry (default: 1000)
+- `FIRECRAWL_RETRY_MAX_DELAY`: Maximum delay in milliseconds between retries (default: 10000)
+- `FIRECRAWL_RETRY_BACKOFF_FACTOR`: Exponential backoff multiplier (default: 2)
 
-##### 信用使用监控
+##### Credit Usage Monitoring
 
-- `FIRECRAWL_CREDIT_WARNING_THRESHOLD`: 信用使用警告阈值（默认：1000）
-- `FIRECRAWL_CREDIT_CRITICAL_THRESHOLD`: 信用使用严重阈值（默认：100）
+- `FIRECRAWL_CREDIT_WARNING_THRESHOLD`: Credit usage warning threshold (default: 1000)
+- `FIRECRAWL_CREDIT_CRITICAL_THRESHOLD`: Credit usage critical threshold (default: 100)
 
-### 配置示例
+### Configuration Examples
 
-对于使用自定义重试和信用监控的云 API：
+For cloud API usage with custom retry and credit monitoring:
 
 ```bash
 # Required for cloud API
@@ -134,7 +134,7 @@ export FIRECRAWL_CREDIT_WARNING_THRESHOLD=2000    # Warning at 2000 credits
 export FIRECRAWL_CREDIT_CRITICAL_THRESHOLD=500    # Critical at 500 credits
 ```
 
-对于自托管实例：
+For self-hosted instance:
 
 ```bash
 # Required for self-hosted
@@ -148,9 +148,9 @@ export FIRECRAWL_RETRY_MAX_ATTEMPTS=10
 export FIRECRAWL_RETRY_INITIAL_DELAY=500     # Start with faster retries
 ```
 
-### 与 Claude 桌面版一起使用
+### Usage with Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -174,9 +174,9 @@ export FIRECRAWL_RETRY_INITIAL_DELAY=500     # Start with faster retries
 }
 ```
 
-### 系统配置
+### System Configuration
 
-服务器包括几个可以通过环境变量设置的可配置参数。以下是未配置时的默认值：
+The server includes several configurable parameters that can be set via environment variables. Here are the default values if not configured:
 
 ```typescript
 const CONFIG = {
@@ -193,39 +193,39 @@ const CONFIG = {
 };
 ```
 
-这些配置控制：
+These configurations control:
 
-1. **重试行为**
+1. **Retry Behavior**
 
-   - 自动重试因速率限制而失败的请求
-   - 使用指数退避以避免对 API 的过度请求
-   - 示例：使用默认设置，重试将在以下时间进行：
-     - 第一次重试：1秒延迟
-     - 第二次重试：2秒延迟
-     - 第三次重试：4秒延迟（最大延迟为 maxDelay）
+   - Automatically retries failed requests due to rate limits
+   - Uses exponential backoff to avoid overwhelming the API
+   - Example: With default settings, retries will be attempted at:
+     - 1st retry: 1 second delay
+     - 2nd retry: 2 seconds delay
+     - 3rd retry: 4 seconds delay (capped at maxDelay)
 
-2. **信用使用监控**
-   - 跟踪云 API 使用的 API 信用消耗
-   - 在指定阈值时提供警告
-   - 帮助防止意外的服务中断
-   - 示例：使用默认设置：
-     - 剩余 1000 个信用时发出警告
-     - 剩余 100 个信用时发出严重警报
+2. **Credit Usage Monitoring**
+   - Tracks API credit consumption for cloud API usage
+   - Provides warnings at specified thresholds
+   - Helps prevent unexpected service interruption
+   - Example: With default settings:
+     - Warning at 1000 credits remaining
+     - Critical alert at 100 credits remaining
 
-### 速率限制和批量处理
+### Rate Limiting and Batch Processing
 
-服务器利用 FireCrawl 内置的速率限制和批量处理功能：
+The server utilizes FireCrawl's built-in rate limiting and batch processing capabilities:
 
-- 使用指数退避自动处理速率限制
-- 对批量操作进行高效的并行处理
-- 智能请求队列和限流
-- 自动重试瞬态错误
+- Automatic rate limit handling with exponential backoff
+- Efficient parallel processing for batch operations
+- Smart request queuing and throttling
+- Automatic retries for transient errors
 
-## 可用工具
+## Available Tools
 
-### 1. 抓取工具 (`firecrawl_scrape`)
+### 1. Scrape Tool (`firecrawl_scrape`)
 
-从单个 URL 抓取内容，并支持高级选项。
+Scrape content from a single URL with advanced options.
 
 ```json
 {
@@ -244,9 +244,9 @@ const CONFIG = {
 }
 ```
 
-### 2. 批量抓取工具 (`firecrawl_batch_scrape`)
+### 2. Batch Scrape Tool (`firecrawl_batch_scrape`)
 
-使用内置的速率限制和并行处理高效地抓取多个 URL。
+Scrape multiple URLs efficiently with built-in rate limiting and parallel processing.
 
 ```json
 {
@@ -261,7 +261,7 @@ const CONFIG = {
 }
 ```
 
-响应包括用于状态检查的操作 ID：
+Response includes operation ID for status checking:
 
 ```json
 {
@@ -275,9 +275,9 @@ const CONFIG = {
 }
 ```
 
-### 3. 检查批量状态 (`firecrawl_check_batch_status`)
+### 3. Check Batch Status (`firecrawl_check_batch_status`)
 
-检查批量操作的状态。
+Check the status of a batch operation.
 
 ```json
 {
@@ -288,9 +288,9 @@ const CONFIG = {
 }
 ```
 
-### 4. 搜索工具 (`firecrawl_search`)
+### 4. Search Tool (`firecrawl_search`)
 
-搜索网络并可选地从搜索结果中提取内容。
+Search the web and optionally extract content from search results.
 
 ```json
 {
@@ -308,9 +308,9 @@ const CONFIG = {
 }
 ```
 
-### 5. 爬取工具 (`firecrawl_crawl`)
+### 5. Crawl Tool (`firecrawl_crawl`)
 
-使用高级选项启动异步爬取。
+Start an asynchronous crawl with advanced options.
 
 ```json
 {
@@ -325,9 +325,9 @@ const CONFIG = {
 }
 ```
 
-### 6. 提取工具 (`firecrawl_extract`)
+### 6. Extract Tool (`firecrawl_extract`)
 
-使用 LLM 功能从网页中提取结构化信息。支持云 AI 和自托管 LLM 提取。
+Extract structured information from web pages using LLM capabilities. Supports both cloud AI and self-hosted LLM extraction.
 
 ```json
 {
@@ -352,7 +352,7 @@ const CONFIG = {
 }
 ```
 
-示例响应：
+Example response:
 
 ```json
 {
@@ -370,29 +370,29 @@ const CONFIG = {
 }
 ```
 
-#### 提取工具选项：
+#### Extract Tool Options:
 
-- `urls`: 要从中提取信息的 URL 数组
-- `prompt`: 用于 LLM 提取的自定义提示
-- `systemPrompt`: 用于指导 LLM 的系统提示
-- `schema`: 结构化数据提取的 JSON 模式
-- `allowExternalLinks`: 允许从外部链接中提取
-- `enableWebSearch`: 启用网络搜索以获取额外上下文
-- `includeSubdomains`: 在提取中包含子域
+- `urls`: Array of URLs to extract information from
+- `prompt`: Custom prompt for the LLM extraction
+- `systemPrompt`: System prompt to guide the LLM
+- `schema`: JSON schema for structured data extraction
+- `allowExternalLinks`: Allow extraction from external links
+- `enableWebSearch`: Enable web search for additional context
+- `includeSubdomains`: Include subdomains in extraction
 
-当使用自托管实例时，提取将使用您配置的LLM。对于云API，它使用FireCrawl管理的LLM服务。
+When using a self-hosted instance, the extraction will use your configured LLM. For cloud API, it uses FireCrawl's managed LLM service.
 
-## 日志系统
+## Logging System
 
-服务器包括全面的日志记录：
+The server includes comprehensive logging:
 
-- 操作状态和进度
-- 性能指标
-- 信用使用监控
-- 速率限制跟踪
-- 错误条件
+- Operation status and progress
+- Performance metrics
+- Credit usage monitoring
+- Rate limit tracking
+- Error conditions
 
-示例日志消息：
+Example log messages:
 
 ```
 [INFO] FireCrawl MCP Server initialized successfully
@@ -402,17 +402,17 @@ const CONFIG = {
 [ERROR] Rate limit exceeded, retrying in 2s...
 ```
 
-## 错误处理
+## Error Handling
 
-服务器提供强大的错误处理功能：
+The server provides robust error handling:
 
-- 对于瞬时错误自动重试
-- 带有退避机制的速率限制处理
-- 详细的错误信息
-- 信用使用警告
-- 网络韧性
+- Automatic retries for transient errors
+- Rate limit handling with backoff
+- Detailed error messages
+- Credit usage warnings
+- Network resilience
 
-示例错误响应：
+Example error response:
 
 ```json
 {
@@ -426,7 +426,7 @@ const CONFIG = {
 }
 ```
 
-## 开发
+## Development
 
 ```bash
 # Install dependencies
@@ -439,33 +439,33 @@ npm run build
 npm test
 ```
 
-### 贡献代码
+### Contributing
 
-1. 分叉仓库
-2. 创建您的特性分支
-3. 运行测试：`npm test`
-4. 提交拉取请求
+1. Fork the repository
+2. Create your feature branch
+3. Run tests: `npm test`
+4. Submit a pull request
 
-## 许可证
+## License
 
-MIT许可证 - 详情请参阅LICENSE文件
+MIT License - see LICENSE file for details
 
-**官方网站：** [https://github.com/mcma123/firecrawl-mcp-server](https://github.com/mcma123/firecrawl-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mcma123/firecrawl-mcp-server](https://github.com/mcma123/firecrawl-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `browser`
-- 标签：`browser automation`, `search`, `chinese`
+- Categories: `search`, `browser`
+- Tags: `browser automation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y firecrawl-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y firecrawl-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mcma123-firecrawl.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mcma123-firecrawl.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

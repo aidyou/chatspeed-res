@@ -1,11 +1,11 @@
 ---
-title: "Dify组件生成器"
-description: "集成了Dify AI API，为Ant Design组件提供代码生成服务，支持文本和图像输入，并具备流式处理能力。"
+title: "dify-mcp-server"
+description: "Integrates Dify AI API to provide code generation for Ant Design components, supporting both text and image inputs with stream processing capabilities."
 ---
 
-# Dify组件生成器
+# dify-mcp-server
 
-集成了Dify AI API，为Ant Design组件提供代码生成服务，支持文本和图像输入，并具备流式处理能力。
+Integrates Dify AI API to provide code generation for Ant Design components, supporting both text and image inputs with stream processing capabilities.
 
 # dify-server MCP 服务器
 
@@ -99,22 +99,22 @@ npm run inspector
 
 Inspector 将提供一个可在浏览器中访问的调试工具 URL。
 
-**官方网站：** [https://github.com/AI-FE/dify-mcp-server](https://github.com/AI-FE/dify-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/AI-FE/dify-mcp-server](https://github.com/AI-FE/dify-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `media`
-- 标签：`developer tools`, `image and video processing`, `other`, `chinese`
+- Categories: `development`, `media`
+- Tags: `developer tools`, `image and video processing`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`your/path/dify-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `your/path/dify-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ai-fe-dify.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ai-fe-dify.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

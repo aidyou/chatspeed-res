@@ -1,208 +1,206 @@
 ---
-title: "股票K线分析MCP"
-description: "StockAnalysisServer - 智能股票分析系统 基于FastMCP框架构建的专业股票分析工具，提供全面的技术分析功能，包括K线形态识别、图表形态检测、技术指标计算和多周期分析。 🌟 核心特性 📊 多维度技术分析 - K线形态识别 - 检测单K线、双K线组合、多K线组合等30+种形态 - 图表形态识别 - 识别头肩顶底、双顶底、三角形整理等经典形态 - 技术指标计算 - 移动平均线、RSI、MACD、布林带等主流指标 - 多周期分析 - 支持从1分钟到月线的15个时间周期 🌍 全球市场覆盖 - 美股市场"
+title: "pozansky-stock-server"
+description: "StockAnalysisServer - Intelligent Stock Analysis System Built on the FastMCP framework, this professional stock analysis tool provides comprehensive technical analysis features, including candlestick…"
 ---
 
-# 股票K线分析MCP
+# pozansky-stock-server
 
-StockAnalysisServer - 智能股票分析系统 基于FastMCP框架构建的专业股票分析工具，提供全面的技术分析功能，包括K线形态识别、图表形态检测、技术指标计算和多周期分析。 🌟 核心特性 📊 多维度技术分析 - K线形态识别 - 检测单K线、双K线组合、多K线组合等30+种形态 - 图表形态识别 - 识别头肩顶底、双顶底、三角形整理等经典形态 - 技术指标计算 - 移动平均线、RSI、MACD、布林带等主流指标 - 多周期分析 - 支持从1分钟到月线的15个时间周期 🌍 全球市场覆盖 - 美股市场
+StockAnalysisServer - Intelligent Stock Analysis System Built on the FastMCP framework, this professional stock analysis tool provides comprehensive technical analysis features, including candlestick…
 
-# StockAnalysisServer - 智能股票分析系统
+# StockAnalysisServer - Intelligent Stock Analysis System
 
-基于FastMCP框架构建的专业股票分析工具，提供全面的技术分析功能，包括K线形态识别、图表形态检测、技术指标计算和多周期分析。
+Built on the FastMCP framework, this professional stock analysis tool provides comprehensive technical analysis features, including candlestick pattern recognition, chart pattern detection, technical indicator calculation, and multi-timeframe analysis.
 
-## 🌟 核心特性
+## 🌟 Core Features
 
-### 📊 多维度技术分析
-- **K线形态识别** - 检测单K线、双K线组合、多K线组合等30+种形态
-- **图表形态识别** - 识别头肩顶底、双顶底、三角形整理等经典形态
-- **技术指标计算** - 移动平均线、RSI、MACD、布林带等主流指标
-- **多周期分析** - 支持从1分钟到月线的15个时间周期
+### 📊 Multi-Dimensional Technical Analysis
+- **Candlestick Pattern Recognition** - Detects over 30 types of patterns, including single, double, and multiple candlestick combinations.
+- **Chart Pattern Recognition** - Identifies classic patterns such as head and shoulders, double tops and bottoms, and triangle consolidations.
+- **Technical Indicator Calculation** - Computes mainstream indicators like moving averages, RSI, MACD, and Bollinger Bands.
+- **Multi-Timeframe Analysis** - Supports 15 timeframes from 1-minute to monthly charts.
 
-### 🌍 全球市场覆盖
-- **美股市场** - AAPL, TSLA, GOOGL等主流股票
-- **港股市场** - 0700.HK, 0005.HK等港股标的
-- **A股市场** - 沪市、深市主要股票
-- **全球指数** - 标普500、纳斯达克、恒生指数等
+### 🌍 Global Market Coverage
+- **US Markets** - Major stocks like AAPL, TSLA, GOOGL.
+- **Hong Kong Markets** - Stocks like 0700.HK, 0005.HK.
+- **China A-Shares** - Main stocks in Shanghai and Shenzhen markets.
+- **Global Indices** - S&P 500, NASDAQ, Hang Seng Index, etc.
 
-### 🛠️ 智能功能
-- **自动数据源切换** - 支持多个数据源，自动降级到模拟数据
-- **可视化图表** - 自动生成带形态标注的K线图
-- **置信度评估** - 为每个检测到的形态提供置信度评分
-- **多周期协同** - 同时分析多个时间周期的技术信号
+### 🛠️ Smart Features
+- **Automatic Data Source Switching** - Supports multiple data sources with automatic fallback to simulated data.
+- **Visualized Charts** - Automatically generates K-line charts with annotated patterns.
+- **Confidence Assessment** - Provides a confidence score for each detected pattern.
+- **Multi-Timeframe Synergy** - Analyzes technical signals across multiple timeframes simultaneously.
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 基本使用
+### Basic Usage
 
-```python
-# 获取股票代码示例
+python
+# Get stock code examples
 await get_stock_examples()
 
-# 搜索股票代码
+# Search for stock symbols
 await search_stock_symbols("苹果")
 
-# 单周期分析
+# Single timeframe analysis
 await analyze_stock_price("AAPL", "1d")
 
-# 多周期分析（推荐）
+# Multi-timeframe analysis (recommended)
 await analyze_stock_multiple_intervals("AAPL")
-```
 
-# 📈 支持的分析周期
+# 📈 Supported Analysis Timeframes
 
-## 分钟级周期
+## Minute Timeframes
 - `1m`, `2m`, `5m`, `15m`, `30m`, `60m`, `90m`
 
-## 小时级周期
+## Hourly Timeframes
 - `1h`, `4h`
 
-## 日级及以上周期
+## Daily and Above Timeframes
 - `1d`, `1wk`, `1mo`
 
-## 推荐组合
-- **短线交易**: 15分钟 + 1小时 + 4小时
-- **中线投资**: 1小时 + 4小时 + 日线
-- **长线投资**: 4小时 + 日线 + 周线
+## Recommended Combinations
+- **Short-term Trading**: 15 minutes + 1 hour + 4 hours
+- **Medium-term Investment**: 1 hour + 4 hours + daily
+- **Long-term Investment**: 4 hours + daily + weekly
 
-# 🎯 技术分析功能
+# 🎯 Technical Analysis Features
 
-## K线形态识别
-系统能够识别三大类K线形态：
+## Candlestick Pattern Recognition
+The system can recognize three major categories of candlestick patterns:
 
-### 单K线形态（12种）
-- **看涨形态**: 光头光脚阳线、锤头线、倒锤头线等
-- **看跌形态**: 光头光脚阴线、上吊线、射击之星等
-- **中性形态**: 十字线、T字线等
+### Single Candlestick Patterns (12 types)
+- **Bullish Patterns**: White Marubozu, Hammer, Inverted Hammer, etc.
+- **Bearish Patterns**: Black Marubozu, Hanging Man, Shooting Star, etc.
+- **Neutral Patterns**: Doji, T-Line, etc.
 
-### 双K线组合（7种）
-- 乌云盖顶、旭日东升、抱线组合、孕线组合等
+### Double Candlestick Combinations (7 types)
+- Dark Cloud Cover, Piercing Line, Engulfing Pattern, Harami Pattern, etc.
 
-### 多K线组合（8种）
-- 黄昏之星、早晨之星、红三兵、黑三鸦等
+### Multiple Candlestick Combinations (8 types)
+- Evening Star, Morning Star, Three White Soldiers, Three Black Crows, etc.
 
-## 图表形态检测
+## Chart Pattern Detection
 
-### 持续形态
-- 对称三角形、上升三角形、下降三角形
-- 旗形、三角旗形、矩形整理
-- 上升通道、下降通道
+### Continuation Patterns
+- Symmetrical Triangle, Ascending Triangle, Descending Triangle
+- Flag, Pennant, Rectangle
+- Ascending Channel, Descending Channel
 
-### 反转形态
-- 头肩顶、头肩底
-- 双顶、双底
-- 三重顶、三重底
-- 圆弧顶、圆弧底
+### Reversal Patterns
+- Head and Shoulders, Inverse Head and Shoulders
+- Double Top, Double Bottom
+- Triple Top, Triple Bottom
+- Rounded Top, Rounded Bottom
 
-### 突破形态
-- 通道突破、支撑阻力突破
+### Breakout Patterns
+- Channel Breakout, Support/Resistance Breakout
 
-## 技术指标
+## Technical Indicators
 
-### 趋势指标
-- 移动平均线（MA5, MA10, MA20）
-- 指数移动平均线（EMA）
-- MACD指标
-- 布林带（Bollinger Bands）
+### Trend Indicators
+- Moving Averages (MA5, MA10, MA20)
+- Exponential Moving Average (EMA)
+- MACD
+- Bollinger Bands
 
-### 动量指标
-- 相对强弱指数（RSI）
-- 随机指标（Stochastic）
-- 威廉指标（Williams %R）
-- 顺势指标（CCI）
+### Momentum Indicators
+- Relative Strength Index (RSI)
+- Stochastic Oscillator
+- Williams %R
+- Commodity Channel Index (CCI)
 
-### 成交量指标
-- 成交量分析
-- 能量潮（OBV）
-- 成交量分布
+### Volume Indicators
+- Volume Analysis
+- On-Balance Volume (OBV)
+- Volume Distribution
 
-# 📋 API参考
+# 📋 API Reference
 
-## 核心分析工具
+## Core Analysis Tools
 
 ### `analyze_stock_price(symbol, interval)`
-单周期股票分析
+Single timeframe stock analysis
 
-```python
+python
 await analyze_stock_price("AAPL", "1d")
 await analyze_stock_price("0700.HK", "4h")
-```
-# 🎨 输出示例
 
-## 分析报告包含
-- **价格信息**: 当前价格、涨跌幅、成交量
-- **形态检测**: K线形态、图表形态及置信度
-- **技术指标**: 各类指标数值和信号
-- **可视化**: 带标注的K线图文件路径
-- **时间信息**: 分析时间和数据周期
+# 🎨 Output Examples
 
-## 图表特性
-- **颜色编码**: 红色阳线、绿色阴线
-- **形态标注**: 自动标记检测到的各种形态
-- **置信度显示**: 每个形态的检测置信度
-- **多周期对比**: 不同时间周期的形态分布
+## Analysis Report Includes
+- **Price Information**: Current price, change, volume
+- **Pattern Detection**: Candlestick and chart patterns with confidence scores
+- **Technical Indicators**: Values and signals of various indicators
+- **Visualization**: Path to the annotated K-line chart
+- **Time Information**: Analysis time and data timeframe
 
-# ⚙️ 技术架构
+## Chart Features
+- **Color Coding**: Red for bullish candles, green for bearish candles
+- **Pattern Annotation**: Automatic marking of detected patterns
+- **Confidence Display**: Confidence score for each pattern
+- **Multi-Timeframe Comparison**: Pattern distribution across different timeframes
 
-## 核心模块
-- **CandlestickPatterns**: K线形态识别引擎
-- **ChartPatterns**: 图表形态检测算法
-- **TechnicalIndicators**: 技术指标计算库
-- **StockAnalyzer**: 主分析协调器
+# ⚙️ Technical Architecture
 
-## 数据源架构
-- **主数据源**: Yahoo Finance API
-- **备用数据源**: 多个数据源自动切换
-- **降级策略**: 网络异常时自动使用模拟数据
-- **缓存机制**: 临时图表文件存储
+## Core Modules
+- **CandlestickPatterns**: Candlestick pattern recognition engine
+- **ChartPatterns**: Chart pattern detection algorithms- **TechnicalIndicators**: Technical indicators calculation library
+- **StockAnalyzer**: Main analysis coordinator
 
-## 错误处理
-- **网络容错**: 多数据源自动切换
-- **数据验证**: 股票代码有效性检查
-- **异常恢复**: 模拟数据保底机制
+## Data Source Architecture
+- **Primary Data Source**: Yahoo Finance API
+- **Fallback Data Sources**: Automatic switching among multiple data sources
+- **Degradation Strategy**: Automatically use simulated data in case of network anomalies
+- **Caching Mechanism**: Temporary chart file storage
 
-# 📝 使用建议
+## Error Handling
+- **Network Fault Tolerance**: Automatic switching among multiple data sources
+- **Data Validation**: Stock code validity check
+- **Exception Recovery**: Fallback mechanism using simulated data
 
-## 交易策略参考
-1. **多重验证**: 结合多个时间周期信号
-2. **形态确认**: 等待形态完全形成再操作
-3. **风险控制**: 结合止损和目标位设置
-4. **量价配合**: 关注成交量确认信号
+# 📝 Usage Recommendations
 
-## 分析最佳实践
-1. **从大到小**: 先看长周期，再看短周期
-2. **多指标协同**: 不要依赖单一指标
-3. **市场环境**: 考虑整体市场趋势
-4. **概率思维**: 技术分析是概率游戏
+## Trading Strategy References
+1. **Multiple Verifications**: Combine signals from multiple time periods
+2. **Pattern Confirmation**: Wait for the pattern to fully form before taking action
+3. **Risk Control**: Set stop-loss and target levels
+4. **Volume and Price Coordination**: Pay attention to volume confirmation signals
 
-# 🔧 故障排除
+## Best Practices for Analysis
+1. **From Large to Small**: Start with long-term cycles, then move to short-term cycles
+2. **Multi-Indicator Synergy**: Do not rely on a single indicator
+3. **Market Environment**: Consider the overall market trend
+4. **Probabilistic Thinking**: Technical analysis is a game of probabilities
 
-## 常见问题
-1. **数据获取失败**: 系统会自动使用模拟数据继续分析
-2. **图表生成失败**: 检查临时目录权限和磁盘空间
-3. **中文显示问题**: 系统已配置中文字体支持
+# 🔧 Troubleshooting
 
-## 性能优化
-- 调整分析的时间周期范围
-- 合理选择关注的股票数量
-- 定期清理临时图表文件
+## Common Issues
+1. **Data Retrieval Failure**: The system will automatically continue analysis using simulated data
+2. **Chart Generation Failure**: Check temporary directory permissions and disk space
+3. **Chinese Display Issues**: The system is configured with Chinese font support
 
-**官方网站：** [https://github.com/pozansky/Stock-server](https://github.com/pozansky/Stock-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Performance Optimization
+- Adjust the range of analysis time periods
+- Reasonably select the number of stocks to focus on
+- Regularly clean up temporary chart files
 
-## 分类与标签
+**Official site: ** [https://github.com/pozansky/Stock-server](https://github.com/pozansky/Stock-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`search`, `finance`
-- 标签：`finance`, `search`, `chinese`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `search`, `finance`
+- Tags: `finance`, `search`, `chinese`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`pozansky-stock-server`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `pozansky-stock-server`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/ddpenpal-pozansky-stock.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/ddpenpal-pozansky-stock.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

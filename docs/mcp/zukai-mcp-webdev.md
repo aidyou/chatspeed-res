@@ -1,11 +1,11 @@
 ---
-title: "网页开发MCP"
-description: "一个提供网页开发工具的MCP服务器，例如屏幕捕捉功能，可以让AI代理获取并处理用户屏幕的截图。"
+title: "webdev-mcp"
+description: "An MCP server providing web development tools such as screen capturing capabilities that let AI agents take and work with screenshots of the user's screen."
 ---
 
-# 网页开发MCP
+# webdev-mcp
 
-一个提供网页开发工具的MCP服务器，例如屏幕捕捉功能，可以让AI代理获取并处理用户屏幕的截图。
+An MCP server providing web development tools such as screen capturing capabilities that let AI agents take and work with screenshots of the user's screen.
 
 # webdev-mcp
 
@@ -60,22 +60,22 @@ The tool will return the screenshot as a base64 encoded string.
 
 Make sure YOLO mode is on and MCP tools protection is off in your Cursor settings for the best experience. You might have to allow Cursor to record your screen on MacOS.
 
-**官方网站：** [https://github.com/ZukAi-MCP/webdev-mcp](https://github.com/ZukAi-MCP/webdev-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ZukAi-MCP/webdev-mcp](https://github.com/ZukAi-MCP/webdev-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`developer tools`, `image and video processing`, `browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `developer tools`, `image and video processing`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`webdev-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `webdev-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zukai-mcp-webdev.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zukai-mcp-webdev.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

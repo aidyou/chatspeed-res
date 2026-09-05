@@ -1,102 +1,100 @@
 ---
-title: "全国快递物流查询"
-description: "支持全球上千家快递公司跟踪服务，包括顺丰、圆通、申通等主流快递公司。自动识别快递公司及单号，服务器毫秒响应，数据及时准确。"
+title: "th-express-query"
+description: "Supports tracking services for thousands of courier companies worldwide, including major ones like SF Express, YTO Express, and STO Express. Automatically identifies the courier company and tracking n…"
 ---
 
-# 全国快递物流查询
+# th-express-query
 
-支持全球上千家快递公司跟踪服务，包括顺丰、圆通、申通等主流快递公司。自动识别快递公司及单号，服务器毫秒响应，数据及时准确。
+Supports tracking services for thousands of courier companies worldwide, including major ones like SF Express, YTO Express, and STO Express. Automatically identifies the courier company and tracking n…
 
-# 瞳虎-全国快递查询 MCP 服务文档
+# Tonghu - Nationwide Express Inquiry MCP Service Documentation
 
-## 什么是 瞳虎-全国快递查询 MCP 服务？
-瞳虎全国快递查询MCP Server提供以下核心功能：
-- 全国快递查询
+## What is the Tonghu - Nationwide Express Inquiry MCP Service?
+The Tonghu Nationwide Express Inquiry MCP Server provides the following core functionalities:
+- Nationwide express inquiry
 
-服务特点：
-- **覆盖信息全**：支持全球上千家快递公司跟踪服务，包括顺丰、圆通、申通等主流快递公司。
-- **实时更新**：官方数据源动态更新
-- **精准查询**：支持通过快递单号精准查询
-- **返回字段**：返回物流状态，物流轨迹等详细的快递物流信息。
+Service Features:
+- **Comprehensive Coverage**: Supports tracking services for over a thousand global courier companies, including major ones like SF Express, YTO Express, and STO Express.
+- **Real-time Updates**: Official data sources are dynamically updated
+- **Precise Inquiry**: Supports precise inquiries through express waybill numbers
+- **Return Fields**: Returns detailed express logistics information such as logistics status and logistics trajectory.
 
 ---
 
-## 如何使用 瞳虎-全国快递查询 MCP 服务？
-### API Key 获取方式
-1. 注册登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")
-2. 创建您的 API Key（已创建的可直接使用）
-3. 在[产品中心](https://mcp.tonghu.top/#/layout/prodCenter "瞳虎MCP")开通【全国快递查询】服务
-### 部署方式1（SSE）
-```
+## How to Use the Tonghu - Nationwide Express Inquiry MCP Service?
+### API Key Acquisition
+1. Register and log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP")
+2. Create your API Key (if already created, you can use it directly)
+3. Activate the [Nationwide Express Inquiry] service in the [Product Center](https://mcp.tonghu.top/#/layout/prodCenter "Tonghu MCP")
+
+### Deployment Method 1 (SSE)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/sse?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/sse?apiKey=Your apiKey obtained from the Tonghu MCP platform"
     }
   }
 }
-```
-### 部署方式2（Streamable Http）
-```
+
+### Deployment Method 2 (Streamable Http)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/streamable?apiKey=Your apiKey obtained from the Tonghu MCP platform"
     }
   }
 }
-```
-> **注意事项**：
-- 服务已支持集成到智能体和工作流中
+
+> **Note**:
+- The service is now supported for integration into agents and workflows.
 
 ---
 
+## Use Cases of the Tonghu - Nationwide Express Inquiry MCP Service
 
+1. **Automated Customer Service Response for Logistics Issues**  
+   After a user places an order, the system automatically generates an order and associates it with an express waybill number. The customer service AI calls the MCP express inquiry interface to display real-time logistics dynamics.
 
-## 瞳虎-全国快递查询 MCP 服务的使用案例
-
-1. **客服系统自动响应物流问题**  
-   用户下单后，系统自动生成订单并关联快递单号。客服AI调用 MCP 快递查询接口，实时展示物流动态。
-
-2. **企业内部物流管理系统对接**  
-   将 MCP 快递查询服务接入内部 WMS 或 ERP 系统。批量查询多个快递单号的物流状态，用于报表分析、异常预警等。
-
+2. **Integration with Internal Logistics Management Systems**  
+   Integrate the MCP express inquiry service into internal WMS or ERP systems. Batch query the logistics status of multiple express waybill numbers for report analysis, anomaly alerts, etc.
 
 ---
 
-## 常见问题解答
+## Frequently Asked Questions
 
-**Q：使用瞳虎-全国快递查询MCP服务是否需要付费？**  
-A：首次开通产品有免费试用额度，额度耗尽可选择：
-- 购买套餐（限时优惠）
-- 充值余额按次扣费
-- 量大可联系客服定制额外优惠
+**Q: Is there a fee for using the Tonghu - Nationwide Express Inquiry MCP Service?**  
+A: There is a free trial quota upon first activation. Once the quota is exhausted, you can choose:
+- Purchase a package (limited-time offer)
+- Recharge balance and pay per use
+- For large volumes, contact customer service for additional discounts
 
-**Q：使用瞳虎-全国快递查询MCP服务注意事项？**  
-A：首次使用请：
-1. 登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")，使用手机号注册账号
-2. 创建 API Key
-3. 在产品中心开通服务（可额外购买套餐）
+**Q: What should I be aware of when using the Tonghu - Nationwide Express Inquiry MCP Service?**  
+A: For first-time users, please:
+1. Log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP") and register an account with your phone number
+2. Create an API Key
+3. Activate the service in the Product Center (additional packages can be purchased)
 
-> **技术支持**  
-联系平台客服或王先生：18363092551（微信同号）
+> **Technical Support**  
+Contact platform customer service or Mr. Wang: 18363092551 (WeChat ID same)
 
-**官方网站：** [https://mcp.tonghu.top](https://mcp.tonghu.top)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `企业服务`, `快递服务`, `电商服务`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `企业服务`, `快递服务`, `电商服务`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kid1235789-th-express-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kid1235789-th-express-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

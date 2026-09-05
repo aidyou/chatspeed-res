@@ -1,52 +1,52 @@
 ---
-title: "OpenCode Zen 免费模型"
-description: "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。"
+title: "OpenCode Zen Free Models"
+description: "Inside the opencode coding agent, limited-time free models (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, etc.) are usable after signing in, without adding billing details."
 ---
 
-# OpenCode Zen 免费模型
+# OpenCode Zen Free Models
 
-在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。
+Inside the opencode coding agent, limited-time free models (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, etc.) are usable after signing in, without adding billing details.
 
-OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。
+OpenCode Zen is the AI gateway maintained by the OpenCode team (SST), used inside the opencode coding agent (TUI / CLI): sign in, run /connect with your Zen API key, then /models to pick a model. A set of models is currently free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, Nemotron 3.5 Lightning Free, Ling 3.0 Flash Fin Free, Muse Spark 1.2 Contributor Free) without billing details; paid models are metered per token (auto-recharge defaults to $20 when balance < $5). OpenAI-compatible endpoints are exposed at https://opencode.ai/zen/v1, so it can also be configured in ChatSpeed. The free list rotates frequently; check the official docs.
 
-**官方网站：** [https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
-**状态：** `review`　**最后核验：** `2026-08-30`
+**Official site: ** [https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
+**Status: ** `review`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`coding`
-- 标签：`opencode`, `zen`, `free-models`, `coding`, `api`
+- Categories: `coding`
+- Tags: `opencode`, `zen`, `free-models`, `coding`, `api`
 
-## 免费使用说明
+## Free Usage
 
-- 访问方式：`api`
-- 是否需要登录：`是`
-- 是否有免费层：`是`
-- 可用区域：`global`
+- Access: `api`
+- Requires login: `Yes`
+- Has free tier: `Yes`
+- Availability: `global`
 
-一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。
+A set of models is free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free etc.); no billing details needed for free models. The list rotates; check the official docs.
 
-### 分模型免费额度明细
+### Per-model free quota
 
-| 模型 | 免费额度 | 频率与限速 |
+| Model | Free quota | Rate / frequency |
 | --- | --- | --- |
-| MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单） | 免费 | 限时免费，名单轮换，以官方文档为准 |
+| MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free (current list) | Free | Limited-time free; list rotates, check official docs |
 
-## 注册与限制
-- 注册入口：[https://opencode.ai/zen](https://opencode.ai/zen)
-- 注册限制：在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。
-- 免费政策文档：[https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
+## Registration & Limits
+- Sign up: [https://opencode.ai/zen](https://opencode.ai/zen)
+- Registration limit: Sign up/connect with a Zen account inside opencode (or via the Zen website); free models need no billing details, paid models require adding billing (auto-recharge default $20).
+- Free policy doc: [https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
 
-## ChatSpeed 导入
+## ChatSpeed Import
 
-该服务关联模型供应商 `opencode-zen`，可从模型供应商列表导入配置，调用入口如下：
-- 协议：`openai`
-- Base URL：`https://opencode.ai/zen/v1`
-- Logo：![OpenCode Zen](https://www.google.com/s2/favicons?domain=opencode.ai&sz=64)
-- 官方文档：[https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
-- 模型列表：[https://opencode.ai/zen/v1/models](https://opencode.ai/zen/v1/models)
-- 密钥申请：[https://opencode.ai/zen](https://opencode.ai/zen)
+This service is linked to model provider `opencode-zen`; import its config from the model provider list. Call entry points:
+- Protocol: `openai`
+- Base URL: `https://opencode.ai/zen/v1`
+- Logo: ![OpenCode Zen](https://www.google.com/s2/favicons?domain=opencode.ai&sz=64)
+- Docs: [https://opencode.ai/docs/zen/](https://opencode.ai/docs/zen/)
+- Model list: [https://opencode.ai/zen/v1/models](https://opencode.ai/zen/v1/models)
+- API key: [https://opencode.ai/zen](https://opencode.ai/zen)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/free-ai/opencode-zen-free-models.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/free-ai/opencode-zen-free-models.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

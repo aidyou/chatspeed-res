@@ -1,34 +1,34 @@
 ---
-title: "天气查询小能手"
-description: "支持通过城市名称 / 经纬度精准调用，返回结构化、高可用的天气信息，适配 AI 智能体、应用开发、物联网设备等多场景集成需求。 核心功能与数据输出规范 支持查询维度：城市名称（含区县级别）、经纬度坐标（WGS84） 预报时效：最长 5 天（含当日），数据按自然日拆分返回 覆盖范围：全球主要城市（中国地区支持省级 / 市级 / 区县级精准匹配）"
+title: "XingYuWeather"
+description: "Supports precise invocation through city name / latitude and longitude, returning structured, highly available weather information, suitable for integration in various scenarios such as AI agents, app…"
 ---
 
-# 天气查询小能手
+# XingYuWeather
 
-支持通过城市名称 / 经纬度精准调用，返回结构化、高可用的天气信息，适配 AI 智能体、应用开发、物联网设备等多场景集成需求。 核心功能与数据输出规范 支持查询维度：城市名称（含区县级别）、经纬度坐标（WGS84） 预报时效：最长 5 天（含当日），数据按自然日拆分返回 覆盖范围：全球主要城市（中国地区支持省级 / 市级 / 区县级精准匹配）
+Supports precise invocation through city name / latitude and longitude, returning structured, highly available weather information, suitable for integration in various scenarios such as AI agents, app…
 
-支持通过城市名称 / 经纬度精准调用，返回结构化、高可用的天气信息，适配 AI 智能体、应用开发、物联网设备等多场景集成需求。
-核心功能与数据输出规范
-支持查询维度：城市名称（含区县级别）、经纬度坐标（WGS84）
-预报时效：最长 5 天（含当日），数据按自然日拆分返回
-覆盖范围：全球主要城市（中国地区支持省级 / 市级 / 区县级精准匹配）
+Supports precise invocation through city name / latitude and longitude, returning structured, highly available weather information, suitable for integration in various scenarios such as AI agents, application development, and IoT devices.
+### Core Functions and Data Output Specifications
+- **Query Dimensions**: City name (including district/county level), Latitude and Longitude coordinates (WGS84)
+- **Forecast Validity Period**: Up to 5 days (including the current day), with data returned split by natural days
+- **Coverage Area**: Major cities globally (supports provincial/city/district/county level precise matching in China)
 
-**官方网站：** [https://www.modelscope.cn/studios/nihaochen123/CXY/summary](https://www.modelscope.cn/studios/nihaochen123/CXY/summary)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/nihaochen123/CXY/summary](https://www.modelscope.cn/studios/nihaochen123/CXY/summary)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://nihaochen123-cxy.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://nihaochen123-cxy.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/nihaochen123-xingyuweather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/nihaochen123-xingyuweather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

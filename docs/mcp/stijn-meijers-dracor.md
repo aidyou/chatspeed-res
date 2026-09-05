@@ -1,88 +1,100 @@
 ---
-title: "stijn-meijers"
-description: "DraCor MCP 服务器 一个用于与戏剧语料库项目（DraCor）API 交互的模型上下文协议（MCP）服务器。此 MCP 服务器使您能够通过 Claude 或其他大型语言模型（LLM）无缝分析戏剧文本及其角色网络。 概述 该项目使用官方的 Model Context Protocol Python SDK 实现了一个 MCP 服务器，提供了对 DraCor API v1 的访问。它允许 Claude 和其他 LLM 与戏剧文本语料库进行交互，分析角色网络，检索剧本信息，并生成关于不同语言和时期的戏剧作品的见解"
+title: "dracor-mcp"
+description: "DraCor MCP Server A Model Context Protocol (MCP) server for interacting with the Drama Corpora Project (DraCor) API. This MCP server enables you to seamlessly analyze dramatic texts and their characte…"
 ---
 
-# stijn-meijers
+# dracor-mcp
 
-DraCor MCP 服务器 一个用于与戏剧语料库项目（DraCor）API 交互的模型上下文协议（MCP）服务器。此 MCP 服务器使您能够通过 Claude 或其他大型语言模型（LLM）无缝分析戏剧文本及其角色网络。 概述 该项目使用官方的 Model Context Protocol Python SDK 实现了一个 MCP 服务器，提供了对 DraCor API v1 的访问。它允许 Claude 和其他 LLM 与戏剧文本语料库进行交互，分析角色网络，检索剧本信息，并生成关于不同语言和时期的戏剧作品的见解
+DraCor MCP Server A Model Context Protocol (MCP) server for interacting with the Drama Corpora Project (DraCor) API. This MCP server enables you to seamlessly analyze dramatic texts and their characte…
 
-# DraCor MCP 服务器
+# DraCor MCP Server
 
-一个用于与戏剧语料库项目（DraCor）API 交互的模型上下文协议（MCP）服务器。此 MCP 服务器使您能够通过 Claude 或其他大型语言模型（LLM）无缝分析戏剧文本及其角色网络。
+A Model Context Protocol (MCP) server for interacting with the Drama Corpora Project (DraCor) API. This MCP server enables you to seamlessly analyze dramatic texts and their character networks through Claude or other LLMs.
 
-## 概述
+## Overview
 
-该项目使用官方的 Model Context Protocol Python SDK 实现了一个 MCP 服务器，提供了对 DraCor API v1 的访问。它允许 Claude 和其他 LLM 与戏剧文本语料库进行交互，分析角色网络，检索剧本信息，并生成关于不同语言和时期的戏剧作品的见解。
+This project implements an MCP server using the official Model Context Protocol Python SDK that provides access to the DraCor API v1. It allows Claude and other LLMs to interact with dramatic text corpora, analyze character networks, retrieve play information, and generate insights about dramatic works across different languages and periods.
 
-该项目包括两种实现：
+The project includes two implementations:
 
-1. `dracor_mcp_fastmcp.py` - 使用基于装饰器的 FastMCP API 的简化实现，支持 v1 API
+1. `dracor_mcp_fastmcp.py` - Streamlined implementation using the FastMCP decorator-based API with v1 API
 
-## 功能
+## Features
 
-- 通过统一接口访问 DraCor API v1
-- 无需认证（DraCor API 是公开可访问的）
-- 结构化的 DraCor 实体数据模型
-- 支持的操作：
-  - 语料库和剧本信息检索
-  - 角色网络分析
-  - 剧本指标和统计数据
-  - 角色信息和台词
-  - 剧本比较分析
-  - 搜索功能
-  - 角色关系数据
-  - 多种格式的网络数据（CSV、GEXF、GraphML）
-  - 跨剧本的性别分析
-  - **纯文本和 TEI XML 格式的全文检索**
-  - **完整的剧本文本分析**
+- Access to DraCor API v1 through a unified interface
+- No authentication required (DraCor API is publicly accessible)
+- Structured data models for DraCor entities
+- Support for operations:
+  - Corpora and play information retrieval
+  - Character network analysis
+  - Metrics and statistics for plays
+  - Character information and spoken text
+  - Comparative play analysis
+  - Search functionality
+  - Character relationship data
+  - Network data in multiple formats (CSV, GEXF, GraphML)
+  - Gender analysis across plays
+  - **Full text retrieval in plain text and TEI XML formats**
+  - **Complete play text analysis**
 
-## 设置
+## Setup
 
-### 先决条件
+### Prerequisites
 
-- Python 3.10 或更高版本
-- UV 包管理器（推荐）或 pip
+- Python 3.10 or higher
+- UV package manager (recommended) or pip
 
-### 使用 UV 安装
+### Installation with UV
 
-1. 安装 UV：
+1. Install UV:
 
+```
 pip install uv
+```
 
-2. 创建虚拟环境并安装依赖项：
+2. Create a virtual environment and install dependencies:
 
+```
 uv venv
-source .venv/bin/activate  # 在 Windows 上：.venvScriptsactivate
+source .venv/bin/activate  # On Windows: .venvScriptsactivate
 uv pip install -e .
+```
 
-3. 在 Claude Desktop 中安装 MCP 服务器：
+3. Install the MCP server in Claude Desktop:
 
-对于标准实现（v0 API）：
+For standard implementation (v0 API):
 
+```
 mcp install dracor_mcp_server.py
+```
 
-或者对于 FastMCP 实现（v1 API，推荐）：
+Or for FastMCP implementation with v1 API (recommended):
 
+```
 mcp install dracor_mcp_fastmcp.py
+```
 
-### 开发模式
+### Development Mode
 
-用于测试和开发：
+For testing and development:
 
+```
 mcp dev dracor_mcp_server.py
+```
 
-或者对于 FastMCP 实现（v1 API，推荐）：
+Or for FastMCP implementation with v1 API (recommended):
 
+```
 mcp dev dracor_mcp_fastmcp.py
+```
 
-这将启动 MCP Inspector，在其中您可以交互式地测试您的工具和资源。
+This will launch the MCP Inspector where you can test your tools and resources interactively.
 
-### Claude 配置
+### Claude Configuration
 
-您还可以直接配置 Claude 以使用 DraCor MCP 服务器，方法是在您的 Claude 配置文件中添加以下内容：
+You can also directly configure Claude to use the DraCor MCP server by adding the following to your Claude configuration file:
 
-json
+```json
 {
   "tools": {
     "DraCor API v1": {
@@ -104,259 +116,267 @@ json
     }
   }
 }
+```
 
-将 `/path/to/dracor-mcp/` 替换为实际的 dracor-mcp 目录路径。此配置使用 `uv run` 执行 MCP 服务器，并带有必要的依赖项，而无需预先安装。
+Replace `/path/to/dracor-mcp/` with the actual path to your dracor-mcp directory. This configuration uses `uv run` to execute the MCP server with the necessary dependencies without requiring a prior installation.
 
-### Docker（可选）
+### Docker (optional)
 
-如果您更喜欢使用 Docker：
+If you prefer using Docker:
 
+```
 docker build -t dracor-mcp .
 docker run dracor-mcp
+```
 
-要改为使用 FastMCP 实现（v1 API）：
+To use the FastMCP implementation with v1 API instead:
 
+```
 docker run -e IMPLEMENTATION=fastmcp dracor-mcp
+```
 
-## 实现细节
+## Implementation Details
 
-### 标准 MCP 实现（v0 API）
+### Standard MCP Implementation (v0 API)
 
-在 `dracor_mcp_server.py` 中的标准实现使用了核心 MCP SDK 类与旧的 v0 API：
+The standard implementation in `dracor_mcp_server.py` uses the core MCP SDK classes with the older v0 API:
 
-- `Resource` - 用于定义 API 资源
-- `MCPToolImpl` - 用于实现工具
-- `PromptTemplate` - 用于创建提示模板
+- `Resource` - For defining API resources
+- `MCPToolImpl` - For implementing tools
+- `PromptTemplate` - For creating prompt templates
 
-### FastMCP 实现（v1 API）
+### FastMCP Implementation (v1 API)
 
-在 `dracor_mcp_fastmcp.py` 中的 FastMCP 实现使用了更简洁的基于装饰器的方法与当前的 v1 API：
+The FastMCP implementation in `dracor_mcp_fastmcp.py` uses a more concise decorator-based approach with the current v1 API:
 
-- `@mcp.resource()` - 用于定义 API 资源
-- `@mcp.tool()` - 用于实现工具
-- `@mcp.prompt()` - 用于创建提示模板
+- `@mcp.resource()` - For defining API resources
+- `@mcp.tool()` - For implementing tools
+- `@mcp.prompt()` - For creating prompt templates
 
-这种方法使得代码更加清晰且易于维护，同时提供相同的功能但可以访问更多全面的 API 特性。
+This approach results in cleaner, more maintainable code while providing the same functionality but with access to more comprehensive API features.
 
-## v1 API 特性v1 API 实现提供了访问许多额外端点和功能的途径：
+## v1 API Features
 
-- **API 信息** - DraCor API 的版本信息
-- **语料库元数据** - 语料库中所有剧本的详细元数据
-- **剧本度量** - 网络度量和分析数据
-- **角色网络数据** - CSV、GEXF 和 GraphML 格式
-- **角色关系** - 角色之间的显式关系
-- **口语文本过滤器** - 按性别、关系类型或角色身份过滤
-- **舞台指示** - 获取带有或不带发言者的舞台指示
-- **角色查找** - 查找包含特定角色（通过 Wikidata ID）的剧本
+The v1 API implementation provides access to many additional endpoints and capabilities:
 
-## 使用方法
+- **API info** - Version information for the DraCor API
+- **Corpus metadata** - Detailed metadata for all plays in a corpus
+- **Play metrics** - Network metrics and analysis data
+- **Character network data** - CSV, GEXF, and GraphML formats
+- **Character relations** - Explicit relationships between characters
+- **Spoken text filters** - Filter by gender, relation type, or character role
+- **Stage directions** - Retrieve stage directions with or without speakers
+- **Character lookup** - Find plays containing specific characters (by Wikidata ID)
 
-在 Claude Desktop 中安装后，您可以通过 Claude 与 DraCor API 进行交互。以下是一些示例：
+## Usage
 
-### 基本查询
+Once installed in Claude Desktop, you can interact with the DraCor API through Claude. Here are some examples:
 
-1. 要求 Claude 列出可用的戏剧语料库：
+### Basic Queries
 
-   
-   Can you list all available drama corpora in DraCor?
-   
+1. Ask Claude to list available corpora:
 
-2. 获取关于特定剧本的信息：
+```
+Can you list all available drama corpora in DraCor?
+```
 
-   
-   Tell me about Goethe s Faust in the German corpus
-   
+2. Get information about a specific play:
 
-3. 分析角色网络：
+```
+Tell me about Goethe s Faust in the German corpus
+```
 
-   
-   Analyze the character network in Hamlet from the Shakespeare corpus
-   
+3. Analyze character networks:
 
-### 高级查询
+```
+Analyze the character network in Hamlet from the Shakespeare corpus
+```
 
-1. 分析角色关系：
+### Advanced Queries
 
-   
-   What are the strongest character relationships in Pushkin s Boris Godunov?
-   
+1. Analyze character relationships:
 
-2. 比较剧本：
+```
+What are the strongest character relationships in Pushkin s Boris Godunov?
+```
 
-   
-   Compare Goethe s Faust and Schiller s Die Räuber in terms of network density and character count
-   
+2. Compare plays:
 
-3. 分析角色重要性：
+```
+Compare Goethe s Faust and Schiller s Die Räuber in terms of network density and character count
+```
 
-   
-   Who are the most central characters in Shakespeare s Hamlet based on speaking time and relationships?
-   
+3. Analyze character importance:
 
-4. 分析性别表现：
+```
+Who are the most central characters in Shakespeare s Hamlet based on speaking time and relationships?
+```
 
-   
-   Analyze the gender distribution and representation in Molière s Le Misanthrope
-   
+4. Analyze gender representation:
 
-5. 在不同剧本中查找一个角色：
+```
+Analyze the gender distribution and representation in Molière s Le Misanthrope
+```
 
-   
-   Find all plays that feature a character named "Hamlet" or similar
-   
+5. Find a character across different plays:
 
-6. 分析剧本全文：
+```
+Find all plays that feature a character named "Hamlet" or similar
+```
 
-   
-   Provide a comprehensive analysis of the full text of Goethe s Faust
-   
+6. Analyze the full text of a play:
 
-7. 从剧本文本中提取主题：
+```
+Provide a comprehensive analysis of the full text of Goethe s Faust
+```
 
-   
-   What are the main themes and motifs in the full text of Shakespeare s Hamlet?
-   
+7. Extract themes from play text:
 
-8. 分析语言模式：
+```
+What are the main themes and motifs in the full text of Shakespeare s Hamlet?
+```
 
-   
-   Analyze the language patterns and style in Chekhov s The Cherry Orchard
-   
+8. Analyze language patterns:
 
-### 文学分析查询
+```
+Analyze the language patterns and style in Chekhov s The Cherry Orchard
+```
 
-1. 分析剧本结构：
+### Literary Analysis Queries
 
-   
-   Analyze the structure of Molière s Le Misanthrope in terms of acts, scenes, and dialogue distribution
-   
+1. Analyze play structure:
 
-2. 比较作者：
+```
+Analyze the structure of Molière s Le Misanthrope in terms of acts, scenes, and dialogue distribution
+```
 
-   
-   Compare the network structures in plays by Shakespeare and Molière
-   
+2. Compare authors:
 
-3. 历史背景：
+```
+Compare the network structures in plays by Shakespeare and Molière
+```
 
-   
-   Put Pushkin s Boris Godunov in its historical context and analyze how this is reflected in the character network
-   
+3. Historical context:
 
-## 资源 (v1 API)
+```
+Put Pushkin s Boris Godunov in its historical context and analyze how this is reflected in the character network
+```
 
-FastMCP 服务器公开了以下资源：
+## Resources (v1 API)
 
-- `info://` - API 信息和版本详情
-- `corpora://` - 所有可用语料库的列表
-- `corpus://{corpus_name}` - 关于特定语料库的信息
-- `corpus_metadata://{corpus_name}` - 语料库中所有剧本的元数据
-- `plays://{corpus_name}` - 特定语料库中的剧本列表
-- `play://{corpus_name}/{play_name}` - 关于特定剧本的信息
-- `play_metrics://{corpus_name}/{play_name}` - 特定剧本的网络度量
-- `characters://{corpus_name}/{play_name}` - 特定剧本中的角色列表
-- `spoken_text://{corpus_name}/{play_name}` - 剧本中的口语文本（可选过滤）
-- `spoken_text_by_character://{corpus_name}/{play_name}` - 每个角色的发言文本
-- `stage_directions://{corpus_name}/{play_name}` - 剧本中的舞台指示
-- `network_data://{corpus_name}/{play_name}` - CSV 格式的网络数据
-- `relations://{corpus_name}/{play_name}` - CSV 格式的角色关系数据
-- `character_by_wikidata://{wikidata_id}` - 通过 Wikidata ID 列出包含特定角色的剧本
-- `full_text://{corpus_name}/{play_name}` - 剧本的纯文本格式全文
-- `tei_text://{corpus_name}/{play_name}` - 剧本的完整 TEI XML 文本
+The FastMCP server exposes the following resources:
 
-## 工具 (v1 API)
+- `info://` - API information and version details
+- `corpora://` - List of all available corpora
+- `corpus://{corpus_name}` - Information about a specific corpus
+- `corpus_metadata://{corpus_name}` - Metadata for all plays in a corpus
+- `plays://{corpus_name}` - List of plays in a specific corpus
+- `play://{corpus_name}/{play_name}` - Information about a specific play
+- `play_metrics://{corpus_name}/{play_name}` - Network metrics for a specific play
+- `characters://{corpus_name}/{play_name}` - List of characters in a specific play
+- `spoken_text://{corpus_name}/{play_name}` - Spoken text in a play (with optional filters)
+- `spoken_text_by_character://{corpus_name}/{play_name}` - Text spoken by each character
+- `stage_directions://{corpus_name}/{play_name}` - Stage directions in a play
+- `network_data://{corpus_name}/{play_name}` - Network data in CSV format
+- `relations://{corpus_name}/{play_name}` - Character relation data in CSV format
+- `character_by_wikidata://{wikidata_id}` - List plays containing a character by Wikidata ID
+- `full_text://{corpus_name}/{play_name}` - Full text of a play in plain text format
+- `tei_text://{corpus_name}/{play_name}` - Full TEI XML text of a play
 
-FastMCP 服务器提供了以下工具：
+## Tools (v1 API)
 
-- `search_plays` - 根据查询搜索剧本
-- `compare_plays` - 比较两个剧本的度量和结构- `analyze_character_relations` - 分析剧本中的人物关系
-- `analyze_play_structure` - 分析剧本的结构
-- `find_character_across_plays` - 在多个剧本中查找某个角色
-- `analyze_full_text` - 分析剧本的全文，包括对话和舞台指示
+The FastMCP server provides the following tools:
 
-## 提示模板 (v1 API)
+- `search_plays` - Search for plays based on a query
+- `compare_plays` - Compare two plays in terms of metrics and structure
+- `analyze_character_relations` - Analyze character relationships in a play
+- `analyze_play_structure` - Analyze the structure of a play
+- `find_character_across_plays` - Find a character across multiple plays
+- `analyze_full_text` - Analyze the full text of a play, including dialogue and stage directions
 
-FastMCP 服务器包含以下提示模板：
+## Prompt Templates (v1 API)
 
-- `analyze_play` - 用于分析特定剧本的模板
-- `character_analysis` - 用于分析特定角色的模板
-- `network_analysis` - 用于分析角色网络的模板
-- `comparative_analysis` - 用于比较两个剧本的模板
-- `gender_analysis` - 用于分析剧本中性别表现的模板
-- `historical_context` - 用于分析剧本历史背景的模板
-- `full_text_analysis` - 用于分析剧本全文的模板
+The FastMCP server includes these prompt templates:
 
-## 工作原理
+- `analyze_play` - Template for analyzing a specific play
+- `character_analysis` - Template for analyzing a specific character
+- `network_analysis` - Template for analyzing a character network
+- `comparative_analysis` - Template for comparing two plays
+- `gender_analysis` - Template for analyzing gender representation in a play
+- `historical_context` - Template for analyzing the historical context of a play
+- `full_text_analysis` - Template for analyzing the full text of a play
 
-该项目使用官方的 Model Context Protocol Python SDK 构建了一个 MCP 服务器，该服务器暴露了 Claude 可以用来与 DraCor API 交互的资源和工具。
+## How It Works
 
-当你向 Claude 询问关于戏剧文本的问题时，它可以：
+This project uses the official Model Context Protocol Python SDK to build an MCP server that exposes resources and tools that Claude can use to interact with the DraCor API.
 
-1. 访问诸如语料库、剧本、角色和网络等资源
-2. 使用工具来搜索、比较和分析剧本
-3. 根据数据提供见解和可视化结果
+When you ask Claude a question about dramatic texts, it can:
 
-DraCor API 是公开可访问的，因此不需要身份验证。
+1. Access resources like corpora, plays, characters, and networks
+2. Use tools to search, compare, and analyze plays
+3. Provide insights and visualizations based on the data
 
-## 速率限制
+The DraCor API is publicly accessible, so no authentication is required.
 
-请注意 DraCor 的速率限制政策。服务器包含了可以在 .env 文件中配置的可选速率限制设置。
+## Rate Limiting
 
-## 故障排除
+Be mindful of DraCor s rate limiting policies. The server includes optional rate limiting settings that can be configured in the .env file.
 
-如果你遇到问题：
+## Troubleshooting
 
-1. 确保你使用的是 Python 3.10 或更高版本
-2. 尝试在开发模式下运行以进行调试：`mcp dev dracor_mcp_fastmcp.py`
-3. 检查 DraCor API 的状态：https://dracor.org/doc/api
+If you encounter issues:
 
-## 与 MCP 一起使用的提示
+1. Ensure you re using Python 3.10 or higher
+2. Try running in development mode to debug: `mcp dev dracor_mcp_fastmcp.py`
+3. Check the DraCor API status at https://dracor.org/doc/api
 
-"你的任务是从 DraCor 数据库中分析历史剧本，以识别角色 ID 标签问题。具体来说：
+## Prompt to use with MCP
 
-1. 从 DraCor 数据库中选择一个剧本，并对其人物关系、全文和结构进行全面分析。
-2. 识别所有可能的角色 ID 标签不一致之处，包括：
-   - 角色名称的拼写变体
-   - 角色名称混淆或合并
-   - 历史拼写变体
-   - 角色 ID 与舞台指示之间的差异
-3. 创建一份详细的潜在角色 ID 标签错误报告，采用结构化表格格式，包含以下列：
-   - 文本 ID（剧本的唯一标识符）
-   - 当前数据库中使用的角色 ID
-   - 文本中发现的问题变体
-   - 错误类型（拼写、变体、混淆等）
-   - 问题说明
+"Your task is to analyze historical plays from the DraCor database to identify character ID tagging issues. Specifically:
 
-针对此文本执行：[playname]"
+1. Select a play from the DraCor database and perform a comprehensive analysis of its character relations, full text, and structure.
+2. Identify all possible inconsistencies in character ID tagging, including:
+   - Spelling variations of character names
+   - Character name confusion or conflation
+   - Historical spelling variants
+   - Discrepancies between character IDs and stage directions
+3. Create a detailed report of potential character ID tagging errors in a structured table format with the following columns:
+   - Text ID (unique identifier for the play)
+   - Current character ID used in the database
+   - Problematic variant(s) found in the text
+   - Type of error (spelling, variation, confusion, etc.)
+   - Explanation of the issue
 
-## 许可证
+do it for this text: [playname]"
+
+## License
 
 MIT
 
-## 致谢
+## Acknowledgements
 
-该项目使用了：
+This project uses:
 
-- Model Context Protocol Python SDK 用于构建 MCP 服务器
-- DraCor API v1 用于戏剧文本和网络数据
-- Drama Corpora Project (DraCor) 用于提供基础数据和 API
+- Model Context Protocol Python SDK for building the MCP server
+- DraCor API v1 for dramatic text and network data
+- Drama Corpora Project (DraCor) for providing the underlying data and API
 
-**官方网站：** [https://github.com/stijn-meijers/dracor-mcp](https://github.com/stijn-meijers/dracor-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/stijn-meijers/dracor-mcp](https://github.com/stijn-meijers/dracor-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `search`, `research and data`
+- Categories: `media`
+- Tags: `art and culture`, `search`, `research and data`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run --with mcp[cli] --with requests --with pydantic --with python-multipart mcp run /path/to/dracor-mcp/dracor_mcp_fastmcp.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run --with mcp[cli] --with requests --with pydantic --with python-multipart mcp run /path/to/dracor-mcp/dracor_mcp_fastmcp.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/stijn-meijers-dracor.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/stijn-meijers-dracor.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

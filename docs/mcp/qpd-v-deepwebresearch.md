@@ -1,64 +1,64 @@
 ---
-title: "Claude深度网络调研器"
-description: "一种模型上下文协议服务器，使克劳德能够进行高级网络研究，具有智能搜索排队、增强的内容提取和深入的研究能力。"
+title: "mcp-DEEPwebresearch"
+description: "A Model Context Protocol server that enables Claude to perform advanced web research with intelligent search queuing, enhanced content extraction, and deep research capabilities."
 ---
 
-# Claude深度网络调研器
+# mcp-DEEPwebresearch
 
-一种模型上下文协议服务器，使克劳德能够进行高级网络研究，具有智能搜索排队、增强的内容提取和深入的研究能力。
+A Model Context Protocol server that enables Claude to perform advanced web research with intelligent search queuing, enhanced content extraction, and deep research capabilities.
 
-# MCP 深网研究服务器 (v0.3.0)
+# MCP Deep Web Research Server (v0.3.0)
 
-[![Node.js 版本](/mcp-assets/6176b88dbd8c31864dcd7185f406cea8.svg)](https://nodejs.org/)
+[![Node.js Version](/mcp-assets/6176b88dbd8c31864dcd7185f406cea8.svg)](https://nodejs.org/)
 [![TypeScript](/mcp-assets/03500effbf23a69c818017a47f3da738.svg)](https://www.typescriptlang.org/)
-[![许可证: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-一个用于高级网络研究的模型上下文协议 (MCP) 服务器。
+A Model Context Protocol (MCP) server for advanced web research.
 
-## 最新更改
+## Latest Changes
 
-- 添加了用于直接网页内容提取的 `visit_page` 工具
-- 优化性能以适应 MCP 超时限制
-  * 减少了默认的 `maxDepth` 和 `maxBranching` 参数
-  * 提高了页面加载效率
-  * 在整个过程中添加了超时检查
-  * 增强了针对超时的错误处理
+- Added visit_page tool for direct webpage content extraction
+- Optimized performance to work within MCP timeout limits
+  * Reduced default maxDepth and maxBranching parameters
+  * Improved page loading efficiency
+  * Added timeout checks throughout the process
+  * Enhanced error handling for timeouts
 
-> 该项目是 [mzxrai](https://github.com/mzxrai) 的 [mcp-webresearch](https://github.com/mzxrai/mcp-webresearch) 项目的分支，增加了额外的功能以提高深网研究能力。我们非常感谢原作者的基础工作。
+> This project is a fork of [mcp-webresearch](https://github.com/mzxrai/mcp-webresearch) by [mzxrai](https://github.com/mzxrai), enhanced with additional features for deep web research capabilities. We're grateful to the original creators for their foundational work.
 
-通过智能搜索队列、增强的内容提取和深入的研究功能，将实时信息带入 Claude。
+Bring real-time info into Claude with intelligent search queuing, enhanced content extraction, and deep research capabilities.
 
-## 功能
+## Features
 
-- 智能搜索队列系统
-  - 批量搜索操作并带有速率限制
-  - 队列管理及进度跟踪
-  - 错误恢复与自动重试
-  - 搜索结果去重
+- Intelligent Search Queue System
+  - Batch search operations with rate limiting
+  - Queue management with progress tracking
+  - Error recovery and automatic retries
+  - Search result deduplication
 
-- 增强的内容提取
-  - 基于 TF-IDF 的相关性评分
-  - 关键词邻近分析
-  - 内容部分加权
-  - 可读性评分
-  - 改进的 HTML 结构解析
-  - 结构化数据提取
-  - 更好的内容清理与格式化
+- Enhanced Content Extraction
+  - TF-IDF based relevance scoring
+  - Keyword proximity analysis
+  - Content section weighting
+  - Readability scoring
+  - Improved HTML structure parsing
+  - Structured data extraction
+  - Better content cleaning and formatting
 
-- 核心功能
-  - Google 搜索集成
-  - 网页内容提取
-  - 研究会话跟踪
-  - 改进格式化的 Markdown 转换
+- Core Features
+  - Google search integration
+  - Webpage content extraction
+  - Research session tracking
+  - Markdown conversion with improved formatting
 
-## 先决条件
+## Prerequisites
 
-- [Node.js](https://nodejs.org/) >= 18（包含 `npm` 和 `npx`）
-- [Claude 桌面应用程序](https://claude.ai/download)
+- [Node.js](https://nodejs.org/) >= 18 (includes `npm` and `npx`)
+- [Claude Desktop app](https://claude.ai/download)
 
-## 安装
+## Installation
 
-### 全局安装（推荐）
+### Global Installation (Recommended)
 
 ```bash
 # Install globally using npm
@@ -71,7 +71,7 @@ yarn global add mcp-deepwebresearch
 pnpm add -g mcp-deepwebresearch
 ```
 
-### 本地项目安装
+### Local Project Installation
 
 ```bash
 # Using npm
@@ -84,9 +84,9 @@ yarn add mcp-deepwebresearch
 pnpm add mcp-deepwebresearch
 ```
 
-### Claude 桌面应用程序集成
+### Claude Desktop Integration
 
-安装包后，在您的 `claude_desktop_config.json` 文件中添加以下条目：
+After installing the package, add this entry to your `claude_desktop_config.json`:
 
 #### Windows
 ```json
@@ -99,7 +99,7 @@ pnpm add mcp-deepwebresearch
   }
 }
 ```
-位置：`%APPDATA%\Claude\claude_desktop_config.json`
+Location: `%APPDATA%Claudeclaude_desktop_config.json`
 
 #### macOS
 ```json
@@ -112,36 +112,36 @@ pnpm add mcp-deepwebresearch
   }
 }
 ```
-位置：`~/Library/Application Support/Claude/claude_desktop_config.json`
+Location: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-此配置允许 Claude 桌面应用程序在需要时自动启动网络研究 MCP 服务器。
+This config allows Claude Desktop to automatically start the web research MCP server when needed.
 
-### 首次设置
+### First-time Setup
 
-安装完成后，运行以下命令以安装所需的浏览器依赖项：
+After installation, run this command to install required browser dependencies:
 ```bash
 npx playwright install chromium
 ```
 
-## 使用方法
+## Usage
 
-只需开始与Claude的聊天，并发送一个可以从网络研究中受益的提示。如果您希望使用一个为深入网络研究定制的预构建提示，您可以通过这个包提供的`agentic-research`提示来实现。在Claude Desktop中，通过点击聊天输入框中的回形针图标，然后选择 `Choose an integration` → `deepwebresearch` → `agentic-research` 来访问该提示。
+Simply start a chat with Claude and send a prompt that would benefit from web research. If you'd like a prebuilt prompt customized for deeper web research, you can use the `agentic-research` prompt that we provide through this package. Access that prompt in Claude Desktop by clicking the Paperclip icon in the chat input and then selecting `Choose an integration` → `deepwebresearch` → `agentic-research`.
 
-### 工具
+### Tools
 
 1. `deep_research`
-   - 执行全面的研究并进行内容分析
-   - 参数：
+   - Performs comprehensive research with content analysis
+   - Arguments:
 ```typescript
      {
        topic: string;
-       maxDepth?: number;      // 默认值: 2
-       maxBranching?: number;  // 默认值: 3
-       timeout?: number;       // 默认值: 55000 (55秒)
-       minRelevanceScore?: number;  // 默认值: 0.7
+       maxDepth?: number;      // default: 2
+       maxBranching?: number;  // default: 3
+       timeout?: number;       // default: 55000 (55 seconds)
+       minRelevanceScore?: number;  // default: 0.7
      }
 ```
-   - 返回：
+   - Returns:
 ```typescript
      {
        findings: {
@@ -170,79 +170,79 @@ npx playwright install chromium
 ```
 
 2. `parallel_search`
-   - 并行执行多个Google搜索，采用智能队列机制
-   - 参数：`{ queries: string[], maxParallel?: number }`
-   - 注意：为了确保可靠的性能，maxParallel限制为5
+   - Performs multiple Google searches in parallel with intelligent queuing
+   - Arguments: `{ queries: string[], maxParallel?: number }`
+   - Note: maxParallel is limited to 5 to ensure reliable performance
 
 3. `visit_page`
-   - 访问网页并提取其内容
-   - 参数：`{ url: string }`
-   - 返回：
+   - Visit a webpage and extract its content
+   - Arguments: `{ url: string }`
+   - Returns:
 ```typescript
      {
        url: string;
        title: string;
-       content: string;  // Markdown格式的内容
+       content: string;  // Markdown formatted content
      }
 ```
 
-### 提示
+### Prompts
 
 #### `agentic-research`
-这是一个引导式研究提示，帮助Claude进行彻底的网络研究。该提示指导Claude：
-- 从广泛的搜索开始，以了解主题概况
-- 优先考虑高质量、权威的来源
-- 根据发现迭代地精炼研究方向
-- 保持您的知情权，并让您能够交互式地指导研究
-- 总是引用带有URL的来源
+A guided research prompt that helps Claude conduct thorough web research. The prompt instructs Claude to:
+- Start with broad searches to understand the topic landscape
+- Prioritize high-quality, authoritative sources
+- Iteratively refine the research direction based on findings
+- Keep you informed and let you guide the research interactively
+- Always cite sources with URLs
 
-## 配置选项
+## Configuration Options
 
-服务器可以通过环境变量进行配置：
+The server can be configured through environment variables:
 
-- `MAX_PARALLEL_SEARCHES`: 同时进行的最大搜索数量（默认值: 5）
-- `SEARCH_DELAY_MS`: 搜索之间的延迟时间（毫秒）（默认值: 200）
-- `MAX_RETRIES`: 失败请求的重试次数（默认值: 3）
-- `TIMEOUT_MS`: 请求超时时间（毫秒）（默认值: 55000）
-- `LOG_LEVEL`: 日志级别（默认值: 'info'）
+- `MAX_PARALLEL_SEARCHES`: Maximum number of concurrent searches (default: 5)
+- `SEARCH_DELAY_MS`: Delay between searches in milliseconds (default: 200)
+- `MAX_RETRIES`: Number of retry attempts for failed requests (default: 3)
+- `TIMEOUT_MS`: Request timeout in milliseconds (default: 55000)
+- `LOG_LEVEL`: Logging level (default: 'info')
 
-## 错误处理
+## Error Handling
 
-### 常见问题
+### Common Issues
 
-1. 速率限制
-   - 症状："Too many requests" 错误
-   - 解决方案：增加 `SEARCH_DELAY_MS` 或减少 `MAX_PARALLEL_SEARCHES`
+1. Rate Limiting
+   - Symptom: "Too many requests" error
+   - Solution: Increase `SEARCH_DELAY_MS` or decrease `MAX_PARALLEL_SEARCHES`
 
-2. 网络超时
-   - 症状："Request timed out" 错误
-   - 解决方案：确保请求在 60 秒的 MCP 超时内完成
+2. Network Timeouts
+   - Symptom: "Request timed out" error
+   - Solution: Ensure requests complete within the 60-second MCP timeout
 
-3. 浏览器问题
-   - 症状："Browser failed to launch" 错误
-   - 解决方案：确保 Playwright 正确安装 (`npx playwright install`)
+3. Browser Issues
+   - Symptom: "Browser failed to launch" error
+   - Solution: Ensure Playwright is properly installed (`npx playwright install`)
 
-### 调试
+### Debugging
 
-这是测试版软件。如果您遇到问题：
+This is beta software. If you run into issues:
 
-1. 检查 Claude Desktop 的 MCP 日志：
+1. Check Claude Desktop's MCP logs:
 ```bash
-   # 在 macOS 上
+   # On macOS
    tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
    
-   # 在 Windows 上
-   Get-Content -Path "$env:APPDATA\Claude\logs\mcp*.log" -Tail 20 -Wait
+   # On Windows
+   Get-Content -Path "$env:APPDATAClaudelogsmcp*.log" -Tail 20 -Wait
 ```
 
-2. 启用调试日志记录：
+2. Enable debug logging:
 ```bash
    export LOG_LEVEL=debug
 ```
 
-## 开发
+## Development
 
-### 设置
+### Setup
 
 ```bash
 # Install dependencies
@@ -258,7 +258,7 @@ pnpm watch
 pnpm dev
 ```
 
-### 测试
+### Testing
 
 ```bash
 # Run all tests
@@ -271,7 +271,7 @@ pnpm test:watch
 pnpm test:coverage
 ```
 
-### 代码质量
+### Code Quality
 
 ```bash
 # Run linter
@@ -284,69 +284,69 @@ pnpm lint:fix
 pnpm type-check
 ```
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建您的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### 编码标准
+### Coding Standards
 
-- 遵循 TypeScript 最佳实践
-- 维护测试覆盖率高于 80%
-- 记录新功能和 API
-- 对重大更改更新 CHANGELOG.md
-- 遵循语义化版本控制
+- Follow TypeScript best practices
+- Maintain test coverage above 80%
+- Document new features and APIs
+- Update CHANGELOG.md for significant changes
+- Follow semantic versioning
 
-### 性能考虑
+### Performance Considerations
 
-- 尽可能使用批量操作
-- 实现适当的错误处理和重试机制
-- 考虑大型数据集的内存使用
-- 适当缓存结果
-- 使用流式处理大内容
+- Use batch operations where possible
+- Implement proper error handling and retries
+- Consider memory usage with large datasets
+- Cache results when appropriate
+- Use streaming for large content
 
-## 要求
+## Requirements
 
 - Node.js >= 18
-- Playwright（作为依赖项自动安装）
+- Playwright (automatically installed as a dependency)
 
-## 已验证平台
+## Verified Platforms
 
 - [x] macOS
 - [x] Windows
 - [ ] Linux
 
-## 许可证
+## License
 
 MIT
 
-## 致谢
+## Credits
 
-本项目基于 [mzxrai](https://github.com/mzxrai) 的 [mcp-webresearch](https://github.com/mzxrai/mcp-webresearch) 的优秀工作。原始代码库为我们的增强功能和能力提供了基础。
+This project builds upon the excellent work of [mcp-webresearch](https://github.com/mzxrai/mcp-webresearch) by [mzxrai](https://github.com/mzxrai). The original codebase provided the foundation for our enhanced features and capabilities.
 
-## 作者
+## Author
 
 [qpd-v](https://github.com/qpd-v)
 
-**官方网站：** [https://github.com/qpd-v/mcp-deepwebresearch](https://github.com/qpd-v/mcp-deepwebresearch)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/qpd-v/mcp-deepwebresearch](https://github.com/qpd-v/mcp-deepwebresearch)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `search`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`mcp-deepwebresearch`
-- 参数：无
+- Transport: `stdio`
+- Command: `mcp-deepwebresearch`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/qpd-v-deepwebresearch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/qpd-v-deepwebresearch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,41 +1,35 @@
 ---
-title: "WordPress MCP 服务器"
-description: "使用此MCP WordPress服务器与您的WordPress网站进行交互。\n\n100% 使用Cline创建。如果您使用Cline，可以通过指向代码库并询问代码是否安全来让其评估代码。\n\n请参阅READ.me以获取详细概述。\n\n享受吧！"
+title: "wordpress-mcp-server"
+description: "interact with your WordPress site (s) using this MCP WordPress Server 100% created with Cline. If you use Cline you can have it evaluate the code by pointing it to the repository and asking if the cod…"
 ---
 
-# WordPress MCP 服务器
+# wordpress-mcp-server
 
-使用此MCP WordPress服务器与您的WordPress网站进行交互。
+interact with your WordPress site (s) using this MCP WordPress Server 100% created with Cline. If you use Cline you can have it evaluate the code by pointing it to the repository and asking if the cod…
 
-100% 使用Cline创建。如果您使用Cline，可以通过指向代码库并询问代码是否安全来让其评估代码。
+# WordPress MCP Server
 
-请参阅READ.me以获取详细概述。
+A Model Context Protocol (MCP) server for WordPress integration, compatible with Windows, macOS, and Linux.
 
-享受吧！
+## Overview
 
-# WordPress MCP 服务器
+This MCP server enables interaction with WordPress sites through the WordPress REST API. It provides tools for creating, retrieving, and updating posts using JSON-RPC 2.0 protocol.
 
-适用于 WordPress 集成的 Model Context Protocol (MCP) 服务器，兼容 Windows、macOS 和 Linux。
+## Installation
 
-## 概述
-
-此 MCP 服务器通过 WordPress REST API 实现与 WordPress 站点的交互。它提供了使用 JSON-RPC 2.0 协议创建、检索和更新文章的工具。
-
-## 安装
-
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 ```bash
 npm install
 ```
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-## 配置
+## Configuration
 
-在您的 MCP 设置文件中添加服务器，并使用环境变量设置 WordPress 凭证：
+Add the server to your MCP settings file with environment variables for WordPress credentials:
 
 ```json
 {
@@ -53,55 +47,55 @@ npm run build
 }
 ```
 
-环境变量包括：
-- WORDPRESS_SITE_URL: 您的 WordPress 站点 URL
-- WORDPRESS_USERNAME: WordPress 用户名
-- WORDPRESS_PASSWORD: WordPress 应用程序密码
+The environment variables are:
+- WORDPRESS_SITE_URL: Your WordPress site URL
+- WORDPRESS_USERNAME: WordPress username
+- WORDPRESS_PASSWORD: WordPress application password
 
-您也可以选择不在环境变量中提供这些凭证，而是在请求参数中直接提供。
+You can also provide these credentials in the request parameters if you prefer not to use environment variables.
 
-## 可用方法
+## Available Methods
 
 ### create_post
-创建新的 WordPress 文章。
+Creates a new WordPress post.
 
-参数：
-- siteUrl: (如果已在环境变量中设置则可选) WordPress 站点 URL
-- username: (如果已在环境变量中设置则可选) WordPress 用户名
-- password: (如果已在环境变量中设置则可选) WordPress 应用程序密码
-- title: 文章标题
-- content: 文章内容
-- status: (可选) 'draft' | 'publish' | 'private' (默认: 'draft')
+Parameters:
+- siteUrl: (optional if set in env) WordPress site URL
+- username: (optional if set in env) WordPress username
+- password: (optional if set in env) WordPress application password
+- title: Post title
+- content: Post content
+- status: (optional) 'draft' | 'publish' | 'private' (default: 'draft')
 
 ### get_posts
-检索 WordPress 文章。
+Retrieves WordPress posts.
 
-参数：
-- siteUrl: (如果已在环境变量中设置则可选) WordPress 站点 URL
-- username: (如果已在环境变量中设置则可选) WordPress 用户名
-- password: (如果已在环境变量中设置则可选) WordPress 应用程序密码
-- perPage: (可选) 每页的文章数量 (默认: 10)
-- page: (可选) 页码 (默认: 1)
+Parameters:
+- siteUrl: (optional if set in env) WordPress site URL
+- username: (optional if set in env) WordPress username
+- password: (optional if set in env) WordPress application password
+- perPage: (optional) Number of posts per page (default: 10)
+- page: (optional) Page number (default: 1)
 
 ### update_post
-更新现有的 WordPress 文章。
+Updates an existing WordPress post.
 
-参数：
-- siteUrl: (如果已在环境变量中设置则可选) WordPress 站点 URL
-- username: (如果已在环境变量中设置则可选) WordPress 用户名
-- password: (如果已在环境变量中设置则可选) WordPress 应用程序密码
-- postId: 要更新的文章 ID
-- title: (可选) 新文章标题
-- content: (可选) 新文章内容
-- status: (可选) 'draft' | 'publish' | 'private'
+Parameters:
+- siteUrl: (optional if set in env) WordPress site URL
+- username: (optional if set in env) WordPress username
+- password: (optional if set in env) WordPress application password
+- postId: ID of the post to update
+- title: (optional) New post title
+- content: (optional) New post content
+- status: (optional) 'draft' | 'publish' | 'private'
 
-## 安全提示
+## Security Note
 
-为了安全起见，建议使用 WordPress 应用程序密码而不是您的主账户密码。您可以在 WordPress 仪表板的用户 → 安全 → 应用程序密码下生成应用程序密码。
+For security, it's recommended to use WordPress application passwords instead of your main account password. You can generate an application password in your WordPress dashboard under Users → Security → Application Passwords.
 
-## 使用示例
+## Example Usage
 
-使用环境变量：
+Using environment variables:
 ```json
 {
   "jsonrpc": "2.0",
@@ -115,7 +109,7 @@ npm run build
 }
 ```
 
-不使用环境变量：
+Without environment variables:
 ```json
 {
   "jsonrpc": "2.0",
@@ -132,32 +126,32 @@ npm run build
 }
 ```
 
-## 要求
+## Requirements
 
-- Node.js 20.0.0 或更高版本
-- 启用了 REST API 的 WordPress 站点
-- 用于身份验证的 WordPress 应用程序密码
+- Node.js 20.0.0 or higher
+- WordPress site with REST API enabled
+- WordPress application password for authentication
 
-## 许可证
+## License
 
-MIT 许可证 - 详情请参阅 LICENSE 文件
+MIT License - See LICENSE file for details
 
-**官方网站：** [https://github.com/stefans71/wordpress-mcp-server](https://github.com/stefans71/wordpress-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/stefans71/wordpress-mcp-server](https://github.com/stefans71/wordpress-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/stefans71-wordpress.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/stefans71-wordpress.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

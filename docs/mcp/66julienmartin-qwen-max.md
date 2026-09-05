@@ -1,95 +1,97 @@
 ---
-title: "MCP服务端-Qwen大模型"
-description: "通过模型上下文协议（MCP），启用使用Qwen Max语言模型生成文本，该模型具有可配置参数，并与克劳德桌面无缝集成。"
+title: "MCP-server-Qwen_Max"
+description: "Enables text generation using the Qwen Max language model with configurable parameters and seamless integration with Claude Desktop via the Model Context Protocol (MCP)."
 ---
 
-# MCP服务端-Qwen大模型
+# MCP-server-Qwen_Max
 
-通过模型上下文协议（MCP），启用使用Qwen Max语言模型生成文本，该模型具有可配置参数，并与克劳德桌面无缝集成。
+Enables text generation using the Qwen Max language model with configurable parameters and seamless integration with Claude Desktop via the Model Context Protocol (MCP).
 
-# Qwen Max MCP 服务器
+# Qwen Max MCP Server
 
-Qwen Max 语言模型的 Model Context Protocol (MCP) 服务器实现。
+A Model Context Protocol (MCP) server implementation for the Qwen Max language model.
 
 [Smithery](https://smithery.ai/server/@66julienmartin/mcp-server-qwen_max)
 
-为什么选择 Node.js？
-此实现使用了 Node.js/TypeScript，因为它目前提供了与 MCP 服务器相比其他语言（如 Python）更为稳定和可靠的集成。Node.js 的 MCP SDK 提供了更好的类型安全性、错误处理以及与 Claude Desktop 的兼容性。
+Why Node.js?
+This implementation uses Node.js/TypeScript as it currently provides the most stable and reliable integration 
+with MCP servers compared to other languages like Python. The Node.js SDK for MCP offers better type safety, 
+error handling, and compatibility with Claude Desktop.
 
-## 前提条件
+## Prerequisites
 
-- Node.js (v18 或更高版本)
+- Node.js (v18 or higher)
 - npm
 - Claude Desktop
-- Dashscope API 密钥
+- Dashscope API key
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@66julienmartin/mcp-server-qwen_max) 自动为 Claude Desktop 安装 Qwen Max MCP 服务器：
+To install Qwen Max MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@66julienmartin/mcp-server-qwen_max):
 
 ```bash
 npx -y @smithery/cli install @66julienmartin/mcp-server-qwen_max --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```bash
 git clone https://github.com/66julienmartin/mcp-server-qwen-max.git
 cd Qwen_Max
 npm install
 ```
 
-## 模型选择
-默认情况下，此服务器使用 Qwen-Max 模型。
-Qwen 系列提供了几个具有不同功能的商业模型：
+## Model Selection
+By default, this server uses the Qwen-Max model. 
+The Qwen series offers several commercial models with different capabilities:
 
 ### Qwen-Max
-提供最佳推理性能，特别是对于复杂和多步骤的任务。
+Provides the best inference performance, especially for complex and multi-step tasks.
 
-上下文窗口：32,768 个令牌
-- 最大输入：30,720 个令牌
-- 最大输出：8,192 个令牌
-- 价格：$0.0016/1K 令牌（输入），$0.0064/1K 令牌（输出）
-- 免费配额：1 百万个令牌
+Context window: 32,768 tokens
+- Max input: 30,720 tokens
+- Max output: 8,192 tokens
+- Pricing: $0.0016/1K tokens (input), $0.0064/1K tokens (output)
+- Free quota: 1 million tokens
 
-可用版本：
+Available versions:
 
-- qwen-max (稳定版)
-- qwen-max-latest (最新版)
-- qwen-max-2025-01-25 (快照，也称为 qwen-max-0125 或 Qwen2.5-Max)
+- qwen-max (Stable)
+- qwen-max-latest (Latest)
+- qwen-max-2025-01-25 (Snapshot, also known as qwen-max-0125 or Qwen2.5-Max)
 
 ### Qwen-Plus
-在性能、速度和成本之间取得平衡，适用于中等复杂度的任务。
+Balanced combination of performance, speed, and cost, ideal for moderately complex tasks.
 
-上下文窗口：131,072 个令牌
-- 最大输入：129,024 个令牌
-- 最大输出：8,192 个令牌
-- 价格：$0.0004/1K 令牌（输入），$0.0012/1K 令牌（输出）
-- 免费配额：1 百万个令牌
+Context window: 131,072 tokens
+- Max input: 129,024 tokens
+- Max output: 8,192 tokens
+- Pricing: $0.0004/1K tokens (input), $0.0012/1K tokens (output)
+- Free quota: 1 million tokens
 
-可用版本：
+Available versions:
 
-- qwen-plus (稳定版)
-- qwen-plus-latest (最新版)
-- qwen-plus-2025-01-25 (快照，也称为 qwen-plus-0125)
+- qwen-plus (Stable)
+- qwen-plus-latest (Latest)
+- qwen-plus-2025-01-25 (Snapshot, also known as qwen-plus-0125)
 
 ### Qwen-Turbo
-速度快且成本低，适合简单任务。
+Fast speed and low cost, suitable for simple tasks.
 
-- 上下文窗口：1,000,000 个令牌
-- 最大输入：1,000,000 个令牌
-- 最大输出：8,192 个令牌
-- 价格：$0.00005/1K 令牌（输入），$0.0002/1K 令牌（输出）
-- 免费配额：1 百万个令牌
+- Context window: 1,000,000 tokens
+- Max input: 1,000,000 tokens
+- Max output: 8,192 tokens
+- Pricing: $0.00005/1K tokens (input), $0.0002/1K tokens (output)
+- Free quota: 1 million tokens
 
-可用版本：
+Available versions:
 
-- qwen-turbo (稳定版)
-- qwen-turbo-latest (最新版)
-- qwen-turbo-2024-11-01 (快照，也称为 qwen-turbo-1101)
+- qwen-turbo (Stable)
+- qwen-turbo-latest (Latest)
+- qwen-turbo-2024-11-01 (Snapshot, also known as qwen-turbo-1101)
 
-要修改模型，请在 `src/index.ts` 中更新模型名称：
+To modify the model, update the model name in src/index.ts:
 
 ```typescript
 // For Qwen-Max (default)
@@ -102,9 +104,9 @@ model: "qwen-plus"
 model: "qwen-turbo"
 ```
 
-有关可用模型的更多详细信息，请访问 Alibaba Cloud 模型文档 [https://www.alibabacloud.com/help/en/model-studio/getting-started/models?spm=a3c0i.23458820.2359477120.1.446c7d3f9LT0FY](https://www.alibabacloud.com/help/en/model-studio/getting-started/models?spm=a3c0i.23458820.2359477120.1.446c7d3f9LT0FY)。
+For more detailed information about available models, visit the Alibaba Cloud Model Documentation https://www.alibabacloud.com/help/en/model-studio/getting-started/models?spm=a3c0i.23458820.2359477120.1.446c7d3f9LT0FY.
 
-## 项目结构
+## Project Structure
 ```
 qwen-max-mcp/
 ├── src/
@@ -117,15 +119,14 @@ qwen-max-mcp/
 ├── package-lock.json
 └── tsconfig.json
 ```
+## Configuration
 
-## 配置
-
-1. 在项目根目录中创建一个 `.env` 文件：
+1. Create a `.env` file in the project root:
 ```
 DASHSCOPE_API_KEY=your-api-key-here
 ```
 
-2. 更新 Claude Desktop 配置：
+2. Update Claude Desktop configuration:
 ```json
 {
   "mcpServers": {
@@ -140,7 +141,7 @@ DASHSCOPE_API_KEY=your-api-key-here
 }
 ```
 
-## 开发
+## Development
 
 ```bash
 npm run dev     # Watch mode
@@ -148,17 +149,17 @@ npm run build   # Build
 npm run start   # Start server
 ```
 
-## 功能
+## Features
 
-- 使用 Qwen 模型生成文本
-- 可配置参数（max_tokens, temperature）
-- 错误处理
-- 支持 MCP 协议
-- Claude Desktop 集成
-- 支持所有 Qwen 商业模型（Max, Plus, Turbo）
-- 广泛的 token 上下文窗口
+- Text generation with Qwen models
+- Configurable parameters (max_tokens, temperature)
+- Error handling
+- MCP protocol support
+- Claude Desktop integration
+- Support for all Qwen commercial models (Max, Plus, Turbo)
+- Extensive token context windows
 
-## API 使用
+## API Usage
 
 ```typescript
 // Example tool call
@@ -171,53 +172,53 @@ npm run start   # Start server
   }
 }
 ```
-## 温度参数
+## The Temperature Parameter
 
-温度参数控制模型输出的随机性：
+The temperature parameter controls the randomness of the model's output:
 
-较低值 (0.0-0.7)：更集中和确定性的输出
-较高值 (0.7-1.0)：更具创造性和多样性的输出
+Lower values (0.0-0.7): More focused and deterministic outputs
+Higher values (0.7-1.0): More creative and varied outputs
 
-按任务推荐的温度设置：
+Recommended temperature settings by task:
 
-代码生成：0.0-0.3
-技术写作：0.3-0.5
-一般任务：0.7（默认）
-创意写作：0.8-1.0
+Code generation: 0.0-0.3
+Technical writing: 0.3-0.5
+General tasks: 0.7 (default)
+Creative writing: 0.8-1.0
 
-## 错误处理
+## Error Handling
 
-服务器为常见问题提供了详细的错误信息：
+The server provides detailed error messages for common issues:
 
-API 认证错误
-无效参数
-速率限制
-网络问题
-超出 token 限制
-模型可用性问题
+API authentication errors
+Invalid parameters
+Rate limiting
+Network issues
+Token limit exceeded
+Model availability issues
 
-## 贡献
-欢迎贡献！请随时提交 Pull Request。
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 MIT
 
-**官方网站：** [https://github.com/66julienmartin/MCP-server-Qwen_Max](https://github.com/66julienmartin/MCP-server-Qwen_Max)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/66julienmartin/MCP-server-Qwen_Max](https://github.com/66julienmartin/MCP-server-Qwen_Max)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/Qwen_Max/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/Qwen_Max/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/66julienmartin-qwen-max.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/66julienmartin-qwen-max.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

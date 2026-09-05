@@ -1,71 +1,70 @@
 ---
-title: "埃文IP定位MCP"
-description: "埃文科技IP定位MCP，提供高精度的IP定位服务，快速查询IP地址相关信息和确定用户位置"
+title: "aiwen-mcp-server-geoip"
+description: "Aiwen Mcp Server Geoip , quickly query IP and determine user location"
 ---
 
-# 埃文IP定位MCP
+# aiwen-mcp-server-geoip
 
-埃文科技IP定位MCP，提供高精度的IP定位服务，快速查询IP地址相关信息和确定用户位置
+Aiwen Mcp Server Geoip , quickly query IP and determine user location
 
-# 埃文IP定位 MCP Server
+# Aiwen IP Location MCP Server
 
-## 介绍
-[埃文科技](https://www.ipplus360.com/) 是全球IP地址高精准实时定位技术领航者 全球网络空间地图大数据服务提供商
+## Introduction
+[Aiwen Technology](https://www.ipplus360.com/) is a global leader in high-precision real-time IP address location technology and a provider of big data services for the global cyberspace map.
 
-埃文科技IP定位API已全面兼容MCP协议
+Aiwen's IP location API is now fully compatible with the MCP protocol.
 
 MCP Server for the Aiwen IP Location API
 
-## 工具介绍
+## Tool Introduction
 
-1. IP定位 `aiwen_ip_location`
-- 描述：根据请求的IP地址，返回该IP地址的详细信息，包括国家、省份、城市、运营商、使用者、经纬度等。
-- 参数：
-  - `ip`：IP地址，必填IPv4
+1. IP Location `aiwen_ip_location`
+- Description: Returns detailed information about the requested IP address, including country, province, city, operator, user, latitude and longitude, etc.
+- Parameters:
+  - `ip`: IP address, required (IPv4)
 
-- 输出示例
+- Example Output
 
-```json
+json
 {
   "code": "Success",
   "data": {
-    "continent": "亚洲",
-    "country": "中国",
-    "owner": "中国电信",
-    "isp": "中国电信",
+    "continent": "Asia",
+    "country": "China",
+    "owner": "China Telecom",
+    "isp": "China Telecom",
     "zipcode": "510000",
     "timezone": "UTC+8",
-    "accuracy": "城市",
-    "source": "数据挖掘",
+    "accuracy": "City",
+    "source": "Data Mining",
     "areacode": "CN",
     "adcode": "440100",
     "asnumber": "4134",
     "lat": "23.116548",
     "lng": "113.295827",
     "radius": "87.3469",
-    "prov": "广东省",
-    "city": "广州市"
+    "prov": "Guangdong Province",
+    "city": "Guangzhou"
   },
   "charge": true,
-  "msg": "查询成功",
+  "msg": "Query successful",
   "ip": "202.97.89.109",
   "coordsys": "WGS84"
 }
-```
 
-2. 获取当前网络IP地址 根据当前网络IP地址获取位置信息 `user_network_ip`
-- 描述：基于IP的位置检测 获取用户当前网络的IP地址及定位信息
-- 参数 无
-- 输出结果 同上
+2. Get Current Network IP Address and Location Information `user_network_ip`
+- Description: Based on IP location detection, retrieves the current network IP address and location information of the user.
+- Parameters: None
+- Output: Same as above
 
-## 快速使用
+## Quick Start
 
-### 获取API key
-通过aiwen官网 获取api key： https://mall.ipplus360.com/pros/IPVFourGeoAPI
+### Obtain API Key
+Get your API key from the Aiwen official website: https://mall.ipplus360.com/pros/IPVFourGeoAPI
 
-### MCP HOST中配置使用
+### Configuration in MCP HOST
 #### cursor
-```json
+json
 {
     "mcpServers": {
         "aiwen-iplocation": {
@@ -80,9 +79,9 @@ MCP Server for the Aiwen IP Location API
         }
     }
 }
-```
+
 #### vscode
-```json
+json
 {
     "mcpServers": {
         "aiwen-iplocation": {
@@ -97,24 +96,23 @@ MCP Server for the Aiwen IP Location API
         }
     }
 }
-```
 
-**官方网站：** [https://github.com/ipfred/aiwen-mcp-server-geoip](https://github.com/ipfred/aiwen-mcp-server-geoip)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ipfred/aiwen-mcp-server-geoip](https://github.com/ipfred/aiwen-mcp-server-geoip)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y aiwen-mcp-server-geoip`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y aiwen-mcp-server-geoip`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ipfred-aiwen-geoip.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ipfred-aiwen-geoip.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

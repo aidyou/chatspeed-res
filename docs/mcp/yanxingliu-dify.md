@@ -1,46 +1,46 @@
 ---
-title: "Dify MCP 服务器"
-description: "用于使用[Dify](https://github.com/langgenius/dify)的服务器。它通过调用MCP的工具来实现Dify工作流程的调用。"
+title: "dify-mcp-server"
+description: "Server for using Dify. It achieves the invocation of the Dify workflow by calling the tools of MCP."
 ---
 
-# Dify MCP 服务器
+# dify-mcp-server
 
-用于使用[Dify](https://github.com/langgenius/dify)的服务器。它通过调用MCP的工具来实现Dify工作流程的调用。
+Server for using Dify. It achieves the invocation of the Dify workflow by calling the tools of MCP.
 
 # Model Context Protocol (MCP) Server for dify workflows
-一个简单的MCP服务器实现，用于使用[dify](https://github.com/langgenius/dify)。通过调用MCP的工具来实现Dify工作流的调用。
-## 🔨安装
-可以通过[Smithery](https://smithery.ai/server/dify-mcp-server)或手动方式安装该服务器。两种方法都需要Config.yaml文件。因此，在安装之前我们需要准备好它。
+A simple implementation of an MCP server for using [dify](https://github.com/langgenius/dify). It achieves the invocation of the Dify workflow by calling the tools of MCP.
+## 🔨Installation
+The server can be installed via [Smithery](https://smithery.ai/server/dify-mcp-server) or manually. Config.yaml is required for both methods. Thus, we need to prepare it before installation.
 
-### 准备config.yaml
-在使用mcp服务器之前，您应该准备一个config.yaml文件来保存您的dify_base_url和dify_sks。示例配置如下：
+### Prepare config.yaml
+Before using the mcp server, you should prepare a config.yaml to save your dify_base_url and dify_sks. The example config like this:
 ```yaml
 dify_base_url: "https://cloud.dify.ai/v1"
 dify_app_sks:
   - "app-sk1"
   - "app-sk2"
 ```
-您可以在终端中运行以下命令快速创建一个配置文件：
+You can run the following command in your terminal to quickly create a configuration file:
 ```
 mkdir -p ~/tools && cat > ~/tools/config.yaml
 ```
 
-**官方网站：** [https://github.com/YanxingLiu/dify-mcp-server](https://github.com/YanxingLiu/dify-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/YanxingLiu/dify-mcp-server](https://github.com/YanxingLiu/dify-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory ${DIFY_MCP_SERVER_PATH} run dify_mcp_server`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory ${DIFY_MCP_SERVER_PATH} run dify_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yanxingliu-dify.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yanxingliu-dify.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

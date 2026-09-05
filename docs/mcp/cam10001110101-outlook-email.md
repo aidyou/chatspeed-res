@@ -1,61 +1,61 @@
 ---
-title: "MongoDB Outlook邮件处理工具"
-description: "处理来自Outlook的电子邮件时，使用日期过滤，将它们存储在SQLite数据库中，同时为MongoDB生成向量嵌入以实现语义搜索功能。"
+title: "mcp-server-outlook-email"
+description: "Processes emails from Outlook with date filtering, storing them in SQLite databases while generating vector embeddings for semantic search capabilities in MongoDB."
 ---
 
-# MongoDB Outlook邮件处理工具
+# mcp-server-outlook-email
 
-处理来自Outlook的电子邮件时，使用日期过滤，将它们存储在SQLite数据库中，同时为MongoDB生成向量嵌入以实现语义搜索功能。
+Processes emails from Outlook with date filtering, storing them in SQLite databases while generating vector embeddings for semantic search capabilities in MongoDB.
 
-# 电子邮件处理 MCP 服务器
+# Email Processing MCP Server
 
-此 MCP 服务器提供电子邮件处理功能，并集成了 MongoDB 用于语义搜索，以及 SQLite 用于高效存储和检索。
+This MCP server provides email processing capabilities with MongoDB integration for semantic search and SQLite for efficient storage and retrieval.
 
-## 功能
+## Features
 
-- 从 Outlook 处理具有日期范围过滤的电子邮件
-- 在 SQLite 数据库中存储电子邮件并进行适当的连接管理
-- 使用 Ollama 生成向量嵌入
-- 多邮箱支持
-- 支持收件箱、已发送邮件文件夹，可选地支持已删除邮件文件夹
+- Process emails from Outlook with date range filtering
+- Store emails in SQLite database with proper connection management
+- Generate vector embeddings using Ollama
+- Multi-mailbox support
+- Support for Inbox, Sent Items, and optionally Deleted Items folders
 
-## 即将推出的功能
+## Upcoming Features
 
-- 具备语义能力的电子邮件搜索
-- 使用 LLM 进行电子邮件摘要
-- 自动电子邮件分类
-- 可定制的电子邮件报告
-- 高级过滤选项
-- Outlook 草拟电子邮件回复
-- Outlook 规则建议
-- 扩展数据库选项，集成 Neo4j 和 ChromaDB
+- Email search with semantic capabilities
+- Email summarization using LLMs
+- Automatic email categorization
+- Customizable email reports
+- Advanced filtering options
+- Outlook drafting email responses
+- Outlook rule suggestions
+- Expanded database options with Neo4j and ChromaDB integration
 
-## 前提条件
+## Prerequisites
 
-- Python 3.10 或更高版本
-- 本地运行 Ollama（用于嵌入）
-- 安装 Microsoft Outlook
-- Windows 操作系统（用于 Outlook 集成）
-- MongoDB 服务器（用于存储嵌入）
+- Python 3.10 or higher
+- Ollama running locally (for embeddings)
+- Microsoft Outlook installed
+- Windows OS (for Outlook integration)
+- MongoDB server (for storing embeddings)
 
-## 安装
+## Installation
 
-1. 安装 uv（如果尚未安装）：
+1. Install uv (if not already installed):
 ```bash
   pip install uv
 ```
 
-2. 创建虚拟环境：
+2. Create a virtual environment:
 ```bash
   uv venv .venv
 ```
 
-3. 激活虚拟环境：  
+3. Activate the virtual environment:  
    
    Windows: 
 
 ```
-    .venv\Scripts\activate
+    .venvScriptsactivate
 ```
 
    
@@ -65,26 +65,26 @@ description: "处理来自Outlook的电子邮件时，使用日期过滤，将�
     source .venv/bin/activate
 ```
 
-4. 安装依赖项：
+4. Install dependencies:
 ```bash
 uv pip install -e .
 ```
 
-5. 安装 fastmcp 包：
+5. Install the fastmcp package:
 ```bash
 uv pip install fastmcp
 ```
 
-6. 确保 Ollama 本地运行且带有必需的模型：
+6. Make sure Ollama is running locally with required models:
 ```bash
 ollama pull nomic-embed-text
 ```
 
-## 配置
+## Configuration
 
-将服务器添加到您的 Claude for Desktop 配置文件中：
+Add the server to your Claude for Desktop configuration file:
 
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+- Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
@@ -97,7 +97,7 @@ ollama pull nomic-embed-text
       ],
       "env": {
         "MONGODB_URI": "mongodb://localhost:27017/MCP?authSource=admin",
-        "SQLITE_DB_PATH": "C:\\Users\\username\\path\\to\\mcp-server-outlook-email\\data\\emails.db",
+        "SQLITE_DB_PATH": "C:\Users\username\path\to\mcp-server-outlook-email\data\emails.db",
         "EMBEDDING_BASE_URL": "http://localhost:11434",
         "EMBEDDING_MODEL": "nomic-embed-text",
         "COLLECTION_NAME": "outlook-emails",
@@ -108,33 +108,33 @@ ollama pull nomic-embed-text
 }
 ```
 
-### 跟踪与监控
+### Tracing and Monitoring
 
-该服务器设计支持外部跟踪和监控解决方案。MCP 日志实现已被有意移除，以支持一个更强大的独立实施的跟踪方法。
+The server has been designed to support external tracing and monitoring solutions. The MCP logging implementation has been intentionally removed in favor of a more robust tracing approach that will be implemented separately.
 
-注意：不要尝试重新实现之前的日志系统。未来将提供一个新的跟踪解决方案。
+Note: Do not attempt to re-implement the previous logging system. A new tracing solution will be provided in the future.
 
-配置字段说明：
-- `command`: 您虚拟环境中 Python 可执行文件的完整路径
-- `args`: 包含 MCP 服务器脚本完整路径的数组
-- `env`: 用于配置的环境变量
-  - `MONGODB_URI`: MongoDB 连接字符串
-  - `SQLITE_DB_PATH`: SQLite 数据库文件的绝对路径
-  - `EMBEDDING_BASE_URL`: Ollama 服务器 URL
-  - `EMBEDDING_MODEL`: 用于嵌入的模型
-  - `LLM_MODEL`: 用于 LLM 操作的模型
-  - `COLLECTION_NAME`: 要使用的 MongoDB 集合名称（必需）
-  - `PROCESS_DELETED_ITEMS`: 是否处理来自已删除邮件文件夹的邮件（可选，默认为 "false"）
-- `disabled`: 服务器是否被禁用（应设置为 false）
-- `alwaysAllow`: 不需要用户确认的工具数组
-- `autoApprove`: 可自动批准的工具数组
+Configuration fields explained:
+- `command`: Full path to the Python executable in your virtual environment
+- `args`: Array containing the full path to the MCP server script
+- `env`: Environment variables for configuration
+  - `MONGODB_URI`: MongoDB connection string
+  - `SQLITE_DB_PATH`: Absolute path to SQLite database file
+  - `EMBEDDING_BASE_URL`: Ollama server URL
+  - `EMBEDDING_MODEL`: Model to use for embeddings
+  - `LLM_MODEL`: Model to use for LLM operations
+  - `COLLECTION_NAME`: Name of the MongoDB collection to use (required)
+  - `PROCESS_DELETED_ITEMS`: Whether to process emails from the Deleted Items folder (optional, default: "false")
+- `disabled`: Whether the server is disabled (should be false)
+- `alwaysAllow`: Array of tools that Do not require user confirmation
+- `autoApprove`: Array of tools that can be auto-approved
 
-将路径替换为您系统中的实际路径。请注意，`env` 部分中的 Windows 路径应使用双反斜杠。
+Replace the paths with the actual paths on your system. Note that Windows paths in the `env` section should use double backslashes.
 
-## 可用工具
+## Available Tools
 
 ### 1. process_emails
-处理指定日期范围内的电子邮件：
+Process emails from a specified date range:
 ```python
 {
   "start_date": "2024-01-01",    # ISO format date (YYYY-MM-DD)
@@ -143,88 +143,88 @@ ollama pull nomic-embed-text
 }
 ```
 
-该工具将执行以下操作：
-1. 连接到指定的 Outlook 邮箱
-2. 从收件箱和已发送项目文件夹（如果启用，则还包括已删除项目）中检索电子邮件
-3. 将电子邮件存储在 SQLite 数据库中
-4. 使用 Ollama 生成嵌入
-5. 将嵌入存储在 MongoDB 中以进行语义搜索
+The tool will:
+1. Connect to specified Outlook mailboxes
+2. Retrieve emails from Inbox and Sent Items folders (and Deleted Items if enabled)
+3. Store emails in SQLite database
+4. Generate embeddings using Ollama
+5. Store embeddings in MongoDB for semantic search
 
-## Claude 中的示例用法
+## Example Usage in Claude
 
 ```
 "Process emails from February 1st to February 17th from all mailboxes"
 ```
 
-## 架构
+## Architecture
 
-服务器使用混合搜索方法：
-1. SQLite 数据库用于：
-   - 主要电子邮件存储
-   - 全文搜索功能
-   - 处理状态跟踪
-   - 高效过滤
-   - 如果目录不存在则自动创建
-   - 正确关闭连接以防止数据库锁定
+The server uses a hybrid search approach:
+1. SQLite database for:
+   - Primary email storage
+   - Full-text search capabilities
+   - Processing status tracking
+   - Efficient filtering
+   - Directory is created automatically if it does not exist
+   - Connections are properly closed to prevent database locking
 
-2. MongoDB 用于：
-   - 向量嵌入存储
-   - 语义相似性搜索
-   - 元数据过滤
-   - 高效检索
-   - 使用后正确关闭连接
+2. MongoDB for:
+   - Vector embeddings storage
+   - Semantic similarity search
+   - Metadata filtering
+   - Efficient retrieval
+   - Connections are properly closed after use
 
-## 错误处理
+## Error Handling
 
-服务器为常见问题提供了详细的错误消息：
-- 无效的日期格式
-- 与 Outlook 的连接问题
-- MongoDB 错误
-- 带有重试逻辑的嵌入生成失败
-- SQLite 存储错误
-- 自动重试的 Ollama 服务器连接问题
+The server provides detailed error messages for common issues:
+- Invalid date formats
+- Connection issues with Outlook
+- MongoDB errors
+- Embedding generation failures with retry logic
+- SQLite storage errors
+- Ollama server connection issues with automatic retries
 
-## 资源管理
+## Resource Management
 
-服务器实施了适当的资源管理以防止问题：
-- 在服务器运行期间保持数据库连接（SQLite 和 MongoDB）打开，以防止“无法对已关闭的数据库进行操作”错误
-- 仅在服务器关闭时通过 atexit 处理程序关闭连接
-- 使用析构函数和上下文管理器作为后备，确保对象被垃圾回收时关闭连接
-- 连接管理旨在平衡资源使用与操作可靠性
-- 对外部服务（如 Ollama）的强大重试逻辑以处理临时连接问题
+The server implements proper resource management to prevent issues:
+- Database connections (SQLite and MongoDB) are kept open during the server's lifetime to prevent "Cannot operate on a closed database" errors
+- Connections are only closed when the server shuts down, using an atexit handler
+- Destructors and context managers are used as a fallback to ensure connections are closed when objects are garbage collected
+- Connection management is designed to balance resource usage with operational reliability
+- Robust retry logic for external services like Ollama to handle temporary connection issues
 
-## 安全注意事项
+## Security Notes
 
-- 服务器仅处理指定邮箱中的电子邮件
-- 所有数据都存储在本地（SQLite）和 MongoDB 中
-- 除了调用本地 Ollama 服务器外，没有其他外部 API 调用
-- 需要用户明确批准才能处理电子邮件
-- 通过 MCP 接口不暴露敏感电子邮件数据
+- The server only processes emails from specified mailboxes
+- All data is stored locally (SQLite) and in MongoDB
+- No external API calls except to local Ollama server
+- Requires explicit user approval for email processing
+- No sensitive email data is exposed through the MCP interface
 
-## 调试
+## Debugging
 
-如果您遇到问题：
-1. 验证电子邮件是否成功处理（检查 process_emails 响应）
-2. 确保 Ollama 服务器正在运行以生成嵌入
-3. 检查 SQLite 数据库是否可访问
-4. 确认 MongoDB 连接正常工作
+If you encounter issues:
+1. Verify emails were successfully processed (check process_emails response)
+2. Ensure Ollama server is running for embedding generation
+3. Check that the SQLite database is accessible
+4. Verify MongoDB connection is working properly
 
-**官方网站：** [https://github.com/Cam10001110101/mcp-server-outlook-email](https://github.com/Cam10001110101/mcp-server-outlook-email)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Cam10001110101/mcp-server-outlook-email](https://github.com/Cam10001110101/mcp-server-outlook-email)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`databases`, `communication`, `knowledge and memory`, `chinese`
+- Categories: `communication`
+- Tags: `databases`, `communication`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`C:/Users/username/path/to/mcp-server-outlook-email/.venv/Scripts/python`
-- 参数：`C:/Users/username/path/to/mcp-server-outlook-email/src/mcp_server.py`
+- Transport: `stdio`
+- Command: `C:/Users/username/path/to/mcp-server-outlook-email/.venv/Scripts/python`
+- Args: `C:/Users/username/path/to/mcp-server-outlook-email/src/mcp_server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cam10001110101-outlook-email.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cam10001110101-outlook-email.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

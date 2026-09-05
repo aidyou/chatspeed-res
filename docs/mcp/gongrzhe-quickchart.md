@@ -1,60 +1,60 @@
 ---
-title: "QuickChart MCP 服务器"
-description: "一个用于生成可自定义数据可视化的MCP服务器，使用QuickChart.io，支持多种图表类型和Chart.js配置。"
+title: "Quickchart-MCP-Server"
+description: "An MCP server for generating customizable data visualizations using QuickChart.io, supporting multiple chart types and Chart.js configuration."
 ---
 
-# QuickChart MCP 服务器
+# Quickchart-MCP-Server
 
-一个用于生成可自定义数据可视化的MCP服务器，使用QuickChart.io，支持多种图表类型和Chart.js配置。
+An MCP server for generating customizable data visualizations using QuickChart.io, supporting multiple chart types and Chart.js configuration.
 
-# quickchart-server MCP 服务器
+# quickchart-server MCP Server
 
 ![image](/mcp-assets/a495ea4a6dfe48b593c9635600caa82a.png)
 
   
 
 >
- ![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP 服务器')
+ ![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP Server')
 
-这是一个使用 QuickChart.io 生成图表的 Model Context Protocol 服务器。
+A Model Context Protocol server for generating charts using QuickChart.io
 
-这是一个基于 TypeScript 的 MCP 服务器，提供了图表生成功能。它允许您通过 MCP 工具创建各种类型的图表。
+This is a TypeScript-based MCP server that provides chart generation capabilities. It allows you to create various types of charts through MCP tools.
 
-## 概述
+## Overview
 
-该服务器集成了 QuickChart.io 基于 URL 的图表生成功能，使用 Chart.js 配置来创建图表图像。用户可以通过提供数据和样式参数来生成各种类型的图表，服务器会将这些参数转换为图表 URL 或可下载的图像。
+This server integrates with QuickChart.io's URL-based chart generation service to create chart images using Chart.js configurations. Users can generate various types of charts by providing data and styling parameters, which the server converts into chart URLs or downloadable images.
 
-## 功能
+## Features
 
-### 工具
-- `generate_chart` - 使用 QuickChart.io 生成图表 URL
-  - 支持多种图表类型：条形图、折线图、饼图、环形图、雷达图、极区图、散点图、气泡图、径向仪表盘、速度计
-  - 可自定义标签、数据集、颜色和其他选项
-  - 返回生成的图表 URL
+### Tools
+- `generate_chart` - Generate a chart URL using QuickChart.io
+  - Supports multiple chart types: bar, line, pie, doughnut, radar, polarArea, scatter, bubble, radialGauge, speedometer
+  - Customizable with labels, datasets, colors, and additional options
+  - Returns a URL to the generated chart
 
-- `download_chart` - 将图表图像下载到本地文件
-  - 参数包括图表配置和输出路径
-  - 将图表图像保存到指定位置
+- `download_chart` - Download a chart image to a local file
+  - Takes chart configuration and output path as parameters
+  - Saves the chart image to the specified location
 ![image](/mcp-assets/86b981a650a9c915c04fdfa0a91bd674.png)
 
 ![image](/mcp-assets/8dc7ec4ba11f643eaffb375b92838cc1.png)
 
-## 支持的图表类型
-- 条形图：用于比较不同类别的值
-- 折线图：用于显示随时间变化的趋势
-- 饼图：用于显示比例数据
-- 环形图：类似于饼图，但中心为空
-- 雷达图：用于显示多变量数据
-- 极区图：用于显示具有固定角度段的比例数据
-- 散点图：用于显示数据点分布
-- 气泡图：用于三维数据可视化
-- 径向仪表盘：用于显示范围内的单个值
-- 速度计：用于速度计样式的值显示
+## Supported Chart Types
+- Bar charts: For comparing values across categories
+- Line charts: For showing trends over time
+- Pie charts: For displaying proportional data
+- Doughnut charts: Similar to pie charts with a hollow center
+- Radar charts: For showing multivariate data
+- Polar Area charts: For displaying proportional data with fixed-angle segments
+- Scatter plots: For showing data point distributions
+- Bubble charts: For three-dimensional data visualization
+- Radial Gauge: For displaying single values within a range
+- Speedometer: For speedometer-style value display
 
-## 使用方法
+## Usage
 
-### 图表配置
-服务器使用 Chart.js 配置格式。以下是一个基本示例：
+### Chart Configuration
+The server uses Chart.js configuration format. Here's a basic example:
 
 ```javascript
 {
@@ -76,44 +76,44 @@ description: "一个用于生成可自定义数据可视化的MCP服务器，使
 }
 ```
 
-### URL 生成
-服务器将您的配置转换为 QuickChart URL：
+### URL Generation
+The server converts your configuration into a QuickChart URL:
 ```
 https://quickchart.io/chart?c={...encoded configuration...}
 ```
 
-## 开发
+## Development
 
-安装依赖项：
+Install dependencies:
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 ```bash
 npm run build
 ```
 
-## 安装
+## Installation
 
-### 安装
+### Installing
 
 ```bash
  npm install @gongrzhe/quickchart-mcp-server
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
  
- 通过 [Smithery](https://smithery.ai/server/@GongRzhe/Quickchart-MCP-Server) 自动安装适用于 Claude Desktop 的 QuickChart 服务器：
+ To install QuickChart Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@GongRzhe/Quickchart-MCP-Server):
  
 ```bash
  npx -y @smithery/cli install @gongrzhe/quickchart-mcp-server --client claude
 ```
 
-要与 Claude Desktop 一起使用，请添加服务器配置：
+To use with Claude Desktop, add the server config:
 
-在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -126,7 +126,7 @@ npm run build
 }
 ```
 
-或
+or
 
 ```json
 {
@@ -142,30 +142,30 @@ npm run build
 }
 ```
 
-## 文档参考
-- [QuickChart 文档](https://quickchart.io/documentation/)
-- [图表类型参考](https://quickchart.io/documentation/chart-types/)
+## Documentation References
+- [QuickChart Documentation](https://quickchart.io/documentation/)
+- [Chart Types Reference](https://quickchart.io/documentation/chart-types/)
 
-## 📜 许可证
+## 📜 License
 
-本项目采用 MIT 许可证。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/GongRzhe/Quickchart-MCP-Server](https://github.com/GongRzhe/Quickchart-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/GongRzhe/Quickchart-MCP-Server](https://github.com/GongRzhe/Quickchart-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @gongrzhe/quickchart-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @gongrzhe/quickchart-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gongrzhe-quickchart.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gongrzhe-quickchart.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

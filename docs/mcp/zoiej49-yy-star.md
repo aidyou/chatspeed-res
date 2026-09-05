@@ -1,54 +1,53 @@
 ---
-title: "星座mcp"
-description: "星座 MCP 服务 (Star MCP) 一个功能完整的星座 MCP (Model Context Protocol) 服务，提供星座信息查询、运势分析、配对测试等功能。 功能特性 🌟 核心功能 - 星座信息查询: 获取12星座的详细信息，包括性格特征、守护星、元素等 - 今日运势: 提供爱情、事业、健康、财运、综合运势查询 - 星座配对: 分析两个星座的配对指数和关系 - 生日星座: 根据出生日期自动确定星座 - 上升星座计算: 基于准确天文算法的上升星座计算，包含儒略日、恒星时等详细数据 - 上升星座信息: 获"
+title: "yy-star-mcp"
+description: "Star MCP Service (Star MCP) A fully-featured constellation MCP (Model Context Protocol) service, providing functionalities such as constellation information queries, fortune analysis, compatibility te…"
 ---
 
-# 星座mcp
+# yy-star-mcp
 
-星座 MCP 服务 (Star MCP) 一个功能完整的星座 MCP (Model Context Protocol) 服务，提供星座信息查询、运势分析、配对测试等功能。 功能特性 🌟 核心功能 - 星座信息查询: 获取12星座的详细信息，包括性格特征、守护星、元素等 - 今日运势: 提供爱情、事业、健康、财运、综合运势查询 - 星座配对: 分析两个星座的配对指数和关系 - 生日星座: 根据出生日期自动确定星座 - 上升星座计算: 基于准确天文算法的上升星座计算，包含儒略日、恒星时等详细数据 - 上升星座信息: 获
+Star MCP Service (Star MCP) A fully-featured constellation MCP (Model Context Protocol) service, providing functionalities such as constellation information queries, fortune analysis, compatibility te…
 
-# 星座 MCP 服务 (Star MCP)
+# Star MCP Service (Star MCP)
 
-一个功能完整的星座 MCP (Model Context Protocol) 服务，提供星座信息查询、运势分析、配对测试等功能。
+A fully-featured constellation MCP (Model Context Protocol) service, providing functionalities such as constellation information queries, fortune analysis, compatibility tests, and more.
 
-## 功能特性
+## Features
 
-### 🌟 核心功能
-- **星座信息查询**: 获取12星座的详细信息，包括性格特征、守护星、元素等
-- **今日运势**: 提供爱情、事业、健康、财运、综合运势查询
-- **星座配对**: 分析两个星座的配对指数和关系
-- **生日星座**: 根据出生日期自动确定星座
-- **上升星座计算**: 基于准确天文算法的上升星座计算，包含儒略日、恒星时等详细数据
-- **上升星座信息**: 获取上升星座的详细特征分析，包括外貌特征和性格特点
-- **星座列表**: 获取所有星座的基本信息
+### 🌟 Core Features
+- **Constellation Information Query**: Obtain detailed information about the 12 constellations, including personality traits, ruling planets, elements, etc.
+- **Today's Fortune**: Provide inquiries on love, career, health, wealth, and overall fortune
+- **Constellation Compatibility**: Analyze the compatibility index and relationship between two constellations
+- **Birthday Constellation**: Automatically determine the constellation based on the birth date
+- **Rising Sign Calculation**: Calculate the rising sign based on accurate astronomical algorithms, including Julian Day, Sidereal Time, etc.
+- **Rising Sign Information**: Get a detailed characteristic analysis of the rising sign, including physical features and personality traits
+- **Constellation List**: Retrieve basic information about all constellations
 
-### 🎯 支持的星座
-- ♈ 白羊座 (Aries)
-- ♉ 金牛座 (Taurus)
-- ♊ 双子座 (Gemini)
-- ♋ 巨蟹座 (Cancer)
-- ♌ 狮子座 (Leo)
-- ♍ 处女座 (Virgo)
-- ♎ 天秤座 (Libra)
-- ♏ 天蝎座 (Scorpio)
-- ♐ 射手座 (Sagittarius)
-- ♑ 摩羯座 (Capricorn)
-- ♒ 水瓶座 (Aquarius)
-- ♓ 双鱼座 (Pisces)
+### 🎯 Supported Constellations
+- ♈ Aries (白羊座)
+- ♉ Taurus (金牛座)
+- ♊ Gemini (双子座)
+- ♋ Cancer (巨蟹座)
+- ♌ Leo (狮子座)
+- ♍ Virgo (处女座)
+- ♎ Libra (天秤座)
+- ♏ Scorpio (天蝎座)
+- ♐ Sagittarius (射手座)
+- ♑ Capricorn (摩羯座)
+- ♒ Aquarius (水瓶座)
+- ♓ Pisces (双鱼座)
 
-## 安装和运行
+## Installation and Running
 
-### 前置要求
+### Prerequisites
 - Node.js 18+ 
-- npm 或 pnpm
+- npm or pnpm
 
-### 安装依赖
+### Install Dependencies
 ```bash
 cd star
 npm install
 ```
-
-### 运行服务
+### Run the Service
 ```bash
 # 开发模式（自动重启）
 npm run dev
@@ -56,10 +55,9 @@ npm run dev
 # 生产模式
 npm start
 ```
+## API Endpoints
 
-## API 接口
-
-### 1. 获取星座信息
+### 1. Get Constellation Information
 ```javascript
 {
   name: 'get_zodiac_info',
@@ -68,8 +66,7 @@ npm start
   }
 }
 ```
-
-### 2. 获取今日运势
+### 2. Get Today's Fortune
 ```javascript
 {
   name: 'get_daily_horoscope',
@@ -79,8 +76,7 @@ npm start
   }
 }
 ```
-
-### 3. 星座配对分析
+### 3. Constellation Compatibility Analysis
 ```javascript
 {
   name: 'get_compatibility',
@@ -90,8 +86,7 @@ npm start
   }
 }
 ```
-
-### 4. 根据生日查询星座
+### 4. Query Constellation by Birthday
 ```javascript
 {
   name: 'get_zodiac_by_date',
@@ -101,16 +96,14 @@ npm start
   }
 }
 ```
-
-### 5. 获取所有星座列表
+### 5. Get All Constellation List
 ```javascript
 {
   name: 'get_all_zodiacs',
   arguments: {}
 }
 ```
-
-### 6. 计算上升星座
+### 6. Calculate Rising Sign
 ```javascript
 {
   name: 'get_rising_sign',
@@ -125,18 +118,17 @@ npm start
   }
 }
 ```
+**Algorithm Explanation:**
+The calculation of the rising sign is based on precise astronomical algorithms, including:
+- Julian Day Calculation
+- Greenwich Sidereal Time Calculation
+- Local Sidereal Time Calculation
+- Ascendant Longitude Calculation
+- Determination of Constellation Boundaries
 
-**计算算法说明:**
-上升星座计算基于准确的天文算法，包括：
-- 儒略日计算 (Julian Day)
-- 格林威治恒星时计算 (Greenwich Sidereal Time)
-- 地方恒星时计算 (Local Sidereal Time)
-- 上升点黄经计算 (Ascendant)
-- 星座边界确定
+The returned result includes detailed astronomical calculation data to ensure accuracy.
 
-返回结果包含详细的天文计算数据，确保计算准确性。
-
-### 7. 获取上升星座信息
+### 7. Get Rising Sign Information
 ```javascript
 {
   name: 'get_rising_sign_info',
@@ -145,15 +137,14 @@ npm start
   }
 }
 ```
+## Deployment Instructions
 
-## 部署说明
+### Local Deployment
+1. Clone the project to your local machine
+2. Install dependencies: `npm install`
+3. Start the service: `npm start`
 
-### 本地部署
-1. 克隆项目到本地
-2. 安装依赖: `npm install`
-3. 启动服务: `npm start`
-
-### Docker 部署
+### Docker Deployment
 ```dockerfile
 FROM node:18-alpine
 WORKDIR /app
@@ -163,88 +154,96 @@ COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
 ```
+### Publishing to MCP Marketplace
+1. Ensure the code complies with MCP specifications
+2. Add appropriate error handling and logging
+3. Write comprehensive documentation
+4. Submit to the MCP registry
 
-### 发布到 MCP 市场
-1. 确保代码符合 MCP 规范
-2. 添加适当的错误处理和日志
-3. 编写完整的文档
-4. 提交到 MCP 注册表
+## Tech Stack
 
-## 技术栈
+- **Node.js**: Runtime environment
+- **MCP SDK**: Official Model Context Protocol SDK
+- **ES Modules**: Using modern JavaScript module system
 
-- **Node.js**: 运行时环境
-- **MCP SDK**: Model Context Protocol 官方 SDK
-- **ES Modules**: 使用现代 JavaScript 模块系统
-
-## 项目结构
+## Project Structure
 
 ```
+
 star/
+
 ├── index.js                    # 主服务文件
+
 ├── package.json                # 项目配置
+
 ├── README.md                   # 项目文档
+
 ├── RISING_SIGN_GUIDE.md        # 上升星座计算使用指南
+
 ├── test.js                     # 测试文件
+
 ├── demo.js                     # 演示文件
+
 ├── simple_test.js              # 简单测试文件
+
 └── rising_sign_test.js         # 上升星座准确性测试
+
 ```
+## Development Guide
 
-## 开发指南
+### Adding New Features
+1. Define new tools in the `tools` array
+2. Add processing logic in the `switch` statement
+3. Update documentation and tests
 
-### 添加新功能
-1. 在 `tools` 数组中定义新工具
-2. 在 `switch` 语句中添加处理逻辑
-3. 更新文档和测试
+### Customizing Data
+- Modify the `zodiacData` object to add constellation information
+- Update the `horoscopeData` to add fortune content
+- Adjust the `compatibilityData` to modify compatibility rules
+- Modify the `risingSignData` to adjust rising sign characteristics
 
-### 自定义数据
-- 修改 `zodiacData` 对象添加星座信息
-- 更新 `horoscopeData` 添加运势内容
-- 调整 `compatibilityData` 修改配对规则
-- 修改 `risingSignData` 调整上升星座特征
+### Rising Sign Calculation
+- The algorithm is based on standard astronomical calculations
+- Supports dates between 1900-2100
+- Includes detailed astronomical data output
+- Provides error handling and fallback algorithms
 
-### 上升星座计算
-- 算法基于标准天文计算
-- 支持1900-2100年间的日期
-- 包含详细的天文数据输出
-- 提供错误处理和备用算法
+For detailed usage instructions, please refer to [RISING_SIGN_GUIDE.md](https://github.com/jlankellii/star-mcp/blob/HEAD/RISING_SIGN_GUIDE.md)
 
-详细使用说明请参考 [RISING_SIGN_GUIDE.md](https://github.com/jlankellii/star-mcp/blob/HEAD/RISING_SIGN_GUIDE.md)
-
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributions
 
-欢迎提交 Issue 和 Pull Request！
+Feel free to submit Issues and Pull Requests!
 
-## 联系方式
+## Contact
 
-如有问题或建议，请通过以下方式联系：
-- 提交 GitHub Issue
-- 发送邮件至项目维护者
+If you have any questions or suggestions, please contact us through the following methods:
+- Submit a GitHub Issue
+- Send an email to the project maintainers
 
 ---
 
-**注意**: 本服务仅供娱乐参考，星座运势等内容不具有科学依据。
+**Note**: This service is for entertainment purposes only. The contents related to zodiac fortunes do not have scientific basis.
 
-**官方网站：** [https://github.com/jlankellii/star-mcp](https://github.com/jlankellii/star-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jlankellii/star-mcp](https://github.com/jlankellii/star-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`star-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `star-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zoiej49-yy-star.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zoiej49-yy-star.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,71 +1,66 @@
 ---
-title: "图片视频生成MCP(即梦AI)"
-description: "即梦AI全能力生成MCP服务 即梦AI全能力生成MCP服务是一个基于Model Context Protocol (MCP)的AI图像和视频生成工具，集成了火山引擎即梦AI的强大生成能力。 github:https://github.com/ARSENE2630/jimenggen-mcp ✨ 核心功能 🎨 图像生成 - 文生图3.1: 基于文本描述生成高质量图像 - 图生图3.0: 基于参考图片生成新图像 - 图片生成4.0: 最新版本的图像生成模型(计划中) 🎬 视频生成 - 视频生成3.0 Pro: 基于文本"
+title: "jimenggen-mcp"
+description: "Jimeng AI Full Capability Generation MCP Service Jimeng AI Full Capability Generation MCP Service is an AI image and video generation tool based on the Model Context Protocol (MCP), integrating the po…"
 ---
 
-# 图片视频生成MCP(即梦AI)
+# jimenggen-mcp
 
-即梦AI全能力生成MCP服务 即梦AI全能力生成MCP服务是一个基于Model Context Protocol (MCP)的AI图像和视频生成工具，集成了火山引擎即梦AI的强大生成能力。 github:https://github.com/ARSENE2630/jimenggen-mcp ✨ 核心功能 🎨 图像生成 - 文生图3.1: 基于文本描述生成高质量图像 - 图生图3.0: 基于参考图片生成新图像 - 图片生成4.0: 最新版本的图像生成模型(计划中) 🎬 视频生成 - 视频生成3.0 Pro: 基于文本
+Jimeng AI Full Capability Generation MCP Service Jimeng AI Full Capability Generation MCP Service is an AI image and video generation tool based on the Model Context Protocol (MCP), integrating the po…
 
-# 即梦AI全能力生成MCP服务
+# Jimeng AI Full Capability Generation MCP Service
 
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](/mcp-assets/6c2f12dd7529236aa9edfab30fbcfcd9.svg)](https://www.typescriptlang.org/)
 [![MCP](/mcp-assets/87f72c275fb39706595cd53d5a0896ca.svg)](https://modelcontextprotocol.io/)
 
+Jimeng AI Full Capability Generation MCP Service is an AI image and video generation tool based on the Model Context Protocol (MCP), integrating the powerful generation capabilities of ByteDance's Jimeng AI.
 
-即梦AI全能力生成MCP服务是一个基于Model Context Protocol (MCP)的AI图像和视频生成工具，集成了火山引擎即梦AI的强大生成能力。
+github: https://github.com/ARSENE2630/jimenggen-mcp
 
-github:https://github.com/ARSENE2630/jimenggen-mcp
+## ✨ Core Features
 
-## ✨ 核心功能
+### 🎨 Image Generation
+- **Text-to-Image 3.1**: Generate high-quality images based on text descriptions.
+- **Image-to-Image 3.0**: Generate new images based on reference images.
+- **Image Generation 4.0**: The latest version of the image generation model (planned).
 
-### 🎨 图像生成
-- **文生图3.1**: 基于文本描述生成高质量图像
-- **图生图3.0**: 基于参考图片生成新图像
-- **图片生成4.0**: 最新版本的图像生成模型(计划中)
+### 🎬 Video Generation
+- **Video Generation 3.0 Pro**: Generate high-quality videos based on text descriptions.
 
-### 🎬 视频生成
-- **视频生成3.0 Pro**: 基于文本描述生成高质量视频
+### 👗 Image Dressing
+- **Image Dressing V2**: Intelligent clothing replacement function.
 
-### 👗 图片换装
-- **图片换装V2**: 智能服装更换功能
+## 🚀 Quick Start
 
-## 🚀 快速开始
-
-### 环境要求
-- Node.js 18+ 
+### Environment Requirements
+- Node.js 18+
 - TypeScript 5.7.2+
 
-### 安装依赖
-```bash
+### Install Dependencies
+bash
 npm install
-```
 
-### 配置环境变量
-创建 `.env` 文件并配置火山引擎API密钥：
-```env
+### Configure Environment Variables
+Create a `.env` file and configure the ByteDance API keys:
+env
 JIMENG_ACCESS_KEY=your_access_key_here
 JIMENG_SECRET_KEY=your_secret_key_here
-```
 
-### 构建项目
-```bash
+### Build the Project
+bash
 npm run build
-```
 
-### 运行测试
-```bash
+### Run Tests
+bash
 npm test
-```
 
-### 快速开始（quick start）
+### Quick Start (quick start)
 
-#### 客户端配置（IDE）
+#### Client Configuration (IDE)
 
-在Claude、Trae、cursor等MCP客户端的MCP配置文件中添加以下配置：
+Add the following configuration to the MCP configuration files in MCP clients such as Claude, Trae, and cursor:
 
-```json
+json
 {
   "mcpServers": {
     "jimenggen": {
@@ -80,11 +75,10 @@ npm test
     }
   }
 }
-```
 
-#### 本地运行配置
+#### Local Run Configuration
 
-```json
+json
 {
   "mcpServers": {
     "jimenggen": {
@@ -99,173 +93,166 @@ npm test
     }
   }
 }
-```
 
-## 📋 可用工具
+## 📋 Available Tools
 
-### 文生图 (text-to-image)
-基于文本提示词生成图像，支持自定义宽高比和多种艺术风格。
+### Text-to-Image
+Generate images based on text prompts, supporting custom aspect ratios and multiple artistic styles.
 
-**参数:**
-- `prompt`: 图片生成提示词
-- `ratio`: 图像宽高比，支持自定义
-- `style`: 图片风格（写实、国潮、赛博朋克等）
+**Parameters:**
+- `prompt`: Image generation prompt
+- `ratio`: Image aspect ratio, supports customization
+- `style`: Image style (realistic, guochao, cyberpunk, etc.)
 
-### 图生图 (image-to-image)
-基于参考图片生成新图像，支持风格迁移和内容编辑。
+### Image-to-Image
+Generate new images based on reference images, supporting style transfer and content editing.
 
-### 视频生成 (text-to-video)
-基于文本描述生成高质量视频内容。
+### Text-to-Video
+Generate high-quality video content based on text descriptions.
 
-### 图片换装 (image-dressing)
-智能服装更换功能，支持多种服装类型和保留选项。
+### Image Dressing
+Intelligent clothing replacement function, supporting multiple clothing types and retention options.
 
-## 🔧 技术架构
+## 🔧 Technical Architecture
 
-### 核心技术栈
+### Core Technology Stack
 - **Runtime**: Node.js + TypeScript
-- **协议**: Model Context Protocol (MCP)
-- **HTTP客户端**: node-fetch
-- **图像处理**: sharp
-- **数据验证**: zod
+- **Protocol**: Model Context Protocol (MCP)
+- **HTTP Client**: node-fetch
+- **Image Processing**: sharp
+- **Data Validation**: zod
 
-### 项目结构
-```
+### Project Structure
+plaintext
 jimenggen-mcp/
 ├── src/
-│   ├── index.ts          # 主入口文件
-│   └── test.ts           # 测试文件
-├── build/                # 编译输出目录
-├── package.json          # 项目配置
-├── tsconfig.json         # TypeScript配置
-└── README.md            # 项目文档
-```
+│   ├── index.ts          # Main entry file
+│   └── test.ts           # Test file
+├── build/                # Compilation output directory
+├── package.json          # Project configuration
+├── tsconfig.json         # TypeScript configuration
+└── README.md            # Project documentation
 
-## 🔑 API配置
+## 🔑 API Configuration
 
-### 火山引擎即梦AI
-本项目使用火山引擎即梦AI服务，需要配置以下参数：
+### ByteDance Jimeng AI
+This project uses the ByteDance Jimeng AI service, which requires the following parameters:
 - **Endpoint**: `https://visual.volcengineapi.com`
 - **Region**: `cn-north-1`
 - **Service**: `cv`
 
-### 支持的模型
-- `jimeng_t2i_v31` - 文生图3.1
-- `jimeng_i2i_v30` - 图生图3.0
-- `jimeng_ti2v_v30_pro` - 视频生成3.0 Pro
-- `dressing_diffusionV2` - 图片换装V2
-- `jimeng_t2i_v40` - 图片生成4.0
+### Supported Models
+- `jimeng_t2i_v31` - Text-to-Image 3.1
+- `jimeng_i2i_v30` - Image-to-Image 3.0
+- `jimeng_ti2v_v30_pro` - Video Generation 3.0 Pro
+- `dressing_diffusionV2` - Image Dressing V2
+- `jimeng_t2i_v40` - Image Generation 4.0
 
-## 🎯 使用示例
+## 🎯 Usage Examples
 
-### 文生图示例
-```javascript
-// 生成一张赛博朋克风格的未来城市图像
+### Text-to-Image Example
+javascript
+// Generate a cyberpunk-style future city image
 await textToImage({
-  prompt: "未来城市夜景，霓虹灯光，赛博朋克风格",
+  prompt: "Future city night scene, neon lights, cyberpunk style",
   ratio: { width: 1024, height: 768 },
-  style: "赛博朋克"
+  style: "cyberpunk"
 });
-```
 
-### 图生图示例
-```javascript
-// 基于现有图片生成新风格的图像
+### Image-to-Image Example
+javascript
+// Generate a new style image based on an existing image
 await imageToImage({
-  prompt: "将这张照片转换为油画风格",
+  prompt: "Convert this photo to oil painting style",
   imageUrl: "https://example.com/original.jpg",
-  style: "油画"
-});
-```
+  style: "oil painting"
+});## 🔍 Debugging Information
 
-## 🔍 调试信息
+When the service starts, it will display the results of the environment variable check:
+ 
+🔍 MCP Server Startup - Environment Variable Check:
+📋 Current Environment Variable Status:
+   JIMENG_ACCESS_KEY: ✅ Set (Length:20)
+   JIMENG_SECRET_KEY: ✅ Set (Length:40)
 
-服务启动时会显示环境变量检查结果：
-```
-🔍 MCP服务器启动 - 环境变量检查:
-📋 当前环境变量状态:
-   JIMENG_ACCESS_KEY: ✅ 已设置 (长度:20)
-   JIMENG_SECRET_KEY: ✅ 已设置 (长度:40)
-```
+## 📝 Development Guide
 
-## 📝 开发指南
+### Adding New Tools
+1. Register new MCP tools in `src/index.ts`
+2. Implement the corresponding API call functions
+3. Update type definitions and parameter validation
+4. Add test cases
 
-### 添加新工具
-1. 在 `src/index.ts` 中注册新的MCP工具
-2. 实现对应的API调用函数
-3. 更新类型定义和参数验证
-4. 添加测试用例
+### Extending Model Support
+1. Add new model mappings in `MODEL_MAPPING`
+2. Configure API parameters in `API_CONFIG_MAPPING`
+3. Implement the corresponding invocation logic
 
-### 扩展模型支持
-1. 在 `MODEL_MAPPING` 中添加新模型映射
-2. 在 `API_CONFIG_MAPPING` 中配置API参数
-3. 实现对应的调用逻辑
+## 🐛 Troubleshooting
 
-## 🐛 故障排除
+### Common Issues
+1. **API Call Failure**: Check if the environment variable configuration is correct
+2. **Image Generation Timeout**: Adjust the polling interval and maximum number of attempts
+3. **Insufficient Memory**: Optimize image processing logic, use streaming processing
 
-### 常见问题
-1. **API调用失败**: 检查环境变量配置是否正确
-2. **图片生成超时**: 调整轮询间隔和最大尝试次数
-3. **内存不足**: 优化图片处理逻辑，使用流式处理
+### Debug Mode
+Set the `DEBUG=true` environment variable to enable detailed log output.
 
-### 调试模式
-设置 `DEBUG=true` 环境变量启用详细日志输出。
+## 🤝 Contribution Guidelines
 
-## 🤝 贡献指南
+Feel free to submit Issues and Pull Requests to improve the project!
 
-欢迎提交Issue和Pull Request来改进项目！
+### Development Workflow
+1. Fork the project
+2. Create a feature branch
+3. Commit changes
+4. Push to the branch
+5. Create a Pull Request
 
-### 开发流程
-1. Fork 项目
-2. 创建功能分支
-3. 提交更改
-4. 推送到分支
-5. 创建Pull Request
+## 📄 License
 
-## 📄 许可证
+This project is open-sourced under the MIT License - see the [LICENSE](https://github.com/ARSENE2630/jimenggen-mcp/blob/HEAD/LICENSE) file for details.
 
-本项目基于 MIT 许可证开源 - 查看 [LICENSE](https://github.com/ARSENE2630/jimenggen-mcp/blob/HEAD/LICENSE) 文件了解详情。
+## 🙏 Acknowledgments
 
-## 🙏 致谢
+- Thanks to Volcano Engine for providing the powerful Jimeng AI service
+- Thanks to the Model Context Protocol community
+- Thanks to all contributors and users
 
-- 感谢火山引擎提供强大的即梦AI服务
-- 感谢Model Context Protocol社区
-- 感谢所有贡献者和用户
+## 📞 Contact
 
-## 📞 联系方式
+If you have any questions or suggestions, please contact us through the following methods:
+- Submit a GitHub Issue
+- Send an email to the project maintainers
 
-如有问题或建议，请通过以下方式联系：
-- 提交 GitHub Issue
-- 发送邮件至项目维护者
+## Version History
 
-## 版本历史
+- **v1.0.0**: Initial version, supporting basic text-to-image, image-to-image, video generation, and image transformation features
 
-- **v1.0.0**: 初始版本，支持基础的文生图、图生图、视频生成和图片换装功能
+## Appreciation
 
-## 赞赏
-
-如果本项目对您有帮助，欢迎赞赏支持！
+If this project has been helpful to you, feel free to show your support with a donation!
 
 ---
 
-**注意**: 使用本服务需要遵守火山引擎即梦AI的服务条款和使用规范。
+**Note**: Use of this service requires compliance with the terms of service and usage guidelines of Volcano Engine's Jimeng AI.
 
-**官方网站：** [https://github.com/ARSENE2630/jimenggen-mcp](https://github.com/ARSENE2630/jimenggen-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ARSENE2630/jimenggen-mcp](https://github.com/ARSENE2630/jimenggen-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `media`
-- 标签：`entertainment and media`, `art and culture`, `developer tools`, `文生图`, `图生图`, `视频生成`
+- Categories: `development`, `media`
+- Tags: `entertainment and media`, `art and culture`, `developer tools`, `文生图`, `图生图`, `视频生成`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`jimenggen-mcp@1.0.5`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `jimenggen-mcp@1.0.5`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/arsene-jimenggen.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/arsene-jimenggen.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

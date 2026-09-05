@@ -1,51 +1,51 @@
 ---
-title: "Fetch MCP 工具"
-description: "通过简单的API调用，提供获取和转换网络内容（HTML、JSON、纯文本和Markdown格式）的功能。"
+title: "fetch_mcp"
+description: "Provides functionality to fetch and transform web content in various formats (HTML, JSON, plain text, and Markdown) through simple API calls."
 ---
 
-# Fetch MCP 工具
+# fetch_mcp
 
-通过简单的API调用，提供获取和转换网络内容（HTML、JSON、纯文本和Markdown格式）的功能。
+Provides functionality to fetch and transform web content in various formats (HTML, JSON, plain text, and Markdown) through simple API calls.
 
-# 获取 MCP 服务器
+# Fetch MCP Server
 
 
-此 MCP 服务器提供以多种格式（包括 HTML、JSON、纯文本和 Markdown）获取网页内容的功能。
+This MCP server provides functionality to fetch web content in various formats, including HTML, JSON, plain text, and Markdown.
 
-### 工具
+### Tools
 
 - **fetch_html**
 
-  - 获取网站内容并以 HTML 格式返回
-  - 输入参数：
-    - `url` (字符串, 必填): 要获取的网站 URL
-    - `headers` (对象, 可选): 请求中包含的自定义头
-  - 返回网页的原始 HTML 内容
+  - Fetch website content and return as HTML
+  - Input parameters:
+    - `url` (string, required): URL of the website to fetch
+    - `headers` (object, optional): Custom headers to include in the request
+  - Returns the raw HTML content of the webpage
 
 - **fetch_json**
 
-  - 从 URL 获取 JSON 文件
-  - 输入参数：
-    - `url` (字符串, 必填): 要获取的 JSON 的 URL
-    - `headers` (对象, 可选): 请求中包含的自定义头
-  - 返回解析后的 JSON 内容
+  - Fetch JSON file from URL
+  - Input parameters:
+    - `url` (string, required): URL of the JSON to fetch
+    - `headers` (object, optional): Custom headers to include in the request
+  - Returns the parsed JSON content
 
 - **fetch_txt**
 
-  - 获取网站内容并以纯文本格式返回（无 HTML）
-  - 输入参数：
-    - `url` (字符串, 必填): 要获取的网站 URL
-    - `headers` (对象, 可选): 请求中包含的自定义头
-  - 返回移除 HTML 标签、脚本和样式的网页文本内容
+  - Fetch website content and return as plain text (no HTML)
+  - Input parameters:
+    - `url` (string, required): URL of the website to fetch
+    - `headers` (object, optional): Custom headers to include in the request
+  - Returns the text content of the webpage with HTML tags, scripts, and styles removed
 
 - **fetch_markdown**
-  - 获取网站内容并以 Markdown 格式返回
-  - 输入参数：
-    - `url` (字符串, 必填): 要获取的网站 URL
-    - `headers` (对象, 可选): 请求中包含的自定义头
-  - 返回转换为 Markdown 格式的网页内容
+  - Fetch website content and return as Markdown
+  - Input parameters:
+    - `url` (string, required): URL of the website to fetch
+    - `headers` (object, optional): Custom headers to include in the request
+  - Returns the webpage content converted to Markdown format
 
-### 启动方式
+### 2 Ways to Start
 
 1. bun
 
@@ -60,7 +60,7 @@ bun start
 docker compose up --build -d
 ```
 
-### 使用方法
+### Usage
 
 ```json
 {
@@ -78,30 +78,30 @@ docker compose up --build -d
 }
 ```
 
-### 资源
+### Resources
 
-此服务器不提供任何持久化资源。它被设计为按需获取和转换网页内容。
+This server does not provide any persistent resources. It is designed to fetch and transform web content on demand.
 
-### 参考资料
+### References
 
-- [原仓库 zcaceres/fetch-mcp](https://github.com/zcaceres/fetch-mcp)
+- [Original Repository zcaceres/fetch-mcp](https://github.com/zcaceres/fetch-mcp)
 
-**官方网站：** [https://github.com/phpmac/fetch_mcp](https://github.com/phpmac/fetch_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/phpmac/fetch_mcp](https://github.com/phpmac/fetch_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/phpmac-fetch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/phpmac-fetch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

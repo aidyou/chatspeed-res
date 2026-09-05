@@ -1,11 +1,11 @@
 ---
 title: "CrowdStrike Falcon MCP"
-description: "falcon-mcp falcon-mcp is a Model Context Protocol (MCP) server that connects AI agents with the CrowdStrike Falcon platform, powering intelligent security analysis in your agentic workflows. It delivers programmatic acce"
+description: "falcon-mcp falcon-mcp is a Model Context Protocol (MCP) server that connects AI agents with the CrowdStrike Falcon platform, powering intelligent security analysis in your agentic workflows. It delive…"
 ---
 
 # CrowdStrike Falcon MCP
 
-falcon-mcp falcon-mcp is a Model Context Protocol (MCP) server that connects AI agents with the CrowdStrike Falcon platform, powering intelligent security analysis in your agentic workflows. It delivers programmatic acce
+falcon-mcp falcon-mcp is a Model Context Protocol (MCP) server that connects AI agents with the CrowdStrike Falcon platform, powering intelligent security analysis in your agentic workflows. It delive…
 
 ![CrowdStrike Logo (Light)](https://raw.githubusercontent.com/CrowdStrike/.github/main/assets/cs-logo-light-mode.png#gh-light-mode-only)
 ![CrowdStrike Logo (Dark)](https://raw.githubusercontent.com/CrowdStrike/.github/main/assets/cs-logo-dark-mode.png#gh-dark-mode-only)
@@ -306,22 +306,22 @@ This is a community-driven, open source project. While it is not an official Cro
 
 For more information, please see our [SUPPORT](https://github.com/CrowdStrike/falcon-mcp/blob/HEAD/SUPPORT.md) file.
 
-**官方网站：** [https://github.com/CrowdStrike/falcon-mcp](https://github.com/CrowdStrike/falcon-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/CrowdStrike/falcon-mcp](https://github.com/CrowdStrike/falcon-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `security`, `crowdstrike`, `falcon`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `security`, `crowdstrike`, `falcon`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`falcon-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `falcon-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/crowdstrike-falcon.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/crowdstrike-falcon.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

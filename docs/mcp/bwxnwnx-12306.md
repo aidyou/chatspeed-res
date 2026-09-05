@@ -1,122 +1,141 @@
 ---
-title: "铁路票务信息查询系统"
-description: "可以从铁路12306转件中获取票务信息"
+title: "12306"
+description: "You can obtain ticket information from the Railway 12306 app."
 ---
 
-# 铁路票务信息查询系统
+# 12306
 
-可以从铁路12306转件中获取票务信息
+You can obtain ticket information from the Railway 12306 app.
 
-12306MCP - 中国铁路智能购票助手
+12306MCP - Intelligent Railway Ticket Booking Assistant for China
 
-🚄 12306MCP（12306 Model-Context Protocol）是一个基于 AI 和自动化技术的智能铁路购票工具，旨在优化 12306 官网及 APP 的购票体验，提供自动抢票、候补监控、智能查询、多账号管理等功能。
+🚄 12306MCP (12306 Model-Context Protocol) is an intelligent railway ticket booking tool based on AI and automation technology, aimed at optimizing the ticket purchasing experience on the official 12306 website and app. It provides features such as automatic ticket grabbing, waitlist monitoring, smart queries, and multi-account management.
 
-🔧 功能特性
+🔧 Features
 
-✅ 智能抢票 - 自动监控余票，快速下单
+✅ Smart Ticket Grabbing - Automatically monitors available tickets and places orders quickly
 
-✅ 候补订单增强 - 实时监控候补成功率，自动调整策略
+✅ Enhanced Waitlist Orders - Real-time monitoring of waitlist success rates, with automatic strategy adjustments
 
-✅ 多账号支持 - 同时管理多个 12306 账号
+✅ Multi-Account Support - Manages multiple 12306 accounts simultaneously
 
-✅ 自动验证码识别 - 支持滑块、点选验证码自动处理
+✅ Automatic Captcha Recognition - Supports automatic handling of slider and point selection captchas
 
-✅ 查询优化 - 智能推荐最佳车次、座位
+✅ Query Optimization - Recommends the best train and seat options intelligently
 
-✅ 通知提醒 - 微信/Telegram/邮件通知抢票结果
+✅ Notification Alerts - Sends WeChat/Telegram/email notifications about ticket grabbing results
 
-🚀 快速开始
+🚀 Quick Start
 
-1. 安装
+1. Installation
 
-方式 1：npm 全局安装（推荐）
+Method 1: npm Global Installation (Recommended)
 
-npm install -g 12306mcp 
+bash
+npm install -g 12306mcp
 
-方式 2：npx 临时运行
+Method 2: npx Temporary Execution
 
-npx 12306mcp 
+bash
+npx 12306mcp
 
-2. 配置
+2. Configuration
 
-首次运行会自动生成配置文件 ~/.12306mcp/config.json，请按提示填写：
+The first run will automatically generate a configuration file at `~/.12306mcp/config.json`. Please fill it out as prompted:
 
-{ "accounts": [ { "username": "你的12306账号", "password": "密码（建议使用加密存储）" } ], "notification": { "email": "your-email@example.com", "wechat": "微信推送Key（可选）" } } 
+json
+{ 
+  "accounts": [ 
+    { 
+      "username": "Your 12306 username", 
+      "password": "Password (It's recommended to use encrypted storage)" 
+    } 
+  ], 
+  "notification": { 
+    "email": "your-email@example.com", 
+    "wechat": "WeChat Push Key (Optional)" 
+  } 
+}
 
-3. 使用
+3. Usage
 
-基本命令
+Basic Commands
 
-12306mcp --help # 查看帮助 12306mcp monitor # 监控余票 12306mcp grab --train G1234 --date 2025-01-01 --from 北京 --to 上海 # 自动抢票 12306mcp backup --train K1234 --date 2025-01-01 # 自动候补下单 
+bash
+12306mcp --help # View help
+12306mcp monitor # Monitor available tickets
+12306mcp grab --train G1234 --date 2025-01-01 --from Beijing --to Shanghai # Automatic ticket grabbing
+12306mcp backup --train K1234 --date 2025-01-01 # Automatic waitlist order placement
 
-⚙️ 高级功能
+⚙️ Advanced Features
 
-1. 多账号模式
+1. Multi-Account Mode
 
-支持同时监控多个账号，提高抢票成功率：
+Supports simultaneous monitoring of multiple accounts to increase the success rate of ticket grabbing:
 
-12306mcp --account 账号1,账号2 monitor 
+bash
+12306mcp --account account1,account2 monitor
 
-2. 自定义抢票策略
+2. Custom Ticket Grabbing Strategies
 
-在 config.json 中可设置：
+In `config.json`, you can set:
 
-优先车次（高铁/动车/直达）
+- Preferred train types (High-speed/EMU/Direct)
+- Seat preferences (First Class/Second Class/No Seat)
+- Grabbing frequency (to avoid being blocked)
 
-座位偏好（一等座/二等座/无座）
+3. Proxy Settings (To Prevent Blocking)
 
-抢票频率（避免被封禁）
+json
+{ 
+  "proxy": "http://127.0.0.1:1080", 
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ..." 
+}
 
-3. 代理设置（防封禁）
+⚠️ Important Notes
 
-{ "proxy": "http://127.0.0.1:1080", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ..." } 
+Legal and Compliant Use: This tool is intended for learning and technical research only. Do not misuse it, and avoid affecting the normal operation of the 12306 system.
 
-⚠️ 注意事项
+Account Security: It is recommended to use a separate password or two-factor authentication to prevent account leaks.
 
-合法合规使用：本工具仅用于学习和技术研究，请勿滥用，避免影响 12306 系统正常运行。
+Anti-Blocking Strategies:
 
-账号安全：建议使用独立密码或二步验证，防止账号泄露。
+- Avoid high-frequency requests (default 5-10 seconds per request)
+- Use rotating proxy IPs
+- Simulate real browser behavior
 
-防封策略：
+📜 Open Source License
 
-避免高频请求（默认 5-10 秒/次）
-
-使用代理 IP 轮换
-
-模拟真实浏览器行为
-
-📜 开源协议
-
-本项目基于 MIT License 开源，欢迎贡献代码！
+This project is open-sourced under the MIT License. Contributions are welcome!
 
 GitHub: https://github.com/your-repo/12306mcp
 
-📢 反馈与支持
+📢 Feedback and Support
 
-遇到问题？欢迎提交 Issue 或联系：
+Encountered an issue? Feel free to submit an Issue or contact us:
 
 📧 Email: support@12306mcp.com
 
 💬 Telegram: @12306mcp_support
 
-🚀 祝您购票顺利，旅途愉快！ 🚄✨
+🚀 Wishing you a smooth ticket booking process and a pleasant journey! 🚄✨
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/bwxnwnx-12306.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/bwxnwnx-12306.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

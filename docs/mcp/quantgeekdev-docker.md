@@ -1,11 +1,11 @@
 ---
-title: "Docker MCP工具"
-description: "一个强大的模型上下文协议（MCP）服务器，用于Docker操作，通过Claude AI实现容器和组合堆栈的无缝管理。"
+title: "docker-mcp"
+description: "A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI."
 ---
 
-# Docker MCP工具
+# docker-mcp
 
-一个强大的模型上下文协议（MCP）服务器，用于Docker操作，通过Claude AI实现容器和组合堆栈的无缝管理。
+A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.
 
 # 🐳 docker-mcp
 
@@ -14,27 +14,27 @@ description: "一个强大的模型上下文协议（MCP）服务器，用于Doc
 [![Code style: black](/mcp-assets/c41a882f152367575bf9d86c0b2ec68e.svg)](https://github.com/psf/black)
 [Smithery](https://smithery.ai/protocol/docker-mcp)
 
-一个强大的用于 Docker 操作的 Model Context Protocol (MCP) 服务器，通过 Claude AI 实现无缝容器和 compose 堆栈管理。
+A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.
 
-## ✨ 特性
+## ✨ Features
 
-- 🚀 容器创建和实例化
-- 📦 Docker Compose 堆栈部署
-- 🔍 容器日志检索
-- 📊 容器列表和状态监控
+- 🚀 Container creation and instantiation
+- 📦 Docker Compose stack deployment
+- 🔍 Container logs retrieval
+- 📊 Container listing and status monitoring
 
-### 🎬 演示
-#### 部署 Docker Compose 堆栈
+### 🎬 Demos
+#### Deploying a Docker Compose Stack
 
-[https://github.com/user-attachments/assets/b5f6e40a-542b-4a39-ba12-7fdf803ee278](https://github.com/user-attachments/assets/b5f6e40a-542b-4a39-ba12-7fdf803ee278)
+https://github.com/user-attachments/assets/b5f6e40a-542b-4a39-ba12-7fdf803ee278
 
-#### 分析容器日志
+#### Analyzing Container Logs
 
-[https://github.com/user-attachments/assets/da386eea-2fab-4835-82ae-896de955d934](https://github.com/user-attachments/assets/da386eea-2fab-4835-82ae-896de955d934)
+https://github.com/user-attachments/assets/da386eea-2fab-4835-82ae-896de955d934
 
-## 🚀 快速开始
+## 🚀 Quickstart
 
-要在 Claude Desktop 应用程序中尝试此功能，请将以下内容添加到您的 claude 配置文件中：
+To try this in Claude Desktop app, add this to your claude config files:
 ```json
 {
   "mcpServers": {
@@ -48,31 +48,31 @@ description: "一个强大的模型上下文协议（MCP）服务器，用于Doc
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/protocol/docker-mcp) 自动为 Claude Desktop 安装 Docker MCP：
+To install Docker MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/protocol/docker-mcp):
 
 ```bash
 npx @smithery/cli install docker-mcp --client claude
 ```
 
-### 先决条件
+### Prerequisites
 
-- UV（包管理器）
+- UV (package manager)
 - Python 3.12+
-- Docker Desktop 或 Docker Engine
+- Docker Desktop or Docker Engine
 - Claude Desktop
 
-### 安装
+### Installation
 
-#### Claude Desktop 配置
+#### Claude Desktop Configuration
 
-将服务器配置添加到您的 Claude Desktop 配置文件中：
+Add the server configuration to your Claude Desktop config file:
 
-**MacOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`  
+**MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
-  💻 开发配置
+  💻 Development Configuration
 
 ```json
 {
@@ -91,7 +91,7 @@ npx @smithery/cli install docker-mcp --client claude
 }
 ```
 
-  🚀 生产配置
+  🚀 Production Configuration
 
 ```json
 {
@@ -106,44 +106,44 @@ npx @smithery/cli install docker-mcp --client claude
 }
 ```
 
-## 🛠️ 开发
+## 🛠️ Development
 
-### 本地设置
+### Local Setup
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/QuantGeekDev/docker-mcp.git
 cd docker-mcp
 ```
 
-2. 创建并激活虚拟环境：
+2. Create and activate a virtual environment:
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venvScriptsactivate
 ```
 
-3. 安装依赖项：
+3. Install dependencies:
 ```bash
 uv sync
 ```
 
-### 🔍 调试
+### 🔍 Debugging
 
-启动 MCP Inspector 进行调试：
+Launch the MCP Inspector for debugging:
 
 ```bash
 npx @modelcontextprotocol/inspector uv --directory 
  run docker-mcp
 ```
 
-Inspector 将提供一个 URL 以访问调试界面。
+The Inspector will provide a URL to access the debugging interface.
 
-## 📝 可用工具
+## 📝 Available Tools
 
-服务器提供以下工具：
+The server provides the following tools:
 
 ### create-container
-创建一个独立的 Docker 容器
+Creates a standalone Docker container
 ```json
 {
     "image": "image-name",
@@ -154,16 +154,21 @@ Inspector 将提供一个 URL 以访问调试界面。
 ```
 
 ### deploy-compose
-部署 Docker Compose 堆栈
+Deploys a Docker Compose stack
 ```json
 {
     "project_name": "example-stack",
-    "compose_yaml": "version: '3.8'\nservices:\n  service1:\n    image: image1:latest\n    ports:\n      - '8080:80'"
+    "compose_yaml": "version: '3.8'
+services:
+  service1:
+    image: image1:latest
+    ports:
+      - '8080:80'"
 }
 ```
 
 ### get-logs
-从特定容器检索日志
+Retrieves logs from a specific container
 ```json
 {
     "container_name": "my-container"
@@ -171,56 +176,56 @@ Inspector 将提供一个 URL 以访问调试界面。
 ```
 
 ### list-containers
-列出所有 Docker 容器
+Lists all Docker containers
 ```json
 {}
 ```
 
-## 🚧 当前限制
+## 🚧 Current Limitations
 
-- 不支持内置环境变量
-- 无卷管理
-- 无网络管理
-- 无容器健康检查
-- 无容器重启策略
-- 无容器资源限制
+- No built-in environment variable support for containers
+- No volume management
+- No network management
+- No container health checks
+- No container restart policies
+- No container resource limits
 
-## 🤝 贡献
+## 🤝 Contributing
 
-1. 从 [docker-mcp](https://github.com/QuantGeekDev/docker-mcp) 仓库分叉
-2. 创建你的特性分支
-3. 提交你的更改
-4. 推送到分支
-5. 打开 Pull Request
+1. Fork the repository from [docker-mcp](https://github.com/QuantGeekDev/docker-mcp)
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-## 📜 许可证
+## 📜 License
 
-该项目根据 MIT 许可证许可 - 有关详细信息，请参阅 [LICENSE](https://github.com/QuantGeekDev/docker-mcp/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/QuantGeekDev/docker-mcp/blob/HEAD/LICENSE) file for details.
 
-## ✨ 作者
+## ✨ Authors
 
-- **Alex Andru** - *初始工作 | 核心贡献者* - [@QuantGeekDev](https://github.com/QuantGeekDev)
-- **Ali Sadykov** - *初始工作 | 核心贡献者* - [@md-archive](https://github.com/md-archive)
+- **Alex Andru** - *Initial work | Core contributor* - [@QuantGeekDev](https://github.com/QuantGeekDev)
+- **Ali Sadykov** - *Initial work  | Core contributor* - [@md-archive](https://github.com/md-archive)
 
 ---
 Made with ❤️
 
-**官方网站：** [https://github.com/QuantGeekDev/docker-mcp](https://github.com/QuantGeekDev/docker-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/QuantGeekDev/docker-mcp](https://github.com/QuantGeekDev/docker-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`virtualization`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `virtualization`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`docker-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `docker-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/quantgeekdev-docker.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/quantgeekdev-docker.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

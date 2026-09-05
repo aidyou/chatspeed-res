@@ -1,94 +1,91 @@
 ---
-title: "且慢MCP"
-description: "盈米且慢推出国内首个兼容MCP协议的财富管理服务平台—Qieman MCP Server（简称且慢MCP）。且慢MCP提供了完整的金融数据与专业分析工具支持，让您的AI大模型能实时提供高质量、可用且数据真实准确的金融服务。助力财富管理的行业伙伴及投资人，能一同探索体验，解决自身以及客户的真实金融问题。"
+title: "qieman-mcp"
+description: "Qieman MCP Server is an AI-specific financial toolkit. It enhances the capabilities of AI LLMs, enabling them to deliver real-time, professional, reliable, and high-quality financial services based on…"
 ---
 
-# 且慢MCP
+# qieman-mcp
 
-盈米且慢推出国内首个兼容MCP协议的财富管理服务平台—Qieman MCP Server（简称且慢MCP）。且慢MCP提供了完整的金融数据与专业分析工具支持，让您的AI大模型能实时提供高质量、可用且数据真实准确的金融服务。助力财富管理的行业伙伴及投资人，能一同探索体验，解决自身以及客户的真实金融问题。
+Qieman MCP Server is an AI-specific financial toolkit. It enhances the capabilities of AI LLMs, enabling them to deliver real-time, professional, reliable, and high-quality financial services based on…
 
-# 且慢MCP
+# Qieman MCP Server
 
-盈米且慢推出国内首个兼容MCP协议的财富管理服务平台—Qieman MCP Server（简称且慢MCP）。且慢MCP提供了完整的金融数据与专业分析工具支持，让您的AI大模型能实时提供高质量、可用且数据真实准确的金融服务。助力财富管理的行业伙伴及投资人，能一同探索体验，解决自身以及客户的真实金融问题。
+Qieman MCP Server, provided by Yingmi Company, is an AI-specific financial toolkit. It enhances the capabilities of AI LLMs, enabling them to deliver real-time, professional, reliable, and high-quality financial services based on accurate data in vertical fields. The toolkit specializes in mutual fund and investment advisory services, helping AI make more accurate and scientific investment decisions.
 
-## 主要特点
+With one-click configuration, users can access the toolkit, which enables industry partners and investors to find efficient and convenient solutions to address real financial problems for themselves and their customers.
 
-1. **精确的金融数据**：调用且慢MCP可获取实时准确的金融数据，可避免常见的大模型幻觉；
-2. **全面的投资研究系统**：整合了金融专家的最新分析观点和汇总信息，以提高金融信息服务的质量。
-3. **专业的投资顾问系统**：调用专业投顾测算工具与各类资产分析能力，构建金融与投顾服务核心优势；
-4. **便捷的用户体验**：初始配置后，服务将自动更新和升级，确保能持续使用最新的金融工具服务包。
+## Key Features
 
-## 工具列表
+1. **Precise Financial Data**: Access to the Qieman MCP Server enables users to obtain real-time and accurate financial data, reducing inaccuracies and enhancing reliability.
+2. **Comprehensive Investment Research System**: This system integrates the latest insights and summarized information from financial experts to enhance the quality of financial information services.
+3. **Advanced Investment Advisory System**: It utilizes professional investment advisory calculation tools and various asset analysis capabilities to create a core competitive advantage in advisory services.
+4. **Seamless User Experience**: After initial configuration, services will automatically update and upgrade, ensuring seamless and continuous access to the latest financial tool service packages.
 
-| 功能/API名称 | 描述 |
-|------------|------|
-| BatchGetFundsDetail | 批量查询多个基金的详细信息，包括名称、类型、规模、风险级别、经理、成立日期、投资范围等。 |
-| BatchGetFundNavHistory | 批量获取多个基金的历史净值数据，支持按不同时间维度查询。 |
-| GetBatchFundPerformance | 批量获取基金的业绩数据，包括业绩分析指标和阶段回报。 |
-| BatchGetFundsHolding | 批量获取多个基金的持仓信息，包括十大重仓股、债券持仓等。 |
-| BatchGetFundsHolderInfo | 批量获取基金的资产规模和持有人结构数据，包括单份数据、总份数据和持有人结构信息。 |
-| BatchGetFundsFeeRule | 批量获取多个基金的费用规则，包括认购费、申购费、赎回费和操作费。 |
-| BatchGetFundTradeRules | 批量获取基金的交易规则，包括最低/最高购买金额、预期确认日期、预期到账日期、费用规则等。 |
-| BatchGetFundTradeLimit | 批量获取多个基金的交易限制信息，包括基金是否可交易、最低购买金额、最低持有份额、定投起点等。 |
-| BatchGetFundsSplitHistory | 批量获取基金的拆分记录信息，包括拆分日期和比例。 |
-| BatchGetFundsDividendRecord | 批量获取基金的分红记录，包括权益登记日、红利发放日和每份红利金额。 |
-| GetFundAnnouncements | 查询基金公告，包括基金代码、名称、全名、公告ID、日期、来源、标题、链接和类型。支持按时间范围、公告类型和标题关键词查询。 |
-| SearchFunds | 基于名称、代码或其他条件搜索基金，支持按回报、规模、费用等排序。 |
-| GetPopularFund | 获取最近受欢迎基金的列表，了解市场焦点和投资趋势。 |
-| GuessFundCode | 根据基金名称匹配最接近的基金代码。 |
-| GetAssetAllocation | 分析基金组合的资产配置，提供资产类别分布、雷达图评分和诊断结果。 |
-| GetFundsCorrelation | 分析多个基金之间的相关系数，了解组合中每个基金趋势的相互影响。 |
-| GetFundsBackTest | 对给定的基金组合进行历史回测分析，计算关键指标并提供全面的诊断结果和评分。 |
-| MonteCarloSimulate | 基于给定的资产配置权重执行蒙特卡洛模拟计算，生成预期收益分布、波动率情景和各种百分位数的收益率数据。 |
-| AnalyzeFundRisk | 获取多个基金的风险评分和详细风险解释，计算风险评分、R平方、残差方差、标准误差等指标。 |
-| AnalyzePortfolioRisk | 对给定的基金组合进行风险评估分析，计算多维风险指标。 |
-| SearchFinancialNews | 搜索工具支持按关键词和时间范围进行筛选和分页，返回详细的新闻内容。 |
-| SearchManagerViewpoint | 获取基金经理对各行业的见解和市场分析，支持按行业主题、时间范围和关键词进行筛选。 |
-| GetFundDiagnosis | 提供全面的基金诊断分析，包括最新信息、风险和机会评估、行业持仓、资产配置、业绩等。 |
-| DiagnoseFundPortfolio | 提供全面的基金组合诊断分析，包括资产配置分析、基金相关性分析和回测诊断。 |
-| GetAssetAllocationPlan | 基于投资参数获取资产配置计划。 |
-| GetCompositeModel | 通过资产配置计划ID获取相应的复合模型。 |
-| RenderEchart | 根据提供的ECharts配置渲染图表并转换为图像，支持返回base64编码的图像内容或OSS访问URL。 |
-| RenderHtmlToPdf | 将HTML内容转换为PDF文档，支持自定义PDF格式和边距设置。 |
-| GetCurrentTime | 获取服务器的当前时间，返回格式化的日期和时间字符串。 |
-| GetTxnDayRange | 基于中心时间获取指定期间内的交易日列表，支持向前和向后推算指定天数。 |
+## Tools
 
-## 官方网站
+| Feature/API name | Description |
+|------------------|-------------|
+| BatchGetFundsDetail | Batch query detailed information of multiple funds including name, type, size, risk level, manager, establishment date, investment scope, etc. |
+| BatchGetFundNavHistory | Batch obtain historical net value data of multiple funds, supporting querying by different time dimensions. |
+| GetBatchFundPerformance | Batch obtain performance data of funds including performance analysis indicators and phase returns. |
+| BatchGetFundsHolding | Batch obtain holding information of multiple funds including top ten holdings, bond holdings, etc. |
+| BatchGetFundsHolderInfo | Batch obtain asset size and holder structure data of funds, including single share data, total share data, and holder structure information. |
+| BatchGetFundsFeeRule | Batch obtain fee rules of multiple funds including subscription fee, purchase fee, redemption fee, and operational fee. |
+| BatchGetFundTradeRules | Batch obtain trading rules of funds including minimum/maximum purchase amount, expected confirmation date, expected arrival date, fee rules, etc. |
+| BatchGetFundTradeLimit | Batch obtain trading limit information of multiple funds including whether the fund is tradable, minimum purchase amount, minimum holding shares, fixed investment starting point, etc. |
+| BatchGetFundsSplitHistory | Batch obtain split record information of funds including split date and ratio. |
+| BatchGetFundsDividendRecord | Batch obtain dividend record of funds including rights registration date, dividend distribution date, and dividend amount per share. |
+| GetFundAnnouncements | Query fund announcements including fund code, name, full name, announcement ID, date, source, title, link, and type. Supports querying by time range, announcement type, and title keywords. |
+| SearchFunds | Search funds based on name, code, or other conditions, supporting sorting by return, size, fee, etc. |
+| GetPopularFund | Obtain a list of recently popular funds to understand market focus and investment trends. |
+| GuessFundCode | Match the closest fund code based on fund name. |
+| GetAssetAllocation | Analyze asset allocation of fund portfolios, providing asset class distribution, radar chart scoring, and diagnostic results. |
+| GetFundsCorrelation | Analyze correlation coefficients between multiple funds to understand the mutual influence of each fund's trend in the portfolio. |
+| GetFundsBackTest | Conduct historical backtesting analysis of a given fund portfolio, calculating key indicators and providing comprehensive diagnostic results and scoring. |
+| MonteCarloSimulate | Perform Monte Carlo simulation calculations based on given asset allocation weights to generate expected return distribution, volatility scenarios, and various percentile return data. |
+| AnalyzeFundRisk | Obtain risk scores and detailed risk explanations of multiple funds, calculating indicators such as risk score, R-squared, residual variance, standard error, etc. |
+| AnalyzePortfolioRisk | Conduct risk assessment analysis of a given fund portfolio, calculating multi-dimensional risk indicators. |
+| SearchFinancialNews | Search tool supporting filtering and pagination by keywords and time range, returning detailed news content. |
+| SearchManagerViewpoint | Obtain fund manager views and market analysis on various industries, supporting filtering by industry theme, time range, and keywords. |
+| GetFundDiagnosis | Provide comprehensive fund diagnostic analysis including recent information, risk and opportunity assessment, industry holdings, asset allocation, performance, etc. |
+| DiagnoseFundPortfolio | Provide comprehensive fund portfolio diagnostic analysis including asset allocation analysis, fund correlation analysis, and backtesting diagnosis. |
+| GetAssetAllocationPlan | Obtain asset allocation plans based on investment parameters. |
+| GetCompositeModel | Obtain corresponding composite models through asset allocation plan IDs. |
+| RenderEchart | Render charts based on provided ECharts configuration and convert to images, supporting returning base64 encoded image content or OSS access URLs. |
+| RenderHtmlToPdf | Convert HTML content to PDF documents, supporting custom PDF format and margin settings. |
+| GetCurrentTime | Obtain the current time of the server, returning a formatted date and time string. |
+| GetTxnDayRange | Obtain a list of trading days within a specified period based on the central time, supporting forward and backward specified days. |
 
+## Official Website
 https://qieman.com/mcp/landing
 
-## 开始使用
+## Get Started
+1. **Apply for Qieman MCP service**:
+   Visit our Qieman MCP official website, log in or register a Qieman account, and fill out the form to get your own API Key.
+2. **Use the link to get the services**:
+   https://stargate.yingmi.com/mcp/sse?apiKey=[your API Key]
 
-1. **申请开通Qieman MCP服务**：
-   访问且慢MCP官方网站，登录或注册且慢账户，填写表格获取您专属的API密钥。
-
-2. **使用链接开始获取服务**：
-   https://stargate.yingmi.com/mcp/sse?apiKey=[您的API密钥]
-
-## 用户指南
-
+## User Guide
 https://qieman.com/mcp/how-to-use
 
-## 联系我们
-
+## Contact Us
 oap@yingmi.cn
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/qieman-ai-qieman.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/qieman-ai-qieman.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

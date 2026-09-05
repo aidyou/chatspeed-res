@@ -1,11 +1,11 @@
 ---
 title: "Snyk SAW MCP"
-description: "Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural language. Built on FastMCP "
+description: "Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural languag…"
 ---
 
 # Snyk SAW MCP
 
-Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural language. Built on FastMCP 
+Snyk API & Web MCP Server Connect your AI coding assistant to Snyk API & Web so it can onboard scan targets, configure authentication, run DAST scans, and triage findings — all through natural languag…
 
 ![SAW MCP Banner](https://github.com/snyk/saw-mcp/blob/HEAD/assets/Snyk_API_and_Web_Banner.webp)
 
@@ -250,22 +250,22 @@ For active development with automatic reload on file changes:
 
 This project is licensed under the [Apache License 2.0](https://github.com/snyk/saw-mcp/blob/HEAD/LICENSE).
 
-**官方网站：** [https://github.com/snyk/saw-mcp](https://github.com/snyk/saw-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/snyk/saw-mcp](https://github.com/snyk/saw-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `security`, `snyk`, `dast`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `security`, `snyk`, `dast`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from git+https://github.com/snyk/saw-mcp.git saw-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from git+https://github.com/snyk/saw-mcp.git saw-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/snyk-saw.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/snyk-saw.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,67 +1,67 @@
 ---
-title: "国立博物馆艺术品平台"
-description: "允许您搜索艺术品、检索特定艺术品的详细信息、访问艺术品的图像瓦片，并探索来自国立博物馆的用户创建的收藏。"
+title: "rijksmuseum-mcp"
+description: "Allows you to search for artworks, retrieve detailed information about specific artworks, access image tiles for artworks, and explore user-created collections from the Rijksmuseum."
 ---
 
-# 国立博物馆艺术品平台
+# rijksmuseum-mcp
 
-允许您搜索艺术品、检索特定艺术品的详细信息、访问艺术品的图像瓦片，并探索来自国立博物馆的用户创建的收藏。
+Allows you to search for artworks, retrieve detailed information about specific artworks, access image tiles for artworks, and explore user-created collections from the Rijksmuseum.
 
-# Rijksmuseum MCP 服务器
+# Rijksmuseum MCP Server
 
-一个模型上下文协议（MCP）服务器，通过自然语言交互提供对Rijksmuseum藏品的访问。该服务器使AI模型能够探索、分析并与来自Rijksmuseum的艺术作品和藏品进行互动。
+A Model Context Protocol (MCP) server that provides access to the Rijksmuseum's collection through natural language interactions. This server enables AI models to explore, analyze, and interact with artworks and collections from the Rijksmuseum.
 
-## 功能
+## Features
 
-该服务器提供了几种与Rijksmuseum藏品互动的工具：
+The server provides several tools for interacting with the Rijksmuseum's collection:
 
-### 1. 搜索艺术品 (`search_artwork`)
-使用各种标准搜索和筛选艺术品，包括：
-- 基于文本的搜索
-- 艺术家姓名
-- 艺术品类别
-- 材料和技术
-- 时期
-- 颜色
-- 等等
+### 1. Search Artworks (`search_artwork`)
+Search and filter artworks using various criteria including:
+- Text-based search
+- Artist name
+- Artwork type
+- Materials and techniques
+- Time periods
+- Colors
+- And more
 
-### 2. 艺术品详情 (`get_artwork_details`)
-检索特定艺术品的全面信息，包括：
-- 基本详情（标题、艺术家、日期）
-- 物理属性
-- 历史背景
-- 视觉信息
-- 策展信息
-- 展览历史
+### 2. Artwork Details (`get_artwork_details`)
+Retrieve comprehensive information about specific artworks, including:
+- Basic details (title, artist, dates)
+- Physical properties
+- Historical context
+- Visual information
+- Curatorial information
+- Exhibition history
 
-### 3. 高分辨率图像 (`get_artwork_image`)
-访问具有深度缩放能力的高分辨率图像数据：
-- 多级缩放
-- 基于瓦片的图像加载
-- 完全分辨率支持
-- 位置信息
+### 3. High-Resolution Images (`get_artwork_image`)
+Access high-resolution image data with deep zoom capabilities:
+- Multiple zoom levels
+- Tile-based image loading
+- Full resolution support
+- Position information
 
-### 4. 用户收藏集 (`get_user_sets` & `get_user_set_details`)
-探索用户创建的收藏集：
-- 浏览精选集合
-- 查看主题分组
-- 分析收藏模式
-- 访问详细的集合信息
+### 4. User Collections (`get_user_sets` & `get_user_set_details`)
+Explore user-created collections:
+- Browse curated sets
+- View thematic groupings
+- Analyze collection patterns
+- Access detailed set information
 
-### 5. 图像查看 (`open_image_in_browser`)
-直接在浏览器中打开艺术品图像以详细查看。
+### 5. Image Viewing (`open_image_in_browser`)
+Open artwork images directly in your browser for detailed viewing.
 
-### 6. 艺术家时间线 (`get_artist_timeline`)
-生成艺术家作品的时间顺序时间线：
-- 追踪艺术发展
-- 分析时期和风格
-- 研究职业进展
+### 6. Artist Timeline (`get_artist_timeline`)
+Generate chronological timelines of artists' works:
+- Track artistic development
+- Analyze periods and styles
+- Study career progression
 
-## 示例用例
+## Example Use Cases
 
-这里是一些您可以向AI询问的示例查询：
+Here are some example queries you can ask the AI when using this server:
 
-### 艺术品发现
+### Artwork Discovery
 ```
 "Show me all paintings by Rembrandt from the 1640s"
 "Find artworks that prominently feature the color blue"
@@ -69,7 +69,7 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "Search for still life paintings from the Dutch Golden Age"
 ```
 
-### 艺术品分析
+### Artwork Analysis
 ```
 "Tell me everything about The Night Watch"
 "What are the dimensions and materials used in Van Gogh's Self Portrait?"
@@ -77,7 +77,7 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "Compare the colors used in different versions of The Potato Eaters"
 ```
 
-### 艺术家研究
+### Artist Research
 ```
 "Create a timeline of Rembrandt's self-portraits"
 "How did Van Gogh's use of color evolve throughout his career?"
@@ -85,7 +85,7 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "What techniques did Jan Steen use in his paintings?"
 ```
 
-### 主题探索
+### Thematic Exploration
 ```
 "Find all artworks depicting biblical scenes"
 "Show me paintings of Amsterdam in the 17th century"
@@ -93,7 +93,7 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "Find portraits that include musical instruments"
 ```
 
-### 收藏分析
+### Collection Analysis
 ```
 "Show me the most popular user-curated collections"
 "Find sets that focus on landscape paintings"
@@ -101,7 +101,7 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "Show me collections featuring works from multiple artists"
 ```
 
-### 视觉细节
+### Visual Details
 ```
 "Let me examine the details in the background of The Night Watch"
 "Show me a close-up of the jewelry in Girl with a Pearl Earring"
@@ -109,12 +109,12 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
 "I want to study the facial expressions in The Syndics"
 ```
 
-## 开始使用
+## Getting Started
 
-您可以通过两种方式安装此服务器：
+You can install this server in two ways:
 
-### 1. 使用Claude桌面版及NPM包
-更新您的Claude配置文件 (`~/Library/Application Support/Claude/claude_desktop_config.json`)：
+### 1. Using Claude Desktop with NPM Package
+Update your Claude configuration file (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
@@ -132,24 +132,23 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
   }
 }
 ```
-您可以从[Rijksmuseum API门户](https://data.rijksmuseum.nl/docs/api/)获取API密钥。
+You can get an API key from the [Rijksmuseum API Portal](https://data.rijksmuseum.nl/docs/api/).
 
-### 2. 从源代码安装
-
-1. 克隆此仓库
-2. 安装依赖项：
+### 2. From Source
+1. Clone this repository
+2. Install dependencies:
 ```bash
    npm install
 ```
-3. 复制示例环境文件：
+3. Copy the example environment file:
 ```bash
    cp .env.example .env
 ```
-4. 在 `.env` 文件中添加您的 Rijksmuseum API 密钥：
+4. Add your Rijksmuseum API key to the `.env` file:
 ```
    RIJKSMUSEUM_API_KEY=your_api_key_here
 ```
-5. 然后更新您的 Claude 配置文件：
+5. Then update your Claude configuration file:
 ```json
    {
      "mcpServers": {
@@ -166,48 +165,48 @@ description: "允许您搜索艺术品、检索特定艺术品的详细信息、
    }
 ```
 
-请确保：
-- 将 `/path/to/rijksmuseum-server` 替换为您实际的安装路径
-- 在 `env` 部分添加您的 Rijksmuseum API 密钥
+Make sure to:
+- Replace `/path/to/rijksmuseum-server` with the actual path to your installation
+- Add your Rijksmuseum API key in the `env` section
 
-更新配置后，重启 Claude Desktop 以使更改生效。
+After updating the configuration, restart Claude Desktop for the changes to take effect.
 
-## 配置
+## Configuration
 
-可以通过环境变量来配置服务器：
-- `RIJKSMUSEUM_API_KEY`: 您的 Rijksmuseum API 密钥（必需）
-- `PORT`: 服务器端口（默认：3000）
-- `LOG_LEVEL`: 日志级别（默认：'info'）
+The server can be configured through environment variables:
+- `RIJKSMUSEUM_API_KEY`: Your Rijksmuseum API key (required)
+- `PORT`: Server port (default: 3000)
+- `LOG_LEVEL`: Logging level (default: 'info')
 
-## API 文档
+## API Documentation
 
-有关此服务器使用的 Rijksmuseum API 端点的详细信息，请访问：
-[Rijksmuseum API 文档](https://data.rijksmuseum.nl/object-metadata/api/)
+For detailed information about the Rijksmuseum API endpoints used by this server, visit:
+[Rijksmuseum API Documentation](https://data.rijksmuseum.nl/object-metadata/api/)
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交拉取请求或创建问题报告 bug 和功能请求。
+Contributions are welcome! Please feel free to submit pull requests or create issues for bugs and feature requests.
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详情请参阅 LICENSE 文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/r-huijts/rijksmuseum-mcp](https://github.com/r-huijts/rijksmuseum-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/r-huijts/rijksmuseum-mcp](https://github.com/r-huijts/rijksmuseum-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `media`
-- 标签：`search`, `image and video processing`, `other`, `chinese`
+- Categories: `search`, `media`
+- Tags: `search`, `image and video processing`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-server-rijksmuseum`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-server-rijksmuseum`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/r-huijts-rijksmuseum.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/r-huijts-rijksmuseum.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

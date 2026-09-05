@@ -1,48 +1,48 @@
 ---
-title: "MCP软件规划工具"
-description: "通过管理任务、跟踪进度以及通过模型上下文协议创建详细的实施计划，促进交互式软件开发规划。"
+title: "Software-planning-mcp"
+description: "Facilitates interactive software development planning by managing tasks, tracking progress, and creating detailed implementation plans through the Model Context Protocol."
 ---
 
-# MCP软件规划工具
+# Software-planning-mcp
 
-通过管理任务、跟踪进度以及通过模型上下文协议创建详细的实施计划，促进交互式软件开发规划。
+Facilitates interactive software development planning by managing tasks, tracking progress, and creating detailed implementation plans through the Model Context Protocol.
 
-# 软件规划工具 🚀
+# Software Planning Tool 🚀
 [Smithery](https://smithery.ai/server/@NightTrek/Software-planning-mcp)
 
-这是一个设计用于通过交互式、结构化方法促进软件开发规划的模型上下文协议（MCP）服务器。此工具帮助将复杂的软件项目分解为可管理的任务，跟踪实施进度，并维护详细的开发计划。
+A Model Context Protocol (MCP) server designed to facilitate software development planning through an interactive, structured approach. This tool helps break down complex software projects into manageable tasks, track implementation progress, and maintain detailed development plans.
 
   
 
-## 功能 ✨
+## Features ✨
 
-- **交互式规划会话**：启动和管理开发规划会话
-- **待办事项管理**：创建、更新并跟踪开发任务
-- **复杂度评分**：为任务分配复杂度分数以进行更好的估算
-- **代码示例**：在任务描述中包含相关的代码片段
-- **实施计划**：保存和管理详细的实施计划
+- **Interactive Planning Sessions**: Start and manage development planning sessions
+- **Todo Management**: Create, update, and track development tasks
+- **Complexity Scoring**: Assign complexity scores to tasks for better estimation
+- **Code Examples**: Include relevant code snippets in task descriptions
+- **Implementation Plans**: Save and manage detailed implementation plans
 
-## 安装 🛠️
+## Installation 🛠️
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@NightTrek/Software-planning-mcp) 自动安装适用于 Claude 桌面版的软件规划工具：
+To install Software Planning Tool for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@NightTrek/Software-planning-mcp):
 
 ```bash
 npx -y @smithery/cli install @NightTrek/Software-planning-mcp --client claude
 ```
 
-### 手动安装
-1. 克隆仓库
-2. 安装依赖项：
+### Manual Installation
+1. Clone the repository
+2. Install dependencies:
 ```bash
 pnpm install
 ```
-3. 构建项目：
+3. Build the project:
 ```bash
 pnpm run build
 ```
-4. 添加到您的 MCP 设置配置文件中（通常位于 `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`）：
+4. Add to your MCP settings configuration (typically located at `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`):
 ```json
 {
   "mcpServers": {
@@ -58,10 +58,10 @@ pnpm run build
 }
 ```
 
-## 可用工具 🔧
+## Available Tools 🔧
 
 ### start_planning
-以特定目标开始新的规划会话。
+Start a new planning session with a specific goal.
 ```typescript
 {
   goal: string  // The software development goal to plan
@@ -69,7 +69,7 @@ pnpm run build
 ```
 
 ### add_todo
-向当前计划添加一个新的待办事项。
+Add a new todo item to the current plan.
 ```typescript
 {
   title: string,         // Title of the todo item
@@ -80,13 +80,13 @@ pnpm run build
 ```
 
 ### get_todos
-检索当前计划中的所有待办事项。
+Retrieve all todos in the current plan.
 ```typescript
 // No parameters required
 ```
 
 ### update_todo_status
-更新待办事项的完成状态。
+Update the completion status of a todo item.
 ```typescript
 {
   todoId: string,     // ID of the todo item
@@ -95,7 +95,7 @@ pnpm run build
 ```
 
 ### save_plan
-保存当前的实施计划。
+Save the current implementation plan.
 ```typescript
 {
   plan: string  // The implementation plan text
@@ -103,25 +103,25 @@ pnpm run build
 ```
 
 ### remove_todo
-从当前计划中移除一个待办事项。
+Remove a todo item from the current plan.
 ```typescript
 {
   todoId: string  // ID of the todo item to remove
 }
 ```
 
-## 使用示例 📝
+## Example Usage 📝
 
-这里是一个使用软件规划工具的完整示例：
+Here's a complete example of using the software planning tool:
 
-1. 开始一个规划会话：
+1. Start a planning session:
 ```typescript
 await client.callTool("software-planning-tool", "start_planning", {
   goal: "Create a React-based dashboard application"
 });
 ```
 
-2. 添加一个待办事项：
+2. Add a todo item:
 ```typescript
 const todo = await client.callTool("software-planning-tool", "add_todo", {
   title: "Set up project structure",
@@ -135,7 +135,7 @@ npm install @material-ui/core @material-ui/icons
 });
 ```
 
-3. 更新待办事项状态：
+3. Update todo status:
 ```typescript
 await client.callTool("software-planning-tool", "update_todo_status", {
   todoId: todo.id,
@@ -143,7 +143,7 @@ await client.callTool("software-planning-tool", "update_todo_status", {
 });
 ```
 
-4. 保存实施计划：
+4. Save the implementation plan:
 ```typescript
 await client.callTool("software-planning-tool", "save_plan", {
   plan: `
@@ -162,9 +162,9 @@ await client.callTool("software-planning-tool", "save_plan", {
 });
 ```
 
-## 开发 🔨
+## Development 🔨
 
-### 项目结构
+### Project Structure
 ```
 software-planning-tool/
   ├── src/
@@ -177,41 +177,41 @@ software-planning-tool/
   └── tsconfig.json
 ```
 
-### 构建
+### Building
 ```bash
 pnpm run build
 ```
 
-### 测试
-使用 MCP 检查器测试所有功能：
+### Testing
+Test all features using the MCP inspector:
 ```bash
 pnpm run inspector
 ```
 
-## 许可证 📄
+## License 📄
 
 MIT
 
 ---
 
-使用 Model Context Protocol 以 ❤️ 制作
+Made with ❤️ using the Model Context Protocol
 
-**官方网站：** [https://github.com/NightTrek/Software-planning-mcp](https://github.com/NightTrek/Software-planning-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/NightTrek/Software-planning-mcp](https://github.com/NightTrek/Software-planning-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/software-planning-tool/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/software-planning-tool/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/nighttrek-software-planning.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/nighttrek-software-planning.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

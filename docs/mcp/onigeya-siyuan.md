@@ -1,15 +1,11 @@
 ---
-title: "SiYuan MCP Server（思源笔记AI服务器）"
-description: "一种集成到思源笔记系统的MCP服务器实现， enables 人工智能模型通过综合命令访问和操作笔记数据，这些命令涵盖了笔记本管理、文档操作和内容 manipulation。  \n\n（注：原文中“enables”和“manipulation”在翻译时需要根据上下文调整为更合适的中文表达，以下是优化后的版本：）\n\n一种集成到思源笔记系统的MCP服务器实现，使人工智能模型能够通过全面的命令来管理和操作笔记数据，包括笔记本管理、文档操作以及内容处理。"
+title: "siyuan-mcp-server"
+description: "An MCP server implementation that integrates with SiYuan Note system, enabling AI models to access and manipulate note data through comprehensive commands for notebook management, document operations…"
 ---
 
-# SiYuan MCP Server（思源笔记AI服务器）
+# siyuan-mcp-server
 
-一种集成到思源笔记系统的MCP服务器实现， enables 人工智能模型通过综合命令访问和操作笔记数据，这些命令涵盖了笔记本管理、文档操作和内容 manipulation。  
-
-（注：原文中“enables”和“manipulation”在翻译时需要根据上下文调整为更合适的中文表达，以下是优化后的版本：）
-
-一种集成到思源笔记系统的MCP服务器实现，使人工智能模型能够通过全面的命令来管理和操作笔记数据，包括笔记本管理、文档操作以及内容处理。
+An MCP server implementation that integrates with SiYuan Note system, enabling AI models to access and manipulate note data through comprehensive commands for notebook management, document operations…
 
 # SiYuan Note MCP Server
 [Smithery](https://smithery.ai/server/@onigeya/siyuan-mcp-server)
@@ -187,8 +183,8 @@ pnpm start
 ### Docker 运行 | Docker Run
 
 ```bash
-docker run --rm -i \
-  -e SIYUAN_TOKEN=your-siyuan-token \
+docker run --rm -i 
+  -e SIYUAN_TOKEN=your-siyuan-token 
   mcp/siyuan
 ```
 
@@ -223,22 +219,22 @@ This project is released under the ISC License. This means you can freely use, m
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 - [思源笔记 API 文档 | SiYuan Note API Documentation](https://github.com/siyuan-note/siyuan/blob/master/API.md)
 
-**官方网站：** [https://github.com/onigeya/siyuan-mcp-server](https://github.com/onigeya/siyuan-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/onigeya/siyuan-mcp-server](https://github.com/onigeya/siyuan-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`note taking`, `knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `note taking`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @onigeya/siyuan-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @onigeya/siyuan-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/onigeya-siyuan.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/onigeya-siyuan.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

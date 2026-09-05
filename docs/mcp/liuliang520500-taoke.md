@@ -1,34 +1,33 @@
 ---
-title: "淘客助手"
-description: "综合购物比价场景，搜索优惠券，通过调用三大平台淘宝、京东、拼多多官方API接口，来搜索商品并比价结合大模型的理解能力输出给用户"
+title: "taoke-mcp"
+description: "In the comprehensive shopping price comparison scenario, searching for coupons and comparing prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo—in…"
 ---
 
-# 淘客助手
+# taoke-mcp
 
-综合购物比价场景，搜索优惠券，通过调用三大平台淘宝、京东、拼多多官方API接口，来搜索商品并比价结合大模型的理解能力输出给用户
+In the comprehensive shopping price comparison scenario, searching for coupons and comparing prices by calling the official API interfaces of the three major platforms—Taobao, JD.com, and Pinduoduo—in…
 
-# 淘宝客 MCP 服务
+# Taobao MCP Service
 
 [Smithery](https://smithery.ai/server/@liuliang520530/taoke-mcp)
 
-淘宝联盟，京东联盟，多多进定全平台 MCP 服务是一个基于 Model Context Protocol (MCP) 的服务，支持淘宝、京东、拼多多三大电商平台的链接转换和商品推广功能，商品搜索等等一系列工具
+The Taobao Alliance, JD Alliance, and Pinduoduo full-platform MCP service is a service based on the Model Context Protocol (MCP), supporting link conversion and product promotion functions for the three major e-commerce platforms: Taobao, JD, and Pinduoduo. It also includes a series of tools such as product search.
 
-# github:
+# GitHub:
 
 https://github.com/liuliang520530/taoke-mcp/
 
-## 视频教程
+## Video Tutorial
 
 https://www.bilibili.com/video/BV1tE5jzLEMu/
 
-
-## smithery服务托管
+## Smithery Service Hosting
 https://smithery.ai/server/@liuliang520530/taoke-mcp
 
-## 支持docker部署
+## Docker Deployment Support
 https://hub.docker.com/r/liuliang520500/taoke-mcp
 
-```shell
+shell
 docker run -dit \
 --name taoke-mcp  \
 --restart always \
@@ -38,162 +37,154 @@ docker run -dit \
 -e ENV_OVERRIDE=false \
 liuliang520500/taoke-mcp
 
+You can add more environment variables with -e, refer to the stdio configuration below.
 
-你可以添加更多的环境变量 -e，参考下面的stdio配置
-
-```
-
-## 官方文档
+## Official Documentation
 
 https://mcp.sinataoke.cn/docs
 
-## 在 Cherry Studio 上的工具展示
+## Tool Demonstration on Cherry Studio
 
+# Usage
 
+### Environment Variable Configuration
 
-# 使用方法
+The service requires the following environment variables to be configured:
 
-### 环境变量配置
-
-服务需要配置以下环境变量：
-
-```
-# 环境变量加载配置
+shell
+# Environment variable loading configuration
 ENV_URL=https://config.sinataoke.cn/api/mcp/secret
 ENV_SECRET=url:mcp.sinataoke.cn
-ENV_OVERRIDE=false  # 可选，是否覆盖当前已存在的环境变量，这个一定要为false，不然下面的配置将不生效
+ENV_OVERRIDE=false  # Optional, whether to override existing environment variables, this must be false, otherwise the following configurations will not take effect
 
-# 淘宝客API配置
-TAOBAO_PID=your-pid # 淘宝联盟PID
-TAOBAO_SESSION=your-session # 你的授权ID，下面有授权链接
+# Taobao Alliance API configuration
+TAOBAO_PID=your-pid # Taobao Alliance PID
+TAOBAO_SESSION=your-session # Your authorization ID, see the authorization link below
 
-# 京东联盟API配置
-JD_KEY=your-jd-key # union.jd.com后台获取的
-JD_PID=your-pid-id # PID的第一段
+# JD Alliance API configuration
+JD_KEY=your-jd-key # Obtained from union.jd.com
+JD_PID=your-pid-id # The first part of the PID
 
-# 拼多多API配置
-PDD_PID=your-pid # jinbao.pinduoduo.com上获取的，需要授权
-PDD_SESSION_TOKEN=your-session-token # 授权token，授权链接在下面
-```
+# Pinduoduo API configuration
+PDD_PID=your-pid # Obtained from jinbao.pinduoduo.com, requires authorization
+PDD_SESSION_TOKEN=your-session-token # Authorization token, see the authorization link below
 
-# 淘宝联盟授权链接：
+# Taobao Alliance Authorization Link:
 
 https://oauth.taobao.com/authorize?response_type=token&client_id=34297717&state=1212&view=web
 
-# 拼多多授权链接
+# Pinduoduo Authorization Link
 
 https://jinbao.pinduoduo.com/open.html?client_id=313cc43a30cf487da0a336d9f2df7de2&response_type=code&redirect_uri=http%3A%2F%2Fddk.mintaoke.cn%2FApi%2Fget_access_token&view=web
 
-# 拼多多 PID 授权
+# Pinduoduo PID Authorization
 
--   授权链接用工具 pdd.goods.prom.url 转一个推广链接，参数 generate_authority_url=true，如果没授权，会优先走授权链接
--   你如果让 ai 通过 MCP 授权的话，你就直接发送一个商品链接，并告诉 ai 参数 generate_authority_url=true，然后 ai 就会通过当前工具授权链接用工具 pdd.goods.prom.url 转一个推广链接，并返回一个授权链接给你
+- Use the tool `pdd.goods.prom.url` to convert a promotional link, with the parameter `generate_authority_url=true`. If not authorized, it will prioritize the authorization link.
+- If you want the AI to authorize through MCP, simply send a product link and tell the AI to set `generate_authority_url=true`. The AI will then use the current tool's authorization link to convert a promotional link and return an authorization link to you.
 
-# 与 Claude Desktop 或 Cherry Studio 集成
+# Integration with Claude Desktop or Cherry Studio
 
-要在 Claude Desktop 中使用此服务
+To use this service in Claude Desktop:
 
-### 使用 MCP 配置文件
+### Using MCP Configuration File
 
-您也可以使用 MCP 配置文件来启动服务。创建一个名为 `mcp.json` 的文件，内容如下【stdio配置】：
+You can also start the service using an MCP configuration file. Create a file named `mcp.json` with the following content [stdio configuration]:
 
-```json
+json
 {
 	"mcpServers": {
 		"taobao-mcp": {
-			"name": "导购助手",
+			"name": "Shopping Assistant",
 			"type": "stdio",
 			"isActive": true,
 			"command": "npx",
 			"args": [
 				"-y",
 				"@liuliang520500/sinataoke_cn@latest",
-				"g:win11desktop/logs/" // 可选，日志文件夹路径,，如果要填写，要换成你自己本地电脑上的一个文件夹
+				"g:win11desktop/logs/" // Optional, log folder path, replace with a folder on your local computer if needed
 			],
 			"env": {
 				"ENV_URL": "https://config.sinataoke.cn/api/mcp/secret",
 				"ENV_SECRET": "url:mcp.sinataoke.cn",
 				"ENV_OVERRIDE": "false",
-				"TAOBAO_PID": "淘宝PID",
-				"TAOBAO_SESSION": "淘宝授权token，上面有授权链接，授权后，复制token到这里",
-				"JD_KEY": "union.jd.com上去取",
-				"JD_PID": "union.jd.com上去取",
-				"PDD_PID": "拼多多PID",
-				"PDD_SESSION_TOKEN": "拼多多授权token，上面有授权链接"
+				"TAOBAO_PID": "Taobao PID",
+				"TAOBAO_SESSION": "Taobao authorization token, see the authorization link above, copy the token here after authorization",
+				"JD_KEY": "Obtain from union.jd.com",
+				"JD_PID": "Obtain from union.jd.com",
+				"PDD_PID": "Pinduoduo PID",
+				"PDD_SESSION_TOKEN": "Pinduoduo authorization token, see the authorization link above"
 			}
 		}
 	}
 }
-```
 
-## 支持的功能
+## Supported Features
 
-### 淘宝平台
+### Taobao Platform
 
--   链接转换
--   链接解析
--   活动转换
--   订单详情查询
--   工具列表
--   推广请求
--   创建推广位
--   淘口令创建
--   物料搜索
--   处罚订单查询
--   商品信息查询
--   优选推广
+- Link conversion
+- Link parsing
+- Activity conversion
+- Order details query
+- Tool list
+- Promotion request
+- Create promotion position
+- Taokouling creation
+- Material search
+- Penalty order query-   Product Information Inquiry
+-   Preferred Promotion
 
-### 京东平台
+### JD Platform
 
--   推广位查询
--   推广位创建
--   联盟推广
--   商品查询
--   优惠券查询
+-   Promotion Position Inquiry
+-   Promotion Position Creation
+-   Alliance Promotion
+-   Product Inquiry
+-   Coupon Inquiry
 
-### 拼多多平台
+### Pinduoduo Platform
 
--   商品详情
--   CMS 推广链接
--   推广位生成
--   推广位查询
--   推广链接生成
--   商品推荐
--   商品搜索
--   多多进宝转链
--   会员权限查询
--   订单详情查询
--   订单增量查询
--   推广位生成
+-   Product Details
+-   CMS Promotion Link
+-   Promotion Position Generation
+-   Promotion Position Inquiry
+-   Promotion Link Generation
+-   Product Recommendation
+-   Product Search
+-   Duoduo Jinbao Link Conversion
+-   Member Permission Inquiry
+-   Order Details Inquiry
+-   Order Incremental Inquiry
+-   Promotion Position Generation
 
-## 许可证
+## License
 
 ISC
 
-## 作者 VX
+## Author VX
 
 -   liuliangzheng
 
-### 有任务使用问题联系作者，请认准包名：
+### For any usage issues, please contact the author and verify the package name:
 
--   @liuliang520500/sinataoke_cn@latest 谨防假冒
+-   @liuliang520500/sinataoke_cn@latest Beware of counterfeits
 
-**官方网站：** [https://github.com/liuliang520530/taoke-mcp](https://github.com/liuliang520530/taoke-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/liuliang520530/taoke-mcp](https://github.com/liuliang520530/taoke-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `research and data`, `电商,淘宝客,淘宝,京东,拼多多`, `chinese`
+- Categories: `data`
+- Tags: `search`, `research and data`, `电商,淘宝客,淘宝,京东,拼多多`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @liuliang520500/sinataoke_cn@latest g:win11desktop/logs/`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @liuliang520500/sinataoke_cn@latest g:win11desktop/logs/`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/liuliang520500-taoke.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/liuliang520500-taoke.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

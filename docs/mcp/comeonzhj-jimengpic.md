@@ -1,174 +1,164 @@
 ---
-title: "即梦MCP"
-description: "该项目是基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务，支持多种图片比例，并且可以方便地与各种MCP客户端集成。"
+title: "jimengpic-mcp"
+description: "即梦AI图片生成 MCP 服务 基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。"
 ---
 
-# 即梦MCP
+# jimengpic-mcp
 
-该项目是基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务，支持多种图片比例，并且可以方便地与各种MCP客户端集成。
+即梦AI图片生成 MCP 服务 基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。
 
-# 即梦AI图片生成 MCP 服务
+# Jimeng AI Image Generation MCP Service
 
-基于火山引擎即梦AI的图片生成MCP（Model Context Protocol）服务。
+Based on the Jimeng AI image generation MCP (Model Context Protocol) service from Volcengine.
 
-## 功能特性
+## Features
 
-- 使用火山引擎即梦AI API生成高质量图片
-- 支持多种图片比例：4:3、3:4、16:9、9:16
-- 标准化的MCP接口，兼容各种MCP客户端
-- 环境变量配置，安全便捷
+- Generate high-quality images using the Volcengine Jimeng AI API
+- Supports multiple image ratios: 4:3, 3:4, 16:9, 9:16
+- Standardized MCP interface, compatible with various MCP clients
+- Environment variable configuration for security and convenience
 
-## 安装依赖
+## Install Dependencies
 
-```bash
+bash
 cd jimengpic-mcp
 npm install
-```
 
-## 编译项目
+## Build the Project
 
-```bash
+bash
 npm run build
-```
 
-## 环境变量配置
+## Environment Variable Configuration
 
-设置以下环境变量：
+Set the following environment variables:
 
-```bash
-export JIMENG_ACCESS_KEY="你的火山引擎AccessKey"
-export JIMENG_SECRET_KEY="你的火山引擎SecretKey"
-```
+bash
+export JIMENG_ACCESS_KEY="Your Volcengine AccessKey"
+export JIMENG_SECRET_KEY="Your Volcengine SecretKey"
 
-### 获取API密钥
+### Obtain API Keys
 
-1. 访问 [火山引擎控制台](https://console.volcengine.com/)
-2. 登录后进入"即梦AI"产品页面，开通服务（可选择免费试用）
-3. 在"访问控制"页面创建访问密钥，获取Access Key和Secret Key
-4. 确保账号已开通即梦AI图像生成相关权限和策略
+1. Visit the [Volcengine Console](https://console.volcengine.com/)
+2. After logging in, go to the "Jimeng AI" product page and activate the service (you can choose a free trial)
+3. On the "Access Control" page, create an access key to obtain the Access Key and Secret Key
+4. Ensure that your account has the necessary permissions and policies for Jimeng AI image generation
 
-**注意：** 根据官方文档，请确保使用正确的req_key参数值 `jimeng_high_aes_general_v21_L`
+**Note:** According to the official documentation, make sure to use the correct `req_key` parameter value `jimeng_high_aes_general_v21_L`.
 
-## 使用方法
+## Usage
 
-### 直接运行
+### Run Directly
 
-```bash
+bash
 node build/index.js
-```
 
-### 作为MCP服务器
+### As an MCP Server
 
-在MCP客户端（如Claude Desktop、Cursor等）中配置此服务：
+Configure this service in an MCP client (such as Claude Desktop, Cursor, etc.):
 
-```json
+json
 {
   "mcpServers": {
     "jimengpic": {
       "command": "node",
       "args": ["/path/to/jimengpic-mcp/build/index.js"],
       "env": {
-        "JIMENG_ACCESS_KEY": "你的AccessKey",
-        "JIMENG_SECRET_KEY": "你的SecretKey"
+        "JIMENG_ACCESS_KEY": "Your AccessKey",
+        "JIMENG_SECRET_KEY": "Your SecretKey"
       }
     }
   }
 }
-```
 
-## API接口
+## API Endpoints
 
 ### generate-image
 
-当用户需要生成图片时使用的工具。
+A tool used when users need to generate images.
 
-**参数：**
-- `text` (string): 用户需要在图片上显示的文字
-- `illustration` (string): 根据用户要显示的文字，提取3-5个可以作为图片配饰的插画元素关键词
-- `color` (string): 图片的背景主色调
-- `ratio` (enum): 图片比例，支持以下选项：
+**Parameters:**
+- `text` (string): The text that the user wants to display on the image
+- `illustration` (string): 3-5 keywords for illustration elements that can be used as accessories based on the text to be displayed
+- `color` (string): The main background color of the image
+- `ratio` (enum): The aspect ratio of the image, supporting the following options:
   - `"4:3"`: 512×384
   - `"3:4"`: 384×512  
   - `"16:9"`: 512×288
   - `"9:16"`: 288×512
 
-**提示词生成规则：**
-工具会自动将输入参数组合成以下格式的提示词：
-```
-字体设计："{text}"，黑色字体，斜体，带阴影。干净的背景，白色到{color}渐变。点缀浅灰色、半透明{illustration}等元素插图做配饰插画。
-```
+**Prompt Generation Rules:**
+The tool will automatically combine the input parameters into a prompt in the following format:
 
-**返回：**
-- 成功时返回图片URL和详细信息
-- 失败时返回错误信息
+Font design: "{text}", black font, italic, with shadow. Clean background, white to {color} gradient. Decorated with light gray, semi-transparent {illustration} and other illustrative elements.
 
-## 使用示例
+**Returns:**
+- On success, returns the image URL and detailed information
+- On failure, returns an error message
 
-```typescript
-// 在MCP客户端中调用
+## Example Usage
+
+typescript
+// Call in an MCP client
 const result = await mcp.callTool("generate-image", {
-  text: "新年快乐",
-  illustration: "烟花, 灯笼, 祥云, 星星, 礼花",
-  color: "红色",
+  text: "Happy New Year",
+  illustration: "fireworks, lanterns, auspicious clouds, stars, fireworks",
+  color: "red",
   ratio: "4:3"
 });
-```
 
-## 项目结构
+## Project Structure
 
-```
 jimengpic-mcp/
 ├── src/
-│   └── index.ts          # 主服务文件
-├── build/                # 编译输出目录
-├── package.json          # 项目配置
-├── tsconfig.json         # TypeScript配置
-└── README.md            # 项目说明
-```
+│   └── index.ts          # Main service file
+├── build/                # Compiled output directory
+├── package.json          # Project configuration
+├── tsconfig.json         # TypeScript configuration
+└── README.md            # Project description
 
-## 注意事项
+## Notes
 
-1. 确保网络连接正常，能够访问火山引擎API
-2. API调用需要消耗积分，请注意使用量
-3. 生成的图片URL有时效性，建议及时下载保存
-4. 请遵守火山引擎的使用条款和即梦AI的内容政策
+1. Ensure that the network connection is normal and can access the Volcengine API
+2. API calls consume credits, so please be mindful of usage
+3. The generated image URLs have a time limit, it is recommended to download and save them promptly
+4. Please comply with Volcengine's terms of use and Jimeng AI content policies
 
-## 故障排除
+## Troubleshooting
 
-### 常见错误
+### Common Errors
 
-1. **环境变量未设置**：确保设置了正确的ACCESS_KEY和SECRET_KEY
-2. **网络连接问题**：检查网络连接和防火墙设置
-3. **API配额不足**：检查火山引擎账户余额和API调用次数
-4. **提示词不合规**：确保提示词符合内容安全规范
+1. **Environment variables not set**: Ensure that the correct ACCESS_KEY and SECRET_KEY are set
+2. **Network connection issues**: Check the network connection and firewall settings
+3. **Insufficient API quota**: Check the Volcengine account balance and API call count
+4. **Non-compliant prompts**: Ensure that the prompts comply with content safety guidelines
 
-### 调试方法
+### Debugging Methods
 
-运行时添加调试信息：
-```bash
+Add debug information when running:
+bash
 DEBUG=* node build/index.js
-```
 
-## 许可证
+## License
 
 ISC License
 
-**官方网站：** [https://github.com/comeonzhj/jimengpic-mcp](https://github.com/comeonzhj/jimengpic-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/comeonzhj/jimengpic-mcp](https://github.com/comeonzhj/jimengpic-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`
+- Categories: `media`
+- Tags: `art and culture`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/jimengpic-mcp/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/jimengpic-mcp/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/comeonzhj-jimengpic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/comeonzhj-jimengpic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

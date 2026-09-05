@@ -3,21 +3,26 @@
   "channel": "free-ai",
   "name": {
     "en": "Cerebras Free Tier",
-    "zh-Hans": "Cerebras 免费层",
-    "zh-Hant": "Cerebras 免费层"
+    "zh-Hans": "Cerebras 免费层"
   },
   "description": {
     "en": "Ultra-fast OpenAI-compatible inference (up to ~2,000 tokens/s) with a free tier of roughly 1M tokens/day per model (e.g. Llama 3.3 70B); no credit card required.",
-    "zh-Hans": "OpenAI 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 Llama 3.3 70B）；无需信用卡。",
-    "zh-Hant": "OpenAI 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 Llama 3.3 70B）；无需信用卡。"
+    "zh-Hans": "OpenAI 兼容的极速推理（可达约 2,000 tokens/秒），免费层每模型每天约 100 万 tokens（如 Llama 3.3 70B）；无需信用卡。"
   },
   "detail": {
     "en": "Cerebras runs open LLMs on wafer-scale chips with very high throughput via an OpenAI-compatible API (base https://api.cerebras.ai/v1). The free tier provides roughly 1M tokens/day per model with per-model RPM/TPM/TPD limits (values per the official rate-limits doc); hitting a limit returns 429. No credit card is required; the paid Developer tier offers about 10x higher limits.",
-    "zh-Hans": "Cerebras 使用晶圆级芯片托管开源 LLM，通过 OpenAI 兼容 API（https://api.cerebras.ai/v1）提供极高吞吐。免费层每模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速（数值见官方 rate-limits 文档）；超限返回 429。无需信用卡；付费 Developer 层限速约为免费层 10 倍。",
-    "zh-Hant": "Cerebras 使用晶圆级芯片托管开源 LLM，通过 OpenAI 兼容 API（https://api.cerebras.ai/v1）提供极高吞吐。免费层每模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速（数值见官方 rate-limits 文档）；超限返回 429。无需信用卡；付费 Developer 层限速约为免费层 10 倍。"
+    "zh-Hans": "Cerebras 使用晶圆级芯片托管开源 LLM，通过 OpenAI 兼容 API（https://api.cerebras.ai/v1）提供极高吞吐。免费层每模型每天约 100 万 tokens，并按模型设置 RPM/TPM/TPD 限速（数值见官方 rate-limits 文档）；超限返回 429。无需信用卡；付费 Developer 层限速约为免费层 10 倍。"
   },
-  "categories": ["general", "coding"],
-  "tags": ["cerebras", "free-tier", "api", "fast-inference"],
+  "categories": [
+    "general",
+    "coding"
+  ],
+  "tags": [
+    "cerebras",
+    "free-tier",
+    "api",
+    "fast-inference"
+  ],
   "website": "https://www.cerebras.ai/",
   "status": "active",
   "lastVerifiedAt": "2026-08-30",
@@ -27,33 +32,28 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "Free tier: roughly 1M tokens/day per model (plus per-model RPM/TPM limits); no credit card required. Check the official rate-limits doc for current values.",
-      "zh-Hans": "免费层约每模型每天 100 万 tokens（另按模型设 RPM/TPM 限速）；无需信用卡；当前数值以官方 rate-limits 文档为准。",
-      "zh-Hant": "免费层约每模型每天 100 万 tokens（另按模型设 RPM/TPM 限速）；无需信用卡；当前数值以官方 rate-limits 文档为准。"
+      "zh-Hans": "免费层约每模型每天 100 万 tokens（另按模型设 RPM/TPM 限速）；无需信用卡；当前数值以官方 rate-limits 文档为准。"
     },
     "availability": "global",
     "signupUrl": "https://cloud.cerebras.ai/",
     "freePolicyUrl": "https://inference-docs.cerebras.ai/support/rate-limits",
     "registrationRestriction": {
       "en": "Sign up with email; no credit card required. Rate limits are per organization/API key and model.",
-      "zh-Hans": "邮箱注册即可，无需信用卡；限速按组织/API Key 与模型计。",
-      "zh-Hant": "邮箱注册即可，无需信用卡；限速按组织/API Key 与模型计。"
+      "zh-Hans": "邮箱注册即可，无需信用卡；限速按组织/API Key 与模型计。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "Free-tier models (e.g. Llama 3.3 70B, Qwen3 and other open models)",
-          "zh-Hans": "免费层模型（如 Llama 3.3 70B、Qwen3 等开源模型）",
-          "zh-Hant": "免费层模型（如 Llama 3.3 70B、Qwen3 等开源模型）"
+          "zh-Hans": "免费层模型（如 Llama 3.3 70B、Qwen3 等开源模型）"
         },
         "quota": {
           "en": "Free, ~1M tokens/day per model",
-          "zh-Hans": "免费，每模型约 100 万 tokens/天",
-          "zh-Hant": "免费，每模型约 100 万 tokens/天"
+          "zh-Hans": "免费，每模型约 100 万 tokens/天"
         },
         "frequency": {
           "en": "RPM/TPM/TPD per model; see official doc",
-          "zh-Hans": "按模型设 RPM/TPM/TPD，见官方文档",
-          "zh-Hant": "按模型设 RPM/TPM/TPD，见官方文档"
+          "zh-Hans": "按模型设 RPM/TPM/TPD，见官方文档"
         }
       }
     ],

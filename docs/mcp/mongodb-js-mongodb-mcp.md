@@ -1,11 +1,11 @@
 ---
-title: "MongoDB MCP 服务器"
-description: "MongoDB MCP Server A Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas. Quick Start Using the official MongoDB plugins for AI agents MongoDB MCP Server comes bundled with the official"
+title: "MongoDB MCP Server"
+description: "MongoDB MCP Server A Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas. Quick Start Using the official MongoDB plugins for AI agents MongoDB MCP Server comes bundl…"
 ---
 
-# MongoDB MCP 服务器
+# MongoDB MCP Server
 
-MongoDB MCP Server A Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas. Quick Start Using the official MongoDB plugins for AI agents MongoDB MCP Server comes bundled with the official
+MongoDB MCP Server A Model Context Protocol server for interacting with MongoDB Databases and MongoDB Atlas. Quick Start Using the official MongoDB plugins for AI agents MongoDB MCP Server comes bundl…
 
 # MongoDB MCP Server
 
@@ -384,22 +384,22 @@ NOTE: atlas tools are only available when you set credentials on [configuration]
 
 - `atlas-local-connect-deployment` - Connect to a MongoDB Atlas Local deployment and get back a connectionId to pass to the other 
 
-**官方网站：** [https://github.com/mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`database`, `mongodb`, `developer tools`, `official`
+- Categories: `data`, `development`
+- Tags: `database`, `mongodb`, `developer tools`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mongodb-mcp-server@latest setup`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mongodb-mcp-server@latest setup`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mongodb-js-mongodb-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mongodb-js-mongodb-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

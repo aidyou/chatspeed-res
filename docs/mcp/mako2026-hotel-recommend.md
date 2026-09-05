@@ -1,84 +1,85 @@
 ---
-title: "酒店搜索与智能推荐"
-description: "🏨 酒店搜索与智能推荐 酒店搜索与智能推荐MCP服务，连接大语言模型与全国酒店数据，为AI助手、旅行智能体及Cursor/Windsurf等IDE提供实时酒店检索与推荐能力。1次调用完成搜索→详情→退改解读全流程，无需多次调用多个工具，极省Token。 ✨ 核心特性 - 1次调用全流程：场景路由→搜索→详情→退改解读，1次调用替代传统的\"搜索+详情+解读\"3步流程，大幅节省Token - 场景自动识别：自动检测商务/亲子/度假/背包/通用5种出行场景，智能匹配最优筛选标签 - 3档价格分层：搜索20家→按价格分为性"
+title: "hotel-recommend"
+description: "🏨 Hotel Search and Intelligent Recommendations The Hotel Search and Intelligent Recommendations MCP service connects large language models with nationwide hotel data, providing real-time hotel search…"
 ---
 
-# 酒店搜索与智能推荐
+# hotel-recommend
 
-🏨 酒店搜索与智能推荐 酒店搜索与智能推荐MCP服务，连接大语言模型与全国酒店数据，为AI助手、旅行智能体及Cursor/Windsurf等IDE提供实时酒店检索与推荐能力。1次调用完成搜索→详情→退改解读全流程，无需多次调用多个工具，极省Token。 ✨ 核心特性 - 1次调用全流程：场景路由→搜索→详情→退改解读，1次调用替代传统的"搜索+详情+解读"3步流程，大幅节省Token - 场景自动识别：自动检测商务/亲子/度假/背包/通用5种出行场景，智能匹配最优筛选标签 - 3档价格分层：搜索20家→按价格分为性
+🏨 Hotel Search and Intelligent Recommendations The Hotel Search and Intelligent Recommendations MCP service connects large language models with nationwide hotel data, providing real-time hotel search…
 
-🏨 酒店搜索与智能推荐
+🏨 Hotel Search and Intelligent Recommendations
 
-酒店搜索与智能推荐MCP服务，连接大语言模型与全国酒店数据，为AI助手、旅行智能体及Cursor/Windsurf等IDE提供实时酒店检索与推荐能力。1次调用完成搜索→详情→退改解读全流程，无需多次调用多个工具，极省Token。
+The Hotel Search and Intelligent Recommendations MCP service connects large language models with nationwide hotel data, providing real-time hotel search and recommendation capabilities for AI assistants, travel intelligences, and IDEs like Cursor/Windsurf. A single call completes the entire process from search → details → cancellation policy interpretation, eliminating the need to call multiple tools and significantly saving on tokens.
 
-✨ 核心特性
+✨ Core Features
 
-- 1次调用全流程：场景路由→搜索→详情→退改解读，1次调用替代传统的"搜索+详情+解读"3步流程，大幅节省Token
-- 场景自动识别：自动检测商务/亲子/度假/背包/通用5种出行场景，智能匹配最优筛选标签
-- 3档价格分层：搜索20家→按价格分为性价比之选/品质推荐/豪华体验3档各4家共12家，一次满足不同预算需求
-- 预算感知：用户提预算时（如"500以内"），自动只返回预算内酒店，不再返回超出预算的结果
-- 退改政策解读：将原始JSON退改规则自动转为人类可读文字，如"05月31日后取消扣¥553"
-- 精选输出：返回精简emoji格式结果，含酒店信息、退改政策与预订链接，信息密度高
+- **One-Call Full Process**: Scene routing → search → details → cancellation policy interpretation, replacing the traditional "search + details + interpretation" three-step process with a single call, greatly saving on tokens.
+- **Automatic Scene Recognition**: Automatically detects five types of travel scenarios (business/parent-child/vacation/backpacker/general) and intelligently matches the best filter tags.
+- **Three-Tier Price Segmentation**: Searches 20 hotels and categorizes them into three tiers (value-for-money/quality recommendations/luxury experience), each with 4 hotels, totaling 12, to meet different budget needs in one go.
+- **Budget Awareness**: When a user specifies a budget (e.g., "under 500"), it automatically returns only hotels within that budget, excluding those that exceed it.
+- **Cancellation Policy Interpretation**: Automatically converts raw JSON cancellation rules into human-readable text, such as "cancellation after May 31st incurs a deduction of ¥553".
+- **Curated Output**: Returns concise emoji-formatted results, including hotel information, cancellation policies, and booking links, with high information density.
 
-🛠 工具
+🛠 Tools
 
-hotel_search_and_recommend
+**hotel_search_and_recommend**
 
-酒店搜索与智能推荐：1次调用完成场景路由→搜索→详情→退改解读。
+Hotel Search and Intelligent Recommendations: One call completes scene routing → search → details → cancellation policy interpretation.
 
-参数：
+Parameters:
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| destination | string | ✅ | 目的地城市/区域/地标，如"上海"、"三亚海棠湾" |
-| scene | string | ❌ | 差旅场景：商务/亲子/度假/背包/通用，默认通用。也可通过query自动检测 |
-| check_in | string | ❌ | 入住日期 YYYY-MM-DD，不传默认明天 |
-| check_out | string | ❌ | 退房日期 YYYY-MM-DD，不传默认后天 |
-| guests | int | ❌ | 入住人数，默认1 |
-| max_price | int | ❌ | 每晚最高预算（元），如500表示500元以内 |
-| query | string | ❌ | 用户原始查询，用于场景自动检测 |
+| Parameter | Type   | Required | Description |
+|-----------|--------|----------|-------------|
+| destination | string | ✅ | Destination city/area/landmark, e.g., "Shanghai", "Sanya Haitang Bay" |
+| scene | string | ❌ | Travel scenario: business/parent-child/vacation/backpacker/general, default is general. Can also be automatically detected via query |
+| check_in | string | ❌ | Check-in date YYYY-MM-DD, defaults to tomorrow if not provided |
+| check_out | string | ❌ | Check-out date YYYY-MM-DD, defaults to the day after tomorrow if not provided |
+| guests | int | ❌ | Number of guests, default is 1 |
+| max_price | int | ❌ | Maximum nightly budget (in CNY), e.g., 500 means under 500 CNY |
+| query | string | ❌ | User's original query, used for automatic scene detection |
 
-场景自动检测：
+Automatic Scene Detection:
 
-| 场景 | 关键词 | 标签策略 |
-|------|--------|----------|
-| 💼 商务 | 出差/商务/办公/会议/商旅 | 必选：商务酒店；优选：免费WiFi/24小时前台 |
-| 👨‍👩‍👧 亲子 | 亲子/家庭/带娃/遛娃 | 必选：亲子酒店；优选：儿童乐园/儿童泳池 |
-| 🌴 度假 | 度假/情侣/蜜月/温泉 | 优选：度假酒店/SPA/户外泳池 |
-| 🎒 背包 | 穷游/学生/青旅/便宜 | 优选：性价比酒店；排除：仅限成人入住 |
-| 🏨 通用 | 无匹配关键词 | 无标签过滤 |
+| Scene | Keywords | Tag Strategy |
+|-------|----------|--------------|
+| 💼 Business | Business trip/business/office/meeting/business travel | Must-have: business hotel; Preferred: free WiFi/24-hour front desk |
+| 👨‍👩‍👧 Parent-Child | Parent-child/family/with kids/taking kids out | Must-have: family-friendly hotel; Preferred: children's playground/children's pool |
+| 🌴 Vacation | Vacation/couple/honeymoon/hot spring | Preferred: resort hotel/SPA/outdoor pool |
+| 🎒 Backpacker | Budget travel/student/youth hostel/cheap | Preferred: value-for-money hotel; Excluded: adults-only |
+| 🏨 General | No matching keywords | No tag filtering |
 
-输出示例：
+Example Output:
 
-👨‍👩‍👧亲子+度假推荐 · 北京 · 2026-06-02 (3晚) · ¥1431-¥2933/晚
+👨‍👩‍👧 Parent-Child + Vacation Recommendation · Beijing · 2026-06-02 (3 nights) · ¥1431-¥2933/night
 
-💰 性价比之选 ¥1431-¥1667/晚
+💰 Value-for-Money Choice ¥1431-¥1667/night
 
-1. 北京西藏大厦(鸟巢店) ⭐4 💰¥1431/晚
-   📍 北四环东路118号
-   🏷️ 提供家庭房 客房点餐
-   💡 性价比之选，有家庭房
-   🔄 退改：不可免费取消，取消扣¥1431
+1. Tibet Hotel Beijing (Bird's Nest Branch) ⭐4 💰¥1431/night
+   📍 No. 118, North Fourth Ring East Road
+   🏷️ Offers family rooms, room service
+   💡 Value-for-money choice, with family rooms
+   🔄 Cancellation: Non-refundable, cancellation fee ¥1431
    🔗 https://rollinggo.cn/...
 
-2. 北京龙城华美达酒店 ⭐4 💰¥1542/晚
+2. Ramada by Wyndham Beijing North ⭐4 💰¥1542/night
    ...
 
-🏨 品质推荐 ¥1764-¥1982/晚
+🏨 Quality Recommendations ¥1764-¥1982/night
 
-5. 北京保利大厦酒店 ⭐4 💰¥1764/晚
+5. Poly Plaza Hotel Beijing ⭐4 💰¥1764/night
    ...
 
-✨ 豪华体验 ¥2546-¥2933/晚
+✨ Luxury Experience ¥2546-¥2933/night
 
-9. 北京朗丽兹西山花园酒店 ⭐5 💰¥2546/晚
+9. Lanzhiz Xi Shan Garden Hotel Beijing ⭐5 💰¥2546/night
    ...
 
-📦 安装
+📦 Installation
 
+bash
 pip install mcp-rollinggo-hotel
 
-⚙️ MCP客户端配置
+⚙️ MCP Client Configuration
 
 json
 {
@@ -90,36 +91,36 @@ json
   }
 }
 
-💡 零配置即用，无需API密钥，开箱即用。
+💡 Ready to use with zero configuration, no API key required, plug-and-play.
 
-📝 使用示例
+📝 Usage Examples
 
-- "出差上海住哪好" → 自动检测商务场景
-- "带娃去三亚住哪" → 自动检测亲子场景
-- "杭州有什么便宜的酒店" → 自动检测背包场景
-- "北京500以内的酒店" → 自动过滤，只返回500以内
-- "帮我搜搜北京的酒店" → 通用场景
+- "Where to stay for a business trip to Shanghai" → Automatically detects the business scenario
+- "Where to stay with kids in Sanya" → Automatically detects the parent-child scenario
+- "Cheap hotels in Hangzhou" → Automatically detects the backpacker scenario
+- "Hotels in Beijing under 500" → Automatically filters, returning only those under 500
+- "Help me find a hotel in Beijing" → General scenario
 
-📄 许可证
+📄 License
 
 MIT License
 
-**官方网站：** [https://pypi.org/project/mcp-rollinggo-hotel/](https://pypi.org/project/mcp-rollinggo-hotel/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pypi.org/project/mcp-rollinggo-hotel/](https://pypi.org/project/mcp-rollinggo-hotel/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `酒店推荐`, `酒店搜索`, `酒店预订`, `酒店查询`, `酒店价格`, `订酒店`, `chinese`
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `酒店推荐`, `酒店搜索`, `酒店预订`, `酒店查询`, `酒店价格`, `订酒店`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-rollinggo-hotel==1.5.1`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-rollinggo-hotel==1.5.1`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mako2026-hotel-recommend.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-hotel-recommend.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

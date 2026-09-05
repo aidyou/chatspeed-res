@@ -1,11 +1,11 @@
 ---
-title: "企业微信文件发送 MCP 服务"
-description: "wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理 安装依赖 bash pip install -r requirements.txt 启动方式 1. 作为独立 MCP "
+title: "wechat_send_mcp_serve"
+description: "wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理…"
 ---
 
-# 企业微信文件发送 MCP 服务
+# wechat_send_mcp_serve
 
-wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理 安装依赖 bash pip install -r requirements.txt 启动方式 1. 作为独立 MCP 
+wechatsend MCP 服务 一个通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP (Model Context Protocol) 服务。 功能特性 - 🚀 支持多种文件输入方式：本地文件、网络文件、Base64 编码文件 - 🔧 基于 MCP 协议，可集成到各种 AI 助手和自动化工具中 - 📱 专为企业微信群聊设计，支持文件分享 - 🛡️ 完善的错误处理和临时文件管理…
 
 # wechat_send MCP 服务
 
@@ -134,22 +134,22 @@ MIT License
 
 欢迎提交 Issue 和 Pull Request 来改进这个项目。
 
-**官方网站：** [https://github.com/NANYAN-01/wechat-send-mcp](https://github.com/NANYAN-01/wechat-send-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/NANYAN-01/wechat-send-mcp](https://github.com/NANYAN-01/wechat-send-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`
+- Categories: `communication`
+- Tags: `communication`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx wechat-send`
-- 参数：无
+- Transport: `stdio`
+- Command: `uvx wechat-send`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/nanyan001-wechat-send-serve.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/nanyan001-wechat-send-serve.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,116 +1,70 @@
 ---
-title: "Outlook日历管理器"
-description: "Outlook日历MCP使克劳德能够直接管理Windows系统上的Microsoft Outlook日历，提供了一种注重隐私的解决方案，可将所有数据保留在本地。用户可以查看事件、创建会议、查找空闲时间段以及管理多个日历，而无需让数据离开他们的机器。"
+title: "Outlook_Calendar_MCP"
+description: "The Outlook Calendar MCP enables Claude to directly manage Microsoft Outlook calendars on Windows systems, offering a privacy-focused solution that keeps all data local. Users can view events, create…"
 ---
 
-# Outlook日历管理器
+# Outlook_Calendar_MCP
 
-Outlook日历MCP使克劳德能够直接管理Windows系统上的Microsoft Outlook日历，提供了一种注重隐私的解决方案，可将所有数据保留在本地。用户可以查看事件、创建会议、查找空闲时间段以及管理多个日历，而无需让数据离开他们的机器。
+The Outlook Calendar MCP enables Claude to directly manage Microsoft Outlook calendars on Windows systems, offering a privacy-focused solution that keeps all data local. Users can view events, create…
 
-# Outlook 日历 MCP 工具
+# Outlook Calendar MCP Tool
 
-这是一个模型上下文协议（MCP）服务器，允许 Claude 访问和管理您的本地 Microsoft Outlook 日历（仅限 Windows）。
+A Model Context Protocol (MCP) server that allows Claude to access and manage your local Microsfot Outlook calendar (Windows only).
 
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-## 功能
+## Features
 
-- **查看日历事件**：列出指定日期范围内的事件，查看事件详情，检查参与者状态
-- **管理日历事件**：创建新的事件和会议，更新现有事件
-- **日历智能**：查找可用时间以安排会议，确定最佳会议时间
-- **多日历支持**：访问您 Outlook 配置文件中的不同日历
+- **View Calendar Events**: List events within a date range, view event details, check attendee status
+- **Manage Calendar Events**: Create new events and meetings, update existing events
+- **Calendar Intelligence**: Find free time slots for scheduling, identify optimal meeting times
+- **Multiple Calendar Support**: Access different calendars in your Outlook profile
 
-## 前提条件
+## Prerequisites
 
-- Windows 操作系统
-- 安装了 Microsoft Outlook 桌面客户端
-- Node.js (版本 14.x 或更高)
-- npm (随 Node.js 一起提供)
+- Windows operating system
+- Microsoft Outlook desktop client installed
+- Node.js (version 14.x or higher)
+- npm (comes with Node.js)
 
-## 安装
+## Installation
 
-### 选项 1：从 npm 安装
+### Option 1: Install from npm
 
 ```bash
 npm install -g outlook-calendar-mcp
 ```
 
-您也可以直接使用 npx 运行而无需安装：
+You can also run it directly without installation using npx:
 
 ```bash
 npx outlook-calendar-mcp
 ```
 
-### 选项 2：从源代码安装
+### Option 2: Install from source
 
-1. 克隆此仓库或下载源代码
-2. 安装依赖项：
+1. Clone this repository or download the source code
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. 运行服务器：
+3. Run the server:
 
 ```bash
 npm start
 ```
 
-## MCP 服务器配置
+## MCP Server Configuration
 
-要将此工具与 Claude 一起使用，需要将其添加到您的 MCP 设置配置文件中。
+To use this tool with Claude, you need to add it to your MCP settings configuration file.
 
-### 对于 Claude 桌面应用程序
+### For Claude Desktop App
 
-在您的 Claude 桌面配置文件（位于 `%APPDATA%\Claude\claude_desktop_config.json`）中添加以下内容：
+Add the following to your Claude Desktop configuration file (located at `%APPDATA%\Claude\claude_desktop_config.json`):
 
-#### 如果通过 npm 全局安装：
-
-```json
-{
-  "mcpServers": {
-    "outlook-calendar": {
-      "command": "outlook-calendar-mcp",
-      "args": [],
-      "env": {}
-    }
-  }
-}
-```
-
-#### 使用 npx（不安装）：
-
-```json
-{
-  "mcpServers": {
-    "outlook-calendar": {
-      "command": "npx",
-      "args": ["-y", "outlook-calendar-mcp"],
-      "env": {}
-    }
-  }
-}
-```
-
-#### 如果从源代码安装：
-
-```json
-{
-  "mcpServers": {
-    "outlook-calendar": {
-      "command": "node",
-      "args": ["path/to/outlook-calendar-mcp/src/index.js"],
-      "env": {}
-    }
-  }
-}
-```
-
-### 对于 Claude VSCode 扩展
-
-在您的 Claude VSCode 扩展 MCP 设置文件（位于 `%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`）中添加以下内容：
-
-#### 如果通过 npm 全局安装：
+#### If installed globally via npm:
 
 ```json
 {
@@ -124,7 +78,7 @@ npm start
 }
 ```
 
-#### 使用 npx（不安装）：
+#### Using npx (without installation):
 
 ```json
 {
@@ -138,7 +92,7 @@ npm start
 }
 ```
 
-#### 如果从源代码安装：
+#### If installed from source:
 
 ```json
 {
@@ -152,13 +106,59 @@ npm start
 }
 ```
 
-对于源代码安装，请将 `path/to/outlook-calendar-mcp` 替换为您实际安装此工具的路径。
+### For Claude VSCode Extension
 
-## 使用
+Add the following to your Claude VSCode extension MCP settings file (located at `%APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`):
 
-配置完成后，Claude 将可以访问以下工具：
+#### If installed globally via npm:
 
-### 列出日历事件
+```json
+{
+  "mcpServers": {
+    "outlook-calendar": {
+      "command": "outlook-calendar-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}
+```
+
+#### Using npx (without installation):
+
+```json
+{
+  "mcpServers": {
+    "outlook-calendar": {
+      "command": "npx",
+      "args": ["-y", "outlook-calendar-mcp"],
+      "env": {}
+    }
+  }
+}
+```
+
+#### If installed from source:
+
+```json
+{
+  "mcpServers": {
+    "outlook-calendar": {
+      "command": "node",
+      "args": ["path/to/outlook-calendar-mcp/src/index.js"],
+      "env": {}
+    }
+  }
+}
+```
+
+For source installation, replace `path/to/outlook-calendar-mcp` with the actual path to where you installed this tool.
+
+## Usage
+
+Once configured, Claude will have access to the following tools:
+
+### List Calendar Events
 
 ```
 list_events
@@ -167,9 +167,9 @@ list_events
 - calendar: Calendar name (optional)
 ```
 
-示例："列出我下周的日历事件"
+Example: "List my calendar events for next week"
 
-### 创建日历事件
+### Create Calendar Event
 
 ```
 create_event
@@ -185,9 +185,9 @@ create_event
 - calendar: Calendar name (optional)
 ```
 
-示例："周五下午 2 点与 John 关于项目提案的会议"
+Example: "Add a meeting with John about the project proposal on Friday at 2 PM"
 
-### 查找空闲时间段
+### Find Free Time Slots
 
 ```
 find_free_slots
@@ -199,9 +199,9 @@ find_free_slots
 - calendar: Calendar name (optional)
 ```
 
-示例："这周我什么时候有空进行 1 小时的会议？"
+Example: "When am I free for a 1-hour meeting this week?"
 
-### 获取参与者状态
+### Get Attendee Status
 
 ```
 get_attendee_status
@@ -209,11 +209,11 @@ get_attendee_status
 - calendar: Calendar name (optional)
 ```
 
-示例："谁还没有回复我的团队会议邀请？"
+Example: "Who hasn't responded to my team meeting invitation?"
 
-> **重要提示**：当使用需要事件 ID 的操作（如 update_event, delete_event, get_attendee_status）时，必须使用 list_events 响应中的 `id` 字段。这是 Outlook 用来标识事件的唯一 EntryID。
+> **Important Note**: When using operations that require an event ID (update_event, delete_event, get_attendee_status), you must use the `id` field from the list_events response. This is the unique EntryID that Outlook uses to identify events.
 
-### 更新日历事件
+### Update Calendar Event
 
 ```
 update_event
@@ -228,54 +228,54 @@ update_event
 - calendar: Calendar name (optional)
 ```
 
-示例："将我明天的团队会议时间从下午 2 点改为下午 3 点"
+Example: "Update my team meeting tomorrow to start at 3 PM instead of 2 PM"
 
-### 获取日历
+### Get Calendars
 
 ```
 get_calendars
 ```
 
-示例："显示我可用的日历"
+Example: "Show me my available calendars"
 
-## 安全注意事项
+## Security Notes
 
-- 首次使用时，Outlook 可能会显示安全提示以允许脚本访问
-- 该工具仅访问您的本地 Outlook 客户端，并不会将日历数据发送到外部服务器
-- 所有日历操作都在您的计算机上本地执行
+- On first use, Outlook may display security prompts to allow script access
+- The tool only accesses your local Outlook client and does not send calendar data to external servers
+- All calendar operations are performed locally on your computer
 
-## 故障排除
+## Troubleshooting
 
-- **Outlook 安全提示**：如果您看到 Outlook 的安全提示，您需要允许脚本访问您的 Outlook 数据
-- **脚本执行策略**：如果遇到脚本执行错误，可能需要调整您的 PowerShell 执行策略
-- **路径问题**：请确保 MCP 配置文件中的路径指向工具的正确位置
+- **Outlook Security Prompts**: If you see security prompts from Outlook, you need to allow the script to access your Outlook data
+- **Script Execution Policy**: If you encounter script execution errors, you may need to adjust your PowerShell execution policy
+- **Path Issues**: Ensure the path in your MCP configuration file points to the correct location of the tool
 
-## 贡献
+## Contributing
 
-我们欢迎对 Outlook Calendar MCP 工具做出贡献！请参阅我们的[贡献指南](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/CONTRIBUTING.md)以了解如何开始。
+We welcome contributions to the Outlook Calendar MCP Tool! Please see our [Contributing Guide](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/CONTRIBUTING.md) for details on how to get started.
 
-通过参与此项目，您同意遵守我们的[行为准则](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/CODE_OF_CONDUCT.md)。
+By participating in this project, you agree to abide by our [Code of Conduct](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/CODE_OF_CONDUCT.md).
 
-## 许可证
+## License
 
-此项目根据 MIT 许可证许可 - 详情请参见[LICENSE](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/merajmehrabi/Outlook_Calendar_MCP/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/merajmehrabi/Outlook_Calendar_MCP](https://github.com/merajmehrabi/Outlook_Calendar_MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/merajmehrabi/Outlook_Calendar_MCP](https://github.com/merajmehrabi/Outlook_Calendar_MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y outlook-calendar-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y outlook-calendar-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/merajmehrabi-outlook-calendar.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/merajmehrabi-outlook-calendar.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

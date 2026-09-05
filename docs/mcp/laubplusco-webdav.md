@@ -1,37 +1,37 @@
 ---
-title: "MCP WebDAV 服务"
-description: "一种模型上下文协议（MCP）服务器，它使 Claude Desktop 和其他 MCP 客户端能够通过自然语言命令与 WebDAV 文件系统进行 CRUD 操作交互。"
+title: "mcp-webdav-server"
+description: "A Model Context Protocol server that enables Claude Desktop and other MCP clients to interact with WebDAV file systems through natural language commands for CRUD operations."
 ---
 
-# MCP WebDAV 服务
+# mcp-webdav-server
 
-一种模型上下文协议（MCP）服务器，它使 Claude Desktop 和其他 MCP 客户端能够通过自然语言命令与 WebDAV 文件系统进行 CRUD 操作交互。
+A Model Context Protocol server that enables Claude Desktop and other MCP clients to interact with WebDAV file systems through natural language commands for CRUD operations.
 
-# WebDAV MCP 服务器
+# WebDAV MCP Server
 
-一个模型上下文协议（MCP）服务器，支持通过基本身份验证对WebDAV端点进行CRUD操作。此服务器使Claude Desktop和其他MCP客户端能够通过自然语言命令与WebDAV文件系统交互。
+A Model Context Protocol (MCP) server that enables CRUD operations on a WebDAV endpoint with basic authentication. This server enables Claude Desktop and other MCP clients to interact with WebDAV file systems through natural language commands.
 
-## 功能
+## Features
 
-- 连接到任意带有可选身份验证的WebDAV服务器
-- 对文件和目录执行CRUD操作
-- 将文件操作作为MCP资源和工具公开
-- 通过stdio传输（用于Claude Desktop集成）或HTTP/SSE传输运行
-- 通过可选的基本身份验证实现安全访问
-- 支持使用bcrypt加密密码进行MCP服务器身份验证（由于协议限制，WebDAV密码必须是明文）
-- 连接池以提高与WebDAV服务器的性能
-- 使用Zod进行配置验证
-- 结构化日志记录以便更好地进行故障排除
+- Connect to any WebDAV server with optional authentication
+- Perform CRUD operations on files and directories
+- Expose file operations as MCP resources and tools
+- Run via stdio transport (for Claude Desktop integration) or HTTP/SSE transport
+- Secure access with optional basic authentication
+- Support for bcrypt-encrypted passwords for MCP server authentication (WebDAV passwords must be plain text due to protocol limitations)
+- Connection pooling for better performance with WebDAV servers
+- Configuration validation using Zod
+- Structured logging for better troubleshooting
 
-## 前提条件
+## Prerequisites
 
-- Node.js 18 或更高版本
-- npm 或 yarn
-- WebDAV 服务器（用于实际文件操作）
+- Node.js 18 or later
+- npm or yarn
+- WebDAV server (for actual file operations)
 
-## 安装
+## Installation
 
-### 选项 1：从npm包安装
+### Option 1: Install from npm package
 
 ```bash
 # Global installation
@@ -41,7 +41,7 @@ npm install -g webdav-mcp-server
 npx webdav-mcp-server
 ```
 
-### 选项 2：从源代码克隆并构建
+### Option 2: Clone and build from source
 
 ```bash
 # Clone repository
@@ -55,34 +55,34 @@ npm install
 npm run build
 ```
 
-### 选项 3：Docker
+### Option 3: Docker
 
 ```bash
 # Build the Docker image
 docker build -t webdav-mcp-server .
 
 # Run the container without authentication
-docker run -p 3000:3000 \
-  -e WEBDAV_ROOT_URL=http://your-webdav-server \
-  -e WEBDAV_ROOT_PATH=/webdav \
+docker run -p 3000:3000 
+  -e WEBDAV_ROOT_URL=http://your-webdav-server 
+  -e WEBDAV_ROOT_PATH=/webdav 
   webdav-mcp-server
   
 # Run the container with authentication for both WebDAV and MCP server
-docker run -p 3000:3000 \
-  -e WEBDAV_ROOT_URL=http://your-webdav-server \
-  -e WEBDAV_ROOT_PATH=/webdav \
-  -e WEBDAV_AUTH_ENABLED=true \
-  -e WEBDAV_USERNAME=admin \
-  -e WEBDAV_PASSWORD=password \
-  -e AUTH_ENABLED=true \
-  -e AUTH_USERNAME=user \
-  -e AUTH_PASSWORD=pass \
+docker run -p 3000:3000 
+  -e WEBDAV_ROOT_URL=http://your-webdav-server 
+  -e WEBDAV_ROOT_PATH=/webdav 
+  -e WEBDAV_AUTH_ENABLED=true 
+  -e WEBDAV_USERNAME=admin 
+  -e WEBDAV_PASSWORD=password 
+  -e AUTH_ENABLED=true 
+  -e AUTH_USERNAME=user 
+  -e AUTH_PASSWORD=pass 
   webdav-mcp-server
 ```
 
-## 配置
+## Configuration
 
-在根目录下创建一个`.env`文件，并设置以下变量：
+Create a `.env` file in the root directory with the following variables:
 
 ```env
 # WebDAV configuration
@@ -110,31 +110,31 @@ AUTH_REALM=MCP WebDAV Server
 # AUTH_PASSWORD={bcrypt}$2y$10$CyLKnUwn9fqqKQFEbxpZFuE9mzWR/x8t6TE7.CgAN0oT8I/5jKJBy
 ```
 
-### 为MCP服务器认证使用加密密码
+### Encrypted Passwords for MCP Server Authentication
 
-为了增强MCP服务器的安全性（而不是WebDAV连接），您可以使用bcrypt加密密码而非明文存储：
+For enhanced security of the MCP server (not WebDAV connections), you can use bcrypt-encrypted passwords instead of storing them in plain text:
 
-1. 生成bcrypt哈希：
+1. Generate a bcrypt hash:
 ```bash
-   # 使用内置工具
+   # Using the built-in utility
    npm run generate-hash -- yourpassword
    
-   # 或者使用npx
+   # Or with npx
    npx webdav-mcp-generate-hash yourpassword
 ```
 
-2. 将哈希添加到您的.env文件中，并加上{bcrypt}前缀：
+2. Add the hash to your .env file with the {bcrypt} prefix:
 ```
    AUTH_PASSWORD={bcrypt}$2y$10$CyLKnUwn9fqqKQFEbxpZFuE9mzWR/x8t6TE7.CgAN0oT8I/5jKJBy
 ```
 
-这样，您的MCP服务器密码将被安全地存储。请注意，根据协议要求，WebDAV密码必须始终是明文。
+This way, your MCP server password is stored securely. Note that WebDAV passwords must always be in plain text due to protocol requirements.
 
-## 使用
+## Usage
 
-### 通过stdio传输运行
+### Running with stdio transport
 
-这种模式非常适合直接与Claude Desktop集成。
+This mode is ideal for direct integration with Claude Desktop.
 
 ```bash
 # If installed globally
@@ -147,9 +147,9 @@ npx webdav-mcp-server
 node dist/index.js
 ```
 
-### 通过HTTP/SSE传输运行
+### Running with HTTP/SSE transport
 
-这种模式允许服务器通过HTTP与Server-Sent Events实现实时通信。
+This mode enables the server to be accessed over HTTP with Server-Sent Events for real-time communication.
 
 ```bash
 # If installed globally
@@ -162,9 +162,9 @@ npx webdav-mcp-server --http
 node dist/index.js --http
 ```
 
-## 使用Docker Compose快速启动
+## Quick Start with Docker Compose
 
-开始使用WebDAV服务器和MCP服务器最简单的方法是使用Docker Compose：
+The easiest way to get started with both the WebDAV server and the MCP server is to use Docker Compose:
 
 ```bash
 # Start both WebDAV and MCP servers
@@ -176,13 +176,13 @@ docker-compose up -d
 # - MCP server on port 3000 (username: user, password: pass)
 ```
 
-此设置使用[hacdias/webdav](https://github.com/hacdias/webdav)，这是一个用Go编写的简单且独立的WebDAV服务器。WebDAV服务器的配置存储在`webdav_config.yml`中，您可以修改它来调整权限、添加用户或更改其他设置。
+This setup uses [hacdias/webdav](https://github.com/hacdias/webdav), a simple and standalone WebDAV server written in Go. The configuration for the WebDAV server is stored in `webdav_config.yml`, which you can modify to adjust permissions, add users, or change other settings.
 
-WebDAV服务器将所有文件存储在一个名为`webdav_data`的Docker卷中，该卷在容器重启之间保持持久性。
+The WebDAV server stores all files in a Docker volume called `webdav_data`, which persists across container restarts.
 
-## WebDAV 服务器配置
+## WebDAV Server Configuration
 
-`webdav_config.yml`文件配置了Docker Compose设置中使用的hacdias/webdav服务器。以下是您可以自定义的内容：
+The `webdav_config.yml` file configures the hacdias/webdav server used in the Docker Compose setup. Here's what you can customize:
 
 ```yaml
 # Server address and port
@@ -215,23 +215,23 @@ users:
     password: "{bcrypt}$2y$10$zEP6oofmXFeHaeMfBNLnP.DO8m.H.Mwhd24/TOX2MWLxAExXi4qgi"
 ```
 
-对于更高级的配置选项，请参阅 [hacdias/webdav 文档](https://github.com/hacdias/webdav)。
+For more advanced configuration options, refer to the [hacdias/webdav documentation](https://github.com/hacdias/webdav).
 
-## 测试
+## Testing
 
-要运行测试：
+To run the tests:
 
 ```bash
 npm test
 ```
 
-## 与 Claude Desktop 集成
+## Integrating with Claude Desktop
 
-1. 确保在 Claude Desktop 中启用了 MCP 功能
+1. Ensure the MCP feature is enabled in Claude Desktop
 
-使用 npx
-2. 打开 Claude Desktop 设置并点击编辑配置 (`claude_desktop_config.json`)
-3. 添加
+Using npx
+2. Open Claude Desktop settings and click edit config (`claude_desktop_config.json`)
+3. Add
 ```json
 {
     "mcpServers": {
@@ -253,10 +253,10 @@ npm test
 }
 ```
 
-使用 node 和本地构建
-2. 克隆此仓库并在 mac/linux 上运行 `setup.sh` 或在 windows 上运行 `setup.bat`
-3. 打开 Claude Desktop 设置并点击编辑配置 (`claude_desktop_config.json`)
-4. 添加
+Using node and local build
+2. Clone this repository and run `setup.sh` on mac/linux or `setup.bat` on windows
+3. Open Claude Desktop settings and click edit config (`claude_desktop_config.json`)
+4. Add
 ```json
 {
     "mcpServers": {
@@ -278,50 +278,50 @@ npm test
 }
 ```
 
-## 可用的 MCP 资源
+## Available MCP Resources
 
-- `webdav://{path}/list` - 列出目录中的文件
-- `webdav://{path}/content` - 获取文件内容
-- `webdav://{path}/info` - 获取文件或目录信息
+- `webdav://{path}/list` - List files in a directory
+- `webdav://{path}/content` - Get file content
+- `webdav://{path}/info` - Get file or directory information
 
-## 可用的 MCP 工具
+## Available MCP Tools
 
-- `webdav_create_remote_file` - 在远程 WebDAV 服务器上创建新文件
-- `webdav_get_remote_file` - 从存储在远程 WebDAV 服务器上的文件中检索内容
-- `webdav_update_remote_file` - 更新远程 WebDAV 服务器上的现有文件
-- `webdav_delete_remote_item` - 从远程 WebDAV 服务器上删除文件或目录
-- `webdav_create_remote_directory` - 在远程 WebDAV 服务器上创建新目录
-- `webdav_move_remote_item` - 在远程 WebDAV 服务器上移动或重命名文件/目录
-- `webdav_copy_remote_item` - 将文件/目录复制到远程 WebDAV 服务器上的新位置
-- `webdav_list_remote_directory` - 列出远程 WebDAV 服务器上的文件和目录
+- `webdav_create_remote_file` - Create a new file on a remote WebDAV server
+- `webdav_get_remote_file` - Retrieve content from a file stored on a remote WebDAV server
+- `webdav_update_remote_file` - Update an existing file on a remote WebDAV server
+- `webdav_delete_remote_item` - Delete a file or directory from a remote WebDAV server
+- `webdav_create_remote_directory` - Create a new directory on a remote WebDAV server
+- `webdav_move_remote_item` - Move or rename a file/directory on a remote WebDAV server
+- `webdav_copy_remote_item` - Copy a file/directory to a new location on a remote WebDAV server
+- `webdav_list_remote_directory` - List files and directories on a remote WebDAV server
 
-## 可用的 MCP 提示
+## Available MCP Prompts
 
-- `webdav_create_remote_file` - 提示在远程WebDAV服务器上创建新文件
-- `webdav_get_remote_file` - 提示从远程WebDAV文件中检索内容
-- `webdav_update_remote_file` - 提示更新远程WebDAV服务器上的文件
-- `webdav_delete_remote_item` - 提示从远程WebDAV服务器上删除文件/目录
-- `webdav_list_remote_directory` - 提示列出远程WebDAV服务器上的目录内容
-- `webdav_create_remote_directory` - 提示在远程WebDAV服务器上创建目录
-- `webdav_move_remote_item` - 提示在远程WebDAV服务器上移动/重命名文件/目录
-- `webdav_copy_remote_item` - 提示在远程WebDAV服务器上复制文件/目录
+- `webdav_create_remote_file` - Prompt to create a new file on a remote WebDAV server
+- `webdav_get_remote_file` - Prompt to retrieve content from a remote WebDAV file
+- `webdav_update_remote_file` - Prompt to update a file on a remote WebDAV server
+- `webdav_delete_remote_item` - Prompt to delete a file/directory from a remote WebDAV server
+- `webdav_list_remote_directory` - Prompt to list directory contents on a remote WebDAV server
+- `webdav_create_remote_directory` - Prompt to create a directory on a remote WebDAV server
+- `webdav_move_remote_item` - Prompt to move/rename a file/directory on a remote WebDAV server
+- `webdav_copy_remote_item` - Prompt to copy a file/directory on a remote WebDAV server
 
-## Claude 中的示例查询
+## Example Queries in Claude
 
-以下是一些可以在Claude Desktop中使用的示例查询，前提是已经连接了WebDAV MCP服务器：
+Here are some example queries you can use in Claude Desktop once the WebDAV MCP server is connected:
 
-- "列出我的远程WebDAV服务器上的文件"
-- "在我的远程WebDAV服务器上创建一个名为notes.txt的新文本文件，内容为：Hello World"
-- "从我的远程WebDAV服务器获取document.txt的内容"
-- "使用此新配置更新我远程WebDAV服务器上的config.json"
-- "在我的远程WebDAV服务器上创建一个名为projects的目录"
-- "将report.docx复制到我的远程WebDAV服务器上的备份位置"
-- "在我远程WebDAV服务器上将old_name.txt文件移动并重命名为new_name.txt"
-- "从我的远程WebDAV服务器上删除temp.txt"
+- "List files on my remote WebDAV server"
+- "Create a new text file called notes.txt on my remote WebDAV server with the following content: Hello World"
+- "Get the content of document.txt from my remote WebDAV server"
+- "Update config.json on my remote WebDAV server with this new configuration"
+- "Create a directory called projects on my remote WebDAV server"
+- "Copy report.docx to a backup location on my remote WebDAV server"
+- "Move the file old_name.txt to new_name.txt on my remote WebDAV server"
+- "Delete temp.txt from my remote WebDAV server"
 
-## 程序化使用
+## Programmatic Usage
 
-您也可以在自己的项目中以编程方式使用此包：
+You can also use this package programmatically in your own projects:
 
 ```javascript
 import { startWebDAVServer } from 'webdav-mcp-server';
@@ -406,26 +406,26 @@ await startWebDAVServer({
 });
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/laubplusco/mcp-webdav-server](https://github.com/laubplusco/mcp-webdav-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/laubplusco/mcp-webdav-server](https://github.com/laubplusco/mcp-webdav-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y webdav-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y webdav-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/laubplusco-webdav.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/laubplusco-webdav.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

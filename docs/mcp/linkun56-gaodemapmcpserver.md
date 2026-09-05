@@ -1,252 +1,289 @@
 ---
-title: "高德地图 MCP Server"
-description: "这是一个高德地图MCP服务器，提供地理编码、IP定位、天气查询、路线规划（骑行、步行、驾车和公共交通）、距离测量以及POI搜索等工具。"
+title: "GaodeMapMCPServer"
+description: "该高德地图 MCP Server 发布在 。 本服务提供以下工具： 将一个高德经纬度坐标转换为行政区划地址信息 参数： - location: 经纬度坐标 将详细的结构化地址转换为经纬度坐标。支持对地标性名胜景区、建筑物名称解析为经纬度坐标 参数： - address: 结构化地址 - city (可选): 指定查询的城市 IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置 参数： -…"
 ---
 
-# 高德地图 MCP Server
+# GaodeMapMCPServer
 
-这是一个高德地图MCP服务器，提供地理编码、IP定位、天气查询、路线规划（骑行、步行、驾车和公共交通）、距离测量以及POI搜索等工具。
+该高德地图 MCP Server 发布在 。 本服务提供以下工具： 将一个高德经纬度坐标转换为行政区划地址信息 参数： - location: 经纬度坐标 将详细的结构化地址转换为经纬度坐标。支持对地标性名胜景区、建筑物名称解析为经纬度坐标 参数： - address: 结构化地址 - city (可选): 指定查询的城市 IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置 参数： -…
 
-# 高德地图 MCP Server
+# AMap MCP Server
 
-该高德地图 MCP Server 发布在 [PyPI](https://pypi.org/project/amap-mcp-server/)。
+This AMap MCP Server is published on [PyPI](https://pypi.org/project/amap-mcp-server/).
 
-## MCP 工具列表
+## MCP Tools List
 
-本服务提供以下工具：
+This service provides the following tools:
 
-### 地理编码工具
+### Geocoding Tools
 
 #### maps_regeocode
-将一个高德经纬度坐标转换为行政区划地址信息
+Converts an AMap latitude and longitude coordinate into administrative division address information.
 
-**参数：**
-- `location`: 经纬度坐标
+**Parameters:**
+- `location`: Latitude and longitude coordinates
 
 #### maps_geo
-将详细的结构化地址转换为经纬度坐标。支持对地标性名胜景区、建筑物名称解析为经纬度坐标
+Converts a detailed structured address into latitude and longitude coordinates. Supports parsing of landmark scenic spots and building names into latitude and longitude coordinates.
 
-**参数：**
-- `address`: 结构化地址
-- `city` (可选): 指定查询的城市
+**Parameters:**
+- `address`: Structured address
+- `city` (optional): Specifies the city for the query
 
-### 位置服务工具
+### Location Service Tools
 
 #### maps_ip_location
-IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置
+IP location determines the location of the IP based on the user's input IP address.
 
-**参数：**
-- `ip`: IP地址
+**Parameters:**
+- `ip`: IP address
 
 #### maps_weather
-根据城市名称或者标准adcode查询指定城市的天气
+Queries the weather of a specified city based on the city name or standard adcode.
 
-**参数：**
-- `city`: 城市名称或者adcode
+**Parameters:**
+- `city`: City name or adcode
 
-### 路线规划工具
+### Route Planning Tools
 
-#### 骑行路线
+#### Bicycling Routes
 ##### maps_bicycling_by_coordinates
-骑行路径规划用于规划骑行通勤方案，规划时会考虑天桥、单行线、封路等情况。最大支持 500km 的骑行路线规划
+Bicycling route planning is used to plan commuting routes, taking into account overpasses, one-way streets, and road closures. Supports up to 500km of bicycling route planning.
 
-**参数：**
-- `origin`: 起点经纬度坐标
-- `destination`: 终点经纬度坐标
+**Parameters:**
+- `origin`: Origin latitude and longitude coordinates
+- `destination`: Destination latitude and longitude coordinates
 
 ##### maps_bicycling_by_address
-骑行路径规划（地址版），使用地址进行骑行路线规划，推荐优先使用此工具
+Bicycling route planning (address version), uses addresses for bicycling route planning. It is recommended to use this tool first.
 
-**参数：**
-- `origin_address`: 起点地址（例如："北京市朝阳区阜通东大街6号"）
-- `destination_address`: 终点地址（例如："北京市海淀区上地十街10号"）
-- `origin_city` (可选): 起点所在城市，用于提高地理编码准确性
-- `destination_city` (可选): 终点所在城市，用于提高地理编码准确性
+**Parameters:**
+- `origin_address`: Origin address (e.g., "No. 6 Futong East Street, Chaoyang District, Beijing")
+- `destination_address`: Destination address (e.g., "No. 10 Shangdi 10th Street, Haidian District, Beijing")
+- `origin_city` (optional): The city where the origin is located, to improve geocoding accuracy
+- `destination_city` (optional): The city where the destination is located, to improve geocoding accuracy
 
-#### 步行路线
+#### Walking Routes
 ##### maps_direction_walking_by_coordinates
-步行路径规划 API 可以根据输入起点终点经纬度坐标规划100km 以内的步行通勤方案，并且返回通勤方案的数据
+Walking route planning API can plan walking commuting routes within 100km based on the input origin and destination latitude and longitude coordinates, and return the commuting data.
 
-**参数：**
-- `origin`: 起点经纬度坐标
-- `destination`: 终点经纬度坐标
+**Parameters:**
+- `origin`: Origin latitude and longitude coordinates
+- `destination`: Destination latitude and longitude coordinates
 
 ##### maps_direction_walking_by_address
-步行路径规划（地址版），使用地址进行步行路线规划，推荐优先使用此工具
+Walking route planning (address version), uses addresses for walking route planning. It is recommended to use this tool first.
 
-**参数：**
-- `origin_address`: 起点地址（例如："北京市朝阳区阜通东大街6号"）
-- `destination_address`: 终点地址（例如："北京市海淀区上地十街10号"）
-- `origin_city` (可选): 起点所在城市，用于提高地理编码准确性
-- `destination_city` (可选): 终点所在城市，用于提高地理编码准确性
+**Parameters:**
+- `origin_address`: Origin address (e.g., "No. 6 Futong East Street, Chaoyang District, Beijing")
+- `destination_address`: Destination address (e.g., "No. 10 Shangdi 10th Street, Haidian District, Beijing")
+- `origin_city` (optional): The city where the origin is located, to improve geocoding accuracy
+- `destination_city` (optional): The city where the destination is located, to improve geocoding accuracy
 
-#### 驾车路线
+#### Driving Routes
 ##### maps_direction_driving_by_coordinates
-驾车路径规划 API 可以根据用户起终点经纬度坐标规划以小客车、轿车通勤出行的方案，并且返回通勤方案的数据
+Driving route planning API can plan commuting travel schemes for small passenger cars and sedans based on the user's origin and destination latitude and longitude coordinates, and return the commuting data.
 
-**参数：**
-- `origin`: 起点经纬度坐标
-- `destination`: 终点经纬度坐标
+**Parameters:**
+- `origin`: Origin latitude and longitude coordinates
+- `destination`: Destination latitude and longitude coordinates
 
 ##### maps_direction_driving_by_address
-驾车路径规划（地址版），使用地址进行驾车路线规划，推荐优先使用此工具
+Driving route planning (address version), uses addresses for driving route planning. It is recommended to use this tool first.
 
-**参数：**
-- `origin_address`: 起点地址（例如："北京市朝阳区阜通东大街6号"）
-- `destination_address`: 终点地址（例如："北京市海淀区上地十街10号"）
-- `origin_city` (可选): 起点所在城市，用于提高地理编码准确性
-- `destination_city` (可选): 终点所在城市，用于提高地理编码准确性
+**Parameters:**
+- `origin_address`: Origin address (e.g., "No. 6 Futong East Street, Chaoyang District, Beijing")
+- `destination_address`: Destination address (e.g., "No. 10 Shangdi 10th Street, Haidian District, Beijing")
+- `origin_city` (optional): The city where the origin is located, to improve geocoding accuracy
+- `destination_city` (optional): The city where the destination is located, to improve geocoding accuracy
 
-#### 公共交通路线
+#### Public Transit Routes
 ##### maps_direction_transit_integrated_by_coordinates
-根据用户起终点经纬度坐标规划综合各类公共（火车、公交、地铁）交通方式的通勤方案，并且返回通勤方案的数据，跨城场景下必须传起点城市与终点城市
+Plans integrated public transit (train, bus, subway) commuting schemes based on the user's origin and destination latitude and longitude coordinates, and returns the commuting data. For intercity scenarios, the origin and destination cities must be provided.
 
-**参数：**
-- `origin`: 起点经纬度坐标
-- `destination`: 终点经纬度坐标
-- `city`: 起点城市
-- `cityd`: 终点城市
+**Parameters:**
+- `origin`: Origin latitude and longitude coordinates
+- `destination`: Destination latitude and longitude coordinates
+- `city`: Origin city
+- `cityd`: Destination city
 
 ##### maps_direction_transit_integrated_by_address
-公共交通路径规划（地址版），使用地址进行公共交通路线规划，推荐优先使用此工具
+Public transit route planning (address version), uses addresses for public transit route planning. It is recommended to use this tool first.
 
-**参数：**
-- `origin_address`: 起点地址（例如："北京市朝阳区阜通东大街6号"）
-- `destination_address`: 终点地址（例如："北京市海淀区上地十街10号"）
-- `origin_city`: 起点所在城市（跨城交通必需）
-- `destination_city`: 终点所在城市（跨城交通必需）
+**Parameters:**
+- `origin_address`: Origin address (e.g., "No. 6 Futong East Street, Chaoyang District, Beijing")- `destination_address`: Destination address (e.g., "No. 10, Shangdi 10th Street, Haidian District, Beijing")
+- `origin_city`: Origin city (required for intercity travel)
+- `destination_city`: Destination city (required for intercity travel)
 
-### 距离测量工具
+### Distance Measurement Tools
 
 #### maps_distance
-测量两个经纬度坐标之间的距离,支持驾车、步行以及球面距离测量
+Measures the distance between two latitude and longitude coordinates, supporting driving, walking, and spherical distance measurements.
 
-**参数：**
-- `origins`: 起点经纬度坐标
-- `destination`: 终点经纬度坐标
-- `type` (可选，默认为"1"): 测量类型
+**Parameters:**
+- `origins`: Origin latitude and longitude coordinates
+- `destination`: Destination latitude and longitude coordinates
+- `type` (optional, default is "1"): Type of measurement
 
-### POI搜索工具
+### POI Search Tools
 
 #### maps_text_search
-关键词搜索 API 根据用户输入的关键字进行 POI 搜索，并返回相关的信息
+The keyword search API performs POI searches based on user-input keywords and returns relevant information.
 
-**参数：**
-- `keywords`: 搜索关键词
-- `city` (可选): 查询城市
-- `citylimit` (可选，默认为"false"): 是否限制城市范围内搜索
+**Parameters:**
+- `keywords`: Search keywords
+- `city` (optional): City to query
+- `citylimit` (optional, default is "false"): Whether to limit the search within the city range
 
 #### maps_around_search
-周边搜，根据用户传入关键词以及坐标location，搜索出radius半径范围的POI
+Searches for POIs within a radius based on the user-provided keywords and location coordinates.
 
-**参数：**
-- `location`: 中心点经纬度坐标
-- `radius` (可选，默认为"1000"): 搜索半径
-- `keywords` (可选): 搜索关键词
+**Parameters:**
+- `location`: Latitude and longitude coordinates of the center point
+- `radius` (optional, default is "1000"): Search radius
+- `keywords` (optional): Search keywords
 
 #### maps_search_detail
-查询关键词搜或者周边搜获取到的POI ID的详细信息
+Queries detailed information about the POI ID obtained from keyword or nearby searches.
 
-**参数：**
+**Parameters:**
 - `id`: POI ID
 
-## 配置方法
+## Configuration Methods
 
-要使用此服务，您需要在应用中添加以下MCP配置。服务支持三种传输方式：`stdio`（默认）、`sse` 和 `streamable-http`。
+To use this service, you need to add the following MCP configuration in your application. The service supports three transmission methods: `stdio` (default), `sse`, and `streamable-http`.
 
-### stdio 传输（默认）
+### stdio Transmission (Default)
 
-直接在客户端配置如下MCP Server即可。
+Directly configure the MCP Server as follows in the client.
 
 ```json
+
 {
+
     "mcpServers": {
+
         "amap-mcp-server": {
+
             "command": "uvx",
+
             "args": [
+
                 "amap-mcp-server"
+
             ],
+
             "env": {
+
                 "AMAP_MAPS_API_KEY": "your valid amap maps api key"
+
             }
+
         }
+
     }
+
 }
+
 ```
+### SSE Transmission
 
-### SSE 传输
+SSE transmission supports real-time data pushing, suitable for remotely deployed MCP Servers.
 
-SSE传输支持实时数据推送，适合远程部署MCP Server。
-
-本地以SSE运行 `amap-mcp-server`：
+Run `amap-mcp-server` locally with SSE:
 
 ```bash
+
 $ export AMAP_MAPS_API_KEY=你的有效API Key
+
 $ uvx amap-mcp-server sse
 
 INFO:     Started server process [50125]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-```
 
-MCP客户端配置：
+INFO:     Waiting for application startup.
+
+INFO:     Application startup complete.
+
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+```
+MCP Client Configuration:
 
 ```json
+
 {
+
     "mcpServers": {
+
         "amap-mcp-server": {
+
             "url": "http://0.0.0.0:8000/sse"
+
         }
+
     }
+
 }
+
 ```
+### Streamable HTTP Transmission
 
-### Streamable HTTP 传输
-
-本地以Streamable HTTP运行 `amap-mcp-server`：
+Run `amap-mcp-server` locally with Streamable HTTP:
 
 ```bash
+
 $ export AMAP_MAPS_API_KEY=你的有效API Key
+
 $ uvx amap-mcp-server streamable-http
 
 INFO:     Started server process [50227]
-INFO:     Waiting for application startup.
-StreamableHTTP session manager started
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-```
 
-MCP客户端配置：
+INFO:     Waiting for application startup.
+
+StreamableHTTP session manager started
+
+INFO:     Application startup complete.
+
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+```
+MCP Client Configuration:
 
 ```json
+
 {
+
     "mcpServers": {
+
         "amap-mcp-server": {
+
             "url": "http://localhost:8000/mcp"
+
         }
+
     }
+
 }
+
 ```
+You can register and obtain an API key on the [Amap Open Platform](https://lbs.amap.com/).
 
-您可以在[高德开放平台](https://lbs.amap.com/)注册并获取API密钥。
+**Official site: ** [https://github.com/sugarforever/amap-mcp-server](https://github.com/sugarforever/amap-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/sugarforever/amap-mcp-server](https://github.com/sugarforever/amap-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `amap-mcp-server`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`amap-mcp-server`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/linkun56-gaodemapmcpserver.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/linkun56-gaodemapmcpserver.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

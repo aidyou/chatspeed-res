@@ -1,53 +1,53 @@
 ---
-title: "文档服务"
-description: "一种模型上下文协议的实现，使人工智能助手能够与markdown文档文件交互，提供文档管理、元数据处理、搜索和文档健康分析等功能。"
+title: "mcp-docs-service"
+description: "A Model Context Protocol implementation that enables AI assistants to interact with markdown documentation files, providing capabilities for document management, metadata handling, search, and documen…"
 ---
 
-# 文档服务
+# mcp-docs-service
 
-一种模型上下文协议的实现，使人工智能助手能够与markdown文档文件交互，提供文档管理、元数据处理、搜索和文档健康分析等功能。
+A Model Context Protocol implementation that enables AI assistants to interact with markdown documentation files, providing capabilities for document management, metadata handling, search, and documen…
 
-# MCP 文档服务
+# MCP Documentation Service
 
-[![测试覆盖率](/mcp-assets/ed5662db1b9600999d4acc8b2ec92120.svg)](https://codecov.io/gh/alekspetrov/mcp-docs-service)
+[![Test Coverage](/mcp-assets/ed5662db1b9600999d4acc8b2ec92120.svg)](https://codecov.io/gh/alekspetrov/mcp-docs-service)
 
   
 
-## 这是什么？
+## What is it?
 
-MCP 文档服务是一个用于文档管理的模型上下文协议（MCP）实现。它提供了一套工具，用于读取、写入和管理带有 frontmatter 元数据的 markdown 文档。该服务设计为与像 Cursor 或 Claude Desktop 中的 AI 助手无缝协作，使您能够通过自然语言交互轻松管理您的文档。
+MCP Documentation Service is a Model Context Protocol (MCP) implementation for documentation management. It provides a set of tools for reading, writing, and managing markdown documentation with frontmatter metadata. The service is designed to work seamlessly with AI assistants like Claude in Cursor or Claude Desktop, making it easy to manage your documentation through natural language interactions.
 
-## 特性
+## Features
 
-- **读写文档**：轻松读写带有 frontmatter 元数据的 markdown 文档
-- **编辑文档**：对文档进行精确的行级编辑，并预览差异
-- **列表和搜索**：根据内容或元数据查找文档
-- **导航生成**：从您的文档中创建导航结构
-- **健康检查**：分析文档质量并识别问题，如缺少元数据或断开的链接
-- **LLM 优化文档**：生成针对大型语言模型优化的整合单文档输出
-- **MCP 集成**：与模型上下文协议无缝集成
-- **Frontmatter 支持**：完全支持 markdown 文档中的 YAML frontmatter
-- **Markdown 兼容性**：适用于标准 markdown 文件
+- **Read and Write Documents**: Easily read and write markdown documents with frontmatter metadata
+- **Edit Documents**: Make precise line-based edits to documents with diff previews
+- **List and Search**: Find documents by content or metadata
+- **Navigation Generation**: Create navigation structures from your documentation
+- **Health Checks**: Analyze documentation quality and identify issues like missing metadata or broken links
+- **LLM-Optimized Documentation**: Generate consolidated single-document output optimized for large language models
+- **MCP Integration**: Seamless integration with the Model Context Protocol
+- **Frontmatter Support**: Full support for YAML frontmatter in markdown documents
+- **Markdown Compatibility**: Works with standard markdown files
 
-## 快速开始
+## Quick Start
 
-### 安装
+### Installation
 
-需要在您的机器上安装 Node。
+Requires Node to be installed on your machine.
 
 ```bash
 npm install -g mcp-docs-service
 ```
 
-或者直接使用 npx：
+Or use directly with npx:
 
 ```bash
 npx mcp-docs-service /path/to/docs
 ```
 
-### Cursor 集成
+### Cursor Integration
 
-要与 Cursor 一起使用，请在项目根目录下创建一个 `.cursor/mcp.json` 文件：
+To use with Cursor, create a `.cursor/mcp.json` file in your project root:
 
 ```json
 {
@@ -60,21 +60,21 @@ npx mcp-docs-service /path/to/docs
 }
 ```
 
-### Claude Desktop 集成
+### Claude Desktop Integration
 
-要将 MCP 文档服务与 Claude Desktop 一起使用：
+To use MCP Docs Service with Claude Desktop:
 
-1. **安装 Claude Desktop** - 从 [Claude 的网站](https://claude.ai/desktop) 下载最新版本。
+1. **Install Claude Desktop** - Download the latest version from [Claude's website](https://claude.ai/desktop).
 
-2. **配置 Claude Desktop 以支持 MCP**：
+2. **Configure Claude Desktop for MCP**:
 
-   - 打开 Claude Desktop
-   - 点击 Claude 菜单并选择“开发者设置”
-   - 这将在以下位置创建一个配置文件：
+   - Open Claude Desktop
+   - Click on the Claude menu and select "Developer Settings"
+   - This will create a configuration file at:
      - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
      - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-3. **编辑配置文件** 以添加 MCP 文档服务：
+3. **Edit the configuration file** to add the MCP Docs Service:
 
 ```json
 {
@@ -87,27 +87,27 @@ npx mcp-docs-service /path/to/docs
 }
 ```
 
-请确保将 `/path/to/your/docs` 替换为您文档目录的绝对路径。
+Make sure to replace `/path/to/your/docs` with the absolute path to your documentation directory.
 
-4. **完全重启 Claude Desktop**。
+4. **Restart Claude Desktop** completely.
 
-5. **验证工具是否可用** - 重新启动后，您应该能在 docs-manager MCP 工具 (Cursor 设置 > MCP) 中看到一个绿色的点。
+5. **Verify the tool is available** - After restarting, you should see a green dot for docs-manager MCP tool (Cursor Settings > MCP)
 
-6. **故障排除**：
-   - 如果服务器没有出现，请检查日志：
+6. **Troubleshooting**:
+   - If the server doesn't appear, check the logs at:
      - macOS: `~/Library/Logs/Claude/mcp*.log`
      - Windows: `%APPDATA%\Claude\logs\mcp*.log`
-   - 确保您的系统上已安装 Node.js
-   - 确保配置中的路径是绝对路径且有效
+   - Ensure Node.js is installed on your system
+   - Make sure the paths in your configuration are absolute and valid
 
-## 示例
+## Examples
 
-### 与 Cursor 中的 Claude 一起使用
+### Using with Claude in Cursor
 
-当在 Cursor 中使用 Claude 时，可以通过两种方式调用工具：
+When using Claude in Cursor, you can invoke the tools in two ways:
 
-1. **使用自然语言**（推荐）：
-   - 只需用简单的英语告诉 Claude 执行任务：
+1. **Using Natural Language** (Recommended):
+   - Simply ask Claude to perform the task in plain English:
 
 ```
 Can you search my documentation for anything related to "getting started"?
@@ -121,8 +121,8 @@ Please list all the markdown files in my docs directory.
 Could you check if there are any issues with my documentation?
 ```
 
-2. **使用直接工具语法**：
-   - 对于更精确的控制，可以使用直接工具语法：
+2. **Using Direct Tool Syntax**:
+   - For more precise control, you can use the direct tool syntax:
 
 ```
 @docs-manager mcp_docs_manager_read_document path=docs/getting-started.md
@@ -136,11 +136,11 @@ Could you check if there are any issues with my documentation?
 @docs-manager mcp_docs_manager_check_documentation_health
 ```
 
-### 使用 Claude Desktop
+### Using with Claude Desktop
 
-当使用 Claude Desktop 时，可以通过两种方式调用工具：
+When using Claude Desktop, you can invoke the tools in two ways:
 
-1. **使用自然语言**（推荐）：
+1. **Using Natural Language** (Recommended):
 
 ```
 Can you read the README.md file for me?
@@ -154,25 +154,25 @@ Please find all documents that mention "API" in my documentation.
 I'd like you to check the health of our documentation and tell me if there are any issues.
 ```
 
-2. **使用工具选择器**：
-   - 点击输入框右下角的锤子图标
-   - 从可用工具列表中选择 "docs-manager"
-   - 选择您要使用的特定工具
-   - 填写所需参数并点击“运行”
+2. **Using the Tool Picker**:
+   - Click the hammer icon in the bottom right corner of the input box
+   - Select "docs-manager" from the list of available tools
+   - Choose the specific tool you want to use
+   - Fill in the required parameters and click "Run"
 
-Claude 将解释您的自然语言请求，并使用适当的工具和正确的参数。您不需要记住确切的工具名称或参数格式——只需描述您想要做什么！
+Claude will interpret your natural language requests and use the appropriate tool with the correct parameters. You don't need to remember the exact tool names or parameter formats - just describe what you want to do!
 
-### 常见工具命令
+### Common Tool Commands
 
-以下是一些您可以与工具一起使用的常见命令：
+Here are some common commands you can use with the tools:
 
-#### 阅读文档
+#### Reading a Document
 
 ```
 @docs-manager mcp_docs_manager_read_document path=docs/getting-started.md
 ```
 
-#### 编写文档
+#### Writing a Document
 
 ```
 @docs-manager mcp_docs_manager_write_document path=docs/new-document.md content="---
@@ -185,41 +185,41 @@ description: A new document created with MCP Docs Service
 This is a new document created with MCP Docs Service."
 ```
 
-#### 编辑文档
+#### Editing a Document
 
 ```
 @docs-manager mcp_docs_manager_edit_document path=README.md edits=[{"oldText":"# Documentation", "newText":"# Project Documentation"}]
 ```
 
-#### 搜索文档
+#### Searching Documents
 
 ```
 @docs-manager mcp_docs_manager_search_documents query="getting started"
 ```
 
-#### 生成导航
+#### Generating Navigation
 
 ```
 @docs-manager mcp_docs_manager_generate_navigation
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！以下是您如何贡献的方法：
+Contributions are welcome! Here's how you can contribute:
 
-1. 分叉仓库
-2. 创建一个功能分支：`git checkout -b feature/my-feature`
-3. 提交您的更改：`git commit -am 'Add my feature'`
-4. 推送到分支：`git push origin feature/my-feature`
-5. 提交拉取请求
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Commit your changes: `git commit -am 'Add my feature'`
+4. Push to the branch: `git push origin feature/my-feature`
+5. Submit a pull request
 
-请确保您的代码遵循现有的风格，并包含适当的测试。
+Please make sure your code follows the existing style and includes appropriate tests.
 
-## 测试和覆盖率
+## Testing and Coverage
 
-MCP 文档服务具有全面的测试覆盖范围，以确保可靠性和稳定性。我们使用 Vitest 进行测试，并跟踪覆盖率指标以维护代码质量。
+The MCP Docs Service has comprehensive test coverage to ensure reliability and stability. We use Vitest for testing and track coverage metrics to maintain code quality.
 
-### 运行测试
+### Running Tests
 
 ```bash
 # Run all tests
@@ -229,41 +229,41 @@ npm test
 npm run test:coverage
 ```
 
-测试套件包括：
+The test suite includes:
 
-- 实用函数和处理器的单元测试
-- 文档流的集成测试
-- MCP 服务的端到端测试
+- Unit tests for utility functions and handlers
+- Integration tests for document flow
+- End-to-end tests for the MCP service
 
-我们的测试设计得非常健壮，能够处理实现中的潜在错误，确保即使底层代码存在问题也能通过测试。
+Our tests are designed to be robust and handle potential errors in the implementation, ensuring they pass even if there are issues with the underlying code.
 
-### 覆盖率报告
+### Coverage Reports
 
-运行覆盖率命令后，在 `coverage` 目录中生成详细的报告：
+After running the coverage command, detailed reports are generated in the `coverage` directory:
 
-- HTML 报告：`coverage/index.html`
-- JSON 报告：`coverage/coverage-final.json`
+- HTML report: `coverage/index.html`
+- JSON report: `coverage/coverage-final.json`
 
-我们保持高测试覆盖率以确保服务的可靠性，重点测试关键路径和边缘情况。
+We maintain high test coverage to ensure the reliability of the service, with a focus on testing critical paths and edge cases.
 
-## 文档健康
+## Documentation Health
 
-我们使用 MCP 文档服务来维护我们自己文档的健康。健康分数基于以下因素：
+We use the MCP Docs Service to maintain the health of our own documentation. The health score is based on:
 
-- 元数据的完整性（标题、描述等）
-- 断链的存在
-- 孤立的文档（没有任何链接指向它们）
-- 一致的格式和样式
+- Completeness of metadata (title, description, etc.)
+- Presence of broken links
+- Orphaned documents (not linked from anywhere)
+- Consistent formatting and style
 
-您可以使用以下命令检查文档的健康状况：
+You can check the health of your documentation with:
 
 ```bash
 npx mcp-docs-service --health-check /path/to/docs
 ```
 
-### LLM 的综合文档
+### Consolidated Documentation for LLMs
 
-MCP Docs Service 可以生成一个针对大型语言模型优化的整合文档文件。当你希望将整个文档集提供给 LLM 作为上下文时，此功能非常有用：
+MCP Docs Service can generate a consolidated documentation file optimized for large language models. This feature is useful when you want to provide your entire documentation set to an LLM for context:
 
 ```bash
 # Generate consolidated documentation with default filename (consolidated-docs.md)
@@ -276,83 +276,83 @@ npx mcp-docs-service --single-doc --output my-project-context.md /path/to/docs
 npx mcp-docs-service --single-doc --max-tokens 100000 /path/to/docs
 ```
 
-整合输出包括：
+The consolidated output includes:
 
-- 项目元数据（名称、版本、描述）
-- 带有每个部分令牌计数的目录
-- 按部分组织的所有文档，具有清晰的分隔
-- 令牌计数帮助保持在 LLM 上下文限制内
+- Project metadata (name, version, description)
+- Table of contents with token counts for each section
+- All documentation organized by section with clear separation
+- Token counting to help stay within LLM context limits
 
-### 默认具有弹性
+### Resilient by Default
 
-MCP Docs Service 被设计为默认具有弹性。即使面对不完整或结构不良的文档，服务也能自动处理而不会失败：
+MCP Docs Service is designed to be resilient by default. The service automatically handles incomplete or poorly structured documentation without failing:
 
-- 即使存在问题也至少返回 80 的健康评分
-- 自动创建缺失的文档目录
-- 优雅地处理缺失的文档目录
-- 即使文件中有错误也能继续处理
-- 对元数据完整性和断开链接提供宽松评分
+- Returns a minimum health score of 80 even with issues
+- Automatically creates missing documentation directories
+- Handles missing documentation directories gracefully
+- Continues processing even when files have errors
+- Provides lenient scoring for metadata completeness and broken links
 
-这使得该服务特别适用于：
+This makes the service particularly useful for:
 
-- 文档极少的遗留项目
-- 处于文档开发早期阶段的项目
-- 从其他格式迁移文档时
+- Legacy projects with minimal documentation
+- Projects in early stages of documentation development
+- When migrating documentation from other formats
 
-该服务总是提供有用的反馈而不是失败，允许你随着时间逐步改进你的文档。
+The service will always provide helpful feedback rather than failing, allowing you to incrementally improve your documentation over time.
 
-## 版本历史
+## Version History
 
 ### v0.6.0
 
-- 添加了针对 LLM 优化的整合文档功能（--single-doc 标志）
-- 为每个文档部分添加了令牌计数
-- 添加了整合文档输出自定义（--output 标志）
-- 添加了最大令牌限制配置（--max-tokens 标志）
+- Added LLM-optimized consolidated documentation feature (--single-doc flag)
+- Added token counting for each documentation section
+- Added consolidated document output customization (--output flag)
+- Added maximum token limit configuration (--max-tokens flag)
 
 ### v0.5.2
 
-- 通过自动创建缺失的文档目录增强了弹性
-- 改进了容忍模式，最低健康评分为 80
-- 将容忍模式设为健康检查的默认模式
-- 更新了健康检查工具描述，提到了容忍模式
+- Enhanced resilience by automatically creating missing documentation directories
+- Improved tolerance mode with a minimum health score of 80
+- Made tolerance mode the default for health checks
+- Updated health check tool description to mention tolerance mode
 
 ### v0.5.1
 
-- 在健康检查中添加了容忍模式
-- 修复了测试套件可靠性问题
-- 改进了文档操作中的错误处理
+- Added tolerance mode to health checks
+- Fixed issues with test suite reliability
+- Improved error handling in document operations
 
-## 文档
+## Documentation
 
-有关更详细的信息，请参阅我们的文档：
+For more detailed information, check out our documentation:
 
-- [入门指南](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/getting-started.md)
-- [MCP 集成指南](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/mcp-integration.md)
-- [MCP 协议使用](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/mcp-protocol-usage.md)
-- [API 参考](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/api/tools-reference.md)
-- [示例](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/examples/basic-usage.md)
+- [Getting Started Guide](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/getting-started.md)
+- [MCP Integration Guide](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/mcp-integration.md)
+- [MCP Protocol Usage](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/guides/mcp-protocol-usage.md)
+- [API Reference](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/api/tools-reference.md)
+- [Examples](https://github.com/alekspetrov/mcp-docs-service/blob/main/docs/examples/basic-usage.md)
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/alekspetrov/mcp-docs-service](https://github.com/alekspetrov/mcp-docs-service)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/alekspetrov/mcp-docs-service](https://github.com/alekspetrov/mcp-docs-service)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `memory`, `files`
-- 标签：`file systems`, `knowledge and memory`, `search`, `chinese`
+- Categories: `search`, `memory`, `files`
+- Tags: `file systems`, `knowledge and memory`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-docs-service /path/to/your/docs`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-docs-service /path/to/your/docs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/alekspetrov-docs-service.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alekspetrov-docs-service.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

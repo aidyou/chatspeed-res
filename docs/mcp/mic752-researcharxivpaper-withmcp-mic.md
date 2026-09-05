@@ -1,11 +1,15 @@
 ---
-title: "搜论文Arxiv 袁明伟 (MCP&Agent挑战赛) 班级群2"
-description: "基于 arXiv 的开放 API 进行论文搜索的"
+title: "ResearchArxivPaper-WithMcp-Mic"
+description: "Based on the arXiv Open API for Paper Search --- Introduction arXiv 是一个用于发布科学论文的开放存取库，涵盖了物理学、数学、计算机科学等多个领域。通过使用 arXiv 提供的开放 API，开发者可以轻松地进行论文搜索和获取相关信息。 Getting Started Prerequisites - 你需要一个 arXiv API 密…"
 ---
 
-# 搜论文Arxiv 袁明伟 (MCP&Agent挑战赛) 班级群2
+# ResearchArxivPaper-WithMcp-Mic
 
-基于 arXiv 的开放 API 进行论文搜索的
+Based on the arXiv Open API for Paper Search --- Introduction arXiv 是一个用于发布科学论文的开放存取库，涵盖了物理学、数学、计算机科学等多个领域。通过使用 arXiv 提供的开放 API，开发者可以轻松地进行论文搜索和获取相关信息。 Getting Started Prerequisites - 你需要一个 arXiv API 密…
+
+我帮你整理了一份更新后的 README，并把 **Keyword Optimizer** 和 **Summary/Conclusion** 功能详细说明都加上了，同时保持了原来的风格和示例。下面是修改后的版本：
+
+---
 
 # 📚 研究论文查找与导出工具 (MCP 服务器)
 
@@ -36,10 +40,10 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   * 输入: `"手语识别"`
   * 输出:
 
-     
+```
     Suggested Keywords:
     "Sign Language Recognition", "Transformer-based Sign Language Model", "Video-based Gesture Recognition"
-    
+```
 * **用途**:
 
   * 提高 arXiv 搜索的相关性和覆盖范围
@@ -57,10 +61,10 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   * 发表日期
   * PDF 链接
   * 摘要
-* **可设置**: 返回结果数量（1~10 条）
+* **可设置**: 返回结果数量（1\~10 条）
 * **示例输出**:
 
-   
+```
   🔍 Search Results for: Transformer
   📄 Paper 1:
   Title      : Transformer for Sign Language Recognition
@@ -69,7 +73,7 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   PDF Link   : http://arxiv.org/pdf/...
   Abstract   : 本文探讨了...
   --------------------------------------------------
-  
+```
 
 ---
 
@@ -87,9 +91,9 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   * 用于科研报告或文献综述
 * **示例**:
 
-   
+```
   This collection of papers on "Transformer-based Sign Language Recognition" highlights recent advances in deep learning for gesture understanding, showing improved accuracy and efficiency in video-based recognition systems. Emerging trends focus on multi-modal approaches and real-time applications.
-  
+```
 
 ---
 
@@ -104,9 +108,9 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   * 提供科研汇报或文献管理参考
 * **示例文件名**:
 
-   
+```
   outputs/exported_results_20250830_213045.pdf
-  
+```
 
 ---
 
@@ -131,22 +135,24 @@ description: "基于 arXiv 的开放 API 进行论文搜索的"
   * Excel: `pandas`
 * **总结/结论生成**: AI 模型（API）处理标题和摘要生成学术总结
 
-**官方网站：** [https://www.modelscope.cn/studios/Mic752/ResearchArxivPaper-WithMcp](https://www.modelscope.cn/studios/Mic752/ResearchArxivPaper-WithMcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+---
 
-## 分类与标签
+**Official site: ** [https://www.modelscope.cn/studios/Mic752/ResearchArxivPaper-WithMcp](https://www.modelscope.cn/studios/Mic752/ResearchArxivPaper-WithMcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`productivity`
-- 标签：`calendar management`, `search`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `productivity`
+- Tags: `calendar management`, `search`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://mic752-researcharxivpaper-withmcp.ms.show/gradio_api/mcp/sse --transport sse-only`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://mic752-researcharxivpaper-withmcp.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/mic752-researcharxivpaper-withmcp-mic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/mic752-researcharxivpaper-withmcp-mic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

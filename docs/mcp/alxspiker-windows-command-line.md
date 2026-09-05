@@ -1,59 +1,59 @@
 ---
-title: "Windows命令行MCP服务器"
-description: "一个安全的模型上下文协议服务器，允许人工智能模型与Windows命令行功能安全交互，实现系统命令的受控执行、项目创建和系统信息获取。"
+title: "Windows-Command-Line-MCP-Server"
+description: "A secure Model Context Protocol server that allows AI models to safely interact with Windows command-line functionality, enabling controlled execution of system commands, project creation, and system…"
 ---
 
-# Windows命令行MCP服务器
+# Windows-Command-Line-MCP-Server
 
-一个安全的模型上下文协议服务器，允许人工智能模型与Windows命令行功能安全交互，实现系统命令的受控执行、项目创建和系统信息获取。
+A secure Model Context Protocol server that allows AI models to safely interact with Windows command-line functionality, enabling controlled execution of system commands, project creation, and system…
 
-# Windows 命令行 MCP 服务器
+# Windows Command Line MCP Server
 
-一个安全的模型上下文协议 (MCP) 服务器，能够使 AI 模型安全高效地与 Windows 命令行功能进行交互。
+A secure Model Context Protocol (MCP) server that enables AI models to interact with Windows command-line functionality safely and efficiently.
 
 ![Version](/mcp-assets/6eecfe2b7d4bf3580c8fad0645d077dd.svg)
 ![License: MIT](/mcp-assets/6d39e47e35bcced1bb707dfa0b1c276c.svg)
 [Smithery](https://smithery.ai/server/@alxspiker/Windows-Command-Line-MCP-Server)
 
-## 概述
+## Overview
 
-Windows 命令行 MCP 服务器为 AI 模型和 Windows 系统操作之间提供了一个健壮且安全的桥梁。它允许受控执行命令、项目创建和系统信息检索，同时保持严格的安全协议。
+The Windows Command Line MCP Server provides a robust, secure bridge between AI models and Windows system operations. It allows controlled execution of commands, project creation, and system information retrieval while maintaining strict security protocols.
 
-## 主要特性
+## Key Features
 
-### 🔒 增强安全性
-- 全面的命令白名单
-- 严格的输入验证
-- 防止破坏性系统操作
-- 可配置的安全级别
+### 🔒 Enhanced Security
+- Comprehensive command allowlist
+- Strict input validation
+- Prevention of destructive system operations
+- Configurable security levels
 
-### 🛠 开发工具支持
-- 支持 React、Node.js 和 Python 项目的创建
-- 安全的开发环境交互
-- 扩展对开发工作流的命令支持
+### 🛠 Development Tools Support
+- Project creation for React, Node.js, and Python
+- Safe development environment interactions
+- Expanded command support for development workflows
 
-### 🖥 系统交互能力
-- 执行 Windows CLI 命令
-- 运行 PowerShell 脚本
-- 检索系统和网络信息
-- 管理进程和服务
+### 🖥 System Interaction Capabilities
+- Execute Windows CLI commands
+- Run PowerShell scripts
+- Retrieve system and network information
+- Manage processes and services
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@alxspiker/Windows-Command-Line-MCP-Server) 自动安装适用于 Claude Desktop 的 Windows 命令行 MCP 服务器：
+To install Windows Command Line MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@alxspiker/Windows-Command-Line-MCP-Server):
 
 ```bash
 npx -y @smithery/cli install @alxspiker/Windows-Command-Line-MCP-Server --client claude
 ```
 
-### 先决条件
-- Node.js 16 或更高版本
-- npm 或 yarn
-- Windows 操作系统
+### Prerequisites
+- Node.js 16 or later
+- npm or yarn
+- Windows operating system
 
-### 设置
+### Setup
 ```bash
 git clone https://github.com/alxspiker/Windows-Command-Line-MCP-Server.git
 cd Windows-Command-Line-MCP-Server
@@ -61,35 +61,35 @@ npm install
 npm run build
 ```
 
-## 使用
+## Usage
 
-### 命令行选项
-- 默认模式：使用预定义的安全命令
-- `--allow-all`：以扩展模式运行（带有额外的预防措施）
-- 可以指定自定义命令列表作为参数
+### Command Line Options
+- Default mode: Uses predefined safe commands
+- `--allow-all`: Run in extended mode (with additional precautions)
+- Custom command lists can be specified as arguments
 
-### 项目创建
-使用内置的项目创建工具安全地创建新项目：
-- 支持的项目类型：React、Node.js、Python
-- 项目在沙盒化的 `~/AIProjects` 目录中创建
+### Project Creation
+Create new projects safely with the built-in project creation tool:
+- Supported project types: React, Node.js, Python
+- Projects created in a sandboxed `~/AIProjects` directory
 
-### 可用工具
-1. **execute_command**：运行 Windows CLI 命令
-2. **execute_powershell**：执行 PowerShell 脚本
-3. **create_project**：安全地创建新的开发项目
-4. **list_running_processes**：检索活动的系统进程
-5. **get_system_info**：收集系统配置详细信息
-6. **get_network_info**：检索网络适配器信息
-7. **get_scheduled_tasks**：列出并查询系统任务
-8. **get_service_info**：管理和查询 Windows 服务
-9. **list_allowed_commands**：列出服务器可以执行的所有命令
+### Available Tools
+1. **execute_command**: Run Windows CLI commands
+2. **execute_powershell**: Execute PowerShell scripts
+3. **create_project**: Safely create new development projects
+4. **list_running_processes**: Retrieve active system processes
+5. **get_system_info**: Collect system configuration details
+6. **get_network_info**: Retrieve network adapter information
+7. **get_scheduled_tasks**: List and query system tasks
+8. **get_service_info**: Manage and query Windows services
+9. **list_allowed_commands**: List all commands that can be executed by the server
 
-## 与 Claude for Desktop 一起使用
+## Using with Claude for Desktop
 
-要将此服务器与 Claude for Desktop 一起使用：
+To use this server with Claude for Desktop:
 
-1. 根据上述设置说明构建服务器
-2. 将其添加到您的 `claude_desktop_config.json` 文件中：
+1. Build the server using the setup instructions above
+2. Add it to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -102,33 +102,32 @@ npm run build
 }
 ```
 
-将 `/path/to/dist/index.js` 替换为 `dist` 目录中生成的 `index.js` 文件的绝对路径。
+Replace `/path/to/dist/index.js` with the absolute path to the built `index.js` file in the `dist` directory.
 
-3. 重启 Claude for Desktop
-4. 您现在可以通过让 Claude 执行 Windows 系统操作来使用这些工具
+3. Restart Claude for Desktop
+4. You can now use the tools by asking Claude to perform Windows system operations
 
-## 安全考虑
+## Security Considerations
 
-### 允许的命令
-默认情况下，只允许安全的命令：
+### Allowed Commands
+By default, only safe commands are permitted:
+- System information retrieval
+- Network configuration
+- Process management
+- Development tool interactions
 
-- 系统信息检索
-- 网络配置
-- 进程管理
-- 开发工具交互
+### Blocked Operations
+Dangerous commands are always blocked, including:
+- Disk formatting
+- User management
+- System shutdown
+- Critical registry modifications
 
-### 被阻止的操作
-危险命令总是被阻止，包括：
-- 磁盘格式化
-- 用户管理
-- 系统关机
-- 关键注册表修改
+## Configuration
 
-## 配置
+Customize the server's behavior by specifying allowed commands or using configuration flags.
 
-通过指定允许的命令或使用配置标志来自定义服务器的行为。
-
-### 示例
+### Example
 ```bash
 # Run with default safe commands
 node dist/index.js
@@ -140,49 +139,49 @@ node dist/index.js dir echo npm git
 node dist/index.js --allow-all
 ```
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个拉取请求
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-本项目根据 MIT 许可证发布 - 详情请参阅 [LICENSE](https://github.com/alxspiker/Windows-Command-Line-MCP-Server/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/alxspiker/Windows-Command-Line-MCP-Server/blob/HEAD/LICENSE) file for details.
 
-## 致谢
+## Acknowledgements
 
-- 受 Model Context Protocol 规范启发
-- 以安全性和灵活性为设计理念开发
+- Inspired by the Model Context Protocol specification
+- Developed with security and flexibility in mind
 
-## 版本历史
+## Version History
 
-- **0.3.0**: 实现了 README 中提到的所有工具（系统信息、网络信息、进程管理、服务信息）
-- **0.2.0**: 添加了项目创建，扩展了开发工具
-- **0.1.0**: 初始版本，具有基本的命令执行能力
+- **0.3.0**: Implemented all tools mentioned in README (system info, network info, process management, service info)
+- **0.2.0**: Added project creation, expanded development tools
+- **0.1.0**: Initial release with basic command execution capabilities
 
-## 支持
+## Support
 
-对于问题、疑问或建议，请在 GitHub 上 [打开一个 issue](https://github.com/alxspiker/Windows-Command-Line-MCP-Server/issues)。
+For issues, questions, or suggestions, please [open an issue](https://github.com/alxspiker/Windows-Command-Line-MCP-Server/issues) on GitHub.
 
-**官方网站：** [https://github.com/alxspiker/Windows-Command-Line-MCP-Server](https://github.com/alxspiker/Windows-Command-Line-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/alxspiker/Windows-Command-Line-MCP-Server](https://github.com/alxspiker/Windows-Command-Line-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`os automation`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `os automation`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/alxspiker-windows-command-line.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alxspiker-windows-command-line.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

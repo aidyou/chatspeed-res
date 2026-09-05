@@ -1,56 +1,56 @@
 ---
-title: "七日餐饮助手3.0（MCP&Agent挑战赛）"
-description: "项目功能 这是一个基于Gradio的七日餐饮规划助手，具有以下功能： 核心功能 - 七日餐饮规划：为用户生成一周的营养均衡餐饮规划 - 多样化菜谱：包含早餐、午餐、晚餐和加餐的丰富选择 - 智能随机搭配：每天提供不同的菜谱组合，避免重复 - 灵活日期设置：支持指定开始日期或使用当前日期 技术特点 - MCP支持：完全兼容Model Context Protocol - Gradio界面：简洁易用的Web界面 - 中文优化：专门为中文用户设计的界面和菜谱 菜谱类型 - 早餐：营养丰富的早餐选择 - 午餐：均衡的主餐搭"
+title: "7daysfoodHelperV3.0"
+description: "Project Features This is a seven-day meal planning assistant based on Gradio, with the following features: Core Features - Seven-Day Meal Planning: Generates a week's worth of nutritionally balanced m…"
 ---
 
-# 七日餐饮助手3.0（MCP&Agent挑战赛）
+# 7daysfoodHelperV3.0
 
-项目功能 这是一个基于Gradio的七日餐饮规划助手，具有以下功能： 核心功能 - 七日餐饮规划：为用户生成一周的营养均衡餐饮规划 - 多样化菜谱：包含早餐、午餐、晚餐和加餐的丰富选择 - 智能随机搭配：每天提供不同的菜谱组合，避免重复 - 灵活日期设置：支持指定开始日期或使用当前日期 技术特点 - MCP支持：完全兼容Model Context Protocol - Gradio界面：简洁易用的Web界面 - 中文优化：专门为中文用户设计的界面和菜谱 菜谱类型 - 早餐：营养丰富的早餐选择 - 午餐：均衡的主餐搭
+Project Features This is a seven-day meal planning assistant based on Gradio, with the following features: Core Features - Seven-Day Meal Planning: Generates a week's worth of nutritionally balanced m…
 
-项目功能
+Project Features
 
-这是一个基于Gradio的七日餐饮规划助手，具有以下功能：
+This is a seven-day meal planning assistant based on Gradio, with the following features:
 
-### 核心功能
+### Core Features
 
-- **七日餐饮规划**：为用户生成一周的营养均衡餐饮规划
-- **多样化菜谱**：包含早餐、午餐、晚餐和加餐的丰富选择
-- **智能随机搭配**：每天提供不同的菜谱组合，避免重复
-- **灵活日期设置**：支持指定开始日期或使用当前日期
+- **Seven-Day Meal Planning**: Generates a week's worth of nutritionally balanced meal plans for users
+- **Diverse Recipes**: Offers a wide selection of breakfast, lunch, dinner, and snack options
+- **Smart Random Pairing**: Provides different recipe combinations each day to avoid repetition
+- **Flexible Date Setting**: Supports specifying a start date or using the current date
 
-### 技术特点
+### Technical Features
 
-- **MCP支持**：完全兼容Model Context Protocol
-- **Gradio界面**：简洁易用的Web界面
-- **中文优化**：专门为中文用户设计的界面和菜谱
+- **MCP Support**: Fully compatible with Model Context Protocol
+- **Gradio Interface**: A simple and user-friendly web interface
+- **Chinese Optimization**: An interface and recipes specifically designed for Chinese users
 
-###  菜谱类型
+### Recipe Types
 
-- **早餐**：营养丰富的早餐选择
-- **午餐**：均衡的主餐搭配
-- **晚餐**：健康的晚餐选择
-- **加餐**：水果、坚果等健康零食
-- **选择**：支持多样化的口味偏好组合
+- **Breakfast**: Nutritious breakfast options
+- **Lunch**: Balanced main meal combinations
+- **Dinner**: Healthy dinner choices
+- **Snacks**: Healthy snacks such as fruits and nuts
+- **Selections**: Supports a variety of taste preference combinations
 
-### 节庆菜谱设计
-* 帮助你轻松准备春节和元宵的菜谱
+### Festival Recipe Design
+* Helps you easily prepare menus for Spring Festival and Lantern Festival
 
-**官方网站：** [https://www.modelscope.cn/studios/harykali/7daysfoodHelperV3.0](https://www.modelscope.cn/studios/harykali/7daysfoodHelperV3.0)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/harykali/7daysfoodHelperV3.0](https://www.modelscope.cn/studios/harykali/7daysfoodHelperV3.0)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`, `memory`, `media`
-- 标签：`calendar management`, `art and culture`, `knowledge and memory`, `chinese`
+- Categories: `productivity`, `memory`, `media`
+- Tags: `calendar management`, `art and culture`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://harykali-7daysfoodhelperv3-0.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://harykali-7daysfoodhelperv3-0.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/harykali-7daysfoodhelperv3-0.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/harykali-7daysfoodhelperv3-0.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

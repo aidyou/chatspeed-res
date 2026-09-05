@@ -1,11 +1,11 @@
 ---
 title: "Next.js DevTools MCP"
-description: "Next.js DevTools MCP next-devtools-mcp is a Model Context Protocol (MCP) server that connects coding agents like Claude and Cursor to your running Next.js dev server. It is a thin connector. It discovers running Next.js "
+description: "Next.js DevTools MCP next-devtools-mcp is a Model Context Protocol (MCP) server that connects coding agents like Claude and Cursor to your running Next.js dev server. It is a thin connector. It discov…"
 ---
 
 # Next.js DevTools MCP
 
-Next.js DevTools MCP next-devtools-mcp is a Model Context Protocol (MCP) server that connects coding agents like Claude and Cursor to your running Next.js dev server. It is a thin connector. It discovers running Next.js 
+Next.js DevTools MCP next-devtools-mcp is a Model Context Protocol (MCP) server that connects coding agents like Claude and Cursor to your running Next.js dev server. It is a thin connector. It discov…
 
 # Next.js DevTools MCP
 
@@ -282,22 +282,22 @@ See the [Next.js MCP documentation](https://nextjs.org/docs/app/guides/mcp) for 
 
 MIT
 
-**官方网站：** [https://github.com/vercel/next-devtools-mcp](https://github.com/vercel/next-devtools-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/vercel/next-devtools-mcp](https://github.com/vercel/next-devtools-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `next.js`, `react`, `web development`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `next.js`, `react`, `web development`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`next-devtools-mcp@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `next-devtools-mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/vercel-next-devtools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/vercel-next-devtools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,6 +1,6 @@
 ---
-title: 免费 AI
-description: 免费 AI 网站与 API 服务目录。免费额度是动态信息，请以详情页和官方页面为准。
+title: "Free AI"
+description: "Directory of free AI websites and API services. Free quotas are dynamic; refer to the detail page and official site."
 sidebar: false
 breadcrumb: false
 pageInfo: false

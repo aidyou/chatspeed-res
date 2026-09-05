@@ -1,58 +1,58 @@
 ---
-title: "MCP天气预报服务"
-description: "提供与洪水相关的水位、天气预报、警报以及地震报告的模型上下文协议（MCP）服务器，数据来源于马来西亚政府的开放API。"
+title: "weather-my-mcp"
+description: "Model Context Protocol (MCP) server that provides weather forecast, warnings, water level associated with flood, and earthquake reports from Malaysia Government's Open API."
 ---
 
-# MCP天气预报服务
+# weather-my-mcp
 
-提供与洪水相关的水位、天气预报、警报以及地震报告的模型上下文协议（MCP）服务器，数据来源于马来西亚政府的开放API。
+Model Context Protocol (MCP) server that provides weather forecast, warnings, water level associated with flood, and earthquake reports from Malaysia Government's Open API.
 
-# 天气 MCP 服务器
+# Weather MCP Server
 
-这是一个基本的模型上下文协议（MCP）服务器，它从马来西亚官方开放数据门户的开放 API 中获取天气信息。
-该服务器使 LLMs 能够获取天气预报、警告、与洪水相关的水位以及地震报告。
+A basic Model Context Protocol (MCP) server that provides weather information retrieved from Open API of Malaysia's official open data portal.
+This server enables LLMs to get weather forecast, warnings, water level associated with flood, and earthquake reports.
 
-API 文档：[data.gov.my](https://developer.data.gov.my/)
+API Documentation: [data.gov.my](https://developer.data.gov.my/)
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 1. get_water_level_condition
-    - 获取指定地区或州的洪水预警相关水位情况。
-        如果同时提供了地区和州，则优先考虑地区。
-        如果未指定地区或州，则将该字段留空。
+    - Retrieve the water level conditions associated with flood warnings for a specified district or state.
+        If both district and state are provided, the district takes precedence.
+        If district or state is not specified, use an empty string for that field.
 
-    - 参数：
-        - district: 指定州内要检索洪水预警条件的地区的名称。
-        - state: 马来西亚要检索洪水预警条件的州的名称。
+    - Args:
+        - district: The name of the district within the specified state for which to retrieve flood warning conditions.
+        - state: The name of the state in Malaysia for which to retrieve flood warning conditions.
 
 2. get_warning
-    - 在指定日期范围内检索发布的通用天气警告。
+    - Retrieve general weather warnings issued within a specified date range.
 
-    - 参数：
-        - datetime_start: 以 `YYYY-MM-DD HH:MM:SS` 格式表示的最早时间戳（包含），从此时间戳开始检索天气警告。如果省略，默认为当前日期。
-        - datetime_end: 以 `YYYY-MM-DD HH:MM:SS` 格式表示的最晚时间戳（包含），在此时间戳之前停止检索天气警告。如果省略，默认为当前日期。
+    - Args:
+        - datetime_start: The earliest timestamp in the form of `YYYY-MM-DD HH:MM:SS` (inclusive) from which to retrieve weather warnings. If omitted, defaults to the current date.
+        - datetime_end: The latest timestamp in the form of `YYYY-MM-DD HH:MM:SS` (inclusive) to stop retrieving the weather warnings. If omitted, defaults to the current date.
 
 3. get_weather_forecast
-    - 在给定日期范围内检索特定地点的天气预报。
+    - Retrieve a weather forecast for a specific location within a given date range.
 
-    - 参数：
-        - location_name: 要检索预报的地点的名称或标识符。
-        - date_start: 最早日期（包含），从此日期开始检索天气预报。如果省略，默认为当前日期。
-        - date_end: 最晚日期（包含），在此日期之前停止检索天气预报。如果省略，默认为当前日期。
+    - Args:
+        - location_name: The name or identifier of the location for which the forecast is retrieved.
+        - date_start: The earliest date (inclusive) to begin retrieving the weather forecast. If omitted, defaults to the current date.
+        - date_end: The latest date (inclusive) to stop retrieving the weather forecast. If omitted, defaults to the current date.
 
 4. get_earthquake_news
-    - 在指定日期范围内获取给定地点的地震新闻。
+    - Fetch earthquake news for a given location within a specified date range.
 
-    - 参数：
-        - location: 发生地震的地方的名称或标识符。
-        - date_start: 最早日期（包含），从此日期开始搜索地震新闻。如果省略，默认为当前日期。
-        - date_end: 最晚日期（包含），在此日期之前停止搜索地震新闻。如果省略，默认为当前日期。
+    - Args:
+        - location: Name or identifier of the place where the earthquake(s) occurred.
+        - date_start: The earliest date (inclusive) to start searching for earthquake news. If omitted, defaults to the current date.
+        - date_end: The latest date (inclusive) to stop searching for earthquake news. If omitted, defaults to the current date.
 
-## Claude Desktop 配置
+## Claude Desktop configuration
 
-将以下内容添加到 `claude_desktop_config.json` 文件中。更多信息，请参阅 [For Claude Desktop Users](https://modelcontextprotocol.io/quickstart/user)。
+Add the following into `claude_desktop_config.json` file. For more information, refer to [For Claude Desktop Users](https://modelcontextprotocol.io/quickstart/user).
 
 ```json
 {
@@ -70,26 +70,26 @@ API 文档：[data.gov.my](https://developer.data.gov.my/)
 }
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证许可。这意味着您可以在遵守 MIT 许可证条款和条件的前提下自由使用、修改和分发该软件。更多详细信息，请参见项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/yting27/weather-my-mcp](https://github.com/yting27/weather-my-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yting27/weather-my-mcp](https://github.com/yting27/weather-my-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `data`
-- 标签：`search`, `location services`, `chinese`
+- Categories: `search`, `data`
+- Tags: `search`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory weather-my-mcp run weather.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory weather-my-mcp run weather.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yting27-weather-my.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yting27-weather-my.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

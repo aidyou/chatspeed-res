@@ -1,98 +1,94 @@
 ---
 title: "SQLReader"
-description: "NaturalSQL MCP Server 这是一个基于 Model Context Protocol (MCP) 的自然语言 SQL 查询服务器。 功能特性 - 🧠 自然语言转 SQL 查询 - 🔗 动态数据库连接配置 - 🛡️ SQL 安全检查（阻止危险操作） - 📊 结果数据表格展示 - 🌐 基于 Gradio 的 Web 界面 安装依赖 bash pip install -r requirements.txt 启动方式 方式1：直接启动 bash python app.py 方式2：使用批处理文件（Wind"
+description: "NaturalSQL MCP Server This is a natural language SQL query server based on the Model Context Protocol (MCP). Features - 🧠 Natural language to SQL query conversion - 🔗 Dynamic database connection confi…"
 ---
 
 # SQLReader
 
-NaturalSQL MCP Server 这是一个基于 Model Context Protocol (MCP) 的自然语言 SQL 查询服务器。 功能特性 - 🧠 自然语言转 SQL 查询 - 🔗 动态数据库连接配置 - 🛡️ SQL 安全检查（阻止危险操作） - 📊 结果数据表格展示 - 🌐 基于 Gradio 的 Web 界面 安装依赖 bash pip install -r requirements.txt 启动方式 方式1：直接启动 bash python app.py 方式2：使用批处理文件（Wind
+NaturalSQL MCP Server This is a natural language SQL query server based on the Model Context Protocol (MCP). Features - 🧠 Natural language to SQL query conversion - 🔗 Dynamic database connection confi…
 
 # NaturalSQL MCP Server
 
-这是一个基于 Model Context Protocol (MCP) 的自然语言 SQL 查询服务器。
+This is a natural language SQL query server based on the Model Context Protocol (MCP).
 
-## 功能特性
+## Features
 
-- 🧠 自然语言转 SQL 查询
-- 🔗 动态数据库连接配置
-- 🛡️ SQL 安全检查（阻止危险操作）
-- 📊 结果数据表格展示
-- 🌐 基于 Gradio 的 Web 界面
+- 🧠 Natural language to SQL query conversion
+- 🔗 Dynamic database connection configuration
+- 🛡️ SQL security checks (blocking dangerous operations)
+- 📊 Result data table display
+- 🌐 Web interface based on Gradio
 
-## 安装依赖
+## Install Dependencies
 
-```bash
+bash
 pip install -r requirements.txt
-```
 
-## 启动方式
+## Startup Methods
 
-### 方式1：直接启动
-```bash
+### Method 1: Direct Startup
+bash
 python app.py
-```
 
-### 方式2：使用批处理文件（Windows）
-```bash
+### Method 2: Using Batch File (Windows)
+bash
 start_mcp_server.bat
-```
 
-## MCP 配置文件
+## MCP Configuration Files
 
-- `mcp_config.json` - 简单的 MCP 服务器配置
-- `mcp_server_config.json` - 详细的 MCP 服务器配置，包含工具定义
+- `mcp_config.json` - Simple MCP server configuration
+- `mcp_server_config.json` - Detailed MCP server configuration, including tool definitions
 
-## 使用说明
+## Usage Instructions
 
-1. **配置数据库连接**
-   - 在"数据库配置"标签页中输入 PostgreSQL 连接信息
-   - 点击"测试连接"验证连接
-   - 点击"更新配置"应用配置并加载数据库架构
+1. **Configure Database Connection**
+   - Enter PostgreSQL connection information in the "Database Configuration" tab
+   - Click "Test Connection" to verify the connection
+   - Click "Update Configuration" to apply the configuration and load the database schema
 
-2. **执行自然语言查询**
-   - 切换到"SQL查询"标签页
-   - 输入自然语言查询，例如："查看2023年7月的订单总金额"
-   - 点击"执行查询"获取结果
+2. **Execute Natural Language Query**
+   - Switch to the "SQL Query" tab
+   - Enter a natural language query, for example: "Show the total order amount for July 2023"
+   - Click "Execute Query" to get the results
 
-## 安全特性
+## Security Features
 
-系统会自动检测并阻止以下危险 SQL 操作：
+The system automatically detects and blocks the following dangerous SQL operations:
 - DROP
 - DELETE  
 - TRUNCATE
 - UPDATE
 - INSERT
 
-## 环境要求
+## Environment Requirements
 
 - Python 3.8+
-- PostgreSQL 数据库
-- OpenAI API 密钥（需在 config.py 中配置）
+- PostgreSQL database
+- OpenAI API key (configure in config.py)
 
-## 配置 OpenAI API
+## Configure OpenAI API
 
-在 `config.py` 文件中设置您的 OpenAI API 密钥：
+Set your OpenAI API key in the `config.py` file:
 
-```python
+python
 openai_api_key = "your-openai-api-key-here"
-```
 
-**官方网站：** [https://www.modelscope.cn/studios/xperiamol/SQLReader](https://www.modelscope.cn/studios/xperiamol/SQLReader)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/xperiamol/SQLReader](https://www.modelscope.cn/studios/xperiamol/SQLReader)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `files`
-- 标签：`file systems`, `knowledge and memory`, `chinese`
+- Categories: `memory`, `files`
+- Tags: `file systems`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://xperiamol-sqlreader.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://xperiamol-sqlreader.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xperiamol-sqlreader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xperiamol-sqlreader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

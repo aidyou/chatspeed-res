@@ -1,110 +1,110 @@
 ---
-title: "PowerPoint MCP 服务器"
-description: "通过模型上下文协议（Model Context Protocol）实现创建和编辑 PowerPoint 演示文稿的服务器，支持添加幻灯片、图像、文本框、图表和表格等功能。"
+title: "Office-PowerPoint-MCP-Server"
+description: "A server that enables creating and editing PowerPoint presentations programmatically through the Model Context Protocol, supporting features like adding slides, images, textboxes, charts, and tables."
 ---
 
-# PowerPoint MCP 服务器
+# Office-PowerPoint-MCP-Server
 
-通过模型上下文协议（Model Context Protocol）实现创建和编辑 PowerPoint 演示文稿的服务器，支持添加幻灯片、图像、文本框、图表和表格等功能。
+A server that enables creating and editing PowerPoint presentations programmatically through the Model Context Protocol, supporting features like adding slides, images, textboxes, charts, and tables.
 
 # Office-PowerPoint-MCP-Server
 [Smithery](https://smithery.ai/server/@GongRzhe/Office-PowerPoint-MCP-Server)
 ![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP Server')
 
-这是一个使用 `python-pptx` 的 PowerPoint 操控 MCP（Model Context Protocol）服务器。该服务器通过 MCP 协议提供创建、编辑和操控 PowerPoint 演示文稿的工具。
+A MCP (Model Context Protocol) server for PowerPoint manipulation using python-pptx. This server provides tools for creating, editing, and manipulating PowerPoint presentations through the MCP protocol.
 
-### 示例
+### Example
 
-#### 提示
+#### Pormpt
 
-#### 输出
+#### Output
 
-#### 演示 GIF -> (./public/demo.mp4)
+#### Demo's GIF -> (./public/demo.mp4)
 
-## 功能
+## Features
 
-- 往返任何 Open XML 演示文稿（.pptx 文件），包括其所有元素
-- 添加幻灯片
-- 填充文本占位符，例如创建项目符号幻灯片
-- 在任意位置和大小向幻灯片添加图片
-- 向幻灯片添加文本框；操控文本字体大小和加粗
-- 向幻灯片添加表格
-- 向幻灯片添加自定义形状（例如多边形、流程图形状等）
-- 添加并操控柱状图、条形图、折线图和饼图
-- 访问并更改核心文档属性，如标题和主题
+- Round-trip any Open XML presentation (.pptx file) including all its elements
+- Add slides
+- Populate text placeholders, for example to create a bullet slide
+- Add image to slide at arbitrary position and size
+- Add textbox to a slide; manipulate text font size and bold
+- Add table to a slide
+- Add auto shapes (e.g. polygons, flowchart shapes, etc.) to a slide
+- Add and manipulate column, bar, line, and pie charts
+- Access and change core document properties such as title and subject
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@GongRzhe/Office-PowerPoint-MCP-Server) 自动为 Claude Desktop 安装 PowerPoint 操控服务器：
+To install PowerPoint Manipulation Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@GongRzhe/Office-PowerPoint-MCP-Server):
 
 ```bash
 npx -y @smithery/cli install @GongRzhe/Office-PowerPoint-MCP-Server --client claude
 ```
 
-### 先决条件
+### Prerequisites
 
-- Python 3.10 或更高版本
-- pip 包管理器
+- Python 3.10 or higher
+- pip package manager
 
-### 安装选项
+### Installation Options
 
-#### 选项 1：使用设置脚本（推荐）
+#### Option 1: Using the Setup Script (Recommended)
 
-最简单的方法是使用提供的设置脚本来配置 PowerPoint MCP 服务器，该脚本会自动化安装过程：
+The easiest way to set up the PowerPoint MCP Server is using the provided setup script, which automates the installation process:
 
 ```bash
 python setup_mcp.py
 ```
 
-此脚本将：
-- 检查先决条件
-- 提供安装选项：
-  - 从 PyPI 安装（推荐大多数用户使用）
-  - 设置本地开发环境
-- 安装所需依赖项
-- 生成适当的 MCP 配置文件
-- 提供与 Claude Desktop 集成的说明
+This script will:
+- Check prerequisites
+- Offer installation options:
+  - Install from PyPI (recommended for most users)
+  - Set up local development environment
+- Install required dependencies
+- Generate the appropriate MCP configuration file
+- Provide instructions for integrating with Claude Desktop
 
-该脚本根据您的环境提供不同的路径：
-- 如果您已安装 `uvx`，它将使用 UVX 进行配置（推荐）
-- 如果服务器已经安装，它会提供配置选项
-- 如果服务器未安装，它会提供安装方法
+The script offers different paths based on your environment:
+- If you have `uvx` installed, it will configure using UVX (recommended)
+- If the server is already installed, it provides configuration options
+- If the server is not installed, it offers installation methods
 
-#### 选项 2：手动安装
+#### Option 2: Manual Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
    git clone https://github.com/GongRzhe/Office-PowerPoint-MCP-Server.git
    cd Office-PowerPoint-MCP-Server
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
    pip install -r requirements.txt
 ```
 
-3. 使服务器可执行：
+3. Make the server executable:
 ```bash
    chmod +x ppt_mcp_server.py
 ```
 
-## 使用
+## Usage
 
-### 启动服务器
+### Starting the Server
 
-运行服务器：
+Run the server:
 
 ```bash
 python ppt_mcp_server.py
 ```
 
-### MCP 配置
+### MCP Configuration
 
-#### 选项 1：本地 Python 服务器
+#### Option 1: Local Python Server
 
-将服务器添加到您的 MCP 设置配置文件中：
+Add the server to your MCP settings configuration file:
 
 ```json
 {
@@ -118,9 +118,9 @@ python ppt_mcp_server.py
 }
 ```
 
-#### 选项 2：使用 UVX（无需本地安装）
+#### Option 2: Using UVX (No Local Installation Required)
 
-如果你已经安装了 `uvx`，你可以直接从 PyPI 运行服务器而无需本地安装：
+If you have `uvx` installed, you can run the server directly from PyPI without local installation:
 
 ```json
 {
@@ -136,48 +136,48 @@ python ppt_mcp_server.py
 }
 ```
 
-## 可用工具
+## Available Tools
 
-### 演示文稿工具
+### Presentation Tools
 
-- **create_presentation**: 创建一个新的 PowerPoint 演示文稿
-- **open_presentation**: 从文件中打开一个现有的 PowerPoint 演示文稿
-- **save_presentation**: 将当前演示文稿保存到文件
-- **get_presentation_info**: 获取关于当前演示文稿的信息
-- **set_core_properties**: 设置当前演示文稿的核心文档属性
+- **create_presentation**: Create a new PowerPoint presentation
+- **open_presentation**: Open an existing PowerPoint presentation from a file
+- **save_presentation**: Save the current presentation to a file
+- **get_presentation_info**: Get information about the current presentation
+- **set_core_properties**: Set core document properties of the current presentation
 
-### 幻灯片工具
+### Slide Tools
 
-- **add_slide**: 向当前演示文稿添加一张新幻灯片
-- **get_slide_info**: 获取特定幻灯片的信息
-- **populate_placeholder**: 用文本填充占位符
-- **add_bullet_points**: 向占位符添加项目符号
+- **add_slide**: Add a new slide to the current presentation
+- **get_slide_info**: Get information about a specific slide
+- **populate_placeholder**: Populate a placeholder with text
+- **add_bullet_points**: Add bullet points to a placeholder
 
-### 文本工具
+### Text Tools
 
-- **add_textbox**: 向幻灯片添加一个文本框
+- **add_textbox**: Add a textbox to a slide
 
-### 图像工具
+### Image Tools
 
-- **add_image**: 向幻灯片添加一张图片
-- **add_image_from_base64**: 从 base64 编码的字符串向幻灯片添加一张图片
+- **add_image**: Add an image to a slide
+- **add_image_from_base64**: Add an image from a base64 encoded string to a slide
 
-### 表格工具
+### Table Tools
 
-- **add_table**: 向幻灯片添加一个表格
-- **format_table_cell**: 格式化表格单元格
+- **add_table**: Add a table to a slide
+- **format_table_cell**: Format a table cell
 
-### 形状工具
+### Shape Tools
 
-- **add_shape**: 向幻灯片添加一个自动形状
+- **add_shape**: Add an auto shape to a slide
 
-### 图表工具
+### Chart Tools
 
-- **add_chart**: 向幻灯片添加一个图表
+- **add_chart**: Add a chart to a slide
 
-## 示例
+## Examples
 
-### 创建一个新的演示文稿
+### Creating a New Presentation
 
 ```python
 # Create a new presentation
@@ -223,7 +223,7 @@ result = use_mcp_tool(
 )
 ```
 
-### 添加一个图表
+### Adding a Chart
 
 ```python
 # Add a chart slide
@@ -264,26 +264,26 @@ result = use_mcp_tool(
 )
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/GongRzhe/Office-PowerPoint-MCP-Server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/GongRzhe/Office-PowerPoint-MCP-Server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `developer tools`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from office-powerpoint-mcp-server ppt_mcp_server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from office-powerpoint-mcp-server ppt_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gongrzhe-office-powerpoint.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gongrzhe-office-powerpoint.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

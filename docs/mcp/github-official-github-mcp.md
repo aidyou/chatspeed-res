@@ -1,11 +1,11 @@
 ---
-title: "GitHub MCP 服务器"
-description: "GitHub MCP Server The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues and PRs, analyze code"
+title: "GitHub MCP Server"
+description: "GitHub MCP Server The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues a…"
 ---
 
-# GitHub MCP 服务器
+# GitHub MCP Server
 
-GitHub MCP Server The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues and PRs, analyze code
+GitHub MCP Server The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues a…
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/github/github-mcp-server)](https://goreportcard.com/report/github.com/github/github-mcp-server)
 
@@ -538,22 +538,22 @@ The local GitHub MCP Server offers an insiders version with early access to new 
 
 1. 
 
-**官方网站：** [https://github.com/github/github-mcp-server](https://github.com/github/github-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/github/github-mcp-server](https://github.com/github/github-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `github`, `version control`, `ci/cd`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `github`, `version control`, `ci/cd`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/github-official-github-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/github-official-github-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

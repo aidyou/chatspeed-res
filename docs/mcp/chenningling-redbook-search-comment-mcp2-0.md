@@ -1,102 +1,102 @@
 ---
-title: "小红书自动搜索评论工具"
-description: "这是一款基于 Playwright 开发的小红书自动搜索和评论工具，作为 MCP Server，可通过特定配置接入 MCP Client（如Claude for Desktop），帮助用户自动完成登录小红书、搜索关键词、获取笔记内容及发布AI生成评论等操作。"
+title: "Redbook-Search-Comment-MCP2.0"
+description: "This is an automated Xiaohongshu (Redbook) search and comment tool developed using Playwright. As an MCP Server, it can be integrated with MCP Client (e.g., Claude for Desktop) through specific config…"
 ---
 
-# 小红书自动搜索评论工具
+# Redbook-Search-Comment-MCP2.0
 
-这是一款基于 Playwright 开发的小红书自动搜索和评论工具，作为 MCP Server，可通过特定配置接入 MCP Client（如Claude for Desktop），帮助用户自动完成登录小红书、搜索关键词、获取笔记内容及发布AI生成评论等操作。
+This is an automated Xiaohongshu (Redbook) search and comment tool developed using Playwright. As an MCP Server, it can be integrated with MCP Client (e.g., Claude for Desktop) through specific config…
 
-# 小红书自动搜索评论工具（MCP Server 2.0）
+# Xiaohongshu (RED) Auto Search & Comment Tool (MCP Server 2.0)
 
-[English](https://github.com/chenningling/Redbook-Search-Comment-MCP2.0/blob/HEAD/README_EN.md) | 中文
+English | [中文](https://github.com/chenningling/Redbook-Search-Comment-MCP2.0/blob/HEAD/README.md)
 
-> 本项目基于 [JonaFly/RednoteMCP](https://github.com/JonaFly/RednoteMCP.git) 并结合多次实战经验，进行全面优化和功能扩展（by windsurf）。在此向原作者的贡献表示由衷的感谢！
+> This project is based on [JonaFly/RednoteMCP](https://github.com/JonaFly/RednoteMCP.git) with comprehensive optimizations and feature extensions based on multiple practical experiences (by windsurf). Sincere thanks to the original author for their contributions!
 
-这是一款基于 Playwright 开发的小红书自动搜索和评论工具，作为 MCP Server，可通过特定配置接入 MCP Client（如Claude for Desktop），帮助用户自动完成登录小红书、搜索关键词、获取笔记内容及发布AI生成评论等操作。
+This is a Xiaohongshu (RED) automatic search and comment tool developed with Playwright. As an MCP Server, it can be integrated with MCP Clients (such as Claude for Desktop) through specific configurations, helping users automatically log in to Xiaohongshu, search for keywords, retrieve note content, and publish AI-generated comments.
 
-## 主要特点与优势
+## Key Features and Advantages
 
-- **深度集成AI能力**：利用MCP客户端（如Claude）的大模型能力，生成更自然、更相关的评论内容
-- **模块化设计**：将功能分为笔记分析、评论生成和评论发布三个独立模块，提高代码可维护性
-- **强大的内容获取能力**：集成多种获取笔记内容的方法，确保能完整获取各类笔记的标题、作者和正文内容
-- **持久化登录**：使用持久化浏览器上下文，首次登录后无需重复登录
-- **两步式评论流程**：先获取笔记分析结果，然后由MCP客户端生成并发布评论
+- **Deep AI Integration**: Leverages the large model capabilities of MCP clients (like Claude) to generate more natural and relevant comment content
+- **Modular Design**: Divides functionality into three independent modules: note analysis, comment generation, and comment publishing, improving code maintainability
+- **Powerful Content Retrieval**: Integrates multiple methods to retrieve note content, ensuring complete acquisition of titles, authors, and content from various types of notes
+- **Persistent Login**: Uses persistent browser context, eliminating the need to log in repeatedly after the first login
+- **Two-Step Comment Process**: First obtains note analysis results, then generates and publishes comments through the MCP client
 
-## 2.0版本主要优化
+## Version 2.0 Major Improvements
 
-- **内容获取增强**：重构了笔记内容获取模块，增加页面加载等待时间和滚动操作，实现四种不同的内容获取方法
-- **AI评论生成**：重构评论功能，将笔记分析结果返回给MCP客户端，由客户端的AI能力生成更自然、更相关的评论
-- **功能模块化**：将功能分为笔记分析、评论生成和评论发布三个独立模块，提高代码可维护性
-- **搜索结果优化**：解决了搜索笔记时标题不显示的问题，提供更完整的搜索结果
-- **错误处理增强**：添加更详细的错误处理和调试信息输出
+- **Enhanced Content Retrieval**: Restructured the note content retrieval module, increased page loading wait times and scrolling operations, implementing four different content retrieval methods
+- **AI Comment Generation**: Redesigned the comment functionality to return note analysis results to the MCP client, which uses its AI capabilities to generate more natural and relevant comments
+- **Modular Functionality**: Divided functionality into three independent modules: note analysis, comment generation, and comment publishing, improving code maintainability
+- **Search Results Optimization**: Resolved the issue of titles not displaying when searching for notes, providing more complete search results
+- **Enhanced Error Handling**: Added more detailed error handling and debug information output
 
-## 一、核心功能
+## I. Core Features
 
-### 1. 用户认证与登录
-- **持久化登录**：支持手动扫码登录，首次登录后保存状态，后续使用无需重复扫码
-- **登录状态管理**：自动检测登录状态，并在需要时提示用户登录
+### 1. User Authentication and Login
+- **Persistent Login**: Supports manual QR code login, saves state after first login, no need to scan again for subsequent use
+- **Login State Management**: Automatically detects login status and prompts users to log in when needed
 
-### 2. 内容发现与获取
-- **智能关键词搜索**：支持多关键词搜索，可指定返回结果数量，并提供完整的笔记信息
-- **多维度内容获取**：集成四种不同的获取方法，确保能准确获取笔记的标题、作者、发布时间和正文内容
-- **评论数据获取**：支持获取笔记的评论内容，包括评论者、评论文本和时间信息
+### 2. Content Discovery and Retrieval
+- **Smart Keyword Search**: Supports multi-keyword search, can specify the number of results to return, and provides complete note information
+- **Multi-dimensional Content Retrieval**: Integrates four different retrieval methods to ensure accurate acquisition of note titles, authors, publication times, and content
+- **Comment Data Retrieval**: Supports retrieving comments on notes, including commenter, comment text, and time information
 
-### 3. 内容分析与生成
-- **笔记内容分析**：自动分析笔记内容，提取关键信息并识别笔记所属领域
-- **AI评论生成**：利用MCP客户端（如Claude）的AI能力，基于笔记内容生成自然、相关的评论
-- **多类型评论支持**：支持四种不同类型的评论生成：
-  - **引流型**：引导用户关注或私聊
-  - **点赞型**：简单互动获取好感
-  - **咨询型**：以问题形式增加互动
-  - **专业型**：展示专业知识建立权威
+### 3. Content Analysis and Generation
+- **Note Content Analysis**: Automatically analyzes note content, extracts key information, and identifies the domain of the note
+- **AI Comment Generation**: Uses the AI capabilities of MCP clients (such as Claude) to generate natural, relevant comments based on note content
+- **Multiple Comment Types**: Supports four different types of comment generation:
+  - **Traffic-driving**: Guides users to follow or private message
+  - **Like-oriented**: Simple interactions to gain goodwill
+  - **Inquiry-based**: Increases interaction in the form of questions
+  - **Professional**: Displays professional knowledge to establish authority
 
-### 4. 数据返回与反馈
-- **结构化数据返回**：将笔记分析结果以JSON格式返回给MCP客户端，便于AI生成评论
-- **评论发布反馈**：提供评论发布结果的实时反馈
+### 4. Data Return and Feedback
+- **Structured Data Return**: Returns note analysis results to the MCP client in JSON format, facilitating AI comment generation
+- **Comment Publishing Feedback**: Provides real-time feedback on comment publishing results
 
-## 二、安装步骤
+## II. Installation Steps
 
-1. **Python 环境准备**：确保系统已安装 Python 3.8 或更高版本。若未安装，可从 Python 官方网站下载并安装。
+1. **Python Environment Preparation**: Ensure your system has Python 3.8 or higher installed. If not, download and install it from the official Python website.
 
-2. **项目获取**：将本项目克隆或下载到本地。
+2. **Project Acquisition**: Clone or download this project to your local machine.
 
-3. **创建虚拟环境**：在项目目录下创建并激活虚拟环境（推荐）：
+3. **Create Virtual Environment**: Create and activate a virtual environment in the project directory (recommended):
 ```bash
-   # 创建虚拟环境
+   # Create virtual environment
    python3 -m venv venv
 
-   # 激活虚拟环境
+   # Activate virtual environment
    # Windows
    venvScriptsactivate
    # macOS/Linux
    source venv/bin/activate
 ```
 
-4. **安装依赖**：在激活的虚拟环境中安装所需依赖：
+4. **Install Dependencies**: Install the required dependencies in the activated virtual environment:
 ```bash
    pip install -r requirements.txt
    pip install fastmcp
 ```
 
-5. **安装浏览器**：安装Playwright所需的浏览器：
+5. **Install Browser**: Install the browsers required by Playwright:
 ```bash
    playwright install
 ```
 
-## 三、MCP Server 配置
+## III. MCP Server Configuration
 
-在 MCP Client（如Claude for Desktop）的配置文件中添加以下内容，将本工具配置为 MCP Server：
+Add the following content to the MCP Client (such as Claude for Desktop) configuration file to configure this tool as an MCP Server:
 
-### Mac 配置示例
+### Mac Configuration Example
 
 ```json
 {
     "mcpServers": {
         "xiaohongshu MCP": {
-            "command": "/绝对路径/到/venv/bin/python3",
+            "command": "/absolute/path/to/venv/bin/python3",
             "args": [
-                "/绝对路径/到/xiaohongshu_mcp.py",
+                "/absolute/path/to/xiaohongshu_mcp.py",
                 "--stdio"
             ]
         }
@@ -104,7 +104,7 @@ description: "这是一款基于 Playwright 开发的小红书自动搜索和评
 }
 ```
 
-### Windows 配置示例
+### Windows Configuration Example
 
 ```json
 {
@@ -120,311 +120,311 @@ description: "这是一款基于 Playwright 开发的小红书自动搜索和评
 }
 ```
 
-> **重要提示**：
-> - 请使用虚拟环境中Python解释器的**完整绝对路径**
-> - Mac示例：`/Users/username/Desktop/RedBook-Search-Comment-MCP/venv/bin/python3`
-> - Windows示例：`C:UsersusernameDesktopMCPRedbook-Search-Comment-MCP2.0venvScriptspython.exe`
-> - 同样，xiaohongshu_mcp.py也需要使用**完整绝对路径**
-> - Windows路径中的反斜杠在JSON中需要双重转义（使用 ``）
+> **Important Notes**:
+> - Please use the **complete absolute path** of the Python interpreter in your virtual environment
+> - Mac example: `/Users/username/Desktop/RedBook-Search-Comment-MCP/venv/bin/python3`
+> - Windows example: `C:UsersusernameDesktopMCPRedbook-Search-Comment-MCP2.0venvScriptspython.exe`
+> - Similarly, xiaohongshu_mcp.py also needs to use a **complete absolute path**
+> - Backslashes in Windows paths need to be double-escaped in JSON (using `\`)
 
-### Python 命令区分（python 与 python3）
+### Python Command Differences (python vs python3)
 
-不同系统环境中，Python 命令可能有所不同，这取决于您的系统配置。以下是如何确定您应该使用哪个命令：
+In different system environments, Python commands may vary depending on your system configuration. Here's how to determine which command you should use:
 
-1. **确定您的 Python 命令**：
-   - 在终端中运行：`python --version` 和 `python3 --version`
-   - 查看哪个命令返回 Python 3.x 版本（本项目需要 Python 3.8+）
+1. **Determine Your Python Command**:
+   - Run in terminal: `python --version` and `python3 --version`
+   - Check which command returns a Python 3.x version (this project requires Python 3.8+)
 
-2. **在虚拟环境中确认**：
-   - 激活虚拟环境后，运行 `which python` 或 `where python`（Windows）
-   - 这将显示 Python 解释器的完整路径
+2. **Confirm in Virtual Environment**:
+   - After activating the virtual environment, run `which python` or `where python` (Windows)
+   - This will display the complete path of the Python interpreter
 
-3. **配置中使用正确的命令**：
-   - Mac：通常为 `python3` 或虚拟环境中的 `python`
-   - Windows：通常为 `python` 或 `python.exe`
+3. **Use the Correct Command in Configuration**:
+   - Mac: Usually `python3` or `python` in the virtual environment
+   - Windows: Usually `python` or `python.exe`
 
-在配置文件中，始终使用虚拟环境中 Python 解释器的**完整绝对路径**，而不是命令名称。
+In the configuration file, always use the **complete absolute path** of the Python interpreter in your virtual environment, not the command name.
 
-## 四、使用方法
+## IV. Usage Methods
 
-### （一）启动服务器
+### (A) Starting the Server
 
-1. **直接运行**：在项目目录下，激活虚拟环境后执行：
+1. **Direct Execution**: In the project directory, after activating the virtual environment, execute:
 ```bash
    python3 xiaohongshu_mcp.py
 ```
 
-2. **通过 MCP Client 启动**：配置好MCP Client后，按照客户端的操作流程进行启动和连接。
+2. **Launch via MCP Client**: After configuring the MCP Client, follow the client's operation process to start and connect.
 
-### （二）主要功能操作
+### (B) Main Functionality Operations
 
-在MCP Client（如Claude for Desktop）中连接到服务器后，可以使用以下功能：
+After connecting to the server in the MCP Client (such as Claude for Desktop), you can use the following features:
 
-### 1. 登录小红书
+### 1. Log in to Xiaohongshu
 
-**工具函数**：
+**Tool Function**:
 ```
 mcp0_login()
 ```
 
-**在MCP客户端中的使用方式**：
-直接发送以下文本：
+**Usage in MCP Client**:
+Send the following text directly:
 ```
-帮我登录小红书账号
+Help me log in to my Xiaohongshu account
 ```
-或：
+Or:
 ```
-请登录小红书
-```
-
-**功能说明**：首次使用时会打开浏览器窗口，等待用户手动扫码登录。登录成功后，工具会保存登录状态。
-
-### 2. 搜索笔记
-
-**工具函数**：
-```
-mcp0_search_notes(keywords="关键词", limit=5)
+Please log in to Xiaohongshu
 ```
 
-**在MCP客户端中的使用方式**：
-发送包含关键词的搜索请求：
-```
-帮我搜索小红书笔记，关键词为：美食
-```
-指定返回数量：
-```
-帮我搜索小红书笔记，关键词为旅游，返回10条结果
-```
+**Function Description**: When used for the first time, it will open a browser window and wait for the user to manually scan the QR code to log in. After successful login, the tool will save the login state.
 
-**功能说明**：根据关键词搜索小红书笔记，并返回指定数量的结果。默认返回5条结果。
+### 2. Search for Notes
 
-### 3. 获取笔记内容
-
-**工具函数**：
+**Tool Function**:
 ```
-mcp0_get_note_content(url="笔记URL")
+mcp0_search_notes(keywords="keywords", limit=5)
 ```
 
-**在MCP客户端中的使用方式**：
-发送包含笔记URL的请求：
+**Usage in MCP Client**:
+Send a search request containing keywords:
 ```
-帮我获取这个笔记的内容：https://www.xiaohongshu.com/search_result/xxxx
+Help me search for Xiaohongshu notes with the keyword: food
 ```
-或：
+Specify the number of results:
 ```
-请查看这个小红书笔记的内容：https://www.xiaohongshu.com/search_result/xxxx
-```
-
-**功能说明**：获取指定笔记URL的详细内容，包括标题、作者、发布时间和正文内容。
-
-### 4. 获取笔记评论
-
-**工具函数**：
-```
-mcp0_get_note_comments(url="笔记URL")
+Help me search for Xiaohongshu notes with the keyword travel, return 10 results
 ```
 
-**在MCP客户端中的使用方式**：
-发送包含笔记URL的评论请求：
-```
-帮我获取这个笔记的评论：https://www.xiaohongshu.com/search_result/xxxx
-```
-或：
-```
-请查看这个小红书笔记的评论区：https://www.xiaohongshu.com/search_result/xxxx
-```
+**Function Description**: Searches for Xiaohongshu notes based on keywords and returns a specified number of results. Returns 5 results by default.
 
-**功能说明**：获取指定笔记URL的评论信息，包括评论者、评论内容和评论时间。
+### 3. Get Note Content
 
-### 5. 发布智能评论
-
-**工具函数**：
+**Tool Function**:
 ```
-mcp0_post_smart_comment(url="笔记URL", comment_type="评论类型")
+mcp0_get_note_content(url="note URL")
 ```
 
-**在MCP客户端中的使用方式**：
-发送包含笔记URL和评论类型的请求：
+**Usage in MCP Client**:
+Send a request containing the note URL:
 ```
-帮我为这个笔记写一条[类型]评论：https://www.xiaohongshu.com/explore/xxxx
+Help me get the content of this note: https://www.xiaohongshu.com/search_result/xxxx
 ```
-
-**功能说明**：获取笔记分析结果，并返回给MCP客户端，由客户端生成评论并调用post_comment发布。
-
-### 6. 发布评论
-
-**工具函数**：
+Or:
 ```
-mcp0_post_comment(url="笔记URL", comment="评论内容")
+Please check the content of this Xiaohongshu note: https://www.xiaohongshu.com/search_result/xxxx
 ```
 
-**在MCP客户端中的使用方式**：
-发送包含笔记URL和评论内容的请求：
+**Function Description**: Retrieves detailed content of the specified note URL, including title, author, publication time, and content.
+
+### 4. Get Note Comments
+
+**Tool Function**:
 ```
-帮我发布这条评论到笔记：https://www.xiaohongshu.com/explore/xxxx
-评论内容：[评论内容]
+mcp0_get_note_comments(url="note URL")
 ```
 
-**功能说明**：将指定的评论内容发布到笔记页面。
+**Usage in MCP Client**:
+Send a comment request containing the note URL:
+```
+Help me get the comments on this note: https://www.xiaohongshu.com/search_result/xxxx
+```
+Or:
+```
+Please check the comment section of this Xiaohongshu note: https://www.xiaohongshu.com/search_result/xxxx
+```
 
-## 四、使用指南
+**Function Description**: Retrieves comment information for the specified note URL, including commenter, comment content, and comment time.
 
-### 0. 工作原理
+### 5. Post Smart Comment
 
-本工具采用两步式流程实现智能评论功能：
+**Tool Function**:
+```
+mcp0_post_smart_comment(url="note URL", comment_type="comment type")
+```
 
-1. **笔记分析**：调用`post_smart_comment`工具获取笔记信息（标题、作者、内容等）
+**Usage in MCP Client**:
+Send a request containing the note URL and comment type:
+```
+Help me write a [type] comment for this note: https://www.xiaohongshu.com/explore/xxxx
+```
 
-2. **评论生成与发布**：
-   - MCP客户端(如Claude)基于笔记分析结果生成评论
-   - 调用`post_comment`工具发布评论
+**Function Description**: Retrieves note analysis results and returns them to the MCP client, which generates a comment and calls post_comment to publish it.
 
-这种设计充分利用了MCP客户端的AI能力，实现了更自然、相关的评论生成。
+### 6. Post Comment
 
-### 1. 在MCP客户端中的使用方式
+**Tool Function**:
+```
+mcp0_post_comment(url="note URL", comment="comment content")
+```
 
-#### 基本操作
+**Usage in MCP Client**:
+Send a request containing the note URL and comment content:
+```
+Help me post this comment to the note: https://www.xiaohongshu.com/explore/xxxx
+Comment content: [comment content]
+```
 
-| 功能 | 示例命令 |
+**Function Description**: Posts the specified comment content to the note page.
+
+## V. User Guide
+
+### 0. Working Principle
+
+This tool uses a two-step process to implement smart commenting:
+
+1. **Note Analysis**: Calls the `post_smart_comment` tool to get note information (title, author, content, etc.)
+
+2. **Comment Generation and Publishing**:
+   - The MCP client (such as Claude) generates comments based on note analysis results
+   - Calls the `post_comment` tool to publish the comment
+
+This design fully utilizes the AI capabilities of the MCP client to generate more natural and relevant comments.
+
+### 1. Usage in MCP Client
+
+#### Basic Operations
+
+| Function | Example Command |
 |---------|----------|
-| **搜索笔记** | `帮我搜索关于[关键词]的小红书笔记` |
-| **获取笔记内容** | `帮我查看这篇小红书笔记的内容：https://www.xiaohongshu.com/explore/xxxx` |
-| **分析笔记** | `帮我分析这篇小红书笔记：https://www.xiaohongshu.com/explore/xxxx` |
-| **获取评论** | `帮我查看这篇笔记的评论：https://www.xiaohongshu.com/explore/xxxx` |
-| **生成评论** | `帮我为这篇小红书笔记写一条[类型]评论：https://www.xiaohongshu.com/explore/xxxx` |
+| **Search Notes** | `Help me search for Xiaohongshu notes about [keyword]` |
+| **Get Note Content** | `Help me view the content of this Xiaohongshu note: https://www.xiaohongshu.com/explore/xxxx` |
+| **Analyze Note** | `Help me analyze this Xiaohongshu note: https://www.xiaohongshu.com/explore/xxxx` |
+| **Get Comments** | `Help me view the comments on this note: https://www.xiaohongshu.com/explore/xxxx` |
+| **Generate Comment** | `Help me write a [type] comment for this Xiaohongshu note: https://www.xiaohongshu.com/explore/xxxx` |
 
-#### 评论类型选项
+#### Comment Type Options
 
-| 类型 | 描述 | 适用场景 |
+| Type | Description | Use Case |
 |---------|------|----------|
-| **引流** | 引导用户关注或私聊 | 增加粉丝或私信互动 |
-| **点赞** | 简单互动获取好感 | 增加曝光和互动率 |
-| **咨询** | 以问题形式增加互动 | 引发博主回复，增加互动深度 |
-| **专业** | 展示专业知识建立权威 | 建立专业形象，增强可信度 |
+| **Traffic-driving** | Guide users to follow or private message | Increase followers or private message interactions |
+| **Like-oriented** | Simple interactions to gain goodwill | Increase exposure and interaction rate |
+| **Inquiry-based** | Increase interaction in the form of questions | Trigger blogger replies, increase interaction depth |
+| **Professional** | Display professional knowledge to establish authority | Build professional image, enhance credibility |
 
-### 2. 实际工作流程示例
+### 2. Actual Workflow Example
 
 ```
-用户: 帮我为这个小红书笔记写一条专业类型的评论：https://www.xiaohongshu.com/explore/xxxx
+User: Help me write a professional type comment for this Xiaohongshu note: https://www.xiaohongshu.com/explore/xxxx
 
-Claude: 我会帮您写一条专业类型的评论。让我获取笔记内容并生成评论。
-[调用post_smart_comment工具]
+Claude: I'll help you write a professional type comment. Let me get the note content and generate a comment.
+[Calls post_smart_comment tool]
 
-# 工具返回笔记分析结果，包含标题、作者、内容、领域和关键词
+# Tool returns note analysis results, including title, author, content, domain, and keywords
 
-Claude: 我已经获取到笔记信息，这是一篇关于[主题]的笔记。基于内容，我生成并发布了以下专业评论：
+Claude: I've obtained the note information, this is a note about [topic]. Based on the content, I generated and posted the following professional comment:
 
-"[生成的专业评论内容]"
+"[Generated professional comment content]"
 
-[调用post_comment工具]
+[Calls post_comment tool]
 
-Claude: 评论已成功发布！
+Claude: Comment successfully posted!
 ```
 
-**注意**：上述流程中，`post_smart_comment`工具只负责获取笔记分析结果并返回给MCP客户端，实际的评论生成是由MCP客户端（如Claude）自身完成的。
+**Note**: In the above process, the `post_smart_comment` tool is only responsible for retrieving note analysis results and returning them to the MCP client. The actual comment generation is done by the MCP client (such as Claude) itself.
 
-### 3. 工作原理
+### 3. Working Principle
 
-新版小红书MCP工具采用了模块化设计，分为三个核心模块：
+The new version of the Xiaohongshu MCP tool adopts a modular design, divided into three core modules:
 
-1. **笔记分析模块**（analyze_note）
-   - 获取笔记的标题、作者、发布时间和内容
-   - 分析笔记所属领域和关键词
-   - 返回结构化的笔记信息
+1. **Note Analysis Module** (analyze_note)
+   - Retrieves the title, author, publication time, and content of the note
+   - Analyzes the domain and keywords of the note
+   - Returns structured note information
 
-2. **评论生成模块**（由MCP客户端实现）
-   - 接收笔记分析结果
-   - 根据笔记内容和评论类型生成自然、相关的评论
-   - 允许用户在发布前预览和修改评论
+2. **Comment Generation Module** (implemented by the MCP client)
+   - Receives note analysis results
+   - Generates natural, relevant comments based on note content and comment type
+   - Allows users to preview and modify comments before publishing
 
-3. **评论发布模块**（post_comment）
-   - 接收生成的评论内容
-   - 定位并操作评论输入框
-   - 发布评论并返回结果
+3. **Comment Publishing Module** (post_comment)
+   - Receives generated comment content
+   - Locates and operates the comment input box
+   - Publishes the comment and returns results
 
-## 五、代码结构
+## VI. Code Structure
 
-- **xiaohongshu_mcp.py**：实现主要功能的核心文件，包含登录、搜索、获取内容和评论、发布评论等功能的代码逻辑。
-- **requirements.txt**：记录项目所需的依赖库。
+- **xiaohongshu_mcp.py**: The core file implementing the main functions, including login, search, content and comment retrieval, comment publishing, and other code logic.
+- **requirements.txt**: Records the dependencies required by the project.
 
-## 六、常见问题与解决方案
+## VII. Common Issues and Solutions
 
-1. **连接失败**：
-   - 确保使用了虚拟环境中Python解释器的**完整绝对路径**
-   - 确保MCP服务器正在运行
-   - 尝试重启MCP服务器和客户端
+1. **Connection Failure**:
+   - Ensure you're using the **complete absolute path** of the Python interpreter in your virtual environment
+   - Ensure the MCP server is running
+   - Try restarting the MCP server and client
 
-2. **浏览器会话问题**：
-   如果遇到`Page.goto: Target page, context or browser has been closed`错误：
-   - 重启MCP服务器
-   - 重新连接并登录
+2. **Browser Session Issues**:
+   If you encounter a `Page.goto: Target page, context or browser has been closed` error:
+   - Restart the MCP server
+   - Reconnect and log in again
 
-3. **依赖安装问题**：
-   如果遇到`ModuleNotFoundError`错误：
-   - 确保在虚拟环境中安装了所有依赖
-   - 检查是否安装了fastmcp包
+3. **Dependency Installation Issues**:
+   If you encounter a `ModuleNotFoundError` error:
+   - Ensure all dependencies are installed in the virtual environment
+   - Check if the fastmcp package is installed
 
-## 七、注意事项与问题解决
+## VIII. Notes and Troubleshooting
 
-### 1. 使用注意事项
+### 1. Usage Notes
 
-- **浏览器模式**：工具使用 Playwright 的非隐藏模式运行，运行时会打开真实浏览器窗口
-- **登录方式**：首次登录需要手动扫码，后续使用若登录状态有效，则无需再次扫码
-- **平台规则**：使用过程中请严格遵守小红书平台的相关规定，避免过度操作，防止账号面临封禁风险
-- **评论频率**：建议控制评论发布频率，避免短时间内发布大量评论，每天发布评论数量不超过30条
+- **Browser Mode**: The tool runs in Playwright's non-headless mode, opening a real browser window during execution
+- **Login Method**: First-time login requires manual QR code scanning; subsequent uses don't require rescanning if the login state is valid
+- **Platform Rules**: Please strictly follow Xiaohongshu platform regulations during use, avoid excessive operations to prevent account banning risks
+- **Comment Frequency**: It's recommended to control comment posting frequency, avoid posting a large number of comments in a short time, and limit the number of comments posted per day to no more than 30
 
-### 2. 常见问题与解决方案
+### 2. Common Issues and Solutions
 
-#### 浏览器实例问题
+#### Browser Instance Issues
 
-如果遇到“Page.goto: Target page, context or browser has been closed”类似错误，可能是浏览器实例没有正确关闭或数据目录锁文件问题，请尝试：
+If you encounter errors like "Page.goto: Target page, context or browser has been closed", it may be due to browser instances not closing correctly or data directory lock file issues. Try:
 
 ```bash
-# 删除浏览器锁文件
-rm -f /项目路径/browser_data/SingletonLock /项目路径/browser_data/SingletonCookie
+# Delete browser lock files
+rm -f /project_path/browser_data/SingletonLock /project_path/browser_data/SingletonCookie
 
-# 如果问题仍然存在，备份并重建浏览器数据目录
-mkdir -p /项目路径/backup_browser_data
-mv /项目路径/browser_data/* /项目路径/backup_browser_data/
-mkdir -p /项目路径/browser_data
+# If the problem persists, backup and rebuild the browser data directory
+mkdir -p /project_path/backup_browser_data
+mv /project_path/browser_data/* /project_path/backup_browser_data/
+mkdir -p /project_path/browser_data
 ```
 
-#### 内容获取问题
+#### Content Retrieval Issues
 
-如果无法获取笔记内容或内容不完整，可尝试：
+If you cannot retrieve note content or the content is incomplete, try:
 
-1. **增加等待时间**：小红书笔记页面可能需要更长的加载时间，特别是包含大量图片或视频的笔记
-2. **清除浏览器缓存**：有时浏览器缓存会影响内容获取
-3. **尝试不同的获取方法**：工具集成了多种获取方法，如果一种方法失败，可以尝试其他方法
+1. **Increase Wait Time**: Xiaohongshu note pages may need longer loading times, especially for notes with many images or videos
+2. **Clear Browser Cache**: Sometimes browser cache can affect content retrieval
+3. **Try Different Retrieval Methods**: The tool integrates multiple retrieval methods; if one method fails, try others
 
-#### 平台变化适应
+#### Platform Changes Adaptation
 
-小红书平台可能会更新页面结构和DOM元素，导致工具无法正常工作。如遇到此类问题：
+The Xiaohongshu platform may update page structure and DOM elements, causing the tool to malfunction. If you encounter such issues:
 
-1. **检查项目更新**：关注项目最新版本，及时更新
-2. **调整选择器**：如果您熟悉代码，可以尝试调整CSS选择器或XPath表达式
-3. **提交问题反馈**：向项目维护者提交问题，描述遇到的具体问题和页面变化
+1. **Check Project Updates**: Pay attention to the latest version of the project and update in a timely manner
+2. **Adjust Selectors**: If you're familiar with the code, try adjusting CSS selectors or XPath expressions
+3. **Submit Issue Feedback**: Submit issues to the project maintainer, describing the specific problems and page changes encountered
 
-## 八、免责声明
+## IX. Disclaimer
 
-本工具仅用于学习和研究目的，使用者应严格遵守相关法律法规以及小红书平台的规定。因使用不当导致的任何问题，本项目开发者不承担任何责任。
+This tool is for learning and research purposes only. Users should strictly comply with relevant laws, regulations, and Xiaohongshu platform rules. The project developers are not responsible for any issues caused by improper use.
 
-**官方网站：** [https://github.com/chenningling/Redbook-Search-Comment-MCP2.0](https://github.com/chenningling/Redbook-Search-Comment-MCP2.0)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/chenningling/Redbook-Search-Comment-MCP2.0](https://github.com/chenningling/Redbook-Search-Comment-MCP2.0)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `browser`, `media`
-- 标签：`search`, `browser automation`, `entertainment and media`, `chinese`
+- Categories: `search`, `browser`, `media`
+- Tags: `search`, `browser automation`, `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/绝对路径/到/venv/bin/python3`
-- 参数：`/绝对路径/到/xiaohongshu_mcp.py --stdio`
+- Transport: `stdio`
+- Command: `/绝对路径/到/venv/bin/python3`
+- Args: `/绝对路径/到/xiaohongshu_mcp.py --stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chenningling-redbook-search-comment-mcp2-0.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chenningling-redbook-search-comment-mcp2-0.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

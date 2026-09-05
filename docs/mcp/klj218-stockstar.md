@@ -1,72 +1,72 @@
 ---
-title: "证券之星"
-description: "证券之星 MCP 服务是面向金融投资领域的智能工具，将证券之星各项数据与服务封装为云端服务。该服务目前支持A股、港股等各项基础数据、衍生数据、财务分析、商业模式分析等。"
+title: "stockstar-mcp"
+description: "Securities Star MCP service is an intelligent tool designed for the financial investment sector, encapsulating various data and services of Securities Star into cloud-based services. The service curre…"
 ---
 
-# 证券之星
+# stockstar-mcp
 
-证券之星 MCP 服务是面向金融投资领域的智能工具，将证券之星各项数据与服务封装为云端服务。该服务目前支持A股、港股等各项基础数据、衍生数据、财务分析、商业模式分析等。
+Securities Star MCP service is an intelligent tool designed for the financial investment sector, encapsulating various data and services of Securities Star into cloud-based services. The service curre…
 
-# 证券之星 MCP 服务
+# Stockstar MCP Service
 
-## 关键特性
+## Key Features
 
-1. **使用简单**：适用普通用户基于 MCP（SSE）方式，不必部署本地服务，简单通过 URL 地址配置即可使用。
-2. **自动升级**：我们会持续进行迭代更新，无须用户自己任何额外操作使用。
+1. **Ease of Use**: Suitable for general users based on the MCP (SSE) method, no need to deploy local services. It can be used simply by configuring the URL.
+2. **Automatic Updates**: We continuously iterate and update, requiring no additional actions from the user.
 
-## 使用案例
+## Use Cases
 
-使用证券之星MCP服务，您可以得到：
+Using the Stockstar MCP service, you can get:
 
-- **上市公司信息查询**：A股、港股上市公司各类F10数据查询
-- **金融资讯**：获取当日热门金融资讯
-- **衍生数据**：A股、港股上市公司主流ESG评级数据
-- **综合统计**：市场数据统计，如近一年ROIC高于20%的A股上市公司有哪些？
+- **Listed Company Information Query**: Various F10 data queries for A-share and HKEX listed companies
+- **Financial News**: Get the day's hot financial news
+- **Derived Data**: Mainstream ESG rating data for A-share and HKEX listed companies
+- **Comprehensive Statistics**: Market data statistics, such as which A-share listed companies have an ROIC higher than 20% in the past year?
 
-## 常见问题解答
+## Frequently Asked Questions
 
-**Q**：使用证券之星MCP服务是否需要付费？
+**Q**: Is there a fee for using the Stockstar MCP service?
 
-**A**：无需付费，未来证券之星将根据平台规范以及业务需求，进行必要适时的服务策略调整。
+**A**: No, it is free. In the future, Stockstar will make necessary and timely adjustments to the service strategy based on platform regulations and business needs.
 
-**Q**：我想要的上市公司数据未包含在证券之星MCP服务中，可否新增？
+**Q**: The listed company data I want is not included in the Stockstar MCP service. Can it be added?
 
-**A**：如有需求请联系sslink@stockstar.com 沈先生，我们会做对应评估。
+**A**: If you have any requirements, please contact Mr. Shen at sslink@stockstar.com. We will conduct the corresponding evaluation.
 
-## 工具列表
+## Tool List
 
-1. 妙盈科技ESG评级 `miotech_esg_rating`
-2. 华证指数ESG评级 `hindices_esg_rating`
-3. 商道融绿ESG评级 `syntaogf_esg_rating`
-4. 个股估值诊断 `stk_dcf`
-5. 个股综合评估 `stk_eval`
-6. 个股调研 `stk_survey`
-7. 近一年ROE估值筛选 `stk_eval_filter_by_roe_1y`
-8. 近三年ROE估值筛选 `stk_eval_filter_by_roe_3y`
-9. 近一年ROIC估值筛选 `stk_eval_filter_by_roic_1y`
-10. 近三年ROIC估值筛选 `stk_eval_filter_by_roic_3y`
-11. 近一年毛利率估值筛选 `stk_eval_filter_by_gpm_1y`
-12. 近三年毛利率估值筛选 `stk_eval_filter_by_gpm_3y`
-13. 近一年净利率估值筛选 `stk_eval_filter_by_npm_1y`
-14. 近三年净利率估值筛选 `stk_eval_filter_by_npm_3y`
-15. 股息率估值筛选 `stk_eval_filter_by_div_rate`
+1. MioTech ESG Rating `miotech_esg_rating`
+2. Hindices ESG Rating `hindices_esg_rating`
+3. SynTao Green Finance ESG Rating `syntaogf_esg_rating`
+4. Individual Stock Valuation Diagnosis `stk_dcf`
+5. Comprehensive Evaluation of Individual Stocks `stk_eval`
+6. Individual Stock Research `stk_survey`
+7. ROE Valuation Screening for the Past Year `stk_eval_filter_by_roe_1y`
+8. ROE Valuation Screening for the Past Three Years `stk_eval_filter_by_roe_3y`
+9. ROIC Valuation Screening for the Past Year `stk_eval_filter_by_roic_1y`
+10. ROIC Valuation Screening for the Past Three Years `stk_eval_filter_by_roic_3y`
+11. Gross Profit Margin Valuation Screening for the Past Year `stk_eval_filter_by_gpm_1y`
+12. Gross Profit Margin Valuation Screening for the Past Three Years `stk_eval_filter_by_gpm_3y`
+13. Net Profit Margin Valuation Screening for the Past Year `stk_eval_filter_by_npm_1y`
+14. Net Profit Margin Valuation Screening for the Past Three Years `stk_eval_filter_by_npm_3y`
+15. Dividend Yield Valuation Screening `stk_eval_filter_by_div_rate`
 
-**官方网站：** [http://www.stockstar.com](http://www.stockstar.com)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [http://www.stockstar.com](http://www.stockstar.com)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `证券之星`, `stockstar`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `证券之星`, `stockstar`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/klj218-stockstar.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/klj218-stockstar.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

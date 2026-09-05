@@ -1,11 +1,11 @@
 ---
-title: "Neon MCP 服务器"
-description: "Neon MCP Server Neon MCP Server is an open-source tool that lets you interact with your Lakebase Postgres databases on Neon in natural language. The Model Context Protocol (MCP) is a standardized protocol designed to man"
+title: "Neon MCP Server"
+description: "Neon MCP Server Neon MCP Server is an open-source tool that lets you interact with your Lakebase Postgres databases on Neon in natural language. The Model Context Protocol (MCP) is a standardized prot…"
 ---
 
-# Neon MCP 服务器
+# Neon MCP Server
 
-Neon MCP Server Neon MCP Server is an open-source tool that lets you interact with your Lakebase Postgres databases on Neon in natural language. The Model Context Protocol (MCP) is a standardized protocol designed to man
+Neon MCP Server Neon MCP Server is an open-source tool that lets you interact with your Lakebase Postgres databases on Neon in natural language. The Model Context Protocol (MCP) is a standardized prot…
 
 # Neon MCP Server
 
@@ -348,22 +348,22 @@ Notes:
 
 - **`inspect_database`**: Runs one of 15 predefined read-only Postgres diagnostics against a branch — relation and index sizes, index and sequential-scan usage, active queries and locks, the heaviest and most frequent queries, cache hit rate and working-set size, autovacuum and bloat estimates, and replication state. Same checks as the `neon inspect db` CLI command. Omit `database_name` to cover every database on the branch; pass a name to inspect one. Four of them need the 
 
-**官方网站：** [https://github.com/neondatabase/mcp-server-neon](https://github.com/neondatabase/mcp-server-neon)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/neondatabase/mcp-server-neon](https://github.com/neondatabase/mcp-server-neon)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`database`, `neon`, `postgresql`, `developer tools`, `official`
+- Categories: `data`, `development`
+- Tags: `database`, `neon`, `postgresql`, `developer tools`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/neondatabase-neon.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/neondatabase-neon.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,89 +1,87 @@
 ---
-title: "arXiv-MCP服务器工具"
-description: "一个MCP服务器，允许Claude AI通过自建的本地服务器高效地搜索、浏览和比较arXiv论文。"
+title: "arxiv-mcp-server"
+description: "An MCP server that allows Claude AI to search, explore, and compare arXiv papers efficiently through a custom-built local server."
 ---
 
-# arXiv-MCP服务器工具
+# arxiv-mcp-server
 
-一个MCP服务器，允许Claude AI通过自建的本地服务器高效地搜索、浏览和比较arXiv论文。
+An MCP server that allows Claude AI to search, explore, and compare arXiv papers efficiently through a custom-built local server.
 
-# 🧠 arXiv Research Assistant MCP 服务器
+# 🧠 arXiv Research Assistant MCP Server
 
-该项目是一个MCP（模型上下文协议）服务器，用于与庞大的arXiv.org论文数据库进行交互。
+This project is an MCP (Model Context Protocol) server built to interact with the vast arXiv.org paper database.
 
-它允许像**Claude AI**这样的客户端高效地搜索、探索和比较arXiv论文——所有这些都通过一个自定义构建的本地服务器实现。该服务器使用**Python**语言和**FastMCP**框架构建，并采用**uv**进行轻量级包管理。
-
----
-
-## ✨ 功能特点
-
-- **🔍 基于关键词的论文搜索**  
-  通过关键词搜索arXiv论文，并可按相关性或最新发表时间排序。
-
-- **📚 按类别获取最新论文**  
-  指定一个arXiv类别代码（例如 `cs.AI`, `math.AP`），以获取该领域内的最新论文。
-
-- **📄 论文详情查询**  
-  使用论文的arXiv ID获取详细元数据：标题、作者、摘要、类别、DOI、PDF链接等更多信息。
-
-- **🧑‍🔬 基于作者的论文搜索**  
-  获取特定作者发表的所有论文列表。
-
-- **📊 趋势分析（实验性）**  
-  根据某一类别下的最近论文概览热门关键词或主题（当前使用模拟数据）。
-
-- **📝 摘要提示生成器**  
-  动态生成帮助大型语言模型更有效地总结选定论文的提示。
-
-- **🆚 比较提示生成器**  
-  提供两个论文ID以生成结构化的提示来比较它们的内容。
+It allows clients like **Claude AI** to search, explore, and compare arXiv papers efficiently — all through a custom-built, local server. It’s built with **Python** and the **FastMCP** framework, and uses **uv** for lightweight package management.
 
 ---
 
-## 🛠️ 技术栈
+## ✨ Features
+
+- **🔍 Keyword-based Paper Search**  
+  Search arXiv papers by keywords, with options to sort by relevance or most recent.
+
+- **📚 Latest Papers by Category**  
+  Specify an arXiv category code (e.g., `cs.AI`, `math.AP`) to fetch the most recent papers in that field.
+
+- **📄 Paper Details Lookup**  
+  Fetch detailed metadata using a paper's arXiv ID: title, authors, abstract, categories, DOI, PDF link, and more.
+
+- **🧑‍🔬 Author-based Paper Search**  
+  Retrieve a list of papers published by a specific author.
+
+- **📊 Trend Analysis (Experimental)**  
+  Get an overview of trending keywords or topics based on recent papers in a category (currently uses mock data).
+
+- **📝 Summarization Prompt Generator**  
+  Dynamically generate prompts that help LLMs summarize a selected paper more effectively.
+
+- **🆚 Comparison Prompt Generator**  
+  Provide two paper IDs to generate a structured prompt for comparing their content.
+
+---
+
+## 🛠️ Tech Stack
 
 - Python 3.11+
 - [FastMCP](https://github.com/modelcontextprotocol/fastmcp)
-- uv（用于依赖项及环境管理）
-- requests（用于API通信）
-- xml.etree.ElementTree（用于解析XML响应）
+- uv (for dependency & environment management)
+- requests (for API communication)
+- xml.etree.ElementTree (for parsing XML responses)
 
 ---
 
-## 🚀 快速开始
+## 🚀 Getting Started
 
-### 1. 从PyPI安装
+### 1. Installation from PyPI
 ```bash
 pip install arxiv-paper-mcp
 # or with uv
 uv install arxiv-paper-mcp
 ```
-
-### 🔧 2. 克隆仓库（开发用途）
+### 🔧 2. Clone the repository (for development)
 ```bash
 git clone https://github.com/daheepk/arxiv-mcp-server.git
 cd arxiv-mcp-server
 ```
+### 🔧 3. Install Dependencies (for development)
 
-### 🔧 3. 安装依赖项（开发用途）
-
-使用`uv`以可编辑模式安装所有依赖项：
+Use `uv` to install all dependencies in editable mode:
 
 ```bash
 uv pip install -e .
 ```
 
-## ⚙️ 如何运行
+## ⚙️ How to Run
 
-### ▶️ 运行服务器（本地）
+### ▶️ Run the server (locally)
 
 ```bash
 uv run mcp dev arxiv_mcp/server.py
 ```
 
-## 🔌 与Claude配合使用
+## 🔌 Use with Claude
 
-若要将此MCP服务器与Claude一起使用，请向Claude的MCP设置中添加以下JSON配置：
+To use this MCP server with Claude, add the following JSON configuration to Claude's MCP settings:
 
 ```json
 {
@@ -99,7 +97,7 @@ uv run mcp dev arxiv_mcp/server.py
 }
 ```
 
-## 项目结构
+## Project Structure
 ```
 arxiv-mcp-server/
 ├── arxiv_mcp/              # Main package
@@ -114,22 +112,22 @@ arxiv-mcp-server/
 └── README.md               # This file
 ```
 
-**官方网站：** [https://github.com/daheepk/arxiv-mcp-server](https://github.com/daheepk/arxiv-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/daheepk/arxiv-mcp-server](https://github.com/daheepk/arxiv-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`tool run arxiv-paper-mcp`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `tool run arxiv-paper-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/daheepk-arxiv.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/daheepk-arxiv.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

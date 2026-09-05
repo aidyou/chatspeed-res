@@ -1,92 +1,88 @@
 ---
-title: "comfyui图像生成mcp服务"
-description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生成服务，通过API调用本地ComfyUI实例生成图片。"
+title: "hh-mcp-comfyui"
+description: "This is a ComfyUI image generation service based on the Model Context Protocol (MCP), which generates images by calling the local ComfyUI instance through an API."
 ---
 
-# comfyui图像生成mcp服务
+# hh-mcp-comfyui
 
-这是一个基于Model Context Protocol (MCP)的ComfyUI图像生成服务，通过API调用本地ComfyUI实例生成图片。
+This is a ComfyUI image generation service based on the Model Context Protocol (MCP), which generates images by calling the local ComfyUI instance through an API.
 
-# ComfyUI MCP 服务
+# ComfyUI MCP Service
 
 ![English](/mcp-assets/61f5c8da326274e25c6808773dea795f.svg)
 
 ![Python 3.12+](/mcp-assets/5142151145d2dd1ac338bb460f878742.svg)
 ![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)
 
-这是一个基于Model Context Protocol (MCP)的ComfyUI图像生成服务，通过API调用本地ComfyUI实例生成图片。
+This is a ComfyUI image generation service based on the Model Context Protocol (MCP), which generates images by calling the local ComfyUI instance through API.
 
-## 功能特性
+## Features
 
-- 通过MCP协议提供图像生成服务，实现自然语言生图自由
-- 支持动态替换工作流中的提示词和尺寸等参数
-- 自动加载workflows目录下的工作流文件作为资源
+- Provides image generation services via the MCP protocol, enabling natural language to generate images freely
+- Supports dynamic replacement of prompts and dimensions in workflows
+- Automatically loads workflow files from the workflows directory as resources
 
-## 新增功能记录
-- [2025-06-29] 支持kontext图片编辑工作流
+## Changelog
+- [2025-06-29] Support for kontext image editing workflows
 
-- [2025-05-11] 支持工作流文件目录动态配置
-- [2025-05-09] 增加docker构建方式,支持Python 3.12+
-- [2025-05-07] 增加pip构建方式
-- [2025-05-06] 把项目目录src/hh修改成src/hh_mcp_comfyui,增加uvx构建方式
-- [2025-04-26] 增加图生图和移除背景样例工作流及支持图生图工具
-- [2025-04-20] 加入文生图生成工具
- 
-## 效果
+- [2025-05-11] Support for dynamically configuring the workflow file directory
+- [2025-05-09] Added Docker build method, supports Python 3.12+
+- [2025-05-07] Added pip build method
+- [2025-05-06] Changed project directory `src/hh` to `src/hh_mcp_comfyui`, added uvx build method
+- [2025-04-26] Added image-to-image and background removal sample workflows and support for image-to-image tools
+- [2025-04-20] Added text-to-image generation tool
 
-- **Cherry Studio中使用效果**
+## Effects
 
+- **Usage in Cherry Studio**
 
-- **Cline中使用效果**
+- **Usage in Cline**
 
+## Installation Dependencies
 
+**1. Ensure Python 3.12+ is installed**
 
-## 安装依赖
-
-**1. 确保已安装Python 3.12+**
-
-**2. 使用uv管理Python环境：**
-- 安装uv:
-```bash
+**2. Use uv to manage the Python environment:**
+- Install uv:
+  bash
   # On macOS and Linux.
   $ curl -LsSf https://astral.sh/uv/install.sh | sh
 
   # On Windows.
   $ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-  # 更新uv(非必要操作):
+  # Update uv (not required):
   $ uv self update
-```
+  
 
-## 测试运行服务
+## Test Running the Service
 
-- **uvx方式**
-```bash
+- **uvx Method**
+  bash
   $ uvx hh-mcp-comfyui
 
   INFO:hh_mcp_comfyui.server:Scanning for workflows in: C:\Users\tianw\AppData\Local\uv\cache\archive-v0\dp4MTo0f1qL0DdYF_BYCL\Lib\site-packages\hh_mcp_comfyui\workflows
   INFO:hh_mcp_comfyui.server:Starting ComfyUI MCP Server...
-```
-- **pip方式**
-```bash
+  
+- **pip Method**
+  bash
   $ pip install hh_mcp_comfyui
   
   $ python -m hh_mcp_comfyui
 
   INFO:hh_mcp_comfyui.server:Scanning for workflows in: F:\Python\Python313\Lib\site-packages\hh_mcp_comfyui\workflows
   INFO:hh_mcp_comfyui.server:Starting ComfyUI MCP Server...
-```
-**出现上面的信息表示服务启动成功**
+  
+**The above messages indicate that the service has started successfully.**
 
-## 使用方法
-> **必须确保本地ComfyUI实例正在运行(默认地址: http://127.0.0.1:8188) [ComfyUI安装地址](https://github.com/comfyanonymous/ComfyUI.git)**
+## Usage
+> **Ensure that the local ComfyUI instance is running (default address: http://127.0.0.1:8188) [ComfyUI installation link](https://github.com/comfyanonymous/ComfyUI.git)**
 
-### Cherry Studio、Cline、Cursor等客户端的使用方式
+### Usage with Clients like Cherry Studio, Cline, Cursor, etc.
 
+  uvx MCP Service Configuration
 
-  uvx MCP服务配置
-
-```bash
+  bash
   {
     "mcpServers": {
       "hh-mcp-comfyui": {
@@ -101,15 +97,14 @@ description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生�
       }
     }
   }
-```
+  
   
 
+  pip MCP Service Configuration
 
-  pip MCP服务配置
+  **First, run the following command in the terminal: `pip install hh_mcp_comfyui`**
 
-  **需要先执行命令窗口先执行：pip install hh_mcp_comfyui**
-
-```bash
+  bash
   {
     "mcpServers": {
       "hh-mcp-comfyui": {
@@ -125,15 +120,13 @@ description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生�
       }
     }
   }
-```
+  
 
+  Docker MCP Service Configuration
 
+  **Prerequisite: Docker is installed**
 
-  docker MCP服务配置
-
-  **前提是已安装docker**
-
-```bash
+  bash
   {
     "mcpServers": {
       "hh-mcp-comfyui": {
@@ -153,97 +146,92 @@ description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生�
       }
     }
   }
-```
+    
 
+## Sample Workflow Copy to the Specified Workflow Directory:
 
-## 样例工作流copy到指定工作流目录：
-
-  （**注意**：使用下面uvx或pip方式找到你的安装工作流目录的位置把样例工作流添加进去，然后重启你的MCP服务）
+  (**Note**: Use the following uvx or pip method to find the location of your installed workflow directory, add the sample workflow, and then restart your MCP service)
 - **uvx**
-```bash
+  bash
   $ uvx hh-mcp-comfyui
-```
+  
   
 - **pip**
-  
-```bash
-  #首先安装依赖
+
+   bash
+  # First, install dependencies
   $ pip install hh_mcp_comfyui
   $ python -m hh_mcp_comfyui
-```
+  
   
 
-## 测试
+## Testing
 
-> **使用MCP Inspector测试服务端工具**
+> **Use MCP Inspector to Test the Server Tool**
 
-- **uvx方式**
-```bash
+- **uvx Method**
+  bash
   $ npx @modelcontextprotocol/inspector uvx hh-mcp-comfyui
-```
-- **pip方式**
-```bash
+   
+- **pip Method**
+  bash
   $ pip install hh_mcp_comfyui
   $ npx @modelcontextprotocol/inspector python -m hh_mcp_comfyui
-```
- - **docker方式**
-```bash
+   
+- **Docker Method**
+    bash
     $ npx @modelcontextprotocol/inspector docker run --net=host -i --rm zjf2671/hh-mcp-comfyui
-```
-然后点击连接如图即可调试：
+     
+Then click to connect as shown in the image for debugging:
 
+## Usage Notes (Especially for Those Who Have Not Used ComfyUI Before)
 
-## 使用注意事项（针对没有用过comfyui的特别注意）
+- The default workflow is `t2image_bizyair_flux`
+- The default image size is 1024x1024
+- When the service starts, it will automatically load all JSON workflow files in the workflows directory
+- If you are using the **sample workflow** from this project, you need to download a plugin in ComfyUI. For detailed instructions, please refer to: [Sample Workflow Plugin Installation Tutorial](https://ziitefe2yxn.feishu.cn/wiki/PlSmwBbBWiA0iDkc07scb4EEnHc)
+- If you are using a local ComfyUI workflow, first ensure that your workflow can run normally in ComfyUI, then export it in JSON format (API) and place it in your local `/path/hh_mcp_comfyui/workflows` directory
 
-- 默认工作流为`t2image_bizyair_flux`
-- 图片尺寸默认为1024x1024
-- 服务启动时会自动加载workflows目录下的所有JSON工作流文件
-- 如果你使用的是本项目中的**样例工作流**需要在comfyui中下载个插件，详细操作请查看：[样例工作流插件安装教程](https://ziitefe2yxn.feishu.cn/wiki/PlSmwBbBWiA0iDkc07scb4EEnHc)
-- 如果使用你本地的comfyui工作流的话，先要保证你的工作流能在comfyui正常运行，然后需要导出(API)的JSON格式，并放入到你本地的`/path/hh_mcp_comfyui/workflows`目录中
+## Adding New Workflows
 
-## 添加新工作流
-
-1. 将工作流JSON文件放入`/path/hh_mcp_comfyui/workflows`目录中
+1. Place the workflow JSON file in the `/path/hh_mcp_comfyui/workflows` directory
   
-    如果是uvx和pip启动方式请看上面 《**样例工作流copy到指定工作流目录**》 的使用方式
+    For uvx and pip startup methods, please refer to the usage instructions above under **"Copy Sample Workflow to the Specified Workflow Directory"**
 
-2. 重启服务自动加载新工作流
+2. Restart the service to automatically load the new workflow
 
-## 开发
+## Development
 
+### Project Structure
 
-### 项目结构
-
-```
+plaintext
 .
 ├── .gitignore
 ├── .python-version
 ├── pyproject.toml
 ├── README.md
 ├── uv.lock
-├── example/              # 示例工作流目录
+├── example/              # Example workflow directory
 │   └── workflows/
 │       ├── i2image_bizyair_sdxl.json
 │       ├── t2image_bizyair_flux.json
 │       ├── i2image_cogview4.json
 │       └── t2image_sd1.5.json
-├── src/                  # 源代码目录
+├── src/                  # Source code directory
 │   └── hh_mcp_comfyui/
-│       ├── comfyui_client.py    # ComfyUI客户端实现
-│       ├── server.py            # MCP服务主文件
-│       └── workflows/           # 工作流文件目录
-```
+│       ├── comfyui_client.py    # ComfyUI client implementation
+│       ├── server.py            # MCP service main file
+│       └── workflows/           # Workflow files directory
 
+### Initialize the Project Development Environment:
 
- ### 初始化项目开发环境：  
-
-```bash
+  bash
   # Clone the repository.
   $ git clone https://github.com/zjf2671/hh-mcp-comfyui.git
 
   $ cd hh-mcp-comfyui
 
-  # Initialized venv
+  # Initialize venv
   $ uv venv
 
   # Activate the virtual environment.
@@ -253,30 +241,31 @@ description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生�
   $ uv lock
   Resolved 30 packages in 1ms
 
-  # sync dependencies.
+  # Sync dependencies.
   $ uv sync
   Resolved 30 packages in 2.54s
   Audited 29 package in 0.02ms
-```
+  
 
-### 检查服务是否正常
+### Check if the Service is Running Normally
 
-```bash
+  bash
   $ uv --directory 你本地安装目录/hh-mcp-comfyui run hh-mcp-comfyui
 
   INFO:__main__:Scanning for workflows in: D:\cygitproject\hh-mcp-comfyui\src\hh_mcp_comfyui\workflows
   INFO:__main__:Registered resource: workflow://t2image_bizyair_flux -> t2image_bizyair_flux.json
   INFO:__main__:Starting ComfyUI MCP Server...
-```
-### 使用MCP Inspector测试服务端工具
   
-```bash
+
+### Use MCP Inspector to Test the Server Tool
+
+  bash
   $ npx @modelcontextprotocol/inspector uv --directory 你本地安装目录/hh-mcp-comfyui run hh-mcp-comfyui
-```
+  
 
-### MCP配置
+### MCP Configuration
 
-```bash
+  json
   {
     "mcpServers": {
       "hh-mcp-comfyui": {
@@ -293,46 +282,41 @@ description: "这是一个基于Model Context Protocol (MCP)的ComfyUI图像生�
         }
       }
     }
-  }
-```
+  }## Contribution
 
-## 贡献
-
-1. Fork项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
-## 如有问题可以到公众号中联系我：
+## If you have any questions, you can contact me through the official account:
 
 *
 
 *
 
-
-👆 扫码关注，发现更多好玩的！
-
+👆 Scan to follow and discover more fun stuff!
 
 ---
 
-**官方网站：** [https://github.com/zjf2671/hh-mcp-comfyui.git](https://github.com/zjf2671/hh-mcp-comfyui.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zjf2671/hh-mcp-comfyui.git](https://github.com/zjf2671/hh-mcp-comfyui.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`other`, `entertainment and media`, `comfyui`, `图像生成`, `chinese`
+- Categories: `media`
+- Tags: `other`, `entertainment and media`, `comfyui`, `图像生成`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`hh-mcp-comfyui@latest`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `hh-mcp-comfyui@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jumpskip-hh-comfyui.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jumpskip-hh-comfyui.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

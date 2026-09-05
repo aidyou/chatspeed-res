@@ -1,65 +1,65 @@
 ---
-title: "文档处理工具"
-description: "提供全面的文档处理功能，包括读取、转换和操作各种文档格式，具有先进的文本和HTML处理能力。"
+title: "mcp-doc-forge"
+description: "Provides comprehensive document processing, including reading, converting, and manipulating various document formats with advanced text and HTML processing capabilities."
 ---
 
-# 文档处理工具
+# mcp-doc-forge
 
-提供全面的文档处理功能，包括读取、转换和操作各种文档格式，具有先进的文本和HTML处理能力。
+Provides comprehensive document processing, including reading, converting, and manipulating various document formats with advanced text and HTML processing capabilities.
 
-# 简单文档处理 MCP 服务器
+# Simple Document Processing MCP Server
 [Smithery](https://smithery.ai/server/@cablate/mcp-doc-forge)
 
-一个强大的模型上下文协议（MCP）服务器，提供全面的文档处理能力。
+A powerful Model Context Protocol (MCP) server providing comprehensive document processing capabilities.
 
-## 功能
+## Features
 
-### 文档阅读器
-- 阅读 DOCX、PDF、TXT、HTML、CSV
+### Document Reader
+- Read DOCX, PDF, TXT, HTML, CSV
 
-### 文档转换
-- DOCX 转 HTML/PDF
-- HTML 转 TXT/Markdown
-- PDF 操作（合并、拆分）
+### Document Conversion
+- DOCX to HTML/PDF conversion
+- HTML to TXT/Markdown conversion
+- PDF manipulation (merge, split)
 
-### 文本处理
-- 多编码转换支持（UTF-8、Big5、GBK）
-- 文本格式化和清理
-- 文本比较和差异生成
-- 按行或分隔符分割文本
+### Text Processing
+- Multi-encoding transfer support (UTF-8, Big5, GBK)
+- Text formatting and cleaning
+- Text comparison and diff generation
+- Text splitting by lines or delimiter
 
-### HTML 处理
-- HTML 清理和格式化
-- 资源提取（图片、链接、视频）
-- 保留结构的转换
+### HTML Processing
+- HTML cleaning and formatting
+- Resource extraction (images, links, videos)
+- Structure-preserving conversion
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@cablate/mcp-doc-forge) 自动为 Claude Desktop 安装文档处理服务器：
+To install Document Processing Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cablate/mcp-doc-forge):
 
 ```bash
 npx -y @smithery/cli install @cablate/mcp-doc-forge --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```bash
 npm install -g @cablate/mcp-doc-forge
 ```
 
-## 使用方法
+## Usage
 
-### 命令行界面
+### Cli
 
 ```bash
 mcp-doc-forge
 ```
 
-### 与 [Dive Desktop](https://github.com/OpenAgentPlatform/Dive) 一起使用
+### With [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)
 
-1. 在 Dive Desktop 中点击“+ 添加 MCP 服务器”
-2. 复制并粘贴此配置：
+1. Click "+ Add MCP Server" in Dive Desktop
+2. Copy and paste this configuration:
 
 ```json
 {
@@ -76,45 +76,45 @@ mcp-doc-forge
 }
 ```
 
-3. 点击“保存”以安装 MCP 服务器
+3. Click "Save" to install the MCP server
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎社区参与和贡献！以下是贡献方式：
+Welcome community participation and contributions! Here are ways to contribute:
 
-- ⭐️ 如果你觉得项目有用，请给它加星标
-- 🐛 提交问题：报告问题或提供建议
-- 🔧 创建拉取请求：提交代码改进
+- ⭐️ Star the project if you find it helpful
+- 🐛 Submit Issues: Report problems or provide suggestions
+- 🔧 Create Pull Requests: Submit code improvements
 
-## 联系方式
+## Contact
 
-如果你有任何问题或建议，随时联系我们：
+If you have any questions or suggestions, feel free to reach out:
 
-- 📧 电子邮件: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
+- 📧 Email: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
 - 📧 GitHub: [CabLate](https://github.com/cablate/)
-- 🤝 合作：欢迎讨论项目合作
-- 📚 技术指导：诚挚欢迎建议和技术指导
+- 🤝 Collaboration: Welcome to discuss project cooperation
+- 📚 Technical Guidance: Sincere welcome for suggestions and guidance
 
-**官方网站：** [https://github.com/cablate/mcp-doc-forge](https://github.com/cablate/mcp-doc-forge)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cablate/mcp-doc-forge](https://github.com/cablate/mcp-doc-forge)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @cablate/mcp-doc-forge`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @cablate/mcp-doc-forge`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cablate-doc-forge.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cablate-doc-forge.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

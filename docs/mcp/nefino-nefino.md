@@ -1,41 +1,41 @@
 ---
-title: "德国可再生能源数据工具"
-description: "为大型语言模型提供德国可再生能源项目相关的新闻和信息访问，并允许按照位置、主题（太阳能、风能、氢能）以及日期范围进行筛选。"
+title: "mcp-nefino"
+description: "Provides large language models with access to news and information about renewable energy projects in Germany, allowing filtering by location, topic (solar, wind, hydrogen), and date range."
 ---
 
-# 德国可再生能源数据工具
+# mcp-nefino
 
-为大型语言模型提供德国可再生能源项目相关的新闻和信息访问，并允许按照位置、主题（太阳能、风能、氢能）以及日期范围进行筛选。
+Provides large language models with access to news and information about renewable energy projects in Germany, allowing filtering by location, topic (solar, wind, hydrogen), and date range.
 
-# Nefino MCP 服务器
+# Nefino MCP Server
 
-Nefino MCP 服务器是一个 [模型上下文协议 (MCP)](https://modelcontextprotocol.io) 服务器，它为大型语言模型（LLMs）提供关于德国可再生能源项目、规划和公告的新闻和信息。它与 Nefino API 集成，以提供对这些数据的结构化访问。
+The Nefino MCP Server is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides Large Language Models (LLMs) with access to news and information about renewable energy projects, planning, and announcements in Germany. It integrates with the Nefino API to provide structured access to this data.
 
-## 功能
+## Features
 
-- 检索特定地理位置的新闻条目
-- 按各种可再生能源主题过滤（太阳能、风能、氢能等）
-- 支持按日期范围和最近性查询
-- 通过环境变量进行安全认证
-- 输入验证和错误处理
-- 完全符合 MCP 协议
+- Retrieve news items for specific geographic locations
+- Filter by various renewable energy topics (solar, wind, hydrogen, etc.)
+- Support for both date range and recency-based queries
+- Secure authentication through environment variables
+- Input validation and error handling
+- Full MCP compatibility
 
-## 安装
+## Installation
 
-### 前提条件
+### Prerequisites
 
-- Python 3.10 或更高版本
-- 访问 Nefino API（需要凭证）
+- Python 3.10 or higher
+- Access to the Nefino API (credentials required)
 
-### 安装
+### Installation
 
 ```bash
 pip install git+https://github.com/nefino/mcp-nefino.git
 ```
 
-## 配置
+## Configuration
 
-服务器需要设置几个环境变量。在运行服务器时应直接传递这些变量。
+The server requires several environment variables to be set. They should be passed in directly when running the server.
 
 ```bash
 NEFINO_USERNAME=your_username
@@ -44,13 +44,13 @@ NEFINO_JWT_SECRET=your_jwt_secret
 NEFINO_BASE_URL=http://api_endpoint
 ```
 
-## 使用方法
+## Usage
 
-### 与 Claude Desktop 一起使用
+### With Claude Desktop
 
-1. 安装 [Claude Desktop](https://claude.ai/download)
+1. Install [Claude Desktop](https://claude.ai/download)
 
-2. 在您的 Claude Desktop 配置文件中添加以下内容（macOS 上为 `~/Library/Application Support/Claude/claude_desktop_config.json`，Windows 上为 `%APPDATA%\Claude\claude_desktop_config.json`）：
+2. Add the following to your Claude Desktop configuration (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS or `%APPDATA%\Claude\claude_desktop_config.json` on Windows):
 
 ```json
 {
@@ -69,75 +69,75 @@ NEFINO_BASE_URL=http://api_endpoint
 }
 ```
 
-3. 重启 Claude Desktop
+3. Restart Claude Desktop
 
-### 直接使用
+### Direct Usage
 
-您也可以直接运行服务器：
+You can also run the server directly:
 
 ```bash
 python -m mcp_nefino
 ```
 
-## 可用工具
+## Available Tools
 
 ### retrieve_news_items_for_place
 
-检索具有各种过滤选项的特定位置的新闻条目。
+Retrieves news items for a specific location with various filtering options.
 
-参数：
-- `place_id` (字符串)：地点的 ID
-- `place_type` (枚举)：地点类型 (PR, CTY, AU, LAU)
-- `range_or_recency` (枚举, 可选)：RANGE 或 RECENCY
-- `last_n_days` (整数, 可选)：回溯天数（仅在 RECENCY 模式下有效）
-- `date_range_begin` (字符串, 可选)：开始日期（格式为 YYYY-MM-DD，仅在 RANGE 模式下有效）
-- `date_range_end` (字符串, 可选)：结束日期（格式为 YYYY-MM-DD，仅在 RANGE 模式下有效）
-- `news_topics` (枚举列表, 可选)：要过滤的主题 (BATTERY_STORAGE, GRID_EXPANSION, SOLAR, HYDROGEN, WIND)
+Parameters:
+- `place_id` (string): The ID of the place
+- `place_type` (enum): Type of place (PR, CTY, AU, LAU)
+- `range_or_recency` (enum, optional): RANGE or RECENCY
+- `last_n_days` (integer, optional): Number of days to look back (for RECENCY mode)
+- `date_range_begin` (string, optional): Start date in YYYY-MM-DD format (for RANGE mode)
+- `date_range_end` (string, optional): End date in YYYY-MM-DD format (for RANGE mode)
+- `news_topics` (list of enums, optional): Topics to filter by (BATTERY_STORAGE, GRID_EXPANSION, SOLAR, HYDROGEN, WIND)
 
-通过 Claude 的示例查询：
+Example query via Claude:
 ```
 Get renewable energy news for administrative unit DE9_AU0213 from January to June 2024, focusing on solar projects.
 ```
 
-## 开发
+## Development
 
-要在开发模式下使用 MCP Inspector 运行：
+To run in development mode with the MCP Inspector:
 
 ```bash
 mcp dev -m mcp_nefino
 ```
 
-## 错误处理
+## Error Handling
 
-服务器执行以下验证：
-- 日期格式 (YYYY-MM-DD)
-- 日期范围的有效性
-- RANGE 和 RECENCY 模式的参数组合
-- API 凭证和连接性
-- 新闻主题的有效性
+The server performs validation on:
+- Date formats (YYYY-MM-DD)
+- Date range validity
+- Parameter combinations for RANGE vs RECENCY modes
+- API credentials and connectivity
+- News topic validity
 
-所有错误都附有描述性消息，有助于诊断问题。
+All errors are returned with descriptive messages to help diagnose issues.
 
-## 许可证
+## License
 
-[许可证类型 - 例如，MIT] - 请参阅 LICENSE 文件获取详细信息
+[License type - e.g., MIT] - see LICENSE file for details
 
-**官方网站：** [https://github.com/nefino/mcp-nefino](https://github.com/nefino/mcp-nefino)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/nefino/mcp-nefino](https://github.com/nefino/mcp-nefino)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m mcp_nefino`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m mcp_nefino`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/nefino-nefino.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/nefino-nefino.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

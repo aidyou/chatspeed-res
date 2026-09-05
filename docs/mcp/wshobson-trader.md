@@ -1,165 +1,165 @@
 ---
-title: "MCP交易分析平台"
-description: "MCP Trader Server 对股票进行综合技术分析，提供趋势、动量指标、波动率指标和成交量分析的见解，以支持股票交易决策。"
+title: "mcp-trader"
+description: "The MCP Trader Server conducts comprehensive technical analysis on stocks, offering insights into trends, momentum indicators, volatility metrics, and volume analysis to support stock trading decision…"
 ---
 
-# MCP交易分析平台
+# mcp-trader
 
-MCP Trader Server 对股票进行综合技术分析，提供趋势、动量指标、波动率指标和成交量分析的见解，以支持股票交易决策。
+The MCP Trader Server conducts comprehensive technical analysis on stocks, offering insights into trends, momentum indicators, volatility metrics, and volume analysis to support stock trading decision…
 
-# MCP 交易者服务器
+# MCP Trader Server
 
 [Smithery](https://smithery.ai/server/mcp-trader)
 
-一个面向股票交易者的模型上下文协议（MCP）服务器。
+A Model Context Protocol (MCP) server for stock traders.
 
-## 功能
+## Features
 
-### 工具
+### Tools
 
-该服务器为股票分析和交易提供了以下工具：
+The server provides the following tools for stock analysis and trading:
 
-- **analyze-stock**: 对给定的股票代码进行技术分析
+- **analyze-stock**: Performs technical analysis on a given stock symbol
 
-  - 必需参数: `symbol` (字符串, 例如 "NVDA")
-  - 返回全面的技术分析，包括：
-    - 移动平均趋势 (20, 50, 200 日简单移动平均线)
-    - 动量指标 (RSI, MACD)
-    - 波动率指标 (ATR, ADRP)
-    - 成交量分析
+  - Required argument: `symbol` (string, e.g. "NVDA")
+  - Returns comprehensive technical analysis including:
+    - Moving average trends (20, 50, 200 SMA)
+    - Momentum indicators (RSI, MACD)
+    - Volatility metrics (ATR, ADRP)
+    - Volume analysis
 
-- **relative-strength**: 计算相对于基准的股票相对强度
+- **relative-strength**: Calculates a stock's relative strength compared to a benchmark
 
-  - 必需参数: `symbol` (字符串, 例如 "AAPL")
-  - 可选参数: `benchmark` (字符串, 默认: "SPY")
-  - 返回多个时间段（21, 63, 126, 252 天）的相对强度指标
-  - 包括股票与基准之间的表现比较
+  - Required argument: `symbol` (string, e.g. "AAPL")
+  - Optional argument: `benchmark` (string, default: "SPY")
+  - Returns relative strength metrics across multiple timeframes (21, 63, 126, 252 days)
+  - Includes performance comparison between the stock and benchmark
 
-- **volume-profile**: 按价格分析成交量分布
+- **volume-profile**: Analyzes volume distribution by price
 
-  - 必需参数: `symbol` (字符串, 例如 "MSFT")
-  - 可选参数: `lookback_days` (整数, 默认: 60)
-  - 返回成交量分布分析，包括：
-    - 控制点 (POC) - 成交量最高的价格水平
-    - 价值区域 (70% 的成交量范围)
-    - 成交量最高的价格水平
+  - Required argument: `symbol` (string, e.g. "MSFT")
+  - Optional argument: `lookback_days` (integer, default: 60)
+  - Returns volume profile analysis including:
+    - Point of Control (POC) - price level with highest volume
+    - Value Area (70% of volume range)
+    - Top volume price levels
 
-- **detect-patterns**: 在价格数据中识别图表模式
+- **detect-patterns**: Identifies chart patterns in price data
 
-  - 必需参数: `symbol` (字符串, 例如 "AMZN")
-  - 返回检测到的图表模式及其置信度和价格目标
+  - Required argument: `symbol` (string, e.g. "AMZN")
+  - Returns detected chart patterns with confidence levels and price targets
 
-- **position-size**: 根据风险参数计算最优仓位大小
+- **position-size**: Calculates optimal position size based on risk parameters
 
-  - 必需参数:
-    - `symbol` (字符串, 例如 "TSLA")
-    - `stop_price` (数字)
-    - `risk_amount` (数字)
-    - `account_size` (数字)
-  - 可选参数: `price` (数字, 默认: 当前价格)
-  - 返回推荐的仓位大小、美元风险和潜在盈利目标
+  - Required arguments:
+    - `symbol` (string, e.g. "TSLA")
+    - `stop_price` (number)
+    - `risk_amount` (number)
+    - `account_size` (number)
+  - Optional argument: `price` (number, default: current price)
+  - Returns recommended position size, dollar risk, and potential profit targets
 
-- **suggest-stops**: 基于技术分析建议止损水平
-  - 必需参数: `symbol` (字符串, 例如 "META")
-  - 返回基于以下条件的多个止损建议：
-    - ATR 基准止损 (1x, 2x, 3x ATR)
-    - 百分比基准止损 (2%, 5%, 8%)
-    - 技术水平 (移动平均线, 最近的摆动低点)
+- **suggest-stops**: Suggests stop loss levels based on technical analysis
+  - Required argument: `symbol` (string, e.g. "META")
+  - Returns multiple stop loss suggestions based on:
+    - ATR-based stops (1x, 2x, 3x ATR)
+    - Percentage-based stops (2%, 5%, 8%)
+    - Technical levels (moving averages, recent swing lows)
 
-### 技术分析能力
+### Technical Analysis Capabilities
 
-该服务器利用了多个专门的分析模块：
+The server leverages several specialized analysis modules:
 
-- **技术分析**: 核心技术指标和趋势分析
+- **TechnicalAnalysis**: Core technical indicators and trend analysis
 
-  - 移动平均线 (SMA 20, 50, 200)
-  - 动量指标 (RSI, MACD)
-  - 波动率指标 (ATR, 平均每日波动百分比)
-  - 成交量分析 (20日平均成交量)
+  - Moving averages (SMA 20, 50, 200)
+  - Momentum indicators (RSI, MACD)
+  - Volatility metrics (ATR, Average Daily Range Percentage)
+  - Volume analysis (20-day average volume)
 
-- **相对强度**: 比较表现分析
+- **RelativeStrength**: Comparative performance analysis
 
-  - 多时间框架相对强度评分 (21, 63, 126, 252天)
-  - 与基准指数的表现比较
-  - 超额/不足表现分类
+  - Multi-timeframe relative strength scoring (21, 63, 126, 252 days)
+  - Performance comparison against benchmark indices
+  - Outperformance/underperformance classification
 
-- **成交量分布**: 高级成交量分析
+- **VolumeProfile**: Advanced volume analysis
 
-  - 价格水平成交量分布
-  - 控制点 (POC) 识别
-  - 价值区域计算 (70% 的成交量)
+  - Price level volume distribution
+  - Point of Control (POC) identification
+  - Value Area calculation (70% of volume)
 
-- **模式识别**: 图表模式检测
+- **PatternRecognition**: Chart pattern detection
 
-  - 支撑/阻力水平
-  - 常见图表模式 (头肩顶、双重顶/底等)
-  - 检测到的模式的信心评分
+  - Support/resistance levels
+  - Common chart patterns (head and shoulders, double tops/bottoms, etc.)
+  - Confidence scoring for detected patterns
 
-- **风险分析**: 仓位大小和风险管理
-  - 基于风险的仓位大小
-  - 多种止损策略
-  - R倍数盈利目标计算
+- **RiskAnalysis**: Position sizing and risk management
+  - Risk-based position sizing
+  - Multiple stop loss strategies
+  - R-multiple profit target calculation
 
-### 数据来源
+### Data Sources
 
-服务器使用 [Tiingo API](https://api.tiingo.com/) 获取市场数据：
+The server uses the [Tiingo API](https://api.tiingo.com/) for market data:
 
-- 历史每日OHLCV数据
-- 用于准确回测的调整后价格
-- 默认最多一年的历史数据
+- Historical daily OHLCV data
+- Adjusted prices for accurate backtesting
+- Up to 1 year of historical data by default
 
-## 设置
+## Setup
 
-### 先决条件
+### Prerequisites
 
 - Python 3.11+
 - [uv](https://github.com/astral-sh/uv)
 - [ta-lib](https://ta-lib.org/install/)
 - [Tiingo API Key](https://api.tiingo.com/)
 
-### 环境变量
+### Environment Variables
 
-创建一个 `.env` 文件：
+Create a `.env` file:
 
 ```bash
 TIINGO_API_KEY=your_api_key_here
 ```
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/mcp-trader) 自动安装Trader for Claude Desktop：
+To install Trader for Claude Desktop automatically via [Smithery](https://smithery.ai/server/mcp-trader):
 
 ```bash
 npx -y @smithery/cli install mcp-trader --client claude
 ```
 
-这将执行以下操作：
+This will:
 
-1. 安装MCP Trader服务器
-2. 使用您的Tiingo API密钥进行配置
-3. 设置Claude Desktop集成
+1. Install the MCP Trader server
+2. Configure it with your Tiingo API key
+3. Set up the Claude Desktop integration
 
-#### Smithery配置
+#### Smithery Configuration
 
-服务器包含一个 `smithery.yaml` 配置文件，定义了：
+The server includes a `smithery.yaml` configuration file that defines:
 
-- 必需的配置参数 (Tiingo API密钥)
-- 启动MCP服务器的命令函数
-- 与Claude Desktop的集成
+- Required configuration parameters (Tiingo API key)
+- Command function to start the MCP server
+- Integration with Claude Desktop
 
-您可以通过编辑 `smithery.yaml` 文件来自定义Smithery配置。
+You can customize the Smithery configuration by editing the `smithery.yaml` file.
 
-### 安装
+### Installation
 
 ```bash
 uv venv --python 3.11
-source .venv/bin/activate # On Windows: .venv\Scripts\activate
+source .venv/bin/activate # On Windows: .venvScriptsactivate
 uv sync
 ```
 
-### Docker部署
+### Docker Deployment
 
-项目包含一个用于容器化部署的Dockerfile：
+The project includes a Dockerfile for containerized deployment:
 
 ```bash
 # Build the Docker image
@@ -169,21 +169,21 @@ docker build -t mcp-trader .
 docker run -e TIINGO_API_KEY=your_api_key_here -p 8000:8000 mcp-trader
 ```
 
-要以HTTP服务器模式运行容器：
+To run the container in HTTP server mode:
 
 ```bash
 docker run -e TIINGO_API_KEY=your_api_key_here -p 8000:8000 mcp-trader uv run mcp-trader --http
 ```
 
-## 配置
+## Configuration
 
-### Claude Desktop应用程序
+### Claude Desktop App
 
-在MacOS上: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-在Windows上: `%APPDATA%/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
-开发配置：
+Development Configuration:
 
 ```json
 {
@@ -204,28 +204,28 @@ docker run -e TIINGO_API_KEY=your_api_key_here -p 8000:8000 mcp-trader uv run mc
 }
 ```
 
-## 开发
+## Development
 
-### 构建和运行
+### Build and Run
 
 ```bash
 uv build
 uv run mcp-trader
 ```
 
-### HTTP服务器模式
+### HTTP Server Mode
 
-服务器也可以作为独立的HTTP服务器运行，以便测试或与其他应用程序集成：
+The server can also run as a standalone HTTP server for testing or integration with other applications:
 
 ```bash
 uv run mcp-trader --http
 ```
 
-这将在 [http://localhost:8000](http://localhost:8000) 上启动一个HTTP服务器，并提供以下端点：
+This starts an HTTP server on http://localhost:8000 with the following endpoints:
 
-- **GET /list-tools**: 返回可用工具及其架构的列表
-- **POST /call-tool**: 使用提供的参数执行工具
-  - 请求体格式：
+- **GET /list-tools**: Returns a list of available tools and their schemas
+- **POST /call-tool**: Executes a tool with the provided arguments
+  - Request body format:
 ```json
     {
       "name": "analyze-stock",
@@ -234,29 +234,29 @@ uv run mcp-trader --http
       }
     }
 ```
-  - 返回一个内容项数组（文本、图片等）
+  - Returns an array of content items (text, images, etc.)
 
-### 调试
+### Debugging
 
-使用 MCP Inspector 进行调试：
+Use the MCP Inspector for debugging:
 
 ```bash
 npx @modelcontextprotocol/inspector uv --directory /path/to/mcp-trader run mcp-trader
 ```
 
-## 示例用法
+## Example Usage
 
-在 Claude Desktop 中：
+In Claude Desktop:
 
 ```
 Analyze the technical setup for NVDA
 ```
 
-服务器将返回技术分析摘要，包括趋势状态、动量指标和关键指标。
+The server will return a technical analysis summary including trend status, momentum indicators, and key metrics.
 
-## 依赖项
+## Dependencies
 
-请参阅 pyproject.toml 获取完整的依赖项列表：
+See pyproject.toml for full dependency list:
 
 ```
 - aiohttp >=3.11.11
@@ -269,59 +269,59 @@ Analyze the technical setup for NVDA
 - ta-lib >=0.6.0
 ```
 
-## 贡献
+## Contributing
 
-欢迎为 MCP Trader 做贡献！以下是一些你可以贡献的方式：
+Contributions to MCP Trader are welcome! Here are some ways you can contribute:
 
-- **添加新工具**：实现额外的技术分析工具或交易策略
-- **改进现有工具**：提高当前工具的准确性或性能
-- **添加数据源**：集成额外的市场数据提供商
-- **文档**：改进文档或添加示例
-- **修复错误**：修复问题或改进错误处理
+- **Add new tools**: Implement additional technical analysis tools or trading strategies
+- **Improve existing tools**: Enhance the accuracy or performance of current tools
+- **Add data sources**: Integrate additional market data providers
+- **Documentation**: Improve the documentation or add examples
+- **Bug fixes**: Fix issues or improve error handling
 
-### 开发工作流程
+### Development Workflow
 
-1. 叉分仓库
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 未来计划
+## Future Plans
 
-MCP Trader 项目有多个计划中的增强功能：
+The MCP Trader project has several planned enhancements:
 
-- **投资组合分析**：用于分析和优化投资组合的工具
-- **回测**：在历史数据上测试交易策略的能力
-- **情绪分析**：与新闻和社交媒体情绪数据的集成
-- **期权分析**：用于分析期权策略和定价的工具
-- **实时数据**：支持实时市场数据流
-- **自定义策略**：实现和测试自定义交易策略的框架
-- **警报**：价格和技术指标警报的通知系统
+- **Portfolio Analysis**: Tools for analyzing and optimizing portfolios
+- **Backtesting**: Capabilities to test trading strategies on historical data
+- **Sentiment Analysis**: Integration with news and social media sentiment data
+- **Options Analysis**: Tools for analyzing options strategies and pricing
+- **Real-time Data**: Support for real-time market data feeds
+- **Custom Strategies**: Framework for implementing and testing custom trading strategies
+- **Alerts**: Notification system for price and technical indicator alerts
 
-## 进一步阅读
+## Further Reading
 
-通过这些详细的博客文章了解更多关于此项目的信息：
+Learn more about this project through these detailed blog posts:
 
-- [使用 MCP 构建股票分析服务器，第 1 部分](https://sethhobson.com/2025/01/building-a-stock-analysis-server-with-mcp-part-1/) - 初始设置、架构和核心技术分析功能
-- [使用 MCP 构建股票分析服务器，第 2 部分](https://sethhobson.com/2025/03/building-a-stock-analysis-server-with-mcp-part-2/) - 相对强度、成交量、模式识别、风险分析
+- [Building a Stock Analysis Server with MCP, Part 1](https://sethhobson.com/2025/01/building-a-stock-analysis-server-with-mcp-part-1/) - Initial setup, architecture, and core technical analysis features
+- [Building a Stock Analysis Server with MCP, Part 2](https://sethhobson.com/2025/03/building-a-stock-analysis-server-with-mcp-part-2/) - Relative Strength, Volume, Pattern Recognition, Risk analysis
 
-**官方网站：** [https://github.com/wshobson/mcp-trader](https://github.com/wshobson/mcp-trader)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wshobson/mcp-trader](https://github.com/wshobson/mcp-trader)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`, `data`
-- 标签：`finance`, `research and data`, `chinese`
+- Categories: `finance`, `data`
+- Tags: `finance`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /absolute/path/to/mcp-trader run mcp-trader`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /absolute/path/to/mcp-trader run mcp-trader`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wshobson-trader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wshobson-trader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

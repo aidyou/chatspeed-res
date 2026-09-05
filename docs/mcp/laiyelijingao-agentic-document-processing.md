@@ -1,47 +1,45 @@
 ---
-title: "智能体文档处理 MCP"
-description: "关于 ADP MCP Server ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端，让任何支持 MCP 协议的 AI 客户端（Claude Desktop、Cursor、Copilot Chat、通义灵码、Coze 等）无需编写代码即可调用 ADP 的文档解析与抽取能力。与 CLI 工具不同，MCP Server 以 Streamable HTTP 传输运行，一条连接即可发"
+title: "Agentic_Document_Processing_MCP"
+description: "About ADP MCP Server ADP MCP Server is the Model Context Protocol server for Laiye Technology's Agentic Document Processing (ADP) product, enabling any AI client that supports the MCP protocol (such a…"
 ---
 
-# 智能体文档处理 MCP
+# Agentic_Document_Processing_MCP
 
-关于 ADP MCP Server ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端，让任何支持 MCP 协议的 AI 客户端（Claude Desktop、Cursor、Copilot Chat、通义灵码、Coze 等）无需编写代码即可调用 ADP 的文档解析与抽取能力。与 CLI 工具不同，MCP Server 以 Streamable HTTP 传输运行，一条连接即可发
+About ADP MCP Server ADP MCP Server is the Model Context Protocol server for Laiye Technology's Agentic Document Processing (ADP) product, enabling any AI client that supports the MCP protocol (such a…
 
-## 关于 ADP MCP Server
+## About ADP MCP Server
 
-ADP MCP Server 是来也科技**智能体文档处理产品 (Agentic Document Processing，简称 ADP)** 的 Model Context Protocol 服务端，让任何支持 MCP 协议的 AI 客户端（Claude Desktop、Cursor、Copilot Chat、通义灵码、Coze 等）无需编写代码即可调用 ADP 的文档解析与抽取能力。与 CLI 工具不同，MCP Server 以 **Streamable HTTP** 传输运行，一条连接即可发现所有可用工具、调用处理、查询结果——完全在对话窗口内完成。
+ADP MCP Server is the Model Context Protocol server for Laiye Technology's **Agentic Document Processing (ADP)** product, enabling any AI client that supports the MCP protocol (such as Claude Desktop, Cursor, Copilot Chat, Tongyi Lingma, Coze, etc.) to invoke ADP's document parsing and extraction capabilities without writing any code. Unlike CLI tools, the MCP Server operates via **Streamable HTTP** transmission, allowing all available tools to be discovered, invoked, and queried for results—all within a single connection and entirely through the conversation window.
 
-ADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与智能体自主决策技术，彻底颠覆传统文档处理模式，将行业沿用多年的规则驱动的机械字段抽取，全面升级为目标驱动的全流程智能自动化。产品专注于各类业务单据智能化处理，可对海外发票、国内票据、采购合同、物流单据、金融报表、交易合同等文件自动分类并精准抽取关键字段，同时支持表格解析、内容核验与多语种识别，无需人工搭建模板、标注数据和维护规则，高效完成大批量文档处理工作。
-
+The ADP product deeply integrates Visual-Language Models (VLM), Large Language Models (LLM), and agent-based autonomous decision-making technologies, completely revolutionizing traditional document processing methods. It upgrades the long-standing, rule-driven mechanical field extraction to a goal-driven, fully intelligent and automated process. The product focuses on the intelligent processing of various business documents, automatically classifying and accurately extracting key fields from overseas invoices, domestic bills, procurement contracts, logistics documents, financial statements, transaction contracts, and more. It also supports table parsing, content verification, and multilingual recognition, eliminating the need for manual template creation, data annotation, and rule maintenance, thus efficiently handling large volumes of documents.
 
 ---
 
-## 快速接入
+## Quick Integration
 
-### 1. 获取 API Key
+### 1. Obtain API Key
 
-访问 [https://adp.laiye.com/](https://adp.laiye.com/ 注册 ADP 账号，复制我的专属 API Key。
+Visit [https://adp.laiye.com/](https://adp.laiye.com/ to register for an ADP account and copy your unique API Key.
 
+### 2. Configure MCP Client
 
-### 2. 配置 MCP 客户端
+#### Method One: Visual Interface Configuration (Recommended)
 
-#### 方式一：可视化界面配置（推荐）
+Most MCP clients (Cursor, Tongyi Lingma, Coze, etc.) support adding MCP services directly through their settings interface. For example, using Cursor:
 
-大多数 MCP 客户端（Cursor、通义灵码、Coze 等）支持在设置界面直接添加 MCP 服务。以 Cursor 为例：
+1. Open **Settings → MCP**
+2. Click **Add new MCP server**
+3. Fill in the following information:
+   - **Name**: `ADP` (custom name)
+   - **Type**: `streamable-http`
+   - **URL**: `https://adp.laiye.com/mcp?key=`
+4. Save the configuration, and you can now use ADP tools in the conversation.
 
-1. 打开 **Settings → MCP**
-2. 点击 **Add new MCP server**
-3. 填写以下信息：
-   - **Name**：`ADP`（自定义名称）
-   - **Type**：`streamable-http`
-   - **URL**：`https://adp.laiye.com/mcp?key=`
-4. 保存后即可在对话中使用 ADP 工具
+#### Method Two: Edit Configuration File
 
-#### 方式二：编辑配置文件
+For example, with Claude Desktop, add the following to the `claude_desktop_config.json` file:
 
-以 Claude Desktop 为例，在 `claude_desktop_config.json` 中添加：
-
-```json
+json
 {
   "mcpServers": {
     "adp": {
@@ -50,116 +48,113 @@ ADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与�
     }
   }
 }
-```
 
-其他客户端配置方式同理，核心参数：
+The configuration method for other clients is similar, with the core parameters being:
 
-| 参数 | 值 |
-|------|---|
+| Parameter | Value |
+|-----------|-------|
 | **Endpoint** | `https://adp.laiye.com/mcp` |
 | **Transport** | Streamable HTTP |
-| **认证方式** | URL Query `?key=` |
+| **Authentication Method** | URL Query `?key=` |
 
-> 私有部署环境请将域名替换为实际服务地址。
+> For private deployment environments, replace the domain with the actual service address.
 
-### 3. 开始使用
+### 3. Start Using
 
-连接成功后，AI 客户端会自动发现所有可用的 ADP 工具。直接在对话中描述你的需求即可，例如：
+Once connected, the AI client will automatically discover all available ADP tools. Simply describe your needs in the conversation, such as:
 
-- "帮我解析这份 PDF 的结构"
-- "提取这张身份证的信息"
-- "从这张发票里抽取金额和日期"
-
----
-
-## 工具列表
-
-### 文档解析
-
-| 工具名 | 标题 | 说明 |
-|--------|------|------|
-| `parse_document` | 通用文档解析 | 对 PDF、图片、Word、Excel、PPT 等文档进行版面解析，返回结构化的文本块、表格、阅读顺序与页面坐标。适用于不确定文档类型、需要先获取原始结构再做后续处理的场景；如已确认是发票、证件等特定类型，请优先使用对应的专用提取工具。 |
-
-### 票据与订单抽取
-
-| 工具名 | 标题 | 说明 |
-|--------|------|------|
-| `extract_china_invoice` | 中国票据 | 覆盖中国地区 30+ 种常见票据：支持全电发票、普通发票、专用发票、出租车票、火车票、飞机行程单、财政发票等财务场景常见票据。可从票据中提取发票号码、开票日期、金额、购买方、销售方等关键信息，以及支持判断发票真假。 |
-| `extract_global_invoice` | 海外发票/收据 | 从 PDF 或图片格式的海外发票、收据、票据中提取关键字段（发票号、开票日期、金额、税额、币种、明细行等）。适用于跨境贸易、报销、应付账款自动化等场景；中国大陆增值税发票请使用专门的国内发票工具。 |
-| `extract_purchase_order` | 订单 | 从 PDF 或图片格式的采购订单、销售订单中提取关键字段（订单号、买卖双方信息、下单日期、商品明细、数量、单价、总金额、收货地址等）。适用于电商订单录入、供应链对账、出入库管理自动化等场景。 |
-
-### 卡证抽取
-
-| 工具名 | 标题 | 说明 |
-|--------|------|------|
-| `extract_id_card` | 身份证 | 从中国大陆居民身份证图片中提取关键字段（姓名、性别、民族、出生日期、身份证号、住址、签发机关、有效期等），支持正反面识别。适用于实名认证、用户注册等场景。 |
-| `extract_bank_card` | 银行卡 | 从银行卡正面图片中提取关键字段（卡号、所属银行、卡种类型、有效期等）。适用于绑卡、收款账户录入、支付渠道配置等场景。注意：仅识别卡面公开信息，不涉及 CVV 等敏感字段。 |
-| `extract_vehicle_cert` | 车辆合格证 | 从机动车整车出厂合格证图片中提取关键字段（合格证编号、车辆品牌、型号、车辆识别代号 VIN、发动机号、制造日期等）。适用于车辆上户、二手车交易、车辆资产管理等场景。 |
-| `extract_account_permit` | 开户许可证 | 从企业开户许可证图片中提取关键字段（企业名称、基本账户账号、开户银行、核准号、发证日期等）。适用于对公收款账户校验、企业财务审核、应付账款收款方信息核对等场景。 |
-| `extract_driver_license` | 驾驶证 | 从中国机动车驾驶证图片中提取关键字段（姓名、性别、国籍、出生日期、驾驶证号、准驾车型、初次领证日期、有效期等），支持正副页识别。适用于驾驶员资质核验、网约车/货运司机准入审核等场景。 |
-| `extract_business_license` | 营业执照 | 从中国企业营业执照图片中提取关键字段（企业名称、统一社会信用代码、法定代表人、注册资本、成立日期、经营范围、注册地址等）。适用于企业开户、商户入驻、供应商资质审核、企业实名认证等场景。 |
-| `extract_passport_cn` | 护照-中国 | 从中华人民共和国护照图片中提取关键字段（中文姓名、姓名拼音、性别、出生日期、护照号、国籍、签发日期、有效期、签发机关等）。适用于出境业务、跨境身份核验、签证办理等场景；外国护照不在支持范围内。 |
-| `extract_vehicle_license` | 行驶证 | 从中国机动车行驶证图片中提取关键字段（车牌号、车辆类型、所有人、车辆识别代号 VIN、发动机号、注册日期、发证日期等），支持正副页识别。适用于车辆登记、保险投保、网约车/货运车辆准入等场景。 |
-| `extract_org_code_cert` | 组织机构代码证 | 从组织机构代码证图片中提取关键字段（机构名称、组织机构代码、法定代表人、地址、发证日期、有效期等）。适用于历史档案数字化、存量企业资质核验等场景；新办企业建议使用营业执照工具。 |
-| `extract_household_book` | 户口本 | 从中国居民户口本图片中提取关键字段（户号、户别、住址、家庭成员列表，含成员姓名、身份证号、与户主关系等），支持首页与个人页两种页面类型。适用于户籍核验、亲属关系认证、社保业务等场景。 |
-| `extract_hk_macao_permit` | 港澳通行证 | 从港澳通行证（往来港澳通行证）图片中提取关键字段（姓名、性别、出生日期、证件号、签发日期、有效期、签发机关等）。适用于出入境业务、酒店登记、票务实名等场景。 |
-
-### 自定义抽取
-
-除上述开箱即用工具外，MCP 提供两个固定工具来使用你在 ADP 平台上创建的自定义抽取应用：
-
-| 工具名 | 标题 | 说明 |
-|--------|------|------|
-| `list_custom_extract_apps` | 列出自定义抽取应用 | 列出当前用户创建的所有自定义文档抽取应用，返回每个应用的 ID、名称、描述、标签和输出字段定义。可用于查找 `execute_custom_extract_app` 所需的 `app_id`。 |
-| `execute_custom_extract_app` | 执行自定义抽取应用 | 使用指定的自定义文档抽取应用处理文件。需先通过 `list_custom_extract_apps` 获取可用的 `app_id`。 |
-
-**使用流程：** 先调用 `list_custom_extract_apps` 查看可用应用列表，获取目标应用的 `app_id`，再调用 `execute_custom_extract_app` 传入 `app_id` 与文件进行抽取。
+- "Help me parse the structure of this PDF"
+- "Extract the information from this ID card"
+- "Extract the amount and date from this invoice"
 
 ---
 
-## 工具输入参数
+## Tool List
 
-### 文档解析与 OOTB 抽取工具
+### Document Parsing
 
-所有开箱即用工具共享统一的输入 Schema：
+| Tool Name | Title | Description |
+|-----------|-------|-------------|
+| `parse_document` | General Document Parsing | Parses the layout of PDFs, images, Word, Excel, PPT, and other documents, returning structured text blocks, tables, reading order, and page coordinates. Suitable for scenarios where the document type is uncertain and the original structure needs to be obtained before further processing. If the document is confirmed to be an invoice, ID, or other specific type, please use the corresponding dedicated extraction tool first. |
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| `file` | string | 是 | 文件 URL 或 Base64 编码内容 |
-| `file_name` | string | 否 | 文件名（含扩展名） |
-| `with_rec_result` | boolean | 否 | 是否包含 OCR 中间结果，默认 `true` |
-| `wait` | boolean | 否 | 是否同步等待结果，默认 `true` |
-| `timeout_seconds` | integer | 否 | 同步等待超时秒数，默认 `300`，范围 1–900 |
+### Invoice and Order Extraction
+
+| Tool Name | Title | Description |
+|-----------|-------|-------------|
+| `extract_china_invoice` | Chinese Invoices | Covers over 30 common types of invoices in China: supports electronic invoices, general invoices, special invoices, taxi receipts, train tickets, flight itineraries, fiscal invoices, and other common financial documents. Extracts key information such as invoice number, issue date, amount, buyer, seller, and also supports verifying the authenticity of invoices. |
+| `extract_global_invoice` | Overseas Invoices/Receipts | Extracts key fields (invoice number, issue date, amount, tax, currency, line items, etc.) from PDF or image formats of overseas invoices, receipts, and bills. Suitable for cross-border trade, expense reimbursement, and accounts payable automation. For VAT invoices in mainland China, please use the dedicated domestic invoice tool. || `extract_purchase_order` | Order | Extracts key fields (order number, buyer and seller information, order date, item details, quantity, unit price, total amount, delivery address, etc.) from purchase orders or sales orders in PDF or image format. Suitable for e-commerce order entry, supply chain reconciliation, and automation of warehouse management scenarios. |
+
+### Card and Certificate Extraction
+
+| Tool Name | Title | Description |
+|-----------|-------|-------------|
+| `extract_id_card` | ID Card | Extracts key fields (name, gender, ethnicity, date of birth, ID number, address, issuing authority, validity period, etc.) from images of Chinese resident ID cards, supporting both front and back recognition. Suitable for real-name authentication, user registration, and other scenarios. |
+| `extract_bank_card` | Bank Card | Extracts key fields (card number, issuing bank, card type, validity period, etc.) from the front image of a bank card. Suitable for card binding, payment account entry, and payment channel configuration scenarios. Note: Only public information on the card surface is recognized; sensitive fields such as CVV are not involved. |
+| `extract_vehicle_cert` | Vehicle Compliance Certificate | Extracts key fields (certificate number, vehicle brand, model, vehicle identification number VIN, engine number, manufacturing date, etc.) from images of motor vehicle compliance certificates. Suitable for vehicle registration, used car transactions, and vehicle asset management scenarios. |
+| `extract_account_permit` | Account Opening Permit | Extracts key fields (company name, basic account number, opening bank, approval number, issue date, etc.) from images of corporate account opening permits. Suitable for corporate collection account verification, financial review, and payee information verification in accounts payable scenarios. |
+| `extract_driver_license` | Driver's License | Extracts key fields (name, gender, nationality, date of birth, driver's license number, authorized vehicle types, initial issuance date, validity period, etc.) from images of Chinese motor vehicle driver's licenses, supporting both main and supplementary page recognition. Suitable for driver qualification verification, ride-hailing/freight driver admission review, and other scenarios. |
+| `extract_business_license` | Business License | Extracts key fields (company name, unified social credit code, legal representative, registered capital, establishment date, business scope, registered address, etc.) from images of Chinese business licenses. Suitable for corporate account opening, merchant onboarding, supplier qualification review, and corporate real-name authentication scenarios. |
+| `extract_passport_cn` | Passport - China | Extracts key fields (Chinese name, name in Pinyin, gender, date of birth, passport number, nationality, issue date, validity period, issuing authority, etc.) from images of People's Republic of China passports. Suitable for outbound services, cross-border identity verification, visa application, and other scenarios; foreign passports are not supported. |
+| `extract_vehicle_license` | Vehicle Registration Certificate | Extracts key fields (license plate number, vehicle type, owner, vehicle identification number VIN, engine number, registration date, issue date, etc.) from images of Chinese motor vehicle registration certificates, supporting both main and supplementary page recognition. Suitable for vehicle registration, insurance application, and ride-hailing/freight vehicle admission scenarios. |
+| `extract_org_code_cert` | Organization Code Certificate | Extracts key fields (organization name, organization code, legal representative, address, issue date, validity period, etc.) from images of organization code certificates. Suitable for historical archive digitization and existing enterprise qualification verification; new enterprises are advised to use the business license tool. |
+| `extract_household_book` | Household Register | Extracts key fields (household number, household type, address, list of family members, including member names, ID numbers, relationship with the head of household, etc.) from images of Chinese household registers, supporting both the first page and individual pages. Suitable for household registration verification, kinship certification, and social security services. |
+| `extract_hk_macao_permit` | Hong Kong/Macau Permit | Extracts key fields (name, gender, date of birth, document number, issue date, validity period, issuing authority, etc.) from images of Hong Kong/Macau travel permits. Suitable for entry and exit services, hotel check-in, and ticketing real-name scenarios. |
+
+### Custom Extraction
+
+In addition to the out-of-the-box tools mentioned above, MCP provides two fixed tools for using custom extraction applications you create on the ADP platform:
+
+| Tool Name | Title | Description |
+|-----------|-------|-------------|| `list_custom_extract_apps` | List Custom Extraction Apps | Lists all custom document extraction applications created by the current user, returning each application's ID, name, description, tags, and output field definitions. Can be used to find the `app_id` required for `execute_custom_extract_app`. |
+| `execute_custom_extract_app` | Execute Custom Extraction App | Processes a file using the specified custom document extraction application. You need to first obtain an available `app_id` via `list_custom_extract_apps`. |
+
+**Usage Flow:** First, call `list_custom_extract_apps` to view the list of available applications and get the target `app_id`, then call `execute_custom_extract_app` passing in the `app_id` and the file for extraction.
+
+---
+
+## Tool Input Parameters
+
+### Document Parsing and OOTB Extraction Tools
+
+All out-of-the-box tools share a unified input schema:
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `file` | string | Yes | File URL or Base64 encoded content |
+| `file_name` | string | No | File name (including extension) |
+| `with_rec_result` | boolean | No | Whether to include OCR intermediate results, default `true` |
+| `wait` | boolean | No | Whether to synchronously wait for the result, default `true` |
+| `timeout_seconds` | integer | No | Synchronous waiting timeout in seconds, default `300`, range 1–900 |
 
 ### execute_custom_extract_app
 
-在上述参数基础上增加：
+In addition to the above parameters, it includes:
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| `app_id` | string | 是 | 自定义抽取应用 ID（通过 `list_custom_extract_apps` 获取） |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `app_id` | string | Yes | Custom extraction application ID (obtained through `list_custom_extract_apps`) |
 
 ### list_custom_extract_apps
 
-无需输入参数。
+No input parameters are required.
 
-**文件传入方式：**
+**File Input Methods:**
 
-- **URL**：`file` 传入以 `http://`、`https://`、`file://` 开头的可访问链接
-- **Base64**：`file` 传入 Base64 编码的文件内容（非 URL 格式时自动识别）
+- **URL**: Pass a URL starting with `http://`, `https://`, or `file://` into `file`
+- **Base64**: Pass Base64 encoded file content into `file` (automatically recognized if not in URL format)
 
-**同步 vs 异步：**
+**Synchronous vs Asynchronous:**
 
-- `wait=true`（默认）：阻塞等待处理完成，直接返回结果
-- `wait=false`：立即返回 `task_id`，后续可查询任务状态
+- `wait=true` (default): Blocks until processing is complete, returns the result directly
+- `wait=false`: Returns `task_id` immediately, status can be queried later
 
 ---
 
-## 工具输出
+## Tool Output
 
-### parse_document 输出
+### parse_document Output
 
-```json
+json
 {
   "task_id": "fabd7f0a4e7211f1bbc4d85ed35661fd",
   "status": 4,
@@ -195,26 +190,25 @@ ADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与�
     }
   ]
 }
-```
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `task_id` | string | 任务 ID |
-| `status` | integer | 任务状态码 |
-| `message` | string | 状态消息 |
-| `doc_recognize_result` | array | 各页识别结果 |
-| `doc_recognize_result[].page_num` | integer | 页码（1 起始） |
-| `doc_recognize_result[].document_content` | string | 该页完整文本（按阅读顺序） |
-| `doc_recognize_result[].document_details` | array | 元素级详情 |
-| `document_details[].type` | string | 元素类型：`Text`、`Table`、`Picture` |
-| `document_details[].text` | string | 文本内容；Picture 类型为图片 URL |
-| `document_details[].position` | array | 边界框坐标（4 个角点） |
-| `document_details[].ocr_confidence.ocr_mean_confidence` | float | 平均 OCR 置信度 (0–1) |
-| `document_details[].ocr_confidence.ocr_min_confidence` | float | 最低 OCR 置信度 (0–1) |
+| Field | Type | Description |
+|-------|------|-------------|
+| `task_id` | string | Task ID |
+| `status` | integer | Task status code |
+| `message` | string | Status message |
+| `doc_recognize_result` | array | Recognition results for each page |
+| `doc_recognize_result[].page_num` | integer | Page number (starts from 1) |
+| `doc_recognize_result[].document_content` | string | Full text of the page (in reading order) |
+| `doc_recognize_result[].document_details` | array | Element-level details |
+| `document_details[].type` | string | Element type: `Text`, `Table`, `Picture` |
+| `document_details[].text` | string | Text content; for `Picture` type, it is the image URL |
+| `document_details[].position` | array | Bounding box coordinates (4 corner points) |
+| `document_details[].ocr_confidence.ocr_mean_confidence` | float | Average OCR confidence (0–1) |
+| `document_details[].ocr_confidence.ocr_min_confidence` | float | Minimum OCR confidence (0–1) |
 
-### extract 类工具输出
+### extract Tool Output
 
-```json
+json
 {
   "task_id": "91283e544e7111f18cd6d85ed35661fd",
   "status": 4,
@@ -253,145 +247,136 @@ ADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与�
       ]
     }
   ]
-}
-```
+}**Regular Fields** (without `table_values`):
 
-**普通字段**（无 `table_values`）：
+| Field | Type | Description |
+|-------|------|-------------|
+| `field_key` | string | Field identifier |
+| `field_name` | string | Field name |
+| `field_values` | array | List of extracted values |
+| `field_values[].field_value` | string | Extracted value |
+| `field_values[].field_confidence` | float | Confidence (0–1) |
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `field_key` | string | 字段标识 |
-| `field_name` | string | 字段名称 |
-| `field_values` | array | 提取值列表 |
-| `field_values[].field_value` | string | 提取值 |
-| `field_values[].field_confidence` | float | 置信度 (0–1) |
+**Table Fields** (with `table_values`):
 
-**表格字段**（含 `table_values`）：
+| Field | Type | Description |
+|-------|------|-------------|
+| `field_key` | string | Table identifier |
+| `field_name` | string | Table name |
+| `table_values` | array[array] | 2D array: each row is an array of cells, each cell contains `field_name`, `field_key`, and `field_values` |
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `field_key` | string | 表格标识 |
-| `field_name` | string | 表格名称 |
-| `table_values` | array\[array\] | 二维数组：每行是一个单元格数组，每个单元格含 `field_name`、`field_key`、`field_values` |
+**Determination Method:** If the field object contains `table_values` → Table field; if it only contains `field_values` → Regular field.
 
-**判断方式：** 字段对象包含 `table_values` → 表格字段；仅含 `field_values` → 普通字段。
+### Asynchronous Response (`wait=false`)
 
-### 异步返回（`wait=false`）
-
-```json
+json
 {
   "task_id": "fabd7f0a4e7211f1bbc4d85ed35661fd",
   "status": "running"
 }
-```
 
 ---
 
-## 任务状态码
+## Task Status Codes
 
-| 状态码 | MCP 状态 | 说明 |
-|--------|----------|------|
-| 0 | running | 未知 |
-| 1 | running | 就绪/排队中 |
-| 2 | running | 处理中 |
-| 4 | success | 成功 |
-| 5 | failed | 失败 |
-| 6 | failed | 已取消 |
+| Status Code | MCP Status | Description |
+|-------------|------------|-------------|
+| 0 | running | Unknown |
+| 1 | running | Ready/Queued |
+| 2 | running | Processing |
+| 4 | success | Success |
+| 5 | failed | Failed |
+| 6 | failed | Canceled |
 
 ---
 
-## 支持的文件格式
+## Supported File Formats
 
-| 格式 | 扩展名 | 说明 |
-|------|--------|------|
-| PDF | `.pdf` | 支持扫描件与电子版 |
-| 图片 | `.jpg` `.jpeg` `.png` `.bmp` `.tiff` `.webp` | 支持手机拍摄件 |
+| Format | Extensions | Description |
+|--------|------------|-------------|
+| PDF | `.pdf` | Supports scanned and electronic versions |
+| Images | `.jpg` `.jpeg` `.png` `.bmp` `.tiff` `.webp` | Supports mobile phone captures |
 | Word | `.doc` `.docx` | - |
 | Excel | `.xls` `.xlsx` | - |
 | PPT | `.ppt` `.pptx` | - |
 
 ---
 
-## 认证说明
+## Authentication Instructions
 
-ADP MCP Server 使用 API Key 认证，通过 URL Query 参数传递：
+ADP MCP Server uses API Key authentication, passed through URL Query parameters:
 
-```
 https://adp.laiye.com/mcp?key=
-```
 
-- API Key 可在 ADP 控制台「我的MCP」页面获取
-- 每个 API Key 绑定一个用户，仅可访问该用户下的应用与数据
-- API Key 不会出现在请求体或响应中，仅用于认证
-
----
-
-## 常见问题
-
-**Q: MCP 连接后看不到某些卡证工具？**
-
-A: 工具列表按当前用户的已初始化应用动态生成。首次连接时系统会自动初始化所有开箱即用应用，初始化完成后刷新工具列表即可看到全部工具。
-
-**Q: 卡证工具返回「文档抽取失败」？**
-
-A: 请确认上传的文件与工具类型匹配（例如：身份证图片使用 `extract_id_card`，不要用 `extract_vehicle_cert`）。文件格式需为支持的图片或 PDF。
-
-**Q: 超时怎么处理？**
-
-A: 默认超时 300 秒（5 分钟），可通过 `timeout_seconds` 参数调整（最大 900 秒）。大文件或复杂文档建议使用 `wait=false` 异步模式，再通过 `task_id` 查询结果。
-
-**Q: 与 ADP CLI / OpenAPI 有什么区别？**
-
-A: 三者功能等价，区别仅在接入方式：
-
-| 接入方式 | 适合场景 |
-|----------|----------|
-| **MCP Server** | AI 客户端（Claude Desktop、Cursor 等）直接调用，无需写代码 |
-| **ADP CLI** | 终端命令行、脚本自动化、AI Skill 集成 |
-| **OpenAPI** | 业务系统集成、后端服务调用 |
+- The API Key can be obtained from the ADP Console on the "My MCP" page.
+- Each API Key is bound to a user and can only access applications and data under that user.
+- The API Key will not appear in the request body or response, and is used solely for authentication.
 
 ---
 
-## 授权许可
+## Frequently Asked Questions
 
-- **MCP Server**：免费接入，作为 ADP 产品的一部分提供
-- **ADP 服务**：基于公有云的 AI 文档处理服务，按使用量计费
+**Q: Why can't I see certain card tools after connecting to MCP?**
 
-免费额度：新用户注册后每月可获得 **100 免费积分**
+A: The tool list is dynamically generated based on the current user's initialized applications. When connecting for the first time, the system automatically initializes all out-of-the-box applications. After initialization, refresh the tool list to see all tools.
 
-[立即体验](https://adp.laiye.com/)
+**Q: Why does the card tool return "Document extraction failed"?**
+
+A: Please ensure that the uploaded file matches the tool type (e.g., use `extract_id_card` for ID card images, not `extract_vehicle_cert`). The file format must be one of the supported image or PDF formats.
+
+**Q: How to handle timeouts?**
+
+A: The default timeout is 300 seconds (5 minutes), which can be adjusted using the `timeout_seconds` parameter (maximum 900 seconds). For large files or complex documents, it is recommended to use the asynchronous mode with `wait=false` and then query the result using the `task_id`.
+
+**Q: What are the differences between ADP CLI / OpenAPI?**
+
+A: All three have equivalent functionality, differing only in the method of integration:
+
+| Integration Method | Suitable Scenarios |
+|--------------------|--------------------|
+| **MCP Server** | Direct calls from AI clients (Claude Desktop, Cursor, etc.) without coding |
+| **ADP CLI** | Terminal command line, script automation, AI Skill integration |
+| **OpenAPI** | Business system integration, backend service calls |
 
 ---
 
-## 支持与联系
+## Licensing
 
-- **API 接口文档：** [Open API 使用指南](https://laiye-tech.feishu.cn/wiki/PO9Jw4cH3iV2ThkMPW2c539pnkc)
-- **ADP 产品操作手册：** [公有云操作手册](https://laiye-tech.feishu.cn/wiki/UDYIwG42pisBbFkJI39ctpeKnWh)
-- **邮箱：** mkt@laiye.com
-- **官网：** [来也科技](https://laiye.com/product/adp-platform)
+- **MCP Server**: Free to connect, provided as part of the ADP product.
+- **ADP Service**: Public cloud-based AI document processing service, billed based on usage.
 
+Free Quota: New users receive **100 free credits** per month after registration.
 
+[Experience Now](https://adp.laiye.com/)
 
+---
 
-**用 ❤️ 构建智能体 AI 的未来**
-版权所有 © 2026 [来也科技（北京）有限公司] 保留所有权利。
+## Support and Contact
 
-**官方网站：** [https://github.com/Laiye-ADP/adp-mcp](https://github.com/Laiye-ADP/adp-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- **API Documentation:** [Open API User Guide](https://laiye-tech.feishu.cn/wiki/PO9Jw4cH3iV2ThkMPW2c539pnkc)
+- **ADP Product Manual:** [Public Cloud Operation Manual](https://laiye-tech.feishu.cn/wiki/UDYIwG42pisBbFkJI39ctpeKnWh)
+- **Email:** mkt@laiye.com
+- **Website:** [Laiye Technology](https://laiye.com/product/adp-platform)
 
-## 分类与标签
+**Building the Future of Intelligent Agents with ❤️**
+Copyright © 2026 [Laiye Technology (Beijing) Co., Ltd.] All rights reserved.
 
-- 分类：`development`, `memory`, `communication`
-- 标签：`communication`, `knowledge and memory`, `developer tools`, `文档解析`, `文档识别`, `文档抽取`, `ocr`, `数据录入`, `chinese`
+**Official site: ** [https://github.com/Laiye-ADP/adp-mcp](https://github.com/Laiye-ADP/adp-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## MCP 配置
+## Categories & Tags
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Categories: `development`, `memory`, `communication`
+- Tags: `communication`, `knowledge and memory`, `developer tools`, `文档解析`, `文档识别`, `文档抽取`, `ocr`, `数据录入`, `chinese`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## MCP Configuration
 
-## 数据来源
+- Transport: `http`
+- Command: ``
+- Args: none
 
-资源文件：`resources/mcp/laiyelijingao-agentic-document-processing.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/laiyelijingao-agentic-document-processing.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

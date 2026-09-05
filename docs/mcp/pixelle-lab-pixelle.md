@@ -1,11 +1,11 @@
 ---
-title: "像素实验室MCP"
-description: "🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 ComfyUI 与大型语言模型 (LLM) 无缝集成。它允许用户将复杂的 ComfyUI 工作流转换为可调用的 MCP 工具，无需"
+title: "Pixelle_MCP"
+description: "🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 Comfy…"
 ---
 
-# 像素实验室MCP
+# Pixelle_MCP
 
-🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 ComfyUI 与大型语言模型 (LLM) 无缝集成。它允许用户将复杂的 ComfyUI 工作流转换为可调用的 MCP 工具，无需
+🎨 Pixelle MCP - 全模态融合智能体框架 ✨ 基于 MCP 协议的 AIGC 方案，零代码将 ComfyUI 工作流无缝转化为 MCP Tool，让 LLM 与 ComfyUI 强强联合。 官网地址 https://github.com/AIDC-AI/Pixelle-MCP --- 🌟 简介 Pixelle 是一个开源的全模态代理框架，通过 模型上下文协议 (MCP) 将 Comfy…
 
 🎨 Pixelle MCP - 全模态融合智能体框架
 
@@ -69,22 +69,22 @@ Pixelle 构建于可扩展的 ComfyUI 生态系统之上，采用强大的客户
 
 > 欢迎 Star ⭐️、Fork 🎉、提交 Issue 或 PR，共同完善 Pixelle MCP！
 
-**官方网站：** [https://github.com/AIDC-AI/Pixelle-MCP](https://github.com/AIDC-AI/Pixelle-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/AIDC-AI/Pixelle-MCP](https://github.com/AIDC-AI/Pixelle-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `art and culture`
+- Categories: `media`
+- Tags: `entertainment and media`, `art and culture`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-pixellab --secret=your-pixellab-secret-here`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-pixellab --secret=your-pixellab-secret-here`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/pixelle-lab-pixelle.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/pixelle-lab-pixelle.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,55 +1,52 @@
 ---
-title: "哔哩哔哩视频信息获取"
-description: "这是一个基于MCP（模型上下文协议）的服务器，可以获取Bilibili视频的字幕、弹幕和评论信息。"
+title: "bilibili-video-info-mcp"
+description: "MCP Server for Bilibili Video Info 这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。"
 ---
 
-# 哔哩哔哩视频信息获取
+# bilibili-video-info-mcp
 
-这是一个基于MCP（模型上下文协议）的服务器，可以获取Bilibili视频的字幕、弹幕和评论信息。
+MCP Server for Bilibili Video Info 这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。
 
 # MCP Server for Bilibili Video Info
 
-这是一个基于 MCP (Model Context Protocol) 的服务器，可以获取 Bilibili 视频的字幕、弹幕和评论信息。
+This is a server based on MCP (Model Context Protocol) that can fetch subtitles, danmaku (bullet comments), and comments information of Bilibili videos.
 
-## MCP 工具列表
+## MCP Tool List
 
-### 1. 获取视频字幕列表
+### 1. Get Video Subtitles List
 
-```json
+json
 {
   "name": "get_subtitles",
   "arguments": {
     "url": "https://www.bilibili.com/video/BV1x341177NN"
   }
 }
-```
 
-### 2. 获取视频弹幕
+### 2. Get Video Danmaku
 
-```json
+json
 {
   "name": "get_danmaku",
   "arguments": {
     "url": "https://www.bilibili.com/video/BV1x341177NN"
   }
 }
-```
 
-### 3. 获取视频评论
+### 3. Get Video Comments
 
-```json
+json
 {
   "name": "get_comments",
   "arguments": {
     "url": "https://www.bilibili.com/video/BV1x341177NN"
   }
 }
-```
 
-## 使用方法
+## Usage
 
-MCP 客户端配置
-```json
+MCP Client Configuration
+json
 {
     "mcpServers": {
         "bilibili-video-info-mcp": {
@@ -63,52 +60,50 @@ MCP 客户端配置
         }
     }
 }
-```
 
-## 常见问题
+## Frequently Asked Questions
 
-### 1. 找不到 SESSDATA 怎么办？
+### 1. What to do if SESSDATA cannot be found?
 
-1. 登录 Bilibili 网站
-2. 打开浏览器开发者工具 (F12)
-3. 进入 Application/Storage -> Cookies
-4. 找到 SESSDATA 对应的值
+1. Log in to the Bilibili website.
+2. Open the browser developer tools (F12).
+3. Go to Application/Storage -> Cookies.
+4. Find the value corresponding to SESSDATA.
 
-### 2. 报错 "SESSDATA environment variable is required"
+### 2. Error: "SESSDATA environment variable is required"
 
-确保已经设置了环境变量：
+Make sure the environment variable is set:
 
-```bash
-export SESSDATA="你的SESSDATA值"
-```
+bash
+export SESSDATA="your SESSDATA value"
 
-### 3. 视频链接支持哪些格式？
+### 3. Which formats of video links are supported?
 
-支持标准的 Bilibili 视频链接，例如：
+Standard Bilibili video links are supported, such as:
 - https://www.bilibili.com/video/BV1x341177NN
-- https://b23.tv/xxxxx (短链接)
-- 包含 BV 号的任何链接
+- https://b23.tv/xxxxx (short link)
+- Any link containing the BV number
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/lesir831/bilibili-video-info-mcp](https://github.com/lesir831/bilibili-video-info-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/lesir831/bilibili-video-info-mcp](https://github.com/lesir831/bilibili-video-info-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`bilibili-video-info-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `bilibili-video-info-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/imlesir-bilibili-video-info.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/imlesir-bilibili-video-info.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,45 +1,45 @@
 ---
-title: "Jira MCP Server助手"
-description: "通过模型上下文协议启用与 Jira 的自然语言交互，以便通过 Claude Desktop 管理项目、问题、任务和工作流，从而允许用户委托项目管理任务。"
+title: "Jira-MCP-Server"
+description: "Enables natural language interaction with Jira for managing projects, issues, tasks, and workflows through the Model Context Protocol, allowing users to delegate PM tasks through Claude Desktop."
 ---
 
-# Jira MCP Server助手
+# Jira-MCP-Server
 
-通过模型上下文协议启用与 Jira 的自然语言交互，以便通过 Claude Desktop 管理项目、问题、任务和工作流，从而允许用户委托项目管理任务。
+Enables natural language interaction with Jira for managing projects, issues, tasks, and workflows through the Model Context Protocol, allowing users to delegate PM tasks through Claude Desktop.
 
-# Jira MCP 服务器
+# Jira MCP Server
 
-使用自然语言与 Jira 对话，以获取项目信息并进行修改。结合自定义的 README（其中包含项目信息）和 Claude Desktop 使用，这样您可以委托 PM 任务（例如，根据您的团队成员及其专长列表，将任何新问题分配给最相关的人）。
+Speak to Jira in natural language to get information on and modify your project. Use it with Claude Desktop in combination with a custom README that you will create with project information, so that you can delegate PM tasks, (e.g. given yoou have a list of my team and their specialities, assign any new issue to the most relevant person).
 
-该服务器基于 [Model Context Protocol](https://github.com/modelcontextprotocol) 构建。
+Built using the [Model Context Protocol](https://github.com/modelcontextprotocol).
 
-服务器支持以下功能：
+The server enables:
 
-- 项目创建和配置
-- 问题和子任务管理
-- 问题链接和依赖关系
-- 自动化问题工作流
+- Project creation and configuration
+- Issue and subtask management
+- Issue linking and dependencies
+- Automated issue workflows
 
-## 配置
+## Configuration
 
-必需的环境变量：
+Required environment variables:
 
-- `JIRA_HOST`：您的 Jira 实例主机名
-- `JIRA_EMAIL`：您的 Jira 账户邮箱
-- `JIRA_API_TOKEN`：来自 https://id.atlassian.com/manage-profile/security/api-tokens 的 API 令牌
+- `JIRA_HOST`: Your Jira instance hostname
+- `JIRA_EMAIL`: Your Jira account email
+- `JIRA_API_TOKEN`: API token from https://id.atlassian.com/manage-profile/security/api-tokens
 
-## 可用工具
+## Available Tools
 
-### 1. 用户管理
+### 1. User Management
 
 ```typescript
-// Get user's account ID by email
+// Get User is account ID by email
 {
   email: "user@example.com";
 }
 ```
 
-### 2. 问题类型管理
+### 2. Issue Type Management
 
 ```typescript
 // List all available issue types
@@ -47,7 +47,7 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 // No parameters required
 ```
 
-### 3. 问题链接类型
+### 3. Issue Link Types
 
 ```typescript
 // List all available issue link types
@@ -55,9 +55,9 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 // No parameters required
 ```
 
-### 4. 问题管理
+### 4. Issue Management
 
-#### 获取问题
+#### Retrieving Issues
 
 ```typescript
 // Get all issues in a project
@@ -78,7 +78,7 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 }
 ```
 
-#### 创建问题
+#### Creating Issues
 
 ```typescript
 // Create a standard issue
@@ -104,7 +104,7 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 }
 ```
 
-#### 更新问题
+#### Updating Issues
 
 ```typescript
 // Update issue fields
@@ -118,7 +118,7 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 }
 ```
 
-#### 问题依赖
+#### Issue Dependencies
 
 ```typescript
 // Create issue link
@@ -129,7 +129,7 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 }
 ```
 
-#### 删除问题
+#### Deleting Issues
 
 ```typescript
 // Delete single issue
@@ -149,18 +149,18 @@ description: "通过模型上下文协议启用与 Jira 的自然语言交互，
 }
 ```
 
-## 字段格式
+## Field Formatting
 
-### 描述字段
+### Description Field
 
-描述字段支持 Markdown 样式的格式：
+The description field supports markdown-style formatting:
 
-- 段落之间使用空行
-- 使用 "- " 表示项目符号列表
-- 使用 "1. " 表示编号列表
-- 使用以 ":" 结尾的标题（后跟空行）
+- Use blank lines between paragraphs
+- Use "- " for bullet points
+- Use "1. " for numbered lists
+- Use headers ending with ":" (followed by blank line)
 
-示例：
+Example:
 
 ```
 Task Overview:
@@ -179,32 +179,32 @@ Acceptance Criteria:
 - Documentation updated
 ```
 
-## 错误处理
+## Error Handling
 
-服务器提供详细的错误消息，包括：
+The server provides detailed error messages for:
 
-- 无效的问题键
-- 缺少必填字段
-- 权限问题
-- API 速率限制
+- Invalid issue keys
+- Missing required fields
+- Permission issues
+- API rate limits
 
-## 设置说明
+## Setup Instructions
 
-1. 克隆仓库：
+1. Clone the repository:
 
 ```bash
    git clone https://github.com/George5562/Jira-MCP-Server.git
    cd Jira-MCP-Server
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 
 ```bash
    npm install
 ```
 
-3. 配置环境变量：
-   在根目录下创建一个 `.env` 文件：
+3. Configure environment variables:
+   Create a `.env` file in the root directory:
 
 ```bash
    JIRA_HOST=your-instance.atlassian.net
@@ -212,28 +212,28 @@ Acceptance Criteria:
    JIRA_API_TOKEN=your-api-token
 ```
 
-4. 构建项目：
+4. Build the project:
 
 ```bash
    npm run build
 ```
 
-5. 启动服务器：
+5. Start the server:
 ```bash
    npm start
 ```
 
-## 配置 Claude Desktop
+## Configuring Claude Desktop
 
-要将此 MCP 服务器与 Claude Desktop 一起使用，请执行以下步骤：
+To use this MCP server with Claude Desktop:
 
-1. 找到您的 Claude Desktop 配置文件：
+1. Locate your Claude Desktop configuration file:
 
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%/Claude/claude_desktop_config.json`
    - Linux: `~/.config/Claude/claude_desktop_config.json`
 
-2. 将 Jira MCP 服务器添加到您的配置中：
+2. Add the Jira MCP server to your configuration:
 
 ```json
    {
@@ -252,32 +252,32 @@ Acceptance Criteria:
    }
 ```
 
-   将 `/path/to/jira-server` 替换为克隆仓库的绝对路径。
+   Replace `/path/to/jira-server` with the absolute path to your cloned repository.
 
-3. 重启 Claude Desktop 以应用更改。
+3. Restart Claude Desktop to apply the changes.
 
-## 参考资料
+## References
 
 - [Model Context Protocol](https://github.com/modelcontextprotocol)
-- [Jira REST API 文档](https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0)
-- [Jira REST API 示例](https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/)
+- [Jira REST API Documentation](https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0)
+- [Jira REST API Examples](https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/)
 
-**官方网站：** [https://github.com/George5562/Jira-MCP-Server](https://github.com/George5562/Jira-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/George5562/Jira-MCP-Server](https://github.com/George5562/Jira-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`developer tools`, `communication`, `other`, `chinese`
+- Categories: `communication`
+- Tags: `developer tools`, `communication`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/path/to/node`
-- 参数：`/path/to/jira-server/build/index.js`
+- Transport: `stdio`
+- Command: `/path/to/node`
+- Args: `/path/to/jira-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/george5562-jira.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/george5562-jira.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

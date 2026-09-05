@@ -1,15 +1,11 @@
 ---
-title: "MCP文档增强服务器"
-description: "一种MCP服务器实现，它提供了通过向量搜索检索和处理文档的工具，使AI助手能够用相关的文档上下文来增强其响应。\n\n使用Ollama或OpenAI生成嵌入式内容。\n\n包含Docker文件。"
+title: "mcp-server-ragdocs"
+description: "An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation contex…"
 ---
 
-# MCP文档增强服务器
+# mcp-server-ragdocs
 
-一种MCP服务器实现，它提供了通过向量搜索检索和处理文档的工具，使AI助手能够用相关的文档上下文来增强其响应。
-
-使用Ollama或OpenAI生成嵌入式内容。
-
-包含Docker文件。
+An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation contex…
 
 # MCP-server-ragdocs
 [![Node.js Package](/mcp-assets/d5ccd5c5c7571857b94be33d0359c687.svg)](https://github.com/sanderkooger/mcp-server-ragdocs/actions/workflows/release.yml)
@@ -18,44 +14,44 @@ description: "一种MCP服务器实现，它提供了通过向量搜索检索和
 [![codecov](/mcp-assets/1a234f4d2d89ec3ce218d06c6d518c8b.svg)](https://codecov.io/gh/sanderkooger/mcp-server-ragdocs)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-这是一个MCP服务器实现，它提供了通过向量搜索检索和处理文档的工具，使AI助手能够利用相关的文档上下文来增强其响应。
+An MCP server implementation that provides tools for retrieving and processing documentation through vector search, enabling AI assistants to augment their responses with relevant documentation context.
 
-## 目录
+## Table of Contents
 
-- [使用](#usage)
-- [特性](#features)
-- [配置](#configuration)
-- [部署](#deployment)
-  - [本地开发](#local-development)
-  - [云部署](#cloud-deployment)
-- [工具](#tools)
-- [项目结构](#project-structure)
-- [使用Ollama嵌入](#using-ollama-embeddings)
-- [许可证](#license)
-- [开发工作流程](#development-workflow)
-- [贡献](#contributing)
-- [Forkception致谢](#forkception-acknowledgments)
+- [Usage](#usage)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Deployment](#deployment)
+  - [Local Development](#local-development)
+  - [Cloud Deployment](#cloud-deployment)
+- [Tools](#tools)
+- [Project Structure](#project-structure)
+- [Using Ollama Embeddings](#using-ollama-embeddings)
+- [License](#license)
+- [Development Workflow](#development-workflow)
+- [Contributing](#contributing)
+- [Forkception Acknowledgments](#forkception-acknowledgments)
 
-## 使用
+## Usage
 
-RAG文档工具设计用于：
+The RAG Documentation tool is designed for:
 
-- 用相关文档增强AI响应
-- 构建具有文档意识的AI助手
-- 为开发者创建上下文感知的工具
-- 实现语义文档搜索
-- 增强现有的知识库
+- Enhancing AI responses with relevant documentation
+- Building documentation-aware AI assistants
+- Creating context-aware tooling for developers
+- Implementing semantic documentation search
+- Augmenting existing knowledge bases
 
-## 特性
+## Features
 
-- 基于向量的文档搜索和检索
-- 支持多种文档来源
-- 支持本地（Ollama）嵌入生成或OPENAI
-- 语义搜索功能
-- 自动化文档处理
-- 为LLMs提供实时上下文增强
+- Vector-based documentation search and retrieval
+- Support for multiple documentation sources
+- Support for local (Ollama) embeddings generation or OPENAI
+- Semantic search capabilities
+- Automated documentation processing
+- Real-time context augmentation for LLMs
 
-## 配置
+## Configuration
 
 ```json
 {
@@ -73,11 +69,11 @@ RAG文档工具设计用于：
 }
 ```
 
-### 与Claude Desktop一起使用
+### Usage with Claude Desktop
 
-在你的`claude_desktop_config.json`中添加以下内容：
+Add this to your `claude_desktop_config.json`:
 
-### OpenAI配置
+### OpenAI Configuration
 
 ```json
 {
@@ -96,7 +92,7 @@ RAG文档工具设计用于：
 }
 ```
 
-### Ollama配置
+### Ollama Configuration
 
 ```json
 {
@@ -115,7 +111,7 @@ RAG文档工具设计用于：
 }
 ```
 
-### 从这个代码库运行Ollama
+### Ollama run from this codebase
 ```
 "ragdocs-mcp": {
       "command": "node",
@@ -140,150 +136,150 @@ RAG文档工具设计用于：
     }
 ```
 
-## 环境变量参考
+## Environment Variables Reference
 
-| 变量                | 必需项  | 默认值                  | 备注                       |
+| Variable                | Required For  | Default                  | remarks                       |
 |-------------------------|---------------|--------------------------|-------------------------------|
-| `EMBEDDINGS_PROVIDER`   | 所有           | `ollama`                 | "openai" 或 "ollama"          |
-| `OPENAI_API_KEY`        | OpenAI        | -                        | 从OpenAI仪表板获取           |
-| `OLLAMA_BASE_URL`       | Ollama        | `http://localhost:11434` | 本地Ollama服务器URL         |
-| `QDRANT_URL`            | 所有           | `http://localhost:6333`  | Qdrant端点URL               |
-| `QDRANT_API_KEY`        | 云Qdrant      | -                        | 从Qdrant Cloud控制台获得     |
+| `EMBEDDINGS_PROVIDER`   | All           | `ollama`                 | "openai" or "ollama"          |
+| `OPENAI_API_KEY`        | OpenAI        | -                        | Obtain from OpenAI dashboard  |
+| `OLLAMA_BASE_URL`       | Ollama        | `http://localhost:11434` | Local Ollama server URL       |
+| `QDRANT_URL`            | All           | `http://localhost:6333`  | Qdrant endpoint URL           |
+| `QDRANT_API_KEY`        | Cloud Qdrant  | -                        | From Qdrant Cloud console     |
 
-### 本地部署
+### Local Deployment
 
-仓库包含了用于本地开发的Docker Compose配置文件：
+The repository includes Docker Compose configuration for local development:
 
-[Docker Compose 下载](https://raw.githubusercontent.com/sanderkooger/mcp-server-ragdocs/main/docker-compose.yml)
+[Docker Compose Download](https://raw.githubusercontent.com/sanderkooger/mcp-server-ragdocs/main/docker-compose.yml)
 
 ```bash
 docker compose up -d
 ```
 
-这将启动：
+This starts:
 
-- Qdrant 向量数据库在 6333 端口
-- Ollama LLM 服务在 11434 端口
+- Qdrant vector database on port 6333
+- Ollama LLM service on port 11434
 
-访问端点：
+Access endpoints:
 
 - Qdrant: http://localhost:6333
 - Ollama: http://localhost:11434
 
-### 云部署
+### Cloud Deployment
 
-对于生产环境部署：
+For production deployments:
 
-1. 使用托管的 Qdrant Cloud 服务
-2. 设置以下环境变量：
+1. Use hosted Qdrant Cloud service
+2. Set these environment variables:
 
 ```bash
 QDRANT_URL=your-cloud-cluster-url
 QDRANT_API_KEY=your-cloud-api-key
 ```
 
-## 工具
+## Tools
 
 ### search_documentation
 
-使用自然语言查询搜索存储的文档。返回带有上下文的相关摘录，并按相关性排序。
+Search through stored documentation using natural language queries. Returns matching excerpts with context, ranked by relevance.
 
-**输入：**
+**Inputs:**
 
-- `query` (字符串)：要在文档中搜索的文本。可以是自然语言查询、特定术语或代码片段。
-- `limit` (数字，可选)：要返回的最大结果数量（1-20，默认为 5）。较高的限制提供更全面的结果，但处理时间可能更长。
+- `query` (string): The text to search for in the documentation. Can be a natural language query, specific terms, or code snippets.
+- `limit` (number, optional): Maximum number of results to return (1-20, default: 5). Higher limits provide more comprehensive results but may take longer to process.
 
 ### list_sources
 
-列出系统中当前存储的所有文档源。返回所有已索引文档的综合列表，包括源 URL、标题和最后更新时间。使用此功能可以了解可用于搜索的文档，或验证特定源是否已被索引。
+List all documentation sources currently stored in the system. Returns a comprehensive list of all indexed documentation including source URLs, titles, and last update times. Use this to understand what documentation is available for searching or to verify if specific sources have been indexed.
 
 ### extract_urls
 
-从给定网页中提取并分析所有 URL。此工具会爬取指定网页，识别所有超链接，并可选择将它们添加到处理队列中。
+Extract and analyze all URLs from a given web page. This tool crawls the specified webpage, identifies all hyperlinks, and optionally adds them to the processing queue.
 
-**输入：**
+**Inputs:**
 
-- `url` (字符串)：要分析的网页的完整 URL（必须包含协议，例如 https://）。页面必须是公开可访问的。
-- `add_to_queue` (布尔值，可选)：如果为 true，则自动将提取的 URL 添加到处理队列以供稍后索引。在大型站点上使用时需谨慎，以免过度排队。
+- `url` (string): The complete URL of the webpage to analyze (must include protocol, e.g., https://). The page must be publicly accessible.
+- `add_to_queue` (boolean, optional): If true, automatically add extracted URLs to the processing queue for later indexing. Use with caution on large sites to avoid excessive queuing.
 
 ### remove_documentation
 
-通过其 URL 从系统中删除特定的文档源。删除是永久性的，会影响未来的搜索结果。
+Remove specific documentation sources from the system by their URLs. The removal is permanent and will affect future search results.
 
-**输入：**
+**Inputs:**
 
-- `urls` (字符串数组)：要从数据库中删除的 URL 数组。每个 URL 必须与添加文档时使用的 URL 完全匹配。
+- `urls` (string[]): Array of URLs to remove from the database. Each URL must exactly match the URL used when the documentation was added.
 
 ### list_queue
 
-列出当前在文档处理队列中等待的所有 URL。显示将在调用 run_queue 时处理的待处理文档源。使用此功能来监控队列状态、验证 URL 是否正确添加或检查处理积压情况。
+List all URLs currently waiting in the documentation processing queue. Shows pending documentation sources that will be processed when run_queue is called. Use this to monitor queue status, verify URLs were added correctly, or check processing backlog.
 
 ### run_queue
 
-处理并索引文档队列中的所有 URL。每个 URL 依次处理，具有适当的错误处理和重试逻辑。处理过程中会提供进度更新。长时间运行的操作将一直处理直到队列为空或发生无法恢复的错误为止。
+Process and index all URLs currently in the documentation queue. Each URL is processed sequentially, with proper error handling and retry logic. Progress updates are provided as processing occurs. Long-running operations will process until the queue is empty or an unrecoverable error occurs.
 
 ### clear_queue
 
-从文档处理队列中移除所有待处理的 URL。当您想重新开始、删除不需要的 URL 或取消待处理的处理时，请使用此功能。此操作是立即且永久的——如果以后需要处理这些 URL，则需要重新添加。
+Remove all pending URLs from the documentation processing queue. Use this to reset the queue when you want to start fresh, remove unwanted URLs, or cancel pending processing. This operation is immediate and permanent - URLs will need to be re-added if you want to process them later.
 
-## 项目结构
+## Project Structure
 
-该包遵循模块化架构，核心组件和MCP协议处理器之间有明确的分离。有关详细的结构文档和设计决策，请参阅[ARCHITECTURE.md](https://github.com/sanderkooger/mcp-server-ragdocs/blob/HEAD/ARCHITECTURE.md)。
+The package follows a modular architecture with clear separation between core components and MCP protocol handlers. See [ARCHITECTURE.md](https://github.com/sanderkooger/mcp-server-ragdocs/blob/HEAD/ARCHITECTURE.md) for detailed structural documentation and design decisions.
 
-## 不使用Docker运行Ollama Embeddings
+## Using Ollama Embeddings without docker
 
-1. 安装Ollama：
+1. Install Ollama:
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-2. 下载nomic-embed-text模型：
+2. Download the nomic-embed-text model:
 
 ```bash
 ollama pull nomic-embed-text
 ```
 
-3. 验证安装：
+3. Verify installation:
 
 ```bash
 ollama list
 ```
 
-## 许可证
+## License
 
-此MCP服务器根据MIT许可证授权。这意味着您可以自由地使用、修改和分发软件，但必须遵守MIT许可证的条款和条件。更多详情，请参见项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-## 贡献
+## Contributing
 
-我们欢迎贡献！请参阅我们的[CONTRIBUTING.md](https://github.com/sanderkooger/mcp-server-ragdocs/blob/HEAD/CONTRIBUTING.md)以获取详细指南，以下是基本步骤：
+We welcome contributions! Please see our [CONTRIBUTING.md](https://github.com/sanderkooger/mcp-server-ragdocs/blob/HEAD/CONTRIBUTING.md) for detailed guidelines, but here are the basics:
 
-1. Fork仓库
-2. 安装依赖项：`npm install`
-3. 创建特性分支：`git checkout -b feat/your-feature`
-4. 使用`npm run commit`提交更改，以确保符合[Conventional Commits](https://www.conventionalcommits.org)规范
-5. 将更改推送到您的Fork并打开一个PR
+1. Fork the repository
+2. Install dependencies: `npm install`
+3. Create a feature branch: `git checkout -b feat/your-feature`
+4. Commit changes with npm run commit to ensure compliance with [Conventional Commits](https://www.conventionalcommits.org)
+5. Push to your fork and open a PR
 
-## Forkception致谢
+## Forkception Acknowledgments
 
-本项目基于[hannesrudolph/mcp-ragdocs](https://github.com/hannesrudolph/mcp-ragdocs)的一个分支，而后者又从[qpd-v/mcp-ragdocs](https://github.com/qpd-v/mcp-ragdocs)的原始工作分叉而来。原项目为这个实现提供了基础。
+This project is based on a fork of [hannesrudolph/mcp-ragdocs](https://github.com/hannesrudolph/mcp-ragdocs), which itself was forked from the original work by [qpd-v/mcp-ragdocs](https://github.com/qpd-v/mcp-ragdocs). The original project provided the foundation for this implementation.
 
-**官方网站：** [https://github.com/sanderkooger/mcp-server-ragdocs](https://github.com/sanderkooger/mcp-server-ragdocs)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sanderkooger/mcp-server-ragdocs](https://github.com/sanderkooger/mcp-server-ragdocs)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`knowledge and memory`, `search`, `research and data`, `chinese`
+- Categories: `data`
+- Tags: `knowledge and memory`, `search`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @sanderkooger/mcp-server-ragdocs`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @sanderkooger/mcp-server-ragdocs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sanderkooger-ragdocs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sanderkooger-ragdocs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

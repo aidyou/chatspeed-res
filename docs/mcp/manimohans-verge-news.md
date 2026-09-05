@@ -1,27 +1,27 @@
 ---
-title: "Verge新闻获取器"
-description: "提供从The Verge的RSS源获取和搜索新闻的工具，允许用户获取当天的新闻、检索过去一周的随机文章以及在近期的Verge内容中搜索特定关键词。"
+title: "verge-news-mcp"
+description: "Provides tools to fetch and search news from The Verge's RSS feed, allowing users to get today's news, retrieve random articles from the past week, and search for specific keywords in recent Verge con…"
 ---
 
-# Verge新闻获取器
+# verge-news-mcp
 
-提供从The Verge的RSS源获取和搜索新闻的工具，允许用户获取当天的新闻、检索过去一周的随机文章以及在近期的Verge内容中搜索特定关键词。
+Provides tools to fetch and search news from The Verge's RSS feed, allowing users to get today's news, retrieve random articles from the past week, and search for specific keywords in recent Verge con…
 
-# The Verge News MCP 服务器
+# The Verge News MCP Server
 
 [Smithery](https://smithery.ai/server/@manimohans/verge-news-mcp)
 
-一个提供从 The Verge 的 RSS 源获取和搜索新闻的工具的 MCP 服务器。
+An MCP server that provides tools to fetch and search news from The Verge's RSS feed.
 
   
 
-## 功能
+## Features
 
-- 从 The Verge 获取今日新闻
-- 从 The Verge 过去一周中随机选择一些新闻
-- 通过关键词搜索新闻文章
+- Fetch today's news from The Verge
+- Fetch a random selection of news from The Verge's past week
+- Search for news articles by keyword
 
-## 安装
+## Installation
 
 ```bash
 # Clone the repository
@@ -35,22 +35,22 @@ npm install
 npm run build
 ```
 
-## 使用方法
+## Usage
 
-### 运行服务器
+### Running the server
 
 ```bash
 npm start
 ```
 
-### 与 Claude for Desktop 一起使用
+### Using with Claude for Desktop
 
-1. 安装 [Claude for Desktop](https://claude.ai/download)
-2. 打开你的 Claude for Desktop 应用配置文件：
+1. Install [Claude for Desktop](https://claude.ai/download)
+2. Open your Claude for Desktop App configuration at:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+   - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 
-3. 添加以下配置：
+3. Add the following configuration:
 
 ```json
 {
@@ -63,86 +63,86 @@ npm start
 }
 ```
 
-4. 重启 Claude for Desktop
+4. Restart Claude for Desktop
 
-### 与 Smithery 一起使用
+### Using with Smithery
 
-你也可以将此 MCP 服务器与 [Smithery](https://smithery.dev/) 一起使用，这允许你轻松地共享和使用 MCP 服务器：
+You can also use this MCP server with [Smithery](https://smithery.dev/), which allows you to easily share and use MCP servers:
 
-1. 确保已安装 Smithery：
+1. Make sure you have Smithery installed:
 ```bash
 npm install -g @anthropic-ai/smithery
 ```
 
-2. 要通过 Smithery 使用此服务器，请运行：
+2. To use this server via Smithery, run:
 ```bash
 smithery use https://github.com/manimohans/verge-news-mcp
 ```
 
-3. 安装完成后，你可以将其与 Claude 或任何其他支持 MCP 的应用程序一起使用。
+3. Once installed, you can use it with Claude or any other MCP-compatible application.
 
-#### Smithery 配置
+#### Smithery Configuration
 
-此仓库包括了 Smithery 所需的配置文件：
+This repository includes the necessary configuration files for Smithery:
 
-- `Dockerfile`：定义如何为 MCP 服务器构建 Docker 容器
-- `smithery.yaml`：为 Smithery 配置 MCP 服务器，包括其功能
+- `Dockerfile`: Defines how to build the Docker container for the MCP server
+- `smithery.yaml`: Configures the MCP server for Smithery, including its capabilities
 
-有关 Smithery 配置的更多信息，请参阅 [Smithery 文档](https://smithery.ai/docs/config)。
+For more information about Smithery configuration, see the [Smithery documentation](https://smithery.ai/docs/config).
 
-### 可用工具
+### Available Tools
 
 #### get-daily-news
 
-从 The Verge 获取过去 24 小时内发布的最新新闻文章。
+Fetches the latest news articles from The Verge published in the last 24 hours.
 
-示例查询：“今天 The Verge 有什么新闻？”
+Example query: "What's in the news today from The Verge?"
 
 #### get-weekly-news
 
-从 The Verge 获取过去 7 天内发布的新闻文章。
+Fetches news articles from The Verge published in the last 7 days.
 
-示例查询：“显示 The Verge 过去一周的新闻。”
+Example query: "Show me The Verge's news from the past week."
 
-**注意：** 此工具会从过去一周中随机选择 10 条新闻，每次使用时都会有所不同。
+**Note:** This tool randomly selects 10 news items from the past week, providing variety each time it's used.
 
 #### search-news
 
-搜索包含特定关键词的新闻文章。
+Searches for news articles containing a specific keyword.
 
-参数：
-- `keyword`：要搜索的术语
-- `days`（可选）：回溯的天数（默认：30）
+Parameters:
+- `keyword`: The term to search for
+- `days` (optional): Number of days to look back (default: 30)
 
-示例查询：“查找 The Verge 关于 AI 的新闻文章。”
+Example query: "Find news articles about AI from The Verge."
 
-## 开发
+## Development
 
 ```bash
 # Run in development mode
 npm run dev
 ```
 
-## 许可证
+## License
 
 ISC
 
-**官方网站：** [https://github.com/manimohans/verge-news-mcp](https://github.com/manimohans/verge-news-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/manimohans/verge-news-mcp](https://github.com/manimohans/verge-news-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `browser`, `media`
-- 标签：`search`, `browser automation`, `entertainment and media`, `chinese`
+- Categories: `search`, `browser`, `media`
+- Tags: `search`, `browser automation`, `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/absolute/path/to/verge-news-mcp/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/absolute/path/to/verge-news-mcp/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/manimohans-verge-news.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/manimohans-verge-news.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

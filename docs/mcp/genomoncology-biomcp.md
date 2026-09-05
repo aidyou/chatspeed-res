@@ -1,60 +1,73 @@
 ---
-title: "BioMCP 生物医学模型上下文协议工具"
-description: "通过模型上下文协议为大型语言模型提供对关键生物医学数据库（包括PubTator3（PubMed/PMC）、ClinicalTrials.gov和MyVariant.info）的结构化访问。"
+title: "biomcp"
+description: "Provides LLMs with structured access to critical biomedical databases including PubTator3 (PubMed/PMC), ClinicalTrials.gov, and MyVariant.info through the Model Context Protocol."
 ---
 
-# BioMCP 生物医学模型上下文协议工具
+# biomcp
 
-通过模型上下文协议为大型语言模型提供对关键生物医学数据库（包括PubTator3（PubMed/PMC）、ClinicalTrials.gov和MyVariant.info）的结构化访问。
+Provides LLMs with structured access to critical biomedical databases including PubTator3 (PubMed/PMC), ClinicalTrials.gov, and MyVariant.info through the Model Context Protocol.
 
-# BioMCP: 生物医学模型上下文协议
+# BioMCP: Biomedical Model Context Protocol
 
-BioMCP 是一个开源（MIT 许可证）工具包，它为 AI 助手和代理提供了专门的生物医学知识。它遵循模型上下文协议 (MCP) 构建，将 AI 系统连接到权威的生物医学数据源，使它们能够精准且深入地回答关于临床试验、科学文献和基因变异的问题。
+BioMCP is an open source (MIT License) toolkit that empowers AI assistants and
+agents with specialized biomedical knowledge. Built following the Model Context
+Protocol (MCP), it connects AI systems to authoritative biomedical data
+sources, enabling them to answer questions about clinical trials, scientific
+literature, and genomic variants with precision and depth.
 
 [Watch video](https://www.youtube.com/watch?v=bKxOWrWUUhM)
 
-## 为什么选择 BioMCP？
+## Why BioMCP?
 
-虽然大型语言模型具有广泛的一般知识，但它们通常缺乏特定领域的专业知识或访问最新资源的能力。BioMCP 通过以下方式填补了生物医学领域的这一空白：
+While Large Language Models have broad general knowledge, they often lack
+specialized domain-specific information or access to up-to-date resources.
+BioMCP bridges this gap for biomedicine by:
 
-- 提供**结构化访问**临床试验、生物医学文献和基因变异
-- 支持对专业数据库进行**自然语言查询**而无需了解其具体语法
-- 通过一致的接口支持**生物医学研究**工作流程
-- 作为 AI 助手和代理的**MCP 服务器**运行
+- Providing **structured access** to clinical trials, biomedical literature,
+  and genomic variants
+- Enabling **natural language queries** to specialized databases without
+  requiring knowledge of their specific syntax
+- Supporting **biomedical research** workflows through a consistent interface
+- Functioning as an **MCP server** for AI assistants and agents
 
-## 生物医学数据源
+## Biomedical Data Sources
 
-BioMCP 集成了三个关键的生物医学数据源：
+BioMCP integrates with three key biomedical data sources:
 
-- **PubTator3/PubMed** - 带有实体注释的生物医学文献
-- **ClinicalTrials.gov** - 临床试验注册表和结果数据库
-- **MyVariant.info** - 来自多个数据库的综合遗传变异注释
+- **PubTator3/PubMed** - Biomedical literature with entity annotations
+- **ClinicalTrials.gov** - Clinical trial registry and results database
+- **MyVariant.info** - Consolidated genetic variant annotation from multiple
+  databases
 
-## 可用的 MCP 工具
+## Available MCP Tools
 
 ### PubMed & PubTator3
 
-- `article_searcher`: 按基因、疾病、变异或关键词搜索文章
-- `article_details`: 获取包括摘要和全文在内的详细文章信息
+- `article_searcher`: Search for articles by genes, diseases, variants, or
+  keywords
+- `article_details`: Get detailed article information including abstracts and
+  full text
 
 ### ClinicalTrials.gov
 
-- `trial_searcher`: 通过条件、干预、阶段等进行高级试验搜索
-- `trial_protocol`: 详细的试验方案信息
-- `trial_locations`: 试验地点和联系信息
-- `trial_outcomes`: 结果和结局指标
-- `trial_references`: 相关出版物
+- `trial_searcher`: Advanced trial search with filtering by condition,
+  intervention, phase, etc.
+- `trial_protocol`: Detailed trial protocol information
+- `trial_locations`: Trial site locations and contact information
+- `trial_outcomes`: Results and outcome measures
+- `trial_references`: Related publications
 
 ### MyVariant.info
 
-- `variant_searcher`: 使用复杂的过滤器搜索遗传变异
-- `variant_details`: 来自多个来源的全面注释（CIViC, ClinVar, COSMIC, dbSNP 等）
+- `variant_searcher`: Search for genetic variants with sophisticated filtering
+- `variant_details`: Comprehensive annotations from multiple sources (CIViC,
+  ClinVar, COSMIC, dbSNP, etc.)
 
-## 快速开始
+## Quick Start
 
-### 对于 Claude Desktop 用户
+### For Claude Desktop Users
 
-1. 如果还没有安装 `uv`（推荐），请先**安装 `uv`**：
+1. **Install `uv`** if you don't have it (recommended):
 
 ```bash
    # MacOS
@@ -64,10 +77,10 @@ BioMCP 集成了三个关键的生物医学数据源：
    pip install uv
 ```
 
-2. **配置 Claude Desktop**：
-   - 打开 Claude Desktop 设置
-   - 导航到开发者部分
-   - 点击“编辑配置”并添加：
+2. **Configure Claude Desktop**:
+   - Open Claude Desktop settings
+   - Navigate to Developer section
+   - Click "Edit Config" and add:
 ```json
    {
      "mcpServers": {
@@ -78,9 +91,9 @@ BioMCP 集成了三个关键的生物医学数据源：
      }
    }
 ```
-   - 重启 Claude Desktop 并开始讨论生物医学话题！
+   - Restart Claude Desktop and start chatting about biomedical topics!
 
-### Python 包安装
+### Python Package Installation
 
 ```bash
 # Using pip
@@ -93,9 +106,9 @@ uv pip install biomcp-python
 uv run --with biomcp-python biomcp trial search --condition "lung cancer"
 ```
 
-## 命令行界面
+## Command Line Interface
 
-BioMCP 提供了一个全面的 CLI 以直接与数据库交互：
+BioMCP provides a comprehensive CLI for direct database interaction:
 
 ```bash
 # Get help
@@ -113,71 +126,73 @@ biomcp variant search --gene TP53 --significance pathogenic
 biomcp variant get rs113488022
 ```
 
-## 测试与验证
+## Testing & Verification
 
-使用 MCP Inspector 测试您的 BioMCP 设置：
+Test your BioMCP setup with the MCP Inspector:
 
 ```bash
 npx @modelcontextprotocol/inspector uv run --with biomcp-python biomcp run
 ```
 
-这将打开一个网页界面，您可以在其中探索和测试所有可用工具。
+This opens a web interface where you can explore and test all available tools.
 
-## 企业版：OncoMCP
+## Enterprise Version: OncoMCP
 
-OncoMCP 在 BioMCP 的基础上扩展了 GenomOncology 的企业级精准肿瘤平台（POP），提供以下功能：
+OncoMCP extends BioMCP with GenomOncology's enterprise-grade precision oncology
+platform (POP), providing:
 
-- **符合 HIPAA 的部署**：安全的本地部署选项
-- **实时试验匹配**：最新状态和分组级别匹配
-- **医疗集成**：无缝 EHR 和数据仓库连接
-- **精选知识库**：15,000 多项试验和 FDA 批准
-- **高级患者匹配**：使用集成的临床和分子档案
-- **高级 NLP**：从非结构化文本中进行结构化提取
-- **全面的生物标志物处理**：突变和规则处理
+- **HIPAA-Compliant Deployment**: Secure on-premise options
+- **Real-Time Trial Matching**: Up-to-date status and arm-level matching
+- **Healthcare Integration**: Seamless EHR and data warehouse connectivity
+- **Curated Knowledge Base**: 15,000+ trials and FDA approvals
+- **Sophisticated Patient Matching**: Using integrated clinical and molecular
+  profiles
+- **Advanced NLP**: Structured extraction from unstructured text
+- **Comprehensive Biomarker Processing**: Mutation and rule processing
 
-了解更多：[GenomOncology](https://genomoncology.com/)
+Learn more: [GenomOncology](https://genomoncology.com/)
 
-## MCP 注册表
+## MCP Registries
 
 [Smithery](https://smithery.ai/server/@genomoncology/biomcp)
 
-## 文档
+## Documentation
 
-如需完整的文档，请访问 [https://biomcp.org](https://biomcp.org)
+For comprehensive documentation, visit [https://biomcp.org](https://biomcp.org)
 
-## BioMCP 示例仓库
+## BioMCP Examples Repo
 
-想看看 BioMCP 的实际应用吗？
+Looking to see BioMCP in action?
 
-请查看配套仓库：
+Check out the companion repository:
 👉 **[biomcp-examples](https://github.com/genomoncology/biomcp-examples)**
 
-该仓库包含真实的提示、AI 生成的研究简报以及不同模型的评估运行。
-您可以使用它来探索功能、比较输出或基准测试您的设置。
+It contains real prompts, AI-generated research briefs, and evaluation runs across different models.
+Use it to explore capabilities, compare outputs, or benchmark your own setup.
 
-有自己的精彩示例？
-**我们非常欢迎您贡献！** 只需 fork 该仓库并提交带有您实验的 PR 即可。
+Have a cool example of your own?
+**We’d love for you to contribute!** Just fork the repo and submit a PR with your experiment.
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/genomoncology/biomcp](https://github.com/genomoncology/biomcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/genomoncology/biomcp](https://github.com/genomoncology/biomcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `search`, `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run --with biomcp-python biomcp run`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run --with biomcp-python biomcp run`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/genomoncology-biomcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/genomoncology-biomcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

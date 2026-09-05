@@ -1,82 +1,82 @@
 ---
-title: "Think推理服务器"
-description: "Anthropic的“think”工具的官方实现，该工具为Claude提供了一个专门用于结构化推理的空间，从而在需要多步骤解决问题的复杂任务上，性能最多可提高54%。"
+title: "think-mcp-server"
+description: "Official implementation of Anthropic's 'think' tool that provides Claude with a dedicated space for structured reasoning, improving performance by up to 54% on complex tasks requiring multi-step probl…"
 ---
 
-# Think推理服务器
+# think-mcp-server
 
-Anthropic的“think”工具的官方实现，该工具为Claude提供了一个专门用于结构化推理的空间，从而在需要多步骤解决问题的复杂任务上，性能最多可提高54%。
+Official implementation of Anthropic's 'think' tool that provides Claude with a dedicated space for structured reasoning, improving performance by up to 54% on complex tasks requiring multi-step probl…
 
 # Think Tool MCP Server
 
 [Smithery](https://smithery.ai/server/@PhillipRt/think-mcp-server)
 
-**Anthropic 的 "think" 工具的官方 MCP 服务器实现** - 通过结构化思考显著提高 Claude 的推理能力。
+**Official implementation of Anthropic's "think" tool as an MCP server** - Dramatically improve Claude's reasoning capabilities with structured thinking.
 
-## 什么是 Think 工具？
+## What is the Think Tool?
 
-这个 MCP 服务器实现了 Anthropic 在其[工程博客文章](https://www.anthropic.com/engineering/claude-think-tool)中介绍的确切 "think" 工具。Think 工具为 Claude 在处理复杂问题时提供了一个专门的空间进行结构化推理，从而生成更周到、准确和可靠的响应。
+This MCP server implements the exact "think" tool that Anthropic introduced in their [engineering blog post](https://www.anthropic.com/engineering/claude-think-tool). The Think Tool provides Claude with a dedicated space for structured reasoning during complex problem-solving tasks, enabling more thoughtful, accurate, and reliable responses.
 
-## 经验证明的性能优势
+## Proven Performance Benefits
 
-Anthropic 的研究表明，在使用 "think" 工具时，有显著的改进：
+Anthropic's research demonstrates remarkable improvements when using the "think" tool:
 
-- **在复杂的客户服务任务上提高了 54%**
-- **更好地遵守详细的政策和指南**
-- **在多次执行同一任务时增强了一致性**
-- **在软件工程基准测试中表现更好**
-- **与其他增强技术相比，实施开销最小**
+- **54% improvement** in complex customer service tasks
+- **Significantly better adherence** to detailed policies and guidelines
+- **Enhanced consistency** across multiple trials of the same task
+- **Improved performance** on software engineering benchmarks
+- **Minimal implementation overhead** compared to other enhancement techniques
 
-"think" 工具在其他方法不足的地方表现出色：
-- **对于需要复杂工具链的情况，优于扩展思考**
-- **对于政策密集型场景，比基线提示更有效**
-- **与优化后的提示结合使用时特别强大**
+The "think" tool excels where other approaches fall short:
+- **Better than extended thinking** for cases requiring complex tool chains
+- **More effective than baseline prompting** for policy-heavy scenarios
+- **Especially powerful** when paired with optimized prompting
 
-## 快速安装
+## Quick Install
 
-### 对于 Claude 桌面版
+### For Claude Desktop
 
 ```bash
 npx -y @smithery/cli@latest install @PhillipRt/think-mcp-server --client claude --config "{}"
 ```
 
-### 对于 Cursor
+### For Cursor
 
 ```bash
 npx -y @smithery/cli@latest install @PhillipRt/think-mcp-server --client cursor --config "{}"
 ```
 
-## 工作原理
+## How It Works
 
-"think" 工具实现了 Anthropic 工程博客中描述的确切机制。与扩展思考（在 Claude 开始响应之前发生）不同，"think" 工具允许 Claude 在响应生成过程中暂停和反思。
+The "think" tool implements the exact mechanism described in Anthropic's engineering blog. Unlike extended thinking (which happens before Claude starts responding), the "think" tool allows Claude to pause and reflect during its response generation.
 
-**关键机制：** 该工具不执行任何外部操作或检索新信息 - 它只是为 Claude 提供了一个专用的草稿本，使其能够逐步推理，从而显著提高在复杂任务上的表现。
+**Key mechanism:** The tool does not perform any external actions or retrieve new information - it simply provides Claude with a dedicated scratchpad to work through reasoning step-by-step, which dramatically improves performance on complex tasks.
 
-当 Claude 使用 "think" 工具时：
-1. **在继续复杂的推理链之前，它会暂停以组织思路**
-2. **对多步骤问题采取结构化的方法**
-3. **更彻底和一致地验证政策合规性**
-4. **在决定下一步之前仔细分析工具输出**
-5. **在长时间互动中保持更好的上下文意识**
+When Claude uses the "think" tool:
+1. It **pauses to organize thoughts** before continuing a complex reasoning chain
+2. It **creates a structured approach** to multi-step problems
+3. It **verifies policy compliance** more thoroughly and consistently
+4. It **carefully analyzes tool outputs** before deciding next steps
+5. It **maintains better context awareness** across long interactions
 
-### 何时使用 Think 工具
+### When to Use the Think Tool
 
-"think" 工具在以下情况下特别有价值：
+The "think" tool is especially valuable when:
 
-1. **与其他 MCP 工具一起工作** - 非常适合分析来自数据库、文件系统或 API 的输出
-2. **遵循复杂的政策** - 适用于客户服务、法律或合规情况
-3. **做出顺序决策** - 适用于后续步骤依赖于先前步骤的工作流程
-4. **处理网络搜索结果** - 帮助 Claude 从多个来源综合信息
-5. **解决编码挑战** - 提高软件工程任务的成功率
+1. **Working with other MCP tools** - Great for analyzing outputs from databases, filesystems, or APIs
+2. **Following complex policies** - Perfect for customer service, legal, or compliance scenarios
+3. **Making sequential decisions** - Ideal for workflows where later steps depend on earlier ones
+4. **Processing web search results** - Helps Claude synthesize information from multiple sources
+5. **Solving coding challenges** - Improves success rates on software engineering tasks
 
-## 用于获得最佳结果的系统提示
+## System Prompt for Optimal Results
 
-Anthropic 的研究表明，**将“思考”工具与优化的提示相结合可以带来最强的性能提升**。为了获得最佳效果，请在与 Claude 交互时添加以下优化系统提示：
+Anthropic's research shows that **combining the "think" tool with optimized prompting delivers the strongest performance improvements**. For best results, add the following optimized system prompt to your Claude interaction:
 
-### 对于 Claude 桌面版（自定义指令）
+### For Claude Desktop (Custom Instructions)
 
-1. 转到设置 > 自定义指令
-2. 添加以下系统提示：
+1. Go to Settings > Custom Instructions
+2. Add the following system prompt:
 
 ```
 You have access to a "think" tool that provides a dedicated space for structured reasoning. Using this tool significantly improves your performance on complex tasks.
@@ -103,13 +103,13 @@ When using the think tool:
 Remember that using the think tool has been shown to improve your performance by up to 54% on complex tasks, especially when working with multiple tools or following detailed policies.
 ```
 
-### 对于 Cursor（全局规则）
+### For Cursor (Global Rules)
 
-要将思考工具作为 Cursor 规则添加：
+To add the Think Tool as a Cursor Rule:
 
-1. 打开 Cursor 设置
-2. 导航到常规 > AI 规则
-3. 添加一条新规则，内容如下：
+1. Open Cursor Settings
+2. Navigate to General > Rules for AI
+3. Add a new rule with the following content:
 
 ```
 After any context change (viewing new files, running commands, or receiving tool outputs), use the "mcp_think" tool to organize your reasoning before responding.
@@ -132,32 +132,32 @@ When using the think tool:
 The think tool has been proven to improve performance by up to 54% on complex tasks, especially when working with multiple tools or following detailed policies.
 ```
 
-## 手动安装
+## Manual Installation
 
-如果您希望在本地运行服务器：
+If you prefer to run the server locally:
 
-1. **克隆仓库**：
+1. **Clone the repository**:
 ```bash
    git clone https://github.com/PhillipRt/think-mcp-server.git
    cd think-mcp-server
 ```
 
-2. **安装依赖**：
+2. **Install dependencies**:
 ```bash
    npm install
 ```
 
-3. **构建并运行**：
+3. **Build and run**:
 ```bash
    npm run build
    npm start
 ```
 
-4. **手动配置 Claude 桌面版**：
-   - 查找或创建配置文件：
+4. **Configure Claude Desktop manually**:
+   - Find or create the configuration file:
      - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-     - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-   - 添加您的服务器配置：
+     - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
+   - Add your server configuration:
 
 ```json
    {
@@ -170,26 +170,26 @@ The think tool has been proven to improve performance by up to 54% on complex ta
    }
 ```
 
-## 许可证
+## License
 
 MIT License
 
-**官方网站：** [https://github.com/PhillipRt/think-mcp-server](https://github.com/PhillipRt/think-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/PhillipRt/think-mcp-server](https://github.com/PhillipRt/think-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `developer tools`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/think-mcp-server/dist/server.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/think-mcp-server/dist/server.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/philliprt-think.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/philliprt-think.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

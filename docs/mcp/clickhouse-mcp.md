@@ -1,11 +1,11 @@
 ---
-title: "ClickHouse MCP 服务器"
-description: "ClickHouse MCP Server An MCP server for ClickHouse. Features ClickHouse Tools runquery Execute SQL queries on your ClickHouse cluster. Input: query (string): The SQL query to execute. Queries run in read-only mode by def"
+title: "ClickHouse MCP Server"
+description: "ClickHouse MCP Server An MCP server for ClickHouse. Features ClickHouse Tools runquery Execute SQL queries on your ClickHouse cluster. Input: query (string): The SQL query to execute. Queries run in r…"
 ---
 
-# ClickHouse MCP 服务器
+# ClickHouse MCP Server
 
-ClickHouse MCP Server An MCP server for ClickHouse. Features ClickHouse Tools runquery Execute SQL queries on your ClickHouse cluster. Input: query (string): The SQL query to execute. Queries run in read-only mode by def
+ClickHouse MCP Server An MCP server for ClickHouse. Features ClickHouse Tools runquery Execute SQL queries on your ClickHouse cluster. Input: query (string): The SQL query to execute. Queries run in r…
 
 # ClickHouse MCP Server
 
@@ -523,22 +523,22 @@ Configuration is split into **independent** groups. Mixing them up is a common c
 
 #### ClickHouse database connecti
 
-**官方网站：** [https://github.com/ClickHouse/mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ClickHouse/mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`database`, `clickhouse`, `sql`, `developer tools`, `official`
+- Categories: `data`, `development`
+- Tags: `database`, `clickhouse`, `sql`, `developer tools`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run mcp-clickhouse`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run mcp-clickhouse`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/clickhouse-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/clickhouse-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

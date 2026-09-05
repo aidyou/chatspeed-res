@@ -1,19 +1,19 @@
 ---
-title: "Claude实时语音服"
-description: "一种模型上下文协议服务器，使像 Claude 这样的人工智能助手能够通过 Twilio 和 OpenAI 的语音模型发起和管理实时语音通话。"
+title: "voice-call-mcp-server"
+description: "A Model Context Protocol server that enables AI assistants like Claude to initiate and manage real-time voice calls using Twilio and OpenAI's voice models."
 ---
 
-# Claude实时语音服
+# voice-call-mcp-server
 
-一种模型上下文协议服务器，使像 Claude 这样的人工智能助手能够通过 Twilio 和 OpenAI 的语音模型发起和管理实时语音通话。
+A Model Context Protocol server that enables AI assistants like Claude to initiate and manage real-time voice calls using Twilio and OpenAI's voice models.
 
-# 语音通话 MCP 服务器
+# Voice Call MCP Server
 
-这是一个模型上下文协议 (MCP) 服务器，它使 Claude 和其他 AI 助手能够使用 Twilio 和 OpenAI（GPT-4o 实时模型）发起和管理语音通话。
+A Model Context Protocol (MCP) server that enables Claude and other AI assistants to initiate and manage voice calls using Twilio and OpenAI (GPT-4o Realtime model).
 
-您可以将此作为基础来启动您的 AI 语音通话探索，节省时间并在其基础上开发更多功能。
+Use this as a base to kick-start your AI-powered voice calling explorations, save time and develop additional functionality on top of it.
 
-## 序列图
+## Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -36,71 +36,71 @@ sequenceDiagram
 until the call ends
 ```
 
-## 特性
+## Features
 
-- 通过 Twilio 发起外拨电话 📞
-- 使用 GPT-4o 实时模型实时处理通话音频 🎙️
-- 通话过程中实时切换语言 🌐
-- 针对常见通话场景的预构建提示（如餐厅预订） 🍽️
-- 自动使用 ngrok 进行公共 URL 隧道传输 🔄
-- 安全处理凭证 🔒
+- Make outbound phone calls via Twilio 📞
+- Process call audio in real-time with GPT-4o Realtime model 🎙️
+- Real-time language switching during calls 🌐
+- Pre-built prompts for common calling scenarios (like restaurant reservations) 🍽️
+- Automatic public URL tunneling with ngrok 🔄
+- Secure handling of credentials 🔒
 
-## 为什么选择 MCP？
+## Why MCP?
 
-模型上下文协议 (MCP) 桥接了 AI 助手与现实世界行动之间的鸿沟。通过实现 MCP，这个服务器允许像 Claude 这样的 AI 模型：
+The Model Context Protocol (MCP) bridges the gap between AI assistants and real-world actions. By implementing MCP, this server allows AI models like Claude to:
 
-1. 代表用户发起实际电话通话
-2. 处理并响应实时音频对话
-3. 执行需要语音通信的复杂任务
+1. Initiate actual phone calls on behalf of users
+2. Process and respond to real-time audio conversations
+3. Execute complex tasks requiring voice communication
 
-这种开源实现提供了透明性和可定制性，让开发者可以扩展功能的同时保持对其数据和隐私的控制。
+This open-source implementation provides transparency and customizability, allowing developers to extend functionality while maintaining control over their data and privacy.
 
-## 要求
+## Requirements
 
 - Node.js >= 22
-  - 如果您需要更新 Node.js，我们建议使用 `nvm`（Node 版本管理器）：
+  - If you need to update Node.js, we recommend using `nvm` (Node Version Manager):
 ```bash
     nvm install 22
     nvm use 22
 ```
-- 具有 API 凭证的 Twilio 账户
-- OpenAI API 密钥
-- Ngrok 认证令牌
+- Twilio account with API credentials
+- OpenAI API key
+- Ngrok Authtoken
 
-## 安装
+## Installation
 
-### 手动安装
+### Manual Installation
 
-1. 克隆仓库
+1. Clone the repository
 ```bash
    git clone https://github.com/lukaskai/voice-call-mcp-server.git
    cd voice-call-mcp-server
 ```
 
-2. 安装依赖并构建
+2. Install dependencies and build
 ```bash
    npm install
    npm run build
 ```
 
-## 配置
+## Configuration
 
-服务器需要以下环境变量：
+The server requires several environment variables:
 
-- `TWILIO_ACCOUNT_SID`: 您的 Twilio 账户 SID
-- `TWILIO_AUTH_TOKEN`: 您的 Twilio 授权令牌
-- `TWILIO_NUMBER`: 您的 Twilio 号码
-- `OPENAI_API_KEY`: 您的 OpenAI API 密钥
-- `NGROK_AUTHTOKEN`: 您的 ngrok 认证令牌
-- `RECORD_CALLS`: 设置为 "true" 以录制通话（可选）
+- `TWILIO_ACCOUNT_SID`: Your Twilio account SID
+- `TWILIO_AUTH_TOKEN`: Your Twilio auth token
+- `TWILIO_NUMBER`: Your Twilio number
+- `OPENAI_API_KEY`: Your OpenAI API key
+- `NGROK_AUTHTOKEN`: Your ngrok authtoken
+- `RECORD_CALLS`: Set to "true" to record calls (optional)
 
-### Claude Desktop 配置
+### Claude Desktop Configuration
 
-要使用 Claude Desktop 与此服务器配合，请在配置文件中添加以下内容：
+To use this server with Claude Desktop, add the following to your configuration file:
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+**Windows**: `%APPDATA%Claudeclaude_desktop_config.json`
 
 ```json
 {
@@ -120,98 +120,98 @@ until the call ends
 }
 ```
 
-之后，重启 Claude Desktop 以重新加载配置。
-如果连接成功，您应该能在 🔨 菜单下看到“语音通话”选项。
+After that, restart Claude Desktop to reload the configuration. 
+If connected, you should see Voice Call under the 🔨 menu.
 
-## 与 Claude 的示例交互
+## Example Interactions with Claude
 
-这里有一些通过 Claude 与服务器自然交互的方式：
+Here are some natural ways to interact with the server through Claude:
 
-1. 简单呼叫：
+1. Simple call:
 ```
 Can you call +1-123-456-7890 and let them know I'll be 15 minutes late for our meeting?
 ```
 
-2. 餐厅预订：
+2. Restaurant reservation:
 ```
 Please call Delicious Restaurant at +1-123-456-7890 and make a reservation for 4 people tonight at 7:30 PM. Please speak in German.
 ```
 
-3. 预约安排：
+3. Appointment scheduling:
 ```
 Please call Expert Dental NYC (+1-123-456-7899) and reschedule my Monday appointment to next Friday between 4–6pm.
 ```
 
-## 重要说明
+## Important Notes
 
-1. **电话号码格式**：所有电话号码必须采用E.164格式（例如，+11234567890）
-2. **速率限制**：请注意您的Twilio和OpenAI账户的速率限制和费用
-3. **语音对话**：AI将实时处理自然对话
-4. **通话时长**：请注意通话时长会影响OpenAI API和Twilio的成本
-5. **公开暴露**：请注意ngrok隧道会以随机URL的形式公开您的服务器供Twilio访问（尽管受随机密钥保护）
+1. **Phone Number Format**: All phone numbers must be in E.164 format (e.g., +11234567890)
+2. **Rate Limits**: Be aware of your Twilio and OpenAI account's rate limits and pricing
+3. **Voice Conversations**: The AI will handle natural conversations in real-time
+4. **Call Duration**: Be mindful of call durations as they affect OpenAI API and Twilio costs
+5. **Public Exposure**: Be aware that the ngrok tunnel exposes your server publicly for Twilio to reach it (though with a random URL and protected by a random secret)
 
-## 故障排除
+## Troubleshooting
 
-常见的错误信息及解决方案：
+Common error messages and solutions:
 
-1. "电话号码必须为E.164格式"
-   - 确保电话号码以"+"开头，并包含国家代码
+1. "Phone number must be in E.164 format"
+   - Make sure the phone number starts with "+" and the country code
 
-2. "无效凭据"
-   - 请仔细检查您的TWILIO_ACCOUNT_SID和TWILIO_AUTH_TOKEN。您可以从[Twilio控制台](https://console.twilio.com)复制它们
+2. "Invalid credentials"
+   - Double-check your TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN. You can copy them from the [Twilio Console](https://console.twilio.com)
 
-3. "OpenAI API错误"
-   - 验证您的OPENAI_API_KEY是否正确且有足够的信用额度
+3. "OpenAI API error"
+   - Verify your OPENAI_API_KEY is correct and has sufficient credits
 
-4. "ngrok隧道启动失败"
-   - 确保您的NGROK_AUTHTOKEN有效且未过期
+4. "Ngrok tunnel failed to start"
+   - Ensure your NGROK_AUTHTOKEN is valid and not expired
 
-5. "OpenAI实时系统无法检测到语音输入结束，或存在延迟。"
-   - 有时，Twilio与接收方网络运营商之间可能存在语音编码问题。尝试使用不同的接收方。
+5. "OpenAI Realtime does not detect the end of voice input, or is lagging."
+   - Sometimes, there might be voice encoding issues between Twilio and the receiver's network operator. Try using a different receiver.
 
-## 贡献
+## Contributing
 
-欢迎贡献！我们希望改进的一些领域包括：
+Contributions are welcome! Here are some areas we're looking to improve:
 
-- 实现对当前实现之外的多种AI模型的支持
-- 添加数据库集成，以便本地存储对话历史并使其可用于AI上下文
-- 改进延迟和响应时间，以增强通话体验
-- 增强错误处理和恢复机制
-- 添加更多针对常见场景的预构建对话模板
-- 实施更完善的呼叫监控和分析功能
+- Implement support for multiple AI models beyond the current implementation
+- Add database integration to store conversation history locally and make it accessible for AI context
+- Improve latency and response times to enhance call experiences
+- Enhance error handling and recovery mechanisms
+- Add more pre-built conversation templates for common scenarios
+- Implement improved call monitoring and analytics
 
-如果您想做出贡献，请在提交拉取请求前先打开一个问题来讨论您的想法。
+If you'd like to contribute, please open an issue to discuss your ideas before submitting a pull request.
 
-## 许可证
+## License
 
-本项目根据MIT许可证发布 - 详情请参阅LICENSE文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 安全性
+## Security
 
-请不要在GitHub的问题或拉取请求中包含任何敏感信息（如电话号码或API凭证）。此服务器处理敏感通信；请负责任地部署它，并确保所有凭证的安全。
+Please do not include any sensitive information (like phone numbers or API credentials) in GitHub issues or pull requests. This server handles sensitive communications; deploy it responsibly and ensure all credentials are kept secure.
 
-## 是时候迎接新使命了吗？
+## Time For a New Mission?
 
-我们正在招聘工程师，在语音AI前沿进行建设——并将其融入下一代电信服务中。
+We’re hiring engineers to build at the frontier of voice AI — and bake it into a next-gen telco.
 
-感兴趣吗？前往[careers.popcorn.space](https://careers.popcorn.space/apply)了解更多 🍿 !
+Curious? Head to [careers.popcorn.space](https://careers.popcorn.space/apply) 🍿 !
 
-**官方网站：** [https://github.com/lukaskai/voice-call-mcp-server](https://github.com/lukaskai/voice-call-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/lukaskai/voice-call-mcp-server](https://github.com/lukaskai/voice-call-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `speech processing`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `speech processing`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/your/mcp-new/dist/start-all.cjs`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/your/mcp-new/dist/start-all.cjs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/popcornspace-voice-call.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/popcornspace-voice-call.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

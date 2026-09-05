@@ -1,11 +1,11 @@
 ---
-title: "股票量化价位分析MCP"
-description: "该服务基于FastMCP框架构建，提供股票价格的量化分析能力。它为指定的股票计算Q级价格水平（保守级、正常级和极端级），以辅助投资决策。"
+title: "stock_quant_mcp"
+description: "This service is built based on the FastMCP framework, providing stock price quantitative analysis capabilities. It calculates Q-level price levels (conservative level, normal level, and extreme level)…"
 ---
 
-# 股票量化价位分析MCP
+# stock_quant_mcp
 
-该服务基于FastMCP框架构建，提供股票价格的量化分析能力。它为指定的股票计算Q级价格水平（保守级、正常级和极端级），以辅助投资决策。
+This service is built based on the FastMCP framework, providing stock price quantitative analysis capabilities. It calculates Q-level price levels (conservative level, normal level, and extreme level)…
 
 ## Overview
 This service is built based on the FastMCP framework, providing stock price quantitative analysis capabilities. It calculates Q-level price levels (conservative level, normal level, and extreme level) for specified stocks to assist investment decisions.
@@ -37,28 +37,28 @@ Calculates the Q-level price levels for a specified stock, including the followi
 #### Return Format
 ```json
 {
-  "保守位": "calculation result",
-  "正常位": "calculation result",
-  "极限位": "calculation result"
+  "Conservative Level": "calculation result",
+  "Normal Level": "calculation result",
+  "Extreme Level": "calculation result"
 } ```
 ```
 
-**官方网站：** [https://github.com/virgo777/qMCP](https://github.com/virgo777/qMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/virgo777/qMCP](https://github.com/virgo777/qMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`, `data`
-- 标签：`finance`, `research and data`
+- Categories: `finance`, `data`
+- Tags: `finance`, `research and data`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xiaohua-stock-quant.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xiaohua-stock-quant.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

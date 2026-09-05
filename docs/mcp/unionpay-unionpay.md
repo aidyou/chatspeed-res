@@ -1,65 +1,69 @@
 ---
-title: "银联MCP支付服务"
-description: "银联开放平台提供的MCP服务器，可以帮助您轻松地将银联开放平台的交易创建、查询、退款等能力集成到您的LLM应用中，让您进一步开发带有支付功能的智能工具。"
+title: "unionpay-mcp-server"
+description: "The MCP Server provided by the UnionPay Open Platform allows you to easily integrate transaction creation, query, refund, and other capabilities offered by the UnionPay Open Platform into your LLM app…"
 ---
 
-# 银联MCP支付服务
+# unionpay-mcp-server
 
-银联开放平台提供的MCP服务器，可以帮助您轻松地将银联开放平台的交易创建、查询、退款等能力集成到您的LLM应用中，让您进一步开发带有支付功能的智能工具。
+The MCP Server provided by the UnionPay Open Platform allows you to easily integrate transaction creation, query, refund, and other capabilities offered by the UnionPay Open Platform into your LLM app…
 
-## 1. 简介 
-unionpay-mcp-server是银联基于MCP协议为AI智能体提供的支付工具（MCP Server），各类支持MCP协议的智能体应用均可安全、便捷地接入银联支付能力。以下是一个行程规划智能体为用户提供行程规划和酒店预定的示例：
-传统方式下，用户需要自主查询酒店、对比酒店价格，并完成预订和支付。 智能体模式下，用户只需在智能体应用中输入出行需求（如出发地、目的地、出行时间、预算偏好等），智能体即可自动分析需求，并推荐最佳酒店选择方案，用户确认后，智能体通过银联MCP Server生成支付订单，待用户支付后，智能体完成线上酒店预订操作，并将订单信息同步给用户。整个流程无需人工反复查询和操作，高效便捷。
+## 1. Introduction
 
-## 2. 使用和配置 
+unionpay-mcp-server is a payment tool (MCP Server) provided by UnionPay for AI agents based on the MCP protocol. All kinds of agent applications that support the MCP protocol can access UnionPay payment capabilities safely and conveniently. The following is an example of a trip planning agent providing hotel reservations for users:
+In the traditional way, users need to independently query hotels, compare hotel prices, and complete reservations and payments, which takes up a lot of time and energy. In the agent mode, users only need to enter travel needs (such as departure point, destination, travel time, budget preferences, etc.) in the agent application, and the agent can automatically analyze the needs and recommend the best hotel options. After the user confirms, the order is automatically placed and the payment link is generated through the UnionPay MCP Server. After the user completes the payment, the agent completes the online hotel reservation operation and synchronizes the order information to the user in real time. The entire process does not require manual repeated inquiries and operations, which is efficient and convenient.
 
-使用前，需先注册成为银联网络商户，并开通业务权限，获取商户私钥。之后，即可在主流的支持MCP的客户端应用上使用银联MCP Server中的各类支付工具。
+## 2. Usage and Configuration
 
-### 在 Cursor 中使用
+Before using, users must first register as a merchant receiving payment on the UnionPay Open Platform and obtain the merchant private key. After that, users can use various payment tools in the UnionPay MCP Server on mainstream client applications that support MCP.
 
-在 Cursor 项目中的 `.cursor/mcp.json` 加入如下配置：
+### Use in Cursor
+
+Add the following configuration to `.cursor/mcp.json` in the Cursor project:
 
 ```json
 {
   "mcpServers": {
     "unionpay-mcp-server": {
-	"command": "npx",
-	"args": [
-		"-y",
-		"unionpay-mcp-server"
-	],
-	"env": {
-		"UP_ACQ_INS_CODE": "",
-		"UP_ACCESS_TYPE": "",
-		"UP_MER_ID": "",
-		"UP_TR_ID": "
+	   "command": "npx",
+	   "args": ["-y","unionpay-mcp-server"],
+	   "env": {
+		   "UP_ACQ_INS_CODE": "
 ",
-		"UP_TOKEN_TYPE": "",
-		"UP_FRONT_URL": "",
-		"UP_FRONT_FAIL_URL": "",
-		"UP_BACK_URL": "",
-		"UP_SIGN_CERT_PATH": "",
-		"UP_SIGN_CERT_PWD": "",
-		"UP_VALIDATE_CERT_DIR": "",
-		"UP_NEED_ENCRYPT": "",
-		"UP_ENCRYPT_CERT_PATH": "",
-		"UP_DECRYPT_CERT_PATH": "",
-		"UP_ENCRYPT_CERT_PWD": "",
-		"UP_LOG_DIR": "日志打印地址，选填，默认在HOME目录打印日志",
-		"UP_URL": "",
-		"UP_TIME_OUT": "",
-		"UP_AVAILABLE_TOOLS": ""
-	}
-    },
-    "其他工具": { 
+		   "UP_ACCESS_TYPE": "",
+		   // Merchant ID
+		   "UP_MER_ID": "",
+		   "UP_TR_ID": "
+",
+		   "UP_TOKEN_TYPE": "",
+		   "UP_FRONT_URL": "",
+		   "UP_FRONT_FAIL_URL": "",
+		   "UP_BACK_URL": "
+",
+		   "UP_SIGN_CERT_PATH": "
+",
+		   "UP_SIGN_CERT_PWD": "",
+		   "UP_VALIDATE_CERT_DIR": "
+",
+		   "UP_NEED_ENCRYPT": "",
+		   "UP_ENCRYPT_CERT_PATH": "
+",
+		   "UP_DECRYPT_CERT_PATH": "
+",
+		   "UP_ENCRYPT_CERT_PWD": "
+",
+		   "UP_LOG_DIR": "Log output directory, optional, logs are output to HOME directory by default"
+	         }
+     },
+    "Other tools": {
       "...": "..."
     }
   }
 }
 ```
 
-### 在 Cline 中使用 
-在 Cline 设置中找到 `cline_mcp_settings.json` 配置文件，并加入如下配置：
+### Use in Cline
+
+Find the `cline_mcp_settings.json` configuration file in Cline settings and add the following configuration:
 
 ```json
 {
@@ -68,48 +72,56 @@ unionpay-mcp-server是银联基于MCP协议为AI智能体提供的支付工具�
       "command": "npx",
       "args": ["-y", "unionpay-mcp-server"],
       "env": {
-		"UP_ACQ_INS_CODE": "",
-		"UP_ACCESS_TYPE": "",
-		"UP_MER_ID": "",
-		"UP_TR_ID": "
+		    "UP_ACQ_INS_CODE": "
 ",
-		"UP_TOKEN_TYPE": "",
-		"UP_FRONT_URL": "",
-		"UP_FRONT_FAIL_URL": "",
-		"UP_BACK_URL": "",
-		"UP_SIGN_CERT_PATH": "",
-		"UP_SIGN_CERT_PWD": "",
-		"UP_VALIDATE_CERT_DIR": "",
-		"UP_NEED_ENCRYPT": "",
-		"UP_ENCRYPT_CERT_PATH": "",
-		"UP_DECRYPT_CERT_PATH": "",
-		"UP_ENCRYPT_CERT_PWD": "",
-		"UP_LOG_DIR": "日志打印地址，选填，默认在HOME目录打印日志",
-		"UP_URL": "",
-		"UP_TIME_OUT": "",
-		"UP_AVAILABLE_TOOLS": ""
+		    "UP_ACCESS_TYPE": "",
+		   // Merchant ID
+		   "UP_MER_ID": "",
+		   "UP_TR_ID": "
+",
+		   "UP_TOKEN_TYPE": "",
+		   "UP_FRONT_URL": "",
+		   "UP_FRONT_FAIL_URL": "",
+		   "UP_BACK_URL": "
+",
+		   "UP_SIGN_CERT_PATH": "
+",
+		   "UP_SIGN_CERT_PWD": "",
+		   "UP_VALIDATE_CERT_DIR": "
+",
+		   "UP_NEED_ENCRYPT": "",
+		   "UP_ENCRYPT_CERT_PATH": "
+",
+		   "UP_DECRYPT_CERT_PATH": "
+",
+		   "UP_ENCRYPT_CERT_PWD": "
+",
+		   "UP_LOG_DIR": "Log output path, optional, defaults to HOME directory"
       },
       "disable": false,
       "autoApprove": []
     },
-    "其他工具": { 
+    "Other tools": {
       "...": "..."
     }
   }
 }
 ```
 
-### 在其他 MCP Client中使用 
+### Use in other MCP Clients
 
-在其它支持MCP的客户端中，通过合理配置 Server 进程启动方式`npx -y unionpay-mcp-server` ，并按下文介绍设置环境参数即可使用。
+You can also use it in any other MCP Client, configure the Server process startup method `npx -y unionpay-mcp-server` appropriately, and set the environment parameters as described below.
 
-### 所有参数
+### All parameters
 
-银联MCP Server通过环境变量接收参数。
+UnionPay MCP Server receives parameters through environment variables.
+UnionPay open platform configuration:
 
 ```json
- {
-		"UP_ACQ_INS_CODE": "",
+UnionPay open platform configuration：
+{
+		"UP_ACQ_INS_CODE": "
+",
 		"UP_ACCESS_TYPE": "",
 		"UP_MER_ID": "",
 		"UP_TR_ID": "
@@ -117,172 +129,82 @@ unionpay-mcp-server是银联基于MCP协议为AI智能体提供的支付工具�
 		"UP_TOKEN_TYPE": "",
 		"UP_FRONT_URL": "",
 		"UP_FRONT_FAIL_URL": "",
-		"UP_BACK_URL": "",
-		"UP_SIGN_CERT_PATH": "",
+		"UP_BACK_URL": "
+",
+		"UP_SIGN_CERT_PATH": "
+",
 		"UP_SIGN_CERT_PWD": "",
-		"UP_VALIDATE_CERT_DIR": "",
+		"UP_VALIDATE_CERT_DIR": "
+",
 		"UP_NEED_ENCRYPT": "",
-		"UP_ENCRYPT_CERT_PATH": "",
-		"UP_DECRYPT_CERT_PATH": "",
-		"UP_ENCRYPT_CERT_PWD": "",
-		"UP_LOG_DIR": "日志打印地址，选填，默认在HOME目录打印日志",
-		"UP_URL": "",
-		"UP_TIME_OUT": "",
-		"UP_AVAILABLE_TOOLS": ""
-}
+		"UP_ENCRYPT_CERT_PATH": "
+",
+		"UP_DECRYPT_CERT_PATH": "
+",
+		"UP_ENCRYPT_CERT_PWD": "
+",
+      }
+
+MCP Server Configuration：
+    "UP_LOG_DIR": "Log output path, optional, defaults to HOME directory"
 ```
 
-MCP Server配置：
+## 3. Debugging with MCP Inspector
 
-	"UP_LOG_DIR": "日志打印地址，选填，默认在HOME目录打印日志"
+Developers can use MCP Inspector to debug and understand the functions of UnionPay MCP Server. The specific operations are as follows:
 
-## 3. 使用 MCP Inspector 调试
+1. Set various environment variables through export;
+2. Execute npx -y @modelcontextprotocol/inspector && npx -y unionpay-mcp-server to start MCP Inspector;
+3. Debug in MCP Inspector WebUI.
 
-开发人员可使用 MCP Inspector 来调试和了解银联 MCP Server 的各项功能，具体操作如下： 
+## 4. Supported capabilities
 
-1.通过export设置各环境变量； 
+The following table lists the payment tools available in this version of MCP Server. For specific usage of the capabilities provided in this version, please refer to the UnionPay Open Platform Contract Payment Products.（https://open.unionpay.com/tjweb/acproduct/list?apiSvcId=3301）
 
-2.执行 npx -y @modelcontextprotocol/inspector && npx -y unionpay-mcp-serve，启动 MCP Inspector； 
+In addition, when platform merchants and acquiring institutions access, they need to send the following fields when calling other tools besides query-unionpay-payment:
 
-3.在 MCP Inspector WebUI 中进行调试。
+| Name       | Description                     | Parameters                            |
+| ---------- | ------------------------------- | ------------------------------------- |
+| merCatCode | Merchant Category               | Required for acquiring access         |
+| merName    | Merchant Name                   | Required for acquiring access         |
+| merAbbr    | Merchant Abbreviation           | Required for acquiring access         |
+| subMerId   | Secondary Merchant Code         | Required for platform merchant access |
+| subMerName | Secondary Merchant Name         | Required for platform merchant access |
+| subMerAbbr | Secondary Merchant Abbreviation | Required for platform merchant access |
 
-## 4. 支持的能力   
+## 5. How to choose the right payment method
 
-下表列出了本版本MCP Server可用的支付工具，本版本提供能力具体使用方法参考银联开放平台签约支付产品（ https://open.unionpay.com/tjweb/acproduct/list?apiSvcId=3301 ）
+During the development process, in order to allow LLM to more accurately select the appropriate payment method, it is recommended to clearly explain the product usage scenario in the prompt:
+Web payment: Applicable to scenarios where users see the payment interface on the computer screen. If the intelligent application is mainly run on the desktop (PC), you can explain in the prompt: "My application is a desktop software/PC website, and the payment QR code needs to be displayed on the computer."
+Mobile payment: Applicable to scenarios where users initiate payment in the mobile browser. If the application is a mobile H5 page or mobile website, you can explain in the prompt: "My page is a mobile web page, and you need to initiate online payment directly on the phone."
+More MCP payment tools are under development, so stay tuned.
 
-| 名称 | 描述 | 参数 | 输出 |
-|:-----:|:----:|:----:|:----:|
-| `create-contract-order-unionpay-payment` | 创建一笔签约支付订单，并返回授权签约链接。 | - orderId: 交易订单号,格式:8至40位字母数字 
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- certifTp: 证件类型,格式:2位数字
-- certifId: 证件号码,格式:1至20位字母数字
-- customerNm: 用户姓名,格式:1至120字母数字
-- phoneNo: 手机号,格式:1至20位手机号
-- riskRateInfo: 风险信息域的JSON字符串格式 | -  code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- contractUrl: 签约url |
-| `create-contract-unionpay-payment` | 发起签约交易，并返回签约信息,该交易是签约下单的后续交易，是支付的前序交易，且签约交易只需做一次，可以实现多次支付。 | - orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
- - origOrderId: 签约下单交易请求的订单号orderId
-- origTxnTime: 签约下单交易应答的txnTime
-- tokenType: token类型,格式:2位数字
- | code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- tokenInfo: 签约成功后返回。token：签约协议ID， tokenEnd：标记失效时间  
-- cardContractInfo: 银行卡签约信息
-- protocolFlag: 电子协议签约标识|
-| `contract-pay-sms` | 创建一笔支付短信，当需要在支付前做短信验证时调用此接口| - orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- token: 签约交易返回的token
-- txnAmt: 交易金额
-- currencyCode: 交易币种,默认156人民币 | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- contractUrl: 签约url|
-| `pay-contract-order-unionpay-payment` | 创建一笔签约支付订单，并返回用户支付结果 | orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- certifTp: 证件类型,格式:2位数字
-- certifId: 证件号码,格式:1至20位字母数字
-- customerNm: 用户姓名,格式:1至120字母数字
-- phoneNo: 手机号,格式:1至20位手机号
-- riskRateInfo: 风险信息域的JSON字符串格式 
-- currencyCode: 交易币种,默认156人民币 
-- token:  签约交易返回的token  | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- orderId: 支付订单ID|
-| `refund-contract-order-unionpay-payment` | 创建一笔退货订单，并返回退货结果| - orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
- - origOrderId: 支付交易请求的订单号orderId
-- origTxnTime: 交易应答的txnTime
- - txnAmt: 需要退货的金额
- | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- orderId: 支付订单ID |
-| `query-unionpay-payment` | 发起查询交易，支持签约交易查询、支付交易查询、退款等查询类交易| - orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- txnAmt: 退货金额 
-- transStatus: 交易状态
-- tokenInfo: token域信息
-- cardContractInfo: 银行卡签约信息 
-- origBizMethod: 查询订单对应的原始方法
-- origTn: 查询订单对应的原始订单号  |
-| `cancel-contract-order-unionpay-payment` | 创建一笔解约订单，并返回解约结果,该交易是签约的反向交易 | - orderId: 交易订单号,格式:8至40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- token: 签约交易返回的token | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- orderId: 支付订单ID |
-| `apply-unionpay-qrCode` | 申请消费二维码,返回qrCode | - orderId: 交易订单号,格式:8~40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- payTimeout: 二维码有效时间 
-- txnAmt: 交易金额,单位元| - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- qrCode: 返回的二维码链接 |
-| `refund-unionpay-qrCode` | 对之前二维码交易进行退货，仅30天之内交易可退货，多次退货累计退货金额不超过原始交易金额 | - orderId: 交易订单号,格式:8~40位字母数字
-- txnTime: 交易时间,格式:yyyyMMddHHmmss
-- origTxnTime: 原始交易的交易时间,格式:YYYYMMDDhhmmss
-- origOrderId: 原始交易的订单号,格式:8~40位字母数字
-- origQryId: 原始交易的查询ID,格式:查询订单请求返回的若干位数字
-- txnAmt: 待退货金额,单位元 | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
-- orderId: 支付订单ID |
-| `query-unionpay-QrCode-trade` | 发起二维码类查询交易，支持申码支付交易查询、退款等查询类交易 | - orderId: 被查询交易订单号,原交易订单号,当使用原交易orderId和txnTime查询时必填
-- txnTime: 被查询交易交易时间,原交易时间,当使用原交易orderId和txnTime查询时必填
-- queryId: 被查询交易流水号,当使用原交易流水号查询时必填 | - code: 系统响应码 
-- msg: 接口响应信息
-- txnTime: 交易时间
- |
+##  6. Notes
 
-此外对于平台商户和收单机构接入时候，需要额外在除query-unionpay-payment外的其他工具调用时候，上送如下字段:
+* UnionPay MCP payment service is currently in the early stages of release, and related capabilities and supporting facilities are being continuously improved. If you have any questions or suggestions during use, please contact us.
+* When developing any intelligent service using MCP Server and providing it to users, please understand the necessary security knowledge to prevent security risks such as prompt attacks unique to AI applications and arbitrary command execution of MCP Server.
 
-| 名称 | 描述 | 参数 |
-|-------|------|------|
-merCatCode| 商户类别       |收单接入时必填
-merName    |商户名称       |收单接入时必填
-merAbbr    |商户简称       |收单接入时必填
-subMerId   |二级商户代码   |平台商户接入时必填
-subMerName| 二级商户名称   |平台商户接入时必填
-subMerAbbr |二级商户简称   |平台商户接入时必填 
-## 5. 如何选择合适的支付方式  
-在开发过程中，为了让 LLM 能更准确地选择合适的支付方式，建议在 Prompt 中清晰说明产品使用场景：
-网页支付：适用于用户在电脑屏幕上看到支付界面的场景。如果智能体应用主要运行在桌面端（PC），可以在Prompt中说明："我的应用是桌面软件/PC网站，需要在电脑上展示支付二维码"。
-手机支付：适用于用户在手机浏览器内发起支付的场景。如果应用是手机H5页面或移动端网站，可在Prompt中说明："我的页面是手机网页，需要直接在手机上发起在线付款"。
-更多MCP支付工具正在研发中，敬请期待。
+##  7. Terms of Use
 
-## 6. 注意事项  
-* 最新使用指南请以银联开放平台-银联MCP智能支付服务解决方案为准（ https://open.unionpay.com/tjweb/solution/detail?solId=613  ）
-* 银联MCP支付服务目前处于发布早期阶段，相关能力和配套设施正在持续完善中。在使用过程中，如有相关问题或建议，欢迎联系我们。
-* 在开发任何使用 MCP Server的智能体服务，并提供给用户使用时，请了解必要的安全知识，防范AI应用特有的Prompt攻击、MCP Server任意命令执行等安全风险。
-* 我们提供了MD5校验机制，参见'dist/checksums.md5'文件
+This tool is part of the UnionPay open platform capabilities. During use, please comply with China UnionPay Developer Usage Guidelines
+(https://open.unionpay.com/tjweb/support/doc/online/3/122), the open platform "China UnionPay Service Agreement" (https://user.95516.com/pages/misc/newAgree.html) and relevant business behavior regulations.
 
-## 7. 使用协议  
-本工具是银联开放平台能力的组成部分。使用期间，请遵守中国银联开发者使用规范
-（ https://open.unionpay.com/tjweb/support/doc/online/3/122 ）、开放平台《中国银联服务协议》（ https://user.95516.com/pages/misc/newAgree.html ）和相关商业行为法规。
+**Official site: ** [https://www.npmjs.com/package/unionpay-mcp-server?activeTab=code](https://www.npmjs.com/package/unionpay-mcp-server?activeTab=code)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://www.npmjs.com/package/unionpay-mcp-server?activeTab=code](https://www.npmjs.com/package/unionpay-mcp-server?activeTab=code)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @unionpay/unionpay-mcp-server`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @unionpay/unionpay-mcp-server`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/unionpay-unionpay.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/unionpay-unionpay.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

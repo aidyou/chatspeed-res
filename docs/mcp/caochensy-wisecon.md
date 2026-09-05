@@ -1,11 +1,11 @@
 ---
-title: "Wisecon金融数据查询服务"
-description: "WisEcon 是一款专注于金融市场的量化分析工具，旨在为投资者、研究人员和金融分析师提供全面的数据分析和决策支持。"
+title: "wisecon"
+description: "WisEcon is a quantitative analysis tool that focuses on financial markets, designed to provide investors, researchers, and financial analysts with comprehensive data analysis and decision-making suppo…"
 ---
 
-# Wisecon金融数据查询服务
+# wisecon
 
-WisEcon 是一款专注于金融市场的量化分析工具，旨在为投资者、研究人员和金融分析师提供全面的数据分析和决策支持。
+WisEcon is a quantitative analysis tool that focuses on financial markets, designed to provide investors, researchers, and financial analysts with comprehensive data analysis and decision-making suppo…
 
 WisEcon 
 
@@ -20,70 +20,68 @@ WisEcon
 [![CONTRIBUTING](/mcp-assets/dd9e62c55f1f679a211f74c35e47063e.svg)](https://github.com/CaoChensy/wisecon/blob/main/CONTRIBUTING.md)
 [![License: MIT](/mcp-assets/4204807ce8c07ac752bf93e5ea77fbc3.svg)](https://github.com/CaoChensy/wisecon/blob/main/LICENSE)
 
-## WisEcon是什么?
+## What is WisEcon?
 
-WisEcon 是一款专注于金融市场的量化分析工具，旨在为投资者、研究人员和金融分析师提供全面的数据分析和决策支持。以下是其主要特点和功能：
+WisEcon is a quantitative analysis tool focused on financial markets, designed to provide comprehensive data analysis and decision support for investors, researchers, and financial analysts. Below are its main features and functions:
 
-1. **数据支持** WisEcon 提供多种类型的金融数据，包括：
+1. **Data Support** WisEcon provides various types of financial data, including:
+   - Stock Data: Real-time and historical stock prices, trading volumes, financial statements, etc.
+   - Fund Data: Net asset values, returns, risk indicators, etc., for various funds.
+   - Futures Data: Prices, trading volumes, open interest, etc., for futures contracts.
+   - Macroeconomic Data: Key economic indicators such as GDP, inflation rates, unemployment rates, etc.
 
-   - 股票数据：实时和历史股票价格、交易量、财务报表等。
-   - 基金数据：各类基金的净值、收益率、风险指标等。
-   - 期货数据：期货合约的价格、成交量、持仓量等。
-   - 宏观经济数据：包括GDP、通货膨胀率、失业率等关键经济指标。
+2. **Large Model Support** WisEcon integrates the ZLAI-Agent toolchain, a powerful AI-driven analysis tool.
+   - Using machine learning and natural language processing, ZLAI-Agent can effectively analyze large datasets, identify potential investment opportunities, and provide intelligent recommendations.
 
-2. **大模型支持** WisEcon 集成了 ZLAI-Agent 工具链，这是一种强大的人工智能驱动的分析工具。
-   - 通过机器学习和自然语言处理，ZLAI-Agent 可以有效地分析海量数据，发掘潜在的投资机会，并提供智能化的建议。
+3. **Features**
+   - Data Visualization: Intuitive charts and dashboards help users quickly understand data trends and patterns.
+   - Strategy Backtesting: Users can test their trading strategies using historical data to evaluate their effectiveness.
+   - Risk Management: Provides multiple risk assessment tools to help users identify and manage investment risks.
+   - Real-time Monitoring: Users can set alerts to monitor market changes in real-time and make timely decisions.
 
-3. **功能特点**
-   - 数据可视化：直观的图表和仪表盘，帮助用户快速理解数据趋势和模式。
-   - 策略回测：用户可以根据历史数据测试自己的交易策略，以评估其有效性。
-   - 风险管理：提供多种风险评估工具，帮助用户识别和管理投资风险。
-   - 实时监控：用户可以设置警报，实时监控市场变化，及时作出决策。
+4. **Use Cases**
+   - Individual Investors: Helps individual investors develop investment strategies and improve returns.
+   - Institutional Investors: Provides in-depth market analysis and forecasts to support the decision-making process.
+   - Academic Research: Offers rich data and analysis tools to support financial research.
 
-4. **应用场景**
-   - 个人投资者：帮助个人投资者制定投资策略，提高投资回报。
-   - 机构投资者：为机构提供深入的市场分析和预测，支持决策过程。
-   - 学术研究：为金融研究人员提供丰富的数据和分析工具，支持学术研究。
-
-[详细文档](https://caochensy.github.io/wisecon/)
+[Detailed Documentation](https://caochensy.github.io/wisecon/)
 
 -----
 
-## 如何安装？
+## How to Install?
 
-```bash
+bash
 pip install wisecon
-```
 
 [Quick Start](https://caochensy.github.io/wisecon/)
 
 -----
 
-> Wechat
+> WeChat
 
  width="160px">
 
-微信群
+WeChat Group
 
 -----
 @2024/03/27
 
-**官方网站：** [https://github.com/CaoChensy/wisecon](https://github.com/CaoChensy/wisecon)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/CaoChensy/wisecon](https://github.com/CaoChensy/wisecon)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`, `data`
-- 标签：`finance`, `research and data`, `search`
+- Categories: `finance`, `data`
+- Tags: `finance`, `research and data`, `search`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from wisecon wisecon-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from wisecon wisecon-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/caochensy-wisecon.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/caochensy-wisecon.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,18 +1,18 @@
 ---
-title: "简易文件向量存储"
-description: "一个非常简单的向量存储，它能够监视目录列表，并自动将目录中的所有markdown、html和文本文件索引到向量存储中，以增强上下文。"
+title: "simple-files-vectorstore"
+description: "A very simple vector store that provides capability to watch a list of directories, and automatically index all the markdown, html and text files in the directory to a vector store to enhance context."
 ---
 
-# 简易文件向量存储
+# simple-files-vectorstore
 
-一个非常简单的向量存储，它能够监视目录列表，并自动将目录中的所有markdown、html和文本文件索引到向量存储中，以增强上下文。
+A very simple vector store that provides capability to watch a list of directories, and automatically index all the markdown, html and text files in the directory to a vector store to enhance context.
 
 # @lishenxydlgzs/simple-files-vectorstore
 
-一个提供文件间语义搜索功能的模型上下文协议（MCP）服务器。该服务器监控指定目录，并创建文件内容的向量嵌入，从而实现文档间的语义搜索。
+A Model Context Protocol (MCP) server that provides semantic search capabilities across files. This server watches specified directories and creates vector embeddings of file contents, enabling semantic search across your documents.
 
-## 安装与使用
-在您的MCP设置文件中添加：
+## Installation & Usage
+Add to your MCP settings file:
 ```json
 {
   "mcpServers": {
@@ -32,22 +32,22 @@ description: "一个非常简单的向量存储，它能够监视目录列表，
 }
 ```
 
-MCP设置文件位置：
-- VSCode Cline扩展：`~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
-- Claude桌面应用程序：`~/Library/Application Support/Claude/claude_desktop_config.json`
+MCP settings file locations:
+- VSCode Cline Extension: `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
+- Claude Desktop App: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-## 配置
+## Configuration
 
-服务器需要通过环境变量进行配置：
+The server requires configuration through environment variables:
 
-### 必需的环境变量
+### Required Environment Variables
 
-您必须使用以下方法之一指定要监视的目录：
+You must specify directories to watch using ONE of the following methods:
 
-- `WATCH_DIRECTORIES`: 用逗号分隔的目录列表
-- `WATCH_CONFIG_FILE`: 包含`watchList`数组的JSON配置文件路径
+- `WATCH_DIRECTORIES`: Comma-separated list of directories to watch
+- `WATCH_CONFIG_FILE`: Path to a JSON configuration file with a `watchList` array
 
-使用`WATCH_DIRECTORIES`的例子：
+Example using WATCH_DIRECTORIES:
 ```json
 {
   "mcpServers": {
@@ -67,7 +67,7 @@ MCP设置文件位置：
 }
 ```
 
-使用`WATCH_CONFIG_FILE`的例子：
+Example using WATCH_CONFIG_FILE:
 ```json
 {
   "mcpServers": {
@@ -87,7 +87,7 @@ MCP设置文件位置：
 }
 ```
 
-监视配置文件应具有如下结构：
+The watch config file should have the following structure:
 ```json
 {
   "watchList": [
@@ -98,13 +98,14 @@ MCP设置文件位置：
 }
 ```
 
-### 可选的环境变量
+### Optional Environment Variables
 
-- `CHUNK_SIZE`: 文本块处理大小（默认: 1000）
-- `CHUNK_OVERLAP`: 块之间的重叠部分（默认: 200）
-- `IGNORE_FILE`: .gitignore风格文件的路径，用于基于模式排除文件/目录
+- `CHUNK_SIZE`: Size of text chunks for processing (default: 1000)
+- `CHUNK_OVERLAP`: Overlap between chunks (default: 200)
+- `IGNORE_FILE`: Path to a .gitignore style file to exclude files/directories based on patterns
 
-包含所有可选参数的例子：
+Example with all optional parameters:
+
 ```json
   {
     "mcpServers": {
@@ -126,19 +127,19 @@ MCP设置文件位置：
     }
   }
 ```
-## MCP工具
+## MCP Tools
 
-此服务器提供了以下MCP工具：
+This server provides the following MCP tools:
 
 ### 1. search
 
-对索引文件执行语义搜索。
+Perform semantic search across indexed files.
 
-参数：
-- `query` (必需): 搜索查询字符串
-- `limit` (可选): 返回的最大结果数 (默认: 5, 最大: 20)
+Parameters:
+- `query` (required): The search query string
+- `limit` (optional): Maximum number of results to return (default: 5, max: 20)
 
-示例响应：
+Example response:
 ```json
 [
   {
@@ -152,11 +153,11 @@ MCP设置文件位置：
 
 ### 2. get_stats
 
-获取关于索引文件的统计信息。
+Get statistics about indexed files.
 
-参数: 无
+Parameters: None
 
-示例响应：
+Example response:
 ```json
 {
   "totalDocuments": 42,
@@ -165,35 +166,35 @@ MCP设置文件位置：
 }
 ```
 
-## 特性
+## Features
 
-- 实时文件监控和索引
-- 使用向量嵌入的语义搜索
-- 支持多种文件类型
-- 可配置的文本块大小和重叠
-- 文件的后台处理
-- 自动处理文件变更和删除
+- Real-time file watching and indexing
+- Semantic search using vector embeddings
+- Support for multiple file types
+- Configurable chunk size and overlap
+- Background processing of files
+- Automatic handling of file changes and deletions
 
-## 仓库
+## Repository
 
-[GitHub 仓库](https://github.com/lishenxydlgzs/simple-files-vectorstore)
+[GitHub Repository](https://github.com/lishenxydlgzs/simple-files-vectorstore)
 
-**官方网站：** [https://github.com/lishenxydlgzs/simple-files-vectorstore](https://github.com/lishenxydlgzs/simple-files-vectorstore)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/lishenxydlgzs/simple-files-vectorstore](https://github.com/lishenxydlgzs/simple-files-vectorstore)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `knowledge and memory`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @lishenxydlgzs/simple-files-vectorstore`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @lishenxydlgzs/simple-files-vectorstore`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/lishenxydlgzs-simple-files-vectorstore.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/lishenxydlgzs-simple-files-vectorstore.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

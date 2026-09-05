@@ -1,66 +1,66 @@
 ---
-title: "Claude-Jina AI服务"
-description: "一个MCP服务器，通过Claude提供对Jina AI强大网络服务（页面阅读、网络搜索、事实核查）的访问。"
+title: "mcp-jina-ai"
+description: "An MCP server that provides access to Jina AI's powerful web services (page reading, web search, fact checking) through Claude."
 ---
 
-# Claude-Jina AI服务
+# mcp-jina-ai
 
-一个MCP服务器，通过Claude提供对Jina AI强大网络服务（页面阅读、网络搜索、事实核查）的访问。
+An MCP server that provides access to Jina AI's powerful web services (page reading, web search, fact checking) through Claude.
 
-# Jina AI MCP 服务器
+# Jina AI MCP Server
 [Smithery](https://smithery.ai/server/jina-ai-mcp)
 [Smithery](https://smithery.ai/server/jina-ai-mcp-server)
 
-一个通过 Claude 提供访问 Jina AI 强大网络服务的 MCP 服务器。该服务器实现了三个主要工具：
+An MCP server that provides access to Jina AI's powerful web services through Claude. This server implements three main tools:
 
-- 网页阅读和内容提取
-- 网络搜索
-- 事实核查/基础验证
+- Web page reading and content extraction
+- Web search
+- Fact checking/grounding
 
-## 特性
+## Features
 
-### 工具
+### Tools
 
 #### `read_webpage`
-- 以优化格式从网页中提取内容，适用于大型语言模型 (LLMs)
-- 支持多种输出格式（默认、Markdown、HTML、文本、屏幕截图、页面截图）
-- 可选项包括包含链接和图片
-- 能够为图片生成替代文本
-- 缓存控制选项
+- Extract content from web pages in a format optimized for LLMs
+- Supports multiple output formats (Default, Markdown, HTML, Text, Screenshot, Pageshot)
+- Options for including links and images
+- Ability to generate alt text for images
+- Cache control options
 
 #### `search_web`
-- 使用 Jina AI 的搜索 API 进行网络搜索
-- 可配置的结果数量（默认：5）
-- 支持保留图片和生成替代文本
-- 多种返回格式（Markdown、文本、HTML）
-- 返回结构化结果，包括标题、描述和内容
+- Search the web using Jina AI's search API
+- Configurable number of results (default: 5)
+- Support for image retention and alt text generation
+- Multiple return formats (markdown, text, html)
+- Returns structured results with titles, descriptions, and content
 
 #### `fact_check`
-- 使用 Jina AI 的基础引擎进行事实核查
-- 提供事实性评分和支持证据
-- 可选深入模式，进行更彻底的分析
-- 返回带有关键引用和支持/矛盾分类的参考资料
+- Fact-check statements using Jina AI's grounding engine
+- Provides factuality scores and supporting evidence 
+- Optional deep-dive mode for more thorough analysis
+- Returns references with key quotes and supportive/contradictory classification
 
-## 设置
+## Setup
 
-### 前提条件
+### Prerequisites
 
-使用此服务器需要一个 Jina AI API 密钥。您可以在 [https://jina.ai/](https://jina.ai/) 免费获取。
+You'll need a Jina AI API key to use this server. Get one for free at https://jina.ai/
 
-### 安装
+### Installation
 
-有两种方法可以使用此服务器：
+There are two ways to use this server:
 
-#### 通过 Smithery 安装
+#### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/jina-ai-mcp-server) 自动安装适用于 Claude Desktop 的 Jina AI：
+To install Jina AI for Claude Desktop automatically via [Smithery](https://smithery.ai/server/jina-ai-mcp-server):
 
 ```bash
 npx -y @smithery/cli install jina-ai-mcp-server --client claude
 ```
 
-#### 选项 1：NPX（推荐）
-将以下配置添加到您的 Claude Desktop 配置文件中：
+#### Option 1: NPX (Recommended)
+Add this configuration to your Claude Desktop config file:
 
 ```json
 {
@@ -79,19 +79,19 @@ npx -y @smithery/cli install jina-ai-mcp-server --client claude
 }
 ```
 
-#### 选项 2：本地安装
-1. 克隆仓库
-2. 安装依赖项：
+#### Option 2: Local Installation
+1. Clone the repository
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建服务器：
+3. Build the server:
 ```bash
 npm run build
 ```
 
-4. 将以下配置添加到您的 Claude Desktop 配置中：
+4. Add this configuration to your Claude Desktop config:
 ```json
 {
   "mcpServers": {
@@ -108,55 +108,55 @@ npm run build
 }
 ```
 
-### 配置文件位置
+### Config File Location
 
-在 MacOS 上：
+On MacOS:
 ```bash
 ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-在 Windows 上：
+On Windows:
 ```bash
 %APPDATA%/Claude/claude_desktop_config.json
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过 stdio 通信，调试可能具有挑战性。我们建议使用 [MCP 检查器](https://github.com/modelcontextprotocol/inspector)：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
 
 ```bash
 npm run inspector
 ```
 
-检查器将提供一个 URL，以便您在浏览器中访问调试工具。
+The Inspector will provide a URL to access debugging tools in your browser.
 
-## API 响应类型
+## API Response Types
 
-所有工具都返回结构化的 JSON 响应，其中包括：
+All tools return structured JSON responses that include:
 
-- 状态码和元数据
-- 根据请求的输出类型格式化的内容
-- 使用情况信息（令牌计数）
-- 在适用时：图片、链接和额外的元数据
+- Status codes and metadata
+- Formatted content based on the requested output type
+- Usage information (token counts)
+- When applicable: images, links, and additional metadata
 
-有关详细的模式信息，请参阅 `schemas.ts`。
+For detailed schema information, see `schemas.ts`.
 
-**官方网站：** [https://github.com/joeBlockchain/mcp-jina-ai](https://github.com/joeBlockchain/mcp-jina-ai)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/joeBlockchain/mcp-jina-ai](https://github.com/joeBlockchain/mcp-jina-ai)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `search`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y jina-ai-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y jina-ai-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/joebuildsstuff-jina-ai.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/joebuildsstuff-jina-ai.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

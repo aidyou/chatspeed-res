@@ -1,41 +1,41 @@
 ---
-title: "MCP地点搜索"
-description: "一个用于附近地点搜索的MCP服务器，具有基于IP的位置检测功能。"
+title: "nearby-search-mcp"
+description: "An MCP server for nearby place searches with IP-based location detection."
 ---
 
-# MCP地点搜索
+# nearby-search-mcp
 
-一个用于附近地点搜索的MCP服务器，具有基于IP的位置检测功能。
+An MCP server for nearby place searches with IP-based location detection.
 
 # NearbySearch MCP Server
 
-基于IP位置检测的附近地点搜索MCP服务器。
+An MCP server for nearby place searches with IP-based location detection.
 
 ![GitHub License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) 
 ![GitHub Last Commit](/mcp-assets/4e70b12afff6d1394e76925e2c277c74.svg) 
 ![Python Version](/mcp-assets/405b7b46d001e379991916d79670861b.svg)
 
-## 功能
+## Features
 
-- **基于IP的位置检测**：使用ipapi.co确定您的当前位置
-- **Google Places集成**：根据关键词和可选类型过滤器搜索附近的地点
-- **简单界面**：具有可自定义半径的单一工具端点
+- **IP-based Location Detection**: Uses ipapi.co to determine your current location
+- **Google Places Integration**: Searches for nearby places based on keywords and optional type filters
+- **Simple Interface**: Single tool endpoint with customizable radius
 
-## 要求
+## Requirements
 
 - Python 3.10+
-- 启用了Places API的Google Cloud Platform API密钥
-- 互联网连接
+- Google Cloud Platform API Key with Places API enabled
+- Internet connection
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/kukapay/nearby-search-mcp.git
 cd nearby-search-mcp
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 # Using uv (recommended)
 uv add "mcp[cli]" httpx python-dotenv
@@ -44,7 +44,7 @@ uv add "mcp[cli]" httpx python-dotenv
 pip install mcp httpx python-dotenv
 ```
 
-3. 客户端配置
+3. Client Configuration
 
 ```json
 {
@@ -60,54 +60,54 @@ pip install mcp httpx python-dotenv
 }
 ```
 
-## 使用方法
+## Usage
 
-### 运行服务器
+### Running the Server
 
-- **开发模式**（带有MCP Inspector）：
+- **Development Mode** (with MCP Inspector):
 ```bash
 mcp dev main.py
 ```
 
-- **在Claude Desktop中安装**：
+- **Install in Claude Desktop**:
 ```bash
 mcp install main.py --name "NearbySearch"
 ```
 
-- **直接执行**：
+- **Direct Execution**:
 ```bash
 python main.py
 ```
 
-### 可用端点
+### Available Endpoints
 
-**工具: `search_nearby`**
- - 搜索您当前位置附近的地点
- - 参数：
-   - `keyword` (str): 搜索内容（例如，“咖啡店”）
-   - `radius` (int, 可选): 搜索半径（以米为单位，默认值：1500）
-   - `type` (str, 可选): 地点类型（例如，“餐厅”，“咖啡馆”）
+**Tool: `search_nearby`**
+ - Searches for places near your current location
+ - Parameters:
+   - `keyword` (str): What to search for (e.g., "coffee shop")
+   - `radius` (int, optional): Search radius in meters (default: 1500)
+   - `type` (str, optional): Place type (e.g., "restaurant", "cafe")
 
-## 许可证
+## License
 
-此项目根据MIT许可证发布 - 详情请参见[LICENSE](https://github.com/kukapay/nearby-search-mcp/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/kukapay/nearby-search-mcp/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/kukapay/nearby-search-mcp](https://github.com/kukapay/nearby-search-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kukapay/nearby-search-mcp](https://github.com/kukapay/nearby-search-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory path/to/nearby-search-mcp run main.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory path/to/nearby-search-mcp run main.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kukapay-nearby-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kukapay-nearby-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

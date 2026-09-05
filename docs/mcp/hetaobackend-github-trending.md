@@ -1,39 +1,39 @@
 ---
-title: "GitHub趋势MCP"
-description: "一个MCP服务器，通过简单的API接口提供对GitHub热门仓库和开发者数据的访问。"
+title: "mcp-github-trending"
+description: "A MCP server that provides access to GitHub trending repositories and developers data through a simple API interface."
 ---
 
-# GitHub趋势MCP
+# mcp-github-trending
 
-一个MCP服务器，通过简单的API接口提供对GitHub热门仓库和开发者数据的访问。
+A MCP server that provides access to GitHub trending repositories and developers data through a simple API interface.
 
 # mcp-github-trending MCP Server
 
-一个通过简单API接口提供GitHub热门仓库和开发者数据的MCP服务器。
+A MCP server that provides access to GitHub trending repositories and developers data through a simple API interface.
 
 [Smithery](https://smithery.ai/server/@hetaoBackend/github-trending-mcp-server)
 
-## 功能
+## Features
 
-- 访问GitHub热门仓库和开发者数据
-- 按编程语言筛选
-- 按时间周期（每日、每周、每月）筛选
-- 按自然语言筛选
-- 返回格式良好的JSON响应
+- Access GitHub trending repositories and developers data
+- Filter by programming language
+- Filter by time period (daily, weekly, monthly)
+- Filter by spoken language
+- Returns well-formatted JSON responses
 
-## 工具
+## Tools
 
-该服务器实现了以下工具：
+The server implements the following tools:
 
 ### get_github_trending_repositories
 
-从GitHub获取热门仓库，参数如下：
+Gets trending repositories from GitHub with the following parameters:
 
-- `language` (可选): 用于筛选仓库的编程语言（例如 "python", "javascript"）
-- `since` (可选): 用于筛选仓库的时间周期 ("daily", "weekly", "monthly")。默认为 "daily"
-- `spoken_language` (可选): 用于筛选仓库的自然语言
+- `language` (optional): Programming language to filter repositories by (e.g. "python", "javascript")
+- `since` (optional): Time period to filter repositories by ("daily", "weekly", "monthly"). Defaults to "daily"
+- `spoken_language` (optional): Spoken language to filter repositories by
 
-示例响应：
+Example response:
 ```json
 [
   {
@@ -51,12 +51,12 @@ description: "一个MCP服务器，通过简单的API接口提供对GitHub热门
 
 ### get_github_trending_developers
 
-从GitHub获取热门开发者，参数如下：
+Gets trending developers from GitHub with the following parameters:
 
-- `language` (可选): 用于筛选开发者的编程语言（例如 "python", "javascript"）
-- `since` (可选): 用于筛选开发者的时间周期 ("daily", "weekly", "monthly")。默认为 "daily"
+- `language` (optional): Programming language to filter by (e.g. "python", "javascript")
+- `since` (optional): Time period to filter by ("daily", "weekly", "monthly"). Defaults to "daily"
 
-示例响应：
+Example response:
 ```json
 [
   {
@@ -73,32 +73,32 @@ description: "一个MCP服务器，通过简单的API接口提供对GitHub热门
 ]
 ```
 
-## 安装
+## Installation
 
-### 前提条件
+### Prerequisites
 
 - Python 3.12
 
-### 安装步骤
+### Install Steps
 
-安装包：
+Install the package:
 ```bash
 pip install mcp-github-trending
 ```
 
-### Claude Desktop 配置
+### Claude Desktop Configuration
 
-在MacOS上：
+On MacOS:
 ```bash
-~/Library/Application\ Support/Claude/claude_desktop_config.json
+~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-在Windows上：
+On Windows:
 ```bash
 %APPDATA%/Claude/claude_desktop_config.json
 ```
 
- 开发/未发布服务器配置
+ Development/Unpublished Servers Configuration
 
 ```json
 {
@@ -116,7 +116,7 @@ pip install mcp-github-trending
 }
 ```
 
- 已发布服务器配置
+ Published Servers Configuration
 
 ```json
 {
@@ -131,61 +131,61 @@ pip install mcp-github-trending
 }
 ```
 
-## 开发
+## Development
 
-### 构建和发布
+### Building and Publishing
 
-1. 同步依赖并更新锁文件：
+1. Sync dependencies and update lockfile:
 ```bash
 uv sync
 ```
 
-2. 构建包分发：
+2. Build package distributions:
 ```bash
 uv build
 ```
 
-3. 发布到PyPI：
+3. Publish to PyPI:
 ```bash
 uv publish
 ```
 
-注意：通过环境变量或命令标志设置PyPI凭据：
-- Token: `--token` 或 `UV_PUBLISH_TOKEN`
-- 用户名/密码: `--username`/`UV_PUBLISH_USERNAME` 和 `--password`/`UV_PUBLISH_PASSWORD`
+Note: Set PyPI credentials via environment variables or command flags:
+- Token: `--token` or `UV_PUBLISH_TOKEN`
+- Username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
 
-### 调试
+### Debugging
 
-为了获得最佳调试体验，请使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)。
+For the best debugging experience, use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
 
-通过[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)启动MCP Inspector：
+Launch the MCP Inspector via [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm):
 
 ```bash
 npx @modelcontextprotocol/inspector uv --directory /path/to/mcp-github-trending run mcp-github-trending
 ```
 
-Inspector将显示一个URL，您可以在浏览器中访问它以开始调试。
+The Inspector will display a URL that you can access in your browser to begin debugging.
 
-## 许可证
+## License
 
-本项目根据MIT许可证许可 - 详情请参阅LICENSE文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/hetaoBackend/mcp-github-trending](https://github.com/hetaoBackend/mcp-github-trending)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hetaoBackend/mcp-github-trending](https://github.com/hetaoBackend/mcp-github-trending)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`version control`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `version control`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-github-trending`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-github-trending`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hetaobackend-github-trending.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hetaobackend-github-trending.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

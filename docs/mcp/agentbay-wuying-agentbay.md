@@ -1,232 +1,226 @@
 ---
-title: "无影 Agent 开发套件 AgentBay"
+title: "wuying-agentbay-mcp-server"
 description: "无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。"
 ---
 
-# 无影 Agent 开发套件 AgentBay
+# wuying-agentbay-mcp-server
 
 无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。
 
-无影AgentBay是AI 时代的Agent云基础设施， 面向企业、开发者、AI厂商，提供可一键配置的AI Agent任务执行工具和执行环境。您可以通过无影API或AgentBay MCP Server快速集成，并调用相关工具获取Serverless服务。
+AgentBay of the Invisible is the AI era's cloud infrastructure for Agents, designed for enterprises, developers, and AI vendors. It provides a one-click configurable AI Agent task execution tool and environment. You can quickly integrate and call related tools to obtain Serverless services through the Invisible API or AgentBay MCP Server.
 
-## **产品大图**
+## **Product Overview**
 
-![无影AgentBay产品大图](/mcp-assets/e5b3836b1d1e84f52bdbfad2d9779a7e.png)
+![Invisible AgentBay Product Overview](/mcp-assets/e5b3836b1d1e84f52bdbfad2d9779a7e.png)
 
-## **云服务规格**
+## **Cloud Service Specifications**
 
-### **云资源**
+### **Cloud Resources**
 
-目前您可通过购买[新人0.01元优惠](https://help.aliyun.com/zh/agentbay/product-overview/new-user-trial-instructions?spm=5176.30918410.J_WB32E9T-bokl57SJYCiyd.1.942e3c658LjrMW)开通使用（限新人），最大支持10个并发实例，服务地域将根据您的接入IP地址自动分配
+Currently, you can activate usage by purchasing the [New User 0.01 RMB Offer](https://help.aliyun.com/zh/agentbay/product-overview/new-user-trial-instructions?spm=5176.30918410.J_WB32E9T-bokl57SJYCiyd.1.942e3c658LjrMW) (limited to new users), supporting up to 10 concurrent instances. The service region will be automatically assigned based on your access IP address.
 
-无影 AgentBay SDK 已开源：[👉Star us on GitHub🌟](https://github.com/aliyun/wuying-agentbay-sdk)
+The Invisible AgentBay SDK is open-source: [👉Star us on GitHub🌟](https://github.com/aliyun/wuying-agentbay-sdk)
 
-### **产品优势**
-1. **场景丰富，覆盖全面**
+### **Product Advantages**
+1. **Rich Scenarios, Comprehensive Coverage**
 
-为智能体开发提供浏览器、代码、电脑、移动端四大核心环境，从网页自动化到代码编译，从桌面操作到移动应用控制，实现智能体全场景运行的环境支持。
+Provides four core environments—browser, code, PC, and mobile—for agent development, covering everything from web automation to code compilation, and from desktop operations to mobile app control, ensuring full-scenario support for agent operation.
 
-2. **接入多样，集成灵活**
+2. **Diverse Integration, Flexible Configuration**
 
-为智能体开发提供API、SDK和MCP三种接入方式，面向开发者友好且灵活，技术专家可深度定制，普通开发者也能快速上手，真正实现零门槛到专业化的全覆盖。
+Offers three integration methods—API, SDK, and MCP—for agent development, catering to both technical experts who can deeply customize and general developers who can get started quickly, truly achieving a zero-threshold to professional-level coverage.
 
-3. **基建强大，调度智能**
+3. **Powerful Infrastructure, Intelligent Scheduling**
 
-依托阿里云强大算力，实现秒级弹性伸缩与千级并发的运维能力，让开发者无需担心智能体运行所需的基础建设和运维难题，专注智能体创新开发的工作中。
+Leveraging the powerful computing capabilities of Alibaba Cloud, it achieves second-level elastic scaling and maintenance capabilities for thousands of concurrent operations, allowing developers to focus on innovative agent development without worrying about the underlying infrastructure and operational challenges.
 
-## **操作步骤**
+## **Operation Steps**
 
-### 步骤1：创建API Key
-1.  登录[AgentBay控制台](https://agentbay.console.aliyun.com/)。
+### Step 1: Create an API Key
+1. Log in to the [AgentBay Console](https://agentbay.console.aliyun.com/).
 
-2.  在左侧导航栏中单击**服务管理**。
+2. Click **Service Management** in the left navigation bar.
     
-3.  在**服务管理**页面上单击**创建API KEY**。
+3. On the **Service Management** page, click **Create API KEY**.
     
-4.  在**创建API KEY**对话框中输入名称，并单击**确定**。
+4. In the **Create API KEY** dialog box, enter the name and click **OK**.
     
-### 步骤2：根据您的需求选择合适的沙箱环境
-1. 在服务管理页面上，在目标API KEY的操作列中单击**查看MCP地址**。
-2. 目前支持的镜像类型和对应的IMAGEID如下:
+### Step 2: Select the Appropriate Sandbox Environment Based on Your Needs
+1. On the Service Management page, click **View MCP Address** in the operation column of the target API KEY.
+2. The currently supported image types and corresponding IMAGEIDs are as follows:
 + Windows: windows_latest
-+ Linux：linux_latest
-+ Browser：browser_latest
-+ Code：code_latest
-+ Mobile：mobile_latest
++ Linux: linux_latest
++ Browser: browser_latest
++ Code: code_latest
++ Mobile: mobile_latest
 
-### 步骤3：完成MCP服务配置
-1. 返回魔搭——无影 Agent 开发套件 AgentBay——服务详情页面。
-2. 在右侧的服务配置信息面板中选择 Remote，点击“配置”。也可以选择 Stdio，使用个人付费资源部署MCP服务。
-3. 选择传输类型：AgentBay目前支持 SSE、Streamable HTTP、Stdio三种传输类型。推荐使用 SSE 和 Streamable HTTP。
-4. 输入 无影AgentBay 的 APIKEY 和 IMAGEID。也可以根据自己的需求填写其他的 IMAGEID，您可以通过订阅 Pro 或 Ultra 权益包，创建自定义镜像，填写自定义的 IMAGEID。
-5. Remote方式点击“连接”即可去试用，Stdio方式需选择“个人账号授权资源”进行部署。
-6. 点击“试用”，跳转到“MCP实验场”页面后，开启无影AgentBay MCP服务，即可试用。
+### Step 3: Complete MCP Service Configuration
+1. Return to the ModelScope - Invisible Agent Development Kit AgentBay - Service Details page.
+2. In the right-side Service Configuration Information panel, select Remote and click "Configure". Alternatively, you can choose Stdio to deploy the MCP service using personal paid resources.
+3. Choose the transmission type: AgentBay currently supports SSE, Streamable HTTP, and Stdio. SSE and Streamable HTTP are recommended.
+4. Enter the APIKEY and IMAGEID for Invisible AgentBay. You can also fill in other IMAGEIDs according to your needs. You can create custom images by subscribing to Pro or Ultra packages and filling in the custom IMAGEID.
+5. For the Remote method, click "Connect" to try it out. For the Stdio method, select "Personal Account Authorized Resources" for deployment.
+6. Click "Try", and after being redirected to the "MCP Playground" page, start the Invisible AgentBay MCP service to try it out.
 
-## 常见问题
+## Frequently Asked Questions
 
-### **Q1: 无影AgentBay是什么？是虚拟机吗？**
+### **Q1: What is Invisible AgentBay? Is it a virtual machine?**
 
-无影AgentBay不是简单的虚拟机，而是一个完整的AI Agent云基础设施平台。具体来说：
+Invisible AgentBay is not simply a virtual machine but a complete AI Agent cloud infrastructure platform. Specifically:
 
-+   **定位**：它是阿里云推出的AI时代的Agent云基础设施，面向企业、开发者和AI厂商。
++   **Positioning**: It is an AI-era Agent cloud infrastructure launched by Alibaba Cloud, aimed at enterprises, developers, and AI vendors.
     
-+   **核心功能**：
++   **Core Functions**:
     
-    +   标准Runtime：预集成大量面向Agent任务执行的标准工具，并以MCP封装，以便企业快速集成。
+    +   Standard Runtime: Pre-integrates a large number of standard tools for Agent task execution, packaged in MCP for quick enterprise integration.
         
-    +   用户状态持久化：通过无影自研的持久化架构，安全隔离地保存用户配置文件、Cookie等，并动态挂载，让云环境无限接近本地环境。
+    +   User State Persistence: Through the self-developed persistence architecture of the Invisible, user configuration files, cookies, etc., are securely isolated and saved, and dynamically mounted, making the cloud environment infinitely close to the local environment.
         
-    +   实时端云交互：无影自研ASP协议可将云端画面实时串流到用户本地，让用户和AI可以交替控制云环境。且ASP支持网络和外设重定向通道，让云环境可以感知和控制本地设备。
+    +   Real-time End-Cloud Interaction: The self-developed ASP protocol of the Invisible can stream the cloud screen in real time to the user's local end, allowing users and AI to alternately control the cloud environment. Additionally, ASP supports network and peripheral redirection channels, enabling the cloud environment to sense and control local devices.
         
-+   **技术架构**：
++   **Technical Architecture**:
     
-    +   自研持久化文件系统，可动态按需保留用户状态和文件。
-        
-    +   自研ASP端云实时通信协议，让云环境可感知、模仿、控制本地环境。
-        
-    +   底层基于阿里云无影资源池，全球部署，就近接入。
-        
-    +   提供Serverless服务能力，客户可以一键调度环境会话。
-        
-    +   集成了Browser、File、Terminal等标准MCP工具集。
-        
-    +   支持通过SDK或者MCP Server快速接入，两者均兼容。
-        
+    +   Self-developed persistent file system that can dynamically retain user states and files as needed.+   Self-developed ASP end-cloud real-time communication protocol, making the cloud environment perceptible, imitable, and controllable for the local environment.
+    
++   Based on Alibaba Cloud's Wuying resource pool, globally deployed with nearby access.
+    
++   Provides Serverless service capabilities, allowing customers to schedule environment sessions with one click.
+    
++   Integrates standard MCP toolsets such as Browser, File, and Terminal.
+    
++   Supports quick integration via SDK or MCP Server, both of which are compatible.
 
-### **Q2: 市场上的AI Agent产品如何接入无影AgentBay？**
+### **Q2: How can AI Agent products in the market integrate with Wuying AgentBay?**
 
-AI Agent产品可以通过以下方式接入无影AgentBay：
+AI Agent products can integrate with Wuying AgentBay through the following methods:
 
-1.  **基础接入流程**：
+1.  **Basic Integration Process**:
     
-    1.  申请API Key
+    1.  Apply for an API Key
         
-    2.  完成自定义镜像制作和资源池定义配置（可选）
+    2.  Complete the custom image creation and resource pool definition configuration (optional)
         
-    3.  完成MCP服务配置（可选）
+    3.  Complete the MCP service configuration (optional)
         
-    4.  集成AgentBay SDK（可选）
+    4.  Integrate the AgentBay SDK (optional)
         
-    5.  客户端或服务端发起工具使用请求（会话调度）
+    5.  Initiate a tool usage request from the client or server (session scheduling)
         
-2.  **接入方式**：
+2.  **Integration Methods**:
     
-    +   通过AgentBay SDK接入
+    +   Through the AgentBay SDK
         
-    +   通过MCP Server接入
+    +   Through the MCP Server
         
-3.  **访问方式**：
+3.  **Access Methods**:
     
-    +   支持客户端内嵌WebView串流云环境
+    +   Supports embedding WebView in the client to stream the cloud environment
         
-    +   支持跳转浏览器使用
+    +   Supports using a browser for access
         
-    +   访问格式：`https://wuying.aliyun.com?mcp.html?authcode=
+    +   Access format: `https://wuying.aliyun.com?mcp.html?authcode=
 &resourceId=`
         
-        **说明**
+        **Note**
         
-        在发起工具调用时，该URL会由MCP Server返回。
-        
+        This URL will be returned by the MCP Server when initiating a tool call.
 
-### **Q3: 无影AgentBay支持MCP协议，和市场上的MCP Server之间是什么关系？**
+### **Q3: Wuying AgentBay supports the MCP protocol; what is its relationship with MCP Servers available in the market?**
 
-无影AgentBay与MCP Server的关系如下：
+The relationship between Wuying AgentBay and MCP Servers is as follows:
 
-+   **协议支持**：
++   **Protocol Support**:
     
-    +   无影AgentBay完全支持MCP（Model Context Protocol）协议。
+    +   Wuying AgentBay fully supports the MCP (Model Context Protocol) protocol.
         
-    +   提供标准化的MCP接口，确保与现有MCP生态兼容。
+    +   Provides standardized MCP interfaces to ensure compatibility with the existing MCP ecosystem.
         
-+   **工具集成**：
++   **Tool Integration**:
     
-    提供主流的MCP工具集，包括但不限于：
+    Offers mainstream MCP toolsets, including but not limited to:
     
-    +   Browser工具：支持浏览器操作
+    +   Browser tool: supports browser operations
         
-    +   File工具：支持文件操作
+    +   File tool: supports file operations
         
-    +   Terminal工具：支持终端操作
+    +   Terminal tool: supports terminal operations
         
-+   **生态关系**：
++   **Ecosystem Relationship**:
     
-    +   可以与现有的MCP Server生态系统无缝集成。
+    +   Can seamlessly integrate with the existing MCP Server ecosystem.
         
-    +   支持现有MCP Server的功能扩展。
+    +   Supports functional extensions of existing MCP Servers.
         
-    +   提供统一的接口标准，便于管理和集成。
-        
+    +   Provides a unified interface standard for easy management and integration.
 
-### **Q4: 使用AI Agent时，我不想泄露个人隐私，无影AgentBay如何保障我的私人数据？**
+### **Q4: When using AI Agents, I don't want to leak personal privacy. How does Wuying AgentBay protect my private data?**
 
-无影AgentBay通过以下机制保障用户隐私和数据安全：
+Wuying AgentBay ensures user privacy and data security through the following mechanisms:
 
-+   **隔离机制**：
++   **Isolation Mechanism**:
     
-    +   为每个用户提供完全隔离的VM环境。
+    +   Provides a completely isolated VM environment for each user.
         
-    +   环境会话结束后即重置，不留存任何数据。
+    +   The environment session is reset after completion, leaving no data behind.
         
-+   **访问控制**：
++   **Access Control**:
     
-    +   通过API Key进行身份认证。
+    +   Authenticates identity through API Keys.
         
-    +   提供安全的访问控制机制。
+    +   Provides secure access control mechanisms.
         
-+   **数据处理**：
++   **Data Handling**:
     
-    +   本地数据不会上传到云端，云端数据不会被保留，除非用户明确授权和要求。
+    +   Local data is not uploaded to the cloud, and cloud data is not retained unless explicitly authorized and requested by the user.
         
-    +   提供安全的数据传输通道。
+    +   Provides secure data transmission channels.
         
-    +   支持数据加密存储。
-        
+    +   Supports encrypted data storage.
 
-### **Q5: Agent执行各种任务时经常消耗大量本地算力，我的电脑都不能做其他事了，无影AgentBay是否能解决这个问题？是如何解决的？**
+### **Q5: When agents execute various tasks, they often consume a lot of local computing power, making it difficult to do other things on my computer. Can Wuying AgentBay solve this problem, and if so, how?**
 
-无影AgentBay可以通过以下方式有效解决本地算力消耗问题：
+Wuying AgentBay can effectively address the issue of local computing power consumption through the following methods:
 
-+   **云端执行**：
++   **Cloud Execution**:
     
-    +   任务在阿里云的资源池中执行，不占用本地计算资源。
+    +   Tasks are executed in Alibaba Cloud's resource pool, without occupying local computing resources.
         
-    +   提供Serverless服务，按需分配计算资源。
+    +   Provides Serverless services, allocating computing resources on demand.
         
-    +   支持弹性扩展，根据任务需求自动调整资源。
+    +   Supports elastic scaling, automatically adjusting resources based on task requirements.
         
-+   **资源优化**：
++   **Resource Optimization**:
     
-    +   采用云端分布式计算。
+    +   Utilizes cloud-based distributed computing.
         
-    +   支持任务并行处理。
+    +   Supports parallel task processing.
         
-    +   资源自动扩缩容。
+    +   Automatically scales resources up or down.
         
-+   **性能保障**：
++   **Performance Assurance**:
     
-    +   提供专业的云计算资源池。
+    +   Provides professional cloud computing resource pools.
         
-    +   确保任务执行效率。
+    +   Ensures efficient task execution.
         
-    +   本地设备只需要处理基础的交互操作。
+    +   Local devices only need to handle basic interaction operations.
 
-**官方网站：** [https://help.aliyun.com/zh/agentbay/product-overview/](https://help.aliyun.com/zh/agentbay/product-overview/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://help.aliyun.com/zh/agentbay/product-overview/](https://help.aliyun.com/zh/agentbay/product-overview/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y wuying-agentbay-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y wuying-agentbay-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/agentbay-wuying-agentbay.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/agentbay-wuying-agentbay.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

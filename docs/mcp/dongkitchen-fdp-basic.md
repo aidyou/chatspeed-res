@@ -1,12 +1,11 @@
 ---
-title: "网络基础数据查询"
-description: "网络基础数据，包括passivedns解析数据、域名和IP的注册信息、网站证书、IOC库的查询。\n数据来源于奇安信X实验室被动收集的大网安全研究、威胁分析溯源和大规模多维度安全数据平台。"
+title: "fdp_basic"
+description: "Basic network data, including passive DNS resolution data, registration information for domains and IPs, website certificates, and queries to the IOC (Indicators of Compromise) library. The data sourc…"
 ---
 
-# 网络基础数据查询
+# fdp_basic
 
-网络基础数据，包括passivedns解析数据、域名和IP的注册信息、网站证书、IOC库的查询。
-数据来源于奇安信X实验室被动收集的大网安全研究、威胁分析溯源和大规模多维度安全数据平台。
+Basic network data, including passive DNS resolution data, registration information for domains and IPs, website certificates, and queries to the IOC (Indicators of Compromise) library. The data sourc…
 
 # 网络基础安全数据查询
 
@@ -106,22 +105,22 @@ X实验室是国内最早利用大规模数据进行安全研究、安全应用�
 	}
 ```
 
-**官方网站：** [https://blog.xlab.qianxin.com/](https://blog.xlab.qianxin.com/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://blog.xlab.qianxin.com/](https://blog.xlab.qianxin.com/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `data`
-- 标签：`research and data`, `developer tools`, `knowledge and memory`, `网络安全`, `威胁情报`, `passivedns`, `dns`, `whois`, `certificate`
+- Categories: `memory`, `data`
+- Tags: `research and data`, `developer tools`, `knowledge and memory`, `网络安全`, `威胁情报`, `passivedns`, `dns`, `whois`, `certificate`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-remote@latest https://fdp.qianxin.com/mcp/v1/basic/`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-remote@latest https://fdp.qianxin.com/mcp/v1/basic/`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/dongkitchen-fdp-basic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/dongkitchen-fdp-basic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,47 +1,47 @@
 ---
-title: "热闻社媒服务"
-description: "一个模型上下文协议服务器，提供来自主要中文社交平台和新闻网站的实时热门话题。"
+title: "mcp-hotnews-server"
+description: "A Model Context Protocol server that provides real-time hot trending topics from major Chinese social platforms and news sites."
 ---
 
-# 热闻社媒服务
+# mcp-hotnews-server
 
-一个模型上下文协议服务器，提供来自主要中文社交平台和新闻网站的实时热门话题。
+A Model Context Protocol server that provides real-time hot trending topics from major Chinese social platforms and news sites.
 
 # HotNews MCP Server
 
-一个提供来自中国主要社交平台和新闻网站实时热点话题的模型上下文协议（MCP）服务器。
+A Model Context Protocol (MCP) server that provides real-time hot trending topics from major Chinese social platforms and news sites.
 
-## 特性
+## Features
 
-- 来自9个中国主要平台的实时热点
-- 兼容MCP协议
-- 与AI模型轻松集成
-- 支持Markdown格式输出及可点击链接
-- 热度指数支持（在可用的情况下）
+- Real-time hot topics from 9 major Chinese platforms
+- MCP protocol compatible
+- Easy integration with AI models
+- Markdown formatted output with clickable links
+- Heat index support (where available)
 
-## 支持的平台
+## Supported Platforms
 
-1. 知乎热榜 (Zhihu Hot List)
-2. 36氪热榜 (36Kr Hot List)
-3. 百度热点 (Baidu Hot Discussion)
-4. B站热榜 (Bilibili Hot List)
-5. 微博热搜 (Weibo Hot Search)
-6. 抖音热点 (Douyin Hot List)
-7. 虎扑热榜 (Hupu Hot List)
-8. 豆瓣热榜 (Douban Hot List)
-9. IT新闻 (IT News)
+1. Zhihu Hot List (知乎热榜)
+2. 36Kr Hot List (36氪热榜)
+3. Baidu Hot Discussion (百度热点)
+4. Bilibili Hot List (B站热榜)
+5. Weibo Hot Search (微博热搜)
+6. Douyin Hot List (抖音热点)
+7. Hupu Hot List (虎扑热榜)
+8. Douban Hot List (豆瓣热榜)
+9. IT News (IT新闻)
 
-> API来源，本项目使用`api.vvhan.com`服务来获取热点数据。
+> API Source, This project uses the `api.vvhan.com` service for fetching hot topics data.
 
-## 可用工具
+## Available Tools
 - `get_hot_news`
-  - `sources` - 必需参数：平台ID列表
-- 使用示例：
-  - `get_hot_news([3])` : 仅获取百度热点讨论
-  - `get_hot_news([1,3,7])` : 获取知乎、百度和虎扑的热门榜单
-  - `get_hot_news([1,2,3,4])` : 获取知乎、36氪、百度和B站的热门榜单
+  - `sources` - Required arguments: Platform ID list
+- Example usage:
+  - `get_hot_news([3])` : Get Baidu Hot Discussion only
+  - `get_hot_news([1,3,7])` : Get hot lists from zhihuHot, Baidu, and huPu
+  - `get_hot_news([1,2,3,4])` : Get hot lists from zhihuHot, 36Kr, Baidu, and Bilibili`
 
-## 安装
+## Installation
 
 ### NPX
 
@@ -60,7 +60,7 @@ description: "一个模型上下文协议服务器，提供来自主要中文社
 ```
 
 ### Docker 
-（Docker镜像尚未上传至Docker Hub，需要自行构建。）
+（ Docker image not uploaded to Docker Hub, need to build it yourself. ）
 
 ```json
 {
@@ -78,7 +78,7 @@ description: "一个模型上下文协议服务器，提供来自主要中文社
 }
 ```
 
-## 开发
+## Development
 
 ```bash
 # Install dependencies
@@ -94,32 +94,32 @@ npm run build
 npm run test:urls
 ```
 
-Docker 构建:
+Docker build:
 
 ```bash
 docker build -t wopal/mcp-server-hotnews:latest -f Dockerfile .
 ```
 
-## 许可证
+## License
 
-此MCP服务器根据MIT许可证发布。这意味着您可以自由地使用、修改和分发该软件，但需遵守MIT许可证的条款和条件。更多详情，请参见项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/wopal-cn/mcp-hotnews-server](https://github.com/wopal-cn/mcp-hotnews-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wopal-cn/mcp-hotnews-server](https://github.com/wopal-cn/mcp-hotnews-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`social media`, `search`, `chinese`
+- Categories: `search`
+- Tags: `social media`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @wopal/mcp-server-hotnews`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @wopal/mcp-server-hotnews`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wopal-cn-hotnews.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wopal-cn-hotnews.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,21 +1,21 @@
 ---
-title: "向量化智能搜索"
-description: "为高级检索、私有深度研究、任意文件转Markdown提取和文本分块矢量化MCP服务器。"
+title: "vectorize-mcp-server"
+description: "Vectorize MCP server for advanced retrieval, Private Deep Research, Anything-to-Markdown file extraction and text chunking."
 ---
 
-# 向量化智能搜索
+# vectorize-mcp-server
 
-为高级检索、私有深度研究、任意文件转Markdown提取和文本分块矢量化MCP服务器。
+Vectorize MCP server for advanced retrieval, Private Deep Research, Anything-to-Markdown file extraction and text chunking.
 
-# Vectorize MCP 服务器
+# Vectorize MCP Server
 
-这是一个与 [Vectorize](https://vectorize.io/) 集成的 Model Context Protocol (MCP) 服务器实现，用于高级向量检索和文本提取。
+A Model Context Protocol (MCP) server implementation that integrates with [Vectorize](https://vectorize.io/) for advanced Vector retrieval and text extraction.
 
   
 
-## 安装
+## Installation
 
-### 使用 npx 运行
+### Running with npx
 
 ```bash
 export VECTORIZE_ORG_ID=YOUR_ORG_ID
@@ -25,7 +25,7 @@ export VECTORIZE_PIPELINE_ID=YOUR_PIPELINE_ID
 npx -y @vectorize-io/vectorize-mcp-server@latest
 ```
 
-## 在 Claude/Windsurf/Cursor/Cline 上配置
+## Configuration on Claude/Windsurf/Cursor/Cline
 
 ```json
 {
@@ -43,11 +43,11 @@ npx -y @vectorize-io/vectorize-mcp-server@latest
 }
 ```
 
-## 工具
+## Tools
 
-### 检索文档
+### Retrieve documents
 
-执行向量搜索并检索文档（参见官方 [API](https://docs.vectorize.io/api/api-pipelines/api-retrieval)）：
+Perform vector search and retrieve documents (see official [API](https://docs.vectorize.io/api/api-pipelines/api-retrieval)):
 
 ```json
 {
@@ -59,9 +59,9 @@ npx -y @vectorize-io/vectorize-mcp-server@latest
 }
 ```
 
-### 文本提取和分块（任何文件转为 Markdown 格式）
+### Text extraction and chunking (Any file to Markdown)
 
-从文档中提取文本并将其分块为 Markdown 格式（参见官方 [API](https://docs.vectorize.io/api/api-extraction)）：
+Extract text from a document and chunk it into Markdown format (see official [API](https://docs.vectorize.io/api/api-extraction)):
 
 ```json
 {
@@ -73,9 +73,9 @@ npx -y @vectorize-io/vectorize-mcp-server@latest
 }
 ```
 
-### 深度研究
+### Deep Research
 
-从您的管道生成私有深度研究报告（参见官方 [API](https://docs.vectorize.io/api/api-pipelines/api-deep-research)）：
+Generate a Private Deep Research from your pipeline (see official [API](https://docs.vectorize.io/api/api-pipelines/api-deep-research)):
 
 ```json
 {
@@ -87,35 +87,35 @@ npx -y @vectorize-io/vectorize-mcp-server@latest
 }
 ```
 
-## 开发
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-### 贡献
+### Contributing
 
-1. 叉分仓库
-2. 创建您的功能分支
-3. 提交拉取请求
+1. Fork the repository
+2. Create your feature branch
+3. Submit a pull request
 
-**官方网站：** [https://github.com/vectorize-io/vectorize-mcp-server](https://github.com/vectorize-io/vectorize-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/vectorize-io/vectorize-mcp-server](https://github.com/vectorize-io/vectorize-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `research and data`, `chinese`
+- Categories: `data`
+- Tags: `search`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @vectorize-io/vectorize-mcp-server@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @vectorize-io/vectorize-mcp-server@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/vectorize-io-vectorize.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/vectorize-io-vectorize.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

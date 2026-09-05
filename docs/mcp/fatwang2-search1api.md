@@ -1,86 +1,86 @@
 ---
-title: "Search1API-MCP 搜索爬取服务器"
-description: "一个使用Search1API提供搜索和爬取功能的模型上下文协议（MCP）服务器。"
+title: "search1api-mcp"
+description: "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API."
 ---
 
-# Search1API-MCP 搜索爬取服务器
+# search1api-mcp
 
-一个使用Search1API提供搜索和爬取功能的模型上下文协议（MCP）服务器。
+A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.
 
-# Search1API MCP 服务器
+# Search1API MCP Server
 
 [中文文档](https://github.com/fatwang2/search1api-mcp/blob/HEAD/README_zh.md)
 
-一个使用 Search1API 提供搜索和爬取功能的模型上下文协议 (MCP) 服务器。
+A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.
 
-## 先决条件
+## Prerequisites
 
 - Node.js >= 18.0.0
-- 有效的 Search1API API 密钥（请参阅下面的**设置指南**以了解如何获取和配置）
+- A valid Search1API API key (See **Setup Guide** below on how to obtain and configure)
 
-## 安装（独立/通用）
+## Installation (Standalone / General)
 
-1. **克隆仓库：**
+1.  **Clone the repository:**
 ```bash
     git clone https://github.com/fatwang2/search1api-mcp.git
     cd search1api-mcp
 ```
 
-2. **配置 API 密钥：** 在构建之前，您需要提供您的 Search1API 密钥。请参阅下面的**设置指南**部分，了解不同的方法（例如，使用 `.env` 文件或环境变量）。
+2.  **Configure API Key:** Before building, you need to provide your Search1API key. See the **Setup Guide** section below for different methods (e.g., using a `.env` file or environment variables).
 
-3. **安装依赖并构建：**
+3.  **Install dependencies and build:**
 ```bash
     npm install
     npm run build
 ```
-    *注意：如果使用项目的 `.env` 文件方法来配置 API 密钥，请确保在执行此步骤之前该文件已经存在。*
+    *Note: If using the project's `.env` file method for the API key, ensure it exists before this step.*
 
-## 使用（独立/通用）
+## Usage (Standalone / General)
 
-确保您的 API 密钥已配置（请参阅**设置指南**）。
+Ensure your API key is configured (see **Setup Guide**).
 
-启动服务器：
+Start the server:
 ```bash
 npm start
 ```
 
-然后服务器将准备好接受来自 MCP 客户端的连接。
+The server will then be ready to accept connections from MCP clients.
 
-## 设置指南
+## Setup Guide
 
-### 1. 获取 Search1API 密钥
+### 1. Get Search1API Key
 
-1. 在 [Search1API](https://www.search1api.com/) 注册
-2. 从您的仪表板中获取您的 API 密钥。
+1.  Register at [Search1API](https://www.search1api.com/)
+2.  Get your API key from your dashboard.
 
-### 2. 配置 API 密钥
+### 2. Configure API Key
 
-您需要让服务器能够访问您的 API 密钥。请选择以下**一种**方法：
+You need to make your API key available to the server. Choose **one** of the following methods:
 
-**方法 A：项目 `.env` 文件（推荐用于独立或 LibreChat）**
+**Method A: Project `.env` File (Recommended for Standalone or LibreChat)**
 
-如果您正在与当前版本的 LibreChat 集成，则需要使用此方法（请参见下面的具体部分）。
+This method is required if integrating with the current version of LibreChat (see specific section below).
 
-1. 在 `search1api-mcp` 项目的根目录下创建一个名为 `.env` 的文件：
+1.  In the `search1api-mcp` project root directory, create a file named `.env`:
 ```bash
-    # 在 search1api-mcp 目录中
+    # In the search1api-mcp directory
     echo "SEARCH1API_KEY=your_api_key_here" > .env
 ```
-2. 将 `your_api_key_here` 替换为您的实际密钥。
-3. 确保在运行 `npm install && npm run build` 之前该文件已经存在。
+2.  Replace `your_api_key_here` with your actual key.
+3.  Make sure this file exists **before** running `npm install && npm run build`.
 
-**方法 B：环境变量（仅限独立）**
+**Method B: Environment Variable (Standalone Only)**
 
-在启动服务器之前设置 `SEARCH1API_KEY` 环境变量。
+Set the `SEARCH1API_KEY` environment variable before starting the server.
 
 ```bash
 export SEARCH1API_KEY="your_api_key_here"
 npm start
 ```
 
-**方法 C：MCP 客户端配置（高级）**
+**Method C: MCP Client Configuration (Advanced)**
 
-某些 MCP 客户端允许在其配置中直接指定环境变量。这对于像 Cursor、VS Code 扩展等客户端非常有用。
+Some MCP clients allow specifying environment variables directly in their configuration. This is useful for clients like Cursor, VS Code extensions, etc.
 
 ```json
 {
@@ -99,22 +99,22 @@ npm start
 }
 ```
 
-**LibreChat 用户注意事项：** 由于 LibreChat 当前的限制，方法 A（项目 `.env` 文件）是**必需**的方法。请参阅下面的专用集成部分以获取完整说明。
+**Note for LibreChat Users:** Due to current limitations in LibreChat, Method A (Project `.env` File) is the **required** method. See the dedicated integration section below for full instructions.
 
-## 与 LibreChat 集成（Docker）
+## Integration with LibreChat (Docker)
 
-本节详细介绍了通过 Docker 与 LibreChat 集成所需的步骤。
+This section details the required steps for integrating with LibreChat via Docker.
 
-**概述：**
+**Overview:**
 
-1. 将此服务器的仓库克隆到 LibreChat `docker-compose.yml` 可访问的位置。
-2. 使用**项目 `.env` 文件方法**在此服务器目录内配置所需的 API 密钥。
-3. 构建此服务器。
-4. 通过编辑 `librechat.yaml` 告诉 LibreChat 如何运行此服务器。
-5. 确保通过 Docker 卷绑定使构建的服务器代码在 LibreChat 容器内可用。
-6. 重启 LibreChat。
+1.  Clone this server's repository into a location accessible by your LibreChat `docker-compose.yml`.
+2.  Configure the required API key using the **Project `.env` File method** within this server's directory.
+3.  Build this server.
+4.  Tell LibreChat how to run this server by editing `librechat.yaml`.
+5.  Make sure the built server code is available inside the LibreChat container via a Docker volume bind.
+6.  Restart LibreChat.
 
-**逐步操作：**
+**Step-by-Step:**
 
 1.  **Clone the Repository:**
     Navigate to the directory on your host machine where you manage external services for LibreChat (this is often alongside your `docker-compose.yml`). A common location is a dedicated `mcp-server` directory.
@@ -185,101 +185,101 @@ npm start
     # Or: docker compose restart api (if only librechat.yaml changed)
 ```
 
-现在，Search1API 服务器应该作为工具提供者在 LibreChat 中可用。
+Now, the Search1API server should be available as a tool provider within LibreChat.
 
-## 功能
+## Features
 
-- 网页搜索功能
-- 新闻搜索功能
-- 网页内容提取
-- 网站站点地图提取
-- 使用 DeepSeek R1 进行深度思考和复杂问题解决
-- 与 Claude Desktop、Cursor、Windsurf、Cline 及其他 MCP 客户端无缝集成
+- Web search functionality
+- News search functionality
+- Web page content extraction
+- Website sitemap extraction
+- Deep thinking and complex problem solving with DeepSeek R1
+- Seamless integration with Claude Desktop, Cursor, Windsurf, Cline and other MCP clients
 
-## 工具
+## Tools
 
-### 1. 搜索工具
-- 名称: `search`
-- 描述: 使用 Search1API 进行网页搜索
-- 参数:
-  * `query` (必需): 自然语言的搜索查询。请具体且简洁以获得更好的结果
-  * `max_results` (可选, 默认: 10): 返回的结果数量
-  * `search_service` (可选, 默认: "google"): 使用的搜索服务 (google, bing, duckduckgo, yahoo, x, reddit, github, youtube, arxiv, wechat, bilibili, imdb, wikipedia)
-  * `crawl_results` (可选, 默认: 0): 需要爬取完整网页内容的结果数量
-  * `include_sites` (可选): 要包含在搜索中的网站列表
-  * `exclude_sites` (可选): 要从搜索中排除的网站列表
-  * `time_range` (可选): 搜索结果的时间范围 ("day", "month", "year")
+### 1. Search Tool
+- Name: `search`
+- Description: Search the web using Search1API
+- Parameters:
+  * `query` (required): Search query in natural language. Be specific and concise for better results
+  * `max_results` (optional, default: 10): Number of results to return
+  * `search_service` (optional, default: "google"): Search service to use (google, bing, duckduckgo, yahoo, x, reddit, github, youtube, arxiv, wechat, bilibili, imdb, wikipedia)
+  * `crawl_results` (optional, default: 0): Number of results to crawl for full webpage content
+  * `include_sites` (optional): List of sites to include in search
+  * `exclude_sites` (optional): List of sites to exclude from search
+  * `time_range` (optional): Time range for search results ("day", "month", "year")
 
-### 2. 新闻工具
-- 名称: `news`
-- 描述: 使用 Search1API 搜索新闻文章
-- 参数:
-  * `query` (必需): 自然语言的搜索查询。请具体且简洁以获得更好的结果
-  * `max_results` (可选, 默认: 10): 返回的结果数量
-  * `search_service` (可选, 默认: "bing"): 使用的搜索服务 (google, bing, duckduckgo, yahoo, hackernews)
-  * `crawl_results` (可选, 默认: 0): 需要爬取完整网页内容的结果数量
-  * `include_sites` (可选): 要包含在搜索中的网站列表
-  * `exclude_sites` (可选): 要从搜索中排除的网站列表
-  * `time_range` (可选): 搜索结果的时间范围 ("day", "month", "year")
+### 2. News Tool
+- Name: `news`
+- Description: Search for news articles using Search1API
+- Parameters:
+  * `query` (required): Search query in natural language. Be specific and concise for better results
+  * `max_results` (optional, default: 10): Number of results to return
+  * `search_service` (optional, default: "bing"): Search service to use (google, bing, duckduckgo, yahoo, hackernews)
+  * `crawl_results` (optional, default: 0): Number of results to crawl for full webpage content
+  * `include_sites` (optional): List of sites to include in search
+  * `exclude_sites` (optional): List of sites to exclude from search
+  * `time_range` (optional): Time range for search results ("day", "month", "year")
 
-### 3. 爬虫工具
-- 名称: `crawl`
-- 描述: 使用 Search1API 从 URL 提取内容
-- 参数:
-  * `url` (必需): 要爬取的 URL
+### 3. Crawl Tool
+- Name: `crawl`
+- Description: Extract content from a URL using Search1API
+- Parameters:
+  * `url` (required): URL to crawl
 
-### 4. 站点地图工具
-- 名称: `sitemap`
-- 描述: 从 URL 获取所有相关链接
-- 参数:
-  * `url` (必需): 要获取站点地图的 URL
+### 4. Sitemap Tool
+- Name: `sitemap`
+- Description: Get all related links from a URL
+- Parameters:
+  * `url` (required): URL to get sitemap
 
-### 5. 推理工具
-- 名称: `reasoning`
-- 描述: 一个用于深度思考和复杂问题解决的工具，具有快速的 deepseek r1 模型和网络搜索能力（您可以在 search1api 网站上更改到任何其他模型，但速度无法保证）
-- 参数:
-  * `content` (必需): 需要深度思考的问题或难题
+### 5. Reasoning Tool
+- Name: `reasoning`
+- Description: A tool for deep thinking and complex problem solving with fast deepseek r1 model and web search ability(You can change to any other model in search1api website but the speed is not guaranteed)
+- Parameters:
+  * `content` (required): The question or problem that needs deep thinking
 
-### 6. 热门话题工具
-- 名称: `trending`
-- 描述: 从热门平台获取热门话题
-- 参数:
-  * `search_service` (必需): 指定要从中获取热门话题的平台 (github, hackernews)
-  * `max_results` (可选, 默认: 10): 返回的最大热门条目数
+### 6. Trending Tool
+- Name: `trending`
+- Description: Get trending topics from popular platforms
+- Parameters:
+  * `search_service` (required): Specify the platform to get trending topics from (github, hackernews)
+  * `max_results` (optional, default: 10): Maximum number of trending items to return
 
-## 版本历史
+## Version History
 
-- v0.2.0: 为LibreChat集成添加了回退的`.env`支持，并更新了依赖项。
-- v0.1.8: 添加了X(Twitter)和Reddit搜索服务
-- v0.1.7: 添加了GitHub和Hacker News的趋势工具
-- v0.1.6: 添加了维基百科搜索服务
-- v0.1.5: 添加了新的搜索参数（include_sites, exclude_sites, time_range）和新的搜索服务（arxiv, wechat, bilibili, imdb）
-- v0.1.4: 添加了带有deepseek r1的推理工具，并更新了Cursor和Windsurf配置指南
-- v0.1.3: 添加了新闻搜索功能
-- v0.1.2: 添加了站点地图功能
-- v0.1.1: 添加了网络爬虫功能
-- v0.1.0: 初始版本，包含搜索功能
+- v0.2.0: Added fallback `.env` support for LibreChat integration and updated dependencies.
+- v0.1.8: Added X(Twitter) and Reddit search services
+- v0.1.7: Added Trending tool for GitHub and Hacker News
+- v0.1.6: Added Wikipedia search service
+- v0.1.5: Added new search parameters (include_sites, exclude_sites, time_range) and new search services (arxiv, wechat, bilibili, imdb)
+- v0.1.4: Added reasoning tool with deepseek r1 and updated the Cursor and Windsurf configuration guide
+- v0.1.3: Added news search functionality
+- v0.1.2: Added sitemap functionality
+- v0.1.1: Added web crawling functionality
+- v0.1.0: Initial release with search functionality
 
-## 许可证
+## License
 
-本项目采用MIT许可证 - 详情请参阅LICENSE文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/fatwang2/search1api-mcp](https://github.com/fatwang2/search1api-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/fatwang2/search1api-mcp](https://github.com/fatwang2/search1api-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `search`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y search1api-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y search1api-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/fatwang2-search1api.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/fatwang2-search1api.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

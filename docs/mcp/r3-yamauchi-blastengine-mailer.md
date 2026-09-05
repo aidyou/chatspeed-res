@@ -1,46 +1,46 @@
 ---
-title: "邮件服务"
-description: "一个基于 TypeScript 的 MCP 服务器，实现了电子邮件发送系统，允许 Claude 通过 blastengine 服务发送电子邮件。"
+title: "mcp-server-blastengine-mailer"
+description: "A TypeScript-based MCP server that implements an email sending system, allowing Claude to send emails via the blastengine service."
 ---
 
-# 邮件服务
+# mcp-server-blastengine-mailer
 
-一个基于 TypeScript 的 MCP 服务器，实现了电子邮件发送系统，允许 Claude 通过 blastengine 服务发送电子邮件。
+A TypeScript-based MCP server that implements an email sending system, allowing Claude to send emails via the blastengine service.
 
-# blastengine-mailer MCP 服务器
+# blastengine-mailer MCP Server
 
-这是一个基于模型上下文协议的服务器。
+A Model Context Protocol server
 
-这是一款基于 TypeScript 的 MCP 服务器，实现了发送电子邮件的系统。
+This is a TypeScript-based MCP server that implements a sending email system.
 
-## 特性
+## Features
 
-### 工具
-- `send_email` - 发送邮件
+### Tools
+- `send_email` - send a email
 
-## 开发
+## Development
 
-安装依赖项：
+Install dependencies:
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 ```bash
 npm run build
 ```
 
-开发时自动重建：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-## 安装
+## Installation
 
-要与 Claude Desktop 一起使用，请添加服务器配置：
+To use with Claude Desktop, add the server config:
 
-在 MacOS 上: `~/Library/Application Support/Claude/claude_desktop_config.json`
-在 Windows 上: `%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -59,32 +59,32 @@ npm run watch
 }
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过标准输入输出进行通信，调试可能会比较困难。我们推荐使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为一个包脚本可用：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 npm run inspector
 ```
 
-Inspector 将提供一个 URL，以便您可以在浏览器中访问调试工具。
+The Inspector will provide a URL to access debugging tools in your browser.
 
-**官方网站：** [https://github.com/r3-yamauchi/mcp-server-blastengine-mailer](https://github.com/r3-yamauchi/mcp-server-blastengine-mailer)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/r3-yamauchi/mcp-server-blastengine-mailer](https://github.com/r3-yamauchi/mcp-server-blastengine-mailer)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/blastengine-mailer/server.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/blastengine-mailer/server.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/r3-yamauchi-blastengine-mailer.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/r3-yamauchi-blastengine-mailer.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

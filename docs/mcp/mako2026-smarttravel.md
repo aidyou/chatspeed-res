@@ -1,208 +1,206 @@
 ---
-title: "全能旅行助手"
-description: "🧳 全能旅行助手 16合1一站式旅行MCP服务，覆盖行程规划、火车票、机票、酒店、景点、美食、交通、天气、汽车票、跟团游、邮轮、度假线路及万豪酒店专属服务。 ✨ 核心特性 ▸ 一站式全覆盖 — 16个工具覆盖旅行全链路，从规划到预订一步到位 ▸ 自然语言规划 — 输入\"三亚5天亲子游\"即可生成完整行程方案 ▸ 多数据源聚合 — 飞猪+高德+同程+途牛四大平台数据汇聚 ▸ 预订链接直达 — 搜索结果附带预订链接，点击即可下单 ▸ 零配置接入 — MCP URL直连即用，无需申请Key 🛠 工具 plantravel "
+title: "SmartTravel"
+description: "🧳 All-in-One Travel Assistant 16-in-1 one-stop travel MCP service, covering itinerary planning, train tickets, flight tickets, hotels, attractions, food, transportation, weather, bus tickets, group to…"
 ---
 
-# 全能旅行助手
+# SmartTravel
 
-🧳 全能旅行助手 16合1一站式旅行MCP服务，覆盖行程规划、火车票、机票、酒店、景点、美食、交通、天气、汽车票、跟团游、邮轮、度假线路及万豪酒店专属服务。 ✨ 核心特性 ▸ 一站式全覆盖 — 16个工具覆盖旅行全链路，从规划到预订一步到位 ▸ 自然语言规划 — 输入"三亚5天亲子游"即可生成完整行程方案 ▸ 多数据源聚合 — 飞猪+高德+同程+途牛四大平台数据汇聚 ▸ 预订链接直达 — 搜索结果附带预订链接，点击即可下单 ▸ 零配置接入 — MCP URL直连即用，无需申请Key 🛠 工具 plantravel 
+🧳 All-in-One Travel Assistant 16-in-1 one-stop travel MCP service, covering itinerary planning, train tickets, flight tickets, hotels, attractions, food, transportation, weather, bus tickets, group to…
 
-🧳 全能旅行助手
+🧳 All-in-One Travel Assistant
 
-16合1一站式旅行MCP服务，覆盖行程规划、火车票、机票、酒店、景点、美食、交通、天气、汽车票、跟团游、邮轮、度假线路及万豪酒店专属服务。
+16-in-1 one-stop travel MCP service, covering itinerary planning, train tickets, flight tickets, hotels, attractions, food, transportation, weather, bus tickets, group tours, cruises, vacation routes, and exclusive services for Marriott hotels.
 
-✨ 核心特性
+✨ Core Features
 
-▸ 一站式全覆盖 — 16个工具覆盖旅行全链路，从规划到预订一步到位
+▸ One-Stop Full Coverage — 16 tools cover the entire travel journey, from planning to booking in one go
 
-▸ 自然语言规划 — 输入"三亚5天亲子游"即可生成完整行程方案
+▸ Natural Language Planning — Input "5-day family trip to Sanya" to generate a complete itinerary plan
 
-▸ 多数据源聚合 — 飞猪+高德+同程+途牛四大平台数据汇聚
+▸ Multi-Source Data Aggregation — Data from Fliggy, AutoNavi, Tongcheng, and Tuniu aggregated
 
-▸ 预订链接直达 — 搜索结果附带预订链接，点击即可下单
+▸ Direct Booking Links — Search results come with booking links, click to place an order
 
-▸ 零配置接入 — MCP URL直连即用，无需申请Key
+▸ Zero Configuration Access — Use MCP URL directly without needing to apply for a Key
 
-🛠 工具
+🛠 Tools
 
-plan_travel - 旅行智能规划
+plan_travel - Intelligent Travel Planning
 
-用自然语言描述旅行需求，自动推荐目的地、行程安排、交通住宿方案。规划后可继续查票、订酒店、查天气、生成打车链接。
+Describe your travel needs in natural language, and it will automatically recommend destinations, itinerary arrangements, and transportation and accommodation plans. After planning, you can continue to check tickets, book hotels, check the weather, and generate taxi links.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：旅行需求描述，如"三亚5天亲子游预算1万""周末杭州2日游"
+▸ query (string, ✅ required): Description of travel needs, such as "5-day family trip to Sanya with a budget of 10,000 RMB", "2-day weekend trip to Hangzhou"
 
-search_train - 火车票查询
+search_train - Train Ticket Search
 
-查询火车票/高铁票，返回实时余票、时刻表与价格。
+Query train tickets/high-speed rail tickets, returning real-time availability, schedules, and prices.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：出发地+目的地+日期，如"广州到北京明天"
+▸ query (string, ✅ required): Departure + destination + date, such as "Guangzhou to Beijing tomorrow"
 
-search_flight - 机票查询
+search_flight - Flight Ticket Search
 
-查询国内航班机票，返回实时价格、航班时刻与预订链接。
+Query domestic flight tickets, returning real-time prices, flight schedules, and booking links.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：出发地+目的地+日期，如"上海到北京6月25日"
+▸ query (string, ✅ required): Departure + destination + date, such as "Shanghai to Beijing on June 25th"
 
-search_hotel - 酒店搜索
+search_hotel - Hotel Search
 
-搜索酒店住宿，返回实时价格和可预订链接，支持星级、价格、地标等多维筛选，8字段结构化展示。
+Search for hotel accommodations, returning real-time prices and booking links, supporting multi-dimensional filtering by star rating, price, and landmarks, with 8-field structured display.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市+酒店关键词，如"上海外滩附近五星级酒店300-800元"
+▸ query (string, ✅ required): City + hotel keywords, such as "5-star hotel near the Bund in Shanghai, 300-800 RMB"
 
-search_poi - 景点门票搜索
+search_poi - Attraction Ticket Search
 
-搜索景点门票，返回门票价格与购票链接，支持城市、关键词、景区等级筛选。
+Search for attraction tickets, returning ticket prices and booking links, supporting city, keyword, and scenic area level filtering.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市+景点关键词，如"北京故宫门票""上海迪士尼"
+▸ query (string, ✅ required): City + attraction keywords, such as "Beijing Forbidden City tickets", "Shanghai Disneyland"
 
-search_fast - 快速搜索
+search_fast - Quick Search
 
-轻量意图秒级响应，适合简单关键词查询场景。
+Lightweight intent response within seconds, suitable for simple keyword search scenarios.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：搜索关键词，如"三亚民宿""成都火锅"
+▸ query (string, ✅ required): Search keywords, such as "Sanya homestay", "Chengdu hotpot"
 
-search_marriott_hotel - 万豪酒店搜索
+search_marriott_hotel - Marriott Hotel Search
 
-搜索万豪旗下酒店，品牌专属筛选，返回实时价格与预订链接。
+Search for Marriott-branded hotels, with brand-specific filtering, returning real-time prices and booking links.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市+品牌关键词，如"上海JW万豪""北京丽思卡尔顿"
+▸ query (string, ✅ required): City + brand keywords, such as "JW Marriott in Shanghai", "Ritz-Carlton in Beijing"
 
-get_marriott_hotel_info - 万豪酒店详情
+get_marriott_hotel_info - Marriott Hotel Details
 
-获取万豪酒店详细信息，包括设施、政策、图片等。
+Get detailed information about Marriott hotels, including facilities, policies, and images.
 
-参数：
+Parameters:
 
-▸ hotel_id（string，✅必填）：酒店ID，从search_marriott_hotel结果获取
+▸ hotel_id (string, ✅ required): Hotel ID, obtained from the search_marriott_hotel result
 
-search_marriott_package - 万豪酒店套餐搜索
+search_marriott_package - Marriott Hotel Package Search
 
-搜索万豪酒店套餐，含餐、含景点等组合优惠方案。
+Search for Marriott hotel packages, including meal and attraction combinations and other promotional offers.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市+套餐关键词，如"上海万豪含早餐套餐"
+▸ query (string, ✅ required): City + package keywords, such as "Marriott breakfast package in Shanghai"
 
-search_food - 美食推荐
+search_food - Food Recommendations
 
-搜索附近餐厅美食，返回评分、人均消费、地址。
+Search for nearby restaurants and cuisine, returning ratings, average cost per person, and addresses.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市+美食关键词，如"成都火锅推荐""广州早茶"
+▸ query (string, ✅ required): City + food keywords, such as "Chengdu hotpot recommendations", "Cantonese dim sum in Guangzhou"
 
-search_transport - 市内交通查询
+search_transport - In-City Transportation Query
 
-查询市内交通方案，含地铁/公交换乘路线、打车预估费用，并生成一键打车链接。仅支持国内城市。
+Query in-city transportation options, including subway/bus transfer routes, estimated taxi fares, and generate one-click taxi links. Only supports domestic cities.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：出发地+目的地+城市，如"从南京路到外滩 上海"
+▸ query (string, ✅ required): Departure + destination + city, such as "from Nanjing Road to the Bund in Shanghai"
 
-search_weather - 天气查询
+search_weather - Weather Query
 
-查询目的地天气预报，出发前了解天气，辅助行程安排和行李准备。
+Query the weather forecast at the destination, understand the weather before departure to assist in itinerary planning and luggage preparation.
 
-参数：
+Parameters:
 
-▸ query（string，✅必填）：城市名称，如"三亚天气""北京未来一周天气"
+▸ query (string, ✅ required): City name, such as "Sanya weather", "Beijing weather for the next week"
 
-bus_search - 汽车票搜索
+bus_search - Bus Ticket Search
 
-搜索长途汽车票和城际大巴班次，返回发车时间、车型、票价、余票和预订链接。
+Search for long-distance bus and intercity bus schedules, returning departure times, vehicle types, ticket prices, availability, and booking links.
 
-参数：
+Parameters:
 
-▸ departure（string，选填）：出发城市，如"上海""北京"
+▸ departure (string, optional): Departure city, such as "Shanghai", "Beijing"
 
-▸ destination（string，选填）：到达城市，如"杭州""苏州"
+▸ destination (string, optional): Arrival city, such as "Hangzhou", "Suzhou"▸ date (string, optional): Departure date, such as "2026-06-25", default is today
 
-▸ date（string，选填）：出发日期，如"2026-06-25"，默认今天
+travel_search - Group Tour Search
 
-travel_search - 跟团游搜索
+Search for group tours and free travel products, returning the number of travel days, price, included attractions, and booking links.
 
-搜索跟团游和自由行旅游产品，返回行程天数、价格、含景点、预订链接。
+Parameters:
 
-参数：
+▸ departure (string, optional): Departure city, such as "Shanghai" or "Beijing"
 
-▸ departure（string，选填）：出发城市，如"上海""北京"
+▸ destination (string, optional): Destination, such as "Yunnan" or "Jiuzhaigou"
 
-▸ destination（string，选填）：目的地，如"云南""九寨沟"
+▸ date (string, optional): Departure date
 
-▸ date（string，选填）：出发日期
+▸ days (string, optional): Number of travel days, such as "5" or "7"
 
-▸ days（string，选填）：行程天数，如"5""7"
+cruise_search - Cruise Search
 
-cruise_search - 邮轮搜索
+Search for cruise travel products, returning the cruise brand, route, number of travel days, price, and booking link.
 
-搜索邮轮旅游产品，返回邮轮品牌、航线、行程天数、价格和预订链接。
+Parameters:
 
-参数：
+▸ departure (string, optional): Departure city, such as "Shanghai" or "Tianjin"
 
-▸ departure（string，选填）：出发城市，如"上海""天津"
+▸ destination (string, optional): Destination route, such as "Japan" or "Southeast Asia"
 
-▸ destination（string，选填）：目的地航线，如"日本""东南亚"
+▸ month (string, optional): Departure month, such as "2026-07"
 
-▸ month（string，选填）：出发月份，如"2026-07"
+holiday_search - Holiday Route Search
 
-holiday_search - 度假线路搜索
+Search for holiday travel routes, supporting keyword, departure city, budget, and duration filters.
 
-搜索度假旅游线路产品，支持关键词、出发城市、预算、天数筛选。
+Parameters:
 
-参数：
+▸ query (string, optional): Keywords, such as "Hainan vacation" or "Japan group tour"
 
-▸ query（string，选填）：关键词，如"海南度假""日本跟团"
+▸ departure (string, optional): Departure city
 
-▸ departure（string，选填）：出发城市
+▸ budget (string, optional): Budget range, such as "5000" or "3000-8000"
 
-▸ budget（string，选填）：预算范围，如"5000""3000-8000"
+▸ days (string, optional): Duration, such as "5" or "7"
 
-▸ days（string，选填）：天数，如"5""7"
+📝 Usage Examples
 
-📝 使用示例
+▸ "Sanya 5-day family trip budget 10,000" → plan_travel generates a 5-day itinerary for Sanya
 
-▸ "三亚5天亲子游预算1万" → plan_travel 生成三亚5日行程方案
+▸ "Guangzhou to Beijing train ticket tomorrow" → search_train queries train tickets
 
-▸ "广州到北京明天火车票" → search_train 查询火车票
+▸ "Shanghai Bund five-star hotel" → search_hotel searches for hotels
 
-▸ "上海外滩五星级酒店" → search_hotel 搜索酒店
+▸ "Beijing Forbidden City ticket" → search_poi searches for attraction tickets
 
-▸ "北京故宫门票" → search_poi 搜索景点门票
+▸ "Chengdu hotpot recommendation" → search_food recommends food
 
-▸ "成都火锅推荐" → search_food 推荐美食
+▸ "From Nanjing Road to the Bund, Shanghai" → search_transport queries urban transportation
 
-▸ "从南京路到外滩 上海" → search_transport 查询市内交通
+**Official site: ** [https://pypi.org/project/mcp-travel-smart-plan/](https://pypi.org/project/mcp-travel-smart-plan/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://pypi.org/project/mcp-travel-smart-plan/](https://pypi.org/project/mcp-travel-smart-plan/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `data`
+- Tags: `search`, `developer tools`, `location services`, `旅行规划`, `行程规划`, `旅游攻略`, `火车票`, `高铁票`, `机票查询`, `酒店搜索`
 
-- 分类：`data`
-- 标签：`search`, `developer tools`, `location services`, `旅行规划`, `行程规划`, `旅游攻略`, `火车票`, `高铁票`, `机票查询`, `酒店搜索`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-travel-smart-plan==7.0.2`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-travel-smart-plan==7.0.2`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/mako2026-smarttravel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mako2026-smarttravel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "weather_query",
-    "zh-Hans": "天气 查询",
-    "zh-Hant": "天气 查询"
+    "zh-Hans": "天气 查询"
   },
   "description": {
     "en": "Obtain weather information based on specified conditions (MCP standardized interface). Core pain point addressed: Replaces the repetitive labor of manually checking the weather, supports automation integration in multiple scenarios (such as travel guides, offi",
-    "zh-Hans": "获取指定条件的天气信息（MCP标准化接口）。 解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。 Args: location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级； timerange (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"； needtype (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。 Re",
-    "zh-Hant": "获取指定条件的天气信息（MCP标准化接口）。 解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。 Args: location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级； timerange (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"； needtype (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。 Re"
+    "zh-Hans": "获取指定条件的天气信息（MCP标准化接口）。 解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。 Args: location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级； timerange (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"； needtype (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。 Re"
   },
   "detail": {
     "en": "Obtain weather information based on specified conditions (MCP standardized interface).  \n    Core pain point addressed: Replaces the repetitive labor of manually checking the weather, supports automation integration in multiple scenarios (such as travel guides, office reminders, agricultural alerts).\n\n    Args:  \n        location (str, required): Specific city/region (e.g., \"Chaoyang District, Beijing\", \"Paris\"), needs to be specified at the city level;  \n        time_range (str, optional): Time range, possible values are [\"实时\", \"未来1天\", \"未来3天\"], default is \"实时\";  \n        need_type (str, optional): Type of requirement, possible values are [\"综合\", \"温度+降水\", \"风力+空气质量\"], default is \"综合\".\n\n    Returns:  \n        tuple[Dict, str]: Structured data (for MCP integration), human-readable feedback (for direct display).",
-    "zh-Hans": "获取指定条件的天气信息（MCP标准化接口）。  \r\n    解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。  \r\n\r\n    Args:  \r\n        location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级；  \r\n        time_range (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"；  \r\n        need_type (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。  \r\n\r\n    Returns:  \r\n        tuple[Dict, str]: 结构化数据（用于MCP集成）、人性化反馈（用于直接展示）。",
-    "zh-Hant": "获取指定条件的天气信息（MCP标准化接口）。  \r\n    解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。  \r\n\r\n    Args:  \r\n        location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级；  \r\n        time_range (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"；  \r\n        need_type (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。  \r\n\r\n    Returns:  \r\n        tuple[Dict, str]: 结构化数据（用于MCP集成）、人性化反馈（用于直接展示）。"
+    "zh-Hans": "获取指定条件的天气信息（MCP标准化接口）。  \r\n    解决的核心痛点：替代手动查询天气的重复劳动，支持多场景自动化整合（如旅游攻略、办公提醒、农业预警）。  \r\n\r\n    Args:  \r\n        location (str, 必填): 具体城市/区域（如\"北京市朝阳区\"、\"巴黎\"），需明确到城市级；  \r\n        time_range (str, 可选): 时间范围，可选值为[\"实时\", \"未来1天\", \"未来3天\"]，默认\"实时\"；  \r\n        need_type (str, 可选): 需求类型，可选值为[\"综合\", \"温度+降水\", \"风力+空气质量\"]，默认\"综合\"。  \r\n\r\n    Returns:  \r\n        tuple[Dict, str]: 结构化数据（用于MCP集成）、人性化反馈（用于直接展示）。"
   },
   "categories": [
     "search"

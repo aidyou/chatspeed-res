@@ -1,47 +1,47 @@
 ---
-title: "MCP Google日历管理器"
-description: "启用全面的日历管理功能，可以通过与Google日历集成的Model Context Protocol服务器创建、列出、更新和删除事件。"
+title: "mcp-google-calendar"
+description: "Enables comprehensive calendar management with capabilities to create, list, update, and delete events through a Model Context Protocol server integrated with Google Calendar."
 ---
 
-# MCP Google日历管理器
+# mcp-google-calendar
 
-启用全面的日历管理功能，可以通过与Google日历集成的Model Context Protocol服务器创建、列出、更新和删除事件。
+Enables comprehensive calendar management with capabilities to create, list, update, and delete events through a Model Context Protocol server integrated with Google Calendar.
 
-# Calendar Tools MCP 服务器
+# Calendar Tools MCP Server
 
-一个强大的模型上下文协议（MCP）服务器，提供全面的日历管理功能。
+A powerful Model Context Protocol (MCP) server providing comprehensive calendar management capabilities.
 
-## 功能
+## Features
 
-### 日历管理
+### Calendar Management
 
-- 创建日历事件
-- 列出日历事件
-- 更新现有事件
-- 删除事件
+- Create calendar events
+- List calendar events
+- Update existing events
+- Delete events
 
-## 在 Dive Desktop 上的演示
+## Demo on Dive Desktop
 
-## 安装
+## Installation
 
-### 手动安装
+### Manual Installation
 
 ```bash
 npm install -g @cablate/mcp-google-calendar
 ```
 
-## 使用方法
+## Usage
 
-### 命令行界面 (CLI)
+### Cli
 
 ```bash
 mcp-google-calendar
 ```
 
-### 使用 [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)
+### With [Dive Desktop](https://github.com/OpenAgentPlatform/Dive)
 
-1. 在 Dive Desktop 中点击 "+ 添加 MCP 服务器"
-2. 复制并粘贴以下配置：
+1. Click "+ Add MCP Server" in Dive Desktop
+2. Copy and paste this configuration:
 
 ```json
 {
@@ -60,63 +60,63 @@ mcp-google-calendar
 }
 ```
 
-3. 点击“保存”以安装 MCP 服务器
+3. Click "Save" to install the MCP server
 
-## Google 服务账号和凭证
+## Google Service Account and Credentials
 
-以下是创建 Google 服务账号和凭证的简单步骤：
+Here is the simple steps to create a google service account and credentials:
 
-1. 前往 [Google Cloud 控制台](https://console.cloud.google.com/)
-2. 创建新项目或选择现有项目
-3. 导航到 "IAM & Admin" 部分
-4. 点击 "Service Accounts"
-5. 点击 "Create Service Account"
-6. 为服务账号输入名称（例如，“MCP Google Calendar”）
-7. 点击 "Create"
-8. 点击 "Create Key"
-9. 选择 "JSON" 作为密钥类型
-10. 点击 "Create"
-11. 下载 JSON 文件并将其保存为 `credentials.json`
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing project
+3. Navigate to the "IAM & Admin" section
+4. Click on "Service Accounts"
+5. Click on "Create Service Account"
+6. Enter a name for the service account (e.g., "MCP Google Calendar")
+7. Click on "Create"
+8. Click on "Create Key"
+9. Select "JSON" as the key type
+10. Click on "Create"
+11. Download the JSON file and save it as `credentials.json`
 
-如果还有任何问题，请自行搜索答案。
+if still got any question, google and find the answer.
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎社区参与和贡献！以下是贡献方式：
+Welcome community participation and contributions! Here are ways to contribute:
 
-- ⭐️ 如果您觉得该项目有帮助，请给它点个星
-- 🐛 提交问题：报告问题或提供建议
-- 🔧 创建 Pull Requests：提交代码改进
+- ⭐️ Star the project if you find it helpful
+- 🐛 Submit Issues: Report problems or provide suggestions
+- 🔧 Create Pull Requests: Submit code improvements
 
-## 联系
+## Contact
 
-如果您有任何问题或建议，请随时联系我们：
+If you have any questions or suggestions, feel free to reach out:
 
-- 📧 电子邮件: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
+- 📧 Email: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
 - 📧 GitHub: [CabLate](https://github.com/cablate/)
-- 🤝 合作: 欢迎讨论项目合作事宜
-- 📚 技术指导: 欢迎提出建议和指导
+- 🤝 Collaboration: Welcome to discuss project cooperation
+- 📚 Technical Guidance: Sincere welcome for suggestions and guidance
 
-**官方网站：** [https://github.com/cablate/mcp-google-calendar](https://github.com/cablate/mcp-google-calendar)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cablate/mcp-google-calendar](https://github.com/cablate/mcp-google-calendar)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @cablate/mcp-google-calendar`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @cablate/mcp-google-calendar`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cablate-google-calendar.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cablate-google-calendar.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

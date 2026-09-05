@@ -20,7 +20,11 @@ RESOURCES = ROOT / "resources"
 PUBLIC_CATALOG = ROOT / "public" / "catalog"
 GENERATED_DATA = ROOT / "src" / "data" / "generated"
 DOCS_ROOT = ROOT / "docs"
-LOCALES = ("en", "zh-Hans", "zh-Hant")
+LOCALES = ("en", "zh-Hans")
+# Active locale during docs generation. localized() falls back to this so every
+# localized(...) call site (including ones we must not hand-edit) becomes
+# locale-aware. write_docs sets it per generated locale.
+_LOCALE = "en"
 CHANNELS = ("mcp", "models", "free-ai")
 COMMON_FIELDS = (
     "id",
@@ -304,8 +308,9 @@ def localized_search_text(resource: dict) -> str:
     return " ".join(values).lower()
 
 
-def localized(resource: dict, field: str, locale: str = "zh-Hans") -> str:
+def localized(resource: dict, field: str, locale: str | None = None) -> str:
     values = resource[field]
+    locale = locale or _LOCALE
     return values.get(locale) or values.get("en") or next(iter(values.values()))
 
 
@@ -313,11 +318,173 @@ def markdown_link(url: str, label: str) -> str:
     return f"[{label}]({url})"
 
 
+# Upstream README content in the localized `description`/`detail` fields can contain
+# raw HTML, Vue `{{ }}` interpolation, and relative asset links. English entries in
+# particular are dirtier than Chinese and break the VuePress markdown->Vue compile.
+# These sanitizers make arbitrary resource content safe to emit as markdown pages.
+def _strip_tags(text: str) -> str:
+    return re.sub(r"</?[a-zA-Z][^>]*>", " ", text)
+
+
+def _plain_summary(text: str, limit: int = 200) -> str:
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = _strip_tags(text)
+    text = re.sub(r"[`*_#>]", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return (text[:limit].rstrip(" ,;:.") + "…") if len(text) > limit else text
+
+
+def _fix_relative_assets(text: str) -> str:
+    text = re.sub(r"!\[([^\]]*)\]\((?:\.\.?/)[^)]*\)", r"\1", text)
+    text = re.sub(r"\[([^\]]*)\]\((?:\.\.?/)[^)]*\)", r"\1", text)
+    return text
+
+
+def _outside_code(text: str, transform) -> str:
+    out = []
+    fence = False
+    for line in text.split("\n"):
+        stripped = line.lstrip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            fence = not fence
+            out.append(line)
+            continue
+        out.append(line if fence else transform(line))
+    return "\n".join(out)
+
+
+def _escape_vue_line(line: str) -> str:
+    # Wrap {{ ... }} in inline code so VuePress does not treat it as interpolation.
+    # (HTML entities are decoded back to braces by markdown-it, so they do not help.)
+    return re.sub(r"\{\{(.+?)\}\}", r"`{{\1}}`", line)
+
+
+def _sanitize_detail(text: str) -> str:
+    text = _fix_relative_assets(text)
+    text = _outside_code(text, _escape_vue_line)
+    text = _outside_code(text, _strip_tags)
+    return text
+
+
+_DETAIL_LABELS = {
+    "en": {
+        "official": "Official site", "status": "Status", "lastVerified": "Last verified",
+        "catTags": "Categories & Tags", "categories": "Categories", "tags": "Tags",
+        "mcpConfig": "MCP Configuration", "transport": "Transport", "command": "Command",
+        "args": "Args", "argsNone": "none",
+        "mcpNote": "This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.",
+        "providerConfig": "Provider Configuration", "protocol": "Protocol", "baseUrl": "Base URL",
+        "modelCount": "Model count", "docs": "Docs", "modelList": "Model list", "apiKey": "API key",
+        "supportedModels": "Supported models", "colModelId": "Model ID", "colName": "Name",
+        "colCaps": "Capabilities", "basicChat": "Basic chat",
+        "freeUsage": "Free Usage", "access": "Access", "requiresLogin": "Requires login",
+        "hasFreeTier": "Has free tier", "availability": "Availability", "yes": "Yes", "no": "No",
+        "quotaDetail": "Per-model free quota", "colModel": "Model", "colQuota": "Free quota",
+        "colFreq": "Rate / frequency",
+        "regLimits": "Registration & Limits", "signup": "Sign up", "regLimit": "Registration limit",
+        "freePolicy": "Free policy doc",
+        "csImport": "ChatSpeed Import",
+        "csImportNote": "This service is linked to model provider `{ref}`; import its config from the model provider list. Call entry points:",
+        "logo": "Logo", "dataSource": "Data source",
+        "sourceNote": "Resource file: `resources/{channel}/{id}.json`. Content last verified on `{date}`; free quotas and service limits may change with official policies.",
+    },
+    "zh-Hans": {
+        "official": "官方网站", "status": "状态", "lastVerified": "最后核验",
+        "catTags": "分类与标签", "categories": "分类", "tags": "标签",
+        "mcpConfig": "MCP 配置", "transport": "传输方式", "command": "启动命令",
+        "args": "参数", "argsNone": "无",
+        "mcpNote": "该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。",
+        "providerConfig": "供应商配置", "protocol": "协议", "baseUrl": "Base URL",
+        "modelCount": "模型数量", "docs": "文档", "modelList": "模型列表", "apiKey": "密钥申请",
+        "supportedModels": "支持的模型", "colModelId": "模型 ID", "colName": "名称",
+        "colCaps": "能力", "basicChat": "基础对话",
+        "freeUsage": "免费使用说明", "access": "访问方式", "requiresLogin": "是否需要登录",
+        "hasFreeTier": "是否有免费层", "availability": "可用区域", "yes": "是", "no": "否",
+        "quotaDetail": "分模型免费额度明细", "colModel": "模型", "colQuota": "免费额度",
+        "colFreq": "频率与限速",
+        "regLimits": "注册与限制", "signup": "注册入口", "regLimit": "注册限制",
+        "freePolicy": "免费政策文档",
+        "csImport": "ChatSpeed 导入",
+        "csImportNote": "该服务关联模型供应商 `{ref}`，可从模型供应商列表导入配置，调用入口如下：",
+        "logo": "Logo", "dataSource": "数据来源",
+        "sourceNote": "资源文件：`resources/{channel}/{id}.json`。内容最后核验于 `{date}`；免费额度和服务限制可能随官方政策变化。",
+    },
+}
+
+_HOME_META = {
+    "en": {"title": "ChatSpeed Resource Center", "description": "A catalog of MCP servers, model providers, and free AI services."},
+    "zh-Hans": {"title": "ChatSpeed 资源中心", "description": "MCP、模型供应商和免费 AI 服务目录"},
+}
+
+_CHANNEL_META = {
+    "en": {
+        "mcp": ("MCP Servers", "MCP servers you can import into ChatSpeed. The list shows a short summary; open a resource for the full configuration and usage."),
+        "models": ("Model Providers", "Model providers compatible with ChatSpeed. The list is for quick selection; detail pages include protocol, endpoints, and model info."),
+        "free-ai": ("Free AI", "Directory of free AI websites and API services. Free quotas are dynamic; refer to the detail page and official site."),
+    },
+    "zh-Hans": {
+        "mcp": ("MCP 服务", "可导入 ChatSpeed 的 MCP 服务。列表展示简要说明，点击资源进入完整配置与使用详情。"),
+        "models": ("模型供应商", "可接入 ChatSpeed 的模型供应商。列表用于快速选择，详情页包含协议、接口和模型信息。"),
+        "free-ai": ("免费 AI", "免费 AI 网站与 API 服务目录。免费额度是动态信息，请以详情页和官方页面为准。"),
+    },
+}
+
+_GUIDE = {
+    "en": """---
+title: Guide
+description: How to browse resources and import them into ChatSpeed
+sidebar: false
+---
+
+# Guide
+
+## Browse resources
+
+Use the top navigation to switch between the MCP Servers, Model Providers, and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time.
+
+## Before importing
+
+- Resource configs come from a public catalog. Before importing, verify the official site, command, arguments, and permission source.
+- This site never stores your ChatSpeed API key, MCP secrets, or other credentials.
+- Free quotas, model availability, and service limits change over time. Refer to the official pages and the last-verified date on each resource detail page.
+
+## Submit a resource
+
+Online submissions are not available yet. You can contribute resource files through the project repository, following the [resource spec](/RESOURCE_SPEC.html) for localized descriptions, categories, tags, official links, and verification date.
+""",
+    "zh-Hans": """---
+title: 使用说明
+description: 如何浏览资源并导入 ChatSpeed
+sidebar: false
+---
+
+# 使用说明
+
+## 浏览资源
+
+使用顶部导航切换 MCP 服务、模型供应商和免费 AI 频道。频道页支持关键词搜索、分类筛选和按更新时间排序。
+
+## 导入前检查
+
+- 资源配置来自公开目录，导入前请核对官方网站、命令、参数和权限来源。
+- 资源站点不会保存 ChatSpeed API Key、MCP 密钥或其他凭据。
+- 免费额度、模型可用性和服务限制会变化，请以官方页面和资源详情页的最后核验时间为准。
+
+## 提交资源
+
+暂不提供在线投稿。可以通过项目仓库提交资源文件，并按照 [资源规范](/RESOURCE_SPEC.html) 补齐多语言描述、分类、标签、官方链接和核验时间。
+""",
+}
+
+
 def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
+    L = _DETAIL_LABELS[_LOCALE]
+    colon = "：" if _LOCALE == "zh-Hans" else ": "
     channel = resource["channel"]
     title = localized(resource, "name")
-    description = localized(resource, "description")
-    detail = localized(resource, "detail")
+    description = _plain_summary(localized(resource, "description"))
+    detail = _sanitize_detail(localized(resource, "detail"))
     lines = [
         "---",
         f"title: {json.dumps(title, ensure_ascii=False)}",
@@ -330,60 +497,60 @@ def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
         "",
         detail,
         "",
-        f"**官方网站：** {markdown_link(resource['website'], resource['website'])}",
-        f"**状态：** `{resource['status']}`　**最后核验：** `{resource['lastVerifiedAt']}`",
+        f"**{L['official']}{colon}** {markdown_link(resource['website'], resource['website'])}",
+        f"**{L['status']}{colon}** `{resource['status']}`　**{L['lastVerified']}{colon}** `{resource['lastVerifiedAt']}`",
         "",
-        "## 分类与标签",
+        f"## {L['catTags']}",
         "",
-        f"- 分类：{', '.join(f'`{item}`' for item in resource['categories'])}",
-        f"- 标签：{', '.join(f'`{item}`' for item in resource['tags'])}",
+        f"- {L['categories']}{colon}{', '.join(f'`{item}`' for item in resource['categories'])}",
+        f"- {L['tags']}{colon}{', '.join(f'`{item}`' for item in resource['tags'])}",
     ]
     if channel == "mcp":
         mcp = resource["mcp"]
         lines.extend([
             "",
-            "## MCP 配置",
+            f"## {L['mcpConfig']}",
             "",
-            f"- 传输方式：`{mcp['type']}`",
-            f"- 启动命令：`{mcp.get('command', '')}`",
-            f"- 参数：`{' '.join(mcp.get('args', []))}`" if mcp.get("args") else "- 参数：无",
+            f"- {L['transport']}{colon}`{mcp['type']}`",
+            f"- {L['command']}{colon}`{mcp.get('command', '')}`",
+            (f"- {L['args']}{colon}`{' '.join(mcp.get('args', []))}`" if mcp.get("args") else f"- {L['args']}{colon}{L['argsNone']}"),
             "",
-            "该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。",
+            L["mcpNote"],
         ])
     elif channel == "models":
         provider = resource["provider"]
         lines.extend([
             "",
-            "## 供应商配置",
+            f"## {L['providerConfig']}",
             "",
-            f"- 协议：`{provider['protocol']}`",
-            f"- Base URL：`{provider['baseUrl']}`",
-            f"- 模型数量：{len(provider['models'])}",
-            f"- 文档：{markdown_link(provider['documentationUrl'], provider['documentationUrl'])}",
-            f"- 模型列表：{markdown_link(provider['modelListUrl'], provider['modelListUrl'])}",
-            f"- 密钥申请：{markdown_link(provider['keyApplyUrl'], provider['keyApplyUrl'])}",
+            f"- {L['protocol']}{colon}`{provider['protocol']}`",
+            f"- {L['baseUrl']}{colon}`{provider['baseUrl']}`",
+            f"- {L['modelCount']}{colon}{len(provider['models'])}",
+            f"- {L['docs']}{colon}{markdown_link(provider['documentationUrl'], provider['documentationUrl'])}",
+            f"- {L['modelList']}{colon}{markdown_link(provider['modelListUrl'], provider['modelListUrl'])}",
+            f"- {L['apiKey']}{colon}{markdown_link(provider['keyApplyUrl'], provider['keyApplyUrl'])}",
         ])
         if provider["models"]:
-            lines.extend(["", "### 支持的模型", "", "| 模型 ID | 名称 | 能力 |", "| --- | --- | --- |"])
+            lines.extend(["", f"### {L['supportedModels']}", "", f"| {L['colModelId']} | {L['colName']} | {L['colCaps']} |", "| --- | --- | --- |"])
             for model in provider["models"]:
                 capabilities = [key for key in ("reasoning", "functionCall", "imageInput") if model.get(key)]
-                lines.append(f"| `{model['id']}` | {model.get('name', model['id'])} | {', '.join(capabilities) or '基础对话'} |")
+                lines.append(f"| `{model['id']}` | {model.get('name', model['id'])} | {', '.join(capabilities) or L['basicChat']} |")
     else:
         free_ai = resource["freeAi"]
         lines.extend([
             "",
-            "## 免费使用说明",
+            f"## {L['freeUsage']}",
             "",
-            f"- 访问方式：`{free_ai['accessType']}`",
-            f"- 是否需要登录：`{'是' if free_ai['requiresLogin'] else '否'}`",
-            f"- 是否有免费层：`{'是' if free_ai['hasFreeTier'] else '否'}`",
-            f"- 可用区域：`{free_ai['availability']}`",
+            f"- {L['access']}{colon}`{free_ai['accessType']}`",
+            f"- {L['requiresLogin']}{colon}`{L['yes'] if free_ai['requiresLogin'] else L['no']}`",
+            f"- {L['hasFreeTier']}{colon}`{L['yes'] if free_ai['hasFreeTier'] else L['no']}`",
+            f"- {L['availability']}{colon}`{free_ai['availability']}`",
             "",
             f"{localized(free_ai, 'freeLimit')}",
         ])
         free_quotas = free_ai.get("freeQuotas")
         if free_quotas:
-            lines.extend(["", "### 分模型免费额度明细", "", "| 模型 | 免费额度 | 频率与限速 |", "| --- | --- | --- |"])
+            lines.extend(["", f"### {L['quotaDetail']}", "", f"| {L['colModel']} | {L['colQuota']} | {L['colFreq']} |", "| --- | --- | --- |"])
             for quota in free_quotas:
                 lines.append(
                     f"| {localized(quota, 'model').replace('|', '\\\\|')} "
@@ -394,60 +561,70 @@ def detail_markdown(resource: dict, provider_by_id: dict[str, dict]) -> str:
         restriction = free_ai.get("registrationRestriction")
         policy_url = free_ai.get("freePolicyUrl")
         if signup_url or restriction or policy_url:
-            lines.extend(["", "## 注册与限制"])
+            lines.extend(["", f"## {L['regLimits']}"])
             if signup_url:
-                lines.append(f"- 注册入口：{markdown_link(signup_url, signup_url)}")
+                lines.append(f"- {L['signup']}{colon}{markdown_link(signup_url, signup_url)}")
             if restriction:
-                lines.append(f"- 注册限制：{localized(free_ai, 'registrationRestriction')}")
+                lines.append(f"- {L['regLimit']}{colon}{localized(free_ai, 'registrationRestriction')}")
             if policy_url:
-                lines.append(f"- 免费政策文档：{markdown_link(policy_url, policy_url)}")
+                lines.append(f"- {L['freePolicy']}{colon}{markdown_link(policy_url, policy_url)}")
         integration = free_ai.get("integrations", {}).get("chatSpeedModel")
         if integration and integration.get("importable"):
             provider_ref = integration["providerRef"]
-            lines.extend(["", "## ChatSpeed 导入", "", f"该服务关联模型供应商 `{provider_ref}`，可从模型供应商列表导入配置，调用入口如下："])
+            lines.extend(["", f"## {L['csImport']}", "", L["csImportNote"].format(ref=provider_ref)])
             provider = provider_by_id.get(provider_ref)
             if provider:
                 info = provider["provider"]
-                lines.append(f"- 协议：`{info['protocol']}`")
-                lines.append(f"- Base URL：`{info['baseUrl']}`")
+                lines.append(f"- {L['protocol']}{colon}`{info['protocol']}`")
+                lines.append(f"- {L['baseUrl']}{colon}`{info['baseUrl']}`")
                 if info.get("logo"):
-                    lines.append(f"- Logo：![{info.get('name', provider_ref)}]({info['logo']})")
-                for label, field in (("官方文档", "documentationUrl"), ("模型列表", "modelListUrl"), ("密钥申请", "keyApplyUrl")):
+                    lines.append(f"- {L['logo']}{colon}![{info.get('name', provider_ref)}]({info['logo']})")
+                for label, field in ((L["docs"], "documentationUrl"), (L["modelList"], "modelListUrl"), (L["apiKey"], "keyApplyUrl")):
                     url = info.get(field)
                     if url:
-                        lines.append(f"- {label}：{markdown_link(url, url)}")
-    lines.extend(["", "## 数据来源", "", f"资源文件：`resources/{channel}/{resource['id']}.json`。内容最后核验于 `{resource['lastVerifiedAt']}`；免费额度和服务限制可能随官方政策变化。"])
+                        lines.append(f"- {label}{colon}{markdown_link(url, url)}")
+    lines.extend(["", f"## {L['dataSource']}", "", L["sourceNote"].format(channel=channel, id=resource["id"], date=resource["lastVerifiedAt"])])
     return "\n".join(lines) + "\n"
 
 
+def _frontmatter_lines(title: str, description: str) -> list[str]:
+    return [
+        "---",
+        f"title: {json.dumps(title, ensure_ascii=False)}",
+        f"description: {json.dumps(description, ensure_ascii=False)}",
+        "sidebar: false",
+        "breadcrumb: false",
+        "pageInfo: false",
+        "toc: false",
+        "containerClass: resource-directory",
+        "---",
+        "",
+    ]
+
+
 def write_docs(catalog: dict, by_channel: dict[str, list[dict]]) -> None:
+    global _LOCALE
     DOCS_ROOT.mkdir(parents=True, exist_ok=True)
     provider_by_id = {item["id"]: item for item in by_channel.get("models", [])}
-    for channel, resources in by_channel.items():
-        channel_dir = DOCS_ROOT / channel
-        channel_dir.mkdir(parents=True, exist_ok=True)
-        title = {"mcp": "MCP 服务", "models": "模型供应商", "free-ai": "免费 AI"}[channel]
-        intro = {
-            "mcp": "可导入 ChatSpeed 的 MCP 服务。列表展示简要说明，点击资源进入完整配置与使用详情。",
-            "models": "可接入 ChatSpeed 的模型供应商。列表用于快速选择，详情页包含协议、接口和模型信息。",
-            "free-ai": "免费 AI 网站与 API 服务目录。免费额度是动态信息，请以详情页和官方页面为准。",
-        }[channel]
-        index_lines = [
-            "---",
-            f"title: {title}",
-            f"description: {intro}",
-            "sidebar: false",
-            "pageClass: resource-directory",
-            "---",
-            "",
-            f'<ResourceBrowser channel="{channel}" />',
-            "",
-        ]
-        index_text = "\n".join(index_lines)
-        write_text(channel_dir / "README.md", index_text)
-        for resource in resources:
-            write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource, provider_by_id))
-    write_text(DOCS_ROOT / "README.md", """---\ntitle: ChatSpeed 资源中心\ndescription: MCP、模型供应商和免费 AI 服务目录\nsidebar: false\npageClass: resource-directory\n---\n\n<ResourceBrowser />\n""")
+    # English is the default locale at the site root; Chinese lives under /zh/.
+    # The ResourceBrowser component reads the active locale from the route path,
+    # so the same <ResourceBrowser/> markup serves both locales.
+    for locale, prefix in (("en", ""), ("zh-Hans", "zh")):
+        _LOCALE = locale
+        base = DOCS_ROOT / prefix if prefix else DOCS_ROOT
+        base.mkdir(parents=True, exist_ok=True)
+        home = _HOME_META[locale]
+        home_lines = _frontmatter_lines(home["title"], home["description"]) + ["<ResourceBrowser />", ""]
+        write_text(base / "README.md", "\n".join(home_lines))
+        write_text(base / "guide" / "README.md", _GUIDE[locale])
+        for channel, resources in by_channel.items():
+            channel_dir = base / channel
+            channel_dir.mkdir(parents=True, exist_ok=True)
+            title, intro = _CHANNEL_META[locale][channel]
+            index_lines = _frontmatter_lines(title, intro) + [f'<ResourceBrowser channel="{channel}" />', ""]
+            write_text(channel_dir / "README.md", "\n".join(index_lines))
+            for resource in resources:
+                write_text(channel_dir / f"{resource['id']}.md", detail_markdown(resource, provider_by_id))
 
 
 def output_item(resource: dict) -> dict:

@@ -1,11 +1,11 @@
 ---
 title: "Azure DevOps MCP"
-description: "Azure DevOps MCP Server [!WARNING] We recently completed a full tool consolidation that includes renaming of existing tools. Please see the Toolset documentation for the complete list of new tool names. If this is a brea"
+description: "Azure DevOps MCP Server [!WARNING] We recently completed a full tool consolidation that includes renaming of existing tools. Please see the Toolset documentation for the complete list of new tool name…"
 ---
 
 # Azure DevOps MCP
 
-Azure DevOps MCP Server [!WARNING] We recently completed a full tool consolidation that includes renaming of existing tools. Please see the Toolset documentation for the complete list of new tool names. If this is a brea
+Azure DevOps MCP Server [!WARNING] We recently completed a full tool consolidation that includes renaming of existing tools. Please see the Toolset documentation for the complete list of new tool name…
 
 # Azure DevOps MCP Server
 
@@ -239,22 +239,22 @@ Licensed under the [MIT License](https://github.com/microsoft/azure-devops-mcp/b
 
 _Trademarks: This project may include trademarks or logos for Microsoft or third parties. Use of Microsoft trademarks or logos must follow [Microsoft’s Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general). Third-party trademarks are subject to their respective policies._
 
-**官方网站：** [https://github.com/microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `azure`, `devops`, `ci/cd`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `azure`, `devops`, `ci/cd`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/microsoft-azure-devops.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/microsoft-azure-devops.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,53 +1,53 @@
 ---
-title: "Zoom约会助手服务器"
-description: "一个由人工智能辅助的服务器，可在Zoom会议中实现约会功能，设置时需要提供Zoom API凭证（客户端ID、客户端密钥、账户ID）。"
+title: "zoom-mcp-server"
+description: "An AI-assisted server that enables dating within Zoom meetings, requiring Zoom API credentials (Client ID, Client Secret, Account ID) for setup."
 ---
 
-# Zoom约会助手服务器
+# zoom-mcp-server
 
-一个由人工智能辅助的服务器，可在Zoom会议中实现约会功能，设置时需要提供Zoom API凭证（客户端ID、客户端密钥、账户ID）。
+An AI-assisted server that enables dating within Zoom meetings, requiring Zoom API credentials (Client ID, Client Secret, Account ID) for setup.
 
 # Zoom MCP Server
 
 [![NPM Version](/mcp-assets/8cbae245c0357e4b060d80948c0bef6f.svg)](https://www.npmjs.com/package/@yitianyigexiangfa/zoom-mcp-server) ![MIT licensed](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) [Smithery](https://smithery.ai/server/@JavaProgrammerLB/zoom-mcp-server) ![Zoom MCP Server](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg "MCP Server")
 
-现在你可以借助AI的帮助安排Zoom会议
+Now you can date a Zoom meeting with AI's help
 
-## 使用方法
+## Usage
 
-### 1. 列出会议
+### 1. list meetings
 
 - `list my meetings`
 - `list my upcoming meetings`
 
-### 2. 创建会议
+### 2. create a meeting
 
 - `Schedule a meeting at today 3 pm with a introduce mcp topic`
 
-### 3. 删除会议
+### 3. delete a meeting
 
 - `delete the latest meeting`
 - `delete the 86226580854 meeting`
 
-### 4. 获取会议详情
+### 4. get a meeting detail
 
 - `Retrieve the latest meeting's details`
 - `Retrieve 86226580854 meeting's details`
 
-## 两步开始使用 zoom-mcp-server
+## 2 Steps to play with zoom-mcp-server
 
-- 获取Zoom客户端ID、Zoom客户端密钥和账户ID
-- 配置MCP服务器
+- Get Zoom Client ID, Zoom Client Secret and Account ID
+- Config MCP server
 
-### 1. 获取Zoom客户端ID、Zoom客户端密钥和账户ID
+### 1. Get Zoom Client ID, Zoom Client Secret and Account ID
 
-1. 访问 [Zoom Marketplace](https://marketplace.zoom.us/)
-1. 构建应用并选择 **Server to Server OAuth App**
-1. 添加权限 > 会议 > 选择所有会议权限
-1. 激活你的应用
-   然后你可以在应用凭证页面获取**账户ID**、**客户端ID**、**客户端密钥**
+1. vist [Zoom Marketplace](https://marketplace.zoom.us/)
+1. Build App and choose **Server to Server OAuth App**
+1. Add Scope > Meeting > Select All Meeting Permissions
+1. Active your app
+   then you can get **Account ID**, **Client ID**, **Client Secret** in App Credentials page
 
-### 2. 配置MCP服务器
+### 2. Config MCP Server
 
 ```json
 {
@@ -65,22 +65,22 @@ description: "一个由人工智能辅助的服务器，可在Zoom会议中实�
 }
 ```
 
-**官方网站：** [https://github.com/JavaProgrammerLB/zoom-mcp-server](https://github.com/JavaProgrammerLB/zoom-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JavaProgrammerLB/zoom-mcp-server](https://github.com/JavaProgrammerLB/zoom-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `social media`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `social media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @yitianyigexiangfa/zoom-mcp-server@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @yitianyigexiangfa/zoom-mcp-server@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/javaprogrammerlb-zoom.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/javaprogrammerlb-zoom.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

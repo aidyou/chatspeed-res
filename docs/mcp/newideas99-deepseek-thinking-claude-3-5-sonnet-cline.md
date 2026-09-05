@@ -1,64 +1,64 @@
 ---
-title: "深度思考推理工具"
-description: "促进使用DeepSeek进行详细分析的两阶段推理过程，并支持多种响应模型，例如Claude 3.5、Sonnet和OpenRouter，保持对话上下文并增强人工智能驱动的交互。"
+title: "Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP"
+description: "Facilitates two-stage reasoning processes using DeepSeek for detailed analysis and supports multiple response models such as Claude 3.5 Sonnet and OpenRouter, maintaining conversation context and enha…"
 ---
 
-# 深度思考推理工具
+# Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP
 
-促进使用DeepSeek进行详细分析的两阶段推理过程，并支持多种响应模型，例如Claude 3.5、Sonnet和OpenRouter，保持对话上下文并增强人工智能驱动的交互。
+Facilitates two-stage reasoning processes using DeepSeek for detailed analysis and supports multiple response models such as Claude 3.5 Sonnet and OpenRouter, maintaining conversation context and enha…
 
 # Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP
 
 [Smithery](https://smithery.ai/server/@newideas99/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP)
 
-这是一个模型上下文协议（MCP）服务器，它通过OpenRouter结合了DeepSeek R1的推理能力和Claude 3.5 Sonnet的响应生成能力。此实现使用两阶段处理过程，其中DeepSeek提供结构化的推理，然后将其整合到Claude的响应生成中。
+A Model Context Protocol (MCP) server that combines DeepSeek R1's reasoning capabilities with Claude 3.5 Sonnet's response generation through OpenRouter. This implementation uses a two-stage process where DeepSeek provides structured reasoning which is then incorporated into Claude's response generation.
 
-## 功能
+## Features
 
-- **两阶段处理**：
-  - 使用DeepSeek R1进行初始推理（50k字符上下文）
-  - 使用Claude 3.5 Sonnet生成最终响应（600k字符上下文）
-  - 通过OpenRouter的统一API访问两个模型
-  - 将DeepSeek的推理令牌注入Claude的上下文中
+- **Two-Stage Processing**:
+  - Uses DeepSeek R1 for initial reasoning (50k character context)
+  - Uses Claude 3.5 Sonnet for final response (600k character context)
+  - Both models accessed through OpenRouter's unified API
+  - Injects DeepSeek's reasoning tokens into Claude's context
 
-- **智能对话管理**：
-  - 通过文件修改时间检测活动对话
-  - 处理多个并发对话
-  - 自动过滤已结束的对话
-  - 在需要时支持清除上下文
+- **Smart Conversation Management**:
+  - Detects active conversations using file modification times
+  - Handles multiple concurrent conversations
+  - Filters out ended conversations automatically
+  - Supports context clearing when needed
 
-- **优化参数**：
-  - 模型特定的上下文限制：
-    * DeepSeek：50,000个字符用于集中推理
-    * Claude：600,000个字符用于全面响应
-  - 推荐设置：
-    * temperature: 0.7 以平衡创造力
-    * top_p: 1.0 以使用完整的概率分布
-    * repetition_penalty: 1.0 以防重复
+- **Optimized Parameters**:
+  - Model-specific context limits:
+    * DeepSeek: 50,000 characters for focused reasoning
+    * Claude: 600,000 characters for comprehensive responses
+  - Recommended settings:
+    * temperature: 0.7 for balanced creativity
+    * top_p: 1.0 for full probability distribution
+    * repetition_penalty: 1.0 to prevent repetition
 
-## 安装
+## Installation
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/@newideas99/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP)自动为Claude Desktop安装DeepSeek Thinking with Claude 3.5 Sonnet：
+To install DeepSeek Thinking with Claude 3.5 Sonnet for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@newideas99/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP):
 
 ```bash
 npx -y @smithery/cli install @newideas99/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP --client claude
 ```
 
-### 手动安装
-1. 克隆仓库：
+### Manual Installation
+1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP.git
 cd Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 创建一个包含您的OpenRouter API密钥的`.env`文件：
+3. Create a `.env` file with your OpenRouter API key:
 ```env
 # Required: OpenRouter API key for both DeepSeek and Claude models
 OPENROUTER_API_KEY=your_openrouter_api_key_here
@@ -68,14 +68,14 @@ DEEPSEEK_MODEL=deepseek/deepseek-r1  # DeepSeek model for reasoning
 CLAUDE_MODEL=anthropic/claude-3.5-sonnet:beta  # Claude model for responses
 ```
 
-4. 构建服务器：
+4. Build the server:
 ```bash
 npm run build
 ```
 
-## 与Cline一起使用
+## Usage with Cline
 
-将以下内容添加到您的Cline MCP设置中（通常在`~/.vscode/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`）：
+Add to your Cline MCP settings (usually in `~/.vscode/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`):
 
 ```json
 {
@@ -93,13 +93,13 @@ npm run build
 }
 ```
 
-## 工具使用
+## Tool Usage
 
-服务器提供了两个工具用于生成和监控响应：
+The server provides two tools for generating and monitoring responses:
 
 ### generate_response
 
-主要工具，用于生成响应，具有以下参数：
+Main tool for generating responses with the following parameters:
 
 ```typescript
 {
@@ -112,7 +112,7 @@ npm run build
 
 ### check_response_status
 
-用于检查响应生成任务状态的工具：
+Tool for checking the status of a response generation task:
 
 ```typescript
 {
@@ -120,20 +120,20 @@ npm run build
 }
 ```
 
-### 响应轮询
+### Response Polling
 
-服务器使用轮询机制来处理长时间运行的请求：
+The server uses a polling mechanism to handle long-running requests:
 
-1. 初始请求：
-   - `generate_response`立即返回一个任务ID
-   - 响应格式：`{"taskId": "uuid-here"}`
+1. Initial Request:
+   - `generate_response` returns immediately with a task ID
+   - Response format: `{"taskId": "uuid-here"}`
 
-2. 状态检查：
-   - 使用`check_response_status`轮询任务状态
-   - **注意：** 响应可能需要最多60秒才能完成
-   - 状态依次经过：pending → reasoning → responding → complete
+2. Status Checking:
+   - Use `check_response_status` to poll the task status
+   - **Note:** Responses can take up to 60 seconds to complete
+   - Status progresses through: pending → reasoning → responding → complete
 
-在Cline中的示例用法：
+Example usage in Cline:
 ```typescript
 // Initial request
 const result = await use_mcp_tool({
@@ -163,51 +163,51 @@ const status = await use_mcp_tool({
 }
 ```
 
-## 开发
+## Development
 
-对于带有自动重建功能的开发：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-## 工作原理
+## How It Works
 
-1. **推理阶段（DeepSeek R1）**:
-   - 使用 OpenRouter 的推理令牌功能
-   - 提示被修改为在捕获推理时输出 'done'
-   - 从响应元数据中提取推理
+1. **Reasoning Stage (DeepSeek R1)**:
+   - Uses OpenRouter's reasoning tokens feature
+   - Prompt is modified to output 'done' while capturing reasoning
+   - Reasoning is extracted from response metadata
 
-2. **响应阶段（Claude 3.5 Sonnet）**:
-   - 接收原始提示和 DeepSeek 的推理
-   - 生成包含推理的最终响应
-   - 维护对话上下文和历史记录
+2. **Response Stage (Claude 3.5 Sonnet)**:
+   - Receives the original prompt and DeepSeek's reasoning
+   - Generates final response incorporating the reasoning
+   - Maintains conversation context and history
 
-## 许可证
+## License
 
-MIT 许可证 - 详情请参阅 LICENSE 文件。
+MIT License - See LICENSE file for details.
 
-## 致谢
+## Credits
 
-基于 [Skirano](https://x.com/skirano/status/1881922469411643413) 提出的 RAT（检索增强思考）概念，该概念通过结构化推理和知识检索来增强 AI 响应。
+Based on the RAT (Retrieval Augmented Thinking) concept by [Skirano](https://x.com/skirano/status/1881922469411643413), which enhances AI responses through structured reasoning and knowledge retrieval.
 
-此实现特别结合了 DeepSeek R1 的推理能力和 Claude 3.5 Sonnet 的响应生成能力，通过 OpenRouter 的统一 API 实现。
+This implementation specifically combines DeepSeek R1's reasoning capabilities with Claude 3.5 Sonnet's response generation through OpenRouter's unified API.
 
-**官方网站：** [https://github.com/newideas99/RAT-retrieval-augmented-thinking-MCP](https://github.com/newideas99/RAT-retrieval-augmented-thinking-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/newideas99/RAT-retrieval-augmented-thinking-MCP](https://github.com/newideas99/RAT-retrieval-augmented-thinking-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/path/to/node`
-- 参数：`/path/to/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP/build/index.js`
+- Transport: `stdio`
+- Command: `/path/to/node`
+- Args: `/path/to/Deepseek-Thinking-Claude-3.5-Sonnet-CLINE-MCP/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/newideas99-deepseek-thinking-claude-3-5-sonnet-cline.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/newideas99-deepseek-thinking-claude-3-5-sonnet-cline.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,47 +1,48 @@
 ---
-title: "MCP-PA 智能助手"
-description: "一种多功能的模型上下文协议服务器，使人工智能助手能够管理日历、跟踪任务、处理电子邮件、搜索网络以及控制智能家居设备。"
+title: "mcp-pa-ai-agent"
+description: "A versatile Model Context Protocol server that enables AI assistants to manage calendars, track tasks, handle emails, search the web, and control smart home devices."
 ---
 
-# MCP-PA 智能助手
+# mcp-pa-ai-agent
 
-一种多功能的模型上下文协议服务器，使人工智能助手能够管理日历、跟踪任务、处理电子邮件、搜索网络以及控制智能家居设备。
+A versatile Model Context Protocol server that enables AI assistants to manage calendars, track tasks, handle emails, search the web, and control smart home devices.
 
-# MCP 个人助理代理
+# MCP Personal Assistant Agent
 
-这是一个使用模型上下文协议（MCP）构建的多功能个人助理AI代理，可帮助管理日历、任务、电子邮件等。
+A versatile personal assistant AI agent built with the Model Context Protocol (MCP) that helps with calendar, tasks, emails, and more.
 
-## 概述
+## Overview
 
-该项目是一个基于模型上下文协议（MCP）的服务端，为个人助理代理提供了一套工具。它可以与像Claude for Desktop这样的MCP客户端集成，赋予AI助手以下能力：
+This project is a Model Context Protocol (MCP) server that provides a set of tools for a personal assistant agent. It can be integrated with MCP clients like Claude for Desktop to give AI assistants the ability to:
 
-- 管理日历事件
-- 跟踪任务和待办事项
-- 阅读和发送电子邮件
-- 在网上搜索并检索信息
-- 控制智能家居设备
+- Manage calendar events
+- Track tasks and to-dos
+- Read and send emails
+- Search the web and retrieve information
+- Control smart home devices
 
-## 要求
+## Requirements
 
-⚠️ **重要提示：** MCP SDK需要Python 3.10或更高版本。服务器将不兼容早期版本的Python。
-- Python 3.10+
+⚠️ **IMPORTANT:** Python 3.10 or higher is required for the MCP SDK. The server will not work with earlier Python versions.
+
+- Python 3.10+ 
 - MCP SDK 1.2.0+
-- 必需的Python包（参见requirements.txt）
+- Required Python packages (see requirements.txt)
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/mcp-pa-ai-agent.git
 cd mcp-pa-ai-agent
 ```
 
-2. 确保您安装了Python 3.10+：
+2. Ensure you have Python 3.10+:
 ```bash
 python --version
 ```
 
-3. 如果您的系统Python版本低于3.10，请设置一个兼容环境：
+3. If your system Python is older than 3.10, set up a compatible environment:
 ```bash
 # Using conda
 conda create -n mcp-env python=3.10
@@ -49,39 +50,40 @@ conda activate mcp-env
 
 # OR using venv (if Python 3.10+ is installed elsewhere)
 python3.10 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venvScriptsactivate
 ```
 
-4. 安装依赖项：
+4. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-5. 通过复制示例文件来配置环境变量：
+5. Configure environment variables by copying the example file:
 ```bash
 cp .env.example .env
 ```
 
-6. 使用您的API凭证和设置编辑`.env`文件。
+6. Edit the `.env` file with your API credentials and settings.
 
-## 运行服务器
+## Running the Server
 
-启动MCP服务器：
+Start the MCP server with:
+
 ```bash
 python mcp_server.py
 ```
 
-服务器将启动并监听来自MCP客户端的连接。
+The server will start and listen for MCP client connections.
 
-## 连接到Claude for Desktop
+## Connecting to Claude for Desktop
 
-1. 安装[Claude for Desktop](https://claude.ai/desktop)
+1. Install [Claude for Desktop](https://claude.ai/desktop)
 
-2. 通过编辑配置文件来配置Claude for Desktop以使用此MCP服务器：
+2. Configure Claude for Desktop to use this MCP server by editing the configuration file at:
    - MacOS/Linux: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+   - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 
-3. 添加如下配置：
+3. Add the following configuration:
 ```json
 {
   "mcpServers": {
@@ -95,102 +97,102 @@ python mcp_server.py
 }
 ```
 
-如果您正在使用虚拟环境，请确保指向该环境中的Python可执行文件。
+If you're using a virtual environment, make sure to point to the Python executable in that environment.
 
-4. 重启Claude for Desktop
+4. Restart Claude for Desktop
 
-## 可用工具
+## Available Tools
 
-### 日历
-- `get_events`: 获取即将到来的日历事件
-- `create_event`: 创建一个新的日历事件
+### Calendar
+- `get_events`: Retrieve upcoming calendar events
+- `create_event`: Schedule a new calendar event
 
-### 任务
-- `list_tasks`: 查看所有任务或按状态筛选
-- `add_task`: 创建新任务
-- `update_task_status`: 标记任务为待处理、进行中或已完成
+### Tasks
+- `list_tasks`: View all tasks or filter by status
+- `add_task`: Create a new task
+- `update_task_status`: Mark tasks as pending, in-progress, or completed
 
-### 电子邮件
-- `get_emails`: 列出收件箱中的最近邮件
-- `read_email`: 查看特定邮件的完整内容
-- `send_email`: 编写并发送新邮件
+### Email
+- `get_emails`: List recent emails from your inbox
+- `read_email`: View the full content of a specific email
+- `send_email`: Compose and send a new email
 
-### 知识
-- `web_search`: 在网上搜索信息
-- `get_weather`: 获取当前天气信息
-- `get_news`: 检索最新新闻文章
+### Knowledge
+- `web_search`: Search the web for information
+- `get_weather`: Get current weather information
+- `get_news`: Retrieve latest news articles
 
-### 智能家居
-- `list_devices`: 查看所有智能家居设备
-- `control_device`: 控制智能家居设备（如灯光、恒温器等）
-- `get_device_state`: 获取设备当前状态的详细信息
+### Smart Home
+- `list_devices`: View all smart home devices
+- `control_device`: Control smart home devices (lights, thermostats, etc.)
+- `get_device_state`: Get detailed information about a device's current state
 
-## 配置
+## Configuration
 
-服务器需要各种API密钥和服务访问凭据：
+The server requires various API keys and credentials to access different services:
 
-- **Google API**: 用于日历和电子邮件功能（OAuth2凭证）
-- **Weather API**: 用于获取天气信息
-- **News API**: 用于检索新闻
-- **Home Assistant**: 用于智能家居控制
+- **Google API**: For calendar and email functionality (OAuth2 credentials)
+- **Weather API**: For weather information
+- **News API**: For news retrieval
+- **Home Assistant**: For smart home control
 
-请参考`.env.example`文件了解所有可配置选项。
+Refer to the `.env.example` file for all configurable options.
 
-## 故障排除
+## Troubleshooting
 
-### Python 版本问题
+### Python Version Issues
 
-如果你看到类似以下错误：
+If you see an error like:
 ```
 Error: Python 3.10 or higher is required for the MCP server.
 ```
 
-你需要升级你的 Python 版本或使用带有 Python 3.10+ 的虚拟环境。
+You need to upgrade your Python version or use a virtual environment with Python 3.10+.
 
-### MCP SDK 安装问题
+### MCP SDK Installation Issues
 
-如果你在安装 MCP SDK 时遇到问题：
+If you encounter problems installing the MCP SDK:
 ```
 ERROR: Could not find a version that satisfies the requirement mcp>=1.2.0
 ```
 
-请确保你使用的是 Python 3.10+ 并且 pip 是最新的：
+Make sure you're using Python 3.10+ and pip is updated:
 ```bash
 pip install --upgrade pip
 ```
 
-## 开发
+## Development
 
-要为服务器添加新功能，你可以：
+To add new functionality to the server, you can:
 
-1. 在 `modules/` 目录下创建一个新的模块
-2. 使用 `@mcp.tool()` 装饰器实现函数
-3. 在 `mcp_server.py` 中导入你的模块
+1. Create a new module in the `modules/` directory
+2. Implement functions with the `@mcp.tool()` decorator
+3. Import your module in `mcp_server.py`
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-**官方网站：** [https://github.com/zhangzhongnan928/mcp-pa-ai-agent](https://github.com/zhangzhongnan928/mcp-pa-ai-agent)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zhangzhongnan928/mcp-pa-ai-agent](https://github.com/zhangzhongnan928/mcp-pa-ai-agent)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `home automation and iot`, `communication`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `home automation and iot`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/path/to/python`
-- 参数：`/absolute/path/to/mcp-pa-ai-agent/mcp_server.py`
+- Transport: `stdio`
+- Command: `/path/to/python`
+- Args: `/absolute/path/to/mcp-pa-ai-agent/mcp_server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zhangzhongnan928-pa-ai-agent.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zhangzhongnan928-pa-ai-agent.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,47 +1,47 @@
 ---
-title: "CoinGecko金融数据接口"
-description: "启用与CoinGecko Pro API的交互，通过MCP和OpenAI功能调用访问加密货币数据，包括价格历史和市场指标。"
+title: "mcp-coingecko-server"
+description: "Enables interaction with the CoinGecko Pro API to access cryptocurrency data including price history and market metrics through both MCP and OpenAI function calling."
 ---
 
-# CoinGecko金融数据接口
+# mcp-coingecko-server
 
-启用与CoinGecko Pro API的交互，通过MCP和OpenAI功能调用访问加密货币数据，包括价格历史和市场指标。
+Enables interaction with the CoinGecko Pro API to access cryptocurrency data including price history and market metrics through both MCP and OpenAI function calling.
 
-# CoinGecko 服务器
+# CoinGecko Server
 
-一个用于与 CoinGecko Pro API 交互的模型上下文协议（MCP）服务器和 OpenAI 函数调用服务。
+A Model Context Protocol (MCP) server and OpenAI function calling service for interacting with the CoinGecko Pro API.
 
-## 功能
+## Features
 
-- 支持的加密货币分页列表
-- 按名称或符号查找币 ID
-- 历史价格、市值和交易量数据
-- OHLC（开盘价、最高价、最低价、收盘价）K线数据
-- 具有刷新功能的本地币缓存
+- Paginated list of supported cryptocurrencies
+- Coin ID lookup by name or symbol
+- Historical price, market cap, and volume data
+- OHLC (Open, High, Low, Close) candlestick data
+- Local coin cache with refresh capability
 
-## 安装
+## Installation
 
 ```bash
 npm install coingecko-server
 ```
 
-## 环境设置
+## Environment Setup
 
-在你的项目根目录下创建一个 `.env` 文件：
+Create a `.env` file in your project root:
 
 ```env
 COINGECKO_API_KEY=your_api_key_here
 ```
 
-## 与 Claude Desktop 一起使用
+## Usage with Claude Desktop
 
-Claude Desktop 提供了对 MCP 特性的全面支持。要使用此服务器：
+Claude Desktop provides full support for MCP features. To use this server:
 
-1. 安装 [Claude Desktop](https://claude.ai/download)
+1. Install [Claude Desktop](https://claude.ai/download)
 
-2. 添加到你的 Claude Desktop 配置中：
-   - 在 macOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-   - 在 Windows 上：`%APPDATA%\Claude\claude_desktop_config.json`
+2. Add to your Claude Desktop configuration:
+   - On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - On Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -57,16 +57,16 @@ Claude Desktop 提供了对 MCP 特性的全面支持。要使用此服务器：
 }
 ```
 
-3. 重启 Claude Desktop
+3. Restart Claude Desktop
 
-服务器提供了以下工具：
-- `get-coins`: 获取支持的币种分页列表
-- `find-coin-ids`: 查找币名/符号对应的 CoinGecko ID
-- `get-historical-data`: 获取历史价格、市值和交易量数据
-- `get-ohlc-data`: 获取 OHLC K线数据
-- `refresh-cache`: 刷新本地币种列表缓存
+The server provides the following tools:
+- `get-coins`: Get a paginated list of supported coins
+- `find-coin-ids`: Look up CoinGecko IDs for coin names/symbols
+- `get-historical-data`: Get historical price, market cap, and volume data
+- `get-ohlc-data`: Get OHLC candlestick data
+- `refresh-cache`: Refresh the local coin list cache
 
-## 与 OpenAI 函数调用一起使用
+## Usage with OpenAI Function Calling
 
 ```typescript
 import { CoinGeckoService } from 'coingecko-server';
@@ -98,7 +98,7 @@ if (response.choices[0].message.function_call) {
 }
 ```
 
-## 数据类型
+## Data Types
 
 ### OHLCData
 ```typescript
@@ -130,30 +130,30 @@ interface CoinInfo {
 }
 ```
 
-## 速率限制
+## Rate Limits
 
-请参考 [CoinGecko Pro API 文档](https://www.coingecko.com/api/documentation) 以获取当前的速率限制和使用指南。
+Please refer to the [CoinGecko Pro API documentation](https://www.coingecko.com/api/documentation) for current rate limits and usage guidelines.
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/crazyrabbitLTC/mcp-coingecko-server](https://github.com/crazyrabbitLTC/mcp-coingecko-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/crazyrabbitLTC/mcp-coingecko-server](https://github.com/crazyrabbitLTC/mcp-coingecko-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/coingecko-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/coingecko-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/crazyrabbitltc-coingecko.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/crazyrabbitltc-coingecko.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

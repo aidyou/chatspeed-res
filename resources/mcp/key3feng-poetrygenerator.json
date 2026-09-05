@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "PoetryGenerator",
-    "zh-Hans": "诗词生成助手(MCP&Agent挑战赛)",
-    "zh-Hant": "诗词生成助手(MCP&Agent挑战赛)"
+    "zh-Hans": "诗词生成助手(MCP&Agent挑战赛)"
   },
   "description": {
     "en": "A smart creation tool that not only automatically generates five-character or seven-character quatrains based on keywords provided by the user but also further transforms these verses into artistic video works.",
-    "zh-Hans": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。",
-    "zh-Hant": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。"
+    "zh-Hans": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。"
   },
   "detail": {
     "en": "A smart creation tool that not only automatically generates five-character or seven-character quatrains based on keywords provided by the user but also further transforms these verses into artistic video works.",
-    "zh-Hans": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。",
-    "zh-Hant": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。"
+    "zh-Hans": "一款不仅可以根据用户提供的关键词自动生成五言绝句或七言绝句，还可以进一步将这些诗句转化为富有艺术感视频作品的智能创作工具。"
   },
   "categories": [
     "media"

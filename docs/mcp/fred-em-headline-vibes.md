@@ -1,49 +1,49 @@
 ---
-title: "新闻标题情感分析"
-description: "分析来自美国主要出版物的新闻标题的情感，使用标准和自然语言日期输入，从而洞察公众情感趋势。"
+title: "headline-vibes"
+description: "Analyzes sentiment in news headlines from major US publications using both standard and natural language date inputs, enabling insights into public sentiment trends."
 ---
 
-# 新闻标题情感分析
+# headline-vibes
 
-分析来自美国主要出版物的新闻标题的情感，使用标准和自然语言日期输入，从而洞察公众情感趋势。
+Analyzes sentiment in news headlines from major US publications using both standard and natural language date inputs, enabling insights into public sentiment trends.
 
-# 标题情绪分析 MCP 服务器
+# Headline Vibes Analysis MCP Server
 
-一个模型上下文协议服务器，用于分析美国主要出版物新闻标题的情绪。该服务器提供了基于日期的标准接口和自然语言日期解析功能，以便更易于使用。
+A Model Context Protocol server that analyzes sentiment in news headlines from major US publications. The server provides both a standard date-based interface and natural language date parsing for easier use.
 
-## 功能
+## Features
 
-- 每次请求最多分析100个标题
-- 美国主要新闻来源的标题均衡分布
-- 情绪评分范围为0-10（0=最负面，10=最正面）
-- 自然语言日期解析（例如，“昨天”，“上周五”）
-- 详细的来源分布信息
-- 结果中包含示例标题
+- Analyzes up to 100 headlines per request
+- Even distribution of headlines across major US news sources
+- Sentiment scoring on a 0-10 scale (0 = most negative, 10 = most positive)
+- Natural language date parsing (e.g., "yesterday", "last Friday")
+- Detailed source distribution information
+- Sample headlines included in results
 
-## 前提条件
+## Prerequisites
 
-- Node.js v16或更高版本
-- NewsAPI密钥（在https://newsapi.org获取）
+- Node.js v16 or higher
+- NewsAPI key (get one at https://newsapi.org)
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/fred-em/headline-vibes.git
 cd headline-vibes
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建服务器：
+3. Build the server:
 ```bash
 npm run build
 ```
 
-4. 在MCP设置文件中配置您的NewsAPI密钥：
+4. Configure your NewsAPI key in your MCP settings file:
 ```json
 {
   "mcpServers": {
@@ -60,12 +60,12 @@ npm run build
 }
 ```
 
-## 可用工具
+## Available Tools
 
 ### analyze_headlines
-使用自然语言日期输入或特定日期来分析情绪。
+Analyze sentiment using natural language date input or specific dates.
 
-示例用法：
+Example usage:
 ```typescript
 // Using natural language
 {
@@ -84,16 +84,16 @@ npm run build
 }
 ```
 
-输入示例：
+Input examples:
 - "last Friday"
 - "3 days ago"
 - "March 10th"
 - "two weeks ago"
-- "2025-02-11"（也支持YYYY-MM-DD格式）
+- "2025-02-11" (YYYY-MM-DD format also supported)
 
-## 响应格式
+## Response Format
 
-工具返回结果的格式如下：
+The tool returns results in the following format:
 ```json
 {
   "score": "6.50",              // Normalized sentiment score (0-10)
@@ -114,57 +114,57 @@ npm run build
 }
 ```
 
-## 新闻来源
+## News Sources
 
-服务器从以下美国主要新闻来源获取标题：
-- 美联社
-- 路透社
+The server pulls headlines from major US news sources including:
+- Associated Press
+- Reuters
 - CNN
 - Fox News
 - NBC News
 - ABC News
-- 华尔街日报
-- 华盛顿邮报
+- Wall Street Journal
+- Washington Post
 - USA Today
-- 彭博社
+- Bloomberg
 - Business Insider
 - Time
 
-## 错误处理
+## Error Handling
 
-对于常见问题，服务器提供了清晰的错误消息：
-- 无效的日期格式
-- 无法解析的自然语言查询
-- 指定日期未找到任何标题
-- 来自NewsAPI的API错误
+The server provides clear error messages for common issues:
+- Invalid date formats
+- Unparseable natural language queries
+- No headlines found for the specified date
+- API errors from NewsAPI
 
-## 开发
+## Development
 
-在开发过程中以监视模式运行服务器：
+To run the server in watch mode during development:
 ```bash
 npm run watch
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/fred-em/headline-vibes](https://github.com/fred-em/headline-vibes)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/fred-em/headline-vibes](https://github.com/fred-em/headline-vibes)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/headline-vibes/build/index.mjs`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/headline-vibes/build/index.mjs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/fred-em-headline-vibes.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/fred-em-headline-vibes.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

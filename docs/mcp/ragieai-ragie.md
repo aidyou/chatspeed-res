@@ -1,50 +1,50 @@
 ---
-title: "Ragie 检索服务器"
-description: "一个MCP服务器，它使AI模型能够通过简单的“检索”工具从Ragie的知识库中获取信息。"
+title: "ragie-mcp-server"
+description: "An MCP server that enables AI models to retrieve information from Ragie's knowledge base through a simple 'retrieve' tool."
 ---
 
-# Ragie 检索服务器
+# ragie-mcp-server
 
-一个MCP服务器，它使AI模型能够通过简单的“检索”工具从Ragie的知识库中获取信息。
+An MCP server that enables AI models to retrieve information from Ragie's knowledge base through a simple 'retrieve' tool.
 
 ![image](/mcp-assets/83c61dd838391a10eff0cc084cfcdaff.png)
 
-# Ragie 模型上下文协议服务器
+# Ragie Model Context Protocol Server
 
-一个模型上下文协议（MCP）服务器，提供访问Ragie知识库检索功能的接口。
+A Model Context Protocol (MCP) server that provides access to Ragie's knowledge base retrieval capabilities.
 
-## 说明
+## Description
 
-该服务器实现了模型上下文协议，使AI模型能够从Ragie知识库中检索信息。它提供了一个名为“retrieve”的工具，允许查询知识库以获取相关信息。
+This server implements the Model Context Protocol to enable AI models to retrieve information from a Ragie knowledge base. It provides a single tool called "retrieve" that allows querying the knowledge base for relevant information.
 
-## 先决条件
+## Prerequisites
 
 - Node.js >= 18
-- 一个Ragie API密钥
+- A Ragie API key
 
-## 安装
+## Installation
 
-服务器需要以下环境变量：
+The server requires the following environment variable:
 
-- `RAGIE_API_KEY` (必需): 您的Ragie API认证密钥
+- `RAGIE_API_KEY` (required): Your Ragie API authentication key
 
-服务器将启动并在标准输入输出上监听MCP协议消息。
+The server will start and listen on stdio for MCP protocol messages.
 
-使用npx安装并运行服务器：
+Install and run the server with npx:
 
 ```bash
 RAGIE_API_KEY=your_api_key npx @ragieai/mcp-server
 ```
 
-### 命令行选项
+### Command Line Options
 
-该服务器支持以下命令行选项：
+The server supports the following command line options:
 
-- `--description, -d `: 使用自定义文本覆盖默认工具描述
+- `--description, -d `: Override the default tool description with custom text
 - `--partition, -p 
-`: 指定要查询的Ragie分区ID
+`: Specify the Ragie partition ID to query
 
-示例：
+Examples:
 
 ```bash
 # With custom description
@@ -57,18 +57,18 @@ RAGIE_API_KEY=your_api_key npx @ragieai/mcp-server --partition your_partition_id
 RAGIE_API_KEY=your_api_key npx @ragieai/mcp-server --description "Search the company knowledge base" --partition your_partition_id
 ```
 
-## Cursor 配置
+## Cursor Configuration
 
-为了与Cursor一起使用此MCP服务器：
+To use this MCP server with Cursor:
 
-### 选项1：创建MCP配置文件
+### Option 1: Create an MCP configuration file
 
-1. 保存名为`mcp.json`的文件
+1. Save a file called `mcp.json`
 
-* **对于特定于项目的工具**，在您的项目目录中创建一个`.cursor/mcp.json`文件。这允许您定义仅在该项目内可用的MCP服务器。
-* **对于希望跨所有项目使用的工具**，在您的主目录中创建一个`~/.cursor/mcp.json`文件。这样可以让MCP服务器在所有的Cursor工作空间中都可用。
+* **For tools specific to a project**, create a `.cursor/mcp.json` file in your project directory. This allows you to define MCP servers that are only available within that specific project.
+* **For tools that you want to use across all projects**, create a `~/.cursor/mcp.json` file in your home directory. This makes MCP servers available in all your Cursor workspaces.
 
-示例`mcp.json`：
+Example `mcp.json`:
 ```json
 {
   "mcpServers": {
@@ -88,9 +88,9 @@ RAGIE_API_KEY=your_api_key npx @ragieai/mcp-server --description "Search the com
 }
 ```
 
-### 选项2：使用shell脚本
+### Option 2: Use a shell script
 
-1. 在系统上保存名为`ragie-mcp.sh`的文件：
+1. Save a file called `ragie-mcp.sh` on your system:
 ```bash
 #!/usr/bin/env bash
 
@@ -99,22 +99,22 @@ export RAGIE_API_KEY="your_api_key"
 npx -y @ragieai/mcp-server --partition optional_partition_id
 ```
 
-2. 给文件执行权限：`chmod +x ragie-mcp.sh`
+2. Give the file execute permissions: `chmod +x ragie-mcp.sh`
 
-3. 通过进入Cursor UI中的**设置** -> **Cursor设置** -> **MCP服务器**来添加MCP服务器脚本。
+3. Add the MCP server script by going to **Settings** -> **Cursor Settings** -> **MCP Servers** in the Cursor UI.
 
-将`your_api_key`替换为您的实际Ragie API密钥，并根据需要设置分区ID（如果需要的话）。
+Replace `your_api_key` with your actual Ragie API key and optionally set the partition ID if needed.
 
-## Claude 桌面配置
+## Claude Desktop Configuration
 
-为了与Claude桌面版一起使用此MCP服务器：
+To use this MCP server with Claude desktop:
 
-1. 创建MCP配置文件`claude_desktop_config.json`：
+1. Create the MCP config file `claude_desktop_config.json`:
 
-* 对于MacOS: 使用`~/Library/Application Support/Claude/claude_desktop_config.json`
-* 对于Windows: 使用`%APPDATA%/Claude/claude_desktop_config.json`
+* For MacOS: Use `~/Library/Application Support/Claude/claude_desktop_config.json`
+* For Windows: Use `%APPDATA%/Claude/claude_desktop_config.json`
 
-示例`claude_desktop_config.json`：
+Example `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -134,65 +134,64 @@ npx -y @ragieai/mcp-server --partition optional_partition_id
 }
 ```
 
-将`your_api_key`替换为您的实际Ragie API密钥，并根据需要设置分区ID（如果需要的话）。
+Replace `your_api_key` with your actual Ragie API key and optionally set the partition ID if needed.
 
-2. 重启Claude桌面版以使更改生效。
+2. Restart Claude desktop for the changes to take effect.
 
-现在，您可以在Claude桌面对话中使用Ragie检索工具了。
+The Ragie retrieval tool will now be available in your Claude desktop conversations.
 
-## 功能
+## Features
 
-### 检索工具
+### Retrieve Tool
 
-服务器提供了一个`retrieve`工具，可用于搜索知识库。它接受以下参数：
+The server provides a `retrieve` tool that can be used to search the knowledge base. It accepts the following parameters:
 
-- `query` (字符串): 要查找相关信息的搜索查询
+- `query` (string): The search query to find relevant information
 
-该工具返回：
-- 包含来自知识库匹配文本的内容块数组
+The tool returns:
+- An array of content chunks containing matching text from the knowledge base
 
-## 开发
+## Development
 
-该项目用TypeScript编写，并使用了以下主要依赖项：
+This project is written in TypeScript and uses the following main dependencies:
+- `@modelcontextprotocol/sdk`: For implementing the MCP server
+- `ragie`: For interacting with the Ragie API
+- `zod`: For runtime type validation
 
-- `@modelcontextprotocol/sdk`: 用于实现MCP服务器
-- `ragie`: 用于与Ragie API交互
-- `zod`: 用于运行时类型验证
+### Development setup
 
-### 开发环境设置
-
-在开发模式下运行服务器：
+Running the server in dev mode:
 
 ```bash
 RAGIE_API_KEY=your_api_key npm run dev -- --partition optional_partition_id
 ```
 
-构建项目：
+Building the project:
 
 ```bash
 npm run build
 ```
 
-## 许可证
+## License
 
-MIT许可证 - 详情请参阅LICENSE.txt。
+MIT License - See LICENSE.txt for details.
 
-**官方网站：** [https://github.com/ragieai/ragie-mcp-server](https://github.com/ragieai/ragie-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ragieai/ragie-mcp-server](https://github.com/ragieai/ragie-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`search`, `knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `search`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @ragieai/mcp-server --partition optional_partition_id`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @ragieai/mcp-server --partition optional_partition_id`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ragieai-ragie.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ragieai-ragie.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

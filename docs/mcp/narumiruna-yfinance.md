@@ -1,53 +1,53 @@
 ---
-title: "yfinance股票数据服务"
-description: "一个简单的用于雅虎财经的MCP服务器，使用yfinance。该服务器提供了一组工具来获取股票数据、新闻和其他财务信息。"
+title: "yfinance-mcp"
+description: "A simple MCP server for Yahoo Finance using yfinance. This server provides a set of tools to fetch stock data, news, and other financial information."
 ---
 
-# yfinance股票数据服务
+# yfinance-mcp
 
-一个简单的用于雅虎财经的MCP服务器，使用yfinance。该服务器提供了一组工具来获取股票数据、新闻和其他财务信息。
+A simple MCP server for Yahoo Finance using yfinance. This server provides a set of tools to fetch stock data, news, and other financial information.
 
-# Yahoo Finance MCP 服务器
+# Yahoo Finance MCP Server
 
-使用 yfinance 的一个简单的 Yahoo Finance MCP 服务器。该服务器提供了一组工具来获取股票数据、新闻和其他金融信息。
+A simple MCP server for Yahoo Finance using yfinance. This server provides a set of tools to fetch stock data, news, and other financial information.
 
-## 工具
+## Tools
 
 - **get_ticker_info**
 
-  - 获取包括公司信息、财务状况、交易指标和治理数据在内的股票数据。
-  - 输入：
-    - `symbol` (字符串): 股票代码。
+  - Retrieve stock data including company info, financials, trading metrics and governance data.
+  - Inputs:
+    - `symbol` (string): The stock symbol.
 
 - **get_ticker_news**
 
-  - 获取与特定股票代码相关的最近新闻文章，包括标题、内容和来源详情。
-  - 输入：
-    - `symbol` (字符串): 股票代码。
+  - Fetches recent news articles related to a specific stock symbol with title, content, and source details.
+  - Inputs:
+    - `symbol` (string): The stock symbol.
 
 - **search**
 
-  - 从 Yahoo Finance 获取并组织搜索结果，包括股票报价和新闻文章。
-  - 输入：
-    - `query` (字符串): 搜索查询（股票代码或公司名称）。
-    - `search_type` (字符串): 要检索的搜索结果类型（选项："all", "quotes", "news"）。
+  - Fetches and organizes search results from Yahoo Finance, including stock quotes and news articles.
+  - Inputs:
+    - `query` (string): The search query (ticker symbol or company name).
+    - `search_type` (string): Type of search results to retrieve (options: "all", "quotes", "news").
 
 - **get_top**
 
-  - 获取某一行业内的顶级实体（ETF、共同基金、公司、成长型公司或表现优异的公司）。
-  - 输入：
-    - `sector` (字符串): 要获取的行业。
-    - `top_type` (字符串): 要检索的顶级公司类型（选项："top_etfs", "top_mutual_funds", "top_companies", "top_growth_companies", "top_performing_companies"）。
-    - `top_n` (数字, 可选): 要检索的顶级实体数量（默认为10）。
+  - Get top entities (ETFs, mutual funds, companies, growth companies, or performing companies) in a sector.
+  - Inputs:
+    - `sector` (string): The sector to get.
+    - `top_type` (string): Type of top companies to retrieve (options: "top_etfs", "top_mutual_funds", "top_companies", "top_growth_companies", "top_performing_companies").
+    - `top_n` (number, optional): Number of top entities to retrieve (default 10).
 
-## 使用方法
+## Usage
 
-您可以通过 uv（Python 包管理器）或 Docker 来使用此 MCP 服务器。
+You can use this MCP server either via uv (Python package installer) or Docker.
 
-### 通过 uv
+### Via uv
 
-1. [安装 uv](https://docs.astral.sh/uv/getting-started/installation/)
-2. 将以下配置添加到您的 MCP 服务器配置文件中：
+1. [Install uv](https://docs.astral.sh/uv/getting-started/installation/)
+2. Add the following configuration to your MCP server configuration file:
 
 ```json
 {
@@ -60,9 +60,9 @@ description: "一个简单的用于雅虎财经的MCP服务器，使用yfinance�
 }
 ```
 
-### 通过 Docker
+### Via Docker
 
-将以下配置添加到您的 MCP 服务器配置文件中：
+Add the following configuration to your MCP server configuration file:
 
 ```json
 {
@@ -75,22 +75,22 @@ description: "一个简单的用于雅虎财经的MCP服务器，使用yfinance�
 }
 ```
 
-**官方网站：** [https://github.com/narumiruna/yfinance-mcp](https://github.com/narumiruna/yfinance-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/narumiruna/yfinance-mcp](https://github.com/narumiruna/yfinance-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`yfmcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `yfmcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/narumiruna-yfinance.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/narumiruna-yfinance.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

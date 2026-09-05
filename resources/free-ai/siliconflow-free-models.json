@@ -3,21 +3,27 @@
   "channel": "free-ai",
   "name": {
     "en": "SiliconFlow Free Models & Credit",
-    "zh-Hans": "硅基流动免费模型与额度",
-    "zh-Hant": "硅基流动免费模型与额度"
+    "zh-Hans": "硅基流动免费模型与额度"
   },
   "description": {
     "en": "New users get about ¥14 (≈20M tokens) credit, and after real-name verification can use many permanently free open models (DeepSeek, Qwen, Llama, GLM etc.); free models cost 0 with fixed rate limits.",
-    "zh-Hans": "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。",
-    "zh-Hant": "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。"
+    "zh-Hans": "新用户注册送约 ¥14（约合 2,000 万 tokens）额度，完成实名认证后可长期免费使用大量开源模型（DeepSeek、Qwen、Llama、GLM 等），免费模型费用为 0、限速固定。"
   },
   "detail": {
     "en": "SiliconFlow (硅基流动) is a domestic MaaS platform with 200+ open models behind one OpenAI-compatible endpoint. Free tier: new accounts receive a credit grant of about ¥14 (roughly 20M tokens of Qwen-class models); after real-name verification, all permanent free variants become available (named without the Pro/ prefix), which cost 0 and have fixed per-model rate limits. Text models generally allow RPM 1,000–10,000 and TPM 50,000–5,000,000 depending on the model and usage tier; image models are limited to IPM 2 / IPD 400. Free policy and limits change, so confirm with the official rate-limit and billing docs.",
-    "zh-Hans": "硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。",
-    "zh-Hant": "硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。"
+    "zh-Hans": "硅基流动（SiliconFlow）是国内 MaaS 平台，在一个 OpenAI 兼容端点后提供 200+ 开源模型。免费政策：新账号注册赠送约 ¥14 额度（约相当于 2,000 万 tokens 的 Qwen 类模型调用）；完成实名认证后可使用全部永久免费模型（名称不带 Pro/ 前缀），调用费用为 0、限速固定。文本（语言）模型一般允许 RPM 1,000–10,000、TPM 5 万–500 万（按模型与用量级别）；图像生成模型限 IPM 2 / IPD 400。免费政策与限速可能调整，请以官方速率限制与计费文档为准。该接口可接入 ChatSpeed。"
   },
-  "categories": ["general", "coding", "reasoning"],
-  "tags": ["siliconflow", "free-models", "api", "china"],
+  "categories": [
+    "general",
+    "coding",
+    "reasoning"
+  ],
+  "tags": [
+    "siliconflow",
+    "free-models",
+    "api",
+    "china"
+  ],
   "website": "https://siliconflow.cn/",
   "status": "active",
   "lastVerifiedAt": "2026-08-30",
@@ -27,67 +33,56 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "Sign-up credit about ¥14 (≈20M tokens); permanent free models cost 0 after real-name verification, text models roughly RPM 1,000–10,000 / TPM 50K–5M, image models IPM 2 / IPD 400. Confirm current values in the official docs.",
-      "zh-Hans": "注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。",
-      "zh-Hant": "注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。"
+      "zh-Hans": "注册赠约 ¥14（约合 2,000 万 tokens）额度；实名认证后免费模型调用费用为 0，文本模型约 RPM 1,000–10,000 / TPM 5 万–500 万，图像模型 IPM 2 / IPD 400；以官方文档当前值为准。"
     },
     "availability": "regional",
     "signupUrl": "https://siliconflow.cn/",
     "freePolicyUrl": "https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation",
     "registrationRestriction": {
       "en": "Sign up with a Chinese phone number/email; real-name verification is required to use all permanent free models. No credit card required.",
-      "zh-Hans": "手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。",
-      "zh-Hant": "手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。"
+      "zh-Hans": "手机号/邮箱注册即可；免费模型需完成实名认证后方可使用全部免费模型。无需信用卡，中国大陆用户可直接注册使用。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "New-user credit (all models by tokens)",
-          "zh-Hans": "新用户注册额度（全模型按 token 消耗）",
-          "zh-Hant": "新用户注册额度（全模型按 token 消耗）"
+          "zh-Hans": "新用户注册额度（全模型按 token 消耗）"
         },
         "quota": {
           "en": "≈ ¥14 (≈ 20M tokens of Qwen-class models)",
-          "zh-Hans": "约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型）",
-          "zh-Hant": "约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型）"
+          "zh-Hans": "约 ¥14（约合 2,000 万 tokens 的 Qwen 类模型）"
         },
         "frequency": {
           "en": "One-time grant; exact amount per official billing doc",
-          "zh-Hans": "一次性赠送，具体以官方计费文档为准",
-          "zh-Hant": "一次性赠送，具体以官方计费文档为准"
+          "zh-Hans": "一次性赠送，具体以官方计费文档为准"
         }
       },
       {
         "model": {
           "en": "Permanent free models (text, e.g. DeepSeek, Qwen, Llama, GLM variants)",
-          "zh-Hans": "永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体）",
-          "zh-Hant": "永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体）"
+          "zh-Hans": "永久免费模型（文本，如 DeepSeek、Qwen、Llama、GLM 变体）"
         },
         "quota": {
           "en": "Free (cost 0)",
-          "zh-Hans": "免费（费用 0）",
-          "zh-Hant": "免费（费用 0）"
+          "zh-Hans": "免费（费用 0）"
         },
         "frequency": {
           "en": "RPM 1,000–10,000 / TPM 50K–5M (by model)",
-          "zh-Hans": "RPM 1,000–10,000 / TPM 5 万–500 万（按模型）",
-          "zh-Hant": "RPM 1,000–10,000 / TPM 5 万–500 万（按模型）"
+          "zh-Hans": "RPM 1,000–10,000 / TPM 5 万–500 万（按模型）"
         }
       },
       {
         "model": {
           "en": "Image-generation models",
-          "zh-Hans": "图像生成模型",
-          "zh-Hant": "图像生成模型"
+          "zh-Hans": "图像生成模型"
         },
         "quota": {
           "en": "Free (cost 0)",
-          "zh-Hans": "免费（费用 0）",
-          "zh-Hant": "免费（费用 0）"
+          "zh-Hans": "免费（费用 0）"
         },
         "frequency": {
           "en": "IPM 2 / IPD 400",
-          "zh-Hans": "IPM 2 / IPD 400",
-          "zh-Hant": "IPM 2 / IPD 400"
+          "zh-Hans": "IPM 2 / IPD 400"
         }
       }
     ],

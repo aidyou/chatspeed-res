@@ -1,48 +1,48 @@
 ---
-title: "无畏搜索"
-description: "勇敢搜索"
+title: "mcp-brave-search"
+description: "brave search"
 ---
 
-# 无畏搜索
+# mcp-brave-search
 
-勇敢搜索
+brave search
 
-# Brave Search MCP 服务器
+# Brave Search MCP Server
 
-一个集成了 Brave Search API 的 MCP 服务器实现，提供网页和本地搜索功能。
+An MCP server implementation that integrates the Brave Search API, providing both web and local search capabilities.
 
-## 功能
+## Features
 
-- **网页搜索**：通用查询、新闻、文章，支持分页和新鲜度控制
-- **本地搜索**：查找企业、餐馆和服务，并提供详细信息
-- **灵活的过滤**：控制结果类型、安全级别和内容新鲜度
-- **智能回退**：当没有找到本地结果时自动回退到网页搜索
+- **Web Search**: General queries, news, articles, with pagination and freshness controls
+- **Local Search**: Find businesses, restaurants, and services with detailed information
+- **Flexible Filtering**: Control result types, safety levels, and content freshness
+- **Smart Fallbacks**: Local search automatically falls back to web when no results are found
 
-## 工具
+## Tools
 
 - **brave_web_search**
-  - 执行带有分页和过滤的网页搜索
-  - 输入：
-    - `query` (字符串)：搜索词
-    - `count` (数字, 可选)：每页结果数（最大20）
-    - `offset` (数字, 可选)：分页偏移量（最大9）
+  - Execute web searches with pagination and filtering
+  - Inputs:
+    - `query` (string): Search terms
+    - `count` (number, optional): Results per page (max 20)
+    - `offset` (number, optional): Pagination offset (max 9)
 
 - **brave_local_search**
-  - 搜索本地企业和服务
-  - 输入：
-    - `query` (字符串)：本地搜索词
-    - `count` (数字, 可选)：结果数量（最大20）
-  - 如果没有找到本地结果，将自动回退到网页搜索
+  - Search for local businesses and services
+  - Inputs:
+    - `query` (string): Local search terms
+    - `count` (number, optional): Number of results (max 20)
+  - Automatically falls back to web search if no local results found
 
-## 配置
+## Configuration
 
-### 获取 API 密钥
-1. 注册 [Brave Search API 账户](https://brave.com/search/api/)
-2. 选择一个计划（免费套餐每月提供2,000次查询）
-3. 从开发者仪表板生成您的 API 密钥 [从开发者仪表板](https://api.search.brave.com/app/keys)
+### Getting an API Key
+1. Sign up for a [Brave Search API account](https://brave.com/search/api/)
+2. Choose a plan (Free tier available with 2,000 queries/month)
+3. Generate your API key [from the developer dashboard](https://api.search.brave.com/app/keys)
 
-### 与 Claude Desktop 一起使用
-在 `claude_desktop_config.json` 中添加以下内容：
+### Usage with Claude Desktop
+Add this to your `claude_desktop_config.json`:
 
 ### Docker
 
@@ -86,34 +86,34 @@ description: "勇敢搜索"
 }
 ```
 
-## 构建
+## Build
 
-Docker 构建：
+Docker build:
 
 ```bash
 docker build -t mcp/brave-search:latest -f src/brave-search/Dockerfile .
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证授权。这意味着您可以自由使用、修改和分发该软件，但须遵守 MIT 许可证的条款和条件。更多详情，请参阅项目仓库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/w-jeon/mcp-brave-search](https://github.com/w-jeon/mcp-brave-search)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/w-jeon/mcp-brave-search](https://github.com/w-jeon/mcp-brave-search)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `search`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-brave-search`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-brave-search`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/w-jeon-brave-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/w-jeon-brave-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

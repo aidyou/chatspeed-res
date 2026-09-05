@@ -1,86 +1,76 @@
 ---
-title: "智谱联网搜索"
-description: "智谱网络搜索MCP服务器是专为大模型设计的搜索引擎，整合了四种搜索引擎，可以让用户灵活对比和切换。在传统搜索引擎的网页爬取和排序能力基础上，增强意图识别能力，返回更适用于大模型处理的结果（如网页标题、网址、摘要、站点名称、站点图标等），帮助AI应用实现“动态知识获取”和“精准场景适配”的能力。"
+title: "Zhipu-Web-Search"
+description: "Zhipu Web Search MCP Server is a search engine specifically designed for large models. It integrates four search engines, allowing users to flexibly compare and switch between them. Building upon the…"
 ---
 
-# 智谱联网搜索
+# Zhipu-Web-Search
 
-智谱网络搜索MCP服务器是专为大模型设计的搜索引擎，整合了四种搜索引擎，可以让用户灵活对比和切换。在传统搜索引擎的网页爬取和排序能力基础上，增强意图识别能力，返回更适用于大模型处理的结果（如网页标题、网址、摘要、站点名称、站点图标等），帮助AI应用实现“动态知识获取”和“精准场景适配”的能力。
+Zhipu Web Search MCP Server is a search engine specifically designed for large models. It integrates four search engines, allowing users to flexibly compare and switch between them. Building upon the…
 
-## 什么是Zhipu Web Search MCP服务?
+## What is Zhipu Web Search MCP Service?
 
-Zhipu Web Search MCP Server是[智谱开放平台](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME)（BigModel.cn)推出的一个专给大模型用的搜索引擎，整合了5家搜索引擎供用户灵活对比切换，在传统搜索引擎网页抓取、排序的能力基础上，增强了意图识别能力，返回更适合大模型处理的结果（网页标题、网页URL、网页摘要、网站名称、网站图标等），帮助 AI 应用获得“动态知识获取”与“精准场景适配”的能力。
+Zhipu Web Search MCP Server is a search engine launched by Zhipu Open Platform (BigModel.cn), specifically designed for large models. It integrates five search engines, allowing users to flexibly compare and switch between them. Building upon the web crawling and ranking capabilities of traditional search engines, it enhances intent recognition capabilities, returning results more suitable for large model processing (such as webpage titles, URLs, summaries, site names, site icons, etc.), helping AI applications achieve "dynamic knowledge acquisition" and "precise scenario adaptation" capabilities.
 
-## 如何使用Zhipu Web Search MCP？
+## How to use Zhipu Web Search MCP?
 
-支持运行 MCP 协议的客户端，如Cursor、Cherry Studio等中配置，在[智谱 BigModel开放平台](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME)复制您的 API 密钥，并按照文档内容设置服务器命令。
+It can be configured in clients that support the MCP protocol, such as Cursor, Cherry Studio, etc. Copy your API key from the Zhipu BigModel Open Platform, and set up the server command according to the documentation.
 
-## Zhipu Web Search MCP服务的关键特性
+## Key Features of Zhipu Web Search MCP Service
 
-**实时联网搜索**： 实时检索全网信息和网页链接。
+**Real-time Web Search**:  Retrieves real-time information and webpage links from across the internet.
 
-**意图增强检索**： 结合智谱自研的向量、语义匹配、时效性、内容质量度等模型，针对用户提问进行意图识别，优化提取query 搜索词。同时使用自研 semantic reranker 分析用户问题与给定搜索结果的相关度，结合时效性给出打分和排序，为用户提供准确可靠的搜索结果。
+**Domain-Specific Search Support**: Users can search for content within a specified domain by entering the domain name. This enhances search efficiency and result relevance, catering to personalized needs such as professional research, brand monitoring, and security management.
 
-**支持指定域名搜索**：可以通过输入指定的域名搜索站内内容。提升搜索效率与结果相关性，满足专业研究、品牌监控、安全管理等个性化需求。
+**Flexible Result Quantity Customization**: Users can freely set the number of search results from 1 to 50 based on their requirements. This precise control over information quantity helps avoid information redundancy or insufficiency.
 
-**灵活条数定制**：可依据需求自由设置 1 - 50 条的搜索结果数量；精准匹配用户对信息量的把控需求，避免信息冗余或不足 。
+**Accurate Time Filtering**: Users can filter websites published within a day, a week, a month, a year, or without any time limit. This assists in accurately retrieving the latest information and historical data, meeting users' multi-condition search needs.
 
-**精准时间筛选**：可以筛选一天、一周、一个月、一年或者不限时间发布的网站。帮助用户精准检索最新咨询和历史资料。满足用户多条件的检索需求。
+**Independent Summary Adjustment**: We offer two modes for generating website summaries. The medium mode provides a summary of approximately 400-600 words, while the newly added high mode can generate up to 2500 words of extended context summary, allowing the model to produce more comprehensive answers. Users can adjust the mode according to their needs.
 
-**自主摘要调控**：对于网站摘要我们提供两种模式进行摘要的生成。medium模式会总结大概400-600字的网站摘要，而新增的high模式最多可以总结2500字的长上下文摘要共模型生成更加完备的回答。用户可以根据需要进行模式的调整。
+**Intent-Enhanced Search**: Combines Zhipu's proprietary models for vectors, semantic matching, timeliness, content quality, etc., to perform intent recognition on user queries and optimize the extraction of query search terms. It also utilizes a proprietary semantic reranker to analyze the relevance between the user's question and the given search results, assigns scores and ranks them based on timeliness, providing users with accurate and reliable search results.
 
-**多引擎支持**：  整合智谱自研引擎及主流搜索引擎（Bing/搜狗/夸克/Jina.ai），开发者可以按场景需求灵活调用，发挥不同搜索工具的优势。
+**Multi-Engine Support**:  Integrates Zhipu's proprietary engine and mainstream search engines (Sogou/Quark/Jina.ai). Developers can flexibly invoke them according to scenario-specific needs, leveraging the advantages of different search tools.
 
-| 名称  | 介绍  |
-| --- | --- |
-| 智谱自研搜索基础版 | 提供基础搜索能力，超高性价比。 |
-| 智谱自研搜索 Pro版 | 支持超长正文、更全面的搜索结果，多引擎降低空结果率提高搜索效率，搜索结果召回率更高、答案更准确。 |
-| 搜狗搜索 | 内容全面，可以抓取腾讯生态（腾讯新闻、企鹅号）、知乎的内容；在百科、医疗垂类场景中答案权威度更高。 |
-| 夸克搜索 | 支持指定范围搜索，比如可指定在金融、法律行业内搜索，提高召回准确性；全正文输出，提供覆盖 95% 网页的 3000字 长正文服务，无需再次解析URL。 |
-| Jina AI 搜索 | 输出结果直接精炼，适合需要明确直接答案的场景；能精准解析复杂 HTML，并将其转换为干净的 Markdown 或 JSON 格式。 |
-| Bing | 拥有庞大索引，涵盖数十亿网页及多种内容类型；搜索功能丰富，包括网页、图像、视频、新闻、购物、学术、地图等多种类型搜索。 |
+| Name                                | Description                                                                                                                                                                                                                                                                                                                                 |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Zhipu Proprietary Search Basic Edition | Provides basic search capabilities, excellent value for money.                                                                                                                                                                                                                                                                            |
+| Zhipu Proprietary Search Pro Edition  | Supports ultra-long full text, more comprehensive search results; multiple engines reduce empty result rates and improve search efficiency; higher search result recall rate, more accurate answers.                                                                                                                                      |
+| Sogou Search                        | Comprehensive content; can crawl content from the Tencent ecosystem (Tencent News, Penguin Accounts) and Zhihu; higher answer authoritativeness in encyclopedia and medical vertical scenarios.                                                                                                                                                |
+| Quark Search                        | Supports searching within a specified scope, e.g., can specify searches within the finance and legal industries, improving recall accuracy; full-text output, provides a 3000-character long full-text service covering 95% of webpages, no need to re-parse URLs.                                                                         |
+| Jina AI Search                      | Output results are direct and concise, suitable for scenarios requiring clear and direct answers; can accurately parse complex HTML and convert it into clean Markdown or JSON format.  
+| Bing Search                        | Possessing a vast index that encompasses billions of web pages and various types of content; featuring a rich array of search functions, including searches for web pages, images, videos, news, shopping, academic resources, maps, and more.                                                                                                                         |
 
-**结构化输出**：返回适合LLM处理的数据格式（含标题/URL/摘要/网站名/图标等）
+**Structured output**: Returns a data format suitable for LLM processing (including title/URL/summary/site name/icon, etc.)
 
-## Zhipu Web Search MCP服务的使用场景
+## Use Cases for Zhipu Web Search MCP Service
 
-**专业垂直研究：** 进行高质量网页检索、多源信息整合，如学术研究、法律、金融行业分析报告。
+**Professional Vertical Research**: Conduct high-quality webpage retrieval and multi-source information integration, such as academic research, legal, and financial industry analysis reports.
 
-**商业情报雷达：** 实时数据跟踪与分析，如监控行业动态、竞争对手信息、市场趋势等。
+**Business Intelligence Radar**: Real-time data tracking and analysis, such as monitoring industry dynamics, competitor information, market trends, etc.
 
-**AI 助手/聊天机器人：** 提供实时信息搜索能力，确保回答准确性和时效性。
+**AI Assistant/Chatbot**: Provides real-time information search capabilities to ensure the accuracy and timeliness of answers.
 
-**消费决策与规划设计：** 根据最新天气、新闻、车票等信息、进行多个选项对比，寻找最优解。
+**Consumer Decision-making and Planning Design**: Compare multiple options and find the optimal solution based on the latest information such as weather, news, and tickets.
 
-**人才画像与简历优化：** 对于hr，搜索对比市场上的jd招聘信息，帮助生成或优化jd；对于求职者，搜索对比简历与目标岗位JD及相关行业成功简历的模板，帮助生成/优化简历。
+**Talent Profiling and Resume Optimization**: For HR, search and compare job descriptions (JDs) in the market to help generate or optimize JDs; for job seekers, search and compare resumes with target job JDs and templates of successful resumes in related industries to help generate/optimize resumes.
 
-## 常见问题解答
+## Frequently Asked Questions
+Q: How to obtain an API Key?
+A: You need to register a developer account on the [Zhipu BigModel Open Platform](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME) to obtain an API Key.
+Q: Is there a fee for using Zhipu Web Search MCP?
+A: You can receive a free quota on the Zhipu BigModel Open Platform. If the free quota is exhausted, you will need to pay for usage. If you have any questions, you can consult customer service on the Zhipu BigModel Open Platform.
+Q: Which search engines are supported?
+A: It supports Zhipu's proprietary engines and mainstream search engines. Zhipu proprietary engines: search_std (Basic Edition), search_pro (Advanced Edition). Third-party engines: search_pro_sogou (Sogou), search_pro_quark (Quark), search_pro_jina (Jina.ai),search_pro_bing（Bing）.
 
-Q：如何获取API Key？
+## Installation Guide
+Supports clients that run the MCP protocol, such as Cursor, Cherry Studio, etc.
+Click to obtain the API Key from the [Zhipu BigModel Open Platform](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME).
 
-A：需在[智谱BigModel开放平台](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME)注册开发者账号，获取 API Key。
+**Using in Cursor**
+Cursor version 0.45.6 provides MCP functionality. Cursor will act as an MCP service client to use the MCP service. The MCP service can be integrated into Cursor through simple configuration.
+Operation Path: Cursor Settings ->【Features】->【MCP Servers】.
 
-Q：使用Zhipu Web Search MCP是否需要付费？
-
-A：您在[智谱BigModel开放平台](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME)可获得免费额度。若免费额度耗尽，则需要付费使用。有任何疑问可在智谱BigModel 开放平台中咨询客服。
-
-Q：支持哪些搜索引擎？
-
-A：支持智谱自研引擎及主流搜索引擎。智谱自研引擎：search_std（基础版）、search_pro（高阶版）。第三方引擎：search_pro_sogou （搜狗）、search_pro_quark（夸克）、search_pro_jina（Jina.ai ）、search_pro_bing（Bing）。
-
-## 安装教程
-
-支持运行 MCP 协议的客户端，如Cursor、Cherry Studio等。
-
-点击获取[智谱 BigModel 开放平台的API Key](https://zhipuaishengchan.datasink.sensorsdata.cn/t/ME)。
-
-**在Cursor中使用**
-
-Cursor 0.45.6 版本提供了MCP功能，Cursor将作为MCP服务客户端使用MCP服务，在Cursor中通过简单的配置就可以完成MCP服务的接入。
-
-操作路径：Cursor设置->【Features】->【MCP Servers】。
-
-**配置MCP服务器**
+**Configure MCP Server**
 ```json
 {
     "mcpServers": {
@@ -92,22 +82,22 @@ Cursor 0.45.6 版本提供了MCP功能，Cursor将作为MCP服务客户端使用
 
 ```
 
-**官方网站：** [https://github.com/THUDM](https://github.com/THUDM)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/THUDM](https://github.com/THUDM)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `search`
-- 标签：`search`, `developer tools`, `chinese`
+- Categories: `development`, `search`
+- Tags: `search`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zhipuai-zhipu-web-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zhipuai-zhipu-web-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

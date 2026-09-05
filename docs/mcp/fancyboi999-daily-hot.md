@@ -1,82 +1,76 @@
 ---
-title: "每日热点"
-description: "🔥 Daily Hots 是一个基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务，覆盖30个优质数据源，并提供实时更新。该服务使用Python实现，易于维护和扩展，支持自定义RSS订阅源，并且可以轻松集成到AI应用中。"
+title: "daily-hot-mcp"
+description: "🔥 Daily Hots 基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现"
 ---
 
-# 每日热点
+# daily-hot-mcp
 
-🔥 Daily Hots 是一个基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务，覆盖30个优质数据源，并提供实时更新。该服务使用Python实现，易于维护和扩展，支持自定义RSS订阅源，并且可以轻松集成到AI应用中。
+🔥 Daily Hots 基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现
 
 # 🔥 Daily Hots
 
-基于 Model Context Protocol (MCP) 协议的全网热点趋势一站式聚合服务 - Python实现
+One-stop aggregation service for internet hot trends based on the Model Context Protocol (MCP) - Python Implementation
 
-## ✨ 特性
+## ✨ Features
 
-- 📊 **一站式聚合** - 聚合全网热点资讯，覆盖30个优质数据源
-- 🔄 **实时更新** - 保持与源站同步的最新热点数据
-- 🧩 **MCP 协议支持** - 完全兼容 Model Context Protocol，轻松集成到 AI 应用
-- 🔌 **易于扩展** - 简单配置即可添加自定义数据源
-- 🎨 **灵活定制** - 通过环境变量轻松调整返回字段
-- 🐍 **Python实现** - 使用Python开发，更好的可维护性和扩展性
-- 🌐 **多领域覆盖** - 新闻资讯、社交媒体、科技开发、财经投资、汽车、生活消费等
+- 📊 **One-stop Aggregation** - Aggregates hot news from across the web, covering 30 high-quality data sources
+- 🔄 **Real-time Updates** - Keeps the latest trending data in sync with the source sites
+- 🧩 **MCP Protocol Support** - Fully compatible with the Model Context Protocol, making it easy to integrate into AI applications
+- 🔌 **Easy to Extend** - Add custom data sources with simple configuration
+- 🎨 **Flexible Customization** - Easily adjust return fields via environment variables
+- 🐍 **Python Implementation** - Developed using Python for better maintainability and scalability
+- 🌐 **Multi-field Coverage** - News, social media, tech development, finance and investment, automobiles, lifestyle and consumption, etc.
 
-## 📦 安装
+## 📦 Installation
 
-### 方式一：从源码安装
+### Method One: Install from Source Code
 
-```bash
+bash
 git clone https://github.com/fancyboi999/daily-hot-mcp.git
 cd daily-hot-mcp
 pip install -r requirements.txt
 pip install -e .
-```
 
-## 📖 使用指南
+## 📖 User Guide
 
-### 配置环境变量
+### Configure Environment Variables
 
-首先复制环境变量模板文件：
+First, copy the environment variable template file:
 
-```bash
+bash
 cp env.example .env
-```
 
-#### 自定义配置选项
+#### Custom Configuration Options
 
-##### `TRENDS_HUB_CUSTOM_RSS_URL` - 自定义 RSS 订阅源
+##### `TRENDS_HUB_CUSTOM_RSS_URL` - Custom RSS Feed URL
 
-支持通过环境变量添加自定义 RSS 源：
+Supports adding a custom RSS feed through an environment variable:
 
-```bash
+bash
 TRENDS_HUB_CUSTOM_RSS_URL=https://your-rss-feed-url.com/feed
-```
 
-配置后系统将自动添加 `custom-rss` 工具，用于获取指定的 RSS 订阅源内容。
+After configuration, the system will automatically add a `custom-rss` tool to fetch content from the specified RSS feed.
 
-##### `FIRECRAWL_API_KEY` - 爬虫服务 API 密钥
+##### `FIRECRAWL_API_KEY` - Web Crawler Service API Key
 
-用于获取热点内容的详细信息：
+Used to obtain detailed information about trending topics:
 
-```bash
+bash
 FIRECRAWL_API_KEY=your_api_key_here
-```
 
-此配置允许系统抓取目标热点的完整内容，提供更丰富的信息展示。API 密钥可在 [FireCrawl官网](https://www.firecrawl.dev/app) 申请获取。
+This configuration allows the system to crawl the full content of target trending topics, providing richer information. The API key can be obtained from the [FireCrawl official website](https://www.firecrawl.dev/app).
 
-### 命令行运行
+### Running via Command Line
 
-```bash
-
-# 直接运行模块
+bash
+# Run the module directly
 python daily_hot_mcp/__main__.py
-```
 
-### MCP客户端配置
+### MCP Client Configuration
 
-#### JSON 配置
+#### JSON Configuration
 
-```json
+json
 {
   "mcpServers": {
     "daily-news": {
@@ -85,103 +79,101 @@ python daily_hot_mcp/__main__.py
     }
   }
 }
-```
 
-## 🛠️ 支持的工具 (30个)
+## 🛠️ Supported Tools (30)
 
-### 📰 新闻资讯类 (11个)
+### 📰 News Information Category (11)
 
-| 工具名称 | 描述 |
+| Tool Name | Description |
 | --- | --- |
-| get-baidu-trending | 获取百度热榜，包含实时热搜、社会热点、科技新闻、娱乐八卦等多领域的热门中文资讯和搜索趋势 |
-| get-toutiao-trending | 获取今日头条热榜，包含时政要闻、社会事件、国际新闻、科技发展及娱乐八卦等多领域的热门中文资讯 |
-| get-ithome-trending | 获取IT之家热榜，包含科技资讯、数码产品、互联网动态、软件应用及前沿科技发展的热门中文科技新闻 |
-| get-bbc-news | 获取 BBC 新闻，提供全球新闻、英国新闻、商业、政治、健康、教育、科技、娱乐等资讯 |
-| get-36kr-trending | 获取 36 氪热榜，提供创业、商业、科技领域的热门资讯，包含投融资动态、新兴产业分析和商业模式创新信息 |
-| get-netease-news-trending | 获取网易新闻热点榜，包含时政要闻、社会事件、财经资讯、科技动态及娱乐体育的全方位中文新闻资讯 |
-| get-infoq-news | 获取 InfoQ 技术资讯，包含软件开发、架构设计、云计算、AI等企业级技术内容和前沿开发者动态 |
-| get-thepaper-trending | 获取澎湃新闻热榜，包含时政要闻、财经动态、社会事件、文化教育及深度报道的高质量中文新闻资讯 |
-| get-tencent-news-trending | 获取腾讯新闻热点榜，包含国内外时事、社会热点、财经资讯、娱乐动态及体育赛事的综合性中文新闻资讯 |
-| get-theverge-news | 获取 The Verge 新闻，包含科技创新、数码产品评测、互联网趋势及科技公司动态的英文科技资讯 |
-| get-9to5mac-news | 获取 9to5Mac 苹果相关新闻，包含苹果产品发布、iOS 更新、Mac 硬件、应用推荐及苹果公司动态的英文资讯 |
+| get-baidu-trending | Fetches Baidu Hot Trends, including real-time search trends, social hotspots, technology news, entertainment gossip, and more across multiple Chinese-language fields |
+| get-toutiao-trending | Fetches Toutiao Hot Trends, including political news, social events, international news, technological developments, and entertainment gossip across multiple Chinese-language fields |
+| get-ithome-trending | Fetches IT Home Hot Trends, including technology news, digital products, internet dynamics, software applications, and cutting-edge technology developments in Chinese-language tech news |
+| get-bbc-news | Fetches BBC News, providing global news, UK news, business, politics, health, education, technology, and entertainment information |
+| get-36kr-trending | Fetches 36Kr Hot Trends, providing startup, business, and technology news, including investment and financing dynamics, emerging industry analysis, and business model innovation information |
+| get-netease-news-trending | Fetches Netease News Hot Trends, including political news, social events, financial information, technological developments, and entertainment and sports news in comprehensive Chinese-language news |
+| get-infoq-news | Fetches InfoQ Technical News, including software development, architectural design, cloud computing, AI, and other enterprise-level technical content and cutting-edge developer dynamics |
+| get-thepaper-trending | Fetches The Paper Hot Trends, including political news, financial dynamics, social events, cultural education, and in-depth reports in high-quality Chinese-language news |
+| get-tencent-news-trending | Fetches Tencent News Hot Trends, including domestic and international current affairs, social hotspots, financial information, entertainment dynamics, and sports events in comprehensive Chinese-language news |
+| get-theverge-news | Fetches The Verge News, including technological innovations, digital product reviews, internet trends, and technology company dynamics in English-language tech news |
+| get-9to5mac-news | Fetches 9to5Mac Apple-related news, including Apple product launches, iOS updates, Mac hardware, app recommendations, and Apple company dynamics in English-language news |
 
-### 📱 社交媒体热榜类 (9个)
+### 📱 Social Media Hot Trend Category (9)
 
-| 工具名称 | 描述 |
+| Tool Name | Description |
+| --- | --- || get-kuaishou-trending | Get Kuaishou trending, including popular short videos, hot topics, and trending content in real-time on the Kuaishou platform |
+| get-xiaohongshu-trending | Get Xiaohongshu trending, featuring popular notes, fashion and beauty, lifestyle, and product recommendations on the Xiaohongshu platform |
+| get-so360-trending | Get 360 Hot Search, covering popular search terms, real-time news, and highly followed Chinese information on the 360 Search platform |
+| get-sogou-trending | Get Sogou Hot Search, including popular search keywords, real-time search trends, and user-focused hot Chinese information on the Sogou Search platform |
+| get-hupu-trending | Get Hupu trending, featuring sports events, popular posts from the walking street, basketball and football discussions, and popular Chinese content related to men's lifestyle interests on the Hupu platform |
+| get-weibo-trending | Get Weibo trending, covering current affairs, social phenomena, entertainment news, celebrity updates, and widely discussed online topics in real-time |
+| get-zhihu-trending | Get Zhihu trending, featuring current affairs, social topics, technology updates, entertainment gossip, and popular Q&A and discussions across multiple fields |
+| get-douyin-trending | Get Douyin Hot Search, showcasing the most popular social topics, entertainment events, internet hotspots, and trending topics |
+| get-bilibili-trending | Get Bilibili trending videos |
+
+### 🎮 Entertainment and Content Platforms (4)
+
+| Tool Name | Description |
 | --- | --- |
-| get-kuaishou-trending | 获取快手热榜，包含快手平台的热门短视频、热点话题及流行内容的实时热门中文资讯 |
-| get-xiaohongshu-trending | 获取小红书热榜，包含小红书平台的热门笔记、时尚美妆、生活方式、种草推荐等热门中文内容 |
-| get-so360-trending | 获取360热搜榜，包含360搜索平台的热门搜索词、实时新闻热点及用户关注度较高的中文资讯 |
-| get-sogou-trending | 获取搜狗热搜榜，包含搜狗搜索平台的热门搜索关键词、实时搜索趋势及用户关注的热点中文资讯 |
-| get-hupu-trending | 获取虎扑热榜，包含虎扑体育赛事、步行街热帖、篮球足球话题及男性生活兴趣的热门中文讨论内容 |
-| get-weibo-trending | 获取微博热搜榜，包含时事热点、社会现象、娱乐新闻、明星动态及网络热议话题的实时热门中文资讯 |
-| get-zhihu-trending | 获取知乎热榜，包含时事热点、社会话题、科技动态、娱乐八卦等多领域的热门问答和讨论的中文资讯 |
-| get-douyin-trending | 获取抖音热搜榜单，展示当下最热门的社会话题、娱乐事件、网络热点和流行趋势 |
-| get-bilibili-trending | 获取哔哩哔哩热门视频 |
+| get-bilibili-rank | Get Bilibili video rankings, covering popular videos across the entire site, animation, music, games, and more, reflecting the content consumption trends of young people |
+| get-douban-rank | Get Douban real-time hot lists, providing information on currently popular books, movies, TV series, and variety shows, including ratings and popularity data |
+| get-weread-rank | Get WeRead rankings, featuring popular novels, bestsellers, new book recommendations, and reading data and ranking information for various literary works |
+| get-gcores-new | Get Gcores game-related information, including in-depth content on electronic game reviews, player culture, game development, and gaming peripherals |
 
-### 🎮 娱乐与内容平台 (4个)
+### 🚗 Automotive (1)
 
-| 工具名称 | 描述 |
+| Tool Name | Description |
 | --- | --- |
-| get-bilibili-rank | 获取哔哩哔哩视频排行榜，包含全站、动画、音乐、游戏等多个分区的热门视频，反映当下年轻人的内容消费趋势 |
-| get-douban-rank | 获取豆瓣实时热门榜单，提供当前热门的图书、电影、电视剧、综艺等作品信息，包含评分和热度数据 |
-| get-weread-rank | 获取微信读书排行榜，包含热门小说、畅销书籍、新书推荐及各类文学作品的阅读数据和排名信息 |
-| get-gcores-new | 获取机核网游戏相关资讯，包含电子游戏评测、玩家文化、游戏开发和游戏周边产品的深度内容 |
+| get-autohome-trending | Get Autohome trending, covering automotive news, new car launches, car buying guides, test drive experiences, car reviews, and industry dynamics |
 
-### 🚗 汽车类 (1个)
+### 🛒 Lifestyle and Consumer (3)
 
-| 工具名称 | 描述 |
+| Tool Name | Description |
 | --- | --- |
-| get-autohome-trending | 获取汽车之家热榜，包含汽车新闻、新车发布、购车指南、试驾体验、汽车评测及汽车行业动态的专业汽车资讯 |
+| custom-rss | Custom RSS feed: your_url_here |
+| get-smzdm-rank | Get Smzdm trending, featuring product recommendations, discount information, shopping guides, product reviews, and consumer experience sharing |
+| get-sspai-rank | Get Sspai trending, featuring digital product reviews, software application recommendations, lifestyle guides, and productivity tips |
 
-### 🛒 生活消费类 (3个)
+### 🌐 Other Tools (2)
 
-| 工具名称 | 描述 |
+| Tool Name | Description |
 | --- | --- |
-| custom-rss | 自定义RSS订阅源: your_url_here |
-| get-smzdm-rank | 获取什么值得买热门，包含商品推荐、优惠信息、购物攻略、产品评测及消费经验分享的实用中文消费类资讯 |
-| get-sspai-rank | 获取少数派热榜，包含数码产品评测、软件应用推荐、生活方式指南及效率工作技巧的优质中文科技生活类内容 |
+| crawl_website | Crawl website content, often used when users want to gain a detailed understanding of a specific website's content |
+| get-ifanr-news | Get iFanr tech news, covering the latest in tech products, digital devices, and internet trends |
 
-### 🌐 其他工具 (2个)
+> 💡 **Tip**: More data sources are being continuously added. We are committed to providing you with the most comprehensive trend information!
 
-| 工具名称 | 描述 |
-| --- | --- |
-| crawl_website | 爬取网站内容，多用于用户想要详细了解某网站内容时使用 |
-| get-ifanr-news | 获取爱范儿科技快讯，包含最新的科技产品、数码设备、互联网动态等前沿科技资讯 |
-
-> 💡 **提示**: 更多数据源正在持续增加中，我们致力于为您提供最全面的热点趋势信息！
-
-## 📄 许可证
+## 📄 License
 
 MIT License
 
-## 🙏 鸣谢
+## 🙏 Acknowledgements
 
-- [DailyHotApi](https://github.com/imsyy/DailyHotApi) - 提供了优秀的热榜API设计思路
-- [RSSHub](https://github.com/DIYgod/RSSHub) - RSS聚合服务的灵感来源
-- [Model Context Protocol](https://modelcontextprotocol.io/) - MCP协议规范
-- 感谢所有贡献者和用户的支持与反馈
+- [DailyHotApi](https://github.com/imsyy/DailyHotApi) - Provided excellent design ideas for trending APIs
+- [RSSHub](https://github.com/DIYgod/RSSHub) - Inspiration for RSS aggregation services
+- [Model Context Protocol](https://modelcontextprotocol.io/) - MCP protocol specifications
+- Thanks to all contributors and users for their support and feedback
 
 ---
 
-**🎯 打造最全面的中文热点趋势聚合服务，让信息触手可及！**
+**🎯 Building the most comprehensive Chinese trend aggregation service, making information easily accessible!**
 
-**官方网站：** [https://github.com/fancyboi999/daily-hot-mcp](https://github.com/fancyboi999/daily-hot-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/fancyboi999/daily-hot-mcp](https://github.com/fancyboi999/daily-hot-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/fancyboi999-daily-hot.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/fancyboi999-daily-hot.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

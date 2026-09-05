@@ -1,31 +1,31 @@
 ---
-title: "Zotero-MCP 智搜"
-description: "该服务器允许用户通过模型上下文协议与他们的Zotero图书馆进行交互，提供用于搜索项目、检索元数据和使用自然语言查询访问全文的工具。"
+title: "zotero-mcp"
+description: "This server allows users to interact with their Zotero library through the Model Context Protocol, providing tools for searching items, retrieving metadata, and accessing full text using natural langu…"
 ---
 
-# Zotero-MCP 智搜
+# zotero-mcp
 
-该服务器允许用户通过模型上下文协议与他们的Zotero图书馆进行交互，提供用于搜索项目、检索元数据和使用自然语言查询访问全文的工具。
+This server allows users to interact with their Zotero library through the Model Context Protocol, providing tools for searching items, retrieving metadata, and accessing full text using natural langu…
 
-# Zotero 的 Model Context Protocol 服务器
+# Model Context Protocol server for Zotero
 
-这个项目是一个用 Python 实现的服务器，它为 [Zotero](https://www.zotero.org/) 实现了 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)，让你能够在 AI 助手中访问你的 Zotero 库。它的目的是实现一组小但非常有用的与 Zotero 的交互，以便与 [MCP 客户端](https://modelcontextprotocol.io/clients)一起使用。
+This project is a python server that implements the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) for [Zotero](https://www.zotero.org/), giving you access to your Zotero library within AI assistants. It is intended to implement a small but maximally useful set of interactions with Zotero for use with [MCP clients](https://modelcontextprotocol.io/clients).
 
-## 特性
+## Features
 
-此 MCP 服务器提供以下工具：
+This MCP server provides the following tools:
 
-- `zotero_search_items`：使用文本查询在您的 Zotero 库中搜索条目
-- `zotero_item_metadata`：获取特定 Zotero 条目的详细元数据信息
-- `zotero_item_fulltext`：获取特定 Zotero 条目的全文（即 PDF 内容）
+- `zotero_search_items`: Search for items in your Zotero library using a text query
+- `zotero_item_metadata`: Get detailed metadata information about a specific Zotero item
+- `zotero_item_fulltext`: Get the full text of a specific Zotero item (i.e. PDF contents)
 
-这些可以通过任何 MCP 客户端或通过 [MCP 检查器](https://modelcontextprotocol.io/docs/tools/inspector)发现和访问。
+These can be discovered and accessed through any MCP client or through the [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector).
 
-每个工具返回包含来自您的 Zotero 条目的相关信息的格式化文本，像 Claude 这样的 AI 助手可以依次使用它们，先搜索条目然后检索其元数据或文本内容。
+Each tool returns formatted text containing relevant information from your Zotero items, and AI assistants such as Claude can use them sequentially, searching for items then retrieving their metadata or text content.
 
-## 安装
+## Installation
 
-要与 Claude Desktop 一起使用，请将以下内容添加到 `mcpServers` 配置中：
+To use this with Claude Desktop, add the following to the `mcpServers` configuration:
 
 ```json
 {
@@ -41,63 +41,63 @@ description: "该服务器允许用户通过模型上下文协议与他们的Zot
 }
 ```
 
-`ZOTERO_LOCAL` 设置指向 [本地 Zotero API](https://groups.google.com/g/zotero-dev/c/ElvHhIFAXrY/m/fA7SKKwsAgAJ)，并要求 Zotero 7（或测试版，见下文说明）在同一台机器上运行。
+The `ZOTERO_LOCAL` setting points the plugin to the [local Zotero API](https://groups.google.com/g/zotero-dev/c/ElvHhIFAXrY/m/fA7SKKwsAgAJ) and requires Zotero 7 (or the beta version, see note below) running on the same machine as the client.
 
-若要使用 Zotero Web API，您需要创建一个 API 密钥，并在您的 Zotero 账户设置中找到您的库 ID（通常是您的用户 ID）: [https://www.zotero.org/settings/keys](https://www.zotero.org/settings/keys)
+To use the Zotero Web API, you'll need to create an API key and find your Library ID (usually your User ID) in your Zotero account settings here: 
 
-以下环境变量提供了配置选项：
+The following environment variables provide configuration options:
 
-- `ZOTERO_LOCAL=true`: 使用本地 Zotero API（默认值：false，见下文说明）
-- `ZOTERO_API_KEY`: 您的 Zotero API 密钥（对于本地 API 不是必需的）
-- `ZOTERO_LIBRARY_ID`: 您的 Zotero 库 ID（用户库时为您的用户 ID，对于本地 API 不是必需的）
-- `ZOTERO_LIBRARY_TYPE`: 库的类型（用户或组，默认值：用户）
+- `ZOTERO_LOCAL=true`: Use the local Zotero API (default: false, see note below)
+- `ZOTERO_API_KEY`: Your Zotero API key (not required for the local API)
+- `ZOTERO_LIBRARY_ID`: Your Zotero library ID (your user ID for user libraries, not required for the local API)
+- `ZOTERO_LIBRARY_TYPE`: The type of library (user or group, default: user)
 
 > [!IMPORTANT]
-> 若要本地访问全文 API，需要即将发布的 Zotero 版本。在此期间，您需要安装 [Zotero 测试版构建](https://www.zotero.org/support/beta_builds)才能使该功能正常工作（截至 2025-03-07）。有关更多信息，请参阅 https://github.com/zotero/zotero/pull/5004。
+> For access to the fulltext API locally, an upcoming Zotero release is required. In the meantime you'll need to install a [Zotero Beta Build](https://www.zotero.org/support/beta_builds) for that functionality to work (as of 2025-03-07). See https://github.com/zotero/zotero/pull/5004 for more information.
 
-## 开发
+## Development
 
-1. 克隆此仓库
-1. 通过运行 `uv sync` 使用 [uv](https://docs.astral.sh/uv/) 安装依赖项
-1. 在项目根目录下创建一个 `.env` 文件，并填充上述环境变量
+1. Clone this repository
+1. Install dependencies with [uv](https://docs.astral.sh/uv/) by running: `uv sync`
+1. Create a `.env` file in the project root with the environment variables above
 
-启动 [MCP 检查器](https://modelcontextprotocol.io/docs/tools/inspector)进行本地开发：
+Start the [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) for local development:
 
 ```bash
 npx @modelcontextprotocol/inspector uv run zotero-mcp
 ```
 
-### 运行测试
+### Running Tests
 
-要运行测试套件：
+To run the test suite:
 
 ```bash
 uv run pytest
 ```
 
-## 相关文档
+## Relevant Documentation
 
 - https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
 - https://github.com/modelcontextprotocol/python-sdk
 - https://pyzotero.readthedocs.io/en/latest/
 - https://www.zotero.org/support/dev/web_api/v3/start
 
-**官方网站：** [https://github.com/kujenga/zotero-mcp](https://github.com/kujenga/zotero-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kujenga/zotero-mcp](https://github.com/kujenga/zotero-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `data`
-- 标签：`research and data`, `note taking`, `search`, `chinese`
+- Categories: `search`, `data`
+- Tags: `research and data`, `note taking`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`zotero-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `zotero-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kujenga-zotero.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kujenga-zotero.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

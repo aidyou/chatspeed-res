@@ -1,44 +1,44 @@
 ---
-title: "Excel分块读取器"
-description: "通过自动分块和分页高效处理大型Excel文件，使用MCP实现无缝的文件读取和管理功能，例如工作表选择和错误处理。"
+title: "excel-reader-mcp"
+description: "Provides efficient handling of large Excel files through automatic chunking and pagination, using MCP to enable seamless file reading and management features such as sheet selection and error handling…"
 ---
 
-# Excel分块读取器
+# excel-reader-mcp
 
-通过自动分块和分页高效处理大型Excel文件，使用MCP实现无缝的文件读取和管理功能，例如工作表选择和错误处理。
+Provides efficient handling of large Excel files through automatic chunking and pagination, using MCP to enable seamless file reading and management features such as sheet selection and error handling…
 
-# MCP Excel 读取器
+# MCP Excel Reader
 
 [Smithery](https://smithery.ai/server/@ArchimedesCrypto/excel-reader-mcp-chunked)
-这是一个用于读取 Excel 文件的 Model Context Protocol (MCP) 服务器，支持自动分块和分页。使用 SheetJS 和 TypeScript 构建，该工具通过将大文件自动拆分为可管理的小块来帮助您高效处理大型 Excel 文件。
+A Model Context Protocol (MCP) server for reading Excel files with automatic chunking and pagination support. Built with SheetJS and TypeScript, this tool helps you handle large Excel files efficiently by automatically breaking them into manageable chunks.
 
-## 功能
+## Features
 
-- 📊 自动大小限制读取 Excel 文件 (.xlsx, .xls)
-- 🔄 大数据集的自动分块
-- 📑 表格选择与行分页
-- 📅 正确的日期处理
-- ⚡ 针对大文件优化
-- 🛡️ 错误处理与验证
+- 📊 Read Excel files (.xlsx, .xls) with automatic size limits
+- 🔄 Automatic chunking for large datasets
+- 📑 Sheet selection and row pagination
+- 📅 Proper date handling
+- ⚡ Optimized for large files
+- 🛡️ Error handling and validation
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@ArchimedesCrypto/excel-reader-mcp-chunked) 自动为 Claude Desktop 安装 Excel 读取器：
+To install Excel Reader for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@ArchimedesCrypto/excel-reader-mcp-chunked):
 
 ```bash
 npx -y @smithery/cli install @ArchimedesCrypto/excel-reader-mcp-chunked --client claude
 ```
 
-### 作为 MCP 服务器安装
+### As an MCP Server
 
-1. 全局安装：
+1. Install globally:
 ```bash
 npm install -g @archimdescrypto/excel-reader
 ```
 
-2. 添加到您的 MCP 设置文件中（通常位于 `~/.config/claude/settings.json` 或等效位置）：
+2. Add to your MCP settings file (usually at `~/.config/claude/settings.json` or equivalent):
 ```json
 {
   "mcpServers": {
@@ -50,27 +50,29 @@ npm install -g @archimdescrypto/excel-reader
 }
 ```
 
-### 开发环境
+### For Development
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/ArchimdesCrypto/mcp-excel-reader.git
 cd mcp-excel-reader
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-## 使用
+## Usage
 
-Excel 读取器提供了一个名为 `read_excel` 的工具，具有以下参数：
+## Usage
+
+The Excel Reader provides a single tool `read_excel` with the following parameters:
 
 ```typescript
 interface ReadExcelArgs {
@@ -103,54 +105,54 @@ interface ExcelResponse {
 }
 ```
 
-### 基本用法
+### Basic Usage
 
-当与 Claude 或其他 MCP 兼容的 AI 一起使用时：
+When used with Claude or another MCP-compatible AI:
 
 ```
 Read the Excel file at path/to/file.xlsx
 ```
 
-AI 将使用该工具读取文件，并自动处理大文件的分块。
+The AI will use the tool to read the file, automatically handling chunking for large files.
 
-### 功能
+### Features
 
-1. **自动分块**
-   - 自动将大文件分割成可管理的小块
-   - 默认块大小为 100KB
-   - 提供分页所需的元数据
+1. **Automatic Chunking**
+   - Automatically splits large files into manageable chunks
+   - Default chunk size of 100KB
+   - Provides metadata for pagination
 
-2. **表格选择**
-   - 按名称读取特定表格
-   - 如果未指定，默认读取第一个表格
+2. **Sheet Selection**
+   - Read specific sheets by name
+   - Defaults to first sheet if not specified
 
-3. **行分页**
-   - 通过 startRow 和 maxRows 控制要读取的行
-   - 获取下一个块的信息以进行连续读取
+3. **Row Pagination**
+   - Control which rows to read with startRow and maxRows
+   - Get next chunk information for continuous reading
 
-4. **错误处理**
-   - 验证文件存在性和格式
-   - 提供清晰的错误消息
-   - 优雅地处理格式不正确的 Excel 文件
+4. **Error Handling**
+   - Validates file existence and format
+   - Provides clear error messages
+   - Handles malformed Excel files gracefully
 
-## 通过 SheetJS 功能扩展
+## Extending with SheetJS Features
 
-Excel 读取器基于 SheetJS 构建，可以利用其强大的功能进行扩展：
+The Excel Reader is built on SheetJS and can be extended with its powerful features:
 
-### 可用扩展
+### Available Extensions
 
-1. **公式处理**
+1. **Formula Handling**
 ```typescript
-   // 启用公式解析
+   // Enable formula parsing
    const wb = XLSX.read(data, {
      cellFormula: true,
      cellNF: true
    });
 ```
 
-2. **单元格格式化**
+2. **Cell Formatting**
 ```typescript
-   // 访问单元格样式和格式
+   // Access cell styles and formatting
    const styles = Object.keys(worksheet)
      .filter(key => key[0] !== '!')
      .map(key => ({
@@ -159,52 +161,52 @@ Excel 读取器基于 SheetJS 构建，可以利用其强大的功能进行扩�
      }));
 ```
 
-3. **数据验证**
+3. **Data Validation**
 ```typescript
-   // 访问数据验证规则
+   // Access data validation rules
    const validation = worksheet['!dataValidation'];
 ```
 
-4. **表格功能**
-   - 合并单元格：`worksheet['!merges']`
-   - 隐藏行/列：`worksheet['!rows']`, `worksheet['!cols']`
-   - 表格保护：`worksheet['!protect']`
+4. **Sheet Features**
+   - Merged Cells: `worksheet['!merges']`
+   - Hidden Rows/Columns: `worksheet['!rows']`, `worksheet['!cols']`
+   - Sheet Protection: `worksheet['!protect']`
 
-更多功能和详细文档，请访问 [SheetJS 文档](https://docs.sheetjs.com/)。
+For more features and detailed documentation, visit the [SheetJS Documentation](https://docs.sheetjs.com/).
 
-## 贡献
+## Contributing
 
-1. 叉分仓库
-2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m '添加了一些惊人的功能'`)
-4. 推送到该分支 (`git push origin feature/amazing-feature`)
-5. 打开一个拉取请求
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-本项目根据 MIT 许可证发布 - 详情请参阅 [LICENSE](https://github.com/ArchimedesCrypto/excel-reader-mcp/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ArchimedesCrypto/excel-reader-mcp/blob/HEAD/LICENSE) file for details.
 
-## 致谢
+## Acknowledgments
 
-- 使用 [SheetJS](https://sheetjs.com/) 构建
-- 属于 [Model Context Protocol](https://github.com/modelcontextprotocol/mcp) 生态系统的一部分
+- Built with [SheetJS](https://sheetjs.com/)
+- Part of the [Model Context Protocol](https://github.com/modelcontextprotocol/mcp) ecosystem
 
-**官方网站：** [https://github.com/ArchimedesCrypto/excel-reader-mcp](https://github.com/ArchimedesCrypto/excel-reader-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ArchimedesCrypto/excel-reader-mcp](https://github.com/ArchimedesCrypto/excel-reader-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `other`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`excel-reader`
-- 参数：无
+- Transport: `stdio`
+- Command: `excel-reader`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/archimedescrypto-excel-reader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/archimedescrypto-excel-reader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

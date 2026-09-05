@@ -1,48 +1,48 @@
 ---
-title: "Spotify音乐管理"
-description: "通过Spotify Web API启用与Spotify音乐目录的交互，支持搜索、艺人信息获取、播放列表管理和自动令牌处理。"
+title: "mcp-spotify"
+description: "Enables interaction with Spotify's music catalog via the Spotify Web API, supporting searches, artist information retrieval, playlist management, and automatic token handling."
 ---
 
-# Spotify音乐管理
+# mcp-spotify
 
-通过Spotify Web API启用与Spotify音乐目录的交互，支持搜索、艺人信息获取、播放列表管理和自动令牌处理。
+Enables interaction with Spotify's music catalog via the Spotify Web API, supporting searches, artist information retrieval, playlist management, and automatic token handling.
 
 # ArtistLens
 
 [Smithery](https://smithery.ai/server/@superseoworld/artistlens)
 [![npm version](/mcp-assets/5b2f6860f196533871b70e560b2a8000.svg)](https://www.npmjs.com/package/@thomaswawra/artistlens)
 
-一个强大的模型上下文协议（MCP）服务器，提供对Spotify Web API的访问。ArtistLens使您能够无缝地与Spotify的音乐目录进行交互，包括搜索曲目、专辑和艺术家，以及访问特定艺术家的信息，如热门曲目和相关艺术家。
+A powerful Model Context Protocol (MCP) server that provides access to the Spotify Web API. ArtistLens enables seamless interaction with Spotify's music catalog, including searching for tracks, albums, and artists, as well as accessing artist-specific information like top tracks and related artists.
 
-**当前版本:** 0.4.12
+**Current Version:** 0.4.12
 
-## 安装
+## Installation
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/@superseoworld/artistlens)自动为Claude Desktop安装ArtistLens：
+To install ArtistLens for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@superseoworld/artistlens):
 
 ```bash
 npx -y @smithery/cli install @superseoworld/artistlens --client claude
 ```
 
-### 手动安装
+### Manual Installation
 
-您可以全局安装该软件包：
+You can install the package globally:
 
 ```bash
 npm install -g @thomaswawra/artistlens
 ```
 
-或者直接使用npx运行：
+Or run it directly with npx:
 
 ```bash
 npx -y @thomaswawra/artistlens
 ```
 
-## 配置
+## Configuration
 
-添加到您的MCP设置文件中（例如，`claude_desktop_config.json`或`cline_mcp_settings.json`）：
+Add to your MCP settings file (e.g., `claude_desktop_config.json` or `cline_mcp_settings.json`):
 
 ```json
 {
@@ -61,57 +61,57 @@ npx -y @thomaswawra/artistlens
 }
 ```
 
-您需要提供您的Spotify API凭证：
-1. 前往[Spotify开发者仪表板](https://developer.spotify.com/dashboard)
-2. 创建一个新的应用程序
-3. 获取您的客户端ID和客户端密钥
-4. 将它们按照上述方式添加到配置中
+You'll need to provide your Spotify API credentials:
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new application
+3. Get your Client ID and Client Secret
+4. Add them to the configuration as shown above
 
-## 功能
+## Features
 
-- 搜索曲目、专辑、艺术家和播放列表
-- 获取艺术家信息，包括热门曲目和相关艺术家
-- 获取专辑信息和曲目
-- 访问新发行和推荐
-- 获取带有市场特定内容和章节的有声书信息
-- 注意：有声书端点可能需要额外的身份验证或市场特定访问权限
-- 获取并修改播放列表信息（名称、描述、公开/私密状态）
-- 支持分页访问播放列表曲目和项目
-- 同时支持Spotify ID和URI
-- 自动令牌管理，采用客户端凭据流
-- 全面的功能测试套件
-- 代码组织良好，职责分离明确
+- Search for tracks, albums, artists, and playlists
+- Get artist information including top tracks and related artists
+- Get album information and tracks
+- Access new releases and recommendations
+- Get audiobook information with market-specific content and chapters
+- Note: Audiobook endpoints may require additional authentication or market-specific access
+- Get and modify playlist information (name, description, public/private status)
+- Access playlist tracks and items with pagination support
+- Support for both Spotify IDs and URIs
+- Automatic token management with client credentials flow
+- Comprehensive test suite for all functionality
+- Well-organized code with separation of concerns
 
-## 可用工具
+## Available Tools
 
-- `get_access_token`: 获取有效的 Spotify 访问令牌
-- `search`: 搜索曲目、专辑、艺术家或播放列表
-- `get_artist`: 获取艺术家信息
-- `get_artist_top_tracks`: 获取艺术家的热门曲目
-- `get_artist_related_artists`: 获取与给定艺术家相似的艺术家
-- `get_artist_albums`: 获取艺术家的专辑
-- `get_album`: 获取专辑信息
-- `get_album_tracks`: 获取专辑中的曲目
-- `get_track`: 获取曲目信息
-- `get_available_genres`: 获取用于推荐的可用流派列表
-- `get_new_releases`: 获取新发行的专辑
-- `get_recommendations`: 基于种子曲目、艺术家或流派获取曲目推荐
-- `get_audiobook`: 获取有声书信息，可选市场参数
-- `get_multiple_audiobooks`: 获取多个有声书的信息（最多50个）
-- `get_audiobook_chapters`: 获取有声书章节，支持分页（每次请求1-50章）
-- `get_playlist`: 获取由 Spotify 用户拥有的播放列表
-- `get_playlist_tracks`: 获取播放列表中曲目的完整详情（每次请求1-100首曲目）
-- `get_playlist_items`: 获取播放列表中项目的完整详情（每次请求1-100个项目）
-- `modify_playlist`: 更改播放列表详情（名称、描述、公开/私有状态、协作状态）
-- `add_tracks_to_playlist`: 向播放列表添加一个或多个曲目，可选位置
-- `remove_tracks_from_playlist`: 从播放列表中移除一个或多个曲目，可选位置和快照ID
-- `get_current_user_playlists`: 获取当前 Spotify 用户拥有或关注的播放列表列表（每次请求1-50个播放列表）
-- `get_featured_playlists`: 获取带有特定类别的 Spotify 推荐播放列表列表，可选语言环境和支持分页
-- `get_category_playlists`: 获取带有特定类别的 Spotify 播放列表列表
+- `get_access_token`: Get a valid Spotify access token
+- `search`: Search for tracks, albums, artists, or playlists
+- `get_artist`: Get artist information
+- `get_artist_top_tracks`: Get an artist's top tracks
+- `get_artist_related_artists`: Get artists similar to a given artist
+- `get_artist_albums`: Get an artist's albums
+- `get_album`: Get album information
+- `get_album_tracks`: Get an album's tracks
+- `get_track`: Get track information
+- `get_available_genres`: Get a list of available genres for recommendations
+- `get_new_releases`: Get new album releases
+- `get_recommendations`: Get track recommendations based on seed tracks, artists, or genres
+- `get_audiobook`: Get audiobook information with optional market parameter
+- `get_multiple_audiobooks`: Get information for multiple audiobooks (max 50)
+- `get_audiobook_chapters`: Get chapters of an audiobook with pagination support (1-50 chapters per request)
+- `get_playlist`: Get a playlist owned by a Spotify user
+- `get_playlist_tracks`: Get full details of the tracks of a playlist (1-100 tracks per request)
+- `get_playlist_items`: Get full details of the items of a playlist (1-100 items per request)
+- `modify_playlist`: Change playlist details (name, description, public/private state, collaborative status)
+- `add_tracks_to_playlist`: Add one or more tracks to a playlist with optional position
+- `remove_tracks_from_playlist`: Remove one or more tracks from a playlist with optional positions and snapshot ID
+- `get_current_user_playlists`: Get a list of the playlists owned or followed by the current Spotify user (1-50 playlists per request)
+- `get_featured_playlists`: Get a list of Spotify featured playlists with optional locale and pagination support
+- `get_category_playlists`: Get a list of Spotify playlists tagged with a particular category
 
-## 更新
+## Updating
 
-要更新到最新版本：
+To update to the latest version:
 
 ```bash
 # If installed globally
@@ -121,64 +121,64 @@ npm update -g @thomaswawra/artistlens
 npx -y @thomaswawra/artistlens
 ```
 
-## 开发
+## Development
 
-该项目是开源的，可在 GitHub 上找到：[https://github.com/superseoworld/artistlens](https://github.com/superseoworld/artistlens)。
+This project is open source and available on GitHub at [https://github.com/superseoworld/artistlens](https://github.com/superseoworld/artistlens).
 
-### 项目结构
+### Project Structure
 
-代码库组织成以下目录：
-- `src/handlers/`: 包含不同 Spotify API 端点的处理器类
-- `src/types/`: 请求和响应对象的 TypeScript 接口
-- `src/utils/`: 用于 API 通信的实用函数和类
-- `src/__tests__/`: 所有功能的 Jest 测试文件
+The codebase is organized into the following directories:
+- `src/handlers/`: Contains handler classes for different Spotify API endpoints
+- `src/types/`: TypeScript interfaces for request and response objects
+- `src/utils/`: Utility functions and classes for API communication
+- `src/__tests__/`: Jest test files for all functionality
 
-### 测试
+### Testing
 
-该项目使用 Jest 进行测试。要运行测试：
+The project uses Jest for testing. To run the tests:
 
 ```bash
 npm test
 ```
 
-在开发期间以监视模式运行测试：
+To run tests in watch mode during development:
 
 ```bash
 npm run test:watch
 ```
 
-### 贡献
+### Contributing
 
-要贡献代码，请遵循以下步骤：
-1. 叉取仓库
-2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 为你的更改添加测试
-4. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-5. 将更改推送到分支 (`git push origin feature/amazing-feature`)
-6. 打开拉取请求
+To contribute:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Add tests for your changes
+4. Commit your changes (`git commit -m 'Add some amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
 [Smithery](https://smithery.ai/server/@superseoworld/artistlens)
 
-**官方网站：** [https://github.com/superseoworld/mcp-spotify](https://github.com/superseoworld/mcp-spotify)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/superseoworld/mcp-spotify](https://github.com/superseoworld/mcp-spotify)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @thomaswawra/artistlens`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @thomaswawra/artistlens`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/superseoworld-spotify.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/superseoworld-spotify.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

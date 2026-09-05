@@ -1,33 +1,33 @@
 ---
-title: "Hacker News模型上下文协议"
-description: "为LLM客户端添加了强大的Hacker News集成，允许用户通过模型上下文协议访问故事、评论、用户资料和搜索功能。"
+title: "hn-mcp"
+description: "Adds powerful Hacker News integration to LLM clients, allowing users to access stories, comments, user profiles, and search functionality through the Model Context Protocol."
 ---
 
-# Hacker News模型上下文协议
+# hn-mcp
 
-为LLM客户端添加了强大的Hacker News集成，允许用户通过模型上下文协议访问故事、评论、用户资料和搜索功能。
+Adds powerful Hacker News integration to LLM clients, allowing users to access stories, comments, user profiles, and search functionality through the Model Context Protocol.
 
-# Hacker News MCP 服务器
+# Hacker News MCP Server
 
 [Smithery](https://smithery.ai/server/@devabdultech/hn-mcp)
-官方 Hacker News MCP 服务器 - 为 Cursor、Claude 和其他 LLM 客户端添加强大的 Hacker News 集成。通过模型上下文协议访问故事、评论、用户资料和搜索功能。
+Official Hacker News MCP Server - Adds powerful Hacker News integration to Cursor, Claude, and any other LLM clients. Access stories, comments, user profiles, and search functionality through the Model Context Protocol.
 
   
 
-## 功能
+## Features
 
-- 使用 Algolia 的 HN 搜索 API 搜索故事和评论
-- 按类型获取故事（热门、最新、最佳、提问、展示、工作）
-- 获取带有评论的单个故事
-- 获取评论树和用户讨论
-- 获取用户资料和提交
-- 实时访问 Hacker News 数据
+- Search stories and comments using Algolia's HN Search API
+- Get stories by type (top, new, best, ask, show, job)
+- Get individual stories with comments
+- Get comment trees and user discussions
+- Get user profiles and submissions
+- Real-time access to Hacker News data
 
-## 设置
+## Set Up
 
-### 在 Claude 桌面版上运行
+### Running on Claude Desktop
 
-将以下内容添加到你的 `claude_desktop_config.json` 文件中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -40,88 +40,88 @@ description: "为LLM客户端添加了强大的Hacker News集成，允许用户�
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@devabdultech/hn-mcp) 自动安装 Hacker News MCP 服务器用于 Claude 桌面版，请使用以下命令：
+To install Hacker News MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@devabdultech/hn-mcp):
 
 ```bash
 npx -y @smithery/cli install @devabdultech/hn-mcp --client claude
 ```
 
-## 工具
+## Tools
 
 1. `search`
-   * 使用 Algolia 的搜索 API 在 Hacker News 上搜索故事和评论
-   * 输入：
-         * `query` (字符串): 搜索查询
-         * `type` (可选字符串): 按类型过滤 ('story' 或 'comment')
-         * `page` (可选数字): 分页的页码
-         * `hitsPerPage` (可选数字): 每页的结果数量（最大 100）
-   * 返回: 包含故事和评论的搜索结果
+   * Search for stories and comments on Hacker News using Algolia's search API
+   * Inputs:
+         * `query` (string): Search query
+         * `type` (optional string): Filter by type ('story' or 'comment')
+         * `page` (optional number): Page number for pagination
+         * `hitsPerPage` (optional number): Results per page (max 100)
+   * Returns: Search results with stories and comments
 
 2. `getStories`
-   * 按类型获取多个故事（热门、最新、最佳、提问、展示、工作）
-   * 输入：
-         * `type` (字符串): 要获取的故事类型 ('top', 'new', 'best', 'ask', 'show', 'job')
-         * `limit` (可选数字): 要获取的故事数量（最大 100）
-   * 返回: 故事对象数组
+   * Get multiple stories by type (top, new, best, ask, show, job)
+   * Inputs:
+         * `type` (string): Type of stories to fetch ('top', 'new', 'best', 'ask', 'show', 'job')
+         * `limit` (optional number): Number of stories to fetch (max 100)
+   * Returns: Array of story objects
 
 3. `getStoryWithComments`
-   * 获取一个带有评论线程的故事
-   * 输入：
-         * `id` (数字): 故事 ID
-   * 返回: 包含嵌套评论的故事详情
+   * Get a story along with its comment thread
+   * Inputs:
+         * `id` (number): Story ID
+   * Returns: Story details with nested comments
 
 4. `getCommentTree`
-   * 获取故事的完整评论树
-   * 输入：
-         * `storyId` (数字): 故事 ID
-   * 返回: 层次化的评论树结构
+   * Get the full comment tree for a story
+   * Inputs:
+         * `storyId` (number): ID of the story
+   * Returns: Hierarchical comment tree structure
 
 5. `getUser`
-   * 获取用户的个人资料信息
-   * 输入：
-         * `id` (字符串): 用户名
-   * 返回: 用户个人资料详情，包括业力值、创建日期和关于文本
+   * Get a User is profile information
+   * Inputs:
+         * `id` (string): Username
+   * Returns: User profile details including karma, created date, and about text
 
 6. `getUserSubmissions`
-   * 获取用户的提交（故事和评论）
-   * 输入：
-         * `id` (字符串): 用户名
-   * 返回: 用户提交的故事和评论数组
+   * Get a User is submissions (stories and comments)
+   * Inputs:
+         * `id` (string): Username
+   * Returns: Array of User is submitted stories and comments
 
-### 贡献
+### Contributing
 
-1. 叉取仓库
-2. 创建你的特性分支
-3. 提交你的更改
-4. 推送到该分支
-5. 创建一个新的拉取请求
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证授权。详见 LICENSE 文件。
+This MCP server is licensed under the MIT License. See the LICENSE file for details.
 
-## 关于
+## About
 
-此 MCP 服务器由 [devabdultech](https://github.com/devabdultech) 构建并维护。它使用官方的 Hacker News API 和 Algolia 搜索 API，通过模型上下文协议提供对 Hacker News 数据的全面访问。
+This MCP server is built and maintained by [devabdultech](https://github.com/devabdultech). It uses the official Hacker News API and Algolia Search API to provide comprehensive access to Hacker News data through the Model Context Protocol.
 
-**官方网站：** [https://github.com/devabdultech/hn-mcp](https://github.com/devabdultech/hn-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/devabdultech/hn-mcp](https://github.com/devabdultech/hn-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `search`, `social media`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `search`, `social media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @devabdultech/hn-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @devabdultech/hn-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/devabdultech-hn.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/devabdultech-hn.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

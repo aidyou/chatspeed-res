@@ -1,198 +1,199 @@
 ---
-title: "今天吃什么"
-description: "让 AI 助手变身私人大厨，为你的一日三餐出谋划策！"
+title: "howtocook-mcp"
+description: "Turn your AI assistant into a personal chef that helps plan your daily meals!"
 ---
 
-# 今天吃什么
+# howtocook-mcp
 
-让 AI 助手变身私人大厨，为你的一日三餐出谋划策！
+Turn your AI assistant into a personal chef that helps plan your daily meals!
 
-# 🍳 HowToCook-MCP Server 🥘 -- 炫一周好饭，拒绝拼好饭
+# 🍳 HowToCook-MCP Server 🥘 -- Plan Your Weekly Meals, No More Daily Struggles
 
+English | [简体中文](https://github.com/worryzyy/HowToCook-mcp/blob/HEAD/README.md)
 
-> 让 AI 助手变身私人大厨，为你的一日三餐出谋划策！
+> Turn your AI assistant into a personal chef that helps plan your daily meals!
 
-基于[Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook)打造的 MCP(Model Context Protocol)服务器，让 AI 助手能够为你推荐菜谱、规划膳食，解决"今天吃什么"的世纪难题！
+An MCP (Model Context Protocol) server based on [Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook), allowing AI assistants to recommend recipes, plan meals, and solve the age-old question of "what should I eat today?"
 
-数据来源：[Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook) ⭐ 没有 star 的同学快去点个星星吧！
+Data Source: [Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook) ⭐ Don't forget to star the repo if you haven't already!
 
-## 📸 效果预览
+## 📸 Preview
 
-![功能预览1](/mcp-assets/24417b0b97208f833ff336efeb26d272.png)
-![功能预览2](/mcp-assets/a6b06393c063e3b279b26ff104d05edc.png)
+![Feature Preview 1](/mcp-assets/24417b0b97208f833ff336efeb26d272.png)
+![Feature Preview 2](/mcp-assets/a6b06393c063e3b279b26ff104d05edc.png)
 
-## 🔌 支持的 MCP 客户端
+## 🔌 Supported MCP Clients
 
-本服务器适用于所有支持 MCP 协议的 AI 助手和客户端，包括但不限于：
+This server works with all AI assistants and clients that support the MCP protocol, including but not limited to:
 
-- 🤖 Claude 桌面应用
+- 🤖 Claude Desktop App
 - 📝 Cursor
-- 💼 其他支持 MCP 的客户端
+- 💼 Other MCP-compatible clients
 
-## ✨ 美味功能
+## ✨ Delicious Features
 
-该 MCP 服务器提供以下美食工具:
+This MCP server provides the following culinary tools:
 
-1. **📚 查询全部菜谱** - 获取所有可用菜谱数据，做菜百科全书 -- 慎用这个--上下文太大
-2. **🔍 根据分类查询菜谱** - 按照分类筛选菜谱，想吃水产？早餐？荤菜？主食？一键搞定！
-3. **🧩 智能推荐膳食** - 根据你的忌口、过敏原和用餐人数，为你规划整整一周的美味佳肴
-4. **🎲 不知道吃什么** - 选择困难症福音！根据人数直接推荐今日菜单，再也不用纠结了
+1. **📚 Query All Recipes** - Access all available recipe data, your complete cooking encyclopedia -- Use with caution due to large context size
+2. **🔍 Query Recipes by Category** - Filter recipes by category: seafood, breakfast, meat dishes, staple foods, and more!
+3. **🧩 Smart Meal Planning** - Get a full week's meal plan based on dietary restrictions, allergies, and number of diners
+4. **🎲 Don't Know What to Eat?** - Perfect for the indecisive! Get instant menu recommendations based on party size
 
-## 🚀 快速上手
+## 🚀 Quick Start
 
-### 📋 先决条件
+### 📋 Prerequisites
 
 - Node.js 16.0.0+ 🟢
-- npm 或 yarn 📦
+- npm or yarn 📦
 
-### 💻 安装步骤
+### 💻 Installation
 
-1. 克隆美食仓库
+1. Clone the repository
 
 ```bash
 git clone https://github.com/worryzyy/howtocook-mcp.git
 cd howtocook-mcp-server
 ```
 
-2. 安装依赖（就像准备食材一样简单！）
+2. Install dependencies (as simple as preparing ingredients!)
 
 ```bash
 npm install
 ```
 
-3. 编译代码（烹饪过程...）
+3. Build the code (the cooking process...)
 
 ```bash
 npm run build
 ```
 
-## 🍽️ 开始使用
+## 🍽️ Getting Started
 
-### 🔥 启动服务器
+### 🔥 Start the Server
 
 ```bash
 npm start
 ```
 
-### 🔧 配置 MCP 客户端
+### 🔧 Configure MCP Clients
 
-#### 推荐使用 Cursor 快速体验(两种方式)
+#### It is recommended to use Cursor for quick experience (two methods)Cursor Configuration
 
-1. 使用 npm 包：请先运行 `npm i -g howtocook-mcp` ,否则会出现 `Failed to create client`
+1. Using npm package: Please run `npm i -g howtocook-mcp` first, otherwise `Failed to create client` will appear
 
-然后在 Cursor 设置中添加 MCP 服务器配置：
-
-```json
-{
-    "mcpServers": {
-        "howtocook-mcp": {
-            "command": "npx",
-            "args": ["-y", "howtocook-mcp"]
-        }
-    }
-}
-```
-
-2. 如果是克隆仓库本地运行，请使用如下配置
+Then add the MCP server configuration in Cursor settings:
 
 ```json
 {
-    "mcpServers": {
-        "howtocook-mcp": {
-            "command": "node",
-            "args": ["youpath\\howtocook-mcp\\build\\index.js"]
-        }
-    }
+	"mcpServers": {
+		"howtocook-mcp": {
+			"command": "npx",
+			"args": ["-y", "howtocook-mcp"]
+		}
+	}
 }
 ```
 
-#### 其他 MCP 客户端
+2. If running from a local cloned repository, use this configuration:
 
-对于其他支持 MCP 协议的客户端，请参考各自的文档进行配置，通常需要指定：
-
-- 服务器名称: `howtocook-mcp`
-- 命令: `npx -y howtocook-mcp`
-
-3. 重启客户端，让美食魔法生效 ✨
-
-## 🧙‍♂️ 菜单魔法使用指南
-
-以下是在各种 MCP 客户端中使用的示例提示语：
-
-### 1. 📚 查询全部菜谱
-
-无需参数，直接召唤美食全书！
-
-```
-请使用howtocook的MCP服务查询所有菜谱
+```json
+{
+	"mcpServers": {
+		"howtocook-mcp": {
+			"command": "node",
+			"args": ["yourpath\howtocook-mcp\build\index.js"]
+		}
+	}
+}
 ```
 
-### 2. 🔍 根据分类查询菜谱
+#### Other MCP Clients
+
+For other clients supporting the MCP protocol, refer to their respective documentation. Generally, you'll need to specify:
+
+- Server name: `howtocook-mcp`
+- Command: `npx -y howtocook-mcp`
+
+3. Restart the client to activate the culinary magic ✨
+
+## 🧙‍♂️ Culinary Magic Usage Guide
+
+Here are example prompts for using these tools in MCP clients:
+
+### 1. 📚 Query All Recipes
+
+No parameters needed, just summon the culinary encyclopedia!
 
 ```
-请使用howtocook的MCP服务查询水产类的菜谱
+Please use the howtocook MCP service to query all recipes
 ```
 
-参数:
-
-- `category`: 菜谱分类（水产、早餐、荤菜、主食等）
-
-### 3. 🧩 智能推荐一周菜谱
+### 2. 🔍 Query Recipes by Category
 
 ```
-请使用howtocook的MCP服务为3人推荐一周菜谱，我们家不吃香菜，对虾过敏
+Please use the howtocook MCP service to query seafood recipes
 ```
 
-参数:
+Parameters:
 
-- `allergies`: 过敏原列表，如 ["大蒜", "虾"]
-- `avoidItems`: 忌口食材，如 ["葱", "姜"]
-- `peopleCount`: 用餐人数 (1-10)
+- `category`: Recipe category (seafood, breakfast, meat dishes, staple foods, etc.)
 
-### 4. 🎲 今天吃什么？
+### 3. 🧩 Smart Meal Planning
 
 ```
-请使用howtocook的MCP服务为4人晚餐推荐菜单
+Please use the howtocook MCP service to recommend a weekly meal plan for 3 people. We don't eat cilantro and are allergic to shrimp.
 ```
 
-参数:
+Parameters:
 
-- `peopleCount`: 用餐人数 (1-10)
+- `allergies`: List of allergens, e.g., ["garlic", "shrimp"]
+- `avoidItems`: Dietary restrictions, e.g., ["green onion", "ginger"]
+- `peopleCount`: Number of diners (1-10)
 
-## 📝 小贴士
+### 4. 🎲 What to Eat Today?
 
-- 该包已发布至 npm，可直接通过`npm install -g howtocook-mcp`全局安装
-- 本服务兼容所有支持 MCP 协议的 AI 助手和应用
-- 首次使用时，AI 可能需要一点时间来熟悉如何使用这些工具（就像烧热锅一样）
+```
+Please use the howtocook MCP service to recommend a dinner menu for 4 people
+```
 
-## 🤝 贡献
+Parameters:
 
-欢迎 Fork 和 Pull Request，让我们一起完善这个美食助手！
+- `peopleCount`: Number of diners (1-10)
 
-## 📄 许可
+## 📝 Tips
 
-MIT License - 随意使用，就像分享美食配方一样慷慨！
+- This package is published on npm and can be installed globally via `npm install -g howtocook-mcp`
+- Compatible with all AI assistants and applications that support the MCP protocol
+- On first use, AI may need some time to familiarize itself with these tools (like preheating an oven)
+
+## 🤝 Contributing
+
+Forks and Pull Requests are welcome! Let's improve this culinary assistant together!
+
+## 📄 License
+
+MIT License - Feel free to use, just like sharing your favorite recipes!
 
 ---
 
-> 🍴 美食即将开始，胃口准备好了吗？
+> 🍴 The feast is about to begin, is your appetite ready?
 
-**官方网站：** [https://github.com/worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y howtocook-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y howtocook-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/worryzyy-howtocook.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/worryzyy-howtocook.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

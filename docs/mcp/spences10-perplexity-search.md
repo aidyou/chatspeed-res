@@ -1,193 +1,204 @@
 ---
-title: "Perplexity 智能搜索"
-description: "启用 Perplexity 的 AI API 与大语言模型的集成，通过使用专门的提示模板来实现高级聊天补全，适用于技术文档、代码审查和 API 文档等任务。"
+title: "mcp-perplexity-search"
+description: "Enables integration of Perplexity's AI API with LLMs, delivering advanced chat completion by utilizing specialized prompt templates for tasks like technical documentation, code review, and API documen…"
 ---
 
-# Perplexity 智能搜索
+# mcp-perplexity-search
 
-启用 Perplexity 的 AI API 与大语言模型的集成，通过使用专门的提示模板来实现高级聊天补全，适用于技术文档、代码审查和 API 文档等任务。
+Enables integration of Perplexity's AI API with LLMs, delivering advanced chat completion by utilizing specialized prompt templates for tasks like technical documentation, code review, and API documen…
 
 # mcp-perplexity-search
 
 ---
 
-## ⚠️ 通知
+## ⚠️ Notice
 
-**此仓库不再维护。**
+**This repository is no longer maintained.**
 
-该工具的功能现已整合到 [mcp-omnisearch](https://github.com/spences10/mcp-omnisearch) 中，后者将多个 MCP 工具合并为一个统一的包。
+The functionality of this tool is now available in [mcp-omnisearch](https://github.com/spences10/mcp-omnisearch), which combines multiple MCP tools in one unified package.
 
-请改用 [mcp-omnisearch](https://github.com/spences10/mcp-omnisearch)。
+Please use [mcp-omnisearch](https://github.com/spences10/mcp-omnisearch) instead.
 
 ---
 
-这是一个用于将 Perplexity 的 AI API 与大型语言模型 (LLMs) 集成的 Model Context Protocol (MCP) 服务器。该服务器提供了先进的聊天完成能力，并为各种使用场景提供了专门的提示模板。
+A Model Context Protocol (MCP) server for integrating Perplexity's AI
+API with LLMs. This server provides advanced chat completion
+capabilities with specialized prompt templates for various use cases.
 
   
 
-## 特性
+## Features
 
-- 🤖 使用 Perplexity 的 AI 模型进行高级聊天完成
-- 📝 常见场景预定义提示模板：
-  - 技术文档生成
-  - 安全最佳实践分析
-  - 代码审查和改进
-  - 结构化格式的 API 文档
-- 🎯 支持自定义模板以满足特定需求
-- 📊 多种输出格式（文本、Markdown、JSON）
-- 🔍 可选在响应中包含源 URL
-- ⚙️ 可配置的模型参数（温度、最大令牌数）
-- 🚀 支持多种 Perplexity 模型，包括 Sonar 和 LLaMA
+- 🤖 Advanced chat completion using Perplexity's AI models
+- 📝 Predefined prompt templates for common scenarios:
+  - Technical documentation generation
+  - Security best practices analysis
+  - Code review and improvements
+  - API documentation in structured format
+- 🎯 Custom template support for specialized use cases
+- 📊 Multiple output formats (text, markdown, JSON)
+- 🔍 Optional source URL inclusion in responses
+- ⚙️ Configurable model parameters (temperature, max tokens)
+- 🚀 Support for various Perplexity models including Sonar and LLaMA
 
-## 配置
+## Configuration
 
-此服务器需要通过您的 MCP 客户端进行配置。以下是不同环境下的示例：
+This server requires configuration through your MCP client. Here are
+examples for different environments:
 
-### Cline 配置
+### Cline Configuration
 
-将以下内容添加到您的 Cline MCP 设置中：
-
-```json
-{
-    "mcpServers": {
-        "mcp-perplexity-search": {
-            "command": "npx",
-            "args": ["-y", "mcp-perplexity-search"],
-            "env": {
-                "PERPLEXITY_API_KEY": "your-perplexity-api-key"
-            }
-        }
-    }
-}
-```
-
-### Claude Desktop with WSL 配置
-
-对于 WSL 环境，请将以下内容添加到您的 Claude Desktop 配置中：
+Add this to your Cline MCP settings:
 
 ```json
 {
-    "mcpServers": {
-        "mcp-perplexity-search": {
-            "command": "wsl.exe",
-            "args": [
-                "bash",
-                "-c",
-                "source ~/.nvm/nvm.sh && PERPLEXITY_API_KEY=your-perplexity-api-key /home/username/.nvm/versions/node/v20.12.1/bin/npx mcp-perplexity-search"
-            ]
-        }
-    }
+	"mcpServers": {
+		"mcp-perplexity-search": {
+			"command": "npx",
+			"args": ["-y", "mcp-perplexity-search"],
+			"env": {
+				"PERPLEXITY_API_KEY": "your-perplexity-api-key"
+			}
+		}
+	}
 }
 ```
 
-### 环境变量
+### Claude Desktop with WSL Configuration
 
-服务器需要以下环境变量：
+For WSL environments, add this to your Claude Desktop configuration:
 
-- `PERPLEXITY_API_KEY`: 您的 Perplexity API 密钥（必需）
+```json
+{
+	"mcpServers": {
+		"mcp-perplexity-search": {
+			"command": "wsl.exe",
+			"args": [
+				"bash",
+				"-c",
+				"source ~/.nvm/nvm.sh && PERPLEXITY_API_KEY=your-perplexity-api-key /home/username/.nvm/versions/node/v20.12.1/bin/npx mcp-perplexity-search"
+			]
+		}
+	}
+}
+```
+
+### Environment Variables
+
+The server requires the following environment variable:
+
+- `PERPLEXITY_API_KEY`: Your Perplexity API key (required)
 
 ## API
 
-服务器实现了一个带有可配置参数的单个 MCP 工具：
+The server implements a single MCP tool with configurable parameters:
 
 ### chat_completion
 
-使用 Perplexity API 生成聊天完成，并支持专门的提示模板。
+Generate chat completions using the Perplexity API with support for
+specialized prompt templates.
 
-参数：
+Parameters:
 
-- `messages` (数组, 必需): 包含消息对象的数组，每个对象包含：
-  - `role` (字符串): 'system', 'user', 或 'assistant'
-  - `content` (字符串): 消息内容
-- `prompt_template` (字符串, 可选): 要使用的预定义模板：
-  - `technical_docs`: 带有代码示例的技术文档
-  - `security_practices`: 安全实施指南
-  - `code_review`: 代码分析和改进
-  - `api_docs`: JSON 格式的 API 文档
-- `custom_template` (对象, 可选): 自定义提示模板，包含：
-  - `system` (字符串): 助手行为的系统消息
-  - `format` (字符串): 输出格式偏好
-  - `include_sources` (布尔值): 是否包含来源
-- `format` (字符串, 可选): 'text', 'markdown', 或 'json' (默认: 'text')
-- `include_sources` (布尔值, 可选): 包含源 URL (默认: false)
-- `model` (字符串, 可选): 要使用的 Perplexity 模型 (默认: 'sonar')
-- `temperature` (数字, 可选): 输出随机性 (0-1, 默认: 0.7)
-- `max_tokens` (数字, 可选): 最大响应长度 (默认: 1024)
+- `messages` (array, required): Array of message objects with:
+  - `role` (string): 'system', 'user', or 'assistant'
+  - `content` (string): The message content
+- `prompt_template` (string, optional): Predefined template to use:
+  - `technical_docs`: Technical documentation with code examples
+  - `security_practices`: Security implementation guidelines
+  - `code_review`: Code analysis and improvements
+  - `api_docs`: API documentation in JSON format
+- `custom_template` (object, optional): Custom prompt template with:
+  - `system` (string): System message for assistant behaviour
+  - `format` (string): Output format preference
+  - `include_sources` (boolean): Whether to include sources
+- `format` (string, optional): 'text', 'markdown', or 'json' (default:
+  'text')
+- `include_sources` (boolean, optional): Include source URLs (default:
+  false)
+- `model` (string, optional): Perplexity model to use (default:
+  'sonar')
+- `temperature` (number, optional): Output randomness (0-1, default:
+  0.7)
+- `max_tokens` (number, optional): Maximum response length
+  (default: 1024)
 
-## 开发
+## Development
 
-### 设置
+### Setup
 
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-3. 构建项目：
+3. Build the project:
 
 ```bash
 pnpm build
 ```
 
-4. 以开发模式运行：
+4. Run in development mode:
 
 ```bash
 pnpm dev
 ```
 
-### 发布
+### Publishing
 
-该项目使用 changesets 进行版本管理。要发布，请执行以下步骤：
+The project uses changesets for version management. To publish:
 
-1. 创建一个 changeset：
+1. Create a changeset:
 
 ```bash
 pnpm changeset
 ```
 
-2. 对包进行版本控制：
+2. Version the package:
 
 ```bash
 pnpm changeset version
 ```
 
-3. 发布到 npm：
+3. Publish to npm:
 
 ```bash
 pnpm release
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 
-MIT 许可证 - 详情请参阅 [LICENSE](https://github.com/spences10/mcp-perplexity-search/blob/HEAD/LICENSE) 文件。
+MIT License - see the [LICENSE](https://github.com/spences10/mcp-perplexity-search/blob/HEAD/LICENSE) file for details.
 
-## 致谢
+## Acknowledgments
 
-- 基于 [Model Context Protocol](https://github.com/modelcontextprotocol)
-- 由 [Perplexity SONAR](https://docs.perplexity.ai/api-reference/chat-completions) 提供支持
+- Built on the
+  [Model Context Protocol](https://github.com/modelcontextprotocol)
+- Powered by
+  [Perplexity SONAR](https://docs.perplexity.ai/api-reference/chat-completions)
 
-**官方网站：** [https://github.com/spences10/mcp-perplexity-search](https://github.com/spences10/mcp-perplexity-search)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/spences10/mcp-perplexity-search](https://github.com/spences10/mcp-perplexity-search)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `development`
-- 标签：`search`, `developer tools`, `other`, `chinese`
+- Categories: `search`, `development`
+- Tags: `search`, `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-perplexity-search`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-perplexity-search`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/spences10-perplexity-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/spences10-perplexity-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

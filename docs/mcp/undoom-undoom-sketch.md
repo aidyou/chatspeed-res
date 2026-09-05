@@ -1,11 +1,11 @@
 ---
-title: "图片素描mcp"
-description: "一个基于 MCP (Model Context Protocol) 的图片素描化服务器，可以将普通图片转换为多种风格的素描效果。支持单张图片转换、批量处理，以及多种自定义参数调节。 项目已发布到 PyPI，可以直接使用： - PyPI: - GitHub: - 🎨 多种素描风格：支持经典、详细、柔和三种不同的素描风格 - 📁 批量处理：支持批量转换文件夹中的所有图片 - 🖼️ 多格式支持：支持 JPG、PNG、B"
+title: "undoom-sketch-mcp"
+description: "A sketching server based on MCP (Model Context Protocol) that can convert ordinary images into various styles of sketch effects. It supports single image conversion, batch processing, and multiple cus…"
 ---
 
-# 图片素描mcp
+# undoom-sketch-mcp
 
-一个基于 MCP (Model Context Protocol) 的图片素描化服务器，可以将普通图片转换为多种风格的素描效果。支持单张图片转换、批量处理，以及多种自定义参数调节。 项目已发布到 PyPI，可以直接使用： - PyPI: - GitHub: - 🎨 多种素描风格：支持经典、详细、柔和三种不同的素描风格 - 📁 批量处理：支持批量转换文件夹中的所有图片 - 🖼️ 多格式支持：支持 JPG、PNG、B
+A sketching server based on MCP (Model Context Protocol) that can convert ordinary images into various styles of sketch effects. It supports single image conversion, batch processing, and multiple cus…
 
 # Undoom Sketch MCP
 
@@ -42,48 +42,37 @@ description: "一个基于 MCP (Model Context Protocol) 的图片素描化服务
 ### 方法一：直接使用 uvx（推荐）
 
 ```bash
-
 # 使用国内镜像源（推荐）
-
 uvx --index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-sketch-mcp
 
 # 或使用默认源
-
 uvx undoom-sketch-mcp
-
 ```
+
 ### 方法二：通过 PyPI 安装
 
 ```bash
-
 # 安装包
-
 pip install undoom-sketch-mcp
 
 # 运行服务器
-
 python -m undoom_sketch_mcp
-
 ```
+
 ### 方法三：从源码安装
 
 ```bash
-
 # 克隆项目
-
 git clone https://github.com/kk520879/undoom-sketch-mcp.git
-
 cd undoom-sketch-mcp
 
 # 使用 uv 安装（推荐）
-
 uv sync
 
 # 或使用 pip
-
 pip install -e .
-
 ```
+
 ## 📖 使用方法
 
 ### 作为 MCP 服务器使用
@@ -93,45 +82,30 @@ pip install -e .
 创建 `mcp_config.json` 配置文件：
 
 ```json
-
 {
-
   "mcpServers": {
-
     "undoom-sketch-mcp": {
-
       "command": "uvx",
-
       "args": [
-
         "--index-url",
-
         "https://pypi.tuna.tsinghua.edu.cn/simple",
-
         "undoom-sketch-mcp"
-
       ]
-
     }
-
   }
-
 }
-
 ```
+
 #### 2. 直接运行服务器
 
 ```bash
-
 # 启动 MCP 服务器
-
 python -m undoom_sketch_mcp
 
 # 或使用 uvx
-
 uvx undoom-sketch-mcp
-
 ```
+
 ### 🛠️ 可用工具
 
 #### 1. convert_image_to_sketch - 单张图片转换
@@ -148,6 +122,7 @@ uvx undoom-sketch-mcp
   }
 }
 ```
+
 **Python 直接调用：**
 ```python
 from undoom_sketch_mcp.server import convert_image_to_sketch
@@ -160,38 +135,30 @@ result = convert_image_to_sketch(
 )
 print(result)
 ```
+
 #### 2. batch_convert_images - 批量图片转换
 
 ```python
-
 from undoom_sketch_mcp.server import batch_convert_images
 
 result = batch_convert_images(
-
     folder_path="D:/photos/",
-
     style="detailed",
-
     blur_size=21,
-
     contrast=256.0
-
 )
-
 print(result)
-
 ```
+
 #### 3. get_image_info - 获取图片信息
 
 ```python
-
 from undoom_sketch_mcp.server import get_image_info
 
 info = get_image_info("D:/photos/image.jpg")
-
 print(info)
-
 ```
+
 ### 素描风格说明
 
 - **classic**：经典素描风格，平衡的线条和对比度
@@ -230,22 +197,17 @@ print(info)
 ### 开发环境设置
 
 ```bash
-
 # 克隆仓库
-
 git clone https://github.com/kk520879/undoom-sketch-mcp.git
-
 cd undoom-sketch-mcp
 
 # 安装开发依赖
-
 uv sync --dev
 
 # 运行测试
-
 python -m pytest
-
 ```
+
 ## 📄 许可证
 
 本项目采用 [MIT 许可证](https://github.com/kk520879/undoom-sketch-mcp/blob/HEAD/LICENSE)。
@@ -260,22 +222,22 @@ python -m pytest
 
 **如果这个项目对你有帮助，请给它一个 ⭐ Star！**
 
-**官方网站：** [https://github.com/kk520879/undoom-sketch-mcp](https://github.com/kk520879/undoom-sketch-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kk520879/undoom-sketch-mcp](https://github.com/kk520879/undoom-sketch-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `素描化`
+- Categories: `media`
+- Tags: `art and culture`, `素描化`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-sketch-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-sketch-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/undoom-undoom-sketch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/undoom-undoom-sketch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

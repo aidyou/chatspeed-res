@@ -1,52 +1,52 @@
 ---
-title: "OBS远程控制面板"
-description: "一台通过OBS WebSocket协议提供远程控制OBS Studio工具的服务器，可以通过MCP客户端界面管理场景、源、流媒体和录制。"
+title: "obs-mcp"
+description: "A server that provides tools to control OBS Studio remotely via the OBS WebSocket protocol, enabling management of scenes, sources, streaming, and recording through an MCP client interface."
 ---
 
-# OBS远程控制面板
+# obs-mcp
 
-一台通过OBS WebSocket协议提供远程控制OBS Studio工具的服务器，可以通过MCP客户端界面管理场景、源、流媒体和录制。
+A server that provides tools to control OBS Studio remotely via the OBS WebSocket protocol, enabling management of scenes, sources, streaming, and recording through an MCP client interface.
 
-# OBS MCP 服务器
+# OBS MCP Server
 
-一个用于OBS Studio的MCP服务器，提供通过OBS WebSocket协议控制OBS的工具。
+An MCP server for OBS Studio that provides tools to control OBS via the OBS WebSocket protocol.
 
-## 功能
+## Features
 
-- 连接到OBS WebSocket服务器
-- 通过MCP工具控制OBS
-- 提供以下功能的工具：
-  - 常规操作
-  - 场景管理
-  - 源控制
-  - 场景项操作
-  - 流媒体和录制
-  - 转场效果
+- Connect to OBS WebSocket server
+- Control OBS via MCP tools
+- Provides tools for:
+  - General operations
+  - Scene management
+  - Source control
+  - Scene item manipulation
+  - Streaming and recording
+  - Transitions
 
-## 安装
+## Installation
 
 ```bash
 npm install
 npm run build
 ```
 
-## 使用方法
+## Usage
 
-1. 确保开启了WebSocket服务器的OBS Studio正在运行（工具 > WebSocket服务器设置）。记下WS的密码。
-2. 如果需要的话，在环境变量中设置WebSocket密码：
+1. Make sure OBS Studio is running with WebSocket server enabled (Tools > WebSocket Server Settings). Note the password for the WS.
+2. Set the WebSocket password in environment variable (if needed):
 
 ```bash
 export OBS_WEBSOCKET_PASSWORD="your_password_here"
 ```
 
-3. 运行OBS MCP服务器以检查它是否能够构建并连接成功：
+3. Run the OBS MCP server to see that it is able to build and connect:
 
 ```bash
 npm run build
 npm run start
 ```
 
-4. 使用MCP服务器设置配置你的Claude桌面：
+4. Provision you Claude desktop with the MCP server settings:
 
 ```json
 {
@@ -65,50 +65,50 @@ npm run start
 }
 ```
 
-5. 使用Claude来控制你的OBS！
+5. Use Claude to control your OBS!
 
-## 可用工具
+## Available Tools
 
-该服务器按类别组织提供了如下工具：
+The server provides tools organized by category:
 
-- 通用工具：版本信息、统计信息、快捷键、工作室模式
-- 场景工具：列出场景、切换场景、创建/删除场景
-- 源工具：管理源、设置、音频级别、静音/取消静音
-- 场景项工具：管理场景中的项（位置、可见性等）
-- 流媒体工具：开始/停止流媒体、录制、虚拟摄像头
-- 转场工具：设置转场、持续时间、触发转场
+- General tools: Version info, stats, hotkeys, studio mode
+- Scene tools: List scenes, switch scenes, create/remove scenes
+- Source tools: Manage sources, settings, audio levels, mute/unmute
+- Scene item tools: Manage items in scenes (position, visibility, etc.)
+- Streaming tools: Start/stop streaming, recording, virtual camera
+- Transition tools: Set transitions, durations, trigger transitions
 
-## 环境变量
+## Environment Variables
 
-- `OBS_WEBSOCKET_URL`：WebSocket URL（默认值: ws://localhost:4455）
-- `OBS_WEBSOCKET_PASSWORD`：与OBS WebSocket认证所需的密码（如果需要）
+- `OBS_WEBSOCKET_URL`: WebSocket URL (default: ws://localhost:4455)
+- `OBS_WEBSOCKET_PASSWORD`: Password for authenticating with OBS WebSocket (if required)
 
-## 要求
+## Requirements
 
 - Node.js 16+
-- 启用了WebSocket服务器的OBS Studio 31+
-- Claude桌面
+- OBS Studio 31+ with WebSocket server enabled
+- Claude desktop
 
-## 许可证
+## License
 
-详情请参见[LICENSE](https://github.com/royshil/obs-mcp/blob/HEAD/LICENSE)文件。
+See the [LICENSE](https://github.com/royshil/obs-mcp/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/royshil/obs-mcp](https://github.com/royshil/obs-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/royshil/obs-mcp](https://github.com/royshil/obs-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`os automation`, `entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `os automation`, `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`<obs-mcp_root>/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `<obs-mcp_root>/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/royshil-obs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/royshil-obs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

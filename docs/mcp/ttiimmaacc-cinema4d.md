@@ -1,89 +1,89 @@
 ---
-title: "Cinema 4D AI助手"
-description: "将Cinema 4D与Claude连接起来，通过自然语言命令实现人工智能辅助的3D建模和场景操作。"
+title: "cinema4d-mcp"
+description: "Connects Cinema 4D to Claude, enabling AI-assisted 3D modeling and scene manipulation through natural language commands."
 ---
 
-# Cinema 4D AI助手
+# cinema4d-mcp
 
-将Cinema 4D与Claude连接起来，通过自然语言命令实现人工智能辅助的3D建模和场景操作。
+Connects Cinema 4D to Claude, enabling AI-assisted 3D modeling and scene manipulation through natural language commands.
 
-# Cinema4D MCP — Model Context Protocol (MCP) 服务器
+# Cinema4D MCP — Model Context Protocol (MCP) Server
 
-Cinema4D MCP 服务器将 Cinema 4D 连接到 Claude，使用户能够通过提示辅助进行 3D 操作。
+Cinema4D MCP Server connects Cinema 4D to Claude, enabling prompt-assisted 3D manipulation.
 
-## 目录
+## Table of Contents
 
-- [组件](#components)
-- [前提条件](#prerequisites)
-- [安装](#installation)
-- [设置](#setup)
-- [使用](#usage)
-- [开发](#development)
-- [故障排除与调试](#troubleshooting--debugging)
-- [文件结构](#file-structure)
-- [工具命令](#tool-commands)
+- [Components](#components)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Development](#development)
+- [Troubleshooting & Debugging](#troubleshooting--debugging)
+- [File Structure](#file-structure)
+- [Tool Commands](#tool-commands)
 
-## 组件
+## Components
 
-1. **C4D 插件**: 一个监听来自 MCP 服务器的命令并在 Cinema 4D 环境中执行这些命令的套接字服务器。
-2. **MCP 服务器**: 一个实现 MCP 协议并提供 Cinema 4D 集成工具的 Python 服务器。
+1. **C4D Plugin**: A socket server that listens for commands from the MCP server and executes them in the Cinema 4D environment.
+2. **MCP Server**: A Python server that implements the MCP protocol and provides tools for Cinema 4D integration.
 
-## 前提条件
+## Prerequisites
 
 - Cinema 4D
-- Python 3.10 或更高版本
+- Python 3.10 or higher
 
-## 开发安装
+## Development Installation
 
-要安装项目，请按照以下步骤操作：
+To install the project, follow these steps:
 
-### 克隆仓库
+### Clone the Repository
 
 ```bash
 git clone https://github.com/ttiimmaacc/cinema4d-mcp.git
 cd cinema4d-mcp
 ```
 
-### 安装包
+### Install the Package
 
 ```bash
 pip install -e .
 ```
 
-### 使封装脚本可执行
+### Make the Wrapper Script Executable
 
 ```bash
 chmod +x bin/cinema4d-mcp-wrapper
 ```
 
-## 设置
+## Setup
 
-### Cinema 4D 插件设置
+### Cinema 4D Plugin Setup
 
-要设置 Cinema 4D 插件，请按照以下步骤操作：
+To set up the Cinema 4D plugin, follow these steps:
 
-1. **复制插件文件**: 将 `c4d_plugin/mcp_server_plugin.pyp` 文件复制到 Cinema 4D 的插件文件夹中。路径根据您的操作系统而异：
+1. **Copy the Plugin File**: Copy the `c4d_plugin/mcp_server_plugin.pyp` file to Cinema 4D's plugin folder. The path varies depending on your operating system:
 
    - macOS: `/Users/USERNAME/Library/Preferences/Maxon/Maxon Cinema 4D/plugins/`
-   - Windows: `C:\Users\USERNAME\AppData\Roaming\Maxon\Maxon Cinema 4D\plugins\`
+   - Windows: `C:UsersUSERNAMEAppDataRoamingMaxonMaxon Cinema 4Dplugins`
 
-2. **启动套接字服务器**:
-   - 打开 Cinema 4D。
-   - 转到扩展 > 套接字服务器插件
-   - 您应该会看到一个套接字服务器控制对话框窗口。点击启动服务器。
+2. **Start the Socket Server**:
+   - Open Cinema 4D.
+   - Go to Extensions > Socket Server Plugin
+   - You should see a Socket Server Control dialog window. Click Start Server.
 
-### Claude Desktop 配置
+### Claude Desktop Configuration
 
-要配置 Claude Desktop，您需要修改其配置文件：
+To configure Claude Desktop, you need to modify its configuration file:
 
-1. **打开配置文件**:
+1. **Open the Configuration File**:
 
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-   - 或者，使用 Claude Desktop 中的设置菜单（设置 > 开发人员 > 编辑配置）。
+   - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
+   - Alternatively, use the Settings menu in Claude Desktop (Settings > Developer > Edit Config).
 
-2. **添加 MCP 服务器配置**:
-   对于开发/未发布的服务器，添加以下配置：
+2. **Add MCP Server Configuration**:
+   For development/unpublished server, add the following configuration:
 ```json
    "mcpServers": {
      "cinema4d": {
@@ -92,9 +92,9 @@ chmod +x bin/cinema4d-mcp-wrapper
      }
    }
 ```
-3. **更新配置文件后重启 Claude Desktop**。
+3. **Restart Claude Desktop** after updating the configuration file.
 
-  [TODO] 对于已发布的服务器
+  [TODO] For published server
 
 ```json
 {
@@ -109,77 +109,77 @@ chmod +x bin/cinema4d-mcp-wrapper
 
    
 
-## 使用
+## Usage
 
-1. 确保 Cinema 4D 套接字服务器正在运行。
-2. 打开 Claude Desktop 并在输入框中查找锤子图标 🔨，这表示 MCP 工具可用。
-3. 使用可用的[工具命令](#tool-commands)通过 Claude 与 Cinema 4D 进行交互。
+1. Ensure the Cinema 4D Socket Server is running.
+2. Open Claude Desktop and look for the hammer icon 🔨 in the input box, indicating MCP tools are available.
+3. Use the available [Tool Commands](#tool-commands) to interact with Cinema 4D through Claude.
 
-## 测试
+## Testing
 
-### 命令行测试
+### Command Line Testing
 
-要直接从命令行测试 Cinema 4D 套接字服务器：
+To test the Cinema 4D socket server directly from the command line:
 
 ```bash
 python main.py
 ```
 
-您应该会看到确认服务器成功启动并连接到 Cinema 4D 的输出。
+You should see output confirming the server's successful start and connection to Cinema 4D.
 
-### 使用 MCP 测试框架测试
+### Testing with MCP Test Harness
 
-该仓库包含一个简单的测试框架，用于运行预定义的命令序列：
+The repository includes a simple test harness for running predefined command sequences:
 
-1. **测试命令文件** (`tests/mcp_test_harness.jsonl`)：包含一系列以 JSONL 格式编写的命令，可以按顺序执行。每一行代表一个带有参数的 MCP 命令。
+1. **Test Command File** (`tests/mcp_test_harness.jsonl`): Contains a sequence of commands in JSONL format that can be executed in order. Each line represents a single MCP command with its parameters.
 
-2. **GUI 测试运行器** (`tests/mcp_test_harness_gui.py`)：一个简单的 Tkinter GUI 用于运行测试命令：
+2. **GUI Test Runner** (`tests/mcp_test_harness_gui.py`): A simple Tkinter GUI for running the test commands:
 
 ```bash
    python tests/mcp_test_harness_gui.py
 ```
 
-   该 GUI 允许你：
+   The GUI allows you to:
 
-   - 选择一个 JSONL 测试文件
-   - 按顺序运行命令
-   - 查看来自 Cinema 4D 的响应
+   - Select a JSONL test file
+   - Run the commands in sequence
+   - View the responses from Cinema 4D
 
-此测试框架特别适用于：
+This test harness is particularly useful for:
 
-- 快速测试新命令
-- 在更新后验证插件功能
-- 为调试重新创建复杂场景
-- 测试不同版本 Cinema 4D 之间的兼容性
+- Rapidly testing new commands
+- Verifying plugin functionality after updates
+- Recreating complex scenes for debugging
+- Testing compatibility across different Cinema 4D versions
 
-## 故障排除与调试
+## Troubleshooting & Debugging
 
-1. 检查日志文件：
+1. Check the log files:
 
 ```bash
    tail -f ~/Library/Logs/Claude/mcp*.log
 ```
 
-2. 确认在打开 Claude Desktop 后，Cinema 4D 控制台显示连接信息。
+2. Verify Cinema 4D shows connections in its console after you open Claude Desktop.
 
-3. 直接测试包装脚本：
+3. Test the wrapper script directly:
 
 ```bash
    cinema4d-mcp-wrapper
 ```
 
-4. 如果出现找不到 mcp 模块的错误，请全局安装它：
+4. If there are errors finding the mcp module, install it system-wide:
 
 ```bash
    pip install mcp
 ```
 
-5. 对于高级调试，使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)：
+5. For advanced debugging, use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
 ```bash
    npx @modelcontextprotocol/inspector uv --directory /Users/username/cinema4d-mcp run cinema4d-mcp
 ```
 
-## 项目文件结构
+## Project File Structure
 
 ```
 cinema4d-mcp/
@@ -205,104 +205,104 @@ cinema4d-mcp/
     └── mcp_test_harness_gui.py
 ```
 
-## 工具命令
+## Tool Commands
 
-### 场景和执行通用命令
+### General Scene & Execution
 
-- `get_scene_info`：获取当前 Cinema 4D 场景的概要信息。
-- `list_objects`：列出所有场景对象（包括层次结构）。
-- `group_objects`：将选定的对象分组到一个新的空对象下。
-- `execute_python`：在 Cinema 4D 内执行自定义 Python 代码。
-- `save_scene`：将当前 Cinema 4D 项目保存到磁盘。
-- `load_scene`：加载一个 `.c4d` 文件到场景中。
-- `set_keyframe`：在对象属性上设置关键帧（位置、旋转等）。
+- `get_scene_info`: Get summary info about the active Cinema 4D scene.
+- `list_objects`: List all scene objects (with hierarchy).
+- `group_objects`: Group selected objects under a new null.
+- `execute_python`: Execute custom Python code inside Cinema 4D.
+- `save_scene`: Save the current Cinema 4D project to disk.
+- `load_scene`: Load a `.c4d` file into the scene.
+- `set_keyframe`: Set a keyframe on an objects property (position, rotation, etc.).
 
-### 对象创建与修改
+### Object Creation & Modification
 
-- `add_primitive`：向场景中添加一个基本体（立方体、球体、圆锥等）。
-- `modify_object`：修改现有对象的变换或属性。
-- `create_abstract_shape`：创建一个有机的、非标准的抽象形状。
+- `add_primitive`: Add a primitive (cube, sphere, cone, etc.) to the scene.
+- `modify_object`: Modify transform or attributes of an existing object.
+- `create_abstract_shape`: Create an organic, non-standard abstract form.
 
-### 摄像机与动画
+### Cameras & Animation
 
-- `create_camera`：向场景中添加一个新的摄像机。
-- `animate_camera`：沿路径（线性或样条）动画化摄像机。
+- `create_camera`: Add a new camera to the scene.
+- `animate_camera`: Animate a camera along a path (linear or spline-based).
 
-### 灯光与材质
+### Lighting & Materials
 
-- `create_light`：向场景中添加灯光（全向光、聚光灯等）。
-- `create_material`：创建一个标准的 Cinema 4D 材质。
-- `apply_material`：将材质应用到目标对象。
-- `apply_shader`：生成并应用风格化或程序化着色器。
+- `create_light`: Add a light (omni, spot, etc.) to the scene.
+- `create_material`: Create a standard Cinema 4D material.
+- `apply_material`: Apply a material to a target object.
+- `apply_shader`: Generate and apply a stylized or procedural shader.
 
-### Redshift 支持
+### Redshift Support
 
-- `validate_redshift_materials`：检查 Redshift 材质设置和连接。
+- `validate_redshift_materials`: Check Redshift material setup and connections.
 
-### MoGraph 与场
+### MoGraph & Fields
 
-- `create_mograph_cloner`：添加一个 MoGraph 克隆器（线性、径向、网格等）。
-- `add_effector`：添加一个 MoGraph 效应器（随机、平面等）。
-- `apply_mograph_fields`：添加并将 MoGraph 场链接到对象。
+- `create_mograph_cloner`: Add a MoGraph Cloner (linear, radial, grid, etc.).
+- `add_effector`: Add a MoGraph Effector (Random, Plain, etc.).
+- `apply_mograph_fields`: Add and link a MoGraph Field to objects.
 
-### 动力学与物理
+### Dynamics & Physics
 
-- `create_soft_body`: 为对象添加软体标签。
-- `apply_dynamics`: 应用刚体或软体物理效果。
+- `create_soft_body`: Add a Soft Body tag to an object.
+- `apply_dynamics`: Apply Rigid or Soft Body physics.
 
-### 渲染与预览
+### Rendering & Preview
 
-- `render_frame`: 渲染一帧并保存到磁盘（仅文件输出）。
-- `render_preview`: 渲染快速预览并返回 base64 图像（供 AI 使用）。
-- `snapshot_scene`: 捕获场景快照（包括对象和预览图像）。
+- `render_frame`: Render a frame and save it to disk (file-based output only).
+- `render_preview`: Render a quick preview and return base64 image (for AI).
+- `snapshot_scene`: Capture a snapshot of the scene (objects + preview image).
 
-## 兼容性计划与路线图
+## Compatibility Plan & Roadmap
 
-| Cinema 4D 版本 | Python 版本 | 兼容性状态 | 备注                                             |
+| Cinema 4D Version | Python Version | Compatibility Status | Notes                                             |
 | ----------------- | -------------- | -------------------- | ------------------------------------------------- |
-| R21 / S22         | Python 2.7     | ❌ 不支持     | 旧版 API 和 Python 版本过时             |
-| R23               | Python 3.7     | 🔍 未计划       | 目前未测试                              |
-| S24 / R25 / S26   | Python 3.9     | ⚠️ 可能（待定）    | 需要测试并对缺失的 API 进行回退处理   |
-| 2023.0 / 2023.1   | Python 3.9     | 🧪 进行中       | 为核心功能提供回退支持                 |
-| 2023.2            | Python 3.10    | 🧪 进行中       | 与计划的测试基础保持一致                  |
-| 2024.0            | Python 3.11    | ✅ 支持         | 已验证                                          |
-| 2025.0+           | Python 3.11    | ✅ 完全支持   | 主要开发目标                        |
+| R21 / S22         | Python 2.7     | ❌ Not supported     | Legacy API and Python version too old             |
+| R23               | Python 3.7     | 🔍 Not planned       | Not currently tested                              |
+| S24 / R25 / S26   | Python 3.9     | ⚠️ Possible (TBD)    | Requires testing and fallbacks for missing APIs   |
+| 2023.0 / 2023.1   | Python 3.9     | 🧪 In progress       | Targeting fallback support for core functionality |
+| 2023.2            | Python 3.10    | 🧪 In progress       | Aligns with planned testing base                  |
+| 2024.0            | Python 3.11    | ✅ Supported         | Verified                                          |
+| 2025.0+           | Python 3.11    | ✅ Fully Supported   | Primary development target                        |
 
-### 兼容性目标
+### Compatibility Goals
 
-- **短期目标**：确保与 C4D 2023.1+（Python 3.9 和 3.10）兼容
-- **中期目标**：为缺失的 MoGraph 和 Field API 添加条件处理
-- **长期目标**：如果需求出现，考虑为 R23–S26 支持提供可选的旧插件模块
+- **Short Term**: Ensure compatibility with C4D 2023.1+ (Python 3.9 and 3.10)
+- **Mid Term**: Add conditional handling for missing MoGraph and Field APIs
+- **Long Term**: Consider optional legacy plugin module for R23–S26 support if demand arises
 
-## 最近修复的问题
+## Recent Fixes
 
-- 修复了 MoGraph 字段中“应用到：无”的问题
-  - 通过直接在目标对象下插入来修复字段层次结构
-  - 实现了适用于 Cinema 4D 2025.1 的正确字段驱动器标签连接
-  - 增加了多种字段链接方法以实现最大兼容性
-  - 通过使用多个参数 ID 启用了“使用字段”复选框
-  - 修复了字段可见性和父子关系问题
-- 通过提供正确的参数 ID 修复了网格克隆器创建问题
-- 通过定义适当的字段类型常量修复了 MoGraph 字段应用问题
-- 在 list_objects 命令中改进了层次显示
-- 提高了克隆器可见性和创建可靠性
+- Fixed "Applied to: None" issue with MoGraph fields
+  - Fixed field hierarchy by inserting directly under target object
+  - Implemented proper Field Driver tag connection for Cinema 4D 2025.1
+  - Added multiple field linkage approaches for maximum compatibility
+  - Enabled 'Use Fields' checkbox using multiple parameter IDs
+  - Fixed field visibility and parent-child relationship issues
+- Fixed Grid Cloner creation issue by providing correct parameter IDs
+- Fixed MoGraph Fields application by defining proper field type constants
+- Improved hierarchical display in list_objects command
+- Enhanced cloner visibility and creation reliability
 
-**官方网站：** [https://github.com/ttiimmaacc/cinema4d-mcp](https://github.com/ttiimmaacc/cinema4d-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ttiimmaacc/cinema4d-mcp](https://github.com/ttiimmaacc/cinema4d-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `image and video processing`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `image and video processing`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`cinema4d-mcp-wrapper`
-- 参数：无
+- Transport: `stdio`
+- Command: `cinema4d-mcp-wrapper`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ttiimmaacc-cinema4d.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ttiimmaacc-cinema4d.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

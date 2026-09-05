@@ -1,85 +1,85 @@
 ---
-title: "RAG文档管理工具"
-description: "为语义文档搜索提供RAG功能，使用Qdrant向量数据库和Ollama/OpenAI嵌入式服务，允许用户添加、搜索、列出和删除带有元数据支持的文档。"
+title: "ragdocs"
+description: "Provides RAG capabilities for semantic document search using Qdrant vector database and Ollama/OpenAI embeddings, allowing users to add, search, list, and delete documentation with metadata support."
 ---
 
-# RAG文档管理工具
+# ragdocs
 
-为语义文档搜索提供RAG功能，使用Qdrant向量数据库和Ollama/OpenAI嵌入式服务，允许用户添加、搜索、列出和删除带有元数据支持的文档。
+Provides RAG capabilities for semantic document search using Qdrant vector database and Ollama/OpenAI embeddings, allowing users to add, search, list, and delete documentation with metadata support.
 
-# RagDocs MCP 服务器
+# RagDocs MCP Server
 
-一个使用 Qdrant 向量数据库和 Ollama/OpenAI 嵌入的模型上下文协议 (MCP) 服务器，提供 RAG（检索增强生成）功能。该服务器通过向量相似性实现文档的语义搜索和管理。
+A Model Context Protocol (MCP) server that provides RAG (Retrieval-Augmented Generation) capabilities using Qdrant vector database and Ollama/OpenAI embeddings. This server enables semantic search and management of documentation through vector similarity.
 
-## 功能
+## Features
 
-- 添加带有元数据的文档
-- 通过文档进行语义搜索
-- 列出并组织文档
-- 删除文档
-- 支持 Ollama（免费）和 OpenAI（付费）嵌入
-- 自动文本分块和嵌入生成
-- 使用 Qdrant 进行向量存储
+- Add documentation with metadata
+- Semantic search through documents
+- List and organize documentation
+- Delete documents
+- Support for both Ollama (free) and OpenAI (paid) embeddings
+- Automatic text chunking and embedding generation
+- Vector storage with Qdrant
 
-## 先决条件
+## Prerequisites
 
-- Node.js 16 或更高版本
-- 以下 Qdrant 设置之一：
-  - 使用 Docker 的本地实例（免费）
-  - 拥有 API 密钥的 Qdrant Cloud 账户（托管服务）
-- 以下嵌入选项之一：
-  - 本地运行的 Ollama（默认，免费）
-  - OpenAI API 密钥（可选，付费）
+- Node.js 16 or higher
+- One of the following Qdrant setups:
+  - Local instance using Docker (free)
+  - Qdrant Cloud account with API key (managed service)
+- One of the following for embeddings:
+  - Ollama running locally (default, free)
+  - OpenAI API key (optional, paid)
 
-## 可用工具
+## Available Tools
 
 ### 1. add_document
-将文档添加到 RAG 系统中。
+Add a document to the RAG system.
 
-参数：
-- `url`（必填）：文档 URL/标识符
-- `content`（必填）：文档内容
-- `metadata`（可选）：文档元数据
-  - `title`：文档标题
-  - `contentType`：内容类型（例如："text/markdown"）
+Parameters:
+- `url` (required): Document URL/identifier
+- `content` (required): Document content
+- `metadata` (optional): Document metadata
+  - `title`: Document title
+  - `contentType`: Content type (e.g., "text/markdown")
 
 ### 2. search_documents
-使用语义相似性搜索已存储的文档。
+Search through stored documents using semantic similarity.
 
-参数：
-- `query`（必填）：自然语言搜索查询
-- `options`（可选）：
-  - `limit`：最大结果数（1-20，默认：5）
-  - `scoreThreshold`：最小相似度分数（0-1，默认：0.7）
-  - `filters`：
-    - `domain`：按领域过滤
-    - `hasCode`：过滤包含代码的文档
-    - `after`：按日期之后过滤（ISO 格式）
-    - `before`：按日期之前过滤（ISO 格式）
+Parameters:
+- `query` (required): Natural language search query
+- `options` (optional):
+  - `limit`: Maximum number of results (1-20, default: 5)
+  - `scoreThreshold`: Minimum similarity score (0-1, default: 0.7)
+  - `filters`:
+    - `domain`: Filter by domain
+    - `hasCode`: Filter for documents containing code
+    - `after`: Filter for documents after date (ISO format)
+    - `before`: Filter for documents before date (ISO format)
 
 ### 3. list_documents
-列出所有存储的文档，并提供分页和分组选项。
+List all stored documents with pagination and grouping options.
 
-参数（全部可选）：
-- `page`：页码（默认：1）
-- `pageSize`：每页文档数量（1-100，默认：20）
-- `groupByDomain`：按领域分组文档（默认：false）
-- `sortBy`：排序字段（"timestamp"、"title" 或 "domain"）
-- `sortOrder`：排序顺序（"asc" 或 "desc"）
+Parameters (all optional):
+- `page`: Page number (default: 1)
+- `pageSize`: Number of documents per page (1-100, default: 20)
+- `groupByDomain`: Group documents by domain (default: false)
+- `sortBy`: Sort field ("timestamp", "title", or "domain")
+- `sortOrder`: Sort order ("asc" or "desc")
 
 ### 4. delete_document
-从 RAG 系统中删除文档。
+Delete a document from the RAG system.
 
-参数：
-- `url`（必填）：要删除的文档的 URL
+Parameters:
+- `url` (required): URL of the document to delete
 
-## 安装
+## Installation
 
 ```bash
 npm install -g @mcpservers/ragdocs
 ```
 
-## MCP 服务器配置
+## MCP Server Configuration
 
 ```json
 {
@@ -96,7 +96,7 @@ npm install -g @mcpservers/ragdocs
 }
 ```
 
-使用 Qdrant Cloud:
+Using Qdrant Cloud:
 ```json
 {
   "mcpServers": {
@@ -113,7 +113,7 @@ npm install -g @mcpservers/ragdocs
 }
 ```
 
-使用 OpenAI:
+Using OpenAI:
 ```json
 {
   "mcpServers": {
@@ -130,44 +130,44 @@ npm install -g @mcpservers/ragdocs
 }
 ```
 
-## 本地 Qdrant 与 Docker
+## Local Qdrant with Docker
 
 ```bash
 docker run -d --name qdrant -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
 
-## 环境变量
+## Environment Variables
 
-- `QDRANT_URL`：您的 Qdrant 实例的 URL
-  - 对于本地："http://127.0.0.1:6333"（默认）
-  - 对于云："https://your-cluster-url.qdrant.tech"
-- `QDRANT_API_KEY`：Qdrant Cloud 的 API 密钥（使用云实例时必需）
-- `EMBEDDING_PROVIDER`：选择嵌入提供者（"ollama" 或 "openai"，默认："ollama"）
-- `OPENAI_API_KEY`：OpenAI API 密钥（如果使用 OpenAI 则必需）
-- `EMBEDDING_MODEL`：用于嵌入的模型
-  - 对于 Ollama：默认为 "nomic-embed-text"
-  - 对于 OpenAI：默认为 "text-embedding-3-small"
+- `QDRANT_URL`: URL of your Qdrant instance
+  - For local: "http://127.0.0.1:6333" (default)
+  - For cloud: "https://your-cluster-url.qdrant.tech"
+- `QDRANT_API_KEY`: API key for Qdrant Cloud (required when using cloud instance)
+- `EMBEDDING_PROVIDER`: Choice of embedding provider ("ollama" or "openai", default: "ollama")
+- `OPENAI_API_KEY`: OpenAI API key (required if using OpenAI)
+- `EMBEDDING_MODEL`: Model to use for embeddings
+  - For Ollama: defaults to "nomic-embed-text"
+  - For OpenAI: defaults to "text-embedding-3-small"
 
-## 许可证
+## License
 
 Apache License 2.0
 
-**官方网站：** [https://github.com/heltonteixeira/ragdocs](https://github.com/heltonteixeira/ragdocs)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/heltonteixeira/ragdocs](https://github.com/heltonteixeira/ragdocs)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `search`, `databases`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `search`, `databases`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`@mcpservers/ragdocs`
+- Transport: `stdio`
+- Command: `node`
+- Args: `@mcpservers/ragdocs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/heltonteixeira-ragdocs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/heltonteixeira-ragdocs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "luner_info",
-    "zh-Hans": "luner_info",
-    "zh-Hant": "luner_info"
+    "zh-Hans": "luner_info"
   },
   "description": {
     "en": "# luner_mcp\nThis is an MCP that can fetch the lunar calendar information for a specific day. You can input an empty value or a date to get the lunar calendar information for that day or the current day.",
-    "zh-Hans": "# luner_mcp\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。",
-    "zh-Hant": "# luner_mcp\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。"
+    "zh-Hans": "# luner_mcp\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。"
   },
   "detail": {
     "en": "# luner_mcp\nThis is an MCP that can fetch the lunar calendar information for a specific day. You can input either an empty value or a date to get the lunar calendar information for that day or the current day. The date format should be: 1991年1月1日 or 1991-01-01.\n\nThe response you will receive is as follows:\n\n日期\t:\t2025-07-01 00:00:00\n农历\t:\t二零二五 乙巳[蛇]年 六月大初七\n星期\t:\tTuesday\n八字\t:\t乙巳 壬午 辛未 戊子\n今日节气:\tNone\n下一节气:\t('小暑', (7, 7), 2025)\n季节\t:\tMidsummer\n生肖冲煞:\tSheep day clashes with Ox\n星座\t:\tCancer\n吉神方位:\t['Joy God Southwest', 'Wealth God East', 'Blessing God Northwest', 'Yang Noble Northeast', 'Yin Noble South']\n宜\t\t:\t['Sacrifice', 'Travel', 'Banquet', 'Bathing', 'Haircut', 'Construction', 'Submitting Petitions', 'Taking Office', 'Admitting People', 'Erecting Beams and Columns', 'Acupuncture', 'Gaining Wealth', 'Cleaning House', 'Planting', 'Rearing Livestock', 'Breaking Ground', 'Burial', 'Praying for Blessings', 'Caring for Orphans and Widows', 'Promoting Uprightness', 'Tailoring', 'Engagement', 'Moving', 'Recruiting Talents', 'Announcing Government Affairs', 'Granting Pardon', 'Bestowing Favors', 'Pacifying Borders', 'Resolving Disputes', 'Seeking Heirs', 'Trimming Nails', 'Granting Rewards', 'Repairing Granaries', 'Signing Contracts', 'Selecting Generals', 'Building Fortifications', 'Registering Titles', 'Dispatching Troops', 'Exercising Governance', 'Acquiring Livestock', 'Repairing City Walls', 'Grooming', 'Issuing Edicts', 'Redressing Wrongs']\n忌\t\t:\t['Hunting', 'Fishing']",
-    "zh-Hans": "# luner_mcp\r\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。日期格式形如：1991年1月1日或1991-01-01。\r\n\r\n获取得到的回答如下：\r\n\r\n日期\t:\t2025-07-01 00:00:00\r\n农历\t:\t二零二五 乙巳[蛇]年 六月大初七\r\n星期\t:\t星期二\r\n八字\t:\t乙巳 壬午 辛未 戊子\r\n今日节气:\t无\r\n下一节气:\t('小暑', (7, 7), 2025)\r\n季节\t:\t仲夏\r\n生肖冲煞:\t羊日冲牛\r\n星座\t:\t巨蟹座\r\n吉神方位:\t['喜神西南', '财神正东', '福神西北', '阳贵东北', '阴贵正南']\r\n宜\t\t:\t['祭祀', '出行', '宴会', '沐浴', '剃头', '修造', '上表章', '上官', '进人口', '竖柱上梁', '经络', '纳财', '扫舍宇', '栽种', '牧养', '破土', '安葬', '祈福', '恤孤茕', '举正直', '裁制', '纳采', '搬移', '招贤', '宣政事', '覃恩', '施恩', '安抚边境', '解除', '求嗣', '整手足甲', '庆赐', '修仓库', '立券交易', '选将', '营建', '上册', '出师', '临政', '纳畜', '缮城郭', '整容', '颁诏', '雪冤']\r\n忌\t\t:\t['畋猎', '取鱼']",
-    "zh-Hant": "# luner_mcp\r\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。日期格式形如：1991年1月1日或1991-01-01。\r\n\r\n获取得到的回答如下：\r\n\r\n日期\t:\t2025-07-01 00:00:00\r\n农历\t:\t二零二五 乙巳[蛇]年 六月大初七\r\n星期\t:\t星期二\r\n八字\t:\t乙巳 壬午 辛未 戊子\r\n今日节气:\t无\r\n下一节气:\t('小暑', (7, 7), 2025)\r\n季节\t:\t仲夏\r\n生肖冲煞:\t羊日冲牛\r\n星座\t:\t巨蟹座\r\n吉神方位:\t['喜神西南', '财神正东', '福神西北', '阳贵东北', '阴贵正南']\r\n宜\t\t:\t['祭祀', '出行', '宴会', '沐浴', '剃头', '修造', '上表章', '上官', '进人口', '竖柱上梁', '经络', '纳财', '扫舍宇', '栽种', '牧养', '破土', '安葬', '祈福', '恤孤茕', '举正直', '裁制', '纳采', '搬移', '招贤', '宣政事', '覃恩', '施恩', '安抚边境', '解除', '求嗣', '整手足甲', '庆赐', '修仓库', '立券交易', '选将', '营建', '上册', '出师', '临政', '纳畜', '缮城郭', '整容', '颁诏', '雪冤']\r\n忌\t\t:\t['畋猎', '取鱼']"
+    "zh-Hans": "# luner_mcp\r\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。日期格式形如：1991年1月1日或1991-01-01。\r\n\r\n获取得到的回答如下：\r\n\r\n日期\t:\t2025-07-01 00:00:00\r\n农历\t:\t二零二五 乙巳[蛇]年 六月大初七\r\n星期\t:\t星期二\r\n八字\t:\t乙巳 壬午 辛未 戊子\r\n今日节气:\t无\r\n下一节气:\t('小暑', (7, 7), 2025)\r\n季节\t:\t仲夏\r\n生肖冲煞:\t羊日冲牛\r\n星座\t:\t巨蟹座\r\n吉神方位:\t['喜神西南', '财神正东', '福神西北', '阳贵东北', '阴贵正南']\r\n宜\t\t:\t['祭祀', '出行', '宴会', '沐浴', '剃头', '修造', '上表章', '上官', '进人口', '竖柱上梁', '经络', '纳财', '扫舍宇', '栽种', '牧养', '破土', '安葬', '祈福', '恤孤茕', '举正直', '裁制', '纳采', '搬移', '招贤', '宣政事', '覃恩', '施恩', '安抚边境', '解除', '求嗣', '整手足甲', '庆赐', '修仓库', '立券交易', '选将', '营建', '上册', '出师', '临政', '纳畜', '缮城郭', '整容', '颁诏', '雪冤']\r\n忌\t\t:\t['畋猎', '取鱼']"
   },
   "categories": [
     "productivity"

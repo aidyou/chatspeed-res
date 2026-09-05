@@ -1,80 +1,80 @@
 ---
-title: "Hive金融社交服务"
-description: "通过模型上下文协议，使人工智能助手能够与Hive区块链互动，从而实现账户信息检索、内容读取/创建、加密货币转账和加密操作。"
+title: "hive-mcp-server"
+description: "Enables AI assistants to interact with the Hive blockchain through the Model Context Protocol, allowing for account info retrieval, content reading/creation, cryptocurrency transfers, and cryptographi…"
 ---
 
-# Hive金融社交服务
+# hive-mcp-server
 
-通过模型上下文协议，使人工智能助手能够与Hive区块链互动，从而实现账户信息检索、内容读取/创建、加密货币转账和加密操作。
+Enables AI assistants to interact with the Hive blockchain through the Model Context Protocol, allowing for account info retrieval, content reading/creation, cryptocurrency transfers, and cryptographi…
 
-# Hive MCP 服务器
+# Hive MCP Server
 
 [Smithery](https://smithery.ai/server/@gluneau/hive-mcp-server)
-[![glama 徽章](/mcp-assets/073d8a096603ce663779e8300a5d356f.png)](https://glama.ai/mcp/servers/pobodojvqv)
+[![glama badge](/mcp-assets/073d8a096603ce663779e8300a5d356f.png)](https://glama.ai/mcp/servers/pobodojvqv)
 
-一个通过模型上下文协议使 AI 助手能够与 Hive 区块链交互的 MCP 服务器。
+An MCP server that enables AI assistants to interact with the Hive blockchain through the Model Context Protocol.
 
-## 概述
+## Overview
 
-该服务器为 AI 助手（如 Claude）和 Hive 区块链之间提供了桥梁，允许 AI 模型执行以下操作：
+This server provides a bridge between AI assistants (like Claude) and the Hive blockchain, allowing AI models to:
 
-- 获取账户信息和历史记录
-- 检索博客文章和讨论
-- 按标签或用户获取文章
-- 对内容进行投票并创建文章（在适当认证后）
-- 向其他账户发送 HIVE 或 HBD 代币
-- 使用 Hive 密钥签名和验证消息
-- 发送和接收加密消息
+- Fetch account information and history
+- Retrieve blog posts and discussions
+- Get posts by tag or user
+- Vote on content and create posts (when properly authenticated)
+- Send HIVE or HBD tokens to other accounts
+- Sign and verify messages with Hive keys
+- Send and receive encrypted messages
 
-## 功能
+## Features
 
-### 提示词
+### Prompts
 
-- `create-post` - 创建结构化的提示词，引导 AI 以正确的格式和标签创建新的 Hive 文章
-- `analyze-account` - 生成提示词，分析 Hive 账户的统计数据、发布历史和活动模式
+- `create-post` - Creates a structured prompt to guide the AI through creating a new Hive post with the right format and tags
+- `analyze-account` - Generates a prompt to analyze a Hive account's statistics, posting history, and activity patterns
 
-### 工具
+### Tools
 
-#### 读取数据
+#### Reading Data
 
-- `get_account_info` - 获取有关 Hive 区块链账户的详细信息
-- `get_post_content` - 根据作者和永久链接检索特定的文章
-- `get_posts_by_tag` - 按标签和类别（热门、趋势等）检索文章
-- `get_posts_by_user` - 从特定用户或其订阅中获取文章
-- `get_account_history` - 获取账户的交易历史记录，并可选择过滤操作
-- `get_chain_properties` - 获取当前 Hive 区块链的属性和统计信息
-- `get_vesting_delegations` - 获取由特定账户发起的质押委托列表
+- `get_account_info` - Get detailed information about a Hive blockchain account
+- `get_post_content` - Retrieve a specific post by author and permlink
+- `get_posts_by_tag` - Retrieve posts by tag and category (trending, hot, etc.)
+- `get_posts_by_user` - Fetch posts from a specific user or their feed
+- `get_account_history` - Get transaction history for an account with optional operation filtering
+- `get_chain_properties` - Fetch current Hive blockchain properties and statistics
+- `get_vesting_delegations` - Get a list of vesting delegations made by a specific account
 
-#### 区块链交互（需要认证）
+#### Blockchain Interactions (Require Authentication)
 
-- `vote_on_post` - 对 Hive 内容进行投票（需要发布密钥）
-- `create_post` - 在 Hive 区块链上创建新博客文章（需要发布密钥）
-- `create_comment` - 对现有文章发表评论或回复评论（需要发布密钥）
-- `send_token` - 将 HIVE 或 HBD 加密货币发送到其他账户（需要活跃密钥）
+- `vote_on_post` - Vote on Hive content (requires posting key)
+- `create_post` - Create new blog posts on the Hive blockchain (requires posting key)
+- `create_comment` - Comment on existing posts or reply to comments (requires posting key)
+- `send_token` - Send HIVE or HBD cryptocurrency to other accounts (requires active key)
 
-#### 加密技术
+#### Cryptography
 
-- `sign_message` - 使用 Hive 私钥对消息进行签名
-- `verify_signature` - 验证消息签名是否与 Hive 公钥匹配
+- `sign_message` - Sign a message using a Hive private key
+- `verify_signature` - Verify a message signature against a Hive public key
 
-#### 加密消息
+#### Encrypted Messaging
 
-- `encrypt_message` - 为特定的 Hive 账户加密消息
-- `decrypt_message` - 解密来自特定 Hive 账户的加密消息
-- `send_encrypted_message` - 使用代币转账发送加密消息
-- `get_encrypted_messages` - 从账户历史记录中检索并可选地解密消息
+- `encrypt_message` - Encrypt a message for a specific Hive account
+- `decrypt_message` - Decrypt an encrypted message from a specific Hive account
+- `send_encrypted_message` - Send an encrypted message using a token transfer
+- `get_encrypted_messages` - Retrieve and optionally decrypt messages from account history
 
-## 使用 MCP Inspector 进行调试
+## Debugging with MCP Inspector
 
-MCP Inspector 提供了一个交互式界面用于测试和调试服务器：
+The MCP Inspector provides an interactive interface for testing and debugging the server:
 
 ```bash
 npx @modelcontextprotocol/inspector npx @gluneau/hive-mcp-server
 ```
 
-### 认证配置
+### Authentication Configuration
 
-要启用认证操作（投票、发帖、发送代币），您需要设置环境变量：
+To enable authenticated operations (voting, posting, sending tokens), you'll need to set environment variables:
 
 ```bash
 export HIVE_USERNAME=your-hive-username
@@ -83,21 +83,21 @@ export HIVE_ACTIVE_KEY=your-hive-active-private-key    # For token transfers
 export HIVE_MEMO_KEY=your-hive-memo-private-key        # For encrypted messaging
 ```
 
-**安全注意事项**：切勿共享您的私钥或将它们提交到版本控制系统。请使用环境变量或安全的配置方法。
+**Security Note**: Never share your private keys or commit them to version control. Use environment variables or a secure configuration approach.
 
-## 与 AI 助手集成
+## Integration with AI Assistants
 
-### Claude 桌面版
+### Claude Desktop
 
-要将此服务器与 Claude Desktop 一起使用：
+To use this server with Claude Desktop:
 
-1. 确保已安装 [Claude Desktop](https://claude.ai/download)
-2. 打开或创建 Claude 配置文件：
+1. Ensure you have [Claude Desktop](https://claude.ai/download) installed
+2. Open or create the Claude configuration file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
    - Linux: `~/.config/Claude/claude_desktop_config.json`
 
-3. 将此服务器添加到您的配置中：
+3. Add this server to your configuration:
 
 ```json
 {
@@ -116,230 +116,224 @@ export HIVE_MEMO_KEY=your-hive-memo-private-key        # For encrypted messaging
 }
 ```
 
-### Windsurf 和 Cursor
+### Windsurf and Cursor
 
-相同的 JSON 配置适用于 Windsurf（在 `windsurf_config.json` 中）和 Cursor（对于版本 >= 0.47，在 `~/.cursor/mcp.json` 中）。
+The same JSON configuration works for Windsurf (in `windsurf_config.json`) and for Cursor (in `~/.cursor/mcp.json` for version >= 0.47).
 
-在早期版本中，您需要在设置的 MCP 部分使用单行命令格式：
+In previous versions, you'll have to use the 1 line command format in the MCP section of the Settings :
 `env HIVE_USERNAME=your-hive-username env HIVE_POSTING_KEY=your-hive-posting-private-key env HIVE_ACTIVE_KEY=your-hive-active-private-key env HIVE_MEMO_KEY=your-hive-memo-private-key npx -y @gluneau/hive-mcp-server`
 
-## 示例
+## Examples
 
-连接到 MCP 客户端后，您可以提出如下问题：
+Once connected to an MCP client, you can ask questions like:
 
-- "Hive 上 #photography 标签下的热门帖子有哪些？"
-- "显示用户名 'alice' 的最新帖子"
-- "查询 'bob' 的账户余额和详细信息"
-- "获取 'charlie' 的交易历史记录"
-- "能否给 'dave' 发布的带有 permlink 'my-awesome-post' 的帖子点赞？"
-- "在 Hive 上创建一篇关于 AI 技术的新帖子"
-- "向用户 'frank' 发送 1 HIVE 并附上备注 'Thanks for your help!'"
-- "用我的 Hive 发帖密钥签名这条消息：'Verifying my identity'"
-- "当前 Hive 区块链的属性是什么？"
-- "显示用户 'grace' 做出的质押委托"
-- "为用户 'alice' 加密这条消息：'This is a secret message'"
-- "解密来自 'bob' 的消息：'#4f3a5b...'"
-- "向 'charlie' 发送一条加密消息，内容是 'Let's meet tomorrow'"
-- "显示并解密我的加密消息"
-- "获取我与 'dave' 交换的最后 10 条加密消息"
+- "What are the trending posts in the #photography tag on Hive?"
+- "Show me the recent posts from username 'alice'"
+- "What's the account balance and details for 'bob'?"
+- "Get the transaction history for 'charlie'"
+- "Can you upvote the post by 'dave' with permlink 'my-awesome-post'?"
+- "Create a new post on Hive about AI technology"
+- "Send 1 HIVE to user 'frank' with the memo 'Thanks for your help!'"
+- "Sign this message with my Hive posting key: 'Verifying my identity'"
+- "What are the current Hive blockchain properties?"
+- "Show me the vesting delegations made by user 'grace'"
+- "Encrypt this message for user 'alice': 'This is a secret message'"
+- "Decrypt this message from 'bob': '#4f3a5b...'"
+- "Send an encrypted message to 'charlie' saying 'Let's meet tomorrow'"
+- "Show me my encrypted messages and decrypt them"
+- "Get the last 10 encrypted messages I've exchanged with 'dave'"
 
-## 工具文档
+## Tool Documentation
 
 ### `get_account_info`
 
-获取 Hive 区块链账户的详细信息，包括余额、权限、投票权等其他指标。
+Fetches detailed information about a Hive blockchain account including balance, authority, voting power, and other metrics.
 
-- 参数：
-  - `username`: 要查询信息的 Hive 用户名
+- Parameters:
+  - `username`: Hive username to fetch information for
 
 ### `get_post_content`
 
-通过作者和永久链接检索特定的 Hive 博客文章。
+Retrieves a specific Hive blog post identified by author and permlink.
 
-- 参数：
-  - `author`: 文章作者
-  - `permlink`: 文章的永久链接
+- Parameters:
+  - `author`: Author of the post
+  - `permlink`: Permlink of the post
 
 ### `get_posts_by_tag`
 
-根据特定标签筛选并按类别排序来检索 Hive 文章。
+Retrieves Hive posts filtered by a specific tag and sorted by a category.
 
-- 参数：
-  - `category`: 排序类别（如热门、最新、创建时间等）
-  - `tag`: 用于筛选文章的标签
-  - `limit`: 返回的文章数量（1-20）
+- Parameters:
+  - `category`: Sorting category (trending, hot, created, etc.)
+  - `tag`: The tag to filter posts by
+  - `limit`: Number of posts to return (1-20)
 
 ### `get_posts_by_user`
 
-检索特定 Hive 用户发布的或在其动态中的文章。
+Retrieves posts authored by or in the feed of a specific Hive user.
 
-- 参数：
-  - `category`: 要获取的用户文章类型（博客或动态）
-  - `username`: 要为其获取文章的 Hive 用户名
-  - `limit`: 返回的文章数量（1-20）
+- Parameters:
+  - `category`: Type of user posts to fetch (blog or feed)
+  - `username`: Hive username to fetch posts for
+  - `limit`: Number of posts to return (1-20)
 
 ### `get_account_history`
 
-检索 Hive 账户的交易历史记录，并可选择性地按操作类型过滤。
+Retrieves transaction history for a Hive account with optional operation type filtering.
 
-- 参数：
-  - `account`: 要查询历史记录的 Hive 账户名
-  - `start`: 开始的交易索引
-  - `end`: 结束的交易索引
-  - `operation_types`: 可选参数，指定要过滤的操作类型列表
-
-- 参数：
-  - `username`: Hive 用户名
-  - `limit`: 返回的操作数量
-  - `operation_filter`: 可选的操作类型列表，用于过滤
+- Parameters:
+  - `username`: Hive username
+  - `limit`: Number of operations to return
+  - `operation_filter`: Optional list of operation types to filter for
 
 ### `get_chain_properties`
 
-获取当前的 Hive 区块链属性和统计数据。
+Fetch current Hive blockchain properties and statistics.
 
-- 参数：无
+- Parameters: None
 
 ### `get_vesting_delegations`
 
-获取特定 Hive 账户的委托列表。
+Get a list of vesting delegations made by a specific Hive account.
 
-- 参数：
-  - `username`: 获取委托的 Hive 账户
-  - `limit`: 要检索的最大委托数量
-  - `from`: 可选的分页起始账户
+- Parameters:
+  - `username`: Hive account to get delegations for
+  - `limit`: Maximum number of delegations to retrieve
+  - `from`: Optional starting account for pagination
 
 ### `vote_on_post`
 
-使用配置的 Hive 账户对 Hive 帖子进行投票（点赞或点踩）。
+Vote on a Hive post (upvote or downvote) using the configured Hive account.
 
-- 参数：
-  - `author`: 要投票的帖子的作者
-  - `permlink`: 要投票的帖子的永久链接
-  - `weight`: 投票权重，从 -10000（100% 点踩）到 10000（100% 点赞）
+- Parameters:
+  - `author`: Author of the post to vote on
+  - `permlink`: Permlink of the post to vote on
+  - `weight`: Vote weight from -10000 (100% downvote) to 10000 (100% upvote)
 
 ### `create_post`
 
-使用配置的账户在 Hive 区块链上创建新的博客文章。
+Create a new blog post on the Hive blockchain using the configured account.
 
-- 参数：
-  - `title`: 博客文章的标题
-  - `body`: 博客文章的内容（支持 Markdown）
-  - `tags`: 文章的标签
-  - 各种可选参数，如奖励、受益人等
+- Parameters:
+  - `title`: Title of the blog post
+  - `body`: Content of the blog post (Markdown supported)
+  - `tags`: Tags for the post
+  - Various optional parameters for rewards, beneficiaries, etc.
 
 ### `create_comment`
 
-在现有的 Hive 帖子上发表评论或回复其他评论。
+Create a comment on an existing Hive post or reply to another comment.
 
-- 参数：
-  - `parent_author`: 您要回复的帖子作者或评论者的用户名
-  - `parent_permlink`: 您要回复的帖子或评论的永久链接
-  - `body`: 评论的内容（支持 Markdown）
-  - 各种可选参数，如奖励、受益人等
+- Parameters:
+  - `parent_author`: Username of the post author or comment you're replying to
+  - `parent_permlink`: Permlink of the post or comment you're replying to
+  - `body`: Content of the comment (Markdown supported)
+  - Various optional parameters for rewards, beneficiaries, etc.
 
 ### `send_token`
 
-使用配置的账户向另一个 Hive 账户发送 HIVE 或 HBD 代币。
+Send HIVE or HBD tokens to another Hive account using the configured account.
 
-- 参数：
-  - `to`: 收件人的 Hive 用户名
-  - `amount`: 要发送的代币数量
-  - `currency`: 要发送的货币（HIVE 或 HBD）
-  - `memo`: 可选的交易备注
+- Parameters:
+  - `to`: Recipient Hive username
+  - `amount`: Amount of tokens to send
+  - `currency`: Currency to send (HIVE or HBD)
+  - `memo`: Optional memo to include with the transaction
 
 ### `sign_message`
 
-使用环境变量中的 Hive 私钥签署消息。
+Sign a message using a Hive private key from environment variables.
 
-- 参数：
-  - `message`: 要签名的消息
-  - `key_type`: 使用的密钥类型（posting、active 或 memo）
+- Parameters:
+  - `message`: Message to sign
+  - `key_type`: Type of key to use (posting, active, or memo)
 
 ### `verify_signature`
 
-验证数字签名是否与 Hive 公钥匹配。
+Verify a digital signature against a Hive public key.
 
-- 参数：
-  - `message_hash`: 消息的 SHA-256 哈希值（十六进制格式）
-  - `signature`: 要验证的签名字符串
-  - `public_key`: 用于验证的公钥
+- Parameters:
+  - `message_hash`: The SHA-256 hash of the message in hex format
+  - `signature`: Signature string to verify
+  - `public_key`: Public key to verify against
 
 ### `encrypt_message`
 
-使用备忘录加密为特定 Hive 账户加密消息。
+Encrypt a message for a specific Hive account using memo encryption.
 
-- 参数：
-  - `message`: 要加密的消息
-  - `recipient`: 收件人的 Hive 用户名
+- Parameters:
+  - `message`: Message to encrypt
+  - `recipient`: Hive username of the recipient
 
 ### `decrypt_message`
 
-解密从特定 Hive 账户收到的加密消息。
+Decrypt an encrypted message received from a specific Hive account.
 
-- 参数：
-  - `encrypted_message`: 加密的消息（以 # 开头）
-  - `sender`: 发送者的 Hive 用户名
+- Parameters:
+  - `encrypted_message`: Encrypted message (starts with #)
+  - `sender`: Hive username of the sender
 
 ### `send_encrypted_message`
 
-使用小额代币转账发送加密消息给 Hive 账户。
+Send an encrypted message to a Hive account using a small token transfer.
 
-- 参数：
-  - `message`: 要加密并发送的消息
-  - `recipient`: 收件人的 Hive 用户名
-  - `amount`: 要发送的 HIVE 数量（最小 0.001，默认：0.001）
+- Parameters:
+  - `message`: Message to encrypt and send
+  - `recipient`: Hive username of the recipient
+  - `amount`: Amount of HIVE to send (minimum 0.001, default: 0.001)
 
 ### `get_encrypted_messages`
 
-从账户历史中检索加密消息，并可选择解密。
+Retrieve encrypted messages from account history with optional decryption.
 
-- 参数：
-  - `username`: 要获取加密消息的Hive用户名
-  - `limit`: 要检索的最大消息数量（默认：20）
-  - `decrypt`: 是否尝试对消息进行解密（默认：false）
+- Parameters:
+  - `username`: Hive username to fetch encrypted messages for
+  - `limit`: Maximum number of messages to retrieve (default: 20)
+  - `decrypt`: Whether to attempt decryption of messages (default: false)
 
-## 开发
+## Development
 
-### 项目结构
+### Project Structure
 
-- `src/index.ts` - 主服务器实现
-- `src/tools/` - 所有工具的实现
-- `src/schemas/` - 工具参数的Zod模式
-- `src/utils/` - 与Hive区块链交互的实用函数
-- `src/config/` - 客户端配置和日志级别处理
+- `src/index.ts` - Main server implementation
+- `src/tools/` - Implementation of all tools
+- `src/schemas/` - Zod schemas for tool parameters
+- `src/utils/` - Utility functions for interacting with the Hive blockchain
+- `src/config/` - Client Configuration and log level handling
 
-### 依赖项
+### Dependencies
 
-- [@hiveio/dhive](https://www.npmjs.com/package/@hiveio/dhive) - Hive区块链客户端
+- [@hiveio/dhive](https://www.npmjs.com/package/@hiveio/dhive) - Hive blockchain client
 - [@modelcontextprotocol/sdk](https://www.npmjs.com/package/@modelcontextprotocol/sdk) - MCP SDK
-- [zod](https://www.npmjs.com/package/zod) - 模式验证
+- [zod](https://www.npmjs.com/package/zod) - Schema validation
 
-## 许可证
+## License
 
 ISC
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-有关更详细的贡献指南，请参阅[CONTRIBUTING.md](https://github.com/gluneau/hive-mcp-server/blob/HEAD/CONTRIBUTING.md)文件。
+See the [CONTRIBUTING.md](https://github.com/gluneau/hive-mcp-server/blob/HEAD/CONTRIBUTING.md) file for more detailed contribution guidelines.
 
-**官方网站：** [https://github.com/gluneau/hive-mcp-server](https://github.com/gluneau/hive-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/gluneau/hive-mcp-server](https://github.com/gluneau/hive-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `social media`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `social media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @gluneau/hive-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @gluneau/hive-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gluneau-hive.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gluneau-hive.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,75 +1,75 @@
 ---
-title: "AI Word文档助手"
-description: "一个模型上下文协议服务器，它使人工智能助手能够通过标准化的工具和资源创建、读取、编辑和格式化Microsoft Word文档。"
+title: "Office-Word-MCP-Server"
+description: "A Model Context Protocol server that enables AI assistants to create, read, edit, and format Microsoft Word documents through standardized tools and resources."
 ---
-
-# AI Word文档助手
-
-一个模型上下文协议服务器，它使人工智能助手能够通过标准化的工具和资源创建、读取、编辑和格式化Microsoft Word文档。
 
 # Office-Word-MCP-Server
 
-一个用于创建、读取和操作 Microsoft Word 文档的 Model Context Protocol (MCP) 服务器。该服务器通过标准化接口使 AI 助手能够处理 Word 文档，提供丰富的文档编辑功能。
+A Model Context Protocol server that enables AI assistants to create, read, edit, and format Microsoft Word documents through standardized tools and resources.
+
+# Office-Word-MCP-Server
+
+A Model Context Protocol (MCP) server for creating, reading, and manipulating Microsoft Word documents. This server enables AI assistants to work with Word documents through a standardized interface, providing rich document editing capabilities.
 
   
 
 ![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP Server')
 
-## 概述
+## Overview
 
-Office-Word-MCP-Server 实现了 [Model Context Protocol](https://modelcontextprotocol.io/)，将 Word 文档操作作为工具和资源暴露出来。它充当 AI 助手与 Microsoft Word 文档之间的桥梁，允许进行文档创建、内容添加、格式化和分析。
+Office-Word-MCP-Server implements the [Model Context Protocol](https://modelcontextprotocol.io/) to expose Word document operations as tools and resources. It serves as a bridge between AI assistants and Microsoft Word documents, allowing for document creation, content addition, formatting, and analysis.
 
-### 示例
+### Example
 
-#### 提示
+#### Pormpt
 
 ![image](/mcp-assets/395a6377f12fe93d389157130a292b11.png)
 
-#### 输出
+#### Output
 
 ![image](/mcp-assets/a79683de81cad01ede15b3c05c60f894.png)
 
-## 功能
+## Features
 
-### 文档管理
-- 创建带有元数据的新 Word 文档
-- 提取文本并分析文档结构
-- 查看文档属性和统计信息
-- 列出目录中的可用文档
-- 创建现有文档的副本
+### Document Management
+- Create new Word documents with metadata
+- Extract text and analyze document structure
+- View document properties and statistics
+- List available documents in a directory
+- Create copies of existing documents
 
-### 内容创建
-- 添加不同级别的标题
-- 插入段落（可选样式）
-- 使用自定义数据创建表格
-- 按比例缩放添加图片
-- 插入分页符
+### Content Creation
+- Add headings with different levels
+- Insert paragraphs with optional styling
+- Create tables with custom data
+- Add images with proportional scaling
+- Insert page breaks
 
-### 富文本格式
-- 格式化特定文本段落（加粗、斜体、下划线）
-- 更改文本颜色和字体属性
-- 应用自定义样式到文本元素
-- 在整个文档中搜索和替换文本
+### Rich Text Formatting
+- Format specific text sections (bold, italic, underline)
+- Change text color and font properties
+- Apply custom styles to text elements
+- Search and replace text throughout documents
 
-### 表格格式
-- 使用边框和样式格式化表格
-- 创建具有独特格式的表头行
-- 应用单元格阴影和自定义边框
-- 结构化表格以提高可读性
+### Table Formatting
+- Format tables with borders and styles
+- Create header rows with distinct formatting
+- Apply cell shading and custom borders
+- Structure tables for better readability
 
-### 高级文档操作
-- 删除段落
-- 创建自定义文档样式
-- 在整个文档中应用一致的格式
-- 详细控制特定范围的文本格式
+### Advanced Document Manipulation
+- Delete paragraphs
+- Create custom document styles
+- Apply consistent formatting throughout documents
+- Format specific ranges of text with detailed control
 
-## 安装
+## Installation
 
-### 前提条件
-- Python 3.8 或更高版本
-- pip 包管理器
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
 
-### 基本安装
+### Basic Installation
 
 ```bash
 # Clone the repository
@@ -80,25 +80,25 @@ cd Office-Word-MCP-Server
 pip install -r requirements.txt
 ```
 
-### 使用设置脚本
+### Using the Setup Script
 
-或者，您可以使用提供的设置脚本，该脚本处理：
-- 检查前提条件
-- 设置虚拟环境
-- 安装依赖项
-- 生成 MCP 配置
+Alternatively, you can use the provided setup script which handles:
+- Checking prerequisites
+- Setting up a virtual environment
+- Installing dependencies
+- Generating MCP configuration
 
 ```bash
 python setup_mcp.py
 ```
 
-## 与 Claude for Desktop 一起使用
+## Usage with Claude for Desktop
 
-### 配置
+### Configuration
 
-#### 方法 1：本地安装后
+#### Method 1: After Local Installation
 
-1. 安装完成后，将服务器添加到您的 Claude for Desktop 配置文件中：
+1. After installation, add the server to your Claude for Desktop configuration file:
 
 ```json
 {
@@ -113,9 +113,9 @@ python setup_mcp.py
 }
 ```
 
-#### 方法 2：无需安装（使用 uvx）
+#### Method 2: Without Installation (Using uvx)
 
-1. 您还可以通过使用 uvx 包管理器配置 Claude for Desktop 来使用服务器，而无需本地安装：
+1. You can also configure Claude for Desktop to use the server without local installation by using the uvx package manager:
 
 ```json
 {
@@ -130,27 +130,27 @@ python setup_mcp.py
 }
 ```
 
-2. 配置文件位置：
+2. Configuration file locations:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-3. 重启 Claude for Desktop 以加载配置。
+3. Restart Claude for Desktop to load the configuration.
 
-### 示例操作
+### Example Operations
 
-配置完成后，您可以要求 Claude 执行以下操作：
+Once configured, you can ask Claude to perform operations like:
 
-- "创建一个名为 'report.docx' 的新文档，并添加封面页"
-- "在我的文档中添加一个标题和三个段落"
-- "插入一个包含销售数据的4x4表格"
-- "将第2段中的单词 'important' 设置为加粗并显示为红色"
-- "查找并替换所有 'old term' 实例为 'new term'"
-- "为节标题创建自定义样式"
-- "对我的文档中的表格应用格式"
+- "Create a new document called 'report.docx' with a title page"
+- "Add a heading and three paragraphs to my document"
+- "Insert a 4x4 table with sales data"
+- "Format the word 'important' in paragraph 2 to be bold and red"
+- "Search and replace all instances of 'old term' with 'new term'"
+- "Create a custom style for section headings"
+- "Apply formatting to the table in my document"
 
-## API 参考
+## API Reference
 
-### 文档创建与属性
+### Document Creation and Properties
 
 ```python
 create_document(filename, title=None, author=None)
@@ -161,7 +161,7 @@ list_available_documents(directory=".")
 copy_document(source_filename, destination_filename=None)
 ```
 
-### 内容添加
+### Content Addition
 
 ```python
 add_heading(filename, text, level=1)
@@ -171,7 +171,7 @@ add_picture(filename, image_path, width=None)
 add_page_break(filename)
 ```
 
-### 文本格式化
+### Text Formatting
 
 ```python
 format_text(filename, paragraph_index, start_pos, end_pos, bold=None, 
@@ -182,81 +182,81 @@ create_custom_style(filename, style_name, bold=None, italic=None,
                     font_size=None, font_name=None, color=None, base_style=None)
 ```
 
-### 表格格式化
+### Table Formatting
 
 ```python
 format_table(filename, table_index, has_header_row=None, 
              border_style=None, shading=None)
 ```
 
-## 故障排除
+## Troubleshooting
 
-### 常见问题
+### Common Issues
 
-1. **缺少样式**
-   - 某些文档可能缺乏执行标题和表格操作所需的样式
-   - 服务器将尝试创建缺失的样式或使用直接格式化
-   - 为了获得最佳结果，请使用具有标准 Word 样式的模板
+1. **Missing Styles**
+   - Some documents may lack required styles for heading and table operations
+   - The server will attempt to create missing styles or use direct formatting
+   - For best results, use templates with standard Word styles
 
-2. **权限问题**
-   - 确保服务器有权读写文档路径
-   - 使用 `copy_document` 函数来创建锁定文档的可编辑副本
-   - 如果操作失败，请检查文件所有权和权限
+2. **Permission Issues**
+   - Ensure the server has permission to read/write to the document paths
+   - Use the `copy_document` function to create editable copies of locked documents
+   - Check file ownership and permissions if operations fail
 
-3. **图片插入问题**
-   - 使用绝对路径指定图像文件
-   - 确认图像格式兼容性（推荐使用 JPEG、PNG）
-   - 检查图像文件大小和权限
+3. **Image Insertion Problems**
+   - Use absolute paths for image files
+   - Verify image format compatibility (JPEG, PNG recommended)
+   - Check image file size and permissions
 
-### 调试
+### Debugging
 
-通过设置环境变量启用详细日志记录：
+Enable detailed logging by setting the environment variable:
 
 ```bash
 export MCP_DEBUG=1  # Linux/macOS
 set MCP_DEBUG=1     # Windows
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. 分叉仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到该分支 (`git push origin feature/amazing-feature`)
-5. 打开 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-此项目根据 MIT 许可证发布 - 详情请参阅 LICENSE 文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 致谢
+## Acknowledgments
 
-- [模型上下文协议](https://modelcontextprotocol.io/) 提供了协议规范
-- [python-docx](https://python-docx.readthedocs.io/) 用于处理 Word 文档
-- [FastMCP](https://github.com/modelcontextprotocol/python-sdk) 提供 Python MCP 实现
+- [Model Context Protocol](https://modelcontextprotocol.io/) for the protocol specification
+- [python-docx](https://python-docx.readthedocs.io/) for Word document manipulation
+- [FastMCP](https://github.com/modelcontextprotocol/python-sdk) for the Python MCP implementation
 
 ---
 
-*注意：此服务器会与您系统上的文档文件交互。在 Claude for Desktop 或其他 MCP 客户端中确认任何请求的操作之前，请始终验证这些操作是否适当。*
+*Note: This server interacts with document files on your system. Always verify that requested operations are appropriate before confirming them in Claude for Desktop or other MCP clients.*
 
-**官方网站：** [https://github.com/gongrzhe/office-word-mcp-server](https://github.com/gongrzhe/office-word-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/gongrzhe/office-word-mcp-server](https://github.com/gongrzhe/office-word-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `note taking`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `note taking`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from office-word-mcp-server word_mcp_server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from office-word-mcp-server word_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gongrzhe-office-word.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gongrzhe-office-word.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

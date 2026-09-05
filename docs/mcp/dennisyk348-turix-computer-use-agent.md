@@ -1,61 +1,62 @@
 ---
-title: "TuriX电脑操作智能体"
-description: "TuriX · 桌面操作，由AI驱动 与您的计算机对话，观看它工作。 观看我们的演示并下载MCP服务，我们在GitHub上完全开源。 📞 联系方式与社区 通过电子邮件联系我们：contact@turix.ai 如果您对我们的服务感兴趣，欢迎加入我们的微信群。 TuriX 让您强大的AI模型直接在桌面上执行实际的、动手的操作。 它附带了一个最先进的计算机使用代理（通过了我们内部OSWorld风格测试集的68%以上），同时对于个人和研究用途保持100%开源且免费。 更喜欢自己的模型？在config.json中更改即可。"
+title: "TuriX-Computer-Use-Agent"
+description: "TuriX · Desktop Actions, Driven by AI Talk to your computer, watch it work. Watch our demo and download MCP service, we fully open‑source at GitHub. 📞 Contact & Community Contact us with email: contac…"
 ---
 
-# TuriX电脑操作智能体
+# TuriX-Computer-Use-Agent
 
-TuriX · 桌面操作，由AI驱动 与您的计算机对话，观看它工作。 观看我们的演示并下载MCP服务，我们在GitHub上完全开源。 📞 联系方式与社区 通过电子邮件联系我们：contact@turix.ai 如果您对我们的服务感兴趣，欢迎加入我们的微信群。 TuriX 让您强大的AI模型直接在桌面上执行实际的、动手的操作。 它附带了一个最先进的计算机使用代理（通过了我们内部OSWorld风格测试集的68%以上），同时对于个人和研究用途保持100%开源且免费。 更喜欢自己的模型？在config.json中更改即可。
+TuriX · Desktop Actions, Driven by AI Talk to your computer, watch it work. Watch our demo and download MCP service, we fully open‑source at GitHub. 📞 Contact & Community Contact us with email: contac…
 
-TuriX · 桌面操作，由AI驱动
+TuriX · Desktop Actions, Driven by AI
 
-与您的计算机对话，观看它工作。
+Talk to your computer, watch it work.
 
-观看我们的演示并下载MCP服务，我们在[GitHub](https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp)上完全开源。
+Watch our demo and download MCP service, we fully open‑source at [GitHub](https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp).
 　
-## 📞 联系方式与社区
+## 📞 Contact & Community
 
-通过电子邮件联系我们：contact@turix.ai
+Contact us with email: contact@turix.ai
 
-如果您对我们的服务感兴趣，欢迎加入我们的微信群。![二维码](/mcp-assets/36c9a922c3d018dcb69e44be7ccb8e29.jpg)
+If you are interested in our service, welcome to join our wechat group.![QRcode](/mcp-assets/36c9a922c3d018dcb69e44be7ccb8e29.jpg)
 
-TuriX 让您强大的AI模型直接在桌面上执行实际的、动手的操作。
-它附带了一个**最先进的计算机使用代理**（通过了我们内部OSWorld风格测试集的68%以上），同时对于个人和研究用途保持100%开源且免费。
+TuriX lets your powerful AI models take real, hands‑on actions directly on your desktop. 
+It ships with a **state‑of‑the‑art computer‑use agent** (passes > 68 % of our internal OSWorld‑style test set) yet stays 100 % open‑source and cost‑free for personal & research use.  
 
-更喜欢自己的模型？**在`config.json`中更改即可。**
+Prefer your own model? **Change in `config.json` and go.**
 
-## 目录
-- [📞 联系方式与社区](#-联系方式与社区)
-- [🚀 快速开始 (macOS 15)](#-快速开始-macos-15)
-   - [1. 创建Python 3.12环境](#2-创建python-312环境)
-   - [2. 授予macOS权限](#3-授予macos权限)
-      - [2.1 辅助功能](#31-辅助功能)
-      - [2.2 Safari自动化](#32-safari自动化)
-   - [3. MCP支持](#5-mcp支持)
+## Table of Contents
+- [📞 Contact & Community](#-contact--community)
+- [🚀 Quick‑Start (macOS 15)](#-quickstart-macos-15)
+   - [1. Create a Python 3.12 Environment](#2-create-a-python-312-environment)
+   - [2. Grant macOS Permissions](#3-grant-macos-permissions)
+      - [2.1 Accessibility](#31-accessibility)
+      - [2.2 Safari Automation](#32-safari-automation)
+   - [3. MCP Support](#5-mcp-support)
 
-## 🚀 快速开始 (macOS 15)
+## 🚀 Quick‑Start (macOS 15)
 
-### 1. 创建Python 3.12环境
-首先克隆仓库并运行：
+### 1. Create a Python 3.12 Environment
+Firstly Clone the repository and run:
 ```bash
 conda create -n turix_env python=3.12
 conda activate turix_env        # requires conda ≥ 22.9
 pip install -r requirements.txt
 ```
-### 2. 授予macOS权限
 
-#### 2.1 辅助功能
-1. 打开 **系统设置 ▸ 隐私与安全性 ▸ 辅助功能**  
-2. 点击 **＋**，然后添加 **终端** 和 **Visual Studio Code** 或任何你使用的IDE
-3. 如果代理仍然失败，请也添加 **/usr/bin/python3**
+### 2. Grant macOS Permissions
 
-#### 2.2 Safari自动化
-1. **Safari ▸ 设置 ▸ 高级** → 启用 **显示Web开发者功能**  
-2. 在新的 **开发** 菜单中，启用  
-    * **允许远程自动化**  
-    * **允许Apple事件中的JavaScript**  
+#### 2.1 Accessibility
+1. Open **System Settings ▸ Privacy & Security ▸ Accessibility**  
+2. Click **＋**, then add **Terminal** and **Visual Studio Code** ANY IDE you use
+3. If the agent still fails, also add **/usr/bin/python3**
 
-##### 触发权限对话框（每个shell会话运行一次）
+#### 2.2 Safari Automation
+1. **Safari ▸ Settings ▸ Advanced** → enable **Show features for web developers**  
+2. In the new **Develop** menu, enable  
+    * **Allow Remote Automation**  
+    * **Allow JavaScript from Apple Events**  
+
+##### Trigger the Permission Dialogs (run once per shell)
 ```
 # macOS Terminal
 osascript -e 'tell application "Safari" \
@@ -65,11 +66,12 @@ to do JavaScript "alert(\"Triggering accessibility request\")" in document 1'
 osascript -e 'tell application "Safari" \
 to do JavaScript "alert(\"Triggering accessibility request\")" in document 1'
 ```
-> **在每个对话框上点击“允许”**，以便代理可以控制Safari。
 
-### 3. MCP支持
+> **Click "Allow" on every dialog** so the agent can drive Safari.
 
-TuriX 支持 [Model Context Protocol](https://modelcontextprotocol.io/overview)。您可以使用Claude for Desktop将TuriX作为MCP服务器调用，配置如下（假设您有turix_env conda环境）:
+### 3. MCP Support
+
+TuriX support [Model Context Protocol](https://modelcontextprotocol.io/overview). You can use Claude for Desktop to call TuriX as a MCP Server with the following configuration(assume you have turix_env conda env): 
 ```json
 {
   "mcpServers": {
@@ -90,26 +92,26 @@ TuriX 支持 [Model Context Protocol](https://modelcontextprotocol.io/overview)�
   }
 }
 ```
-您也可以通过更改json文件中的环境来设置您的LLM模型。MCP_TIMEOUT_SEC是时间限制，如果任务运行时间超过设定值，任务将被终止。
+You can also setup your llm model by change the env in the json file. MCP_TIMEOUT_SEC is the time limit, if the task running time larger than the setting value, the task will be terminated.
 
-如果您想在运行时终止代理，请按cmd+shift+2。
+If you wanna terminate the agent while running, press cmd+shift+2.
 
-**官方网站：** [https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp](https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp](https://github.com/TurixAI/TuriX-CUA/tree/mac_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`other`, `browser automation`, `computer-use-agent`, `computer-automation`, `电脑自动化`
+- Categories: `browser`
+- Tags: `other`, `browser automation`, `computer-use-agent`, `computer-automation`, `电脑自动化`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/ABSOLUTE/PATH/TO/YOUR/CONDA/ENV/bin/python`
-- 参数：`/ABSOLUTE/PATH/TO/FOLDER/TuriX-CUA/src/mcp/mcp_server.py`
+- Transport: `stdio`
+- Command: `/ABSOLUTE/PATH/TO/YOUR/CONDA/ENV/bin/python`
+- Args: `/ABSOLUTE/PATH/TO/FOLDER/TuriX-CUA/src/mcp/mcp_server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/dennisyk348-turix-computer-use-agent.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/dennisyk348-turix-computer-use-agent.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

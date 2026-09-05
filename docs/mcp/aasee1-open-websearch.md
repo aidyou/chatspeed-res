@@ -1,13 +1,13 @@
 ---
-title: "OpenWebSearch 网络搜索 MCP 服务器"
-description: "一个基于多引擎搜索结果的模型上下文协议(MCP)服务器，支持免费网络搜索，无需API密钥。它支持多个搜索引擎，并提供带有标题、URL和描述的结构化结果。"
+title: "open-webSearch"
+description: "Open-WebSearch MCP 服务器 English"
 ---
 
-# OpenWebSearch 网络搜索 MCP 服务器
+# open-webSearch
 
-一个基于多引擎搜索结果的模型上下文协议(MCP)服务器，支持免费网络搜索，无需API密钥。它支持多个搜索引擎，并提供带有标题、URL和描述的结构化结果。
+Open-WebSearch MCP 服务器 English
 
-# Open-WebSearch MCP 服务器
+# Open-WebSearch MCP Server
 
 [![ModelScope](/mcp-assets/c4cd95316a856a211a0787c96a4104c0.svg)](https://www.modelscope.cn/mcp/servers/Aasee1/open-webSearch)
 [Smithery](https://smithery.ai/server/@Aas-ee/open-websearch)
@@ -15,170 +15,169 @@ description: "一个基于多引擎搜索结果的模型上下文协议(MCP)服�
 ![License](/mcp-assets/443190a98194af50f87289b7ed6cab6a.svg)
 ![Issues](/mcp-assets/073392f73ddf9639c8800be249f9f141.svg)
 
-**🇨🇳 中文 | [🇺🇸 English](https://github.com/Aas-ee/open-webSearch/blob/HEAD/README.md)**
+**🇨🇳 Chinese | [🇺🇸 English](https://github.com/Aas-ee/open-webSearch/blob/HEAD/README.md)**
 
-一个基于多引擎搜索结果的模型上下文协议(MCP)服务器，支持免费网络搜索，无需API密钥。
+A Model Context Protocol (MCP) server based on multi-engine search results, supporting free web searches without the need for an API key.
 
   
-点击展开查看简单示例效果(deepseek-v3)
+Click to expand and view a simple example (deepseek-v3)
 
 ---
 
-### 🧩 示例开始
+### 🧩 Example Start
 
 ### prompt:
 
-> 使用websearch工具查询 《Open-WebSearch MCP》，用csdn引擎，查20条记录，告诉我工具返回的engine，以及相关信息，再通过url查询作者是Aasee的文章内容（如果有多篇顺序查询，不要同时查询）。规范输出
+> Use the websearch tool to query "Open-WebSearch MCP" with the CSDN engine, fetch 20 records, and tell me the engine used and related information. Then, through the URL, query the content of articles by Aasee (if there are multiple, query them in sequence, do not query simultaneously). Provide a structured output.
 
 ---
 
 ### assistant:
 
-我将使用MCP_search工具查询《Open-WebSearch MCP》并使用CSDN引擎获取20条记录。
+I will use the MCP_search tool to query "Open-WebSearch MCP" and use the CSDN engine to fetch 20 records.
 
-### 查询结果分析
+### Query Result Analysis
 
-1. **使用的搜索引擎**: CSDN
-2. **总记录数**: 20条
+1. **Search Engine Used**: CSDN
+2. **Total Records**: 20
 
-### 作者Aasee的文章列表
-搜索结果显示有2篇作者是"Aasee."的文章：
+### List of Articles by Author Aasee
+The search results show 2 articles by "Aasee":
 
-1. **文章标题**: "开源 AI 联网搜索工具：Open-WebSearch MCP 全新升级，支持多引擎 + 流式响应！"
+1. **Article Title**: "Open Source AI Web Search Tool: Open-WebSearch MCP Fully Upgraded, Supports Multiple Engines + Streaming Response!"
    **URL**: https://blog.csdn.net/weixin_45801664/article/details/149000138
-   **简介**: 该项目为AI插件开发提供免费、可控的联网搜索能力，支持Bing、百度、CSDN多引擎组合搜索...
+   **Summary**: This project provides free, controllable web search capabilities for AI plugin development, supporting Bing, Baidu, CSDN, and other multi-engine combined searches...
 
-2. **文章标题**: "Web Seach 搜索 MCP 启动！"
+2. **Article Title**: "Web Search MCP Launched!"
    **URL**: https://blog.csdn.net/weixin_45801664/article/details/148813614
-   **简介**: 开源Web搜索MCP服务器Open-WebSearch上线，解决AI模型无法获取最新网络信息的问题...
+   **Summary**: The open-source Web search MCP server, Open-WebSearch, is now available, solving the problem of AI models being unable to access the latest web information...
 
-### 开始查询第一篇文章内容
-我将先查询第一篇文章的全文内容：
+### Start Querying the First Article Content
+I will first query the full content of the first article:
 
-# 搜索结果分析
+# Search Result Analysis
 
-## 工具返回的引擎信息
-使用了CSDN搜索引擎进行查询，返回了20条相关记录。
+## Engine Information Returned by the Tool
+The CSDN search engine was used for the query, returning 20 relevant records.
 
-## 作者Aasee的相关文章内容
+## Content of Articles by Author Aasee
 
-### 文章1: "开源 AI 联网搜索工具：Open-WebSearch MCP 全新升级，支持多引擎 + 流式响应！"
- 
-🚀 开源 AI 联网搜索工具：Open-WebSearch MCP 全新升级，支持多引擎 + 流式响应！
+### Article 1: "Open Source AI Web Search Tool: Open-WebSearch MCP Fully Upgraded, Supports Multiple Engines + Streaming Response!"
 
-💡「让你的 AI 插件真正能联网」—— 不需要 API Key，搜索结果可控、开箱即用！
+🚀 Open Source AI Web Search Tool: Open-WebSearch MCP Fully Upgraded, Supports Multiple Engines + Streaming Response!
 
-项目亮点一览：
-✅ 多引擎实时搜索：支持 Bing、百度、CSDN、DuckDuckGo、Exa、Brave
-✅ 流式响应(MCP协议)：兼容 Claude 插件(MCP)协议
-✅ 文章正文抓取：支持提取 CSDN 博客文章全文
-✅ 完全免费 & 无需 API Key
-✅ Docker 一键部署
+💡 "Let your AI plugins truly connect to the web" — No API Key required, controllable search results, ready to use out of the box!
 
-安装方法：
-- Git克隆项目: `git clone https://github.com/Aas-ee/open-webSearch`
-- 或使用Docker: `docker run -d --name web-search -p 3000:3000 -e ENABLE_CORS=true -e CORS_ORIGIN=* ghcr.io/aas-ee/open-web-search:latest`
+Project Highlights:
+✅ Multi-engine real-time search: Supports Bing, Baidu, CSDN, DuckDuckGo, Exa, Brave
+✅ Streaming response (MCP protocol): Compatible with Claude plugin (MCP) protocol
+✅ Article body extraction: Supports extracting full text of CSDN blog articles
+✅ Completely free & no API Key required
+✅ One-click Docker deployment
 
-MCP工具支持：
+Installation Methods:
+- Git clone the project: `git clone https://github.com/Aas-ee/open-webSearch`
+- Or use Docker: `docker run -d --name web-search -p 3000:3000 -e ENABLE_CORS=true -e CORS_ORIGIN=* ghcr.io/aas-ee/open-web-search:latest`
 
-🔍 search：多引擎搜索工具  
-📄 fetchCsdnArticle：提取 CSDN 文章全文  
-🧪 fetchLinuxDoArticle：抓取 Linux.do 文章(开发中)  
+MCP Tool Support:
 
-项目地址：  
-🧩 GitHub: https://github.com/Aas-ee/open-webSearch  
-📦 Docker: ghcr.io/aas-ee/open-web-search:latest  
+🔍 search: Multi-engine search tool  
+📄 fetchCsdnArticle: Extracts full text of CSDN articles  
+🧪 fetchLinuxDoArticle: Fetches Linux.do articles (in development)  
 
-### 文章2: "Web Seach 搜索 MCP 启动！"  
+Project Address:  
+🧩 GitHub: https://github.com/Aas-ee/open-webSearch📦 Docker: ghcr.io/aas-ee/open-web-search:latest  
 
-开源Web搜索MCP服务器Open-WebSearch上线，解决AI模型无法获取最新网络信息的问题。该项目免费提供百度搜索结果API，支持结构化JSON返回格式，兼容Claude等AI工具的MCP协议。用户仅需简单安装即可使用，无需API密钥...
+### Article 2: "Web Search MCP Launched!"
 
-需要查询其他Aasee作者的文章内容吗？我可以继续为您检索。
+The open-source Web search MCP server, Open-WebSearch, is now online, addressing the issue of AI models not being able to access the latest web information. This project provides a free Baidu search results API, supporting structured JSON return formats and compatible with the MCP protocol of AI tools like Claude. Users can simply install and use it without needing an API key...
 
-### ✅ 示例结束
+Do you need to look up content from other articles by Aasee? I can continue to retrieve them for you.
+
+### ✅ Example Ends
 
 ---
-## 功能特性
+## Features
 
-- 使用多引擎搜索结果进行网络检索
+- Conduct web searches using multiple search engines
   - bing
   - baidu
-  - ~~linux.do~~ 暂不支持
+  - ~~linux.do~~ (not supported)
   - csdn
   - duckduckgo
   - exa
   - brave
-- 支持HTTP代理配置，轻松解决网络访问限制
-- 无需API密钥或身份验证
-- 返回带标题、URL和描述的结构化结果
-- 可配置每次搜索返回的结果数量
-- 可自定义默认搜索引擎
-- 支持获取单篇文章内容
+- Supports HTTP proxy configuration, easily solving network access restrictions
+- No API key or authentication required
+- Returns structured results with title, URL, and description
+- Configurable number of results returned per search
+- Customizable default search engine
+- Supports fetching the content of individual articles
   - csdn
-  - github（README文件）
+  - github (README files)
 
 ## TODO
-- 支持~~Bing~~（已支持）,~~DuckDuckGo~~（已支持）,~~Exa~~（已支持）,~~Brave~~（已支持）,Google等搜索引擎
-- 支持更多博客论坛、社交软件
-- 优化文章内容提取功能，增加更多站点支持
-- ~~支持GitHub README获取~~（已支持）
+- Support for ~~Bing~~ (supported), ~~DuckDuckGo~~ (supported), ~~Exa~~ (supported), ~~Brave~~ (supported), Google, and more search engines
+- Support for more blogs, forums, and social software
+- Optimize article content extraction function, adding support for more sites
+- ~~Support for GitHub README retrieval~~ (supported)
 
-## 安装指南
+## Installation Guide
 
-### NPX 快速启动（推荐）
+### NPX Quick Start (Recommended)
 
-最快的使用方式：
+The fastest way to get started:
 
 bash
-# 基本使用
+# Basic usage
 npx open-websearch@latest
 
-# 带环境变量（Linux/macOS）
+# With environment variables (Linux/macOS)
 DEFAULT_SEARCH_ENGINE=duckduckgo ENABLE_CORS=true npx open-websearch@latest
 
 # Windows PowerShell
 $env:DEFAULT_SEARCH_ENGINE="duckduckgo"; $env:ENABLE_CORS="true"; npx open-websearch@latest
 
-# 跨平台（需要 cross-env，用于本地开发）
-# 全局安装
+# Cross-platform (requires cross-env, for local development)
+# Global installation
 npm install -g open-websearch
 npx cross-env DEFAULT_SEARCH_ENGINE=duckduckgo ENABLE_CORS=true open-websearch
 
-**环境变量说明：**
+**Environment Variable Explanation:**
 
-| 变量名 | 默认值                     | 可选值 | 说明 |
-|--------|-------------------------|--------|------|
-| `ENABLE_CORS` | `false`                 | `true`, `false` | 启用CORS |
-| `CORS_ORIGIN` | `*`                     | 任何有效来源 | CORS来源配置 |
-| `DEFAULT_SEARCH_ENGINE` | `bing`                  | `bing`, `duckduckgo`, `exa`, `brave` | 默认搜索引擎 |
-| `USE_PROXY` | `false`                 | `true`, `false` | 启用HTTP代理 |
-| `PROXY_URL` | `http://127.0.0.1:7890` | 任何有效URL | 代理服务器URL |
-| `PORT` | `3000`                  | 1-65535 | 服务器端口 |
+| Variable Name | Default Value                     | Possible Values | Description |
+|---------------|-----------------------------------|-----------------|-------------|
+| `ENABLE_CORS` | `false`                           | `true`, `false` | Enable CORS |
+| `CORS_ORIGIN` | `*`                               | Any valid origin | CORS origin configuration |
+| `DEFAULT_SEARCH_ENGINE` | `bing`                            | `bing`, `duckduckgo`, `exa`, `brave` | Default search engine |
+| `USE_PROXY`   | `false`                           | `true`, `false` | Enable HTTP proxy |
+| `PROXY_URL`   | `http://127.0.0.1:7890`           | Any valid URL    | Proxy server URL |
+| `PORT`        | `3000`                            | 1-65535          | Server port |
 
-**常用配置示例：**
+**Common Configuration Examples:**
 bash
-# 启用代理（适用于网络受限地区）
+# Enable proxy (for regions with restricted internet access)
 USE_PROXY=true PROXY_URL=http://127.0.0.1:7890 npx open-websearch@latest
 
-# 完整配置
+# Full configuration
 DEFAULT_SEARCH_ENGINE=duckduckgo ENABLE_CORS=true USE_PROXY=true PROXY_URL=http://127.0.0.1:7890 PORT=8080 npx open-websearch@latest
 
-**Windows 用户注意事项：**
-- 在 PowerShell 中使用 `$env:VAR="value"; ` 语法
-- 本地开发推荐使用 `npx cross-env` 实现跨平台兼容
+**Notes for Windows Users:**
+- Use `$env:VAR="value";` syntax in PowerShell
+- For local development, it's recommended to use `npx cross-env` for cross-platform compatibility
 
-### 本地安装
+### Local Installation
 
-1. 克隆或下载本仓库
-2. 安装依赖项：
+1. Clone or download this repository
+2. Install dependencies:
    bash
    npm install
    
-3. 构建服务器：
+3. Build the server:
    bash
    npm run build
    
-4. 将服务器添加到您的MCP配置中：
+4. Add the server to your MCP configuration:
 
 **Cherry Studio:**
 json
@@ -194,7 +193,7 @@ json
   }
 }
 
-**VSCode版(Claude开发扩展):**
+**VSCode Version (Claude Development Extension):**
 json
 {
   "mcpServers": {
@@ -213,53 +212,55 @@ json
   }
 }
 
-**Claude桌面版:**
+**Claude Desktop Version:**
 json
 {
   "mcpServers": {
-    "web-search": {json
-"transport": {json
-  "type": "streamableHttp",
-  "url": "http://localhost:3000/mcp"
-}
-},
-"web-search-sse": {
-  "transport": {
-    "type": "sse",
-    "url": "http://localhost:3000/sse"
+    "web-search": {
+      "transport": {
+        "type": "streamableHttp",
+        "url": "http://localhost:3000/mcp"
+      }
+    },
+    "web-search-sse": {
+      "transport": {
+        "type": "sse",
+        "url": "http://localhost:3000/sse"
+      }
+    }
   }
 }
 
-### Docker部署
+### Docker Deployment
 
-使用Docker Compose快速部署：
+Quick deployment using Docker Compose:
 
-bash
+bashbash
 docker-compose up -d
 
-或者直接使用Docker：
+Or directly using Docker:
 bash
 docker run -d --name web-search -p 3000:3000 -e ENABLE_CORS=true -e CORS_ORIGIN=* ghcr.io/aas-ee/open-web-search:latest
 
-配置环境变量说明：
+Environment Variable Configuration Explanation:
 
-| 变量名 | 默认值 | 可选值 | 说明 |
-|--------|---------|--------|------|
-| `ENABLE_CORS` | `false` | `true`, `false` | 启用CORS |
-| `CORS_ORIGIN` | `*` | 任何有效来源 | CORS来源配置 |
-| `DEFAULT_SEARCH_ENGINE` | `bing` | `bing`, `duckduckgo`, `exa`, `brave` | 默认搜索引擎 |
-| `USE_PROXY` | `false` | `true`, `false` | 启用HTTP代理 |
-| `PROXY_URL` | `http://127.0.0.1:7890` | 任何有效URL | 代理服务器URL |
-| `PORT` | `3000` | 1-65535 | 服务器端口 |
+| Variable Name | Default Value | Possible Values | Description |
+|---------------|---------------|-----------------|-------------|
+| `ENABLE_CORS` | `false` | `true`, `false` | Enable CORS |
+| `CORS_ORIGIN` | `*` | Any valid origin | CORS origin configuration |
+| `DEFAULT_SEARCH_ENGINE` | `bing` | `bing`, `duckduckgo`, `exa`, `brave` | Default search engine |
+| `USE_PROXY` | `false` | `true`, `false` | Enable HTTP proxy |
+| `PROXY_URL` | `http://127.0.0.1:7890` | Any valid URL | Proxy server URL |
+| `PORT` | `3000` | 1-65535 | Server port |
 
-然后在MCP客户端中配置：
+Then, configure in the MCP client:
 json
 {
   "mcpServers": {
     "web-search": {
       "name": "Web Search MCP",
       "type": "streamableHttp",
-      "description": "多引擎网页搜索并获取文章",
+      "description": "Multi-engine web search and article retrieval",
       "isActive": true,
       "baseUrl": "http://localhost:3000/mcp"
     },
@@ -267,7 +268,7 @@ json
       "transport": {
         "name": "Web Search MCP",
         "type": "sse",
-        "description": "多引擎网页搜索并获取文章",
+        "description": "Multi-engine web search and article retrieval",
         "isActive": true,
         "url": "http://localhost:3000/sse"
       }
@@ -275,53 +276,53 @@ json
   }
 }
 
-## 使用说明
+## Usage Instructions
 
-服务器提供四个工具：`search`、`fetchLinuxDoArticle`、`fetchCsdnArticle` 和 `fetchGithubReadme`。
+The server provides four tools: `search`, `fetchLinuxDoArticle`, `fetchCsdnArticle`, and `fetchGithubReadme`.
 
-### search工具使用说明
+### Usage of the `search` Tool
 
 typescript
 {
-  "query": string,        // 搜索查询词
-  "limit": number,        // 可选：返回结果数量（默认：10）
-  "engines": string[]     // 可选：要使用的引擎（bing,baidu,linuxdo,csdn,duckduckgo,exa,brave）默认bing
+  "query": string,        // Search query
+  "limit": number,        // Optional: Number of results to return (default: 10)
+  "engines": string[]     // Optional: Engines to use (bing, baidu, linuxdo, csdn, duckduckgo, exa, brave) default is bing
 }
 
-使用示例：
+Example usage:
 typescript
 use_mcp_tool({
   server_name: "web-search",
   tool_name: "search",
   arguments: {
-    query: "搜索内容",
-    limit: 3,  // 可选参数
-    engines: ["bing", "csdn", "duckduckgo", "exa", "brave"] // 可选参数，支持多引擎组合搜索
+    query: "search content",
+    limit: 3,  // Optional parameter
+    engines: ["bing", "csdn", "duckduckgo", "exa", "brave"] // Optional parameter, supports multi-engine combined search
   }
 })
 
-返回示例：
+Example response:
 json
 [
   {
-    "title": "示例搜索结果",
+    "title": "Example search result",
     "url": "https://example.com",
-    "description": "搜索结果的描述文本...",
-    "source": "来源",
-    "engine": "使用的引擎"
+    "description": "Description text of the search result...",
+    "source": "Source",
+    "engine": "Used engine"
   }
 ]
 
-### fetchCsdnArticle工具使用说明
+### Usage of the `fetchCsdnArticle` Tool
 
-用于获取CSDN博客文章的完整内容。
+Used to fetch the full content of a CSDN blog post.
 
 typescript
 {
-  "url": string    // search 工具使用csdn查询出的url
+  "url": string    // URL obtained from the `search` tool using the csdn engine
 }
 
-使用示例：
+Example usage:
 typescript
 use_mcp_tool({
   server_name: "web-search",
@@ -331,24 +332,24 @@ use_mcp_tool({
   }
 })
 
-返回示例：
+Example response:
 json
 [
   {
-    "content": "示例搜索结果"
+    "content": "Example search result"
   }
 ]
 
-### fetchLinuxDoArticle工具使用说明
+### Usage of the `fetchLinuxDoArticle` Tool
 
-用于获取Linux.do论坛文章的完整内容。
+Used to fetch the full content of a Linux.do forum post.
 
 typescript
 {
-  "url": string    // search 工具使用linuxdo查询出的url
+  "url": string    // URL obtained from the `search` tool using the linuxdo engine
 }
 
-使用示例：
+Example usage:
 typescript
 use_mcp_tool({
   server_name: "web-search",
@@ -358,24 +359,24 @@ use_mcp_tool({
   }
 })
 
-返回示例：
+Example response:
 json
 [
   {
-    "content": "示例搜索结果"
+    "content": "Example search result"
   }
 ]
 
-### fetchGithubReadme工具使用说明
+### Usage of the `fetchGithubReadme` Tool
 
-用于获取GitHub仓库的README文件内容。
+Used to fetch the content of a GitHub repository's README file.
 
 typescript
 {
-  "url": string    // GitHub仓库URL（支持HTTPS、SSH格式）
+  "url": string    // GitHub repository URL (supports HTTPS, SSH formats)
 }
 
-使用示例：
+Example usage:
 typescript
 use_mcp_tool({
   server_name: "web-search",
@@ -385,125 +386,125 @@ use_mcp_tool({
   }
 })
 
-支持的URL格式：
+Supported URL formats:
 - HTTPS: `https://github.com/owner/repo`
 - HTTPS with .git: `https://github.com/owner/repo.git`
 - SSH: `git@github.com:owner/repo.git`
-- 带参数的URL: `https://github.com/owner/repo?tab=readme`
+- URL with parameters: `https://github.com/owner/repo?tab=readme`
 
-返回示例：
+Example response:
 json
 [
   {
 
 # Open-WebSearch MCP Server...
 
-## 使用限制由于本工具通过爬取多引擎搜索结果实现，请注意以下重要限制：
+## Usage Limitations
 
-1. **频率限制**：
-    - 短时间内搜索次数过多可能导致使用的引擎暂时屏蔽请求
-    - 建议：
-        - 保持合理的搜索频率
-        - 审慎使用limit参数
-        - 必要时可在搜索间设置延迟
+Since this tool implements multi-engine search results through scraping, please note the following important limitations:
 
-2. **结果准确性**：
-    - 依赖对应引擎的HTML结构，可能随引擎改版失效
-    - 部分结果可能缺失描述等元数据
-    - 复杂搜索运算符可能无法按预期工作
+1. **Rate Limiting**:
+    - Excessive searches in a short period may cause the used engines to temporarily block requests.
+    - Recommendations:
+        - Maintain a reasonable search frequency.
+        - Use the `limit` parameter cautiously.
+        - Set delays between searches if necessary.2. **Result Accuracy**:
+    - Depends on the HTML structure of the corresponding engine, which may become invalid with engine updates
+    - Some results may lack metadata such as descriptions
+    - Complex search operators may not work as expected
 
-3. **法律条款**：
-    - 本工具仅限个人使用
-    - 请遵守对应引擎的服务条款
-    - 建议根据实际使用场景实施适当的频率限制
+3. **Legal Terms**:
+    - This tool is for personal use only
+    - Please comply with the service terms of the corresponding engine
+    - It is recommended to implement appropriate frequency limits based on the actual usage scenario
 
-4. **搜索引擎配置**：
-   - 可通过环境变量`DEFAULT_SEARCH_ENGINE`设置默认搜索引擎
-   - 支持的引擎有：bing, duckduckgo, exa, brave
-   - 当搜索特定网站内容时，会自动使用默认搜索引擎
+4. **Search Engine Configuration**:
+   - The default search engine can be set via the environment variable `DEFAULT_SEARCH_ENGINE`
+   - Supported engines include: bing, duckduckgo, exa, brave
+   - When searching for content on a specific website, the default search engine will be used automatically
 
-5. **代理服务配置**：
-   - 当某些搜索引擎在特定地区不可用时，可配置HTTP代理
-   - 通过环境变量`USE_PROXY=true`启用代理
-   - 使用`PROXY_URL`配置代理服务器地址
+5. **Proxy Service Configuration**:
+   - When certain search engines are unavailable in specific regions, an HTTP proxy can be configured
+   - Enable the proxy by setting the environment variable `USE_PROXY=true`
+   - Configure the proxy server address using `PROXY_URL`
 
-## 贡献指南
+## Contribution Guidelines
 
-欢迎提交问题报告和功能改进建议！
+We welcome bug reports and suggestions for feature improvements!
 
-### 贡献者指南
+### Contributor Guidelines
 
-如果您想要fork本仓库并发布自己的Docker镜像，需要进行以下配置：
+If you want to fork this repository and publish your own Docker image, you need to configure the following:
 
-#### GitHub Secrets配置
+#### GitHub Secrets Configuration
 
-要启用自动Docker镜像构建和发布功能，请在您的GitHub仓库设置中添加以下secrets（Settings → Secrets and variables → Actions）：
+To enable automatic Docker image building and publishing, add the following secrets in your GitHub repository settings (Settings → Secrets and variables → Actions):
 
-**必需的Secrets:**
-- `GITHUB_TOKEN`: GitHub自动提供（无需设置）
+**Required Secrets:**
+- `GITHUB_TOKEN`: Automatically provided by GitHub (no need to set)
 
-**可选的Secrets（用于阿里云ACR）:**
-- `ACR_REGISTRY`: 您的阿里云容器镜像服务URL（例如：`registry.cn-hangzhou.aliyuncs.com`）
-- `ACR_USERNAME`: 您的阿里云ACR用户名
-- `ACR_PASSWORD`: 您的阿里云ACR密码
-- `ACR_IMAGE_NAME`: 您在ACR中的镜像名称（例如：`your-namespace/open-web-search`）
+**Optional Secrets (for Alibaba Cloud ACR):**
+- `ACR_REGISTRY`: Your Alibaba Cloud Container Registry URL (e.g., `registry.cn-hangzhou.aliyuncs.com`)
+- `ACR_USERNAME`: Your Alibaba Cloud ACR username
+- `ACR_PASSWORD`: Your Alibaba Cloud ACR password
+- `ACR_IMAGE_NAME`: Your image name in ACR (e.g., `your-namespace/open-web-search`)
 
-#### CI/CD工作流程
+#### CI/CD Workflow
 
-仓库包含一个GitHub Actions工作流程（`.github/workflows/docker.yml`），会自动：
+The repository includes a GitHub Actions workflow (`/.github/workflows/docker.yml`) that will automatically:
 
-1. **触发条件**：
-    - 推送到`main`分支
-    - 推送版本标签（`v*`）
-    - 手动触发workflow
+1. **Trigger Conditions**:
+    - Push to the `main` branch
+    - Push a version tag (e.g., `v*`)
+    - Manually trigger the workflow
 
-2. **构建并推送到**：
-    - GitHub Container Registry (ghcr.io) - 始终启用
-    - 阿里云容器镜像服务 - 仅在配置ACR secrets时启用
+2. **Build and Push to**:
+    - GitHub Container Registry (ghcr.io) - always enabled
+    - Alibaba Cloud Container Registry - only enabled if ACR secrets are configured
 
-3. **镜像标签**：
-    - `ghcr.io/您的用户名/open-web-search:latest`
-    - `您的ACR地址/您的镜像名:latest`（如果配置了ACR）
+3. **Image Tags**:
+    - `ghcr.io/your-username/open-web-search:latest`
+    - `your-acr-address/your-image-name:latest` (if ACR is configured)
 
-#### Fork和发布步骤：
+#### Fork and Publish Steps:
 
-1. **Fork仓库**到您的GitHub账户
-2. **配置secrets**（如果需要ACR发布）：
-    - 进入您fork的仓库的Settings → Secrets and variables → Actions
-    - 添加上面列出的ACR相关secrets
-3. **推送更改**到`main`分支或创建版本标签
-4. **GitHub Actions将自动构建并推送**您的Docker镜像
-5. **使用您的镜像**，更新Docker命令：
+1. **Fork the repository** to your GitHub account
+2. **Configure secrets** (if ACR publishing is needed):
+    - Go to your forked repository's Settings → Secrets and variables → Actions
+    - Add the ACR-related secrets listed above
+3. **Push changes** to the `main` branch or create a version tag
+4. **GitHub Actions will automatically build and push** your Docker image
+5. **Use your image** by updating the Docker command:
    bash
-   docker run -d --name web-search -p 3000:3000 -e ENABLE_CORS=true -e CORS_ORIGIN=* ghcr.io/您的用户名/open-web-search:latest
+   docker run -d --name web-search -p 3000:3000 -e ENABLE_CORS=true -e CORS_ORIGIN=* ghcr.io/your-username/open-web-search:latest
    
 
-#### 注意事项：
-- 如果您不配置ACR secrets，工作流程将只发布到GitHub Container Registry
-- 确保您的GitHub仓库已启用Actions功能
-- 工作流程会使用您的GitHub用户名（转换为小写）作为GHCR镜像名称
+#### Notes:
+- If you do not configure ACR secrets, the workflow will only publish to the GitHub Container Registry
+- Ensure that your GitHub repository has Actions enabled
+- The workflow will use your GitHub username (converted to lowercase) as the GHCR image name
 
 ## Star History
-如果项目对你有帮助，请考虑给个⭐ Star！
+If the project is helpful to you, please consider giving it a ⭐ Star!
 
 [![Star History Chart](/mcp-assets/7ff5ea12648cd650854ef8cf69c6f49e.svg)](https://www.star-history.com/#Aas-ee/open-webSearch&Date)
 
-**官方网站：** [https://github.com/Aas-ee/open-webSearch](https://github.com/Aas-ee/open-webSearch)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Aas-ee/open-webSearch](https://github.com/Aas-ee/open-webSearch)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`open-websearch@1.2.5`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `open-websearch@1.2.5`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/aasee1-open-websearch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/aasee1-open-websearch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

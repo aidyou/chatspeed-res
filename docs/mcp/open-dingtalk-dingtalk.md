@@ -1,11 +1,11 @@
 ---
-title: "钉钉MCP"
-description: "钉钉MCP Server 🚀 功能特性 - 钉钉通讯录 - 钉钉部门管理 - 钉钉机器人发消息/DING - 钉钉企业文化荣誉 - 钉钉待办 - 钉钉日程 - 钉钉签到 - 钉钉工作通知 - 钉钉应用管理 - 钉钉服务窗 - 钉钉项目管理 - 钉钉日志 如何使用 json { \"mcpServers\": { \"dingtalk-mcp\": { \"command\": \"npx\", \"args\": [ \"-y\", \"dingtalk-mcp@latest\" ], \"env\": { \"DINGTALKClientID\":"
+title: "dingtalk-mcp"
+description: "钉钉MCP Server 🚀 功能特性 - 钉钉通讯录 - 钉钉部门管理 - 钉钉机器人发消息/DING - 钉钉企业文化荣誉 - 钉钉待办 - 钉钉日程 - 钉钉签到 - 钉钉工作通知 - 钉钉应用管理 - 钉钉服务窗 - 钉钉项目管理 - 钉钉日志 如何使用 json { \"mcpServers\": { \"dingtalk-mcp\": { \"command\": \"npx\", \"args\": […"
 ---
 
-# 钉钉MCP
+# dingtalk-mcp
 
-钉钉MCP Server 🚀 功能特性 - 钉钉通讯录 - 钉钉部门管理 - 钉钉机器人发消息/DING - 钉钉企业文化荣誉 - 钉钉待办 - 钉钉日程 - 钉钉签到 - 钉钉工作通知 - 钉钉应用管理 - 钉钉服务窗 - 钉钉项目管理 - 钉钉日志 如何使用 json { "mcpServers": { "dingtalk-mcp": { "command": "npx", "args": [ "-y", "dingtalk-mcp@latest" ], "env": { "DINGTALKClientID":
+钉钉MCP Server 🚀 功能特性 - 钉钉通讯录 - 钉钉部门管理 - 钉钉机器人发消息/DING - 钉钉企业文化荣誉 - 钉钉待办 - 钉钉日程 - 钉钉签到 - 钉钉工作通知 - 钉钉应用管理 - 钉钉服务窗 - 钉钉项目管理 - 钉钉日志 如何使用 json { "mcpServers": { "dingtalk-mcp": { "command": "npx", "args": […
 
 # 钉钉MCP Server
 
@@ -84,22 +84,22 @@ qyapi_get_microapp_list |
 - 欢迎加入钉钉MCP交流群
   ![欢迎加入钉钉MCP交流群](/mcp-assets/716fc6db3a69b27b109dea933f579009.png)
 
-**官方网站：** [https://github.com/open-dingtalk/dingtalk-mcp](https://github.com/open-dingtalk/dingtalk-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/open-dingtalk/dingtalk-mcp](https://github.com/open-dingtalk/dingtalk-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y dingtalk-mcp@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y dingtalk-mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/open-dingtalk-dingtalk.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/open-dingtalk-dingtalk.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

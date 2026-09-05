@@ -1,85 +1,83 @@
 ---
-title: "城市分级查询MCP服务（MCP&Agent挑战赛 - -作品1）"
-description: "基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。 这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称查询其所属级别、列出特定级别的所有城市、获取所有级别的统计信息、以及根据关键词搜索城市。服务采用FastMCP框架和SSE协议实现，确保高效稳定的查询体验。 数据查询、城市信息、地理服务 - 根据城市名称查询城市属于哪一线城市 - 列出指定分级的所有城市 - 获取所有城市分级的统计信息 - 根据关键词搜索城市 - 一线城市（4个）：上海、北京、深圳、广州 - 新一线城市（15个）：成都、杭州、重庆、武汉、苏州、西安、南京、长沙、郑州"
+title: "CitytierMCP"
+description: "Based on the 2025 New First-Tier Cities Charm Ranking, this city tier query service uses FastMCP and SSE protocol. The service provides a complete set of functions for querying city tiers, supporting…"
 ---
 
-# 城市分级查询MCP服务（MCP&Agent挑战赛 - -作品1）
+# CitytierMCP
 
-基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。 这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称查询其所属级别、列出特定级别的所有城市、获取所有级别的统计信息、以及根据关键词搜索城市。服务采用FastMCP框架和SSE协议实现，确保高效稳定的查询体验。 数据查询、城市信息、地理服务 - 根据城市名称查询城市属于哪一线城市 - 列出指定分级的所有城市 - 获取所有城市分级的统计信息 - 根据关键词搜索城市 - 一线城市（4个）：上海、北京、深圳、广州 - 新一线城市（15个）：成都、杭州、重庆、武汉、苏州、西安、南京、长沙、郑州
+Based on the 2025 New First-Tier Cities Charm Ranking, this city tier query service uses FastMCP and SSE protocol. The service provides a complete set of functions for querying city tiers, supporting…
 
-# 城市分级查询 MCP Server
+# City Tier Query MCP Server
 
-**说明** 本项目通过 github 创建
+**Note** This project is created via GitHub.
 
-## 服务介绍
+## Service Introduction
 
-基于2025新一线城市魅力排行榜的城市分级查询服务，使用 FastMCP 和 SSE 协议。该服务提供了完整的城市分级查询功能，支持按城市名称查询分级、列出指定分级的所有城市、获取统计信息以及关键词搜索等功能。
+This city tier query service, based on the 2025 New First-Tier Cities Charm Ranking, uses FastMCP and SSE protocol. The service provides a complete set of functions for querying city tiers, including searching by city name, listing all cities within a specified tier, obtaining statistical information, and keyword-based searches.
 
-## 服务描述
+## Service Description
 
-这是一个专业的城市分级查询MCP服务，基于最新的2025年城市魅力排行榜数据。服务提供了四个主要功能：根据城市名称查询其所属级别、列出特定级别的所有城市、获取所有级别的统计信息、以及根据关键词搜索城市。服务采用FastMCP框架和SSE协议实现，确保高效稳定的查询体验。
+This is a professional city tier query MCP service, built upon the latest 2025 City Charm Rankings data. The service offers four main functionalities: querying the tier of a city by its name, listing all cities in a specific tier, getting statistical information about all tiers, and searching for cities using keywords. The service is implemented using the FastMCP framework and SSE protocol to ensure an efficient and stable query experience.
 
-## 类型
+## Categories
 
-数据查询、城市信息、地理服务
+Data Query, City Information, Geographical Services
 
-## 功能
+## Features
 
-- 根据城市名称查询城市属于哪一线城市
-- 列出指定分级的所有城市
-- 获取所有城市分级的统计信息
-- 根据关键词搜索城市
+- Query which tier a city belongs to by its name
+- List all cities within a specified tier
+- Obtain statistical information about all city tiers
+- Search for cities based on keywords
 
-## 城市分级
+## City Tiers
 
-- **一线城市（4个）**：上海、北京、深圳、广州
-- **新一线城市（15个）**：成都、杭州、重庆、武汉、苏州、西安、南京、长沙、郑州、天津、合肥、青岛、东莞、宁波、佛山
-- **二线城市（30个）**：济南、无锡、沈阳、昆明、福州、厦门、温州、石家庄等
-- **三线城市（70个）**：乌鲁木齐、兰州、中山、盐城、海口、扬州等
-- **四线城市（90个）**：枣庄、宜宾、榆林、开封、邵阳、运城等
-- **五线城市（128个）**：忻州、盘锦、伊犁、丹东、延边、酒泉等
+- **First-tier Cities (4)**: Shanghai, Beijing, Shenzhen, Guangzhou
+- **New First-tier Cities (15)**: Chengdu, Hangzhou, Chongqing, Wuhan, Suzhou, Xi'an, Nanjing, Changsha, Zhengzhou, Tianjin, Hefei, Qingdao, Dongguan, Ningbo, Foshan
+- **Second-tier Cities (30)**: Jinan, Wuxi, Shenyang, Kunming, Fuzhou, Xiamen, Wenzhou, Shijiazhuang, etc.
+- **Third-tier Cities (70)**: Urumqi, Lanzhou, Zhongshan, Yancheng, Haikou, Yangzhou, etc.
+- **Fourth-tier Cities (90)**: Zaozhuang, Yibin, Yulin, Kaifeng, Shaoyang, Yuncheng, etc.
+- **Fifth-tier Cities (128)**: Xinzhou, Panjin, Ili, Dandong, Yanbian, Jiuquan, etc.
 
-## 安装
+## Installation
 
-```bash
+bash
 pip install -r requirements.txt
-```
 
-## 使用
+## Usage
 
-### 作为 MCP Server 运行（SSE 协议）
+### Running as an MCP Server (SSE Protocol)
 
-```bash
+bash
 python server.py
-```
 
-服务器将在 SSE 模式下运行，默认监听端口。
+The server will run in SSE mode, listening on the default port.
 
-### 可用工具
+### Available Tools
 
-1. **get_city_tier** - 查询城市分级
-   - 参数：`city_name` (string) - 城市名称
-   - 示例：查询"上海"返回"上海 属于 一线城市"
+1. **get_city_tier** - Query city tier
+   - Parameters: `city_name` (string) - Name of the city
+   - Example: Querying "Shanghai" returns "Shanghai belongs to First-tier Cities"
 
-2. **list_cities_by_tier** - 列出指定分级的城市
-   - 参数：`tier` (string) - 城市分级
-   - 可选值：一线城市、新一线城市、二线城市、三线城市、四线城市、五线城市
+2. **list_cities_by_tier** - List cities by tier
+   - Parameters: `tier` (string) - City tier
+   - Possible values: First-tier Cities, New First-tier Cities, Second-tier Cities, Third-tier Cities, Fourth-tier Cities, Fifth-tier Cities
 
-3. **get_all_tiers** - 获取所有分级统计
-   - 无参数
-   - 返回各分级城市数量统计
+3. **get_all_tiers** - Get statistics for all tiers
+   - No parameters
+   - Returns the count of cities in each tier
 
-4. **search_cities** - 搜索城市
-   - 参数：`keyword` (string) - 搜索关键词
-   - 返回包含关键词的城市列表及其分级
+4. **search_cities** - Search for cities
+   - Parameters: `keyword` (string) - Search keyword
+   - Returns a list of cities containing the keyword along with their tiers
 
-## 服务配置
+## Service Configuration
 
-在 MCP 客户端配置文件中添加：
+Add the following to your MCP client configuration file:
 
-### SSE 协议配置
+### SSE Protocol Configuration
 
-```json
+json
 {
   "mcpServers": {
     "city-tier": {
@@ -96,11 +94,10 @@ python server.py
     }
   }
 }
-```
 
-或者使用项目脚本启动：
+Or use the project script to start:
 
-```json
+json
 {
   "mcpServers": {
     "city-tier": {
@@ -114,11 +111,10 @@ python server.py
     }
   }
 }
-```
 
-### 使用 uvx 运行
+### Running with uvx
 
-```json
+json
 {
   "mcpServers": {
     "city-tier": {
@@ -135,30 +131,29 @@ python server.py
     }
   }
 }
-```
 
-## 环境变量配置
+## Environment Variable Configuration
 
-支持的环境变量：
+Supported environment variables:
 
-- `FASTMCP_LOG_LEVEL`: 日志级别，可选值为 DEBUG、INFO、WARNING、ERROR，默认为 ERROR
+- `FASTMCP_LOG_LEVEL`: Log level, possible values are DEBUG, INFO, WARNING, ERROR, default is ERROR
 
-**官方网站：** [https://github.com/megemini/CitytierMCP](https://github.com/megemini/CitytierMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/megemini/CitytierMCP](https://github.com/megemini/CitytierMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `search`, `mcp`, `city tier`, `城市分级`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `search`, `mcp`, `city tier`, `城市分级`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`fastmcp run main.py`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `fastmcp run main.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/megemini-citytiermcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/megemini-citytiermcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,25 +1,25 @@
 ---
-title: "Fiscal Data 连接器"
-description: "连接到美国财政部的财政数据API，使用户能够获取特定的财政部报表、访问历史数据并生成格式化的报告。"
+title: "fiscal-data-mcp"
+description: "Connects to the US Treasury's Fiscal Data API, enabling users to fetch specific treasury statements, access historical data, and generate formatted reports."
 ---
 
-# Fiscal Data 连接器
+# fiscal-data-mcp
 
-连接到美国财政部的财政数据API，使用户能够获取特定的财政部报表、访问历史数据并生成格式化的报告。
+Connects to the US Treasury's Fiscal Data API, enabling users to fetch specific treasury statements, access historical data, and generate formatted reports.
 
-## 概述
+## Overview
 
-[Fiscal Data MCP 服务器](https://github.com/QuantGeekDev/fiscal-data-mcp) 展示了一个连接到美国财政部 Fiscal Data API 的MCP服务器的实际实现。它展示了以下功能：
+The [Fiscal Data MCP Server](https://github.com/QuantGeekDev/fiscal-data-mcp) demonstrates a practical implementation of an MCP server that connects to the US Treasury's Fiscal Data API. It showcases:
 
-- 获取特定财政报表的工具
-- 访问历史数据的资源
-- 生成格式化报告的提示
+- Tools for fetching specific treasury statements
+- Resources for historical data access
+- Prompts for generating formatted reports
 
-## 快速开始
+## Quick Start
 
-### 1. 使用 Claude Desktop 安装和使用
+### 1. Install and Use with Claude Desktop
 
-将此配置添加到您的 Claude Desktop 配置文件中：
+Add this configuration to your Claude Desktop config file:
 
 **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
@@ -35,19 +35,19 @@ description: "连接到美国财政部的财政数据API，使用户能够获取
 }
 ```
 
-### 2. 示例交互
+### 2. Example Interactions
 
-配置完成后，您可以通过 Claude 与服务器进行交互：
+Once configured, you can interact with the server through Claude:
 
 ```
 Human: Can you get the treasury statement for the 20th of September 2023?
 ```
 
-## 功能
+## Features
 
-### 1. 每日财政报表
+### 1. Daily Treasury Statements
 
-使用 `get_daily_treasury_statement` 工具获取特定日期的财政数据：
+Fetch treasury data for specific dates using the `get_daily_treasury_statement` tool:
 
 ```typescript
 // Example usage through Claude
@@ -55,16 +55,17 @@ Human: Get the treasury statement for 2024-03-01
 Assistant: I'll fetch that information for you using the treasury statement tool.
 ```
 
-### 2. 历史数据资源
+### 2. Historical Data Resource
 
-通过资源系统访问30天的历史财政数据：
-- 自动缓存1小时
-- 按需更新
-- 提供格式化的 JSON 数据
+Access 30 days of historical treasury data through the resource system:
 
-### 3. 报告生成
+- Automatically cached for 1 hour
+- Updates on demand
+- Provides formatted JSON data
 
-使用 `daily_treasury_report` 提示生成格式化的财政报告：
+### 3. Report Generation
+
+Generate formatted treasury reports using the `daily_treasury_report` prompt:
 
 ```typescript
 // Example usage through Claude
@@ -72,22 +73,22 @@ Human: Generate a treasury report for 2024-03-01
 Assistant: I'll use the daily treasury report prompt to create a formatted report...
 ```
 
-**官方网站：** [https://github.com/QuantGeekDev/fiscal-data-mcp](https://github.com/QuantGeekDev/fiscal-data-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/QuantGeekDev/fiscal-data-mcp](https://github.com/QuantGeekDev/fiscal-data-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`, `data`
-- 标签：`finance`, `research and data`, `chinese`
+- Categories: `finance`, `data`
+- Tags: `finance`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`fiscal-data-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `fiscal-data-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/quantgeekdev-fiscal-data.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/quantgeekdev-fiscal-data.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

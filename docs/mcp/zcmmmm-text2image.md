@@ -1,36 +1,36 @@
 ---
-title: "文字转图片"
-description: "一个提供文本转图像功能的模型上下文协议服务器，可将任何文本转换为美观的图像格式。"
+title: "text2image"
+description: "A Model Context Protocol server that provides text-to-image functionality, converting any text into aesthetically pleasing image formats."
 ---
 
-# 文字转图片
+# text2image
 
-一个提供文本转图像功能的模型上下文协议服务器，可将任何文本转换为美观的图像格式。
+A Model Context Protocol server that provides text-to-image functionality, converting any text into aesthetically pleasing image formats.
 
-# TextImage 服务
+# TextImage Service
 
-一个提供文本转图片功能的模型上下文协议服务器，可将任意文本转换为美观的图片格式。
+A Model Context Protocol server that provides text-to-image functionality, converting any text into aesthetically pleasing image formats.
 
-## 功能
+## Features
 
-- 将文本转换为1080x1080尺寸的图片
-- 自动计算文字大小和居中位置
-- 支持自定义字体
-- 生成图片可直接保存或显示
+- Convert text to 1080x1080 sized images
+- Automatically calculate text size and center position
+- Support custom fonts
+- Generated images can be directly saved or displayed
 
-## 安装
+## Installation
 ```bash
 pip install -r requirements.txt
 ```
 
-## 使用方法
-### 作为命令行工具
+## Usage
+### As a command line tool
 ```bash
 python src/text2image/text2image.py
 ```
 
-### 在 Claude 桌面版中
-添加到您的 Claude 桌面配置 (claude_desktop_config.json)：
+### In Claude Desktop
+Add to your Claude Desktop configuration (claude_desktop_config.json):
 ```json
 {
   "mcpServers": {
@@ -45,27 +45,27 @@ python src/text2image/text2image.py
 }
 ```
 
-## 可用工具
+## Available Tools
 ### text_to_image
-将文本转换为图片
+Convert text to image
 
-**参数**:
-- `text` (字符串, 必填): 要转换为图片的文本
-- `text_color` (字符串, 可选): 文字颜色，Hex格式，默认"#000000"
-- `bg_color` (字符串, 可选): 背景颜色，Hex格式，默认"#FFFFFF"
-- `width` (整数, 可选): 图片宽度，默认1080
-- `height` (整数, 可选): 图片高度，默认1080
-- `font_size` (整数, 可选): 字体大小，默认80
-- `font_path` (字符串, 可选): 字体文件路径，默认'simhei.ttf'
-- `texture` (字符串, 可选): 背景材质图片路径
-- `output_path` (字符串, 可选): 图片保存路径，未指定时默认保存为"output.png"
-- `corner_radius` (整数, 可选): 图片圆角半径，默认为0（直角）
+**Parameters**:
+- `text` (string, required): Text to be converted
+ to image (It can be equipped with a line break character to control the position of line breaks.)
+- `text_color` (string, optional): Text color in Hex format, default "#000000"
+- `bg_color` (string, optional): Background color in Hex format, default "#FFFFFF"
+- `width` (integer, optional): Image width, default 1080
+- `height` (integer, optional): Image height, default 1080
+- `font_size` (integer, optional): Font size, default 80
+- `font_path` (string, optional): Font file path, default 'simhei.ttf'
+- `texture` (string, optional): Background texture image path
+- `output_path` (string, optional): Output file path, defaults to "output.png" if not specified
+- `corner_radius` (integer, optional): Image corner radius, defaults to 0 (sharp corners)
 
-**JSON示例请求**:
+**JSON Request Example**:
 ```json
 {
-  "text": "示例
-文本(可自带换行符控制换行位置)",
+  "text": "Example text",
   "text_color": "#FF0000",
   "bg_color": "#FFFFFF",
   "width": 800,
@@ -77,41 +77,40 @@ python src/text2image/text2image.py
 }
 ```
 
-**返回值**:
-- PIL.Image.Image: 生成的图片对象
+**Returns**:
+- PIL.Image.Image: Generated image object
 
-## 开发
+## Development
 ```bash
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 运行服务
+# Run service
 python src/text2image/text2image.py
 ```
 
-## 许可证
-MIT 许可证
+## License
+MIT License
 
-## 贡献
-欢迎贡献！请随时提交 Pull Request。
-  "mcpServers": # TextImage 服务
+## Contributing
+Contributions are welcome! Feel free to submit Pull Requests.
 
-**官方网站：** [https://gitee.com/zcmmmm/text2image-mcp-server](https://gitee.com/zcmmmm/text2image-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://gitee.com/zcmmmm/text2image-mcp-server](https://gitee.com/zcmmmm/text2image-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /absolute/path/to/text2image run text2image.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /absolute/path/to/text2image run text2image.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zcmmmm-text2image.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zcmmmm-text2image.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

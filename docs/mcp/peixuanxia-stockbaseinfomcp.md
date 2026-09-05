@@ -1,49 +1,47 @@
 ---
-title: "查询股票基础信息MCP"
-description: "这是一个基于Gradio的MCP（Model Context Protocol）服务，用于查询股票的基础信息（依赖efinance库）。支持输入任意有效股票代码（如600519（贵州茅台）、TSLA（特斯拉）），返回包含公司名称、行业分类、总股本、上市日期等关键信息的结构化JSON数据，适用于需要股票基础数据的应用场景（如金融分析工具、股票查询小程序等）。\n\nA Gradio-based MCP (Model Context Protocol) service for querying basic information of stocks (powered by the efinance library). Accepts any valid stock code (e.g., 600519 for Kweichow Moutai, TSLA for Tesla) and returns structured JSON data including company name, industry, total shares, listing date, etc. Suitable for applications requiring stock basic data (e.g., financial analysis tools, stock query mini-programs)."
+title: "StockBaseInfoMCP"
+description: "This is a Gradio-based MCP (Model Context Protocol) service for querying basic information of stocks (powered by the efinance library). It supports input of any valid stock code (such as 600519 (Kweic…"
 ---
 
-# 查询股票基础信息MCP
+# StockBaseInfoMCP
 
-这是一个基于Gradio的MCP（Model Context Protocol）服务，用于查询股票的基础信息（依赖efinance库）。支持输入任意有效股票代码（如600519（贵州茅台）、TSLA（特斯拉）），返回包含公司名称、行业分类、总股本、上市日期等关键信息的结构化JSON数据，适用于需要股票基础数据的应用场景（如金融分析工具、股票查询小程序等）。
-
-A Gradio-based MCP (Model Context Protocol) service for querying basic information of stocks (powered by the efinance library). Accepts any valid stock code (e.g., 600519 for Kweichow Moutai, TSLA for Tesla) and returns structured JSON data including company name, industry, total shares, listing date, etc. Suitable for applications requiring stock basic data (e.g., financial analysis tools, stock query mini-programs).
+This is a Gradio-based MCP (Model Context Protocol) service for querying basic information of stocks (powered by the efinance library). It supports input of any valid stock code (such as 600519 (Kweic…
 
 # StockBaseInfoMCP
-一个基于Gradio的MCP服务，用于快速查询A股股票的基础信息（数据来源：efinance）。
+A Gradio-based MCP service for quickly querying the basic information of A-share stocks (data source: efinance).
 
-## 📌 功能说明
-输入：6位A股股票代码（字符串，如600519、000001）；
+## 📌 Function Description
+Input: 6-digit A-share stock code (string, such as 600519, 000001);
 
-输出：结构化JSON数据，包含以下关键字段（示例）：
+Output: Structured JSON data, containing the following key fields (example):
 
-- name：公司全称（如贵州茅台酒股份有限公司）；
-- industry：行业分类（如酿酒行业）；
-- total_shares：总股本（单位：股，如125619.78万）；
-- listed_date：上市日期（如2001-08-27）；
+- name: Full company name (e.g., Kweichow Moutai Co., Ltd.);
+- industry: Industry classification (e.g., Liquor Industry);
+- total_shares: Total shares (unit: shares, e.g., 125619.78 million);
+- listed_date: Listing date (e.g., 2001-08-27);
 
-（注：更多字段由efinance库返回，以实际输出为准）。
+(Note: More fields are returned by the efinance library, and the actual output should be taken as the standard).
 
-## 🚀 快速开始
-1. 环境准备
-Python 3.7+；
-安装依赖库（gradio用于构建接口，efinance用于获取股票数据）：
+## 🚀 Quick Start
+1. Environment Preparation
+Python 3.7+;
+Install dependency libraries (gradio for building the interface, efinance for obtaining stock data):
 `pip install gradio efinance`
 
-2. 运行服务
-将代码保存为app.py，执行以下命令启动MCP服务器：
+2. Run the Service
+Save the code as app.py, and execute the following command to start the MCP server:
 `python app.py`
 
-启动后，终端会输出：
+After starting, the terminal will output:
 
-本地Web接口：http://127.0.0.1:7860/（可通过浏览器测试）；
+Local Web Interface: http://127.0.0.1:7860/ (can be tested via a browser);
 
-MCP服务接口：http://127.0.0.1:7860/mcp（供模型/应用调用）；
+MCP Service Interface: http://127.0.0.1:7860/mcp (for model/application invocation);
 
-共享链接（可选）：https://xxxx-xx-xx-xx-xx.gradio.live/（用于外网访问，有效期24小时）。
+Share Link (optional): https://xxxx-xx-xx-xx-xx.gradio.live/ (for external network access, valid for 24 hours).
 
-## 📖 MCP配置说明
-核心函数定义
+## 📖 MCP Configuration Explanation
+Core function definition
 ```
 def get_stock_base_info(stock_code: str) -> dict:
     """获取指定股票代码的基础信息（依赖efinance库）。
@@ -68,9 +66,9 @@ demo = gr.Interface(
     description="输入6位A股代码，获取公司名称、行业、总股本等基础信息（数据来源：efinance）。"
 )
 ```
-## 📝 示例调用
-### 1. 浏览器测试（适合新人验证）
-打开本地Web接口http://127.0.0.1:7860/，在输入框中输入600519（贵州茅台），点击“提交”，即可看到输出结果：
+## 📝 Example Call
+### 1. Browser Testing (Suitable for Beginners to Verify)
+Open the local web interface http://127.0.0.1:7860/, enter 600519 (Kweichow Moutai) in the input box, click "Submit", and you can see the output result:
 ```
 {
   "name": "贵州茅台酒股份有限公司",
@@ -82,8 +80,8 @@ demo = gr.Interface(
   // 更多字段由efinance返回...
 }
 ```
-### 2. 模型/应用调用（MCP协议）
-通过POST请求调用/mcp接口（示例用Python的requests库）：
+### 2. Model/Application Invocation (MCP Protocol)
+Invoke the /mcp interface through a POST request (example using Python's requests library):
 ```
 import requests
 
@@ -103,34 +101,34 @@ response = requests.post(url, json=data)
 print(response.json())
 输出结果与浏览器测试一致。
 ```
-⚠️ 注意事项
-股票代码格式：必须输入有效股票代码（如上证主板600xxx、深证主板000xxx等），否则efinance库会返回错误；
+⚠️ Notes
+Stock Code Format: You must enter a valid stock code (such as Shanghai Main Board 600xxx, Shenzhen Main Board 000xxx, etc.), otherwise, the efinance library will return an error;
 
-数据来源：数据由efinance库提供，若返回字段缺失或错误，请检查efinance版本（建议安装最新版：pip install --upgrade efinance）；
+Data Source: The data is provided by the efinance library. If there are missing or incorrect fields, please check the version of efinance (it is recommended to install the latest version: pip install --upgrade efinance);
 
-端口占用：若7860端口被占用，可修改demo.launch()的server_port参数（如demo.launch(mcp_server=True, server_port=8000)）；
+Port Occupation: If port 7860 is occupied, you can modify the server_port parameter of demo.launch() (e.g., demo.launch(mcp_server=True, server_port=8000));
 
-共享链接：share=True会生成外网可访问的临时链接（有效期24小时），适合测试，但不建议用于生产环境。
+Share Link: share=True will generate a temporary link accessible from the external network (valid for 24 hours), suitable for testing but not recommended for production environments.
 
-📜 许可证
-本项目采用MIT许可证，详情请见LICENSE文件。
+📜 License
+This project uses the MIT license. For details, please refer to the LICENSE file.
 
-**官方网站：** [https://www.modelscope.cn/studios/PeixuanXia/StockBaseInfoMCP](https://www.modelscope.cn/studios/PeixuanXia/StockBaseInfoMCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/PeixuanXia/StockBaseInfoMCP](https://www.modelscope.cn/studios/PeixuanXia/StockBaseInfoMCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `search`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://peixuanxia-stockbaseinfomcp.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://peixuanxia-stockbaseinfomcp.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/peixuanxia-stockbaseinfomcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/peixuanxia-stockbaseinfomcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

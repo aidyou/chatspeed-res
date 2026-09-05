@@ -1,91 +1,91 @@
 ---
-title: "学术搜索助手"
-description: "启用从多个来源实时搜索和检索学术论文信息的功能，提供对论文元数据、摘要和全文内容（如有可用）的访问，并以结构化数据响应的形式提供，以便与支持工具/功能调用的AI模型进行集成。"
+title: "academic-search-mcp-server"
+description: "Enables real-time search and retrieval of academic paper information from multiple sources, providing access to paper metadata, abstracts, and full-text content when available, with structured data re…"
 ---
 
-# 学术搜索助手
+# academic-search-mcp-server
 
-启用从多个来源实时搜索和检索学术论文信息的功能，提供对论文元数据、摘要和全文内容（如有可用）的访问，并以结构化数据响应的形式提供，以便与支持工具/功能调用的AI模型进行集成。
+Enables real-time search and retrieval of academic paper information from multiple sources, providing access to paper metadata, abstracts, and full-text content when available, with structured data re…
 
-# 学术论文搜索 MCP 服务器
+# Academic Paper Search MCP Server
 
 [Smithery](https://smithery.ai/server/@afrise/academic-search-mcp-server)
 
-这是一个 [模型上下文协议 (MCP)](https://www.anthropic.com/news/model-context-protocol) 服务器，能够从多个来源搜索和检索学术论文信息。
+A [Model Context Protocol (MCP)](https://www.anthropic.com/news/model-context-protocol) server that enables searching and retrieving academic paper information from multiple sources.
 
-该服务器为大型语言模型 (LLMs) 提供以下功能：
-- 实时学术论文搜索功能
-- 访问论文元数据和摘要
-- 在可用时获取全文内容
-- 遵循 MCP 规范的结构化数据响应
+The server provides LLMs with:
+- Real-time academic paper search functionality  
+- Access to paper metadata and abstracts
+- Ability to retrieve full-text content when available
+- Structured data responses following the MCP specification
 
-虽然该服务器主要设计用于与 Anthropic 的 Claude Desktop 客户端集成，但 MCP 规范允许其可能与其他支持工具/函数调用能力的人工智能模型和客户端兼容（例如 OpenAI 的 API）。
+While primarily designed for integration with Anthropic's Claude Desktop client, the MCP specification allows for potential compatibility with other AI models and clients that support tool/function calling capabilities (e.g. OpenAI's API).
 
-**注意**：此软件正在积极开发中。特性和功能可能会发生变化。
+**Note**: This software is under active development. Features and functionality are subject to change.
 
-## 功能
+## Features
 
-该服务器提供了以下工具：
-- `search_papers`：跨多个来源搜索学术论文
-  - 参数：
-    - `query` (str): 搜索查询文本
-    - `limit` (int, 可选): 返回的最大结果数量（默认：10）
-  - 返回：包含论文详情的格式化字符串
+This server exposes the following tools:
+- `search_papers`: Search for academic papers across multiple sources
+  - Parameters:
+    - `query` (str): Search query text
+    - `limit` (int, optional): Maximum number of results to return (default: 10)
+  - Returns: Formatted string containing paper details
   
-- `fetch_paper_details`：检索特定论文的详细信息
-  - 参数：
-    - `paper_id` (str): 论文标识符（DOI 或 Semantic Scholar ID）
-    - `source` (str, 可选): 数据源 ("crossref" 或 "semantic_scholar", 默认: "crossref")
-  - 返回：包含全面论文元数据的格式化字符串，包括：
-    - 标题、作者、年份、DOI
-    - 发表场所、开放访问状态、PDF URL（仅限 Semantic Scholar）
-    - 摘要和 TL;DR 总结（如果可用）
+- `fetch_paper_details`: Retrieve detailed information for a specific paper
+  - Parameters:
+    - `paper_id` (str): Paper identifier (DOI or Semantic Scholar ID)
+    - `source` (str, optional): Data source ("crossref" or "semantic_scholar", default: "crossref")
+  - Returns: Formatted string with comprehensive paper metadata including:
+    - Title, authors, year, DOI
+    - Venue, open access status, PDF URL (Semantic Scholar only)
+    - Abstract and TL;DR summary (when available)
 
-- `search_by_topic`：按主题搜索论文，并可选择日期范围过滤
-  - 参数：
-    - `topic` (str): 搜索查询文本（限制在 300 个字符内）
-    - `year_start` (int, 可选): 日期范围的起始年份
-    - `year_end` (int, 可选): 日期范围的结束年份
-    - `limit` (int, 可选): 返回的最大结果数量（默认：10）
-  - 返回：包含搜索结果的格式化字符串，包括：
-    - 论文标题、作者和年份
-    - 摘要和 TL;DR 总结（如果可用）
-    - 发表场所和开放访问信息
+- `search_by_topic`: Search for papers by topic with optional date range filter
+  - Parameters:
+    - `topic` (str): Search query text (limited to 300 characters)
+    - `year_start` (int, optional): Start year for date range 
+    - `year_end` (int, optional): End year for date range
+    - `limit` (int, optional): Maximum number of results to return (default: 10)
+  - Returns: Formatted string containing search results including:
+    - Paper titles, authors, and years
+    - Abstracts and TL;DR summaries when available
+    - Venue and open access information
 
-## 设置
+## Setup
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@afrise/academic-search-mcp-server) 自动为 Claude Desktop 安装学术论文搜索服务器：
+To install Academic Paper Search Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@afrise/academic-search-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @afrise/academic-search-mcp-server --client claude
 ```
 
-***注意*** 此方法尚未经过大量测试，因为他们的服务器似乎遇到了一些问题。您可以按照独立安装说明操作，直到 Smithery 修复为止。
+***note*** this method is largely untested, as their server seems to be having trouble. you can follow the standalone instructions until smithery gets fixed. 
 
-### 通过 uv 手动安装:
+### Installing via uv (manual install): 
 
-1. 安装依赖项：
+1. Install dependencies:
 ```sh
 uv add "mcp[cli]" httpx
 ```
 
-2. 在您的环境或 `.env` 文件中设置所需的 API 密钥：
+2. Set up required API keys in your environment or `.env` file:
 ```sh
 #  These are not actually implemented
 SEMANTIC_SCHOLAR_API_KEY=your_key_here 
 CROSSREF_API_KEY=your_key_here  # Optional but recommended
 ```
 
-3. 运行服务器：
+3. Run the server:
 ```sh
 uv run server.py
 ```
 
-## 与 Claude Desktop 的使用
+## Usage with Claude Desktop
 
-1. 将服务器添加到您的 Claude Desktop 配置中 (`claude_desktop_config.json`)：
+1. Add the server to your Claude Desktop configuration (`claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
@@ -101,65 +101,65 @@ uv run server.py
 }
 ```
 
-2. 重启 Claude Desktop
+2. Restart Claude Desktop
 
-## 开发
+## Development
 
-此服务器使用以下技术构建：
+This server is built using:
 - Python MCP SDK
-- FastMCP 用于简化服务器实现
-- httpx 用于 API 请求
+- FastMCP for simplified server implementation
+- httpx for API requests
 
-## API 来源
+## API Sources
 
 - Semantic Scholar API
 - Crossref API
 
-## 许可证
+## License
 
-本项目采用 GNU Affero General Public License v3.0 (AGPL-3.0) 许可证。该许可证确保：
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). This license ensures that:
 
-- 您可以自由使用、修改和分发此软件
-- 任何修改都必须以相同的许可证开源
-- 使用此软件提供网络服务的任何人都必须公开源代码
-- 允许商业使用，但软件及其衍生作品必须保持免费和开源
+- You can freely use, modify, and distribute this software
+- Any modifications must be open-sourced under the same license
+- Anyone providing network services using this software must make the source code available
+- Commercial use is allowed, but the software and any derivatives must remain free and open source
 
-请参阅 [LICENSE](https://github.com/afrise/academic-search-mcp-server/blob/HEAD/LICENSE) 文件获取完整的许可证文本。
+See the [LICENSE](https://github.com/afrise/academic-search-mcp-server/blob/HEAD/LICENSE) file for the full license text.
 
-## 贡献
+## Contributing
 
-欢迎贡献！您可以按以下步骤帮助我们：
+Contributions are welcome! Here's how you can help:
 
-1. 叉取仓库
-2. 创建一个功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交您的更改 (`git commit -m 'Add amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-请注意：
-- 遵循现有的代码风格和约定
-- 为任何新功能添加测试
-- 根据需要更新文档
-- 确保您的更改遵守 AGPL-3.0 许可证条款
+Please note:
+- Follow the existing code style and conventions
+- Add tests for any new functionality
+- Update documentation as needed
+- Ensure your changes respect the AGPL-3.0 license terms
 
-通过贡献此项目，您同意您的贡献将根据 AGPL-3.0 许可证进行授权。
+By contributing to this project, you agree that your contributions will be licensed under the AGPL-3.0 license.
 
-**官方网站：** [https://github.com/afrise/academic-search-mcp-server](https://github.com/afrise/academic-search-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/afrise/academic-search-mcp-server](https://github.com/afrise/academic-search-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `data`
-- 标签：`search`, `research and data`, `chinese`
+- Categories: `search`, `data`
+- Tags: `search`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`run  /path/to/server/server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `run  /path/to/server/server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/afrise-academic-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/afrise-academic-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

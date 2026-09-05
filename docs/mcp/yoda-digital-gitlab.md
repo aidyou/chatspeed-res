@@ -1,47 +1,45 @@
 ---
-title: "GitLab 项目管理服务器"
-description: "GitLab MCP服务器（具有活动跟踪和群组项目列表功能）\n\n该服务器基于原始的GitLab MCP服务器，并增强了群组项目列表和活动跟踪功能。"
+title: "mcp-gitlab-server"
+description: "GitLab MCP Server (with activity tracking and group projects listing features) This server is based on the original GitLab MCP server with Group Projects Listing and Activity Tracking enhancements"
 ---
 
-# GitLab 项目管理服务器
+# mcp-gitlab-server
 
-GitLab MCP服务器（具有活动跟踪和群组项目列表功能）
+GitLab MCP Server (with activity tracking and group projects listing features) This server is based on the original GitLab MCP server with Group Projects Listing and Activity Tracking enhancements
 
-该服务器基于原始的GitLab MCP服务器，并增强了群组项目列表和活动跟踪功能。
+# GitLab MCP Server
 
-# GitLab MCP 服务器
+A Model Context Protocol (MCP) server for GitLab integration, providing tools to interact with GitLab repositories, issues, merge requests, wikis, and more.
 
-一个用于 GitLab 集成的 Model Context Protocol (MCP) 服务器，提供与 GitLab 仓库、问题、合并请求、维基等交互的工具。
+## Features
 
-## 功能
+- Support for both stdio and SSE transports
+- Strict TypeScript typing with the MCP SDK
+- Comprehensive GitLab API integration
+- Repository operations (search, create, fork)
+- File operations (read, create, update)
+- Branch operations (create)
+- Issue management (create, list, filter)
+- Merge request handling (create, list, filter)
+- Group projects listing
+- Project events retrieval
+- Commit history access
+- Member management (list project and group members)
+- Complete wiki management:
+  - Project wiki support (list, get, create, edit, delete pages)
+  - Group wiki support (list, get, create, edit, delete pages)
+  - Wiki attachment handling
+  - Multiple wiki formats (markdown, rdoc, asciidoc, org)
 
-- 支持 stdio 和 SSE 传输
-- 使用 MCP SDK 的严格 TypeScript 类型定义
-- 全面的 GitLab API 集成
-- 仓库操作（搜索、创建、分叉）
-- 文件操作（读取、创建、更新）
-- 分支操作（创建）
-- 问题管理（创建、列出、筛选）
-- 合并请求处理（创建、列出、筛选）
-- 组项目列表
-- 项目事件检索
-- 提交历史访问
-- 成员管理（列出项目和组成员）
-- 完整的维基管理：
-  - 项目维基支持（列出、获取、创建、编辑、删除页面）
-  - 组维基支持（列出、获取、创建、编辑、删除页面）
-  - 维基附件处理
-  - 多种维基格式（markdown、rdoc、asciidoc、org）
+## Installation
 
-## 安装
-
-### 从 npm 安装（推荐）
+### From npm (Recommended)
 
 ```bash
 npm install @yoda.digital/gitlab-mcp-server
 ```
 
-### 从源码安装
+### From Source
 
 ```bash
 # Clone the repository
@@ -55,20 +53,20 @@ npm install
 npm run build
 ```
 
-## 配置
+## Configuration
 
-### 环境变量
+### Environment Variables
 
-直接运行时，服务器需要以下环境变量：
+The server requires the following environment variables when running directly:
 
-- `GITLAB_PERSONAL_ACCESS_TOKEN`（必需）：您的 GitLab 个人访问令牌
-- `GITLAB_API_URL`（可选）：GitLab API URL（默认为 'https://gitlab.com/api/v4'）
-- `PORT`（可选）：用于 SSE 传输的端口（默认为 3000）
-- `USE_SSE`（可选）：设置为 'true' 以使用 SSE 传输而不是 stdio（默认为 'false'）
+- `GITLAB_PERSONAL_ACCESS_TOKEN` (required): Your GitLab personal access token
+- `GITLAB_API_URL` (optional): The GitLab API URL (defaults to 'https://gitlab.com/api/v4')
+- `PORT` (optional): The port to use for SSE transport (defaults to 3000)
+- `USE_SSE` (optional): Set to 'true' to use SSE transport instead of stdio (defaults to 'false')
 
-### MCP 设置配置
+### MCP Settings Configuration
 
-您可以将 GitLab MCP 服务器添加到您的 MCP 设置文件中（例如 `cline_mcp_settings.json` 或 `claude_desktop_config.json`）：
+You can add the GitLab MCP server to your MCP settings file (e.g., `cline_mcp_settings.json` or `claude_desktop_config.json`):
 
 ```json
 {
@@ -87,9 +85,9 @@ npm run build
 }
 ```
 
-## 使用
+## Usage
 
-### 使用 stdio 传输运行（默认）
+### Running with stdio transport (default)
 
 ```bash
 # Set your GitLab personal access token
@@ -99,7 +97,7 @@ export GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here
 npm start
 ```
 
-### 使用 SSE 传输运行
+### Running with SSE transport
 
 ```bash
 # Set your GitLab personal access token and enable SSE
@@ -111,20 +109,20 @@ export PORT=3000  # Optional, defaults to 3000
 npm start
 ```
 
-### 使用 npx 运行
+### Running with npx
 
 ```bash
 # Run directly with npx
 GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
 ```
 
-## 可用工具
+## Available Tools
 
-服务器提供以下工具：
+The server provides the following tools:
 
-### 仓库操作
+### Repository Operations
 
-- `search_repositories`: 搜索 GitLab 项目
+- `search_repositories`: Search for GitLab projects
 
 ```json
   {
@@ -134,7 +132,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `create_repository`: 创建一个新的 GitLab 项目
+- `create_repository`: Create a new GitLab project
 
 ```json
   {
@@ -145,7 +143,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `fork_repository`: 分叉一个 GitLab 项目
+- `fork_repository`: Fork a GitLab project
 
 ```json
   {
@@ -154,7 +152,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `list_group_projects`: 列出特定 GitLab 组中的所有项目
+- `list_group_projects`: List all projects within a specific GitLab group
 ```json
   {
     "group_id": "group-name",
@@ -166,9 +164,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 文件操作
+### File Operations
 
-- `get_file_contents`: 从 GitLab 项目中获取文件内容
+- `get_file_contents`: Get the contents of a file from a GitLab project
 
 ```json
   {
@@ -178,7 +176,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `create_or_update_file`: 在 GitLab 项目中创建或更新单个文件
+- `create_or_update_file`: Create or update a single file in a GitLab project
 
 ```json
   {
@@ -191,7 +189,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `push_files`: 在单次提交中将多个文件推送到 GitLab 项目
+- `push_files`: Push multiple files to a GitLab project in a single commit
 ```json
   {
     "project_id": "username/project",
@@ -210,9 +208,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 分支操作
+### Branch Operations
 
-- `create_branch`: 在 GitLab 项目中创建新分支
+- `create_branch`: Create a new branch in a GitLab project
 ```json
   {
     "project_id": "username/project",
@@ -221,9 +219,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 问题操作
+### Issue Operations
 
-- `create_issue`: 在 GitLab 项目中创建新问题
+- `create_issue`: Create a new issue in a GitLab project
 
 ```json
   {
@@ -236,7 +234,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `list_issues`: 获取具有过滤条件的 GitLab 项目中的问题
+- `list_issues`: Get issues for a GitLab project with filtering
 ```json
   {
     "project_id": "username/project",
@@ -255,9 +253,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 合并请求操作
+### Merge Request Operations
 
-- `create_merge_request`: 在 GitLab 项目中创建新的合并请求
+- `create_merge_request`: Create a new merge request in a GitLab project
 
 ```json
   {
@@ -271,7 +269,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `list_merge_requests`: 获取具有过滤条件的 GitLab 项目中的合并请求
+- `list_merge_requests`: Get merge requests for a GitLab project with filtering
 ```json
   {
     "project_id": "username/project",
@@ -294,9 +292,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 项目活动
+### Project Activity
 
-- `get_project_events`: 获取 GitLab 项目的最近事件/活动
+- `get_project_events`: Get recent events/activities for a GitLab project
 
 ```json
   {
@@ -311,7 +309,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `list_commits`: 获取 GitLab 项目的提交历史
+- `list_commits`: Get commit history for a GitLab project
 ```json
   {
     "project_id": "username/project",
@@ -327,9 +325,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 成员操作
+### Member Operations
 
-- `list_project_members`: 列出 GitLab 项目的所有成员（包括继承的成员）
+- `list_project_members`: List all members of a GitLab project (including inherited members)
 
 ```json
   {
@@ -340,7 +338,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `list_group_members`: 列出 GitLab 组的所有成员（包括继承的成员）
+- `list_group_members`: List all members of a GitLab group (including inherited members)
 
 ```json
   {
@@ -351,9 +349,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 项目维基操作
+### Project Wiki Operations
 
-- `list_project_wiki_pages`: 列出 GitLab 项目的所有维基页面
+- `list_project_wiki_pages`: List all wiki pages for a GitLab project
 
 ```json
   {
@@ -362,7 +360,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `get_project_wiki_page`: 获取 GitLab 项目的特定维基页面
+- `get_project_wiki_page`: Get a specific wiki page for a GitLab project
 
 ```json
   {
@@ -373,7 +371,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `create_project_wiki_page`: 为 GitLab 项目创建新的维基页面
+- `create_project_wiki_page`: Create a new wiki page for a GitLab project
 
 ```json
   {
@@ -384,7 +382,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `edit_project_wiki_page`: 编辑 GitLab 项目的现有维基页面
+- `edit_project_wiki_page`: Edit an existing wiki page for a GitLab project
 
 ```json
   {
@@ -396,7 +394,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `delete_project_wiki_page`: 从 GitLab 项目中删除一个维基页面
+- `delete_project_wiki_page`: Delete a wiki page from a GitLab project
 
 ```json
   {
@@ -405,7 +403,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `upload_project_wiki_attachment`: 向 GitLab 项目维基上传附件
+- `upload_project_wiki_attachment`: Upload an attachment to a GitLab project wiki
 ```json
   {
     "project_id": "username/project",
@@ -415,9 +413,9 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-### 组维基操作
+### Group Wiki Operations
 
-- `list_group_wiki_pages`: 列出 GitLab 组的所有 wiki 页面
+- `list_group_wiki_pages`: List all wiki pages for a GitLab group
 
 ```json
   {
@@ -426,7 +424,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `get_group_wiki_page`: 获取 GitLab 组的特定 wiki 页面
+- `get_group_wiki_page`: Get a specific wiki page for a GitLab group
 
 ```json
   {
@@ -437,7 +435,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `create_group_wiki_page`: 为 GitLab 组创建新的 wiki 页面
+- `create_group_wiki_page`: Create a new wiki page for a GitLab group
 
 ```json
   {
@@ -448,7 +446,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `edit_group_wiki_page`: 编辑 GitLab 组中已存在的 wiki 页面
+- `edit_group_wiki_page`: Edit an existing wiki page for a GitLab group
 
 ```json
   {
@@ -460,7 +458,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `delete_group_wiki_page`: 从 GitLab 组中删除一个 wiki 页面
+- `delete_group_wiki_page`: Delete a wiki page from a GitLab group
 
 ```json
   {
@@ -469,7 +467,7 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-- `upload_group_wiki_attachment`: 向 GitLab 组的 wiki 上传附件
+- `upload_group_wiki_attachment`: Upload an attachment to a GitLab group wiki
 ```json
   {
     "group_id": "group-name",
@@ -479,55 +477,55 @@ GITLAB_PERSONAL_ACCESS_TOKEN=your_token_here npx @yoda.digital/gitlab-mcp-server
   }
 ```
 
-## 开发
+## Development
 
-### 构建项目
+### Building the Project
 
 ```bash
 npm run build
 ```
 
-### 运行测试
+### Running Tests
 
 ```bash
 npm test
 ```
 
-## 许可证
+## License
 
-此项目根据 MIT 许可证发布 - 详情请参阅 [LICENSE](https://github.com/yoda-digital/mcp-gitlab-server/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yoda-digital/mcp-gitlab-server/blob/HEAD/LICENSE) file for details.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 贡献者
+## Contributors
 
-感谢所有帮助改进此项目的贡献者：
+Thanks to all the contributors who have helped improve this project:
 
-- [thomasleveil](https://github.com/thomasleveil) - 实现了项目和组的 GitLab 成员列表功能
+- [thomasleveil](https://github.com/thomasleveil) - Implemented GitLab member listing functionality for projects and groups
 
-## NPM 包
+## NPM Package
 
-该包在 npm 上可用:
-[https://www.npmjs.com/package/@yoda.digital/gitlab-mcp-server](https://www.npmjs.com/package/@yoda.digital/gitlab-mcp-server)
+This package is available on npm:
+https://www.npmjs.com/package/@yoda.digital/gitlab-mcp-server
 
-**官方网站：** [https://github.com/yoda-digital/mcp-gitlab-server](https://github.com/yoda-digital/mcp-gitlab-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yoda-digital/mcp-gitlab-server](https://github.com/yoda-digital/mcp-gitlab-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`version control`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `version control`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @yoda.digital/gitlab-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @yoda.digital/gitlab-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yoda-digital-gitlab.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yoda-digital-gitlab.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

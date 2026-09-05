@@ -1,47 +1,47 @@
 ---
-title: "paperpal：论文伙伴"
-description: "MCP扩展程序为大型语言模型（LLMs）提供对arXiv和Hugging Face论文的访问，使用户能够通过自然对话讨论论文、搜索新研究和组织文献综述。"
+title: "paperpal"
+description: "MCP Extension that gives LLMs access to arXiv and Hugging Face papers, enabling users to discuss papers, search for new research, and organize literature reviews through natural conversation."
 ---
-
-# paperpal：论文伙伴
-
-MCP扩展程序为大型语言模型（LLMs）提供对arXiv和Hugging Face论文的访问，使用户能够通过自然对话讨论论文、搜索新研究和组织文献综述。
 
 # paperpal
 
-MCP 扩展，帮助您搜索和撰写文献综述
+MCP Extension that gives LLMs access to arXiv and Hugging Face papers, enabling users to discuss papers, search for new research, and organize literature reviews through natural conversation.
 
-> 查看与[Claude的对话](https://claude.ai/share/0572fbd9-3ba2-4143-9f7f-5cae205c6d0d)，了解它可以做什么
+# paperpal
 
-## 工作原理
+MCP Extension to aid you in searching and writing literature reviews
 
-`paperpal` 使您的大型语言模型能够访问 [arxiv](https://www.arxiv.org) 和 [Hugging Face 论文](https://huggingface.co/papers)。
-然后，您可以与您喜欢的语言模型（例如 Claude）进行自然对话，并让其指导您。
+> Check out this [conversation with Claude](https://claude.ai/share/0572fbd9-3ba2-4143-9f7f-5cae205c6d0d) to see what it can do
 
-您可以：
+## How it works
 
-* 讨论论文
-* 寻找新论文
-* 组织文献综述的想法
-* 等等。
+`paperpal` gives your LLMs access to [arxiv](https://www.arxiv.org) and [Hugging Face papers](https://huggingface.co/papers).
+You can then have a natural conversation with your favourite LLMs (e.g. Claude) and have it guide you.
 
-当然，这个工具的好坏取决于它的各个组成部分。语言模型仍然可能产生幻觉，且语义搜索永远不会是完美的。
+You can:
 
-## 快速开始
+* Discuss papers
+* Look for new papers
+* Organize ideas for liteature reviews
+* etc.
 
-有许多不同的方式可以与 MCP 服务器交互。
+Of course, this tool is as good as the sum of its parts. LLMs can still hallucinate, and semantic search is never perfect.
 
-### Claude 桌面应用程序
+## Quickstart
 
-> 如果这是您第一次使用 MCP 服务器为 Claude 桌面应用程序，请参阅 https://modelcontextprotocol.io/quickstart/user
+There are many different ways with which you can interact with an MCP server.
 
-首先，将此仓库克隆到本地：
+### Claude Desktop App
+
+> If this is your first time using an MCP server for Claude Desktop App, see https://modelcontextprotocol.io/quickstart/user
+
+First, clone this repository locally:
 
     git clone https://github.com/jerpint/paperpal
 
-接下来，将扩展添加到您的应用中。打开配置文件（在 macOS 上应该是 `~/Library/Application Support/Claude/claude_desktop_config.json`），并将以下内容添加到扩展部分：
+Next, add the extension to your app. Open your configuration file (on macOS this should be `~/Library/Application Support/Claude/claude_desktop_config.json`) and and add the following to the extension:
 
-例如，在 MacOS 上：
+For example on MacOS:
 
 ```python
 {
@@ -59,17 +59,17 @@ MCP 扩展，帮助您搜索和撰写文献综述
 }
 ```
 
-重启您的 Claude 桌面应用程序，您应该会看到它出现。
+Restart your Claude Desktop App and you should see it appear.
 
 ### Cursor
 
-> 如果这是您第一次使用 MCP 服务器为 Cursor，请参阅 https://docs.cursor.com/context/model-context-protocol#remote-development
+> If this is your first time using an MCP server for Cursor, see https://docs.cursor.com/context/model-context-protocol#remote-development
 
-首先，将此仓库克隆到本地：
+First, clone this repository locally:
 
     git clone https://github.com/jerpint/paperpal
 
-在项目的根目录下的 `.cursor/mcp.json` 文件中添加以下内容：
+Add this to the root of the project in a `.cursor/mcp.json` file:
 
 ```
 {
@@ -87,22 +87,22 @@ MCP 扩展，帮助您搜索和撰写文献综述
 }
 ```
 
-**官方网站：** [https://github.com/jerpint/paperpal](https://github.com/jerpint/paperpal)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jerpint/paperpal](https://github.com/jerpint/paperpal)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/Users/jeremypinto/.cargo/bin/uv`
-- 参数：`--directory /Users/jeremypinto/paperpal run paperpal.py`
+- Transport: `stdio`
+- Command: `/Users/jeremypinto/.cargo/bin/uv`
+- Args: `--directory /Users/jeremypinto/paperpal run paperpal.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jerpint-paperpal.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jerpint-paperpal.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

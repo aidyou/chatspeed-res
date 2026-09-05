@@ -1,82 +1,82 @@
 ---
-title: "Strava健康数据分析服务器"
-description: "一个模型上下文协议服务器，为语言模型提供对Strava API数据的访问，使它们能够查询和分析Strava上的运动员活动。"
+title: "strava-mcp-server"
+description: "A Model Context Protocol server that provides language models with access to Strava API data, allowing them to query and analyze athlete activities from Strava."
 ---
 
-# Strava健康数据分析服务器
+# strava-mcp-server
 
-一个模型上下文协议服务器，为语言模型提供对Strava API数据的访问，使它们能够查询和分析Strava上的运动员活动。
+A Model Context Protocol server that provides language models with access to Strava API data, allowing them to query and analyze athlete activities from Strava.
 
-# Strava MCP 服务器
+# Strava MCP Server
 
 ![Python Package](/mcp-assets/b34dd1f9c1c9445c7bad4f893b73a785.svg)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10](/mcp-assets/9a5462509af74d8a0229903fa0c244e1.svg)](https://www.python.org/downloads/release/python-3100/)
 
-这是一个 [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) 服务器，提供对 Strava API 的访问。它允许语言模型从 Strava API 查询运动员活动数据。
+A [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) server that provides access to the Strava API. It allows language models to query athlete activities data from the Strava API.
 
-## 可用工具
+## Available Tools
 
-该服务器提供了以下工具：
+The server exposes the following tools:
 
-### 活动查询
+### Activities Queries
 
-- `get_activities(limit: int = 10)`: 获取已认证运动员的最近活动
-- `get_activities_by_date_range(start_date: str, end_date: str, limit: int = 30)`: 获取特定日期范围内的活动
-- `get_activity_by_id(activity_id: int)`: 获取特定活动的详细信息
-- `get_recent_activities(days: int = 7, limit: int = 10)`: 获取过去 X 天内的活动
+- `get_activities(limit: int = 10)`: Get the authenticated athlete's recent activities
+- `get_activities_by_date_range(start_date: str, end_date: str, limit: int = 30)`: Get activities within a specific date range
+- `get_activity_by_id(activity_id: int)`: Get detailed information about a specific activity
+- `get_recent_activities(days: int = 7, limit: int = 10)`: Get activities from the past X days
 
-日期应以 ISO 格式 (`YYYY-MM-DD`) 提供。
+Dates should be provided in ISO format (`YYYY-MM-DD`).
 
-## 活动数据格式
+## Activity Data Format
 
-服务器返回的活动数据具有统一的字段名称和单位：
+The server returns activity data with consistent field names and units:
 
-| 字段 | 描述 | 单位 |
+| Field | Description | Unit |
 |-------|-------------|------|
-| `name` | 活动名称 | - |
-| `sport_type` | 运动类型 | - |
-| `start_date` | 开始日期和时间 | ISO 8601 |
-| `distance_metres` | 距离 | 米 |
-| `elapsed_time_seconds` | 总经过时间 | 秒 |
-| `moving_time_seconds` | 移动时间 | 秒 |
-| `average_speed_mps` | 平均速度 | 米/秒 |
-| `max_speed_mps` | 最大速度 | 米/秒 |
-| `total_elevation_gain_metres` | 总海拔升高 | 米 |
-| `elev_high_metres` | 最高海拔 | 米 |
-| `elev_low_metres` | 最低海拔 | 米 |
-| `calories` | 燃烧的卡路里 | 千卡 |
-| `start_latlng` | 起点坐标 | [纬度, 经度] |
-| `end_latlng` | 终点坐标 | [纬度, 经度] |
+| `name` | Activity name | - |
+| `sport_type` | Type of sport | - |
+| `start_date` | Start date and time | ISO 8601 |
+| `distance_metres` | Distance | meters |
+| `elapsed_time_seconds` | Total elapsed time | seconds |
+| `moving_time_seconds` | Moving time | seconds |
+| `average_speed_mps` | Average speed | meters per second |
+| `max_speed_mps` | Maximum speed | meters per second |
+| `total_elevation_gain_metres` | Total elevation gain | meters |
+| `elev_high_metres` | Highest elevation | meters |
+| `elev_low_metres` | Lowest elevation | meters |
+| `calories` | Calories burned | kcal |
+| `start_latlng` | Start coordinates | [lat, lng] |
+| `end_latlng` | End coordinates | [lat, lng] |
 
-## 认证
+## Authentication
 
-要使用此服务器，您需要与 Strava API 进行认证。请按照以下步骤操作：
+To use this server, you'll need to authenticate with the Strava API. Follow these steps:
 
-1. 创建一个 Strava API 应用程序：
-   - 前往 [Strava API 设置](https://www.strava.com/settings/api)
-   - 创建一个应用程序以获取您的 Client ID 和 Client Secret
-   - 将授权回调域设置为 `localhost`
+1. Create a Strava API application:
+   - Go to [Strava API Settings](https://www.strava.com/settings/api)
+   - Create an application to get your Client ID and Client Secret
+   - Set the Authorization Callback Domain to `localhost`
 
-2. 获取您的刷新令牌：
-   - 使用随附的 `get_strava_token.py` 脚本：
+2. Get your refresh token:
+   - Use the included `get_strava_token.py` script:
 ```bash
    python get_strava_token.py
 ```
-   - 按照提示授权您的应用程序
-   - 脚本会将您的令牌保存到 `.env` 文件中
+   - Follow the prompts to authorize your application
+   - The script will save your tokens to a `.env` file
 
-3. 设置环境变量：
-   服务器需要以下环境变量：
-   - `STRAVA_CLIENT_ID`: 您的 Strava API Client ID
-   - `STRAVA_CLIENT_SECRET`: 您的 Strava API Client Secret
-   - `STRAVA_REFRESH_TOKEN`: 您的 Strava API 刷新令牌
+3. Set environment variables:
+   The server requires the following environment variables:
+   - `STRAVA_CLIENT_ID`: Your Strava API Client ID
+   - `STRAVA_CLIENT_SECRET`: Your Strava API Client Secret
+   - `STRAVA_REFRESH_TOKEN`: Your Strava API Refresh Token
 
-## 使用方法
+## Usage
 
 ### Claude for Desktop
 
-更新您的 `claude_desktop_config.json`（在 macOS 上位于 `~/Library/Application\ Support/Claude/claude_desktop_config.json`，在 Windows 上位于 `%APPDATA%/Claude/claude_desktop_config.json`），以包含以下内容：
+Update your `claude_desktop_config.json` (located in `~/Library/Application\ Support/Claude/claude_desktop_config.json` on macOS and `%APPDATA%/Claude/claude_desktop_config.json` on Windows) to include the following:
 
 ```json
 {
@@ -98,45 +98,45 @@ description: "一个模型上下文协议服务器，为语言模型提供对Str
 
 ### Claude Web
 
-对于 Claude Web，你可以本地运行服务器并通过 MCP 扩展连接它。
+For Claude Web, you can run the server locally and connect it using the MCP extension.
 
-## 示例查询
+## Example Queries
 
-连接后，你可以向 Claude 提问，例如：
+Once connected, you can ask Claude questions like:
 
-- "我最近的活动有哪些？"
-- "显示我上周的活动"
-- "过去一个月里我最长的一次跑步是多久？"
-- "获取关于我最新骑行活动的详细信息"
+- "What are my recent activities?"
+- "Show me my activities from last week"
+- "What was my longest run in the past month?"
+- "Get details about my latest cycling activity"
 
-## 错误处理
+## Error Handling
 
-服务器为常见的问题提供了易于理解的错误消息：
+The server provides human-readable error messages for common issues:
 
-- 无效的日期格式
-- API 认证错误
-- 网络连接问题
+- Invalid date formats
+- API authentication errors
+- Network connectivity problems
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证发布 - 详情请参阅 LICENSE 文件。
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/tomekkorbak/strava-mcp-server](https://github.com/tomekkorbak/strava-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/tomekkorbak/strava-mcp-server](https://github.com/tomekkorbak/strava-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`health and wellness`, `research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `health and wellness`, `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`strava-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `strava-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tomekkorbak-strava.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tomekkorbak-strava.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

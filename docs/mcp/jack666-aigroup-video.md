@@ -1,140 +1,132 @@
 ---
-title: "视频分析MCP"
-description: "Aigroup Video MCP Aigroup Video MCP 是一个基于阿里云 DashScope 的视频多模态理解 MCP（Model Context Protocol）服务器，提供强大的视频内容分析功能。 🌟 特性 - 🎥 视频内容分析：支持通过 URL 或本地路径分析视频内容 - 🧠 智能摘要：自动生成视频摘要和关键信息 - 🎬 场景识别：识别视频中的主要场景和场景转换 - ✨ 自定义提示词：支持灵活的自定义分析需求 - 🔌 MCP 协议支持：完全兼容 MCP 协议，支持 stdio 和 SSE 模"
+title: "aigroup-video-mcp"
+description: "Aigroup Video MCP Aigroup Video MCP is a video multimodal understanding MCP (Model Context Protocol) server based on Alibaba Cloud DashScope, providing powerful video content analysis capabilities. 🌟…"
 ---
 
-# 视频分析MCP
+# aigroup-video-mcp
 
-Aigroup Video MCP Aigroup Video MCP 是一个基于阿里云 DashScope 的视频多模态理解 MCP（Model Context Protocol）服务器，提供强大的视频内容分析功能。 🌟 特性 - 🎥 视频内容分析：支持通过 URL 或本地路径分析视频内容 - 🧠 智能摘要：自动生成视频摘要和关键信息 - 🎬 场景识别：识别视频中的主要场景和场景转换 - ✨ 自定义提示词：支持灵活的自定义分析需求 - 🔌 MCP 协议支持：完全兼容 MCP 协议，支持 stdio 和 SSE 模
+Aigroup Video MCP Aigroup Video MCP is a video multimodal understanding MCP (Model Context Protocol) server based on Alibaba Cloud DashScope, providing powerful video content analysis capabilities. 🌟…
 
 # Aigroup Video MCP
 
-Aigroup Video MCP 是一个基于阿里云 DashScope 的视频多模态理解 MCP（Model Context Protocol）服务器，提供强大的视频内容分析功能。
+Aigroup Video MCP is a video multimodal understanding MCP (Model Context Protocol) server based on Alibaba Cloud DashScope, providing powerful video content analysis capabilities.
 
 [![Python](/mcp-assets/d52fa8fd608496fb7cb57d905d36fafc.svg)](https://python.org)
 [![License](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg)](https://github.com/jackdark425/aigroup-video-mcp/blob/HEAD/LICENSE)
 [![MCP](/mcp-assets/5723e6b7b8950ac8c07587ca6cf6e73a.svg)](https://modelcontextprotocol.io)
 
-## 🌟 特性
+## 🌟 Features
 
-- **🎥 视频内容分析**：支持通过 URL 或本地路径分析视频内容
-- **🧠 智能摘要**：自动生成视频摘要和关键信息
-- **🎬 场景识别**：识别视频中的主要场景和场景转换
-- **✨ 自定义提示词**：支持灵活的自定义分析需求
-- **🔌 MCP 协议支持**：完全兼容 MCP 协议，支持 stdio 和 SSE 模式
-- **⚡ 高性能处理**：基于异步处理，支持并发请求
-- **📊 使用统计**：内置使用统计和监控功能
-- **🛡️ 安全配置**：支持域名白名单、文件大小限制等安全特性
+- **🎥 Video Content Analysis**: Supports analyzing video content via URL or local path
+- **🧠 Intelligent Summarization**: Automatically generates video summaries and key information
+- **🎬 Scene Recognition**: Identifies major scenes and scene transitions in the video
+- **✨ Custom Prompts**: Supports flexible custom analysis requirements
+- **🔌 MCP Protocol Support**: Fully compatible with the MCP protocol, supporting stdio and SSE modes
+- **⚡ High-Performance Processing**: Based on asynchronous processing, supports concurrent requests
+- **📊 Usage Statistics**: Built-in usage statistics and monitoring features
+- **🛡️ Security Configuration**: Supports security features such as domain whitelisting and file size limits
 
-## 🎯 核心功能
+## 🎯 Core Functions
 
-### 视频分析工具
+### Video Analysis Tools
 
-- **analyze_video**: 基础视频内容分析
-- **summarize_video**: 视频摘要生成（支持简要、详细、通用三种模式）
-- **analyze_video_scenes**: 视频场景分析和转换检测
-- **analyze_video_custom**: 自定义提示词视频分析
-- **validate_video_source**: 视频源验证和检查
+- **analyze_video**: Basic video content analysis
+- **summarize_video**: Video summary generation (supports brief, detailed, and general modes)
+- **analyze_video_scenes**: Video scene analysis and transition detection
+- **analyze_video_custom**: Custom prompt-based video analysis
+- **validate_video_source**: Video source validation and checks
 
-### 系统资源
+### System Resources
 
-- **config://system**: 系统配置信息
-- **models://available**: 可用模型信息
-- **status://system**: 系统状态和健康检查
-- **stats://usage**: 使用统计和分析报告
+- **config://system**: System configuration information
+- **models://available**: Available model information
+- **status://system**: System status and health checks
+- **stats://usage**: Usage statistics and analysis reports
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Environment Requirements
 
 - Python 3.8+
 - DashScope API Key
 
-### 安装
+### Installation
 
-```bash
-# 克隆项目
+bash
+# Clone the project
 git clone https://github.com/jackdark425/aigroup-video-mcp.git
 cd aigroup-video-mcp
 
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 或使用 pip 安装
+# Or install using pip
 pip install aigroup-video-mcp
-```
 
-### 配置
+### Configuration
 
-1. 复制环境变量示例文件：
+1. Copy the example environment variable file:
 
-```bash
+bash
 cp .env.example .env
-```
 
-2. 编辑 `.env` 文件，设置你的 DashScope API Key：
+2. Edit the `.env` file to set your DashScope API Key:
 
-```bash
+bash
 DASHSCOPE_API_KEY=your_dashscope_api_key_here
-```
 
-3. 或者直接设置环境变量：
+3. Or set the environment variable directly:
 
-```bash
+bash
 export DASHSCOPE_API_KEY=your_dashscope_api_key_here
-```
 
-### 运行服务器
+### Running the Server
 
-#### MCP 模式（默认）
+#### MCP Mode (Default)
 
-```bash
-# 使用 stdio 传输模式（推荐用于 MCP 客户端）
+bash
+# Use stdio transport mode (recommended for MCP clients)
 python -m aigroup_video_mcp.main serve
-```
 
-#### SSE 模式
+#### SSE Mode
 
-```bash
-# 使用 SSE 传输模式（用于 HTTP 客户端）
+bash
+# Use SSE transport mode (for HTTP clients)
 python -m aigroup_video_mcp.main serve --transport sse --host 0.0.0.0 --port 3001
-```
 
-## 📖 使用示例
+## 📖 Usage Examples
 
-### 命令行工具
+### Command Line Tool
 
-#### 分析视频文件
+#### Analyzing a Video File
 
-```bash
-# 基础视频分析
+bash
+# Basic video analysis
 python -m aigroup_video_mcp.main analyze video.mp4
 
-# 使用自定义提示词
-python -m aigroup_video_mcp.main analyze video.mp4 --prompt "请分析视频中的人物动作和表情"
+# Using a custom prompt
+python -m aigroup_video_mcp.main analyze video.mp4 --prompt "Please analyze the characters' actions and expressions in the video"
 
-# 输出为 JSON 格式
+# Output in JSON format
 python -m aigroup_video_mcp.main analyze video.mp4 --format json --save-to result.json
-```
 
-#### 健康检查
+#### Health Check
 
-```bash
-# 检查服务器健康状态
+bash
+# Check server health status
 python -m aigroup_video_mcp.main health
 
-# 查看服务器信息
+# View server information
 python -m aigroup_video_mcp.main info
 
-# 验证配置
+# Validate configuration
 python -m aigroup_video_mcp.main config
-```
 
-### RooCode MCP 客户端集成
+### RooCode MCP Client Integration
 
-如果你正在开发 MCP 客户端，可以通过以下方式集成：
-DASHSCOPE_API_KEY直接在环境变量中设置
-```json
+If you are developing an MCP client, you can integrate it as follows:
+Set `DASHSCOPE_API_KEY` directly in the environment variables.
+json
 {
   "mcpServers": {
     "aigroup-video-mcp": {
@@ -158,103 +150,98 @@ DASHSCOPE_API_KEY直接在环境变量中设置
     }
   }
 }
-```
 
 ### Python API
 
-```python
+python
 import asyncio
 from aigroup_video_mcp.core.analyzer import get_analyzer, create_video_source
 
 async def analyze_video():
-    # 创建分析器
+    # Create an analyzer
     analyzer = get_analyzer(async_mode=True)
     
-    # 创建视频源
+    # Create a video source
     video_source = create_video_source("path/to/video.mp4")
     
-    # 分析视频
+    # Analyze the video
     result = await analyzer.analyze(
         video_source, 
-        "请描述这个视频的主要内容"
+        "Please describe the main content of this video"
     )
     
     if result.success:
         print(result.content)
     else:
-        print(f"分析失败: {result.error}")
+        print(f"Analysis failed: {result.error}")
 
-# 运行
-asyncio.run(analyze_video())
-```
-
-## 🛠️ 工具详细说明
+# Run
+asyncio.run(analyze_video())## 🛠️ Detailed Tool Description
 
 ### analyze_video
 
-基础视频内容分析工具。
+A basic tool for video content analysis.
 
-**参数：**
-- `video_path` (必需): 视频文件路径或 URL
-- `prompt` (可选): 自定义分析提示词
-- `model` (可选): 使用的模型名称
-- `temperature` (可选): 文本生成温度 (0.0-2.0)
-- `max_tokens` (可选): 最大响应 token 数
+**Parameters:**
+- `video_path` (required): Path or URL to the video file
+- `prompt` (optional): Custom prompt for analysis
+- `model` (optional): Name of the model to use
+- `temperature` (optional): Temperature for text generation (0.0-2.0)
+- `max_tokens` (optional): Maximum number of tokens in the response
 
-**示例：**
-```json
+**Example:**
+json
 {
   "video_path": "https://example.com/video.mp4",
-  "prompt": "请分析这个视频的内容，包括主要场景、人物、动作和事件。",
+  "prompt": "Please analyze the content of this video, including main scenes, characters, actions, and events.",
   "temperature": 0.7,
   "max_tokens": 2000
 }
-```
 
 ### summarize_video
 
-视频摘要生成工具。
+A tool for generating video summaries.
 
-**参数：**
-- `video_path` (必需): 视频文件路径或 URL
-- `summary_type` (可选): 摘要类型 (`general`, `detailed`, `brief`)
-- `model` (可选): 使用的模型名称
-- `temperature` (可选): 文本生成温度
-- `max_tokens` (可选): 最大响应 token 数
+**Parameters:**
+- `video_path` (required): Path or URL to the video file
+- `summary_type` (optional): Type of summary (`general`, `detailed`, `brief`)
+- `model` (optional): Name of the model to use
+- `temperature` (optional): Temperature for text generation
+- `max_tokens` (optional): Maximum number of tokens in the response
 
 ### analyze_video_scenes
 
-视频场景分析工具。
+A tool for analyzing video scenes.
 
-**参数：**
-- `video_path` (必需): 视频文件路径或 URL
-- `scene_detection` (可选): 是否检测场景转换
-- `detailed_analysis` (可选): 是否提供详细分析
-- `model` (可选): 使用的模型名称
+**Parameters:**
+- `video_path` (required): Path or URL to the video file
+- `scene_detection` (optional): Whether to detect scene transitions
+- `detailed_analysis` (optional): Whether to provide a detailed analysis
+- `model` (optional): Name of the model to use
 
 ### analyze_video_custom
 
-自定义视频分析工具。
+A customizable tool for video analysis.
 
-**参数：**
-- `video_path` (必需): 视频文件路径或 URL
-- `custom_prompt` (必需): 自定义分析提示词
-- `analysis_focus` (可选): 分析焦点
-- `output_format` (可选): 输出格式
-- `language` (可选): 输出语言
+**Parameters:**
+- `video_path` (required): Path or URL to the video file
+- `custom_prompt` (required): Custom prompt for analysis
+- `analysis_focus` (optional): Focus of the analysis
+- `output_format` (optional): Format of the output
+- `language` (optional): Language of the output
 
 ### validate_video_source
 
-视频源验证工具。
+A tool for validating video sources.
 
-**参数：**
-- `video_path` (必需): 视频文件路径或 URL
-- `check_accessibility` (可选): 是否检查可访问性
-- `check_format` (可选): 是否检查格式兼容性
-- `check_size` (可选): 是否检查文件大小
-- `detailed_info` (可选): 是否返回详细信息
+**Parameters:**
+- `video_path` (required): Path or URL to the video file
+- `check_accessibility` (optional): Whether to check accessibility
+- `check_format` (optional): Whether to check format compatibility
+- `check_size` (optional): Whether to check file size
+- `detailed_info` (optional): Whether to return detailed information
 
-## 📊 支持的视频格式
+## 📊 Supported Video Formats
 
 - MP4
 - AVI
@@ -263,135 +250,131 @@ asyncio.run(analyze_video())
 - WebM
 - FLV
 
-## ⚙️ 配置选项
+## ⚙️ Configuration Options
 
-### 环境变量
+### Environment Variables
 
-| 变量名 | 说明 | 默认值 |
-|--------|------|--------|
-| `DASHSCOPE_API_KEY` | DashScope API 密钥 | *必需* |
-| `VIDEO__MAX_FILE_SIZE` | 最大文件大小（字节） | 104857600 (100MB) |
-| `VIDEO__MAX_DURATION` | 最大视频时长（秒） | 3600 (1小时) |
-| `MCP__MAX_CONCURRENT_REQUESTS` | 最大并发请求数 | 10 |
-| `LOG__LEVEL` | 日志级别 | INFO |
-| `ENVIRONMENT` | 运行环境 | production |
-| `DEBUG` | 调试模式 | false |
+| Variable Name | Description | Default Value |
+|---------------|-------------|---------------|
+| `DASHSCOPE_API_KEY` | DashScope API key | *Required* |
+| `VIDEO__MAX_FILE_SIZE` | Maximum file size (bytes) | 104857600 (100MB) |
+| `VIDEO__MAX_DURATION` | Maximum video duration (seconds) | 3600 (1 hour) |
+| `MCP__MAX_CONCURRENT_REQUESTS` | Maximum number of concurrent requests | 10 |
+| `LOG__LEVEL` | Log level | INFO |
+| `ENVIRONMENT` | Running environment | production |
+| `DEBUG` | Debug mode | false |
 
-### 配置文件
+### Configuration File
 
-项目支持通过 `.env` 文件进行配置。所有环境变量都可以在配置文件中设置。
+The project supports configuration through a `.env` file. All environment variables can be set in the configuration file.
 
-## 🔒 安全特性
+## 🔒 Security Features
 
-- **文件大小限制**：防止过大文件上传
-- **格式验证**：只支持指定的视频格式
-- **域名白名单/黑名单**：控制允许访问的 URL 域名
-- **速率限制**：防止 API 滥用
-- **输入验证**：严格的参数验证
+- **File Size Limitation**: Prevents uploading of overly large files
+- **Format Validation**: Only supports specified video formats
+- **Domain Whitelist/Blacklist**: Controls allowed URL domains
+- **Rate Limiting**: Prevents API abuse
+- **Input Validation**: Strict parameter validation
 
-## 📈 监控和统计
+## 📈 Monitoring and Statistics
 
-服务器内置了使用统计和监控功能：
+The server includes built-in usage statistics and monitoring features:
 
-- **使用统计**：工具和资源的使用频率
-- **性能监控**：响应时间和成功率
-- **健康检查**：系统状态和组件健康
-- **资源监控**：CPU、内存、磁盘使用情况
+- **Usage Statistics**: Frequency of tool and resource usage
+- **Performance Monitoring**: Response time and success rate
+- **Health Checks**: System status and component health
+- **Resource Monitoring**: CPU, memory, and disk usage
 
-访问统计信息：
+Accessing statistics:
 
-```bash
-# 查看使用统计
+bash
+# View usage statistics
 curl http://localhost:3001/resources/stats://usage
 
-# 查看系统状态
+# View system status
 curl http://localhost:3001/resources/status://system
-```
 
-## 🐛 故障排除
+## 🐛 Troubleshooting
 
-### 常见问题
+### Common Issues
 
-1. **API Key 未设置**
-```
+1. **API Key Not Set**
+   
    Error: DashScope API key is required
-```
-   解决方案：设置 `DASHSCOPE_API_KEY` 环境变量
+   
+   Solution: Set the `DASHSCOPE_API_KEY` environment variable
 
-2. **不支持的视频格式**
-```
+2. **Unsupported Video Format**
+   
    Error: Unsupported format: xxx
-```
-   解决方案：转换视频为支持的格式（MP4, AVI, MOV, MKV, WebM, FLV）
+   
+   Solution: Convert the video to a supported format (MP4, AVI, MOV, MKV, WebM, FLV)
 
-3. **文件过大**
-```
+3. **File Too Large**
+   
    Error: File too large
-```
-   解决方案：压缩视频或调整 `VIDEO__MAX_FILE_SIZE` 配置
+   
+   Solution: Compress the video or adjust the `VIDEO__MAX_FILE_SIZE` configuration
 
-4. **网络连接问题**
-```
+4. **Network Connection Issue**
+   
    Error: Failed to connect to DashScope API
-```
-   解决方案：检查网络连接和 API Key 是否正确
+   
+   Solution: Check your network connection and ensure the API Key is correct### Debug Mode
 
-### 调试模式
+Enable debug mode to get more detailed logs:
 
-启用调试模式获取更详细的日志：
-
-```bash
+bash
 python -m aigroup_video_mcp.main --debug serve
-```
 
-## 🤝 贡献
+## 🤝 Contribution
 
-欢迎贡献代码！请遵循以下步骤：
+Contributions are welcome! Please follow these steps:
 
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-该项目使用 MIT 许可证。详情请参阅 [LICENSE](https://github.com/jackdark425/aigroup-video-mcp/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/jackdark425/aigroup-video-mcp/blob/HEAD/LICENSE) file for details.
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [阿里云 DashScope](https://dashscope.aliyun.com/) - 提供强大的多模态 AI 能力
-- [Model Context Protocol](https://modelcontextprotocol.io/) - 提供标准化的模型交互协议
-- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 提供 Python MCP 实现
+- [Alibaba Cloud DashScope](https://dashscope.aliyun.com/) - Provides powerful multimodal AI capabilities
+- [Model Context Protocol](https://modelcontextprotocol.io/) - Provides a standardized model interaction protocol
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Provides the Python implementation of MCP
 
-## 📞 支持
+## 📞 Support
 
-如果你遇到任何问题或有建议，请：
+If you encounter any issues or have suggestions, please:
 
-1. 查看 [常见问题](https://github.com/jackdark425/aigroup-video-mcp/blob/HEAD/README.md#故障排除) 部分
-2. 提交 [Issue](https://github.com/jackdark425/aigroup-video-mcp/issues)
-3. 联系开发团队：jackdark425@gmail.com
+1. Check the [FAQ](https://github.com/jackdark425/aigroup-video-mcp/blob/HEAD/README.md#故障排除) section
+2. Submit an [Issue](https://github.com/jackdark425/aigroup-video-mcp/issues)
+3. Contact the development team: jackdark425@gmail.com
 
 ---
 
 **Made with ❤️ by Aigroup Team**
 
-**官方网站：** [https://github.com/jackdark425/aigroup-video-mcp](https://github.com/jackdark425/aigroup-video-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jackdark425/aigroup-video-mcp](https://github.com/jackdark425/aigroup-video-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m aigroup_video_mcp.main serve`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m aigroup_video_mcp.main serve`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jack666-aigroup-video.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jack666-aigroup-video.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

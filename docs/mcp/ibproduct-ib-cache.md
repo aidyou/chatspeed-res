@@ -1,35 +1,35 @@
 ---
-title: "模型上下文缓存器"
-description: "一种模型上下文协议服务器，通过在语言模型交互之间高效缓存数据来减少令牌消耗，自动存储和检索信息以最小化冗余令牌使用。"
+title: "ib-mcp-cache-server"
+description: "A Model Context Protocol server that reduces token consumption by efficiently caching data between language model interactions, automatically storing and retrieving information to minimize redundant t…"
 ---
 
-# 模型上下文缓存器
+# ib-mcp-cache-server
 
-一种模型上下文协议服务器，通过在语言模型交互之间高效缓存数据来减少令牌消耗，自动存储和检索信息以最小化冗余令牌使用。
+A Model Context Protocol server that reduces token consumption by efficiently caching data between language model interactions, automatically storing and retrieving information to minimize redundant t…
 
-# 内存缓存服务器
+# Memory Cache Server
 
-一个模型上下文协议（MCP）服务器，通过在语言模型交互之间高效地缓存数据来减少令牌消耗。与任何使用令牌的MCP客户端和任何语言模型兼容。
+A Model Context Protocol (MCP) server that reduces token consumption by efficiently caching data between language model interactions. Works with any MCP client and any language model that uses tokens.
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone git@github.com:ibproduct/ib-mcp-cache-server
 cd ib-mcp-cache-server
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-4. 添加到您的MCP客户端设置中：
+4. Add to your MCP client settings:
 ```json
 {
   "mcpServers": {
@@ -41,23 +41,23 @@ npm run build
 }
 ```
 
-5. 当您使用MCP客户端时，服务器将自动启动
+5. The server will automatically start when you use your MCP client
 
-## 验证其工作情况
+## Verifying It Works
 
-当服务器正常运行时，您会看到：
-1. 终端中的消息：“内存缓存MCP服务器正在stdio上运行”
-2. 多次访问相同数据时性能提高
-3. 无需您采取任何行动 - 缓存会自动发生
+When the server is running properly, you'll see:
+1. A message in the terminal: "Memory Cache MCP server running on stdio"
+2. Improved performance when accessing the same data multiple times
+3. No action required from you - the caching happens automatically
 
-您可以按照以下方式验证服务器是否正在运行：
-1. 打开您的MCP客户端
-2. 查看启动服务器的终端中是否有任何错误消息
-3. 执行可以从缓存中受益的操作（如多次读取同一文件）
+You can verify the server is running by:
+1. Opening your MCP client
+2. Looking for any error messages in the terminal where you started the server
+3. Performing operations that would benefit from caching (like reading the same file multiple times)
 
-## 配置
+## Configuration
 
-服务器可以通过`config.json`或环境变量进行配置：
+The server can be configured through `config.json` or environment variables:
 
 ```json
 {
@@ -69,84 +69,82 @@ npm run build
 }
 ```
 
-### 配置设置说明
+### Configuration Settings Explained
 
-1. **maxEntries** (默认: 1000)
-   - 可以存储在缓存中的最大项目数
-   - 防止缓存无限增长
-   - 超过限制时，最旧且未使用的项目将被优先移除
+1. **maxEntries** (default: 1000)
+   - Maximum number of items that can be stored in cache
+   - Prevents cache from growing indefinitely
+   - When exceeded, oldest unused items are removed first
 
-2. **maxMemory** (默认: 100MB)
-   - 最大内存使用量（以字节为单位）
-   - 防止过度消耗内存
-   - 超过限制时，最近最少使用的项目将被移除
+2. **maxMemory** (default: 100MB)
+   - Maximum memory usage in bytes
+   - Prevents excessive memory consumption
+   - When exceeded, least recently used items are removed
 
-3. **defaultTTL** (默认: 1小时)
-   - 默认情况下项目在缓存中停留的时间
-   - 超过此时间后，项目将自动被移除
-   - 防止陈旧数据占用内存
+3. **defaultTTL** (default: 1 hour)
+   - How long items stay in cache by default
+   - Items are automatically removed after this time
+   - Prevents stale data from consuming memory
 
-4. **checkInterval** (默认: 1分钟)
-   - 服务器检查过期项目的频率
-   - 较低的值使内存使用更准确
-   - 较高的值减少CPU使用
+4. **checkInterval** (default: 1 minute)
+   - How often the server checks for expired items
+   - Lower values keep memory usage more accurate
+   - Higher values reduce CPU usage
 
-5. **statsInterval** (默认: 30秒)
-   - 缓存统计信息更新的频率
-   - 影响命中/未命中率的准确性
-   - 帮助监控缓存的有效性
+5. **statsInterval** (default: 30 seconds)
+   - How often cache statistics are updated
+   - Affects accuracy of hit/miss rates
+   - Helps monitor cache effectiveness
 
-## 它如何减少令牌消耗
+## How It Reduces Token Consumption
 
-内存缓存服务器通过自动存储原本需要在您和语言模型之间重新发送的数据来减少令牌消耗。您不需要做任何特别的事情 - 当您通过MCP客户端与任何语言模型交互时，缓存会自动发生。
+The memory cache server reduces token consumption by automatically storing data that would otherwise need to be re-sent between you and the language model. You don't need to do anything special - the caching happens automatically when you interact with any language model through your MCP client.
 
-以下是一些缓存示例：
+Here are some examples of what gets cached:
 
-### 1. 文件内容缓存
-多次读取文件时：
-- 第一次：完整读取文件内容并缓存
-- 后续次数：从缓存中检索内容而不是重新读取文件
-- 结果：重复文件操作使用的令牌更少
+### 1. File Content Caching
+When reading a file multiple times:
+- First time: Full file content is read and cached
+- Subsequent times: Content is retrieved from cache instead of re-reading the file
+- Result: Fewer tokens used for repeated file operations
 
-### 2. 计算结果
-执行计算或分析时：
-- 第一次：执行完整的计算并将结果缓存
-- 后续次数：如果输入相同，则从缓存中检索结果
-- 结果：重复计算使用的令牌更少
+### 2. Computation Results
+When performing calculations or analysis:
+- First time: Full computation is performed and results are cached
+- Subsequent times: Results are retrieved from cache if the input is the same
+- Result: Fewer tokens used for repeated computations
 
-### 3. 常用数据
-频繁访问的数据会被缓存，从而减少令牌消耗。
+### 3. Frequently Accessed Data
+When the same data is needed multiple times:
+- First time: Data is processed and cached
+- Subsequent times: Data is retrieved from cache until TTL expires
+- Result: Fewer tokens used for accessing the same information
 
-当多次需要相同的数据时：
-- 第一次：数据被处理并缓存
-- 随后的几次：从缓存中检索数据，直到TTL过期
-- 结果：访问相同信息时使用的令牌更少
+## Automatic Cache Management
 
-## 自动缓存管理
+The server automatically manages the caching process by:
+- Storing data when first encountered
+- Serving cached data when available
+- Removing old/unused data based on settings
+- Tracking effectiveness through statistics
 
-服务器通过以下方式自动管理缓存过程：
-- 首次遇到数据时存储数据
-- 在可用时提供缓存数据
-- 根据设置移除旧的或未使用的数据
-- 通过统计数据跟踪效果
+## Optimization Tips
 
-## 优化技巧
+### 1. Set Appropriate TTLs
+- Shorter for frequently changing data
+- Longer for static content
 
-### 1. 设置适当的TTL
-- 对于经常变化的数据，TTL应较短
-- 对于静态内容，TTL可以较长
+### 2. Adjust Memory Limits
+- Higher for more caching (more token savings)
+- Lower if memory usage is a concern
 
-### 2. 调整内存限制
-- 更高以增加缓存（节省更多令牌）
-- 如果担心内存使用，则降低
+### 3. Monitor Cache Stats
+- High hit rate = good token savings
+- Low hit rate = adjust TTL or limits
 
-### 3. 监控缓存统计
-- 命中率高 = 令牌节省良好
-- 命中率低 = 调整TTL或限制
+## Environment Variable Configuration
 
-## 环境变量配置
-
-您可以在MCP设置中使用环境变量来覆盖config.json中的设置：
+You can override config.json settings using environment variables in your MCP settings:
 
 ```json
 {
@@ -166,7 +164,7 @@ npm run build
 }
 ```
 
-您还可以指定自定义配置文件的位置：
+You can also specify a custom config file location:
 ```json
 {
   "env": {
@@ -175,51 +173,51 @@ npm run build
 }
 ```
 
-服务器将：
-1. 在其目录中查找config.json
-2. 应用任何环境变量覆盖
-3. 如果两者均未指定，则使用默认值
+The server will:
+1. Look for config.json in its directory
+2. Apply any environment variable overrides
+3. Use default values if neither is specified
 
-## 实践中测试缓存
+## Testing the Cache in Practice
 
-要查看缓存在实际中的工作情况，请尝试以下场景：
+To see the cache in action, try these scenarios:
 
-1. **文件读取测试**
-   - 读取并分析一个大文件
-   - 再次就该文件提出相同的问题
-   - 第二次响应应该更快，因为文件内容已被缓存
+1. **File Reading Test**
+   - Read and analyze a large file
+   - Ask the same question about the file again
+   - The second response should be faster as the file content is cached
 
-2. **数据分析测试**
-   - 对某些数据进行分析
-   - 再次请求相同的分析
-   - 第二次分析应使用缓存的结果
+2. **Data Analysis Test**
+   - Perform analysis on some data
+   - Request the same analysis again
+   - The second analysis should use cached results
 
-3. **项目导航测试**
-   - 探索项目的结构
-   - 再次查询相同的文件/目录
-   - 目录列表和文件内容将从缓存中提供
+3. **Project Navigation Test**
+   - Explore a project's structure
+   - Query the same files/directories again
+   - Directory listings and file contents will be served from cache
 
-当您注意到以下情况时，表示缓存正在工作：
-- 重复操作的响应更快
-- 关于不变内容的回答一致
-- 不需要重新读取未更改的文件
+The cache is working when you notice:
+- Faster responses for repeated operations
+- Consistent answers about unchanged content
+- No need to re-read files that haven't changed
 
-**官方网站：** [https://github.com/ibproduct/ib-mcp-cache-server](https://github.com/ibproduct/ib-mcp-cache-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ibproduct/ib-mcp-cache-server](https://github.com/ibproduct/ib-mcp-cache-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `developer tools`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/ib-mcp-cache-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/ib-mcp-cache-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ibproduct-ib-cache.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ibproduct-ib-cache.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

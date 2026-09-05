@@ -1,11 +1,11 @@
 ---
 title: "Octopus Deploy MCP"
-description: "Octopus Deploy Official MCP Server Octopus makes it easy to deliver software to Kubernetes, multi-cloud, on-prem infrastructure, and anywhere else. Automate the release, deployment, and operations of your software and AI"
+description: "Octopus Deploy Official MCP Server Octopus makes it easy to deliver software to Kubernetes, multi-cloud, on-prem infrastructure, and anywhere else. Automate the release, deployment, and operations of…"
 ---
 
 # Octopus Deploy MCP
 
-Octopus Deploy Official MCP Server Octopus makes it easy to deliver software to Kubernetes, multi-cloud, on-prem infrastructure, and anywhere else. Automate the release, deployment, and operations of your software and AI
+Octopus Deploy Official MCP Server Octopus makes it easy to deliver software to Kubernetes, multi-cloud, on-prem infrastructure, and anywhere else. Automate the release, deployment, and operations of…
 
 # Octopus Deploy Official MCP Server
 
@@ -378,22 +378,22 @@ There is intentionally no `/log` resource: activity logs can be multi-megabyte, 
 - `find_feature_toggles`: List customer feature toggles in a project. Each summary includes per-environment state (`isEnabled`, `rolloutPercentage`, `clientRolloutPercentage`) plus a `resourceUri` so "where is X turned on" is answerable from the list response.
 - `update_feature_toggle`: Adjust an existing toggle. Narrow surface — flip an environment on/off, change ro
 
-**官方网站：** [https://github.com/octopusdeploy/mcp-server](https://github.com/octopusdeploy/mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/octopusdeploy/mcp-server](https://github.com/octopusdeploy/mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `octopus deploy`, `devops`, `deployment`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `octopus deploy`, `devops`, `deployment`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @octopusdeploy/mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @octopusdeploy/mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/octopusdeploy-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/octopusdeploy-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

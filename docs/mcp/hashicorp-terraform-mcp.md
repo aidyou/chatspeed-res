@@ -1,11 +1,11 @@
 ---
-title: "Terraform MCP 服务器（HashiCorp）"
-description: "Terraform MCP Server The Terraform MCP Server is a Model Context Protocol (MCP) server that integrates seamlessly with Terraform Registry and HCP Terraform APIs, enabling advanced automation and interaction capabilities "
+title: "Terraform MCP Server (HashiCorp)"
+description: "Terraform MCP Server The Terraform MCP Server is a Model Context Protocol (MCP) server that integrates seamlessly with Terraform Registry and HCP Terraform APIs, enabling advanced automation and inter…"
 ---
 
-# Terraform MCP 服务器（HashiCorp）
+# Terraform MCP Server (HashiCorp)
 
-Terraform MCP Server The Terraform MCP Server is a Model Context Protocol (MCP) server that integrates seamlessly with Terraform Registry and HCP Terraform APIs, enabling advanced automation and interaction capabilities 
+Terraform MCP Server The Terraform MCP Server is a Model Context Protocol (MCP) server that integrates seamlessly with Terraform Registry and HCP Terraform APIs, enabling advanced automation and inter…
 
 # 
  Terraform MCP Server
@@ -661,22 +661,22 @@ When running the MCP server centrally (StreamableHTTP mode) for multiple users, 
 
 When `MCP_ORGANIZATION_ALLOWLIST` or `--organization-allowlist` is conf
 
-**官方网站：** [https://github.com/hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `terraform`, `hashicorp`, `iac`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `terraform`, `hashicorp`, `iac`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm -v ${PWD}:/workdir ghcr.io/hashicorp/terraform-mcp-server`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm -v ${PWD}:/workdir ghcr.io/hashicorp/terraform-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hashicorp-terraform-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hashicorp-terraform-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

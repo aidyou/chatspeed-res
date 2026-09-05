@@ -1,87 +1,79 @@
 ---
-title: "原型设计助手"
-description: "可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。 工具能力： - 提供导航栏。 - 将标记与原型解耦。 - 支持页面附加说明。 AI 提示词建议 在原型设计前： 要求： 请按原型工具规范进行原型设计。 需求：abcd... 使用过程中，如想展示原型，直接输入： 展示原型 原型展示会启动一个后台，所以不需要多次输入指令，否则会启动多个实例。 如想关闭，可输入： 停止展示 或 关闭原型 使用规范 - 导航栏： - 层级定义：与原型所在文件系统的目录结构"
+title: "prototype_assistant"
+description: "An MCP tool that allows AI to perform prototyping directly based on HTML, enabling quick software prototype construction even without tools like Figma or Axure. Tool Capabilities: - Provides a navigat…"
 ---
 
-# 原型设计助手
+# prototype_assistant
 
-可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。 工具能力： - 提供导航栏。 - 将标记与原型解耦。 - 支持页面附加说明。 AI 提示词建议 在原型设计前： 要求： 请按原型工具规范进行原型设计。 需求：abcd... 使用过程中，如想展示原型，直接输入： 展示原型 原型展示会启动一个后台，所以不需要多次输入指令，否则会启动多个实例。 如想关闭，可输入： 停止展示 或 关闭原型 使用规范 - 导航栏： - 层级定义：与原型所在文件系统的目录结构
+An MCP tool that allows AI to perform prototyping directly based on HTML, enabling quick software prototype construction even without tools like Figma or Axure. Tool Capabilities: - Provides a navigat…
 
-可以让 AI 基于HTML直接进行原型设计的 MCP 工具，即使没有 figma、axure也可以快速构建软件原型。
+An MCP tool that allows AI to perform prototyping directly based on HTML, enabling quick software prototype construction even without tools like Figma or Axure.
 
-工具能力：
+Tool Capabilities:
 
-- 提供导航栏。
+- Provides a navigation bar.
+- Decouples markup from the prototype.
+- Supports additional page annotations.
 
-- 将标记与原型解耦。
+## AI Prompt Suggestions
 
-- 支持页面附加说明。
+Before prototyping:
 
+> Requirements:
 
-## AI 提示词建议
+> Please follow the prototype tool specifications for design.
 
-在原型设计前：
+> Needs: abcd...
 
-> 要求：
+During use, if you want to display the prototype, simply enter:
 
-> 请按原型工具规范进行原型设计。
+> Show Prototype
 
-> 需求：abcd...
+Prototype display will start a background process, so **there's no need to input the command multiple times**, as it would start multiple instances.
 
-使用过程中，如想展示原型，直接输入：
+To stop, you can enter:
 
-> 展示原型
+> Stop Display
 
-原型展示会启动一个后台，所以**不需要多次输入指令**，否则会启动多个实例。
+or
 
-如想关闭，可输入：
+> Close Prototype
 
-> 停止展示
+## Usage Guidelines
 
-或
+- Navigation Bar:
+  - Hierarchy Definition: Corresponds one-to-one with the directory structure of the file system where the prototype is located.
+  - Prototype Name: Derived from the `data-nav-name` data attribute value of the prototype page tag; if omitted, the filename is used.
 
-> 关闭原型
+- Function Injection: MCP-Prototype injects the following into each HTML page:
+  - Tags, pay attention to the correctness of the "reference" path.
+  - The `mcp-prototype-inject.js` file, used for displaying markers.
 
-## 使用规范
+- Markers: Enhance the user's understanding of UI elements by setting the `data-marker` data attribute. This is optional. If the meaning of related UI elements is already very clear, it is not recommended to configure this.
 
-- 导航栏：
+Additional page annotations are used to express content that cannot be conveyed through the prototype pages, such as design philosophy, element drag-and-drop, precautions, etc. The format is markdown, and the filename should be in the form [prototype page filename].annotation.md.
 
-  - 层级定义：与原型所在文件系统的目录结构一一对应。
+For specific references, see the `src\mcp\tool\getSpec.ts` file.
 
-  - 原型名称：来源于原型页面标签的 data-nav-name 数据属性值，如省略则使用文件名。
+Tech Stack
+nodejs, SvelteKit, Vite, ts
 
-- 功能注入，MCP-Prototype 会为每个 HTML 页面注入：
+**Official site: ** [https://github.com/llxxbb/mcp-prototype](https://github.com/llxxbb/mcp-prototype)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-  - 标签，注意"引用"路径的正确性。
-  - mcp-prototype-inject.js 文件，用于展示标记。
+## Categories & Tags
 
-- 标记：通过设置 UI 元素的 data-marker 数据属性来增强使用者对UI元素的理解，可选。如相关界面元素的意义已经非常明显，则不建议配置。
+- Categories: `media`
+- Tags: `developer tools`, `art and culture`, `原型`, `html`, `导航`, `标注`, `标记`, `附加说明`, `设计`, `chinese`
 
-                     
+## MCP Configuration
 
-页面的附加说明，用于表达原型页面无法表达的内容，如设计理念，元素拖拽，注意事项等。markdown 格式，文件名格式为[原型页面文件名].annotation.md
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @llxxbb/mcp-prototype`
 
-具体参考：src\mcp\tool\getSpec.ts 文件
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-技术栈
-nodejs, SvelteKit, Vite，ts
+## Data source
 
-**官方网站：** [https://github.com/llxxbb/mcp-prototype](https://github.com/llxxbb/mcp-prototype)
-**状态：** `active`　**最后核验：** `2026-08-30`
-
-## 分类与标签
-
-- 分类：`media`
-- 标签：`developer tools`, `art and culture`, `原型`, `html`, `导航`, `标注`, `标记`, `附加说明`, `设计`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @llxxbb/mcp-prototype`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/llxxbb-prototype-assistant.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/llxxbb-prototype-assistant.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

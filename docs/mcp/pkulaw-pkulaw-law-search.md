@@ -1,61 +1,59 @@
 ---
-title: "北大法宝法律智能检索MCP服务"
-description: "这是[北大法宝](https://www.pkulaw.com/)提供的用于法律法规智能检索的MCP服务。使用文本嵌入，进行语义检索。"
+title: "pkulaw-mcp-law-search"
+description: "This is the MCP service provided by 北大法宝 for intelligent retrieval of laws and regulations. It uses text embedding for semantic retrieval."
 ---
 
-# 北大法宝法律智能检索MCP服务
+# pkulaw-mcp-law-search
 
-这是[北大法宝](https://www.pkulaw.com/)提供的用于法律法规智能检索的MCP服务。使用文本嵌入，进行语义检索。
+This is the MCP service provided by 北大法宝 for intelligent retrieval of laws and regulations. It uses text embedding for semantic retrieval.
 
-# 北大法宝法律智能检索MCP服务
+# Peking University Fabao Legal Intelligent Retrieval MCP Service
 
-这是[北大法宝](https://www.pkulaw.com/)提供的用于法律法规智能检索的MCP服务。
+This is the MCP service provided by [Peking University Fabao](https://www.pkulaw.com/) for intelligent retrieval of laws and regulations.
 
-标签：搜索工具
+Tags: Search Tool
 
-北大法宝——让法律更智能。
+Peking University Fabao – Making law smarter.
 
+## Tools
 
-## 工具
+The legal intelligent retrieval MCP service provides the following tools:
+- `get_article`: Retrieves the content of a legal article and its full name of the regulation through text containing the name of the regulation and the article number.
+- `search_article`: Retrieves matching legal article contents and corresponding regulation names by performing semantic search on the text.
 
-法律法规智能检索MCP服务提供了如下工具：
-- `get_article`: 通过包含法规名称和法条条号的文本，获取法条内容和对应的法规全称
-- `search_article`: 通过对文本进行语义检索，获取匹配的法条内容和对应的法规名称
+## MCP Client Usage
 
+On the right side of the current page, under [Service Configuration Information], select [Streamable HTTP] or [sse], choose "No Authentication" for [Authentication Type], select the [Validity Period], and click [Connect] to generate the service configuration.
 
-## MCP客户端使用
+In the MCP client (e.g., CherryStudio), use the generated configuration to add the legal intelligent retrieval MCP service.
 
-当前页面右侧的【服务配置信息】，选择【Streamable HTTP】或【sse】，【鉴权类型】选择“无鉴权”，选择【有效期】，点击【连接】，生成服务配置。
+In the toolbar of the large model conversation, first enable the intelligent retrieval MCP service, then input something similar to the following to call the MCP service to complete the response:
+- Please provide the exact content of Article 7 of the Civil Procedure Law without any modifications.
+- What is the definition of dangerous goods in the law?
 
-在MCP客户端（比如CherryStudio）里，使用生成的配置添加法律法规智能检索MCP服务。
+If the MCP client does not call the MCP service, add the prompt "Please use the tool to answer" at the beginning of the input:
+- Please use the tool to answer, what is the definition of dangerous goods in the law?
 
-在大模型对话的工具栏，首先启用智能检索MCP服务，然后输入类似以下的内容，调用MCP服务完成回答：
-- 请给出的《民事诉讼法》第7条的具体内容，不要做任何修改。
-- 法律中关于危险货物的定义是什么？
+## Contact
 
-如果MCP客户端没有调用MCP服务，在输入开头加入“请使用工具回答”提示使用：
-- 请使用工具回答，法律中关于危险货物的定义是什么？
+For any questions, please contact: .
 
-## 联系
+**Official site: ** [https://pypi.org/project/pkulaw-mcp-proxy/@latest](https://pypi.org/project/pkulaw-mcp-proxy/@latest)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-有问题请联系: .
+## Categories & Tags
 
-**官方网站：** [https://pypi.org/project/pkulaw-mcp-proxy/@latest](https://pypi.org/project/pkulaw-mcp-proxy/@latest)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## 分类与标签
+## MCP Configuration
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `pkulaw-mcp-proxy --name pkulaw-mcp-law-search --backend-url https://apim-gateway.pkulaw.com/mcp-law-search-service --backend-token c5d14fd3-1c46-3bba-9fa7-64be73cc97ad`
 
-## MCP 配置
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`pkulaw-mcp-proxy --name pkulaw-mcp-law-search --backend-url https://apim-gateway.pkulaw.com/mcp-law-search-service --backend-token c5d14fd3-1c46-3bba-9fa7-64be73cc97ad`
+## Data source
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/pkulaw-pkulaw-law-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/pkulaw-pkulaw-law-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

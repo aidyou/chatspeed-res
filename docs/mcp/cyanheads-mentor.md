@@ -1,11 +1,11 @@
 ---
-title: "智码师"
-description: "通过Deepseek API为大型语言模型代理提供人工智能驱动的代码审查、设计评论、写作反馈和头脑风暴指导，从而在各种开发和战略规划任务中提升输出效果。"
+title: "mentor-mcp-server"
+description: "Provides LLM Agents with AI-powered mentorship for code review, design critique, writing feedback, and brainstorming using the Deepseek API, enabling enhanced output in various development and strateg…"
 ---
 
-# 智码师
+# mentor-mcp-server
 
-通过Deepseek API为大型语言模型代理提供人工智能驱动的代码审查、设计评论、写作反馈和头脑风暴指导，从而在各种开发和战略规划任务中提升输出效果。
+Provides LLM Agents with AI-powered mentorship for code review, design critique, writing feedback, and brainstorming using the Deepseek API, enabling enhanced output in various development and strateg…
 
 # mentor-mcp-server
 
@@ -16,58 +16,58 @@ description: "通过Deepseek API为大型语言模型代理提供人工智能驱
 [![Status](/mcp-assets/9a22554be918edafcc71c8bd0058366d.svg)]()
 [![GitHub](/mcp-assets/fe6113458dd9b6cc2f99e34f47b5a356.svg)](https://github.com/cyanheads/mentor-mcp-server)
 
-一个 Model Context Protocol 服务器，通过 AI 驱动的 Deepseek-Reasoning (R1) 导师功能为 LLM 代理提供第二意见，包括代码审查、设计批评、写作反馈和创意头脑风暴等功能。通过 Deepseek API，让您的 LLM 代理获得专家级的第二意见和可操作的见解。
+A Model Context Protocol server providing LLM Agents a second opinion via AI-powered Deepseek-Reasoning (R1) mentorship capabilities, including code review, design critique, writing feedback, and idea brainstorming through the Deepseek API. Set your LLM Agent up for success with expert second opinions and actionable insights.
 
 ## Model Context Protocol
 
-Model Context Protocol (MCP) 支持以下实体之间的通信：
+The Model Context Protocol (MCP) enables communication between:
 
-- **客户端**：Claude Desktop、IDEs 和其他兼容 MCP 的客户端
-- **服务器**：用于任务管理和自动化的工具和资源
-- **LLM 代理**：利用服务器能力的 AI 模型
+- **Clients**: Claude Desktop, IDEs, and other MCP-compatible clients
+- **Servers**: Tools and resources for task management and automation
+- **LLM Agents**: AI models that leverage the server's capabilities
 
-## 目录
+## Table of Contents
 
-- [特性](#特性)
-- [安装](#安装)
-- [配置](#配置)
-- [工具](#工具)
-- [示例](#示例)
-- [开发](#开发)
-- [项目结构](#项目结构)
-- [许可证](#许可证)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Tools](#tools)
+- [Examples](#examples)
+- [Development](#development)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-## 特性
+## Features
 
-### 代码分析
-- 全面的代码审查
-- 错误检测与预防
-- 代码风格和最佳实践评估
-- 性能优化建议
-- 安全漏洞评估
+### Code Analysis
+- Comprehensive code reviews
+- Bug detection and prevention
+- Style and best practices evaluation
+- Performance optimization suggestions
+- Security vulnerability assessment
 
-### 设计与架构
-- UI/UX 设计批评
-- 架构图分析
-- 设计模式推荐
-- 可访问性评估
-- 一致性检查
+### Design & Architecture
+- UI/UX design critiques
+- Architectural diagram analysis
+- Design pattern recommendations
+- Accessibility evaluation
+- Consistency checks
 
-### 内容增强
-- 写作反馈与改进
-- 语法和风格分析
-- 文档审查
-- 内容清晰度评估
-- 结构性建议
+### Content Enhancement
+- Writing feedback and improvement
+- Grammar and style analysis
+- Documentation review
+- Content clarity assessment
+- Structural recommendations
 
-### 战略规划
-- 功能增强头脑风暴
-- 方法上的第二意见
-- 创新建议
-- 可行性分析
-- 用户价值评估
+### Strategic Planning
+- Feature enhancement brainstorming
+- Second opinions on approaches
+- Innovation suggestions
+- Feasibility analysis
+- User value assessment
 
-## 安装
+## Installation
 
 ```bash
 # Clone the repository
@@ -81,9 +81,9 @@ npm install
 npm run build
 ```
 
-## 配置
+## Configuration
 
-在您的 MCP 客户端设置中添加：
+Add to your MCP client settings:
 
 ```json
 {
@@ -103,19 +103,19 @@ npm run build
 }
 ```
 
-### 环境变量
+### Environment Variables
 
-| 变量 | 是否必需 | 默认值 | 描述 |
+| Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| DEEPSEEK_API_KEY | 是 | - | 您的 Deepseek API 密钥 |
-| DEEPSEEK_MODEL | 是 | deepseek-reasoner | Deepseek 模型名称 |
-| DEEPSEEK_MAX_TOKENS | 否 | 8192 | 每次请求的最大令牌数 |
-| DEEPSEEK_MAX_RETRIES | 否 | 3 | 重试次数 |
-| DEEPSEEK_TIMEOUT | 否 | 30000 | 请求超时时间（毫秒） |
+| DEEPSEEK_API_KEY | Yes | - | Your Deepseek API key |
+| DEEPSEEK_MODEL | Yes | deepseek-reasoner | Deepseek model name |
+| DEEPSEEK_MAX_TOKENS | No | 8192 | Maximum tokens per request |
+| DEEPSEEK_MAX_RETRIES | No | 3 | Number of retry attempts |
+| DEEPSEEK_TIMEOUT | No | 30000 | Request timeout (ms) |
 
-## 工具
+## Tools
 
-### 代码审查
+### Code Review
 ```xml
 
 mentor-mcp-server
@@ -128,7 +128,7 @@ code_review
 
 ```
 
-### 设计批评
+### Design Critique
 ```xml
 
 mentor-mcp-server
@@ -141,7 +141,7 @@ design_critique
 
 ```
 
-### 写作反馈
+### Writing Feedback
 ```xml
 
 mentor-mcp-server
@@ -154,7 +154,7 @@ writing_feedback
 
 ```
 
-### 功能增强
+### Feature Enhancement
 ```xml
 
 mentor-mcp-server
@@ -166,19 +166,19 @@ brainstorm_enhancements
 
 ```
 
-## 示例
+## Examples
 
-每个工具的使用方法和输出详细示例可以在 [examples](https://github.com/cyanheads/mentor-mcp-server/tree/HEAD/examples) 目录中找到：
+Detailed examples of each tool's usage and output can be found in the [examples](https://github.com/cyanheads/mentor-mcp-server/tree/HEAD/examples) directory:
 
-- [第二意见示例](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/second-opinion.md) - 认证系统需求分析
-- [代码审查示例](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/code-review.md) - 详细的 TypeScript 代码审查，包含安全性和性能方面的见解
-- [设计评论示例](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/design-critique.md) - 仪表板设计的全面 UI/UX 反馈
-- [写作反馈示例](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/writing-feedback.md) - 文档改进建议
-- [头脑风暴增强示例](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/brainstorm-enhancements.md) - 功能构思及实现细节
+- [Second Opinion Example](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/second-opinion.md) - Analysis of authentication system requirements
+- [Code Review Example](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/code-review.md) - Detailed TypeScript code review with security and performance insights
+- [Design Critique Example](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/design-critique.md) - Comprehensive UI/UX feedback for a dashboard design
+- [Writing Feedback Example](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/writing-feedback.md) - Documentation improvement suggestions
+- [Brainstorm Enhancements Example](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/examples/brainstorm-enhancements.md) - Feature ideation with implementation details
 
-每个示例都包括请求格式和示例响应，展示了工具的功能和输出结构。
+Each example includes the request format and sample response, demonstrating the tool's capabilities and output structure.
 
-## 开发
+## Development
 
 ```bash
 # Build TypeScript code
@@ -194,7 +194,7 @@ npm run dev
 npm run clean
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 src/
@@ -212,30 +212,30 @@ src/
 └── server.ts    # Main server implementation
 ```
 
-## 许可证
+## License
 
-Apache License 2.0。有关更多信息，请参阅 [LICENSE](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/LICENSE)。
+Apache License 2.0. See [LICENSE](https://github.com/cyanheads/mentor-mcp-server/blob/HEAD/LICENSE) for more information.
 
 ---
 
-使用模型上下文协议构建
+Built with the Model Context Protocol
 
-**官方网站：** [https://github.com/cyanheads/mentor-mcp-server](https://github.com/cyanheads/mentor-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cyanheads/mentor-mcp-server](https://github.com/cyanheads/mentor-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`developer tools`, `research and data`, `cloud platforms`, `chinese`
+- Categories: `data`
+- Tags: `developer tools`, `research and data`, `cloud platforms`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cyanheads-mentor.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cyanheads-mentor.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

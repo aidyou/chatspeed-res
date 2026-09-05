@@ -1,82 +1,82 @@
 ---
-title: "反虚假信息 MCP 服务器"
-description: "启用对主张的分析、来源的验证以及使用多种认识论框架来检测操纵，以确保信息的可信度和道德性。"
+title: "anti-bullshit-mcp-server"
+description: "Enables analysis of claims, validation of sources, and detection of manipulation using multiple epistemological frameworks to ensure credible and ethical information."
 ---
 
-# 反虚假信息 MCP 服务器
+# anti-bullshit-mcp-server
 
-启用对主张的分析、来源的验证以及使用多种认识论框架来检测操纵，以确保信息的可信度和道德性。
+Enables analysis of claims, validation of sources, and detection of manipulation using multiple epistemological frameworks to ensure credible and ethical information.
 
-# 反废话 MCP 服务器
+# Anti-Bullshit MCP Server
 
-一个用于分析声明、验证来源和使用多种认识论框架检测操纵的模型上下文协议服务器。
+A Model Context Protocol server for analyzing claims, validating sources, and detecting manipulation using multiple epistemological frameworks.
 
-## 功能
+## Features
 
-该服务器提供了三种主要工具，用于检测和分析废话：
+The server provides three main tools for detecting and analyzing bullshit:
 
 ### 1. analyze_claim
-使用多种认识论框架分析声明：
+Analyzes claims using multiple epistemological frameworks:
 
-- **经验框架**
-  - 关注可验证的证据
-  - 评估可重复的结果
-  - 交叉引用学术和科学资源
-  - 评估方法严谨性
+- **Empirical Framework**
+  - Focuses on verifiable evidence
+  - Evaluates reproducible results
+  - Cross-references academic and scientific sources
+  - Assesses methodological rigor
 
-- **责任框架**
-  - 评估道德影响
-  - 评估社区影响
-  - 考虑传统知识
-  - 验证来源可信度
+- **Responsible Framework**
+  - Evaluates ethical implications
+  - Assesses community impact
+  - Considers traditional knowledge
+  - Validates source credibility
 
-- **和谐框架**
-  - 评估与已建立知识的一致性
-  - 整合多种视角
-  - 考虑情境适当性
-  - 评估系统影响
+- **Harmonic Framework**
+  - Assesses coherence with established knowledge
+  - Integrates multiple perspectives
+  - Considers contextual appropriateness
+  - Evaluates systemic implications
 
-- **多元框架**
-  - 结合所有其他框架
-  - 考虑多种认知方式
-  - 评估情境适当性
-  - 评估实际结果
-  - 检查与社区价值观的一致性
+- **Pluralistic Framework**
+  - Combines all other frameworks
+  - Considers multiple ways of knowing
+  - Evaluates contextual appropriateness
+  - Assesses practical outcomes
+  - Checks alignment with community values
 
 ### 2. validate_sources
-- 提取并分析引用的来源
-- 验证可信度和权威性
-- 在多个平台上交叉引用
-- 评估方法合理性
-- 检查利益冲突
+- Extracts and analyzes cited sources
+- Validates credibility and authority
+- Cross-references across multiple platforms
+- Evaluates methodological soundness
+- Checks for conflicts of interest
 
 ### 3. check_manipulation
-检测操纵策略，包括：
-- 情感操纵
-- 社会压力
-- 假权威
-- 人为稀缺
-- 制造紧迫感
+Detects manipulation tactics including:
+- Emotional manipulation
+- Social pressure
+- false authority
+- Artificial scarcity
+- Urgency creation
 
-## 安装
+## Installation
 
-### 先决条件
+### Prerequisites
 - Node.js >= 18.0.0
-- npm 或 yarn
+- npm or yarn
 
-### 设置
+### Setup
 
-1. 安装依赖项：
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. 构建服务器：
+2. Build the server:
 ```bash
 npm run build
 ```
 
-3. 添加到 Claude Desktop (MacOS)：
+3. Add to Claude Desktop (MacOS):
 ```json
 {
   "mcpServers": {
@@ -88,12 +88,12 @@ npm run build
 }
 ```
 
-路径：`~/Library/Application Support/Claude/claude_desktop_config.json`
+Path: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-或者对于 VSCode 扩展：
-路径：`~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
+Or for VSCode extension:
+Path: `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
 
-## 使用示例
+## Usage Examples
 
 ```typescript
 // Analyze a claim
@@ -114,54 +114,54 @@ const check = await check_manipulation({
 });
 ```
 
-## 开发
+## Development
 
-开发时自动重建：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-使用 MCP Inspector 调试：
+Debug with MCP Inspector:
 ```bash
 npm run inspector
 ```
 
-## 测试时间线
+## Testing Timeline
 
-服务器使用 2025-01-01 作为声明的时间分析参考日期（特别是对 Goodman 的“grue”悖论和其他类似的哲学难题相关）。
+The server uses 2025-01-01 as the reference date for temporal analysis of claims (particularly relevant for Goodman's "grue" paradox and similar philosophical puzzles).
 
-## 许可证
+## License
 
 MIT
 
-## 作者
+## Author
 
 Teglon Labs (teglon@vibes.lol)
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -am 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -am 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**官方网站：** [https://github.com/bmorphism/anti-bullshit-mcp-server](https://github.com/bmorphism/anti-bullshit-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/bmorphism/anti-bullshit-mcp-server](https://github.com/bmorphism/anti-bullshit-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `security and iam`, `other`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `security and iam`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/anti-bullshit-mcp-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/anti-bullshit-mcp-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/bmorphism-anti-bullshit.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/bmorphism-anti-bullshit.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,54 +1,54 @@
 ---
-title: "NASA-MCP服务器"
-description: "一种模型上下文协议服务器，为人工智能模型提供标准化接口，以与NASA的大量数据源进行交互，包括每日天文图片（APOD）、火星漫游车照片、卫星图像和太空天气数据。"
+title: "NASA-MCP-server"
+description: "A Model Context Protocol server that provides a standardized interface for AI models to interact with NASA's vast array of data sources including APOD, Mars Rover photos, satellite imagery, and space…"
 ---
 
-# NASA-MCP服务器
+# NASA-MCP-server
 
-一种模型上下文协议服务器，为人工智能模型提供标准化接口，以与NASA的大量数据源进行交互，包括每日天文图片（APOD）、火星漫游车照片、卫星图像和太空天气数据。
+A Model Context Protocol server that provides a standardized interface for AI models to interact with NASA's vast array of data sources including APOD, Mars Rover photos, satellite imagery, and space…
 
-# NASA MCP 服务器
+# NASA MCP Server
 
-这是一个为NASA API设计的模型上下文协议（MCP）服务器，提供了标准化接口以便AI模型能够与NASA庞大的数据源进行交互。该服务器实现了官方的模型上下文协议规范。
+A Model Context Protocol (MCP) server for NASA APIs, providing a standardized interface for AI models to interact with NASA's vast array of data sources. This server implements the official Model Context Protocol specification.
 
-特别感谢MCP社区的支持和指导！
+Big thanks to the MCP community for their support and guidance!
 
-## 特性
+## Features
 
-* 通过单一、一致的接口访问20多个NASA数据源
-* 针对AI消费优化的标准数据格式
-* 自动参数验证和错误处理
-* NASA API密钥的速率限制管理
-* 全面的文档和示例
-* 支持多种NASA图像格式
-* 为LLM兼容性进行的数据转换和格式化
-* 跨平台支持（Windows, macOS, Linux）
+* Access to 20+ NASA data sources through a single, consistent interface
+* Standardized data formats optimized for AI consumption
+* Automatic parameter validation and error handling
+* Rate limit management for NASA API keys
+* Comprehensive documentation and examples
+* Support for various NASA imagery formats
+* Data conversion and formatting for LLM compatibility
+* Cross-platform support (Windows, macOS, Linux)
 
-## 免责声明
+## Disclaimer
 
-**此项目与美国国家航空航天局（NASA）或其子公司及其附属机构无关，也未得到它们的认可或关联。** 这是一个独立实现，用于访问NASA公开可用的API。所使用的全部NASA数据都是公开可获取的，并受NASA数据使用政策约束。
+**This project is not affiliated with, endorsed by, or related to NASA (National Aeronautics and Space Administration) or any of its subsidiaries or its affiliates.** It is an independent implementation that accesses NASA's publicly available APIs. All NASA data used is publicly available and subject to NASA's data usage policies.
 
-## 安装
+## Installation
 
-### 使用 npx 运行
+### Running with npx
 
 ```bash
 env NASA_API_KEY=YOUR_API_KEY npx -y @programcomputer/nasa-mcp-server
 ```
 
-您也可以将API密钥作为命令行参数传递：
+You can also pass the API key as a command line argument:
 
 ```bash
 npx -y @programcomputer/nasa-mcp-server --nasa-api-key=YOUR_API_KEY
 ```
 
-### 使用 SuperGateway 实现服务器发送事件 (SSE)
+### Using SuperGateway for Server-Sent Events (SSE)
 
-您可以使用[SuperGateway](https://github.com/supercorp-ai/supergateway)来实现服务器发送事件(SSE)。
+You can use [SuperGateway](https://github.com/supercorp-ai/supergateway) for Server-Sent Events (SSE).
 
-**NASA-MCP-server 的开发者不推荐 SuperGateway 仓库。提供此信息是为了让那些希望自行决定实现SSE功能的人参考。**
+**The developers of NASA-MCP-server DO NOT ENDORSE the SuperGateway repository. This information is provided for those who wish to implement SSE functionality at their own discretion.**
 
-### 手动安装
+### Manual Installation
 
 ```bash
 # Clone the repository
@@ -62,13 +62,13 @@ npm install
 NASA_API_KEY=YOUR_API_KEY npm start
 ```
 
-### 在 Cursor 上运行
+### Running on Cursor
 
-配置 Cursor 🖥️ 注意：需要Cursor版本0.45.6+。
+Configuring Cursor 🖥️ Note: Requires Cursor version 0.45.6+
 
-要在Cursor中配置NASA MCP Server:
+To configure NASA MCP Server in Cursor:
 
-在您的Cursor配置目录中创建或编辑一个 `mcp.json` 文件，内容如下：
+Create or edit an `mcp.json` file in your Cursor configuration directory with the following content:
 
 ```json
 {
@@ -84,57 +84,57 @@ NASA_API_KEY=YOUR_API_KEY npm start
 }
 ```
 
-将 `your-api-key` 替换为您从 [https://api.nasa.gov/](https://api.nasa.gov/) 获取的NASA API密钥。
+Replace `your-api-key` with your NASA API key from https://api.nasa.gov/.
 
-添加配置后，重启Cursor以查看新的NASA工具。作曲家代理将在适当的情况下自动使用NASA MCP处理与空间相关的查询。
+After adding the configuration, restart Cursor to see the new NASA tools. The Composer Agent will automatically use NASA MCP when appropriate for space-related queries.
 
-## 环境变量
+## Environment Variables
 
-可以通过以下环境变量配置服务器：
+The server can be configured with the following environment variables:
 
-| 变量 | 描述 | 默认值 |
+| Variable | Description | Default |
 |----------|-------------|---------|
-| `NASA_API_KEY` | 您的NASA API密钥（在 api.nasa.gov 获取） | `DEMO_KEY`（有限使用） |
-| `PORT` | 服务器运行端口 | `3000` |
-| `LOG_LEVEL` | 日志级别（debug, info, warn, error） | `info` |
-| `CACHE_DURATION` | 缓存时长（秒） | `3600`（1小时） |
-| `RATE_LIMIT` | 每小时最大请求数 | 根据API密钥 |
+| `NASA_API_KEY` | Your NASA API key (get at api.nasa.gov) | `DEMO_KEY` (limited usage) |
+| `PORT` | Port to run the server on | `3000` |
+| `LOG_LEVEL` | Logging level (debug, info, warn, error) | `info` |
+| `CACHE_DURATION` | Cache duration in seconds | `3600` (1 hour) |
+| `RATE_LIMIT` | Maximum requests per hour | Based on API key |
 
-## 包含的NASA API
+## Included NASA APIs
 
-此MCP服务器集成了以下NASA API：
+This MCP server integrates the following NASA APIs:
 
-1. **NASA 开放 API** (api.nasa.gov):
-   - APOD（每日天文图片）
-   - EPIC（地球多色成像相机）
-   - DONKI（空间天气通知、知识和信息数据库）
-   - Insight（火星天气服务）
-   - 火星探测车照片
-   - NEO（近地天体网络服务）
-   - EONET（地球观测自然事件追踪器）
-   - TLE（两行轨道数据）
-   - NASA 图像和视频库
-   - 系外行星档案
-   - NASA 声音 API（测试版）
-   - POWER（全球能源资源预测）
+1. **NASA Open API** (api.nasa.gov):
+   - APOD (Astronomy Picture of the Day)
+   - EPIC (Earth Polychromatic Imaging Camera)
+   - DONKI (Space Weather Database Of Notifications, Knowledge, Information)
+   - Insight (Mars Weather Service)
+   - Mars Rover Photos
+   - NEO (Near Earth Object Web Service)
+   - EONET (Earth Observatory Natural Event Tracker)
+   - TLE (Two-Line Element)
+   - NASA Image and Video Library
+   - Exoplanet Archive
+   - NASA Sounds API (Beta)
+   - POWER (Prediction Of Worldwide Energy Resources)
 
-2. **JPL 太阳系动力学 API** (ssd-api.jpl.nasa.gov):
-   - SBDB（小天体数据库）
-   - SBDB 近距离接近数据
-   - 火流星数据
+2. **JPL Solar System Dynamics API** (ssd-api.jpl.nasa.gov):
+   - SBDB (Small-Body DataBase)
+   - SBDB Close-Approach Data
+   - Fireball Data
    - Scout API
 
-3. **地球数据 API**:
-   - GIBS（全球图像浏览服务）
-   - CMR（通用元数据存储库）- 增强了高级搜索功能
-   - EPIC（地球多色成像相机）
-   - FIRMS（资源管理系统火灾信息）
+3. **Earth Data APIs**:
+   - GIBS (Global Imagery Browse Services)
+   - CMR (Common Metadata Repository) - Enhanced with advanced search capabilities
+   - EPIC (Earth Polychromatic Imaging Camera)
+   - FIRMS (Fire Information for Resource Management System)
 
-## API 方法
+## API Methods
 
-每个 NASA API 都通过标准化的 MCP 方法公开：
+Each NASA API is exposed through standardized MCP methods:
 
-### APOD（每日天文图片）
+### APOD (Astronomy Picture of the Day)
 
 ```json
 {
@@ -147,7 +147,7 @@ NASA_API_KEY=YOUR_API_KEY npm start
 }
 ```
 
-### 火星探测车照片
+### Mars Rover Photos
 
 ```json
 {
@@ -161,7 +161,7 @@ NASA_API_KEY=YOUR_API_KEY npm start
 }
 ```
 
-### 近地天体
+### Near Earth Objects
 
 ```json
 {
@@ -173,20 +173,20 @@ NASA_API_KEY=YOUR_API_KEY npm start
 }
 ```
 
-### GIBS（全球图像浏览服务）
+### GIBS (Global Imagery Browse Services)
 
 ```json
 {
   "method": "nasa/gibs",
   "params": {
-    "layer": "MODIS_Terra_CorrectedReflectance_TrueColor", // Required: Layer ID
+    "layer": "MODIS_Terra_CorrectedReflectance_trueColor", // Required: Layer ID
     "date": "2023-01-01", // Required: YYYY-MM-DD format
     "format": "png" // Optional: "png" or "jpg"
   }
 }
 ```
 
-### POWER（全球能源资源预测）
+### POWER (Prediction Of Worldwide Energy Resources)
 
 ```json
 {
@@ -202,19 +202,19 @@ NASA_API_KEY=YOUR_API_KEY npm start
 }
 ```
 
-有关所有可用方法和参数的完整文档，请参阅 `/docs` 目录中的 API 参考。
+For complete documentation of all available methods and parameters, see the API reference in the `/docs` directory.
 
-## 日志系统
+## Logging System
 
-服务器包括全面的日志记录：
+The server includes comprehensive logging:
 
-* 操作状态和进度
-* 性能指标
-* 速率限制跟踪
-* 错误条件
-* 请求验证
+* Operation status and progress
+* Performance metrics
+* Rate limit tracking
+* Error conditions
+* Request validation
 
-示例日志消息：
+Example log messages:
 
 ```
 [INFO] NASA MCP Server initialized successfully
@@ -224,18 +224,18 @@ NASA_API_KEY=YOUR_API_KEY npm start
 [ERROR] Invalid parameter: 'date' must be in YYYY-MM-DD format
 ```
 
-## 安全考虑
+## Security Considerations
 
-此 MCP 服务器遵循 Model Context Protocol 规范，实施了最佳安全实践：
+This MCP server implements security best practices following the Model Context Protocol specifications:
 
-* 使用 Zod 模式进行输入验证和清理
-* 不执行任意代码
-* 防止命令注入
-* 正确处理错误以防止信息泄露
-* 对 API 请求进行速率限制和超时控制
-* 没有可以在会话间被利用的持久状态
+* Input validation and sanitization using Zod schemas
+* No execution of arbitrary code
+* Protection against command injection
+* Proper error handling to prevent information leakage
+* Rate limiting and timeout controls for API requests
+* No persistent state that could be exploited across sessions
 
-## 开发
+## Development
 
 ```bash
 # Clone the repository
@@ -257,34 +257,34 @@ npm run dev
 npm test
 ```
 
-## 使用 MCP Inspector 测试
+## Testing with MCP Inspector
 
-NASA MCP 服务器包含一个脚本，帮助您使用 MCP Inspector 测试 API：
+The NASA MCP Server includes a script to help you test the APIs using the MCP Inspector:
 
 ```bash
 # Run the provided test script
 ./scripts/test-with-inspector.sh
 ```
 
-这将：
-1. 构建项目以确保包含最新更改
-2. 启动运行 NASA MCP 服务器的 MCP Inspector
-3. 允许您交互式测试所有 NASA API
+This will:
+1. Build the project to ensure the latest changes are included
+2. Start the MCP Inspector with the NASA MCP server running
+3. Allow you to interactively test all the NASA APIs
 
-### 示例测试请求
+### Example Test Requests
 
-仓库中包含了每个 API 的示例测试请求，您可以将其复制并粘贴到 MCP Inspector 中：
+The repository includes example test requests for each API that you can copy and paste into the MCP Inspector:
 
 ```bash
 # View the example test requests
 cat docs/inspector-test-examples.md
 ```
 
-有关详细示例，请参阅 [Inspector 测试示例](https://github.com/programcomputer/nasa-mcp-server/blob/HEAD/docs/inspector-test-examples.md) 文档。
+For detailed examples, see the [Inspector Test Examples](https://github.com/programcomputer/nasa-mcp-server/blob/HEAD/docs/inspector-test-examples.md) document.
 
-## MCP 客户端使用
+## MCP Client Usage
 
-此服务器遵循官方 Model Context Protocol。以下是如何使用 MCP SDK 的示例：
+This server follows the official Model Context Protocol. Here's an example of how to use it with the MCP SDK:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -326,7 +326,7 @@ const neoResults = await client.request({
 const satelliteImage = await client.request({
   method: "nasa/gibs",
   params: {
-    layer: 'MODIS_Terra_CorrectedReflectance_TrueColor',
+    layer: 'MODIS_Terra_CorrectedReflectance_trueColor',
     date: '2023-01-01'
   }
 });
@@ -345,33 +345,33 @@ const powerData = await client.request({
 });
 ```
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建您的功能分支
-3. 运行测试：`npm test`
-4. 提交拉取请求
+1. Fork the repository
+2. Create your feature branch
+3. Run tests: `npm test`
+4. Submit a pull request
 
-## 许可证
+## License
 
-ISC 许可证 - 详情请参阅 LICENSE 文件
+ISC License - see LICENSE file for details
 
-**官方网站：** [https://github.com/programcomputer/nasa-mcp-server](https://github.com/programcomputer/nasa-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/programcomputer/nasa-mcp-server](https://github.com/programcomputer/nasa-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @programcomputer/nasa-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @programcomputer/nasa-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/programcomputer-nasa.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/programcomputer-nasa.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

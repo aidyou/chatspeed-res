@@ -1,35 +1,35 @@
 ---
-title: "Linear协作工具"
-description: "一个集成了Linear问题跟踪系统的模型上下文协议服务器，允许大型语言模型通过自然语言交互创建、更新、搜索和评论Linear问题。"
+title: "linear-mcp-server"
+description: "A Model Context Protocol server that integrates with Linear's issue tracking system, allowing LLMs to create, update, search, and comment on Linear issues through natural language interactions."
 ---
 
-# Linear协作工具
+# linear-mcp-server
 
-一个集成了Linear问题跟踪系统的模型上下文协议服务器，允许大型语言模型通过自然语言交互创建、更新、搜索和评论Linear问题。
+A Model Context Protocol server that integrates with Linear's issue tracking system, allowing LLMs to create, update, search, and comment on Linear issues through natural language interactions.
 
-# Linear MCP 服务器
+# Linear MCP Server
 
 [![npm version](/mcp-assets/d7ee6b6f2c88f845cdef2e7b8e71abb0.svg)](https://www.npmjs.com/package/linear-mcp-server) [Smithery](https://smithery.ai/server/linear-mcp-server)
 
-这是一个用于 [Linear API](https://developers.linear.app/docs/graphql/working-with-the-graphql-api) 的 [Model Context Protocol](https://github.com/modelcontextprotocol) 服务器。
+A [Model Context Protocol](https://github.com/modelcontextprotocol) server for the [Linear API](https://developers.linear.app/docs/graphql/working-with-the-graphql-api).
 
-该服务器通过 MCP 提供与 Linear 问题跟踪系统的集成，允许 LLM 与 Linear 问题进行交互。
+This server provides integration with Linear's issue tracking system through MCP, allowing LLMs to interact with Linear issues.
 
-## 安装
+## Installation
 
-### 自动安装
+### Automatic Installation
 
-要通过 [Smithery](https://smithery.ai/protocol/linear-mcp-server) 自动为 Claude Desktop 安装 Linear MCP 服务器：
+To install the Linear MCP server for Claude Desktop automatically via [Smithery](https://smithery.ai/protocol/linear-mcp-server):
 
 ```bash
 npx @smithery/cli install linear-mcp-server --client claude
 ```
 
-### 手动安装
+### Manual Installation
 
-1. 为您的团队创建或获取一个 Linear API 密钥：[https://linear.app/YOUR-TEAM/settings/api](https://linear.app/YOUR-TEAM/settings/api)
+1. Create or get a Linear API key for your team: [https://linear.app/YOUR-TEAM/settings/api](https://linear.app/YOUR-TEAM/settings/api)
 
-2. 将服务器配置添加到 Claude Desktop 中：
+2. Add server config to Claude Desktop:
    - MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
@@ -49,120 +49,120 @@ npx @smithery/cli install linear-mcp-server --client claude
 }
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
-1. **`linear_create_issue`**: 创建新的 Linear 问题
-   - 必需输入:
-     - `title` (字符串): 问题标题
-     - `teamId` (字符串): 创建问题的团队 ID
-   - 可选输入:
-     - `description` (字符串): 问题描述（支持 markdown）
-     - `priority` (数字, 0-4): 优先级（1=紧急, 4=低）
-     - `status` (字符串): 初始状态名称
+1. **`linear_create_issue`**: Create a new Linear issues
+   - Required inputs:
+     - `title` (string): Issue title
+     - `teamId` (string): Team ID to create issue in
+   - Optional inputs:
+     - `description` (string): Issue description (markdown supported)
+     - `priority` (number, 0-4): Priority level (1=urgent, 4=low)
+     - `status` (string): Initial status name
 
-2. **`linear_update_issue`**: 更新现有问题
-   - 必需输入:
-     - `id` (字符串): 要更新的问题 ID
-   - 可选输入:
-     - `title` (字符串): 新标题
-     - `description` (字符串): 新描述
-     - `priority` (数字, 0-4): 新优先级
-     - `status` (字符串): 新状态名称
+2. **`linear_update_issue`**: Update existing issues
+   - Required inputs:
+     - `id` (string): Issue ID to update
+   - Optional inputs:
+     - `title` (string): New title
+     - `description` (string): New description
+     - `priority` (number, 0-4): New priority
+     - `status` (string): New status name
 
-3. **`linear_search_issues`**: 使用灵活过滤搜索问题
-   - 可选输入:
-     - `query` (字符串): 在标题/描述中搜索文本
-     - `teamId` (字符串): 按团队筛选
-     - `status` (字符串): 按状态筛选
-     - `assigneeId` (字符串): 按指派者筛选
-     - `labels` (字符串数组): 按标签筛选
-     - `priority` (数字): 按优先级筛选
-     - `limit` (数字, 默认: 10): 最大结果数
+3. **`linear_search_issues`**: Search issues with flexible filtering
+   - Optional inputs:
+     - `query` (string): Text to search in title/description
+     - `teamId` (string): Filter by team
+     - `status` (string): Filter by status
+     - `assigneeId` (string): Filter by assignee
+     - `labels` (string[]): Filter by labels
+     - `priority` (number): Filter by priority
+     - `limit` (number, default: 10): Max results
 
-4. **`linear_get_user_issues`**: 获取分配给用户的问题
-   - 可选输入:
-     - `userId` (字符串): 用户 ID（省略则使用已认证用户）
-     - `includeArchived` (布尔值): 包含归档问题
-     - `limit` (数字, 默认: 50): 最大结果数
+4. **`linear_get_user_issues`**: Get issues assigned to a user
+   - Optional inputs:
+     - `userId` (string): User ID (omit for authenticated user)
+     - `includeArchived` (boolean): Include archived issues
+     - `limit` (number, default: 50): Max results
 
-5. **`linear_add_comment`**: 向问题添加评论
-   - 必需输入:
-     - `issueId` (字符串): 要评论的问题 ID
-     - `body` (字符串): 评论文本（支持 markdown）
-   - 可选输入:
-     - `createAsUser` (字符串): 自定义用户名
-     - `displayIconUrl` (字符串): 自定义头像 URL
+5. **`linear_add_comment`**: Add comments to issues
+   - Required inputs:
+     - `issueId` (string): Issue ID to comment on
+     - `body` (string): Comment text (markdown supported)
+   - Optional inputs:
+     - `createAsUser` (string): Custom username
+     - `displayIconUrl` (string): Custom avatar URL
 
-### 资源
+### Resources
 
-- `linear-issue:///{issueId}` - 查看单个问题详情
-- `linear-team:///{teamId}/issues` - 查看团队问题
-- `linear-user:///{userId}/assigned` - 查看用户的分配问题
-- `linear-organization:` - 查看组织信息
-- `linear-viewer:` - 查看当前用户上下文
+- `linear-issue:///{issueId}` - View individual issue details
+- `linear-team:///{teamId}/issues` - View team issues
+- `linear-user:///{userId}/assigned` - View user's assigned issues
+- `linear-organization:` - View organization info
+- `linear-viewer:` - View current user context
 
-## 使用示例
+## Usage examples
 
-一些您可以与 Claude Desktop 一起使用的示例提示以与 Linear 互动：
+Some example prompts you can use with Claude Desktop to interact with Linear:
 
-1. "显示我所有高**优先级**的问题" → 执行 `search_issues` 工具和/或 `linear-user:///{userId}/assigned` 以查找分配给你的优先级为1的问题
+1. "Show me all my high-**priority** issues" → execute the `search_issues` tool and/or `linear-user:///{userId}/assigned` to find issues assigned to you with priority 1
 
-2. "根据我已经告诉你的关于这个错误的信息，为认证系统创建一个错误报告" → 使用 `create_issue` 创建一个新的高优先级问题，并附上适当的信息和状态跟踪
+2. "Based on what I've told you about this bug already, make a bug report for the authentication system" → use `create_issue` to create a new high-priority issue with appropriate details and status tracking
 
-3. "找到所有正在进行中的前端任务" → 使用 `search_issues` 定位与前端相关的、状态为进行中的任务
+3. "Find all in progress frontend tasks" → use `search_issues` to locate frontend-related issues with in progress task
 
-4. "给我一份关于移动应用开发问题的最新更新摘要" → 使用 `search_issues` 确定相关问题，然后通过 `linear-issue:///{issueId}` 获取问题详情并展示最近的活动和评论
+4. "Give me a summary of recent updates on the issues for mobile app development" → use `search_issues` to identify the relevant issue(s), then `linear-issue:///{issueId}` fetch the issue details and show recent activity and comments
 
-5. "移动团队当前的工作量是多少？" → 结合使用 `linear-team:///{teamId}/issues` 和 `search_issues` 来分析移动团队中问题的分布情况及优先级
+5. "What's the current workload for the mobile team?" → combine `linear-team:///{teamId}/issues` and `search_issues` to analyze issue distribution and priorities across the mobile team
 
-## 开发
+## Development
 
-1. 安装依赖项：
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-1. 在`.env`中配置Linear API密钥：
+1. Configure Linear API key in `.env`:
 
 ```bash
 LINEAR_API_KEY=your_api_key_here
 ```
 
-1. 构建服务器：
+1. Build the server:
 
 ```bash
 npm run build
 ```
 
-对于带有自动重建功能的开发：
+For development with auto-rebuild:
 
 ```bash
 npm run watch
 ```
 
-## 许可证
+## License
 
-此MCP服务器依据MIT许可证发布。这意味着你可以在遵守MIT许可证条款和条件的前提下自由地使用、修改和分发该软件。更多详情，请参阅项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/jerhadf/linear-mcp-server](https://github.com/jerhadf/linear-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jerhadf/linear-mcp-server](https://github.com/jerhadf/linear-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`developer tools`, `communication`, `version control`, `chinese`
+- Categories: `communication`
+- Tags: `developer tools`, `communication`, `version control`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y linear-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y linear-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jerhadf-linear.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jerhadf-linear.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

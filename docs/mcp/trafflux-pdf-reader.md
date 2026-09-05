@@ -1,67 +1,67 @@
 ---
-title: "PDF阅读器"
-description: "提供用于读取和提取PDF文件中文本的工具，支持本地文件和URL。"
+title: "pdf-reader-mcp"
+description: "Provides tools for reading and extracting text from PDF files, supporting both local files and URLs."
 ---
 
-# PDF阅读器
+# pdf-reader-mcp
 
-提供用于读取和提取PDF文件中文本的工具，支持本地文件和URL。
+Provides tools for reading and extracting text from PDF files, supporting both local files and URLs.
 
-# PDF Reader MCP 服务器
+# PDF Reader MCP Server
 
-这是一个 Model Context Protocol (MCP) 服务器，提供了从 PDF 文件中读取和提取文本的工具，支持本地文件和 URL。
+A Model Context Protocol (MCP) server that provides tools for reading and extracting text from PDF files, supporting both local files and URLs.
 
-## 作者
+## Author
 
 Philip Van de Walker  
-邮箱: philip.vandewalker@gmail.com  
-GitHub: [https://github.com/trafflux](https://github.com/trafflux)
+Email: philip.vandewalker@gmail.com  
+GitHub: https://github.com/trafflux
 
-## 功能
+## Features
 
-- 从本地 PDF 文件中读取文本内容
-- 从 PDF URL 中读取文本内容
-- 对损坏或无效 PDF 的错误处理
-- 挂载卷以访问本地 PDF
-- 自动检测 PDF 编码
-- 标准化的 JSON 输出格式
+- Read text content from local PDF files
+- Read text content from PDF URLs
+- Error handling for corrupt or invalid PDFs
+- Volume mounting for accessing local PDFs
+- Auto-detection of PDF encoding
+- Standardized JSON output format
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/trafflux/pdf-reader-mcp.git
 cd pdf-reader-mcp
 ```
 
-2. 构建 Docker 镜像：
+2. Build the Docker image:
 
 ```bash
 docker build -t mcp/pdf-reader .
 ```
 
-## 使用
+## Usage
 
-### 运行服务器
+### Running the Server
 
-要运行服务器并访问本地 PDF 文件：
+To run the server with access to local PDF files:
 
 ```bash
 docker run -i --rm -v /path/to/pdfs:/pdfs mcp/pdf-reader
 ```
 
-将 `/path/to/pdfs` 替换为您的 PDF 文件目录的实际路径。
+Replace `/path/to/pdfs` with the actual path to your PDF files directory.
 
-如果不使用本地 PDF 文件：
+If not using local PDF files:
 
 ```bash
 docker run -i --rm mcp/pdf-reader
 ```
 
-### MCP 配置
+### MCP Configuration
 
-将以下配置添加到您的 MCP 设置中：
+Add to your MCP settings configuration:
 
 ```json
 {
@@ -83,7 +83,7 @@ docker run -i --rm mcp/pdf-reader
 }
 ```
 
-不使用本地文件 PDF 文件时：
+Without local file PDF files:
 
 ```json
 {
@@ -98,56 +98,56 @@ docker run -i --rm mcp/pdf-reader
 }
 ```
 
-### 可用工具
+### Available Tools
 
 1. `read_local_pdf`
 
-   - 目的：从本地 PDF 文件中读取文本内容
-   - 输入：
+   - Purpose: Read text content from a local PDF file
+   - Input:
 ```json
      {
        "path": "/pdfs/document.pdf"
      }
 ```
-   - 输出：
+   - Output:
 ```json
      {
        "success": true,
        "data": {
-         "text": "提取的内容..."
+         "text": "Extracted content..."
        }
      }
 ```
 
 2. `read_pdf_url`
-   - 目的：从 PDF URL 中读取文本内容
-   - 输入：
+   - Purpose: Read text content from a PDF URL
+   - Input:
 ```json
      {
        "url": "https://example.com/document.pdf"
      }
 ```
-   - 输出：
+   - Output:
 ```json
      {
        "success": true,
        "data": {
-         "text": "提取的内容..."
+         "text": "Extracted content..."
        }
      }
 ```
 
-## 错误处理
+## Error Handling
 
-服务器处理各种错误情况，并提供清晰的错误消息：
+The server handles various error cases with clear error messages:
 
-- 无效或损坏的 PDF 文件
-- 缺失的文件
-- URL 请求失败
-- 权限问题
-- 网络连接问题
+- Invalid or corrupt PDF files
+- Missing files
+- Failed URL requests
+- Permission issues
+- Network connectivity problems
 
-错误响应遵循以下格式：
+Error responses follow the format:
 
 ```json
 {
@@ -156,14 +156,14 @@ docker run -i --rm mcp/pdf-reader
 }
 ```
 
-## 依赖项
+## Dependencies
 
 - Python 3.11+
-- PyPDF2: PDF 解析和文本提取
-- requests: 用于从 URL 获取 PDF 的 HTTP 客户端
-- MCP SDK: Model Context Protocol 实现
+- PyPDF2: PDF parsing and text extraction
+- requests: HTTP client for fetching PDFs from URLs
+- MCP SDK: Model Context Protocol implementation
 
-## 项目结构
+## Project Structure
 
 ```
 .
@@ -175,43 +175,49 @@ docker run -i --rm mcp/pdf-reader
     └── server.py      # Main server implementation
 ```
 
-## 许可证
+## License
 
-版权所有 2025 Philip Van de Walker
+Copyright 2025 Philip Van de Walker
 
-根据 Apache License, Version 2.0（“许可证”）获得许可；除非符合许可证的要求，否则不得使用此文件。您可以在以下地址获取许可证副本：
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
-除非适用法律要求或书面同意，否则根据许可证分发的软件是按“原样”提供的，没有任何明示或暗示的保证或条件。有关特定语言的权限和限制，请参阅许可证。
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 联系方式
+## Contact
 
-对于问题、意见或贡献，请联系 Philip Van de Walker：
+For questions, issues, or contributions, please contact Philip Van de Walker:
 
-- 邮箱: philip.vandewalker@gmail.com
+- Email: philip.vandewalker@gmail.com
 - GitHub: https://github.com/trafflux
 
-**官方网站：** [https://github.com/trafflux/pdf-reader-mcp](https://github.com/trafflux/pdf-reader-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/trafflux/pdf-reader-mcp](https://github.com/trafflux/pdf-reader-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`, `files`
-- 标签：`file systems`, `browser automation`, `chinese`
+- Categories: `browser`, `files`
+- Tags: `file systems`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm -v /path/to/pdfs:/pdfs mcp/pdf-reader`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm -v /path/to/pdfs:/pdfs mcp/pdf-reader`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/trafflux-pdf-reader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/trafflux-pdf-reader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

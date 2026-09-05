@@ -1,60 +1,59 @@
 ---
-title: "OpenRouter.ai 集成平台"
-description: "提供了与OpenRouter.ai的集成，允许通过统一接口访问各种AI模型。"
+title: "openrouterai"
+description: "Provides integration with OpenRouter.ai, allowing access to various AI models through a unified interface."
 ---
 
-# OpenRouter.ai 集成平台
+# openrouterai
 
-提供了与OpenRouter.ai的集成，允许通过统一接口访问各种AI模型。
+Provides integration with OpenRouter.ai, allowing access to various AI models through a unified interface.
 
-# OpenRouter MCP 服务器
+# OpenRouter MCP Server
 
 [![MCP Server](/mcp-assets/cb56a0889b99f9bc45a0b547b9f87230.svg)](https://github.com/heltonteixeira/openrouterai)
 ![Version](/mcp-assets/d58b7f6784e65408fe1c317cfc0473dd.svg)
 [![TypeScript](/mcp-assets/754e1918c2ab1fa621c9e6e01628f1e0.svg)](https://www.typescriptlang.org/)
 ![License](/mcp-assets/4159b5048650fda64b541eaec9d81bd1.svg)
 
-这是一个模型上下文协议（MCP）服务器，提供与OpenRouter.ai多样化的模型生态系统的无缝集成。通过统一的、类型安全的接口访问各种AI模型，并内置缓存、速率限制和错误处理功能。
+A Model Context Protocol (MCP) server providing seamless integration with OpenRouter.ai's diverse model ecosystem. Access various AI models through a unified, type-safe interface with built-in caching, rate limiting, and error handling.
 
-## 功能
+## Features
 
-- **模型访问**
-  - 直接访问所有OpenRouter.ai模型
-  - 自动模型验证和能力检查
-  - 默认模型配置支持
+- **Model Access**
+  - Direct access to all OpenRouter.ai models
+  - Automatic model validation and capability checking
+  - Default model configuration support
 
-- **性能优化**
-  - 智能模型信息缓存（1小时过期）
-  - 自动速率限制管理
-  - 对失败请求使用指数退避策略
+- **Performance Optimization**
+  - Smart model information caching (1-hour expiry)
+  - Automatic rate limit management
+  - Exponential backoff for failed requests
 
-- **统一响应格式**
-  - 所有响应的一致`ToolResult`结构
-  - 使用`isError`标志明确识别错误
-  - 带有上下文的结构化错误消息
-
-## 安装
+- **Unified Response Format**
+  - Consistent `ToolResult` structure for all responses
+  - Clear error identification with `isError` flag
+  - Structured error messages with context
+## Installation
 
 ```bash
 pnpm install @mcpservers/openrouterai
 ```
 
-## 配置
+## Configuration
 
-### 先决条件
+### Prerequisites
 
-1. 从[OpenRouter 密钥](https://openrouter.ai/keys)获取您的OpenRouter API密钥
-2. 选择一个默认模型（可选）
+1. Get your OpenRouter API key from [OpenRouter Keys](https://openrouter.ai/keys)
+2. Choose a default model (optional)
 
-### 环境变量
+### Environment Variables
 ```env
 OPENROUTER_API_KEY=your-api-key-here
 OPENROUTER_DEFAULT_MODEL=optional-default-model
 ```
 
-### 设置
+### Setup
 
-将以下内容添加到您的MCP设置配置文件 (`cline_mcp_settings.json` 或 `claude_desktop_config.json`) 中：
+Add to your MCP settings configuration file (`cline_mcp_settings.json` or `claude_desktop_config.json`):
 
 ```json
 {
@@ -71,9 +70,9 @@ OPENROUTER_DEFAULT_MODEL=optional-default-model
 }
 ```
 
-## 响应格式
+## Response Format
 
-所有工具返回的响应都采用标准化结构：
+All tools return responses in a standardized structure:
 
 ```typescript
 interface ToolResult {
@@ -82,18 +81,18 @@ interface ToolResult {
 }
 ```
 
-**成功示例:**
+**Success Example:**
 ```json
 {
   "isError": false,
   "content": [{
     "type": "text",
-    "text": "{\"id\": \"gen-123\", ...}"
+    "text": "{"id": "gen-123", ...}"
   }]
 }
 ```
 
-**错误示例:**
+**Error Example:**
 ```json
 {
   "isError": true,
@@ -104,11 +103,11 @@ interface ToolResult {
 }
 ```
 
-## 可用工具
+## Available Tools
 
 ### chat_completion
 
-向OpenRouter.ai模型发送消息：
+Send messages to OpenRouter.ai models:
 
 ```typescript
 interface ChatCompletionRequest {
@@ -122,7 +121,7 @@ interface ChatCompletionRequest {
 
 ### search_models
 
-搜索并筛选可用模型：
+Search and filter available models:
 
 ```typescript
 interface ModelSearchRequest {
@@ -140,7 +139,7 @@ interface ModelSearchRequest {
 
 ### get_model_info
 
-获取特定模型的详细信息：
+Get detailed information about a specific model:
 
 ```typescript
 {
@@ -150,7 +149,7 @@ interface ModelSearchRequest {
 
 ### validate_model
 
-检查模型ID是否有效：
+Check if a model ID is valid:
 
 ```typescript
 interface ModelValidationRequest {
@@ -162,9 +161,9 @@ interface ModelValidationRequest {
 // Error: { isError: true, error: "Model not found" }
 ```
 
-## 错误处理
+## Error Handling
 
-服务器提供带有上下文信息的结构化错误：
+The server provides structured errors with contextual information:
 
 ```typescript
 // Error response structure
@@ -177,13 +176,13 @@ interface ModelValidationRequest {
 }
 ```
 
-**常见错误类别：**
-- `Validation Error`: 无效的输入参数
-- `API Error`: OpenRouter API通信问题
-- `Rate Limit`: 请求限流检测
-- `Internal Error`: 服务器端处理失败
+**Common Error Categories:**
+- `Validation Error`: Invalid input parameters
+- `API Error`: OpenRouter API communication issues
+- `Rate Limit`: Request throttling detection
+- `Internal Error`: Server-side processing failures
 
-**处理响应：**
+**Handling Responses:**
 ```typescript
 async function handleResponse(result: ToolResult) {
   if (result.isError) {
@@ -199,14 +198,14 @@ async function handleResponse(result: ToolResult) {
 }
 ```
 
-## 开发
+## Development
 
-参见 CONTRIBUTING.md 以获取关于以下方面的详细信息：
-- 开发环境设置
-- 项目结构
-- 功能实现
-- 错误处理指南
-- 工具使用示例
+See CONTRIBUTING.md for detailed information about:
+- Development setup
+- Project structure
+- Feature implementation
+- Error handling guidelines
+- Tool usage examples
 
 ```bash
 # Install dependencies
@@ -219,32 +218,32 @@ pnpm run build
 pnpm test
 ```
 
-## 更新日志
-请参阅 CHANGELOG.md 了解最近的更新，包括：
-- 统一响应格式的实现
-- 增强的错误处理系统
-- 类型安全接口的改进
+## Changelog
+See CHANGELOG.md for recent updates including:
+- Unified response format implementation
+- Enhanced error handling system
+- Type-safe interface improvements
 
-## 许可证
+## License
 
-该项目根据Apache许可证2.0版许可 - 详情请参阅 LICENSE 文件。
+This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 
-**官方网站：** [https://github.com/heltonteixeira/openrouterai](https://github.com/heltonteixeira/openrouterai)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/heltonteixeira/openrouterai](https://github.com/heltonteixeira/openrouterai)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@mcpservers/openrouterai`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@mcpservers/openrouterai`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/heltonteixeira-openrouterai.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/heltonteixeira-openrouterai.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

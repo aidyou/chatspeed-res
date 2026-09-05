@@ -1,263 +1,219 @@
 ---
-title: "高德地图"
-description: "高德地图是一个支持任何MCP协议客户端的服务器，允许用户轻松利用高德地图MCP服务器获取各种基于位置的服务。"
+title: "amap-maps"
+description: "Amap Maps is a server that supports any MCP protocol client, allowing users to easily utilize the Amap Maps MCP server for various location-based services."
 ---
 
-# 高德地图
+# amap-maps
 
-高德地图是一个支持任何MCP协议客户端的服务器，允许用户轻松利用高德地图MCP服务器获取各种基于位置的服务。
+Amap Maps is a server that supports any MCP protocol client, allowing users to easily utilize the Amap Maps MCP server for various location-based services.
 
-## 产品介绍
+## Product Introduction
 
-为实现 LBS 服务与 LLM 更好的交互，高德地图 MCP Server 现已覆盖12大核心服务接口，提供全场景覆盖的地图服务，包括地理编码、逆地理编码、IP 定位、天气查询、骑行路径规划、步行路径规划、驾车路径规划、公交路径规划、距离测量、关键词搜索、周边搜索、详情搜索等。
+To achieve better interaction between LBS services and LLM, Amap's MCP Server now covers 12 core service interfaces, providing comprehensive map services for all scenarios, including geocoding, reverse geocoding, IP location, weather queries, cycling route planning, walking route planning, driving route planning, public transport route planning, distance measurement, keyword search, nearby search, and detail search.
 
-为进一步提高开发者接入效率与体验，高德地图开放平台为开发者提供了[通用级 SSE 协议](https://lbs.amap.com/api/mcp-server/gettingstarted) MCP 服务解决方案。
+To further enhance developer access efficiency and experience, Amap Open Platform provides developers with a [general-level SSE protocol](https://lbs.amap.com/api/mcp-server/gettingstarted) MCP service solution.
 
-## 高德地图开放平台通用级 SSE 协议 MCP 服务解决方案
+## Amap Open Platform General-Level SSE Protocol MCP Service Solution
 
-#### 产品架构图
+#### Product Architecture Diagram
 
 ![](/mcp-assets/d20fa1ab7ce32e945458280acfb2c5a9.png)
 
-#### 什么是 SSE？
+#### What is SSE?
 
-Server-Sent Events（SSE，服务器发送事件）是一种基于 HTTP 协议的技术，允许服务器向客户端单向、实时地推送数据。在 SSE 模式下，开发者可以在客户端通过创建一个 EventSource 对象与服务器建立持久连接，服务器则通过该连接持续发送数据流，而无需客户端反复发送请求。
+Server-Sent Events (SSE) is a technology based on the HTTP protocol that allows servers to push data to clients in a unidirectional and real-time manner. In the SSE mode, developers can establish a persistent connection with the server by creating an EventSource object on the client-side. The server then continuously sends data streams through this connection without the client needing to repeatedly send requests.
 
-#### 产品特点
+#### Product Features
 
-+   使用简单：适用普通用户基于MCP（SSE）方式，不必部署本地服务，简单通过 URL 地址配置即可使用。
++   Easy to Use: Suitable for regular users based on MCP (SSE) mode, no need to deploy local services, and can be used simply by configuring a URL address.
     
-+   自动升级：我们会持续进行迭代更新，无须用户自己任何额外操作使用。
++   Automatic Upgrades: We will continue to iterate and update without any additional operation needed from users.
     
-+   更易于大模型理解：我们对原始的JSON结果进行了语义化的转换，更易于大模型理解内容。
++   Easier for LLM Understanding: We have semantically converted the original JSON results, making it easier for LLM to understand the content.
     
-+   零运维成本：采用全托管云服务架构，用户无需关心服务器维护、资源扩容等底层运维问题。
++   Zero Maintenance Cost: Adopts a fully managed cloud service architecture, so users do not need to worry about server maintenance, resource expansion, and other underlying operational issues.
     
-+   协议兼容：支持SSE长连接，适配不同业务场景的技术需求。
++   Protocol Compatibility: Supports SSE long connections to meet the technical needs of different business scenarios.
     
 
-前往 [快速接入](https://lbs.amap.com/api/mcp-server/gettingstarted) 文档，了解如何接入 MCP Server SSE 服务
+Visit the [Quick Access](https://lbs.amap.com/api/mcp-server/gettingstarted) documentation to learn how to access the MCP Server SSE service.
 
-## 能力介绍
+## Capability Introduction
 
-#### 地理编码
+#### Geocoding
 
-将详细的结构化地址转换为经纬度坐标。
+Convert detailed structured addresses into latitude and longitude coordinates.
 
-输入
+Input
 
-address&nbsp;(位置信息)，
+address (location information),
 
-city&nbsp;(城市信息，非必须)
+ city (city information, optional)
 
-输出
+Output
 
-location&nbsp;(位置经纬度)
+location (latitude and longitude)
 
-#### 逆地理编码
+#### Reverse Geocoding
 
-将一个高德经纬度坐标转换为行政区划地址信息。
+Convert Amap latitude and longitude coordinates into administrative district address information.
 
-输入
+Input
 
-location&nbsp;(位置经纬度)
+location (latitude and longitude)
 
-输出
+Output
 
-addressComponent
+addressComponent (location information, including province, city, district, etc.)
 
-&nbsp;(位置信息，包括省市区等信息)
+#### IP Location
 
-#### IP 定位
+IP location determines the location of an IP based on the user-provided IP address.
 
-IP 定位根据用户输入的 IP 地址，定位 IP 的所在位置。
-
-输入
+Input
 
 IP
 
-输出
+Output
 
-province&nbsp;(省)，city&nbsp;(城市)，adcode&nbsp;(城市编码)
+province (province), city (city), adcode (city code)
 
-#### 天气查询
+#### Weather Query
 
-根据城市名称或者标准adcode查询指定城市的天气。
+Query the weather of a specified city based on the city name or standard adcode.
 
-输入
+Input
 
-city
+city (city name or city adcode)
 
-&nbsp;(城市名称或城市adcode)
+Output
 
-输出
+forecasts (weather forecasts)
 
-forecasts&nbsp;(预报天气)
+#### Cycling Route Planning
 
-#### 骑行路径规划
+Used for planning cycling commuting routes, considering overpasses, one-way streets, road closures, etc. Supports cycling route planning up to 500km.
 
-用于规划骑行通勤方案，规划时会考虑天桥、单行线、封路等情况。最大支持 500km 的骑行路线规划。
+Input
 
-输入
+origin (start latitude and longitude),
 
-origin
+ destination (end latitude and longitude)
 
-&nbsp;(起点经纬度)，
+Output
 
-destination&nbsp;(终点经纬度)
+distance (planned distance), duration (planned time), steps (planned step information)
 
-输出
+#### Walking Route Planning
 
-distance&nbsp;(规划距离)，duration&nbsp;(规划时间)，steps&nbsp;(规划步骤信息)
+Plan walking commuting routes within 100km based on the input starting and ending latitude and longitude coordinates and return the data of the commuting plan.
 
-#### 步行路径规划
+Input
 
-可以根据输入起点终点经纬度坐标，规划100km 以内的步行通勤方案，并且返回通勤方案的数据。
+origin (start latitude and longitude),
 
-输入
+ destination (end latitude and longitude)
 
-origin
+Output
 
-&nbsp;(起点经纬度)，
+origin (start information), destination (end information), paths (planned specific information)
 
-destination&nbsp;(终点经纬度)
+#### Driving Route Planning
 
-输出
+Plan commuting travel solutions for small cars and sedans based on the user's start and end latitude and longitude coordinates and return the commuting plan data.
 
-origin&nbsp;(
+Input
 
-起点
+origin (start latitude and longitude),
 
-信息)，destination&nbsp;(终点信息)，paths&nbsp;(规划具体信息)
+ destination (end latitude and longitude)
 
-#### 驾车路径规划
+Output
 
-根据用户起终点经纬度坐标规划以小客车、轿车通勤出行的方案，并且返回通勤方案的数据。
+origin (start information), destination (end information), paths (planned specific information)
 
-输入
+#### Public Transport Route Planning
 
-origin
+Plan commuting solutions that integrate various public transport modes (train, bus, subway) based on the user's start and end latitude and longitude coordinates and return the commuting plan data. For cross-city scenarios, the start city and end city must be provided.
 
-&nbsp;(起点经纬度)，
+Input
 
-destination&nbsp;(终点经纬度)
+origin (start latitude and longitude), destination (end latitude and longitude), city (start city), cityd (end city)
 
-输出
+Output
 
-origin&nbsp;(
+origin (start information), destination (end information), distance (planned distance), transits (planned specific information)
 
-起点
+#### Distance Measurement
 
-信息)，destination&nbsp;(终点信息)，paths&nbsp;(规划具体信息)
+Measure the distance between two latitude and longitude coordinates.
 
-#### 公交路径规划
+Input
 
-根据用户起终点经纬度坐标规划综合各类公共（火车、公交、地铁）交通方式的通勤方案，并且返回通勤方案的数据，跨城场景下必须传起点城市与终点城市。
+origin (start latitude and longitude), destination (end latitude and longitude)
 
-输入
+Output
 
-origin&nbsp;(起点经纬度)，destination&nbsp;(终点经纬度)，city&nbsp;(起点城市)，cityd&nbsp;(终点城市)
+origin_id (start information), dest_id (end information), distance (planned distance), duration (time)
 
-输出
+#### Keyword Search
 
-origin&nbsp;(
+Search for related POI location information based on user-provided keywords.
 
-起点
+Input
 
-信息)，destination&nbsp;(终点信息)，distance&nbsp;(规划距离)，transits&nbsp;(规划具体信息)
+keywords (search keywords),
 
-#### 距离测量
+ city (query city, optional)
 
-测量两个经纬度坐标之间的距离。
+Output
 
-输入
+suggestion (search suggestion), pois (location information list)
 
-origin&nbsp;(起点经纬度)，destination&nbsp;(终点经纬度)
+#### Nearby Search
 
-输出
+Search for POI location information within a radius based on user-provided keywords and location coordinates.
 
-origin_id&nbsp;(
+Input
 
-起点
+keywords (search keywords),
 
-信息)，dest_id&nbsp;(终点信息)，distance&nbsp;(规划距离)，duration&nbsp;(时间)
+ location (central latitude and longitude), radius (search radius, optional)
 
-#### 关键词搜索
+Output
 
-根据用户传入关键词，搜索出相关的POI地点信息。
+pois (location information list)
 
-输入
+#### Detail Search
 
-keywords
+Query detailed information of POI ID obtained from keyword search or nearby search.
 
-&nbsp;(
+Input
 
-搜索关键词
+id (POI ID obtained from keyword search or nearby search)
 
-)，
+Output
 
-city&nbsp;(查询城市，非必须)
+Location detail information
 
-输出
+location (latitude and longitude), address, business_area (business district), city, type (location type), etc.
 
-suggestion&nbsp;(搜索建议)，pois&nbsp;(地点信息列表)
+**Official site: ** [https://www.npmjs.com/package/@amap/amap-maps-mcp-server](https://www.npmjs.com/package/@amap/amap-maps-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-#### 周边搜索
+## Categories & Tags
 
-根据用户传入关键词以及坐标location，搜索出radius半径范围的POI地点信息。
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-输入
+## MCP Configuration
 
-keywords
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @amap/amap-maps-mcp-server`
 
-&nbsp;(
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-搜索关键词
+## Data source
 
-)，
-
-location&nbsp;(中心点经度纬度)，radius&nbsp;(搜索半径，非必须)
-
-输出
-
-pois&nbsp;(地点信息列表)
-
-#### 详情搜索
-
-查询关键词搜或者周边搜获取到的POI ID的详细信息。
-
-输入
-
-id
-
-&nbsp;(
-
-关键词搜或周边搜获取的poiid
-
-)
-
-输出
-
-地点详情信息
-
-location&nbsp;(地点经纬度)，address&nbsp;(地址)，business_area&nbsp;(商圈)，city(城市)，type&nbsp;(地点类型)&nbsp;等
-
-**官方网站：** [https://www.npmjs.com/package/@amap/amap-maps-mcp-server](https://www.npmjs.com/package/@amap/amap-maps-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
-
-## 分类与标签
-
-- 分类：`data`
-- 标签：`location services`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @amap/amap-maps-mcp-server`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/amap-amap-maps.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/amap-amap-maps.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

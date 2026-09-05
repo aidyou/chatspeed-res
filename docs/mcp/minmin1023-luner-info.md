@@ -1,47 +1,46 @@
 ---
 title: "luner_info"
-description: "# luner_mcp\n这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。"
+description: "lunermcp This is an MCP that can fetch the lunar calendar information for a specific day. You can input an empty value or a date to get the lunar calendar information for that day or the current day."
 ---
 
 # luner_info
 
-# luner_mcp
-这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。
+lunermcp This is an MCP that can fetch the lunar calendar information for a specific day. You can input an empty value or a date to get the lunar calendar information for that day or the current day.
 
 # luner_mcp
-这是一个可以获取某天黄历情况的MCP，你可以输入空或日期获取当日或某日的黄历。日期格式形如：1991年1月1日或1991-01-01。
+This is an MCP that can fetch the lunar calendar information for a specific day. You can input either an empty value or a date to get the lunar calendar information for that day or the current day. The date format should be: 1991年1月1日 or 1991-01-01.
 
-获取得到的回答如下：
+The response you will receive is as follows:
 
 日期	:	2025-07-01 00:00:00
 农历	:	二零二五 乙巳[蛇]年 六月大初七
-星期	:	星期二
+星期	:	Tuesday
 八字	:	乙巳 壬午 辛未 戊子
-今日节气:	无
+今日节气:	None
 下一节气:	('小暑', (7, 7), 2025)
-季节	:	仲夏
-生肖冲煞:	羊日冲牛
-星座	:	巨蟹座
-吉神方位:	['喜神西南', '财神正东', '福神西北', '阳贵东北', '阴贵正南']
-宜		:	['祭祀', '出行', '宴会', '沐浴', '剃头', '修造', '上表章', '上官', '进人口', '竖柱上梁', '经络', '纳财', '扫舍宇', '栽种', '牧养', '破土', '安葬', '祈福', '恤孤茕', '举正直', '裁制', '纳采', '搬移', '招贤', '宣政事', '覃恩', '施恩', '安抚边境', '解除', '求嗣', '整手足甲', '庆赐', '修仓库', '立券交易', '选将', '营建', '上册', '出师', '临政', '纳畜', '缮城郭', '整容', '颁诏', '雪冤']
-忌		:	['畋猎', '取鱼']
+季节	:	Midsummer
+生肖冲煞:	Sheep day clashes with Ox
+星座	:	Cancer
+吉神方位:	['Joy God Southwest', 'Wealth God East', 'Blessing God Northwest', 'Yang Noble Northeast', 'Yin Noble South']
+宜		:	['Sacrifice', 'Travel', 'Banquet', 'Bathing', 'Haircut', 'Construction', 'Submitting Petitions', 'Taking Office', 'Admitting People', 'Erecting Beams and Columns', 'Acupuncture', 'Gaining Wealth', 'Cleaning House', 'Planting', 'Rearing Livestock', 'Breaking Ground', 'Burial', 'Praying for Blessings', 'Caring for Orphans and Widows', 'Promoting Uprightness', 'Tailoring', 'Engagement', 'Moving', 'Recruiting Talents', 'Announcing Government Affairs', 'Granting Pardon', 'Bestowing Favors', 'Pacifying Borders', 'Resolving Disputes', 'Seeking Heirs', 'Trimming Nails', 'Granting Rewards', 'Repairing Granaries', 'Signing Contracts', 'Selecting Generals', 'Building Fortifications', 'Registering Titles', 'Dispatching Troops', 'Exercising Governance', 'Acquiring Livestock', 'Repairing City Walls', 'Grooming', 'Issuing Edicts', 'Redressing Wrongs']
+忌		:	['Hunting', 'Fishing']
 
-**官方网站：** [https://github.com/Bald0Wang/luner_mcp](https://github.com/Bald0Wang/luner_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Bald0Wang/luner_mcp](https://github.com/Bald0Wang/luner_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://minmin1023-luner-info1.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://minmin1023-luner-info1.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/minmin1023-luner-info.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/minmin1023-luner-info.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

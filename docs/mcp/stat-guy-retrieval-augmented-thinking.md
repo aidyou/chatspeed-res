@@ -1,41 +1,41 @@
 ---
-title: "检索增强思维"
-description: "通过结构化的、带有检索增强的思维过程来提升人工智能模型的能力，这些过程能够实现动态思维链、并行探索路径以及递归精化周期，从而改善推理能力。"
+title: "retrieval-augmented-thinking"
+description: "Enhances AI model capabilities with structured, retrieval-augmented thinking processes that enable dynamic thought chains, parallel exploration paths, and recursive refinement cycles for improved reas…"
 ---
 
-# 检索增强思维
+# retrieval-augmented-thinking
 
-通过结构化的、带有检索增强的思维过程来提升人工智能模型的能力，这些过程能够实现动态思维链、并行探索路径以及递归精化周期，从而改善推理能力。
+Enhances AI model capabilities with structured, retrieval-augmented thinking processes that enable dynamic thought chains, parallel exploration paths, and recursive refinement cycles for improved reas…
 
-# 检索增强思维 MCP 服务器
+# Retrieval-Augmented Thinking MCP Server
 
-这是一个实现了结构化、检索增强思维过程的MCP（模型上下文协议）服务器。该服务器能够支持动态思维链、并行探索路径以及递归改进周期，以提高推理和解决问题的能力。
+An MCP (Model Context Protocol) server implementation that enhances AI model capabilities with structured, retrieval-augmented thinking processes. This server enables dynamic thought chains, parallel exploration paths, and recursive refinement cycles for improved reasoning and problem-solving.
 
-## 特性
+## Features
 
-- **自适应思维链**：保持连贯的推理流程，并具有分支和修订能力
-- **迭代假设生成**：实施假设测试的验证周期
-- **上下文一致性**：在非线性推理路径上保持上下文的一致性
-- **动态范围调整**：支持灵活的探索与细化
-- **质量评估**：实时评估思维过程
-- **分支管理**：处理并行探索路径
-- **修订追踪**：管理递归改进周期
+- **Adaptive Thought Chains**: Maintains coherent reasoning flows with branching and revision capabilities
+- **Iterative Hypothesis Generation**: Implements validation cycles for hypothesis testing
+- **Context Coherence**: Preserves context across non-linear reasoning paths
+- **Dynamic Scope Adjustment**: Supports flexible exploration and refinement
+- **Quality Assessment**: Real-time evaluation of thought processes
+- **Branch Management**: Handles parallel exploration paths
+- **Revision Tracking**: Manages recursive refinement cycles
 
-## 安装
+## Installation
 
 ```bash
 npm install @modelcontextprotocol/server-retrieval-augmented-thinking
 ```
 
-## 使用方法
+## Usage
 
-### 命令行
+### Command Line
 
 ```bash
 mcp-server-retrieval-augmented-thinking
 ```
 
-### 编程使用
+### Programmatic Usage
 
 ```typescript
 import { Server } from '@modelcontextprotocol/sdk/server';
@@ -52,42 +52,42 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-## 工具配置
+## Tool Configuration
 
-服务器提供了一个工具，包含以下参数：
+The server provides a tool with the following parameters:
 
-- `thought` (字符串)：当前推理步骤
-- `thoughtNumber` (数字)：在推理链中的位置
-- `totalThoughts` (数字)：估计范围
-- `nextThoughtNeeded` (布尔值)：链继续信号
-- `isRevision` (布尔值, 可选)：标记改进步骤
-- `revisesThought` (数字, 可选)：引用目标思想
-- `branchFromThought` (数字, 可选)：分支起点
-- `branchId` (字符串, 可选)：分支标识符
-- `needsMoreThoughts` (布尔值, 可选)：范围扩展信号
+- `thought` (string): Current reasoning step
+- `thoughtNumber` (number): Position in reasoning chain
+- `totalThoughts` (number): Estimated scope
+- `nextThoughtNeeded` (boolean): Chain continuation signal
+- `isRevision` (boolean, optional): Marks refinement steps
+- `revisesThought` (number, optional): References target thought
+- `branchFromThought` (number, optional): Branch origin point
+- `branchId` (string, optional): Branch identifier
+- `needsMoreThoughts` (boolean, optional): Scope expansion signal
 
-## 高级特性
+## Advanced Features
 
-### 思维链分析
+### Thought Chain Analytics
 
-服务器跟踪各种指标来评估思维链的质量：
+The server tracks various metrics for thought chain quality:
 
-- 链条有效性
-- 修订影响
-- 分支成功率
-- 整体质量
-- 单个思维度量（复杂性、深度、质量、影响）
+- Chain effectiveness
+- Revision impact
+- Branch success rate
+- Overall quality
+- Individual thought metrics (complexity, depth, quality, impact)
 
-### 模式识别
+### Pattern Recognition
 
-分析思维模式以实现：
+Analyzes thought patterns for:
 
-- 推理结构
-- 上下文保存
-- 假设验证
-- 解决方案一致性
+- Reasoning structures
+- Context preservation
+- Hypothesis validation
+- Solution coherence
 
-## 开发
+## Development
 
 ```bash
 # Build
@@ -97,30 +97,30 @@ npm run build
 npm run watch
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！请阅读我们的贡献指南并提交拉取请求。
+Contributions welcome! Please read our contributing guidelines and submit pull requests.
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/stat-guy/retrieval-augmented-thinking](https://github.com/stat-guy/retrieval-augmented-thinking)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/stat-guy/retrieval-augmented-thinking](https://github.com/stat-guy/retrieval-augmented-thinking)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `data`
-- 标签：`knowledge and memory`, `research and data`, `chinese`
+- Categories: `memory`, `data`
+- Tags: `knowledge and memory`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-server-rat-node`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-server-rat-node`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/stat-guy-retrieval-augmented-thinking.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/stat-guy-retrieval-augmented-thinking.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

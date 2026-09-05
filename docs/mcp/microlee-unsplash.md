@@ -1,53 +1,51 @@
 ---
-title: "unsplash图片浏览"
-description: "Unsplash MCP Server 一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。 功能列表 照片相关工具 (Photos) - searchphotos - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选 - getphoto - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等 - listphotos - 列出 Unsplash 最新、最热门或最旧的照片列"
+title: "unsplash-server"
+description: "Unsplash MCP Server An Unsplash tool server based on the Model Context Protocol, providing 15 tools for search, photo details, random photos, collections, topics, and users. Feature List Photo-related…"
 ---
 
-# unsplash图片浏览
+# unsplash-server
 
-Unsplash MCP Server 一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。 功能列表 照片相关工具 (Photos) - searchphotos - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选 - getphoto - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等 - listphotos - 列出 Unsplash 最新、最热门或最旧的照片列
+Unsplash MCP Server An Unsplash tool server based on the Model Context Protocol, providing 15 tools for search, photo details, random photos, collections, topics, and users. Feature List Photo-related…
 
 # Unsplash MCP Server
 
-一个基于 Model Context Protocol 的 Unsplash 工具服务器，提供搜索、照片详情、随机照片、集合、主题、用户等 15 个工具。
+An Unsplash tool server based on the Model Context Protocol, providing 15 tools for search, photo details, random photos, collections, topics, and users.
 
-## 功能列表
+## Feature List
 
-### 照片相关工具 (Photos)
-- **search_photos** - 按关键词搜索 Unsplash 照片，支持分页、排序、颜色筛选和方向筛选
-- **get_photo** - 根据照片 ID 获取单张照片的详细信息，包括作者、尺寸、下载链接等
-- **list_photos** - 列出 Unsplash 最新、最热门或最旧的照片列表，支持分页
-- **get_random_photo** - 获取随机照片，可按关键词、集合、主题、用户等条件筛选
-- **track_download** - 追踪照片下载事件（Unsplash API 要求），在用户下载照片时必须调用
+### Photo-related Tools (Photos)
+- **search_photos** - Search Unsplash photos by keyword, supporting pagination, sorting, color filtering, and orientation filtering
+- **get_photo** - Get detailed information of a single photo by its ID, including author, dimensions, download link, etc.
+- **list_photos** - List the latest, most popular, or oldest photos on Unsplash, supporting pagination
+- **get_random_photo** - Get a random photo, with options to filter by keyword, collection, topic, user, etc.
+- **track_download** - Track photo download events (required by the Unsplash API), must be called when a user downloads a photo
 
-### 集合相关工具 (Collections)
-- **list_collections** - 列出 Unsplash 上的照片集合，支持分页浏览
-- **get_collection** - 根据集合 ID 获取集合的详细信息，包括标题、描述、照片数量等
-- **get_collection_photos** - 获取指定集合中的所有照片，支持分页和方向筛选
+### Collection-related Tools (Collections)
+- **list_collections** - List photo collections on Unsplash, supporting paginated browsing
+- **get_collection** - Get detailed information of a collection by its ID, including title, description, number of photos, etc.
+- **get_collection_photos** - Get all photos in a specified collection, supporting pagination and orientation filtering
 
-### 主题相关工具 (Topics)
-- **list_topics** - 列出 Unsplash 上的所有主题分类，支持按最新、最旧或位置排序
-- **get_topic** - 根据主题 ID 或 slug 获取主题的详细信息
-- **get_topic_photos** - 获取指定主题下的照片，支持分页、排序和方向筛选
+### Topic-related Tools (Topics)
+- **list_topics** - List all topic categories on Unsplash, supporting sorting by newest, oldest, or location
+- **get_topic** - Get detailed information of a topic by its ID or slug
+- **get_topic_photos** - Get photos under a specified topic, supporting pagination, sorting, and orientation filtering
 
-### 用户相关工具 (Users)
-- **get_user** - 根据用户名获取 Unsplash 用户的公开信息，包括简介、作品数量等
-- **get_user_photos** - 获取指定用户上传的所有照片，支持分页、排序和方向筛选
-- **get_user_likes** - 获取指定用户点赞（喜欢）的照片列表，支持分页、排序和方向筛选
-- **get_user_collections** - 获取指定用户创建的照片集合列表，支持分页
+### User-related Tools (Users)
+- **get_user** - Get public information of an Unsplash user by username, including bio, number of works, etc.
+- **get_user_photos** - Get all photos uploaded by a specified user, supporting pagination, sorting, and orientation filtering
+- **get_user_likes** - Get a list of photos liked (favorited) by a specified user, supporting pagination, sorting, and orientation filtering
+- **get_user_collections** - Get a list of photo collections created by a specified user, supporting pagination
 
-## 安装与构建
+## Installation and Build
 ```bash
 npm install
 npm run build
 ```
-
-## 运行
+## Running
 ```bash
 UNSPLASH_ACCESS_KEY=your_key node build/index.js
 ```
-
-## MCP 配置示例
+## MCP Configuration Example
 ```json
 {
     "mcpServers": {
@@ -67,30 +65,29 @@ UNSPLASH_ACCESS_KEY=your_key node build/index.js
     }
 }
 ```
-
-## 发布到 npm
-需先登录 npm 并确保包名未被占用：
+## Publishing to npm
+You need to log in to npm and ensure that the package name is not already taken:
 ```bash
 npm login
 npm publish --registry https://registry.npmjs.org
 ```
 
-**官方网站：** [https://unsplash.com/](https://unsplash.com/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://unsplash.com/](https://unsplash.com/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`search`, `art and culture`, `chinese`
+- Categories: `media`
+- Tags: `search`, `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @microlee666/unsplash-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @microlee666/unsplash-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/microlee-unsplash.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/microlee-unsplash.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

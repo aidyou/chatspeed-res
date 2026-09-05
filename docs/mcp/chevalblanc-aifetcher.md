@@ -1,340 +1,305 @@
 ---
-title: "MCP-网页爬虫"
-description: "| | | | | | | MCP 服务器用于通过 Playwright 无头浏览器抓取网页内容。> 🌟 推荐：- 强大的 Ollama AI 模型管理器。-"
+title: "MCP-AIFetcher"
+description: "| | | | | | | MCP server for fetch web page content using Playwright headless browser. 🌟 Recommended: - Powerful Ollama AI Model Manager. -"
 ---
 
-# MCP-网页爬虫
+# MCP-AIFetcher
 
-| | | | | | | MCP 服务器用于通过 Playwright 无头浏览器抓取网页内容。> 🌟 推荐：- 强大的 Ollama AI 模型管理器。-
+| | | | | | | MCP server for fetch web page content using Playwright headless browser. 🌟 Recommended: - Powerful Ollama AI Model Manager. -
 
 [中文](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=zh) |
-[德语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=de) | 
-[西班牙语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=es) | 
-[法语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=fr) | 
-[日语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ja) | 
-[韩语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ko) | 
-[葡萄牙语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=pt) | 
-[俄语](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ru) 
+[Deutsch](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=de) | 
+[Español](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=es) | 
+[français](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=fr) | 
+[日本語](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ja) | 
+[한국어](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ko) | 
+[Português](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=pt) | 
+[Русский](https://www.readme-i18n.com/jae-jae/fetcher-mcp?lang=ru) 
 
 # Fetcher MCP
 
-使用无头浏览器 Playwright 获取网页内容的 MCP 服务器。
+MCP server for fetch web page content using Playwright headless browser.
 
-> 🌟 **推荐**: [OllaMan](https://ollaman.com/) - 强大的 Ollama AI 模型管理器。
+> 🌟 **Recommended**: [OllaMan](https://ollaman.com/) - Powerful Ollama AI Model Manager.
 
-## 优势
+## Advantages
 
-- **JavaScript 支持**：与传统的网页抓取工具不同，Fetcher MCP 使用 Playwright 执行 JavaScript，能够处理动态网页内容和现代 Web 应用程序。
-- **智能内容提取**：内置的 Readability 算法自动从网页中提取主要内容，去除广告、导航和其他非必要元素。
-- **灵活的输出格式**：支持 HTML 和 Markdown 输出格式，易于与各种下游应用集成。
-- **并行处理**：`fetch_urls` 工具支持并发获取多个 URL，显著提高批量操作的效率。
-- **资源优化**：自动阻止不必要的资源（如图片、样式表、字体、媒体）以减少带宽使用并提高性能。
-- **强大的错误处理**：全面的错误处理和日志记录确保在处理问题网页时也能可靠运行。
-- **可配置参数**：对超时、内容提取和输出格式进行细粒度控制，以适应不同的使用场景。
+- **JavaScript Support**: Unlike traditional web scrapers, Fetcher MCP uses Playwright to execute JavaScript, making it capable of handling dynamic web content and modern web applications.
 
-## 快速开始
+- **Intelligent Content Extraction**: Built-in Readability algorithm automatically extracts the main content from web pages, removing ads, navigation, and other non-essential elements.
 
-直接使用 npx 运行：
+- **Flexible Output Format**: Supports both HTML and Markdown output formats, making it easy to integrate with various downstream applications.
+
+- **Parallel Processing**: The `fetch_urls` tool enables concurrent fetching of multiple URLs, significantly improving efficiency for batch operations.
+
+- **Resource Optimization**: Automatically blocks unnecessary resources (images, stylesheets, fonts, media) to reduce bandwidth usage and improve performance.
+
+- **Robust Error Handling**: Comprehensive error handling and logging ensure reliable operation even when dealing with problematic web pages.
+
+- **Configurable Parameters**: Fine-grained control over timeouts, content extraction, and output formatting to suit different use cases.
+
+## Quick Start
+
+Run directly with npx:
 
 ```bash
-
 npx -y fetcher-mcp
-
 ```
-首次设置 - 通过在终端中运行以下命令安装所需的浏览器：
+
+First time setup - install the required browser by running the following command in your terminal:
 
 ```bash
-
 npx playwright install chromium
-
 ```
-### HTTP 和 SSE 传输
 
-使用 `--transport=http` 参数同时启动 Streamable HTTP 端点和 SSE 端点服务：
+### HTTP and SSE Transport
+
+Use the `--transport=http` parameter to start both Streamable HTTP endpoint and SSE endpoint services simultaneously:
 
 ```bash
-
 npx -y fetcher-mcp --log --transport=http --host=0.0.0.0 --port=3000
-
 ```
-启动后，服务器提供以下端点：
 
-- `/mcp` - Streamable HTTP 端点（现代 MCP 协议）
-- `/sse` - SSE 端点（旧版 MCP 协议）
+After startup, the server provides the following endpoints:
 
-客户端可以根据需要选择连接方式。
+- `/mcp` - Streamable HTTP endpoint (modern MCP protocol)
+- `/sse` - SSE endpoint (legacy MCP protocol)
 
-### 调试模式
+Clients can choose which method to connect based on their needs.
 
-使用 `--debug` 选项运行以显示浏览器窗口进行调试：
+### Debug Mode
+
+Run with the `--debug` option to show the browser window for debugging:
 
 ```bash
-
 npx -y fetcher-mcp --debug
-
 ```
-## 配置 MCP
 
-在 Claude Desktop 中配置此 MCP 服务器：
+## Configuration MCP
 
-在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
+Configure this MCP server in Claude Desktop:
 
-在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
-
 {
-
   "mcpServers": {
-
     "fetcher": {
-
       "command": "npx",
-
       "args": ["-y", "fetcher-mcp"]
-
     }
-
   }
-
 }
-
 ```
-## Docker 部署
 
-### 使用 Docker 运行
+## Docker Deployment
+
+### Running with Docker
 
 ```bash
-
 docker run -p 3000:3000 ghcr.io/jae-jae/fetcher-mcp:latest
-
 ```
-### 使用 Docker Compose 部署
 
-创建一个 `docker-compose.yml` 文件：
+### Deploying with Docker Compose
+
+Create a `docker-compose.yml` file:
 
 ```yaml
-
 version: "3.8"
 
 services:
-
   fetcher-mcp:
-
     image: ghcr.io/jae-jae/fetcher-mcp:latest
-
     container_name: fetcher-mcp
-
     restart: unless-stopped
-
     ports:
-
       - "3000:3000"
-
     environment:
-
       - NODE_ENV=production
-
     # Using host network mode on Linux hosts can improve browser access efficiency
-
     # network_mode: "host"
-
     volumes:
-
       # For Playwright, may need to share certain system paths
-
       - /tmp:/tmp
-
     # Health check
-
     healthcheck:
-
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
-
       interval: 30s
-
       timeout: 10s
-
       retries: 3
-
 ```
-然后运行：
+
+Then run:
 
 ```bash
-
 docker-compose up -d
-
-```
-## 功能
-
-- `fetch_url` - 从指定的 URL 获取网页内容
-
-  - 使用 Playwright 无头浏览器解析 JavaScript
-  - 支持智能提取主要内容并转换为 Markdown
-  - 支持以下参数：
-    - `url`：要获取的网页的 URL（必填参数）
-    - `timeout`：页面加载超时时间（毫秒），默认为 30000（30 秒）
-    - `waitUntil`：指定导航何时完成，选项：'load', 'domcontentloaded', 'networkidle', 'commit'，默认为 'load'
-    - `extractContent`：是否智能提取主要内容，默认为 true
-    - `maxLength`：返回内容的最大长度（字符数），默认无限制
-    - `returnHtml`：是否返回 HTML 内容而不是 Markdown，默认为 false
-    - `waitForNavigation`：是否在初始页面加载后等待额外的导航（对于具有反机器人验证的站点有用），默认为 false
-    - `navigationTimeout`：等待额外导航的最大时间（毫秒），默认为 10000（10 秒）- `disableMedia`: 是否禁用媒体资源（图片、样式表、字体、媒体），默认为 true
-- `debug`: 是否启用调试模式（显示浏览器窗口），如果指定了该参数，则会覆盖命令行中的 --debug 标志
-
-- `fetch_urls` - 并行批量从多个 URL 检索网页内容
-  - 使用多标签页并行检索以提高性能
-  - 返回合并的结果，并在不同网页之间有清晰的分隔
-  - 支持以下参数：
-    - `urls`: 要检索的 URL 数组（必需参数）
-    - 其他参数与 `fetch_url` 相同
-
-## 提示
-
-### 处理特殊网站场景
-
-#### 应对反爬虫机制
-
-- **等待完全加载**: 对于使用验证码、重定向或其他验证机制的网站，在提示中包含：
-
 ```
 
+## Features
+
+- `fetch_url` - Retrieve web page content from a specified URL
+
+  - Uses Playwright headless browser to parse JavaScript
+  - Supports intelligent extraction of main content and conversion to Markdown
+  - Supports the following parameters:
+    - `url`: The URL of the web page to fetch (required parameter)
+    - `timeout`: Page loading timeout in milliseconds, default is 30000 (30 seconds)
+    - `waitUntil`: Specifies when navigation is considered complete, options: 'load', 'domcontentloaded', 'networkidle', 'commit', default is 'load'
+    - `extractContent`: Whether to intelligently extract the main content, default is true
+    - `maxLength`: Maximum length of returned content (in characters), default is no limit
+    - `returnHtml`: Whether to return HTML content instead of Markdown, default is false
+    - `waitForNavigation`: Whether to wait for additional navigation after initial page load (useful for sites with anti-bot verification), default is false
+    - `navigationTimeout`: Maximum time to wait for additional navigation in milliseconds, default is 10000 (10 seconds)
+    - `disableMedia`: Whether to disable media resources (images, stylesheets, fonts, media), default is true
+    - `debug`: Whether to enable debug mode (showing browser window), overrides the --debug command line flag if specified
+
+- `fetch_urls` - Batch retrieve web page content from multiple URLs in parallel
+  - Uses multi-tab parallel fetching for improved performance
+  - Returns combined results with clear separation between webpages
+  - Supports the following parameters:
+    - `urls`: Array of URLs to fetch (required parameter)
+    - Other parameters are the same as `fetch_url`
+
+## Tips
+
+### Handling Special Website Scenarios
+
+#### Dealing with Anti-Crawler Mechanisms
+
+- **Wait for Complete Loading**: For websites using CAPTCHA, redirects, or other verification mechanisms, include in your prompt:
+
+```
   Please wait for the page to fully load
-
 ```
-  这将使用 `waitForNavigation: true` 参数。
 
-- **增加超时时间**: 对于加载缓慢的网站：
+  This will use the `waitForNavigation: true` parameter.
+
+- **Increase Timeout Duration**: For websites that load slowly:
 ```
   Please set the page loading timeout to 60 seconds
 ```
-  这会相应地调整 `timeout` 和 `navigationTimeout` 参数。
+  This adjusts both `timeout` and `navigationTimeout` parameters accordingly.
 
-#### 内容检索调整
+#### Content Retrieval Adjustments
 
-- **保留原始 HTML 结构**: 当内容提取可能失败时：
+- **Preserve Original HTML Structure**: When content extraction might fail:
 
 ```
-
   Please preserve the original HTML content
-
-```
-  设置 `extractContent: false` 和 `returnHtml: true`。
-
-- **获取完整页面内容**: 当提取的内容过于有限时：
-
 ```
 
+  Sets `extractContent: false` and `returnHtml: true`.
+
+- **Fetch Complete Page Content**: When extracted content is too limited:
+
+```
   Please fetch the complete webpage content instead of just the main content
-
 ```
-  设置 `extractContent: false`。
 
-- **以 HTML 格式返回内容**: 当需要 HTML 格式而不是默认的 Markdown 格式时：
+  Sets `extractContent: false`.
+
+- **Return Content as HTML**: When HTML format is needed instead of default Markdown:
 ```
   Please return the content in HTML format
 ```
-  设置 `returnHtml: true`。
+  Sets `returnHtml: true`.
 
-### 调试和身份验证
+### Debugging and Authentication
 
-#### 启用调试模式
+#### Enabling Debug Mode
 
-- **动态启用调试**: 在特定的检索操作期间显示浏览器窗口：
+- **Dynamic Debug Activation**: To display the browser window during a specific fetch operation:
 ```
   Please enable debug mode for this fetch operation
 ```
-  即使服务器启动时没有使用 `--debug` 标志，这也会设置 `debug: true`。
+  This sets `debug: true` even if the server was started without the `--debug` flag.
 
-#### 使用自定义 Cookie 进行身份验证
+#### Using Custom Cookies for Authentication
 
-- **手动登录**: 使用自己的凭据登录：
+- **Manual Login**: To login using your own credentials:
 
 ```
-
   Please run in debug mode so I can manually log in to the website
-
 ```
-  设置 `debug: true` 或使用 `--debug` 标志，保持浏览器窗口打开以便手动登录。
 
-- **与调试浏览器交互**: 当启用调试模式时：
-  1. 浏览器窗口保持打开状态
-  2. 可以使用您的凭据手动登录网站
-  3. 登录完成后，将以经过身份验证的会话获取内容
+  Sets `debug: true` or uses the `--debug` flag, keeping the browser window open for manual login.
 
-- **为特定请求启用调试**: 即使服务器已经在运行，也可以为特定请求启用调试模式：
+- **Interacting with Debug Browser**: When debug mode is enabled:
+
+  1. The browser window remains open
+  2. You can manually log into the website using your credentials
+  3. After login is complete, content will be fetched with your authenticated session
+
+- **Enable Debug for Specific Requests**: Even if the server is already running, you can enable debug mode for a specific request:
 ```
   Please enable debug mode for this authentication step
 ```
-  仅为该特定请求设置 `debug: true`，打开浏览器窗口进行手动登录。
+  Sets `debug: true` for this specific request only, opening the browser window for manual login.
 
-## 开发
+## Development
 
-### 安装依赖项
+### Install Dependencies
 
 ```bash
-
 npm install
-
 ```
-### 安装 Playwright 浏览器
 
-安装 Playwright 所需的浏览器：
+### Install Playwright Browser
+
+Install the browsers needed for Playwright:
 
 ```bash
-
 npm run install-browser
-
 ```
-### 构建服务器
+
+### Build the Server
 
 ```bash
-
 npm run build
-
 ```
-## 调试
 
-使用 MCP Inspector 进行调试：
+## Debugging
+
+Use MCP Inspector for debugging:
 
 ```bash
-
 npm run inspector
-
 ```
-您还可以启用可见浏览器模式进行调试：
+
+You can also enable visible browser mode for debugging:
 
 ```bash
-
 node build/index.js --debug
-
 ```
-## 相关项目
 
-- [g-search-mcp](https://github.com/jae-jae/g-search-mcp): 一个强大的 MCP 服务器，用于 Google 搜索，支持同时使用多个关键词进行并行搜索。非常适合批量搜索操作和数据收集。
+## Related Projects
 
-## 许可证
+- [g-search-mcp](https://github.com/jae-jae/g-search-mcp): A powerful MCP server for Google search that enables parallel searching with multiple keywords simultaneously. Perfect for batch search operations and data collection.
 
-根据 [MIT 许可证](https://choosealicense.com/licenses/mit/) 发布
+## License
 
-[](https://dartnode.com "由 DartNode 提供支持 - 为开源提供免费 VPS")
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
 
-**官方网站：** [https://github.com/taurusduan/fetcher-mcp](https://github.com/taurusduan/fetcher-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+[](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
 
-## 分类与标签
+**Official site: ** [https://github.com/taurusduan/fetcher-mcp](https://github.com/taurusduan/fetcher-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`browser`
-- 标签：`browser automation`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `browser`
+- Tags: `browser automation`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y fetcher-mcp`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y fetcher-mcp`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/chevalblanc-aifetcher.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/chevalblanc-aifetcher.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

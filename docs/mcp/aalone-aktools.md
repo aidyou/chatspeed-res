@@ -1,27 +1,27 @@
 ---
-title: "AkTools MCP 分析股票、虚拟货币"
-description: "📈 AkTools MCP Server 基于 akshare 的 MCP (Model Context Protocol) 服务器，提供股票、虚拟货币的数据查询和分析功能。 功能 - 股票搜索: 根据公司名称、股票名称等关键词查找股票代码 - 股票信息: 获取股票的详细信息，包括价格、市值等 - 历史价格: 获取股票、虚拟货币历史价格数据，包含技术分析指标 - 相关新闻: 获取股票、虚拟货币相关的最新新闻资讯 - 财务指标: 支持A股和港股的财务报告关键指标查询 安装 方式1: uvx yaml { \"mcpSe"
+title: "aktools"
+description: "📈 AkTools MCP Server An MCP (Model Context Protocol) server based on akshare, providing data query and analysis functions for stocks and cryptocurrencies. Features - Stock Search: Find stock codes bas…"
 ---
 
-# AkTools MCP 分析股票、虚拟货币
+# aktools
 
-📈 AkTools MCP Server 基于 akshare 的 MCP (Model Context Protocol) 服务器，提供股票、虚拟货币的数据查询和分析功能。 功能 - 股票搜索: 根据公司名称、股票名称等关键词查找股票代码 - 股票信息: 获取股票的详细信息，包括价格、市值等 - 历史价格: 获取股票、虚拟货币历史价格数据，包含技术分析指标 - 相关新闻: 获取股票、虚拟货币相关的最新新闻资讯 - 财务指标: 支持A股和港股的财务报告关键指标查询 安装 方式1: uvx yaml { "mcpSe
+📈 AkTools MCP Server An MCP (Model Context Protocol) server based on akshare, providing data query and analysis functions for stocks and cryptocurrencies. Features - Stock Search: Find stock codes bas…
 
 # 📈 AkTools MCP Server
 
-基于 akshare 的 MCP (Model Context Protocol) 服务器，提供股票、虚拟货币的数据查询和分析功能。
+An MCP (Model Context Protocol) server based on akshare, providing data query and analysis functions for stocks and cryptocurrencies.
 
-## 功能
+## Features
 
-- **股票搜索**: 根据公司名称、股票名称等关键词查找股票代码
-- **股票信息**: 获取股票的详细信息，包括价格、市值等
-- **历史价格**: 获取股票、虚拟货币历史价格数据，包含技术分析指标
-- **相关新闻**: 获取股票、虚拟货币相关的最新新闻资讯
-- **财务指标**: 支持A股和港股的财务报告关键指标查询
+- **Stock Search**: Find stock codes based on keywords such as company name, stock name, etc.
+- **Stock Information**: Obtain detailed information about stocks, including price, market capitalization, etc.
+- **Historic Prices**: Get historical price data for stocks and cryptocurrencies, including technical analysis indicators.
+- **Related News**: Access the latest news related to stocks and cryptocurrencies.
+- **Financial Indicators**: Supports querying key financial report indicators for A-shares and H-shares.
 
-## 安装
+## Installation
 
-### 方式1: uvx
+### Method 1: uvx
 ```yaml
 {
   "mcpServers": {
@@ -32,8 +32,7 @@ description: "📈 AkTools MCP Server 基于 akshare 的 MCP (Model Context Prot
   }
 }
 ```
-
-### 方式2: Docker
+### Method 2: Docker
 ```bash
 mkdir /opt/mcp-aktools
 cd /opt/mcp-aktools
@@ -49,30 +48,29 @@ docker-compose up -d
   }
 }
 ```
-
-### 一键安装
-- 添加到 Cursor [![Install MCP Server](/mcp-assets/ec1e84b0a4f6576d1ecdf0b2651745c5.svg)](https://cursor.com/zh/install-mcp?name=aktools&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJtY3AtYWt0b29scyJdfQ%3D%3D)
-- 添加到 VS Code [
+### One-Click Installation
+- Add to Cursor [![Install MCP Server](/mcp-assets/ec1e84b0a4f6576d1ecdf0b2651745c5.svg)](https://cursor.com/zh/install-mcp?name=aktools&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJtY3AtYWt0b29scyJdfQ%3D%3D)
+- Add to VS Code [
 ](https://insiders.vscode.dev/redirect?url=vscode:mcp/install%3F%7B%22name%22%3A%22aktools%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22mcp-aktools%22%5D%7D)
-- 添加到 Claude code, 执行命令: `claude mcp add --transport stdio aktools -- uvx mcp-aktools`
-- 添加到 OpenAI CodeX, 执行命令: `codex mcp add aktools -- uvx mcp-aktools`
+- Add to Claude code, run command: `claude mcp add --transport stdio aktools -- uvx mcp-aktools`
+- Add to OpenAI CodeX, run command: `codex mcp add aktools -- uvx mcp-aktools`
 
-**官方网站：** [https://github.com/aahl/mcp-aktools](https://github.com/aahl/mcp-aktools)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/aahl/mcp-aktools](https://github.com/aahl/mcp-aktools)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-aktools`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-aktools`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/aalone-aktools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/aalone-aktools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

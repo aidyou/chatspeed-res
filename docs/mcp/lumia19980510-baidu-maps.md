@@ -1,11 +1,11 @@
 ---
-title: "百度地图"
-description: "百度地图API现已全面兼容MCP协议，是国内首家兼容MCP协议的地图服务商。百度地图提供的MCP Server包含10个符合MCP协议标准的API接口，涵盖逆地理编码、地点检索、路线规划等服务。依赖MCP Python SDK和MCP Typescript SDK开发，任意支持MCP协议的智能体助手（如Claude、Cursor以及千帆AppBuilder等）都可以快速接入。"
+title: "baidu-maps"
+description: "百度地图 MCP Server 概述"
 ---
 
-# 百度地图
+# baidu-maps
 
-百度地图API现已全面兼容MCP协议，是国内首家兼容MCP协议的地图服务商。百度地图提供的MCP Server包含10个符合MCP协议标准的API接口，涵盖逆地理编码、地点检索、路线规划等服务。依赖MCP Python SDK和MCP Typescript SDK开发，任意支持MCP协议的智能体助手（如Claude、Cursor以及千帆AppBuilder等）都可以快速接入。
+百度地图 MCP Server 概述
 
 # 百度地图 MCP Server
 
@@ -361,22 +361,22 @@ if __name__ == "__main__":
 | V1.2 | 补充`千帆AppBuilder`接入方式  | 2025-04-05 |
 | V2.0 | 支持MCP`1.9.0`版协议         | 2025-05-16 |
 
-**官方网站：** [https://github.com/baidu-maps/mcp](https://github.com/baidu-maps/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/baidu-maps/mcp](https://github.com/baidu-maps/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`
+- Categories: `data`
+- Tags: `location services`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-baidu-maps`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-baidu-maps`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/lumia19980510-baidu-maps.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/lumia19980510-baidu-maps.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,61 +1,61 @@
 ---
-title: "Figma智能助手"
-description: "一个MCP服务器集成，使Cursor AI能够与Figma通信，允许用户通过自然语言命令以编程方式读取和修改设计。"
+title: "cursor-talk-to-figma-mcp"
+description: "An MCP server integration that enables Cursor AI to communicate with Figma, allowing users to read designs and modify them programmatically through natural language commands."
 ---
 
-# Figma智能助手
+# cursor-talk-to-figma-mcp
 
-一个MCP服务器集成，使Cursor AI能够与Figma通信，允许用户通过自然语言命令以编程方式读取和修改设计。
+An MCP server integration that enables Cursor AI to communicate with Figma, allowing users to read designs and modify them programmatically through natural language commands.
 
-# Cursor 与 Figma MCP 通信
+# Cursor Talk to Figma MCP
 
-该项目实现了 Cursor AI 和 Figma 之间的 Model Context Protocol (MCP) 集成，允许 Cursor 读取设计并在程序上修改它们。
+This project implements a Model Context Protocol (MCP) integration between Cursor AI and Figma, allowing Cursor to communicate with Figma for reading designs and modifying them programmatically.
 
-[https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c](https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c)
+https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c
 
-## 项目结构
+## Project Structure
 
-- `src/talk_to_figma_mcp/` - 用于 Figma 集成的 TypeScript MCP 服务器
-- `src/cursor_mcp_plugin/` - 用于与 Cursor 通信的 Figma 插件
-- `src/socket.ts` - 促进 MCP 服务器和 Figma 插件之间通信的 WebSocket 服务器
+- `src/talk_to_figma_mcp/` - TypeScript MCP server for Figma integration
+- `src/cursor_mcp_plugin/` - Figma plugin for communicating with Cursor
+- `src/socket.ts` - WebSocket server that facilitates communication between the MCP server and Figma plugin
 
-## 开始使用
+## Get Started
 
-1. 如果你还没有安装 Bun，请先安装：
+1. Install Bun if you haven't already:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
 ```
 
-2. 运行设置脚本，这也会在你的 Cursor 当前项目中安装 MCP
+2. Run setup, this will also install MCP in your Cursor's active project
 
 ```bash
 bun setup
 ```
 
-3. 启动 WebSocket 服务器
+3. Start the Websocket server
 
 ```bash
 bun socket
 ```
 
-4. 启动 MCP 服务器
+4. MCP server
 
 ```bash
 bunx cursor-talk-to-figma-mcp
 ```
 
-5. 安装 [Figma 插件](#figma-plugin)
+5. Install [Figma Plugin](#figma-plugin)
 
-# 快速视频教程
+# Quick Video Tutorial
 
 [LinkedIn post](https://www.linkedin.com/posts/sonnylazuardi_just-wanted-to-share-my-latest-experiment-activity-7307821553654657024-yrh8)
 
-## 手动设置和安装
+## Manual Setup and Installation
 
-### MCP 服务器：与 Cursor 的集成
+### MCP Server: Integration with Cursor
 
-将服务器添加到你的 Cursor MCP 配置文件 `~/.cursor/mcp.json` 中：
+Add the server to your Cursor MCP configuration in `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -68,147 +68,147 @@ bunx cursor-talk-to-figma-mcp
 }
 ```
 
-### WebSocket 服务器
+### WebSocket Server
 
-启动 WebSocket 服务器：
+Start the WebSocket server:
 
 ```bash
 bun socket
 ```
 
-### Figma 插件
+### Figma Plugin
 
-1. 在 Figma 中，转到插件 > 开发 > 新建插件
-2. 选择“链接现有插件”
-3. 选择 `src/cursor_mcp_plugin/manifest.json` 文件
-4. 现在该插件应该可以在你的 Figma 开发插件列表中找到
+1. In Figma, go to Plugins > Development > New Plugin
+2. Choose "Link existing plugin"
+3. Select the `src/cursor_mcp_plugin/manifest.json` file
+4. The plugin should now be available in your Figma development plugins
 
-## Windows + WSL 指南
+## Windows + WSL Guide
 
-1. 通过 PowerShell 安装 bun
+1. Install bun via powershell
 
 ```bash
 powershell -c "irm bun.sh/install.ps1|iex"
 ```
 
-2. 在 `src/socket.ts` 中取消注释主机名 `0.0.0.0`
+2. Uncomment the hostname `0.0.0.0` in `src/socket.ts`
 
 ```typescript
 // uncomment this to allow connections in windows wsl
 hostname: "0.0.0.0",
 ```
 
-3. 启动 websocket
+3. Start the websocket
 
 ```bash
 bun socket
 ```
 
-## 使用方法
+## Usage
 
-1. 启动 WebSocket 服务器
-2. 在 Cursor 中安装 MCP 服务器
-3. 打开 Figma 并运行 Cursor MCP 插件
-4. 通过使用 `join_channel` 加入频道来连接插件到 WebSocket 服务器
-5. 使用 Cursor 通过 MCP 工具与 Figma 通信
+1. Start the WebSocket server
+2. Install the MCP server in Cursor
+3. Open Figma and run the Cursor MCP Plugin
+4. Connect the plugin to the WebSocket server by joining a channel using `join_channel`
+5. Use Cursor to communicate with Figma using the MCP tools
 
-## MCP 工具
+## MCP Tools
 
-MCP 服务器提供了以下工具来与 Figma 交互：
+The MCP server provides the following tools for interacting with Figma:
 
-### 文档与选择
+### Document & Selection
 
-- `get_document_info` - 获取当前 Figma 文档的信息
-- `get_selection` - 获取当前选中的信息
-- `get_node_info` - 获取特定节点的详细信息
-- `get_nodes_info` - 通过提供一个节点 ID 数组来获取多个节点的详细信息
+- `get_document_info` - Get information about the current Figma document
+- `get_selection` - Get information about the current selection
+- `get_node_info` - Get detailed information about a specific node
+- `get_nodes_info` - Get detailed information about multiple nodes by providing an array of node IDs
 
-### 创建元素
+### Creating Elements
 
-- `create_rectangle` - 创建一个新的矩形，指定位置、大小和可选名称
-- `create_frame` - 创建一个新的框架，指定位置、大小和可选名称
-- `create_text` - 创建一个新的文本节点，并自定义字体属性
+- `create_rectangle` - Create a new rectangle with position, size, and optional name
+- `create_frame` - Create a new frame with position, size, and optional name
+- `create_text` - Create a new text node with customizable font properties
 
-### 修改文本内容
+### Modifying text content
 
-- `set_text_content` - 设置现有文本节点的文本内容
+- `set_text_content` - Set the text content of an existing text node
 
-### 样式
+### Styling
 
-- `set_fill_color` - 设置节点的填充颜色（RGBA）
-- `set_stroke_color` - 设置节点的描边颜色和粗细
-- `set_corner_radius` - 设置节点的圆角半径，并可选地控制每个角
+- `set_fill_color` - Set the fill color of a node (RGBA)
+- `set_stroke_color` - Set the stroke color and weight of a node
+- `set_corner_radius` - Set the corner radius of a node with optional per-corner control
 
-### 布局与组织
+### Layout & Organization
 
-- `move_node` - 将节点移动到新位置
-- `resize_node` - 用新尺寸调整节点大小
-- `delete_node` - 删除节点
-- `clone_node` - 创建现有节点的副本，并可选地设置位置偏移
+- `move_node` - Move a node to a new position
+- `resize_node` - Resize a node with new dimensions
+- `delete_node` - Delete a node
+- `clone_node` - Create a copy of an existing node with optional position offset
 
-### 组件与样式
+### Components & Styles
 
-- `get_styles` - 获取关于本地样式的相关信息
-- `get_local_components` - 获取关于本地组件的相关信息
-- `get_team_components` - 获取关于团队组件的相关信息
-- `create_component_instance` - 创建一个组件实例
+- `get_styles` - Get information about local styles
+- `get_local_components` - Get information about local components
+- `get_team_components` - Get information about team components
+- `create_component_instance` - Create an instance of a component
 
-### 导出与高级功能
+### Export & Advanced
 
-- `export_node_as_image` - 将节点导出为图像（PNG、JPG、SVG 或 PDF）
-- `execute_figma_code` - 在 Figma 中执行任意 JavaScript 代码（谨慎使用）
+- `export_node_as_image` - Export a node as an image (PNG, JPG, SVG, or PDF)
+- `execute_figma_code` - Execute arbitrary JavaScript code in Figma (use with caution)
 
-### 连接管理
+### Connection Management
 
-- `join_channel` - 加入特定频道以与 Figma 通信
+- `join_channel` - Join a specific channel to communicate with Figma
 
-## 开发
+## Development
 
-### 构建 Figma 插件
+### Building the Figma Plugin
 
-1. 导航到 Figma 插件目录：
+1. Navigate to the Figma plugin directory:
 
 ```
    cd src/cursor_mcp_plugin
 ```
 
-2. 编辑 code.js 和 ui.html 文件
+2. Edit code.js and ui.html
 
-## 最佳实践
+## Best Practices
 
-在使用 Figma MCP 时：
+When working with the Figma MCP:
 
-1. 在发送命令之前始终先加入一个频道
-2. 首先使用 `get_document_info` 获取文档概览
-3. 在进行修改前，使用 `get_selection` 检查当前选择
-4. 根据需要使用适当的创建工具：
-   - 使用 `create_frame` 创建容器
-   - 使用 `create_rectangle` 创建基本形状
-   - 使用 `create_text` 创建文本元素
-5. 使用 `get_node_info` 验证更改
-6. 尽可能使用组件实例以保持一致性
-7. 适当处理错误，因为所有命令都可能抛出异常
+1. Always join a channel before sending commands
+2. Get document overview using `get_document_info` first
+3. Check current selection with `get_selection` before modifications
+4. Use appropriate creation tools based on needs:
+   - `create_frame` for containers
+   - `create_rectangle` for basic shapes
+   - `create_text` for text elements
+5. Verify changes using `get_node_info`
+6. Use component instances when possible for consistency
+7. Handle errors appropriately as all commands can throw exceptions
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `image and video processing`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `image and video processing`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`bunx`
-- 参数：`cursor-talk-to-figma-mcp`
+- Transport: `stdio`
+- Command: `bunx`
+- Args: `cursor-talk-to-figma-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sonnylazuardi-cursor-talk-to-figma.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sonnylazuardi-cursor-talk-to-figma.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

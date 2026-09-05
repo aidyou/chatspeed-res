@@ -1,33 +1,33 @@
 ---
-title: "答案之书"
-description: "答案之书 MCP 服务 一个基于Model Context Protocol的智慧答案生成服务，为你的问题提供随机而富有哲理的答案。 来源地址 - https://github.com/liuyvan2025-art/answer-book-mcp 功能特点 - 🎯 随机生成智慧答案 - 📊 查询历史记录和统计 - 🎨 支持自定义答案 - 💾 持久化存储配置 Inspector 1. 执行：npx @modelcontextprotocol/inspector uvx answer-book-mcp MCP服务器配"
+title: "answer-book-mcp"
+description: "Book of Answers MCP Service A wisdom answer generation service based on the Model Context Protocol, providing random and philosophical answers to your questions. Source Address - https://github.com/li…"
 ---
 
-# 答案之书
+# answer-book-mcp
 
-答案之书 MCP 服务 一个基于Model Context Protocol的智慧答案生成服务，为你的问题提供随机而富有哲理的答案。 来源地址 - https://github.com/liuyvan2025-art/answer-book-mcp 功能特点 - 🎯 随机生成智慧答案 - 📊 查询历史记录和统计 - 🎨 支持自定义答案 - 💾 持久化存储配置 Inspector 1. 执行：npx @modelcontextprotocol/inspector uvx answer-book-mcp MCP服务器配
+Book of Answers MCP Service A wisdom answer generation service based on the Model Context Protocol, providing random and philosophical answers to your questions. Source Address - https://github.com/li…
 
-# 答案之书 MCP 服务
+# Book of Answers MCP Service
 
-一个基于Model Context Protocol的智慧答案生成服务，为你的问题提供随机而富有哲理的答案。
+A wisdom answer generation service based on the Model Context Protocol, providing random and philosophical answers to your questions.
 
-## 来源地址
+## Source Address
 - https://github.com/liuyvan2025-art/answer-book-mcp
 
-## 功能特点
+## Features
 
-- 🎯 随机生成智慧答案
-- 📊 查询历史记录和统计
-- 🎨 支持自定义答案
-- 💾 持久化存储配置
+- 🎯 Randomly generate wise answers
+- 📊 Query history records and statistics
+- 🎨 Support for custom answers
+- 💾 Persistent storage configuration
 
 ## Inspector
 
-1. 执行：`npx @modelcontextprotocol/inspector uvx answer-book-mcp`
+1. Execute: `npx @modelcontextprotocol/inspector uvx answer-book-mcp`
 
-## MCP服务器配置
+## MCP Server Configuration
 
-```json
+json
 {
   "mcpServers": {
     "answer-book-mcp": {
@@ -38,46 +38,44 @@ description: "答案之书 MCP 服务 一个基于Model Context Protocol的智�
     }
   }
 }
-```
 
-## API说明
+## API Documentation
 
-- `ask_question(question: str)` - 提问获取答案
-- `get_recent_history(limit: int)` - 获取历史记录
-- `get_statistics()` - 获取使用统计
-- `add_custom_answer(answer_text: str)` - 添加自定义答案
+- `ask_question(question: str)` - Ask a question to get an answer
+- `get_recent_history(limit: int)` - Get recent history
+- `get_statistics()` - Get usage statistics
+- `add_custom_answer(answer_text: str)` - Add a custom answer
 
-## 使用示例
-这个MCP服务可以通过各种MCP客户端使用，比如Claude、Cursor等：
+## Usage Example
+This MCP service can be used through various MCP clients, such as Claude, Cursor, etc.:
 
-```python
-# 示例对话
-用户：我应该接受这个工作机会吗？
-答案之书：跟随你内心的声音。
+python
+# Sample conversation
+User: Should I accept this job offer?
+Book of Answers: Follow the voice of your heart.
 
-用户：这个项目能成功吗？
-答案之书：风险太大，建议谨慎。
+User: Will this project succeed?
+Book of Answers: The risk is too high, proceed with caution.
 
-用户：查看我的历史记录
-答案之书：显示最近5条提问记录
-```
+User: Show my history
+Book of Answers: Display the last 5 query records
 
-**官方网站：** [https://github.com/liuyvan2025-art/answer-book-mcp](https://github.com/liuyvan2025-art/answer-book-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/liuyvan2025-art/answer-book-mcp](https://github.com/liuyvan2025-art/answer-book-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `mcp`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `mcp`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`answer-book-mcp@latest`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `answer-book-mcp@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/liuyvan-answer-book.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/liuyvan-answer-book.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

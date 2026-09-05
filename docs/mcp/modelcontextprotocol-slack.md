@@ -1,104 +1,101 @@
 ---
-title: "Slack"
-description: "用于Slack API的MCP服务器，使Claude能够与Slack工作区进行交互。"
+title: "slack"
+description: "MCP Server for the Slack API, enabling Claude to interact with Slack workspaces."
 ---
 
-# Slack
+# slack
 
-用于Slack API的MCP服务器，使Claude能够与Slack工作区进行交互。
+MCP Server for the Slack API, enabling Claude to interact with Slack workspaces.
 
-# Slack MCP 服务器
+# Slack MCP Server
 
-用于 Slack API 的 MCP 服务器，使 Claude 能够与 Slack 工作区进行交互。
+MCP Server for the Slack API, enabling Claude to interact with Slack workspaces.
 
-## 工具
+## Tools
 
 1. `slack_list_channels`
-   - 列出工作区中的公共频道
-   - 可选输入：
-     - `limit` (数字，默认：100，最大：200)：要返回的最大频道数
-     - `cursor` (字符串)：下一页的分页游标
-   - 返回：包含频道 ID 和信息的频道列表
+   - List public channels in the workspace
+   - Optional inputs:
+     - `limit` (number, default: 100, max: 200): Maximum number of channels to return
+     - `cursor` (string): Pagination cursor for next page
+   - Returns: List of channels with their IDs and information
 
 2. `slack_post_message`
-   - 向 Slack 频道发布新消息
-   - 必需输入：
-     - `channel_id` (字符串)：要发布的频道 ID
-     - `text` (字符串)：要发布的消息文本
-   - 返回：消息发布确认和时间戳
+   - Post a new message to a Slack channel
+   - Required inputs:
+     - `channel_id` (string): The ID of the channel to post to
+     - `text` (string): The message text to post
+   - Returns: Message posting confirmation and timestamp
 
 3. `slack_reply_to_thread`
-   - 回复特定的消息线程
-   - 必需输入：
-     - `channel_id` (字符串)：包含线程的频道
-     - `thread_ts` (字符串)：父消息的时间戳
-     - `text` (字符串)：回复文本
-   - 返回：回复确认和时间戳
+   - Reply to a specific message thread
+   - Required inputs:
+     - `channel_id` (string): The channel containing the thread
+     - `thread_ts` (string): Timestamp of the parent message
+     - `text` (string): The reply text
+   - Returns: Reply confirmation and timestamp
 
 4. `slack_add_reaction`
-   - 向消息添加表情符号反应
-   - 必需输入：
-     - `channel_id` (字符串)：包含消息的频道
-     - `timestamp` (字符串)：要反应的消息的时间戳
-     - `reaction` (字符串)：不带冒号的表情符号名称
-   - 返回：反应确认
+   - Add an emoji reaction to a message
+   - Required inputs:
+     - `channel_id` (string): The channel containing the message
+     - `timestamp` (string): Message timestamp to react to
+     - `reaction` (string): Emoji name without colons
+   - Returns: Reaction confirmation
 
 5. `slack_get_channel_history`
-   - 获取频道中的最近消息
-   - 必需输入：
-     - `channel_id` (字符串)：频道 ID
-   - 可选输入：
-     - `limit` (数字，默认：10)：要检索的消息数量
-   - 返回：包含消息内容和元数据的消息列表
+   - Get recent messages from a channel
+   - Required inputs:
+     - `channel_id` (string): The channel ID
+   - Optional inputs:
+     - `limit` (number, default: 10): Number of messages to retrieve
+   - Returns: List of messages with their content and metadata
 
 6. `slack_get_thread_replies`
-   - 获取消息线程中的所有回复
-   - 必需输入：
-     - `channel_id` (字符串)：包含线程的频道
-     - `thread_ts` (字符串)：父消息的时间戳
-   - 返回：包含回复内容和元数据的回复列表
+   - Get all replies in a message thread
+   - Required inputs:
+     - `channel_id` (string): The channel containing the thread
+     - `thread_ts` (string): Timestamp of the parent message
+   - Returns: List of replies with their content and metadata
 
 7. `slack_get_users`
-   - 获取带有基本资料信息的工作区用户列表
-   - 可选输入：
-     - `cursor` (字符串)：下一页的分页游标
-     - `limit` (数字，默认：100，最大：200)：要返回的最大用户数
-   - 返回：包含基本资料的用户列表
+   - Get list of workspace users with basic profile information
+   - Optional inputs:
+     - `cursor` (string): Pagination cursor for next page
+     - `limit` (number, default: 100, max: 200): Maximum users to return
+   - Returns: List of users with their basic profiles
 
 8. `slack_get_user_profile`
-   - 获取特定用户的详细资料信息
-   - 必需输入：
-     - `user_id` (字符串)：用户的 ID
-   - 返回：详细的用户资料信息
+   - Get detailed profile information for a specific user
+   - Required inputs:
+     - `user_id` (string): The user's ID
+   - Returns: Detailed user profile information
 
-## 设置
+## Setup
 
-```markdown
-```
+1. Create a Slack App:
+   - Visit the [Slack Apps page](https://api.slack.com/apps)
+   - Click "Create New App"
+   - Choose "From scratch"
+   - Name your app and select your workspace
 
-1. 创建 Slack 应用：
-   - 访问 [Slack Apps 页面](https://api.slack.com/apps)
-   - 点击“创建新应用”
-   - 选择“从头开始”
-   - 命名你的应用并选择你的工作区
+2. Configure Bot Token Scopes:
+   Navigate to "OAuth & Permissions" and add these scopes:
+   - `channels:history` - View messages and other content in public channels
+   - `channels:read` - View basic channel information
+   - `chat:write` - Send messages as the app
+   - `reactions:write` - Add emoji reactions to messages
+   - `users:read` - View users and their basic information
 
-2. 配置 Bot Token 权限范围：
-   导航到“OAuth & Permissions”并添加以下权限范围：
-   - `channels:history` - 查看公共频道中的消息和其他内容
-   - `channels:read` - 查看基本的频道信息
-   - `chat:write` - 以应用的身份发送消息
-   - `reactions:write` - 向消息添加表情符号反应
-   - `users:read` - 查看用户及其基本信息
+4. Install App to Workspace:
+   - Click "Install to Workspace" and authorize the app
+   - Save the "Bot User OAuth Token" that starts with `xoxb-`
 
-4. 将应用安装到工作区：
-   - 点击“安装到工作区”并授权该应用
-   - 保存以 `xoxb-` 开头的“Bot User OAuth Token”
+5. Get your Team ID (starts with a `T`) by following [this guidance](https://slack.com/help/articles/221769328-Locate-your-Slack-URL-or-ID#find-your-workspace-or-org-id)
 
-5. 按照 [此指南](https://slack.com/help/articles/221769328-Locate-your-Slack-URL-or-ID#find-your-workspace-or-org-id) 获取您的团队 ID（以 `T` 开头）
+### Usage with Claude Desktop
 
-### 与 Claude Desktop 一起使用
-
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+Add the following to your `claude_desktop_config.json`:
 
 #### npx
 
@@ -146,42 +143,42 @@ description: "用于Slack API的MCP服务器，使Claude能够与Slack工作区�
 }
 ```
 
-### 故障排除
+### Troubleshooting
 
-如果您遇到权限错误，请验证：
-1. 所有必需的权限范围已添加到您的 Slack 应用中
-2. 该应用已正确安装到您的工作区
-3. 令牌和工作区 ID 已正确复制到配置文件中
-4. 该应用已被添加到需要访问的频道中
+If you encounter permission errors, verify that:
+1. All required scopes are added to your Slack app
+2. The app is properly installed to your workspace
+3. The tokens and workspace ID are correctly copied to your configuration
+4. The app has been added to the channels it needs to access
 
-## 构建
+## Build
 
-Docker 构建命令：
+Docker build:
 
 ```bash
 docker build -t mcp/slack -f src/slack/Dockerfile .
 ```
 
-## 许可证
+## License
 
-本 MCP 服务器依据 MIT 许可证许可。这意味着您可以自由地使用、修改和分发软件，但需遵守 MIT 许可证的条款和条件。更多详情，请参阅项目仓库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-slack`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-slack`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-slack.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-slack.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,53 +1,53 @@
 ---
-title: "Postman AI工具生成器"
-description: "一个MCP服务器，可以从Postman集合和请求生成AI代理工具。该服务器与Postman API集成，将API端点转换为类型安全的代码，这些代码可以与各种AI框架一起使用。"
+title: "mcp-server-postman-tool-generation"
+description: "An MCP server that generates AI agent tools from Postman collections and requests. This server integrates with the Postman API to convert API endpoints into type-safe code that can be used with variou…"
 ---
 
-# Postman AI工具生成器
+# mcp-server-postman-tool-generation
 
-一个MCP服务器，可以从Postman集合和请求生成AI代理工具。该服务器与Postman API集成，将API端点转换为类型安全的代码，这些代码可以与各种AI框架一起使用。
+An MCP server that generates AI agent tools from Postman collections and requests. This server integrates with the Postman API to convert API endpoints into type-safe code that can be used with variou…
 
-# Postman 工具生成 MCP 服务器
+# Postman Tool Generation MCP Server
 
-一个从 Postman 集合和请求生成 AI 代理工具的 MCP 服务器。此服务器与 Postman API 集成，将 API 端点转换为类型安全的代码，可以与各种 AI 框架一起使用。
+An MCP server that generates AI agent tools from Postman collections and requests. This server integrates with the Postman API to convert API endpoints into type-safe code that can be used with various AI frameworks.
 
-模型上下文协议 (MCP) 是一种用于管理大型语言模型 (LLMs) 和外部系统之间上下文的[新标准化协议](https://modelcontextprotocol.io/introduction)。在此仓库中，我们提供了一个安装程序以及一个针对 [Postman 工具生成 API](https://api.getpostman.com/postbot/generations/tool) 的 MCP 服务器。
+Model Context Protocol (MCP) is a [new, standardized protocol](https://modelcontextprotocol.io/introduction) for managing context between large language models (LLMs) and external systems. In this repository, we provide an installer as well as an MCP Server for [Postman Tool Generation API](https://api.getpostman.com/postbot/generations/tool).
 
-这使您可以使用 [Claude Desktop](https://claude.ai/download)，或任何像 [Cline](https://github.com/cline/cline) 这样的 MCP 客户端，通过自然语言在您的 Postman 账户上完成任务，例如：
+This lets you use [Claude Desktop](https://claude.ai/download), or any MCP Client like [Cline](https://github.com/cline/cline), to use natural language to accomplish things on your Postman account, e.g.:
 
-* `为以下内容创建 AI 工具：
+* `Create an AI tool for:
 collectionID: 12345-abcde
 requestID: 67890-fghij
 typescript
 openai`
 
-## 特性
+## Features
 
-- 从 Postman 集合生成 TypeScript/JavaScript 代码
-- 支持多个 AI 框架（OpenAI, Mistral, Gemini, Anthropic, LangChain, AutoGen）
-- 类型安全的代码生成
-- 错误处理和响应验证
+- Generate TypeScript/JavaScript code from Postman collections
+- Support for multiple AI frameworks (OpenAI, Mistral, Gemini, Anthropic, LangChain, AutoGen)
+- Type-safe code generation
+- Error handling and response validation
 
-## 演示
+## Demo
 
   
 
-     alt="演示新发布的 MCP 服务器以探索 Postman 工具生成 API" width="600"/>
+     alt="Demonstrating the newly-released MCP server to explore Postman Tool Generation API" width="600"/>
   
 
-## 设置
+## Setup
 
-1. 安装依赖项：
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. 构建服务器：
+2. Build the server:
 ```bash
 npm run build
 ```
 
-3. 通过向您的 Claude 设置文件 (`cline_mcp_settings.json`) 添加以下内容来配置 MCP 设置：
+3. Configure the MCP settings by adding the following to your Claude settings file (`cline_mcp_settings.json`):
 ```json
 {
   "mcpServers": {
@@ -66,9 +66,9 @@ npm run build
 }
 ```
 
-## 使用
+## Usage
 
-服务器提供了一个名为 `generate_ai_tool` 的工具，具有以下参数：
+The server provides a single tool called `generate_ai_tool` with the following parameters:
 
 ```typescript
 {
@@ -79,7 +79,7 @@ npm run build
 }
 ```
 
-### 示例
+### Example
 
 ```typescript
 // Using the tool through MCP
@@ -95,70 +95,70 @@ const result = await use_mcp_tool({
 });
 ```
 
-### 生成的代码
+### Generated Code
 
-该工具生成的类型安全代码包括：
+The tool generates type-safe code that includes:
 
-- 请求/响应的类型定义
-- 错误处理
-- API 集成
-- OpenAI 函数定义
-- 文档和示例
+- Type definitions for request/response
+- Error handling
+- API integration
+- OpenAI function definitions
+- Documentation and examples
 
-## 开发
+## Development
 
-1. 安装依赖项：
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. 对 `src/index.ts` 进行更改
+2. Make changes to `src/index.ts`
 
-3. 构建服务器：
+3. Build the server:
 ```bash
 npm run build
 ```
 
-4. 重启 Claude 应用程序以加载更新后的服务器
+4. Restart the Claude app to load the updated server
 
-## 环境变量
+## Environment Variables
 
-- `POSTMAN_API_KEY`: 您的 Postman API 密钥（必需）
+- `POSTMAN_API_KEY`: Your Postman API key (required)
 
-## 错误处理
+## Error Handling
 
-服务器包括以下方面的全面错误处理：
-- 无效参数
-- API 失败
-- JSON 解析错误
-- 网络问题
+The server includes comprehensive error handling for:
+- Invalid parameters
+- API failures
+- JSON parsing errors
+- Network issues
 
-错误响应包含详细的错误信息，以帮助诊断问题。
+Error responses include detailed messages to help diagnose issues.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-**官方网站：** [https://github.com/giovannicocco/mcp-server-postman-tool-generation](https://github.com/giovannicocco/mcp-server-postman-tool-generation)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/giovannicocco/mcp-server-postman-tool-generation](https://github.com/giovannicocco/mcp-server-postman-tool-generation)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/postman-tool-generation-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/postman-tool-generation-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/giovannicocco-postman-tool-generation.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/giovannicocco-postman-tool-generation.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

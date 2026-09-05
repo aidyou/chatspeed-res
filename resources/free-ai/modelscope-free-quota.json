@@ -3,21 +3,27 @@
   "channel": "free-ai",
   "name": {
     "en": "ModelScope Free Inference Quota",
-    "zh-Hans": "魔塔免费调用额度",
-    "zh-Hant": "魔塔免费调用额度"
+    "zh-Hans": "魔塔免费调用额度"
   },
   "description": {
     "en": "Free sign-up; after linking an Alibaba Cloud account and completing real-name verification, each account gets 2,000 free API-Inference calls per day in total, with a per-model cap of usually 500 calls/day (lower for some large models).",
-    "zh-Hans": "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。",
-    "zh-Hant": "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。"
+    "zh-Hans": "免费注册并绑定阿里云账号、完成实名认证后，每个账号每天可免费调用模型推理 API（API-Inference）总计 2,000 次，单个模型一般每天不超过 500 次，部分大模型另有更低的单模型额度。"
   },
   "detail": {
     "en": "ModelScope (魔搭) is Alibaba's model community and hosted-inference platform, providing free API-Inference for 60,000+ models (Qwen, DeepSeek, Tongyi and more) plus image-generation capabilities. The API is OpenAI-compatible and also offers an Anthropic-compatible endpoint (used by Claude Code style tools), which suits users who want to evaluate popular open models over an API and connect the provider to ChatSpeed. The currently callable (free) models can be listed through the OpenAI-compatible endpoint `GET /v1/models`; models returned there are callable under the free quota. The free quota is stable, but popular models occasionally get removed or adjusted, and the official side does not publish a per-model quota table — confirm with the official limits document and model pages before relying on it. Note: calls fail with 401 until the account is linked, and the free quota resets per calendar day.",
-    "zh-Hans": "魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。注意：未完成账号关联时调用会收到 401 提示，免费额度按自然日重新计算。",
-    "zh-Hant": "魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。"
+    "zh-Hans": "魔塔（ModelScope）是阿里旗下的模型社区与托管推理平台，提供 6 万多个模型（Qwen 千问、DeepSeek、通义等系列，含文生图能力）的免费 API-Inference 在线推理。API 采用 OpenAI 兼容协议，并提供 Anthropic 兼容端点（可用于 Claude Code 类工具），适合希望通过 API 体验热门开源模型并把供应商配置接入 ChatSpeed 的用户。当前可免费调用的模型可通过 OpenAI 兼容的模型列表接口 `GET /v1/models` 获取，接口能取到的模型即可按免费额度调用。免费额度较为稳定，但热门模型有时会调整或下架，官方未逐一公布每个模型的具体额度，以官方限流文档和模型页为准。注意：未完成账号关联时调用会收到 401 提示，免费额度按自然日重新计算。"
   },
-  "categories": ["general", "coding", "reasoning"],
-  "tags": ["modelscope", "free-quota", "api", "china"],
+  "categories": [
+    "general",
+    "coding",
+    "reasoning"
+  ],
+  "tags": [
+    "modelscope",
+    "free-quota",
+    "api",
+    "china"
+  ],
   "website": "https://modelscope.cn/docs",
   "status": "review",
   "lastVerifiedAt": "2026-08-30",
@@ -27,67 +33,56 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "After sign-up, Alibaba Cloud account linking and real-name verification: 2,000 API-Inference calls/day in total; a single model is usually capped at 500 calls/day, and some large models are currently capped at 200 calls/day (community-reported; the official side does not publish a per-model table). The callable model list is available via `GET /v1/models`. Limits may be adjusted dynamically; follow the official limits documentation.",
-      "zh-Hans": "注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。",
-      "zh-Hant": "注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。"
+      "zh-Hans": "注册并绑定阿里云账号、完成实名认证后，每天可调用 API-Inference 总计 2,000 次；单个模型一般每天不超过 500 次，部分大模型当前为 200 次/天（社区整理，官方未逐一明确）。可用模型列表以 `GET /v1/models` 接口返回为准。额度可能动态调整，以官方限流文档为准。"
     },
     "availability": "regional",
     "signupUrl": "https://modelscope.cn/",
     "freePolicyUrl": "https://modelscope.cn/docs/model-service/API-Inference/limits",
     "registrationRestriction": {
       "en": "Sign up with a phone number/email, then link an Alibaba Cloud account and complete Alibaba Cloud real-name verification before the API works; no credit card is required. Unlinked or unverified accounts receive 401 errors from the API.",
-      "zh-Hans": "手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。",
-      "zh-Hant": "手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。"
+      "zh-Hans": "手机号/邮箱免费注册魔搭账号后，需绑定阿里云账号并完成阿里云实名认证方可调用 API；无需信用卡。未绑定或未实名时接口返回 401（please bind your alibaba cloud...）。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "All models (API-Inference, daily total)",
-          "zh-Hans": "全部模型（API-Inference 每日总额）",
-          "zh-Hant": "全部模型（API-Inference 每日总额）"
+          "zh-Hans": "全部模型（API-Inference 每日总额）"
         },
         "quota": {
           "en": "2,000 calls / day in total",
-          "zh-Hans": "每天总计 2,000 次",
-          "zh-Hant": "每天总计 2,000 次"
+          "zh-Hans": "每天总计 2,000 次"
         },
         "frequency": {
           "en": "Shared by all models per day",
-          "zh-Hans": "全模型合计，按自然日",
-          "zh-Hant": "全模型合计，按自然日"
+          "zh-Hans": "全模型合计，按自然日"
         }
       },
       {
         "model": {
           "en": "Single general model (e.g. Qwen series)",
-          "zh-Hans": "单个一般模型（如 Qwen 系列）",
-          "zh-Hant": "单个一般模型（如 Qwen 系列）"
+          "zh-Hans": "单个一般模型（如 Qwen 系列）"
         },
         "quota": {
           "en": "Up to 500 calls / day per model",
-          "zh-Hans": "每个模型每天不超过 500 次",
-          "zh-Hant": "每个模型每天不超过 500 次"
+          "zh-Hans": "每个模型每天不超过 500 次"
         },
         "frequency": {
           "en": "Per model per day",
-          "zh-Hans": "按模型按天",
-          "zh-Hant": "按模型按天"
+          "zh-Hans": "按模型按天"
         }
       },
       {
         "model": {
           "en": "Large models such as deepseek-ai/DeepSeek-R1-0528, DeepSeek-V3.1",
-          "zh-Hans": "deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型",
-          "zh-Hant": "deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型"
+          "zh-Hans": "deepseek-ai/DeepSeek-R1-0528、DeepSeek-V3.1 等大型模型"
         },
         "quota": {
           "en": "200 calls / day per model (current)",
-          "zh-Hans": "每个模型每天 200 次（当前）",
-          "zh-Hant": "每个模型每天 200 次（当前）"
+          "zh-Hans": "每个模型每天 200 次（当前）"
         },
         "frequency": {
           "en": "Per model per day; may change dynamically",
-          "zh-Hans": "按模型按天，平台可能动态调整",
-          "zh-Hant": "按模型按天，平台可能动态调整"
+          "zh-Hans": "按模型按天，平台可能动态调整"
         }
       }
     ],

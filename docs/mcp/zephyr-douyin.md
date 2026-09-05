@@ -1,13 +1,11 @@
 ---
-title: "抖音小助手（by 云中江树）"
-description: "抖音运营助手，用于提取抖音无水印视频链接、视频文案、IP文案、素材文案以及文案对标改写等功能。\n\n官方地址：https://github.com/yzfly/douyin-mcp-server"
+title: "douyin-mcp-server"
+description: "抖音运营助手，提取抖音无水印视频链接，视频文案， IP文案，素材文案，文案对标改写等。 官方地址：https://github.com/yzfly/douyin-mcp-server"
 ---
 
-# 抖音小助手（by 云中江树）
+# douyin-mcp-server
 
-抖音运营助手，用于提取抖音无水印视频链接、视频文案、IP文案、素材文案以及文案对标改写等功能。
-
-官方地址：https://github.com/yzfly/douyin-mcp-server
+抖音运营助手，提取抖音无水印视频链接，视频文案， IP文案，素材文案，文案对标改写等。 官方地址：https://github.com/yzfly/douyin-mcp-server
 
 # 抖音无水印视频文本提取 MCP 服务器
 
@@ -54,30 +52,19 @@ description: "抖音运营助手，用于提取抖音无水印视频链接、视
 在 Claude Desktop、Cherry Studio 等支持 MCP Server 的应用配置文件中添加以下配置：
 
 ```json
-
 {
-
   "mcpServers": {
-
     "douyin-mcp": {
-
       "command": "uvx",
-
       "args": ["douyin-mcp-server"],
-
       "env": {
-
         "DASHSCOPE_API_KEY": "sk-xxxx"
-
       }
-
     }
-
   }
-
 }
-
 ```
+
 ### 步骤 3：开始使用
 
 配置完成后，您就可以在支持的应用中正常调用 MCP 工具了。
@@ -100,30 +87,19 @@ description: "抖音运营助手，用于提取抖音无水印视频链接、视
 如果您需要使用旧版本，请使用以下配置：
 
 ```json
-
 {
-
   "mcpServers": {
-
     "douyin-mcp": {
-
       "command": "uvx",
-
       "args": ["douyin-mcp-server@1.1.0"],
-
       "env": {
-
         "DOUYIN_API_KEY": "your-api-key-here"
-
       }
-
     }
-
   }
-
 }
-
 ```
+
 **注意：** 旧版本使用硅基流动 API，需要在 [硅基流动](https://cloud.siliconflow.cn/i/TxUlXG3u) 注册账号并获取 API Key。
 
 📖 [1.1.0 版本文档](https://pypi.org/project/douyin-mcp-server/1.1.0/)
@@ -167,7 +143,9 @@ description: "抖音运营助手，用于提取抖音无水印视频链接、视
 
 **特点：** 仅解析视频基本信息，不下载视频文件
 
-### 资源访问- `douyin://video/{video_id}`: 通过视频 ID 获取详细信息
+### 资源访问
+
+- `douyin://video/{video_id}`: 通过视频 ID 获取详细信息
 
 ## 📦 系统要求
 
@@ -193,70 +171,46 @@ description: "抖音运营助手，用于提取抖音无水印视频链接、视
 ### 本地开发环境搭建
 
 ```bash
-
 # 克隆项目
-
 git clone https://github.com/yzfly/douyin-mcp-server.git
-
 cd douyin-mcp-server
 
 # 安装依赖（开发模式）
-
 pip install -e .
-
 ```
+
 ### 运行测试
 
 ```bash
-
 # 启动服务器进行测试
-
 python -m douyin_mcp_server.server
-
 ```
+
 ### Claude Desktop 本地开发配置
 
 在 Claude Desktop 配置文件中添加本地开发配置：
 
 ```json
-
 {
-
   "mcpServers": {
-
     "douyin-mcp": {
-
       "command": "uv",
-
       "args": [
-
         "run",
-
         "--directory",
-
         "/path/to/your/douyin-mcp-server",
-
         "python",
-
         "-m",
-
         "douyin_mcp_server"
-
       ],
-
       "env": {
-
         "DASHSCOPE_API_KEY": "your-api-key-here"
-
       }
-
     }
-
   }
-
 }
-
 ```
+
 ## ⚠️ 免责声明
 
 ### 使用风险
@@ -327,24 +281,25 @@ Apache License 2.0
 - ✨ **核心功能**：支持抖音视频文本提取
 - 🔗 **链接获取**：支持获取无水印视频下载链接
 - 🔐 **环境配置**：从环境变量读取 API 密钥
-- 🧹 **自动清理**：自动清理临时文件- ⚙️ **灵活配置**：支持自定义 API 配置
+- 🧹 **自动清理**：自动清理临时文件
+- ⚙️ **灵活配置**：支持自定义 API 配置
 
-**官方网站：** [https://github.com/yzfly/douyin-mcp-server](https://github.com/yzfly/douyin-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/yzfly/douyin-mcp-server](https://github.com/yzfly/douyin-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`douyin-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `douyin-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zephyr-douyin.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zephyr-douyin.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

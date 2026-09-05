@@ -1,61 +1,61 @@
 ---
-title: "Redis MCP代理服务器"
-description: "官方的 Redis MCP 服务器是一种为代理应用程序设计的自然语言接口，用于高效管理和搜索 Redis 中的数据。"
+title: "mcp-redis"
+description: "The official Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis."
 ---
 
-# Redis MCP代理服务器
+# mcp-redis
 
-官方的 Redis MCP 服务器是一种为代理应用程序设计的自然语言接口，用于高效管理和搜索 Redis 中的数据。
+The official Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis.
 
-# Redis MCP 服务器
+# Redis MCP Server
 [Smithery](https://smithery.ai/server/@redis/mcp-redis)
 
   
 
-## 概述
-Redis MCP 服务器是一个**自然语言接口**，旨在为代理应用程序高效管理和搜索 Redis 中的数据。它与**MCP（模型内容协议）客户端**无缝集成，使 AI 驱动的工作流能够与 Redis 中的结构化和非结构化数据进行交互。使用此 MCP 服务器，您可以提出以下问题：
+## Overview
+The Redis MCP Server is a **natural language interface** designed for agentic applications to efficiently manage and search data in Redis. It integrates seamlessly with **MCP (Model Content Protocol) clients**, enabling AI-driven workflows to interact with structured and unstructured data in Redis. Using this MCP Server, you can ask questions like:
 
-- "将整个对话存储在流中"
-- "缓存此项目"
-- "存储带有过期时间的会话"
-- "索引并搜索此向量"
+- "Store the entire conversation in a stream"
+- "Cache this item"
+- "Store the session with an expiration time"
+- "Index and search this vector"
 
-## 功能
-- **自然语言查询**：允许 AI 代理使用自然语言查询和更新 Redis。
-- **无缝 MCP 集成**：与任何**MCP 客户端**配合使用，实现顺畅的通信。
-- **全面支持 Redis**：处理**哈希、列表、集合、有序集合、流**等。
-- **搜索与过滤**：支持在 Redis 中高效检索和搜索数据。
-- **可扩展且轻量级**：专为**高性能**数据操作设计。
+## Features
+- **Natural Language Queries**: Enables AI agents to query and update Redis using natural language.
+- **Seamless MCP Integration**: Works with any **MCP client** for smooth communication.
+- **Full Redis Support**: Handles **hashes, lists, sets, sorted sets, streams**, and more.
+- **Search & Filtering**: Supports efficient data retrieval and searching in Redis.
+- **Scalable & Lightweight**: Designed for **high-performance** data operations.
 
-## 工具
+## Tools
 
-此 MCP 服务器提供了管理存储在 Redis 中的数据的工具。
+This MCP Server provides tools to manage the data stored in Redis.
 
-- `string` 工具用于设置、获取带过期时间的字符串。适用于存储简单的配置值、会话数据或缓存响应。
-- `hash` 工具用于在一个键内存储字段-值对。哈希可以存储向量嵌入。适用于表示具有多个属性的对象、用户资料或产品信息，其中可以单独访问字段。
-- `list` 工具提供常见的追加和弹出项操作。适用于队列、消息代理或维护最近的操作列表。
-- `set` 工具用于添加、移除和列出集合成员。适用于跟踪唯一的值，如用户 ID 或标签，并执行集合操作，如交集。
-- `sorted set` 工具用于管理例如排行榜、优先级队列或基于分数排序的时间分析数据。
-- `pub/sub` 功能用于向频道发布消息并订阅接收消息。适用于实时通知、聊天应用或向多个客户端分发更新。
-- `streams` 工具用于向数据流添加、读取和删除。适用于事件溯源、活动源或传感器数据日志，支持消费者组。
-- `JSON` 工具用于在 Redis 中存储、检索和操作 JSON 文档。适用于复杂的嵌套数据结构、文档数据库或路径访问的配置管理。
+- `string` tools to set, get strings with expiration. Useful for storing simple configuration values, session data, or caching responses.
+- `hash` tools to store field-value pairs within a single key. The hash can store vector embeddings. Useful for representing objects with multiple attributes, user profiles, or product information where fields can be accessed individually.
+- `list` tools with common operations to append and pop items. Useful for queues, message brokers, or maintaining a list of most recent actions.
+- `set` tools to add, remove and list set members. Useful for tracking unique values like user IDs or tags, and for performing set operations like intersection.
+- `sorted set` tools to manage data for e.g. leaderboards, priority queues, or time-based analytics with score-based ordering.
+- `pub/sub` functionality to publish messages to channels and subscribe to receive them. Useful for real-time notifications, chat applications, or distributing updates to multiple clients.
+- `streams` tools to add, read, and delete from data streams. Useful for event sourcing, activity feeds, or sensor data logging with consumer groups support.
+- `JSON` tools to store, retrieve, and manipulate JSON documents in Redis. Useful for complex nested data structures, document databases, or configuration management with path-based access.
 
-其他工具。
+Additional tools.
 
-- `query engine` 工具用于管理向量索引和执行向量搜索
-- `server management` 工具用于检索有关数据库的信息
+- `query engine` tools to manage vector indexes and perform vector search
+- `server management` tool to retrieve information about the database
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@redis/mcp-redis) 自动安装 Claude Desktop 的 Redis MCP 服务器：
+To install Redis MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@redis/mcp-redis):
 
 ```bash
 npx -y @smithery/cli install @redis/mcp-redis --client claude
 ```
 
-### 手动安装
+### Manual Installation
 ```sh
 # Clone the repository
 git clone https://github.com/redis/mcp-redis.git
@@ -67,55 +67,55 @@ source .venv/bin/activate
 uv sync
 ```
 
-## 配置
+## Configuration
 
-要配置此 Redis MCP 服务器，请考虑以下环境变量：
+To configure this Redis MCP Server, consider the following environment variables:
 
-| 名称                    | 描述                                               | 默认值 |
+| Name                    | Description                                               | Default Value |
 |-------------------------|-----------------------------------------------------------|---------------|
-| `REDIS_HOST`            | Redis IP 或主机名                                      | `"127.0.0.1"` |
-| `REDIS_PORT`            | Redis 端口                                                | `6379`        |
-| `REDIS_USERNAME`        | 默认数据库用户名                                 | `"default"`   |
-| `REDIS_PWD`             | 默认数据库密码                                 | ""            |
-| `REDIS_SSL`             | 启用或禁用 SSL/TLS                               | `False`       |
-| `REDIS_CA_PATH`         | 用于验证服务器的 CA 证书                       | None          |
-| `REDIS_SSL_KEYFILE`     | 客户端认证的私钥文件                           | None          |
-| `REDIS_SSL_CERTFILE`    | 客户端认证的证书文件                           | None          |
-| `REDIS_CERT_REQS`       | 客户端是否应验证服务器的证书 | `"required"`  |
-| `REDIS_CA_CERTS`        | 受信任的 CA 证书文件路径                  | None          |
-| `REDIS_CLUSTER_MODE`    | 启用 Redis 集群模式                                 | `False`       |
+| `REDIS_HOST`            | Redis IP or hostname                                      | `"127.0.0.1"` |
+| `REDIS_PORT`            | Redis port                                                | `6379`        |
+| `REDIS_USERNAME`        | Default database username                                 | `"default"`   |
+| `REDIS_PWD`             | Default database password                                 | ""            |
+| `REDIS_SSL`             | Enables or disables SSL/TLS                               | `False`       |
+| `REDIS_CA_PATH`         | CA certificate for verifying server                       | None          |
+| `REDIS_SSL_KEYFILE`     | Client's private key file for client authentication       | None          |
+| `REDIS_SSL_CERTFILE`    | Client's certificate file for client authentication       | None          |
+| `REDIS_CERT_REQS`       | Whether the client should verify the server's certificate | `"required"`  |
+| `REDIS_CA_CERTS`        | Path to the trusted CA certificates file                  | None          |
+| `REDIS_CLUSTER_MODE`    | Enable Redis Cluster mode                                 | `False`       |
 
-## 与 OpenAI Agents SDK 的集成
+## Integration with OpenAI Agents SDK
 
-将此 MCP 服务器与 OpenAI Agents SDK 集成。阅读[文档](https://openai.github.io/openai-agents-python/mcp/)以了解更多关于 SDK 与 MCP 集成的信息。
+Integrate this MCP Server with the OpenAI Agents SDK. Read the [documents](https://openai.github.io/openai-agents-python/mcp/) to learn more about the integration of the SDK with MCP.
 
-安装 Python SDK。
+Install the Python SDK.
 
 ```commandline
 pip install openai-agents
 ```
 
-配置 OpenAI 令牌：
+Configure the OpenAI token:
 
 ```commandline
 export OPENAI_API_KEY=""
 ```
 
-并运行 [应用程序](https://github.com/redis/mcp-redis/blob/HEAD/examples/redis_assistant.py)。
+And run the [application](https://github.com/redis/mcp-redis/blob/HEAD/examples/redis_assistant.py).
 
 ```commandline
 python3.13 redis_assistant.py 
 ```
 
-您可以使用 [OpenAI 控制台](https://platform.openai.com/traces/)来排查您的代理工作流问题。
+You can troubleshoot your agent workflows using the [OpenAI dashboard](https://platform.openai.com/traces/).
 
-## 与 Claude 桌面版的集成
-您可以配置 Claude 桌面版以使用此 MCP 服务器。
+## Integration with Claude Desktop
+You can configure Claude Desktop to use this MCP Server.
 
-1. 指定您的 Redis 凭据和 TLS 配置
-2. 获取您的 `uv` 命令完整路径（例如 `which uv`）
-3. 编辑 `claude_desktop_config.json` 配置文件 
-   - 在 MacOS 上，位于 `~/Library/Application\ Support/Claude/`
+1. Specify your Redis credentials and TLS configuration
+2. Retrieve your `uv` command full path (e.g. `which uv`)
+3. Edit the `claude_desktop_config.json` configuration file 
+   - on a MacOS, at `~/Library/Application Support/Claude/`
 
 ```commandline
 {
@@ -141,55 +141,54 @@ python3.13 redis_assistant.py
 }
 ```
 
-您可以通过跟踪日志文件来排查问题。
+You can troubleshoot problems by tailing the log file.
 
 ```commandline
 tail -f ~/Library/Logs/Claude/mcp-server-redis.log
 ```
 
-## 测试
+## Testing
 
-您可以使用 [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) 对此 MCP 服务器进行可视化调试。
+You can use the [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) for visual debugging of this MCP Server.
 
 ```sh
 npx @modelcontextprotocol/inspector uv run src/main.py
 ```
 
-## 示例用例
-- **AI 助手**：使 LLM 能够在 Redis 中获取、存储和处理数据。
-- **聊天机器人 & 虚拟代理**：检索会话数据、管理队列以及个性化响应。
-- **数据搜索 & 分析**：查询 Redis 以获得**实时洞察和快速查找**。
-- **事件处理**：使用 **Redis Streams** 管理事件流。
+## Example Use Cases
+- **AI Assistants**: Enable LLMs to fetch, store, and process data in Redis.
+- **Chatbots & Virtual Agents**: Retrieve session data, manage queues, and personalize responses.
+- **Data Search & Analytics**: Query Redis for **real-time insights and fast lookups**.
+- **Event Processing**: Manage event streams with **Redis Streams**.
 
-## 贡献
-1. Fork 仓库
-2. 创建一个新的分支 (`feature-branch`)
-3. 提交您的更改
-4. 将更改推送到您的分支并提交 PR！
+## Contributing
+1. Fork the repo
+2. Create a new branch (`feature-branch`)
+3. Commit your changes
+4. Push to your branch and submit a PR!
 
-## 许可证
+## License
+This project is licensed under the **MIT License**.
 
-此项目采用 **MIT 许可证**。
+## Contact
+For questions or support, reach out via [GitHub Issues](https://github.com/redis/mcp-redis/issues).
 
-## 联系
-如遇问题或需要支持，请通过 [GitHub Issues](https://github.com/redis/mcp-redis/issues) 联系我们。
+**Official site: ** [https://github.com/redis/mcp-redis](https://github.com/redis/mcp-redis)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/redis/mcp-redis](https://github.com/redis/mcp-redis)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `memory`
+- Tags: `databases`, `knowledge and memory`, `chinese`
 
-- 分类：`memory`
-- 标签：`databases`, `knowledge and memory`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run --rm --name redis-mcp-server -i -e REDIS_HOST=<redis_hostname> -e REDIS_PORT=<redis_port> -e REDIS_USERNAME=<redis_username> -e REDIS_PWD=<redis_password> mcp-redis`
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run --rm --name redis-mcp-server -i -e REDIS_HOST=<redis_hostname> -e REDIS_PORT=<redis_port> -e REDIS_USERNAME=<redis_username> -e REDIS_PWD=<redis_password> mcp-redis`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/redis-redis.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/redis-redis.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

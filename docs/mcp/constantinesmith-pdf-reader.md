@@ -1,11 +1,11 @@
 ---
-title: "pdf阅读"
-description: "该项目为AI代理提供了一个安全且灵活的工具，用于从PDF文件中读取和提取信息。它支持全文、特定页面、元数据和页数提取。服务器可以通过npm、Docker或本地构建集成到MCP环境中。"
+title: "pdf_reader"
+description: "PDF Reader MCP Server (@sylphlab/pdf-reader-mcp) <!-- Status Badges Area --"
 ---
 
-# pdf阅读
+# pdf_reader
 
-该项目为AI代理提供了一个安全且灵活的工具，用于从PDF文件中读取和提取信息。它支持全文、特定页面、元数据和页数提取。服务器可以通过npm、Docker或本地构建集成到MCP环境中。
+PDF Reader MCP Server (@sylphlab/pdf-reader-mcp) <!-- Status Badges Area --
 
 # PDF Reader MCP Server (@sylphlab/pdf-reader-mcp)
 
@@ -218,22 +218,22 @@ For detailed usage, API reference, and guides, please visit the **[Full Document
 
 This project is licensed under the [MIT License](https://github.com/sylphxltd/pdf-reader-mcp/blob/HEAD/LICENSE).
 
-**官方网站：** [https://github.com/sylphxltd/pdf-reader-mcp](https://github.com/sylphxltd/pdf-reader-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sylphxltd/pdf-reader-mcp](https://github.com/sylphxltd/pdf-reader-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@sylphlab/pdf-reader-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@sylphlab/pdf-reader-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/constantinesmith-pdf-reader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/constantinesmith-pdf-reader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

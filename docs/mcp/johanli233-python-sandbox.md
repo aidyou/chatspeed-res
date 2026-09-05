@@ -1,11 +1,11 @@
 ---
-title: "Python MCP 沙盒环境"
-description: "一个交互式的Python代码执行环境，允许用户和大型语言模型在隔离的Docker容器中安全地执行Python代码和安装包。"
+title: "python-mcp-sandbox"
+description: "An interactive Python code execution environment that allows users and LLMs to safely execute Python code and install packages in isolated Docker containers."
 ---
 
-# Python MCP 沙盒环境
+# python-mcp-sandbox
 
-一个交互式的Python代码执行环境，允许用户和大型语言模型在隔离的Docker容器中安全地执行Python代码和安装包。
+An interactive Python code execution environment that allows users and LLMs to safely execute Python code and install packages in isolated Docker containers.
 
 # MCP Sandbox
 
@@ -18,15 +18,15 @@ description: "一个交互式的Python代码执行环境，允许用户和大型
 
 [中文文档](https://github.com/JohanLi233/python-mcp-sandbox/blob/HEAD/README_zh.md) | English
 
-Python MCP Sandbox 是一个交互式的 Python 代码执行工具，允许用户和大语言模型在隔离的 Docker 容器中安全地执行 Python 代码并安装包。
+Python MCP Sandbox is an interactive Python code execution tool that allows users and LLMs to safely execute Python code and install packages in isolated Docker containers.
 
-## 功能
+## Features
 
-- 🐳 **Docker 隔离**：在隔离的 Docker 容器中安全地运行 Python 代码
-- 📦 **包管理**：轻松安装和管理 Python 包
-- 📊 **文件生成**：支持生成文件并通过网页链接访问
+- 🐳 **Docker Isolation**: Securely run Python code in isolated Docker containers
+- 📦 **Package Management**: Easily install and manage Python packages
+- 📊 **File Generation**: Support for generating files and accessing them via web links
 
-## 安装
+## Installation
 
 ```bash
 # Clone the repository
@@ -40,19 +40,19 @@ uv sync
 uv run main.py
 ```
 
-默认的 SSE 端点是 [http://localhost:8000/sse](http://localhost:8000/sse)，你可以通过 MCP Inspector 或任何支持 SSE 连接的客户端与它进行交互。
+The default SSE endpoint is http://localhost:8000/sse, and you can interact with it via the MCP Inspector through SSE or any other client that supports SSE connections.
 
-### 可用工具
+### Available Tools
 
-1. **create_sandbox**: 创建一个新的 Python Docker 沙箱，并返回其 ID 以供后续代码执行和包安装使用
-2. **list_sandboxes**: 列出所有现有的沙箱（Docker 容器）以便重用
-3. **execute_python_code**: 在指定的 Docker 沙箱中执行 Python 代码
-4. **install_package_in_sandbox**: 在指定的 Docker 沙箱中安装 Python 包
-5. **check_package_installation_status**: 检查 Docker 沙箱中某个包是否已安装或其安装状态
-6. **execute_terminal_command**: 在指定的 Docker 沙箱中执行终端命令。参数：`sandbox_id` (字符串), `command` (字符串)。返回 `stdout`, `stderr`, `exit_code`。
-7. **upload_file_to_sandbox**: 将本地文件上传到指定的 Docker 沙箱。参数：`sandbox_id` (字符串), `local_file_path` (字符串), `dest_path` (字符串, 可选, 默认: `/app/results`)。
+1. **create_sandbox**: Creates a new Python Docker sandbox and returns its ID for subsequent code execution and package installation
+2. **list_sandboxes**: Lists all existing sandboxes (Docker containers) for reuse
+3. **execute_python_code**: Executes Python code in a specified Docker sandbox
+4. **install_package_in_sandbox**: Installs Python packages in a specified Docker sandbox
+5. **check_package_installation_status**: Checks if a package is installed or installation status in a Docker sandbox
+6. **execute_terminal_command**: Executes a terminal command in the specified Docker sandbox. Parameters: `sandbox_id` (string), `command` (string). Returns `stdout`, `stderr`, `exit_code`.
+7. **upload_file_to_sandbox**: Uploads a local file to the specified Docker sandbox. Parameters: `sandbox_id` (string), `local_file_path` (string), `dest_path` (string, optional, default: `/app/results`).
 
-## 项目结构
+## Project Structure
 
 ```
 python-mcp-sandbox/
@@ -78,7 +78,7 @@ python-mcp-sandbox/
 └── README.md                  # Project documentation
 ```
 
-## 示例提示
+## Example Prompt
 ```
 I've configured a Python code execution sandbox for you. You can run Python code using the following steps:
 
@@ -114,9 +114,9 @@ Remember not to use plt.show() in your Python code. For visualizations:
 - All saved files will automatically appear as HTTP links in the results, which you can open or embed directly.
 ```
 
-## MCP 示例配置
+## MCP Example Config
 
-以下是一个示例配置：
+Below is an example config:
 
 ```json
 {
@@ -129,24 +129,24 @@ Remember not to use plt.show() in your Python code. For visualizations:
 }
 ```
 
-根据你的环境需要修改 `serverUrl`。
+Modify the `serverUrl` as needed for your environment.
 
-**官方网站：** [https://github.com/JohanLi233/python-mcp-sandbox](https://github.com/JohanLi233/python-mcp-sandbox)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JohanLi233/python-mcp-sandbox](https://github.com/JohanLi233/python-mcp-sandbox)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `virtualization`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `virtualization`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y supergateway --sse http://localhost:8000/sse`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y supergateway --sse http://localhost:8000/sse`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/johanli233-python-sandbox.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/johanli233-python-sandbox.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

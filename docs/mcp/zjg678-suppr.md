@@ -1,45 +1,42 @@
 ---
-title: "超能文献-文档翻译&中文搜pubmed"
-description: "Suppr MCP - Usage Guide 提供文档翻译及中文搜Pubmed的MCP服务 Suppr超能文献 Quick Start 1. 安装 全局安装： bash npm install -g suppr-mcp 或者使用 npx（无需安装）： bash npx suppr-mcp 2. 获取 API Key 访问 Suppr API 获取您的 API 密钥。 3. 配置环境变量 bash export SUPPRAPIKEY=yourapikeyhere 4. 在 MCP 客户端中使用 Claude De"
+title: "Suppr_mcp"
+description: "Suppr MCP - Usage Guide Providing Document Translation and Chinese PubMed Search MCP Service Suppr Super Literature Quick Start 1. Installation Global installation: bash npm install -g suppr-mcp Or us…"
 ---
 
-# 超能文献-文档翻译&中文搜pubmed
+# Suppr_mcp
 
-Suppr MCP - Usage Guide 提供文档翻译及中文搜Pubmed的MCP服务 Suppr超能文献 Quick Start 1. 安装 全局安装： bash npm install -g suppr-mcp 或者使用 npx（无需安装）： bash npx suppr-mcp 2. 获取 API Key 访问 Suppr API 获取您的 API 密钥。 3. 配置环境变量 bash export SUPPRAPIKEY=yourapikeyhere 4. 在 MCP 客户端中使用 Claude De
+Suppr MCP - Usage Guide Providing Document Translation and Chinese PubMed Search MCP Service Suppr Super Literature Quick Start 1. Installation Global installation: bash npm install -g suppr-mcp Or us…
 
-# Suppr MCP - Usage Guide | 提供文档翻译及中文搜Pubmed的MCP服务 | Suppr超能文献
+# Suppr MCP - Usage Guide | Providing Document Translation and Chinese PubMed Search MCP Service | Suppr Super Literature
 
 ## Quick Start
 
-### 1. 安装
+### 1. Installation
 
-全局安装：
-```bash
+Global installation:
+bash
 npm install -g suppr-mcp
-```
 
-或者使用 npx（无需安装）：
-```bash
+Or use npx (no installation required):
+bash
 npx suppr-mcp
-```
 
-### 2. 获取 API Key
+### 2. Get API Key
 
-访问 [Suppr API](https://suppr.wilddata.cn/api-keys) 获取您的 API 密钥。
+Visit [Suppr API](https://suppr.wilddata.cn/api-keys) to get your API key.
 
-### 3. 配置环境变量
+### 3. Configure Environment Variables
 
-```bash
+bash
 export SUPPR_API_KEY=your_api_key_here
-```
 
-### 4. 在 MCP 客户端中使用
+### 4. Use in MCP Client
 
-#### Claude Desktop 配置
+#### Claude Desktop Configuration
 
-编辑 `~/Library/Application Support/Claude/claude_desktop_config.json`（macOS）或相应配置文件：
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or the corresponding configuration file:
 
-```json
+json
 {
   "mcpServers": {
     "suppr": {
@@ -51,11 +48,10 @@ export SUPPR_API_KEY=your_api_key_here
     }
   }
 }
-```
 
-或者使用全局安装：
+Or use global installation:
 
-```json
+json
 {
   "mcpServers": {
     "suppr": {
@@ -66,33 +62,31 @@ export SUPPR_API_KEY=your_api_key_here
     }
   }
 }
-```
 
-## 可用工具
+## Available Tools
 
-### 1. create_translation - 创建翻译任务
+### 1. create_translation - Create a Translation Task
 
-创建文档翻译任务。
+Creates a document translation task.
 
-**参数：**
-- `file_path` (file_path 和 file_url 二选一): 源文件路径
-- `file_url` (file_path 和 file_url 二选一): 要翻译的文档 URL
-- `to_lang` (必填): 目标语言代码
-- `from_lang` (可选): 源语言代码（默认自动检测）
-- `optimize_math_formula` (可选): 优化数学公式（仅 PDF）
+**Parameters:**
+- `file_path` (either `file_path` or `file_url`): Source file path
+- `file_url` (either `file_path` or `file_url`): URL of the document to be translated
+- `to_lang` (required): Target language code
+- `from_lang` (optional): Source language code (auto-detected by default)
+- `optimize_math_formula` (optional): Optimize math formulas (PDF only)
 
-**示例：**
-```json
+**Example:**
+json
 {
   "file_url": "https://example.com/document.pdf",
   "to_lang": "en",
   "from_lang": "zh",
   "optimize_math_formula": true
 }
-```
 
-**返回：**
-```json
+**Response:**
+json
 {
   "task_id": "02a6c6d1-3f70-4a5a-80bc-971d53a37bb1",
   "status": "INIT",
@@ -101,24 +95,22 @@ export SUPPR_API_KEY=your_api_key_here
   "target_lang": "en",
   "optimize_math_formula": true
 }
-```
 
-### 2. get_translation - 获取翻译详情
+### 2. get_translation - Get Translation Details
 
-获取翻译任务的详细信息和状态。
+Gets detailed information and status of a translation task.
 
-**参数：**
-- `task_id` (必填): 翻译任务 ID
+**Parameters:**
+- `task_id` (required): Translation task ID
 
-**示例：**
-```json
+**Example:**
+json
 {
   "task_id": "02a6c6d1-3f70-4a5a-80bc-971d53a37bb1"
 }
-```
 
-**返回：**
-```json
+**Response:**
+json
 {
   "task_id": "02a6c6d1-3f70-4a5a-80bc-971d53a37bb1",
   "status": "DONE",
@@ -132,32 +124,30 @@ export SUPPR_API_KEY=your_api_key_here
   "error_msg": null,
   "optimize_math_formula": true
 }
-```
 
-**任务状态说明：**
-- `INIT`: 初始化
-- `PROGRESS`: 进行中
-- `DONE`: 已完成
-- `ERROR`: 错误
+**Task Status Explanation:**
+- `INIT`: Initialization
+- `PROGRESS`: In progress
+- `DONE`: Completed
+- `ERROR`: Error
 
-### 3. list_translations - 列出翻译任务
+### 3. list_translations - List Translation Tasks
 
-获取翻译任务列表，支持分页。
+Gets a list of translation tasks with pagination support.
 
-**参数：**
-- `offset` (可选): 分页偏移量，默认 0
-- `limit` (可选): 每页数量，默认 20
+**Parameters:**
+- `offset` (optional): Pagination offset, default 0
+- `limit` (optional): Number of items per page, default 20
 
-**示例：**
-```json
+**Example:**
+json
 {
   "offset": 0,
   "limit": 10
 }
-```
 
-**返回：**
-```json
+**Response:**
+json
 {
   "total": 42,
   "offset": 0,
@@ -171,41 +161,39 @@ export SUPPR_API_KEY=your_api_key_here
     }
   ]
 }
-```
 
-### 4. search_documents - 文献搜索
+### 4. search_documents - Document Search
 
-AI 驱动的文献语义搜索。
+AI-driven semantic search for documents.
 
-**参数：**
-- `query` (必填): 自然语言查询
-- `topk` (可选): 最大返回数量（1-100，默认 20）
-- `return_doc_keys` (可选): 指定返回字段
-- `auto_select` (可选): 自动选择最优结果（默认 true）
+**Parameters:**
+- `query` (required): Natural language query
+- `topk` (optional): Maximum number of results to return (1-100, default 20)
+- `return_doc_keys` (optional): Specify fields to return
+- `auto_select` (optional): Automatically select the best result (default true)
 
-**示例：**
-```json
+**Example:**
+json
 {
-  "query": "糖尿病最新研究进展",
+  "query": "最新糖尿病研究进展",
   "topk": 5,
   "return_doc_keys": ["title", "abstract", "doi", "authors"],
   "auto_select": true
 }
-```
 
-**可用的返回字段：**
-- `title`: 标题
-- `abstract`: 摘要
-- `authors`: 作者列表
+**Available Return Fields:**
+- `title`: Title
+- `abstract`: Abstract
+- `authors`: List of authors
 - `doi`: DOI
 - `pmid`: PubMed ID
-- `link`: 链接
-- `publication`: 出版物
-- `pub_year`: 出版年份
-- 更多字段请参考 API 文档
+- `link`: Link
+- `publication`: Publication
+- `pub_year`: Publication year
+- For more fields, refer to the API documentation
 
-**返回：**
-```json
+**Response:**
+json
 {
   "search_items": [
     {
@@ -220,109 +208,105 @@ AI 驱动的文献语义搜索。
     }
   ],
   "consumed_points": 20
-}
-```
+}## Supported Languages
 
-## 支持的语言
+Common language codes:
+- `en`: English (English)
+- `zh`: Chinese (Chinese)
+- `ko`: Korean (Korean)
+- `ja`: Japanese (Japanese)
+- `fr`: French (French)
+- `de`: German (German)
+- `es`: Spanish (Spanish)
+- `ru`: Russian (Russian)
+- `ar`: Arabic (Arabic)
+- `pt`: Portuguese (Portuguese)
+- `it`: Italian (Italian)
+- `auto`: Auto-detect
 
-常用语言代码：
-- `en`: English (英语)
-- `zh`: Chinese (中文)
-- `ko`: Korean (韩语)
-- `ja`: Japanese (日语)
-- `fr`: French (法语)
-- `de`: German (德语)
-- `es`: Spanish (西班牙语)
-- `ru`: Russian (俄语)
-- `ar`: Arabic (阿拉伯语)
-- `pt`: Portuguese (葡萄牙语)
-- `it`: Italian (意大利语)
-- `auto`: 自动检测
+## Error Handling
 
-## 错误处理
+All errors return in a standard format:
 
-所有错误都会返回标准格式：
-
-```json
+json
 {
-  "code": 非零错误码,
-  "msg": "错误信息",
+  "code": non-zero error code,
+  "msg": "Error message",
   "data": null
 }
-```
-
-常见错误：
-- **401**: API 密钥无效或未提供
-- **400**: 请求参数错误
-- **404**: 资源不存在
-
-## 使用示例
-
-### 在 Claude Desktop 中使用
-
-1. 配置好 API 密钥后重启 Claude Desktop
-
-2. 在对话中使用工具：
-
-**翻译文档：**
-> 请帮我翻译这个文档：https://example.com/paper.pdf，翻译成英文
-
-**搜索文献：**
-> 帮我搜索关于"深度学习在医学影像中的应用"的最新文献
-
-**查询翻译状态：**
-> 查看任务 02a6c6d1-3f70-4a5a-80bc-971d53a37bb1 的翻译进度
-
-## 常见问题
-
-### Q: 如何获取 API 密钥？
-A: 访问 https://suppr.wilddata.cn/api-keys 注册并获取 API 密钥。
-
-### Q: 支持哪些文档格式？
-A: 支持 PDF, DOCX, PPTX, XLSX, HTML, TXT, EPUB等常见格式。
-
-### Q: 翻译需要多长时间？
-A: 取决于文档大小，通常几分钟到十几分钟不等。可以使用 `get_translation` 查询进度。
-
-### Q: 如何下载翻译后的文档？
-A: 翻译完成后，`get_translation` 会返回 `target_file_url`，直接访问该链接下载。
-
-### Q: npx 运行失败？
-A: 确保 Node.js 版本 >= 18.0.0，并且设置了 SUPPR_API_KEY 环境变量。
 
 
-## 🔗 Suppr超能文献产品
+Common errors:
+- **401**: Invalid or missing API key
+- **400**: Bad request parameters
+- **404**: Resource not found
 
-- **Zotero插件** : https://github.com/WildDataX/suppr-zotero-plugin
-- **官方网站**：[https://suppr.wilddata.cn](https://suppr.wilddata.cn)
-- **AI文档翻译**:https://suppr.wilddata.cn/translate/upload
-- **API服务**:https://openapi.suppr.wilddata.cn/introduction
-- **中文搜Pubmed**: https://suppr.wilddata.cn/
-- **深度研究**：[https://suppr.wilddata.cn/deep-research](https://suppr.wilddata.cn/deep-research)  
-- **GitHub组织**：[WildDataX](https://github.com/WildDataX)
+## Usage Examples
 
-## 技术支持
+### Using in Claude Desktop
 
-如需帮助，请联系：IT@wilddata.cn
+1. Restart Claude Desktop after configuring the API key.
+
+2. Use the tool in the conversation:
+
+**Document Translation:**
+> Please help me translate this document: https://example.com/paper.pdf, into English
+
+**Literature Search:**
+> Help me find the latest literature on "applications of deep learning in medical imaging"
+
+**Check Translation Status:**
+> Check the translation progress of task 02a6c6d1-3f70-4a5a-80bc-971d53a37bb1
+
+## Frequently Asked Questions
+
+### Q: How to get an API key?
+A: Visit https://suppr.wilddata.cn/api-keys to register and obtain an API key.
+
+### Q: What document formats are supported?
+A: Supports common formats such as PDF, DOCX, PPTX, XLSX, HTML, TXT, EPUB, etc.
+
+### Q: How long does the translation take?
+A: It depends on the size of the document, usually ranging from a few minutes to about ten minutes. You can use `get_translation` to check the progress.
+
+### Q: How to download the translated document?
+A: After the translation is complete, `get_translation` will return `target_file_url`, simply access the link to download.
+
+### Q: npx fails to run?
+A: Ensure that Node.js version >= 18.0.0 and the SUPPR_API_KEY environment variable is set.
+
+## 🔗 Suppr Super Literature Products
+
+- **Zotero Plugin** : https://github.com/WildDataX/suppr-zotero-plugin
+- **Official Website**: [https://suppr.wilddata.cn](https://suppr.wilddata.cn)
+- **AI Document Translation**:https://suppr.wilddata.cn/translate/upload
+- **API Service**:https://openapi.suppr.wilddata.cn/introduction
+- **Chinese Search for Pubmed**: https://suppr.wilddata.cn/
+- **Deep Research**: [https://suppr.wilddata.cn/deep-research](https://suppr.wilddata.cn/deep-research)  
+- **GitHub Organization**: [WildDataX](https://github.com/WildDataX)
+
+## Technical Support
+
+For assistance, please contact: IT@wilddata.cn
 
 Made with ❤️ by [WildData](https://wilddata.cn)
 
-**官方网站：** [https://github.com/WildDataX/suppr-mcp](https://github.com/WildDataX/suppr-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/WildDataX/suppr-mcp](https://github.com/WildDataX/suppr-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `文档翻译`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `文档翻译`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y suppr-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y suppr-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zjg678-suppr.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zjg678-suppr.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

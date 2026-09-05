@@ -1,44 +1,43 @@
 ---
-title: "视频创作工具箱"
-description: "一、简介： MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与合成的工具服务。用户再任意支持MCP服务的工具中添加MathMind-MCP服务，即可实现通过自然语言描述场景和需求，工具即可自主调度MathMind的一系列工具，从而实现音视频多媒体内容的智能化生成。 二、核心工具 序号 工具中文名称 工具英文名称 工具介绍（中文） -------------------------------------------------- 1 多张图片合成视频 imgs2video 将一张或多"
+title: "VideoCreatToolKit"
+description: "I. Introduction: MathMind MCP Server provides a series of audio and video creation and synthesis tool services based on the MCP protocol. By adding MathMind-MCP service in any tool that supports MCP s…"
 ---
 
-# 视频创作工具箱
+# VideoCreatToolKit
 
-一、简介： MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与合成的工具服务。用户再任意支持MCP服务的工具中添加MathMind-MCP服务，即可实现通过自然语言描述场景和需求，工具即可自主调度MathMind的一系列工具，从而实现音视频多媒体内容的智能化生成。 二、核心工具 序号 工具中文名称 工具英文名称 工具介绍（中文） -------------------------------------------------- 1 多张图片合成视频 imgs2video 将一张或多
+I. Introduction: MathMind MCP Server provides a series of audio and video creation and synthesis tool services based on the MCP protocol. By adding MathMind-MCP service in any tool that supports MCP s…
 
-# 一、简介：
+# I. Introduction:
 
-MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与合成的工具服务。用户再任意支持MCP服务的工具中添加MathMind-MCP服务，即可实现通过自然语言描述场景和需求，工具即可自主调度MathMind的一系列工具，从而实现音视频多媒体内容的智能化生成。
+MathMind MCP Server provides a series of audio and video creation and synthesis tool services based on the MCP protocol. By adding MathMind-MCP service in any tool that supports MCP services, users can describe scenes and requirements through natural language, and the tool will autonomously schedule a series of tools from MathMind to achieve intelligent generation of multimedia content.
 
-# 二、核心工具
-| 序号 | 工具中文名称 | 工具英文名称 | 工具介绍（中文） |
+# II. Core Tools
+| No. | Tool Chinese Name | Tool English Name | Tool Description (Chinese) |
 |----|--------------|--------------|------------------|
-| 1  | 多张图片合成视频 | imgs2video | 将一张或多张图片合成一个视频，支持添加背景音乐、配音。 |
-| 2  | 多个视频合成视频 | video2video | 将一个或多段视频素材合成一个视频，支持上传背景音乐（非必填）、配音（非必填）合成新的视频。支持单独上传首、尾视频，固定视频首尾。支持设置封面图、支持配音音量控制、支持背景音乐自定义音量。 |
-| 3  | 视频文案提取 | video2txt | 实时提取视频中的文案，用户输入视频链接即可。建议上传5分钟以下的视频 |
-| 4  | 视频字幕识别 | subtitleDynamic | 上传视频，即可识别字幕并输出最终带字幕的视频。字幕支持设置字体与位置等。支持传入text文本。 |
-| 5  | 任务查询 | taskFetch2 | 输入工具subtitleDynamic输出的traceId即可获得添加了字幕以后的视频地址 |
-| 6  | 视频片段获取 | videoCutRandom | 输入视频链接，输入截取的起始和结束位置，即可截取视频片段 |
-| 7  | 图生视频 | imageGenVideo | 上传图片，输入提示词，即可生成视频，模型为VIDU。
-支持实时生成和异步生成。当异步生成，则需要调用查询工具：videoTaskFetch
-实时直接生成URL；
-异步先只给traceId，用户需要调用videoTaskFetch |
-| 8  | 图片画中画 | imgPip | 输入视频，为视频添加图片，如logo、视频提及内容等图片素材。
-支持自定义素材的宽高、入场和出场的时间、动画以及显示的位置，非必填，取默认值。 |
-| 9 | 画中画任务查询 | cutTaskFetch | 上述imgPip只会返回ReqId，此时需要使用任务查询工具主动查询结果 |
+| 1  | 多张图片合成视频 | imgs2video | Synthesizes one or more images into a video, supporting the addition of background music and voiceover. |
+| 2  | 多个视频合成视频 | video2video | Synthesizes one or multiple video clips into a single video, supporting the upload of background music (optional) and voiceover (optional) to create a new video. Supports uploading separate head and tail videos, fixing the beginning and end of the video. Supports setting cover images, controlling voiceover volume, and customizing background music volume. |
+| 3  | 视频文案提取 | video2txt | Extracts text from a video in real time; users just need to input the video link. It is recommended to upload videos under 5 minutes. |
+| 4  | 视频字幕识别 | subtitleDynamic | Upload a video, and it will recognize subtitles and output the final video with subtitles. Subtitles support settings for font and position, etc. Supports passing in text. |
+| 5  | 任务查询 | taskFetch2 | Input the traceId output by the subtitleDynamic tool to get the video address after subtitles have been added. |
+| 6  | 视频片段获取 | videoCutRandom | Input the video link and specify the start and end positions to cut out a video segment. |
+| 7  | 图生视频 | imageGenVideo | Upload an image and input prompt words to generate a video, using the VIDU model.
+Supports both real-time and asynchronous generation. For asynchronous generation, you need to call the query tool: videoTaskFetch
+Real-time directly generates a URL;
+Asynchronous first only gives the traceId, and the user needs to call videoTaskFetch. |
+| 8  | 图片画中画 | imgPip | Input a video and add images to it, such as logos or images related to the video content.
+Supports customization of the width and height of the material, entry and exit times, animations, and display positions. If not specified, default values are used. |
+| 9 | 画中画任务查询 | cutTaskFetch | The above imgPip will only return ReqId, at which point you need to use the task query tool to actively check the results. |
 
-# 三、快速开始
-## 获取apikey
-在MathMind开放平台注册并获取apikey，[立即前往](https://admin.mathmind.cn/login?referralCode=REF22431068)
+# III. Quick Start
+## Get API Key
+Register on the MathMind Open Platform and obtain your API key, [go now](https://admin.mathmind.cn/login?referralCode=REF22431068)
 
-## SSE 调用方式
+## SSE Call Method
 
 ### Windsurf
 
-前往 Windsurf > Settings > Cascade > Add Server > Add custom server 添加配置：
+Go to Windsurf > Settings > Cascade > Add Server > Add custom server to add the configuration:
 
-```
 {
   "mcpServers": {
     "mcp-server-mathmind": {
@@ -46,13 +45,11 @@ MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与�
     }
   }
 }
-```
 
 ### Cursor
 
-前往 Cursor -> Preferences -> Cursor Settings -> MCP -> Add new global MCP Server 添加配置:
+Go to Cursor -> Preferences -> Cursor Settings -> MCP -> Add new global MCP Server to add the configuration:
 
-```
 {
   "mcpServers": {
     "mcp-server-mathmind": {
@@ -60,13 +57,11 @@ MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与�
     }
   }
 }
-```
 
-### 通义灵码
+### Tongyi Lingma
 
-前往 通义灵码 -> MCP工具 -> MCP服务 -> 通过配置文件添加新增MCP服务 -> lingma_mcp.json添加以下配置:
+Go to Tongyi Lingma -> MCP Tools -> MCP Services -> Add New MCP Service via Configuration File -> lingma_mcp.json, and add the following configuration:
 
-```
 {
   "mcpServers": {
     "mcp-server-mathmind": {
@@ -74,43 +69,42 @@ MathMind MCP Server提供了一个基于MCP协议的一系列音视频创作与�
     }
   }
 }
-```
 
-# 其他
+# IV. Additional Information
 
-## 技术支持
+## Technical Support
 
-邮件联系：ai@mathmind.cn
+Contact us via email: ai@mathmind.cn
 
-技术支持：
+Technical Support:
 
 --- 
-## 快捷入口
-- 官网入口：https://mathmind.cn/
-- 开放平台：https://admin.mathmind.cn/#/
-- 插件市场：https://www.coze.cn/user/829510688450616
-- 免费教程：https://mathmind.feishu.cn/wiki/OtIZwYuxbi1ErQkyovmc07HmnOh
-- 付费空间：https://mathmind.feishu.cn/wiki/GvW8wyv2VithdnkNsVmcqhVNnYb
-- B站视频讲解：https://space.bilibili.com/87911991/channel/seriesdetail?sid=4634704
-- 帮助中心：https://mathmind.feishu.cn/docx/Q6eodjvPLoq7yDxZaHOcfnFrntg
-- Coze折扣：https://mathmind.feishu.cn/wiki/D9qSwIoaEixfqmkDupuceF62nFg
+## Quick Links
+- Official Website: https://mathmind.cn/
+- Open Platform: https://admin.mathmind.cn/#/
+- Plugin Marketplace: https://www.coze.cn/user/829510688450616
+- Free Tutorials: https://mathmind.feishu.cn/wiki/OtIZwYuxbi1ErQkyovmc07HmnOh
+- Paid Space: https://mathmind.feishu.cn/wiki/GvW8wyv2VithdnkNsVmcqhVNnYb
+- Bilibili Video Tutorials: https://space.bilibili.com/87911991/channel/seriesdetail?sid=4634704
+- Help Center: https://mathmind.feishu.cn/docx/Q6eodjvPLoq7yDxZaHOcfnFrntg
+- Coze Discount: https://mathmind.feishu.cn/wiki/D9qSwIoaEixfqmkDupuceF62nFg
 
-**官方网站：** [https://github.com/Runninghcm/MathMind-MCP-SERVER.git](https://github.com/Runninghcm/MathMind-MCP-SERVER.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Runninghcm/MathMind-MCP-SERVER.git](https://github.com/Runninghcm/MathMind-MCP-SERVER.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `developer tools`, `art and culture`, `视频`, `图生视频`, `视频剪辑`, `视频合成`, `剪映`, `剪辑`, `视频生成`
+- Categories: `media`
+- Tags: `entertainment and media`, `developer tools`, `art and culture`, `视频`, `图生视频`, `视频剪辑`, `视频合成`, `剪映`, `剪辑`, `视频生成`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mathmind-videocreattoolkit.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mathmind-videocreattoolkit.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

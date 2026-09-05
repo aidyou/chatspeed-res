@@ -1,119 +1,119 @@
 ---
-title: "Exa搜索"
-description: "模型上下文协议（MCP）服务器让像克劳德这样的AI助手可以使用Exa AI搜索API进行网络搜索。这种设置使AI模型能够以安全和受控的方式获取实时网络信息。"
+title: "exa-mcp-server"
+description: "A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches. This setup allows AI models to get real-time web information in a safe and controlled w…"
 ---
 
-# Exa搜索
+# exa-mcp-server
 
-模型上下文协议（MCP）服务器让像克劳德这样的AI助手可以使用Exa AI搜索API进行网络搜索。这种设置使AI模型能够以安全和受控的方式获取实时网络信息。
+A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches. This setup allows AI models to get real-time web information in a safe and controlled w…
 
-# Exa MCP 服务器 🔍
-[![npm 版本](/mcp-assets/90e07ad32988cad1a586fe228cb593dd.svg)](https://www.npmjs.com/package/exa-mcp-server)
+# Exa MCP Server 🔍
+[![npm version](/mcp-assets/90e07ad32988cad1a586fe228cb593dd.svg)](https://www.npmjs.com/package/exa-mcp-server)
 [Smithery](https://smithery.ai/server/exa)
 
-Model Context Protocol (MCP) 服务器允许像 Claude 这样的 AI 助手使用 Exa AI 搜索 API 进行网络搜索。这种设置使 AI 模型能够以安全且受控的方式获取实时网络信息。
+A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches. This setup allows AI models to get real-time web information in a safe and controlled way.
 
-演示视频 [https://www.loom.com/share/ac676f29664e4c6cb33a2f0a63772038?sid=0e72619f-5bfc-415d-a705-63d326373f60](https://www.loom.com/share/ac676f29664e4c6cb33a2f0a63772038?sid=0e72619f-5bfc-415d-a705-63d326373f60)
+Demo video https://www.loom.com/share/ac676f29664e4c6cb33a2f0a63772038?sid=0e72619f-5bfc-415d-a705-63d326373f60
 
-## 什么是 MCP？🤔
+## What is MCP? 🤔
 
-Model Context Protocol (MCP) 是一种系统，它允许像 Claude Desktop 这样的 AI 应用程序连接到外部工具和数据源。它为 AI 助手提供了清晰且安全的方式来与本地服务和 API 交互，同时保持用户控制权。
+The Model Context Protocol (MCP) is a system that lets AI apps, like Claude Desktop, connect to external tools and data sources. It gives a clear and safe way for AI assistants to work with local services and APIs while keeping the user in control.
 
-## 这个服务器做什么？🚀
+## What does this server do? 🚀
 
-Exa MCP 服务器：
-- 使 AI 助手能够使用 Exa 强大的搜索 API 进行网络搜索
-- 提供结构化的搜索结果，包括标题、URL 和内容片段
-- 缓存最近的搜索作为参考资源
-- 优雅地处理速率限制和错误情况
-- 支持实时网络爬取以获取最新内容
+The Exa MCP server:
+- Enables AI assistants to perform web searches using Exa's powerful search API
+- Provides structured search results including titles, URLs, and content snippets
+- Caches recent searches as resources for reference
+- Handles rate limiting and error cases gracefully
+- Supports real-time web crawling for fresh content
 
-## 前提条件 📋
+## Prerequisites 📋
 
-在开始之前，请确保您已安装：
+Before you begin, ensure you have:
 
-- [Node.js](https://nodejs.org/)（版本 18 或更高）
-- 已安装 [Claude Desktop](https://claude.ai/download)
-- 一个 [Exa API 密钥](https://dashboard.exa.ai/api-keys)
-- 安装了 Git
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Claude Desktop](https://claude.ai/download) installed
+- An [Exa API key](https://dashboard.exa.ai/api-keys)
+- Git installed
 
-您可以运行以下命令来验证 Node.js 的安装：
+You can verify your Node.js installation by running:
 ```bash
 node --version  # Should show v18.0.0 or higher
 ```
 
-## 安装 🛠️
+## Installation 🛠️
 
-### NPM 安装
+### NPM Installation
 
 ```bash
 npm install -g exa-mcp-server
 ```
 
-### 使用 Smithery
+### Using Smithery
 
-要通过 [Smithery](https://smithery.ai/server/exa) 自动为 Claude Desktop 安装 Exa MCP 服务器：
+To install the Exa MCP server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/exa):
 
 ```bash
 npx -y @smithery/cli install exa --client claude
 ```
 
-### 手动安装
+### Manual Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/exa-labs/exa-mcp-server.git
 cd exa-mcp-server
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 
 ```bash
 npm run build
 ```
 
-4. 创建全局链接（这使得可以从任何地方执行该服务器）：
+4. Create a global link (this makes the server executable from anywhere):
 
 ```bash
 npm link
 ```
 
-## 配置 ⚙️
+## Configuration ⚙️
 
-### 1. 配置 Claude Desktop 以识别 Exa MCP 服务器
+### 1. Configure Claude Desktop to recognize the Exa MCP server
 
-您可以在 Claude Desktop 应用程序的设置中找到 claude_desktop_config.json 文件：
+You can find claude_desktop_config.json inside the settings of Claude Desktop app:
 
-打开 Claude Desktop 应用程序并从左上角菜单栏启用开发者模式。
+Open the Claude Desktop app and enable Developer Mode from the top-left menu bar. 
 
-启用后，从左上角菜单栏打开设置，并导航到开发者选项，您将在那里找到编辑配置按钮。点击它将打开 claude_desktop_config.json 文件，允许您进行必要的编辑。
+Once enabled, open Settings (also from the top-left menu bar) and navigate to the Developer Option, where you'll find the Edit Config button. Clicking it will open the claude_desktop_config.json file, allowing you to make the necessary edits. 
 
-或者（如果您想从终端打开 claude_desktop_config.json）
+OR (if you want to open claude_desktop_config.json from terminal)
 
-#### 对于 macOS：
+#### For macOS:
 
-1. 打开您的 Claude Desktop 配置文件：
+1. Open your Claude Desktop configuration:
 
 ```bash
-code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+code ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-#### 对于 Windows：
+#### For Windows:
 
-1. 打开您的 Claude Desktop 配置文件：
+1. Open your Claude Desktop configuration:
 
 ```powershell
-code %APPDATA%\Claude\claude_desktop_config.json
+code %APPDATA%Claudeclaude_desktop_config.json
 ```
 
-### 2. 添加 Exa 服务器配置：
+### 2. Add the Exa server configuration:
 
 ```json
 {
@@ -129,19 +129,19 @@ code %APPDATA%\Claude\claude_desktop_config.json
 }
 ```
 
-将 `your-api-key-here` 替换为您从 [dashboard.exa.ai/api-keys](https://dashboard.exa.ai/api-keys) 获取的实际 Exa API 密钥。
+Replace `your-api-key-here` with your actual Exa API key from [dashboard.exa.ai/api-keys](https://dashboard.exa.ai/api-keys).
 
-### 3. 重启 Claude Desktop
+### 3. Restart Claude Desktop
 
-为了让更改生效：
+For the changes to take effect:
 
-1. 完全退出 Claude Desktop（不仅仅是关闭窗口）
-2. 再次启动 Claude Desktop
-3. 查找 🔌 图标以验证 Exa 服务器是否已连接
+1. Completely quit Claude Desktop (not just close the window)
+2. Start Claude Desktop again
+3. Look for the 🔌 icon to verify the Exa server is connected
 
-## 使用 🎯
+## Usage 🎯
 
-配置完成后，您可以要求 Claude 执行网络搜索。以下是一些示例提示：
+Once configured, you can ask Claude to perform web searches. Here are some example prompts:
 
 ```
 Can you search for recent developments in quantum computing?
@@ -167,86 +167,86 @@ Search for the top 10 AI research papers from 2023, and only use live crawling a
 Search for electric vehicles and return 3 results, always using live crawling.
 ```
 
-服务器将执行以下操作：
+The server will:
 
-1. 处理搜索请求
-2. 以最优设置查询 Exa API（包括实时爬取）
-3. 将格式化后的结果返回给 Claude
-4. 缓存搜索以便将来参考
+1. Process the search request
+2. Query the Exa API with optimal settings (including live crawling)
+3. Return formatted results to Claude
+4. Cache the search for future reference
 
-## 功能 ✨
+## Features ✨
 
-* **简化网页搜索工具**：仅通过一个查询参数即可让 Claude 搜索网络
-* **可自定义的搜索参数**：控制结果数量和实时爬取策略
-* **自动实时爬取**：根据指定策略使用实时爬取
-* **预设最佳参数**：为结果数量和字符限制使用最佳默认值
-* **搜索缓存**：保存最近的搜索作为参考资料
-* **错误处理**：优雅地处理 API 错误和速率限制
-* **类型安全**：完全使用 TypeScript 实现，并使用 Zod 验证
-* **MCP 合规性**：完全实现最新的 MCP 协议规范
+* **Simplified Web Search Tool**: Enables Claude to search the web with just a query parameter
+* **Customizable Search Parameters**: Control the number of results and live crawling strategy
+* **Automatic Live Crawling**: Uses real-time crawling based on specified strategy
+* **Preset Optimal Parameters**: Uses best defaults for result count and character limits
+* **Search Caching**: Saves recent searches as resources for reference
+* **Error Handling**: Gracefully handles API errors and rate limits
+* **Type Safety**: Full TypeScript implementation with Zod validation
+* **MCP Compliance**: Fully implements the latest MCP protocol specification
 
-## 使用 MCP Inspector 测试 🔍
+## Testing with MCP Inspector 🔍
 
-您可以直接使用 MCP Inspector 测试服务器：
+You can test the server directly using the MCP Inspector:
 
 ```bash
 npx @modelcontextprotocol/inspector node ./build/index.js
 ```
 
-这将打开一个交互界面，您可以在其中探索服务器的功能、执行搜索查询并查看缓存的搜索结果。
+This opens an interactive interface where you can explore the server's capabilities, execute search queries, and view cached search results.
 
-## 故障排除 🔧
+## Troubleshooting 🔧
 
-### 常见问题
+### Common Issues
 
-1. **找不到服务器**
-   * 确认 npm 链接已正确设置
-   * 检查 Claude Desktop 配置语法
-   * 确保 Node.js 已正确安装
+1. **Server Not Found**
+   * Verify the npm link is correctly set up
+   * Check Claude Desktop configuration syntax
+   * Ensure Node.js is properly installed
 
-2. **API 密钥问题**
-   * 确认您的 EXA_API_KEY 是有效的
-   * 检查 EXA_API_KEY 是否已在 Claude Desktop 配置中正确设置
-   * 确认 API 密钥周围没有空格或引号
+2. **API Key Issues**
+   * Confirm your EXA_API_KEY is valid
+   * Check the EXA_API_KEY is correctly set in the Claude Desktop config
+   * Verify no spaces or quotes around the API key
 
-3. **连接问题**
-   * 完全重启 Claude Desktop
-   * 检查 Claude Desktop 日志：
+3. **Connection Issues**
+   * Restart Claude Desktop completely
+   * Check Claude Desktop logs:
    
 ```bash
    # macOS
    tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
    
    # Windows
-   type "%APPDATA%\Claude\logs\mcp*.log"
+   type "%APPDATA%Claudelogsmcp*.log"
 ```
 
-### 获取帮助
+### Getting Help
 
-如果您遇到问题，请查阅 [MCP 文档](https://modelcontextprotocol.io) 或访问 [GitHub 讨论](https://github.com/orgs/modelcontextprotocol/discussions) 寻求社区支持。
+If you encounter issues, review the [MCP Documentation](https://modelcontextprotocol.io) or visit the [GitHub discussions](https://github.com/orgs/modelcontextprotocol/discussions) for community support.
 
-## 致谢 🙏
+## Acknowledgments 🙏
 
-* [Exa AI](https://exa.ai) 提供了强大的搜索 API
-* [Model Context Protocol](https://modelcontextprotocol.io) 提供了 MCP 规范
-* [Anthropic](https://anthropic.com) 提供了 Claude Desktop
+* [Exa AI](https://exa.ai) for their powerful search API
+* [Model Context Protocol](https://modelcontextprotocol.io) for the MCP specification
+* [Anthropic](https://anthropic.com) for Claude Desktop
 
-**官方网站：** [https://github.com/exa-labs/exa-mcp-server](https://github.com/exa-labs/exa-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/exa-labs/exa-mcp-server](https://github.com/exa-labs/exa-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `chinese`
+- Categories: `search`
+- Tags: `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`exa-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `exa-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/exa-labs-exa.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/exa-labs-exa.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

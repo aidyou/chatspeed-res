@@ -1,71 +1,71 @@
 ---
-title: "股票分析-MCP"
-description: "允许 Claude 和其他 MCP 客户端访问 Alpha Vantage API 提供的实时和历史股票市场数据，包括具有可自定义间隔的盘中和每日股票数据。"
+title: "stock-analysis-mcp"
+description: "Allows Claude and other MCP clients to access real-time and historical stock market data from Alpha Vantage API, including intraday and daily stock data with customizable intervals."
 ---
 
-# 股票分析-MCP
+# stock-analysis-mcp
 
-允许 Claude 和其他 MCP 客户端访问 Alpha Vantage API 提供的实时和历史股票市场数据，包括具有可自定义间隔的盘中和每日股票数据。
+Allows Claude and other MCP clients to access real-time and historical stock market data from Alpha Vantage API, including intraday and daily stock data with customizable intervals.
 
-# Alpha Vantage 股票 MCP 服务器
+# Alpha Vantage Stock MCP Server
 
-这是一个 Model Context Protocol (MCP) 服务器，它通过 Alpha Vantage API 提供股票市场数据。它允许 Claude 和其他 MCP 客户端访问实时和历史股票数据。
+This is a Model Context Protocol (MCP) server that provides stock market data from Alpha Vantage API. It allows Claude and other MCP clients to access real-time and historical stock data.
 
   
 
-## 功能
+## Features
 
-- 获取可自定义间隔的日内股票数据
-- 获取每日股票数据
-- 根据价格变动生成股票警报
-- 作为资源访问股票数据
+- Get intraday stock data with customizable intervals
+- Get daily stock data
+- Generate stock alerts based on price movements
+- Access stock data as resources
 
-## 先决条件
+## Prerequisites
 
-- Node.js 16 或更高版本
-- Alpha Vantage API 密钥（在 [Alpha Vantage](https://www.alphavantage.co/support/#api-key) 免费获取）
+- Node.js 16 or higher
+- An Alpha Vantage API key (get one for free at [Alpha Vantage](https://www.alphavantage.co/support/#api-key))
 
-## 安装
+## Installation
 
-1. 克隆此仓库
-2. 安装依赖项：
+1. Clone this repository
+2. Install dependencies:
 ```
    npm install
 ```
-3. 在根目录下创建一个 `.env` 文件，并添加您的 Alpha Vantage API 密钥：
+3. Create a `.env` file in the root directory and add your Alpha Vantage API key:
 ```
    ALPHA_VANTAGE_API_KEY=your_api_key_here
 ```
 
-## 构建和运行
+## Building and Running
 
-构建 TypeScript 代码：
+Build the TypeScript code:
 ```
 npm run build
 ```
 
-运行服务器：
+Run the server:
 ```
 npm start
 ```
 
-开发时自动重新加载：
+For development with auto-reloading:
 ```
 npm run dev
 ```
 
-测试 API 客户端：
+Test the API client:
 ```
 npm test
 ```
 
-## 与桌面版 Claude 一起使用
+## Using with Claude for Desktop
 
-要将此 MCP 服务器与桌面版 Claude 一起使用：
+To use this MCP server with Claude for Desktop:
 
-1. 打开桌面版 Claude
-2. 转到设置 > 开发者 > 编辑配置
-3. 将以下内容添加到您的 `claude_desktop_config.json` 中：
+1. Open Claude for Desktop
+2. Go to Settings > Developer > Edit Config
+3. Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -81,73 +81,73 @@ npm test
 }
 ```
 
-将 `/absolute/path/to/dist/index.js` 替换为已构建的 index.js 文件的绝对路径。
+Replace `/absolute/path/to/dist/index.js` with the absolute path to the built index.js file.
 
-4. 重启桌面版 Claude
+4. Restart Claude for Desktop
 
-## 可用工具
+## Available Tools
 
 ### get-stock-data
 
-获取特定符号的日内股票数据。
+Gets intraday stock data for a specific symbol.
 
-参数：
-- `symbol`（必需）：股票符号（例如 IBM, AAPL）
-- `interval`（可选）：数据点之间的时间间隔（1min, 5min, 15min, 30min, 60min）。默认值：5min
-- `outputsize`（可选）：返回的数据量（compact：最新 100 个数据点，full：最多 20 年的数据）。默认值：compact
+Parameters:
+- `symbol` (required): Stock symbol (e.g., IBM, AAPL)
+- `interval` (optional): Time interval between data points (1min, 5min, 15min, 30min, 60min). Default: 5min
+- `outputsize` (optional): Amount of data to return (compact: latest 100 data points, full: up to 20 years of data). Default: compact
 
 ### get-daily-stock-data
 
-获取特定符号的每日股票数据。
+Gets daily stock data for a specific symbol.
 
-参数：
-- `symbol`（必需）：股票符号（例如 IBM, AAPL）
-- `outputsize`（可选）：返回的数据量（compact：最新 100 个数据点，full：最多 20 年的数据）。默认值：compact
+Parameters:
+- `symbol` (required): Stock symbol (e.g., IBM, AAPL)
+- `outputsize` (optional): Amount of data to return (compact: latest 100 data points, full: up to 20 years of data). Default: compact
 
 ### get-stock-alerts
 
-分析股票数据以根据价格变动生成警报。
+Analyzes stock data to generate alerts based on price movements.
 
-参数：
-- `symbol`（必需）：股票符号（例如 IBM, AAPL）
-- `threshold`（可选）：价格变动警报的百分比阈值。默认值：5
+Parameters:
+- `symbol` (required): Stock symbol (e.g., IBM, AAPL)
+- `threshold` (optional): Percentage threshold for price movement alerts. Default: 5
 
-## 可用资源
+## Available Resources
 
 ### stock-data
 
-直接作为资源访问股票数据。
+Access stock data directly as a resource.
 
-URI 模板：`stock://{symbol}/{interval}`
+URI Template: `stock://{symbol}/{interval}`
 
-参数：
-- `symbol`：股票符号（例如 IBM, AAPL）
-- `interval`：时间间隔（daily, 1min, 5min, 15min, 30min, 60min）。默认值：daily
+Parameters:
+- `symbol`: Stock symbol (e.g., IBM, AAPL)
+- `interval`: Time interval (daily, 1min, 5min, 15min, 30min, 60min). Default: daily
 
-在 Claude 中的示例用法：
-- "你能分析这个股票数据吗：stock://AAPL/daily"
-- "你认为这些数据怎么样：stock://MSFT/5min"
+Example usage in Claude:
+- "Can you analyze this stock data: stock://AAPL/daily"
+- "What do you think about this data: stock://MSFT/5min"
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/ranveer0323/stock-analysis-mcp](https://github.com/ranveer0323/stock-analysis-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ranveer0323/stock-analysis-mcp](https://github.com/ranveer0323/stock-analysis-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/absolute/path/to/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/absolute/path/to/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ranveer0323-stock-analysis.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ranveer0323-stock-analysis.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

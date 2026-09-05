@@ -1,23 +1,23 @@
 ---
-title: "智思工具"
-description: "实现了Anthropic公司为克劳德开发的“思考”工具，为在复杂问题解决任务中进行结构化推理提供了专门的空间，从而提高了推理链和政策遵循方面的表现。"
+title: "claude-mcp-think-tool"
+description: "Implements Anthropic's 'think' tool for Claude, providing a dedicated space for structured reasoning during complex problem-solving tasks that improves performance in reasoning chains and policy adher…"
 ---
 
-# 智思工具
+# claude-mcp-think-tool
 
-实现了Anthropic公司为克劳德开发的“思考”工具，为在复杂问题解决任务中进行结构化推理提供了专门的空间，从而提高了推理链和政策遵循方面的表现。
+Implements Anthropic's 'think' tool for Claude, providing a dedicated space for structured reasoning during complex problem-solving tasks that improves performance in reasoning chains and policy adher…
 
 # MCP Think Tool Server
 
-一个实现用于提升 Claude 复杂推理能力的“思考”工具的 Model Context Protocol (MCP) 服务器。
+A Model Context Protocol (MCP) server implementing the ["think" tool](https://www.anthropic.com/engineering/claude-think-tool) for improving Claude's complex reasoning capabilities.
 
-## 概述
+## Overview
 
-此 MCP 服务器实现了 Anthropic 的“思考”工具，该工具在解决复杂问题时为 Claude 提供了一个专门的空间来进行结构化思考。正如 [Anthropic 的博客文章](https://www.anthropic.com/engineering/claude-think-tool) 所描述的那样，“思考”工具已被证明能够显著提高需要遵循政策和进行长链工具调用推理的复杂任务的表现。
+This MCP server implements Anthropic's "think" tool, which provides Claude with a dedicated space for structured thinking during complex problem-solving tasks. As described in [Anthropic's blog post](https://www.anthropic.com/engineering/claude-think-tool), the think tool has been shown to significantly improve performance in complex tasks requiring policy adherence and reasoning in long chains of tool calls.
 
-## 自定义指令
+## Custom Instructions
 
-添加这些自定义指令到 Claude 中以优化其使用“思考”工具：
+Add these custom instructions to Claude to optimize its use of the think tool:
 
 ```
 You have access to a "think" tool that provides a dedicated space for structured reasoning. Using this tool significantly improves your performance on complex tasks. 
@@ -40,22 +40,22 @@ When using the think tool:
 5. Verify your reasoning for logical errors or biases
 ```
 
-## 主要使用场景
+## Key Use Cases
 
-- **复杂的工具链**：当 Claude 需要调用复杂的工具并仔细分析输出时
-- **遵守政策**：在有详细指南的政策密集型环境中导航
-- **顺序决策**：每一步都基于前一步，并且错误成本高昂
-- **多步骤分析**：将复杂问题分解成可管理的步骤
+- **Complex Tool Chains**: When Claude needs to call complex tools and analyze outputs carefully
+- **Policy Adherence**: For navigating policy-heavy environments with detailed guidelines
+- **Sequential Decision Making**: When each step builds on previous ones and mistakes are costly
+- **Multi-step Analysis**: Breaking down complex problems into manageable steps
 
-## 安装
+## Installation
 
 ```bash
 npm install -g @cgize/mcp-think-tool
 ```
 
-## 配置
+## Configuration
 
-将此配置添加到您的 MCP 配置文件中：
+Add this configuration to your MCP configuration file:
 
 ```json
 {
@@ -75,10 +75,10 @@ npm install -g @cgize/mcp-think-tool
 }
 ```
 
-配置文件位置：
+Configuration file location:
 - `C:\Users\[username]\AppData\Roaming\Claude\claude_desktop_config.json`
 
-如果全局安装，您还可以使用：
+If installed globally, you can also use:
 
 ```json
 {
@@ -95,14 +95,14 @@ npm install -g @cgize/mcp-think-tool
 }
 ```
 
-## 可用工具
+## Available Tools
 
-- **think**：在解决问题过程中记录结构化推理
-- **get_thoughts**：检索所有记录的想法
-- **clear_thoughts**：重置思考过程
-- **get_thought_stats**：分析思考模式
+- **think**: Record structured reasoning during problem-solving
+- **get_thoughts**: Retrieve all recorded thoughts 
+- **clear_thoughts**: Reset the thinking process
+- **get_thought_stats**: Analyze thinking patterns
 
-## 示例提示
+## Example Prompt
 
 ```
 Using the think tool, solve this multi-step problem:
@@ -110,26 +110,26 @@ Using the think tool, solve this multi-step problem:
 A train travels at a constant speed of 60 km/h. It departs from station A at 9:00 AM and arrives at station B at 11:30 AM. What is the distance between stations A and B?
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/cgize/claude-mcp-think-tool](https://github.com/cgize/claude-mcp-think-tool)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cgize/claude-mcp-think-tool](https://github.com/cgize/claude-mcp-think-tool)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `other`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @cgize/mcp-think-tool`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @cgize/mcp-think-tool`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cgize-claude-think-tool.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cgize-claude-think-tool.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,54 +1,56 @@
 ---
-title: "图像上传MCP服务"
-description: "一个基于模型上下文协议 (MCP) 的图像上传服务，支持将图像文件上传到指定图床并返回可访问的 URL 链接。"
+title: "image-upload-mcp"
+description: "A model context protocol (MCP) based image upload service that supports uploading image files to a specified image hosting service and returns an accessible URL link."
 ---
 
-# 图像上传MCP服务
+# image-upload-mcp
 
-一个基于模型上下文协议 (MCP) 的图像上传服务，支持将图像文件上传到指定图床并返回可访问的 URL 链接。
+A model context protocol (MCP) based image upload service that supports uploading image files to a specified image hosting service and returns an accessible URL link.
 
-# 图像上传 MCP 服务 (Image Upload MCP Service)
+# Image Upload MCP Service
 
-一个基于模型上下文协议 (MCP) 的图像上传服务，支持将图像文件上传到指定图床并返回可访问的 URL 链接。
+An image upload service based on the Model Context Protocol (MCP) that supports uploading image files to a specified image hosting service and returns accessible URL links.
 
-## 🚀 功能特性
+## 🚀 Features
 
-- ✅ **多格式支持**: 支持 JPG, JPEG, PNG, GIF, BMP, WebP, SVG, TIFF 等主流图像格式
-- ✅ **批量上传**: 支持同时上传多个图像文件
-- ✅ **文件验证**: 自动检查文件格式、大小和有效性
-- ✅ **错误处理**: 提供详细的错误信息和上传状态反馈
-- ✅ **安全限制**: 文件大小限制为 10MB，防止滥用
-- ✅ **友好界面**: 使用 emoji 和格式化输出提供清晰的用户体验
+- ✅ **Multi-format Support**: Supports mainstream image formats such as JPG, JPEG, PNG, GIF, BMP, WebP, SVG, TIFF
+- ✅ **Batch Upload**: Supports uploading multiple image files simultaneously
+- ✅ **File Validation**: Automatically checks file format, size, and validity
+- ✅ **Error Handling**: Provides detailed error messages and upload status feedback
+- ✅ **Security Limits**: File size limit is 10MB to prevent abuse
+- ✅ **User-friendly Interface**: Uses emojis and formatted output for a clear user experience
 
-## 🛠️ 安装和配置
+## 🛠️ Installation and Configuration
 
-### 1. 环境要求
+### 1. Environment Requirements
 
 - Python 3.12+
-- uv 包管理器
+- uv package manager
 
-### 2. 环境变量配置
+### 2. Environment Variable Configuration
 
-为了保护您的个人信息，本服务使用环境变量来配置敏感信息：
+To protect your personal information, this service uses environment variables to configure sensitive information:
 
-#### 方法一：使用配置助手脚本（推荐）
+#### Method One: Using the Configuration Helper Script (Recommended)
 
 ```bash
+
 # 运行交互式配置脚本
+
 uv run setup_env.py
 
 # 或检查当前配置
+
 uv run setup_env.py check
+
 ```
+#### Method Two: Manually Create .env File
 
-#### 方法二：手动创建 .env 文件
-
-1. 复制示例配置文件：
+1. Copy the example configuration file:
 ```bash
 cp .env.example .env
 ```
-
-2. 编辑 `.env` 文件，填入您的实际配置：
+2. Edit the `.env` file and fill in your actual configurations:
 ```env
 # 图床 API 基础 URL (可选，默认值如下)
 IMGBED_API_BASE=https://imgbed.deepseeking.app
@@ -56,231 +58,268 @@ IMGBED_API_BASE=https://imgbed.deepseeking.app
 # 图床授权码 (必需，请填写您的实际授权码)
 IMGBED_AUTH_CODE=your_actual_auth_code_here
 ```
-
-#### 方法三：设置系统环境变量
+#### Method Three: Set System Environment Variables
 
 ```bash
+
 # Linux/macOS
+
 export IMGBED_AUTH_CODE="your_actual_auth_code_here"
+
 export IMGBED_API_BASE="https://imgbed.deepseeking.app"  # 可选
 
 # Windows
+
 set IMGBED_AUTH_CODE=your_actual_auth_code_here
+
 set IMGBED_API_BASE=https://imgbed.deepseeking.app
+
 ```
+### 3. Project Initialization
 
-### 3. 项目初始化
-
-项目已经配置好依赖项，您只需运行：
+The project has already been set up with its dependencies; you just need to run:
 
 ```bash
+
 # 验证安装和配置
+
 uv run setup_env.py check
 
 # 启动服务（用于测试）
+
 uv run image_upload.py
+
 ```
+### 4. Configure MCP Service in Cursor
 
-### 4. 在 Cursor 中配置 MCP 服务
-
-在 Cursor 的 MCP 配置中添加以下内容：
+Add the following content to the MCP configuration in Cursor:
 
 ```json
+
 {
+
     "mcpServers": {
+
         "image-upload": {
+
             "command": "uv",
+
             "args": [
+
                 "--directory",
+
                 "/Users/luoshui/Documents/Cursor/MCP/image-upload-mcp",
+
                 "run",
+
                 "image_upload.py"
+
             ]
+
         }
+
     }
+
 }
+
 ```
+> **Note**: Please replace the path `/Users/luoshui/Documents/Cursor/MCP/image-upload-mcp` with your actual project path.
 
-> **注意**: 请将路径 `/Users/luoshui/Documents/Cursor/MCP/image-upload-mcp` 替换为您的实际项目路径。
+## 📋 Available Tools
 
-## 📋 可用工具
+### 1. `upload_image` - Single File Upload
 
-### 1. `upload_image` - 单文件上传
+Uploads a single image file to the image hosting server.
 
-上传单个图像文件到图床服务器。
+**Parameters:**
+- `file_path` (string): The full path of the image file to be uploaded
 
-**参数:**
-- `file_path` (string): 要上传的图像文件的完整路径
-
-**示例:**
+**Example:**
 ```
 请上传我桌面上的 screenshot.png 文件
 ```
+### 2. `upload_multiple_images` - Batch Upload
 
-### 2. `upload_multiple_images` - 批量上传
+Uploads multiple image files in batch.
 
-批量上传多个图像文件。
+**Parameters:**
+- `file_paths` (list[string]): A list of paths to the image files to be uploaded
 
-**参数:**
-- `file_paths` (list[string]): 要上传的图像文件路径列表
-
-**示例:**
+**Example:**
 ```
 请批量上传以下文件：
 - ~/Pictures/photo1.jpg
 - ~/Pictures/photo2.png
 - ~/Pictures/photo3.gif
 ```
+### 3. `check_image_info` - File Information Check
 
-### 3. `check_image_info` - 文件信息检查
+Checks the basic information of an image file to verify if it can be uploaded.
 
-检查图像文件的基本信息，验证是否可以上传。
+**Parameters:**
+- `file_path` (string): The path of the image file to be checked
 
-**参数:**
-- `file_path` (string): 要检查的图像文件路径
-
-**示例:**
+**Example:**
 ```
 请检查 ~/Downloads/image.jpg 文件是否可以上传
 ```
+## 📝 Usage Examples
 
-## 📝 使用示例
-
-### 基本上传
+### Basic Upload
 
 ```
+
 用户: 请帮我上传桌面上的 avatar.jpg 文件
 
 助手: [使用 upload_image 工具]
+
 ✅ 图像上传成功！
 
 原始文件: avatar.jpg
+
 文件大小: 245760 bytes
+
 相对路径: /file/1749257735878_avatar.jpg
+
 完整访问链接: https://imgbed.deepseeking.app/file/1749257735878_avatar.jpg
 
 您可以直接使用上述链接访问上传的图像。
-```
-
-### 批量上传
 
 ```
+### Batch Upload
+
+```
+
 用户: 请批量上传我照片文件夹中的所有图片
 
 助手: [使用 upload_multiple_images 工具]
+
 📊 批量上传完成汇总:
+
 总文件数: 3
+
 成功上传: 2
+
 失败上传: 1
+
 成功率: 66.7%
 
 详细结果:
+
 [1] ✅ photo1.jpg: 上传成功
+
 [2] ✅ photo2.png: 上传成功
+
 [3] ❌ photo3.bmp: 文件太大
-```
-
-### 文件检查
 
 ```
+### File Check
+
+```
+
 用户: 请检查这个文件是否可以上传：~/Downloads/large_image.png
 
 助手: [使用 check_image_info 工具]
+
 📋 文件信息检查结果:
 
 文件名: large_image.png
+
 文件路径: /Users/username/Downloads/large_image.png
+
 文件大小: 15728640 bytes (15360.0 KB)
+
 文件格式: .png
+
 MIME 类型: image/png
 
 ✅ 格式支持: 是
+
 ✅ 大小检查: 超出限制 (最大10MB)
 
 🔴 该文件不能上传
 
 支持的格式: .bmp, .gif, .jpg, .jpeg, .png, .svg, .tif, .tiff, .webp
+
 ```
+## 🔧 Technical Details
 
-## 🔧 技术详情
+### Supported Image Formats
 
-### 支持的图像格式
+- `.jpg`, `.jpeg` - JPEG images
+- `.png` - PNG images
+- `.gif` - GIF animations
+- `.bmp` - Windows bitmap
+- `.webp` - Google WebP format
+- `.svg` - Scalable Vector Graphics
+- `.tiff`, `.tif` - TIFF images
 
-- `.jpg`, `.jpeg` - JPEG 图像
-- `.png` - PNG 图像
-- `.gif` - GIF 动图
-- `.bmp` - Windows 位图
-- `.webp` - Google WebP 格式
-- `.svg` - 可缩放矢量图形
-- `.tiff`, `.tif` - TIFF 图像
+### File Restrictions
 
-### 文件限制
+- **Maximum File Size**: 10MB
+- **Concurrent Uploads**: Supports batch uploads but processes each file sequentially
+- **Timeout Setting**: 60 seconds timeout for each upload request
 
-- **最大文件大小**: 10MB
-- **并发上传**: 支持批量上传，但会按顺序处理每个文件
-- **超时设置**: 每个上传请求 60 秒超时
+### API Integration
 
-### API 集成
+This service uses the following image hosting API:
 
-本服务使用以下图床 API：
+- **Upload Endpoint**: `https://imgbed.deepseeking.app/upload?authCode={authCode}`
+- **Base Access URL**: `https://imgbed.deepseeking.app`
+- **Request Method**: POST (multipart/form-data)
+- **Authentication Method**: authCode in the URL parameters
 
-- **上传接口**: `https://imgbed.deepseeking.app/upload?authCode={authCode}`
-- **访问基础URL**: `https://imgbed.deepseeking.app`
-- **请求方式**: POST (multipart/form-data)
-- **认证方式**: URL 参数中的 authCode
+## 🐛 Error Handling
 
-## 🐛 错误处理
+The service provides detailed error messages:
 
-服务提供详细的错误信息：
+| Error Type | Description | Solution |
+|------------|-------------|----------|
+| File Not Found | The specified file path is invalid | Check if the file path is correct |
+| Unsupported Format | The file format is not in the supported list | Convert to a supported format |
+| File Too Large | The file exceeds the 10MB limit | Compress the image or choose a smaller file |
+| Network Error | Network anomaly during the upload process | Check the network connection and retry |
+| Server Error | Abnormal response from the image hosting server | Retry later or contact the service provider |
 
-| 错误类型 | 描述 | 解决方案 |
-|---------|------|---------|
-| 文件不存在 | 指定的文件路径无效 | 检查文件路径是否正确 |
-| 格式不支持 | 文件格式不在支持列表中 | 转换为支持的格式 |
-| 文件过大 | 文件超过 10MB 限制 | 压缩图像或选择较小的文件 |
-| 网络错误 | 上传过程中网络异常 | 检查网络连接并重试 |
-| 服务器错误 | 图床服务器响应异常 | 稍后重试或联系服务提供商 |
+## 🔒 Security Considerations
 
-## 🔒 安全考虑
+- File size limits to prevent abuse
+- Strict format validation to prevent malicious file uploads
+- Network request timeouts to prevent long-term blocking
+- Detailed error logs for troubleshooting
 
-- 文件大小限制防止滥用
-- 严格的格式验证防止恶意文件上传
-- 网络请求超时防止长时间阻塞
-- 详细的错误日志便于问题排查
+## 📞 Technical Support
 
-## 📞 技术支持
+If you encounter any issues, please check:
 
-如遇到问题，请检查：
-
-1. ✅ 文件路径是否正确
-2. ✅ 文件格式是否支持
-3. ✅ 文件大小是否在限制内
-4. ✅ 网络连接是否正常
-5. ✅ MCP 服务配置是否正确
+1. ✅ Whether the file path is correct
+2. ✅ Whether the file format is supported
+3. ✅ Whether the file size is within the limit
+4. ✅ Whether the network connection is normal
+5. ✅ Whether the MCP service configuration is correct
 
 ---
 
-**开发者**: 基于 FastMCP 框架构建  
-**版本**: 1.0.0  
-**协议**: MCP (Model Context Protocol)  
-**传输方式**: stdio
+**Developer**: Built using the FastMCP framework**Version**: 1.0.0  
+**Protocol**: MCP (Model Context Protocol)  
+**Transport Method**: stdio
 
-**官方网站：** [https://github.com/luoshui-coder/image-upload-mcp.git](https://github.com/luoshui-coder/image-upload-mcp.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/luoshui-coder/image-upload-mcp.git](https://github.com/luoshui-coder/image-upload-mcp.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `entertainment and media`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /Users/luoshui/Documents/Cursor/MCP/image-upload-mcp run image_upload.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /Users/luoshui/Documents/Cursor/MCP/image-upload-mcp run image_upload.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/luoshui2025-image-upload.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/luoshui2025-image-upload.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

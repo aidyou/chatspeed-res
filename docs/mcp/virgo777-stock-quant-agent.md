@@ -1,26 +1,24 @@
 ---
-title: "用于股票量化计算的智能体"
-description: "基于Qwen3推理引擎的股票量化智能体，其详细使用方法可通过MCP平台内置的《查询操作手册》获取。\n\nFor detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system."
+title: "Stock-Quant-Agent"
+description: "Based on the Qwen3 inference engine, the detailed usage method for the stock quantification agent can be obtained through the \"Query Operation Manual\" built into the MCP platform. For detailed usage i…"
 ---
 
-# 用于股票量化计算的智能体
+# Stock-Quant-Agent
 
-基于Qwen3推理引擎的股票量化智能体，其详细使用方法可通过MCP平台内置的《查询操作手册》获取。
+Based on the Qwen3 inference engine, the detailed usage method for the stock quantification agent can be obtained through the "Query Operation Manual" built into the MCP platform. For detailed usage i…
 
-For detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system.
+# Stock Quantitative MCP Service User Manual
 
-# 股票量化MCP服务使用手册
-
-## 📌 简介  
-**智能股票量化支撑点位计算服务（MCP）** 是基于Qwen3大模型推理能力与远程量化计算服务器构建的专业金融分析工具，提供以下核心功能：  
-- 实时市场数据分析与量化策略建议  
-- 标准化API接口与SSE流式数据传输  
+## 📌 Introduction
+**Intelligent Stock Quantitative Support Point Calculation Service (MCP)** is a professional financial analysis tool built on the reasoning capabilities of the Qwen3 large model and remote quantitative computing servers, providing the following core functions:
+- Real-time market data analysis and quantitative strategy recommendations
+- Standardized API interfaces and SSE streaming data transmission
 
 ---
 
-## ⚙️ 服务配置说明  
-在您的系统中添加以下JSON配置启用服务：  
-```json
+## ⚙️ Service Configuration Instructions
+Add the following JSON configuration to your system to enable the service:
+json
 {
     "mcpServers": {
         "quant_mcp_server": {
@@ -29,56 +27,53 @@ For detailed usage instructions on the Qwen3-powered quantitative trading agent 
         }
     }
 }
-```
-## ❓ 常见问题解答
-Q1：如何获取详细文档？
-输入示例：
-```text
-    股票量化MCP服务的使用方法有哪些？  (在安装MCP服务过多时候，最好带有socoo关键字)
-    socoo股票量化MCP服务的使用方法有哪些？
-    这个socoo股票MCP服务怎么用？
-    这个socoo量化怎么用？
-    能否提供一份关于量化交易MCP服务的详细说明文档？
-    我想了解如何使用MCP服务进行股票数据分析。
-    MCP服务支持哪些函数调用，这些函数的功能是什么？
-    给我讲一下这个股票量化MCP服务的使用方法；
-    讲一下这个量化MCP的使用方法；
-    这个股票MCP服务怎么用？
-    这个股票量化怎么用？
-```
+
+## ❓ Frequently Asked Questions
+Q1: How to obtain detailed documentation?
+Example inputs:
+text
+    What are the usage methods for the stock quantitative MCP service? (When installing too many MCP services, it's best to include the socoo keyword)
+    What are the usage methods for the socoo stock quantitative MCP service?
+    How do I use this socoo stock MCP service?
+    How do I use this socoo quantification?
+    Can you provide a detailed description document about the quantitative trading MCP service?
+    I want to know how to use the MCP service for stock data analysis.
+    What function calls does the MCP service support, and what are their functions?
+    Tell me about the usage method of this stock quantitative MCP service;
+    Explain the usage method of this quantitative MCP;
+    How do I use this stock MCP service?
+    How do I use this stock quantification?
 
 ---
 
+This document includes:
+1. Service configuration methods
+2. Core function call examples
+3. Complete list of functions and parameter descriptions
+4. Real-time data integration guide
+5. Solutions to common issues
 
-该文档包含：
-1. 服务配置方法
-2. 核心功能调用示例
-3. 完整函数列表及参数说明
-4. 实时数据对接指南
-5. 常见问题解决方案  
+## Technical Support:
+Official Documentation: https://mcp-docs.socoo.xyz
 
+Developer Email: virgo_wang@qq.com
 
-## 技术支持:
-官方文档：https://mcp-docs.socoo.xyz 
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-开发者邮箱：virgo_wang@qq.com
+## Categories & Tags
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Categories: `development`, `search`, `memory`, `files`, `communication`, `finance`, `media`
+- Tags: `finance`, `search`, `knowledge and memory`, `developer tools`, `communication`, `entertainment and media`, `file systems`, `股票`, `量化`, `量化计算`
 
-## 分类与标签
+## MCP Configuration
 
-- 分类：`development`, `search`, `memory`, `files`, `communication`, `finance`, `media`
-- 标签：`finance`, `search`, `knowledge and memory`, `developer tools`, `communication`, `entertainment and media`, `file systems`, `股票`, `量化`, `量化计算`
+- Transport: `http`
+- Command: ``
+- Args: none
 
-## MCP 配置
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+## Data source
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/virgo777-stock-quant-agent.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/virgo777-stock-quant-agent.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,133 +1,140 @@
 ---
-title: "网站图片AI文生图"
-description: "AI图片生成MCP Server 一个基于Model Context Protocol (MCP)的AI图片生成服务器，专门用于自动分析网页和文章内容，生成相应的AI图片。 功能特性 🎯 核心功能 1. 智能网页分析: 自动分析HTML内容，识别需要图片的区域 2. 文章配图生成: 分析文章内容，为关键段落生成配图 3. AI图片生成: 使用FLUX模型生成高质量图片 4. 英文提示词优化: 自动将中文描述转换为适合AI生成的英文提示词 5. HTML增强: 将生成的图片自动嵌入到原始网页中 🛠️ 提供的工具 1."
+title: "alchain_aipic"
+description: "AI Image Generation MCP Server An AI image generation server based on the Model Context Protocol (MCP), specifically designed for automatically analyzing web pages and article content to generate corr…"
 ---
 
-# 网站图片AI文生图
+# alchain_aipic
 
-AI图片生成MCP Server 一个基于Model Context Protocol (MCP)的AI图片生成服务器，专门用于自动分析网页和文章内容，生成相应的AI图片。 功能特性 🎯 核心功能 1. 智能网页分析: 自动分析HTML内容，识别需要图片的区域 2. 文章配图生成: 分析文章内容，为关键段落生成配图 3. AI图片生成: 使用FLUX模型生成高质量图片 4. 英文提示词优化: 自动将中文描述转换为适合AI生成的英文提示词 5. HTML增强: 将生成的图片自动嵌入到原始网页中 🛠️ 提供的工具 1.
+AI Image Generation MCP Server An AI image generation server based on the Model Context Protocol (MCP), specifically designed for automatically analyzing web pages and article content to generate corr…
 
-# AI图片生成MCP Server
+# AI Image Generation MCP Server
 
-一个基于Model Context Protocol (MCP)的AI图片生成服务器，专门用于自动分析网页和文章内容，生成相应的AI图片。
+An AI image generation server based on the Model Context Protocol (MCP), specifically designed for automatically analyzing web pages and article content to generate corresponding AI images.
 
-## 功能特性
+## Features
 
-### 🎯 核心功能
-1. **智能网页分析**: 自动分析HTML内容，识别需要图片的区域
-2. **文章配图生成**: 分析文章内容，为关键段落生成配图
-3. **AI图片生成**: 使用FLUX模型生成高质量图片
-4. **英文提示词优化**: 自动将中文描述转换为适合AI生成的英文提示词
-5. **HTML增强**: 将生成的图片自动嵌入到原始网页中
+### 🎯 Core Features
+1. **Intelligent Web Page Analysis**: Automatically analyzes HTML content to identify areas that require images.
+2. **Article Illustration Generation**: Analyzes the content of articles to generate illustrations for key paragraphs.
+3. **AI Image Generation**: Uses the FLUX model to generate high-quality images.
+4. **English Prompt Optimization**: Automatically converts Chinese descriptions into English prompts suitable for AI generation.
+5. **HTML Enhancement**: Automatically embeds generated images into the original web page.
 
-### 🛠️ 提供的工具
+### 🛠️ Provided Tools
 
 #### 1. analyze-and-generate-webpage-images
-- **功能**: 分析网页HTML内容并生成相应图片
-- **参数**:
-  - `html`: 网页HTML内容
-  - `generateImages`: 是否立即生成图片（默认true）
+- **Function**: Analyzes the HTML content of a web page and generates corresponding images.
+- **Parameters**:
+  - `html`: The HTML content of the web page.
+  - `generateImages`: Whether to immediately generate images (default: true).
 
 #### 2. analyze-and-generate-article-images
-- **功能**: 分析文章内容并生成配图
-- **参数**:
-  - `content`: 文章内容
-  - `title`: 文章标题（可选）
-  - `generateImages`: 是否立即生成图片（默认true）
+- **Function**: Analyzes the content of an article and generates illustrations.
+- **Parameters**:
+  - `content`: The content of the article.
+  - `title`: The title of the article (optional).
+  - `generateImages`: Whether to immediately generate images (default: true).
 
 #### 3. generate-single-image
-- **功能**: 根据提示词生成单张图片
-- **参数**:
-  - `prompt`: 英文提示词
-  - `width`: 图片宽度（默认1024）
-  - `height`: 图片高度（默认1024）
-  - `model`: 使用的模型名称（可选）
+- **Function**: Generates a single image based on a prompt.
+- **Parameters**:
+  - `prompt`: The English prompt.
+  - `width`: The width of the image (default: 1024).
+  - `height`: The height of the image (default: 1024).
+  - `model`: The name of the model to use (optional).
 
 #### 4. generate-enhanced-webpage
-- **功能**: 将生成的图片嵌入到原始HTML中
-- **参数**:
-  - `originalHtml`: 原始HTML内容
-  - `imageMapping`: 图片ID到URL的映射
+- **Function**: Embeds generated images into the original HTML.
+- **Parameters**:
+  - `originalHtml`: The original HTML content.
+  - `imageMapping`: A mapping from image IDs to URLs.
 
 #### 5. translate-prompt-to-english
-- **功能**: 将中文描述翻译为英文提示词
-- **参数**:
-  - `chinesePrompt`: 中文提示词或描述
-  - `style`: 图片风格（可选）
+- **Function**: Translates Chinese descriptions into English prompts.
+- **Parameters**:
+  - `chinesePrompt`: The Chinese prompt or description.
+  - `style`: The style of the image (optional).
 
-### 📊 提供的资源
+### 📊 Provided Resources
 
 #### 1. generated-images
 - **URI**: `generated://images`
-- **功能**: 获取所有已生成的AI图片信息
+- **Function**: Retrieves information about all generated AI images.
 
 #### 2. generation-stats
 - **URI**: `stats://generation`
-- **功能**: 获取图片生成的统计信息
+- **Function**: Retrieves statistical information about image generation.
 
-## 安装和使用
+## Installation and Usage
 
-### 1. 安装依赖
+### 1. Install Dependencies
 ```bash
 npm install
 ```
-
-### 2. 编译TypeScript
+### 2. Compile TypeScript
 ```bash
 npm run build
 ```
-
-### 3. 运行服务器
+### 3. Run the Server
 ```bash
 npm start
 ```
-
-### 4. 开发模式
+### 4. Development Mode
 ```bash
 npm run dev
 ```
+## Configuring MCP Client
 
-## 配置MCP客户端
-
-### Claude Desktop配置
-在Claude Desktop的配置文件中添加：
+### Claude Desktop Configuration
+Add the following to the configuration file of Claude Desktop:
 
 ```json
+
 {
+
   "mcpServers": {
+
     "ai-image-generator": {
+
       "command": "node",
+
       "args": ["/path/to/your/ai-image-generator-mcp-server/dist/index.js"],
+
       "env": {
+
         "MODELSCOPE_API_KEY": "your-modelscope-api-key-here"
+
       }
+
     }
+
   }
+
 }
+
 ```
+**Important**: Replace `"your-modelscope-api-key-here"` with your actual ModelScope API key.
 
-**重要**: 请将 `"your-modelscope-api-key-here"` 替换为您的真实ModelScope API密钥。
+### Other MCP Clients
+Configure this server according to the method used by your MCP client, and set the API key in the environment variables.
 
-### 其他MCP客户端
-根据您使用的MCP客户端，按照相应的配置方式添加此服务器，并在环境变量中设置API密钥。
+## API Key Configuration
 
-## API密钥配置
+### 1. Obtain ModelScope API Key
+1. Visit [ModelScope](https://modelscope.cn/)
+2. Register and log in to your account
+3. Go to Personal Center → API Management
+4. Create a new API key
+5. Copy the API key (format: `ms-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
 
-### 1. 获取ModelScope API密钥
-1. 访问 [ModelScope](https://modelscope.cn/)
-2. 注册并登录账户
-3. 进入个人中心 → API管理
-4. 创建新的API密钥
-5. 复制API密钥（格式：`ms-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`）
+### 2. Configure Environment Variables
+Set the API key in the `env` section of the MCP client configuration file. This configuration is long-term and similar to how Google Maps is configured.
 
-### 2. 配置环境变量
-在MCP客户端配置文件的 `env` 部分设置API密钥，一次配置长期使用，类似于Google Maps的配置方式。
+## Usage Examples
 
-## 使用示例
+After configuring the API key, you can directly use the tools in the MCP client without passing the API key again:
 
-配置完API密钥后，可以直接在MCP客户端中使用工具，无需再传递API密钥：
-
-### 1. 分析网页并生成图片
+### 1. Analyze Web Page and Generate Images
 ```typescript
 // 通过MCP客户端调用
 const result = await mcpClient.callTool("analyze-and-generate-webpage-images", {
@@ -139,16 +146,14 @@ const result = await mcpClient.callTool("analyze-and-generate-webpage-images", {
   generateImages: true
 });
 ```
-
-### 2. 为文章生成配图
+### 2. Generate Illustrations for an Article
 ```typescript
 const result = await mcpClient.callTool("analyze-and-generate-article-images", {
   content: "人工智能技术正在快速发展...",
   title: "AI技术发展趋势"
 });
 ```
-
-### 3. 生成单张图片
+### 3. Generate a Single Image
 ```typescript
 const result = await mcpClient.callTool("generate-single-image", {
   prompt: "A beautiful landscape with mountains and lake, photorealistic, high quality",
@@ -156,119 +161,125 @@ const result = await mcpClient.callTool("generate-single-image", {
   height: 768
 });
 ```
+## Technical Architecture
 
-## 技术架构
+### Core Components
+- **ImageGenerator**: Responsible for interacting with the ModelScope API to generate AI images.
+- **ContentAnalyzer**: Analyzes web page and article content to identify image requirements.
+- **AIImageGeneratorMCPServer**: The main server class that handles MCP protocol communication.
 
-### 核心组件
-- **ImageGenerator**: 负责与ModelScope API交互，生成AI图片
-- **ContentAnalyzer**: 分析网页和文章内容，识别图片需求
-- **AIImageGeneratorMCPServer**: 主服务器类，处理MCP协议通信
+### Supported Image Formats
+- Width: 200-1200 pixels
+- Height: 200-1200 pixels
+- Format: JPEG, PNG
 
-### 支持的图片格式
-- 宽度: 200-1200像素
-- 高度: 200-1200像素
-- 格式: JPEG, PNG
+### AI Models Used
+- Default Model: `MusePublic/489_ckpt_FLUX_1`
+- Custom models are supported (must be available on the ModelScope platform)
 
-### 使用的AI模型
-- 默认模型: `MusePublic/489_ckpt_FLUX_1`
-- 支持自定义模型（需要在ModelScope平台可用）
+## Advanced Features
 
-## 高级功能
+### Intelligent Content Analysis
+- Automatically identifies image placeholders in web pages.
+- Generates relevant image descriptions based on context.
+- Infers image dimensions and styles intelligently.
 
-### 智能内容分析
-- 自动识别网页中的图片占位符
-- 基于上下文生成相关的图片描述
-- 智能推断图片尺寸和风格
+### Prompt Optimization
+- Automatically converts Chinese descriptions into English.
+- Adds quality and style descriptors.
+- Optimizes prompts based on the content context.
 
-### 提示词优化
-- 自动将中文描述转换为英文
-- 添加质量和风格描述符
-- 基于内容上下文优化提示词
+### Batch Processing
+- Supports generating multiple images simultaneously.- Asynchronous processing to improve efficiency
+- Error handling and retry mechanism
 
-### 批量处理
-- 支持同时生成多张图片
-- 异步处理提高效率
-- 错误处理和重试机制
+## Error Handling
 
-## 错误处理
+The server includes a comprehensive error handling mechanism:
+- Error messages when API calls fail
+- Handling of network connection issues
+- Validation for invalid parameters
+- Detailed error logging
 
-服务器包含完善的错误处理机制：
-- API调用失败时的错误信息
-- 网络连接问题的处理
-- 无效参数的验证
-- 详细的错误日志记录
+## Performance Optimization
 
-## 性能优化
+- Asynchronous image generation
+- Caching generated image information in memory
+- Batch processing optimization
+- Retry mechanism for errors
 
-- 异步图片生成
-- 内存中缓存生成的图片信息
-- 批量处理优化
-- 错误重试机制
+## Scalability
 
-## 扩展性
-
-### 添加新的图片生成模型
-在`ImageGenerator`类中添加新的模型支持：
+### Adding New Image Generation Models
+Add support for new models in the `ImageGenerator` class:
 
 ```typescript
+
 const newModel = 'your-new-model-id';
-const response = await this.generateImage({
-  prompt: "your prompt",
-  model: newModel
-});
-```
 
-### 添加新的分析算法
-在`ContentAnalyzer`类中扩展分析功能：
+const response = await this.generateImage({
+
+  prompt: "your prompt",
+
+  model: newModel
+
+});
+
+```
+### Adding New Analysis Algorithms
+Extend analysis capabilities in the `ContentAnalyzer` class:
 
 ```typescript
+
 private customAnalyzer(content: string): AnalysisResult {
+
   // 实现自定义分析逻辑
+
 }
+
 ```
+## Contribution Guidelines
 
-## 贡献指南
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-1. Fork 项目
-2. 创建特性分支
-3. 提交更改
-4. 推送到分支
-5. 创建Pull Request
-
-## 许可证
+## License
 
 MIT License
 
-## 联系方式
+## Contact
 
-如有问题或建议，请通过以下方式联系：
-- 创建Issue
-- 提交Pull Request
+If you have any questions or suggestions, please contact us through the following methods:
+- Create an Issue
+- Submit a Pull Request
 
-## 更新日志
+## Changelog
 
 ### v1.0.0
-- 初始版本发布
-- 支持网页和文章分析
-- 集成FLUX图片生成模型
-- 提供完整的MCP协议支持
+- Initial version release
+- Support for web page and article analysis
+- Integration of the FLUX image generation model
+- Full MCP protocol support provided
 
-**官方网站：** [https://github.com/alchaincyf/AIpic](https://github.com/alchaincyf/AIpic)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/alchaincyf/AIpic](https://github.com/alchaincyf/AIpic)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/your/ai-image-generator-mcp-server/dist/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/your/ai-image-generator-mcp-server/dist/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/alchain-alchain-aipic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alchain-alchain-aipic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

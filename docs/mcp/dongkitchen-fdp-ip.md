@@ -1,11 +1,11 @@
 ---
-title: "IP相关基础数据查询"
-description: "网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。"
+title: "fdp_ip"
+description: "Network foundational data and IP-related data query tools. Currently, it includes companion IP geolocation queries."
 ---
 
-# IP相关基础数据查询
+# fdp_ip
 
-网络基础数据中和IP相关数据的查询工具。目前包括伴IP地理位置查询。
+Network foundational data and IP-related data query tools. Currently, it includes companion IP geolocation queries.
 
 # IP相关基础数据查询
 
@@ -95,22 +95,22 @@ X实验室是国内最早利用大规模数据进行安全研究、安全应用�
 	}
 ```
 
-**官方网站：** [https://blog.xlab.qianxin-inc.cn](https://blog.xlab.qianxin-inc.cn)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://blog.xlab.qianxin-inc.cn](https://blog.xlab.qianxin-inc.cn)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`, `data`
-- 标签：`communication`, `developer tools`, `research and data`, `ip`, `网络安全`, `威胁情报`, `network security`, `data analysis`
+- Categories: `communication`, `data`
+- Tags: `communication`, `developer tools`, `research and data`, `ip`, `网络安全`, `威胁情报`, `network security`, `data analysis`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-remote@latest https://fdp.qianxin.com/mcp/v1/ip/`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-remote@latest https://fdp.qianxin.com/mcp/v1/ip/`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/dongkitchen-fdp-ip.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/dongkitchen-fdp-ip.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

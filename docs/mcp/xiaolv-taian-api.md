@@ -1,310 +1,290 @@
 ---
-title: "岗位名称标准化和实体抽取"
-description: "企业招聘数据处理系统 概述 本系统用于处理企业招聘相关数据，主要提供两大核心功能： 1. 招聘岗位数据清洗 - 从招聘信息中提取完整的招聘实体信息 2. 岗位别名数据清洗 - 标准化岗位名称，统一岗位命名规范 --- 功能模块 1. 招聘岗位数据清洗 功能描述 对输入的企业招聘数据进行全面的实体抽取，提取招聘信息中的关键字段，支持后续的数据分析和管理。 任务参数 taskl: \"1-招聘岗位数据清洗\" 提取字段清单 字段名称 说明 示例 --------------------- 原始岗位名称 招聘信息中原始的岗位"
+title: "Taian_API"
+description: "Enterprise Recruitment Data Processing System Overview This system is designed to handle data related to enterprise recruitment, primarily providing two core functionalities: 1. Recruitment Position D…"
 ---
 
-# 岗位名称标准化和实体抽取
+# Taian_API
 
-企业招聘数据处理系统 概述 本系统用于处理企业招聘相关数据，主要提供两大核心功能： 1. 招聘岗位数据清洗 - 从招聘信息中提取完整的招聘实体信息 2. 岗位别名数据清洗 - 标准化岗位名称，统一岗位命名规范 --- 功能模块 1. 招聘岗位数据清洗 功能描述 对输入的企业招聘数据进行全面的实体抽取，提取招聘信息中的关键字段，支持后续的数据分析和管理。 任务参数 taskl: "1-招聘岗位数据清洗" 提取字段清单 字段名称 说明 示例 --------------------- 原始岗位名称 招聘信息中原始的岗位
+Enterprise Recruitment Data Processing System Overview This system is designed to handle data related to enterprise recruitment, primarily providing two core functionalities: 1. Recruitment Position D…
 
-# 企业招聘数据处理系统
+# Enterprise Recruitment Data Processing System
 
-## 概述
+## Overview
 
-本系统用于处理企业招聘相关数据，主要提供两大核心功能：
-1. **招聘岗位数据清洗** - 从招聘信息中提取完整的招聘实体信息
-2. **岗位别名数据清洗** - 标准化岗位名称，统一岗位命名规范
-
----
-
-## 功能模块
-
-### 1. 招聘岗位数据清洗
-
-#### 功能描述
-对输入的企业招聘数据进行全面的实体抽取，提取招聘信息中的关键字段，支持后续的数据分析和管理。
-
-#### 任务参数
-```
-task_l: "1-招聘岗位数据清洗"
-```
-
-#### 提取字段清单
-
-| 字段名称 | 说明 | 示例 |
-|---------|------|------|
-| 原始岗位名称 | 招聘信息中原始的岗位名称 | "Java开发工程师（高级）" |
-| 标准岗位名称 | 标准化后的岗位名称 | "Java开发工程师" |
-| 招聘人数 | 计划招聘的人数 | "2人"、"若干" |
-| 招聘公司 | 发布招聘的公司名称 | "XX科技有限公司" |
-| 工作地点 | 工作所在城市/地区 | "北京市朝阳区" |
-| 专业要求 | 要求的专业背景 | "计算机相关专业" |
-| 性别要求 | 性别限制 | "不限"、"男"、"女" |
-| 学历要求 | 最低学历要求 | "本科及以上" |
-| 工作年限要求 | 工作经验要求 | "3-5年" |
-| 年龄要求 | 年龄范围要求 | "25-35岁" |
-| 薪资区间 | 薪资待遇范围 | "15K-25K" |
-| 技能要求 | 必备/优先的技能 | "熟悉Spring框架、MySQL" |
-| 福利待遇 | 公司提供的福利 | "五险一金、年终奖、带薪年假" |
-| 求职者特性 | 对求职者的其他要求 | "责任心强、团队协作能力好" |
-| 联系人 | 招聘联系人姓名 | "张经理" |
-| 联系方式 | 联系电话/邮箱等 | "138****8000"、"hr@*****.com" |
-
-#### 输出格式
-
-```json
-{
-  "原始岗位名称": ["Java开发工程师（高级）"],
-  "标准岗位名称": ["Java开发工程师"],
-  "招聘人数": ["2人"],
-  "招聘公司": ["XX科技有限公司"],
-  "工作地点": ["北京市朝阳区"],
-  "专业要求": ["计算机相关专业"],
-  "性别要求": ["不限"],
-  "学历要求": ["本科及以上"],
-  "工作年限要求": ["3-5年"],
-  "年龄要求": ["无要求"],
-  "薪资区间": ["15K-25K"],
-  "技能要求": ["熟悉Spring框架", "MySQL数据库", "微服务架构"],
-  "福利待遇": ["五险一金", "年终奖", "带薪年假"],
-  "求职者特性": ["责任心强", "团队协作能力好"],
-  "联系人": ["张经理"],
-  "联系方式": ["138****8000"]
-}
-```
-
-#### 字段说明
-- 所有字段均以**列表形式**返回，支持多值提取
-- 当某字段在原文中未提及或无明确信息时，返回 `["无要求"]`
-- 技能要求、福利待遇等字段可包含多个值
-
-#### 使用示例
-
-**输入示例：**
-```
-招聘Java开发工程师2名，要求本科以上学历，3年以上工作经验，
-熟悉Spring Boot、MySQL，薪资15-25K，工作地点：北京朝阳区，
-联系人：张经理，电话：138****8000
-```
-
-**输出示例：**
-```json
-{
-  "原始岗位名称": ["Java开发工程师"],
-  "标准岗位名称": ["Java开发工程师"],
-  "招聘人数": ["2名"],
-  "招聘公司": ["无要求"],
-  "工作地点": ["北京朝阳区"],
-  "专业要求": ["无要求"],
-  "性别要求": ["无要求"],
-  "学历要求": ["本科以上"],
-  "工作年限要求": ["3年以上"],
-  "年龄要求": ["无要求"],
-  "薪资区间": ["15-25K"],
-  "技能要求": ["Spring Boot", "MySQL"],
-  "福利待遇": ["无要求"],
-  "求职者特性": ["无要求"],
-  "联系人": ["张经理"],
-  "联系方式": ["138****8000"]
-}
-```
+This system is designed to handle data related to enterprise recruitment, primarily providing two core functionalities:
+1. **Recruitment Position Data Cleaning** - Extract complete recruitment entity information from job postings.
+2. **Position Alias Data Cleaning** - Standardize job titles and unify naming conventions.
 
 ---
 
-### 2. 岗位别名数据清洗
+## Functional Modules
 
-#### 功能描述
-对输入的招聘岗位名称进行标准化处理，识别和清洗岗位名称的各种变体，输出统一规范的岗位名称及其相关信息。
+### 1. Recruitment Position Data Cleaning
 
-#### 任务参数
-```
-task_l: "2-岗位别名数据清洗"
-```
+#### Function Description
+Comprehensively extract entities from the input corporate recruitment data, extracting key fields from the job postings to support subsequent data analysis and management.
 
-#### 提取字段清单
+#### Task Parameters
+ 
+task_l: "1-Recruitment Position Data Cleaning"
 
-| 字段名称 | 说明 | 示例 |
-|---------|------|------|
-| 原始岗位名称 | 招聘信息中的原始岗位名称 | "高级JAVA工程师（P6）" |
-| 标准岗位名称 | 标准化、规范化后的岗位名称 | "Java开发工程师" |
-| 岗位英文名称 | 岗位的标准英文名称 | "Java Development Engineer" |
-| 岗位中文别名 | 该岗位的其他常见中文叫法 | ["Java工程师", "Java程序员", "Java开发"] |
+#### Field Extraction List
 
-#### 输出格式
+| Field Name | Description | Example |
+|------------|-------------|---------|
+| Original Job Title | The original job title in the job posting | "Java Development Engineer (Senior)" |
+| Standardized Job Title | The standardized job title | "Java Development Engineer" |
+| Number of Hires | The planned number of hires | "2 people", "several" |
+| Hiring Company | The name of the company posting the job | "XX Technology Co., Ltd." |
+| Work Location | The city/region where the work is located | "Chaoyang District, Beijing" |
+| Professional Requirements | Required professional background | "Computer-related major" |
+| Gender Requirement | Gender restrictions | "Unlimited", "Male", "Female" |
+| Education Requirement | Minimum education requirement | "Bachelor's degree or above" |
+| Work Experience Requirement | Work experience requirement | "3-5 years" |
+| Age Requirement | Age range requirement | "25-35 years old" |
+| Salary Range | Salary range | "15K-25K" |
+| Skill Requirements | Essential/preferred skills | "Familiar with Spring framework, MySQL" |
+| Benefits | Benefits provided by the company | "Five insurances and one fund, year-end bonus, paid annual leave" |
+| Candidate Characteristics | Other requirements for candidates | "Strong sense of responsibility, good teamwork ability" |
+| Contact Person | Name of the recruitment contact | "Manager Zhang" |
+| Contact Information | Contact phone/email, etc. | "138****8000", "hr@*****.com" |
 
-```json
+#### Output Format
+
+json
 {
-  "原始岗位名称": ["高级JAVA工程师（P6）"],
-  "标准岗位名称": ["Java开发工程师"],
-  "岗位英文名称": ["Java Development Engineer"],
-  "岗位中文别名": ["Java工程师", "Java程序员", "Java开发"]
+  "Original Job Title": ["Java Development Engineer (Senior)"],
+  "Standardized Job Title": ["Java Development Engineer"],
+  "Number of Hires": ["2 people"],
+  "Hiring Company": ["XX Technology Co., Ltd."],
+  "Work Location": ["Chaoyang District, Beijing"],
+  "Professional Requirements": ["Computer-related major"],
+  "Gender Requirement": ["Unlimited"],
+  "Education Requirement": ["Bachelor's degree or above"],
+  "Work Experience Requirement": ["3-5 years"],
+  "Age Requirement": ["No requirement"],
+  "Salary Range": ["15K-25K"],
+  "Skill Requirements": ["Familiar with Spring framework", "MySQL database", "Microservices architecture"],
+  "Benefits": ["Five insurances and one fund", "Year-end bonus", "Paid annual leave"],
+  "Candidate Characteristics": ["Strong sense of responsibility", "Good teamwork ability"],
+  "Contact Person": ["Manager Zhang"],
+  "Contact Information": ["138****8000"]
 }
-```
 
-#### 字段说明
-- 所有字段均以**列表形式**返回
-- **原始岗位名称**：保留输入的原始形式，不做修改
-- **标准岗位名称**：去除等级、编号等修饰，统一规范表述
-- **岗位英文名称**：提供对应的标准英文名称
-- **岗位中文别名**：列出该岗位的其他常见叫法，支持多个别名
-- 当某字段无法识别或不适用时，返回 `["无要求"]`
+#### Field Explanation
+- All fields are returned in **list form**, supporting multiple value extraction.
+- When a field is not mentioned or has no clear information in the original text, it returns `["No requirement"]`.
+- Fields such as skill requirements and benefits can contain multiple values.
 
-#### 使用示例
+#### Usage Example
 
-**输入示例 1：**
-```
-高级JAVA工程师（P6）
-```
+**Input Example:**
 
-**输出示例 1：**
-```json
+Recruiting 2 Java Development Engineers, requiring a bachelor's degree or above, more than 3 years of work experience,
+familiar with Spring Boot, MySQL, salary 15-25K, work location: Chaoyang District, Beijing,
+contact person: Manager Zhang, phone: 138****8000
+
+**Output Example:**
+json
 {
-  "原始岗位名称": ["高级JAVA工程师（P6）"],
-  "标准岗位名称": ["Java开发工程师"],
-  "岗位英文名称": ["Java Development Engineer"],
-  "岗位中文别名": ["Java工程师", "Java程序员", "Java开发"]
+  "Original Job Title": ["Java Development Engineer"],
+  "Standardized Job Title": ["Java Development Engineer"],
+  "Number of Hires": ["2 people"],
+  "Hiring Company": ["No requirement"],
+  "Work Location": ["Chaoyang District, Beijing"],
+  "Professional Requirements": ["No requirement"],
+  "Gender Requirement": ["No requirement"],
+  "Education Requirement": ["Bachelor's degree or above"],
+  "Work Experience Requirement": ["More than 3 years"],
+  "Age Requirement": ["No requirement"],
+  "Salary Range": ["15-25K"],
+  "Skill Requirements": ["Spring Boot", "MySQL"],
+  "Benefits": ["No requirement"],
+  "Candidate Characteristics": ["No requirement"],
+  "Contact Person": ["Manager Zhang"],
+  "Contact Information": ["138****8000"]
 }
-```
-
-**输入示例 2：**
-```
-产品经理PM/产品设计师
-```
-
-**输出示例 2：**
-```json
-{
-  "原始岗位名称": ["产品经理PM/产品设计师"],
-  "标准岗位名称": ["产品经理"],
-  "岗位英文名称": ["Product Manager"],
-  "岗位中文别名": ["PM", "产品策划", "产品设计师"]
-}
-```
-
-**输入示例 3：**
-```
-UI/UX设计
-```
-
-**输出示例 3：**
-```json
-{
-  "原始岗位名称": ["UI/UX设计"],
-  "标准岗位名称": ["UI设计师"],
-  "岗位英文名称": ["UI Designer"],
-  "岗位中文别名": ["界面设计师", "用户界面设计师", "UX设计师", "交互设计师"]
-}
-```
 
 ---
 
-## 数据处理流程
+### 2. Position Alias Data Cleaning
 
-### 整体流程图
+#### Function Description
+Standardize the input job titles, identify and clean various variants of job titles, and output uniformly standardized job titles and their related information.
 
-```
-输入招聘数据
+#### Task Parameters
+ 
+task_l: "2-Position Alias Data Cleaning"#### Field Extraction List
+
+| Field Name | Description | Example |
+|------------|-------------|---------|
+| Original Job Title | The original job title from the recruitment information | "Senior JAVA Engineer (P6)" |
+| Standardized Job Title | The standardized and normalized job title | "Java Development Engineer" |
+| English Job Title | The standard English name of the position | "Java Development Engineer" |
+| Chinese Alternative Names | Other common Chinese names for the position | ["Java Engineer", "Java Programmer", "Java Developer"] |
+
+#### Output Format
+
+json
+{
+  "Original Job Title": ["Senior JAVA Engineer (P6)"],
+  "Standardized Job Title": ["Java Development Engineer"],
+  "English Job Title": ["Java Development Engineer"],
+  "Chinese Alternative Names": ["Java Engineer", "Java Programmer", "Java Developer"]
+}
+
+#### Field Explanation
+- All fields are returned in **list form**.
+- **Original Job Title**: Retains the original input format without modification.
+- **Standardized Job Title**: Removes modifiers such as levels or numbers, unifying the expression.
+- **English Job Title**: Provides the corresponding standard English name.
+- **Chinese Alternative Names**: Lists other common names for the position, supporting multiple aliases.
+- When a field cannot be identified or is not applicable, return `["No Requirement"]`.
+
+#### Usage Examples
+
+**Example Input 1:**
+ 
+Senior JAVA Engineer (P6)
+
+**Example Output 1:**
+json
+{
+  "Original Job Title": ["Senior JAVA Engineer (P6)"],
+  "Standardized Job Title": ["Java Development Engineer"],
+  "English Job Title": ["Java Development Engineer"],
+  "Chinese Alternative Names": ["Java Engineer", "Java Programmer", "Java Developer"]
+}
+
+**Example Input 2:**
+ 
+Product Manager PM/Product Designer
+
+**Example Output 2:**
+json
+{
+  "Original Job Title": ["Product Manager PM/Product Designer"],
+  "Standardized Job Title": ["Product Manager"],
+  "English Job Title": ["Product Manager"],
+  "Chinese Alternative Names": ["PM", "Product Planner", "Product Designer"]
+}
+
+**Example Input 3:**
+ 
+UI/UX Design
+
+**Example Output 3:**
+json
+{
+  "Original Job Title": ["UI/UX Design"],
+  "Standardized Job Title": ["UI Designer"],
+  "English Job Title": ["UI Designer"],
+  "Chinese Alternative Names": ["Interface Designer", "User Interface Designer", "UX Designer", "Interaction Designer"]
+}
+
+---
+
+## Data Processing Flow
+
+### Overall Flowchart
+
+Input Recruitment Data
      ↓
-识别任务类型 (task_l)
+Identify Task Type (task_l)
      ↓
   ┌──────────────┐
   │              │
   ↓              ↓
-任务1          任务2
-招聘岗位      岗位别名
-数据清洗      数据清洗
+Task 1        Task 2
+Recruitment  Position
+Data Cleaning  Alias
   │              │
   ↓              ↓
-实体抽取      名称标准化
-(16个字段)    (4个字段)
+Entity Extraction  Name Standardization
+(16 Fields)    (4 Fields)
   │              │
   └──────┬───────┘
          ↓
-    返回JSON结果
-```
+   Return JSON Result
 
-### 处理原则
+### Processing Principles
 
-1. **完整性**：尽可能提取所有相关信息
-2. **准确性**：确保提取的信息与原文匹配
-3. **标准化**：统一数据格式和命名规范
-4. **容错性**：对缺失信息返回"无要求"，不抛出错误
-
----
-
-## API 调用规范
-
-### 请求参数
-
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| task_l | string | 是 | 任务类型："1-招聘岗位数据清洗" 或 "2-岗位别名数据清洗" |
-| content | string | 是 | 待处理的招聘数据文本 |
-
-### 请求示例
-
-**任务1 - 招聘岗位数据清洗：**
-```json
-{
-  "task_l": "1-招聘岗位数据清洗",
-  "content": "招聘Java开发工程师2名，要求本科以上学历，3年以上工作经验，熟悉Spring Boot、MySQL，薪资15-25K，工作地点：北京朝阳区"
-}
-```
-
-**任务2 - 岗位别名数据清洗：**
-```json
-{
-  "task_l": "2-岗位别名数据清洗",
-  "content": "高级JAVA工程师（P6）"
-}
-```
-
-### 响应格式
-
-响应统一采用 JSON 格式，根据不同任务类型返回对应的字段结构。
+1. **Completeness**: Extract all relevant information as much as possible.
+2. **Accuracy**: Ensure that the extracted information matches the original text.
+3. **Standardization**: Unify data formats and naming conventions.
+4. **Fault Tolerance**: Return "No Requirement" for missing information, do not throw errors.
 
 ---
 
-## 常见问题 FAQ
+## API Call Specifications
 
-### Q1: 如果招聘信息中某些字段缺失怎么办？
-**A:** 系统会自动识别，对于缺失的字段返回 `["无要求"]`，不会影响其他字段的正常提取。
+### Request Parameters
 
-### Q2: 同一个字段有多个值如何处理？
-**A:** 系统会将多个值以列表形式返回，例如技能要求可能返回 `["Java", "Python", "MySQL"]`。
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| task_l | string | Yes | Task type: "1-Recruitment Position Data Cleaning" or "2-Position Alias Data Cleaning" |
+| content | string | Yes | The recruitment data text to be processed |
 
-### Q3: 岗位名称标准化的依据是什么？
-**A:** 系统基于行业通用的岗位名称规范，去除级别、编号等修饰词，提取核心岗位名称。
+### Request Examples
 
-### Q4: 如何区分使用任务1还是任务2？
+**Task 1 - Recruitment Position Data Cleaning:**
+json
+{
+  "task_l": "1-Recruitment Position Data Cleaning",
+  "content": "Hiring 2 Java Development Engineers, requires bachelor's degree or above, 3+ years of experience, familiar with Spring Boot, MySQL, salary 15-25K, location: Chaoyang District, Beijing"
+}
+
+**Task 2 - Position Alias Data Cleaning:**
+json
+{
+  "task_l": "2-Position Alias Data Cleaning",
+  "content": "Senior JAVA Engineer (P6)"
+}
+
+### Response Format
+
+Responses are uniformly in JSON format, returning the corresponding field structure based on the task type.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### Q1: What if some fields are missing in the recruitment information?**A:** The system will automatically identify and return `["无要求"]` for missing fields, which will not affect the normal extraction of other fields.
+
+### Q2: How to handle multiple values for the same field?
+**A:** The system will return multiple values in list form, for example, skill requirements might return `["Java", "Python", "MySQL"]`.
+
+### Q3: What is the basis for standardizing job titles?
+**A:** The system standardizes job titles based on commonly used industry standards, removing modifiers such as levels and numbers, and extracting the core job title.
+
+### Q4: How to distinguish between using Task 1 or Task 2?
 **A:** 
-- 如果需要提取**完整的招聘信息**（公司、地点、薪资等），使用任务1
-- 如果只需要**标准化岗位名称**，使用任务2
+- If you need to extract **complete job information** (company, location, salary, etc.), use Task 1.
+- If you only need to **standardize the job title**, use Task 2.
 
-### Q5: 系统支持哪些语言的岗位名称？
-**A:** 目前主要支持中文岗位名称的处理，可以输出对应的英文标准名称。
+### Q5: Which languages of job titles does the system support?
+**A:** Currently, the system mainly supports processing Chinese job titles and can output the corresponding standardized English names.
 
 ---
 
-## 数据示例集
+## Data Example Set
 
-### 示例 1：完整招聘信息
+### Example 1: Complete Job Information
 
-**输入：**
-```
-某互联网公司招聘高级产品经理，要求：
-1. 本科及以上学历，市场营销、计算机相关专业优先
-2. 5年以上产品工作经验，有电商行业经验者优先
-3. 年龄30-40岁，性别不限
-4. 熟悉产品设计流程，精通Axure、Xmind等工具
-5. 薪资范围：25K-35K，13薪
-6. 福利：五险一金、补充医疗、年度体检、团建活动
-7. 工作地点：上海市浦东新区
-8. 联系人：李女士，邮箱：hr@*****.com
-```
+**Input:**
+ 
+An internet company is hiring a Senior Product Manager with the following requirements:
+1. Bachelor's degree or above, major in Marketing or Computer Science preferred
+2. 5+ years of product management experience, e-commerce experience preferred
+3. Age 30-40, gender not specified
+4. Familiar with product design processes, proficient in Axure, Xmind, etc.
+5. Salary range: 25K-35K, 13 months' salary
+6. Benefits: Five insurances and one fund, supplementary medical, annual health check, team building activities
+7. Work location: Pudong New Area, Shanghai
+8. Contact: Ms. Li, email: hr@*****.com
 
-**任务1输出：**
-```json
+**Task 1 Output:**
+json
 {
   "原始岗位名称": ["高级产品经理"],
   "标准岗位名称": ["产品经理"],
@@ -323,17 +303,15 @@ UI/UX设计
   "联系人": ["李女士"],
   "联系方式": ["hr@*****.com"]
 }
-```
 
-### 示例 2：简短招聘信息
+### Example 2: Brief Job Information
 
-**输入：**
-```
-急招前端开发，会Vue就行，8-12K
-```
+**Input:**
 
-**任务1输出：**
-```json
+Urgently hiring front-end developers, proficiency in Vue required, 8-12K
+
+**Task 1 Output:**
+json
 {
   "原始岗位名称": ["前端开发"],
   "标准岗位名称": ["前端开发工程师"],
@@ -352,81 +330,78 @@ UI/UX设计
   "联系人": ["无要求"],
   "联系方式": ["无要求"]
 }
-```
 
-### 示例 3：多种岗位名称变体
+### Example 3: Multiple Variants of Job Titles
 
-**输入列表：**
+**Input List:**
 - "资深Java工程师（P7-P8）"
 - "JAVA后端研发专家"
 - "Java开发"
 - "后端工程师-Java方向"
 
-**任务2输出（示例一）：**
-```json
+**Task 2 Output (Example One):**
+json
 {
   "原始岗位名称": ["资深Java工程师（P7-P8）"],
   "标准岗位名称": ["Java开发工程师"],
   "岗位英文名称": ["Java Development Engineer"],
   "岗位中文别名": ["Java工程师", "Java程序员", "Java后端开发", "后端工程师"]
 }
-```
 
 ---
 
-## 技术说明
+## Technical Notes
 
-### 数据格式
-- 所有输入输出均使用 **UTF-8** 编码
-- 返回格式为 **JSON**
-- 所有字段值均为 **列表（List）** 类型
+### Data Format
+- All input and output use **UTF-8** encoding
+- Return format is **JSON**
+- All field values are of **List** type
 
-### 性能指标
-- 单条数据处理时间：< 500ms
-- 支持批量处理
-- 并发处理能力：根据服务器配置而定
+### Performance Metrics
+- Processing time for a single data entry: < 500ms
+- Supports batch processing
+- Concurrent processing capability: Depends on server configuration
 
-### 版本信息
-- 当前版本：v1.0
-- 最后更新：2025-11-10
-
----
-
-## 联系与支持
-
-如有问题或建议，请联系技术支持团队。
+### Version Information
+- Current version: v1.0
+- Last updated: 2025-11-10
 
 ---
 
-## 更新日志
+## Contact and Support
+
+If you have any questions or suggestions, please contact the technical support team.
+
+---
+
+## Update Log
 
 ### v1.0 (2025-11-10)
-- 初始版本发布
-- 支持招聘岗位数据清洗功能
-- 支持岗位别名数据清洗功能
-- 提供16个招聘字段的实体抽取
-- 提供4个岗位名称标准化字段
+- Initial version release- Support job posting data cleaning function
+- Support job alias data cleaning function
+- Provide entity extraction for 16 recruitment fields
+- Provide 4 standardized job title fields
 
 ---
 
-**文档结束**
+**End of Document**
 
-**官方网站：** [https://modelscope.cn/models/xiaolv/security_testing_model/summary](https://modelscope.cn/models/xiaolv/security_testing_model/summary)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://modelscope.cn/models/xiaolv/security_testing_model/summary](https://modelscope.cn/models/xiaolv/security_testing_model/summary)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`knowledge and memory`, `communication`, `实体抽取`, `chinese`
+- Categories: `communication`
+- Tags: `knowledge and memory`, `communication`, `实体抽取`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-remote https://taian-mcp-1.rencaidanao.com --transport http-only --auth-timeout 500000 --timeout 500000`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-remote https://taian-mcp-1.rencaidanao.com --transport http-only --auth-timeout 500000 --timeout 500000`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xiaolv-taian-api.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xiaolv-taian-api.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

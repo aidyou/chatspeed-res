@@ -1,14 +1,11 @@
 ---
-title: "股票量化支撑点位计算器"
-description: "基于Qwen3推理引擎的股票量化智能体，计算特定股票下跌时的介入支撑位，并提供建议。\n其详细使用方法可通过MCP平台内置的《查询操作手册》获取。\n网页版请登录：http://49.235.53.176:929\nFor detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system."
+title: "Stock-Quant-Calculator-MCP"
+description: "Based on the Qwen3 inference engine, the stock quant agent calculates the support levels for a specific stock when it is declining and provides recommendations. Detailed usage instructions can be obta…"
 ---
 
-# 股票量化支撑点位计算器
+# Stock-Quant-Calculator-MCP
 
-基于Qwen3推理引擎的股票量化智能体，计算特定股票下跌时的介入支撑位，并提供建议。
-其详细使用方法可通过MCP平台内置的《查询操作手册》获取。
-网页版请登录：http://49.235.53.176:929
-For detailed usage instructions on the Qwen3-powered quantitative trading agent with advanced reasoning capabilities for stock market analysis, please refer to the MCP Query Cookbook accessible via the platform's built-in documentation system.
+Based on the Qwen3 inference engine, the stock quant agent calculates the support levels for a specific stock when it is declining and provides recommendations. Detailed usage instructions can be obta…
 
 # 股票量化MCP服务使用手册
 
@@ -66,22 +63,22 @@ Q1：如何获取详细文档？
   
 开发者邮箱：virgo_wang@qq.com
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`, `finance`
-- 标签：`communication`, `finance`, `股票量化`, `量化`, `支撑点位`, `股票`
+- Categories: `communication`, `finance`
+- Tags: `communication`, `finance`, `股票量化`, `量化`, `支撑点位`, `股票`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/virgo777-stock-quant-calculator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/virgo777-stock-quant-calculator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

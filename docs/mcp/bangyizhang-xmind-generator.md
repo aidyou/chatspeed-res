@@ -1,38 +1,38 @@
 ---
-title: "Xmind生成器"
-description: "一种允许大型语言模型创建具有分层主题结构的Xmind思维导图的MCP服务器，支持笔记、标签和标记等功能。"
+title: "xmind-generator-mcp"
+description: "An MCP server that allows LLMs to create structured Xmind mind maps with hierarchical topic structures, supporting features like notes, labels, and markers."
 ---
 
-# Xmind生成器
+# xmind-generator-mcp
 
-一种允许大型语言模型创建具有分层主题结构的Xmind思维导图的MCP服务器，支持笔记、标签和标记等功能。
+An MCP server that allows LLMs to create structured Xmind mind maps with hierarchical topic structures, supporting features like notes, labels, and markers.
 
-# Xmind 生成器 MCP 服务器
+# Xmind Generator MCP Server
 
-一个用于生成 Xmind 思维导图的 MCP（模型上下文协议）服务器。此服务器允许通过 MCP 协议创建结构化的思维导图。
+An MCP (Model Context Protocol) server for generating Xmind mind maps. This server allows LLMs to create structured mind maps through the MCP protocol.
 
-## 特性
+## Features
 
-- 生成具有层次主题结构的 Xmind 思维导图
-- 支持主题注释、标签和标记
-- 将思维导图保存到本地文件
-- 易于与 Claude Desktop 及其他 MCP 客户端集成
+- Generate Xmind mind maps with hierarchical topic structures
+- Support for topic notes, labels, and markers
+- Save mind maps to local files
+- Easy integration with Claude Desktop and other MCP clients
 
-## 前提条件
+## Prerequisites
 
-- **Node.js**：需要版本 18 或更高
-- **Xmind**：安装 [Xmind](https://xmind.app/) 桌面应用程序以打开和编辑生成的思维导图
-- **Claude Desktop**：作为扩展使用此工具时必需
+- **Node.js**: Version 18 or higher is required
+- **Xmind**: Install [Xmind](https://xmind.app/) desktop application to open and edit the generated mind maps
+- **Claude Desktop**: Required to use this tool as an extension
 
-## 与 Claude Desktop 集成
+## Setup with Claude Desktop
 
-### 选项 1：使用 npx（推荐）
+### Option 1: Using npx (Recommended)
 
-1. 创建或编辑 Claude Desktop 配置文件：
+1. Create or edit the Claude Desktop configuration file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+   - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 
-2. 添加以下配置：
+2. Add the following configuration:
 ```json
    {
      "mcpServers": {
@@ -48,12 +48,12 @@ description: "一种允许大型语言模型创建具有分层主题结构的Xmi
    }
 ```
 
-3. 重启 Claude Desktop
-4. 开始在对话中使用 Xmind 生成器
+3. Restart Claude Desktop
+4. Start using the Xmind generator in your conversations
 
-### 选项 2：本地安装
+### Option 2: Local Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
    git clone https://github.com/BangyiZhang/xmind-generator-mcp.git
    cd xmind-generator-mcp
@@ -61,11 +61,11 @@ description: "一种允许大型语言模型创建具有分层主题结构的Xmi
    npm run build
 ```
 
-2. 创建或编辑 Claude Desktop 配置文件：
+2. Create or edit the Claude Desktop configuration file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+   - Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 
-3. 添加以下配置：
+3. Add the following configuration:
 ```json
    {
      "mcpServers": {
@@ -81,36 +81,35 @@ description: "一种允许大型语言模型创建具有分层主题结构的Xmi
    }
 ```
 
-4. 将 `path/to/xmind-generator-mcp` 替换为实际克隆项目的路径
-5. 重启 Claude Desktop
-6. 开始在对话中使用 Xmind 生成器
+4. Replace `path/to/xmind-generator-mcp` with the actual path to your cloned project
+5. Restart Claude Desktop
+6. Start using the Xmind generator in your conversations
 
-**注意**：`env` 部分是可选的。它允许您为服务器设置环境变量：
-- `outputPath`：Xmind 文件将被保存的默认目录或文件路径。这可以通过工具调用中的 `outputPath` 参数覆盖。
-- `autoOpenFile`：控制生成的 Xmind 文件是否在创建后自动打开。设置为 "false" 以禁用自动打开（默认为 "true"）。
+**Note**: The `env` section is optional. It allows you to set environment variables for the server:
+- `outputPath`: Default directory or file path where Xmind files will be saved. This can be overridden by the `outputPath` parameter in the tool call.
+- `autoOpenFile`: Controls whether generated Xmind files are automatically opened after creation. Set to "false" to disable auto-opening (default is "true").
 
-## 可用工具
+## Available Tools
 
 ### generate-mind-map
 
-从主题的层次结构生成 Xmind 思维导图。
+Generates an Xmind mind map from a hierarchical structure of topics.
 
-参数：
+Parameters:
+- `title` (string): The title of the mind map (root topic)
+- `topics` (array): Array of topics to include in the mind map
+  - `title` (string): The title of the topic
+  - `ref` (string, optional): Reference ID for the topic
+  - `note` (string, optional): Note for the topic
+  - `labels` (array of strings, optional): Labels for the topic
+  - `markers` (array of strings, optional): Markers for the topic (format: "Category.name", e.g., "Arrow.refresh")
+  - `children` (array, optional): Array of child topics
+- `relationships` (array, optional): Array of relationships between topics
+- `outputPath` (string, optional): Custom output path for the Xmind file. This overrides the environment variable if set.
 
-- `title` (字符串): 思维导图的标题（根主题）
-- `topics` (数组): 要包含在思维导图中的主题数组
-  - `title` (字符串): 主题的标题
-  - `ref` (字符串, 可选): 主题的引用ID
-  - `note` (字符串, 可选): 主题的备注
-  - `labels` (字符串数组, 可选): 主题的标签
-  - `markers` (字符串数组, 可选): 主题的标记（格式: "Category.name"，例如: "Arrow.refresh"）
-  - `children` (数组, 可选): 子主题数组
-- `relationships` (数组, 可选): 主题之间的关系数组
-- `outputPath` (字符串, 可选): Xmind文件的自定义输出路径。如果设置了此选项，则会覆盖环境变量。
+## Example
 
-## 示例
-
-以下是如何使用 `generate-mind-map` 工具的一个示例：
+Here's an example of how to use the `generate-mind-map` tool:
 
 ```json
 {
@@ -147,26 +146,26 @@ description: "一种允许大型语言模型创建具有分层主题结构的Xmi
 }
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/BangyiZhang/xmind-generator-mcp](https://github.com/BangyiZhang/xmind-generator-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/BangyiZhang/xmind-generator-mcp](https://github.com/BangyiZhang/xmind-generator-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `note taking`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `note taking`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`xmind-generator-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `xmind-generator-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/bangyizhang-xmind-generator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/bangyizhang-xmind-generator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "彩云天气 MCP"
-description: "Caiyun Weather MCP Server Hosted Server Caiyun Weather provides a hosted Streamable HTTP MCP server, so you can use the weather tools without installing or running this package locally. json { \"url\": \"https://mcp-weather"
+title: "Caiyun Weather MCP"
+description: "Caiyun Weather MCP Server Hosted Server Caiyun Weather provides a hosted Streamable HTTP MCP server, so you can use the weather tools without installing or running this package locally. json { \"url\"…"
 ---
 
-# 彩云天气 MCP
+# Caiyun Weather MCP
 
-Caiyun Weather MCP Server Hosted Server Caiyun Weather provides a hosted Streamable HTTP MCP server, so you can use the weather tools without installing or running this package locally. json { "url": "https://mcp-weather
+Caiyun Weather MCP Server Hosted Server Caiyun Weather provides a hosted Streamable HTTP MCP server, so you can use the weather tools without installing or running this package locally. json { "url"…
 
 # Caiyun Weather MCP Server
 
@@ -159,22 +159,22 @@ npx @modelcontextprotocol/inspector \
 
 Note: All tools require a valid Caiyun Weather API token to be set in the environment variable `CAIYUN_WEATHER_API_TOKEN`.
 
-**官方网站：** [https://github.com/caiyunapp/mcp-caiyun-weather](https://github.com/caiyunapp/mcp-caiyun-weather)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/caiyunapp/mcp-caiyun-weather](https://github.com/caiyunapp/mcp-caiyun-weather)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`
+- Categories: `data`
+- Tags: `location services`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-caiyun-weather`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-caiyun-weather`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wzmmcp-caiyun-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wzmmcp-caiyun-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

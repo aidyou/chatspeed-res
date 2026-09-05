@@ -1,11 +1,11 @@
 ---
-title: "MCP服务端客户端"
-description: "实现了模型上下文协议（MCP），为人工智能模型提供了一个标准化的接口，用于连接到外部数据源和工具，例如文件系统、数据库或API。"
+title: "python-mcp-server-client"
+description: "Implements the Model Context Protocol (MCP) to provide AI models with a standardized interface for connecting to external data sources and tools like file systems, databases, or APIs."
 ---
 
-# MCP服务端客户端
+# python-mcp-server-client
 
-实现了模型上下文协议（MCP），为人工智能模型提供了一个标准化的接口，用于连接到外部数据源和工具，例如文件系统、数据库或API。
+Implements the Model Context Protocol (MCP) to provide AI models with a standardized interface for connecting to external data sources and tools like file systems, databases, or APIs.
 
 # Python 从0到1构建MCP Server & Client
 
@@ -75,7 +75,7 @@ cd mcp-server
 
 # 创建并激活虚拟环境
 uv venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venvScriptsactivate
 
 # 安装依赖
 uv add "mcp[cli]" httpx
@@ -513,7 +513,8 @@ class MCPClient:
         print("Listing tools...")
         response = await self.session.list_tools()
         tools = response.tools
-        print("\nConnected to server with tools:", [tool.name for tool in tools])
+        print("
+Connected to server with tools:", [tool.name for tool in tools])
 
     async def cleanup(self):
         """Properly clean up the session and streams"""
@@ -597,25 +598,30 @@ class MCPClient:
             else:
                 final_text.append(assistant_message.content)
 
-        return "\n".join(final_text)
+        return "
+".join(final_text)
 
     async def chat_loop(self):
         """Run an interactive chat loop"""
-        print("\nMCP Client Started!")
+        print("
+MCP Client Started!")
         print("Type your queries or 'quit' to exit.")
         
         while True:
             try:
-                query = input("\nQuery: ").strip()
+                query = input("
+Query: ").strip()
                 
                 if query.lower() == 'quit':
                     break
                     
                 response = await self.process_query(query)
-                print("\n" + response)
+                print("
+" + response)
                     
             except Exception as e:
-                print(f"\nError: {str(e)}")
+                print(f"
+Error: {str(e)}")
 
 async def main():
     if len(sys.argv) ")
@@ -653,22 +659,22 @@ Server 日志：
 - https://modelcontextprotocol.io/quickstart/client
 - https://docs.cursor.com/context/model-context-protocol
 
-**官方网站：** [https://github.com/GobinFan/python-mcp-server-client](https://github.com/GobinFan/python-mcp-server-client)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/GobinFan/python-mcp-server-client](https://github.com/GobinFan/python-mcp-server-client)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`developer tools`, `databases`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `developer tools`, `databases`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory <你的项目路径> run main.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory <你的项目路径> run main.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gobinfan-python-client.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gobinfan-python-client.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "MCP-word文档-修改版"
-description: "DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支持基于元素ID的精确文本替换和内容更新 - ☁️ 云存储集成: 自动上传修改后的文档到阿里云OSS，提供便捷的下载链接 "
+title: "MCP-word"
+description: "DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支…"
 ---
 
-# MCP-word文档-修改版
+# MCP-word
 
-DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支持基于元素ID的精确文本替换和内容更新 - ☁️ 云存储集成: 自动上传修改后的文档到阿里云OSS，提供便捷的下载链接 
+DOCX MCP 服务 一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。 🚀 服务功能 - 📄 文档结构提取: 智能解析 .docx 文件，提取段落、表格等结构化内容，为每个元素分配唯一ID - ✏️ 批量内容修改: 支…
 
 # DOCX MCP 服务
 
@@ -208,22 +208,22 @@ A: 处理后的文档会自动上传到预配置的阿里云OSS存储，并提�
 
 💡 **提示**: 如有问题或建议，欢迎提交Issue或Pull Request！
 
-**官方网站：** [https://github.com/taurusduan/Docx_MCP_cj](https://github.com/taurusduan/Docx_MCP_cj)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/taurusduan/Docx_MCP_cj](https://github.com/taurusduan/Docx_MCP_cj)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`
+- Categories: `productivity`
+- Tags: `other`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`docx-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `docx-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chevalblanc-word.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chevalblanc-word.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,163 +1,161 @@
 ---
-title: "阿里云可观测 MCP 服务"
-description: "阿里云可观测 MCP服务，提供了一系列访问阿里云可观测各产品的工具能力，覆盖产品包含阿里云日志服务SLS、阿里云应用实时监控服务ARMS、阿里云云监控等，任意支持 MCP 协议的智能体助手都可快速接入。"
+title: "alibabacloud-observability-mcp-server"
+description: "Alibaba Cloud Observability MCP Server provides a set of tools for accessing various products in Alibaba Cloud's observability suite. It covers products including Alibaba Cloud Log Service (SLS), Alib…"
 ---
 
-# 阿里云可观测 MCP 服务
+# alibabacloud-observability-mcp-server
 
-阿里云可观测 MCP服务，提供了一系列访问阿里云可观测各产品的工具能力，覆盖产品包含阿里云日志服务SLS、阿里云应用实时监控服务ARMS、阿里云云监控等，任意支持 MCP 协议的智能体助手都可快速接入。
+Alibaba Cloud Observability MCP Server provides a set of tools for accessing various products in Alibaba Cloud's observability suite. It covers products including Alibaba Cloud Log Service (SLS), Alib…
 
-## 阿里云可观测MCP服务
-
-  
-">
+## AliCloud Observability MCP Service
 
   
 
-### 简介
+  
 
-阿里云可观测 MCP服务，提供了一系列访问阿里云可观测各产品的工具能力，覆盖产品包含阿里云日志服务SLS、阿里云应用实时监控服务ARMS、阿里云云监控等，任意支持 MCP 协议的智能体助手都可快速接入。支持的产品如下:
+### Introduction
 
-- [阿里云日志服务SLS](https://help.aliyun.com/zh/sls/product-overview/what-is-log-service)
-- [阿里云应用实时监控服务ARMS](https://help.aliyun.com/zh/arms/?scm=20140722.S_help@@%E6%96%87%E6%A1%A3@@34364._.RL_arms-LOC_2024NSHelpLink-OR_ser-PAR1_215042f917434789732438827e4665-V_4-P0_0-P1_0)
+The AliCloud Observability MCP Service provides a series of tools for accessing various AliCloud observability products, including AliCloud Log Service (SLS), AliCloud Application Real-Time Monitoring Service (ARMS), and AliCloud Cloud Monitoring. Any intelligent agent that supports the MCP protocol can quickly integrate with these services. The supported products are as follows:
 
-目前提供的 MCP 工具以阿里云日志服务为主，其他产品会陆续支持，工具详细如下:
+- [AliCloud Log Service (SLS)](https://help.aliyun.com/zh/sls/product-overview/what-is-log-service)
+- [AliCloud Application Real-Time Monitoring Service (ARMS)](https://help.aliyun.com/zh/arms/?scm=20140722.S_help@@%E6%96%87%E6%A1%A3@@34364._.RL_arms-LOC_2024NSHelpLink-OR_ser-PAR1_215042f917434789732438827e4665-V_4-P0_0-P1_0)
 
-### 版本记录
-可以查看 版本记录
+Currently, the MCP tools primarily focus on AliCloud Log Service, with support for other products to be added gradually. The detailed tools are as follows:
 
-##### 场景举例
+### Version History
+You can view the version history.
 
-- 场景一: 快速查询某个 logstore 相关结构
-    - 使用工具:
+##### Example Scenarios
+
+- **Scenario One**: Quickly query the structure of a specific logstore
+    - Tools used:
         - `sls_list_logstores`
         - `sls_describe_logstore`
     
 
-- 场景二: 模糊查询最近一天某个 logstore下面访问量最高的应用是什么
-    - 分析:
-        - 需要判断 logstore 是否存在
-        - 获取 logstore 相关结构
-        - 根据要求生成查询语句(对于语句用户可确认修改)
-        - 执行查询语句
-        - 根据查询结果生成响应
-    - 使用工具:
+- **Scenario Two**: Fuzzy query to find the application with the highest traffic in a specific logstore over the past day
+    - Analysis:
+        - Determine if the logstore exists
+        - Retrieve the logstore structure
+        - Generate a query statement based on requirements (users can confirm and modify the statement)
+        - Execute the query statement
+        - Generate a response based on the query results
+    - Tools used:
         - `sls_list_logstores`
         - `sls_describe_logstore`
         - `sls_translate_natural_language_to_query`
         - `sls_execute_query`
     
 
-- 场景三: 查询 ARMS 某个应用下面响应最慢的几条 Trace
-    - 分析:
-        - 需要判断应用是否存在
-        - 获取应用相关结构
-        - 根据要求生成查询语句(对于语句用户可确认修改)
-        - 执行查询语句
-        - 根据查询结果生成响应
-    - 使用工具:
+- **Scenario Three**: Query the slowest traces for a specific application in ARMS
+    - Analysis:
+        - Determine if the application exists
+        - Retrieve the application structure
+        - Generate a query statement based on requirements (users can confirm and modify the statement)
+        - Execute the query statement
+        - Generate a response based on the query results
+    - Tools used:
         - `arms_search_apps`
         - `arms_generate_trace_query`
         - `sls_translate_natural_language_to_query`
         - `sls_execute_query`
     
 
-### 权限要求
+### Permission Requirements
 
-为了确保 MCP Server 能够成功访问和操作您的阿里云可观测性资源，您需要配置以下权限：
+To ensure that the MCP Server can successfully access and operate your AliCloud observability resources, you need to configure the following permissions:
 
-1.  **阿里云访问密钥 (AccessKey)**：
-    *   服务运行需要有效的阿里云 AccessKey ID 和 AccessKey Secret。
-    *   获取和管理 AccessKey，请参考 [阿里云 AccessKey 管理官方文档](https://help.aliyun.com/document_detail/53045.html)。
+1. **AliCloud Access Key (AccessKey)**:
+    * The service requires a valid AliCloud AccessKey ID and AccessKey Secret.
+    * For information on obtaining and managing AccessKeys, refer to the [official AliCloud AccessKey management documentation](https://help.aliyun.com/document_detail/53045.html).
 
-2. 当你初始化时候不传入 AccessKey 和 AccessKey Secret 时，会使用[默认凭据链进行登录](https://www.alibabacloud.com/help/zh/sdk/developer-reference/v2-manage-python-access-credentials#62bf90d04dztq)
-   1. 如果环境变量 中的ALIBABA_CLOUD_ACCESS_KEY_ID 和 ALIBABA_CLOUD_ACCESS_KEY_SECRET均存在且非空，则使用它们作为默认凭据。
-   2. 如果同时设置了ALIBABA_CLOUD_ACCESS_KEY_ID、ALIBABA_CLOUD_ACCESS_KEY_SECRET和ALIBABA_CLOUD_SECURITY_TOKEN，则使用STS Token作为默认凭据。
+2. If you do not provide an AccessKey and AccessKey Secret during initialization, the default credential chain will be used for login:
+   1. If both `ALIBABA_CLOUD_ACCESS_KEY_ID` and `ALIBABA_CLOUD_ACCESS_KEY_SECRET` environment variables exist and are non-empty, they will be used as the default credentials.
+   2. If `ALIBABA_CLOUD_ACCESS_KEY_ID`, `ALIBABA_CLOUD_ACCESS_KEY_SECRET`, and `ALIBABA_CLOUD_SECURITY_TOKEN` are all set, the STS Token will be used as the default credentials.
 
-3.  **RAM 授权 (重要)**：
-    *   与 AccessKey 关联的 RAM 用户或角色**必须**被授予访问相关云服务所需的权限。
-    *   **强烈建议遵循"最小权限原则"**：仅授予运行您计划使用的 MCP 工具所必需的最小权限集，以降低安全风险。
-    *   根据您需要使用的工具，参考以下文档进行权限配置：
-        *   **日志服务 (SLS)**：如果您需要使用 `sls_*` 相关工具，请参考 [日志服务权限说明](https://help.aliyun.com/zh/sls/overview-8)，并授予必要的读取、查询等权限。
-        *   **应用实时监控服务 (ARMS)**：如果您需要使用 `arms_*` 相关工具，请参考 [ARMS 权限说明](https://help.aliyun.com/zh/arms/security-and-compliance/overview-8?scm=20140722.H_74783._.OR_help-T_cn~zh-V_1)，并授予必要的查询权限。
-    *   请根据您的实际应用场景，精细化配置所需权限。
+3. **RAM Authorization (Important)**:
+    * The RAM user or role associated with the AccessKey **must** be granted the necessary permissions to access the relevant cloud services.
+    * **Strongly recommended to follow the "least privilege principle"**: Grant only the minimum set of permissions required to run the MCP tools you plan to use, to minimize security risks.
+    * Based on the tools you need to use, refer to the following documentation for permission configuration:
+        * **Log Service (SLS)**: If you need to use `sls_*` related tools, refer to the [Log Service permission documentation](https://help.aliyun.com/zh/sls/overview-8) and grant the necessary read, query, etc., permissions.
+        * **Application Real-Time Monitoring Service (ARMS)**: If you need to use `arms_*` related tools, refer to the [ARMS permission documentation](https://help.aliyun.com/zh/arms/security-and-compliance/overview-8?scm=20140722.H_74783._.OR_help-T_cn~zh-V_1) and grant the necessary query permissions.
+    * Configure the required permissions based on your actual use case.
 
-### 安全与部署建议
+### Security and Deployment Recommendations
 
-请务必关注以下安全事项和部署最佳实践：
+Please pay attention to the following security matters and best practices for deployment:
 
-1.  **密钥安全**：
-    *   本 MCP Server 在运行时会使用您提供的 AccessKey 调用阿里云 OpenAPI，但**不会以任何形式存储您的 AccessKey**，也不会将其用于设计功能之外的任何其他用途。
+1. **Key Security**:
+    * The MCP Server will use the AccessKey you provide to call AliCloud OpenAPI, but it **will not store your AccessKey in any form** and will not use it for any purposes other than the designed functionality.
 
-2.  **访问控制 (关键)**：
-    *   当您选择通过 **SSE (Server-Sent Events) 协议** 访问 MCP Server 时，**您必须自行负责该服务接入点的访问控制和安全防护**。
-    *   **强烈建议**将 MCP Server 部署在**内部网络或受信环境**中，例如您的私有 VPC (Virtual Private Cloud) 内，避免直接暴露于公共互联网。
-    *   推荐的部署方式是使用**阿里云函数计算 (FC)**，并配置其网络设置为**仅 VPC 内访问**，以实现网络层面的隔离和安全。
-    *   **注意**：**切勿**在没有任何身份验证或访问控制机制的情况下，将配置了您 AccessKey 的 MCP Server SSE 端点暴露在公共互联网上，这会带来极高的安全风险。
+2. **Access Control (Critical)**:
 
-### 使用说明
+*   When you choose to access the MCP Server via the **SSE (Server-Sent Events) protocol**, **you are responsible for managing access control and security for this service endpoint**.
+*   **It is strongly recommended** to deploy the MCP Server in an **internal network or trusted environment**, such as within your private VPC (Virtual Private Cloud), to avoid direct exposure to the public internet.
+*   The recommended deployment method is to use **Alibaba Cloud Function Compute (FC)** and configure its network settings to **VPC-only access** to achieve network isolation and security.
+*   **Note**: **Do not** expose the MCP Server SSE endpoint configured with your AccessKey on the public internet without any authentication or access control mechanisms, as this will pose a significant security risk.
 
-在使用 MCP Server 之前，需要先获取阿里云的 AccessKeyId 和 AccessKeySecret，请参考 [阿里云 AccessKey 管理](https://help.aliyun.com/document_detail/53045.html)
+### Usage Instructions
 
-#### 使用 pip 安装
-> ⚠️ 需要 Python 3.10 及以上版本。
+Before using the MCP Server, you need to obtain the Alibaba Cloud AccessKeyId and AccessKeySecret. Please refer to [Alibaba Cloud AccessKey Management](https://help.aliyun.com/document_detail/53045.html).
 
-直接使用 pip 安装即可，安装命令如下：
+#### Installation Using pip
+> ⚠️ Requires Python 3.10 or later.
 
-```bash
+You can install it directly using pip. The installation command is as follows:
+
+bash
 pip install mcp-server-aliyun-observability
-```
-1. 安装之后，直接运行即可，运行命令如下：
 
-```bash
+1. After installation, you can run it directly. The run command is as follows:
+
+bash
 python -m mcp_server_aliyun_observability --transport sse --access-key-id  --access-key-secret 
-```
-可通过命令行传递指定参数:
-- `--transport` 指定传输方式，可选值为 `sse` 或 `stdio`，默认值为 `stdio`
-- `--access-key-id` 指定阿里云 AccessKeyId，不指定时会使用环境变量中的ALIBABA_CLOUD_ACCESS_KEY_ID
-- `--access-key-secret` 指定阿里云 AccessKeySecret，不指定时会使用环境变量中的ALIBABA_CLOUD_ACCESS_KEY_SECRET
-- `--log-level` 指定日志级别，可选值为 `DEBUG`、`INFO`、`WARNING`、`ERROR`，默认值为 `INFO`
-- `--transport-port` 指定传输端口，默认值为 `8000`,仅当 `--transport` 为 `sse` 时有效
 
-2. 使用uv 命令启动
+You can pass specific parameters via the command line:
+- `--transport` specifies the transport method, which can be `sse` or `stdio`. The default value is `stdio`.
+- `--access-key-id` specifies the Alibaba Cloud AccessKeyId. If not specified, it will use the `ALIBABA_CLOUD_ACCESS_KEY_ID` environment variable.
+- `--access-key-secret` specifies the Alibaba Cloud AccessKeySecret. If not specified, it will use the `ALIBABA_CLOUD_ACCESS_KEY_SECRET` environment variable.
+- `--log-level` specifies the log level, which can be `DEBUG`, `INFO`, `WARNING`, or `ERROR`. The default value is `INFO`.
+- `--transport-port` specifies the transport port. The default value is `8000`, and it is only effective when `--transport` is set to `sse`.
 
-```bash
+2. Start using the `uv` command
+
+bash
 uv run mcp-server-aliyun-observability
-```
-### 从源码安装
 
-```bash
+### Installation from Source Code
 
-# clone 源码
+bash
+# Clone the source code
 git clone git@github.com:aliyun/alibabacloud-observability-mcp-server.git
-# 进入源码目录
+# Enter the source code directory
 cd alibabacloud-observability-mcp-server
-# 安装
+# Install
 pip install -e .
-# 运行
+# Run
 python -m mcp_server_aliyun_observability --transport sse --access-key-id  --access-key-secret 
-```
 
-### AI 工具集成
+### AI Tool Integration
 
-> 以 SSE 启动方式为例,transport 端口为 8888,实际使用时需要根据实际情况修改
+> Example using the SSE startup method, with the transport port set to 8888. Adjust according to your actual usage.
 
-#### Cursor，Cline 等集成
-1. 使用 SSE 启动方式
-```json
+#### Integration with Cursor, Cline, etc.
+1. Using the SSE startup method
+json
 {
   "mcpServers": {
     "alibaba_cloud_observability": {
       "url": "http://localhost:7897/sse"
-        }
+    }
   }
 }
-```
-2. 使用 stdio 启动方式
-   直接从源码目录启动,注意
-    1. 需要指定 `--directory` 参数,指定源码目录，最好是绝对路径
-    2. uv命令 最好也使用绝对路径，如果使用了虚拟环境，则需要使用虚拟环境的绝对路径
-```json
+
+2. Using the stdio startup method
+   Start directly from the source code directory, note:
+   1. You need to specify the `--directory` parameter to indicate the source code directory, preferably using an absolute path.
+   2. It is best to use an absolute path for the `uv` command. If using a virtual environment, use the absolute path of the virtual environment.
+json
 {
   "mcpServers": {
     "alibaba_cloud_observability": {
@@ -175,9 +173,9 @@ python -m mcp_server_aliyun_observability --transport sse --access-key-id  --acc
     }
   }
 }
-```
-1. 使用 stdio 启动方式-从 module 启动
-```json
+
+3. Using the stdio startup method - starting from a module
+json
 {
   "mcpServers": {
     "alibaba_cloud_observability": {
@@ -193,30 +191,33 @@ python -m mcp_server_aliyun_observability --transport sse --access-key-id  --acc
     }
   }
 }
-```
 
-#### Cherry Studio集成
+#### Cherry Studio Integration
 
-#### Cursor集成
+#### Cursor Integration
 
-#### ChatWise集成
+#### ChatWise Integration
 
-**官方网站：** [https://github.com/aliyun/alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+Sure, here is the translation of the provided Chinese technical document into English, while strictly maintaining the code blocks, links, and format structure:
 
-## 分类与标签
+If you have the actual content of the document, please provide it, and I will translate it accordingly. The images are retained as they are.
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+**Official site: ** [https://github.com/aliyun/alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## MCP 配置
+## Categories & Tags
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory yourpath/alibabacloud-observability-mcp-server run mcp-server-aliyun-observability`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## MCP Configuration
 
-## 数据来源
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory yourpath/alibabacloud-observability-mcp-server run mcp-server-aliyun-observability`
 
-资源文件：`resources/mcp/aliyun-alibabacloud-observability.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/aliyun-alibabacloud-observability.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

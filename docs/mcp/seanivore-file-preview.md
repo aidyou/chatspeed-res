@@ -1,47 +1,47 @@
 ---
-title: "mcp-file-preview HTML预览分析工具"
-description: "提供HTML文件的预览和分析功能。该服务器能够捕获本地HTML文件的全页截图并分析其结构。"
+title: "mcp-file-preview"
+description: "Provides HTML file preview and analysis capabilities. This server enables capturing full-page screenshots of local HTML files and analyzing their structure."
 ---
 
-# mcp-file-preview HTML预览分析工具
+# mcp-file-preview
 
-提供HTML文件的预览和分析功能。该服务器能够捕获本地HTML文件的全页截图并分析其结构。
+Provides HTML file preview and analysis capabilities. This server enables capturing full-page screenshots of local HTML files and analyzing their structure.
 
-# MCP 文件预览服务器
+# MCP File Preview Server
 
-一个提供 HTML 文件预览和分析功能的模型上下文协议 (MCP) 服务器。该服务器能够捕获本地 HTML 文件的全页面截图并分析其结构。
+A Model Context Protocol (MCP) server that provides HTML file preview and analysis capabilities. This server enables capturing full-page screenshots of local HTML files and analyzing their structure.
 
-## 功能
+## Features
 
-- **文件预览**：捕获带有适当 CSS 样式的 HTML 文件全页面截图
-- **内容分析**：分析 HTML 结构（标题、段落、图片、链接）
-- **本地文件支持**：处理本地文件路径和资源
-- **截图管理**：将截图保存到专用目录
+- **File Preview**: Capture full-page screenshots of HTML files with proper CSS styling
+- **Content Analysis**: Analyze HTML structure (headings, paragraphs, images, links)
+- **Local File Support**: Handle local file paths and resources
+- **Screenshot Management**: Save screenshots to a dedicated directory
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/mcp-file-preview.git
 cd mcp-file-preview
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-## 配置
+## Configuration
 
-将服务器添加到您的 Claude 或 Cline MCP 设置中：
+Add the server to your Claude or Cline MCP settings:
 
-### Claude 桌面应用程序
-添加到 `~/Library/Application Support/Claude/claude_desktop_config.json`：
+### Claude Desktop App
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -53,8 +53,8 @@ npm run build
 }
 ```
 
-### Cline VSCode 扩展
-添加到 VSCode 的 MCP 设置中：
+### Cline VSCode Extension
+Add to VSCode's MCP settings:
 ```json
 {
   "mcpServers": {
@@ -66,12 +66,12 @@ npm run build
 }
 ```
 
-## 使用
+## Usage
 
-服务器提供了两个主要工具：
+The server provides two main tools:
 
 ### preview_file
-捕获截图并返回 HTML 内容：
+Captures a screenshot and returns HTML content:
 ```typescript
 
 file-preview
@@ -85,10 +85,10 @@ preview_file
 
 ```
 
-截图将保存在项目文件夹中的 `screenshots/` 目录下。
+Screenshots are saved to `screenshots/` directory in the project folder.
 
 ### analyze_content
-分析 HTML 结构：
+Analyzes HTML structure:
 ```typescript
 
 file-preview
@@ -100,32 +100,32 @@ analyze_content
 
 ```
 
-返回以下各项的计数：
-- 标题
-- 段落
-- 图片
-- 链接
+Returns counts of:
+- Headings
+- Paragraphs
+- Images
+- Links
 
-## 开发
+## Development
 
-1. 安装依赖项：
+1. Install dependencies:
 ```bash
 npm install @modelcontextprotocol/sdk puppeteer typescript @types/node @types/puppeteer
 ```
 
-2. 在 `src/` 中进行修改
-3. 构建：
+2. Make changes in `src/`
+3. Build:
 ```bash
 npm run build
 ```
-4. 本地测试：
+4. Test locally:
 ```bash
 npm run dev
 ```
 
-## 实现细节
+## Implementation Details
 
-服务器使用 MCP SDK 的 Server 类进行适当的初始化：
+The server uses the MCP SDK's Server class with proper initialization:
 
 ```typescript
 this.server = new Server(
@@ -150,50 +150,50 @@ this.server = new Server(
 );
 ```
 
-要点：
-- 服务器构造函数接受单独的元数据和选项对象
-- 工具在 capabilities.tools 中声明
-- 每个工具需要描述和 inputSchema
-- 截图保存到本地 `screenshots/` 目录
+Key points:
+- Server constructor takes separate metadata and options objects
+- Tools are declared in capabilities.tools
+- Each tool needs a description and inputSchema
+- Screenshots are saved to a local `screenshots/` directory
 
-## 调试
+## Debugging
 
-1. 使用 MCP Inspector：
+1. Use the MCP Inspector:
 ```bash
 npx @modelcontextprotocol/inspector
 ```
 
-2. 连接方式：
-   - 传输类型：STDIO
-   - 命令：node
-   - 参数：/path/to/build/index.js
+2. Connect with:
+   - Transport Type: STDIO
+   - Command: node
+   - Arguments: /path/to/build/index.js
 
-3. 如果工具未出现在下拉菜单中，请检查 Claude OS 日志
+3. Check Claude OS logs if tools don't appear in the dropdown
 
-## 贡献
+## Contributing
 
-请阅读 [CONTRIBUTING.md](https://github.com/seanivore/mcp-file-preview/blob/HEAD/CONTRIBUTING.md) 以了解我们的行为准则以及提交拉取请求的流程。
+Please read [CONTRIBUTING.md](https://github.com/seanivore/mcp-file-preview/blob/HEAD/CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## 许可证
+## License
 
-该项目根据 MIT 许可证获得许可 - 有关详细信息，请参阅 [LICENSE](https://github.com/seanivore/mcp-file-preview/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/seanivore/mcp-file-preview/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/seanivore/mcp-file-preview](https://github.com/seanivore/mcp-file-preview)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/seanivore/mcp-file-preview](https://github.com/seanivore/mcp-file-preview)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `browser automation`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/mcp-file-preview/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/mcp-file-preview/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/seanivore-file-preview.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/seanivore-file-preview.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,34 +1,34 @@
 ---
-title: "Jenkins-MCP管理工具"
-description: "通过可配置的MCP服务器，启用管理Jenkins操作的功能，例如列出作业、触发构建和检查构建状态。"
+title: "jenkins-mcp"
+description: "Enables managing Jenkins operations like listing jobs, triggering builds, and checking build statuses through a configurable MCP server."
 ---
 
-# Jenkins-MCP管理工具
+# jenkins-mcp
 
-通过可配置的MCP服务器，启用管理Jenkins操作的功能，例如列出作业、触发构建和检查构建状态。
+Enables managing Jenkins operations like listing jobs, triggering builds, and checking build statuses through a configurable MCP server.
 
 # Jenkins MCP
 [Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)
-用于管理Jenkins操作的MCP服务器。
+MCP server for managing Jenkins operations.
 
   
 
-## 安装
-### 通过Smithery安装
+## Installation
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp)自动为Claude Desktop安装Jenkins MCP：
+To install Jenkins MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kjozsa/jenkins-mcp):
 
 ```bash
 npx -y @smithery/cli install @kjozsa/jenkins-mcp --client claude
 ```
 
-### 手动安装
+### Installing Manually
 ```bash
 uvx install jenkins-mcp
 ```
 
-## 配置
-使用以下JSON配置片段添加MCP服务器：
+## Configuration
+Add the MCP server using the following JSON configuration snippet:
 
 ```json
 {
@@ -47,28 +47,28 @@ uvx install jenkins-mcp
 }
 ```
 
-## CSRF Crumb处理
+## CSRF Crumb Handling
 
-Jenkins通过“crumbs”（一种令牌）来实现CSRF保护，这些令牌必须随POST请求一起包含。此MCP服务器以两种方式处理CSRF crumbs：
+Jenkins implements CSRF protection using "crumbs" - tokens that must be included with POST requests. This MCP server handles CSRF crumbs in two ways:
 
-1. **默认模式**：自动获取并包括构建请求中的CSRF crumbs
-   - 使用会话cookie来保持Web会话
-   - 在后台处理所有CSRF保护
+1. **Default Mode**: Automatically fetches and includes CSRF crumbs with build requests
+   - Uses session cookies to maintain the web session
+   - Handles all the CSRF protection behind the scenes
 
-2. **API令牌模式**：使用免于CSRF保护的Jenkins API令牌
-   - 设置`JENKINS_USE_API_TOKEN=true`
-   - 将`JENKINS_PASSWORD`设置为您的API令牌而不是密码
-   - 适用于Jenkins 2.96+版本，该版本在API令牌认证时不需要crumbs
+2. **API Token Mode**: Uses Jenkins API tokens which are exempt from CSRF protection
+   - Set `JENKINS_USE_API_TOKEN=true`
+   - Set `JENKINS_PASSWORD` to your API token instead of password
+   - Works with Jenkins 2.96+ which doesn't require crumbs for API token auth
 
-您可以在Jenkins中生成API令牌：用户 → 配置 → API令牌 → 添加新令牌
+You can generate an API token in Jenkins at: User → Configure → API Token → Add new Token
 
-## 功能
-- 列出Jenkins作业
-- 触发带有可选参数的构建
-- 检查构建状态
-- 为安全API访问处理CSRF crumbs
+## Features
+- List Jenkins jobs
+- Trigger builds with optional parameters
+- Check build status
+- CSRF crumb handling for secure API access
 
-## 开发
+## Development
 ```bash
 # Install dependencies
 uv pip install -r requirements.txt
@@ -77,22 +77,22 @@ uv pip install -r requirements.txt
 mcp dev jenkins_mcp/server.py
 ```
 
-**官方网站：** [https://github.com/kjozsa/jenkins-mcp](https://github.com/kjozsa/jenkins-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kjozsa/jenkins-mcp](https://github.com/kjozsa/jenkins-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `os automation`, `monitoring`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `os automation`, `monitoring`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`jenkins-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `jenkins-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kjozsa-jenkins.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kjozsa-jenkins.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

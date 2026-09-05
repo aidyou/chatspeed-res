@@ -1,11 +1,11 @@
 ---
-title: "中国节假日MCP"
-description: "一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。"
+title: "china-festival-mcp"
+description: "一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。西方节日都是固定公历日期，不需要查询工具。 - 节假日查询: 查询中国法定节假日、传统节日和调休安排 - 农历转换: 公历与农历日期相互转换 - 农历信息: 获取详细的农历日期描述，包括生肖、干支等 - 二十四节气: 查询二十四节气信息和季节划分…"
 ---
 
-# 中国节假日MCP
+# china-festival-mcp
 
-一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。
+一个基于模型上下文协议（MCP）的中国节假日和农历信息服务器，为AI助手提供准确的法定节假日、调休安排、中国传统节日、农历转换、二十四节气和八字计算功能。西方节日都是固定公历日期，不需要查询工具。 - 节假日查询: 查询中国法定节假日、传统节日和调休安排 - 农历转换: 公历与农历日期相互转换 - 农历信息: 获取详细的农历日期描述，包括生肖、干支等 - 二十四节气: 查询二十四节气信息和季节划分…
 
 # 中国节假日MCP服务器
 
@@ -321,22 +321,22 @@ china-festival-mcp/
 - 基于传统农历算法和现代计算方法
 - 参考了多个开源农历转换项目
 
-**官方网站：** [https://github.com/Eis4TY/china-festival-mcp](https://github.com/Eis4TY/china-festival-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Eis4TY/china-festival-mcp](https://github.com/Eis4TY/china-festival-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`
+- Categories: `productivity`
+- Tags: `calendar management`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`china-festival-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `china-festival-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelscope-mp-216214863-china-festival.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelscope-mp-216214863-china-festival.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

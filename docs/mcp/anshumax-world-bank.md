@@ -1,29 +1,29 @@
 ---
-title: "世界银行指标服务"
-description: "启用AI助手与世界银行开放数据API交互，允许列出并分析可用国家的指标。"
+title: "world_bank_mcp_server"
+description: "Enables AI assistants to interact with the World Bank open data API, allowing for listing and analysis of indicators across available countries."
 ---
 
-# 世界银行指标服务
+# world_bank_mcp_server
 
-启用AI助手与世界银行开放数据API交互，允许列出并分析可用国家的指标。
+Enables AI assistants to interact with the World Bank open data API, allowing for listing and analysis of indicators across available countries.
 
-# 世界银行 MCP 服务器
+# World Bank MCP Server
 [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server)
 
-这是一个模型上下文协议（MCP）服务器，能够与开放的世界银行数据 API 进行交互。该服务器允许 AI 助手列出指标，并对世界银行中可用国家的这些指标进行分析。
+A Model Context Protocol (MCP) server that enables interaction with the open World Bank data API. This server allows AI assistants to list indicators and analyse those indicators for the countries that are available with the World Bank.
 
-## 功能
+## Features
 
-- 列出世界银行开放数据 API 中可用的国家
-- 列出世界银行开放数据 API 中可用的指标
-- 分析各国的指标，如人口细分、贫困人口数量等
-- 全面的日志记录
+- List available countries in the World Bank open data API
+- List available indicators in the World Bank open data API
+- Analyse indicators, such as population segments, poverty numbers etc, for countries
+- Comprehensive logging
 
-## 使用方法
+## Usage
 
-### 在 Claude Desktop 上使用
+### With Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add this to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -41,30 +41,30 @@ description: "启用AI助手与世界银行开放数据API交互，允许列出�
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server) 自动为 Claude Desktop 安装世界银行数据服务器，请执行以下命令：
+To install World Bank Data Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@anshumax/world_bank_mcp_server):
 
 ```bash
 npx -y @smithery/cli install @anshumax/world_bank_mcp_server --client claude
 ```
 
-**官方网站：** [https://github.com/anshumax/world_bank_mcp_server](https://github.com/anshumax/world_bank_mcp_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/anshumax/world_bank_mcp_server](https://github.com/anshumax/world_bank_mcp_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`, `data`
-- 标签：`research and data`, `finance`, `chinese`
+- Categories: `finance`, `data`
+- Tags: `research and data`, `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory path/to/world_bank_mcp_server run world_bank_mcp_server`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory path/to/world_bank_mcp_server run world_bank_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/anshumax-world-bank.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/anshumax-world-bank.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,77 +1,77 @@
 ---
-title: "DeepSeek Claude推理增强器"
-description: "通过集成 DeepSeek R1 的先进推理引擎，增强 Claude 的推理能力，以帮助解决复杂的多步骤推理任务。"
+title: "deepseek-claude-MCP-server"
+description: "Enhances Claude's reasoning capabilities by integrating DeepSeek R1's advanced reasoning engine to help tackle complex multi-step reasoning tasks."
 ---
 
-# DeepSeek Claude推理增强器
+# deepseek-claude-MCP-server
 
-通过集成 DeepSeek R1 的先进推理引擎，增强 Claude 的推理能力，以帮助解决复杂的多步骤推理任务。
+Enhances Claude's reasoning capabilities by integrating DeepSeek R1's advanced reasoning engine to help tackle complex multi-step reasoning tasks.
 
-# DeepSeek-Claude MCP 服务器
+# DeepSeek-Claude MCP Server
 [Smithery](https://smithery.ai/server/@HarshJ23/deepseek-claude-MCP-server)
 
-通过集成 DeepSeek R1 的高级推理引擎**增强 Claude 的推理能力**。此服务器使 Claude 能够利用 deepseek r1 模型的推理能力来处理复杂的推理任务。
+**Enhance Claude's reasoning capabilities** with the integration of DeepSeek R1's advanced reasoning engine. This server enables Claude to tackle complex reasoning tasks by leveraging the reasoning capabilites of deepseek r1 model.
 
 ---
 
-## 🚀 功能
+## 🚀 Features
 
-### **高级推理能力**
-- 无缝集成 DeepSeek R1 的推理与 Claude。
-- 支持复杂的多步骤推理任务。
-- 旨在生成精确且高效的深思熟虑的回答。
+### **Advanced Reasoning Capabilities**
+- Seamlessly integrates DeepSeek R1's reasoning with Claude.
+- Supports intricate multi-step reasoning tasks.
+- Designed for precision and efficiency in generating thoughtful responses.
 
 ---
 
-## 完整设置指南
+## Complete Setup guide
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@HarshJ23/deepseek-claude-MCP-server) 自动为 Claude Desktop 安装 DeepSeek-Claude：
+To install DeepSeek-Claude for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@HarshJ23/deepseek-claude-MCP-server):
 
 ```bash
 npx -y @smithery/cli install @HarshJ23/deepseek-claude-MCP-server --client claude
 ```
 
-### 前提条件
-- Python 3.12 或更高版本
-- `uv` 包管理器
-- DeepSeek API 密钥（在 [DeepSeek 平台](https://platform.deepseek.com) 注册）
+### Prerequisites
+- Python 3.12 or higher
+- `uv` package manager
+- DeepSeek API key (Sign up at [DeepSeek Platform](https://platform.deepseek.com))
 
-1. **克隆仓库**
+1. **Clone the Repository**
 ```bash
    git clone https://github.com/harshj23/deepseek-claude-MCP-server.git
    cd deepseek-claude-MCP-server
 ```
 
-2. **确保 UV 已设置**
-   - **Windows**: 在 PowerShell 中运行以下命令：
+2. **Ensure UV is Set Up**
+   - **Windows**: Run the following in PowerShell:
 ```powershell
      powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-   - **Mac**: 运行以下命令：
+   - **Mac**: Run the following:
 ```bash
      curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-3. **创建虚拟环境**
+3. **Create Virtual Environment**
 ```bash
    uv venv
    source .venv/bin/activate
 ```
 
-4. **安装依赖项**
+4. **Install Dependencies**
 ```bash
    uv add "mcp[cli]" httpx
 ```
 
-5. **设置 API 密钥**
+5. **Set Up API Key**
 ```bash
-   从此处获取您的 API 密钥: https://platform.deepseek.com/api_keys
+   Obtain your api key from here : https://platform.deepseek.com/api_keys
 ```
 
-6. **配置 MCP 服务器**
-   编辑 `claude_desktop_config.json` 文件以包含以下配置：
+6. **Configure MCP Server**
+   Edit the `claude_desktop_config.json` file to include the following configuration:
    
 
 ```json
@@ -81,7 +81,7 @@ npx -y @smithery/cli install @HarshJ23/deepseek-claude-MCP-server --client claud
                "command": "uv",
                "args": [
                    "--directory",
-                   "C:\\ABSOLUTE\\PATH\\TO\\PARENT\\FOLDER\\deepseek-claude",
+                   "C:\ABSOLUTE\PATH\TO\PARENT\FOLDER\deepseek-claude",
                    "run",
                    "server.py"
                ]
@@ -90,58 +90,56 @@ npx -y @smithery/cli install @HarshJ23/deepseek-claude-MCP-server --client claud
    }
 ```
 
-7. **运行服务器**
+7. **Run the Server**
 ```bash
    uv run server.py
 ```
 
-8. **测试设置**
-   - ##### 重启 Claude Desktop。
-   - 确认界面中可见工具图标。
+8. **Test Setup**
+   - ##### Restart Claude Desktop.
+   - Verify the tools icon is visible in the interface.
    
-   
 
-   - 如果服务器不可见，请参阅[故障排除指南](https://modelcontextprotocol.io/quickstart/server#troubleshooting)。
-
----
-
-## 🛠 使用方法
-
-### 启动服务器
-当与 Claude Desktop 一起使用时，服务器会自动启动。确保 Claude Desktop 配置为能够检测到 MCP 服务器。
-
-### 示例工作流程
-
-1. Claude 接收到一个需要高级推理的查询。
-2. 该查询被转发给 DeepSeek R1 进行处理。
-3. DeepSeek R1 返回用 `
-` 标签包裹的结构化推理。
-4. Claude 将推理整合到其最终响应中。
+   - If the server isn’t visible, consult the [troubleshooting guide](https://modelcontextprotocol.io/quickstart/server#troubleshooting).
 
 ---
 
-## 📄 许可证
+## 🛠 Usage
 
-本项目采用 MIT 许可证。详情请参阅 [LICENSE](https://github.com/harshj23/deepseek-claude-mcp-server/blob/HEAD/LICENSE) 文件。
+### Starting the Server
+The server automatically starts when used with Claude Desktop. Ensure Claude Desktop is configured to detect the MCP server.
+
+### Example Workflow
+1. Claude receives a query requiring advanced reasoning.
+2. The query is forwarded to DeepSeek R1 for processing.
+3. DeepSeek R1 returns structured reasoning wrapped in `
+` tags.
+4. Claude integrates the reasoning into its final response.
 
 ---
 
-**官方网站：** [https://github.com/harshj23/deepseek-claude-mcp-server](https://github.com/harshj23/deepseek-claude-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## 📄 License
 
-## 分类与标签
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/harshj23/deepseek-claude-mcp-server/blob/HEAD/LICENSE) file for details.
 
-- 分类：`memory`
-- 标签：`developer tools`, `knowledge and memory`, `chinese`
+---
 
-## MCP 配置
+**Official site: ** [https://github.com/harshj23/deepseek-claude-mcp-server](https://github.com/harshj23/deepseek-claude-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory C:ABSOLUTEPATHTOPARENTFOLDERdeepseek-claude run server.py`
+## Categories & Tags
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Categories: `memory`
+- Tags: `developer tools`, `knowledge and memory`, `chinese`
 
-## 数据来源
+## MCP Configuration
 
-资源文件：`resources/mcp/harshj23-deepseek-claude.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory C:ABSOLUTEPATHTOPARENTFOLDERdeepseek-claude run server.py`
+
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/harshj23-deepseek-claude.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

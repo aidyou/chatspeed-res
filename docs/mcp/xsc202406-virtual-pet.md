@@ -1,104 +1,115 @@
 ---
-title: "虚拟宠物"
-description: "在数字浪潮中重拾 90 年代电子宠物的温暖记忆，MCPet 以现代 AI 技术重构怀旧体验。这一基于 TypeScript 开发的 MCP 服务器，打造了全生命周期的虚拟宠物养成生态：从孵化初生宠物到陪伴其成长为成熟形态，每一次喂养、清洁、互动都将实时影响宠物的性格、状态与成长轨迹。"
+title: "Virtual_Pet"
+description: "In the digital wave, MCPet rekindles the warm memories of 90s electronic pets, reconstructing a nostalgic experience with modern AI technology. This MCP server, developed based on TypeScript, creates…"
 ---
 
-# 虚拟宠物
+# Virtual_Pet
 
-在数字浪潮中重拾 90 年代电子宠物的温暖记忆，MCPet 以现代 AI 技术重构怀旧体验。这一基于 TypeScript 开发的 MCP 服务器，打造了全生命周期的虚拟宠物养成生态：从孵化初生宠物到陪伴其成长为成熟形态，每一次喂养、清洁、互动都将实时影响宠物的性格、状态与成长轨迹。
+In the digital wave, MCPet rekindles the warm memories of 90s electronic pets, reconstructing a nostalgic experience with modern AI technology. This MCP server, developed based on TypeScript, creates…
 
-一、项目概述
+# Project Overview
 
-MCPet 是一款基于 TypeScript 开发的 Model Context Protocol（MCP）服务器应用，旨在为用户带来 AI 时代的怀旧虚拟宠物体验。它复刻了经典 Tamagotchi 玩具的养成玩法，结合现代 AI 技术与模型上下文协议，用户可以收养、培养并与自己的数字伴侣互动，看着它们从婴儿成长为成人。即使离线，宠物的各项统计数据也会随时间自然变化，为用户提供真实且富有情感的虚拟宠物养成体验。
+MCPet is a Model Context Protocol (MCP) server application developed in TypeScript, designed to bring a nostalgic virtual pet experience to users in the AI era. It recreates the classic Tamagotchi toy's nurturing gameplay, integrating modern AI technology and model context protocols. Users can adopt, nurture, and interact with their digital companions, watching them grow from infants to adults. Even when offline, the pet's various statistics will naturally change over time, providing a realistic and emotionally engaging virtual pet nurturing experience.
 
-二、核心功能
+## Core Features
 
-全生命周期养成：支持宠物从婴儿期到成年期的完整成长过程，每次互动都会影响宠物的成长轨迹。
-丰富互动玩法：提供喂养、清洁、游戏等多样化互动方式，宠物会根据用户的照顾情况改变性格和状态。
-AI 驱动特性：基于模型上下文协议（MCP），宠物具备一定的学习和反馈能力，互动越频繁，宠物表现越智能。
-离线动态更新：即使用户不在线，宠物的饥饿值、清洁度等状态也会实时变化，模拟真实宠物的生存逻辑。
+- **Full Lifecycle Nurturing:** Supports the complete growth process of pets from infancy to adulthood, where every interaction influences the pet's growth trajectory.
+- **Rich Interactive Gameplay:** Offers diverse interactive methods such as feeding, cleaning, and playing. The pet's personality and status will change based on the user's care.
+- **AI-Driven Characteristics:** Based on the Model Context Protocol (MCP), the pet has certain learning and feedback capabilities. The more frequent the interactions, the smarter the pet behaves.
+- **Offline Dynamic Updates:** Even when the user is not online, the pet's hunger, cleanliness, and other statuses will change in real-time, simulating the survival logic of a real pet.
 
-三、技术架构
+## Technical Architecture
 
-开发语言：TypeScript，提供强类型支持，提升代码的可维护性和稳定性。
-框架与库：采用 Node.js 作为运行环境，结合 Express 框架搭建服务器，使用 WebSocket 实现实时状态同步。
-数据存储：默认使用内存数据库存储宠物数据，支持扩展至 MongoDB 等持久化存储方案。
-协议支持：深度践行模型上下文协议（MCP），实现用户行为与宠物状态的动态关联。
+- **Development Language:** TypeScript, providing strong type support to enhance code maintainability and stability.
+- **Frameworks and Libraries:** Uses Node.js as the runtime environment, combined with the Express framework to build the server, and WebSocket for real-time state synchronization.
+- **Data Storage:** By default, uses an in-memory database to store pet data, with support for expanding to persistent storage solutions like MongoDB.
+- **Protocol Support:** Deeply implements the Model Context Protocol (MCP) to dynamically associate user actions with pet states.
 
-四、安装与配置
+## Installation and Configuration
 
-4.1 环境要求
-Node.js 版本：需 >= v14.0.0
-npm 版本：>= v6.14.0
+### 4.1 Environment Requirements
+- Node.js Version: >= v14.0.0
+- npm Version: >= v6.14.0
 
-4.2 安装步骤
-克隆项目仓库：
+### 4.2 Installation Steps
+Clone the project repository:
+
 git clone https://github.com/shreyaskarnik/mcpet.git
 
-进入项目目录：
+Enter the project directory:
+
 cd mcpet
 
-安装依赖：
+Install dependencies:
+
 npm install
 
-4.3 配置说明
-环境变量配置：
-在项目根目录下创建.env文件，并配置以下环境变量：
-服务器端口号，默认为3000
-PORT=3000
-宠物数据存储目录，需为可写目录
-PET_DATA_DIR=/path/to/writable/directory
-（可选）若使用MongoDB，配置数据库连接字符串
-MONGODB_URI=mongodb://localhost:27017/mcpet
+### 4.3 Configuration Instructions
+**Environment Variable Setup:**
+- Create a `.env` file in the root directory of the project and configure the following environment variables:
+  - Server port number, default is 3000
+    
+    PORT=3000
+    
+  - Pet data storage directory, must be a writable directory
+    
+    PET_DATA_DIR=/path/to/writable/directory
+    
+  - (Optional) If using MongoDB, configure the database connection string
+    
+    MONGODB_URI=mongodb://localhost:27017/mcpet
+    
 
-其他配置：可根据需求修改config目录下的配置文件，调整服务器参数和功能选项。
+**Other Configurations:**
+- You can modify the configuration files under the `config` directory according to your needs, adjusting server parameters and feature options.
 
-五、使用方法
+## Usage
 
-5.1 启动服务
+### 5.1 Start the Service
+
 npm start
 
-服务启动后，默认访问地址为http://localhost:3000。
+After starting the service, the default access address is http://localhost:3000.
 
-5.2 用户操作指南
-领养宠物：访问服务页面，按照引导流程领养属于自己的虚拟宠物。
-日常互动：通过页面提供的喂养、清洁、游戏等功能按钮，与宠物进行互动，观察宠物状态变化。
-查看宠物信息：在宠物详情页，可查看宠物的健康值、快乐值、成长进度等详细信息。
+### 5.2 User Operation Guide
+- **Adopt a Pet:** Visit the service page and follow the guide to adopt your own virtual pet.
+- **Daily Interactions:** Use the provided buttons for feeding, cleaning, and playing on the page to interact with your pet and observe changes in its status.
+- **View Pet Information:** On the pet details page, you can view detailed information about the pet's health, happiness, and growth progress.
 
-六、API 文档
+## API Documentation
 
-本项目提供了部分 RESTful API 用于与宠物服务进行交互，具体接口文档可在docs/api目录下查看，或通过在线文档工具生成。主要 API 包括：
-获取宠物列表：GET /api/pets
-获取单个宠物详情：GET /api/pets/{petId}
-喂养宠物：POST /api/pets/{petId}/feed
-清洁宠物：POST /api/pets/{petId}/clean
+This project provides some RESTful APIs for interacting with the pet service. The specific API documentation can be found in the `docs/api` directory or generated through an online documentation tool. The main APIs include:
+- Get pet list: `GET /api/pets`
+- Get single pet details: `GET /api/pets/{petId}`
+- Feed the pet: `POST /api/pets/{petId}/feed`
+- Clean the pet: `POST /api/pets/{petId}/clean`
 
-七、贡献与反馈
+## Contributions and Feedback
 
-贡献指南：欢迎开发者提交代码贡献，具体流程请参考CONTRIBUTING.md。
-问题反馈：若在使用过程中遇到问题或有改进建议，可通过 GitHub 的 Issue 板块提交反馈，或发送邮件至 [作者邮箱]。
+- **Contribution Guidelines:** Developers are welcome to submit code contributions. Please refer to CONTRIBUTING.md for the specific process.
+- **Issue Reporting:** If you encounter any issues or have suggestions for improvements during use, please submit feedback via the GitHub Issues section or send an email to [author's email].
 
-八、许可证
+## License
 
-本项目采用MIT License，允许自由使用、修改和分发，但需保留版权声明。
-这份 README 涵盖了 MCPet 项目的关键信息，能满足基础使用和技术参考需求。如果你觉得有内容需要补充或调整，随时和我说。
+This project is licensed under the MIT License, allowing free use, modification, and distribution, but retaining the copyright notice.
+This README covers the key information of the MCPet project, meeting basic usage and technical reference needs. If you feel there's content that needs to be added or adjusted, feel free to let me know.
 
-**官方网站：** [https://github.com/shreyaskarnik/mcpet?tab=readme-ov-file](https://github.com/shreyaskarnik/mcpet?tab=readme-ov-file)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shreyaskarnik/mcpet?tab=readme-ov-file](https://github.com/shreyaskarnik/mcpet?tab=readme-ov-file)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/mcpet/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/mcpet/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xsc202406-virtual-pet.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xsc202406-virtual-pet.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

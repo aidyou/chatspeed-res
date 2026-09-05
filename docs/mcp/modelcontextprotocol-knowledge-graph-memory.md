@@ -1,24 +1,24 @@
 ---
-title: "知识图谱记忆"
-description: "使用本地知识图谱实现持久内存的基本方法。这使得Claude能够在多次聊天中记住用户的相关信息。"
+title: "knowledge-graph-memory-server"
+description: "A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats."
 ---
 
-# 知识图谱记忆
+# knowledge-graph-memory-server
 
-使用本地知识图谱实现持久内存的基本方法。这使得Claude能够在多次聊天中记住用户的相关信息。
+A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
 
-# 知识图谱内存服务器
-使用本地知识图谱实现的持久化内存的基本实现。这使得Claude可以在聊天中记住关于用户的信息。
+# Knowledge Graph Memory Server
+A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
 
-## 核心概念
+## Core Concepts
 
-### 实体
-实体是知识图谱中的主要节点。每个实体包含：
-- 一个唯一的名称（标识符）
-- 一个实体类型（例如，“人”、“组织”、“事件”）
-- 一系列观察结果
+### Entities
+Entities are the primary nodes in the knowledge graph. Each entity has:
+- A unique name (identifier)
+- An entity type (e.g., "person", "organization", "event")
+- A list of observations
 
-示例：
+Example:
 ```json
 {
   "name": "John_Smith",
@@ -27,10 +27,10 @@ description: "使用本地知识图谱实现持久内存的基本方法。这使
 }
 ```
 
-### 关系
-关系定义了实体之间的有向连接。它们总是以主动语态存储，并描述了实体之间如何互动或相互关联。
+### Relations
+Relations define directed connections between entities. They are always stored in active voice and describe how entities interact or relate to each other.
 
-示例：
+Example:
 ```json
 {
   "from": "John_Smith",
@@ -38,16 +38,15 @@ description: "使用本地知识图谱实现持久内存的基本方法。这使
   "relationType": "works_at"
 }
 ```
+### Observations
+Observations are discrete pieces of information about an entity. They are:
 
-### 观察
-观察是对实体的具体信息片段。它们：
+- Stored as strings
+- Attached to specific entities
+- Can be added or removed independently
+- Should be atomic (one fact per observation)
 
-- 作为字符串存储
-- 附加到特定的实体上
-- 可以独立地添加或移除
-- 应该是原子性的（每个观察一个事实）
-
-示例：
+Example:
 ```json
 {
   "entityName": "John_Smith",
@@ -61,85 +60,84 @@ description: "使用本地知识图谱实现持久内存的基本方法。这使
 
 ## API
 
-### 工具
-
+### Tools
 - **create_entities**
-  - 在知识图谱中创建多个新实体
-  - 输入: `entities` (对象数组)
-    - 每个对象包含:
-      - `name` (字符串): 实体标识符
-      - `entityType` (字符串): 类型分类
-      - `observations` (字符串数组): 关联的观察
-  - 忽略已存在名称的实体
+  - Create multiple new entities in the knowledge graph
+  - Input: `entities` (array of objects)
+    - Each object contains:
+      - `name` (string): Entity identifier
+      - `entityType` (string): Type classification
+      - `observations` (string[]): Associated observations
+  - Ignores entities with existing names
 
 - **create_relations**
-  - 在实体之间创建多个新的关系
-  - 输入: `relations` (对象数组)
-    - 每个对象包含:
-      - `from` (字符串): 源实体名称
-      - `to` (字符串): 目标实体名称
-      - `relationType` (字符串): 主动语态的关系类型
-  - 跳过重复的关系
+  - Create multiple new relations between entities
+  - Input: `relations` (array of objects)
+    - Each object contains:
+      - `from` (string): Source entity name
+      - `to` (string): Target entity name
+      - `relationType` (string): Relationship type in active voice
+  - Skips duplicate relations
 
 - **add_observations**
-  - 向现有实体添加新的观察
-  - 输入: `observations` (对象数组)
-    - 每个对象包含:
-      - `entityName` (字符串): 目标实体
-      - `contents` (字符串数组): 要添加的新观察
-  - 返回每个实体添加的观察
-  - 如果实体不存在则失败
+  - Add new observations to existing entities
+  - Input: `observations` (array of objects)
+    - Each object contains:
+      - `entityName` (string): Target entity
+      - `contents` (string[]): New observations to add
+  - Returns added observations per entity
+  - Fails if entity doesn't exist
 
 - **delete_entities**
-  - 移除实体及其关系
-  - 输入: `entityNames` (字符串数组)
-  - 级联删除关联的关系
-  - 如果实体不存在则静默操作
+  - Remove entities and their relations
+  - Input: `entityNames` (string[])
+  - Cascading deletion of associated relations
+  - Silent operation if entity doesn't exist
 
 - **delete_observations**
-  - 从实体中移除特定的观察
-  - 输入: `deletions` (对象数组)
-    - 每个对象包含:
-      - `entityName` (字符串): 目标实体
-      - `observations` (字符串数组): 要移除的观察
-  - 如果观察不存在则静默操作
+  - Remove specific observations from entities
+  - Input: `deletions` (array of objects)
+    - Each object contains:
+      - `entityName` (string): Target entity
+      - `observations` (string[]): Observations to remove
+  - Silent operation if observation doesn't exist
 
 - **delete_relations**
-  - 从图中移除特定的关系
-  - 输入: `relations` (对象数组)
-    - 每个对象包含:
-      - `from` (字符串): 源实体名称
-      - `to` (字符串): 目标实体名称
-      - `relationType` (字符串): 关系类型
-  - 如果关系不存在则静默操作
+  - Remove specific relations from the graph
+  - Input: `relations` (array of objects)
+    - Each object contains:
+      - `from` (string): Source entity name
+      - `to` (string): Target entity name
+      - `relationType` (string): Relationship type
+  - Silent operation if relation doesn't exist
 
 - **read_graph**
-  - 读取整个知识图谱
-  - 不需要输入
-  - 返回包含所有实体和关系的完整图结构
+  - Read the entire knowledge graph
+  - No input required
+  - Returns complete graph structure with all entities and relations
 
 - **search_nodes**
-  - 根据查询搜索节点
-  - 输入: `query` (字符串)
-  - 搜索范围:
-    - 实体名称
-    - 实体类型
-    - 观察内容
-  - 返回匹配的实体及其关系
+  - Search for nodes based on query
+  - Input: `query` (string)
+  - Searches across:
+    - Entity names
+    - Entity types
+    - Observation content
+  - Returns matching entities and their relations
 
 - **open_nodes**
-  - 按名称检索特定节点
-  - 输入: `names` (字符串数组)
-  - 返回:
-    - 请求的实体
-    - 请求实体之间的关系
-  - 静默跳过不存在的节点
+  - Retrieve specific nodes by name
+  - Input: `names` (string[])
+  - Returns:
+    - Requested entities
+    - Relations between requested entities
+  - Silently skips non-existent nodes
 
-# 使用 Claude Desktop
+# Usage with Claude Desktop
 
-### 设置
+### Setup
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add this to your claude_desktop_config.json:
 
 #### Docker
 
@@ -169,9 +167,9 @@ description: "使用本地知识图谱实现持久内存的基本方法。这使
 }
 ```
 
-#### 带自定义设置的 NPX
+#### NPX with custom setting
 
-服务器可以使用以下环境变量进行配置：
+The server can be configured using the following environment variables:
 
 ```json
 {
@@ -190,13 +188,13 @@ description: "使用本地知识图谱实现持久内存的基本方法。这使
 }
 ```
 
-- `MEMORY_FILE_PATH`: 存储 JSON 文件的路径（默认为服务器目录中的 `memory.json`）
+- `MEMORY_FILE_PATH`: Path to the memory storage JSON file (default: `memory.json` in the server directory)
 
-### 系统提示
+### System Prompt
 
-利用记忆的提示取决于用例。更改提示将有助于模型确定创建记忆的频率和类型。
+The prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.
 
-这里是用于聊天个性化的一个示例提示。您可以在[Claude.ai 项目](https://www.anthropic.com/news/projects)的“自定义说明”字段中使用此提示。
+Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). 
 
 ```
 Follow these steps for each interaction:
@@ -224,7 +222,7 @@ Follow these steps for each interaction:
      b) Store facts about them as observations
 ```
 
-## 构建
+## Building
 
 Docker:
 
@@ -232,26 +230,26 @@ Docker:
 docker build -t mcp/memory -f src/memory/Dockerfile . 
 ```
 
-## 许可证
+## License
 
-此MCP服务器根据MIT许可证进行授权。这意味着您可以自由地使用、修改和分发该软件，但需遵守MIT许可证的条款和条件。有关更多详细信息，请参阅项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `chinese`
+- Categories: `memory`
+- Tags: `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-memory`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-memory`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-knowledge-graph-memory.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-knowledge-graph-memory.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

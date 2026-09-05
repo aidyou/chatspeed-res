@@ -3,21 +3,26 @@
   "channel": "models",
   "name": {
     "en": "Pollinations",
-    "zh-Hans": "Pollinations",
-    "zh-Hant": "Pollinations"
+    "zh-Hans": "Pollinations"
   },
   "description": {
     "en": "Open-source generative platform with free text/image/audio/video APIs; the OpenAI-compatible text endpoint works without sign-up or API key.",
-    "zh-Hans": "开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。",
-    "zh-Hant": "开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。"
+    "zh-Hans": "开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。"
   },
   "detail": {
     "en": "Pollinations is an open-source generative-AI platform exposing simple HTTP APIs for text, image, audio and video. The text endpoint is OpenAI-compatible (https://text.pollinations.ai/openai) and, for free models, requires no sign-up or API key; image generation is available at image.pollinations.ai. Some newer/higher-priority models may require Pollinations tokens/accounts. Rate limits are loose but adjust with load; check the official repo for the current model list and limits.",
-    "zh-Hans": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频的简单 HTTP API。文本端点为 OpenAI 兼容（https://text.pollinations.ai/openai），免费模型无需注册与 API Key 即可调用；图像生成见 image.pollinations.ai。部分较新模型或更高优先级的调用可能需要 Pollinations 账号/token。限速较宽松但会随负载调整，当前模型名单与限制以官方仓库为准。",
-    "zh-Hant": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频的简单 HTTP API。文本端点为 OpenAI 兼容（https://text.pollinations.ai/openai），免费模型无需注册与 API Key 即可调用；图像生成见 image.pollinations.ai。部分较新模型或更高优先级的调用可能需要 Pollinations 账号/token。限速较宽松但会随负载调整，当前模型名单与限制以官方仓库为准。"
+    "zh-Hans": "Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频的简单 HTTP API。文本端点为 OpenAI 兼容（https://text.pollinations.ai/openai），免费模型无需注册与 API Key 即可调用；图像生成见 image.pollinations.ai。部分较新模型或更高优先级的调用可能需要 Pollinations 账号/token。限速较宽松但会随负载调整，当前模型名单与限制以官方仓库为准。"
   },
-  "categories": ["general", "vision"],
-  "tags": ["pollinations", "openai-compatible", "free-api", "no-key"],
+  "categories": [
+    "general",
+    "vision"
+  ],
+  "tags": [
+    "pollinations",
+    "openai-compatible",
+    "free-api",
+    "no-key"
+  ],
   "website": "https://pollinations.ai/",
   "status": "review",
   "lastVerifiedAt": "2026-08-30",

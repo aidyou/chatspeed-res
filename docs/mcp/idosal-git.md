@@ -1,96 +1,83 @@
 ---
-title: "GitHub MCP 转换服务"
-description: "一项免费、开源的服务，可将 GitHub 项目转换为 MCP 端点，使人工智能助手能够在无需任何设置的情况下访问和理解项目文档。"
+title: "git-mcp"
+description: "A free, open-source service that transforms GitHub projects into MCP endpoints, enabling AI assistants to access and understand project documentation without any setup."
 ---
 
-# GitHub MCP 转换服务
+# git-mcp
 
-一项免费、开源的服务，可将 GitHub 项目转换为 MCP 端点，使人工智能助手能够在无需任何设置的情况下访问和理解项目文档。
+A free, open-source service that transforms GitHub projects into MCP endpoints, enabling AI assistants to access and understand project documentation without any setup.
 
 # GitMCP
 
  />
 
   
-GitMCP是什么
+What is GitMCP
  •
   
-功能
+Features
  •
   
-快速开始
+Getting Started
  •
   
-工作原理
+How It Works
  •
   
-示例
+Examples
  •
   
-常见问题解答
+FAQ
  •
   
-隐私
+Privacy
  •
   
-贡献指南
+Contributing
  •
   
-许可证
+License
 
 [![Twitter Follow](/mcp-assets/cf3bd9486561f3b7327e31cbbf2fffc1.svg)](https://twitter.com/idosal1)
 [![Twitter Follow](/mcp-assets/8494e03e35786995266c756ccc470a3b.svg)](https://twitter.com/liadyosef)
 
   
 
-## 🤔 GitMCP是什么？
-**停止幻想，开始实际编码！**
+## 🤔 What is GitMCP?
+**Stop vibe-hallucinating and start vibe-coding!**
 
-[GitMCP](https://gitmcp.io) 是一个免费、开源的远程 [Model Context Protocol (MCP)](https://docs.anthropic.com/en/docs/agents-and-tools/mcp) 服务器，它可以将**任何** GitHub 项目（仓库或 GitHub 页面）转换成文档中心。它允许像 Cursor 这样的 AI 工具访问最新的文档和代码，从而无缝结束代码幻觉。
+[GitMCP](https://gitmcp.io) is a free, open-source, remote [Model Context Protocol (MCP)](https://docs.anthropic.com/en/docs/agents-and-tools/mcp) server that transforms **any** GitHub project (repositories or GitHub pages) into a documentation hub. It allows AI tools like Cursor to access up-to-date documentation and code, ending code hallucinations seamlessly.
 
-## ✨ 功能
+## ✨ Features
 
-- 😎 **任意 GitHub 项目的最新文档**：让您的 AI 助手无缝访问 GitHub 项目的文档和代码。内置的智能搜索功能帮助找到 AI 需要的确切内容，而不会使用过多的令牌！
-- 🧠 **不再有幻觉**：有了 GitMCP，您的 AI 助手可以为您提供准确且相关的答案。
-- ☁️ **零配置**：GitMCP 在云端运行。只需将选择的 GitMCP URL 添加为 IDE 中的 MCP 服务器即可——无需下载、安装、注册或更改。
-- ✅ **免费且私密**：GitMCP 是开源的，完全免费使用。它不收集个人信息或存储查询。您甚至可以自行托管！
+- 😎 **Latest Documentation on ANY GitHub Project**: Grant your AI assistant seamless access to the GitHub project's documentation and code. The built-in smart search capabilities help find exactly what the AI needs without using too many tokens!
+- 🧠 **No More Hallucinations**: With GitMCP, your AI assistant can provide accurate and relevant answers to your questions.
+- ☁️ **Zero Setup**: GitMCP runs in the cloud. Simply add the chosen GitMCP URL as an MCP server in your IDE — no downloads, installations, signups, or changes are required.
+- ✅ **Free and Private**: GitMCP is open-source and completely free to use. It doesn't collect personal information or store queries. You can even self-host it!
 
-## 🚀 快速开始
+## 🚀 Getting Started
 
-使用 GitMCP 很简单！请按照以下步骤操作：
+Using GitMCP is easy! Simply follow these steps:
 
-### 第一步：选择您想要的服务器类型
+### Step 1: Choose the type of server you want
 
-根据您想连接的内容选择以下 URL 格式之一：
+Choose one of these URL formats depending on what you want to connect to:
 
-- 对于 GitHub 仓库：`gitmcp.io/{owner}/{repo}` 
-- 对于 GitHub Pages 站点：`{owner}.gitmcp.io/{repo}`
-- 对于支持任何仓库的通用工具（动态）：`gitmcp.io/docs`
+- For GitHub repositories: `gitmcp.io/{owner}/{repo}` 
+- For GitHub Pages sites: `{owner}.gitmcp.io/{repo}`
+- For a generic tool that supports any repository (dynamic): `gitmcp.io/docs`
 
-将 `{owner}` 替换为 GitHub 用户名或组织名称，并将 `{repo}` 替换为仓库名称。
+Replace `{owner}` with the GitHub username or organization name, and `{repo}` with the repository name.
 
-为了方便起见，您还可以使用着陆页上的转换工具将 GitHub URL 转换成 MCP URL！
+For your convenience, you can also use the conversion tool on the landing page to format the GitHub URL into an MCP URL!
 
-### 第二步：连接您的 AI 助手
+### Step 2: Connect your AI assistant
 
-从下面的选项中选择您的 AI 助手并按照配置说明进行操作：
+Select your AI assistant from the options below and follow the configuration instructions:
 
-#### 连接 Cursor
+#### Connecting Cursor
 
-更新您的 Cursor 配置文件 `~/.cursor/mcp.json`:
-```json
-{
-  "servers": [
-    {
-      "name": "My GitHub Project",
-      "url": "gitmcp.io/{owner}/{repo}"
-    }
-  ]
-}
-```
-
-将 `{owner}` 和 `{repo}` 替换为您实际的 GitHub 用户名和仓库名称。
-
+Update your Cursor configuration file at `~/.cursor/mcp.json`:
 ```json
    {
      "mcpServers": {
@@ -101,10 +88,10 @@ GitMCP是什么
    }
 ```
 
-#### 连接 Claude 桌面版
+#### Connecting Claude Desktop
 
-1. 在 Claude 桌面版中，进入设置 > 开发者 > 编辑配置
-2. 将配置替换为：
+1. In Claude Desktop, go to Settings > Developer > Edit Config
+2. Replace the configuration with:
 ```json
    {
      "mcpServers": {
@@ -119,9 +106,9 @@ GitMCP是什么
    }
 ```
 
-#### 连接 Windsurf
+#### Connecting Windsurf
 
-更新你的 Windsurf 配置文件 `~/.codeium/windsurf/mcp_config.json`:
+Update your Windsurf configuration file at `~/.codeium/windsurf/mcp_config.json`:
 ```json
    {
      "mcpServers": {
@@ -132,9 +119,9 @@ GitMCP是什么
    }
 ```
 
-#### 连接 VSCode
+#### Connecting VSCode
 
-更新你的 VSCode 配置文件 `.vscode/mcp.json`:
+Update your VSCode configuration file at `.vscode/mcp.json`:
 ```json
    {
      "servers": {
@@ -146,9 +133,9 @@ GitMCP是什么
    }
 ```
 
-#### 连接 Cline
+#### Connecting Cline
 
-更新你的 Cline 配置文件 `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`:
+Update your Cline configuration file at `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`:
 ```json
    {
      "mcpServers": {
@@ -161,191 +148,188 @@ GitMCP是什么
    }
 ```
 
-#### 连接 Highlight AI
+#### Connecting Highlight AI
 
-1. 打开 Highlight AI 并点击侧边栏中的插件图标（@ 符号）
-2. 点击侧边栏顶部的 **已安装插件**
-3. 选择 **自定义插件**
-4. 点击 **使用自定义 SSE URL 添加插件**
+1. Open Highlight AI and click the plugins icon (@ symbol) in the sidebar
+2. Click **Installed Plugins** at the top of the sidebar
+3. Select **Custom Plugin**
+4. Click **Add a plugin using a custom SSE URL**
 
-插件名称: `gitmcp`
+Plugin name: `gitmcp`
 SSE URL: `https://gitmcp.io/{owner}/{repo}`
 
-有关向 HighlightAI 添加自定义 MCP 服务器的更多详细信息，请参阅[文档](https://docs.highlightai.com/learn/developers/plugins/custom-plugins-setup)。
+For more details on adding custom MCP servers to HighlightAI, refer to [the documentation](https://docs.highlightai.com/learn/developers/plugins/custom-plugins-setup).
 
-> **注意:** 请记得将 `{owner}` 和 `{repo}` 替换为实际的 GitHub 用户名/组织和仓库名称。你也可以使用动态端点 `https://gitmcp.io/docs` 来允许你的 AI 助手按需访问任何仓库。
+> **Note:** Remember to replace `{owner}` and `{repo}` with the actual GitHub username/organization and repository name. You can also use the dynamic endpoint `https://gitmcp.io/docs` to allow your AI to access any repository on demand.
 
-## ⚙️ 工作原理
+## ⚙️ How It Works
 
-GitMCP 使用模型上下文协议 (MCP) 将你的 AI 助手连接到 GitHub 仓库，这是一种标准，可以让 AI 工具从外部源请求额外的信息。
+GitMCP connects your AI assistant to GitHub repositories using the Model Context Protocol (MCP), a standard that lets AI tools request additional information from external sources.
 
-当你使用 GitMCP 时会发生什么：
+What happens when you use GitMCP:
 
-1. **你向 AI 助手提供 GitMCP URL**（例如 `gitmcp.io/microsoft/typescript`）。GitMCP 提供诸如文档获取、智能搜索、代码搜索等工具。
-2. **提示 AI 助手** 关于文档或代码相关的问题。
-3. **你的 AI 发送请求** 到 GitMCP 以使用其工具（需要你的批准）。
-4. **GitMCP 执行 AI 的请求** 并返回请求的数据。
-5. **你的 AI 接收到信息** 并生成更准确、有根据的响应，而不会出现幻觉。
+1. **You provide the GitMCP URL** to your AI assistant (e.g., `gitmcp.io/microsoft/typescript`). GitMCP exposes tools like documentation fetching, smart search, code search, etc.
+2. **Prompt the AI assistant** on documentation/code-related questions.
+3. **Your AI sends requests** to GitMCP to use its tools (with your approval).
+4. **GitMCP executes the AI's request** and returns the requested data.
+5. **Your AI receives the information** and generates a more accurate, grounded response without hallucinations.
 
-### 支持的文档
+### Supported Documentation
 
-GitMCP 目前支持以下文档（按优先级顺序）：
+GitMCP currently supports the following documents (in order of priority):
 1. [llms.txt](https://llmstxt.org)
-2. 项目的 AI 优化版本文档
-3. `README.md`/根目录
+2. AI-optimized version of the project's documentation
+3. `README.md`/root
 
-## 💡 示例
+## 💡 Examples
 
-这里有一些示例，展示了如何使用不同的 AI 助手和仓库与 GitMCP 一起工作：
+Here are some examples of how to use GitMCP with different AI assistants and repositories:
 
-### 示例 1：使用 Windsurf 与特定仓库
+### Example 1: Using Windsurf with a specific repository
 
-对于 GitHub 仓库 `https://github.com/microsoft/playwright-mcp`，将 `https://gitmcp.io/microsoft/playwright-mcp` 作为 MCP 服务器添加到 Windsurf 中。
+For the GitHub repository `https://github.com/microsoft/playwright-mcp`, add `https://gitmcp.io/microsoft/playwright-mcp` as an MCP server to Windsurf.
 
-**提示给 Claude：**
-> "我该如何使用 Playwright MCP"
+**Prompt to Claude:**
+> "How do I use the Playwright MCP"
 
-Windsurf 将从 GitMCP 拉取相关文档以正确实现记忆功能。
+Windsurf will pull the relevant documentation from GitMCP to implement the memory feature correctly.
 
-### 示例 2：使用 Cursor 与 GitHub Pages 站点
+### Example 2: Using Cursor with a GitHub Pages site
 
-```
+For the GitHub Pages site `langchain-ai.github.io/langgraph`, add `https://langchain-ai.gitmcp.io/langgraph` as an MCP server to Cursor.
 
-对于 GitHub Pages 站点 `langchain-ai.github.io/langgraph`，将 `https://langchain-ai.gitmcp.io/langgraph` 作为 MCP 服务器添加到 Cursor 中。
+**Prompt to Cursor:**
+> "Add memory to my LangGraph agent"
 
-**给 Cursor 的提示：**
-> "为我的 LangGraph 代理添加记忆功能"
+Cursor will pull the relevant documentation and code from GitMCP to correctly implement the memory feature.
 
-Cursor 将从 GitMCP 拉取相关的文档和代码以正确实现记忆功能。
+### Example 3: Using Claude Desktop with the dynamic endpoint
 
-### 示例 3：使用动态端点的 Claude Desktop
+You don't have to pick specific repositories. The generic `gitmcp.io/docs` endpoint allows AI to pick the GitHub project on the fly!
 
-您不必选择特定的仓库。通用的 `gitmcp.io/docs` 端点允许 AI 实时选择 GitHub 项目！
+**Prompt to any AI assistant:**
+> "I want to learn about the OpenAI Whisper speech recognition model. Explain how it works.
 
-**给任何 AI 助手的提示：**
-> "我想了解 OpenAI Whisper 语音识别模型。解释一下它是如何工作的。"
+Claude will pull the data from GitMCP and answer the question.
 
-Claude 将从 GitMCP 拉取数据并回答问题。
+## 🛠️ Tools
 
-## 🛠️ 工具
-
-GitMCP 为 AI 助手提供了几个有价值的工具，帮助它们访问、理解和查询 GitHub 仓库。
+GitMCP provides AI assistants with several valuable tools to help them access, understand, and query GitHub repositories.
 
 ### `fetch__documentation`
 
-此工具从 GitHub 仓库获取主要文档。它通过检索相关文档（例如 `llms.txt`）来工作。这使 AI 能够对项目的概要有一个很好的了解。
+This tool gets the primary documentation from a GitHub repository. It works by retrieving relevant documentation (e.g., `llms.txt`). This gives the AI a good overview of what the project is about
 
-**何时有用：** 对于关于项目目的、特性或如何开始的一般问题
+**When it's useful:** For general questions about a project's purpose, features, or how to get started
 
 ### `search__documentation`
 
-此工具允许 AI 通过提供特定的搜索查询来搜索仓库中的文档。而不是加载所有文档（这可能非常庞大），它使用智能搜索来找到仅相关的部分。
+This tool lets the AI search through a repository's documentation by providing a specific search query. Instead of loading all documentation (which could be very large), it uses smart search to find just the relevant parts.
 
-**何时有用：** 对于有关项目内特定功能、函数或概念的具体问题
+**When it's useful:** For specific questions about particular features, functions, or concepts within a project
 
 ### `fetch_url_content`
 
-此工具帮助 AI 从文档中提到的链接获取信息。它从这些链接中检索内容，并将其转换为 AI 可以轻松阅读的格式。
+This tool helps the AI get information from links mentioned in the documentation. It retrieves the content from those links and converts it to a format the AI can easily read.
 
-**何时有用：** 当文档引用了有助于回答您的问题的外部信息时
+**When it's useful:** When documentation references external information that would help answer your question
 
 ### `search__code`
 
-此工具使用 GitHub 的代码搜索在仓库的实际代码中进行搜索。它帮助 AI 找到具体的代码示例或实现细节。
+This tool searches through the actual code in the repository using GitHub's code search. It helps AI find specific code examples or implementation details.
 
-**何时有用：** 当您想要某些实现示例或需要文档中未涵盖的技术细节时
+**When it's useful:** When you want examples of how something is implemented or need technical details not covered in documentation
 
-> **注意：** 使用动态端点 (`gitmcp.io/docs`) 时，这些工具的命名略有不同（如 `fetch_generic_documentation`、`search_generic_code` 和 `search_generic_documentation`），并且需要额外的信息来指定要访问哪个仓库。
+> **Note:** When using the dynamic endpoint (`gitmcp.io/docs`), these tools are named slightly differently (`fetch_generic_documentation`, `search_generic_code`, and `search_generic_documentation`) and need additional information about which repository to access.
 
-## ❓ 常见问题
+## ❓ FAQ
 
-### 什么是 Model Context Protocol？
+### What is the Model Context Protocol?
 
-[Model Context Protocol](https://link.5) 是一个标准，允许 AI 助手以结构化的方式请求和接收来自外部源的额外上下文，从而增强其理解和性能。
+The [Model Context Protocol](https://modelcontextprotocol.io/introduction) is a standard that allows AI assistants to request and receive additional context from external sources in a structured manner, enhancing their understanding and performance.
 
-### GitMCP 是否与任何 AI 助手兼容？
+### Does GitMCP work with any AI assistant?
 
-是的，GitMCP 与支持 Model Context Protocol 的任何 AI 助手兼容，包括像 Cursor、VSCode、Claude 等工具。
+Yes, GitMCP is compatible with any AI assistant supporting the Model Context Protocol, including tools like Cursor, VSCode, Claude, etc.
 
-### GitMCP 是否与所有 GitHub 项目兼容？
+### Is GitMCP compatible with all GitHub projects?
 
-当然！GitMCP 可以与任何公共 GitHub 仓库一起使用，而无需进行任何修改。它优先考虑 `llms.txt` 文件，如果该文件不可用，则会回退到 `README.md` 或其他页面。未来的更新计划支持更多的文档方法，甚至动态生成内容。
+Absolutely! GitMCP works with any public GitHub repository without requiring any modifications. It prioritizes the `llms.txt` file and falls back to `README.md` or other pages if the former is unavailable. Future updates aim to support additional documentation methods and even generate content dynamically.
 
-### GitMCP 是否收费？
+### Does GitMCP cost money?
 
-不，GitMCP 是一个免费的服务，对社区没有任何费用。
+No, GitMCP is a free service to the community with no associated costs.
 
-## 🔒 隐私
+## 🔒 Privacy
 
-GitMCP 深度致力于保护用户的隐私。该服务不需要认证，因此不会访问或存储任何个人身份信息。此外，它不会存储代理发送的任何查询。而且，由于 GitMCP 是一个开源项目，你可以在自己的环境中独立部署。
+GitMCP is deeply committed to its users' privacy. The service doesn't have access to or store any personally identifiable information as it doesn't require authentication. In addition, it doesn't store any queries sent by the agents. Moreover, as GitMCP is an open-source project, it can be deployed independently in your environment.
 
-GitMCP 只访问已经公开的内容，并且只有在用户查询时才会这样做。GitMCP 不会自动抓取仓库。在访问任何 GitHub Pages 站点之前，代码会检查 `robots.txt` 规则并遵循站点所有者设定的指令，允许他们选择退出。请注意，GitMCP 不会永久存储关于 GitHub 项目及其内容的数据。
+GitMCP only accesses content that is already publicly available and only when queried by a user. GitMCP does not automatically scrape repositories. Before accessing any GitHub Pages site, the code checks for `robots.txt` rules and follows the directives set by site owners, allowing them to opt out. Please note that GitMCP doesn't permanently store data regarding the GitHub projects or their content.
 
-## 👥 贡献
+## 👥 Contributing
 
-我们欢迎贡献、反馈和想法！请查阅我们的 [贡献指南](https://link.6)。
+We welcome contributions, feedback, and ideas! Please review our [contribution](https://github.com/idosal/git-mcp/blob/main/.github/CONTRIBUTING.md) guidelines.
 
-### 本地开发环境设置
+### Local Development Setup
 
-1. **克隆仓库**
+1. **Clone the repository**
 ```bash
    git clone https://github.com/idosal/git-mcp.git
    cd git-mcp
 ```
 
-2. **安装依赖**
+2. **Install dependencies**
 ```bash
    pnpm install
 ```
 
-3. **本地运行以进行开发**
+3. **Run locally for development**
 ```bash
    npm run dev
-   # 或者
+   # or
    pnpm dev
 ```
 
-#### 使用 MCP Inspector 进行测试
+#### Using MCP Inspector for Testing
 
-1. 安装 MCP Inspector 工具：
+1. Install the MCP Inspector tool:
 ```bash
    npx @modelcontextprotocol/inspector
 ```
 
-2. 在检查器界面中：
-   - 将传输类型设置为 `SSE`
-   - 输入你的 GitMCP URL（例如：`http://localhost:5173/docs`）
-   - 点击“连接”
+2. In the inspector interface:
+   - Set Transport Type to `SSE`
+   - Enter your GitMCP URL (e.g., `http://localhost:5173/docs`)
+   - Click "Connect"
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 [Apache License 2.0](https://github.com/idosal/git-mcp/blob/HEAD/LICENSE) 许可。
+This project is licensed under the [Apache License 2.0](https://github.com/idosal/git-mcp/blob/HEAD/LICENSE).
 
-## 免责声明
+## Disclaimer
 
-GitMCP 按“原样”提供，不附带任何形式的保证。虽然我们努力确保服务的可靠性和安全性，但我们不对使用过程中可能出现的任何损害或问题负责。通过 GitMCP 访问的 GitHub 项目受其各自所有者的条款和条件约束。GitMCP 与 GitHub 或上述任何 AI 工具无关。
+GitMCP is provided "as is" without warranty of any kind. While we strive to ensure the reliability and security of our service, we are not responsible for any damages or issues that may arise from its use. GitHub projects accessed through GitMCP are subject to their respective owners' terms and conditions. GitMCP is not affiliated with GitHub or any of the mentioned AI tools.
 
-## Star 历史
+## Star History
 
 [![Star History Chart](/mcp-assets/7ff5ea12648cd650854ef8cf69c6f49e.svg)](https://www.star-history.com/#idosal/git-mcp&Timeline)
-```
 
-**官方网站：** [https://github.com/idosal/git-mcp](https://github.com/idosal/git-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/idosal/git-mcp](https://github.com/idosal/git-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `version control`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `version control`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://gitmcp.io/{owner}/{repo}`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://gitmcp.io/{owner}/{repo}`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/idosal-git.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/idosal-git.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

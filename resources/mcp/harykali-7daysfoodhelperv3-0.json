@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "7daysfoodHelperV3.0",
-    "zh-Hans": "七日餐饮助手3.0（MCP&Agent挑战赛）",
-    "zh-Hant": "七日餐饮助手3.0（MCP&Agent挑战赛）"
+    "zh-Hans": "七日餐饮助手3.0（MCP&Agent挑战赛）"
   },
   "description": {
     "en": "Project Features This is a seven-day meal planning assistant based on Gradio, with the following features: Core Features - Seven-Day Meal Planning: Generates a week's worth of nutritionally balanced meal plans for users - Diverse Recipes: Offers a wide selecti",
-    "zh-Hans": "项目功能 这是一个基于Gradio的七日餐饮规划助手，具有以下功能： 核心功能 - 七日餐饮规划：为用户生成一周的营养均衡餐饮规划 - 多样化菜谱：包含早餐、午餐、晚餐和加餐的丰富选择 - 智能随机搭配：每天提供不同的菜谱组合，避免重复 - 灵活日期设置：支持指定开始日期或使用当前日期 技术特点 - MCP支持：完全兼容Model Context Protocol - Gradio界面：简洁易用的Web界面 - 中文优化：专门为中文用户设计的界面和菜谱 菜谱类型 - 早餐：营养丰富的早餐选择 - 午餐：均衡的主餐搭",
-    "zh-Hant": "项目功能 这是一个基于Gradio的七日餐饮规划助手，具有以下功能： 核心功能 - 七日餐饮规划：为用户生成一周的营养均衡餐饮规划 - 多样化菜谱：包含早餐、午餐、晚餐和加餐的丰富选择 - 智能随机搭配：每天提供不同的菜谱组合，避免重复 - 灵活日期设置：支持指定开始日期或使用当前日期 技术特点 - MCP支持：完全兼容Model Context Protocol - Gradio界面：简洁易用的Web界面 - 中文优化：专门为中文用户设计的界面和菜谱 菜谱类型 - 早餐：营养丰富的早餐选择 - 午餐：均衡的主餐搭"
+    "zh-Hans": "项目功能 这是一个基于Gradio的七日餐饮规划助手，具有以下功能： 核心功能 - 七日餐饮规划：为用户生成一周的营养均衡餐饮规划 - 多样化菜谱：包含早餐、午餐、晚餐和加餐的丰富选择 - 智能随机搭配：每天提供不同的菜谱组合，避免重复 - 灵活日期设置：支持指定开始日期或使用当前日期 技术特点 - MCP支持：完全兼容Model Context Protocol - Gradio界面：简洁易用的Web界面 - 中文优化：专门为中文用户设计的界面和菜谱 菜谱类型 - 早餐：营养丰富的早餐选择 - 午餐：均衡的主餐搭"
   },
   "detail": {
     "en": "Project Features\n\nThis is a seven-day meal planning assistant based on Gradio, with the following features:\n\n### Core Features\n\n- **Seven-Day Meal Planning**: Generates a week's worth of nutritionally balanced meal plans for users\n- **Diverse Recipes**: Offers a wide selection of breakfast, lunch, dinner, and snack options\n- **Smart Random Pairing**: Provides different recipe combinations each day to avoid repetition\n- **Flexible Date Setting**: Supports specifying a start date or using the current date\n\n### Technical Features\n\n- **MCP Support**: Fully compatible with Model Context Protocol\n- **Gradio Interface**: A simple and user-friendly web interface\n- **Chinese Optimization**: An interface and recipes specifically designed for Chinese users\n\n### Recipe Types\n\n- **Breakfast**: Nutritious breakfast options\n- **Lunch**: Balanced main meal combinations\n- **Dinner**: Healthy dinner choices\n- **Snacks**: Healthy snacks such as fruits and nuts\n- **Selections**: Supports a variety of taste preference combinations\n\n### Festival Recipe Design\n* Helps you easily prepare menus for Spring Festival and Lantern Festival",
-    "zh-Hans": "项目功能\r\n\r\n这是一个基于Gradio的七日餐饮规划助手，具有以下功能：\r\n\r\n### 核心功能\r\n\r\n- **七日餐饮规划**：为用户生成一周的营养均衡餐饮规划\r\n- **多样化菜谱**：包含早餐、午餐、晚餐和加餐的丰富选择\r\n- **智能随机搭配**：每天提供不同的菜谱组合，避免重复\r\n- **灵活日期设置**：支持指定开始日期或使用当前日期\r\n\r\n### 技术特点\r\n\r\n- **MCP支持**：完全兼容Model Context Protocol\r\n- **Gradio界面**：简洁易用的Web界面\r\n- **中文优化**：专门为中文用户设计的界面和菜谱\r\n\r\n###  菜谱类型\r\n\r\n- **早餐**：营养丰富的早餐选择\r\n- **午餐**：均衡的主餐搭配\r\n- **晚餐**：健康的晚餐选择\r\n- **加餐**：水果、坚果等健康零食\r\n- **选择**：支持多样化的口味偏好组合\r\n\r\n### 节庆菜谱设计\r\n* 帮助你轻松准备春节和元宵的菜谱",
-    "zh-Hant": "项目功能\r\n\r\n这是一个基于Gradio的七日餐饮规划助手，具有以下功能：\r\n\r\n### 核心功能\r\n\r\n- **七日餐饮规划**：为用户生成一周的营养均衡餐饮规划\r\n- **多样化菜谱**：包含早餐、午餐、晚餐和加餐的丰富选择\r\n- **智能随机搭配**：每天提供不同的菜谱组合，避免重复\r\n- **灵活日期设置**：支持指定开始日期或使用当前日期\r\n\r\n### 技术特点\r\n\r\n- **MCP支持**：完全兼容Model Context Protocol\r\n- **Gradio界面**：简洁易用的Web界面\r\n- **中文优化**：专门为中文用户设计的界面和菜谱\r\n\r\n###  菜谱类型\r\n\r\n- **早餐**：营养丰富的早餐选择\r\n- **午餐**：均衡的主餐搭配\r\n- **晚餐**：健康的晚餐选择\r\n- **加餐**：水果、坚果等健康零食\r\n- **选择**：支持多样化的口味偏好组合\r\n\r\n### 节庆菜谱设计\r\n* 帮助你轻松准备春节和元宵的菜谱"
+    "zh-Hans": "项目功能\r\n\r\n这是一个基于Gradio的七日餐饮规划助手，具有以下功能：\r\n\r\n### 核心功能\r\n\r\n- **七日餐饮规划**：为用户生成一周的营养均衡餐饮规划\r\n- **多样化菜谱**：包含早餐、午餐、晚餐和加餐的丰富选择\r\n- **智能随机搭配**：每天提供不同的菜谱组合，避免重复\r\n- **灵活日期设置**：支持指定开始日期或使用当前日期\r\n\r\n### 技术特点\r\n\r\n- **MCP支持**：完全兼容Model Context Protocol\r\n- **Gradio界面**：简洁易用的Web界面\r\n- **中文优化**：专门为中文用户设计的界面和菜谱\r\n\r\n###  菜谱类型\r\n\r\n- **早餐**：营养丰富的早餐选择\r\n- **午餐**：均衡的主餐搭配\r\n- **晚餐**：健康的晚餐选择\r\n- **加餐**：水果、坚果等健康零食\r\n- **选择**：支持多样化的口味偏好组合\r\n\r\n### 节庆菜谱设计\r\n* 帮助你轻松准备春节和元宵的菜谱"
   },
   "categories": [
     "productivity",

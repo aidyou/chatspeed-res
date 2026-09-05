@@ -1,77 +1,77 @@
 ---
-title: "MCP-MIRO连接器"
-description: "用于连接MIRO白板应用的模型上下文协议服务器。允许进行白板操作、便签创建、批量操作等更多功能。"
+title: "mcp-miro"
+description: "A Model Context Protocol server to connect to the MIRO Whiteboard Application. Allows Board manipulation, sticky creation, bulk operations and more."
 ---
 
-# MCP-MIRO连接器
+# mcp-miro
 
-用于连接MIRO白板应用的模型上下文协议服务器。允许进行白板操作、便签创建、批量操作等更多功能。
+A Model Context Protocol server to connect to the MIRO Whiteboard Application. Allows Board manipulation, sticky creation, bulk operations and more.
 
-# mcp-miro MCP 服务器
+# mcp-miro MCP Server
 [Smithery](https://smithery.ai/server/@llmindset/mcp-miro)
 
-一个用于连接 MIRO 白板应用程序的 Model Context Protocol 服务器。
+A Model Context Protocol server to connect to the MIRO Whiteboard Application.
 
-- 允许板面操作、便签创建、批量操作等。
-- 可以通过环境变量传递您的 OAuth 密钥，或者使用“--token”参数。
-- 拍摄便签照片并让 Claude 创建 MIRO 等效作品效果非常好。
+- Allows Board manipulation, sticky creation, bulk operations and more.
+- Pass your OAuth key as an Environment Variable, or using the "--token" argument.
+- Taking a photo of stickies and asking Claude to create MIRO equivalent works _really_ well.
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@llmindset/mcp-miro) 自动安装适用于 Claude Desktop 的 MIRO 白板连接器：
+To install MIRO Whiteboard Connector for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@llmindset/mcp-miro):
 
 ```bash
 npx -y @smithery/cli install @llmindset/mcp-miro --client claude
 ```
 
-### 使用 mcp-get
+### Using mcp-get
 
-您可以使用 mcp-get 安装此包：
+You can install this package using mcp-get:
 
 ```bash
 npx @michaellatman/mcp-get@latest install @llmindset/mcp-miro
 ```
 
-_注意 - 如果您使用的是旧版本的 Windows PowerShell，可能需要先运行_ `Set-ExecutionPolicy Bypass -Scope Process` _再执行此命令。_
+_Note - if you are using an old version of Windows PowerShell, you may need to run_ `Set-ExecutionPolicy Bypass -Scope Process` _before this command._
 
-## 功能
+## Features
 
-### 资源
-- 获取板面内容
+### Resources
+- Get Board Contents 
 
-### 工具
-- 创建便签、形状
-- 读取板面、框架、内容
-- 批量创建
+### Tools
+- Create Sticky, Shape
+- Read Board, Frame, Contents
+- Bulk Create
 
-### 提示
-- 关于板面坐标等指导
+### Prompts
+- Instruct on Board Coordinates etc.
 
-## 开发
+## Development
 
-安装依赖项：
+Install dependencies:
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 ```bash
 npm run build
 ```
 
-对于带有自动重建的开发：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-## 安装
+## Installation
 
-要与 Claude Desktop 一起使用，请添加服务器配置：
+To use with Claude Desktop, add the server config:
 
-在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -87,34 +87,34 @@ npm run watch
 }
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过 stdio 进行通信，调试可能会有挑战。我们建议使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为一个包脚本提供：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 npm run inspector
 ```
 
-Inspector 将提供一个 URL 以便在浏览器中访问调试工具。
+The Inspector will provide a URL to access debugging tools in your browser.
 
-在开发环境中推荐添加 [https://github.com/miroapp/api-clients/blob/041de24ebf7955432b447d887ede066ad4c7e2c7/packages/generator/spec.json](https://github.com/miroapp/api-clients/blob/041de24ebf7955432b447d887ede066ad4c7e2c7/packages/generator/spec.json) 作为参考。
+In Dev environment recommend adding https://github.com/miroapp/api-clients/blob/041de24ebf7955432b447d887ede066ad4c7e2c7/packages/generator/spec.json for reference.
 
-**官方网站：** [https://github.com/evalstate/mcp-miro](https://github.com/evalstate/mcp-miro)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/evalstate/mcp-miro](https://github.com/evalstate/mcp-miro)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/path/to/node-or-npx`
-- 参数：无
+- Transport: `stdio`
+- Command: `/path/to/node-or-npx`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/evalstate-miro.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/evalstate-miro.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

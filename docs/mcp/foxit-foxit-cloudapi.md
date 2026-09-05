@@ -1,215 +1,185 @@
 ---
-title: "福昕Cloud-API"
-description: "福昕PDF服务API提供了一个基于云的REST API，允许通过HTTP客户端处理PDF文件。它提供了丰富的功能，适合集成到各种应用程序中。\n\n📌 主要特性：\nPDF创建与转换\n\n从Word、Excel和PowerPoint等格式创建PDF文件。\n\n将PDF文件转换为其他格式，包括HTML、Word和图像。\n\nPDF合并与拆分\n\n将多个PDF文件合并成一个文档。\n\n将单个PDF文件拆分成多个文档。\n\nPDF压缩与优化\n\n通过图像压缩、文档展平和线性化来减小文件大小。\n\nPDF安全\n\n支持密码保护、权限控制和高级加密以确保文档安全。\n\n如何快速与MCP（多功能云平台）集成？\n📖 集成文档：\n服务API集成指南：\nhttps://cloudapi.fuxinsoft.cn/zh-CN/docs/services/guide\n\nMCP初学者教程：\nhttps://cloudapi.fuxinsoft.cn/zh-CN/docs/services/mcpGuide"
+title: "mcp-server-foxit-cloudapi"
+description: "Foxit PDF Services API provides a cloud-based REST API that allows processing of PDF files via HTTP clients. It offers rich features suitable for integration into various applications. 📌 Key Features…"
 ---
 
-# 福昕Cloud-API
+# mcp-server-foxit-cloudapi
 
-福昕PDF服务API提供了一个基于云的REST API，允许通过HTTP客户端处理PDF文件。它提供了丰富的功能，适合集成到各种应用程序中。
-
-📌 主要特性：
-PDF创建与转换
-
-从Word、Excel和PowerPoint等格式创建PDF文件。
-
-将PDF文件转换为其他格式，包括HTML、Word和图像。
-
-PDF合并与拆分
-
-将多个PDF文件合并成一个文档。
-
-将单个PDF文件拆分成多个文档。
-
-PDF压缩与优化
-
-通过图像压缩、文档展平和线性化来减小文件大小。
-
-PDF安全
-
-支持密码保护、权限控制和高级加密以确保文档安全。
-
-如何快速与MCP（多功能云平台）集成？
-📖 集成文档：
-服务API集成指南：
-https://cloudapi.fuxinsoft.cn/zh-CN/docs/services/guide
-
-MCP初学者教程：
-https://cloudapi.fuxinsoft.cn/zh-CN/docs/services/mcpGuide
+Foxit PDF Services API provides a cloud-based REST API that allows processing of PDF files via HTTP clients. It offers rich features suitable for integration into various applications. 📌 Key Features…
 
 # MCP server for using the Foxit Cloud API
 
 ## Requirements
-
-- 本地需要安装[Node.js](https://nodejs.org/)且版本大于等于18.0.0
+- Node.js >= 18.0.0
 
 ## Features
-- PDF创建和转换：支持从其他文件格式创建PDF文件，并将PDF转换为其他格式，如HTML、Word等。
-- PDF合并和拆分：支持将多个PDF文件合并为一个，或将一个PDF文件拆分为多个。
-- PDF压缩和优化：通过图像压缩和优化来减小PDF文件大小，扁平化，线性化文档等功能
-- PDF安全：提供密码保护和高级加密功能，确保PDF文件的安全性。
+- PDF Creation and Conversion: Supports creating PDF files from other file formats and converting PDFs to other formats such as HTML, Word, etc.
+- PDF Merging and Splitting: Supports merging multiple PDF files into one or splitting a PDF file into multiple files.
+- PDF Compression and Optimization: Reduces PDF file size through image compression and optimization, flattening, linearization, and other functions.
+- PDF Security: Provides password protection and advanced encryption features to ensure the security of PDF files.
 
 ## Tools
 
 ### combine_pdf
 
-将压缩或归档文件中的多个PDF文档，合并为一个PDF文档。使用示例1：把
-中的PDF文档合并为一个PDF。使用示例2：把, 合并为一个PDF。
+Merge multiple PDF documents from compressed or archived files into one PDF document. Example 1: Merge PDF documents from 
+ into one PDF. Example 2: Merge ,  into one PDF.
 
-参数：
-  - path: string - 压缩或归档文件的绝对路径或多个URL地址
-  - config: object - 配置项
-    - isAddBookmark: boolean - 是否添加书签
-    - isAddTOC: boolean - 是否添加目录
-    - isContinueMerge: boolean - 如果发生错误是否继续合并
-    - isRetainPageNum: boolean - 是否保留页面逻辑号
-    - bookmarkLevels: enum('0', '1', '2', '3', '4', '5') - 是否显示目录的等级
+Parameters:
+  - path: string - Absolute path of the compressed or archived file or multiple URL addresses
+  - config: object - Configuration options
+    - isAddBookmark: boolean - Whether to add bookmarks
+    - isAddTOC: boolean - Whether to add a table of contents
+    - isContinueMerge: boolean - Whether to continue merging if an error occurs
+    - isRetainPageNum: boolean - Whether to retain logical page numbers
+    - bookmarkLevels: enum('0', '1', '2', '3', '4', '5') - Level of table of contents display
 
 ### compare_pdf
 
-逐页比较一个PDF文档（作为“基准文档”）与另一个PDF文档（作为“比较文档”）。使用示例1：把
-与
-进行比较。使用示例2：把
-与
-进行比较，比较结果为：pdf。使用示例3：把与进行比较。
+Compare one PDF document (as the "base document") with another PDF document (as the "comparison document") page by page. Example 1: Compare 
+ with 
+. Example 2: Compare 
+ with 
+, result type: pdf. Example 3: Compare  with .
 
-参数：
-  - basePath: string - 基准PDF文档的绝对路径或URL地址
-  - comparePath: string - 比较PDF文档的绝对路径或URL地址
-  - resultType: enum('json', 'pdf') - 结果类型
-  - compareType: enum('all', 'text') - 比较类型
+Parameters:
+  - basePath: string - Absolute path or URL address of the base PDF document
+  - comparePath: string - Absolute path or URL address of the comparison PDF document
+  - resultType: enum('json', 'pdf') - Result type
+  - compareType: enum('all', 'text') - Comparison type
 
 ### compress_pdf
 
-使用指定的压缩级别压缩PDF文档。使用示例1：压缩
-。使用示例2：压缩
-，压缩级别为：high。使用示例3：压缩。
+Compress PDF documents using the specified compression level. Example 1: Compress 
+. Example 2: Compress 
+, compression level: high. Example 3: Compress .
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - compressionLevel: enum('low', 'medium', 'high') - 压缩级别
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - compressionLevel: enum('low', 'medium', 'high') - Compression level
 
 ### convert_pdf
 
-转换PDF文档到其他格式，支持格式：word, excel, ppt, image, text, html。使用示例1：把
-转换为word。使用示例2：把
-转换为text。使用示例3：把转换为excel。
+Convert PDF documents to other formats, supported formats: word, excel, ppt, image, text, html. Example 1: Convert 
+ to word. Example 2: Convert 
+ to text. Example 3: Convert  to excel.
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - format: enum('word', 'excel', 'ppt', 'image', 'text', 'html') - 转换后的文件类型
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - format: enum('word', 'excel', 'ppt', 'image', 'text', 'html') - Converted file type
 
 ### create_pdf
 
-从其他格式，创建或转换为PDF文档，支持格式：word，excel，ppt，image，text。使用示例1：把
-转换为PDF。使用示例2：把
-转换为PDF。使用示例3：把转换为PDF。
+Create or convert to PDF documents from other formats, supported formats: word, excel, ppt, image, text. Example 1: Convert 
+ to PDF. Example 2: Convert 
+ to PDF. Example 3: Convert  to PDF.
 
-参数：
-  - path: string - 转换文件的绝对路径或URL地址
-  - format: enum('word', 'excel', 'ppt', 'image', 'text') - 输入的文件类型
+Parameters:
+  - path: string - Absolute path or URL address of the file to be converted
+  - format: enum('word', 'excel', 'ppt', 'image', 'text') - Input file type
 
 ### create_pdf_from_html
 
-从HTML文件或指定站点URL创建PDF。使用示例1：把
-转换为PDF。使用示例2：把转换为PDF。使用示例3：把转换为PDF，页面模式为：单页。使用示例4：把转换为PDF，输入格式为：html。
+Create PDF from HTML files or specified site URLs. Example 1: Convert 
+ to PDF. Example 2: Convert  to PDF. Example 3: Convert  to PDF, page mode: single page. Example 4：Convert  to PDF, input format: html.
 
-参数：
-  - format: enum('url', 'html', 'htm', 'shtml') - 输入格式，如果是url，则url参数不能为空，否则path参数不能为空
-  - path: string - HTML文件的绝对路径或URL地址
+Parameters:
+  - format: enum('url', 'html', 'htm', 'shtml') - Input format, if url, the url parameter cannot be empty, otherwise the path parameter cannot be empty
+  - path: string - Absolute path or URL address of the HTML file
   - url: string - URL
-  - config: object - 配置项
-    - width: number - 页面宽度，该值必须大于16，默认值为900(单位为1/72英寸)
-    - height: number - 页面高度，该值必须大于16，默认值为600(单位为1/72英寸)
-    - rotate: number - 页面旋转，0：0度，1：90度，2：180度，3：270度
-    - pageMode: number - 页面模式，0：单页，1：多页
-    - pageScaling: number - 页面缩放，1：适应页面，2：适应内容
+  - config: object - Configuration options
+    - width: number - Page width, must be greater than 16, default value is 900 (unit is 1/72 inch)
+    - height: number - Page height, must be greater than 16, default value is 600 (unit is 1/72 inch)
+    - rotate: number - Page rotation, 0: 0 degrees, 1: 90 degrees, 2: 180 degrees, 3: 270 degrees
+    - pageMode: number - Page mode, 0: single page, 1: multiple pages
+    - pageScaling: number - Page scaling, 1: fit to page, 2: fit to content
 
 ### extract_pdf
 
-提取PDF文档中的文本或图像。使用示例1：提取
-中的文本。使用示例2：提取
-中的图片。使用示例3：提取中的文本。
+Extract text or images from PDF documents. Example 1: Extract text from 
+. Example 2: Extract images from 
+. Example 3: Extract text from .
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - mode: enum('extractImages', 'extractText') - 提取模式，extractText表示提取文本，extractImages表示提取图片
-  - pageRange: string - 提取页面范围，A、B和C以逗号分隔。A、B或C可以取数字，如99，也可以取范围，如1-30。如果为空，则提取整个文档
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - mode: enum('extractImages', 'extractText') - Extraction mode, extractText means extracting text, extractImages means extracting images
+  - pageRange: string - Page range for extraction, separated by commas for A, B, and C. A, B, or C can be a number, such as 99, or a range, such as 1-30. If empty, the entire document is extracted
 
 ### flatten_pdf
 
-使PDF文档页面扁平化，使注释和表单字段成为页面内容的一部分。使用示例1：把
-扁平化。使用示例2：把扁平化。
+Flatten PDF document pages, making annotations and form fields part of the page content. Example 1: Flatten 
+. Example 2: Flatten .
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - pageRange: string - PDF文档的页面范围。文档中的页面可以按任何顺序引用，从开始或结束都可以。例如：1、2、3、7-9、all。如果未指定，则执行所有页面
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - pageRange: string - Page range of the PDF document. Pages in the document can be referenced in any order, from start or end. For example: 1, 2, 3, 7-9, all. If not specified, all pages are executed
 
 ### linearize_pdf
 
-线性化PDF文档。使用示例1：把
-线性化。使用例2：把线性化。
+Linearize PDF documents. Example 1: Linearize 
+. Example 2: Linearize .
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
 
 ### manipulation_pdf
 
-操作PDF文档，例如删除页面，旋转页面，移动页面。使用示例1：删除
-的第1页。使用示例2：把
-的第2页移到第1页。使用示例3：删除的第1页。
+Manipulate PDF documents, such as deleting pages, rotating pages, moving pages. Example 1: Delete page 1 of 
+. Example 2: Move page 2 of 
+ to page 1. Example 3: Delete page 1 of .
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - config: object - PDF文档操作配置
-    - pageAction: enum('delete', 'rotate', 'move') - 页面操作类型
-    - pages: array(number) - 操作的页码，如[0,1,2,3]，页面索引从0开始
-    - angle: number - 页面旋转，0：0度，1：90度，2：180度，-1：270度
-    - destination: number - 目标页码，如果"页面操作类型"是"移动"，它是必需的
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - config: object - PDF document operation configuration
+    - pageAction: enum('delete', 'rotate', 'move') - Page operation type
+    - pages: array(number) - Page numbers to operate on, such as [0,1,2,3], page index starts from 0
+    - angle: number - Page rotation, 0: 0 degrees, 1: 90 degrees, 2: 180 degrees, -1: 270 degrees
+    - destination: number - Destination page number, required if "page operation type" is "move"
 
 ### protect_pdf
 
-使用用户或/和所有者密码保护PDF文档，并对某些功能设置限制。使用示例1：给
-设置用户密码，密码为：123456。使用示例2：给
-设置所有者密码，密码为：123456，权限设置为：不允许修改PDF内容。使用示例3：给设置用户密码，密码为：123456。
+Protect PDF documents with user and/or owner passwords and set restrictions on certain functions. Example 1: Set user password for 
+, password: 123456. Example 2: Set owner password for 
+, password: 123456, permission settings: do not allow modification of PDF content. Example 3: Set user password for , password: 123456.
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - passwordProtection: object - 密码保护设置，必须至少设置一个密码
-    - userPassword: string - 用户密码
-    - ownerPassword: string - 所有者密码
-  - permission: object - 权限设置
-    - PRINT_LOW_QUALITY: boolean - 以正常模式打印PDF文档
-    - PRINT_HIGH_QUALITY: boolean - 以高质量打印PDF文档
-    - EDIT_CONTENT: boolean - 修改PDF内容。设置该值后，用户可以通过操作修改PDF文档的内容
-    - EDIT_FILL_AND_SIGN_FORM_FIELDS: boolean - 填写PDF表格。如果设置了该值，用户可以填写交互式表单字段（包括签名字段）
-    - EDIT_ANNOTATION: boolean - 操作文本注释和填写交互式表单字段。如果还设置了"修改PDF内容"值，则用户可以创建或修改交互式表单字段
-    - EDIT_DOCUMENT_ASSEMBLY: boolean - 组装PDF文档。如果设置了这个值，就可以组装文档（插入、旋转或删除页面以及创建书签或缩略图），而不管是否设置了"修改PDF内容"值
-    - COPY_CONTENT: boolean - 残疾的支持。如果设置了此值，用户可以提取文本和图形，以支持残疾用户的可访问性或用于其他目的
-  - encryptionAlgorithm: enum('AES_128', 'AES_256', 'RC4') - 加密算法
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - passwordProtection: object - Password protection settings, at least one password must be set
+    - userPassword: string - User password
+    - ownerPassword: string - Owner password
+  - permission: object - Permission settings
+    - PRINT_LOW_QUALITY: boolean - Print PDF document in normal mode
+    - PRINT_HIGH_QUALITY: boolean - Print PDF document in high quality
+    - EDIT_CONTENT: boolean - Modify PDF content. If set, users can modify the content of the PDF document through operations
+    - EDIT_FILL_AND_SIGN_FORM_FIELDS: boolean - Fill PDF forms. If set, users can fill interactive form fields (including signature fields)
+    - EDIT_ANNOTATION: boolean - Operate text annotations and fill interactive form fields. If "modify PDF content" is also set, users can create or modify interactive form fields
+    - EDIT_DOCUMENT_ASSEMBLY: boolean - Assemble PDF documents. If set, documents can be assembled (insert, rotate or delete pages and create bookmarks or thumbnails), regardless of whether "modify PDF content" is set
+    - COPY_CONTENT: boolean - Support for disabilities. If set, users can extract text and graphics to support accessibility for disabled users or for other purposes
+  - encryptionAlgorithm: enum('AES_128', 'AES_256', 'RC4') - Encryption algorithm
 
 ### remove_password
 
-从PDF文档中删除密码安全性。使用示例1：移除
-的用户密码，密码为：123456。使用示例2：移除
-的所有者密码，密码为：123456。使用示例3：移除的用户密码，密码为：123456。
+Remove password security from PDF documents. Example 1: Remove user password from 
+, password: 123456. Example 2: Remove owner password from 
+, password: 123456. Example 3: Remove user password from , password: 123456.
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - password: string - PDF文档密码。如果PDF受所有者密码保护，则用户需要在该字段中使用所有者密码来取消文档安全性，否则用户需要传入用户密码来打开文档
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - password: string - PDF document password. If the PDF is protected by an owner password, the user needs to use the owner password in this field to remove document security, otherwise the user needs to pass in the user password to open the document
 
 ### split_pdf
 
-将PDF文档拆分为多个较小的文档。使用示例1：把
-拆分为多个文档，拆分后的页数为：3。使用示例2：把拆分为多个文档，拆分后的页数为：2。
+Split PDF documents into multiple smaller documents. Example 1: Split 
+ into multiple documents, number of pages after splitting: 3. Example 2: Split  into multiple documents, number of pages after splitting: 2.
 
-参数：
-  - path: string - PDF文档的绝对路径或URL地址
-  - config: object - 配置项
-    - pageCount: number - 拆分后的页数
+Parameters:
+  - path: string - Absolute path or URL address of the PDF document
+  - config: object - Configuration options
+    - pageCount: number - Number of pages after splitting
 
-## 在 VS Code 的 GitHub Copilot 中使用
+## Using in VS Code's GitHub Copilot
 
-打开 VS Code 配置文件 `settings.json`，添加以下配置，并替换其中的 `your_client_id`：
+Open the VS Code configuration file `settings.json`, add the following configuration, and replace `your_client_id`:
 
 - Windows, MacOS, Linux
 
@@ -217,7 +187,7 @@ https://cloudapi.fuxinsoft.cn/zh-CN/docs/services/mcpGuide
 {
   "mcp": {
     "servers": {
-      // 其他配置 ...
+      // Other configurations ...
       "mcp-server-foxit-cloudapi": {
         "command": "npx",
         "args": [
@@ -228,84 +198,28 @@ https://cloudapi.fuxinsoft.cn/zh-CN/docs/services/mcpGuide
           "CLIENT_ID": "your_client_id"
         }
       }
-      // 其他配置 ...
+      // Other configurations ...
     }
   }
 }
 ```
 
-## 在 VS Code 的 Cline 中使用
+**Official site: ** [https://github.com/deckflow/gezhe-ppt-mcp](https://github.com/deckflow/gezhe-ppt-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-打开 Cline MCP 配置文件 `cline_mcp_settings.json`, 添加以下配置，并替换其中的 `your_client_id`：
+## Categories & Tags
 
-- Windows
+- Categories: `communication`, `media`
+- Tags: `developer tools`, `communication`, `entertainment and media`, `chinese`
 
-```json
-{
-  "mcpServers": {
-    // 其他配置 ...
-    "mcp-server-foxit-cloudapi": {
-      "autoApprove": [],
-      "disabled": false,
-      "timeout": 60,
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@foxitsoftware/mcp-server-foxit-cloudapi"
-      ],
-      "env": {
-        "CLIENT_ID": "your_client_id"
-      },
-      "transportType": "stdio"
-    }
-    // 其他配置 ...
-  }
-}
-```
+## MCP Configuration
 
-- MacOS, Linux
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @foxitsoftware/mcp-server-foxit-cloudapi`
 
-```json
-{
-  "mcpServers": {
-    // 其他配置 ...
-    "mcp-server-foxit-cloudapi": {
-      "autoApprove": [],
-      "disabled": false,
-      "timeout": 60,
-      "command": "npx",
-      "args": [
-        "-y",
-        "@foxitsoftware/mcp-server-foxit-cloudapi"
-      ],
-      "env": {
-        "CLIENT_ID": "your_client_id"
-      },
-      "transportType": "stdio"
-    }
-    // 其他配置 ...
-  }
-}
-```
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-**官方网站：** [https://github.com/deckflow/gezhe-ppt-mcp](https://github.com/deckflow/gezhe-ppt-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Data source
 
-## 分类与标签
-
-- 分类：`communication`, `media`
-- 标签：`developer tools`, `communication`, `entertainment and media`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @foxitsoftware/mcp-server-foxit-cloudapi`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/foxit-foxit-cloudapi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/foxit-foxit-cloudapi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

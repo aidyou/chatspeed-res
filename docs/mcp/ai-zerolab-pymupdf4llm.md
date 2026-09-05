@@ -1,11 +1,11 @@
 ---
-title: "MCP-PDF2Markdown-LLM"
-description: "一个将PDF文档导出为Markdown格式的MCP服务器，该格式经过优化，适用于LLM处理。"
+title: "pymupdf4llm-mcp"
+description: "An MCP server that exports PDF documents to markdown format optimized for LLM processing."
 ---
 
-# MCP-PDF2Markdown-LLM
+# pymupdf4llm-mcp
 
-一个将PDF文档导出为Markdown格式的MCP服务器，该格式经过优化，适用于LLM处理。
+An MCP server that exports PDF documents to markdown format optimized for LLM processing.
 
 # pymupdf4llm-mcp
 
@@ -15,14 +15,14 @@ description: "一个将PDF文档导出为Markdown格式的MCP服务器，该格�
 [![Commit activity](/mcp-assets/40f4dbd4ced8845c945315127dbf74d8.svg)](https://img.shields.io/github/commit-activity/m/ai-zerolab/pymupdf4llm-mcp)
 [![License](/mcp-assets/3558c36785ba77f4575ce643a3a48f2a.svg)](https://img.shields.io/github/license/ai-zerolab/pymupdf4llm-mcp)
 
-pymupdf4llm 的 MCP 服务器，最适合将 PDF 导出为 Markdown 以供 LLM 使用。
+MCP Server for pymupdf4llm, best for export PDF to markdown for LLM.
 
-- **Github 仓库**: 
-- **文档** 
+- **Github repository**: 
+- **Documentation** 
 
-## 快速开始
+## Quick Start
 
-运行以下命令来启动 MCP 服务器：
+Run the following command to run the MCP server:
 
 ```bash
 uvx pymupdf4llm-mcp@latest stdio # stdio mode
@@ -30,7 +30,7 @@ uvx pymupdf4llm-mcp@latest stdio # stdio mode
 uvx pymupdf4llm-mcp@latest sse # sse mode
 ```
 
-配置你的光标/windsurf/... 和其他 MCP 客户端到此服务器：
+Configure your cursor/windsurf/... and other MCP client to this server:
 
 ```json
 {
@@ -47,22 +47,22 @@ uvx pymupdf4llm-mcp@latest sse # sse mode
 }
 ```
 
-**官方网站：** [https://github.com/ai-zerolab/pymupdf4llm-mcp](https://github.com/ai-zerolab/pymupdf4llm-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ai-zerolab/pymupdf4llm-mcp](https://github.com/ai-zerolab/pymupdf4llm-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `other`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`pymupdf4llm-mcp@latest stdio`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `pymupdf4llm-mcp@latest stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ai-zerolab-pymupdf4llm.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ai-zerolab-pymupdf4llm.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

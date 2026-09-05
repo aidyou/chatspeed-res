@@ -1,72 +1,72 @@
 ---
-title: "谷歌地图"
-description: "Google Maps API 的 MCP 服务器。"
+title: "google-maps"
+description: "MCP Server for the Google Maps API."
 ---
 
-# 谷歌地图
+# google-maps
 
-Google Maps API 的 MCP 服务器。
+MCP Server for the Google Maps API.
 
-# Google Maps MCP 服务器
+# Google Maps MCP Server
 
-用于 Google Maps API 的 MCP 服务器。
+MCP Server for the Google Maps API.
 
-## 工具
+## Tools
 
 1. `maps_geocode`
-   - 将地址转换为坐标
-   - 输入: `address` (字符串)
-   - 返回: location, formatted_address, place_id
+   - Convert address to coordinates
+   - Input: `address` (string)
+   - Returns: location, formatted_address, place_id
 
 2. `maps_reverse_geocode`
-   - 将坐标转换为地址
-   - 输入:
-     - `latitude` (数字)
-     - `longitude` (数字)
-   - 返回: formatted_address, place_id, address_components
+   - Convert coordinates to address
+   - Inputs:
+     - `latitude` (number)
+     - `longitude` (number)
+   - Returns: formatted_address, place_id, address_components
 
 3. `maps_search_places`
-   - 使用文本查询搜索地点
-   - 输入:
-     - `query` (字符串)
-     - `location` (可选): { latitude: 数字, longitude: 数字 }
-     - `radius` (可选): 数字 (米，最大 50000)
-   - 返回: 包含名称、地址和位置的地点数组
+   - Search for places using text query
+   - Inputs:
+     - `query` (string)
+     - `location` (optional): { latitude: number, longitude: number }
+     - `radius` (optional): number (meters, max 50000)
+   - Returns: array of places with names, addresses, locations
 
 4. `maps_place_details`
-   - 获取关于某个地点的详细信息
-   - 输入: `place_id` (字符串)
-   - 返回: 名称、地址、联系信息、评分、评论、营业时间
+   - Get detailed information about a place
+   - Input: `place_id` (string)
+   - Returns: name, address, contact info, ratings, reviews, opening hours
 
 5. `maps_distance_matrix`
-   - 计算点之间的距离和时间
-   - 输入:
-     - `origins` (字符串数组)
-     - `destinations` (字符串数组)
-     - `mode` (可选): "driving" | "walking" | "bicycling" | "transit"
-   - 返回: 距离和持续时间矩阵
+   - Calculate distances and times between points
+   - Inputs:
+     - `origins` (string[])
+     - `destinations` (string[])
+     - `mode` (optional): "driving" | "walking" | "bicycling" | "transit"
+   - Returns: distances and durations matrix
 
 6. `maps_elevation`
-   - 获取地点的海拔数据
-   - 输入: `locations` (包含 {latitude, longitude} 的数组)
-   - 返回: 每个点的海拔数据
+   - Get elevation data for locations
+   - Input: `locations` (array of {latitude, longitude})
+   - Returns: elevation data for each point
 
 7. `maps_directions`
-   - 获取点之间的路线
-   - 输入:
-     - `origin` (字符串)
-     - `destination` (字符串)
-     - `mode` (可选): "driving" | "walking" | "bicycling" | "transit"
-   - 返回: 包含步骤、距离和持续时间的路线详情
+   - Get directions between points
+   - Inputs:
+     - `origin` (string)
+     - `destination` (string)
+     - `mode` (optional): "driving" | "walking" | "bicycling" | "transit"
+   - Returns: route details with steps, distance, duration
 
-## 设置
+## Setup
 
-### API 密钥
-按照[这里](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys)的说明获取 Google Maps API 密钥。
+### API Key
+Get a Google Maps API key by following the instructions [here](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys).
 
-### 与 Claude Desktop 一起使用
+### Usage with Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+Add the following to your `claude_desktop_config.json`:
 
 #### Docker
 
@@ -110,34 +110,34 @@ Google Maps API 的 MCP 服务器。
 }
 ```
 
-## 构建
+## Build
 
-Docker 构建命令：
+Docker build:
 
 ```bash
 docker build -t mcp/google-maps -f src/google-maps/Dockerfile .
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证许可。这意味着您可以自由地使用、修改和分发该软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps](https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps](https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-google-maps`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-google-maps`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-google-maps.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-google-maps.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

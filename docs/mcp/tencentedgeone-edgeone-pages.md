@@ -1,27 +1,27 @@
 ---
-title: "EdgeOne Pages"
-description: "基于 EdgeOne Pages 的 MCP 服务器，支持代码部署为在线页面。"
+title: "edgeone-pages-mcp"
+description: "An MCP service for deploying HTML content to EdgeOne Pages and obtaining a publicly accessible URL."
 ---
 
-# EdgeOne Pages
+# edgeone-pages-mcp
 
-基于 EdgeOne Pages 的 MCP 服务器，支持代码部署为在线页面。
+An MCP service for deploying HTML content to EdgeOne Pages and obtaining a publicly accessible URL.
 
 # EdgeOne Pages MCP
 
-一个用于将 HTML 内容部署到 EdgeOne Pages 并获取公开可访问 URL 的 MCP 服务。
+An MCP service for deploying HTML content to EdgeOne Pages and obtaining a publicly accessible URL.
 
   
 
-## 演示
+## Demo
 
 ![](/mcp-assets/3220ccb45aa40a64f0fd4530fdc7c220.gif)
 
-## 要求
+## Requirements
 
-* Node.js 18 或更高版本
+* Node.js 18 or higher
 
-## 配置 MCP
+## Configure MCP
 
 ```json
 {
@@ -34,64 +34,64 @@ description: "基于 EdgeOne Pages 的 MCP 服务器，支持代码部署为在�
 }
 ```
 
-## 架构
+## Architecture
 
-架构图展示了工作流程：
-1. 大型语言模型生成 HTML 内容
-2. 内容发送到 EdgeOne Pages MCP 服务器
-3. MCP 服务器将内容部署到 EdgeOne Pages 边缘函数
-4. 内容存储在 EdgeOne KV Store 以便快速边缘访问
-5. MCP 服务器返回一个公共 URL
-6. 用户可以通过浏览器访问已部署的内容并享受快速边缘交付
+The architecture diagram illustrates the workflow:
+1. Large Language Model generates HTML content
+2. Content is sent to the EdgeOne Pages MCP Server
+3. MCP Server deploys the content to EdgeOne Pages Edge Functions
+4. Content is stored in EdgeOne KV Store for fast edge access
+5. MCP Server returns a public URL
+6. Users can access the deployed content via browser with fast edge delivery
 
-## 功能
+## Features
 
-* 通过 MCP 协议快速将 HTML 内容部署到 EdgeOne Pages
-* 自动生成公开可访问的 URL
+* MCP protocol for rapid deployment of HTML content to EdgeOne Pages
+* Automatic generation of publicly accessible URLs
 
-## 实现
+## Implementation
 
-此 MCP 服务集成了 EdgeOne Pages Functions 以部署静态 HTML 内容。实现方式使用：
+This MCP service integrates with EdgeOne Pages Functions to deploy static HTML content. The implementation uses:
 
-1. **EdgeOne Pages Functions** - 一种无服务器计算平台，允许在边缘执行 JavaScript/TypeScript 代码。
+1. **EdgeOne Pages Functions** - A serverless computing platform that allows execution of JavaScript/TypeScript code at the edge.
 
-2. **关键实现细节**：
-   - 使用 EdgeOne Pages KV 存储并提供 HTML 内容
-   - 为每次部署自动生成一个公共 URL
-   - 使用适当的错误消息处理 API 错误
+2. **Key Implementation Details** :
+   - Uses EdgeOne Pages KV store to store and serve the HTML content
+   - Automatically generates a public URL for each deployment
+   - Handles API errors with appropriate error messages
 
-3. **工作原理**：
-   - MCP 服务器通过 `deploy-html` 工具接受 HTML 内容
-   - 它连接到 EdgeOne Pages API 以获取基础 URL
-   - 使用 EdgeOne Pages KV API 部署 HTML 内容
-   - 返回一个可公开访问的已部署内容的 URL
+3. **How it works** :
+   - The MCP server accepts HTML content through the `deploy-html` tool
+   - It connects to EdgeOne Pages API to get the base URL
+   - Deploys the HTML content using the EdgeOne Pages KV API
+   - Returns a publicly accessible URL to the deployed content
 
-4. **使用示例**：
-   - 向 MCP 服务提供 HTML 内容
-   - 接收一个可立即访问的公共 URL
+4. **Usage Example** :
+   - Provide HTML content to the MCP service
+   - Receive a public URL that can be accessed immediately
 
-有关更多信息，请参阅 [EdgeOne Pages Functions 文档](https://edgeone.ai/document/162227908259442688) 和 [EdgeOne Pages KV 存储指南](https://edgeone.ai/document/162227803822321664)。
+For more information, see the [EdgeOne Pages Functions documentation](https://edgeone.ai/document/162227908259442688) and [EdgeOne Pages KV Storage Guide](https://edgeone.ai/document/162227803822321664).
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/TencentEdgeOne/edgeone-pages-mcp/tree/main](https://github.com/TencentEdgeOne/edgeone-pages-mcp/tree/main)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/TencentEdgeOne/edgeone-pages-mcp/tree/main](https://github.com/TencentEdgeOne/edgeone-pages-mcp/tree/main)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`edgeone-pages-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `edgeone-pages-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tencentedgeone-edgeone-pages.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tencentedgeone-edgeone-pages.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

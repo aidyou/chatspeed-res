@@ -1,11 +1,11 @@
 ---
-title: "金融数据服务"
-description: "一个开源的金融数据查询MCP Server，支持Tushare、Wind、通联等多种数据供应商接口，助力用户在AI应用中快速获取金融数据。"
+title: "finData-mcp-server"
+description: "An open-source MCP Server that supports various data providers such as Tushare, Wind, DataYes, etc. This enables AI applications to quickly retrieve financial data."
 ---
 
-# 金融数据服务
+# finData-mcp-server
 
-一个开源的金融数据查询MCP Server，支持Tushare、Wind、通联等多种数据供应商接口，助力用户在AI应用中快速获取金融数据。
+An open-source MCP Server that supports various data providers such as Tushare, Wind, DataYes, etc. This enables AI applications to quickly retrieve financial data.
 
 width="400" align=center/>
 
@@ -168,22 +168,22 @@ Set the `PROVIDER` environment variable to specify your provider:
 
 This project is open-sourced by [DataCanvas](https://datacanvas.com/)
 
-**官方网站：** [https://github.com/AlayaNeW/finData-mcp-server](https://github.com/AlayaNeW/finData-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/AlayaNeW/finData-mcp-server](https://github.com/AlayaNeW/finData-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /ABSOLUTE/PATH/TO/PARENT/FOLDER/finData-mcp-server/src/findata run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /ABSOLUTE/PATH/TO/PARENT/FOLDER/finData-mcp-server/src/findata run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/alayanew-findata.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alayanew-findata.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

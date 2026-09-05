@@ -1,77 +1,76 @@
 ---
-title: "Excel文件操作工具"
-description: "正文语言类型：英语  \n翻译结果：提供对Excel文件的操纵功能，无需安装Microsoft Excel，即可实现工作簿创建、数据操作、格式设置和高级Excel功能。"
+title: "excel-mcp"
+description: "Provides Excel file manipulation capabilities without requiring Microsoft Excel installation, enabling workbook creation, data manipulation, formatting, and advanced Excel features."
 ---
 
-# Excel文件操作工具
+# excel-mcp
 
-正文语言类型：英语  
-翻译结果：提供对Excel文件的操纵功能，无需安装Microsoft Excel，即可实现工作簿创建、数据操作、格式设置和高级Excel功能。
+Provides Excel file manipulation capabilities without requiring Microsoft Excel installation, enabling workbook creation, data manipulation, formatting, and advanced Excel features.
 
-# Excel MCP 服务器
+# Excel MCP Server
 [Smithery](https://smithery.ai/server/@haris-musa/excel-mcp-server)
 
-这是一个 Model Context Protocol (MCP) 服务器实现，提供了无需安装 Microsoft Excel 即可操作 Excel 文件的功能。此服务器支持工作簿创建、数据操作、格式化以及高级的 Excel 功能。
+A Model Context Protocol (MCP) server implementation that provides Excel file manipulation capabilities without requiring Microsoft Excel installation. This server enables workbook creation, data manipulation, formatting, and advanced Excel features.
 
-## 要求
+## Requirements
 
 - Python 3.10+
 - MCP SDK 1.2.0+
 - OpenPyXL 3.1.2+
 
-## 组件
+## Components
 
-### 资源
+### Resources
 
-该服务器通过 OpenPyXL 提供了 Excel 工作簿的操作功能：
+The server provides Excel workbook manipulation through OpenPyXL:
 
-- 创建和修改 Excel 工作簿
-- 管理工作表和范围
-- 处理格式和样式
-- 支持图表和数据透视表
+- Creates and modifies Excel workbooks
+- Manages worksheets and ranges
+- Handles formatting and styles
+- Supports charts and pivot tables
 
-### 工具
+### Tools
 
-本服务器提供了一整套 Excel 操作工具。有关所有可用工具、它们的参数及使用示例的详细文档，请参阅 [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md)。
+This server provides a comprehensive set of Excel manipulation tools. For detailed documentation of all available tools, their parameters, and usage examples, please refer to [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md).
 
-这些工具包括以下功能：
+The tools include capabilities for:
 
-- 工作簿和工作表管理
-- 数据读写
-- 格式化和样式设置
-- 图表和可视化
-- 数据透视表和数据分析
+- Workbook and worksheet management
+- Data reading and writing
+- Formatting and styling
+- Charts and visualizations
+- Pivot tables and data analysis
 
-详见 [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md) 获取完整文档。
+See [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md) for complete documentation.
 
-## 特性
+## Features
 
-- 全面的 Excel 支持：综合性的 Excel 功能
-- 数据操作：读取、写入和转换数据
-- 高级特性：图表、数据透视表和格式化
-- 错误处理：带有清晰消息的全面错误处理
+- Full Excel Support: Comprehensive Excel functionality
+- Data Manipulation: Read, write, and transform data
+- Advanced Features: Charts, pivot tables, and formatting
+- Error Handling: Comprehensive error handling with clear messages
 
-## 使用方法
+## Usage
 
-### 环境配置
+### Environment Configuration
 
-可以通过以下环境变量来配置服务器：
+The server can be configured using the following environment variables:
 
-- `EXCEL_FILES_PATH`：存储 Excel 文件的目录（默认值：`./excel_files`）
+- `EXCEL_FILES_PATH`: Directory where Excel files will be stored (default: `./excel_files`)
 
-你可以用不同的方式设置它：
+You can set this in different ways:
 
 Windows CMD:
 
 ```cmd
-set EXCEL_FILES_PATH=C:\path\to\excel\files
+set EXCEL_FILES_PATH=C:path	oexcelfiles
 uv run excel-mcp-server
 ```
 
 Windows PowerShell:
 
 ```powershell
-$env:EXCEL_FILES_PATH="C:\path\to\excel\files"
+$env:EXCEL_FILES_PATH="C:path	oexcelfiles"
 uv run excel-mcp-server
 ```
 
@@ -82,7 +81,7 @@ export EXCEL_FILES_PATH=/path/to/excel/files
 uv run excel-mcp-server
 ```
 
-或者在 Claude Desktop 配置中：
+Or in Claude Desktop config:
 
 ```json
 {
@@ -98,48 +97,48 @@ uv run excel-mcp-server
 }
 ```
 
-### 启动服务器
+### Starting the Server
 
-启动服务器：
+Start the server:
 
 ```bash
 uv run excel-mcp-server
 ```
 
-服务器将以 SSE 模式启动，并等待来自 MCP 客户端的连接。
+The server will start in SSE mode and wait for connections from MCP clients.
 
-### 在 Cursor IDE 中连接
+### Connecting in Cursor IDE
 
-启动服务器后，在 Cursor IDE 中连接到 SSE 端点：
+After starting the server, connect to the SSE endpoint in Cursor IDE:
 
 ```
 http://localhost:8000/sse
 ```
 
-Excel MCP 工具将通过代理程序可用。
+The Excel MCP tools will be available through the agent.
 
-关于可用工具及其用法，请参阅 [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md)。
+For available tools and their usage, please refer to [TOOLS.md](https://github.com/fish0710/excel-mcp/blob/HEAD/TOOLS.md).
 
-## 许可证
+## License
 
-该项目根据 MIT 许可证发布 - 详情请见 [LICENSE](https://github.com/fish0710/excel-mcp/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/fish0710/excel-mcp/blob/HEAD/LICENSE) file for details.
 
-**官方网站：** [https://github.com/fish0710/excel-mcp](https://github.com/fish0710/excel-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/fish0710/excel-mcp](https://github.com/fish0710/excel-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `data`
-- 标签：`file systems`, `research and data`, `chinese`
+- Categories: `files`, `data`
+- Tags: `file systems`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv run excel-mcp-server`
-- 参数：无
+- Transport: `stdio`
+- Command: `uv run excel-mcp-server`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/fish0710-excel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/fish0710-excel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

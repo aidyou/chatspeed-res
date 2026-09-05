@@ -1,11 +1,11 @@
 ---
-title: "发票识别LLM MCP（MCP&Agent挑战赛 - -作品4）"
-description: "InvoiceLLM 是一个智能发票识别代理，使用先进的OCR技术和本地大模型从发票文档中提取结构化信息。该系统支持图片和PDF格式，为敏感财务文档处理提供注重隐私的解决方案。"
+title: "InvoiceLLMMCP"
+description: "InvoiceLLM is an intelligent invoice recognition agent that uses advanced OCR technology and local large models to extract structured information from invoice documents. The system supports image and…"
 ---
 
-# 发票识别LLM MCP（MCP&Agent挑战赛 - -作品4）
+# InvoiceLLMMCP
 
-InvoiceLLM 是一个智能发票识别代理，使用先进的OCR技术和本地大模型从发票文档中提取结构化信息。该系统支持图片和PDF格式，为敏感财务文档处理提供注重隐私的解决方案。
+InvoiceLLM is an intelligent invoice recognition agent that uses advanced OCR technology and local large models to extract structured information from invoice documents. The system supports image and…
 
 ---
 domain:
@@ -139,22 +139,22 @@ InvoiceLLM 是一个智能发票识别智能体，使用先进的OCR技术和本
 ## 📜 许可证
 Apache License 2.0
 
-**官方网站：** [https://megemini-invoicellm.ms.show/gradio_api/mcp/](https://megemini-invoicellm.ms.show/gradio_api/mcp/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://megemini-invoicellm.ms.show/gradio_api/mcp/](https://megemini-invoicellm.ms.show/gradio_api/mcp/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `办公自动化`, `发票识别`, `ocr`, `llm`, `本地大模型`
+- Categories: `productivity`
+- Tags: `other`, `办公自动化`, `发票识别`, `ocr`, `llm`, `本地大模型`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/megemini-invoicellmmcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/megemini-invoicellmmcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

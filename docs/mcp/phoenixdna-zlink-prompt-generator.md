@@ -1,11 +1,11 @@
 ---
-title: "提示词生成器（MCP&Agent挑战赛）"
-description: "功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： Node.js 18+ 或 Python 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { \"mcpServers\": { \"your-server-name\": { \"args\": [ \"mcp-remote\", \"https://phoenixdna-prompt-generator-mc"
+title: "Zlink-prompt-generator"
+description: "功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： ​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { \"mcpServers\": { \"your-server-name…"
 ---
 
-# 提示词生成器（MCP&Agent挑战赛）
+# Zlink-prompt-generator
 
-功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： Node.js 18+ 或 Python 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { "mcpServers": { "your-server-name": { "args": [ "mcp-remote", "https://phoenixdna-prompt-generator-mc
+功能说明： AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。 部署指南 环境依赖： ​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择） 配置说明 参考以下 JSON 配置格式（以 SSE 传输为例）： json { "mcpServers": { "your-server-name…
 
 ## 功能说明：
     AIGC赛道苦于自己不会写专业提示词，这个mcp使用 Qwen3 模型优化输入的提示词，使其更适合指定的 AI 图像生成模型。
@@ -13,11 +13,12 @@ description: "功能说明： AIGC赛道苦于自己不会写专业提示词，�
 ## 部署指南
 
 ### 环境依赖：
-Node.js 18+ 或 Python 3.8+（根据实际运行环境选择）
+​​Node.js​​ 18+ 或 ​​Python​​ 3.8+（根据实际运行环境选择）
+
 
 ### 配置说明
 参考以下 JSON 配置格式（以 SSE 传输为例）：
-json
+```json
 {
   "mcpServers": {
     "your-server-name": {
@@ -31,7 +32,7 @@ json
     }
   }
 }
-
+```
 ## 使用示例
 
 ### 参数说明：
@@ -42,24 +43,24 @@ json
     Returns:
         str: 优化后的英文提示词，结构完整，包含主体、环境、光效、风格等要素。
 
-### 示例：
+### Example：
 
-**官方网站：** [https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp](https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp](https://www.modelscope.cn/studios/phoenixdna/prompt-generator-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`
+- Categories: `media`
+- Tags: `entertainment and media`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://phoenixdna-prompt-generator-mcp.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://phoenixdna-prompt-generator-mcp.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/phoenixdna-zlink-prompt-generator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/phoenixdna-zlink-prompt-generator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

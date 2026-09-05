@@ -1,66 +1,66 @@
 ---
-title: "ClickUp开发服务"
-description: "ClickUp API的MCP服务器，"
+title: "mcp-clickup"
+description: "MCP Server for the ClickUp API,"
 ---
 
-# ClickUp开发服务
+# mcp-clickup
 
-ClickUp API的MCP服务器，
+MCP Server for the ClickUp API,
 
-# ClickUp MCP 服务器
+# ClickUp MCP Server
 
 [Smithery](https://smithery.ai/server/@mikah13/mcp-clickup)
 
-用于 ClickUp API 的 MCP 服务器，使 Claude 能够与 ClickUp 工作区进行交互。
+MCP Server for the ClickUp API, enabling Claude to interact with ClickUp workspaces.
 
-## 工具
+## Tools
 
 1. `clickup_authenticate`
-   - 使用 API 令牌和工作区 ID 对 ClickUp API 进行身份验证
-   - 必需的输入：
-     - `api_token` (字符串)：用于身份验证的 ClickUp API 令牌
-     - `workspace_id` (字符串)：用于身份验证的 ClickUp 工作区 ID
-   - 返回：用户信息和身份验证状态
+   - Authenticate with ClickUp API using an API token and workspace ID
+   - Required inputs:
+     - `api_token` (string): ClickUp API token for authentication
+     - `workspace_id` (string): ClickUp workspace ID for authentication
+   - Returns: User information and authentication status
 
 2. `clickup_get_task`
-   - 通过任务 ID 从 ClickUp 中检索任务
-   - 必需的输入：
-     - `api_token` (字符串)：用于身份验证的 ClickUp API 令牌
-     - `task_id` (字符串)：要检索的 ClickUp 任务的 ID
-   - 返回：包括描述、状态和元数据在内的详细任务信息
+   - Retrieve a task from ClickUp by task ID
+   - Required inputs:
+     - `api_token` (string): ClickUp API token for authentication
+     - `task_id` (string): The ID of the ClickUp task to retrieve
+   - Returns: Detailed task information including description, status, and metadata
 
 3. `clickup_get_task_by_custom_id`
-   - 通过自定义 ID 从 ClickUp 中检索任务
-   - 必需的输入：
-     - `api_token` (字符串)：用于身份验证的 ClickUp API 令牌
-     - `custom_id` (字符串)：要检索的 ClickUp 任务的自定义 ID
-     - `workspace_id` (字符串)：API 请求所需的工作区 ID
-   - 返回：包括描述、状态和元数据在内的详细任务信息
+   - Retrieve a task from ClickUp by custom ID
+   - Required inputs:
+     - `api_token` (string): ClickUp API token for authentication
+     - `custom_id` (string): The custom ID of the ClickUp task to retrieve
+     - `workspace_id` (string): The workspace ID required for the API request
+   - Returns: Detailed task information including description, status, and metadata
 
 4. `clickup_get_tasks`
-   - 通过它们的 ID 从 ClickUp 中检索多个任务
-   - 必需的输入：
-     - `api_token` (字符串)：用于身份验证的 ClickUp API 令牌
-     - `workspace_id` (字符串)：ClickUp 工作区 ID
-     - `task_ids` (字符串数组)：要检索的任务 ID 列表
-   - 返回：包含完整信息的任务列表
+   - Retrieve multiple tasks from ClickUp by their IDs
+   - Required inputs:
+     - `api_token` (string): ClickUp API token for authentication
+     - `workspace_id` (string): ClickUp workspace ID
+     - `task_ids` (string[]): List of task IDs to retrieve
+   - Returns: List of tasks with their complete information
 
-## 设置
+## Setup
 
-1. 获取您的 ClickUp API 令牌：
-   - 登录到您的 ClickUp 帐户
-   - 转到设置 → 应用程序
-   - 点击“生成 API 令牌”
-   - 复制您的 API 令牌
+1. Get your ClickUp API Token:
+   - Log in to your ClickUp account
+   - Go to Settings → Apps
+   - Click "Generate API Token"
+   - Copy your API token
 
-2. 获取您的工作区 ID：
-   - 在浏览器中打开 ClickUp
-   - 工作区 ID 在 URL 中：`https://app.clickup.com/{workspace_id}/home`
-   - 它是一个以数字开头的数字
+2. Get your Workspace ID:
+   - Open ClickUp in your browser
+   - The Workspace ID is in the URL: `https://app.clickup.com/{workspace_id}/home`
+   - It's a number that starts with a number
 
-### 与 Claude 桌面版一起使用
+### Usage with Claude Desktop
 
-将以下内容添加到您的 `claude_desktop_config.json` 文件中：
+Add the following to your `claude_desktop_config.json`:
 
 #### npx
 
@@ -108,42 +108,42 @@ ClickUp API的MCP服务器，
 }
 ```
 
-### 故障排除
+### Troubleshooting
 
-如果您遇到错误，请验证：
-1. 您的 API 令牌有效且未过期
-2. 工作区 ID 正确
-3. 您在 ClickUp 工作区中有必要的权限
-4. 您尝试访问的任务 ID 存在且对您可访问
+If you encounter errors, verify that:
+1. Your API token is valid and has not expired
+2. The workspace ID is correct
+3. You have the necessary permissions in the ClickUp workspace
+4. The task IDs you're trying to access exist and are accessible to you
 
-## 构建
+## Build
 
-Docker 构建：
+Docker build:
 
 ```bash
 docker build -t mcp/clickup .
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证许可。这意味着您可以自由使用、修改和分发该软件，但须遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/mikah13/mcp-clickup](https://github.com/mikah13/mcp-clickup)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mikah13/mcp-clickup](https://github.com/mikah13/mcp-clickup)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`developer tools`, `communication`, `other`, `chinese`
+- Categories: `communication`
+- Tags: `developer tools`, `communication`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-clickup`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-clickup`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mikah13-clickup.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mikah13-clickup.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

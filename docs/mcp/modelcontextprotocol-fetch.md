@@ -1,62 +1,63 @@
 ---
-title: "Fetch网页内容抓取"
-description: "该服务器使大型语言模型能够检索和处理网页内容，将HTML转换为markdown格式，以便于更轻松地使用。"
+title: "fetch"
+description: "This server enables LLMs to retrieve and process content from web pages, converting HTML to markdown for easier consumption."
 ---
 
-# Fetch网页内容抓取
+# fetch
 
-该服务器使大型语言模型能够检索和处理网页内容，将HTML转换为markdown格式，以便于更轻松地使用。
+This server enables LLMs to retrieve and process content from web pages, converting HTML to markdown for easier consumption.
 
-# 获取 MCP 服务器
+# Fetch MCP Server
 
-一个提供网页内容抓取功能的模型上下文协议服务器。此服务器使大型语言模型能够从网页中检索和处理内容，并将 HTML 转换为 markdown 以便更容易地使用。
+A Model Context Protocol server that provides web content fetching capabilities. This server enables LLMs to retrieve and process content from web pages, converting HTML to markdown for easier consumption.
 
-获取工具会截断响应，但通过使用 `start_index` 参数，您可以指定从何处开始提取内容。这让模型可以分块读取网页，直到找到所需的信息。
+The fetch tool will truncate the response, but by using the `start_index` argument, you can specify where to start the content extraction. This lets models read a webpage in chunks, until they find the information they need.
 
-### 可用工具
+### Available Tools
 
-- `fetch` - 从互联网上抓取一个 URL 并将其内容作为 markdown 提取。
-    - `url` (字符串, 必需): 要抓取的 URL
-    - `max_length` (整数, 可选): 返回的最大字符数 (默认: 5000)
-    - `start_index` (整数, 可选): 从此字符索引开始提取内容 (默认: 0)
-    - `raw` (布尔值, 可选): 获取未经 markdown 转换的原始内容 (默认: false)
+- `fetch` - Fetches a URL from the internet and extracts its contents as markdown.
+    - `url` (string, required): URL to fetch
+    - `max_length` (integer, optional): Maximum number of characters to return (default: 5000)
+    - `start_index` (integer, optional): Start content from this character index (default: 0)
+    - `raw` (boolean, optional): Get raw content without markdown conversion (default: false)
 
-### 提示
+### Prompts
 
 - **fetch**
-  - 抓取一个 URL 并将其内容作为 markdown 提取
-  - 参数:
-    - `url` (字符串, 必需): 要抓取的 URL
+  - Fetch a URL and extract its contents as markdown
+  - Arguments:
+    - `url` (string, required): URL to fetch
 
-## 安装
+## Installation
 
-可选项：安装 node.js，这将导致 fetch 服务器使用一种更健壮的 HTML 简化器。
+Optionally: Install node.js, this will cause the fetch server to use a different HTML simplifier that is more robust.
 
-### 使用 uv（推荐）
+### Using uv (recommended)
 
-当使用 [`uv`](https://docs.astral.sh/uv/) 时不需要特定的安装步骤。我们将使用 [`uvx`](https://docs.astral.sh/uv/guides/tools/) 直接运行 *mcp-server-fetch*。
+When using [`uv`](https://docs.astral.sh/uv/) no specific installation is needed. We will
+use [`uvx`](https://docs.astral.sh/uv/guides/tools/) to directly run *mcp-server-fetch*.
 
-### 使用 PIP
+### Using PIP
 
-或者，您可以通过 pip 安装 `mcp-server-fetch`：
+Alternatively you can install `mcp-server-fetch` via pip:
 
 ```
 pip install mcp-server-fetch
 ```
 
-安装后，您可以使用以下命令以脚本方式运行它：
+After installation, you can run it as a script using:
 
 ```
 python -m mcp_server_fetch
 ```
 
-## 配置
+## Configuration
 
-### 为 Claude.app 配置
+### Configure for Claude.app
 
-在您的 Claude 设置中添加：
+Add to your Claude settings:
 
-使用 uvx
+Using uvx
 
 ```json
 "mcpServers": {
@@ -67,7 +68,7 @@ python -m mcp_server_fetch
 }
 ```
 
-使用 docker
+Using docker
 
 ```json
 "mcpServers": {
@@ -78,7 +79,7 @@ python -m mcp_server_fetch
 }
 ```
 
-使用 pip 安装
+Using pip installation
 
 ```json
 "mcpServers": {
@@ -89,67 +90,70 @@ python -m mcp_server_fetch
 }
 ```
 
-### 自定义 - robots.txt
+### Customization - robots.txt
 
-默认情况下，如果请求来自模型（通过工具），则服务器会遵守网站的 robots.txt 文件；但如果请求是由用户发起的（通过提示），则不会遵守。通过在配置中的 `args` 列表里添加参数 `--ignore-robots-txt` 可以禁用这一行为。
+By default, the server will obey a websites robots.txt file if the request came from the model (via a tool), but not if
+the request was user initiated (via a prompt). This can be disabled by adding the argument `--ignore-robots-txt` to the
+`args` list in the configuration.
 
-### 自定义 - 用户代理
+### Customization - User-agent
 
-默认情况下，根据请求是否来自模型（通过工具）或由用户发起（通过提示），服务器将使用以下用户代理
+By default, depending on if the request came from the model (via a tool), or was user initiated (via a prompt), the
+server will use either the user-agent
 ```
 ModelContextProtocol/1.0 (Autonomous; +https://github.com/modelcontextprotocol/servers)
 ```
-或
+or
 ```
 ModelContextProtocol/1.0 (User-Specified; +https://github.com/modelcontextprotocol/servers)
 ```
 
-通过在配置中的 `args` 列表里添加参数 `--user-agent=YourUserAgent` 可以自定义用户代理。
+This can be customized by adding the argument `--user-agent=YourUserAgent` to the `args` list in the configuration.
 
-## 调试
+## Debugging
 
-您可以使用 MCP 检查器来调试服务器。对于 uvx 安装：
+You can use the MCP inspector to debug the server. For uvx installations:
 
 ```
 npx @modelcontextprotocol/inspector uvx mcp-server-fetch
 ```
 
-如果您已将包安装在特定目录中或正在开发该包：
+Or if you've installed the package in a specific directory or are developing on it:
 
 ```
 cd path/to/servers/src/fetch
 npx @modelcontextprotocol/inspector uv run mcp-server-fetch
 ```
 
-## 贡献
+## Contributing
 
-我们鼓励贡献以帮助扩展和完善 mcp-server-fetch。无论您是想添加新工具、增强现有功能还是改进文档，您的输入都是宝贵的。
+We encourage contributions to help expand and improve mcp-server-fetch. Whether you want to add new tools, enhance existing functionality, or improve documentation, your input is valuable.
 
-有关其他 MCP 服务器和实现模式的例子，请参见：
-[https://github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+For examples of other MCP servers and implementation patterns, see:
+https://github.com/modelcontextprotocol/servers
 
-欢迎提交拉取请求！请随时贡献新想法、错误修复或增强功能，让 mcp-server-fetch 更加强大和有用。
+Pull requests are welcome! Feel free to contribute new ideas, bug fixes, or enhancements to make mcp-server-fetch even more powerful and useful.
 
-## 许可证
+## License
 
-mcp-server-fetch 采用 MIT 许可证。这意味着您可以自由使用、修改和分发该软件，但需遵守 MIT 许可证的条款和条件。更多详情，请参阅项目仓库中的 LICENSE 文件。
+mcp-server-fetch is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-fetch`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-fetch`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-fetch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-fetch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

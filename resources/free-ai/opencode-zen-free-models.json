@@ -3,21 +3,26 @@
   "channel": "free-ai",
   "name": {
     "en": "OpenCode Zen Free Models",
-    "zh-Hans": "OpenCode Zen 免费模型",
-    "zh-Hant": "OpenCode Zen 免费模型"
+    "zh-Hans": "OpenCode Zen 免费模型"
   },
   "description": {
     "en": "Inside the opencode coding agent, limited-time free models (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, etc.) are usable after signing in, without adding billing details.",
-    "zh-Hans": "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。",
-    "zh-Hant": "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。"
+    "zh-Hans": "在 opencode 编码代理中，登录 OpenCode Zen 账号即可限时免费使用 MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等模型，无需添加账单信息。"
   },
   "detail": {
     "en": "OpenCode Zen is the AI gateway maintained by the OpenCode team (SST), used inside the opencode coding agent (TUI / CLI): sign in, run /connect with your Zen API key, then /models to pick a model. A set of models is currently free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free, Nemotron 3.5 Lightning Free, Ling 3.0 Flash Fin Free, Muse Spark 1.2 Contributor Free) without billing details; paid models are metered per token (auto-recharge defaults to $20 when balance < $5). OpenAI-compatible endpoints are exposed at https://opencode.ai/zen/v1, so it can also be configured in ChatSpeed. The free list rotates frequently; check the official docs.",
-    "zh-Hans": "OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。",
-    "zh-Hant": "OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。"
+    "zh-Hans": "OpenCode Zen 是 OpenCode 团队（SST）维护的 AI 网关，主要在 opencode 编码代理（TUI / CLI）内使用：登录后在 /connect 中粘贴 Zen API Key，再通过 /models 选择模型。当前有一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free、Nemotron 3.5 Lightning Free、Ling 3.0 Flash Fin Free、Muse Spark 1.2 Contributor Free），无需添加账单信息；付费模型按 token 计费（余额低于 $5 时自动充值 $20，可关闭）。同时暴露 OpenAI 兼容端点 https://opencode.ai/zen/v1，也可在 ChatSpeed 中配置。免费名单轮换频繁，请以官方文档为准。"
   },
-  "categories": ["coding"],
-  "tags": ["opencode", "zen", "free-models", "coding", "api"],
+  "categories": [
+    "coding"
+  ],
+  "tags": [
+    "opencode",
+    "zen",
+    "free-models",
+    "coding",
+    "api"
+  ],
   "website": "https://opencode.ai/docs/zen/",
   "status": "review",
   "lastVerifiedAt": "2026-08-30",
@@ -27,33 +32,28 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "A set of models is free for a limited time (MiMo-V2.5 Free, Big Pickle, Nemotron 3 Ultra Free etc.); no billing details needed for free models. The list rotates; check the official docs.",
-      "zh-Hans": "一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。",
-      "zh-Hant": "一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。"
+      "zh-Hans": "一组模型限时免费（MiMo-V2.5 Free、Big Pickle、Nemotron 3 Ultra Free 等）；免费模型无需账单信息。名单会轮换，以官方文档为准。"
     },
     "availability": "global",
     "signupUrl": "https://opencode.ai/zen",
     "freePolicyUrl": "https://opencode.ai/docs/zen/",
     "registrationRestriction": {
       "en": "Sign up/connect with a Zen account inside opencode (or via the Zen website); free models need no billing details, paid models require adding billing (auto-recharge default $20).",
-      "zh-Hans": "在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。",
-      "zh-Hant": "在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。"
+      "zh-Hans": "在 opencode 中或通过 Zen 网站注册/登录账号即可；免费模型无需账单信息，使用付费模型需添加账单（默认余额低于 $5 自动充值 $20，可关闭或调低）。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free (current list)",
-          "zh-Hans": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单）",
-          "zh-Hant": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单）"
+          "zh-Hans": "MiMo-V2.5 Free / Big Pickle / Nemotron 3 Ultra Free / Nemotron 3.5 Lightning Free / Ling 3.0 Flash Fin Free / Muse Spark 1.2 Contributor Free（当前名单）"
         },
         "quota": {
           "en": "Free",
-          "zh-Hans": "免费",
-          "zh-Hant": "免费"
+          "zh-Hans": "免费"
         },
         "frequency": {
           "en": "Limited-time free; list rotates, check official docs",
-          "zh-Hans": "限时免费，名单轮换，以官方文档为准",
-          "zh-Hant": "限时免费，名单轮换，以官方文档为准"
+          "zh-Hans": "限时免费，名单轮换，以官方文档为准"
         }
       }
     ],

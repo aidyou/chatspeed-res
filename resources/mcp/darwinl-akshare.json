@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "akshare_mcp_server",
-    "zh-Hans": "AKSHARE金融数据服务",
-    "zh-Hant": "AKSHARE金融数据服务"
+    "zh-Hans": "AKSHARE金融数据服务"
   },
   "description": {
     "en": "AKShare MCP Server A Model Context Protocol (MCP) server that provides financial data analysis capabilities using the AKShare library. Features Access to Chinese and global financial market data through AKShare Integration with Claude Desktop via MCP protocol ",
-    "zh-Hans": "AKShare MCP 服务器 一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。 功能 - 通过AKShare访问中国及全球金融市场数据 - 通过MCP协议与Claude Desktop集成 - 支持多种金融数据查询和分析 可用工具 AKShare MCP服务器提供了以下工具： - 股票数据查询 - 基金数据查询 - 债券数据查询 - 期货数据查询 - 外汇数据查询 - 宏观经济数据查询 - 等等...",
-    "zh-Hant": "AKShare MCP 服务器 一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。 功能 - 通过AKShare访问中国及全球金融市场数据 - 通过MCP协议与Claude Desktop集成 - 支持多种金融数据查询和分析 可用工具 AKShare MCP服务器提供了以下工具： - 股票数据查询 - 基金数据查询 - 债券数据查询 - 期货数据查询 - 外汇数据查询 - 宏观经济数据查询 - 等等..."
+    "zh-Hans": "AKShare MCP 服务器 一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。 功能 - 通过AKShare访问中国及全球金融市场数据 - 通过MCP协议与Claude Desktop集成 - 支持多种金融数据查询和分析 可用工具 AKShare MCP服务器提供了以下工具： - 股票数据查询 - 基金数据查询 - 债券数据查询 - 期货数据查询 - 外汇数据查询 - 宏观经济数据查询 - 等等..."
   },
   "detail": {
     "en": "# AKShare MCP Server\nA Model Context Protocol (MCP) server that provides financial data analysis capabilities using the AKShare library.\n\n## Features\nAccess to Chinese and global financial market data through AKShare\nIntegration with Claude Desktop via MCP protocol\nSupport for various financial data queries and analysis\n\n## Available Tools\nThe AKShare MCP server provides the following tools:\n\n- Stock data queries\n- Fund data queries\n- Bond data queries\n- Futures data queries\n- Forex data queries\n- Macroeconomic data queries\n- And more...",
-    "zh-Hans": "# AKShare MCP 服务器\n一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。\n\n## 功能\n- 通过AKShare访问中国及全球金融市场数据\n- 通过MCP协议与Claude Desktop集成\n- 支持多种金融数据查询和分析\n\n## 可用工具\nAKShare MCP服务器提供了以下工具：\n\n- 股票数据查询\n- 基金数据查询\n- 债券数据查询\n- 期货数据查询\n- 外汇数据查询\n- 宏观经济数据查询\n- 等等...",
-    "zh-Hant": "# AKShare MCP 服务器\n一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。\n\n## 功能\n- 通过AKShare访问中国及全球金融市场数据\n- 通过MCP协议与Claude Desktop集成\n- 支持多种金融数据查询和分析\n\n## 可用工具\nAKShare MCP服务器提供了以下工具：\n\n- 股票数据查询\n- 基金数据查询\n- 债券数据查询\n- 期货数据查询\n- 外汇数据查询\n- 宏观经济数据查询\n- 等等..."
+    "zh-Hans": "# AKShare MCP 服务器\n一个使用AKShare库提供金融数据分析能力的模型上下文协议（MCP）服务器。\n\n## 功能\n- 通过AKShare访问中国及全球金融市场数据\n- 通过MCP协议与Claude Desktop集成\n- 支持多种金融数据查询和分析\n\n## 可用工具\nAKShare MCP服务器提供了以下工具：\n\n- 股票数据查询\n- 基金数据查询\n- 债券数据查询\n- 期货数据查询\n- 外汇数据查询\n- 宏观经济数据查询\n- 等等..."
   },
   "categories": [
     "finance",

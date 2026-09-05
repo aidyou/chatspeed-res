@@ -1,46 +1,45 @@
 ---
-title: "图片视觉查看分析器"
-description: "一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。它支持本地图片文件和在线图片 URL，基于魔搭社区 AI 模型的智能图像分析，完全兼容 MCP 协议，并提供完整的 TypeScript 类型定义。"
+title: "vision-mcp-server"
+description: "| --- 一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。 例如当你在客户端的模型只支持文字输入，这时你可以使用视觉模型mcp来弥补。 这个项目采用了魔搭社区免费的视觉模型Qwen3-VL-30B-A3B-Instruct（你也可以在配置中，使用魔搭社区自行更换为自己想要的视觉模型）。 - 支持本地图片文件和在线图片 URL - 基于…"
 ---
 
-# 图片视觉查看分析器
+# vision-mcp-server
 
-一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。它支持本地图片文件和在线图片 URL，基于魔搭社区 AI 模型的智能图像分析，完全兼容 MCP 协议，并提供完整的 TypeScript 类型定义。
+| --- 一个用于图片分析的 MCP (Model Context Protocol) 服务器，支持图片内容分析和描述。 例如当你在客户端的模型只支持文字输入，这时你可以使用视觉模型mcp来弥补。 这个项目采用了魔搭社区免费的视觉模型Qwen3-VL-30B-A3B-Instruct（你也可以在配置中，使用魔搭社区自行更换为自己想要的视觉模型）。 - 支持本地图片文件和在线图片 URL - 基于…
 
-# Vision MCP Server｜视觉分析 MCP 服务器
+# Vision MCP Server | Visual Analysis MCP Server
 
+## Version 1.1 of this project has been released, supporting the addition of multiple visual model providers and fallback models.
 
-## 该项目v1.1版本已发布，支持添加多个视觉模型提供商来源和备用模型。
+## Chinese
 
-## 中文
+This is a local MCP Server that analyzes images through visual models.
 
-这是一个通过视觉模型分析图片的本地 MCP Server。
+For example, if the primary model you use on the client side only supports text input, you can add this MCP to your Agent tool, and have the `analyze_image` tool call an independent visual model to complete image understanding.
 
-例如当你在客户端使用的主模型只支持文字输入时，可以把本 MCP 添加到 Agent 工具中，由 `analyze_image` 工具调用独立的视觉模型完成图片理解。
+v1.1 supports:
 
-v1.1 支持：
+- ModelScope, Zhipu BigModel, and other OpenAI Chat Completions compatible visual interfaces
+- Configuring multiple models under the same API Key and falling back in order
+- Cross-provider fallback
+- Automatic rotation, format validation, and proportional scaling of images, with the default longest side being 2048
+- Local directory restrictions, download limits, log desensitization, and online image SSRF protection
 
-- 魔搭 ModelScope、智谱 BigModel，以及其他 OpenAI Chat Completions 兼容视觉接口
-- 同一 API Key 下配置多个模型，并按顺序 fallback
-- 跨供应商 fallback
-- 自动旋转、格式校验和等比例缩放图片，默认最长边 2048
-- 本地目录限制、下载限制、日志脱敏和在线图片 SSRF 防护
+***Please keep your API Key secure and do not publicly share MCP configurations containing real keys.
 
-***请妥善保管 API Key，不要把包含真实 Key 的 MCP 配置公开。
+Choose one of the following four configuration methods.
 
-下面四种配置方式选择一种即可。
-
-## 请注意，如果您已经安装过该项目，建议您先清除原来安装包的缓存，或者在安装过程中，
+## Please note that if you have already installed this project, it is recommended to clear the cache of the previously installed package, or during installation, change
  "args": ["-y", "vision-mcp-server"]
- 最好改为
+ to
   "args": ["-y", "vision-mcp-server@latest"]
-如果您不清楚怎么做，可以交给您的agent中的AI进行提问解决。
+If you are unsure how to do this, you can ask the AI in your agent for help.
 
- ## 方式一：魔搭，一个 Key 配置多个模型
+## Method One: ModelScope, Multiple Models with One Key
 
-适合只使用魔搭 API-Inference 的用户。
+Suitable for users who only use ModelScope API-Inference.
 
-```json
+json
 {
   "mcpServers": {
     "vision-mcp-server": {
@@ -53,32 +52,30 @@ v1.1 支持：
     }
   }
 }
-```
 
-`MODELSCOPE_MODELS` 是使用英文逗号分隔的有序列表：
+`MODELSCOPE_MODELS` is an ordered list separated by commas:
 
-1. 首先调用 `Qwen/Qwen3.5-397B-A17B`。
-2. 如果它返回限流、超时或服务端故障，则调用后面的模型。
-3. 所有模型共用同一个 `MODELSCOPE_TOKEN`。
+1. First, call `Qwen/Qwen3.5-397B-A17B`.
+2. If it returns rate limiting, timeout, or server error, call the next model.
+3. All models share the same `MODELSCOPE_TOKEN`.
 
-请确认所填写模型当前支持魔搭 API-Inference 和图片输入。魔搭的可用模型会变化，本项目不会限制具体 Model ID。
+Please confirm that the models you list currently support ModelScope API-Inference and image input. The available models on ModelScope may change, and this project does not restrict specific Model IDs.
 
-旧版单模型配置仍然兼容：
+The old single-model configuration is still compatible:
 
-```json
+json
 {
   "MODELSCOPE_TOKEN": "your_modelscope_token",
   "MODELSCOPE_MODEL": "Qwen/Qwen3.5-397B-A17B"
 }
-```
 
-如果同时设置 `MODELSCOPE_MODELS` 和 `MODELSCOPE_MODEL`，优先使用 `MODELSCOPE_MODELS`。
+If both `MODELSCOPE_MODELS` and `MODELSCOPE_MODEL` are set, `MODELSCOPE_MODELS` takes precedence.
 
-## 方式二：智谱，一个 Key 配置任意视觉模型
+## Method Two: Zhipu, Any Visual Model with One Key
 
-智谱模式不会写死模型。用户必须通过 `VISION_MODELS` 明确填写自己有权限使用的视觉模型：
+Zhipu mode does not hard-code models. Users must explicitly specify the visual models they have permission to use via `VISION_MODELS`:
 
-```json
+json
 {
   "mcpServers": {
     "vision-mcp-server": {
@@ -92,30 +89,28 @@ v1.1 支持：
     }
   }
 }
-```
 
-默认示例仅使用免费的 `glm-4v-flash`。如需其他模型，请先确认智谱账户权限和计费规则，再手动加入 `VISION_MODELS`，例如：
+The default example uses only the free `glm-4v-flash`. For other models, please first confirm your Zhipu account permissions and billing rules, then manually add them to `VISION_MODELS`, such as:
 
-- `glm-5v-turbo`：付费视觉模型
-- `glm-4.6v`：付费视觉模型
-- `glm-4.1v-thinking-flashx`：增强型视觉模型，是否可用取决于账号权限
-- `glm-4.6v-flash`：免费视觉模型
-- `glm-4.1v-thinking-flash`：免费视觉模型
-- `glm-4v-flash`：免费基础图片理解模型
+- `glm-5v-turbo`: Paid visual model
+- `glm-4.6v`: Paid visual model
+- `glm-4.1v-thinking-flashx`: Enhanced visual model, availability depends on account permissions
+- `glm-4.6v-flash`: Free visual model
+- `glm-4.1v-thinking-flash`: Free visual model
+- `glm-4v-flash`: Free basic image understanding model
 
-实际可用模型、价格和权限以[智谱官方模型列表](https://docs.bigmodel.cn/cn/guide/start/model-overview)为准。
+Refer to the [official Zhipu model list](https://docs.bigmodel.cn/cn/guide/start/model-overview) for actual available models, prices, and permissions.
 
-注意：我们在 2026-08-09 的真实联调中，多次遇到 `glm-4.6v-flash` 返回 HTTP 429、业务码 `1305`（模型当前访问量过大），而 `glm-4v-flash` 可正常调用。这属于智谱免费共享服务的临时过载，不是本 MCP 的图片格式错误。如确需配置付费模型作为 fallback，请先确认计费规则和账户额度。
+Note: In our real-world integration testing on 2026-08-09, we frequently encountered HTTP 429 and business code `1305` (model access volume too high) from `glm-4.6v-flash`, while `glm-4v-flash` could be called normally. This is a temporary overload of Zhipu's free shared service, not an image format error from this MCP. If you need to configure a paid model as a fallback, please first confirm the billing rules and account quota.
 
-## 方式三：一个通用 OpenAI 兼容接口，配置多个模型
+## Method Three: A General OpenAI Compatible Interface, Configuring Multiple Models
 
-适合 OpenRouter、硅基流动、自建 vLLM/LM Studio 或其他兼容接口。接口必须支持：
+Suitable for OpenRouter, SiliciumFlow, self-built vLLM/LM Studio, or other compatible interfaces. The interface must support:
 
 - `POST {baseUrl}/chat/completions`
-- OpenAI 风格的 `messages[].content[]`
-- `image_url.url` 中的 base64 data URL
+- OpenAI-style `messages[].content[]`- `image_url.url` in the base64 data URL
 
-```json
+json
 {
   "mcpServers": {
     "vision-mcp-server": {
@@ -130,17 +125,16 @@ v1.1 支持：
     }
   }
 }
-```
 
-三个模型共用 `OPENAI_API_KEY`，并按照 `VISION_MODELS` 中的顺序 fallback。
+The three models share the `OPENAI_API_KEY` and fallback in the order specified in `VISION_MODELS`.
 
-“OpenAI 兼容”不代表第三方一定支持图片。若某接口只兼容文本或不接受 base64 图片，本 MCP 无法使其获得视觉能力。
+"OpenAI compatible" does not necessarily mean that third-party providers support images. If an endpoint only supports text or does not accept base64 images, this MCP cannot enable visual capabilities for it.
 
-## 方式四：同时配置魔搭、智谱和其他供应商
+## Method Four: Configuring ModelScope, Zhipu, and Other Providers Simultaneously
 
-需要跨供应商 fallback 时，使用 `VISION_ROUTES`。Key 仍然分别放在 `env` 中；`VISION_ROUTES` 只通过 `apiKeyEnv` 引用 Key 所在的环境变量名。
+When cross-provider fallback is needed, use `VISION_ROUTES`. The keys are still placed in `env`; `VISION_ROUTES` only references the environment variable names where the keys are located via `apiKeyEnv`.
 
-```json
+json
 {
   "mcpServers": {
     "vision-mcp-server": {
@@ -155,136 +149,129 @@ v1.1 支持：
     }
   }
 }
-```
 
-上例的完整调用顺序为：
+The complete call sequence in the example above is:
 
-1. 魔搭第一个模型
-2. 魔搭第二个模型（同一个魔搭 Key）
-3. 智谱第一个模型
-4. 智谱后续模型（同一个智谱 Key）
-5. 自定义兼容接口模型
+1. First ModelScope model
+2. Second ModelScope model (same ModelScope key)
+3. First Zhipu model
+4. Subsequent Zhipu models (same Zhipu key)
+5. Custom OpenAI-compatible model
 
-`VISION_ROUTES` 一旦设置，就会覆盖前三种简化配置。
+Once `VISION_ROUTES` is set, it overrides the first three simplified configurations.
 
-### VISION_ROUTES 字段
+### VISION_ROUTES Fields
 
-| 字段 | 必填 | 说明 |
+| Field | Required | Description |
 |---|---:|---|
-| `name` | 否 | 路由名称，只用于安全日志和测试筛选 |
-| `baseUrl` | 是 | OpenAI 兼容接口基础地址 |
-| `apiKeyEnv` | 是 | API Key 所在的环境变量名，不是 Key 本身 |
-| `model` | 二选一 | 单个模型 ID |
-| `models` | 二选一 | 有序模型 ID 数组，同一路由共用一个 Key |
-| `headers` | 否 | 额外请求头；不要在这里存 API Key |
-| `timeoutMs` | 否 | 该路由请求超时，单位毫秒 |
-| `maxImageEdge` | 否 | 该路由接受的图片最长边 |
-| `extraBody` | 否 | 供应商特有的请求字段，例如智谱 `thinking` |
+| `name` | No | Route name, used only for security logs and test filtering |
+| `baseUrl` | Yes | Base URL of the OpenAI-compatible endpoint |
+| `apiKeyEnv` | Yes | Environment variable name where the API Key is located, not the key itself |
+| `model` | One of two | Single model ID |
+| `models` | One of two | Ordered array of model IDs, sharing the same key within the same route |
+| `headers` | No | Additional request headers; do not store API Keys here |
+| `timeoutMs` | No | Request timeout for this route, in milliseconds |
+| `maxImageEdge` | No | Maximum edge length of the image accepted by this route |
+| `extraBody` | No | Provider-specific request fields, e.g., `thinking` for Zhipu |
 
-智谱开启思考模式的路由字段示例：
+Example of a route field to enable thinking mode for Zhipu:
 
-```json
+json
 {
   "extraBody": {
     "thinking": { "type": "enabled" }
   }
 }
-```
 
-## fallback 什么时候发生？
+## When Does Fallback Occur?
 
-会切换到下一模型：
+Fallback to the next model will occur in the following cases:
 
-- HTTP `408`、`429`、`500`、`502`、`503`、`504`
-- 请求超时、连接重置、DNS 或其他网络连接错误
+- HTTP `408`, `429`, `500`, `502`, `503`, `504`
+- Request timeout, connection reset, DNS, or other network connection errors
 
-不会切换：
+Fallback will not occur in the following cases:
 
-- HTTP `400`：图片、Prompt 或请求参数错误
-- HTTP `401/403`：Key、权限或模型授权错误
-- 内容安全拒绝
-- 本地图片不存在、格式无效或路径不允许
+- HTTP `400`: Image, prompt, or request parameter error
+- HTTP `401/403`: Key, permission, or model authorization error
+- Content security rejection
+- Local image does not exist, invalid format, or path not allowed
 
-失败模型会进入冷却，默认 60 秒。这样可避免每次工具调用都先撞一次已经限流的模型。
+Failed models will enter a cooldown period, defaulting to 60 seconds. This prevents each tool call from hitting a rate-limited model first.
 
-## 配置参数总表
+## Configuration Parameter Summary
 
-### 供应商和模型
+### Providers and Models
 
-| 环境变量 | 使用场景 | 说明 |
+| Environment Variable | Use Case | Description |
 |---|---|---|
-| `MODELSCOPE_TOKEN` | 魔搭 | 魔搭 API Token |
-| `MODELSCOPE_MODEL` | 魔搭旧版单模型 | 单个模型 ID |
-| `MODELSCOPE_MODELS` | 魔搭多模型 | 英文逗号分隔，优先于 `MODELSCOPE_MODEL` |
-| `VISION_PROVIDER` | 简化配置 | `zhipu` 或 `openai-compatible`；不设置时默认魔搭兼容模式 |
-| `ZAI_API_KEY` | 智谱 | 智谱 API Key |
-| `OPENAI_BASE_URL` | 通用兼容接口 | 基础地址，例如 `https://provider.example/v1` |
-| `OPENAI_API_KEY` | 通用兼容接口 | API Key |
-| `VISION_API_KEY_ENV` | 简化配置高级选项 | 改用指定名称的 Key 环境变量 |
-| `VISION_MODELS` | 智谱/通用兼容接口 | 必填；英文逗号分隔的有序模型列表 |
-| `VISION_ROUTES` | 多供应商 | 高级路由 JSON；设置后覆盖简化配置 |
+| `MODELSCOPE_TOKEN` | ModelScope | ModelScope API Token |
+| `MODELSCOPE_MODEL` | Old single ModelScope model | Single model ID |
+| `MODELSCOPE_MODELS` | Multiple ModelScope models | Comma-separated list, takes precedence over `MODELSCOPE_MODEL` |
+| `VISION_PROVIDER` | Simplified configuration | `zhipu` or `openai-compatible`; defaults to ModelScope compatibility mode if not set |
+| `ZAI_API_KEY` | Zhipu | Zhipu API Key || `OPENAI_BASE_URL` | Generic compatible interface | Base URL, e.g., `https://provider.example/v1` |
+| `OPENAI_API_KEY` | Generic compatible interface | API Key |
+| `VISION_API_KEY_ENV` | Simplified configuration advanced option | Use the specified name for the Key environment variable |
+| `VISION_MODELS` | Zhipu/Generic compatible interface | Required; a comma-separated list of ordered models in English |
+| `VISION_ROUTES` | Multi-vendor | Advanced routing JSON; overrides simplified configuration if set |
 
-### 图片、安全和可靠性
+### Images, Security, and Reliability
 
-| 环境变量 | 默认值 | 说明 |
+| Environment Variable | Default Value | Description |
 |---|---:|---|
-| `VISION_MAX_IMAGE_EDGE` | `2048` | 简化配置的默认最长边 |
-| `VISION_MAX_IMAGE_BYTES` | `20971520` | 输入或处理后图片最大字节数 |
-| `VISION_MAX_IMAGE_PIXELS` | `40000000` | 解码图片最大像素数 |
-| `VISION_ALLOWED_DIRS` | 未限制 | 允许读取的本地目录，多个目录用英文逗号分隔 |
-| `VISION_IMAGE_DOWNLOAD_TIMEOUT_MS` | `15000` | 在线图片下载超时 |
-| `VISION_REQUEST_TIMEOUT_MS` | `60000` | 模型请求超时 |
-| `VISION_FALLBACK_COOLDOWN_MS` | `60000` | 失败路由冷却时间 |
-| `VISION_DEBUG` | `false` | 输出脱敏调试日志到 stderr |
+| `VISION_MAX_IMAGE_EDGE` | `2048` | Default maximum edge length for simplified configuration |
+| `VISION_MAX_IMAGE_BYTES` | `20971520` | Maximum bytes for input or processed images |
+| `VISION_MAX_IMAGE_PIXELS` | `40000000` | Maximum number of pixels for decoded images |
+| `VISION_ALLOWED_DIRS` | Unrestricted | Allowed local directories, separated by commas |
+| `VISION_IMAGE_DOWNLOAD_TIMEOUT_MS` | `15000` | Timeout for downloading online images |
+| `VISION_REQUEST_TIMEOUT_MS` | `60000` | Timeout for model requests |
+| `VISION_FALLBACK_COOLDOWN_MS` | `60000` | Cool-down time for failed routes |
+| `VISION_DEBUG` | `false` | Output sanitized debug logs to stderr |
 
-推荐为本地图片配置允许目录：
+It is recommended to configure allowed directories for local images:
 
-```json
+json
 {
   "VISION_ALLOWED_DIRS": "D:\\Pictures,D:\\Screenshots"
 }
-```
 
-## MCP 工具
+## MCP Tools
 
 ### `analyze_image`
 
-| 参数 | 必填 | 说明 |
+| Parameter | Required | Description |
 |---|---:|---|
-| `image` | 是 | 本地绝对路径、HTTP/HTTPS URL 或 image data URL |
-| `prompt` | 否 | 针对图片的问题，默认“请描述这张图片的内容” |
+| `image` | Yes | Local absolute path, HTTP/HTTPS URL, or image data URL |
+| `prompt` | No | Question about the image, default is "Please describe the content of this image" |
 
-示例：
+Example:
 
-```json
+json
 {
   "name": "analyze_image",
   "arguments": {
     "image": "D:\\Pictures\\chart.png",
-    "prompt": "提取图表中的标题、数据和单位"
+    "prompt": "Extract the title, data, and units from the chart"
   }
 }
-```
 
-## 图片处理
+## Image Processing
 
-在发送给供应商之前，本 MCP 会：
+Before sending to the provider, this MCP will:
 
-1. 校验真实文件内容，仅接受 JPEG、PNG、WebP、GIF。
-2. 应用 EXIF 方向。
-3. 按所有候选路由中最小的 `maxImageEdge` 等比例缩放，不放大小图。
-4. 有透明通道时输出 PNG，否则输出 JPEG。
-5. 清除 EXIF 等元数据。
-6. 将图片作为 base64 data URL 发送给视觉接口。
+1. Validate the actual file content, accepting only JPEG, PNG, WebP, and GIF.
+2. Apply EXIF orientation.
+3. Scale proportionally to the smallest `maxImageEdge` among all candidate routes, without enlarging smaller images.
+4. Output as PNG if there is a transparent channel, otherwise output as JPEG.
+5. Clear EXIF and other metadata.
+6. Send the image as a base64 data URL to the vision endpoint.
 
-在线图片会先安全下载并做同样处理；localhost、内网地址和云元数据地址默认禁止访问。
+Online images are first securely downloaded and processed similarly; localhost, internal network addresses, and cloud metadata addresses are prohibited by default.
 
-## 安装要求
+## Installation Requirements
 
-- Node.js `20.9.0` 或更高版本
-- MCP 客户端支持本地 stdio Server
-
-
+- Node.js `20.9.0` or higher
+- MCP client supports local stdio Server
 
 ## English
 
@@ -303,22 +290,22 @@ Zhipu models are not hardcoded. Free and paid vision model IDs can be mixed in a
 
 The server falls back only for rate limits, timeouts, network failures, and selected 5xx responses. Invalid images, authentication failures, and request validation errors do not trigger fallback.
 
-**官方网站：** [https://github.com/Markusbetter/vision-mcp-server](https://github.com/Markusbetter/vision-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Markusbetter/vision-mcp-server](https://github.com/Markusbetter/vision-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `视觉`, `通义千问`, `魔搭社区`, `图片识别`, `文字识别`, `图片`, `智普`, `openai`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `视觉`, `通义千问`, `魔搭社区`, `图片识别`, `文字识别`, `图片`, `智普`, `openai`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y vision-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y vision-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/markusbetter-vision.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/markusbetter-vision.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

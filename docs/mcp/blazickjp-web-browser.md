@@ -1,11 +1,11 @@
 ---
-title: "BeautifulSoup4 网页浏览器"
-description: "使用BeautifulSoup4启用网页浏览功能"
+title: "web-browser-mcp-server"
+description: "Enables web browsing capabilities using BeautifulSoup4"
 ---
 
-# BeautifulSoup4 网页浏览器
+# web-browser-mcp-server
 
-使用BeautifulSoup4启用网页浏览功能
+Enables web browsing capabilities using BeautifulSoup4
 
 [![Twitter Follow](/mcp-assets/3e82fabdd3d7f3c8bffecf68b940346e.svg)](https://twitter.com/JoeBlazick)
 [Smithery](https://smithery.ai/server/web-browser-mcp-server)
@@ -14,42 +14,42 @@ description: "使用BeautifulSoup4启用网页浏览功能"
 [![PyPI Downloads](/mcp-assets/f8c1de5b3c366a7630260f8a746beba5.svg)](https://pypi.org/project/web-browser-mcp-server/)
 [![PyPI Version](/mcp-assets/0002d1bc4f92679c760e34714252a2a1.svg)](https://pypi.org/project/web-browser-mcp-server/)
 
-## ✨ 特性
+## ✨ Features
 
-> 🌐 通过简单的MCP接口，使AI助手能够浏览和从网页中提取内容。
+> 🌐 Enable AI assistants to browse and extract content from the web through a simple MCP interface.
 
-Web Browser MCP Server通过消息控制协议（MCP）为AI模型提供了浏览网站、提取内容以及理解网页的能力。它支持使用CSS选择器进行智能内容提取，并具备强大的错误处理功能。
+The Web Browser MCP Server provides AI models with the ability to browse websites, extract content, and understand web pages through the Message Control Protocol (MCP). It enables smart content extraction with CSS selectors and robust error handling.
 
   
-🤝 **[贡献](https://github.com/blazickjp/web-browser-mcp-server/blob/main/CONTRIBUTING.md)** • 
-📝 **[报告Bug](https://github.com/blazickjp/web-browser-mcp-server/issues)**
+🤝 **[Contribute](https://github.com/blazickjp/web-browser-mcp-server/blob/main/CONTRIBUTING.md)** • 
+📝 **[Report Bug](https://github.com/blazickjp/web-browser-mcp-server/issues)**
 
-## ✨ 核心特性
+## ✨ Core Features
 
-- 🎯 **智能内容提取**：使用CSS选择器精确获取所需内容
-- ⚡ **闪电般快速**：采用异步处理以实现最佳性能
-- 📊 **丰富的元数据**：捕获标题、链接和结构化内容
-- 🛡️ **稳健且可靠**：内置错误处理和超时管理
-- 🌍 **跨平台**：在任何运行Python的地方都可工作
+- 🎯 **Smart Content Extraction**: Target exactly what you need with CSS selectors
+- ⚡ **Lightning Fast**: Built with async processing for optimal performance
+- 📊 **Rich Metadata**: Capture titles, links, and structured content
+- 🛡️ **Robust & Reliable**: Built-in error handling and timeout management
+- 🌍 **Cross-Platform**: Works everywhere Python runs
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/web-browser-mcp-server)自动为Claude Desktop安装Web Browser Server：
+To install Web Browser Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/web-browser-mcp-server):
 
 ```bash
 npx -y @smithery/cli install web-browser-mcp-server --client claude
 ```
 
-### 手动安装
-使用uv安装：
+### Installing Manually
+Install using uv:
 
 ```bash
 uv tool install web-browser-mcp-server
 ```
 
-开发环境：
+For development:
 
 ```bash
 # Clone and set up development environment
@@ -64,9 +64,9 @@ source .venv/bin/activate
 uv pip install -e ".[test]"
 ```
 
-### 🔌 MCP集成
+### 🔌 MCP Integration
 
-将此配置添加到您的MCP客户端配置文件中：
+Add this configuration to your MCP client config file:
 
 ```json
 {
@@ -86,7 +86,7 @@ uv pip install -e ".[test]"
 }
 ```
 
-开发环境：
+For Development:
 
 ```json
 {
@@ -107,12 +107,12 @@ uv pip install -e ".[test]"
 }
 ```
 
-## 💡 可用工具
+## 💡 Available Tools
 
-服务器提供了一个强大的网页浏览工具：
+The server provides a powerful web browsing tool:
 
 ### browse_webpage
-使用可选的CSS选择器浏览并从网页中提取内容：
+Browse and extract content from web pages with optional CSS selectors:
 
 ```python
 # Basic webpage fetch
@@ -131,46 +131,46 @@ result = await call_tool("browse_webpage", {
 })
 ```
 
-## ⚙️ 配置
+## ⚙️ Configuration
 
-通过环境变量进行配置：
+Configure through environment variables:
 
-| 变量 | 目的 | 默认值 |
+| Variable | Purpose | Default |
 |----------|---------|---------|
-| `REQUEST_TIMEOUT` | 网页请求超时时间（秒） | 30 |
+| `REQUEST_TIMEOUT` | Webpage request timeout in seconds | 30 |
 
-## 🧪 测试
+## 🧪 Testing
 
-运行测试套件：
+Run the test suite:
 
 ```bash
 python -m pytest
 ```
 
-## 📄 许可证
+## 📄 License
 
-本项目依据MIT许可证发布。详情请参见LICENSE文件。
+Released under the MIT License. See the LICENSE file for details.
 
 ---
 
-由Pear Labs团队用心制作
+Made with ❤️ by the Pear Labs Team
 
-**官方网站：** [https://github.com/blazickjp/web-browser-mcp-server](https://github.com/blazickjp/web-browser-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/blazickjp/web-browser-mcp-server](https://github.com/blazickjp/web-browser-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`tool run web-browser-mcp-server`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `tool run web-browser-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/blazickjp-web-browser.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/blazickjp-web-browser.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

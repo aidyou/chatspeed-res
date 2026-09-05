@@ -1,17 +1,17 @@
 ---
-title: "FastAPI MCP工具"
-description: "一个零配置的工具，可以自动将FastAPI端点暴露为模型上下文协议（MCP）工具，使像Claude这样的大型语言模型系统能够与您的API交互，而无需额外编码。"
+title: "fastapi_mcp"
+description: "A zero-configuration tool that automatically exposes FastAPI endpoints as Model Context Protocol (MCP) tools, allowing LLM systems like Claude to interact with your API without additional coding."
 ---
 
-# FastAPI MCP工具
+# fastapi_mcp
 
-一个零配置的工具，可以自动将FastAPI端点暴露为模型上下文协议（MCP）工具，使像Claude这样的大型语言模型系统能够与您的API交互，而无需额外编码。
+A zero-configuration tool that automatically exposes FastAPI endpoints as Model Context Protocol (MCP) tools, allowing LLM systems like Claude to interact with your API without additional coding.
 
 alt="fastapi-to-mcp" height="100"/>
 
 FastAPI-MCP
 
-一个零配置工具，用于自动将 FastAPI 端点作为 Model Context Protocol (MCP) 工具暴露出来。
+A zero-configuration tool for automatically exposing FastAPI endpoints as Model Context Protocol (MCP) tools.
 
 [![PyPI version](/mcp-assets/3eb159d4ab449e5582c03af5bccbf46e.svg)](https://pypi.org/project/fastapi-mcp/)
 [![Python Versions](/mcp-assets/1828c31a371deac816fc5f6b8a6e3bbb.svg)](https://pypi.org/project/fastapi-mcp/)
@@ -20,32 +20,32 @@ FastAPI-MCP
 
  alt="fastapi-mcp-usage" height="400"/>
 
-## 特性
+## Features
 
-- **直接集成** - 直接将 MCP 服务器挂载到你的 FastAPI 应用
-- **零配置** - 只需指向你的 FastAPI 应用即可工作
-- **自动发现** - 自动发现所有 FastAPI 端点并转换为 MCP 工具
-- **保留模式** - 保留请求模型和响应模型的模式
-- **保留文档** - 保留所有端点的文档，就像在 Swagger 中一样
-- **扩展** - 在自动生成的 MCP 工具旁边添加自定义 MCP 工具
+- **Direct integration** - Mount an MCP server directly to your FastAPI app
+- **Zero configuration** required - just point it at your FastAPI app and it works
+- **Automatic discovery** of all FastAPI endpoints and conversion to MCP tools
+- **Preserving schemas** of your request models and response models
+- **Preserve documentation** of all your endpoints, just as it is in Swagger
+- **Extend** - Add custom MCP tools alongside the auto-generated ones
 
-## 安装
+## Installation
 
-我们推荐使用 [uv](https://docs.astral.sh/uv/)，这是一个快速的 Python 包安装器：
+We recommend using [uv](https://docs.astral.sh/uv/), a fast Python package installer:
 
 ```bash
 uv add fastapi-mcp
 ```
 
-或者，你可以使用 pip 安装：
+Alternatively, you can install with pip:
 
 ```bash
 pip install fastapi-mcp
 ```
 
-## 基本用法
+## Basic Usage
 
-使用 FastAPI-MCP 的最简单方法是直接将 MCP 服务器添加到你的 FastAPI 应用中：
+The simplest way to use FastAPI-MCP is to add an MCP server directly to your FastAPI application:
 
 ```python
 from fastapi import FastAPI
@@ -62,11 +62,11 @@ add_mcp_server(
 )
 ```
 
-就这样！你的自动生成的 MCP 服务器现在可以在 `https://app.base.url/mcp` 访问了。
+That's it! Your auto-generated MCP server is now available at `https://app.base.url/mcp`.
 
-## 高级用法
+## Advanced Usage
 
-FastAPI-MCP 提供了几种自定义和控制 MCP 服务器创建和配置的方法。以下是一些高级用法模式：
+FastAPI-MCP provides several ways to customize and control how your MCP server is created and configured. Here are some advanced usage patterns:
 
 ```python
 from fastapi import FastAPI
@@ -90,31 +90,31 @@ async def get_server_time() -> str:
     return datetime.now().isoformat()
 ```
 
-## 示例
+## Examples
 
-请参阅 examples 目录中的完整示例。
+See the examples directory for complete examples.
 
-## 使用 SSE 连接到 MCP 服务器
+## Connecting to the MCP Server using SSE
 
-一旦你的带有 MCP 集成的 FastAPI 应用程序运行起来，你可以使用任何支持 SSE 的 MCP 客户端（如 Cursor）连接到它：
+Once your FastAPI app with MCP integration is running, you can connect to it with any MCP client supporting SSE, such as Cursor:
 
-1. 运行你的应用程序。
+1. Run your application.
 
-2. 在 Cursor -> 设置 -> MCP 中，使用你的 MCP 服务器端点的 URL（例如 `http://localhost:8000/mcp`）作为 sse。
+2. In Cursor -> Settings -> MCP, use the URL of your MCP server endpoint (e.g., `http://localhost:8000/mcp`) as sse.
 
-3. Cursor 将自动发现所有可用的工具和资源。
+3. Cursor will discover all available tools and resources automatically.
 
-## 使用 [mcp-proxy stdio](https://github.com/sparfenyuk/mcp-proxy?tab=readme-ov-file#1-stdio-to-sse) 连接到 MCP 服务器
+## Connecting to the MCP Server using [mcp-proxy stdio](https://github.com/sparfenyuk/mcp-proxy?tab=readme-ov-file#1-stdio-to-sse) 
 
-如果你的 MCP 客户端不支持 SSE，例如 Claude Desktop： 
+If your MCP client does not support SSE, for example Claude Desktop: 
 
-1. 运行你的应用程序。
+1. Run your application.
 
-2. 安装 [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy?tab=readme-ov-file#installing-via-pypi)，例如：`uv tool install mcp-proxy`。
+2. Install [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy?tab=readme-ov-file#installing-via-pypi), for example: `uv tool install mcp-proxy`.
 
-3. 在 Claude Desktop MCP 配置文件 (`claude_desktop_config.json`) 中添加：
+3. Add in Claude Desktop MCP config file (`claude_desktop_config.json`):
 
-在 Windows 上：
+On Windows:
 ```json
 {
   "mcpServers": {
@@ -125,7 +125,7 @@ async def get_server_time() -> str:
   }
 }
 ```
-在 MacOS 上： 
+On MacOS: 
 ```json
 {
   "mcpServers": {
@@ -136,49 +136,49 @@ async def get_server_time() -> str:
   }
 }
 ```
-通过在终端中运行 `which mcp-proxy` 来找到 mcp-proxy 的路径。
+Find the path to mcp-proxy by running in Terminal: `which mcp-proxy`.
 
-4. Claude Desktop 会自动发现所有可用的工具和资源
+4. Claude Desktop will discover all available tools and resources automatically
 
-## 开发与贡献
+## Development and Contributing
 
-感谢您考虑为 FastAPI-MCP 开源项目做出贡献！正是像您这样的人让我们的社区用户能够真正使用这些项目。
+Thank you for considering contributing to FastAPI-MCP open source projects! It’s people like you that make it a reality for users in our community.
 
-在开始之前，请参阅 [CONTRIBUTING.md](https://github.com/tadata-org/fastapi_mcp/blob/HEAD/CONTRIBUTING.md)。
+Before you get started, please see [CONTRIBUTING.md](https://github.com/tadata-org/fastapi_mcp/blob/HEAD/CONTRIBUTING.md).
 
-## 社区
+## Community
 
-加入 [MCParty Slack 社区](https://join.slack.com/t/themcparty/shared_invite/zt-30yxr1zdi-2FG~XjBA0xIgYSYuKe7~Xg)，与其他 MCP 爱好者联系，提问并分享您使用 FastAPI-MCP 的经验。
+Join [MCParty Slack community](https://join.slack.com/t/themcparty/shared_invite/zt-30yxr1zdi-2FG~XjBA0xIgYSYuKe7~Xg) to connect with other MCP enthusiasts, ask questions, and share your experiences with FastAPI-MCP.
 
-## 要求
+## Requirements
 
 - Python 3.10+
 - uv
 
-## 许可证
+## License
 
-MIT 许可证。版权所有 (c) 2024 Tadata Inc.
+MIT License. Copyright (c) 2024 Tadata Inc.
 
-## 关于
+## About
 
-由 [Tadata Inc.](https://github.com/tadata-org) 开发和维护
+Developed and maintained by [Tadata Inc.](https://github.com/tadata-org)
 
-**官方网站：** [https://github.com/tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`mcp-proxy`
-- 参数：`http://127.0.0.1:8000/mcp`
+- Transport: `stdio`
+- Command: `mcp-proxy`
+- Args: `http://127.0.0.1:8000/mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tadata-org-fastapi.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tadata-org-fastapi.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,35 +1,35 @@
 ---
-title: "和风天气"
-description: "使用和风天气API为中国地区的地点提供天气预报数据，包括实时、逐小时或逐日的预报以及基于位置的查询。"
+title: "hefeng-mcp-weather"
+description: "Provides weather forecast data for locations in China using the HeFeng Weather API, with real-time, hourly, or daily forecasts and location-based queries."
 ---
 
-# 和风天气
+# hefeng-mcp-weather
 
-使用和风天气API为中国地区的地点提供天气预报数据，包括实时、逐小时或逐日的预报以及基于位置的查询。
+Provides weather forecast data for locations in China using the HeFeng Weather API, with real-time, hourly, or daily forecasts and location-based queries.
 
-# HeFeng 天气 MCP 服务器
+# HeFeng Weather MCP Server
 
-一个通过 HeFeng 天气 API 提供中国各地天气预报数据的 Model Context Protocol 服务器。
+A Model Context Protocol server that provides weather forecast data for locations in China through HeFeng Weather API.
 
-## 功能
+## Features
 
-- 获取实时天气数据
-- 获取每小时天气预报（24小时/72小时/168小时）
-- 获取每日天气预报（3天/7天/10天/15天/30天）
-- 支持通过经纬度坐标查询位置
-- 完全中文天气描述
+- Get real-time weather data
+- Get hourly weather forecast (24h/72h/168h)
+- Get daily weather forecast (3d/7d/10d/15d/30d)
+- Support location query by longitude and latitude coordinates
+- Full Chinese weather description
 
 ## API
 
-此 MCP 服务器提供以下工具：
+This MCP server provides the following tool:
 
 ### get-weather
 
-获取特定位置的天气预报数据。
+Get weather forecast data for a specific location.
 
-# 使用 MCP 主机（例如 Claude Desktop）
+# Usage with MCP Host(eg. Claude Desktop)
 
-将以下内容添加到你的 claude_desktop_config.json 文件中
+Add this to your claude_desktop_config.json
 
 ## NPX
 
@@ -44,26 +44,26 @@ description: "使用和风天气API为中国地区的地点提供天气预报数
 }
 ```
 
-# 许可证
+# License
 
-该 MCP 服务器根据 MIT 许可证进行许可。这意味着您可以自由使用、修改和分发软件，但须遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/shanggqm/hefeng-mcp-weather](https://github.com/shanggqm/hefeng-mcp-weather)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shanggqm/hefeng-mcp-weather](https://github.com/shanggqm/hefeng-mcp-weather)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `travel and transportation`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `travel and transportation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`hefeng-mcp-weather@latest --apiKey=${API_KEY}`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `hefeng-mcp-weather@latest --apiKey=${API_KEY}`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shanggqm-hefeng-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shanggqm-hefeng-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

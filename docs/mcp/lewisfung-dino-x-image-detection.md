@@ -1,11 +1,11 @@
 ---
-title: "DINO-X 目标检测 MCP"
-description: "DINO-X MCP 通过 DINO-X 和 Grounding DINO 1.6 API，使大型语言模型能够执行细粒度的对象检测和图像理解。它允许对视觉内容进行精确的定位和高质量的结构化输出，支持诸如视觉问答和与其他 MCP 服务器集成等任务。"
+title: "DINO-X-Image-Detection-MCP"
+description: "DINO-X MCP English | 中文"
 ---
 
-# DINO-X 目标检测 MCP
+# DINO-X-Image-Detection-MCP
 
-DINO-X MCP 通过 DINO-X 和 Grounding DINO 1.6 API，使大型语言模型能够执行细粒度的对象检测和图像理解。它允许对视觉内容进行精确的定位和高质量的结构化输出，支持诸如视觉问答和与其他 MCP 服务器集成等任务。
+DINO-X MCP English | 中文
 
 # DINO-X MCP
 
@@ -217,22 +217,22 @@ pnpm run inspector
 
 Apache License 2.0
 
-**官方网站：** [https://github.com/IDEA-Research/DINO-X-MCP](https://github.com/IDEA-Research/DINO-X-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/IDEA-Research/DINO-X-MCP](https://github.com/IDEA-Research/DINO-X-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`developer tools`, `research and data`, `entertainment and media`, `目标检测`, `图像理解`, `图像识别`, `姿态估计`, `mcp`
+- Categories: `data`
+- Tags: `developer tools`, `research and data`, `entertainment and media`, `目标检测`, `图像理解`, `图像识别`, `姿态估计`, `mcp`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @deepdataspace/dinox-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @deepdataspace/dinox-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/lewisfung-dino-x-image-detection.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/lewisfung-dino-x-image-detection.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

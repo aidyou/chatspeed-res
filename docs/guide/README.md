@@ -1,21 +1,21 @@
 ---
-title: 使用说明
-description: 如何浏览资源并导入 ChatSpeed
+title: Guide
+description: How to browse resources and import them into ChatSpeed
 sidebar: false
 ---
 
-# 使用说明
+# Guide
 
-## 浏览资源
+## Browse resources
 
-使用顶部导航切换 MCP 服务、模型供应商和免费 AI 频道。频道页支持关键词搜索、分类筛选和按更新时间排序。
+Use the top navigation to switch between the MCP Servers, Model Providers, and Free AI channels. Each channel page supports keyword search, category filtering, and sorting by update time.
 
-## 导入前检查
+## Before importing
 
-- 资源配置来自公开目录，导入前请核对官方网站、命令、参数和权限来源。
-- 资源站点不会保存 ChatSpeed API Key、MCP 密钥或其他凭据。
-- 免费额度、模型可用性和服务限制会变化，请以官方页面和资源详情页的最后核验时间为准。
+- Resource configs come from a public catalog. Before importing, verify the official site, command, arguments, and permission source.
+- This site never stores your ChatSpeed API key, MCP secrets, or other credentials.
+- Free quotas, model availability, and service limits change over time. Refer to the official pages and the last-verified date on each resource detail page.
 
-## 提交资源
+## Submit a resource
 
-暂不提供在线投稿。可以通过项目仓库提交资源文件，并按照 [资源规范](/RESOURCE_SPEC.html) 补齐多语言描述、分类、标签、官方链接和核验时间。
+Online submissions are not available yet. You can contribute resource files through the project repository, following the [resource spec](/RESOURCE_SPEC.html) for localized descriptions, categories, tags, official links, and verification date.

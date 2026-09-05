@@ -1,11 +1,11 @@
 ---
-title: "紫微斗数mcp(MCP&Agent挑战赛)"
-description: "紫微斗数 MCP 服务器 一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 🌟 功能特点 核心功能 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向 - 💕 合婚分析: 双人命盘合婚配对分析 - 📅 择日功能: 根据命盘选择吉日良辰 - 🤖 AI智能解盘: 结合传统命理"
+title: "ziwei-mcp"
+description: "紫微斗数 MCP 服务器 一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 🌟 功能特点 核心功能 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向…"
 ---
 
-# 紫微斗数mcp(MCP&Agent挑战赛)
+# ziwei-mcp
 
-紫微斗数 MCP 服务器 一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 🌟 功能特点 核心功能 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向 - 💕 合婚分析: 双人命盘合婚配对分析 - 📅 择日功能: 根据命盘选择吉日良辰 - 🤖 AI智能解盘: 结合传统命理
+紫微斗数 MCP 服务器 一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 🌟 功能特点 核心功能 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向…
 
 # 紫微斗数 MCP 服务器
 
@@ -330,22 +330,22 @@ A: 请确保输入准确的出生日期、时间和地点信息，时间精确�
 
 解释数据
 
-**官方网站：** [https://github.com/SiwuXue/ziwei-mcp](https://github.com/SiwuXue/ziwei-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SiwuXue/ziwei-mcp](https://github.com/SiwuXue/ziwei-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `media`
-- 标签：`knowledge and memory`, `art and culture`
+- Categories: `memory`, `media`
+- Tags: `knowledge and memory`, `art and culture`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y ziwei-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y ziwei-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wuai60-ziwei.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wuai60-ziwei.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

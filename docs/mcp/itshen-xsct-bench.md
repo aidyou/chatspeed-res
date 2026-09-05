@@ -1,24 +1,25 @@
 ---
-title: "XSCT 模型选型 MCP"
-description: "XSCT MCP 用 AI 帮你选 AI，一句话完成大模型选型决策 配置好 XSCT MCP 后，直接向 AI 助手提问即可。AI 会根据你的问题自动调用工具，完成查数据、算成本、做对比，最后给出可执行的建议。 --- 快速开始（推荐直连） 把下面这段配置加进你的 MCP 客户端（Cursor / Claude Desktop / Cherry Studio / CLINE 等通用）： json { \"mcpServers\": { \"xsct-bench\": { \"type\": \"streamablehttp\", "
+title: "xsct-bench"
+description: "XSCT MCP Let AI help you choose the right AI, completing large model selection decisions with just one sentence. After configuring XSCT MCP, simply ask your questions to the AI assistant. The AI will…"
 ---
 
-# XSCT 模型选型 MCP
+# xsct-bench
 
-XSCT MCP 用 AI 帮你选 AI，一句话完成大模型选型决策 配置好 XSCT MCP 后，直接向 AI 助手提问即可。AI 会根据你的问题自动调用工具，完成查数据、算成本、做对比，最后给出可执行的建议。 --- 快速开始（推荐直连） 把下面这段配置加进你的 MCP 客户端（Cursor / Claude Desktop / Cherry Studio / CLINE 等通用）： json { "mcpServers": { "xsct-bench": { "type": "streamablehttp", 
+XSCT MCP Let AI help you choose the right AI, completing large model selection decisions with just one sentence. After configuring XSCT MCP, simply ask your questions to the AI assistant. The AI will…
 
 # XSCT MCP
 
-> 用 AI 帮你选 AI，一句话完成大模型选型决策
+> Let AI help you choose the right AI, completing large model selection decisions with just one sentence.
 
-配置好 XSCT MCP 后，直接向 AI 助手提问即可。AI 会根据你的问题自动调用工具，完成查数据、算成本、做对比，最后给出可执行的建议。
+After configuring XSCT MCP, simply ask your questions to the AI assistant. The AI will automatically invoke the necessary tools to fetch data, calculate costs, make comparisons, and finally provide actionable recommendations.
 
 ---
 
-## 快速开始（推荐直连）
+## Quick Start (Recommended: Direct Connection)
 
-把下面这段配置加进你的 MCP 客户端（Cursor / Claude Desktop / Cherry Studio / CLINE 等通用）：
+Add the following configuration to your MCP client (Cursor / Claude Desktop / Cherry Studio / CLINE, etc.):
 
+plaintext
 ```json
 {
   "mcpServers": {
@@ -29,98 +30,98 @@ XSCT MCP 用 AI 帮你选 AI，一句话完成大模型选型决策 配置好 XS
   }
 }
 ```
+If your client only recognizes the `url` field, you can remove the `type` line and still connect.
 
-如果你的客户端只认 `url` 字段，去掉 `type` 一行也能连上。
+**The direct connection address does not require authentication, registration, and is valid for a long time.**
 
-**直连地址无需鉴权、无需注册、长期有效。**
-
-> ⚠️ 关于「工具无法使用」
+> ⚠️ Regarding "Tool Unavailability"
 >
-> 页面右侧「服务配置」里的 ModelScope 托管地址（`mcp.api-inference.modelscope.net/...`）是平台按 **24 小时** 签发的临时地址，过期后请求会返回 `{"error":{"message":"Url is expired"}}`。
+> The ModelScope hosted address (`mcp.api-inference.modelscope.net/...`) in the "Service Configuration" on the right side of the page is a temporary address issued by the platform for **24 hours**. After it expires, requests will return `{"error":{"message":"Url is expired"}}`.
 >
-> 之前反馈工具突然调不通的同学，原因都在这里。请改用上面的 `https://xsct.ai/mcp` 直连地址，配好一次就不会再失效。
+> For those who have reported that the tool suddenly stopped working, this is the reason. Please use the direct connection address `https://xsct.ai/mcp` provided above, which will not expire once configured.
 
 ---
 
-## 怎么用
+## How to Use
 
-用自然语言问一句话，例如：
+Ask a question in natural language, for example:
 
-- 「润色场景有哪些模型比较好？」
-- 「代码生成场景，用哪个模型性价比最高？」
-- 「Qwen3-Max 和 Claude 在创意写作上有什么差异？」
-- 「图像生成哪个模型中文最好？」
+- "Which models are good for polishing scenarios?"
+- "Which model offers the best cost-effectiveness for code generation?"
+- "What are the differences between Qwen3-Max and Claude in creative writing?"
+- "Which model is the best for image generation in Chinese?"
 
-AI 会自动判断该调用哪些工具，你不需要关心具体实现。
-
----
-
-## 工具列表
-
-| 工具 | 说明 |
-|------|------|
-| `get_leaderboard` | 查排行榜 |
-| `get_model_scores` | 查某个模型的各维度评分 |
-| `compare_models` | 对比两个模型 |
-| `search_testcases` | 搜索测试用例 |
-| `get_model_case_result` | 查模型在某用例上的表现 |
-| `get_dimensions` | 查所有评测维度 |
-| `calculate_cost` | 计算模型成本 |
-| `get_testcase_curl` | 生成可复现的 CURL 命令 |
-
-这 8 个工具覆盖：查榜单、看评分、搜场景、比模型、算成本。**无需记忆**，AI 会根据你的问题自动调用。
+The AI will automatically determine which tools to invoke, so you don't need to worry about the specific implementation.
 
 ---
 
-## 能力边界
+## Tool List
 
-XSCT Arena 收录的是**已完成评测的模型和用例**，覆盖文本生成与图像生成两大类。工具返回的全部是平台实测数据。
+| Tool | Description |
+|------|-------------|
+| `get_leaderboard` | Fetch leaderboard |
+| `get_model_scores` | Fetch scores for a specific model across various dimensions |
+| `compare_models` | Compare two models |
+| `search_testcases` | Search for test cases |
+| `get_model_case_result` | Fetch the performance of a model on a specific test case |
+| `get_dimensions` | Fetch all evaluation dimensions |
+| `calculate_cost` | Calculate model costs |
+| `get_testcase_curl` | Generate a reproducible CURL command |
 
-如果你问的场景平台还没有对应评测（例如图生视频），工具会返回空结果，AI 应当直接告诉你「暂无该项评测数据」。这里不会用推测或训练记忆来凑答案。
-
----
-
-## 使用示例
-
-### 场景一：简单选型
-
-**提问**：「润色场景有哪些模型比较好？」
-
-AI 会自动：
-1. 调用 `search_testcases` 搜索润色相关用例
-2. 调用 `get_leaderboard` 获取排行榜
-3. 给出场景分类和初步建议
-
-### 场景二：企业级成本分析
-
-**提问**：「输入 5000 token，输出 2000 token，每天 300 次调用，80% 触发 KV Cache，哪些模型比较好？」
-
-AI 会自动：
-1. 拆解计算逻辑（Cache 命中率、token 成本）
-2. 调用 `calculate_cost` 批量计算多个模型
-3. 生成完整的成本分析报告
-4. 给出分层推荐（首选 / 备选 / 不推荐）
-
-### 场景三：深度对比
-
-**提问**：「对比一下 MIMO V2 Flash 和 Qwen3-Max 在润色用例上的表现」
-
-AI 会自动调用 `compare_models`，选取代表性用例进行深度对比。
-
-### 场景四：生成可执行代码
-
-**提问**：「帮我生成这个用例的 CURL 命令」
-
-AI 会调用 `get_testcase_curl`，生成可直接运行的 CURL 命令，改一下 KEY 即可在终端测试。
+These 8 tools cover: checking leaderboards, viewing scores, searching scenarios, comparing models, and calculating costs. **No need to memorize**; the AI will automatically invoke the appropriate tools based on your question.
 
 ---
 
-## 平台
+## Capability Boundaries
 
-- **官网**：[xsct.ai](https://xsct.ai)
-- **MCP 地址**：`https://xsct.ai/mcp`（Streamable HTTP，无需鉴权）
-- **系统提示词参考**：
+XSCT Arena includes **models and test cases that have already been evaluated**, covering text generation and image generation. All data returned by the tools are actual measurements from the platform.
 
+If you ask about a scenario that has not yet been evaluated (e.g., video generation from images), the tool will return an empty result, and the AI should directly inform you that "There is no evaluation data for this item." No speculative or trained memory answers will be provided here.
+
+---
+
+## Usage Examples
+
+### Scenario 1: Simple Selection
+
+**Question**: "Which models are good for polishing scenarios?"
+
+The AI will automatically:
+1. Invoke `search_testcases` to search for relevant polishing test cases
+2. Invoke `get_leaderboard` to fetch the leaderboard
+3. Provide a category breakdown and initial recommendations
+
+### Scenario 2: Enterprise-Level Cost Analysis
+
+**Question**: "With 5000 input tokens, 2000 output tokens, 300 calls per day, and 80% KV Cache hit rate, which models are better?"
+
+The AI will automatically:
+1. Break down the calculation logic (Cache hit rate, token costs)
+2. Invoke `calculate_cost` to batch calculate multiple models
+3. Generate a complete cost analysis report
+4. Provide tiered recommendations (Preferred / Alternative / Not Recommended)
+
+### Scenario 3: In-Depth Comparison
+
+**Question**: "Compare MIMO V2 Flash and Qwen3-Max in polishing test cases"
+
+The AI will automatically invoke `compare_models` and select representative test cases for an in-depth comparison.
+
+### Scenario 4: Generating Executable Code
+
+**Question**: "Generate the CURL command for this test case"
+
+The AI will invoke `get_testcase_curl` to generate a directly executable CURL command. You can modify the KEY and test it in the terminal.
+
+---
+
+## Platform
+
+- **Official Website**: [xsct.ai](https://xsct.ai)
+- **MCP Address**: `https://xsct.ai/mcp` (Streamable HTTP, no authentication required)
+- **System Prompt Reference**:
+
+plaintext
 ```
 # 角色：XSCT-Bench 智能选型顾问
 
@@ -180,35 +181,34 @@ AI 会调用 `get_testcase_curl`，生成可直接运行的 CURL 命令，改一
 
 如果工具返回数据为空或报错，坦诚告知用户当前无法获取该信息。禁止编造数据，禁止用过时的记忆回答。如果某个场景没有对应评测，说明局限性，不做硬推荐。
 ```
+---
+
+## About
+
+XSCT Bench is a large model evaluation platform that aggregates evaluation data and provides MCP protocol, allowing AI assistants to query directly. Large model selection is essentially "information retrieval + data analysis + decision reasoning," each step being something large models excel at.
+
+**Author**: Lu Xiaoshan
 
 ---
 
-## 关于
+*Just ask, and leave the rest to the AI.*
 
-XSCT Bench 是大模型评测平台，将评测数据汇聚并提供 MCP 协议，让 AI 助手能直接查询。大模型选型本质是「信息检索 + 数据分析 + 决策推理」，每一步都是大模型擅长的事。
+**Official site: ** [https://xsct.ai/](https://xsct.ai/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**作者**：洛小山
+## Categories & Tags
 
----
+- Categories: `development`
+- Tags: `developer tools`, `模型评测`, `chinese`
 
-*你只管问，剩下的，交给 AI。*
+## MCP Configuration
 
-**官方网站：** [https://xsct.ai/](https://xsct.ai/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Transport: `http`
+- Command: ``
+- Args: none
 
-## 分类与标签
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 分类：`development`
-- 标签：`developer tools`, `模型评测`, `chinese`
+## Data source
 
-## MCP 配置
-
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/itshen-xsct-bench.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/itshen-xsct-bench.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

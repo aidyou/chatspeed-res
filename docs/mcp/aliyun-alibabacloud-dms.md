@@ -1,115 +1,114 @@
 ---
-title: "DMS-数据库安全访问"
-description: "AI 首选的统一数据访问通道，支持30多种数据源(阿里云全系/主流数据库/数仓)的安全访问。"
+title: "alibabacloud-dms-mcp-server"
+description: "AI-Preferred Unified Data Access Gateway, Supporting Secure Access to 30+ Data Sources (Alibaba Cloud Full Suite / Mainstream Databases / Data Warehouses"
 ---
 
-# DMS-数据库安全访问
+# alibabacloud-dms-mcp-server
 
-AI 首选的统一数据访问通道，支持30多种数据源(阿里云全系/主流数据库/数仓)的安全访问。
+AI-Preferred Unified Data Access Gateway, Supporting Secure Access to 30+ Data Sources (Alibaba Cloud Full Suite / Mainstream Databases / Data Warehouses
 
 # AlibabaCloud DMS MCP Server
 
-**AI时代的数据安全访问网关 ｜智能问数引擎 ｜ 支持40+数据源**
+**AI-Era Data Security Access Gateway ｜Intelligent Data Query Engine｜Supports 40+ Data Sources**
 
 ---
 
-## 核心特性
-**安全访问**
-- **账号密码安全托管**：安全管理数据库账号密码，无需人工维护，有效防止敏感信息泄露。
-- **细粒度权限管控**：支持实例、库、表、字段及行级别的精细化访问控制，精准限制调用方权限，杜绝越权操作，保障数据安全。
-- **高危SQL识别与拦截**：内置丰富的规则引擎，实时识别并拦截潜在高危SQL，防范安全风险。
-- **SQL审计追踪**：记录所有SQL操作日志，支持完整追溯与合规审计，满足监管要求。
+## Core Features
+**Secure Access**
+- **Account and Password Security Management**：Safely manage database account passwords without manual maintenance, effectively preventing sensitive information leakage.
+- **Fine-grained Permission Control**：Supports instance, database, table, field, and row-level access control, precisely restricting caller permissions to prevent unauthorized operations and ensure data security.
+- **High-risk SQL Identification and Blocking**: Built-in rich rule engine that identifies and blocks potential high-risk SQL in real time to mitigate security risks.
+- **SQL Audit Trail**: Records all SQL operation logs, supporting full traceability and compliance audits to meet regulatory requirements.
 
-**智能问数**
-- **内置NL2SQL算法**：基于输入的自然语言问题，智能匹配数据表，理解表中业务含义，生成并执行SQL查询，快速获取结果。
-- **个性化知识库**：内置元数据和问数[知识库](https://help.aliyun.com/zh/dms/knowledge-base-management?)，支持自定义业务知识和查询模式，打造贴合业务场景的专属智能问数能力。
+**Intelligent Data Inquiry**
+- **Built-in NL2SQL Algorithm**: Based on natural language input questions, it intelligently matches data tables, understands business semantics within tables, generates and executes SQL queries, and quickly obtains results.
+- **Personalized Knowledge Base**: Built-in metadata and [knowledge base](https://help.aliyun.com/zh/dms/knowledge-base-management?) for data inquiry, supports custom business knowledge and query patterns to build tailored intelligent data inquiry capabilities aligned with business scenarios.
 
-**多数据源支持**
-- **广泛数据源支持**：支持40多种主流数据库/数仓类型，实现多源数据统一接入和访问。
-- **多环境统一管理**：支持开发、测试、生产等不同环境下的数据库实例集中管理，提升运维效率。
-- **多平台无缝集成**：覆盖阿里云、AWS等主流云平台以及自建数据库/数仓，有效降低维护成本。
-
----
-
-## 支持生态
-
-- 支持阿里云全系数据源：RDS、PolarDB、ADB系列、Lindorm系列、TableStore系列、Maxcompute系列。
-- 支持主流数据库/数仓：MySQL、MariaDB、PostgreSQL、Oracle、SQLServer、Redis、MongoDB、StarRocks、Clickhouse、SelectDB、DB2、OceanBase、Gauss、BigQuery等。
+**Multi-data Source Support**
+- **Wide Range of Data Source Support**: Supports over 40 mainstream databases/data warehouses, enabling unified access and integration from multiple sources.
+- **Unified Management Across Environments**: Supports centralized management of database instances across development, testing, and production environments to improve operational efficiency.
+- **Seamless Integration Across Platforms**: Covers major cloud platforms such as Alibaba Cloud and AWS, as well as self-built databases/data warehouses, effectively reducing maintenance costs.
 
 ---
 
-## 核心架构
+## Supported Ecosystem
+- Supports all Alibaba Cloud data sources: RDS, PolarDB, ADB series, Lindorm series, TableStore series, Maxcompute series.
+- Supports mainstream databases/data warehouses: MySQL, MariaDB, PostgreSQL, Oracle, SQLServer, Redis, MongoDB, StarRocks, Clickhouse, SelectDB, DB2, OceanBase, Gauss, BigQuery, etc.
 
 ---
-## 使用方式
-DMS MCP Server 现在支持两种使用模式。
 
-### 模式一：多实例模式
-- 支持添加实例到DMS，可以访问多个数据库实例。
-- 适用于需要管理和访问多个数据库实例的场景。
-#### 场景示例：
-你是公司的DBA，需要在生产、测试和开发等多个环境中管理和访问 MySQL、Oracle 和 PostgreSQL 等多种数据库实例。通过DMS MCP Server，可以实现对这些异构数据库的统一接入与集中管理。
+## Core Architecture
 
-**典型提问示例：**  
-- 获取所有名称为test的数据库列表
-- 获取 myHost:myPort 实例中 test_db 数据库的详细信息。
-- test_db 数据库下有哪些表？ 
-- 使用工具， 查询test_db 库的数据，回答“今天的用户访问量是多少？”
+---
+## Usage Methods  
+DMS MCP Server currently supports two usage modes.
 
-### 模式二：单数据库模式
-- 通过在SERVER中配置 CONNECTION_STRING 参数（格式为 dbName@host:port），直接指定需要访问的数据库。
-- 适用于专注一个数据库访问的场景。
-#### 场景示例1：
-你是一个开发人员，只需要频繁访问一个固定的数据库（如 mydb@192.168.1.100:3306）进行开发测试。在 DMS MCP Server 的配置中设置一个 CONNECTION_STRING 参数，例如：
+### Mode One: Multi-instance Mode  
+- Supports adding instances to DMS, allowing access to multiple database instances.  
+- Suitable for scenarios where managing and accessing multiple database instances is required.  
+#### Scenario Example:  
+You are a company DBA who needs to manage and access various types of database instances (e.g., MySQL, Oracle, PostgreSQL) in production, test, and development environments. With DMS MCP Server, you can achieve unified access and centralized management of these heterogeneous databases.  
+
+**Typical Question Examples:**  
+- Which of my instances are in the production environment?
+- Get a list of all databases named `test`.  
+- Retrieve details of the `test_db` database from the `myHost:myPort` instance.  
+- What tables are in the `test_db` database?  
+- Use a tool to query data from the `test_db` database and answer: "What is today's user traffic?"
+
+### Mode Two: Single Database Mode  
+- Directly specify the target database by configuring the `CONNECTION_STRING` parameter in the server (format: `dbName@host:port`).  
+- Suitable for scenarios that focus on accessing a single database.  
+#### Scenario Example 1:  
+You are a developer who frequently accesses a fixed database (e.g., `mydb@192.168.1.100:3306`) for development and testing. Set the `CONNECTION_STRING` parameter in the DMS MCP Server configuration as follows:  
 ```ini
 CONNECTION_STRING = mydb@192.168.1.100:3306
 ```
-之后每次启动服务时，DMS MCP Server都会直接访问这个指定的数据库，无需切换实例。
+Afterward, every time the service starts, the DMS MCP Server will directly access this specified database without needing to switch instances.
 
-**典型提问示例：**  
-- 我有哪些表？
-- 查看test_table 表的字段结构
-- 获取test_table 表的前20条数据
-- 使用工具，回答“今天的用户访问量是多少？”
+**Typical Question Examples:**  
+- What tables do I have?  
+- Show the field structure of the `test_table` table.  
+- Retrieve the first 20 rows from the `test_table` table.  
+- Use a tool to answer: "What is today's user traffic?"
 
-#### 场景示例2：
-你是一家电商公司的数据分析师，需要频繁查询和分析订单、用户、商品等业务数据。公司的核心业务数据库位于 ecommerce@10.20.30.40:3306。
+#### Scenario Example 2:
+You are a data analyst at an e-commerce company, needing to frequently query and analyze business data such as orders, users, and products. The company's core business database is located at ecommerce@10.20.30.40:3306.
 
-在DMS MCP Server中设置如下参数：
+Configure the following parameters in DMS MCP Server:
 ```ini
 CONNECTION_STRING = ecommerce@10.20.30.40:3306
 ```
+Simply ask questions in natural language, and DMS MCP will parse the question into SQL and return the results.
 
-只需用自然语言提问，DMS MCP 即可将问题解析为 SQL 并返回结果。
-
-**典型提问示例：** 
-- 今天的订单总数是多少？
-- 各个省份的订单数量排名如何？
-- 过去7天内，每天的新增用户数是多少？
-- 哪个商品类别的销售额最高？
-
----
-
-## 工具清单
-| 工具名称           | 描述                            | 适用模式                |
-|------------------|-------------------------------|----------------------|
-| addInstance      | 将阿里云实例添加到 DMS。                | 多实例模式              |
-| listInstances      | 搜索DMS中的实例列表。 | 多实例模式              |
-| getInstance      | 根据 host 和 port 获取实例详细信息。      | 多实例模式              |
-| searchDatabase    | 根据 schemaName 搜索数据库。          | 多实例模式              |
-| getDatabase      | 获取特定数据库的详细信息。                 | 多实例模式              |
-| listTable        | 搜索指定数据库下的数据表。                 | 多实例模式 & 单数据库模式 |
-| getTableDetailInfo | 获取特定数据库表的详细信息。                | 多实例模式 & 单数据库模式 |
-| executeScript    | 执行 SQL 脚本并返回结果。               | 多实例模式 & 单数据库模式 |
-| nl2sql           | 将自然语言问题转换为 SQL 查询。            | 多实例模式              |
-| askDatabase      | 自然语言查询数据库（NL2SQL + 执行 SQL）。   | 单数据库模式            |
-| configureDtsJob  | 配置DTS迁移任务                     | 多实例模式              |
-| startDtsJob      | 启动DTS迁移任务                     | 多实例模式              |
-| getDtsJob        | 查看DTS迁移任务详情                   | 多实例模式              |
+**Typical Question Examples:**
+- What is the total number of orders today?
+- How are the order counts ranked by province?
+- What is the number of new users each day over the past 7 days?
+- Which product category has the highest sales revenue?
 
 ---
 
-## 支持的数据源
+## Tool List  
+| Tool Name          | Description                                                                                                               | Applicable Mode                |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| addInstance        | Adds an instance to DMS. Only Aliyun instances are supported. | Multi-instance Mode            |
+| listInstances      | Search for instances from DMS.                                                                                            | Multi-instance Mode            |
+| getInstance        | Retrieves detailed information about an instance based on host and port.                                                  | Multi-instance Mode            |
+| searchDatabase     | Searches databases based on schemaName.                                                                                   | Multi-instance Mode            |
+| getDatabase        | Retrieves detailed information about a specific database.                                                                 | Multi-instance Mode            |
+| listTable          | Lists tables under a specified database.                                                                                  | Multi-instance Mode & Single Database Mode |
+| getTableDetailInfo | Retrieves detailed information about a specific table.                                                                    | Multi-instance Mode & Single Database Mode |
+| executeScript      | Executes an SQL script and returns the result.                                                                            | Multi-instance Mode & Single Database Mode |
+| nl2sql             | Converts natural language questions into SQL queries.                                                                     | Multi-instance Mode            |
+| askDatabase        | Natural language querying of a database (NL2SQL + execute SQL).                                                           | Single Database Mode           |
+| configureDtsJob    | Configures a DTS migration task                                                                                           | Multi-instance Mode            |
+| startDtsJob        | Starts a DTS migration task                                                                                               | Multi-instance Mode            |
+| getDtsJob          | Views details of a DTS migration task                                                                                     | Multi-instance Mode            |
+
+---
+
+## Supported Data Sources
 | DataSource/Tool       | **NL2SQL** *nlsql* | **Execute script** *executeScript* | **Show schema** *getTableDetailInfo* | **Access control** *default* | **Audit log** *default* |
 |-----------------------|--------------------|------------------------------------|--------------------------------------|-----------------------------|------------------------|
 | MySQL                 | ✅                  | ✅                                  | ✅                                    | ✅                           | ✅                      |
@@ -135,47 +134,40 @@ CONNECTION_STRING = ecommerce@10.20.30.40:3306
 | Hologres              | ✅                  | ✅                                  | ✅                                    | ✅                           | ✅                      |
 
 ---
-## 前提条件
-- 已安装[uv](https://docs.astral.sh/uv/getting-started/installation/)
-- 已安装Python 3.10+
-- 具有阿里云DMS访问权限(AliyunDMSFullAccess)的[AK SK](https://help.aliyun.com/zh/ram/user-guide/view-the-accesskey-pairs-of-a-ram-user)或者[STS Token](https://help.aliyun.com/zh/ram/product-overview/what-is-sts)，添加权限操作，请参见[授权管理](https://help.aliyun.com/zh/ram/user-guide/authorization-management/)
+## Prerequisites  
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) is installed  
+- Python 3.10+ is installed  
+- An [AK/SK](https://www.alibabacloud.com/help/en/doc-detail/116811.html) or [STS Token](https://www.alibabacloud.com/help/en/ram/product-overview/what-is-sts) with access rights to Alibaba Cloud DMS(AliyunDMSFullAccess).Add permission operations, see [Authorization Management](https://www.alibabacloud.com/help/en/ram/user-guide/authorization-management/).
 
 ---
-## 准备工作
-在通过DMS MCP访问托管在DMS的数据库实例之前，需要将对应的数据库实例录入至DMS中，并为实例开启 [安全托管](https://help.aliyun.com/zh/dms/product-overview/security-hosting)。
+## Pre-configuration  
+Before accessing a database instance via DMS, you must first add the instance to DMS.  
 
-可以通过以下两种方式进行实例的添加：
+There are two methods to add an instance:
 
-**方法一：使用DMS MCP 提供的 `addInstance` 工具添加实例**
+**Method One: Use the `addInstance` tool provided by DMS MCP to add an instance**  
+The DMS MCP Server provides the `addInstance` tool for quickly adding an instance to DMS.  
+For more details, see the description of the `addInstance` tool in the "Tool List."  
 
-DMS MCP Server提供了 `addInstance` 工具，用于快速将实例添加到 DMS 中。
-
-详情请见“工具清单”中的 `addInstance`工具描述。
-
-**方法二：通过 DMS 控制台页面添加实例**
-
-1 登录 [DMS 控制台](https://dms.aliyun.com/)。
-
-2 在控制台首页左侧的数据库实例区域，单击**新增实例**图标。
-
-3 在新增实例页面，录入实例信息（如实例地址、端口、用户名、密码）。
-
-4 单击**提交**按钮完成实例添加。
+**Method Two: Add an instance via the DMS console**  
+1. Log in to the [DMS Console](https://dms.aliyun.com/).  
+2. On the home page of the console, click the **Add Instance** icon in the database instance area on the left.  
+3. On the Add Instance page, enter the instance information (e.g., instance address, port, username, password).  
+4. Click **Submit** to complete the instance addition.  
 
 ---
 
-## 快速开始
-
-### 方案一 使用源码运行
-#### 下载代码
+## Getting Started
+### Option 1: Run from Source Code
+#### Download the Code
 ```bash
 git clone https://github.com/aliyun/alibabacloud-dms-mcp-server.git
 ```
 
-#### 配置MCP客户端
-在配置文件中添加以下内容：
+#### Configure MCP Client
+Add the following content to the configuration file:
 
-**多实例模式**
+**Multi-instance Mode**
 ```json
 {
   "mcpServers": {
@@ -196,7 +188,8 @@ git clone https://github.com/aliyun/alibabacloud-dms-mcp-server.git
   }
 }
 ```
-**单数据库模式**
+
+**Single Database Mode**
 ```json
 {
   "mcpServers": {
@@ -218,9 +211,8 @@ git clone https://github.com/aliyun/alibabacloud-dms-mcp-server.git
   }
 }
 ```
-
-### 方案二 使用PyPI包运行
-**多实例模式**
+### Option 2: Run via PyPI Package
+**Multi-instance Mode**
 ```json
 {
   "mcpServers": {
@@ -238,7 +230,7 @@ git clone https://github.com/aliyun/alibabacloud-dms-mcp-server.git
   }
 }
 ```
-**单数据库模式**
+**Single Database Mode**
 ```json
 {
   "mcpServers": {
@@ -261,29 +253,29 @@ git clone https://github.com/aliyun/alibabacloud-dms-mcp-server.git
 
 ## Contact us
 
-如果您有使用问题或建议, 请加入[Alibaba Cloud DMS MCP讨论组](https://h5.dingtalk.com/circle/joinCircle.html?corpId=dinga0bc5ccf937dad26bc961a6cb783455b&token=2f373e6778dcde124e1d3f22119a325b&groupCode=v1,k1,NqFGaQek4YfYPXVECdBUwn+OtL3y7IHStAJIO0no1qY=&from=group&ext=%7B%22channel%22%3A%22QR_GROUP_NORMAL%22%2C%22extension%22%3A%7B%22groupCode%22%3A%22v1%2Ck1%2CNqFGaQek4YfYPXVECdBUwn%2BOtL3y7IHStAJIO0no1qY%3D%22%2C%22groupFrom%22%3A%22group%22%7D%2C%22inviteId%22%3A2823675041%2C%22orgId%22%3A784037757%2C%22shareType%22%3A%22GROUP%22%7D&origin=11) (钉钉群号:129600002740) 进行讨论.
+For any questions or suggestions, join the [Alibaba Cloud DMS MCP Group](https://h5.dingtalk.com/circle/joinCircle.html?corpId=dinga0bc5ccf937dad26bc961a6cb783455b&token=2f373e6778dcde124e1d3f22119a325b&groupCode=v1,k1,NqFGaQek4YfYPXVECdBUwn+OtL3y7IHStAJIO0no1qY=&from=group&ext=%7B%22channel%22%3A%22QR_GROUP_NORMAL%22%2C%22extension%22%3A%7B%22groupCode%22%3A%22v1%2Ck1%2CNqFGaQek4YfYPXVECdBUwn%2BOtL3y7IHStAJIO0no1qY%3D%22%2C%22groupFrom%22%3A%22group%22%7D%2C%22inviteId%22%3A2823675041%2C%22orgId%22%3A784037757%2C%22shareType%22%3A%22GROUP%22%7D&origin=11) (DingTalk Group ID: 129600002740) .
 
  alt="DingTalk" width="40%">
 
 [//]: # (
 )
 
-**官方网站：** [https://github.com/aliyun/alibabacloud-dms-mcp-server](https://github.com/aliyun/alibabacloud-dms-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/aliyun/alibabacloud-dms-mcp-server](https://github.com/aliyun/alibabacloud-dms-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`databases`, `data platforms`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `databases`, `data platforms`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /path/to/alibabacloud-dms-mcp-server/src/alibabacloud_dms_mcp_server run server.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /path/to/alibabacloud-dms-mcp-server/src/alibabacloud_dms_mcp_server run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/aliyun-alibabacloud-dms.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/aliyun-alibabacloud-dms.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

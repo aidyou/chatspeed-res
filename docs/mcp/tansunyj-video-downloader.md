@@ -1,11 +1,11 @@
 ---
-title: "视频下载地址解析"
-description: "社交媒体视频、音频下载，用户提供视频地址，当前服务解析后可以得到不同品质视频、音频下载地址，用户只需要使用这些地址来下载即可。当前该MCP支持像youtube、tiktok、instagram、douyin、bilibili、xiaohongshu、X、等等平台的视频下载"
+title: "video-downloader-mcp"
+description: "Social media video and audio downloads: Users provide the video URL, and the current service parses it to obtain download links for videos and audios of different qualities. Users only need to use the…"
 ---
 
-# 视频下载地址解析
+# video-downloader-mcp
 
-社交媒体视频、音频下载，用户提供视频地址，当前服务解析后可以得到不同品质视频、音频下载地址，用户只需要使用这些地址来下载即可。当前该MCP支持像youtube、tiktok、instagram、douyin、bilibili、xiaohongshu、X、等等平台的视频下载
+Social media video and audio downloads: Users provide the video URL, and the current service parses it to obtain download links for videos and audios of different qualities. Users only need to use the…
 
 # MCP Video Download URL Parser
 
@@ -89,22 +89,22 @@ MIT License
 
 [![GitHub repo](/mcp-assets/03c4dfa55a996f04097bbc75cff96c91.svg)](https://github.com/tansunyj/mcp_video_download_url_parser)
 
-**官方网站：** [https://github.com/tansunyj/mcp_video_download_url_parser.git](https://github.com/tansunyj/mcp_video_download_url_parser.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/tansunyj/mcp_video_download_url_parser.git](https://github.com/tansunyj/mcp_video_download_url_parser.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `youtube`, `tiktok`, `videodownload`
+- Categories: `media`
+- Tags: `entertainment and media`, `youtube`, `tiktok`, `videodownload`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /path/to/mcp_video_download_url_parser run main.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /path/to/mcp_video_download_url_parser run main.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tansunyj-video-downloader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tansunyj-video-downloader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

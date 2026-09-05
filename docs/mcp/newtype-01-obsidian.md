@@ -1,11 +1,11 @@
 ---
-title: "Obsidian-MCP服务器"
-description: "该项目实现了一个模型上下文协议（MCP）服务器，用于将人工智能模型与Obsidian知识库连接起来。通过这个服务器，人工智能模型可以直接访问和操作Obsidian笔记，包括阅读、创建、更新和删除笔记，以及管理文件夹结构。"
+title: "obsidian-mcp"
+description: "This project implements a Model Context Protocol (MCP) server for connecting AI models with Obsidian knowledge bases. Through this server, AI models can directly access and manipulate Obsidian notes…"
 ---
 
-# Obsidian-MCP服务器
+# obsidian-mcp
 
-该项目实现了一个模型上下文协议（MCP）服务器，用于将人工智能模型与Obsidian知识库连接起来。通过这个服务器，人工智能模型可以直接访问和操作Obsidian笔记，包括阅读、创建、更新和删除笔记，以及管理文件夹结构。
+This project implements a Model Context Protocol (MCP) server for connecting AI models with Obsidian knowledge bases. Through this server, AI models can directly access and manipulate Obsidian notes…
 
 # Obsidian MCP (Model Context Protocol) 服务器
 
@@ -123,22 +123,22 @@ ISC
 - [Model Context Protocol](https://github.com/anthropics/model-context-protocol)
 - [Obsidian Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api)
 
-**官方网站：** [https://github.com/newtype-01/obsidian-mcp](https://github.com/newtype-01/obsidian-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/newtype-01/obsidian-mcp](https://github.com/newtype-01/obsidian-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `files`
-- 标签：`note taking`, `knowledge and memory`, `file systems`, `chinese`
+- Categories: `memory`, `files`
+- Tags: `note taking`, `knowledge and memory`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@huangyihe/obsidian-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@huangyihe/obsidian-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/newtype-01-obsidian.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/newtype-01-obsidian.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

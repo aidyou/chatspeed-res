@@ -1,11 +1,11 @@
 ---
-title: "12306-MCP车票查询工具"
-description: "基于Model Context Protocol (MCP) 的12306购票搜索服务器。提供了简单的API接口，允许大模型利用接口搜索12306购票信息。"
+title: "12306-mcp"
+description: "A 12306 ticket search server based on the Model Context Protocol (MCP). The server provides a simple API interface that allows users to search for 12306 tickets."
 ---
 
-# 12306-MCP车票查询工具
+# 12306-mcp
 
-基于Model Context Protocol (MCP) 的12306购票搜索服务器。提供了简单的API接口，允许大模型利用接口搜索12306购票信息。
+A 12306 ticket search server based on the Model Context Protocol (MCP). The server provides a simple API interface that allows users to search for 12306 tickets.
 
 # 
 12306-mcp
@@ -19,20 +19,18 @@ description: "基于Model Context Protocol (MCP) 的12306购票搜索服务器�
 
 A 12306 ticket search server based on the Model Context Protocol (MCP). The server provides a simple API interface that allows users to search for 12306 tickets.
 
-基于 Model Context Protocol (MCP) 的12306购票搜索服务器。提供了简单的API接口，允许大模型利用接口搜索12306购票信息。
-
 ## 
 🚩Features
 
  
 
-| 功能描述                         | 状态     |
-|------------------------------|--------|
-| 查询12306购票信息              | ✅ 已完成  |
-| 过滤列车信息                   | ✅ 已完成  |
-| 过站查询                      | ✅ 已完成 |
-| 中转查询                      | ✅ 已完成 |
-| 其余接口，欢迎提feature         | 🚧 计划内 |
+| Feature Description                    | Status   |
+|----------------------------------------|----------|
+| Query 12306 ticket information         | ✅ Completed |
+| Filter train information               | ✅ Completed |
+| Overstation query                      | ✅ Completed |
+| Transfer query                         | ✅ Completed |
+| Other interfaces, welcome to suggest features | 🚧 Planned |
 
  
    width=800px/>
@@ -58,10 +56,10 @@ npx -y 12306-mcp
 
 ### CLI-http
 ~~~bash
-npx -y 12306-mcp --port [端口号]
+npx -y 12306-mcp --port [port_number]
 ~~~
 
-### MCP sever configuration
+### MCP server configuration
 
 ~~~json
 {
@@ -93,9 +91,9 @@ docker run -p [your_port]:8080 -d 12306-mcp npx 12306-mcp --port 8080
 ## 
 📚Documentation
 
-- [服务原理详解](https://github.com/Joooook/12306-mcp/blob/HEAD/docs/principle.md)  12306-MCP服务的工作原理
-- [架构图](https://github.com/Joooook/12306-mcp/blob/HEAD/docs/architecture.md)  12306-MCP服务的架构图
-   ![12306-MCP 服务架构图](/mcp-assets/988e65867be3fab84b3ccebc94ff4831.png)
+- [Detailed Service Principle](https://github.com/Joooook/12306-mcp/blob/HEAD/docs/principle.md)  Explanation of the working principle of the 12306-MCP service
+- [Architecture Diagram](https://github.com/Joooook/12306-mcp/blob/HEAD/docs/architecture.md)  Architecture diagram of the 12306-MCP service
+   ![12306-MCP Service Architecture Diagram](/mcp-assets/988e65867be3fab84b3ccebc94ff4831.png)
 
 ## 
 👉️Reference
@@ -106,7 +104,7 @@ docker run -p [your_port]:8080 -d 12306-mcp npx 12306-mcp --port 8080
 ## 
 💭Murmurs
 
-本项目仅用于学习，欢迎催更。
+This project is for learning purposes only. Updates are welcome.
 
 ## 
 🎫Badges
@@ -120,24 +118,24 @@ docker run -p [your_port]:8080 -d 12306-mcp npx 12306-mcp --port 8080
 ## 
 ☕️Donate
 
-请我喝杯奶茶吧。
+Buy me a cup of milk tea.
 
-**官方网站：** [https://github.com/Joooook/12306-mcp](https://github.com/Joooook/12306-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Joooook/12306-mcp](https://github.com/Joooook/12306-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`travel and transportation`, `search`, `chinese`
+- Categories: `search`
+- Tags: `travel and transportation`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y 12306-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y 12306-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/joooook-12306.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/joooook-12306.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

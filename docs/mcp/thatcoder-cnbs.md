@@ -1,63 +1,60 @@
 ---
-title: "中国国家统计局数据查询"
-description: "这是一个用于查询中国国家统计局数据的MCP服务器。它提供了多种工具和端点来获取、搜索和比较统计数据。"
+title: "cnbs"
+description: "MCP server for querying China National Bureau of Statistics data. Add to claudedesktopconfig."
 ---
 
-# 中国国家统计局数据查询
+# cnbs
 
-这是一个用于查询中国国家统计局数据的MCP服务器。它提供了多种工具和端点来获取、搜索和比较统计数据。
+MCP server for querying China National Bureau of Statistics data. Add to claudedesktopconfig.
 
-# CNBS MCP 服务器
+# CNBS MCP Server
 
-中国国家统计局 + 主要国际统计数据库的 MCP 服务器。全部对接真实 API，无任何模拟数据。
+China National Bureau of Statistics + Major International Statistical Databases MCP Server. Fully connected to real APIs, with no simulated data.
 
-## 数据源
+## Data Sources
 
-| 数据源 | 认证 | 覆盖范围 |
-|--------|------|---------|
-| **国家统计局 (NBS)** (data.stats.gov.cn) | 无需 | 国内月度/季度/年度/分省全量数据 |
-| **世界银行** (api.worldbank.org) | 无需 | 200+ 国家，GDP/贸易/人口/FDI/基尼系数等 |
-| **IMF DataMapper** | 无需 | WEO 预测：GDP增速/通胀/政府债务/经常账户等 |
-| **OECD SDMX** | 无需 | 成员国季度GDP/就业/综合先行指标/贸易 |
-| **BIS Statistics** | 无需 | 有效汇率/信贷缺口/住宅房价/跨境银行统计 |
-| **FRED（美联储）** | `X-Fred-Api-Key` 请求头 | 美国利率/人民币汇率/原油/黄金/标普500/M2 |
-| **NBS 普查数据** | 无需 | 人口普查（2020）/经济普查（2018）/农业普查（2016） |
-| **NBS 部门统计** | 无需 | 财政/工业/商务/农业/货币金融/社保/房地产/能源 |
+| Data Source | Authentication | Coverage |
+|-------------|----------------|----------|
+| **National Bureau of Statistics (NBS)** (data.stats.gov.cn) | None | Domestic monthly/quarterly/annual/provincial full data |
+| **World Bank** (api.worldbank.org) | None | 200+ countries, GDP/trade/population/FDI/Gini coefficient, etc. |
+| **IMF DataMapper** | None | WEO forecasts: GDP growth/inflation/government debt/current account, etc. |
+| **OECD SDMX** | None | Quarterly GDP/employment/composite leading indicators/trade for member countries |
+| **BIS Statistics** | None | Effective exchange rates/credit gaps/residential property prices/cross-border banking statistics |
+| **FRED (Federal Reserve)** | `X-Fred-Api-Key` header | US interest rates/RMB exchange rate/crude oil/gold/S&P 500/M2 |
+| **NBS Census Data** | None | Population census (2020)/economic census (2018)/agricultural census (2016) |
+| **NBS Sectoral Statistics** | None | Fiscal/industrial/commercial/agricultural/monetary and financial/social security/real estate/energy |
 
-> **FRED API Key：** 在 https://fred.stlouisfed.org/docs/api/api_key.html 免费申请，通过 `X-Fred-Api-Key` 请求头传入（HTTP 模式），或设置 `FRED_API_KEY` 环境变量（stdio 模式）。
+> **FRED API Key:** Apply for free at https://fred.stlouisfed.org/docs/api/api_key.html, pass it via the `X-Fred-Api-Key` request header (HTTP mode), or set the `FRED_API_KEY` environment variable (stdio mode).
 
 ---
 
-## 安装使用
+## Installation and Usage
 
-### npx 直接运行（推荐）
+### Run Directly with npx (Recommended)
 
-```bash
+bash
 npx mcp-cnbs
-```
 
-### HTTP 模式
+### HTTP Mode
 
-```bash
+bash
 npx mcp-cnbs --port 12345
-```
 
-### 全局安装
+### Global Installation
 
-```bash
+bash
 npm install -g mcp-cnbs
 mcp-cnbs
-```
 
 ---
 
-## MCP 客户端配置
+## MCP Client Configuration
 
-### stdio 模式（npx）
+### stdio Mode (npx)
 
-**支持的客户端：** Claude Desktop、Cursor、Windsurf、Cherry Studio、Trae、Continue 等所有支持 MCP 的客户端。
+**Supported Clients:** Claude Desktop, Cursor, Windsurf, Cherry Studio, Trae, Continue, and all other clients that support MCP.
 
-```json
+json
 {
   "mcpServers": {
     "cnbs": {
@@ -66,11 +63,10 @@ mcp-cnbs
     }
   }
 }
-```
 
-带 FRED 支持：
+With FRED Support:
 
-```json
+json
 {
   "mcpServers": {
     "cnbs": {
@@ -82,14 +78,13 @@ mcp-cnbs
     }
   }
 }
-```
 
-### HTTP 模式（远程访问）
+### HTTP Mode (Remote Access)
 
-**支持的客户端：** Trae、Cherry Studio 等支持 HTTP transport 的客户端。
+**Supported Clients:** Trae, Cherry Studio, and other clients that support HTTP transport.
 
-**魔搭免费演示（不含 FRED）：**
-```json
+**ModelScope Free Demo (without FRED):**
+json
 {
   "mcpServers": {
     "cnbs": {
@@ -97,10 +92,9 @@ mcp-cnbs
     }
   }
 }
-```
 
-**HTTP 模式含 FRED 支持** — 在请求头中携带 API Key：
-```json
+**HTTP Mode with FRED Support** — Include API Key in the request header:
+json
 {
   "mcpServers": {
     "cnbs": {
@@ -111,276 +105,264 @@ mcp-cnbs
     }
   }
 }
-```
 
-> 这是阿里云 ModelScope 提供的免费公共演示，无需认证。  
-> 正式使用建议自行部署：[在魔搭免费部署](https://modelscope.cn/mcp/servers/thatcoder/cnbs)
-
----
-
-## 端点说明
-
-| 端点 | 方法 | 说明 |
-|------|------|------|
-| `/` 或 `/mcp` | POST | Streamable HTTP — 初始化会话或发送请求 |
-| `/` 或 `/mcp` | GET | SSE 通知流（需携带 `Mcp-Session-Id` 请求头） |
-| `/` 或 `/mcp` | DELETE | 终止会话（需携带 `Mcp-Session-Id` 请求头） |
-| `/sse` | GET | 旧版 SSE 模式 |
-| `/message` | POST | 旧版 SSE 消息 |
+> This is a free public demo provided by Alibaba Cloud ModelScope, no authentication required.  
+> For production use, it is recommended to deploy your own instance: [Free Deployment on ModelScope](https://modelscope.cn/mcp/servers/thatcoder/cnbs)
 
 ---
 
-## 工具列表
+## Endpoint Description
 
-### 国家统计局核心查询
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` or `/mcp` | POST | Streamable HTTP — Initialize session or send request |
+| `/` or `/mcp` | GET | SSE notification stream (requires `Mcp-Session-Id` header) |
+| `/` or `/mcp` | DELETE | Terminate session (requires `Mcp-Session-Id` header) |
+| `/sse` | GET | Legacy SSE mode |
+| `/message` | POST | Legacy SSE message |
 
-| 工具 | 功能 |
-|------|------|
-| `cnbs_search` | 关键词搜索，返回最新数据值 — **优先使用** |
-| `cnbs_batch_search` | 批量搜索多个关键词 |
-| `cnbs_economic_snapshot` | 一次获取 10 项核心宏观指标最新值（GDP、CPI、PPI、PMI、失业率、工业增加值、社零、固投、进出口、M2） |
-| `cnbs_compare` | 地区对比 / 时间对比 |
-| `cnbs_fetch_nodes` | 获取分类树节点 — 支持同时传入多个分类代码 |
-| `cnbs_fetch_metrics` | 获取数据集指标列表 — 支持同时传入多个 setId |
-| `cnbs_fetch_series` | 获取历史时间序列 |
-| `cnbs_fetch_end_nodes` | 递归获取所有叶子节点 |
+---
 
-### NBS 辅助
+## Tool List
 
-| 工具 | 功能 |
-|------|------|
-| `cnbs_get_guide` | 获取完整工具指南（适合 LLM 自我定向） |
-| `cnbs_get_regions` | 获取地区代码和名称（GB/T 2260） |
-| `cnbs_get_categories` | 获取所有 NBS 分类代码 |
-| `cnbs_list_data_sources` | 列出所有可用数据源及工具映射 |
-| `cnbs_fetch_data_from_source` | 从指定数据源获取数据 |
-| `cnbs_get_source_categories` | 获取数据源分类信息 |
-| `cnbs_search_in_source` | 在指定数据源中搜索 |
+### NBS Core Queries
 
-### 世界银行
+| Tool | Function |
+|------|----------|
+| `cnbs_search` | Keyword search, returns the latest data values — **preferred** |
+| `cnbs_batch_search` | Batch search for multiple keywords |
+| `cnbs_economic_snapshot` | Get the latest values of 10 core macroeconomic indicators in one go (GDP, CPI, PPI, PMI, unemployment rate, industrial added value, retail sales, fixed investment, imports and exports, M2) |
+| `cnbs_compare` | Regional comparison / time comparison |
+| `cnbs_fetch_nodes` | Fetch category tree nodes — supports passing multiple category codes simultaneously |
+| `cnbs_fetch_metrics` | Fetch dataset metric list — supports passing multiple setId simultaneously |
+| `cnbs_fetch_series` | Fetch historical time series |
+| `cnbs_fetch_end_nodes` | Recursively fetch all leaf nodes |
 
-| 工具 | 功能 |
-|------|------|
-| `ext_world_bank` | 查询单个指标，支持多国/多年 |
-| `ext_world_bank_multi` | 同时查询多指标，跨国批量对比 |
-| `ext_world_bank_indicators` | 列出所有预置世界银行指标 |
+### NBS Auxiliary
+
+| Tool | Function |
+|------|----------|| `cnbs_get_guide` | Get the complete tool guide (suitable for LLM self-orientation) |
+| `cnbs_get_regions` | Get region codes and names (GB/T 2260) |
+| `cnbs_get_categories` | Get all NBS category codes |
+| `cnbs_list_data_sources` | List all available data sources and tool mappings |
+| `cnbs_fetch_data_from_source` | Fetch data from a specified data source |
+| `cnbs_get_source_categories` | Get data source category information |
+| `cnbs_search_in_source` | Search within a specified data source |
+
+### World Bank
+
+| Tool | Function |
+|------|----------|
+| `ext_world_bank` | Query a single indicator, supports multiple countries/years |
+| `ext_world_bank_multi` | Query multiple indicators simultaneously, batch comparison across countries |
+| `ext_world_bank_indicators` | List all predefined World Bank indicators |
 
 ### IMF
 
-| 工具 | 功能 |
-|------|------|
-| `ext_imf` | 查询 IMF WEO 数据 — 支持同时传入多个指标 |
-| `ext_imf_indicators` | 列出预置 IMF 指标 |
-| `ext_imf_all_indicators` | 获取 IMF DataMapper 完整指标目录 |
+| Tool | Function |
+|------|----------|
+| `ext_imf` | Query IMF WEO data — supports multiple indicators at once |
+| `ext_imf_indicators` | List predefined IMF indicators |
+| `ext_imf_all_indicators` | Get the complete list of IMF DataMapper indicators |
 
 ### OECD
 
-| 工具 | 功能 |
-|------|------|
-| `ext_oecd` | 查询 OECD SDMX 数据 |
-| `ext_oecd_datasets` | 列出预置 OECD 数据集 |
+| Tool | Function |
+|------|----------|
+| `ext_oecd` | Query OECD SDMX data |
+| `ext_oecd_datasets` | List predefined OECD datasets |
 
 ### BIS
 
-| 工具 | 功能 |
-|------|------|
-| `ext_bis` | 查询 BIS 统计 — 支持同时传入多个国家 |
-| `ext_bis_datasets` | 列出 BIS 数据集及键模板 |
+| Tool | Function |
+|------|----------|
+| `ext_bis` | Query BIS statistics — supports multiple countries at once |
+| `ext_bis_datasets` | List BIS datasets and key templates |
 
-### FRED（美联储）
+### FRED (Federal Reserve)
 
-| 工具 | 功能 |
-|------|------|
-| `ext_fred` | 查询 FRED 系列 — 支持同时传入多个系列 |
-| `ext_fred_series` | 列出所有预置 FRED 系列 |
+| Tool | Function |
+|------|----------|
+| `ext_fred` | Query FRED series — supports multiple series at once |
+| `ext_fred_series` | List all predefined FRED series |
 
-### 国内扩展数据源
+### Domestic Extended Data Sources
 
-| 工具 | 功能 |
-|------|------|
-| `ext_cn_census` | 查询 NBS 普查数据（人口/经济/农业普查） |
-| `ext_cn_department` | 按部门查询 NBS 统计指标 |
-| `ext_cn_department_list` | 列出所有部门分类及指标关键词 |
+| Tool | Function |
+|------|----------|
+| `ext_cn_census` | Query NBS census data (population/economic/agricultural census) |
+| `ext_cn_department` | Query NBS statistical indicators by department |
+| `ext_cn_department_list` | List all department categories and indicator keywords |
 
-### 跨源对比
+### Cross-Source Comparison
 
-| 工具 | 功能 |
-|------|------|
-| `ext_global_compare` | 同时从世界银行和 IMF 获取同一指标，快速多国横向对比 |
+| Tool | Function |
+|------|----------|
+| `ext_global_compare` | Fetch the same indicator from both the World Bank and IMF for quick cross-country comparison |
 
 ---
 
-## 快速示例
+## Quick Examples
 
-### 中国宏观经济速览
+### Chinese Macroeconomic Overview
 
-```
-// 一次获取所有核心宏观指标
+python
+# Fetch all core macroeconomic indicators at once
 cnbs_economic_snapshot()
 
-// 单个指标最新值
+# Latest value of a single indicator
 cnbs_search(keyword="GDP")
 
-// 批量查询
-cnbs_batch_search(keywords=["GDP", "CPI", "出生率", "城镇化率"])
+# Batch query
+cnbs_batch_search(keywords=["GDP", "CPI", "birth rate", "urbanization rate"])
 
-// 地区对比
-cnbs_compare(keyword="GDP", regions=["北京", "上海", "广东"], compareType="region")
+# Regional comparison
+cnbs_compare(keyword="GDP", regions=["Beijing", "Shanghai", "Guangdong"], compareType="region")
 
-// 历史时间序列（先搜索获取 cid/indic_id）
+# Historical time series (first search to get cid/indic_id)
 cnbs_search(keyword="GDP")
 cnbs_fetch_series(setId="...", metricIds=["..."], periods=["2015YY-2024YY"])
-```
 
-### 国际数据
+### International Data
 
-```
-// G7+中国 GDP 增速对比
+python
+# G7 + China GDP growth comparison
 ext_world_bank(indicator="GDP_GROWTH", countries=["CHN","USA","DEU","JPN","GBR","FRA","ITA","CAN"], startYear=2015)
 
-// 中国多指标批量查询
+# Batch query for multiple indicators in China
 ext_world_bank_multi(indicators=["GDP_GROWTH","CPI","UNEMPLOYMENT","FDI_INFLOWS"], countries=["CHN"], startYear=2010)
 
-// IMF 单指标
+# Single IMF indicator
 ext_imf(indicators="GDP_GROWTH", countries=["CHN","USA","JPN","DEU"], periods=["2022","2023","2024","2025"])
 
-// IMF 多指标一次查询
+# Multiple IMF indicators in one query
 ext_imf(indicators=["GDP_GROWTH","CPI_INFLATION","GOVT_DEBT"], countries=["CHN","USA"], periods=["2020","2021","2022","2023","2024"])
 
-// 世界银行 + IMF 双源交叉验证
+# Cross-verification from World Bank and IMF
 ext_global_compare(wbIndicator="GDP_GROWTH", imfIndicator="GDP_GROWTH", countries=["CHN","USA","DEU","JPN","IND"], startYear=2015)
-```
 
 ### BIS & FRED
 
-```
-// BIS 单国
+python
+# Single country BIS
 ext_bis(dataset="EER", countries="CN", lastNObservations=36)
 
-// BIS 多国一次查询
+# Multiple countries BIS in one query
 ext_bis(dataset="EER", countries=["CN","US","DE","JP"], lastNObservations=24)
 
-// 信贷缺口（系统性金融风险早期预警）
+# Credit gap (early warning for systemic financial risk)
 ext_bis(dataset="CREDIT_GAP", countries=["CN","US"], lastNObservations=20)
 
-// FRED 单系列
+# Single FRED series
 ext_fred(series="OIL_PRICE_WTI", limit=100, sortOrder="desc")
 
-// FRED 多系列一次查询
+# Multiple FRED series in one query
 ext_fred(series=["FED_FUNDS","CNY_USD","OIL_PRICE_WTI","GOLD_PRICE"], limit=30, sortOrder="desc")
 
-// 人民币兑美元汇率（2020年至今）
-ext_fred(series="CNY_USD", observationStart="2020-01-01")
-```
+# CNY to USD exchange rate (since 2020)
+ext_fred(series="CNY_USD", observationStart="2020-01-01")### NBS Census and Departments
 
-### NBS 普查与部门
-
-```
-// 第七次全国人口普查
+ 
+// Seventh National Population Census
 ext_cn_census(type="population")
 
-// 央行货币金融数据
-ext_cn_department(department="monetary", indicator="M2货币供应量")
+// Central Bank Monetary and Financial Data
+ext_cn_department(department="monetary", indicator="M2 Money Supply")
 
-// 财政收支
-ext_cn_department(department="finance", indicator="财政收入")
+// Fiscal Revenue and Expenditure
+ext_cn_department(department="finance", indicator="Fiscal Revenue")
 
-// 查看所有部门分类
+// View All Department Categories
 ext_cn_department_list()
-```
 
 ---
 
-## NBS 分类代码
+## NBS Classification Codes
 
-| 代码 | 分类 | 典型指标 |
-|------|------|---------|
-| 1 | 月度数据 | CPI、PPI、工业增加值、PMI |
-| 2 | 季度数据 | GDP季度增速 |
-| 3 | 年度数据 | GDP年度值、人口、城镇化率 |
-| 5 | 分省季度 | 各省GDP季度值 |
-| 6 | 分省年度 | 各省GDP、人口年度值 |
-| 7 | 其他/调查 | 居民调查、专项调查 |
+| Code | Category | Typical Indicators |
+|------|----------|--------------------|
+| 1    | Monthly  | CPI, PPI, Industrial Added Value, PMI |
+| 2    | Quarterly| GDP Quarterly Growth Rate |
+| 3    | Annual   | Annual GDP, Population, Urbanization Rate |
+| 5    | Provincial Quarterly | Provincial GDP Quarterly Values |
+| 6    | Provincial Annual | Provincial GDP, Population Annual Values |
+| 7    | Other/Surveys | Resident Surveys, Special Surveys |
 
-## NBS 时间格式
+## NBS Time Formats
 
-- 年度：`2024YY`，范围 `["2020YY-2024YY"]`
-- 季度：`2024A/B/C/D`（A=Q1, B=Q2, C=Q3, D=Q4），快捷 `LAST6/LAST12/LAST18`
-- 月度：`202401MM`，范围 `["202301MM-202412MM"]`
+- Annual: `2024YY`, range `["2020YY-2024YY"]`
+- Quarterly: `2024A/B/C/D` (A=Q1, B=Q2, C=Q3, D=Q4), shortcuts `LAST6/LAST12/LAST18`
+- Monthly: `202401MM`, range `["202301MM-202412MM"]`
 
-## NBS 地区代码
+## NBS Region Codes
 
-遵循 GB/T 2260 标准，使用 `cnbs_get_regions` 获取完整列表。
+Follows the GB/T 2260 standard. Use `cnbs_get_regions` to get the complete list.
 
-| 地区 | 代码 |
-|------|------|
-| 全国 | `000000000000` |
-| 北京 | `110000000000` |
-| 上海 | `310000000000` |
-| 广东 | `440000000000` |
-| 浙江 | `330000000000` |
-| 江苏 | `320000000000` |
+| Region | Code         |
+|--------|--------------|
+| Nationwide | `000000000000` |
+| Beijing | `110000000000` |
+| Shanghai | `310000000000` |
+| Guangdong | `440000000000` |
+| Zhejiang | `330000000000` |
+| Jiangsu | `320000000000` |
 
 ---
 
-## 鉴权配置
+## Authentication Configuration
 
-默认无需鉴权。可通过 Bearer Token 启用：
+Authentication is not required by default. It can be enabled using a Bearer Token:
 
-### stdio / HTTP 模式
+### stdio / HTTP Mode
 
-```bash
+bash
 npx mcp-cnbs --port 12345 --auth-token your-secret-token
-# 或环境变量
+# or via environment variable
 MCP_CNBS_AUTH_TOKEN=your-secret-token npx mcp-cnbs --port 12345
-```
 
-启用后请求需包含：
-```
+After enabling, requests must include:
+
 Authorization: Bearer your-secret-token
-```
 
 ### Cloudflare Workers
 
-```bash
+bash
 npx wrangler secret put MCP_CNBS_AUTH_TOKEN
-```
 
 ---
 
-## 开发
+## Development
 
-```bash
+bash
 npm install
 npm run build
 npm run start
-```
 
-## 环境要求
+## Environment Requirements
 
 - Node.js >= 18.0.0
-- 网络可访问：`data.stats.gov.cn`、`api.worldbank.org`、`www.imf.org`、`sdmx.oecd.org`、`stats.bis.org`、`api.stlouisfed.org`
+- Network access to: `data.stats.gov.cn`, `api.worldbank.org`, `www.imf.org`, `sdmx.oecd.org`, `stats.bis.org`, `api.stlouisfed.org`
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/icen-ai/mcp-cnbs](https://github.com/icen-ai/mcp-cnbs)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/icen-ai/mcp-cnbs](https://github.com/icen-ai/mcp-cnbs)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `学术研究`, `搜索工具`, `数据查询`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `学术研究`, `搜索工具`, `数据查询`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-cnbs`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-cnbs`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/thatcoder-cnbs.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/thatcoder-cnbs.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

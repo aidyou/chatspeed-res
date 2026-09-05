@@ -1,11 +1,11 @@
 ---
-title: "内容抓取转换器"
-description: "一个强大的MCP服务器，可以轻松地将网页内容抓取并转换为各种格式（HTML、JSON、Markdown、纯文本）。"
+title: "mcp-npx-fetch"
+description: "A powerful MCP server for fetching and transforming web content into various formats (HTML, JSON, Markdown, Plain Text) with ease."
 ---
 
-# 内容抓取转换器
+# mcp-npx-fetch
 
-一个强大的MCP服务器，可以轻松地将网页内容抓取并转换为各种格式（HTML、JSON、Markdown、纯文本）。
+A powerful MCP server for fetching and transforming web content into various formats (HTML, JSON, Markdown, Plain Text) with ease.
 
 # MCP NPX Fetch
 
@@ -14,47 +14,47 @@ description: "一个强大的MCP服务器，可以轻松地将网页内容抓取
 [![TypeScript](/mcp-assets/49904649f602ceb829cc76dcf6be1703.svg)](https://www.typescriptlang.org/)
 [![Model Context Protocol](/mcp-assets/dea21ef1b755e12c928a6fd915869854.svg)](https://github.com/modelcontextprotocol)
 
-一个强大的MCP服务器，可以轻松地将网页内容抓取并转换为各种格式（HTML、JSON、Markdown、纯文本）。
+A powerful MCP server for fetching and transforming web content into various formats (HTML, JSON, Markdown, Plain Text) with ease.
 
-[安装](#installation) •
-[特性](#features) •
-[使用](#usage) •
-[文档](#documentation) •
-[贡献](#contributing)
+[Installation](#installation) •
+[Features](#features) •
+[Usage](#usage) •
+[Documentation](#documentation) •
+[Contributing](#contributing)
 
 ---
 
-## 🚀 特性
+## 🚀 Features
 
-- 🌐 **通用内容抓取**: 支持HTML、JSON、纯文本和Markdown格式
-- 🔒 **自定义头部支持**: 在请求中添加身份验证和自定义头部
-- 🛠 **内置转换**: 自动在不同格式之间进行转换
-- ⚡ **高性能**: 使用现代JavaScript特性和优化以提高速度
-- 🔌 **MCP兼容**: 无缝集成Claude Desktop和其他MCP客户端
-- 🎯 **类型安全**: 用TypeScript编写，具有完整的类型定义
+- 🌐 **Universal Content Fetching**: Supports HTML, JSON, plain text, and Markdown formats
+- 🔒 **Custom Headers Support**: Add authentication and custom headers to your requests
+- 🛠 **Built-in Transformations**: Automatic conversion between formats
+- ⚡ **High Performance**: Built with modern JavaScript features and optimized for speed
+- 🔌 **MCP Compatible**: Seamlessly integrates with Claude Desktop and other MCP clients
+- 🎯 **Type-Safe**: Written in TypeScript with full type definitions
 
-## 📦 安装
+## 📦 Installation
 
-### NPM 全局安装
+### NPM Global Installation
 
 ```bash
 npm install -g @tokenizin/mcp-npx-fetch
 
 ```
 
-### 直接通过NPX使用
+### Direct Usage with NPX
 
 ```bash
 npx @tokenizin/mcp-npx-fetch
 ```
 
-## 📚 文档
+## 📚 Documentation
 
-### 可用工具
+### Available Tools
 
 #### `fetch_html`
 
-从任何URL获取并返回原始HTML内容。
+Fetches and returns raw HTML content from any URL.
 
 ```typescript
 {
@@ -67,7 +67,7 @@ npx @tokenizin/mcp-npx-fetch
 
 #### `fetch_json`
 
-从任何URL获取并解析JSON数据。
+Fetches and parses JSON data from any URL.
 
 ```typescript
 {
@@ -80,7 +80,7 @@ npx @tokenizin/mcp-npx-fetch
 
 #### `fetch_txt`
 
-获取并返回干净的纯文本内容，移除HTML标签和脚本。
+Fetches and returns clean plain text content, removing HTML tags and scripts.
 
 ```typescript
 {
@@ -93,7 +93,7 @@ npx @tokenizin/mcp-npx-fetch
 
 #### `fetch_markdown`
 
-获取内容并将其转换为格式良好的Markdown。
+Fetches content and converts it to well-formatted Markdown.
 
 ```typescript
 {
@@ -104,31 +104,31 @@ npx @tokenizin/mcp-npx-fetch
 }
 ```
 
-## 🔧 使用
+## 🔧 Usage
 
-### CLI 使用
+### CLI Usage
 
-直接启动MCP服务器：
+Start the MCP server directly:
 
 ```bash
 mcp-npx-fetch
 ```
 
-或者通过npx：
+Or via npx:
 
 ```bash
 npx @tokenizin/mcp-npx-fetch
 ```
 
-### Claude Desktop 集成
+### Claude Desktop Integration
 
-1. 找到你的Claude Desktop配置文件：
+1. Locate your Claude Desktop configuration file:
 
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%/Claude/claude_desktop_config.json`
    - Linux: `~/.config/Claude/claude_desktop_config.json`
 
-2. 在你的`mcpServers`对象中添加以下配置：
+2. Add the following configuration to your `mcpServers` object:
 
 ```json
 {
@@ -142,79 +142,76 @@ npx @tokenizin/mcp-npx-fetch
 }
 ```
 
-## 💻 本地开发
+## 💻 Local Development
 
-1. 克隆仓库：
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/tokenizin-agency/mcp-npx-fetch.git
 cd mcp-npx-fetch
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. 启动开发模式：
+3. Start development mode:
 
 ```bash
 npm run dev
 ```
 
-4. 运行测试：
+4. Run tests:
 
 ```bash
 npm test
 ```
 
-## 🛠 技术栈
+## 🛠 Technical Stack
 
-- [Model Context Protocol SDK](https://github.com/modelcontextprotocol/sdk) - 核心MCP功能
-- [JSDOM](https://github.com/jsdom/jsdom) - HTML解析和操作
-- [Turndown](https://github.com/mixmark-io/turndown) - HTML到Markdown转换
-- [TypeScript](https://www.typescriptlang.org/) - 类型安全和现代JavaScript特性
-- [Zod](https://github.com/colinhacks/zod) - 运行时类型验证
+- [Model Context Protocol SDK](https://github.com/modelcontextprotocol/sdk) - Core MCP functionality
+- [JSDOM](https://github.com/jsdom/jsdom) - HTML parsing and manipulation
+- [Turndown](https://github.com/mixmark-io/turndown) - HTML to Markdown conversion
+- [TypeScript](https://www.typescriptlang.org/) - Type safety and modern JavaScript features
+- [Zod](https://github.com/colinhacks/zod) - Runtime type validation
 
-## 🤝 贡献
+## 🤝 Contributing
 
-希望这符合您的要求！如果有任何需要进一步调整的地方，请告诉我。
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-欢迎贡献！请随时提交 Pull Request。对于重大更改，请先打开一个 issue 来讨论您想要进行的更改。
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-1. 叉取仓库
-2. 创建您的功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 将更改推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 Pull Request
+## 📄 License
 
-## 📄 许可证
-
-本项目根据 MIT 许可证授权 - 详情请参阅 [LICENSE](https://github.com/tokenizin-agency/mcp-npx-fetch/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/tokenizin-agency/mcp-npx-fetch/blob/HEAD/LICENSE) file for details.
 
 ---
 
-由 
+Made with ❤️ by 
 PT Tokenizin Technology Agency
- 用 ❤️ 制作
 
-**官方网站：** [https://github.com/tokenizin-agency/mcp-npx-fetch](https://github.com/tokenizin-agency/mcp-npx-fetch)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/tokenizin-agency/mcp-npx-fetch](https://github.com/tokenizin-agency/mcp-npx-fetch)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @tokenizin/mcp-npx-fetch`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @tokenizin/mcp-npx-fetch`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/tokenizin-agency-npx-fetch.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/tokenizin-agency-npx-fetch.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

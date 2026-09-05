@@ -1,29 +1,29 @@
 ---
 title: "cstoolbox"
-description: "CSToolbox 通过 MCP 协议提供网络搜索、网页内容爬取和图表生成等功能。"
+description: "CSToolbox provides features like web search, web content crawling, and chart generation via the MCP protocol."
 ---
 
 # cstoolbox
 
-CSToolbox 通过 MCP 协议提供网络搜索、网页内容爬取和图表生成等功能。
+CSToolbox provides features like web search, web content crawling, and chart generation via the MCP protocol.
 
 # CSToolbox (ChatSpeed Toolbox)
 
 
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-CSToolbox 是 [ChatSpeed](https://github.com/aidyou/chatspeed) 的扩展工具集，通过 MCP 协议提供网络搜索、网页内容爬取和图表生成等功能。
+CSToolbox is an extension toolkit for [ChatSpeed](https://github.com/aidyou/chatspeed). It provides features like web search, web content crawling, and chart generation via the MCP protocol.
 
-## 功能特性
+## Features
 
-- 🔍 **网络搜索** - 支持多种搜索引擎（Google、Bing、百度等）
-- 🕷️ **网页爬取** - 从网页提取结构化内容（支持 Markdown/HTML 格式）
-- 📊 **图表生成** - 快速生成各类数据可视化图表，支持曲线图、柱状图和饼图
-- 📄 **PDF处理** - 从PDF URL 下载文档并提取文本内容
+- 🔍 **Web Search** - Supports multiple search engines (Google, Bing, Baidu, etc.)
+- 🕷️ **Web Crawling** - Extracts structured content from web pages (Supports Markdown/HTML format)
+- 📊 **Chart Generation** - Quickly generates various data visualization charts, supporting line charts, bar charts, and pie charts
+- 📄 **PDF Processing** - Downloads documents from PDF URLs and extracts text content
 
-## 如何使用
+## How to Use
 
-### mcp 客户端配置
+### MCP Client Configuration
 
 ```json
 {
@@ -41,41 +41,42 @@ CSToolbox 是 [ChatSpeed](https://github.com/aidyou/chatspeed) 的扩展工具�
         "CS_BROWSER_LANG": "zh-CN",
         "CS_REGION": "com",
         "CS_HEADLESS": "true",
+        "CS_USER_DATA_DIR": null,
         "CS_BROWSER_TYPE": "chromium",
-        "CS_EXECUTABLE_PATH": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        "CS_USER_DATA_DIR": "~/Library/Application Support/Google/Chrome"
+        "CS_EXECUTABLE_PATH": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
       }
     }
   }
 }
 ```
 
-#### 环境变量说明
+#### Environment Variable Descriptions
 
-- `CS_LOG_LEVEL`：日志级别，可选值为 `DEBUG`、`INFO`、`WARNING`、`ERROR`、`CRITICAL`，默认为 `INFO`
-- `CS_LOG_DIR`：日志目录，默认为 `logs`
-- `CS_PROXY`：代理服务器地址，有些地区无法访问 `google.com` 或者 `bing.com` 搜索引擎，因此需要设置代理，另外，有些网站对用户所在地区有限制，如果没有代理也是访问不了的
-- `CS_BROWSER_TZ`：时区，默认为 `Etc/UTC`
-- `CS_BROWSER_LANG`：浏览器语言，默认为 `en-US`
-- `CS_REGION`：搜索引擎区域，可选值为 `com`、`cn`、`us`、`uk`等，默认为 `com`
-- `CS_HEADLESS`：是否启用无头模式，默认为 `true`
-- `CS_BROWSER_TYPE`：浏览器类型，可选值为 `chromium`、`firefox`、`webkit`，默认为 `chromium`
-- `CS_EXECUTABLE_PATH`：浏览器可执行文件路径，默认为空。你可以用它来指定系统已安装的浏览器路径，这样就可以利用你系统的浏览器的状态数据（如登录状态、cookies等）。如果你指定了`CS_EXECUTABLE_PATH`，则徐注意`CS_BROWSER_TYPE`类型匹配
-- `CS_USER_DATA_DIR`：用户数据目录，如果你指定了`CS_EXECUTABLE_PATH`，建议将`CS_USER_DATA_DIR`设置为浏览器的「个人资料路径」的上一级。
+- `CS_LOG_LEVEL`: Log level. Possible values are `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`. Defaults to `INFO`.
+- `CS_LOG_DIR`: Log directory. Defaults to `logs`.
+- `CS_PROXY`: Proxy server address. A proxy is needed in some regions where search engines like `google.com` or `bing.com` are inaccessible. Additionally, some websites have regional restrictions and cannot be accessed without a proxy.
+- `CS_BROWSER_TZ`: Timezone. Defaults to `Etc/UTC`.
+- `CS_BROWSER_LANG`: Browser language. Defaults to `en-US`.
+- `CS_REGION`: Search engine region. Possible values include `com`, `cn`, `us`, `uk`, etc. Defaults to `com`.
+- `CS_HEADLESS`: Whether to enable headless mode. Defaults to `true`.
+- `CS_BROWSER_TYPE`: Browser type. Possible values are `chromium`, `firefox`, `webkit`. Defaults to `chromium`.
+- `CS_EXECUTABLE_PATH`: Browser executable file path. Defaults to empty. You can use this to specify the path to a browser already installed on your system. This allows leveraging the browser's existing state data (like login status, cookies, etc.). If you specify `CS_EXECUTABLE_PATH`, ensure it matches the `CS_BROWSER_TYPE`.
+- `CS_USER_DATA_DIR`: User data directory. If you specify `CS_EXECUTABLE_PATH`, it is recommended to set `CS_USER_DATA_DIR` to the parent directory of the browser's "Profile Path".
 
-#### 如何获得 chrome 路径和个人资料路径
+#### How to find Chrome's Executable Path and Profile Path
 
-1. 打开 chrome 浏览器
-2. 在地址栏输入 `chrome://version/`
-3. 在界面上你可以看到类似「可执行文件路径」，路径类似`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`，这个路径就是你要设置的`CS_EXECUTABLE_PATH`
-4. 找到「个人资料路径」，路径类似`/Users/xxx/Library/Application Support/Google/Chrome/Default`，`CS_USER_DATA_DIR`的值就是`/Users/xxx/Library/Application Support/Google/Chrome`（注意路径不包含最后的`Default`）。
+1. Open the Chrome browser.
+2. Enter `chrome://version/` in the address bar.
 
-#### ⚠️注意事项
+3. On the page, you will find the "Executable Path". It will look similar to `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`. This is the path you should set for `CS_EXECUTABLE_PATH`.
+4. Find the 'Profile Path', which will look similar to /Users/xxx/Library/Application Support/Google/Chrome/Default. The value for CS_USER_DATA_DIR should be /Users/xxx/Library/Application Support/Google/Chrome (note: this path should exclude the final Default part).
 
-- 部分地区使用 `google` 或者 `bing` 进行网络搜索时需确保代理设置正确
-- `CS_EXECUTABLE_PATH`最好不要设置成你当前正在使用的浏览器，那样会冲突，你如果习惯了使用 `google chrome`，则可以安装 [edge](https://www.microsoft.com/en-us/edge/download)、[brave](https://brave.com/download/) 等 chromium 内核的浏览器，反之如果你习惯使用 `edge` 浏览器，则强烈建议你安装个 [google chrome](https://www.google.com/intl/en_au/chrome/dr/download/)。
+#### ⚠️ Important Notes
 
-#### MCP 配置推荐
+- Ensure the proxy is correctly configured when using `google` or `bing` for web searches in certain regions.
+- It is best not to set `CS_EXECUTABLE_PATH` to the browser you are currently using, as this can cause conflicts. If you are used to using `google chrome`, you can install other Chromium-based browsers like [Edge](https://www.microsoft.com/en-us/edge/download) or [Brave](https://brave.com/download/). Conversely, if you are used to using the `edge` browser, it is highly recommended that you install [google chrome](https://www.google.com/intl/en_au/chrome/dr/download/).
+
+#### The recommend MCP configuration
 
 ```json
 {
@@ -97,9 +98,9 @@ CSToolbox 是 [ChatSpeed](https://github.com/aidyou/chatspeed) 的扩展工具�
 }
 ```
 
-### python 调用示例
+### Python Usage Example
 
-更多 python 调用示例请参考`tests/mcp_client.py`文件
+For more Python usage examples, please refer to the `tests/mcp_client.py` file.
 
 ```python
 from pathlib import Path
@@ -157,102 +158,108 @@ if __name__ == "__main__":
 
 ```
 
-## 开发
+## Development
 
-1. 克隆源代码仓库:
-
-```bash
-git clone https://github.com/aidyou/cstoolbox.git
-cd cstoolbox
-```
-
-2. 安装 uv
-**Macos/Linux**
+1. Clone the source code repository:
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+    git clone https://github.com/aidyou/cstoolbox.git
+    cd cstoolbox
 ```
 
-**Windows**使用`irm`下载并安装
+2. Install uv
+    **macOS/Linux**
 
 ```bash
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-3. 创建并激活venv环境:
+    **Windows** Use `irm` to download and install:
 
 ```bash
-uv venv --python=python3.12
-source .venv/bin/activate
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-4. 安装依赖:
+3. Create and activate a venv environment:
 
 ```bash
-uv pip install .
+    uv venv --python=python3.12
+    source .venv/bin/activate
+    # On Windows use: .venvScriptsactivate
 ```
 
-5. 启动测试:
+    *(Note: Added Windows activation command hint for completeness)*
+
+4. Install dependencies:
 
 ```bash
-mcp dev src/cstoolbox/main.py
+    uv pip install .
 ```
 
-现在你可以通过`http://127.0.0.1:6274/#tools` 进行功能测试
+5. Start the test server:
 
-6. http 接口测试
-在`.vscode/launch.json`文件中添加以下配置
+```bash
+    mcp dev src/cstoolbox/main.py
+```
+
+    Now you can perform functional tests via `http://127.0.0.1:6274/#tools`
+
+6. HTTP API Testing
+    Add the following configuration to your `.vscode/launch.json` file:
 
 ```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "http dev",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "cstoolbox.http_api",
-            "args": [
-            ],
-            "console": "integratedTerminal",
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}/src",
-                "CS_BROWSER_TZ": "Asia/Shanghai",
-                "CS_BROWSER_LANG": "zh-CN",
-                "CS_LOG_LEVEL": "DEBUG",
-                "CS_PROXY": "http://localhost:15154"
-            },
-            "python": "${workspaceFolder}/.venv/bin/python"
-        }
-    ]
-}
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "http dev",
+                "type": "debugpy",
+                "request": "launch",
+                "module": "cstoolbox.http_api",
+                "args": [
+                ],
+                "console": "integratedTerminal",
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}/src",
+                    "CS_BROWSER_TZ": "Asia/Shanghai",
+                    "CS_BROWSER_LANG": "zh-CN",
+                    "CS_LOG_LEVEL": "DEBUG",
+                    "CS_PROXY": "http://localhost:15154"
+                },
+                "python": "${workspaceFolder}/.venv/bin/python"
+                // On Windows, adjust python path: "${workspaceFolder}\.venv\Scripts\python.exe"
+            }
+        ]
+    }
 ```
 
-`env`配置中`CS_*`请根据实际情况进行调整，在 vscode 中启动调试后即可通过如下接口进行测试：
+    *(Note: Added Windows python path hint for completeness)*
 
-- 搜索： `curl http://localhost:12321/chp/web_search?provider=google&kw=deepseek+r2&number=10&page=1`
-- 内容抓取：`curl http://localhost:12321/chp/web_crawler?url=https://medium.com/@lbq999/deepseek-r2-is-around-the-corner-c449a41bfec6`
+    Adjust the `CS_*` settings in the `env` configuration according to your actual environment. After starting the debug session in VS Code, you can test using the following endpoints:
 
-## 协议
+    - Search: `curl http://localhost:12321/chp/web_search?provider=google&kw=deepseek+r2&number=10&page=1`
+    - Content Crawling: `curl http://localhost:12321/chp/web_crawler?url=https://medium.com/@lbq999/deepseek-r2-is-around-the-corner-c449a41bfec6`
 
-本项目采用 MIT 协议 开源，您可以自由使用、修改和分发本软件。
+## License
 
-**官方网站：** [https://github.com/aidyou/cstoolbox](https://github.com/aidyou/cstoolbox)
-**状态：** `active`　**最后核验：** `2026-08-30`
+This project is open-sourced under the MIT License. You are free to use, modify, and distribute this software.
 
-## 分类与标签
+**Official site: ** [https://github.com/aidyou/cstoolbox](https://github.com/aidyou/cstoolbox)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`data`
-- 标签：`browser automation`, `search`, `research and data`, `chinese`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `data`
+- Tags: `browser automation`, `search`, `research and data`, `chinese`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`-i https://mirrors.aliyun.com/pypi/simple/ cstoolbox`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `-i https://mirrors.aliyun.com/pypi/simple/ cstoolbox`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/aidyou-cstoolbox.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/aidyou-cstoolbox.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

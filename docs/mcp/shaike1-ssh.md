@@ -1,36 +1,36 @@
 ---
-title: "MCP SSH服务器"
-description: "针对模型上下文协议的安全SSH服务器实现， enables远程命令执行和文件操作，同时支持基于密码和密钥的身份验证。"
+title: "mcp-server-ssh"
+description: "A secure SSH server implementation for Model Context Protocol that enables remote command execution and file operations, supporting both password and key-based authentication."
 ---
 
-# MCP SSH服务器
+# mcp-server-ssh
 
-针对模型上下文协议的安全SSH服务器实现， enables远程命令执行和文件操作，同时支持基于密码和密钥的身份验证。
+A secure SSH server implementation for Model Context Protocol that enables remote command execution and file operations, supporting both password and key-based authentication.
 
-# MCP SSH 服务器
+# MCP SSH Server
 
-一个强大的 SSH 服务器实现，用于模型上下文协议 (MCP)。该服务器通过 SSH 协议启用安全的远程命令执行和文件操作，支持基于密码和密钥的身份验证。
+A powerful SSH server implementation for Model Context Protocol (MCP). This server enables secure remote command execution and file operations through SSH protocol, supporting both password and key-based authentication.
 
-## 特性
+## Features
 
-- ✨ 安全的 SSH 连接管理
-- 🔑 基于密码和密钥的身份验证
-- 💻 远程命令执行
-- 📁 文件操作（上传/下载）
-- 📊 文件传输进度跟踪
-- 🔐 权限管理
-- 📂 目录操作
-- 🚀 批量文件传输
-- 📝 详细日志记录
+- ✨ Secure SSH connection management
+- 🔑 Password and key-based authentication
+- 💻 Remote command execution
+- 📁 File operations (upload/download)
+- 📊 Progress tracking for file transfers
+- 🔐 Permission management
+- 📂 Directory operations
+- 🚀 Bulk file transfers
+- 📝 Detailed logging
 
-## 安装
+## Installation
 
-1. 安装软件包：
+1. Install the package:
 ```bash
 npm install mcp-ssh
 ```
 
-2. 添加到你的 Claude 桌面配置 (`claude_desktop_config.json`) 中：
+2. Add to your Claude desktop config (`claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
@@ -47,9 +47,9 @@ npm install mcp-ssh
 
 ```
 
-## 使用方法
+## Usage
 
-### 密码认证
+### Password Authentication
 ```powershell
 $body = @{
     id = "test"
@@ -62,7 +62,7 @@ $body = @{
 Invoke-RestMethod -Uri "http://localhost:8889/connect" -Method Post -Body $body -ContentType "application/json"
 ```
 
-### 密钥认证
+### Key Authentication
 ```powershell
 $body = @{
     id = "test"
@@ -76,7 +76,7 @@ $body = @{
 Invoke-RestMethod -Uri "http://localhost:8889/connect" -Method Post -Body $body -ContentType "application/json"
 ```
 
-### 执行命令
+### Execute Commands
 ```powershell
 $execBody = @{
     id = "test"
@@ -86,7 +86,7 @@ $execBody = @{
 Invoke-RestMethod -Uri "http://localhost:8889/exec" -Method Post -Body $execBody -ContentType "application/json"
 ```
 
-### 文件操作
+### File Operations
 ```powershell
 # Upload file
 $uploadForm = @{
@@ -99,7 +99,7 @@ Invoke-RestMethod -Uri "http://localhost:8889/upload/test" -Method Post -Form $u
 Invoke-RestMethod -Uri "http://localhost:8889/download/test?remotePath=/remote/path/file.txt" -Method Get -OutFile "downloaded.txt"
 ```
 
-### 目录操作
+### Directory Operations
 ```powershell
 # List directory
 Invoke-RestMethod -Uri "http://localhost:8889/ls/test?path=/remote/path" -Method Get
@@ -108,62 +108,62 @@ Invoke-RestMethod -Uri "http://localhost:8889/ls/test?path=/remote/path" -Method
 Invoke-RestMethod -Uri "http://localhost:8889/status/test" -Method Get
 ```
 
-## 开发
+## Development
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/shaike1/mcp-server-ssh.git
 cd mcp-server-ssh
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建：
+3. Build:
 ```bash
 npm run build
 ```
 
-4. 启动服务器：
+4. Start server:
 ```bash
 npm start
 ```
 
-## 环境变量
+## Environment Variables
 
-- `SSH_PORT`: 服务器端口（默认：8889）
-- `SSH_LOG_LEVEL`: 日志级别（默认：info）
+- `SSH_PORT`: Server port (default: 8889)
+- `SSH_LOG_LEVEL`: Logging level (default: info)
 
-## 贡献
+## Contributing
 
-1. 叉分仓库
-2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开拉取请求
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/shaike1/mcp-server-ssh](https://github.com/shaike1/mcp-server-ssh)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shaike1/mcp-server-ssh](https://github.com/shaike1/mcp-server-ssh)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `os automation`, `security and iam`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `os automation`, `security and iam`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `%APPDATA%/npm/node_modules/mcp-ssh/dist/server.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shaike1-ssh.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shaike1-ssh.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

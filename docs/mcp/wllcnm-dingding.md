@@ -1,11 +1,11 @@
 ---
-title: "钉钉-MCP服务"
-description: "一种模型控制协议服务器，提供对钉钉（中国职场协作平台）API功能的访问，包括检索访问令牌、部门列表、用户信息以及按名称搜索用户。"
+title: "dingding-mcp"
+description: "A Model Control Protocol server that provides access to DingDing (Chinese workplace collaboration platform) API features, including retrieving access tokens, department lists, user information, and se…"
 ---
 
-# 钉钉-MCP服务
+# dingding-mcp
 
-一种模型控制协议服务器，提供对钉钉（中国职场协作平台）API功能的访问，包括检索访问令牌、部门列表、用户信息以及按名称搜索用户。
+A Model Control Protocol server that provides access to DingDing (Chinese workplace collaboration platform) API features, including retrieving access tokens, department lists, user information, and se…
 
 # 钉钉 MCP 服务
 
@@ -90,9 +90,9 @@ docker pull ghcr.io/你的用户名/dingding-mcp:latest
 
 2. 运行容器：
 ```bash
-docker run -d --name dingding-mcp \
-  -e DINGDING_APP_KEY=你的AppKey \
-  -e DINGDING_APP_SECRET=你的AppSecret \
+docker run -d --name dingding-mcp 
+  -e DINGDING_APP_KEY=你的AppKey 
+  -e DINGDING_APP_SECRET=你的AppSecret 
   ghcr.io/你的用户名/dingding-mcp:latest
 ```
 
@@ -135,22 +135,22 @@ docker run -d --name dingding-mcp \
 
 MIT License
 
-**官方网站：** [https://github.com/wllcnm/dingding-mcp](https://github.com/wllcnm/dingding-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wllcnm/dingding-mcp](https://github.com/wllcnm/dingding-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm -e DINGDING_APP_KEY=你的AppKey -e DINGDING_APP_SECRET=你的AppSecret ghcr.io/你的用户名/dingding-mcp:latest`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm -e DINGDING_APP_KEY=你的AppKey -e DINGDING_APP_SECRET=你的AppSecret ghcr.io/你的用户名/dingding-mcp:latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wllcnm-dingding.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wllcnm-dingding.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

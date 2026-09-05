@@ -1,19 +1,19 @@
 ---
-title: "folderr助手服务"
-description: "一个模型上下文协议（MCP）服务器，提供与Folderr API交互的工具，专门用于管理和与[Folderr](https://www.folderr.com/)助手进行通信。"
+title: "folderr-mcp-server"
+description: "A Model Context Protocol (MCP) server that provides tools to interact with Folderr's API, specifically for managing and communicating with Folderr Assistants."
 ---
 
-# folderr助手服务
+# folderr-mcp-server
 
-一个模型上下文协议（MCP）服务器，提供与Folderr API交互的工具，专门用于管理和与[Folderr](https://www.folderr.com/)助手进行通信。
+A Model Context Protocol (MCP) server that provides tools to interact with Folderr's API, specifically for managing and communicating with Folderr Assistants.
 
-# Folderr MCP 服务器
+# Folderr MCP Server
 
-一个模型上下文协议 (MCP) 服务器，提供了与 Folderr 的 API 进行交互的工具，特别是用于管理和与 Folderr 助手进行通信。
+A Model Context Protocol (MCP) server that provides tools to interact with Folderr's API, specifically for managing and communicating with Folderr Assistants.
 
-## 安装
+## Installation
 
-将以下内容添加到您的 MCP 设置中
+Add to your MCP Settings
 
 ```
 {
@@ -26,15 +26,15 @@ description: "一个模型上下文协议（MCP）服务器，提供与Folderr A
 }
 ```
 
-## 功能
+## Features
 
-该服务器提供以下工具：
+The server provides the following tools:
 
-### 身份验证
+### Authentication
 
-支持两种身份验证方法：
+Two methods of authentication are supported:
 
-1. **使用邮箱/密码登录**
+1. **Login with Email/Password**
 ```typescript
    {
      "name": "login",
@@ -45,7 +45,7 @@ description: "一个模型上下文协议（MCP）服务器，提供与Folderr A
    }
 ```
 
-2. **API 令牌身份验证**
+2. **API Token Authentication**
 ```typescript
    {
      "name": "set_api_token",
@@ -54,56 +54,56 @@ description: "一个模型上下文协议（MCP）服务器，提供与Folderr A
      }
    }
 ```
-   可以从 Folderr 开发者部分生成 API 令牌。此方法推荐用于自动化或长时间运行的过程。
+   API tokens can be generated from the Folderr developers section. This method is recommended for automated or long-running processes.
 
-### 助手管理
+### Assistant Management
 
-1. **列出助手**
+1. **List Assistants**
 ```typescript
    {
      "name": "list_assistants",
      "arguments": {}
    }
 ```
-   返回经过身份验证用户的所有可用助手列表。
+   Returns a list of all available assistants for the authenticated user.
 
-2. **询问助手**
+2. **Ask Assistant**
 ```typescript
    {
      "name": "ask_assistant",
      "arguments": {
        "assistant_id": "assistant-id",
-       "question": "您的问题"
+       "question": "Your question here"
      }
    }
 ```
-   向特定助手发送问题并接收其响应。
+   Send a question to a specific assistant and receive their response.
 
-## 配置
+## Configuration
 
-服务器将其配置存储在 `config.json` 文件中，包括：
-- Folderr API 的基础 URL
-- 身份验证令牌（来自登录或 API 密钥）
+The server stores its configuration in a `config.json` file, which includes:
+- Base URL for the Folderr API
+- Authentication token (from login or API key)
 
-## 错误处理
+## Error Handling
 
-服务器为常见场景提供详细的错误消息：
-- 身份验证失败
-- 无效请求
-- API 错误
-- 网络问题
+The server provides detailed error messages for common scenarios:
+- Authentication failures
+- Invalid requests
+- API errors
+- Network issues
 
-## 开发
+## Development
 
-要构建服务器，请执行：
+To build the server:
 ```bash
 npm install
 npm run build
 ```
 
-## 在 MCP 设置中的使用
+## Usage in MCP Settings
 
-将以下内容添加到您的 MCP 设置配置中：
+Add the following to your MCP settings configuration:
 ```json
 {
   "mcpServers": {
@@ -115,38 +115,38 @@ npm run build
 }
 ```
 
-## 身份验证流程
+## Authentication Flow
 
-1. 任选一种：
-   - 使用带有邮箱和密码的 `login` 工具
-   - 使用从 Folderr 开发者部分获取的 API 令牌的 `set_api_token` 工具
-2. 身份验证令牌会自动保存，并用于后续请求
-3. 所有助手相关的工具都需要在使用前进行身份验证
+1. Either:
+   - Use the `login` tool with email and password
+   - Use the `set_api_token` tool with an API token from Folderr's developers section
+2. The authentication token is automatically saved and used for subsequent requests
+3. All assistant-related tools require authentication before use
 
-## 错误消息
+## Error Messages
 
-常见的错误消息及其含义：
-- "未登录"：未设置身份验证令牌
-- "登录失败"：凭证无效
-- "无法列出助手"：检索助手列表时出错
-- "无法向助手提问"：向助手发送问题时出错
+Common error messages and their meanings:
+- "Not logged in": No authentication token is set
+- "Login failed": Invalid credentials
+- "Failed to list assistants": Error retrieving assistant list
+- "Failed to ask assistant": Error sending question to assistant
 
-**官方网站：** [https://github.com/folderr-tech/folderr-mcp-server](https://github.com/folderr-tech/folderr-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/folderr-tech/folderr-mcp-server](https://github.com/folderr-tech/folderr-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `developer tools`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @folderr/folderr-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @folderr/folderr-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/folderr-tech-folderr.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/folderr-tech-folderr.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

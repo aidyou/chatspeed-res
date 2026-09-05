@@ -1,11 +1,11 @@
 ---
-title: "墨刀AI-MCP"
-description: "基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。"
+title: "modao-proto-mcp"
+description: "基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。 - 🚀 HTML代码生成: 根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局 - 📝 设计描述生成: 基于用"
 ---
 
-# 墨刀AI-MCP
+# modao-proto-mcp
 
-基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。
+基于Model Context Protocol的原型生成功能服务，专注于HTML代码生成、设计描述生成和HTML导入功能。 - 🚀 HTML代码生成: 根据用户描述生成完整的HTML代码，支持现代化设计和响应式布局 - 📝 设计描述生成: 基于用
 
 # modao-proto-mcp
 
@@ -430,22 +430,22 @@ MIT License
 - 🛠️ 完全兼容Model Context Protocol标准
 - 📦 提供完整的开发和构建工具链
 
-**官方网站：** [https://github.com/modao-dev/modao-proto-mcp](https://github.com/modao-dev/modao-proto-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modao-dev/modao-proto-mcp](https://github.com/modao-dev/modao-proto-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `communication`
-- 标签：`developer tools`, `communication`, `file systems`, `产品`, `产品经理`, `设计`, `原型`, `proto`, `ai生成`, `ui设计`
+- Categories: `files`, `communication`
+- Tags: `developer tools`, `communication`, `file systems`, `产品`, `产品经理`, `设计`, `原型`, `proto`, `ai生成`, `ui设计`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modao-mcp/modao-proto-mcp --token=YOUR_TOKEN --url=https://modao.cc`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modao-mcp/modao-proto-mcp --token=YOUR_TOKEN --url=https://modao.cc`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mockingbot-modao-proto.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mockingbot-modao-proto.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

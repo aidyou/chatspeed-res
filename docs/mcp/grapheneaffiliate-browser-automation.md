@@ -1,45 +1,45 @@
 ---
-title: "浏览器自动化-MCP"
-description: "启用人工智能代理通过标准化接口控制网络浏览器，进行诸如启动、交互和关闭浏览器等操作。"
+title: "browser-automation-mcp"
+description: "Enables AI agents to control web browsers via a standardized interface for operations like launching, interacting with, and closing browsers."
 ---
 
-# 浏览器自动化-MCP
+# browser-automation-mcp
 
-启用人工智能代理通过标准化接口控制网络浏览器，进行诸如启动、交互和关闭浏览器等操作。
+Enables AI agents to control web browsers via a standardized interface for operations like launching, interacting with, and closing browsers.
 
-# 浏览器自动化 MCP 服务器
+# Browser Automation MCP Server
 
-这是一个为 Roo Code 提供浏览器自动化功能的模型上下文协议 (MCP) 服务器。它使 AI 代理能够通过标准化接口控制网页浏览器。
+This is a Model Context Protocol (MCP) server that provides browser automation capabilities for Roo Code. It enables AI agents to control web browsers through a standardized interface.
 
-## 功能
+## Features
 
-- 浏览器控制（启动、关闭）
-- 鼠标交互（在指定坐标点击）
-- 键盘输入（键入文本）
-- 页面导航（向上/向下滚动）
-- 固定视口大小（900x600）
+- Browser control (launch, close)
+- Mouse interactions (click at coordinates)
+- Keyboard input (type text)
+- Page navigation (scroll up/down)
+- Fixed viewport size (900x600)
 
-## 安装
+## Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/grapheneaffiliates/browser-automation-mcp.git
 cd browser-automation-mcp
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. 构建项目：
+3. Build the project:
 ```bash
 npm run build
 ```
 
-## 配置
+## Configuration
 
-在您的 Cline MCP 设置文件中添加以下内容：
+Add the following to your Cline MCP settings file:
 
 ```json
 {
@@ -54,17 +54,17 @@ npm run build
 }
 ```
 
-## 可用工具
+## Available Tools
 
-该服务器提供以下 MCP 工具：
+The server provides the following MCP tools:
 
-- `launch_browser`: 在指定 URL 启动一个新的浏览器实例
-- `click`: 在页面上的特定 x,y 坐标处点击
-- `type`: 在页面上键入文本
-- `scroll`: 向上或向下滚动页面
-- `close_browser`: 关闭浏览器实例
+- `launch_browser`: Launch a new browser instance at a specified URL
+- `click`: Click at specific x,y coordinates on the page
+- `type`: Type text into the page
+- `scroll`: Scroll the page up or down
+- `close_browser`: Close the browser instance
 
-## 使用示例
+## Usage Example
 
 ```typescript
 // Using the MCP tools in Roo Code
@@ -77,26 +77,26 @@ const result = await use_mcp_tool({
 });
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/grapheneaffiliate/browser-automation-mcp](https://github.com/grapheneaffiliate/browser-automation-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/grapheneaffiliate/browser-automation-mcp](https://github.com/grapheneaffiliate/browser-automation-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/browser-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/browser-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/grapheneaffiliate-browser-automation.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/grapheneaffiliate-browser-automation.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

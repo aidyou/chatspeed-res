@@ -1,131 +1,131 @@
 ---
-title: "TMDB电影推荐"
-description: "集成电影数据库 (TMDB) API，提供电影信息、搜索功能和推荐。"
+title: "mcp-server-tmdb"
+description: "Integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations."
 ---
 
-# TMDB电影推荐
+# mcp-server-tmdb
 
-集成电影数据库 (TMDB) API，提供电影信息、搜索功能和推荐。
+Integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations.
 
-# TMDB MCP 服务器
+# TMDB MCP Server
 
 [Smithery](https://smithery.ai/server/@Laksh-star/mcp-server-tmdb)
-此MCP服务器与The Movie Database (TMDB) API集成，提供电影信息、搜索功能和推荐。
+This MCP server integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations.
 
-# 先决条件
+# Prerequisites
 
-在安装和运行TMDB MCP服务器之前，请确保已安装并配置以下先决条件：
+Before installing and running the TMDB MCP server, ensure you have the following prerequisites installed and configured:
 
-## 必需软件
+## Required Software
 
 - **Node.js**
-  - 版本 18.0.0 或更高
-  - 从 [Node.js 官方网站](https://nodejs.org/) 下载
-  - 验证安装：`node --version`
+  - Version 18.0.0 or higher
+  - Download from [Node.js official website](https://nodejs.org/)
+  - Verify installation: `node --version`
 
-- **npm (Node 包管理器)**
-  - 版本 8.0.0 或更高（随 Node.js 提供）
-  - 验证安装：`npm --version`
+- **npm (Node Package Manager)**
+  - Version 8.0.0 or higher (comes with Node.js)
+  - Verify installation: `npm --version`
 
 - **TypeScript**
-  - 将作为项目依赖项安装
-  - 可以全局安装：`npm install -g typescript`
-  - 验证安装：`tsc --version`
+  - Will be installed as a project dependency
+  - Can be installed globally: `npm install -g typescript`
+  - Verify installation: `tsc --version`
 
-## 必需账户和API密钥
+## Required Accounts & API Keys
 
-- **TMDB 账户**
-  - 在 [TMDB](https://www.themoviedb.org/) 注册免费账户
-  - 从 TMDB 控制台获取 API 密钥
-  - API 访问必须由 TMDB 批准
+- **TMDB Account**
+  - Free account at [TMDB](https://www.themoviedb.org/)
+  - API key from TMDB dashboard
+  - API access must be approved by TMDB
 
-- **Claude 桌面应用程序**
-  - 安装最新版本
-  - 有权修改配置文件
+- **Claude Desktop Application**
+  - Latest version installed
+  - Access to modify configuration files
 
-## 系统要求
+## System Requirements
 
-- **操作系统**
-  - macOS (10.15 或更高版本)
-  - Linux (现代发行版)
+- **Operating Systems**
+  - macOS (10.15 or later)
+  - Linux (modern distributions)
 
-- **硬件要求**
-  - 最低 4GB RAM
-  - 1GB 空闲磁盘空间
-  - 稳定的互联网连接
+- **Hardware Requirements**
+  - Minimum 4GB RAM
+  - 1GB free disk space
+  - Stable internet connection
 
-## 开发环境
+## Development Environment
 
-为了获得最佳开发体验，我们建议：
-- 支持 TypeScript 的代码编辑器（例如 VS Code）
-- 终端访问
-- Git（用于版本控制）
+For the best development experience, we recommend:
+- A code editor with TypeScript support (e.g., VS Code)
+- Terminal access
+- Git (for version control)
 
-## 功能
+## Features
 
-### 工具
+### Tools
 
 - **search_movies**
-  - 根据标题或关键词搜索电影
-  - 输入：`query` (字符串): 搜索查询
-  - 返回：包含标题、发行年份、ID、评分和概述的电影列表
-  - 示例：搜索关于太空探索的电影
+  - Search for movies by title or keywords
+  - Input: `query` (string): Search query
+  - Returns: List of movies with titles, release years, IDs, ratings, and overviews
+  - Example: Search for movies about space exploration
 
 - **get_recommendations**
-  - 根据电影 ID 获取电影推荐
-  - 输入：`movieId` (字符串): TMDB 电影 ID
-  - 返回：前 5 条推荐电影及其详细信息
-  - 示例：根据电影 ID 550 (搏击俱乐部) 获取推荐
+  - Get movie recommendations based on a movie ID
+  - Input: `movieId` (string): TMDB movie ID
+  - Returns: Top 5 recommended movies with details
+  - Example: Get recommendations based on movie ID 550 (Fight Club)
 
 - **get_trending**
-  - 获取指定时间窗口内的热门电影
-  - 输入：`timeWindow` (字符串): "day" 或 "week"
-  - 返回：前 10 条热门电影及其详细信息
-  - 示例：获取今天的热门电影
+  - Get trending movies for a specified time window
+  - Input: `timeWindow` (string): Either "day" or "week"
+  - Returns: Top 10 trending movies with details
+  - Example: Get today's trending movies
 
-### 资源
+### Resources
 
-该服务器提供对 TMDB 电影信息的访问：
+The server provides access to TMDB movie information:
 
 - **Movies** (`tmdb:///movie/`)
-  - 包含以下详细信息的全面电影详情：
-    - 标题和发行日期
-    - 评分和概述
-    - 类型
-    - 海报 URL
-    - 演员信息（前 5 名演员）
-    - 导演
-    - 选定的评论
-  - 所有数据以 JSON 格式返回
+  - Comprehensive movie details including:
+    - Title and release date
+    - Rating and overview
+    - Genres
+    - Poster URL
+    - Cast information (top 5 actors)
+    - Director
+    - Selected reviews
+  - All data is returned in JSON format
 
-  ## 开始使用
+  ## Getting Started
 
-1. 获取 TMDB API 密钥：
-   - 在 [TMDB](https://www.themoviedb.org/) 注册
-   - 进入您的账户设置
-   - 导航到 API 部分
-   - 为开发者用途请求一个 API 密钥
+1. Get a TMDB API key:
+   - Sign up at [TMDB](https://www.themoviedb.org/)
+   - Go to your account settings
+   - Navigate to the API section
+   - Request an API key for developer use
 
-2. 克隆并设置项目：
+2. Clone and set up the project:
 ```bash
    git clone [repository-url]
    cd mcp-server-tmdb
    npm install
 ```
 
-3. 构建服务器：
+3. Build the server:
 ```bash
    npm run build
 ```
 
-4. 设置环境变量：
+4. Set up your environment variable:
 ```bash
    export TMDB_API_KEY=your_api_key_here
 ```
 
-### 与 Claude Desktop 结合使用
+### Usage with Claude Desktop
 
-要将此服务器与 Claude Desktop 集成，请在应用程序的服务器配置文件（位于 `~/Library/Application Support/Claude/config.json`）中添加以下内容：
+To integrate this server with Claude Desktop, add the following to your app's server configuration file (located at `~/Library/Application Support/Claude/config.json`):
 
 ```json
 {
@@ -140,82 +140,82 @@ description: "集成电影数据库 (TMDB) API，提供电影信息、搜索功�
 }
 ```
 
-请将 `/full/path/to` 替换为您项目的实际路径。
+Replace `/full/path/to` with the actual path to your project directory.
 
-## 通过 Smithery 安装
+## Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@Laksh-star/mcp-server-tmdb) 自动安装适用于 Claude Desktop 的 TMDB 服务器：
+To install TMDB Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Laksh-star/mcp-server-tmdb):
 
 ```bash
 npx -y @smithery/cli install @Laksh-star/mcp-server-tmdb --client claude
 ```
 
-## 示例用法
+## Example Usage
 
-一旦服务器与 Claude Desktop 一起运行，您可以使用如下命令：
+Once the server is running with Claude Desktop, you can use commands like:
 
-1. 搜索电影：
+1. Search for movies:
 ```
    "Search for movies about artificial intelligence"
 ```
 
-2. 获取热门电影：
+2. Get trending movies:
 ```
    "What are the trending movies today?"
    "Show me this week's trending movies"
 ```
 
-3. 获取电影推荐：
+3. Get movie recommendations:
 ```
    "Get movie recommendations based on movie ID 550"
 ```
 
-4. 获取电影详情：
+4. Get movie details:
 ```
    "Tell me about the movie with ID 550"
 ```
 
-## 错误处理
+## Error Handling
 
-该服务器包括全面的错误处理功能，涵盖：
-- 无效的 API 密钥
-- 网络错误
-- 无效的电影 ID
-- 格式错误的请求
+The server includes comprehensive error handling for:
+- Invalid API keys
+- Network errors
+- Invalid movie IDs
+- Malformed requests
 
-错误信息将以用户友好的格式通过 Claude Desktop 返回。
+Error messages will be returned in a user-friendly format through Claude Desktop.
 
-## 开发
+## Development
 
-在开发过程中监视更改：
+To watch for changes during development:
 ```bash
 npm run watch
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证发布。详见 LICENSE 文件。
+This MCP server is licensed under the MIT License. See the LICENSE file for details.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-**官方网站：** [https://github.com/Laksh-star/mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Laksh-star/mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/full/path/to/dist/index.js`
-- 参数：无
+- Transport: `stdio`
+- Command: `/full/path/to/dist/index.js`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/laksh-star-tmdb.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/laksh-star-tmdb.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,32 +1,32 @@
 ---
-title: "MCP-Weather天气工具"
-description: "通过使用AccuWeather API提供每小时天气预报，使用户能够获取当前天气状况以及针对特定地点的详细12小时预报。"
+title: "mcp-weather"
+description: "Provides hourly weather forecasts using the AccuWeather API, enabling users to access current weather conditions and detailed 12-hour forecasts tailored to specific locations."
 ---
 
-# MCP-Weather天气工具
+# mcp-weather
 
-通过使用AccuWeather API提供每小时天气预报，使用户能够获取当前天气状况以及针对特定地点的详细12小时预报。
+Provides hourly weather forecasts using the AccuWeather API, enabling users to access current weather conditions and detailed 12-hour forecasts tailored to specific locations.
 
-# MCP 天气服务器
+# MCP Weather Server
 
-一个简单的MCP服务器，使用AccuWeather API提供每小时天气预报。
+A simple MCP server that provides hourly weather forecasts using the AccuWeather API.
 
-## 设置
+## Setup
 
-1. 使用 `uv` 安装依赖项：
+1. Install dependencies using `uv`:
 ```bash
 uv venv
 uv sync
 ```
 
-2. 创建一个包含您的AccuWeather API密钥的 `.env` 文件：
+2. Create a `.env` file with your AccuWeather API key:
 ```
 ACCUWEATHER_API_KEY=your_api_key_here
 ```
 
-您可以通过在[AccuWeather API](https://developer.accuweather.com/)注册来获取API密钥。
+You can get an API key by registering at [AccuWeather API](https://developer.accuweather.com/).
 
-## 运行服务器
+## Running the Server
 
 ```json
 {
@@ -42,11 +42,11 @@ ACCUWEATHER_API_KEY=your_api_key_here
 }
 ```
 
-## API 使用
+## API Usage
 
-### 获取每小时天气预报
+### Get Hourly Weather Forecast
 
-响应：
+Response:
 ```json
 {
     "location": "Jakarta",
@@ -78,30 +78,30 @@ ACCUWEATHER_API_KEY=your_api_key_here
 }
 ```
 
-该API提供：
-- 当前天气状况，包括温度、天气描述、湿度和降水状态
-- 12小时预报，每小时数据包括：
-  - 从当前时间开始的相对时间
-  - 摄氏温度
-  - 天气描述
-  - 降水概率、类型和强度
+The API provides:
+- Current weather conditions including temperature, weather description, humidity, and precipitation status
+- 12-hour forecast with hourly data including:
+  - Relative time from current time
+  - Temperature in Celsius
+  - Weather description
+  - Precipitation probability, type, and intensity
 
-**官方网站：** [https://github.com/adhikasp/mcp-weather](https://github.com/adhikasp/mcp-weather)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/adhikasp/mcp-weather](https://github.com/adhikasp/mcp-weather)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `other`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from git+https://github.com/adhikasp/mcp-weather.git mcp-weather`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from git+https://github.com/adhikasp/mcp-weather.git mcp-weather`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/adhikasp-weather.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/adhikasp-weather.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

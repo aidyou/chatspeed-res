@@ -1,11 +1,11 @@
 ---
-title: "飞书/乐聊开放API MCP"
-description: "English | | > ⚠️ Beta 版本通知：此工具目前处于 Beta 阶段。功能和 API 可能会发生变化，请随时关注版本更新。"
+title: "lark"
+description: "English | | ⚠️ Beta Version Notice: This tool is currently in Beta stage. Features and APIs may change, so please stay updated with version releases. Thi"
 ---
 
-# 飞书/乐聊开放API MCP
+# lark
 
-English | | > ⚠️ Beta 版本通知：此工具目前处于 Beta 阶段。功能和 API 可能会发生变化，请随时关注版本更新。
+English | | ⚠️ Beta Version Notice: This tool is currently in Beta stage. Features and APIs may change, so please stay updated with version releases. Thi
 
 # Feishu/Lark OpenAPI MCP
 
@@ -438,22 +438,22 @@ This command is used to clear locally stored user access tokens. If the `--app-i
 - **Issue**: Command line displays garbled characters in Windows environment
   **Solution**: Change the command line encoding to UTF-8 by executing `chcp 65001` in the command prompt. If using PowerShell, you may need to change the terminal font or PowerShell configuration
 
-**官方网站：** [https://github.com/larksuite/lark-openapi-mcp](https://github.com/larksuite/lark-openapi-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/larksuite/lark-openapi-mcp](https://github.com/larksuite/lark-openapi-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`
+- Categories: `communication`
+- Tags: `communication`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @larksuiteoapi/lark-mcp mcp -a <your_app_id> -s <your_app_secret>`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @larksuiteoapi/lark-mcp mcp -a <your_app_id> -s <your_app_secret>`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/effyhhh-lark.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/effyhhh-lark.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

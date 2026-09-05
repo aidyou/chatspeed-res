@@ -1,11 +1,11 @@
 ---
-title: "中国新闻网"
-description: "news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\"; import { StdioServerTransport } from \"@modelcontextprotocol/"
+title: "fetch_chinanews"
+description: "news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\"…"
 ---
 
-# 中国新闻网
+# fetch_chinanews
 
-news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"; import { StdioServerTransport } from "@modelcontextprotocol/
+news.js javascript !/usr/bin/env node / MCP News Fetcher - JavaScript 实现 通过MCP协议提供新闻抓取功能 版本: 0.1.0 - 使用@modelcontextprotocol/sdk / import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"…
 
 news.js
 
@@ -166,21 +166,6 @@ server.tool(
   };
 }
 
-javascript
-} catch (error) {
-  logger.error(`请求错误: ${error}`);
-  return {
-    content: [{
-      type: "text",
-      text: JSON.stringify({
-        success: false,
-        request_id: requestId,
-        error: `请求失败: ${error.message}`
-      })
-    }],
-    isError: true
-  };
-}
 
 javascript
 } catch (error) {
@@ -197,6 +182,7 @@ javascript
     isError: true
   };
 }
+
 
 javascript
 // 启动服务
@@ -217,22 +203,22 @@ if (fileURLToPath(import.meta.url) === process.argv[1]) {
 
 export default server;
 
-**官方网站：** [https://www.chinanews.com.cn](https://www.chinanews.com.cn)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.chinanews.com.cn](https://www.chinanews.com.cn)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`
-- 标签：`search`, `other`
+- Categories: `search`
+- Tags: `search`, `other`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`./news.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `./news.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/andyilin-fetch-chinanews.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/andyilin-fetch-chinanews.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "自在招聘-MCP"
-description: "自在招聘平台（https://zizai.work）MCP 服务是一个与 MCP 协议完全兼容的核心 API 服务，是中国第一家支持该协议的招聘平台服务提供商。"
+title: "ZIZAI-Recruitment-Platform"
+description: "ZIZAI Recruitment Platform(https://zizai.work) is a core API service that is fully compatible with the MCP protocol, making it the first recruitment platform service provider in China to support this…"
 ---
 
-# 自在招聘-MCP
+# ZIZAI-Recruitment-Platform
 
-自在招聘平台（https://zizai.work）MCP 服务是一个与 MCP 协议完全兼容的核心 API 服务，是中国第一家支持该协议的招聘平台服务提供商。
+ZIZAI Recruitment Platform(https://zizai.work) is a core API service that is fully compatible with the MCP protocol, making it the first recruitment platform service provider in China to support this…
 
 # 自在招聘 MCP Server
 
@@ -74,22 +74,22 @@ Add the following to your `claude_desktop_config.json`:
 
 This MCP server is licensed under the Apache-2.0 License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the Apache-2.0 License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/zaiwork/mcp](https://github.com/zaiwork/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zaiwork/mcp](https://github.com/zaiwork/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `research and data`, `chinese`
+- Categories: `data`
+- Tags: `search`, `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @zizaiwork/mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @zizaiwork/mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zaiwork-zizai-recruitment-platform.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zaiwork-zizai-recruitment-platform.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

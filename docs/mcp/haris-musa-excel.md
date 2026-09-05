@@ -1,52 +1,52 @@
 ---
-title: "Excel服务器"
-description: "提供对Excel文件的操纵功能。此服务器启用工作簿创建、数据操纵、格式设置和高级Excel功能。"
+title: "excel-mcp-server"
+description: "Provides Excel file manipulation capabilities. This server enables workbook creation, data manipulation, formatting, and advanced Excel features."
 ---
 
-# Excel服务器
+# excel-mcp-server
 
-提供对Excel文件的操纵功能。此服务器启用工作簿创建、数据操纵、格式设置和高级Excel功能。
+Provides Excel file manipulation capabilities. This server enables workbook creation, data manipulation, formatting, and advanced Excel features.
 
-# Excel MCP 服务器
+# Excel MCP Server
 
-这是一个模型上下文协议（MCP）服务器，允许你在不安装 Microsoft Excel 的情况下操作 Excel 文件。使用你的 AI 代理创建、读取和修改 Excel 工作簿。
+A Model Context Protocol (MCP) server that lets you manipulate Excel files without needing Microsoft Excel installed. Create, read, and modify Excel workbooks with your AI agent.
 
-## 功能
+## Features
 
-- 📊 创建和修改 Excel 工作簿
-- 📝 读写数据
-- 🎨 应用格式和样式
-- 📈 创建图表和可视化
-- 📊 生成数据透视表
-- 🔄 管理工作表和范围
+- 📊 Create and modify Excel workbooks
+- 📝 Read and write data
+- 🎨 Apply formatting and styles
+- 📈 Create charts and visualizations
+- 📊 Generate pivot tables
+- 🔄 Manage worksheets and ranges
 
-## 快速开始
+## Quick Start
 
-### 前提条件
+### Prerequisites
 
-- Python 3.10 或更高版本
+- Python 3.10 or higher
 
-### 安装
+### Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/haris-musa/excel-mcp-server.git
 cd excel-mcp-server
 ```
 
-2. 使用 uv 安装：
+2. Install using uv:
 ```bash
 uv pip install -e .
 ```
 
-### 运行服务器
+### Running the Server
 
-启动服务器（默认端口 8000）：
+Start the server (default port 8000):
 ```bash
 uv run excel-mcp-server
 ```
 
-自定义端口（例如 8080）：
+Custom port (e.g., 8080):
 
 ```bash
 # Bash/Linux/macOS
@@ -56,11 +56,11 @@ export FASTMCP_PORT=8080 && uv run excel-mcp-server
 $env:FASTMCP_PORT = "8080"; uv run excel-mcp-server
 ```
 
-## 与 AI 工具一起使用
+## Using with AI Tools
 
 ### Cursor IDE
 
-1. 在 Cursor 中添加此配置：
+1. Add this configuration to Cursor:
 ```json
 {
   "mcpServers": {
@@ -74,47 +74,47 @@ $env:FASTMCP_PORT = "8080"; uv run excel-mcp-server
 }
 ```
 
-2. Excel 工具将通过你的 AI 助手可用。
+2. The Excel tools will be available through your AI assistant.
 
-### 远程托管与传输协议
+### Remote Hosting & Transport Protocols
 
-该服务器使用服务器发送事件（SSE）传输协议。对于不同的使用场景：
+This server uses Server-Sent Events (SSE) transport protocol. For different use cases:
 
-1. **与 Claude Desktop 一起使用（需要 stdio）:**
-   - 使用 [Supergateway](https://github.com/supercorp-ai/supergateway) 将 SSE 转换为 stdio:
+1. **Using with Claude Desktop (requires stdio):**
+   - Use [Supergateway](https://github.com/supercorp-ai/supergateway) to convert SSE to stdio:
 
-2. **托管您的 MCP 服务器：**
-   - [远程 MCP 服务器指南](https://developers.cloudflare.com/agents/guides/remote-mcp-server/)
+2. **Hosting Your MCP Server:**
+   - [Remote MCP Server Guide](https://developers.cloudflare.com/agents/guides/remote-mcp-server/)
 
-## 环境变量
+## Environment Variables
 
-- `FASTMCP_PORT`: 服务器端口（默认：8000）
-- `EXCEL_FILES_PATH`: Excel 文件目录（默认：`./excel_files`）
+- `FASTMCP_PORT`: Server port (default: 8000)
+- `EXCEL_FILES_PATH`: Directory for Excel files (default: `./excel_files`)
 
-## 可用工具
+## Available Tools
 
-服务器提供了一整套的 Excel 操作工具。请参阅 [TOOLS.md](https://github.com/haris-musa/excel-mcp-server/blob/HEAD/TOOLS.md) 获取所有可用工具的完整文档。
+The server provides a comprehensive set of Excel manipulation tools. See [TOOLS.md](https://github.com/haris-musa/excel-mcp-server/blob/HEAD/TOOLS.md) for complete documentation of all available tools.
 
-## 许可证
+## License
 
-MIT 许可证 - 详情见 [LICENSE](https://github.com/haris-musa/excel-mcp-server/blob/HEAD/LICENSE)。
+MIT License - see [LICENSE](https://github.com/haris-musa/excel-mcp-server/blob/HEAD/LICENSE) for details.
 
-**官方网站：** [https://github.com/haris-musa/excel-mcp-server](https://github.com/haris-musa/excel-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/haris-musa/excel-mcp-server](https://github.com/haris-musa/excel-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `databases`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `databases`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`excel-mcp-server stdio`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `excel-mcp-server stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/haris-musa-excel.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/haris-musa-excel.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

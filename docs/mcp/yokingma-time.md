@@ -1,14 +1,13 @@
 ---
-title: "time-时智"
-description: "赋予大型语言模型时间感知能力。\n为您的大型语言模型赋予时间感知能力。访问当前时间、在时区之间转换并轻松获取时间戳。通过精确的时间相关功能增强您的应用程序。"
+title: "time-mcp"
+description: "Giving LLMs Time Awareness Capabilities. Empower your LLMs with time awareness capabilities. Access current time, convert between timezones, and get timestamps effortlessly. Enhance your applications…"
 ---
 
-# time-时智
+# time-mcp
 
-赋予大型语言模型时间感知能力。
-为您的大型语言模型赋予时间感知能力。访问当前时间、在时区之间转换并轻松获取时间戳。通过精确的时间相关功能增强您的应用程序。
+Giving LLMs Time Awareness Capabilities. Empower your LLMs with time awareness capabilities. Access current time, convert between timezones, and get timestamps effortlessly. Enhance your applications…
 
-# 🚀 Time MCP Server: 为LLM赋予时间感知能力
+# 🚀 Time MCP Server: Giving LLMs Time Awareness Capabilities
 
 [Smithery](https://smithery.ai/server/@yokingma/time-mcp) 
 
@@ -17,57 +16,42 @@ description: "赋予大型语言模型时间感知能力。\n为您的大型语�
  
  alt="Report a bug">
 
-这是一个模型上下文协议（MCP）服务器实现，它允许大语言模型（LLMs）具备时间感知功能。
+A Model Context Protocol (MCP) server implementation that allows LLMs to have time awareness capabilities.
 
  >
 
-## 工具
+## Tools
 
-- `current_time`: 获取当前时间（UTC 和本地时间）
-- `relative_time`: 获取相对时间
-- `get_timestamp`: 获取指定时间的时间戳
-- `days_in_month`: 获取月份中的天数
-- `convert_time`: 在不同时区之间转换时间
-- `get_week_year`: 获取一年中的周和ISO周
+- `current_time`: Get current time (UTC and local time)
+- `relative_time`: Get relative time
+- `get_timestamp`: Get timestamp for the time
+- `days_in_month`: Get days in month
+- `convert_time`: Convert time between timezones
+- `get_week_year`: Get week and isoWeek of the year
 
-## 安装
+## Installation
 
-### 通过Smithery安装
+### Installing via Smithery
 
-要通过[Smithery](https://smithery.ai/server/@yokingma/time-mcp)自动为Claude Desktop安装time-mcp：
+To install time-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@yokingma/time-mcp):
 
 ```bash
 npx -y @smithery/cli install @yokingma/time-mcp --client claude
 ```
 
-### 手动安装（可选）
+### Manually install (Optional)
 ```shell
 npm install -g time-mcp
 ```
 
-### 使用npx
+### using npx
 ```shell
 npx -y time-mcp
 ```
 
-## 在Cursor上运行
+## Running on Cursor
 
-您的`mcp.json`文件将如下所示：
-
-```json
-{
-  "mcpServers": {
-    "time-mcp": {
-      "command": "npx",
-      "args": ["-y", "time-mcp"]
-    }
-  }
-}
-```
-
-## 在Windsurf上运行
-
-在您的`./codeium/windsurf/model_config.json`文件中添加以下内容：
+Your `mcp.json` file will look like this:
 
 ```json
 {
@@ -80,26 +64,41 @@ npx -y time-mcp
 }
 ```
 
-## 许可证
+## Running on Windsurf
 
-MIT许可证 - 详情请参见[LICENSE](https://github.com/yokingma/time-mcp/blob/HEAD/LICENSE)文件。
+Add this to your `./codeium/windsurf/model_config.json` file:
 
-**官方网站：** [https://github.com/yokingma/time-mcp](https://github.com/yokingma/time-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+```json
+{
+  "mcpServers": {
+    "time-mcp": {
+      "command": "npx",
+      "args": ["-y", "time-mcp"]
+    }
+  }
+}
+```
 
-## 分类与标签
+## License
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+MIT License - see [LICENSE](https://github.com/yokingma/time-mcp/blob/HEAD/LICENSE) file for details.
 
-## MCP 配置
+**Official site: ** [https://github.com/yokingma/time-mcp](https://github.com/yokingma/time-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y time-mcp`
+## Categories & Tags
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## 数据来源
+## MCP Configuration
 
-资源文件：`resources/mcp/yokingma-time.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y time-mcp`
+
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/yokingma-time.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

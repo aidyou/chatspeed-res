@@ -1,11 +1,11 @@
 ---
-title: "天气预报查询"
-description: "通过地名、经纬度、区号邮编、IP地址、景点名称来查询天气情况。可查询到当前24小时天气、未来7天、15天的天气预报及历史天气情况的数据。广泛应用于能源、电力、农业、生活服务类应用、智能硬件、航天航海、旅游业、建筑业等领域。"
+title: "th-weather-query"
+description: "Query weather conditions by place name, latitude and longitude, area code and postal code, IP address, or scenic spot name. You can obtain data on the current 24-hour weather, a 7-day forecast, a 15-d…"
 ---
 
-# 天气预报查询
+# th-weather-query
 
-通过地名、经纬度、区号邮编、IP地址、景点名称来查询天气情况。可查询到当前24小时天气、未来7天、15天的天气预报及历史天气情况的数据。广泛应用于能源、电力、农业、生活服务类应用、智能硬件、航天航海、旅游业、建筑业等领域。
+Query weather conditions by place name, latitude and longitude, area code and postal code, IP address, or scenic spot name. You can obtain data on the current 24-hour weather, a 7-day forecast, a 15-d…
 
 # 瞳虎-天气预报查询 MCP 服务文档
 
@@ -89,22 +89,22 @@ A：首次使用请：
 > **技术支持**  
 联系平台客服或王先生：18363092551（微信同号）
 
-**官方网站：** [https://mcp.tonghu.top](https://mcp.tonghu.top)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `other`, `天气服务`
+- Categories: `data`
+- Tags: `location services`, `other`, `天气服务`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kid1235789-th-weather-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kid1235789-th-weather-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

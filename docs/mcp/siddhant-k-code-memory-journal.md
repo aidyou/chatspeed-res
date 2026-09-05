@@ -1,50 +1,50 @@
 ---
-title: "Memory Journal MCP服务器（记忆日志MCP服务器）"
-description: "这个MCP服务器通过位置、标签和人物帮助用户搜索和分析他们的照片库，提供照片分析和模糊匹配等功能，以增强照片管理。"
+title: "memory-journal-mcp-server"
+description: "This MCP server aids users in searching and analyzing their photo library by location, labels, and people, offering functionalities like photo analysis and fuzzy matching for enhanced photo management…"
 ---
 
-# Memory Journal MCP服务器（记忆日志MCP服务器）
+# memory-journal-mcp-server
 
-这个MCP服务器通过位置、标签和人物帮助用户搜索和分析他们的照片库，提供照片分析和模糊匹配等功能，以增强照片管理。
+This MCP server aids users in searching and analyzing their photo library by location, labels, and people, offering functionalities like photo analysis and fuzzy matching for enhanced photo management…
 
 # 📸 Smart Photo Journal MCP Server
 
-**Smart Photo Journal** 是一个旨在帮助您使用强大且直观的工具来搜索和分析您的照片库的MCP服务器。无论您是在回忆家庭时刻还是与朋友寻找特定的照片，这个服务器都能满足您的需求！🎉
+**Smart Photo Journal** is an MCP server designed to help you search and analyze your photo library with powerful, intuitive tools. Whether you're reminiscing about family moments or looking for a specific photo with friends, this server has got you covered! 🎉
 
-> **灵感来源：** [burningion/video-editing-mcp](https://github.com/burningion/video-editing-mcp)
-> 特别感谢[@burningion](https://x.com/burningion)提出使用MCP进行创意媒体管理的创新想法！
+> **Inspired by:** [burningion/video-editing-mcp](https://github.com/burningion/video-editing-mcp)
+> A huge shoutout to [@burningion](https://x.com/burningion) for the innovative idea of using MCP for creative media management!
 
-## 🎯 功能
+## 🎯 Features
 
-- **位置搜索：** 轻松找到特定地点的照片。🌍
-- **标签搜索：** 通过关键词或标签如“生日”、“海滩”或“假期”搜索照片。🎉
-- **人物搜索：** 快速定位包含特定人物的照片。👥
-- **照片分析：** 发现有趣的见解，比如您拍照最频繁的时间和日期。🕰️
-- **模糊匹配：** 不确定确切名称？没关系！该服务器支持模糊匹配以增加灵活性。🔍
+- **Location Search:** Find photos from specific places with ease. 🌍
+- **Label Search:** Search photos by keywords or labels like "Birthday," "Beach," or "Vacation." 🎉
+- **People Search:** Quickly locate photos featuring specific people. 👥
+- **Photo Analysis:** Discover fun insights like the most popular times and days for your photo shoots. 🕰️
+- **Fuzzy Matching:** Not sure of the exact name? Don't worry! The server supports fuzzy matching for flexibility. 🔍
 
-## 🚀 开始使用
+## 🚀 Getting started
 
-### 前提条件
+### Prerequisites
 
-1. 确保您有macOS并拥有一个照片库。
-2. 安装[uv](https://docs.astral.sh/uv/)来管理依赖项并运行服务器。
+1. Ensure you have macOS with a Photos library.
+2. Install [uv](https://docs.astral.sh/uv/) to manage dependencies and run the server.
 
-### 安装
+### Installation
 
-1. 克隆仓库：
+1. Clone the repository:
 
 ```bash
    git clone https://github.com/Siddhant-K-code/memory-journal-mcp-server.git
    cd memory-journal-mcp-server
 ```
 
-2. 使用`uv`安装依赖项：
+2. Install dependencies using `uv`:
 
 ```bash
    uv sync
 ```
 
-3. 配置MCP服务器。更新您的`claude_desktop_config.json`文件如下配置：
+3. Configure the MCP server. Update your `claude_desktop_config.json` with the following configuration:
 
 ```json
    {
@@ -63,136 +63,136 @@ description: "这个MCP服务器通过位置、标签和人物帮助用户搜索
    }
 ```
 
-4. 用以下命令启动服务器或者直接打开Claude Desktop：
+4. Start the server with following command or just open Claude Desktop:
 ```bash
    uv run server.py
 ```
 
-> **注意：** 将``和`
-`替换为您实际的设备用户名和克隆目录路径。
-> 您会收到一个弹出窗口，授权服务器访问您的照片。这些操作仅限于本地，除了Claude服务外不会与任何人共享数据。
+> **Note:** Replace `` and `
+` with your actual device username and the path to the cloned directory.
+> You will get a popup to authorize the server to access your photos. It will be in local only, and no data will be shared with anyone except Claude services.
 
-### MCP服务器初始化
+### MCP Server Initialization
 
-当服务器启动时，您将看到：
+When the server starts, you'll see:
 
 ```
 Starting Smart Photo Journal MCP server.
 ```
 
-现在它已经准备好处理您的照片查询了！🎉
+It's now ready to process your photo queries! 🎉
 
 ---
 
-## 🛠️ 使用方法
+## 🛠️ Usage
 
-### 可用工具
+### Available Tools
 
-1. **位置搜索**
+1. **Location Search**
 
-   - 描述：查找在特定位置拍摄的照片。
-   - 输入示例：
+   - Description: Find photos taken in a specific location.
+   - Input Example:
 ```json
      {
-       "location": "乌代布尔"
+       "location": "Udaipur"
      }
 ```
-   - 预期输出：
+   - Expected Output:
 ```
-     找到 5 张来自乌代布尔的照片：
+     Found 5 photos from Udaipur:
      📷 IMG_1234.jpg
      ...
 ```
 
-2. **标签搜索**
+2. **Label Search**
 
-   - 描述：通过标签或关键词搜索照片。
-   - 输入示例：
+   - Description: Search for photos by labels or keywords.
+   - Input Example:
 ```json
      {
-       "label": "生日"
+       "label": "Birthday"
      }
 ```
-   - 预期输出：
+   - Expected Output:
 ```
-     标记为 '生日' 的照片 (找到 3 张)：
+     Photos labeled as 'Birthday' (3 found):
      📷 IMG_5678.jpg
      ...
 ```
 
-3. **人物搜索**
+3. **People Search**
 
-   - 描述：查找包含特定人物的照片。
-   - 输入示例：
+   - Description: Find photos containing specific people.
+   - Input Example:
 ```json
      {
-       "person": "妈妈"
+       "person": "Maa"
      }
 ```
-   - 预期输出：
+   - Expected Output:
 ```
-     包含妈妈的照片 (找到 10 张)：
+     Photos with Maa (10 found):
      📷 IMG_9101.jpg
      ...
 ```
 
-4. **照片分析**
-   - 描述：分析你的照片库中的模式，例如拍照最常见的时间或日子。
-   - 输入示例：
+4. **Photo Analysis**
+   - Description: Analyze patterns in your photo library, such as the most common times or days for photo shoots.
+   - Input Example:
 ```json
      {}
 ```
-   - 预期输出：
+   - Expected Output:
 ```
-     📸 照片拍摄模式：
-     总照片数：200
+     📸 Photo Taking Patterns:
+     Total Photos: 200
      ...
 ```
 
 ---
 
-## 📚 示例用例
+## 📚 Example Use-Cases
 
-### 1. **家庭和朋友相册整理器**
+### 1. **Family & Friends Album Organizer**
 
-想要将所有家庭时刻汇集在一起吗？使用 `people-search` 工具并输入诸如“爸爸”、“妈妈”或“任何朋友”的名字来查找包含特定人物的照片。
+Want to gather all your family moments in one place? Use the `people-search` tool with names like "Papa" or "Mom" or "Any Friend" to find photos with specific people.
 
-### 2. **度假亮点**
+### 2. **Vacation Highlights**
 
-使用 `location-search` 工具搜索你度假目的地的照片。
+Search for photos from your vacation destination using the `location-search` tool.
 
-### 3. **回忆往昔**
+### 3. **Throwback Fun**
 
-想看看过去的生日照片吗？使用 `label-search` 并输入“生日”，重温那些美好的时光！
+Curious about your past birthday photos? Use `label-search` with "Birthday" and relive the fun!
 
-### 4. **了解你的摄影习惯**
+### 4. **Understand Your Photography Habits**
 
-使用 `photo-analysis` 工具了解你大部分照片的拍摄时间和地点。据此计划你的下一次拍摄！
+Use the `photo-analysis` tool to understand when and where you take most of your photos. Plan your next shoot accordingly!
 
 ---
 
-## ⚡ 获取最佳结果的小贴士
+## ⚡ Tips for Best Results
 
-- 确保你的照片库已加载到 macOS 中。
-- 尽可能具体地提供搜索查询以获得更准确的结果。
-- 当你不确定确切的名字时，可以使用模糊匹配以增加灵活性。
+- Ensure your Photos library is loaded in macOS.
+- Be as specific as possible with search queries for more accurate results.
+- Use fuzzy matching for flexibility when you're unsure of the exact name.
 
-**官方网站：** [https://github.com/Siddhant-K-code/memory-journal-mcp-server](https://github.com/Siddhant-K-code/memory-journal-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Siddhant-K-code/memory-journal-mcp-server](https://github.com/Siddhant-K-code/memory-journal-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`image and video processing`, `location services`, `knowledge and memory`, `chinese`
+- Categories: `data`
+- Tags: `image and video processing`, `location services`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/Users/<YOUR_DEVICE_USERNAME>/.local/bin/uv`
-- 参数：`--directory /Users/<PATH_TO_CLONED_DIR>/memory-journal-mcp-server run server.py`
+- Transport: `stdio`
+- Command: `/Users/<YOUR_DEVICE_USERNAME>/.local/bin/uv`
+- Args: `--directory /Users/<PATH_TO_CLONED_DIR>/memory-journal-mcp-server run server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/siddhant-k-code-memory-journal.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/siddhant-k-code-memory-journal.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

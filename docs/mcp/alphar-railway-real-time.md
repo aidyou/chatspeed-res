@@ -1,11 +1,11 @@
 ---
-title: "【稳定版】12306MCP火车票服务"
-description: "12306-MCP-Server v1.0.0 一个为大型语言模型（LLM）设计的、高可用的12306余票查询工具服务，现已搭载智能会话管理引擎。 12306-MCP-Server 将复杂的12306余票查询接口封装为符合 Model Context Protocol (MCP) 规范的工具集，允许AI Agent通过自然语言无缝查询实时火车票、中转换乘和经停站信息。 从 v1.0.0 版本开始，项目引入了全新的智能会话管理系统，通过会话池、动态User-Agent轮换和自动错误恢复机制，将服务的稳定性与反屏蔽能力"
+title: "Railway-Real-Time-MCP-Server"
+description: "12306-MCP-Server v1.0.0 A high-availability 12306 ticket availability query tool service designed for large language models (LLM), now equipped with an intelligent session management engine. 12306-MCP…"
 ---
 
-# 【稳定版】12306MCP火车票服务
+# Railway-Real-Time-MCP-Server
 
-12306-MCP-Server v1.0.0 一个为大型语言模型（LLM）设计的、高可用的12306余票查询工具服务，现已搭载智能会话管理引擎。 12306-MCP-Server 将复杂的12306余票查询接口封装为符合 Model Context Protocol (MCP) 规范的工具集，允许AI Agent通过自然语言无缝查询实时火车票、中转换乘和经停站信息。 从 v1.0.0 版本开始，项目引入了全新的智能会话管理系统，通过会话池、动态User-Agent轮换和自动错误恢复机制，将服务的稳定性与反屏蔽能力
+12306-MCP-Server v1.0.0 A high-availability 12306 ticket availability query tool service designed for large language models (LLM), now equipped with an intelligent session management engine. 12306-MCP…
 
 # 12306-MCP-Server v1.0.0
 
@@ -14,95 +14,93 @@ description: "12306-MCP-Server v1.0.0 一个为大型语言模型（LLM）设计
 
 [![Docker Pulls](/mcp-assets/dfdae949fb9b905b5571a7a6d41a6870.svg)](https://hub.docker.com/r/maozida880/12306-mcp-server)
 
-**一个为大型语言模型（LLM）设计的、高可用的12306余票查询工具服务，现已搭载智能会话管理引擎。**
+**A high-availability 12306 ticket availability query tool service designed for large language models (LLM), now equipped with an intelligent session management engine.**
 
-12306-MCP-Server 将复杂的12306余票查询接口封装为符合 [Model Context Protocol](https://modelcontextprotocol.io) (MCP) 规范的工具集，允许AI Agent通过自然语言无缝查询实时火车票、中转换乘和经停站信息。
+12306-MCP-Server encapsulates the complex 12306 ticket availability query interface into a set of tools that comply with the [Model Context Protocol](https://modelcontextprotocol.io) (MCP) specification, allowing AI Agents to seamlessly query real-time train ticket, transfer, and stopover information through natural language.
 
-从 `v1.0.0` 版本开始，项目引入了全新的智能会话管理系统，通过会话池、动态User-Agent轮换和自动错误恢复机制，将服务的稳定性与反屏蔽能力提升至全新高度。
+Starting from version `v1.0.0`, the project introduces a brand new intelligent session management system, elevating the service's stability and anti-blocking capabilities to new heights through session pools, dynamic User-Agent rotation, and automatic error recovery mechanisms.
 
-## 🎯 核心优势
+## 🎯 Core Advantages
 
-- **🚀 高性能**: 会话复用率90%+，响应时间降低33%，吞吐量提升228%
-- **💪 高可用**: 智能错误恢复，服务可用性99.5%+，自动会话补充
-- **🛡️ 反屏蔽**: 12种UA动态轮换，智能限流，IP封禁风险降低95%
-- **📊 可观测**: 详细的监控指标，健康检查接口，结构化日志
-- **⚙️ 易配置**: 环境变量配置，Docker支持，开箱即用
+- **🚀 High Performance**: 90%+ session reuse rate, 33% reduction in response time, 228% increase in throughput
+- **💪 High Availability**: Intelligent error recovery, 99.5%+ service availability, automatic session replenishment
+- **🛡️ Anti-Blocking**: 12 types of UA dynamic rotation, intelligent rate limiting, 95% reduction in IP ban risk
+- **📊 Observability**: Detailed monitoring metrics, health check endpoints, structured logs
+- **⚙️ Easy Configuration**: Environment variable configuration, Docker support, ready to use out of the box
 
-## ✨ 核心功能
+## ✨ Core Features
 
-### 智能会话管理
-- **会话池**: 维护2-5个会话的池（可配置），高效复用连接
-- **健康监控**: 基于错误率的会话健康度评估，自动淘汰不健康会话
-- **后台维护**: 每5分钟自动清理过期会话并补充新会话
-- **智能恢复**: 自动识别会话失效，立即销毁并创建新会话
-- **请求队列**: 池满时智能排队，避免请求失败
+### Intelligent Session Management
+- **Session Pool**: Maintains a pool of 2-5 sessions (configurable) for efficient connection reuse
+- **Health Monitoring**: Evaluates session health based on error rates and automatically eliminates unhealthy sessions
+- **Background Maintenance**: Automatically cleans up expired sessions and replenishes new sessions every 5 minutes
+- **Intelligent Recovery**: Automatically identifies session failures, immediately destroys and creates new sessions
+- **Request Queue**: Intelligently queues requests when the pool is full to avoid request failures
 
-### 查询工具集
-### 如何使用：工具与参数详解
+### Query Toolset
+### How to Use: Detailed Explanation of Tools and Parameters
 
-该服务主要提供了四个针对不同需求场景设计的查询工具，能够有效地帮助开发人员构建功能丰富的交通出行应用 。
+This service primarily provides four query tools designed for different scenarios, effectively helping developers build feature-rich travel applications.
 
-#### 1. 余票查询接口 (get-tickets)
- 用途：根据出发地、目的地和日期检索可用的直达列车班次及其详细信息，包括票价、余票数量、历时等 。
- 使用场景：当用户想知道从一个城市到另一个城市有哪些列车时，此接口可以快速提供所有选项 。
- 请求参数：
-     `date` (必填): 查询日期，格式为 "yyyy-MM-dd" 。
-     `fromStation` (必填): 出发地的 station_code 。
-     `toStation` (必填): 到达地的 station_code 。
-     `trainFilterFlags` (可选): 车次筛选标志，如 "G" 代表高铁/城际，"D" 代表动车等 。
-     `earliestStartTime` / `latestStartTime` (可选): 最早/最晚出发时间（0-24小时） 。
-     `sortFlag` (可选): 排序方式，支持按出发时间、到达时间、历时排序 。
-     `format` (可选): 返回结果格式，支持 text、csv、json 。
+#### 1. Ticket Availability Query Interface (get-tickets)
+  Purpose: Retrieve available direct train schedules and their detailed information, including ticket prices, remaining tickets, duration, etc., based on the departure, destination, and date.
+  Usage Scenario: When a user wants to know which trains are available from one city to another, this interface can quickly provide all options.
+  Request Parameters:
+     `date` (required): Query date in "yyyy-MM-dd" format.
+     `fromStation` (required): The station_code of the departure location.
+     `toStation` (required): The station_code of the arrival location.
+     `trainFilterFlags` (optional): Train schedule filter flags, such as "G" for high-speed rail/intercity, "D" for EMU, etc.
+     `earliestStartTime` / `latestStartTime` (optional): Earliest/latest departure time (0-24 hours).
+     `sortFlag` (optional): Sorting method, supports sorting by departure time, arrival time, and duration.
+     `format` (optional): Result format, supports text, csv, json.
 
-#### 2. 中转换乘查询接口 (get-interline-tickets)
- 用途：查询两地之间的中转换乘方案，提供多个换乘选项，并展示各段车程的详细信息 。
- 使用场景：适用于两个城市之间没有直达列车，或用户希望寻找更多出行选择的场景 。
- 请求参数：
-     `date` (必填): 查询日期 。
-     `fromStation` (必填): 出发地的 station_code 。
-     `toStation` (必填): 到达地的 station_code 。
-     `middleStation` (可选): 指定中转站的 station_code 。
+#### 2. Transfer Query Interface (get-interline-tickets)
+  Purpose: Query transfer options between two locations, providing multiple transfer options and detailed information for each segment of the journey.
+  Usage Scenario: Suitable for scenarios where there are no direct trains between two cities or when users want to find more travel options.
+  Request Parameters:
+     `date` (required): Query date.
+     `fromStation` (required): The station_code of the departure location.
+     `toStation` (required): The station_code of the arrival location.
+     `middleStation` (optional): The station_code of the specified transfer station.
 
-#### 3. 车次经停站查询接口 (get-train-route-stations)
- 用途：输入具体的列车车次和出发日期，获取该列车沿途停靠的所有站点详情，包括到站和发车时间 。
- 使用场景：当旅客已经确定乘坐某趟列车，但想了解沿途经停站信息时使用 。
- 请求参数：
-     `trainCode` (必填): 要查询的车次，例如 "G1033" 。
-     `departDate` (必填): 列车出发的日期，格式为 "yyyy-MM-dd" 。
+#### 3. Train Route Station Query Interface (get-train-route-stations)
+  Purpose: Input a specific train number and departure date to obtain details of all stops along the route, including arrival and departure times.
+  Usage Scenario: Used when passengers have already decided to take a specific train but want to know the details of the stops along the way.
+  Request Parameters:
+     `trainCode` (required): The train number to be queried, e.g., "G1033".
+     `departDate` (required): The departure date of the train in "yyyy-MM-dd" format.
 
-#### 4. 车站代码查询接口
- 用途：提供多种方式查询火车站的 station_code，这是其他查询接口所必需的参数 。
- 使用场景：在进行车票查询前，将用户输入的中文地名（如“北京”、“上海虹桥”）转换为系统可识别的车站编码 。
- 可用工具：
-     `get-station-code-by-names`: 通过具体的中文车站名查询 。
-     `get-station-code-of-citys`: 通过中文城市名查询代表该城市的车站编码 。
-     `get-stations-code-in-city`: 查询一个城市内的所有火车站编码 。
+#### 4. Station Code Query InterfacePurpose: Provide multiple ways to query the `station_code` of train stations, which is a required parameter for other query interfaces.
+Usage Scenario: Before performing a ticket query, convert the Chinese place names entered by users (such as "Beijing", "Shanghai Hongqiao") into station codes that the system can recognize.
+Available Tools:
+    `get-station-code-by-names`: Query through specific Chinese station names.
+    `get-station-code-of-citys`: Query the station code representing a city through the Chinese city name.
+    `get-stations-code-in-city`: Query all train station codes within a city.
 
-### 灵活的筛选与排序
-- 支持按车次类型 (G/D/Z/T/K/F/S) 进行筛选
-- 支持按出发时间范围进行筛选
-- 支持按出发时间、到达时间和历时进行排序
+### Flexible Filtering and Sorting
+- Supports filtering by train type (G/D/Z/T/K/F/S)
+- Supports filtering by departure time range
+- Supports sorting by departure time, arrival time, and duration
 
-### 多种输出格式
-- 支持 `text` (默认)、`csv` 和 `json` 三种格式
-- 方便不同场景下的数据消费和处理
+### Multiple Output Formats
+- Supports `text` (default), `csv`, and `json` formats
+- Facilitates data consumption and processing in different scenarios
 
-## 📊 性能指标
+## 📊 Performance Metrics
 
-| 指标 | v0.3.x | v1.0.0 | 提升 |
-|------|--------|--------|------|
-| 响应时间 (P95) | 2.5s | 0.5s | +80% |
-| 吞吐量 | 2.5 req/s | 8.2 req/s | +228% |
-| 成功率 | 92% | 99.5% | +8.2% |
-| 会话复用率 | 10% | 90%+ | +800% |
-| IP封禁风险 | 高 | 极低 | -95% |
+| Metric | v0.3.x | v1.0.0 | Improvement |
+|--------|--------|--------|-------------|
+| Response Time (P95) | 2.5s | 0.5s | +80% |
+| Throughput | 2.5 req/s | 8.2 req/s | +228% |
+| Success Rate | 92% | 99.5% | +8.2% |
+| Session Reuse Rate | 10% | 90%+ | +800% |
+| IP Ban Risk | High | Very Low | -95% |
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证。
+This project is licensed under the MIT license.
 
-
-## 📧 联系方式
+## 📧 Contact
 
 - **Issues**: [GitHub Issues](https://github.com/maozida880/12306-mcp-server/issues)
 - **Email**: maozida880@126.com
@@ -110,24 +108,24 @@ description: "12306-MCP-Server v1.0.0 一个为大型语言模型（LLM）设计
 
 ## ⭐ Star History
 
-如果这个项目对你有帮助，请给一个 ⭐️ Star！
+If this project has been helpful to you, please give it a ⭐️ Star!
 
-**官方网站：** [https://github.com/maozida880/12306-MCP-Server](https://github.com/maozida880/12306-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/maozida880/12306-MCP-Server](https://github.com/maozida880/12306-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `communication`
-- 标签：`search`, `communication`, `developer tools`, `chinese`
+- Categories: `search`, `communication`
+- Tags: `search`, `communication`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`12306-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `12306-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/alphar-railway-real-time.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/alphar-railway-real-time.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

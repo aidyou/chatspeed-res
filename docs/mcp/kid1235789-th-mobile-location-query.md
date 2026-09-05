@@ -1,109 +1,108 @@
 ---
-title: "手机归属地查询"
-description: "传入手机号，查询手机号归属地信息、运营商，包括省、市、邮编、区号等等。支持移动、电信、联通、广电、虚拟号码。实时查询，非缓存库。"
+title: "th-mobile-location-query"
+description: "Pass in the phone number to query the information about the phone number's location, operator, including province, city, postal code, area code, etc. Supports Mobile, Telecom, Unicom, Broadcasting & T…"
 ---
 
-# 手机归属地查询
+# th-mobile-location-query
 
-传入手机号，查询手机号归属地信息、运营商，包括省、市、邮编、区号等等。支持移动、电信、联通、广电、虚拟号码。实时查询，非缓存库。
+Pass in the phone number to query the information about the phone number's location, operator, including province, city, postal code, area code, etc. Supports Mobile, Telecom, Unicom, Broadcasting & T…
 
-# 瞳虎-手机归属地查询 MCP 服务文档
+# Tonghu - Mobile Phone Location Query MCP Service Documentation
 
-## 什么是 瞳虎-手机归属地查询 MCP 服务？
-瞳虎手机归属地查询MCP Server提供以下核心功能：
-- 通过手机号查询归属地信息、是否虚拟运营商等
+## What is the Tonghu - Mobile Phone Location Query MCP Service?
+The Tonghu Mobile Phone Location Query MCP Server provides the following core functions:
+- Querying location information and whether it's a virtual operator through the phone number
 
-服务特点：
-- **覆盖信息全**：直连四大运营商，支持移动、电信、联通、广电、虚拟号码
-- **实时更新**：实时核验，毫秒响应，精准核验。
-- **返回字段**：返回运营商、地区、省份、邮编等信息
+Service Features:
+- **Comprehensive Coverage**: Directly connected to four major operators, supporting Mobile, Telecom, Unicom, Broadcasting, and virtual numbers
+- **Real-time Updates**: Real-time verification, millisecond response, precise verification.
+- **Returned Fields**: Returns information such as operator, area, province, postal code, etc.
 
 ---
 
-## 如何使用 瞳虎-手机归属地查询 MCP 服务？
-### API Key 获取方式
-1. 注册登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")
-2. 创建您的 API Key（已创建的可直接使用）
-3. 在[产品中心](https://mcp.tonghu.top/#/layout/prodCenter "瞳虎MCP")开通【手机归属地查询】服务
-### 部署方式1（SSE）
-```
+## How to Use the Tonghu - Mobile Phone Location Query MCP Service?
+### API Key Acquisition
+1. Register and log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP")
+2. Create your API Key (if already created, you can use it directly)
+3. Activate the [Mobile Phone Location Query] service in the [Product Center](https://mcp.tonghu.top/#/layout/prodCenter "Tonghu MCP")
+
+### Deployment Method 1 (SSE)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/sse?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/sse?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-### 部署方式2（Streamable Http）
-```
+
+### Deployment Method 2 (Streamable Http)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/streamable?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-> **注意事项**：
-- 服务已支持集成到智能体和工作流中
+
+> **Note**:
+- The service is already supported for integration into intelligent agents and workflows.
 
 ---
 
+## Use Cases of the Tonghu - Mobile Phone Location Query MCP Service
 
+1. **Customer Geolocation Verification**
+   - After the user enters their phone number during the registration process, the system automatically calls the MCP mobile phone location query interface to obtain the corresponding location information for that number.
+   - Enhances account security and reduces false registrations.
 
-## 瞳虎-手机归属地查询 MCP 服务的使用案例
+2. **Call Location in Customer Support**
+   - When an incoming call is received, the system automatically queries the caller's location and displays it to the customer support staff.
+   - Supports personalized service recommendations based on the region.
 
-1. **客户地理位置验证**  
-   - 在用户注册过程中输入手机号码后，系统自动调用 MCP 手机归属地查询接口获取该号码对应的归属地信息。
-   - 提升账户安全性，减少虚假注册。
+3. **Geographically Targeted Marketing Campaigns**
+   - Analyze the user's phone number location and conduct targeted marketing campaigns for specific regions.
+   - Improves marketing effectiveness and increases conversion rates.
 
-2. **客服支持中的来电定位**  
-   - 当有电话呼入时，系统自动查询来电号码的归属地，并显示给客服人员。
-   - 支持基于地区的个性化服务推荐。
-
-3. **营销活动的地域定向投放**  
-   - 分析用户手机号码归属地，针对特定区域开展有针对性的营销活动。
-   - 提高营销效果，增加转化率。
-  
-4. **风险控制与反欺诈检测**  
-   - 利用 MCP 查询手机号码归属地作为额外的风险评估因素之一，结合其他数据（如IP地址）来判断是否存在异常行为。
+4. **Risk Control and Fraud Detection**
+   - Use the MCP to query the phone number location as one of the additional risk assessment factors, combined with other data (such as IP address) to determine if there are any abnormal behaviors.
 
 ---
 
-## 常见问题解答
+## Frequently Asked Questions
 
-**Q：使用瞳虎-手机归属地查询MCP服务是否需要付费？**  
-A：首次开通产品有免费试用额度，额度耗尽可选择：
-- 购买套餐（限时优惠）
-- 充值余额按次扣费
-- 量大可联系客服定制额外优惠
+**Q: Is there a fee for using the Tonghu - Mobile Phone Location Query MCP Service?**  
+A: There is a free trial quota when you first activate the product. Once the quota is exhausted, you can choose:
+- Purchase a package (limited time offer)
+- Recharge and pay per use
+- For large volumes, contact customer service for additional discounts
 
-**Q：使用瞳虎-手机归属地查询MCP服务注意事项？**  
-A：首次使用请：
-1. 登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")，使用手机号注册账号
-2. 创建 API Key
-3. 在产品中心开通服务（可额外购买套餐）
+**Q: What should I be aware of when using the Tonghu - Mobile Phone Location Query MCP Service?**  
+A: For first-time users, please:
+1. Log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP") and register an account with your phone number
+2. Create an API Key
+3. Activate the service in the Product Center (additional packages can be purchased)
 
-> **技术支持**  
-联系平台客服或王先生：18363092551（微信同号）
+> **Technical Support**  
+Contact platform customer service or Mr. Wang: 18363092551 (WeChat ID same as phone number)
 
-**官方网站：** [https://mcp.tonghu.top](https://mcp.tonghu.top)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `other`, `developer tools`, `企业服务`, `运营商`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `other`, `developer tools`, `企业服务`, `运营商`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kid1235789-th-mobile-location-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kid1235789-th-mobile-location-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

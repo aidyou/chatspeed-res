@@ -1,286 +1,353 @@
 ---
-title: "智能专家辩论系统MCP"
-description: "基于本地MCP（Model Context Protocol）的AI专家辩论系统，采用动态专家生成架构，根据问题而智能的创建最适合的专家组合进行多轮智慧碰撞。\n\nMulti-round AI expert debate system via MCP - Three thought leaders engage in deep discussions on any topic"
+title: "guru-pk-mcp"
+description: "Based on the local MCP (Model Context Protocol), the AI expert debate system adopts a dynamic expert generation architecture, intelligently creating the most suitable combination of experts for multi-…"
 ---
 
-# 智能专家辩论系统MCP
+# guru-pk-mcp
 
-基于本地MCP（Model Context Protocol）的AI专家辩论系统，采用动态专家生成架构，根据问题而智能的创建最适合的专家组合进行多轮智慧碰撞。
+Based on the local MCP (Model Context Protocol), the AI expert debate system adopts a dynamic expert generation architecture, intelligently creating the most suitable combination of experts for multi-…
 
-Multi-round AI expert debate system via MCP - Three thought leaders engage in deep discussions on any topic
+# Guru-PK MCP Intelligent Expert Debate System
 
-# Guru-PK MCP 智能专家辩论系统
+An AI expert debate system based on the local MCP (Model Context Protocol), adopting a **dynamic expert generation architecture** to intelligently create the most suitable combination of experts for multi-round intellectual collisions according to the question.
 
-基于本地MCP（Model Context Protocol）的AI专家辩论系统，采用**动态专家生成架构**，根据问题而智能的创建最适合的专家组合进行多轮智慧碰撞。
+## ✨ Core Features
 
-## ✨ 核心特色
+- 🏭 **Dynamic Expert Generation** - Fully problem-driven, generating a unique set of experts each time
+- 🌟 **Infinite Expert Pool** - Breaking through the limitations of fixed experts, supporting the generation of experts in any field
+- 🔄 **Multi-Round PK Process** - Independent Thinking → Cross-Debate → Final Position → Wisdom Synthesis
+- 🎨 **Tufte Style Infographics** - Transforms expert debates into a single-page dynamic infographic strictly following the design principles of data visualization master Edward Tufte
+- 🤖 **Intelligent Division of Labor Architecture** - The LLM at the MCP Host end is responsible for intelligent analysis, while the MCP Server end provides process guidance
 
-- 🏭 **动态专家生成** - 完全问题驱动，每次生成专属专家组合
-- 🌟 **无限专家池** - 突破固定专家限制，支持任意领域的专家生成
-- 🔄 **多轮PK流程** - 独立思考 → 交叉辩论 → 最终立场 → 智慧综合  
-- 🎨 **塔夫特风格信息图** - 将专家辩论转化为严格遵循数据可视化大师爱德华·塔夫特设计原则的单页动态信息图
-- 🤖 **智能分工架构** - MCP Host端LLM负责智能分析，MCP Server端提供流程指导
+## 🌐 Online Demo
 
-## 🌐 在线演示
+**👉 [View Infographic Demo](https://mitsudoai.github.io/guru-pk-mcp/)**
 
-**👉 [查看信息图演示](https://mitsudoai.github.io/guru-pk-mcp/)**
+This webpage showcases a Tufte-style dynamic infographic created using this MCP tool, vividly demonstrating the powerful capabilities of the expert debate system.
 
-这个网页展示了使用本MCP工具创建的塔夫特风格动态信息图，直观展现了专家辩论系统的强大功能。
+## 🚀 Quick Installation
 
-## 🚀 快速安装
+### 1. Install Dependencies
 
-### 1. 安装依赖
-
-**方式一：使用安装脚本（推荐）**
+**Method One: Using the Installation Script (Recommended)**
 
 **macOS/Linux:**
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
 
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+```
 **Windows:**
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
 
-**方式二：使用 pip 安装（适用于所有平台）**
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+```
+**Method Two: Installing via pip (Suitable for All Platforms)**
 
 ```bash
+
 pip install uv
+
 ```
+**Method Three: Downloading the Installer Package**
 
-**方式三：下载安装包**
+Download the installer package for your platform from the [UV Releases](https://github.com/astral-sh/uv/releases) page
 
-从 [UV Releases](https://github.com/astral-sh/uv/releases) 页面下载对应平台的安装包
+### 2. Configure MCP Client
 
-### 2. 配置MCP客户端
-
-**推荐方式：从PyPI安装**
+**Recommended Method: Install from PyPI**
 
 ```json
+
 {
+
   "mcpServers": {
+
     "guru-pk": {
+
       "command": "uvx",
+
       "args": ["--from", "guru-pk-mcp", "guru-pk-mcp-server"],
+
       "env": {
+
         "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/目录, Windows: %USERPROFILE%目录
+
       }
+
     }
+
   }
+
 }
+
 ```
-
-> **更新说明**:
+> **Update Notes**:
 >
-> - 当需要更新`guru-pk-mcp`到最新版本时，请执行命令：
+> - When updating `guru-pk-mcp` to the latest version, run the command:
 >
->   ```bash
+>   bash
 >   uvx pip install --upgrade guru-pk-mcp
->   ```
+>   
 >
-> - 此命令会从PyPI获取并安装最新发布的版本
-> - 如果遇到缓存问题，可以强制刷新：
+> - This command fetches and installs the latest release from PyPI
+> - If you encounter cache issues, you can force a refresh:
 >
->   ```bash
->   uvx --refresh-package guru-pk-mcp --from guru-pk-mcp python -c "print('✅ UVX缓存已刷新')"
->   ```
+>   bash
+>   uvx --refresh-package guru-pk-mcp --from guru-pk-mcp python -c "print('✅ UVX cache refreshed')"
+>   
 >
-> **注意**:
+> **Note**:
 >
-> - macOS用户可能需要使用完整路径：`/Users/{用户名}/.local/bin/uvx`
-> - Windows用户：`~`会自动解析为用户主目录（如 `C:\Users\{用户名}`），无需手动修改
+> - macOS users may need to use the full path: `/Users/{username}/.local/bin/uvx`
+> - Windows users: `~` will automatically resolve to the user's home directory (e.g., `C:\Users\{username}`), no manual modification needed
 
-**开发方式：从源码安装**
+**Development Method: Install from Source Code**
 
 ```json
+
 {
+
   "mcpServers": {
+
     "guru-pk": {
+
       "command": "uvx", 
+
       "args": ["--from", "/path/to/guru-pk-mcp", "guru-pk-mcp-server"],
+
       "env": {
+
         "DATA_DIR": "~/.guru-pk-data"  // macOS/Linux: ~/目录, Windows: %USERPROFILE%目录
+
       }
+
     }
+
   }
+
 }
+
 ```
-
-> **本地开发说明**:
+> **Local Development Notes**:
 >
-> - 对于本地开发场景，如需刷新uvx缓存，请使用`make refresh-uvx`
-> - 此命令强制UVX重新安装本地包，确保使用最新的代码更改
+> - For local development scenarios, if you need to refresh the uvx cache, use `make refresh-uvx`
+> - This command forces UVX to reinstall the local package, ensuring the latest code changes are used
 
-## 使用入门
+## Getting Started
 
-重启MCP客户端，输入 `guru_pk_help` 获取帮助，或直接提问开始专家辩论！
+Restart the MCP client, enter `guru_pk_help` to get help, or start asking questions directly to begin the expert debate!
 
 ```javascript
+
 // 1. 自然语言提问（最推荐的使用方式）
+
 生成AI的领域，有没有特别适合个人创业的方向？请三个专家PK
 
 // 2. 智能生成候选专家（系统自动执行）
+
 start_pk_session: 生成AI的领域，有没有特别适合个人创业的方向？
 
 // 3. 智能生成候选专家（用户对期待的专家范围进行限定）
+
 start_pk_session: 生成AI的领域，有没有特别适合个人创业的方向？ 找两个AI领域的大牛和一个知名的个人创业家来辩论
+
 ```
+### 💡 Usage Tips
 
-### 💡 使用提示
+**Starting a Debate**:
 
-**启动辩论**：
+- 🤖 **`start_pk_session:直接提问`** - Default efficient batch processing mode (recommended)
+- 🔄 **`start_stepwise_pk_session:直接提问`** - Traditional step-by-step dialogue mode
 
-- 🤖 **`start_pk_session:直接提问`** - 默认高效批处理模式（推荐）
-- 🔄 **`start_stepwise_pk_session:直接提问`** - 传统逐步对话模式
+**Tool Functions**:
 
-**工具功能**：
+- 📋 `guru_pk_help` - Get system introduction and detailed help
+- 📄 `export_session` - Export session as a Markdown file
+- 🎨 `export_session_as_infographic` - Export session as a Tufte-style single-page dynamic infographic
+- 📄 `export_enhanced_session` - Export enhanced analysis report
+- 🌍 `set_language` - Set the language for expert responses
 
-- 📋 `guru_pk_help` - 获取系统介绍和详细帮助
-- 📄 `export_session` - 导出会话为Markdown文件
-- 🎨 `export_session_as_infographic` - 导出会话为塔夫特风格单页动态信息图
-- 📄 `export_enhanced_session` - 导出增强分析报告
-- 🌍 `set_language` - 设置专家回复语言
+### 📱 Compatibility
 
-### 📱 兼容性
+Supports all MCP-compatible applications: Claude Desktop, Cursor, TRAE, DeepChat, Cherry Studio, etc.
 
-支持所有MCP兼容应用：Claude Desktop、Cursor、TRAE、DeepChat、Cherry Studio等
+### 🎯 Recommended Configuration
 
-### 🎯 推荐配置
+**Most Recommended MCP Host**:
 
-**最推荐的MCP Host**：
+- 💰 **Subscription-based MCP Host calculated by user requests** - Such as Cursor and the overseas version of Trae
+- 🌟 **Advantages**:
+  - Significant cost advantage: Subscription fees are based on user requests rather than API calls or token usage
+  - Claude model offers the best support for MCP with excellent instruction-following capability
 
-- 💰 **按用户请求计算的订阅制MCP Host** - 如Cursor和海外版Trae
-- 🌟 **优势**：
-  - 成本优势显著：按用户请求计算的订阅制收费，而非API调用次数或token收费
-  - Claude模型对MCP支持最佳，具有优秀的指令遵循能力
+### ⚠️ Not Recommended Configuration
 
-### ⚠️ 不推荐配置
+- 🚫 **Trae Domestic Version** - The built-in domestic models have sensitive word censorship, which may interrupt the expert debate process and affect the user experience
 
-- 🚫 **Trae国内版** - 内置的国内模型存在敏感词审查问题，可能导致专家辩论过程中断，影响使用体验
+## 🛠️ Technical Architecture
 
-## 🛠️ 技术架构
+**Principle of Intelligent Division of Labor**:
 
-**智能分工原则**：
+- 🧠 **LLM at MCP Host End**: Responsible for complex semantic analysis and intelligent generation
+- 🔧 **MCP Server End**: Provides simple process control and data management
 
-- 🧠 **MCP Host端 LLM**：负责复杂的语义分析和智能生成
-- 🔧 **MCP Server端**：提供简洁的流程控制和数据管理
-
-### 动态专家生成流程
+### Dynamic Expert Generation Process
 
 ```mermaid
+
 flowchart TD
+
     A[🤔 提出问题] --> B[🧠 智能分析]
+
     B --> C[👥 生成候选]
+
     C --> D[🚀 开始辩论]
+
     
+
     A1[直接向系统提问任何话题]
+
     B1[MCP Host端LLM深度分析问题特征]
+
     C1[动态创建3位最相关的专家]
+
     D1[启动多轮PK流程]
+
     
+
     A -.-> A1
+
     B -.-> B1
+
     C -.-> C1
+
     D -.-> D1
+
     
+
     style A fill:#e1f5fe
+
     style B fill:#f3e5f5
+
     style C fill:#e8f5e8
+
     style D fill:#fff3e0
+
 ```
+### 🔄 Debate Process
 
-### 🔄 辩论流程
+**Two Debate Modes**:
 
-**两种辩论模式**：
+🚀 **Batch Mode** (`start_pk_session`) - **Default Recommended**
 
-🚀 **批处理模式** (`start_pk_session`) - **默认推荐**
+- ⚡ High Efficiency: Generates all expert responses in one round, saving about 60% of the time- 🎯 Applicable Scenarios: Quickly obtain multi-perspective analysis for efficient decision support
 
-- ⚡ 高效率：一轮生成所有专家回答，节省约60%时间
-- 🎯 适用场景：快速获取多角度分析，高效决策支持
+🔄 **Step-by-Step Mode** (`start_stepwise_pk_session`) - Traditional Experience
 
-🔄 **逐步模式** (`start_stepwise_pk_session`) - 传统体验  
+- 🎭 Interactivity: Experts speak one by one, allowing real-time adjustments and in-depth discussions
+- 🎯 Applicable Scenarios: Deep reflection, enjoying the full debate process
 
-- 🎭 互动性：逐个专家发言，实时调整和深入探讨
-- 🎯 适用场景：深度思辨，享受完整辩论过程
-
-**4轮辩论流程**：
+**4-Round Debate Process**:
 
 ```mermaid
+
 flowchart TD
+
     A[🤔 独立思考] --> B[⚔️ 交叉辩论]
+
     B --> C[🎯 最终立场]
+
     C --> D[🧠 智慧综合]
+
     
+
     A1[每位专家独立分析问题]
+
     B1[专家间互相质疑和借鉴]
+
     C1[形成各自完善的方案]
+
     D1[融合各方观点的终极答案]
+
     
+
     A -.-> A1
+
     B -.-> B1
+
     C -.-> C1
+
     D -.-> D1
+
     
+
     B --> B2[多轮交互]
+
     B2 --> B
+
     
+
     style A fill:#e3f2fd
+
     style B fill:#fce4ec
+
     style C fill:#e8f5e8
+
     style D fill:#fff8e1
+
     style B2 fill:#f3e5f5
+
 ```
+## 💭 Design Philosophy
 
-## 💭 设计理念
+### Inspiration Source
 
-### 灵感来源
+The initial expert system of this project was inspired by the [Life Coach Team Agent](https://mp.weixin.qq.com/s/QGNzRRo7U3Y2fmvOXNJvyw), implementing the innovative idea of multi-role PK among built-in experts through a local MCP approach.
 
-本项目初期的专家系统受到 [人生教练团Agent](https://mp.weixin.qq.com/s/QGNzRRo7U3Y2fmvOXNJvyw) 的启发，将内置专家的多角色PK的创新思路通过本地MCP的方式实现。
+### Technical Solutions Comparison
 
-### 技术方案对比
+**🔧 Agent Framework Development**
 
-**🔧 Agent框架开发**
+- ✅ Powerful, capable of integrating multiple LLM APIs
+- ✅ Flexible front-end interaction with strong control
+- ❌ High development complexity and costly API calls
 
-- ✅ 功能强大，可集成多个LLM API
-- ✅ 前端交互灵活，控制强劲
-- ❌ 开发复杂度高，API调用成本高昂
+**☁️ Third-Party Document Service Remote MCP Solution (Feishu MCP)**
 
-**☁️ 第三方文档服务远程MCP方案(飞书MCP)**  
+- ✅ Simple deployment, leveraging existing ecosystems
+- ❌ Dependent on third-party services with limited customization
 
-- ✅ 部署简单，利用现有生态
-- ❌ 依赖第三方服务，定制化程度有限
+**🏠 Local MCP Solution (This Project)**
 
-**🏠 本地MCP方案（本项目）**
+- ✅ Integrated with subscription-based chat apps, no API fees
+- ✅ Data localization and privacy protection
+- ✅ Open-source and customizable, technologically independent
+- ✅ **Intelligent Division of Labor Architecture** - Fully utilizing the intelligence of the LLM at the MCP Host end
+- ✅ **Dynamic Expert Generation** - Breaking through the limitations of a fixed expert pool
+- ❌ Dependent on the implementation of the MCP client
 
-- ✅ 与订阅制Chat APP结合，无API费用
-- ✅ 数据本地化，隐私保护
-- ✅ 开源可定制，技术独立
-- ✅ **智能分工架构** - 充分利用MCP Host端LLM智能
-- ✅ **动态专家生成** - 突破固定专家池限制
-- ❌ 依赖MCP客户端实现
+The latest design of this project achieves a fundamental breakthrough from a fixed expert library to an intelligent expert factory through complete dynamic expert generation. Leveraging the intelligence of large language models at the MCP Host end, the MCP server-side (this project) focuses on process control, reducing maintenance costs, and achieving the optimal balance between intelligence and simplicity.
 
-本项目最新的设计，通过完全的动态专家生成，实现了从固定专家库到智能专家工厂的根本性突破。
-借助于MCP Host端大语言模型的智能，MCP服务器端(本项目)专注流程控制，降低维护成本，实现智能与简洁的最佳平衡。
+**Official site: ** [https://github.com/MitsudoAI/guru-pk-mcp](https://github.com/MitsudoAI/guru-pk-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/MitsudoAI/guru-pk-mcp](https://github.com/MitsudoAI/guru-pk-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `communication`, `data`
+- Tags: `research and data`, `knowledge and memory`, `communication`, `专家pk, 大神pk, 专家辩论`, `chinese`
 
-- 分类：`communication`, `data`
-- 标签：`research and data`, `knowledge and memory`, `communication`, `专家pk, 大神pk, 专家辩论`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--from guru-pk-mcp guru-pk-mcp-server`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--from guru-pk-mcp guru-pk-mcp-server`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/chuenlye-guru-pk.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chuenlye-guru-pk.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

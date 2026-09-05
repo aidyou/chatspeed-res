@@ -1,11 +1,11 @@
 ---
-title: "MCP&Agent挑战赛-高考志愿填报推荐"
-description: "高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度变化趋势，提供更精准的推荐 安装和运行 1. 安装依赖 bash pip install -r requirements"
+title: "gaokaomcp"
+description: "高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度…"
 ---
 
-# MCP&Agent挑战赛-高考志愿填报推荐
+# gaokaomcp
 
-高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度变化趋势，提供更精准的推荐 安装和运行 1. 安装依赖 bash pip install -r requirements
+高考志愿推荐系统 基于历年高考录取数据的智能志愿填报推荐系统，帮助考生科学选择院校和专业。 功能特点 - 智能推荐: 基于2024年及历年录取数据，结合专业热度趋势分析 - 四类分层: 自动计算冲、保、稳、其他四个推荐类型，防止扎堆和踩空 - 历史数据估算: 无历史数据时自动用同校同批次同科类其他专业数据估算 - 选科要求匹配: 自动检查选科要求，确保符合报考条件 - 专业趋势分析: 分析专业热度…
 
 # 高考志愿推荐系统
 
@@ -144,22 +144,22 @@ uvicorn main:app --reload
 - [ ] 支持个性化推荐偏好设置
 - [ ] 添加志愿填报模拟功能
 
-**官方网站：** [https://www.modelscope.cn/studios/YYplayer/gaokaomcp](https://www.modelscope.cn/studios/YYplayer/gaokaomcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/studios/YYplayer/gaokaomcp](https://www.modelscope.cn/studios/YYplayer/gaokaomcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`
+- Categories: `productivity`
+- Tags: `other`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://yyplayer-gaokaomcp.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://yyplayer-gaokaomcp.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/yyplayer-gaokaomcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/yyplayer-gaokaomcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,13 +1,13 @@
 ---
-title: "Markmap思维导图"
-description: "Markmap MCP 服务器基于模型上下文协议（MCP），允许一键将 Markdown 文本转换为交互式思维导图，支持多种格式导出和丰富的交互操作。它基于开源项目 markmap 构建。"
+title: "Markmap"
+description: "Markmap MCP Server"
 ---
 
-# Markmap思维导图
+# Markmap
 
-Markmap MCP 服务器基于模型上下文协议（MCP），允许一键将 Markdown 文本转换为交互式思维导图，支持多种格式导出和丰富的交互操作。它基于开源项目 markmap 构建。
+Markmap MCP Server
 
-# Markmap MCP 服务器
+# Markmap MCP Server
 
 ![Sample Mindmap](/mcp-assets/07821881e23a7de173334ab6f80a30cb.svg)
 
@@ -17,33 +17,34 @@ Markmap MCP 服务器基于模型上下文协议（MCP），允许一键将 Mark
 ![English Doc](/mcp-assets/a01eeaa9426e702efc5bcbd844f06a1d.svg)
 [![Stars](/mcp-assets/174243a363738db56c37c6a4cf1bbced.svg)](https://github.com/jinzcdev/markmap-mcp-server)
 
-Markmap MCP Server 基于 [模型上下文协议 (MCP)](https://modelcontextprotocol.io/introduction)，使用开源项目 [markmap](https://github.com/markmap/markmap) 将 Markdown 转为交互式思维导图，并支持在**服务端**导出 PNG / JPG / SVG，便于 Agent 在对话中直接消费。转换过程在**本地完成**，无需第三方 API Key。
+Markmap MCP Server is based on the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) and uses the open-source project [markmap](https://github.com/markmap/markmap) to convert Markdown into interactive mind maps. It supports exporting PNG / JPG / SVG on the **server side**, making it easy for Agents to consume directly in conversations. The conversion process is completed **locally** without the need for a third-party API Key.
 
-## 特性
+## Features
 
-- **Markdown 转思维导图**：标题与嵌套列表 → 交互式 HTML 导图
-- **Agent 友好返回**：可返回文件路径、内联 HTML 和/或图片内容（启动时配置）
-- **服务端导出**：通过 Playwright 导出 PNG / JPG / SVG，供聊天内预览
-- **浏览器预览**：可配置的打开行为 — 始终打开、始终不打开、或由 Agent 决策（启动时配置）
-- **页面导出工具栏**：在浏览器中也可一键导出图片或复制 Markdown
-- **离线 HTML**：启动参数 `--offline` 内联资源，无需访问 CDN
-- **文件工作流**：支持 `inputPath`、列出近期文件、清理旧文件
-- **隐私优先**：纯本地生成，无云端导图 API
+- **Markdown to Mind Map**: Titles and nested lists → Interactive HTML map
+- **Agent-friendly Return**: Can return file paths, inline HTML, and/or image content (configured at startup)
+- **Server-side Export**: Export PNG / JPG / SVG via Playwright for in-chat preview
+- **Browser Preview**: Configurable open behavior — always open, never open, or decided by Agent (configured at startup)
+- **Page Export Toolbar**: One-click export of images or copy Markdown in the browser
+- **Offline HTML**: Startup parameter `--offline` inlines resources, no CDN access required
+- **File Workflow**: Supports `inputPath`, lists recent files, and cleans up old files
+- **Privacy First**: Purely local generation, no cloud-based mind map API
 
-## 前提条件
+## Prerequisites
 
-1. Node.js **v20 或以上**
-2. 使用**服务端图片导出**（`format: png|jpg|svg`）时需安装 Playwright 与 Chromium：
+1. Node.js **v20 or above**
+2. When using **server-side image export** (`format: png|jpg|svg`), install Playwright and Chromium:
 
+bash
 ```bash
 npm install playwright
 npx playwright install chromium
 ```
+(`playwright` is an optional dependency of this package.)
 
-（`playwright` 为本包的可选依赖。）
+## Installation
 
-## 安装
-
+bash
 ```bash
 # 从 npm 安装
 npm install @jinzcdev/markmap-mcp-server -g
@@ -54,9 +55,9 @@ npx -y @jinzcdev/markmap-mcp-server
 # 指定输出目录并自动打开浏览器
 npx -y @jinzcdev/markmap-mcp-server --output /path/to/output/directory --open always
 ```
-
 ### Docker
 
+bash
 ```bash
 docker build -t markmap-mcp-server .
 docker run --rm -i \
@@ -64,9 +65,9 @@ docker run --rm -i \
   -e MARKMAP_DIR=/data/markmap \
   markmap-mcp-server
 ```
+or clone the repository and run locally:
 
-或克隆仓库本地运行：
-
+bash
 ```bash
 git clone https://github.com/jinzcdev/markmap-mcp-server.git
 cd markmap-mcp-server
@@ -75,11 +76,11 @@ npm install && npm run build
 npx playwright install chromium
 node build/index.js
 ```
+## Usage
 
-## 使用方法
+Add the following configuration to your MCP client (Cursor / Claude Desktop, etc.):
 
-将以下配置添加到 MCP 客户端（Cursor / Claude Desktop 等）：
-
+json
 ```json
 {
   "mcpServers": {
@@ -96,134 +97,133 @@ node build/index.js
   }
 }
 ```
+### Service Startup Preferences (CLI / Environment Variables)
 
-### 服务启动偏好（CLI / 环境变量）
+The following options are determined **at service startup** and are **not** tool parameters:
 
-以下选项在**服务启动时**决定，**不是**工具入参：
+| Preference     | CLI               | Environment Variable              | Possible Values                                                   | Default           |
+| -------------- | ----------------- | --------------------------------- | ----------------------------------------------------------------- | ----------------- |
+| Output Directory | `--output` / `-o` | `MARKMAP_DIR`                     | Any directory path                                                | `~/.markmap-mcp`  |
+| Open Browser   | `--open [mode]`   | `MARKMAP_OPEN`                    | `always` \| `never` \| `agent` (bare `--open` = `always`)         | `never`           |
+| Return Mode    | `--return-mode`   | `MARKMAP_RETURN_MODE`             | `path` \| `content` \| `both`                                     | `path`            |
+| Offline HTML   | `--offline`       | `MARKMAP_OFFLINE`                 | `true` \| `false` (CLI only needs `--offline` to enable)          | `false`           |
 
-| 偏好       | CLI               | 环境变量              | 可选值                                                   | 默认值           |
-| ---------- | ----------------- | --------------------- | -------------------------------------------------------- | ---------------- |
-| 输出目录   | `--output` / `-o` | `MARKMAP_DIR`         | 任意目录路径                                             | `~/.markmap-mcp` |
-| 打开浏览器 | `--open [mode]`   | `MARKMAP_OPEN`        | `always` \| `never` \| `agent`（裸 `--open` = `always`） | `never`          |
-| 返回模式   | `--return-mode`   | `MARKMAP_RETURN_MODE` | `path` \| `content` \| `both`                            | `path`           |
-| 离线 HTML  | `--offline`       | `MARKMAP_OFFLINE`     | `true` \| `false`（CLI 仅需加 `--offline` 表示开启）     | `false`          |
+Command-line arguments take precedence over environment variables; `--output` takes precedence over `MARKMAP_DIR`.
 
-命令行参数优先于环境变量；`--output` 优先于 `MARKMAP_DIR`。
+**`--open`:** Bare `--open` is equivalent to `always`; you can also explicitly pass `--open always|never|agent`. Invalid values will cause an error and exit. If the flag is not written, `MARKMAP_OPEN` (default `never`) is used.
 
-**`--open`：** 裸写 `--open` 等同于 `always`；也可显式传 `--open always|never|agent`。非法值会报错退出。未写 flag 时使用 `MARKMAP_OPEN`（默认 `never`）。
+**Return Modes:**
 
-**返回模式：**
+| Mode      | Meaning                                                     |
+| --------- | ----------------------------------------------------------- |
+| `path`    | Only path JSON (`htmlFilePath` + `filePath`)                |
+| `content` | Only inline content (raw HTML text, or base64 image block)  |
+| `both`    | Path JSON + inline content                                  |
 
-| 模式      | 含义                                                     |
-| --------- | -------------------------------------------------------- |
-| `path`    | 仅路径 JSON（`htmlFilePath` + `filePath`）               |
-| `content` | 仅内联内容（原始 HTML 文本，或 base64 图片块）— 不含路径 |
-| `both`    | 路径 JSON + 内联内容                                     |
+Generated HTML always includes the markmap toolbar, English export button text, and all nodes are expanded by default.
 
-生成的 HTML 固定包含 markmap 工具栏、英文导出按钮文案，并默认展开全部节点。
+### Example Prompts
 
-### 示例提示词
+- "Organize this design document into a mind map."
+- "Convert `./notes/architecture.md` into a mind map."
+- "Generate a PNG mind map from the following outline and display it directly in the conversation."
 
-- 「把这篇设计文档整理成思维导图。」
-- 「将 `./notes/architecture.md` 转成导图。」
-- 「根据下面大纲生成 PNG 思维导图，直接在对话里展示。」
+## Available Tools
 
-## 可用工具
+### `markdown_to_mindmap`Convert Markdown to an interactive mind map (optional image export).
 
-### `markdown_to_mindmap`
+| Parameter   | Type                              | Default | Description                                                                                                                     |
+|-------------|-----------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| `markdown`  | string                            | —       | Markdown content (at least one of `markdown` or `inputPath` must be provided; if both are given, `markdown` takes precedence)    |
+| `inputPath` | string                            | —       | Absolute path to the local Markdown file                                                                                        |
+| `format`    | `html` \| `png` \| `svg` \| `jpg` | `html`  | Output format; image formats require Playwright                                                                                  |
+| `filename`  | string                            | auto    | Output filename (will be sanitized; prefixed with `markmap-` if necessary; overwrites existing files with the same name)         |
+| `open`      | boolean                           | `false` | Whether to open the result in a browser. **Only appears in tool arguments when the server's open mode is `agent`** (`--open agent` / `MARKMAP_OPEN=agent`). |
 
-将 Markdown 转为交互式思维导图（可选导出图片）。
-
-| 参数        | 类型                              | 默认值  | 说明                                                                                                                     |
-| ----------- | --------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `markdown`  | string                            | —       | Markdown 内容（与 `inputPath` 至少提供一个；两者都给时以 markdown 为准）                                                 |
-| `inputPath` | string                            | —       | 本地 Markdown 文件绝对路径                                                                                               |
-| `format`    | `html` \| `png` \| `svg` \| `jpg` | `html`  | 输出格式；图片格式需 Playwright                                                                                          |
-| `filename`  | string                            | 自动    | 输出文件名（会清洗；必要时加 `markmap-` 前缀；同名覆盖）                                                                 |
-| `open`      | boolean                           | `false` | 是否在浏览器中打开结果。**仅当服务器 open 模式为 `agent` 时出现在工具入参中**（`--open agent` / `MARKMAP_OPEN=agent`）。 |
-
-**返回值（`returnMode=path`）：**
+**Return Value (`returnMode=path`):**
 
 ```json
+
 {
+
   "htmlFilePath": "/path/to/markmap-….html",
+
   "filePath": "/path/to/markmap-….html"
+
 }
+
 ```
+For image formats, `filePath` is the path to the image, and `htmlFilePath` is still the source HTML file.
 
-图片格式下 `filePath` 为图片路径，`htmlFilePath` 仍为 HTML 源文件。
+**Return Value (`returnMode=content`):** Raw HTML text block, or base64-encoded MCP `image` content block for PNG/JPG/SVG — without path JSON. Falls back to path JSON if HTML size is ≥200KB.
 
-**返回值（`returnMode=content`）：** 原始 HTML 文本块，或 PNG/JPG/SVG 的 MCP `image`（base64）内容块 — 不含路径 JSON。HTML ≥200KB 时回退为路径 JSON。
+**Return Value (`returnMode=both`):** Path JSON + the above inline content.
 
-**返回值（`returnMode=both`）：** 路径 JSON + 上述内联内容。
-
-> **说明：** 页面内的缩放/折叠与「Export PNG/JPG/SVG」按钮属于 **HTML 预览体验**。Agent 若要直接拿到图片，请使用工具参数 `format: png|jpg|svg`。
+> **Note:** Zooming/folding within the page and the "Export PNG/JPG/SVG" button are part of the **HTML preview experience**. If the agent needs to directly obtain images, use the tool parameter `format: png|jpg|svg`.
 
 ### `list_mindmaps`
 
-列出输出目录中近期生成的导图文件（最新优先）。仅包含文件名以 `markmap` 开头的文件。
+Lists recently generated mind map files in the output directory (newest first). Only includes files whose names start with `markmap`.
 
-| 参数    | 类型   | 默认值 | 说明                  |
-| ------- | ------ | ------ | --------------------- |
-| `limit` | number | `20`   | 最多返回条数（1–200） |
+| Parameter | Type   | Default | Description                  |
+|-----------|--------|---------|------------------------------|
+| `limit`   | number | `20`    | Maximum number of items to return (1–200) |
 
-返回 `{outputDir, files: [{name, filePath, size, mtimeMs, mtime}]}`。
+Returns `{outputDir, files: [{name, filePath, size, mtimeMs, mtime}]}`.
 
 ### `get_mindmap`
 
-按绝对路径获取已生成的导图文件。路径必须位于配置的输出目录内（禁止路径穿越）。
+Retrieves a generated mind map file by its absolute path. The path must be within the configured output directory (path traversal is not allowed).
 
-| 参数       | 类型   | 默认值 | 说明                              |
-| ---------- | ------ | ------ | --------------------------------- |
-| `filePath` | string | —      | 导图文件（HTML 或图片）的绝对路径 |
+| Parameter  | Type   | Default | Description                              |
+|------------|--------|---------|------------------------------------------|
+| `filePath` | string | —       | Absolute path to the mind map file (HTML or image) |
 
-返回 JSON `{filePath, mimeType, size}`。HTML/SVG 且小于 200KB 时另附文本内容块；PNG/JPG 仅返回元数据（无 image 块）— 需要像素时请用 `markdown_to_mindmap` 的 `format=png|jpg` 重新导出。
+Returns JSON `{filePath, mimeType, size}`. For HTML/SVG and less than 200KB, also includes the text content block; for PNG/JPG, only metadata is returned (no image block) — to get pixel data, re-export using `markdown_to_mindmap` with `format=png|jpg`.
 
 ### `cleanup_mindmaps`
 
-按天数清理（或清空）输出目录中的导图文件。
+Cleans up (or empties) mind map files in the output directory based on days.
 
-| 参数         | 类型    | 默认值  | 说明                                       |
-| ------------ | ------- | ------- | ------------------------------------------ |
-| `maxAgeDays` | number  | `7`     | 删除超过指定天数的文件                     |
-| `all`        | boolean | `false` | 为 true 时删除全部导图文件                 |
-| `dryRun`     | boolean | `false` | 为 true 时仅预览将被删除的文件，不实际删除 |
+| Parameter     | Type    | Default | Description                                       |
+|-------------- | ------- | ------- | ------------------------------------------------- |
+| `maxAgeDays`  | number  | `7`     | Deletes files older than the specified number of days |
+| `all`         | boolean | `false` | If true, deletes all mind map files               |
+| `dryRun`      | boolean | `false` | If true, only previews the files that would be deleted, without actually deleting them |
 
-### Prompt：`mindmap_from_content`
+### Prompt: `mindmap_from_content`
 
-辅助 Prompt：先将内容整理为层级 Markdown，再调用 `markdown_to_mindmap`。
+Helper prompt: First organizes the content into hierarchical Markdown, then calls `markdown_to_mindmap`.
 
-| 参数    | 类型   | 默认值 | 说明                     |
-| ------- | ------ | ------ | ------------------------ |
-| `topic` | string | —      | 要整理成导图的主题或原文 |
+| Parameter | Type   | Default | Description                     |
+|-----------|--------|---------|---------------------------------|
+| `topic`   | string | —       | The topic or original text to organize into a mind map |
 
-## 相关项目
+## Related Projects| Project                                                                            | Description                                                                |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **[MarkXMind Online](https://github.com/jinzcdev/markxmind)**                   | Create XMind with Markdown online. [Try it now →](https://markxmind.js.org/) |
+| **[Obsidian MarkXMind Plugin](https://github.com/jinzcdev/obsidian-markxmind)** | Render XMindMark mind maps in Obsidian.                             |
 
-| 项目                                                                            | 说明                                                                |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **[MarkXMind Online](https://github.com/jinzcdev/markxmind)**                   | 用 Markdown 在线创建 XMind。[立即体验 →](https://markxmind.js.org/) |
-| **[Obsidian MarkXMind Plugin](https://github.com/jinzcdev/obsidian-markxmind)** | 在 Obsidian 中渲染 XMindMark 思维导图。                             |
+## License
 
-## 许可证
+This project is licensed under the [MIT](https://github.com/jinzcdev/markmap-mcp-server/blob/HEAD/LICENSE) license.
 
-本项目采用 [MIT](https://github.com/jinzcdev/markmap-mcp-server/blob/HEAD/LICENSE) 许可证。
+**Official site: ** [https://github.com/jinzcdev/markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/jinzcdev/markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `memory`
+- Tags: `knowledge and memory`, `mindmap`, `markmap`, `思维导图`, `chinese`
 
-- 分类：`memory`
-- 标签：`knowledge and memory`, `mindmap`, `markmap`, `思维导图`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @jinzcdev/markmap-mcp-server`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @jinzcdev/markmap-mcp-server`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/jinzcdev-markmap.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jinzcdev-markmap.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

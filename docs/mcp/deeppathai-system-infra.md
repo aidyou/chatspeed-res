@@ -1,69 +1,77 @@
 ---
-title: "系统架构师"
-description: "智能架构推荐引擎：为你的系统量身定制"
+title: "mcp-system-infra"
+description: "Smart Architecture Recommendation Engine: Tailored for Your System 随着技术的不断发展，选择最适合您需求的技术栈变得越来越复杂。为了帮助开发者和架构师做出更加明智的选择，我们推出了智能架构推荐引擎（Smart Architecture Recommendation Engine, SARE）。SARE利用先进的算法分析您的项目需求，…"
 ---
 
-# 系统架构师
+# mcp-system-infra
 
-智能架构推荐引擎：为你的系统量身定制
+Smart Architecture Recommendation Engine: Tailored for Your System 随着技术的不断发展，选择最适合您需求的技术栈变得越来越复杂。为了帮助开发者和架构师做出更加明智的选择，我们推出了智能架构推荐引擎（Smart Architecture Recommendation Engine, SARE）。SARE利用先进的算法分析您的项目需求，…
 
-# 🚀 智能架构推荐引擎：为你的系统量身定制
+# 🚀 Intelligent Architecture Recommendation Engine: Tailored for Your System
 
-在数字业务飞速发展的今天，如何快速、高效地构建一套可弹性伸缩、稳定可靠的技术架构？**智能架构推荐引擎**为你解决难题。
+In today's rapidly evolving digital business landscape, how can one quickly and efficiently build a scalable, stable, and reliable technical architecture? The **Intelligent Architecture Recommendation Engine** is here to solve this problem.
 
-我们基于核心参数 —— QPS（每秒请求量）、并发用户数、日活跃用户量、业务类型、数据库选型和AI模型规模 —— 自动生成：
+Based on key parameters — QPS (Queries Per Second), concurrent users, daily active users, business type, database selection, and AI model size — we automatically generate:
 
-- 💡 最优服务器资源配置
-- 🧩 所需中间件模块组合
-- 🏗️ 推荐的整体系统架构
-- ☁️ 推荐的云服务商与部署策略
-- 📊 Markdown 报告 + 架构图一键导出
-
----
-
-## ✨ 核心优势
-
-### ✅ 全参数驱动，贴合业务实际
-
-你只需输入以下参数：
-- `--qps`：业务峰值吞吐
-- `--concurrentUsers`：并发连接数
-- `--uad`：日活跃用户数（UAD）
-- `--type`：业务类型（web / ai）
-- `--db`：数据库类型（relational / nosql / analytics）
-- `--model`：AI 模型大小（small / medium / large）
-
-系统将基于这些参数自动评估所需：
-- CPU / 内存 / 网络配置
-- Redis 缓存容量与淘汰策略
-- 消息队列类型与并发处理能力
-- 是否采用微服务架构
-- 是否启用分布式架构与 GPU 推理集群
+- 💡 Optimal server resource configuration
+- 🧩 Required middleware module combinations
+- 🏗️ Recommended overall system architecture
+- ☁️ Recommended cloud service providers and deployment strategies
+- 📊 Markdown report + one-click export of architectural diagrams
 
 ---
 
-## 🗺️ 架构推荐示意图
+## ✨ Core Advantages
 
-系统自动输出 Mermaid 架构图，清晰表达组件关系：
+### ✅ Fully Parameter-Driven, Closely Aligned with Business Reality
+
+You only need to input the following parameters:
+- `--qps`: Peak throughput of the business
+- `--concurrentUsers`: Number of concurrent connections
+- `--uad`: Daily Active Users (UAD)
+- `--type`: Type of business (web / ai)
+- `--db`: Database type (relational / nosql / analytics)
+- `--model`: Size of AI model (small / medium / large)
+
+The system will automatically evaluate the required:
+- CPU / memory / network configurations
+- Redis cache capacity and eviction strategy
+- Message queue type and concurrent processing capability
+- Whether to adopt a microservices architecture
+- Whether to enable distributed architecture and GPU inference clusters
+
+---
+
+## 🗺️ Architecture Recommendation Diagram
+
+The system automatically outputs a Mermaid architecture diagram, clearly expressing the relationships between components:
 
 ```mermaid
-flowchart TD
-  User[用户请求] --> Nginx[Nginx 负载均衡器]
-  Nginx --> Service[主业务服务节点]
-  Service --> DB[数据库]
-  Service --> Redis[Redis 缓存]
-  Service --> MQ[消息队列]
-  Service --> GPU[AI 推理 GPU 节点]
-  MQ --> Consumer[异步消费者]
-```
 
-## 部署指南
+flowchart TD
+
+  User[用户请求] --> Nginx[Nginx 负载均衡器]
+
+  Nginx --> Service[主业务服务节点]
+
+  Service --> DB[数据库]
+
+  Service --> Redis[Redis 缓存]
+
+  Service --> MQ[消息队列]
+
+  Service --> GPU[AI 推理 GPU 节点]
+
+  MQ --> Consumer[异步消费者]
+
+```
+## Deployment Guide
 
 ~~~bash
 npx -y mcp-system-infra
 ~~~
 
-### MCP sever configuration
+### MCP Server Configuration
 
 ~~~json
 {
@@ -79,46 +87,47 @@ npx -y mcp-system-infra
 }
 ~~~
 
-## 使用示例
+## Usage Example
 
 ```
+
 帮忙设计一个web类型的系统，qps=100，concurrentUsers=50，activeUsersDaily=300，dbType=relational，modelSize=medium的系统架构报告
-```
 
+```
 ## 
 💭Murmurs
 
-本项目仅用于学习，欢迎催更。如需定制功能、部署为 Web 服务、与内部推广平台对接，请联系产品维护者。
+This project is for learning purposes only. Updates are welcome. For custom features, deploying as a web service, or integrating with internal promotion platforms, please contact the product maintainer.
 
-联系方式
+Contact Information
 
    alt="mcp-system-infra MCP server" />
   
-  ## 商务合作联系邮件：  [deeppathai@outlook.com](mailto:deeppathai@outlook.com)
+  ## Business Cooperation Contact Email:  [deeppathai@outlook.com](mailto:deeppathai@outlook.com)
 
 # ai-deeppath
 
-> 人工智能 · 深度路径探索  
+> Artificial Intelligence · Deep Path Exploration  
 
-🌐 **官网地址**  
+🌐 **Official Website**  
 [https://www.ai-deeppath.com](https://www.ai-deeppath.com)
 
-**官方网站：** [https://github.com/deeppath-ai/mcp-system-infra](https://github.com/deeppath-ai/mcp-system-infra)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/deeppath-ai/mcp-system-infra](https://github.com/deeppath-ai/mcp-system-infra)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-system-infra`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-system-infra`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/deeppathai-system-infra.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/deeppathai-system-infra.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

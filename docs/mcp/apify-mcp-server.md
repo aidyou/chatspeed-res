@@ -1,11 +1,11 @@
 ---
-title: "Apify MCP 服务器"
-description: "mcp.apify.com The Apify Model Context Protocol (MCP) server at mcp.apify.com enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, and any other website using thousands of read"
+title: "Apify MCP Server"
+description: "mcp.apify.com The Apify Model Context Protocol (MCP) server at mcp.apify.com enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, and any other website usi…"
 ---
 
-# Apify MCP 服务器
+# Apify MCP Server
 
-mcp.apify.com The Apify Model Context Protocol (MCP) server at mcp.apify.com enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, and any other website using thousands of read
+mcp.apify.com The Apify Model Context Protocol (MCP) server at mcp.apify.com enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, and any other website usi…
 
 mcp.apify.com
 
@@ -357,22 +357,22 @@ As above, this exposes only the specified Actor (`apify/my-actor`) as a tool. No
 
 The `ui` parameter enables [MCP Apps](
 
-**官方网站：** [https://github.com/apify/apify-mcp-server](https://github.com/apify/apify-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/apify/apify-mcp-server](https://github.com/apify/apify-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`, `data`
-- 标签：`web scraping`, `apify`, `browser automation`, `data extraction`, `official`
+- Categories: `browser`, `data`
+- Tags: `web scraping`, `apify`, `browser automation`, `data extraction`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@apify/actors-mcp-server`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@apify/actors-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/apify-mcp-server.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/apify-mcp-server.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

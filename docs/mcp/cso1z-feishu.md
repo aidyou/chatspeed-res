@@ -1,11 +1,11 @@
 ---
-title: "Feishu-MCP（飞书模型上下文协议工具）"
-description: "为基于模型上下文协议实现的人工智能驱动的编码工具（如 Cursor、Windsurf 和 Cline）提供对飞书（Lark）文档的访问。"
+title: "Feishu-MCP"
+description: "Provides access to Feishu (Lark) documents for AI-driven coding tools like Cursor, Windsurf, and Cline based on Model Context Protocol implementation."
 ---
 
-# Feishu-MCP（飞书模型上下文协议工具）
+# Feishu-MCP
 
-为基于模型上下文协议实现的人工智能驱动的编码工具（如 Cursor、Windsurf 和 Cline）提供对飞书（Lark）文档的访问。
+Provides access to Feishu (Lark) documents for AI-driven coding tools like Cursor, Windsurf, and Cline based on Model Context Protocol implementation.
 
 # 飞书 MCP 服务器
 
@@ -154,7 +154,6 @@ bunx feishu-mcp --feishu-app-id= --feishu-app-secret=
 权限分为两种：机器人权限、文档访问权限
 
 ### 权限验证与排查
-
 1. 获取token：[https://open.feishu.cn/api-explorer/cli_a7582508c93ad00d?apiName=tenant_access_token_internal&project=auth&resource=auth&version=v3](https://open.feishu.cn/api-explorer/cli_a7582508c93ad00d?apiName=tenant_access_token_internal&project=auth&resource=auth&version=v3)
 2. 使用第1步获取的token，验证是否有权限访问该文档：[https://open.feishu.cn/api-explorer/cli_a7582508c93ad00d?apiName=get&project=docx&resource=document&version=v1](https://open.feishu.cn/api-explorer/cli_a7582508c93ad00d?apiName=get&project=docx&resource=document&version=v1)
 
@@ -173,22 +172,22 @@ bunx feishu-mcp --feishu-app-id= --feishu-app-secret=
 
 MIT
 
-**官方网站：** [https://github.com/cso1z/feishu-mcp](https://github.com/cso1z/feishu-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cso1z/feishu-mcp](https://github.com/cso1z/feishu-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`note taking`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `note taking`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y feishu-mcp --stdio`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y feishu-mcp --stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cso1z-feishu.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cso1z-feishu.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

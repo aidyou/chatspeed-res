@@ -1,13 +1,11 @@
 ---
-title: "PDF转换工具MCP服务器"
-description: "一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。\n- 🔄 **PDF转图片**: 支持单个/批量PDF转换为高质量图片\n- 📄 **Office转PDF**: Word、Excel、PowerPoint等Office文档转换为PDF"
+title: "undoom-pdf-mcp"
+description: "一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。 - 🔄 PDF转图片: 支持单个/批量PDF转换为高质量图片 - 📄 Office转PDF: Word、Excel、Pow"
 ---
 
-# PDF转换工具MCP服务器
+# undoom-pdf-mcp
 
-一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。
-- 🔄 **PDF转图片**: 支持单个/批量PDF转换为高质量图片
-- 📄 **Office转PDF**: Word、Excel、PowerPoint等Office文档转换为PDF
+一个功能强大的PDF转换工具MCP服务器，基于MCP (Model Context Protocol) 协议，集成了多种文件转换功能。 - 🔄 PDF转图片: 支持单个/批量PDF转换为高质量图片 - 📄 Office转PDF: Word、Excel、Pow
 
 # undoom-pdf-mcp
 
@@ -66,7 +64,6 @@ description: "一个功能强大的PDF转换工具MCP服务器，基于MCP (Mode
 
 #### 方法1: 使用uv（推荐）
 
-bash
 ```bash
 # 克隆仓库
 git clone https://github.com/kk520879/undoom_pdf_mcp.git
@@ -75,9 +72,9 @@ cd undoom_pdf_mcp
 # 安装依赖
 uv sync
 ```
+
 #### 方法2: 使用pip
 
-bash
 ```bash
 # 克隆仓库
 git clone https://github.com/kk520879/undoom_pdf_mcp.git
@@ -90,9 +87,9 @@ venv\Scripts\activate  # Windows
 # 安装依赖
 pip install -e .
 ```
+
 ### 启动服务
 
-bash
 ```bash
 # 使用uv运行
 uv run python undoom_pdf_mcp/main.py
@@ -100,13 +97,13 @@ uv run python undoom_pdf_mcp/main.py
 # 或直接运行
 python undoom_pdf_mcp/main.py
 ```
+
 ### MCP客户端配置
 
 #### 方法1: 使用uvx（推荐）
 
 包已发布到PyPI，可以直接使用uvx安装：
 
-bash
 ```json
 {
   "mcpServers": {
@@ -121,13 +118,13 @@ bash
   }
 }
 ```
+
 **注意**: 配置中使用了清华大学PyPI镜像源以提高下载速度和稳定性。
 
 #### 方法2: 本地开发配置
 
 如果你是从源码运行，可以使用以下配置：
 
-bash
 ```json
 {
   "mcpServers": {
@@ -144,6 +141,7 @@ bash
   }
 }
 ```
+
 将上述配置添加到你的MCP客户端配置文件中（如Claude Desktop的配置文件）。
 
 ## 主要依赖
@@ -158,10 +156,10 @@ bash
 
 ### 启动MCP服务器
 
-bash
 ```bash
 python main.py
 ```
+
 ### 可用工具
 
 #### 1. pdf_to_images
@@ -174,7 +172,6 @@ python main.py
 - `output_dir` (可选): 输出目录路径，留空使用PDF同目录
 
 **示例:**
-bash
 ```json
 {
   "pdf_path": "C:\\Documents\\example.pdf",
@@ -182,6 +179,7 @@ bash
   "quality": 2.0
 }
 ```
+
 #### 2. batch_convert_pdfs
 批量转换PDF文件为图片
 
@@ -191,7 +189,6 @@ bash
 - `quality` (可选): 图片质量倍数，默认2.0
 
 **示例:**
-bash
 ```json
 {
   "folder_path": "C:\\Documents\\PDFs",
@@ -203,6 +200,7 @@ bash
   "quality": 2.0
 }
 ```
+
 #### 3. word_to_pdf
 将Word文档转换为PDF
 
@@ -221,7 +219,8 @@ bash
 将PowerPoint文档转换为PDF
 
 **参数:**
-- `ppt_path` (必需): PowerPoint文件的绝对路径- `output_path` (可选): 输出PDF文件路径，留空自动生成
+- `ppt_path` (必需): PowerPoint文件的绝对路径
+- `output_path` (可选): 输出PDF文件路径，留空自动生成
 
 #### 6. batch_office_to_pdf
 批量转换Office文件为PDF
@@ -252,6 +251,7 @@ bash
   "output_path": "C:\\Documents\\example_encrypted.pdf"
 }
 ```
+
 #### 9. images_to_pdf
 将多张图片合并为PDF
 
@@ -272,6 +272,7 @@ bash
   "page_size": "A4"
 }
 ```
+
 #### 10. single_image_to_pdf
 将单张图片转换为PDF
 
@@ -287,6 +288,7 @@ bash
   "page_size": "A4"
 }
 ```
+
 ## 页码格式说明
 
 支持以下页码格式：
@@ -333,24 +335,16 @@ bash
 ### 项目结构
 
 ```
-
 undoom_pdf_mcp/
-
 ├── undoom_pdf_mcp/
-
 │   ├── __init__.py
-
 │   └── main.py          # 主程序文件
-
 ├── pyproject.toml       # 项目配置
-
 ├── README.md           # 项目说明
-
 ├── LICENSE             # 许可证
-
 └── test_converter.py   # 测试文件
-
 ```
+
 ## 🤝 贡献
 
 欢迎贡献代码！请遵循以下步骤：
@@ -403,22 +397,22 @@ undoom_pdf_mcp/
 
 **注意**: 本项目主要在Windows系统上测试，Office文件转换功能需要安装相应的Microsoft Office软件。
 
-**官方网站：** [https://github.com/kk520879/undoom_pdf_mcp](https://github.com/kk520879/undoom_pdf_mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kk520879/undoom_pdf_mcp](https://github.com/kk520879/undoom_pdf_mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`
+- Categories: `files`
+- Tags: `file systems`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-pdf-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--index-url https://pypi.tuna.tsinghua.edu.cn/simple undoom-pdf-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/undoom-undoom-pdf.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/undoom-undoom-pdf.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

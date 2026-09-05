@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "hefeng-mcp-weather",
-    "zh-Hans": "和风天气",
-    "zh-Hant": "和风天气"
+    "zh-Hans": "和风天气"
   },
   "description": {
     "en": "Provides weather forecast data for locations in China using the HeFeng Weather API, with real-time, hourly, or daily forecasts and location-based queries.",
-    "zh-Hans": "使用和风天气API为中国地区的地点提供天气预报数据，包括实时、逐小时或逐日的预报以及基于位置的查询。",
-    "zh-Hant": "使用和风天气API为中国地区的地点提供天气预报数据，包括实时、逐小时或逐日的预报以及基于位置的查询。"
+    "zh-Hans": "使用和风天气API为中国地区的地点提供天气预报数据，包括实时、逐小时或逐日的预报以及基于位置的查询。"
   },
   "detail": {
     "en": "# HeFeng Weather MCP Server\n\nA Model Context Protocol server that provides weather forecast data for locations in China through HeFeng Weather API.\n\n## Features\n\n- Get real-time weather data\n- Get hourly weather forecast (24h/72h/168h)\n- Get daily weather forecast (3d/7d/10d/15d/30d)\n- Support location query by longitude and latitude coordinates\n- Full Chinese weather description\n\n## API\n\nThis MCP server provides the following tool:\n\n### get-weather\n\nGet weather forecast data for a specific location.\n\n# Usage with MCP Host(eg. Claude Desktop)\n\nAdd this to your claude_desktop_config.json\n\n## NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"hefeng-weather\": {\n      \"command\": \"npx\",\n      \"args\": [\"hefeng-mcp-weather@latest\", \"--apiKey=${API_KEY}\"]\n    }\n  }\n}\n```\n\n# License\n\nThis MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.",
-    "zh-Hans": "# HeFeng 天气 MCP 服务器\n\n一个通过 HeFeng 天气 API 提供中国各地天气预报数据的 Model Context Protocol 服务器。\n\n## 功能\n\n- 获取实时天气数据\n- 获取每小时天气预报（24小时/72小时/168小时）\n- 获取每日天气预报（3天/7天/10天/15天/30天）\n- 支持通过经纬度坐标查询位置\n- 完全中文天气描述\n\n## API\n\n此 MCP 服务器提供以下工具：\n\n### get-weather\n\n获取特定位置的天气预报数据。\n\n# 使用 MCP 主机（例如 Claude Desktop）\n\n将以下内容添加到你的 claude_desktop_config.json 文件中\n\n## NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"hefeng-weather\": {\n      \"command\": \"npx\",\n      \"args\": [\"hefeng-mcp-weather@latest\", \"--apiKey=${API_KEY}\"]\n    }\n  }\n}\n```\n\n# 许可证\n\n该 MCP 服务器根据 MIT 许可证进行许可。这意味着您可以自由使用、修改和分发软件，但须遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。",
-    "zh-Hant": "# HeFeng 天气 MCP 服务器\n\n一个通过 HeFeng 天气 API 提供中国各地天气预报数据的 Model Context Protocol 服务器。\n\n## 功能\n\n- 获取实时天气数据\n- 获取每小时天气预报（24小时/72小时/168小时）\n- 获取每日天气预报（3天/7天/10天/15天/30天）\n- 支持通过经纬度坐标查询位置\n- 完全中文天气描述\n\n## API\n\n此 MCP 服务器提供以下工具：\n\n### get-weather\n\n获取特定位置的天气预报数据。\n\n# 使用 MCP 主机（例如 Claude Desktop）\n\n将以下内容添加到你的 claude_desktop_config.json 文件中\n\n## NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"hefeng-weather\": {\n      \"command\": \"npx\",\n      \"args\": [\"hefeng-mcp-weather@latest\", \"--apiKey=${API_KEY}\"]\n    }\n  }\n}\n```\n\n# 许可证\n\n该 MCP 服务器根据 MIT 许可证进行许可。这意味着您可以自由使用、修改和分发软件，但须遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。"
+    "zh-Hans": "# HeFeng 天气 MCP 服务器\n\n一个通过 HeFeng 天气 API 提供中国各地天气预报数据的 Model Context Protocol 服务器。\n\n## 功能\n\n- 获取实时天气数据\n- 获取每小时天气预报（24小时/72小时/168小时）\n- 获取每日天气预报（3天/7天/10天/15天/30天）\n- 支持通过经纬度坐标查询位置\n- 完全中文天气描述\n\n## API\n\n此 MCP 服务器提供以下工具：\n\n### get-weather\n\n获取特定位置的天气预报数据。\n\n# 使用 MCP 主机（例如 Claude Desktop）\n\n将以下内容添加到你的 claude_desktop_config.json 文件中\n\n## NPX\n\n```json\n{\n  \"mcpServers\": {\n    \"hefeng-weather\": {\n      \"command\": \"npx\",\n      \"args\": [\"hefeng-mcp-weather@latest\", \"--apiKey=${API_KEY}\"]\n    }\n  }\n}\n```\n\n# 许可证\n\n该 MCP 服务器根据 MIT 许可证进行许可。这意味着您可以自由使用、修改和分发软件，但须遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。"
   },
   "categories": [
     "data"

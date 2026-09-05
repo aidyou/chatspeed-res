@@ -1,71 +1,71 @@
 ---
-title: "n8n MCP 服务器"
-description: "一个MCP服务器，通过模型上下文协议（Model Context Protocol）实现与n8n工作流、执行和设置的安全交互，专为与大型语言模型（LLMs）集成而设计。"
+title: "n8n-mcp-server"
+description: "An MCP server enabling secure interaction with n8n workflows, executions, and settings via the Model Context Protocol, designed for integration with Large Language Models (LLMs)."
 ---
 
-# n8n MCP 服务器
+# n8n-mcp-server
 
-一个MCP服务器，通过模型上下文协议（Model Context Protocol）实现与n8n工作流、执行和设置的安全交互，专为与大型语言模型（LLMs）集成而设计。
+An MCP server enabling secure interaction with n8n workflows, executions, and settings via the Model Context Protocol, designed for integration with Large Language Models (LLMs).
 
-# n8n MCP 服务器
+# n8n MCP Server
 
-通过模型上下文协议（Model Context Protocol）提供对 n8n 工作流、执行、凭证等的访问的 MCP 服务器。这允许大型语言模型（LLMs）以安全和标准化的方式与 n8n 实例交互。
+An MCP server that provides access to n8n workflows, executions, credentials, and more through the Model Context Protocol. This allows Large Language Models (LLMs) to interact with n8n instances in a secure and standardized way.
 
-## 安装
+## Installation
 
-### 获取您的 n8n API 密钥
+### Get your n8n API Key
 
-1. 登录到您的 n8n 实例
-2. 点击左下角的用户图标
-3. 转到设置
-4. 选择 API
-5. 点击“创建 API 密钥”
-6. 复制您的 API 密钥（您将无法再次查看它）
+1. Log into your n8n instance
+2. Click your user icon in the bottom left
+3. Go to Settings
+4. Select API
+5. Click "Create API Key"
+6. Copy your API key (you will not  be able to see it again)
 
-### 安装 MCP 服务器
+### Install the MCP Server
 
-#### 选项 1：从 npm 安装（推荐）
+#### Option 1: Install from npm (Recommended)
 
 ```bash
 npm install -g @illuminaresolutions/n8n-mcp-server
 ```
 
-#### 选项 2：从源代码安装
+#### Option 2: Install from Source
 
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
    git clone https://github.com/illuminaresolutions/n8n-mcp-server.git
    cd n8n-mcp-server
 ```
 
-2. 安装依赖并构建：
+2. Install dependencies and build:
 ```bash
    npm install
    npm run build
 ```
 
-3. 在后台启动服务器：
+3. Start the server in the background:
 ```bash
    nohup npm start > n8n-mcp.log 2>&1 &
 ```
 
-   停止服务器：
+   To stop the server:
 ```bash
    pkill -f "node build/index.js"
 ```
 
-注意：从 npm 安装时，服务器将在您的 PATH 中作为 `n8n-mcp-server` 可用。
+Note: When installing from npm, the server will be available as `n8n-mcp-server` in your PATH.
 
-## 配置
+## Configuration
 
-### Claude 桌面版
+### Claude Desktop
 
-1. 打开您的 Claude 桌面配置文件：
+1. Open your Claude Desktop configuration:
 ```
    ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-2. 添加 n8n 配置：
+2. Add the n8n configuration:
 ```json
    {
      "mcpServers": {
@@ -82,12 +82,12 @@ npm install -g @illuminaresolutions/n8n-mcp-server
 
 ### Cline (VS Code)
 
-1. 安装服务器（请参阅上面的安装步骤）
-2. 打开 VS Code
-3. 从左侧边栏打开 Cline 扩展
-4. 单击窗格顶部的 'MCP Servers' 图标
-5. 滚动到底部并点击 'Configure MCP Servers'
-6. 在打开的设置文件中添加以下内容：
+1. Install the server (follow Installation steps above)
+2. Open VS Code
+3. Open the Cline extension from the left sidebar
+4. Click the 'MCP Servers' icon at the top of the pane
+5. Scroll to bottom and click 'Configure MCP Servers'
+6. Add to the opened settings file:
 ```json
    {
      "mcpServers": {
@@ -101,104 +101,103 @@ npm install -g @illuminaresolutions/n8n-mcp-server
      }
    }
 ```
-7. 保存文件
-8. 确保 MCP 开关已启用（绿色）且状态指示器为绿色
-9. 开始在 Cline 中使用 MCP 命令
+7. Save the file
+8. Ensure the MCP toggle is enabled (green) and the status indicator is green
+9. Start using MCP commands in Cline
 
 ### Sage
 
-即将推出！n8n MCP 服务器将可通过以下途径获得：
-- Smithery.ai 市场
-- 从 Claude 桌面版导入
+Coming soon! The n8n MCP server will be available through:
+- Smithery.ai marketplace
+- Import from Claude Desktop
 
-目前，请使用 Claude 桌面版或 Cline。
+For now, please use Claude Desktop or Cline.
 
-## 验证
+## Validation
 
-配置完成后：
+After configuration:
 
-1. 重启您的 LLM 应用程序
-2. 询问：“列出我的 n8n 工作流”
-3. 您应该能看到列出的工作流
+1. Restart your LLM application
+2. Ask: "List my n8n workflows"
+3. You should see your workflows listed
 
-如果出现错误：
-- 检查您的 n8n 实例是否正在运行
-- 验证您的 API 密钥是否有正确的权限
-- 确保 N8N_HOST 没有尾随斜杠
+If you get an error:
+- Check that your n8n instance is running
+- Verify your API key has correct permissions
+- Ensure N8N_HOST has no trailing slash
 
-## 功能
+## Features
 
-### 核心功能
-- 列出和管理工作流
-- 查看工作流详情
-- 执行工作流
-- 管理凭证
-- 处理标签和执行
-- 生成安全审计
-- 管理工作流标签
+### Core Features
+- List and manage workflows
+- View workflow details
+- Execute workflows
+- Manage credentials
+- Handle tags and executions
+- Generate security audits
+- Manage workflow tags
 
-### 企业功能
-这些功能需要 n8n 企业许可证：
+### Enterprise Features
+These features require an n8n Enterprise license:
+- Project management
+- Variable management
+- Advanced user management
 
-- 项目管理
-- 变量管理
-- 高级用户管理
+## Troubleshooting
 
-## 故障排除
+### Common Issues
 
-### 常见问题
+1. "Client not initialized"
+   - Check N8N_HOST and N8N_API_KEY are set correctly
+   - Ensure n8n instance is accessible
+   - Verify API key permissions
 
-1. "客户端未初始化"
-   - 检查 N8N_HOST 和 N8N_API_KEY 是否设置正确
-   - 确保 n8n 实例可访问
-   - 验证 API 密钥权限
+2. "License required"
+   - You're trying to use an Enterprise feature
+   - Either upgrade to n8n Enterprise or use core features only
 
-2. "需要许可证"
-   - 您正在尝试使用企业版功能
-   - 请升级到 n8n 企业版或仅使用核心功能
+3. Connection Issues
+   - Verify n8n instance is running
+   - Check URL protocol (http/https)
+   - Remove trailing slash from N8N_HOST
 
-3. 连接问题
-   - 确认 n8n 实例正在运行
-   - 检查 URL 协议 (http/https)
-   - 从 N8N_HOST 中移除尾部斜杠
+## Security Best Practices
 
-## 安全最佳实践
+1. API Key Management
+   - Use minimal permissions necessary
+   - Rotate keys regularly
+   - Never commit keys to version control
 
-1. API 密钥管理
-   - 使用最低限度的必要权限
-   - 定期轮换密钥
-   - 永不将密钥提交到版本控制
+2. Instance Access
+   - Use HTTPS for production
+   - Enable n8n authentication
+   - Keep n8n updated
 
-2. 实例访问
-   - 在生产环境中使用 HTTPS
-   - 启用 n8n 身份验证
-   - 保持 n8n 更新
-
-## 支持
+## Support
 
 - [GitHub Issues](https://github.com/illuminaresolutions/n8n-mcp-server/issues)
-- [n8n 文档](https://docs.n8n.io)
+- [n8n Documentation](https://docs.n8n.io)
 
-## 许可证
+## License
 
-[MIT 许可证](https://github.com/illuminaresolutions/n8n-mcp-server/blob/HEAD/LICENSE)
+[MIT License](https://github.com/illuminaresolutions/n8n-mcp-server/blob/HEAD/LICENSE)
 
-**官方网站：** [https://github.com/illuminaresolutions/n8n-mcp-server](https://github.com/illuminaresolutions/n8n-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/illuminaresolutions/n8n-mcp-server](https://github.com/illuminaresolutions/n8n-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `browser`
-- 标签：`developer tools`, `os automation`, `other`, `chinese`
+- Categories: `development`, `browser`
+- Tags: `developer tools`, `os automation`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`n8n-mcp-server`
-- 参数：无
+- Transport: `stdio`
+- Command: `n8n-mcp-server`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/illuminaresolutions-n8n.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/illuminaresolutions-n8n.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,67 +1,65 @@
 ---
-title: "完美校园AI一卡通"
-description: "完美校园AI一卡通MCP Server1.0基于新开普一卡通服务，具备一卡通查询、办理等核心能力，可被大模型直接调用。包括校园卡余额查询、校园卡交易信息查询、卡挂失等功能，用户可以基于这些AI 工具搭建属于自己的校园生活助手。"
+title: "wanmei-ai-card"
+description: "Perfect Campus AI All-in-One Card MCP Server 1.0 is based on the NewKaiPu all-in-one card service, featuring core capabilities such as card inquiries and management, which can be directly invoked by l…"
 ---
 
-# 完美校园AI一卡通
+# wanmei-ai-card
 
-完美校园AI一卡通MCP Server1.0基于新开普一卡通服务，具备一卡通查询、办理等核心能力，可被大模型直接调用。包括校园卡余额查询、校园卡交易信息查询、卡挂失等功能，用户可以基于这些AI 工具搭建属于自己的校园生活助手。
+Perfect Campus AI All-in-One Card MCP Server 1.0 is based on the NewKaiPu all-in-one card service, featuring core capabilities such as card inquiries and management, which can be directly invoked by l…
 
-## 公司介绍
-完美数联(杭州)科技有限公司致力于与学校各个垂直场景深度融合，服务学生的学习生活、校园生活、教育培训、 实习就业、社区服务等方面，助力高校提高更优质的生活管理、教学管理、人才成长管理服务,帮助 大学生提升校园生活质量，提升就业能力和素质，为高校、企业与社会提供有效的连接平台，成为 高校信息化生态共建者。
+## Company Introduction
+Perfect Union (Hangzhou) Technology Co., Ltd. is dedicated to deeply integrating with various vertical scenarios in schools, serving students' learning, campus life, education and training, internships, employment, and community services. It aims to help universities provide higher-quality life management, teaching management, and talent development management services, thereby enhancing the quality of campus life for college students, improving their employability and overall competence. The company also provides an effective connection platform between universities, enterprises, and society, becoming a co-builder of the university information ecosystem.
 
-## 产品介绍
-完美数联旗下产品“完美校园”，基于“互联网+教育”理念，依托智慧校园平台，以校区服务为基础，围绕素质画像，提供精准实习、就业、培训及成长规划服务，校园大数据服务。 “完美校园”自2014年上线，已深耕校园移动互联网市场10年，从校园卡服务起步，涵盖充值、缴费、消费、身份识别、出入管控等一卡通各类服务场景，持续融合教务、迎新、宿管、学工、就业等智慧校园服务场景，并与公司全线软、硬件产品的紧密链接、协同联动，构筑公有云+私有云的混合云智慧校园建设模式，为高校与企业、社会搭建有效的连接平台，助力高校数字化全域生态建设。截至2024年，完美校园已累计接入国内1,100多所院校，活跃实名认证用户1,000+多万。详情见：https://www.17wanxiao.com/new/index.html
+## Product Introduction
+"Perfect Campus," a product under Perfect Union, is based on the "Internet + Education" concept, relying on the smart campus platform. It offers services centered around campus services and focuses on providing precise internship, employment, training, and growth planning services, as well as campus big data services. Since its launch in 2014, "Perfect Campus" has been deeply involved in the mobile internet market for campuses for 10 years, starting from campus card services, covering recharge, payment, consumption, identity recognition, access control, and other all-in-one card service scenarios. It continuously integrates with smart campus service scenarios such as academic affairs, orientation, dormitory management, student affairs, and employment, closely linking and coordinating with the company's full range of software and hardware products. This builds a hybrid cloud smart campus construction model combining public and private clouds, establishing an effective connection platform between universities, enterprises, and society, and supporting the comprehensive digital ecological construction of universities. As of 2024, Perfect Campus has connected over 1,100 institutions domestically, with more than 10 million active real-name authenticated users. For more details, visit: https://www.17wanxiao.com/new/index.html
 
-## 完美校园AI一卡通MCP服务
-完美校园AI一卡通MCP Server1.0 基于常用的校园卡业务，提供查询和部分办理类的相关接口，用户可通过搭建工作流、Agent的方式完成对自己校园卡的管理助手/应用的创建，可通过语音、文字等多种方式管理自己的卡业务。
-### 支持功能认证
-#### 1. 支持校园卡常见的查询类业务  
+## Perfect Campus AI One-Card MCP Service
+The Perfect Campus AI One-Card MCP Server 1.0, based on common campus card operations, provides interfaces for inquiries and some processing functions. Users can create their own campus card management assistants/applications by setting up workflows or Agents, managing their card operations through voice, text, and other methods.
+### Supported Function Authentication
+#### 1. Supports Common Inquiry Services for Campus Cards
 
-| 功能名称                     | 描述                                                                 |
-|------------------------------|----------------------------------------------------------------------|
-| **queryUserBalanceTrades**   | **校园卡余额查询**
-根据用户ID查询校园卡余额。                     |
-| **queryUserSelfTrade**       | **校园卡交易明细查询**
-根据用户ID和日期范围查询交易明细，返回交易记录列表，列表项包括交易流水号、商户名称、日期、交易后余额等完整交易信息。 |
-| **queryBasicInfo**           | **校园卡状态查询**
-根据用户ID、姓名和密码查询卡的状态信息，可能的账户状态包括：
-1-正常，2-挂失，3-系统冻结，4-销户，5-预销户，6-手工冻结。 |
+| Function Name                  | Description                                                                 |
+|--------------------------------|------------------------------------------------------------------------------|
+| **queryUserBalanceTrades**     | **Campus Card Balance Inquiry**
+Inquires about the campus card balance based on the user ID. |
+| **queryUserSelfTrade**         | **Campus Card Transaction Details Inquiry**
+Queries transaction details based on the user ID and date range, returning a list of transaction records. Each item in the list includes complete transaction information such as transaction serial number, merchant name, date, and balance after the transaction. |
+| **queryBasicInfo**             | **Campus Card Status Inquiry**
+Queries the status of the card based on the user ID, name, and password. Possible account statuses include:
+1-Normal, 2-Lost, 3-System Frozen, 4-Cancelled, 5-Pre-cancelled, 6-Manually Frozen. |
 
-#### 2. 支持校园卡常见的办理类业务  
+#### 2. Supports Common Processing Services for Campus Cards
 
-| 功能名称      | 描述                                                                 |
-|---------------|----------------------------------------------------------------------|
-| **lostCard**  | **校园卡挂失**
-用户丢卡时提供ID和密码对校园卡进行挂失。如果卡的状态非正常态，则返回操作失败和相应的状态提示。 |
+| Function Name      | Description                                                                 |
+|--------------------|------------------------------------------------------------------------------|
+| **lostCard**       | **Report Lost Campus Card**
+Allows reporting a lost card by providing the ID and password when a user loses their card. If the card status is not normal, it returns an operation failure and the corresponding status prompt. |
 
-### 使用授权
-完美校园AI一卡通MCP Server1.0的使用需要用户被授权。需要确认您所在的学校是否授权开通了完美校园AI一卡通MCP 服务，确认授权后，您需要前往https://aitoolkit.59wanmei.com/pc.html， 登录后获取 API Key。
+### Usage Authorization
+To use the Perfect Campus AI One-Card MCP Server 1.0, users need to be authorized. You must confirm whether your school has authorized the activation of the Perfect Campus AI One-Card MCP service. After confirmation, you should go to https://aitoolkit.59wanmei.com/pc.html, log in, and obtain the API Key.
 
-开通步骤：
+Activation Steps:
 
-1.打开完美校园app，绑定自己的校园卡。
+1. Open the Perfect Campus app and bind your campus card.
+2. During login, authorize on the authentication page at https://aitoolkit.59wanmei.com/pc.html, using the Perfect Campus APP to scan the QR code to get the API key.
+3. Enter your API key to activate (Note: The API key is an important credential for this MCP service; please keep it safe and do not share it). If you need to switch API Keys, you can cancel the current one and re-enter a new one.
 
-2.登陆时授权认证页面https://aitoolkit.59wanmei.com/pc.html， 使用完美校园APP扫描二维码获取apikey。
+**Official site: ** [https://app.59wanmei.com/new/index.html](https://app.59wanmei.com/new/index.html)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-3.输入自己的apikey即可开通（注意：apikey作为该MCP服务的重要凭证请谨慎保存，勿扩散）。如您需要切换 API Key，可取消开通后重新填入。
+## Categories & Tags
 
-**官方网站：** [https://app.59wanmei.com/new/index.html](https://app.59wanmei.com/new/index.html)
-**状态：** `active`　**最后核验：** `2026-08-30`
+- Categories: `productivity`
+- Tags: `other`, `完美校园`, `完美校园一卡通`, `ai一卡通`, `一卡通mcp server`, `chinese`
 
-## 分类与标签
+## MCP Configuration
 
-- 分类：`productivity`
-- 标签：`other`, `完美校园`, `完美校园一卡通`, `ai一卡通`, `一卡通mcp server`, `chinese`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://aitoolkit.59wanmei.com:8080/gateway/tools/sse?apikey=API_KEY --transport sse-only --allow-http`
 
-## MCP 配置
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://aitoolkit.59wanmei.com:8080/gateway/tools/sse?apikey=API_KEY --transport sse-only --allow-http`
+## Data source
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/wmxiaoyuan-wanmei-ai-card.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wmxiaoyuan-wanmei-ai-card.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

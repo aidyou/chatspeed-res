@@ -1,11 +1,11 @@
 ---
-title: "SonarQube MCP 服务器"
-description: "SonarQube MCP Server The SonarQube MCP Server is a Model Context Protocol (MCP) server that enables seamless integration with SonarQube Server or Cloud for code quality and security. It also supports the analysis of code"
+title: "SonarQube MCP Server"
+description: "SonarQube MCP Server The SonarQube MCP Server is a Model Context Protocol (MCP) server that enables seamless integration with SonarQube Server or Cloud for code quality and security. It also supports…"
 ---
 
-# SonarQube MCP 服务器
+# SonarQube MCP Server
 
-SonarQube MCP Server The SonarQube MCP Server is a Model Context Protocol (MCP) server that enables seamless integration with SonarQube Server or Cloud for code quality and security. It also supports the analysis of code
+SonarQube MCP Server The SonarQube MCP Server is a Model Context Protocol (MCP) server that enables seamless integration with SonarQube Server or Cloud for code quality and security. It also supports…
 
 # SonarQube MCP Server
 
@@ -541,22 +541,22 @@ By default, only important toolsets are enabled to reduce context overhead. You 
 | Environment variable  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-**官方网站：** [https://github.com/SonarSource/sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SonarSource/sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `code quality`, `sonarqube`, `code review`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `code quality`, `sonarqube`, `code review`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run --init --pull=always -i --rm -e SONARQUBE_TOKEN -e SONARQUBE_URL sonarsource/sonarqube-mcp`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run --init --pull=always -i --rm -e SONARQUBE_TOKEN -e SONARQUBE_URL sonarsource/sonarqube-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sonarsource-sonarqube.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sonarsource-sonarqube.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

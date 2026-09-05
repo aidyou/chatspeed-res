@@ -1,11 +1,11 @@
 ---
-title: "串口智控"
-description: "一座通过串行通信将物理硬件设备与人工智能大语言模型连接起来的桥梁，允许用户使用自然语言命令控制硬件。"
+title: "mcp2serial"
+description: "A bridge that connects physical hardware devices with AI large language models via serial communication, allowing users to control hardware using natural language commands."
 ---
 
-# 串口智控
+# mcp2serial
 
-一座通过串行通信将物理硬件设备与人工智能大语言模型连接起来的桥梁，允许用户使用自然语言命令控制硬件。
+A bridge that connects physical hardware devices with AI large language models via serial communication, allowing users to control hardware using natural language commands.
 
 # MCP2Serial: 连接物理世界与AI大模型的桥梁 
 
@@ -29,7 +29,7 @@ MCP2Serial 工作流程图
 
 ## 项目愿景
 
-MCP2Serial 是一个将串口设备接入 AI 大模型的项目，它通过 Model Context Protocol (MCP) 将物理世界与 AI 大模型无缝连接。最终实现：
+MCP2Serial 将串口设备接入AI大模型的项目，它通过 Model Context Protocol (MCP) 将物理世界与 AI 大模型无缝连接。最终实现：
 - 用自然语言控制你的硬件设备
 - AI 实时响应并调整物理参数
 - 让你的设备具备理解和执行复杂指令的能力
@@ -154,7 +154,8 @@ serial:
 
 commands:
   set_pwm:
-    command: "PWM {frequency}\n"
+    command: "PWM {frequency}
+"
     need_parse: false
     prompts:
       - "把PWM调到{value}"
@@ -166,14 +167,14 @@ commands:
 
 #### 1. 当前工作目录（适合开发测试）
 - 路径：`./config.yaml`
-- 示例：如果你在 `C:\Projects` 运行程序，它会查找 `C:\Projects\config.yaml`
+- 示例：如果你在 `C:Projects` 运行程序，它会查找 `C:Projectsconfig.yaml`
 - 适用场景：开发和测试
 - 不需要特殊权限
 
 #### 2. 用户主目录（推荐个人使用）
 ```bash
 # Windows系统
-C:\Users\用户名\.mcp2serial\config.yaml
+C:Users用户名.mcp2serialconfig.yaml
 
 # macOS系统
 /Users/用户名/.mcp2serial/config.yaml
@@ -185,7 +186,7 @@ C:\Users\用户名\.mcp2serial\config.yaml
 - 需要创建 `.mcp2serial` 目录：
 ```bash
   # Windows系统（在命令提示符中）
-  mkdir "%USERPROFILE%\.mcp2serial"
+  mkdir "%USERPROFILE%.mcp2serial"
   
   # macOS/Linux系统
   mkdir -p ~/.mcp2serial
@@ -194,7 +195,7 @@ C:\Users\用户名\.mcp2serial\config.yaml
 #### 3. 系统级配置（适合多用户环境）
 ```bash
 # Windows系统（需要管理员权限）
-C:\ProgramData\mcp2serial\config.yaml
+C:ProgramDatamcp2serialconfig.yaml
 
 # macOS/Linux系统（需要root权限）
 /etc/mcp2serial/config.yaml
@@ -203,7 +204,7 @@ C:\ProgramData\mcp2serial\config.yaml
 - 创建目录并设置权限：
 ```bash
   # Windows系统（以管理员身份运行）
-  mkdir "C:\ProgramData\mcp2serial"
+  mkdir "C:ProgramDatamcp2serial"
   
   # macOS/Linux系统（以root身份运行）
   sudo mkdir -p /etc/mcp2serial
@@ -231,7 +232,8 @@ serial:
 commands:
   # PWM控制命令
   set_pwm:
-    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加\r\n
+    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加
+
     need_parse: false  # 不需要解析响应内容
     prompts:
       - "把PWM调到最大"
@@ -253,7 +255,8 @@ serial:
 
 commands:
   set_pwm:
-    command: "PWM {frequency}\n"
+    command: "PWM {frequency}
+"
     need_parse: false
     prompts:
       - "把PWM调到{value}"
@@ -316,14 +319,14 @@ commands:
 
      alt="Cline Configuration Example" width="600"/>
     
- Claude中的示例
+ Example in Claude
 
      alt="Cline Configuration Example" width="600"/>
     
-Cline中的示例
+Example in Cline
 
 ### 硬件编程
-固件可以在项目仓库中下载，目前演示的是Pico的MicroPython代码案例。保存到Pico开发板上运行即可。
+firmware可以在项目仓库中下载，目前演示的是Pico的micropython代码案例。另存到Pico开发板运行即可。
 
 ### 从源码快速开始
 1. 从源码安装
@@ -337,7 +340,7 @@ uv venv .venv
 
 # 激活虚拟环境
 # Windows:
-.venv\Scripts\activate
+.venvScriptsactivate
 # Linux/macOS:
 source .venv/bin/activate
 
@@ -346,10 +349,10 @@ uv pip install --editable .
 ```
 
 2. 配置串口和命令：
-默认不使用真实串口，而是用模拟串口来演示
-如果你的电脑没有串口或者当前没有可用的串口
-可以将port参数设置为LOOP_BACK，这样就可以直接在命令行发送命令了
-但同时请修改应答OK的命令的起始符，使其与发送的命令相同。
+默认不使用真实串口 用模拟串口来演示
+如果你的电脑没有串口或者目前没有串口可用
+可以将port参数设置为LOOP_BACK，这样就可以在命令行直接发送命令了
+但同时请修改应答OK的命令的起始符需要和发送的命令一样。
 比如发送LED_ON
 那么应答起始符也是LED_ON
 ```yaml
@@ -364,7 +367,8 @@ serial:
 commands:
   # PWM控制命令
   set_pwm:
-    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加\r\n
+    command: "CMD_PWM {frequency}"  # 实际发送的命令格式，server会自动添加
+
     need_parse: false  # 不需要解析响应内容
     prompts:
       - "把PWM调到最大"
@@ -386,7 +390,8 @@ serial:
 
 commands:
   set_pwm:
-    command: "PWM {frequency}\n"
+    command: "PWM {frequency}
+"
     need_parse: false
     prompts:
       - "把PWM调到{value}"
@@ -435,7 +440,7 @@ commands:
 3. 运行服务器：
 ```bash
 # 确保已激活虚拟环境
-.venv\Scripts\activate
+.venvScriptsactivate
 
 # 运行服务器（使用默认配置config.yaml 案例中用的LOOP_BACK 模拟串口，无需真实串口和串口设备）
 uv run src/mcp2serial/server.py
@@ -560,22 +565,22 @@ MCP2Serial 正在开启物联网的新篇章：
 
 本项目采用 MIT 许可证 - 详见 [LICENSE](https://github.com/mcp2everything/mcp2serial/blob/HEAD/LICENSE) 文件
 
-**官方网站：** [https://github.com/mcp2everything/mcp2serial](https://github.com/mcp2everything/mcp2serial)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mcp2everything/mcp2serial](https://github.com/mcp2everything/mcp2serial)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`home automation and iot`, `os automation`, `developer tools`, `chinese`
+- Categories: `development`
+- Tags: `home automation and iot`, `os automation`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp2serial`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp2serial`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mcp2everything-mcp2serial.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mcp2everything-mcp2serial.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
 title: "Windows-MCP.Net"
-description: "Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - Windows 操作系统 - .NET 10.0 Runtime 或更高版本 重要提示: 本项目需要 .NET 10 才能"
+description: "Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - W…"
 ---
 
 # Windows-MCP.Net
 
-Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - Windows 操作系统 - .NET 10.0 Runtime 或更高版本 重要提示: 本项目需要 .NET 10 才能
+Windows MCP.Net 一个基于 .NET 的 Windows 桌面自动化 MCP (Model Context Protocol) 服务器，为 AI 助手提供与 Windows 桌面环境交互的能力。 📋 目录 - 功能特性 - 使用场景 - 演示截图 - 技术栈 - API文档 - 项目结构 - 功能扩展建议 - 配置 - 贡献指南 - 更新日志 - 支持 🚀 快速开始 前置要求 - W…
 
 # Windows MCP.Net
 
@@ -476,22 +476,22 @@ src/
 
 **免责声明**: 使用本工具进行自动化操作时，请遵守相关法律法规和软件使用协议。开发者不承担因误用工具而产生的任何责任。
 
-**官方网站：** [https://github.com/AIDotNet/Windows-MCP.Net](https://github.com/AIDotNet/Windows-MCP.Net)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/AIDotNet/Windows-MCP.Net](https://github.com/AIDotNet/Windows-MCP.Net)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `browser`, `files`
-- 标签：`browser automation`, `developer tools`, `file systems`, `mcp`, `windows`
+- Categories: `development`, `browser`, `files`
+- Tags: `browser automation`, `developer tools`, `file systems`, `mcp`, `windows`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`dnx`
-- 参数：`WindowsMCP.Net@ --yes`
+- Transport: `stdio`
+- Command: `dnx`
+- Args: `WindowsMCP.Net@ --yes`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/xuzeyu-windows-net.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/xuzeyu-windows-net.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

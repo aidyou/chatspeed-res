@@ -1,136 +1,140 @@
 ---
-title: "jasnonaz"
-description: "Vibe Worldbuilding MCP 一个用于通过Claude创建详细虚构世界的模型上下文协议（MCP），并附带自动图像生成功能。 概述 此MCP通过结构化的方法帮助您构建丰富且连贯的虚构世界。它利用Claude的能力来帮助您开发概念、探索细节并保持一致性。该MCP还可以生成图像以视觉上表示您的世界元素。 安装 1. 安装MCP CLI： pip install mcp 2. 安装所需的依赖项： pip install google-generativeai 3. 使用您的Google AI API密钥安装"
+title: "vibe-worldbuilding-mcp"
+description: "Vibe Worldbuilding MCP A Model Context Protocol (MCP) for creating detailed fictional worlds with Claude, complete with automatic image generation. Overview This MCP helps you build rich, cohesive fic…"
 ---
 
-# jasnonaz
+# vibe-worldbuilding-mcp
 
-Vibe Worldbuilding MCP 一个用于通过Claude创建详细虚构世界的模型上下文协议（MCP），并附带自动图像生成功能。 概述 此MCP通过结构化的方法帮助您构建丰富且连贯的虚构世界。它利用Claude的能力来帮助您开发概念、探索细节并保持一致性。该MCP还可以生成图像以视觉上表示您的世界元素。 安装 1. 安装MCP CLI： pip install mcp 2. 安装所需的依赖项： pip install google-generativeai 3. 使用您的Google AI API密钥安装
+Vibe Worldbuilding MCP A Model Context Protocol (MCP) for creating detailed fictional worlds with Claude, complete with automatic image generation. Overview This MCP helps you build rich, cohesive fic…
 
 # Vibe Worldbuilding MCP
 
-一个用于通过Claude创建详细虚构世界的模型上下文协议（MCP），并附带自动图像生成功能。
+A Model Context Protocol (MCP) for creating detailed fictional worlds with Claude, complete with automatic image generation.
 
-## 概述
+## Overview
 
-此MCP通过结构化的方法帮助您构建丰富且连贯的虚构世界。它利用Claude的能力来帮助您开发概念、探索细节并保持一致性。该MCP还可以生成图像以视觉上表示您的世界元素。
+This MCP helps you build rich, cohesive fictional worlds through a structured approach to worldbuilding. It uses Claude s capabilities to help you develop concepts, explore details, and maintain consistency. The MCP can also generate images to visually represent your world s elements.
 
-## 安装
+## Installation
 
-1. 安装MCP CLI：
-   
+1. Install the MCP CLI:
+```
    pip install mcp
-   
+```
 
-2. 安装所需的依赖项：
-   
+2. Install required dependencies:
+```
    pip install google-generativeai
-   
+```
 
-3. 使用您的Google AI API密钥安装Vibe Worldbuilding MCP：
-   
+3. Install the Vibe Worldbuilding MCP with your Google AI API key:
+```
    cd /path/to/vibe-worldbuilding-mcp
    mcp install vibe_worldbuilding_server.py -v IMAGEN_API_KEY=your_api_key_here
-   
+```
 
-   `-v` 标志设置了图像生成所需的环境变量。如果您没有用于Imagen的Google AI API密钥，仍然可以使用MCP进行世界构建，但图像生成功能将不可用。
+   The `-v` flag sets the environment variable needed for image generation. If you don t have a Google AI API key for Imagen, you can still use the MCP for worldbuilding, but the image generation feature won t work.
 
-   或者，您可以在开发模式下测试MCP：
-   
+   Alternatively, you can test the MCP in development mode:
+```
    mcp dev vibe_worldbuilding_server.py -v IMAGEN_API_KEY=your_api_key_here
-   
+```
 
-## 如何使用
+## How to Use
 
-MCP提供了几个提示来指导您的世界构建过程：
+The MCP provides several prompts to guide your worldbuilding process:
 
-1. **start-worldbuilding** - 开始一个新的世界项目
-2. **continue-worldbuilding** - 继续处理现有的世界
-3. **world-foundation** - 发展您的世界的核心概念
-4. **taxonomy** - 为世界元素创建分类系统
-5. **world-entry** - 为特定元素创建详细的条目
-6. **consistency-review** - 检查逻辑一致性
-7. **entry-revision** - 修改和完善现有条目
-8. **workflow** - 获取整个过程的指导
+1. **start-worldbuilding** - Begin a new world project
+2. **continue-worldbuilding** - Resume work on an existing world
+3. **world-foundation** - Develop the core concepts of your world
+4. **taxonomy** - Create classification systems for world elements
+5. **world-entry** - Create detailed entries for specific elements
+6. **consistency-review** - Check for logical consistency
+7. **entry-revision** - Revise and improve existing entries
+8. **workflow** - Get guidance on the overall process
 
-### 图像生成
+### Image Generation
 
-MCP可以为您的世界元素生成图像。在为条目、分类或其他元素创建Markdown文件后，使用`generate_image_from_markdown_file`工具：
+The MCP can generate images for your world elements. After creating a markdown file for an entry, taxonomy, or other element, use the `generate_image_from_markdown_file` tool:
 
+```
 Use the generate_image_from_markdown_file tool with path="/path/to/your/file.md"
+```
 
-该工具将：
-1. 读取您的Markdown文件内容
-2. 提取标题和描述
-3. 使用Google的Imagen API生成适当的图像
-4. 将图像保存在Markdown文件旁边的“images”文件夹中
+The tool will:
+1. Read the content of your markdown file
+2. Extract the title and description
+3. Generate an appropriate image using Google s Imagen API
+4. Save the image in an "images" folder next to your markdown file
 
-然后您可以将生成的图像上传到Claude，在对话中查看它。
+You can then upload the generated image to Claude to view it in your conversation.
 
-## 世界构建工作流程
+## Worldbuilding Workflow
 
-1. 从**start-worldbuilding**提示开始
-2. 对于每个新会话，从**continue-worldbuilding**开始
-3. 按以下顺序发展您的世界：
-   - 世界基础（核心概念和概述）
-   - 分类法（分类系统）
-   - 具体条目（详细文章）
-4. 通过发展您感兴趣的元素让您的世界有机地成长
-5. 为您的世界元素生成图像，使其在视觉上生动起来
+1. Start with the **start-worldbuilding** prompt to begin
+2. For each new session, begin with **continue-worldbuilding**
+3. Develop your world in this order:
+   - World foundation (core concept and overview)
+   - Taxonomies (classification systems)
+   - Specific entries (detailed articles)
+4. Let your world grow organically by developing elements that interest you
+5. Generate images for your world elements to bring them to life visually
 
-## 示例会话
+## Example Session
 
-用户：让我们创建一个新世界。
+```
+User: Let s create a new world.
 
-[用户从MCP菜单中选择"start-worldbuilding"提示]
+[User selects the "start-worldbuilding" prompt from the MCP menu]
 
-Claude: [显示世界构建提示]
+Claude: [Displays the worldbuilding prompt]
 
-用户：我想创建一个声音具有魔法属性的世界。
+User: I d like to create a world where sound has magical properties.
 
-Claude: [帮助开发概念并探讨其影响]
+Claude: [Helps develop the concept and explores implications]
 
-用户：让我们把这个作为我的世界概览文件保存。
+User: Let s save this as my world overview file.
 
-Claude: [将内容保存到world-overview.md]
+Claude: [Saves the content to world-overview.md]
 
-用户：现在为这个概览生成一张图片。
+User: Now generate an image for this overview.
 
-[用户使用generate_image_from_markdown_file工具]
+[User uses the generate_image_from_markdown_file tool]
 
-Claude: [生成图像并保存到磁盘]
+Claude: [Generates an image and saves it to disk]
+```
 
-## 要求
+## Requirements
 
-- 用于Imagen的Google AI API密钥（设置为IMAGEN_API_KEY环境变量）
-- Google Generative AI Python库 (`google-generativeai`)
-- MCP CLI工具
+- A Google AI API key for Imagen (set as the IMAGEN_API_KEY environment variable)
+- Google Generative AI Python library (`google-generativeai`)
+- MCP CLI tool
 
-## 成功小贴士
+## Tips for Success
 
-- 逐步构建您的世界，从核心概念开始
-- 创建相关内容的集群
-- 定期审查一致性
-- 重视质量而非数量
-- 让您的世界自然地浮现
-- 使用生成的图像激发进一步的世界构建灵感
+- Build your world incrementally, starting with core concepts
+- Create clusters of related content
+- Review for consistency regularly
+- Focus on quality over quantity
+- Let your world emerge organically
+- Use generated images to inspire further worldbuilding
 
-**官方网站：** [https://github.com/jasnonaz/vibe-worldbuilding-mcp](https://github.com/jasnonaz/vibe-worldbuilding-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jasnonaz/vibe-worldbuilding-mcp](https://github.com/jasnonaz/vibe-worldbuilding-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `image and video processing`, `content management systems`
+- Categories: `media`
+- Tags: `art and culture`, `image and video processing`, `content management systems`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python3`
-- 参数：`./vibe_worldbuilding_server.py`
+- Transport: `stdio`
+- Command: `python3`
+- Args: `./vibe_worldbuilding_server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jasnonaz-vibe-worldbuilding.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jasnonaz-vibe-worldbuilding.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

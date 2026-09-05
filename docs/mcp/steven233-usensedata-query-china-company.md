@@ -1,11 +1,11 @@
 ---
-title: "羽山国内企业信息查询"
-description: "羽山数据API服务现已全面兼容MCP协议，打造数据服务MCP Server。usensedata-mcp-server-query-china-company项目为企业类数据查询服务server，用户可通过简单配置快速通过LLM使用羽山数据企业类数据服务。依赖MCP Typescript SDK，可在支持MCP协议的智能体助手中快速接入。 简介：验证法人姓名与企业名称是否一致。返回 0 表示一致，返回 1 表示不一致。 入参： - operName：代表人姓名 - entName：公司全名 --- 简介：通过企业名称关键词模糊查询公司信息。 入参： - keyWord：公司名称关键词 --- 简介：根据公司全名查询企业基本信息（如法人、注册资本、统一社会信用代码等）。 入参： - entname：公司全名 --- 简介：查询企业的对外投资信息，如投资金额、持股比例、股东类型"
+title: "usensedata-mcp-server-query-china-company"
+description: "Yushan Data API service is now fully compatible with the MCP protocol, creating a data service MCP Server. The usensedata-mcp-server-query-china-company project serves as a server for enterprise data…"
 ---
 
-# 羽山国内企业信息查询
+# usensedata-mcp-server-query-china-company
 
-羽山数据API服务现已全面兼容MCP协议，打造数据服务MCP Server。usensedata-mcp-server-query-china-company项目为企业类数据查询服务server，用户可通过简单配置快速通过LLM使用羽山数据企业类数据服务。依赖MCP Typescript SDK，可在支持MCP协议的智能体助手中快速接入。 简介：验证法人姓名与企业名称是否一致。返回 0 表示一致，返回 1 表示不一致。 入参： - operName：代表人姓名 - entName：公司全名 --- 简介：通过企业名称关键词模糊查询公司信息。 入参： - keyWord：公司名称关键词 --- 简介：根据公司全名查询企业基本信息（如法人、注册资本、统一社会信用代码等）。 入参： - entname：公司全名 --- 简介：查询企业的对外投资信息，如投资金额、持股比例、股东类型
+Yushan Data API service is now fully compatible with the MCP protocol, creating a data service MCP Server. The usensedata-mcp-server-query-china-company project serves as a server for enterprise data…
 
 ## 简介
 羽山数据API服务现已全面兼容MCP协议，打造数据服务MCP Server。usensedata-mcp-server-query-china-company项目为企业类数据查询服务server，用户可通过简单配置快速通过LLM使用羽山数据企业类数据服务。依赖MCP Typescript SDK，可在支持MCP协议的智能体助手中快速接入。
@@ -81,31 +81,30 @@ description: "羽山数据API服务现已全面兼容MCP协议，打造数据服
 
 ### 安装node.js
 当在终端中能成功获取版本号即安装成功，mac须用brew安装
-bash
 ```
 node -v
 npm -v
 ```
+
 ### 安装依赖
-bash
 ```
 npm install
 ```
+
 ### typescript打包
-bash
 ```
 npm run build
 ```
+
 ### 更新版本
 先登录npm账号，须在package.json中更新版本号
-bash
 ```
 npm login
 npm publish --access public
 ```
+
 ### 配置mcp server config
 macos/linux
-bash
 ```
 "mcpServers": {
   "usense-corp": {
@@ -121,7 +120,7 @@ bash
   }
 }
 ```
-bash
+windows
 ```
 "mcpServers": {
   "usense-corp": {
@@ -143,36 +142,36 @@ bash
 实际用户请求：***“帮我查一下羽山数据的对外投资情况”***
 
 ## 说明
-1. 获取实际请求中的需要查询的企业名称 “羽山数据”
+1.获取实际请求中的需要查询的企业名称 “羽山数据”
 
-2. 调用企业模糊查询 [fuzzy_query_of_enterprises] 获取到跟 “羽山数据” 相关的企业列表信息，并从中取得到公司全名.
+2.调用企业模糊查询 [fuzzy_query_of_enterprises] 获取到跟 “羽山数据” 相关的企业列表信息，并从中取得到公司全名.
 
-3. 然后调用公司对外投资查询 [query_company_overseas_investments] 获取公司对应的投资信息.
+3.然后调用公司对外投资查询 [query_company_overseas_investments] 获取公司对应的投资信息.
 
-4. 再调用企业基本信息查询 [query_basic_enterprise_information] 获取公司的基本信息内容.
+4.再调用企业基本信息查询 [query_basic_enterprise_information] 获取公司的基本信息内容.
 
-5. 最后整理以上所有信息，进行输出返回最终展示结果信息.
+5.最后整理以上所以信息，进行输出返回最终展示结果信息.
 
 #### Agent结果
 
 #### MCP tools加载
 
-**官方网站：** [https://github.com/usensedata/usensedata-mcp-server-query-china-company](https://github.com/usensedata/usensedata-mcp-server-query-china-company)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/usensedata/usensedata-mcp-server-query-china-company](https://github.com/usensedata/usensedata-mcp-server-query-china-company)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `企业数据`
+- Categories: `data`
+- Tags: `research and data`, `企业数据`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y usensedata-mcp-server-query-china-company`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y usensedata-mcp-server-query-china-company`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/steven233-usensedata-query-china-company.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/steven233-usensedata-query-china-company.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

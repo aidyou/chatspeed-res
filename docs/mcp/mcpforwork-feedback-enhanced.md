@@ -1,11 +1,11 @@
 ---
-title: "MCP增强反馈"
-description: "该项目是一个MCP服务器，旨在建立以反馈为中心的开发工作流程，支持本地、SSH远程和WSL环境。通过将多个工具调用整合为一个以反馈为中心的请求，它旨在降低平台成本并提高开发效率。"
+title: "feedback-enhanced"
+description: "MCP Feedback Enhanced 🌐 Language / 語言切換: English | 繁體中文 | 简体中文"
 ---
 
-# MCP增强反馈
+# feedback-enhanced
 
-该项目是一个MCP服务器，旨在建立以反馈为中心的开发工作流程，支持本地、SSH远程和WSL环境。通过将多个工具调用整合为一个以反馈为中心的请求，它旨在降低平台成本并提高开发效率。
+MCP Feedback Enhanced 🌐 Language / 語言切換: English | 繁體中文 | 简体中文
 
 # MCP Feedback Enhanced
 
@@ -286,22 +286,22 @@ MIT License - see [LICENSE](https://github.com/Minidoracat/mcp-feedback-enhanced
 ---
 **🌟 Welcome to Star and share with more developers!**
 
-**官方网站：** [https://github.com/Minidoracat/mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Minidoracat/mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-feedback-enhanced@latest`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-feedback-enhanced@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mcpforwork-feedback-enhanced.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mcpforwork-feedback-enhanced.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

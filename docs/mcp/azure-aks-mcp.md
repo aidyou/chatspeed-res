@@ -1,11 +1,11 @@
 ---
-title: "Azure AKS MCP"
-description: "AKS-MCP The AKS-MCP is a Model Context Protocol (MCP) server that enables AI assistants to interact with Azure Kubernetes Service (AKS) clusters. It serves as a bridge between AI tools (like GitHub Copilot, Claude, and o"
+title: "Azure Kubernetes Service MCP"
+description: "AKS-MCP The AKS-MCP is a Model Context Protocol (MCP) server that enables AI assistants to interact with Azure Kubernetes Service (AKS) clusters. It serves as a bridge between AI tools (like GitHub Co…"
 ---
 
-# Azure AKS MCP
+# Azure Kubernetes Service MCP
 
-AKS-MCP The AKS-MCP is a Model Context Protocol (MCP) server that enables AI assistants to interact with Azure Kubernetes Service (AKS) clusters. It serves as a bridge between AI tools (like GitHub Copilot, Claude, and o
+AKS-MCP The AKS-MCP is a Model Context Protocol (MCP) server that enables AI assistants to interact with Azure Kubernetes Service (AKS) clusters. It serves as a bridge between AI tools (like GitHub Co…
 
 # AKS-MCP
 
@@ -535,22 +535,22 @@ The MCP configuration differs depending on whether VS Code is running on Windows
 }
 ```
 
-**官方网站：** [https://github.com/Azure/aks-mcp](https://github.com/Azure/aks-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Azure/aks-mcp](https://github.com/Azure/aks-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `azure`, `kubernetes`, `cloud`, `official`
+- Categories: `development`
+- Tags: `developer tools`, `azure`, `kubernetes`, `cloud`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`bash`
-- 参数：`-lc npx -y @azure/aks-mcp`
+- Transport: `stdio`
+- Command: `bash`
+- Args: `-lc npx -y @azure/aks-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/azure-aks-mcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/azure-aks-mcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

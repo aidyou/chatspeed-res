@@ -1,41 +1,41 @@
 ---
-title: "地球数据MCP服务器"
-description: "一个模型上下文协议服务器，可实现高效发现和检索NASA地球数据以进行地理空间分析。"
+title: "earthdata-mcp-server"
+description: "A Model Context Protocol server that enables efficient discovery and retrieval of NASA Earth Data for geospatial analysis."
 ---
 
-# 地球数据MCP服务器
+# earthdata-mcp-server
 
-一个模型上下文协议服务器，可实现高效发现和检索NASA地球数据以进行地理空间分析。
+A Model Context Protocol server that enables efficient discovery and retrieval of NASA Earth Data for geospatial analysis.
 
 [![Datalayer](/mcp-assets/ebffabe66603ffc5befd3fb0a80b406d.svg)](https://datalayer.io)
 
-[![成为赞助者](/mcp-assets/ac64e82bf123c4e77c9539d7abadcb39.svg)](https://github.com/sponsors/datalayer)
+[![Become a Sponsor](/mcp-assets/ac64e82bf123c4e77c9539d7abadcb39.svg)](https://github.com/sponsors/datalayer)
 
-# 🪐 ✨ Earthdata MCP 服务器
+# 🪐 ✨ Earthdata MCP Server
 
 [Actions](https://github.com/datalayer/earthdata-mcp-server/actions/workflows/build.yml)
-[![PyPI - 版本](/mcp-assets/072238d536766621834bd11be56da91f.svg)](https://pypi.org/project/earthdata-mcp-server)
+[![PyPI - Version](/mcp-assets/072238d536766621834bd11be56da91f.svg)](https://pypi.org/project/earthdata-mcp-server)
 
-Earthdata MCP 服务器是一个 [模型上下文协议](https://modelcontextprotocol.io/introduction) (MCP) 服务器实现，它提供了与 [NASA 地球数据](https://www.earthdata.nasa.gov/) 交互的工具。它使地理空间分析中的数据集发现和检索更加高效。
+Earthdata MCP Server is a [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) server implementation that provides tools to interact with [NASA Earth Data](https://www.earthdata.nasa.gov/). It enables efficient dataset discovery and retrieval for Geospatial analysis.
 
-以下演示使用此 MCP 服务器在 NASA Earthdata 上搜索数据集和数据颗粒，并使用 [jupyter-earth-mcp-server](https://github.com/datalayer/jupyter-earth-mcp-server) 在 Jupyter 中下载数据，以及使用 [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) 进行进一步分析。
-
-  
-
-    
-使用 AI 驱动的地理空间工具和 Jupyter 分析海平面上升 - 观看视频
-
-  
+The following demo uses this MCP server to search for datasets and data granules on NASA Earthdata, the [jupyter-earth-mcp-server](https://github.com/datalayer/jupyter-earth-mcp-server) to download the data in Jupyter and the [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) to run further analysis.
 
   
 
     
+Analyzing Sea Level Rise with AI-Powered Geospatial Tools and Jupyter - Watch Video
 
   
 
-## 与 Claude Desktop 一起使用
+  
 
-要与 Claude Desktop 一起使用，请将以下内容添加到您的 `claude_desktop_config.json` 文件中。
+    
+
+  
+
+## Use with Claude Desktop
+
+To use this with Claude Desktop, add the following to your `claude_desktop_config.json`.
 
 ```json
 {
@@ -53,78 +53,78 @@ Earthdata MCP 服务器是一个 [模型上下文协议](https://modelcontextpro
 }
 ```
 
-如果您使用的是 Linux，请使用以下命令启动 Claude。
+If you are using Linux, start Claude with the following command.
 
 ```bash
 make claude-linux
 ```
 
-## 工具
+## Tools
 
-该服务器提供 2 个工具。
+The server offers 2 tools.
 
 ### `search_earth_datasets`
 
-- 在 NASA Earthdata 上搜索数据集。
-- 输入：
-  - search_keywords (str)：要在数据集标题中搜索的关键字。
-  - count (int)：要返回的数据集数量。
-  - temporal (tuple)：（可选）时间范围格式为 (date_from, date_to)。
-  - bounding_box (tuple)：（可选）边界框格式为 (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat)。
-- 返回：数据集摘要列表。
+- Search for datasets on NASA Earthdata.
+- Input:
+  - search_keywords (str): Keywords to search for in the dataset titles.
+  - count (int): Number of datasets to return.
+  - temporal (tuple): (Optional) Temporal range in the format (date_from, date_to).
+  - bounding_box (tuple): (Optional) Bounding box in the format (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat).
+- Returns: List of dataset abstracts.
 
 ### `search_earth_datagranules`
 
-- 在 NASA Earthdata 上搜索数据颗粒。
-- 输入：
-  - short_name (str)：数据集的简称。
-  - count (int)：要返回的数据颗粒数量。
-  - temporal (tuple)：（可选）时间范围格式为 (date_from, date_to)。
-  - bounding_box (tuple)：（可选）边界框格式为 (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat)。
-- 返回：数据颗粒列表。
+- Search for data granules on NASA Earthdata.
+- Input:
+  - short_name (str): Short name of the dataset.
+  - count (int): Number of data granules to return.
+  - temporal (tuple): (Optional) Temporal range in the format (date_from, date_to).
+  - bounding_box (tuple): (Optional) Bounding box in the format (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat).
+- Returns: List of data granules.
 
-## 提示
+## Prompts
 
 1. `sealevel_rise_dataset`
-   - 搜索全球范围内与海平面上升相关的数据集。
-   - 输入：
-     - `start_year` (int)：起始年份。
-      - `end_year` (int)：结束年份。
-   - 返回：正确格式化的提示。
+   - Search for datasets related to sea level rise worldwide.
+   - Input:
+     - `start_year` (int): Start year to consider.
+      - `end_year` (int): End year to consider.
+   - Returns: Prompt correctly formatted.
 
 2. `ask_datasets_format`
-    - 询问有关数据集格式的信息。
-    - 返回：正确格式化的提示。
+    - To ask about the format of the datasets.
+    - Returns: Prompt correctly formatted.
 
-## 构建
+## Building
 
 ```bash
 # or run `docker build -t datalayer/earthdata-mcp-server .`
 make build-docker
 ```
 
-如果您愿意，您可以拉取预构建的镜像。
+If you prefer, you can pull the prebuilt images.
 
 ```bash
 make pull-docker
 ```
 
-**官方网站：** [https://github.com/datalayer/earthdata-mcp-server](https://github.com/datalayer/earthdata-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/datalayer/earthdata-mcp-server](https://github.com/datalayer/earthdata-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `location services`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `location services`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm datalayer/earthdata-mcp-server:latest`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm datalayer/earthdata-mcp-server:latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/datalayer-earthdata.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/datalayer-earthdata.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

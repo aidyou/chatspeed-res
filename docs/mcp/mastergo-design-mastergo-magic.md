@@ -1,58 +1,58 @@
 ---
-title: "MasterGo设计协作工具"
-description: "MasterGo Magic MCP 是一个独立的 MCP（模型上下文协议）服务，旨在将 MasterGo 设计工具与 AI 模型连接起来。它使 AI 模型能够直接从 MasterGo 设计文件中检索 DSL 数据。"
+title: "mastergo-magic-mcp"
+description: "MasterGo Magic MCP is a standalone MCP (Model Context Protocol) service designed to connect MasterGo design tools with AI models. It enables AI models to directly retrieve DSL data from MasterGo desig…"
 ---
 
-# MasterGo设计协作工具
+# mastergo-magic-mcp
 
-MasterGo Magic MCP 是一个独立的 MCP（模型上下文协议）服务，旨在将 MasterGo 设计工具与 AI 模型连接起来。它使 AI 模型能够直接从 MasterGo 设计文件中检索 DSL 数据。
+MasterGo Magic MCP is a standalone MCP (Model Context Protocol) service designed to connect MasterGo design tools with AI models. It enables AI models to directly retrieve DSL data from MasterGo desig…
 
 # MasterGo Magic MCP
 
-MasterGo Magic MCP 是一项独立的 MCP（模型上下文协议）服务，旨在将 MasterGo 设计工具与 AI 模型连接起来。它使 AI 模型能够直接从 MasterGo 设计文件中检索 DSL 数据。
+MasterGo Magic MCP is a standalone MCP (Model Context Protocol) service designed to connect MasterGo design tools with AI models. It enables AI models to directly retrieve DSL data from MasterGo design files.
 
-## 核心功能
+## Key Features
 
-- 从 MasterGo 设计文件中检索 DSL 数据
-- 可通过 npx 直接运行
-- 不需要外部依赖，只需 Node.js 环境
+- Retrieves DSL data from MasterGo design files
+- Runs directly with npx
+- No external dependencies required, only Node.js environment needed
 
-## 教程
+## Tutorial
 
 - https://mastergo.com/file/155675508499265?page_id=158:0002
 
-## 使用方法
+## Usage
 
-### 获取 MG_MCP_TOKEN
+### Obtaining MG_MCP_TOKEN
 
-1. 访问 https://mastergo.com
-2. 进入个人设置
-3. 点击安全设置选项卡
-4. 找到个人访问令牌
-5. 点击生成令牌
+1. Visit https://mastergo.com
+2. Enter personal settings
+3. Click the Security Settings tab
+4. Find the personal access token
+5. Click to generate the token
 
-### 命令行选项
+### Command Line Options
 
 ```
 npx @mastergo/magic-mcp --token=YOUR_TOKEN [--url=API_URL] [--rule=RULE_NAME] [--debug]
 ```
 
-#### 参数：
+#### Parameters:
 
-- `--token=YOUR_TOKEN` （必需）：用于身份验证的 MasterGo API 令牌
-- `--url=API_URL` （可选）：API 基础 URL，默认为 http://localhost:3000
-- `--rule=RULE_NAME` （可选）：添加要应用的设计规则，可以多次使用
-- `--debug` （可选）：启用调试模式以获取详细错误信息
+- `--token=YOUR_TOKEN` (required): MasterGo API token for authentication
+- `--url=API_URL` (optional): API base URL, defaults to http://localhost:3000
+- `--rule=RULE_NAME` (optional): Add design rules to apply, can be used multiple times
+- `--debug` (optional): Enable debug mode for detailed error information
 
-您还可以使用空格分隔格式来指定参数：
+You can also use space-separated format for parameters:
 
 ```
 npx @mastergo/magic-mcp --token YOUR_TOKEN --url API_URL --rule RULE_NAME --debug
 ```
 
-### cursor 使用方法
+### cursor Usage
 
-Cursor Mcp 使用指南参考：https://docs.cursor.com/context/model-context-protocol#using-mcp-tools-in-agent
+Cursor Mcp usage guide reference: https://docs.cursor.com/context/model-context-protocol#using-mcp-tools-in-agent
 
 ```json
 {
@@ -71,7 +71,7 @@ Cursor Mcp 使用指南参考：https://docs.cursor.com/context/model-context-pr
 }
 ```
 
-### cline 使用方法
+### cline Usage
 
 ```json
 {
@@ -90,26 +90,26 @@ Cursor Mcp 使用指南参考：https://docs.cursor.com/context/model-context-pr
 }
 ```
 
-## 许可证
+## License
 
 ISC
 
-**官方网站：** [https://github.com/mastergo-design/mastergo-magic-mcp](https://github.com/mastergo-design/mastergo-magic-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mastergo-design/mastergo-magic-mcp](https://github.com/mastergo-design/mastergo-magic-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @mastergo/magic-mcp --token=MG_MCP_TOKEN --url=https://mastergo.com`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @mastergo/magic-mcp --token=MG_MCP_TOKEN --url=https://mastergo.com`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mastergo-design-mastergo-magic.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mastergo-design-mastergo-magic.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

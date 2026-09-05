@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "Horoscope",
-    "zh-Hans": "星座查询MCP",
-    "zh-Hant": "星座查询MCP"
+    "zh-Hans": "星座查询MCP"
   },
   "description": {
     "en": "Horoscope Luck",
-    "zh-Hans": "星座运势",
-    "zh-Hant": "星座运势"
+    "zh-Hans": "星座运势"
   },
   "detail": {
     "en": "# Horoscope Zodiac Fortune:\nThis is an MCP that allows you to query zodiac information. You can input a birthday to get the corresponding zodiac sign and its attributes. The supported birthday formats are: YYYY-MM-DD, MM/DD, or YYYY年MM月DD日. The response you will receive is as follows:\nYour zodiac sign is: Gemini.\n# Zodiac Attributes:\nElement: Air\nMode: Mutable\nRuling Planet: Mercury",
-    "zh-Hans": "# Horoscope星座运势:\r\n这是一个可以查询星座信息的MCP，你可以输入生日获取对应的星座及其属性。生日格式支持：YYYY-MM-DD、MM/DD或YYYY年MM月DD日。获取得到的回答如下：\r\n您的星座是: 双子座。\r\n# 星座属性:\r\n元素: 风象\r\n模式: 变动\r\n守护星: 水星",
-    "zh-Hant": "# Horoscope星座运势:\r\n这是一个可以查询星座信息的MCP，你可以输入生日获取对应的星座及其属性。生日格式支持：YYYY-MM-DD、MM/DD或YYYY年MM月DD日。获取得到的回答如下：\r\n您的星座是: 双子座。\r\n# 星座属性:\r\n元素: 风象\r\n模式: 变动\r\n守护星: 水星"
+    "zh-Hans": "# Horoscope星座运势:\r\n这是一个可以查询星座信息的MCP，你可以输入生日获取对应的星座及其属性。生日格式支持：YYYY-MM-DD、MM/DD或YYYY年MM月DD日。获取得到的回答如下：\r\n您的星座是: 双子座。\r\n# 星座属性:\r\n元素: 风象\r\n模式: 变动\r\n守护星: 水星"
   },
   "categories": [
     "media"

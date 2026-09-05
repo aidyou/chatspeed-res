@@ -1,11 +1,11 @@
 ---
-title: "钉钉MCP服务器"
-description: "一种用于与钉钉集成的模型控制协议服务器，允许用户通过克劳德发送消息、检索会话/用户信息以及查询日历事件。"
+title: "dingding_mcp_v2"
+description: "A Model Control Protocol server for integrating with DingTalk, enabling users to send messages, retrieve conversation/user information, and query calendar events through Claude."
 ---
 
-# 钉钉MCP服务器
+# dingding_mcp_v2
 
-一种用于与钉钉集成的模型控制协议服务器，允许用户通过克劳德发送消息、检索会话/用户信息以及查询日历事件。
+A Model Control Protocol server for integrating with DingTalk, enabling users to send messages, retrieve conversation/user information, and query calendar events through Claude.
 
 # DingTalk MCP Server V2
 
@@ -85,9 +85,9 @@ docker ps -a | grep mcp-dingding-v2 | awk '{print $1}' | xargs -r docker rm -f
 
 # 构建并运行新容器
 docker build -t dingding-mcp-v2 .
-docker run -i --rm --name mcp-dingding-v2 \
-  -e DINGTALK_APP_KEY=your_app_key \
-  -e DINGTALK_APP_SECRET=your_app_secret \
+docker run -i --rm --name mcp-dingding-v2 
+  -e DINGTALK_APP_KEY=your_app_key 
+  -e DINGTALK_APP_SECRET=your_app_secret 
   dingding-mcp-v2
 ```
 
@@ -175,22 +175,22 @@ docker run -i --rm --name mcp-dingding-v2 \
 
 MIT
 
-**官方网站：** [https://github.com/wllcnm/dingding_mcp_v2](https://github.com/wllcnm/dingding_mcp_v2)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/wllcnm/dingding_mcp_v2](https://github.com/wllcnm/dingding_mcp_v2)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`, `communication`
-- 标签：`communication`, `calendar management`, `chinese`
+- Categories: `productivity`, `communication`
+- Tags: `communication`, `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`sh`
-- 参数：`-c docker ps -a | grep mcp-dingding-v2 | awk '{print $1}' | xargs -r docker rm -f > /dev/null 2>&1; docker pull ghcr.io/wllcnm/mcp-dingding-v2:latest > /dev/null 2>&1; docker run -i --rm --name mcp-dingding-v2 -e DINGTALK_APP_KEY=你的AppKey -e DINGTALK_APP_SECRET=你的AppSecret ghcr.io/wllcnm/mcp-dingding-v2:latest`
+- Transport: `stdio`
+- Command: `sh`
+- Args: `-c docker ps -a | grep mcp-dingding-v2 | awk '{print $1}' | xargs -r docker rm -f > /dev/null 2>&1; docker pull ghcr.io/wllcnm/mcp-dingding-v2:latest > /dev/null 2>&1; docker run -i --rm --name mcp-dingding-v2 -e DINGTALK_APP_KEY=你的AppKey -e DINGTALK_APP_SECRET=你的AppSecret ghcr.io/wllcnm/mcp-dingding-v2:latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/wllcnm-dingding-v2.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/wllcnm-dingding-v2.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

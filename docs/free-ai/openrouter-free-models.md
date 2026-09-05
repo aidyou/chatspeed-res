@@ -1,54 +1,54 @@
 ---
-title: "OpenRouter 免费模型"
-description: "免费模型变体（模型 ID 加 `:free` 后缀）可通过 OpenAI 兼容 API 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。"
+title: "OpenRouter Free Models"
+description: "Free model variants (model IDs with the :free suffix) can be called free of charge through an OpenAI-compatible API; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/d…"
 ---
 
-# OpenRouter 免费模型
+# OpenRouter Free Models
 
-免费模型变体（模型 ID 加 `:free` 后缀）可通过 OpenAI 兼容 API 免费调用；新账号限速 20 次/分钟、每天最多 50 次，历史累计充值满 $10 后提升为每天 1,000 次。
+Free model variants (model IDs with the :free suffix) can be called free of charge through an OpenAI-compatible API; new accounts get 20 requests/minute and 50 requests/day, raised to 1,000 requests/d…
 
-OpenRouter 是模型聚合与路由平台，通过一个 API Key 访问多家供应商的模型，在模型 ID 后追加 `:free` 后缀即可使用免费变体，便于快速体验与开发调试。免费变体与付费变体相比通常限速更低，可能出现排队或供应商偶发 429；平台侧免费限制会随政策调整（历史累计充值不足 $10 的账号每天最多 50 次，累计满 $10 后提升为每天 1,000 次）。OpenRouter 提供 OpenAI 兼容接口，可接入 ChatSpeed 使用。正式依赖前请查看所选模型的当前条款与官方限速文档。
+OpenRouter is a model-aggregation and routing platform: one API key accesses models from many providers, and appending `:free` to a model ID enables the free variant for quick evaluation and prototyping. Free variants usually have lower rate limits than paid ones, may queue, and can hit upstream provider 429s; platform-level limits change with policy (accounts with less than $10 in lifetime purchases get 50 requests/day, raised to 1,000 after $10). The OpenAI-compatible endpoint can be connected to ChatSpeed directly.
 
-**官方网站：** [https://openrouter.ai/docs/guides/routing/model-variants/free](https://openrouter.ai/docs/guides/routing/model-variants/free)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://openrouter.ai/docs/guides/routing/model-variants/free](https://openrouter.ai/docs/guides/routing/model-variants/free)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `coding`, `reasoning`
-- 标签：`openrouter`, `free-models`, `api`
+- Categories: `general`, `coding`, `reasoning`
+- Tags: `openrouter`, `free-models`, `api`
 
-## 免费使用说明
+## Free Usage
 
-- 访问方式：`api`
-- 是否需要登录：`是`
-- 是否有免费层：`是`
-- 可用区域：`global`
+- Access: `api`
+- Requires login: `Yes`
+- Has free tier: `Yes`
+- Availability: `global`
 
-免费模型变体限速 20 次/分钟；历史累计充值不足 $10 的账号每天最多 50 次，累计充值满 $10 后提升为每天 1,000 次。限制可能调整，以官方限速文档为准。
+Free variants: 20 requests/minute; accounts with less than $10 in lifetime credit purchases get up to 50 requests/day, raised to 1,000 requests/day after $10 in lifetime purchases. Limits may change; check the official rate-limit documentation.
 
-### 分模型免费额度明细
+### Per-model free quota
 
-| 模型 | 免费额度 | 频率与限速 |
+| Model | Free quota | Rate / frequency |
 | --- | --- | --- |
-| 全部免费变体（模型 ID 以 `:free` 结尾） | 免费 | 20 次/分钟 |
-| 历史累计充值不足 $10 的账号 | 免费 | 每天最多 50 次 |
-| 历史累计充值满 $10 的账号 | 免费 | 每天最多 1,000 次 |
+| All free variants (model IDs ending in `:free`) | Free | 20 requests per minute |
+| Accounts with less than $10 lifetime credit purchases | Free | Up to 50 requests per day |
+| Accounts with $10+ lifetime credit purchases | Free | Up to 1,000 requests per day |
 
-## 注册与限制
-- 注册入口：[https://openrouter.ai/](https://openrouter.ai/)
-- 注册限制：邮箱注册即可，无需信用卡；免费日额度较低，可通过历史累计充值 $10+ 提升至每天 1,000 次，充值与支付方式以官方为准。
-- 免费政策文档：[https://openrouter.ai/docs/api_reference/limits](https://openrouter.ai/docs/api_reference/limits)
+## Registration & Limits
+- Sign up: [https://openrouter.ai/](https://openrouter.ai/)
+- Registration limit: Sign up with email only; no credit card required. The free daily cap is low; you can raise it to 1,000 requests/day with $10+ in lifetime credit purchases (payment methods per official policy).
+- Free policy doc: [https://openrouter.ai/docs/api_reference/limits](https://openrouter.ai/docs/api_reference/limits)
 
-## ChatSpeed 导入
+## ChatSpeed Import
 
-该服务关联模型供应商 `openrouter`，可从模型供应商列表导入配置，调用入口如下：
-- 协议：`openai`
-- Base URL：`https://openrouter.ai/api/v1`
-- Logo：![OpenRouter](https://openrouter.ai/favicon.ico)
-- 官方文档：[https://openrouter.ai/docs](https://openrouter.ai/docs)
-- 模型列表：[https://openrouter.ai/models](https://openrouter.ai/models)
-- 密钥申请：[https://openrouter.ai/keys](https://openrouter.ai/keys)
+This service is linked to model provider `openrouter`; import its config from the model provider list. Call entry points:
+- Protocol: `openai`
+- Base URL: `https://openrouter.ai/api/v1`
+- Logo: ![OpenRouter](https://openrouter.ai/favicon.ico)
+- Docs: [https://openrouter.ai/docs](https://openrouter.ai/docs)
+- Model list: [https://openrouter.ai/models](https://openrouter.ai/models)
+- API key: [https://openrouter.ai/keys](https://openrouter.ai/keys)
 
-## 数据来源
+## Data source
 
-资源文件：`resources/free-ai/openrouter-free-models.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/free-ai/openrouter-free-models.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

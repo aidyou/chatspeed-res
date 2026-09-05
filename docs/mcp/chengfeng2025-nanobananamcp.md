@@ -1,11 +1,11 @@
 ---
-title: "NanoBananaMCP生图"
-description: "Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（模型上下文协议）服务器，专门用于图像分析和处理。它可以无缝集成到支持 MCP 协议的 AI 助手中，如 Claude Desktop 和 Cursor，提供强大的视觉理解能力。"
+title: "NanoBananaMCP"
+description: "Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（Model Context Protocol）服务器，专门用于图像分析和处理。它可以无缝集成到 Claude Desktop、Cursor 等支持 MCP 协议的 AI 助手中，提供强大的视觉理解能力。 - 多模态分析：支持图片内容理解、场景识别、文字提取等 - 灵活输入：支持本地文件路径、网络 UR…"
 ---
 
-# NanoBananaMCP生图
+# NanoBananaMCP
 
-Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（模型上下文协议）服务器，专门用于图像分析和处理。它可以无缝集成到支持 MCP 协议的 AI 助手中，如 Claude Desktop 和 Cursor，提供强大的视觉理解能力。
+Gemini MCP 是一个基于 Google Gemini 2.0 Flash 模型的 MCP（Model Context Protocol）服务器，专门用于图像分析和处理。它可以无缝集成到 Claude Desktop、Cursor 等支持 MCP 协议的 AI 助手中，提供强大的视觉理解能力。 - 多模态分析：支持图片内容理解、场景识别、文字提取等 - 灵活输入：支持本地文件路径、网络 UR…
 
 # Gemini MCP - 基于 Gemini 的智能图像分析服务
 
@@ -244,22 +244,22 @@ A: 重启 Claude Desktop 应用以重新加载配置。
 
 **注意**：使用本项目需要有效的 Gemini API 密钥。
 
-**官方网站：** [https://github.com/Ceeon/gemini-mcp](https://github.com/Ceeon/gemini-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Ceeon/gemini-mcp](https://github.com/Ceeon/gemini-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `gemini`, `生图`, `图片`, `google`
+- Categories: `media`
+- Tags: `entertainment and media`, `gemini`, `生图`, `图片`, `google`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`gemini-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `gemini-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chengfeng2025-nanobananamcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chengfeng2025-nanobananamcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "DBHub 数据库 MCP"
-description: "[!NOTE] Brought to you by Bytebase, open-source database governance platform. bash +------------------+ +--------------+ +------------------+ Claude Desktop +---+ +---+ PostgreSQL Claude Code +---+ +---+ SQL Server Curso"
+title: "DBHub"
+description: "[!NOTE] Brought to you by Bytebase, open-source database governance platform. bash +------------------+ +--------------+ +------------------+ Claude Desktop +---+ +---+ PostgreSQL Claude Code +---+ +-…"
 ---
 
-# DBHub 数据库 MCP
+# DBHub
 
-[!NOTE] Brought to you by Bytebase, open-source database governance platform. bash +------------------+ +--------------+ +------------------+ Claude Desktop +---+ +---+ PostgreSQL Claude Code +---+ +---+ SQL Server Curso
+[!NOTE] Brought to you by Bytebase, open-source database governance platform. bash +------------------+ +--------------+ +------------------+ Claude Desktop +---+ +---+ PostgreSQL Claude Code +---+ +-…
 
 > [!NOTE]  
 > Brought to you by [Bytebase](https://www.bytebase.com/), open-source database governance platform.
@@ -129,22 +129,22 @@ See [Testing](https://github.com/bytebase/dbhub/blob/HEAD/.claude/skills/testing
 
 ## Star History
 
-**官方网站：** [https://github.com/bytebase/dbhub](https://github.com/bytebase/dbhub)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/bytebase/dbhub](https://github.com/bytebase/dbhub)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `data`
-- 标签：`database`, `developer tools`, `postgresql`, `sql`, `official`
+- Categories: `development`, `data`
+- Tags: `database`, `developer tools`, `postgresql`, `sql`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@bytebase/dbhub@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@bytebase/dbhub@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/bytebase-dbhub.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/bytebase-dbhub.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

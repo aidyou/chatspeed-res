@@ -1,106 +1,103 @@
 ---
-title: "秘塔AI搜索"
-description: "秘塔AI搜索的MCP服务"
+title: "metaso-search"
+description: "MCP Service of Mitell AI Search 1. 概述 秘塔AI搜索的MCP（Multi-Cloud Platform）服务是一种多云平台解决方案，旨在帮助企业更高效地管理和利用来自不同云服务商的资源。通过MCP，用户可以轻松地在多个云环境之间迁移应用和服务，同时享受统一的管理和监控体验。 2. 功能特点 - 跨云管理：支持对阿里云、腾讯云等主流云服务商的资源进行集中管理。 -…"
 ---
 
-# 秘塔AI搜索
+# metaso-search
 
-秘塔AI搜索的MCP服务
+MCP Service of Mitell AI Search 1. 概述 秘塔AI搜索的MCP（Multi-Cloud Platform）服务是一种多云平台解决方案，旨在帮助企业更高效地管理和利用来自不同云服务商的资源。通过MCP，用户可以轻松地在多个云环境之间迁移应用和服务，同时享受统一的管理和监控体验。 2. 功能特点 - 跨云管理：支持对阿里云、腾讯云等主流云服务商的资源进行集中管理。 -…
 
-# 秘塔AI搜索的MCP服务
+# Metasota AI Search MCP Service
 
-## 简介
+## Introduction
 
-秘塔AI搜索的MCP服务是一个基于Model Context Protocol (MCP) 的智能搜索和问答服务，为AI助手提供强大的网络搜索、内容读取和智能问答能力。通过集成本服务，AI助手可以实时获取网络信息，读取网页内容，并基于RAG技术提供准确的智能问答。
+The Metasota AI Search MCP service is an intelligent search and Q&A service based on the Model Context Protocol (MCP), providing powerful web search, content reading, and intelligent Q&A capabilities for AI assistants. By integrating this service, AI assistants can obtain real-time web information, read web page content, and provide accurate intelligent Q&A based on RAG technology.
 
-## 服务地址
+## Service Address
 
-**ModelScope地址**: [https://www.modelscope.cn/mcp/servers/metasota/metaso-search](https://www.modelscope.cn/mcp/servers/metasota/metaso-search)
+**ModelScope Address**: [https://www.modelscope.cn/mcp/servers/metasota/metaso-search](https://www.modelscope.cn/mcp/servers/metasota/metaso-search)
 
-**API端点**: `https://metaso.cn/api/mcp`
+**API Endpoint**: `https://metaso.cn/api/mcp`
 
-## 功能特性
+## Features
 
-### 🔍 多维度搜索
-- 支持网页、文档、论文、图片、视频、播客等多种内容类型搜索
-- 灵活的搜索范围配置
-- 可自定义返回结果数量
+### 🔍 Multi-Dimensional Search
+- Supports searching various content types including web pages, documents, papers, images, videos, and podcasts
+- Flexible search scope configuration
+- Customizable number of returned results
 
-### 📖 网页内容读取
-- 支持任意URL的网页内容提取
-- 提供JSON和Markdown两种输出格式
-- 智能内容解析和结构化处理
+### 📖 Web Content Reading
+- Extracts content from any URL
+- Provides output in JSON and Markdown formats
+- Intelligent content parsing and structuring
 
-### 💬 智能问答服务
-- 基于RAG（检索增强生成）技术
-- 多模型支持，默认使用快速模型
-- 结合搜索结果提供准确回答
+### 💬 Intelligent Q&A Service
+- Based on RAG (Retrieval-Augmented Generation) technology
+- Supports multiple models, with a fast model as the default
+- Provides accurate answers combined with search results
 
-## 工具列表
+## Tool List
 
-### 1. metaso_web_search - 网络搜索工具
+### 1. metaso_web_search - Web Search Tool
 
-**功能描述**: 根据关键词搜索网页、文档、论文、图片、视频、播客等内容
+**Function Description**: Searches for web pages, documents, papers, images, videos, and podcasts based on keywords
 
-**参数说明**:
-- `q` (必填, string): 搜索查询关键词
-- `scope` (可选, string): 搜索范围，可选值：`webpage`, `document`, `paper`, `image`, `video`, `podcast`
-- `includeSummary` (可选, boolean): 通过网页摘要信息提升搜索结果的召回率
-- `includeRawContent` (可选, boolean): 抓取所有来源网页原文
-- `size` (可选, integer): 返回结果数量，默认为10
+**Parameter Explanation**:
+- `q` (Required, string): Search query keyword
+- `scope` (Optional, string): Search scope, possible values: `webpage`, `document`, `paper`, `image`, `video`, `podcast`
+- `includeSummary` (Optional, boolean): Enhances search result recall through web page summary information
+- `includeRawContent` (Optional, boolean): Scrapes the original text from all source web pages
+- `size` (Optional, integer): Number of returned results, default is 10
 
-**使用示例**:
+**Usage Example**:
 
-```json
+json
 {
-  "q": "人工智能最新发展",
+  "q": "latest developments in artificial intelligence",
   "scope": "paper",
   "includeSummary": true,
   "size": 5
 }
-```
 
-### 2. metaso_web_reader - 网页内容读取工具
+### 2. metaso_web_reader - Web Content Reading Tool
 
-**功能描述**: 读取指定URL的网页内容
+**Function Description**: Reads the content of a specified URL
 
-**参数说明**:
-- `url` (必填, string): 要读取的URL地址
-- `format` (必填, string): 输出格式，可选值：`json`, `markdown`
+**Parameter Explanation**:
+- `url` (Required, string): The URL to be read
+- `format` (Required, string): Output format, possible values: `json`, `markdown`
 
-**使用示例**:
+**Usage Example**:
 
-```json
+json
 {
   "url": "https://example.com/article",
   "format": "markdown"
 }
-```
 
-### 3. metaso_chat - 智能问答工具
+### 3. metaso_chat - Intelligent Q&A Tool
 
-**功能描述**: 基于RAG的智能问答服务
+**Function Description**: Intelligent Q&A service based on RAG
 
-**参数说明**:
-- `message` (必填, string): 用户问题
-- `model` (可选, string): 使用的模型，默认为"fast"
+**Parameter Explanation**:
+- `message` (Required, string): User question
+- `model` (Optional, string): The model to use, default is "fast"
 
-**使用示例**:
+**Usage Example**:
 
-```json
+json
 {
-  "message": "请解释一下量子计算的基本原理",
+  "message": "Please explain the basic principles of quantum computing",
   "model": "fast"
 }
-```
 
-## 配置方法
+## Configuration
 
-### 1. 基础配置
+### 1. Basic Configuration
 
-在您的MCP客户端配置文件中添加以下配置：
-> 请将YOUR_API_KEY替换为你自己的ApiKey
-```json
+Add the following configuration to your MCP client configuration file:
+> Replace YOUR_API_KEY with your own API key
+json
 {
   "mcpServers": {
     "metaso": {
@@ -111,94 +108,92 @@ description: "秘塔AI搜索的MCP服务"
     }
   }
 }
-```
 
-VSCode配置
-```json
+VSCode Configuration
+json
 {
   "servers": {
     "metaso": {
-	  "url": "https://metaso.cn/api/mcp",
-	  "type": "http",
-	  "headers": {
+      "url": "https://metaso.cn/api/mcp",
+      "type": "http",
+      "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
     }
   },
   "inputs": []
 }
-```
 
-### 2. API密钥获取
+### 2. API Key Acquisition
 
-1. 访问秘塔AI搜索官网
-2. 注册并登录账户
-3. 访问API控制台[(https://metaso.cn/search-api/api-keys)](https://metaso.cn/search-api/api-keys)中获取API密钥
-4. 将密钥替换配置中的 `YOUR_API_KEY`
+1. Visit the Metasota AI Search official website
+2. Register and log in to your account
+3. Obtain the API key from the API console [(https://metaso.cn/search-api/api-keys)](https://metaso.cn/search-api/api-keys)
+4. Replace `YOUR_API_KEY` in the configuration with the obtained key
 
-## 使用场景
+## Use Cases
 
-### 📚 学术研究
-- 搜索最新论文和研究资料
-- 获取特定领域的学术文档
-- 快速获取研究背景信息
+### 📚 Academic Research
+- Search for the latest papers and research materials
+- Obtain academic documents in specific fields
+- Quickly get background information for research
 
-### 📰 信息获取
-- 实时新闻和资讯搜索
-- 网页内容快速提取
-- 多媒体内容发现
+### 📰 Information Retrieval
+- Real-time news and information search
+- Quick extraction of web page content
+- Discovery of multimedia content
 
-### 🤖 AI增强
-- 为AI助手提供实时信息检索能力
-- 增强对话系统的知识库
-- 支持基于最新信息的智能问答
+### 🤖 AI Enhancement
+- Provide real-time information retrieval capabilities for AI assistants
+- Enhance the knowledge base of conversational systems
+- Support intelligent Q&A based on the latest information
 
-### 💼 商业应用
-- 市场调研和竞品分析
-- 行业趋势监控
-- 客户服务知识库构建
+### 💼 Business Applications
+- Market research and competitive analysis
+- Industry trend monitoring
+- Construction of customer service knowledge bases
 
-## 技术优势
+## Technical Advantages
 
-- **高性能**: 基于秘塔AI搜索的强大搜索引擎
-- **多格式支持**: 支持多种内容类型和输出格式
-- **RAG技术**: 结合检索和生成，提供准确回答
-- **易于集成**: 标准MCP协议，兼容性强
-- **灵活配置**: 丰富的参数选项，满足不同需求
+- **High Performance**: Based on the powerful search engine of Metasota AI Search
+- **Multi-Format Support**: Supports various content types and output formats- **RAG Technology**: Combines retrieval and generation to provide accurate answers
+- **Easy Integration**: Standard MCP protocol, highly compatible
+- **Flexible Configuration**: Rich parameter options to meet different needs
 
-## 注意事项
+## Precautions
 
-1. **API配额**: 请注意API调用配额限制，合理使用服务。2. **内容合规**: 搜索和获取的内容请遵守相关法律法规。
-3. **缓存策略**: 建议实施适当的缓存策略以提高效率。
-4. **错误处理**: 请在应用中实现合适的错误处理机制。
+1. **API Quota**: Please be aware of the API call quota limits and use the service reasonably.
+2. **Content Compliance**: Ensure that the content searched for and obtained complies with relevant laws and regulations.
+3. **Caching Strategy**: It is recommended to implement an appropriate caching strategy to improve efficiency.
+4. **Error Handling**: Please implement suitable error handling mechanisms in your application.
 
-## 支持与反馈
+## Support and Feedback
 
-如果您在使用过程中遇到问题或有改进建议，欢迎通过以下方式联系我们：
+If you encounter any issues or have suggestions for improvement during use, feel free to contact us through the following methods:
 
-- 官方技术支持邮箱: support-1@metasota.ai
-- 官网客服: 19980541467（微信同号）
+- Official Technical Support Email: support-1@metasota.ai
+- Customer Service on Official Website: 19980541467 (same number for WeChat)
 
 ---
 
-*本服务由秘塔AI搜索团队提供技术支持，致力于为开发者提供优质的AI搜索解决方案。*
+*This service is supported by the Metasota AI Search team, dedicated to providing high-quality AI search solutions for developers.*
 
-**官方网站：** [https://metaso.cn/api/mcp](https://metaso.cn/api/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://metaso.cn/api/mcp](https://metaso.cn/api/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/metasota-metaso-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/metasota-metaso-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

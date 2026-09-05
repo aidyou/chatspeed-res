@@ -1,11 +1,11 @@
 ---
-title: "哔哩哔哩 API MCP 服务器增强版"
-description: "用于哔哩哔哩 API 的 MCP（模型上下文协议）服务器，支持多种操作。 - - 一个项目管理工具，可以很方便管理依赖。 在任意 MCP client 中配置本 Server，系统会自动下载和启用 > 💡 提示：您也可以直接使用项目根目录下的 mcp-config.json 文件作为配置参考。 1. clone 本项目 2. 使用 uv 安装依赖 3. 在任意 MCP client 中配置本 Server 支持以下操作： 1. searchandrecommendvideos: 智能视频搜索和推荐功能。 - 按综合排序搜索视频内容 - 自动过滤课堂视频（cheese链接） - 返回前15条视频结果（可自定义数量） - 基于搜索结果提供推荐理由 - 分析视频质量和热度 - 生成内容总结和推荐报告 2. searchuser: 专门用于搜索哔哩哔哩用户的"
+title: "bilibili-api-mcp-server"
+description: "MCP (Model Context Protocol) server for Bilibili API, supporting multiple operations. - - A project management tool that can conveniently manage dependencies. Configure this Server in any MCP client…"
 ---
 
-# 哔哩哔哩 API MCP 服务器增强版
+# bilibili-api-mcp-server
 
-用于哔哩哔哩 API 的 MCP（模型上下文协议）服务器，支持多种操作。 - - 一个项目管理工具，可以很方便管理依赖。 在任意 MCP client 中配置本 Server，系统会自动下载和启用 > 💡 提示：您也可以直接使用项目根目录下的 mcp-config.json 文件作为配置参考。 1. clone 本项目 2. 使用 uv 安装依赖 3. 在任意 MCP client 中配置本 Server 支持以下操作： 1. searchandrecommendvideos: 智能视频搜索和推荐功能。 - 按综合排序搜索视频内容 - 自动过滤课堂视频（cheese链接） - 返回前15条视频结果（可自定义数量） - 基于搜索结果提供推荐理由 - 分析视频质量和热度 - 生成内容总结和推荐报告 2. searchuser: 专门用于搜索哔哩哔哩用户的
+MCP (Model Context Protocol) server for Bilibili API, supporting multiple operations. - - A project management tool that can conveniently manage dependencies. Configure this Server in any MCP client…
 
 # Bilibili API MCP Server
 
@@ -138,22 +138,22 @@ uv sync
 
 MIT
 
-**官方网站：** [https://github.com/SMYB5431/bilibili-api-mcp-server](https://github.com/SMYB5431/bilibili-api-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/SMYB5431/bilibili-api-mcp-server](https://github.com/SMYB5431/bilibili-api-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`search`, `entertainment and media`
+- Categories: `media`
+- Tags: `search`, `entertainment and media`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`bilibili-api-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `bilibili-api-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/smyb5431-bilibili-api.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/smyb5431-bilibili-api.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

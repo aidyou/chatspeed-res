@@ -1,56 +1,56 @@
 ---
-title: "亿图AI"
-description: "Edraw AI MCP 服务 万兴科技开源的图表可视化解决方案。通过自然语言、图像、文档与代码四种输入方式，一键生成和智能优化各类可视化图表，帮助开发者、产品团队、内容运营和教学人员极速产出高质量的流程图、思维导图、时间线、海报、PPT 单页、框架图、知识卡片、SWOT分析、PEST 分析、精益画布、用户画像、用户故事等视觉内容。 关键特性 - 提供基于自然语言、图像、文档与代码等方式生成可视化图表的能力 - 生成多种类型的图表并返回URL，目前支持十几种图表，覆盖有： - 流程图、思维导图、PPT 单页 - 框"
+title: "edrawai-mcp"
+description: "Edraw AI MCP Service Wondershare's open-source solution for chart visualization. It generates and intelligently optimizes various visual charts through four input methods: natural language, images, do…"
 ---
 
-# 亿图AI
+# edrawai-mcp
 
-Edraw AI MCP 服务 万兴科技开源的图表可视化解决方案。通过自然语言、图像、文档与代码四种输入方式，一键生成和智能优化各类可视化图表，帮助开发者、产品团队、内容运营和教学人员极速产出高质量的流程图、思维导图、时间线、海报、PPT 单页、框架图、知识卡片、SWOT分析、PEST 分析、精益画布、用户画像、用户故事等视觉内容。 关键特性 - 提供基于自然语言、图像、文档与代码等方式生成可视化图表的能力 - 生成多种类型的图表并返回URL，目前支持十几种图表，覆盖有： - 流程图、思维导图、PPT 单页 - 框
+Edraw AI MCP Service Wondershare's open-source solution for chart visualization. It generates and intelligently optimizes various visual charts through four input methods: natural language, images, do…
 
-# Edraw AI MCP 服务
+# Edraw AI MCP Service
 
-万兴科技开源的图表可视化解决方案。通过自然语言、图像、文档与代码四种输入方式，一键生成和智能优化各类可视化图表，帮助开发者、产品团队、内容运营和教学人员极速产出高质量的流程图、思维导图、时间线、海报、PPT 单页、框架图、知识卡片、SWOT分析、PEST 分析、精益画布、用户画像、用户故事等视觉内容。
+Wondershare's open-source solution for chart visualization. It generates and intelligently optimizes various visual charts through four input methods: natural language, images, documents, and code, helping developers, product teams, content operators, and educators to quickly produce high-quality flowcharts, mind maps, timelines, posters, PPT single pages, framework diagrams, knowledge cards, SWOT analyses, PEST analyses, lean canvases, user personas, and user stories.
 
-## 关键特性
-- 提供基于自然语言、图像、文档与代码等方式生成可视化图表的能力
-- 生成多种类型的图表并返回URL，目前支持十几种图表，覆盖有：
-  - 流程图、思维导图、PPT 单页
-  - 框架图、时间线、海报
-  - 知识卡片、SWOT、PEST
-  - 精益画布、用户画像、用户故事等
-- 提供丰富、专业且全面的模板
+## Key Features
+- Provides the ability to generate visual charts based on natural language, images, documents, and code.
+- Generates multiple types of charts and returns URLs, currently supporting over a dozen types of charts, including:
+  - Flowcharts, mind maps, PPT single pages
+  - Framework diagrams, timelines, posters
+  - Knowledge cards, SWOT, PEST
+  - Lean canvases, user personas, user stories, etc.
+- Offers a rich, professional, and comprehensive set of templates.
 
-## 使用案例
-- **人力资源与培训**：提供培训大纲或政策文本 → 生成培训流程图与时间线
-- **跨团队协作与汇报**：提供汇报内容 → 一键生成图文并茂的PPT汇报页
-- **营销与品牌推广**：自然语言描述品牌故事 → 生成海报与社交媒体卡片
-- **产品设计与用户研究**：提交产品需求描述 → 生成用户画像画布与SWOT分析图
-- **项目管理与敏捷开发**：粘贴 Mermaid 代码 → 生成流程图
-- **学术研究与教育**：提供研究提纲与文献摘要 → 生成思维导图与内容框架图
+## Use Cases
+- **Human Resources and Training**: Provide training outlines or policy texts → Generate training flowcharts and timelines.
+- **Cross-Team Collaboration and Reporting**: Provide report content → One-click generation of PPT report pages with both text and images.
+- **Marketing and Brand Promotion**: Describe brand stories in natural language → Generate posters and social media cards.
+- **Product Design and User Research**: Submit product requirement descriptions → Generate user persona canvases and SWOT analysis diagrams.
+- **Project Management and Agile Development**: Paste Mermaid code → Generate flowcharts.
+- **Academic Research and Education**: Provide research outlines and literature summaries → Generate mind maps and content framework diagrams.
 
-## 常见问题解答
-**Q：使用MCP服务是否需要付费？**  
-A：限时免费
+## Frequently Asked Questions
+**Q: Is there a fee for using the MCP service?**  
+A: Free for a limited time.
 
-**Q：如何联系我们？**  
-A：如果您对于Edraw AI MCP服务有任何关于技术问题、服务反馈、API调用大量购买需求等更多疑问，可以通过邮箱：`ws-business@wondershare.cn`联系我们，我们将尽快为您解答问题。
+**Q: How can we contact you?**  
+A: If you have any questions about the Edraw AI MCP service, such as technical issues, service feedback, or bulk API purchase needs, please contact us via email at `ws-business@wondershare.cn`. We will get back to you as soon as possible.
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `mcp 图示`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `mcp 图示`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/longmenchuixue-edrawai.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/longmenchuixue-edrawai.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

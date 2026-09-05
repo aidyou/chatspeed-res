@@ -1,96 +1,90 @@
 ---
-title: "word文档编辑mcp全面升级版(支持本地和web上传)"
-description: "一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。"
+title: "Docx_MCP"
+description: "A powerful Word document processing MCP service that provides a complete document processing solution, including document structure extraction, content modification, and cloud storage integration. It…"
 ---
 
-# word文档编辑mcp全面升级版(支持本地和web上传)
+# Docx_MCP
 
-一个功能强大的 Word 文档处理 MCP 服务，提供文档结构提取、内容修改、云存储集成等完整的文档处理解决方案。支持从URL下载文档、批量修改内容、自动上传到阿里云OSS等功能，完全兼容MCP协议，可无缝集成到各种AI助手中。
+A powerful Word document processing MCP service that provides a complete document processing solution, including document structure extraction, content modification, and cloud storage integration. It…
 
-# 📚 DOCX MCP 完整用户指南
+# 📚 DOCX MCP Complete User Guide
 
-## 🌟 项目简介
+## 🌟 Project Overview
 
-**DOCX MCP** 是一个功能强大的 Word 文档处理工具，基于 MCP (Model Context Protocol) 协议，提供 42 个专业的文档处理工具，支持智能表格分析、自动化填充、文档生成等高级功能。
+**DOCX MCP** is a powerful Word document processing tool based on the MCP (Model Context Protocol) protocol, providing 42 professional document processing tools that support advanced features such as intelligent table analysis, automated filling, and document generation.
 
-### 核心特性
+### Core Features
 
-- 🎯 **42个MCP工具**: 涵盖文档管理、表格处理、图片编辑等全方位功能
-- 🤖 **AI友好**: 完美适配 Claude、ChatGPT 等 AI 助手
-- 📊 **智能表格**: 自动识别表格结构，智能填充数据
-- 🎨 **丰富格式**: 支持文本、图片、表格的精细化格式控制
-- 🚀 **高性能**: 基于 FastMCP 框架，快速响应
-- 🔧 **易集成**: 标准 MCP 协议，轻松接入各类应用
+- 🎯 **42 MCP Tools**: Covering comprehensive functions including document management, table processing, and image editing
+- 🤖 **AI Friendly**: Perfectly compatible with AI assistants like Claude and ChatGPT
+- 📊 **Intelligent Tables**: Automatically recognize table structures and intelligently fill data
+- 🎨 **Rich Formatting**: Support for fine-grained control over text, images, and tables
+- 🚀 **High Performance**: Based on the FastMCP framework for quick response
+- 🔧 **Easy Integration**: Standard MCP protocol for easy integration into various applications
 
 ---
 
-## 📦 快速安装
+## 📦 Quick Installation
 
-### 方式1：使用 pip（推荐）
+### Method 1: Using pip (Recommended)
 
-```bash
+bash
 pip install docx-mcp
-```
 
-### 方式2：使用 uv（更快）
+### Method 2: Using uv (Faster)
 
-```bash
+bash
 uv pip install docx-mcp
-```
 
-### 方式3：使用 uvx（临时运行）
+### Method 3: Using uvx (Temporary Run)
 
-```bash
+bash
 uvx docx-mcp
-```
 
-### 验证安装
+### Verify Installation
 
-```bash
-# 检查版本
+bash
+# Check version
 pip show docx-mcp
 
-# 测试命令
+# Test command
 docx-mcp --help
-```
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 1. 作为 MCP 服务器运行
+### 1. Running as an MCP Server
 
-```bash
-# 启动 MCP 服务器
+bash
+# Start the MCP server
 docx-mcp
 
-# 或使用 uvx（无需安装）
+# Or use uvx (no installation required)
 uvx docx-mcp
-```
 
-服务器启动后会显示：
-```
-启动最终完整MCP服务器...
-功能模块:
-- 📊 工具分类（42个）
-- 📁 文档管理工具 (8个)
-- ✍️ 文本内容工具 (5个)
-- 📊 表格操作工具 (6个)
-- 🔍 表格分析工具 (5个)
-- 📝 表格填充工具 (4个)
-- 🖼️ 图片处理工具 (3个)
-- 📐 页面设置工具 (3个)
-- 🧠 智能功能工具 (5个)
-- ⚙️ 系统状态工具 (3个)
+After the server starts, it will display:
+plaintext
+Starting the final complete MCP server...
+Function modules:
+- 📊 Tool Categories (42)
+- 📁 Document Management Tools (8)
+- ✍️ Text Content Tools (5)
+- 📊 Table Operation Tools (6)
+- 🔍 Table Analysis Tools (5)
+- 📝 Table Filling Tools (4)
+- 🖼️ Image Processing Tools (3)
+- 📐 Page Setup Tools (3)
+- 🧠 Intelligent Function Tools (5)
+- ⚙️ System Status Tools (3)
 ...
-总计: 42个工具
-```
+Total: 42 tools
 
-### 2. 配置 Claude Desktop
+### 2. Configuring Claude Desktop
 
-编辑 `claude_desktop_config.json`:
+Edit `claude_desktop_config.json`:
 
-```json
+json
 {
   "mcpServers": {
     "docx-mcp": {
@@ -99,648 +93,630 @@ uvx docx-mcp
     }
   }
 }
-```
 
-**配置文件位置**:
+**Configuration File Location**:
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
 ---
 
-## 🛠️ 42个工具完整列表
+## 🛠️ Full List of 42 Tools
 
-### 📁 文档管理工具 (8个)
+### 📁 Document Management Tools (8)
 
 #### 1. `create_document`
-创建新的 Word 文档
+Create a new Word document
 
-**参数**:
-- `file_path` (必需): 文档保存路径
+**Parameters**:
+- `file_path` (required): Path to save the document
 
-**示例**:
-```python
+**Example**:
+python
 create_document("report.docx")
-```
 
 #### 2. `open_document`
-打开现有文档
+Open an existing document
 
-**参数**:
-- `file_path` (必需): 文档路径
+**Parameters**:
+- `file_path` (required): Path to the document
 
 #### 3. `save_document`
-保存当前文档
+Save the current document
 
 #### 4. `save_as_document`
-另存为新文档
+Save as a new document
 
-**参数**:
-- `new_file_path` (必需): 新文档路径
+**Parameters**:
+- `new_file_path` (required): Path to the new document
 
 #### 5. `close_document`
-关闭当前文档
+Close the current document
 
 #### 6. `get_document_info`
-获取文档信息（段落数、表格数等）
+Get document information (number of paragraphs, number of tables, etc.)
 
 #### 7. `copy_document`
-复制文档到新位置
+Copy the document to a new location
 
-**参数**:
-- `source_path` (必需): 源文件路径
-- `target_path` (必需): 目标路径
+**Parameters**:
+- `source_path` (required): Source file path
+- `target_path` (required): Target path
 
 #### 8. `create_work_copy`
-创建文档的工作副本
+Create a working copy of the document
 
-**参数**:
-- `file_path` (必需): 原文件路径
-- `suffix` (可选): 后缀名，默认"_工作版"
+**Parameters**:
+- `file_path` (required): Original file path
+- `suffix` (optional): Suffix, default is "_工作版"
 
 ---
 
-### ✍️ 文本内容工具 (5个)
+### ✍️ Text Content Tools (5)
 
 #### 9. `add_paragraph`
-添加段落
+Add a paragraph
 
-**参数**:
-- `text` (必需): 段落文本
-- `bold` (可选): 是否粗体
-- `italic` (可选): 是否斜体
-- `underline` (可选): 是否下划线
-- `font_size` (可选): 字体大小
-- `font_name` (可选): 字体名称
-- `color` (可选): 颜色（十六进制）
-- `alignment` (可选): 对齐方式
+**Parameters**:
+- `text` (required): Paragraph text
+- `bold` (optional): Whether to bold
+- `italic` (optional): Whether to italicize
+- `underline` (optional): Whether to underline
+- `font_size` (optional): Font size
+- `font_name` (optional): Font name
+- `color` (optional): Color (hexadecimal)
+- `alignment` (optional): Alignment
 
-**示例**:
-```python
+**Example**:
+python
 add_paragraph(
-    text="这是重要内容",
+    text="This is important content",
     bold=True,
     font_size=14,
     color="#FF0000",
     alignment="center"
 )
-```
 
 #### 10. `add_heading`
-添加标题
+Add a heading
 
-**参数**:
-- `text` (必需): 标题文本
-- `level` (可选): 标题级别（1-9）
+**Parameters**:
+- `text` (required): Heading text
+- `level` (optional): Heading level (1-9)
 
 #### 11. `add_text_with_formatting`
-添加精确格式化的文本
+Add precisely formatted text
 
 #### 12. `search_and_replace`
-搜索并替换文本
+Search and replace text
 
-**参数**:
-- `search_text` (必需): 搜索文本
-- `replace_text` (必需): 替换文本
-- `case_sensitive` (可选): 是否区分大小写
+**Parameters**:- `search_text` (required): Search text
+- `replace_text` (required): Replacement text
+- `case_sensitive` (optional): Whether to be case sensitive
 
 #### 13. `smart_add_content`
-智能添加内容（自动识别类型）
+Intelligently add content (automatically recognize type)
 
-**参数**:
-- `content` (必需): 内容
-- `content_type` (可选): 类型（paragraph/heading/list）
-- `style` (可选): 样式（normal/emphasis/quote）
-- `auto_format` (可选): 自动格式化
+**Parameters**:
+- `content` (required): Content
+- `content_type` (optional): Type (paragraph/heading/list)
+- `style` (optional): Style (normal/emphasis/quote)
+- `auto_format` (optional): Auto format
 
 ---
 
-### 📊 表格操作工具 (6个)
+### 📊 Table Operation Tools (6)
 
 #### 14. `add_table`
-添加表格
+Add a table
 
-**参数**:
-- `rows` (必需): 行数
-- `cols` (必需): 列数
-- `data` (可选): 表格数据（二维数组）
-- `has_header` (可选): 是否有表头
+**Parameters**:
+- `rows` (required): Number of rows
+- `cols` (required): Number of columns
+- `data` (optional): Table data (2D array)
+- `has_header` (optional): Whether it has a header
 
-**示例**:
-```python
+**Example**:
+python
 add_table(
     rows=3,
     cols=3,
     data=[
-        ["姓名", "年龄", "职业"],
-        ["张三", "25", "工程师"],
-        ["李四", "30", "设计师"]
+        ["Name", "Age", "Occupation"],
+        ["Zhang San", "25", "Engineer"],
+        ["Li Si", "30", "Designer"]
     ],
     has_header=True
 )
-```
 
 #### 15. `add_table_row`
-添加表格行
+Add a table row
 
-**参数**:
-- `table_index` (必需): 表格索引
-- `row_data` (必需): 行数据数组
+**Parameters**:
+- `table_index` (required): Table index
+- `row_data` (required): Row data array
 
 #### 16. `add_table_column`
-添加表格列
+Add a table column
 
-**参数**:
-- `table_index` (必需): 表格索引
-- `column_index` (可选): 插入位置
-- `data` (可选): 列数据
+**Parameters**:
+- `table_index` (required): Table index
+- `column_index` (optional): Insertion position
+- `data` (optional): Column data
 
 #### 17. `format_table`
-格式化表格
+Format a table
 
-**参数**:
-- `table_index` (必需): 表格索引
-- `style` (可选): 表格样式
+**Parameters**:
+- `table_index` (required): Table index
+- `style` (optional): Table style
 
 #### 18. `merge_table_cells`
-合并表格单元格
+Merge table cells
 
-**参数**:
-- `table_index` (必需): 表格索引
-- `row_start` (必需): 起始行
-- `col_start` (必需): 起始列
-- `row_end` (必需): 结束行
-- `col_end` (必需): 结束列
+**Parameters**:
+- `table_index` (required): Table index
+- `row_start` (required): Start row
+- `col_start` (required): Start column
+- `row_end` (required): End row
+- `col_end` (required): End column
 
 #### 19. `intelligent_create_table`
-智能创建表格（自动样式）
+Intelligently create a table (automatic styling)
 
-**参数**:
-- `data` (必需): 表格数据（二维数组）
-- `auto_style` (可选): 自动应用样式
+**Parameters**:
+- `data` (required): Table data (2D array)
+- `auto_style` (optional): Automatically apply style
 
 ---
 
-### 🔍 表格分析工具 (5个)
+### 🔍 Table Analysis Tools (5)
 
 #### 20. `extract_table_structure`
-提取表格结构（完整分析）
+Extract table structure (full analysis)
 
-**参数**:
-- `file_path` (必需): 文档路径
-- `table_index` (必需): 表格索引
+**Parameters**:
+- `file_path` (required): Document path
+- `table_index` (required): Table index
 
-**返回**: JSON格式的详细表格结构
+**Returns**: Detailed table structure in JSON format
 
-**示例**:
-```python
+**Example**:
+python
 structure = extract_table_structure("report.docx", 0)
-# 返回：表格行列数、单元格内容、合并信息等
-```
+# Returns: number of rows and columns, cell contents, merge information, etc.
 
 #### 21. `extract_all_tables_structure`
-提取所有表格结构
+Extract all table structures
 
-**参数**:
-- `file_path` (必需): 文档路径
+**Parameters**:
+- `file_path` (required): Document path
 
 #### 22. `extract_document_structure`
-提取完整文档结构
+Extract full document structure
 
-**参数**:
-- `file_path` (必需): 文档路径
-- `include_cell_details` (可选): 是否包含单元格详情
+**Parameters**:
+- `file_path` (required): Document path
+- `include_cell_details` (optional): Whether to include cell details
 
 #### 23. `get_table_structure_cache_info`
-获取表格结构缓存信息
+Get table structure cache information
 
 #### 24. `clear_table_structure_cache`
-清空表格结构缓存
+Clear table structure cache
 
 ---
 
-### 📝 表格填充工具 (4个)
+### 📝 Table Filling Tools (4)
 
 #### 25. `extract_fillable_fields`
-提取可填充字段（坐标专用）
+Extract fillable fields (coordinate-specific)
 
-**参数**:
-- `file_path` (必需): 文档路径
+**Parameters**:
+- `file_path` (required): Document path
 
-**返回**: 字段坐标映射、空位信息、填充建议
+**Returns**: Field coordinate mapping, empty space information, filling suggestions
 
-**示例**:
-```python
+**Example**:
+python
 fields = extract_fillable_fields("template.docx")
-# 返回：{"field_coordinates": {"姓名": [0, 1, 2]}, ...}
-```
+# Returns: {"field_coordinates": {"Name": [0, 1, 2]}, ...}
 
 #### 26. `fill_with_coordinates`
-使用坐标填充（主要功能）
+Fill using coordinates (main function)
 
-**参数**:
-- `file_path` (必需): 文档路径
-- `coordinate_data` (必需): 坐标数据字典
+**Parameters**:
+- `file_path` (required): Document path
+- `coordinate_data` (required): Coordinate data dictionary
 
-**示例**:
-```python
+**Example**:
+python
 fill_with_coordinates(
     "template.docx",
     {
-        "张三": [0, 1, 2],  # [表格索引, 行, 列]
+        "Zhang San": [0, 1, 2],  # [table index, row, column]
         "2023001": [0, 2, 2],
-        "计算机学院": [0, 3, 2]
+        "School of Computer Science": [0, 3, 2]
     }
 )
-```
 
 #### 27. `basic_table_fill`
-基础表格填充（智能匹配）
+Basic table filling (smart matching)
 
-**参数**:
-- `file_path` (必需): 文档路径
-- `fill_data` (必需): 填充数据字典
+**Parameters**:
+- `file_path` (required): Document path
+- `fill_data` (required): Fill data dictionary
 
-**示例**:
-```python
+**Example**:
+python
 basic_table_fill(
     "template.docx",
     {
-        "姓名": "张三",
-        "学号": "2023001",
-        "学院": "计算机学院",
-        "专业": "计算机科学与技术"
+        "Name": "Zhang San",
+        "Student ID": "2023001",
+        "School": "School of Computer Science",
+        "Major": "Computer Science and Technology"
     }
 )
-```
 
 #### 28. `intelligent_table_fill`
-智能表格填充（辅助功能）
+Intelligent table filling (auxiliary function)
 
 ---
 
-### 🖼️ 图片处理工具 (3个)
+### 🖼️ Image Processing Tools (3)
 
 #### 29. `add_image`
-添加图片
+Add an image
 
-**参数**:
-- `image_path` (必需): 图片路径
-- `width` (可选): 宽度（英寸）
-- `height` (可选): 高度（英寸）
+**Parameters**:- `image_path` (required): Image path
+- `width` (optional): Width (in inches)
+- `height` (optional): Height (in inches)
 
-**示例**:
-```python
+**Example**:
+python
 add_image("logo.png", width=3, height=2)
-```
 
 #### 30. `extract_images`
-提取文档中的所有图片
+Extracts all images from the document
 
-**参数**:
-- `output_dir` (可选): 输出目录
+**Parameters**:
+- `output_dir` (optional): Output directory
 
 #### 31. `resize_image`
-调整图片大小
+Resizes an image
 
-**参数**:
-- `image_index` (必需): 图片索引
-- `width` (必需): 新宽度
-- `height` (必需): 新高度
+**Parameters**:
+- `image_index` (required): Image index
+- `width` (required): New width
+- `height` (required): New height
 
 ---
 
-### 📐 页面设置工具 (3个)
+### 📐 Page Setup Tools (3)
 
 #### 32. `set_page_margins`
-设置页边距
+Sets page margins
 
-**参数**:
-- `top` (可选): 上边距（英寸）
-- `bottom` (可选): 下边距
-- `left` (可选): 左边距
-- `right` (可选): 右边距
+**Parameters**:
+- `top` (optional): Top margin (in inches)
+- `bottom` (optional): Bottom margin
+- `left` (optional): Left margin
+- `right` (optional): Right margin
 
-**示例**:
-```python
+**Example**:
+python
 set_page_margins(top=1, bottom=1, left=1.5, right=1.5)
-```
 
 #### 33. `set_page_orientation`
-设置页面方向
+Sets page orientation
 
-**参数**:
-- `orientation` (可选): portrait（纵向）或 landscape（横向）
+**Parameters**:
+- `orientation` (optional): portrait (portrait) or landscape (landscape)
 
 #### 34. `set_page_size`
-设置页面大小
+Sets page size
 
-**参数**:
-- `width` (可选): 宽度（英寸）
-- `height` (可选): 高度（英寸）
+**Parameters**:
+- `width` (optional): Width (in inches)
+- `height` (optional): Height (in inches)
 
 ---
 
-### 🧠 智能功能工具 (5个)
+### 🧠 Intelligent Function Tools (5)
 
 #### 35. `intelligent_create_document`
-智能创建文档（含模板）
+Intelligently creates a document (with template)
 
-**参数**:
-- `file_path` (必需): 文档路径
-- `template_type` (可选): 模板类型
-  - `basic`: 基础文档
-  - `business`: 商务文档
-  - `academic`: 学术论文
-- `auto_optimize` (可选): 自动优化页面
+**Parameters**:
+- `file_path` (required): Document path
+- `template_type` (optional): Template type
+  - `basic`: Basic document
+  - `business`: Business document
+  - `academic`: Academic paper
+- `auto_optimize` (optional): Automatically optimize pages
 
-**示例**:
-```python
+**Example**:
+python
 intelligent_create_document(
     "report.docx",
     template_type="business",
     auto_optimize=True
 )
-```
 
 #### 36. `get_smart_suggestions`
-获取智能建议
+Gets smart suggestions
 
-**参数**:
-- `context` (可选): 上下文类型
-  - `document_editing`: 文档编辑
-  - `table_creation`: 表格创建
-  - `content_formatting`: 内容格式化
-  - `structure_optimization`: 结构优化
-  - `professional_polish`: 专业润色
+**Parameters**:
+- `context` (optional): Context type
+  - `document_editing`: Document editing
+  - `table_creation`: Table creation
+  - `content_formatting`: Content formatting
+  - `structure_optimization`: Structure optimization
+  - `professional_polish`: Professional polish
 
 #### 37. `get_intelligent_planning_guide`
-获取智能规划指导
+Gets intelligent planning guide
 
-**返回**: AI使用MCP工具的完整指南
+**Returns**: A complete guide for using MCP tools with AI
 
 #### 38. `create_intelligent_workflow_plan`
-创建智能工作流规划
+Creates an intelligent workflow plan
 
-**参数**:
-- `user_request` (必需): 用户请求描述
+**Parameters**:
+- `user_request` (required): User request description
 
-**返回**: 详细的工具调用计划
+**Returns**: A detailed tool call plan
 
 #### 39. `get_tool_detailed_guidance`
-获取工具详细指导
+Gets detailed guidance for a tool
 
-**参数**:
-- `tool_name` (必需): 工具名称
+**Parameters**:
+- `tool_name` (required): Tool name
 
 ---
 
-### ⚙️ 系统状态工具 (3个)
+### ⚙️ System Status Tools (3)
 
 #### 40. `get_system_status`
-获取系统状态
+Gets system status
 
-**返回**: 当前文档状态、可用工具列表等
+**Returns**: Current document status, list of available tools, etc.
 
 #### 41. `test_connection`
-测试连接
+Tests connection
 
-**返回**: 连接状态确认
+**Returns**: Connection status confirmation
 
 #### 42. `get_server_info`
-获取服务器信息
+Gets server information
 
-**返回**: 服务器版本、功能列表等
+**Returns**: Server version, feature list, etc.
 
 ---
 
-## 💡 使用场景示例
+## 💡 Usage Scenario Examples
 
-### 场景1：批量生成报告
+### Scenario 1: Batch Report Generation
 
-```python
+python
 from final_complete_server import *
 
-# 1. 创建文档
+# 1. Create document
 intelligent_create_document("report.docx", "business", True)
 
-# 2. 添加标题
-add_heading("月度工作报告", level=1)
+# 2. Add heading
+add_heading("Monthly Work Report", level=1)
 
-# 3. 添加表格
+# 3. Add table
 intelligent_create_table([
-    ["项目名称", "完成度", "备注"],
-    ["项目A", "100%", "已完成"],
-    ["项目B", "80%", "进行中"]
+    ["Project Name", "Completion Rate", "Notes"],
+    ["Project A", "100%", "Completed"],
+    ["Project B", "80%", "In Progress"]
 ])
 
-# 4. 保存
+# 4. Save
 save_document()
-```
 
-### 场景2：智能填充表单
+### Scenario 2: Intelligent Form Filling
 
-```python
+python
 from core.universal_table_filler import UniversalTableFiller
 
 filler = UniversalTableFiller()
 
-# 1. 分析表格结构
+# 1. Analyze table structure
 coordinates = filler.analyze_and_get_coordinates("template.docx")
 
-# 2. 准备数据
+# 2. Prepare data
 data = {
-    "姓名": "张三",
-    "学号": "2023001",
-    "学院": "计算机学院",
-    "专业": "计算机科学与技术",
-    "联系方式": "13800138000"
+    "Name": "Zhang San",
+    "Student ID": "2023001",
+    "College": "School of Computer Science",
+    "Major": "Computer Science and Technology",
+    "Contact": "13800138000"
 }
 
-# 3. 智能填充
+# 3. Intelligent fill
 fill_with_coordinates("template.docx", {
-    "张三": [0, 1, 2],
+    "Zhang San": [0, 1, 2],
     "2023001": [0, 2, 2],
-    "计算机学院": [0, 3, 2],
-    "计算机科学与技术": [0, 4, 2],
+    "School of Computer Science": [0, 3, 2],
+    "Computer Science and Technology": [0, 4, 2],
     "13800138000": [0, 5, 2]
 })
-```
 
-### 场景3：文档批量处理
+### Scenario 3: Batch Document Processing
 
-```python
+python
 import os
 from pathlib import Path
 
-# 批量处理文件夹中的所有文档
+# Batch process all documents in a folder
 folder = Path("documents")
 for doc in folder.glob("*.docx"):
-    # 打开文档
+    # Open document
     open_document(str(doc))
     
-    # 添加页码
-    add_paragraph(f"第 {{PAGE}} 页", alignment="center")
+    # Add page number
+    add_paragraph(f"Page `{{PAGE}}`", alignment="center")
     
-    # 统一页边距
+    # Set uniform margins
     set_page_margins(1, 1, 1, 1)
     
-    # 保存
+    # Save
     save_document()
-    close_document()
-```
+    close_document()---
 
----
+## 🎯 Advanced Features
 
-## 🎯 高级功能
+### 1. Table Structure Analysis
 
-### 1. 表格结构分析
-
-```python
+python
 from core.table_structure_extractor import table_extractor
 
-# 提取表格结构
+# Extract table structure
 structure = table_extractor.extract_table_structure("document.docx", 0)
 
-# 获取表格信息
-print(f"行数: {structure.rows}")
-print(f"列数: {structure.columns}")
-print(f"表格类型: {structure.table_type}")
-print(f"页面格式: {structure.page_format}")
+# Get table information
+print(f"Number of rows: {structure.rows}")
+print(f"Number of columns: {structure.columns}")
+print(f"Table type: {structure.table_type}")
+print(f"Page format: {structure.page_format}")
 
-# 遍历单元格
+# Traverse cells
 for row in structure.cells:
     for cell in row:
         print(f"({cell.row_index}, {cell.col_index}): {cell.text}")
-```
 
-### 2. 智能工作流规划
 
-```python
+### 2. Intelligent Workflow Planning
+
+python
 from core.intelligent_tool_planner import intelligent_planner
 
-# 获取工具规划
+# Get tool planning
 plan = intelligent_planner.create_intelligent_plan(
-    "创建一个学生信息表，包含姓名、学号、班级，并填充示例数据"
+    "Create a student information table, including name, student ID, and class, and fill with example data"
 )
 
-# 按计划执行
+# Execute according to the plan
 for step in plan.workflow_steps:
-    print(f"步骤 {step.step_id}: {step.description}")
-    print(f"工具: {step.tool_name}")
-    print(f"参数: {step.parameters}")
-```
+    print(f"Step {step.step_id}: {step.description}")
+    print(f"Tool: {step.tool_name}")
+    print(f"Parameters: {step.parameters}")
 
-### 3. 自定义模板
 
-```python
-# 创建自定义业务模板
+### 3. Custom Templates
+
+python
+# Create a custom business template
 intelligent_create_document("template.docx", "business")
 
-# 添加公司信息
-add_paragraph("ABC公司", bold=True, font_size=16, alignment="center")
-add_paragraph("地址：XX市XX路XX号")
-add_paragraph("电话：021-12345678")
+# Add company information
+add_paragraph("ABC Company", bold=True, font_size=16, alignment="center")
+add_paragraph("Address: No. XX, XX Road, XX City")
+add_paragraph("Phone: 021-12345678")
 
-# 添加表格框架
+# Add table framework
 add_table(10, 3, has_header=True)
 
-# 保存为模板
+# Save as template
 save_as_document("custom_template.docx")
-```
+
 
 ---
 
-## 🔧 配置与优化
+## 🔧 Configuration and Optimization
 
-### 环境变量配置
+### Environment Variable Configuration
 
-```bash
-# 设置缓存目录
+bash
+# Set cache directory
 export UV_CACHE_DIR=/path/to/cache
 
-# 禁用进度条
+# Disable progress bar
 export UV_NO_PROGRESS=1
 
-# 使用国内镜像
+# Use domestic mirror
 export UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
-```
 
-### 性能优化建议
 
-1. **使用缓存**: 表格结构会自动缓存，提高重复操作速度
-2. **批量操作**: 尽量打开文档后一次性完成多个操作
-3. **合理使用工具**: 根据需求选择合适的工具（如基础vs智能）
+### Performance Optimization Suggestions
+
+1. **Use Cache**: Table structures are automatically cached, improving the speed of repeated operations.
+2. **Batch Operations**: Try to complete multiple operations at once after opening the document.
+3. **Reasonable Tool Usage**: Choose the appropriate tool based on your needs (e.g., basic vs. intelligent).
 
 ---
 
-## 🐛 常见问题
+## 🐛 Frequently Asked Questions
 
-### Q1: 安装失败怎么办？
+### Q1: What to do if installation fails?
 
-```bash
-# 方式1：使用国内镜像
+bash
+# Method 1: Use domestic mirror
 pip install docx-mcp -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-# 方式2：升级pip
+# Method 2: Upgrade pip
 python -m pip install --upgrade pip
 pip install docx-mcp
 
-# 方式3：使用uv（更快）
+# Method 3: Use uv (faster)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv pip install docx-mcp
-```
 
-### Q2: 导入模块失败？
 
-```python
-# 确保使用正确的导入方式
-from final_complete_server import mcp  # ✅ 正确
-# from docx_mcp import mcp  # ❌ 错误
-```
+### Q2: Module import failure?
 
-### Q3: 表格填充不准确？
+python
+# Ensure correct import method
+from final_complete_server import mcp  # ✅ Correct
+# from docx_mcp import mcp  # ❌ Incorrect
 
-```python
-# 推荐使用坐标填充方式
-# 1. 先分析结构
+
+### Q3: Inaccurate table filling?
+
+python
+# Recommended to use coordinate-based filling
+# 1. Analyze structure first
 fields = extract_fillable_fields("template.docx")
 
-# 2. 根据返回的坐标信息填充
+# 2. Fill based on returned coordinate information
 fill_with_coordinates("template.docx", coordinate_data)
-```
 
-### Q4: 如何调试？
 
-```python
-# 启用详细日志
+### Q4: How to debug?
+
+python
+# Enable detailed logging
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-# 查看工具列表
+# View tool list
 status = get_system_status()
 print(status)
-```
+
 
 ---
 
-## 📝 API 参考
+## 📝 API Reference
 
 ### Python API
 
-```python
-# 导入方式
+python
+# Import method
 from final_complete_server import mcp
 from core.universal_table_filler import UniversalTableFiller
 from core.intelligent_table_analyzer import IntelligentTableAnalyzer
 from core.table_structure_extractor import table_extractor
-```
+
 
 ### MCP Protocol API
 
-作为 MCP 服务器运行时，通过标准 MCP 协议调用工具：
+When running as an MCP server, call tools via the standard MCP protocol:
 
-```json
+json
 {
   "jsonrpc": "2.0",
   "method": "tools/call",
@@ -751,65 +727,63 @@ from core.table_structure_extractor import table_extractor
     }
   }
 }
-```
+
 
 ---
 
-## 🔗 相关链接
+## 🔗 Related Links
 
 - **PyPI**: https://pypi.org/project/docx-mcp/
 - **GitHub**: https://github.com/rockcj/Docx_MCP_cj
-- **问题反馈**: https://github.com/rockcj/Docx_MCP_cj/issues
-- **MCP协议**: https://modelcontextprotocol.io/
+- **Issue Feedback**: https://github.com/rockcj/Docx_MCP_cj/issues
+- **MCP Protocol**: https://modelcontextprotocol.io/
 - **FastMCP**: https://gofastmcp.com
 
 ---
 
-## 📄 许可证
+## 📄 License
 
 MIT License
 
 ---
 
-## 🙏 致谢
-
-感谢所有贡献者和用户的支持！
+## 🙏 AcknowledgmentsThank you to all contributors and users for your support!
 
 ---
 
-**版本**: 0.1.6  
-**更新时间**: 2025-10-02  
-**作者**: DOCX MCP Team
+**Version**: 0.1.6  
+**Update Date**: 2025-10-02  
+**Author**: DOCX MCP Team
 
 ---
 
-## 📞 获取帮助
+## 📞 Getting Help
 
-如果遇到问题或需要帮助：
+If you encounter any issues or need assistance:
 
-1. 查看本文档的常见问题部分
-2. 访问 GitHub Issues
-3. 查看示例代码
-4. 联系维护团队
+1. Check the FAQ section of this document
+2. Visit the GitHub Issues page
+3. Review the example code
+4. Contact the maintenance team
 
 Happy Documenting! 📝✨
 
-**官方网站：** [https://github.com/rockcj/Docx_MCP_cj.git](https://github.com/rockcj/Docx_MCP_cj.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/rockcj/Docx_MCP_cj.git](https://github.com/rockcj/Docx_MCP_cj.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `ai智能化处理docx文档助手`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `ai智能化处理docx文档助手`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`docx-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `docx-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/rockcj-docx.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/rockcj-docx.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

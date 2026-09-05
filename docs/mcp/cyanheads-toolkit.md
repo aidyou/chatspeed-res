@@ -1,11 +1,11 @@
 ---
-title: "MCP工具包服务器"
-description: "一种模型上下文协议服务器，为LLM代理提供一套完整的工具集，用于IP地理定位、网络诊断、系统监控、加密操作和二维码生成。"
+title: "toolkit-mcp-server"
+description: "A Model Context Protocol server that provides LLM Agents with a comprehensive toolset for IP geolocation, network diagnostics, system monitoring, cryptographic operations, and QR code generation."
 ---
 
-# MCP工具包服务器
+# toolkit-mcp-server
 
-一种模型上下文协议服务器，为LLM代理提供一套完整的工具集，用于IP地理定位、网络诊断、系统监控、加密操作和二维码生成。
+A Model Context Protocol server that provides LLM Agents with a comprehensive toolset for IP geolocation, network diagnostics, system monitoring, cryptographic operations, and QR code generation.
 
 # toolkit-mcp-server
 
@@ -16,52 +16,52 @@ description: "一种模型上下文协议服务器，为LLM代理提供一套完
 [![Status](/mcp-assets/9a22554be918edafcc71c8bd0058366d.svg)]()
 [![GitHub](/mcp-assets/0df68bdbd906a344cad37ec4949bb502.svg)](https://github.com/cyanheads/toolkit-mcp-server)
 
-一个提供系统工具和功能的 Model Context Protocol 服务器，包括 IP 地理定位、网络诊断、系统监控、加密操作和二维码生成等功能。
+A Model Context Protocol server providing LLM Agents with system utilities and tools, including IP geolocation, network diagnostics, system monitoring, cryptographic operations, and QR code generation.
 
 ## Model Context Protocol
 
-Model Context Protocol (MCP) 支持以下实体之间的通信：
+The Model Context Protocol (MCP) enables communication between:
 
-- **客户端**：Claude Desktop、IDE 和其他 MCP 兼容的客户端
-- **服务器**：用于任务管理和自动化的工具和资源
-- **LLM 代理**：利用服务器功能的 AI 模型
+- **Clients**: Claude Desktop, IDEs, and other MCP-compatible clients
+- **Servers**: Tools and resources for task management and automation
+- **LLM Agents**: AI models that leverage the server's capabilities
 
-## 目录
+## Table of Contents
 
-- [特性](#features)
-- [安装](#installation)
-- [配置](#configuration)
-- [工具](#tools)
-- [贡献](#contributing)
-- [许可](#license)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Tools](#tools)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 特性
+## Features
 
-### 网络与地理定位
-- 带智能缓存的 IP 地理定位
-- 网络连接测试
-- Ping 和 Traceroute 工具
-- 公共 IP 检测
-- 请求速率限制（每分钟 45 次请求）
+### Network & Geolocation
+- IP geolocation with intelligent caching
+- Network connectivity testing
+- Ping and traceroute utilities
+- Public IP detection
+- Rate limiting (45 requests/minute)
 
-### 系统工具
-- 获取系统信息
-- 资源监控
-- 负载平均跟踪
-- 网络接口详情
+### System Utilities
+- System information retrieval
+- Resource monitoring
+- Load average tracking
+- Network interface details
 
-### 安全工具
-- 加密哈希生成（MD5, SHA-1, SHA-256, SHA-512）
-- 常数时间哈希比较
-- UUID 生成
+### Security Tools
+- Cryptographic hash generation (MD5, SHA-1, SHA-256, SHA-512)
+- Constant-time hash comparison
+- UUID generation
 
-### 生成器工具
-- 二维码生成
-  - 终端输出
-  - SVG 格式
-  - Base64 编码图像
+### Generator Tools
+- QR code generation
+  - Terminal output
+  - SVG format
+  - Base64 encoded images
 
-## 安装
+## Installation
 
 ```bash
 # Using npm (recommended)
@@ -74,9 +74,9 @@ npm install
 npm run build
 ```
 
-## 配置
+## Configuration
 
-将以下内容添加到您的 MCP 客户端设置中：
+Add to your MCP client settings:
 
 ```json
 {
@@ -92,9 +92,9 @@ npm run build
 }
 ```
 
-## 工具
+## Tools
 
-### 网络操作
+### Network Operations
 ```typescript
 // Get geolocation data
 const geo = await mcp.use('toolkit-mcp-server', 'geolocate', {
@@ -108,7 +108,7 @@ const conn = await mcp.use('toolkit-mcp-server', 'checkConnectivity', {
 });
 ```
 
-### 系统操作
+### System Operations
 ```typescript
 // Get system information
 const sysInfo = await mcp.use('toolkit-mcp-server', 'getSystemInfo', {});
@@ -117,7 +117,7 @@ const sysInfo = await mcp.use('toolkit-mcp-server', 'getSystemInfo', {});
 const load = await mcp.use('toolkit-mcp-server', 'getLoadAverage', {});
 ```
 
-### 安全操作
+### Security Operations
 ```typescript
 // Generate hash
 const hash = await mcp.use('toolkit-mcp-server', 'hashData', {
@@ -129,7 +129,7 @@ const hash = await mcp.use('toolkit-mcp-server', 'hashData', {
 const uuid = await mcp.use('toolkit-mcp-server', 'generateUUID', {});
 ```
 
-### 生成器操作
+### Generator Operations
 ```typescript
 // Generate QR code
 const qr = await mcp.use('toolkit-mcp-server', 'generateQRCode', {
@@ -138,38 +138,38 @@ const qr = await mcp.use('toolkit-mcp-server', 'generateQRCode', {
 });
 ```
 
-## 贡献
+## Contributing
 
-1. 叉分仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可
+## License
 
-Apache License 2.0。有关更多信息，请参阅 [LICENSE](https://github.com/cyanheads/toolkit-mcp-server/blob/HEAD/LICENSE)。
+Apache License 2.0. See [LICENSE](https://github.com/cyanheads/toolkit-mcp-server/blob/HEAD/LICENSE) for more information.
 
 ---
 
-使用 Model Context Protocol 构建
+Built with the Model Context Protocol
 
-**官方网站：** [https://github.com/cyanheads/toolkit-mcp-server](https://github.com/cyanheads/toolkit-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cyanheads/toolkit-mcp-server](https://github.com/cyanheads/toolkit-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `monitoring`, `security and iam`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `monitoring`, `security and iam`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`node_modules/@cyanheads/toolkit-mcp-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `node_modules/@cyanheads/toolkit-mcp-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cyanheads-toolkit.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cyanheads-toolkit.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

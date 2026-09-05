@@ -1,11 +1,11 @@
 ---
-title: "数学精灵计算器"
-description: "math\\genie\\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字的乘法计算，包括多位数相乘。 除法：支持除法运算，同时会对除数为 0 的情况进行处理，避免程序错误。 三角函数计算 提供"
+title: "math_genie_calc"
+description: "math\\genie\\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字…"
 ---
 
-# 数学精灵计算器
+# math_genie_calc
 
-math\genie\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字的乘法计算，包括多位数相乘。 除法：支持除法运算，同时会对除数为 0 的情况进行处理，避免程序错误。 三角函数计算 提供
+math\genie\calc mathgeniecalc是一款专注于科学计算的 Python 应用，为用户提供便捷、准确的各类数学运算功能，涵盖了基础运算到复杂三角函数等多种计算需求，适合学生、科研人员以及任何需要进行数学计算的场景使用。 主要功能 基础运算 加法：实现两个及多个数字的相加运算，支持整数、浮点数等多种数值类型。 减法：进行数字间的减法操作，可处理正数与负数的运算。 乘法：完成数字…
 
 # math\_genie\_calc
 
@@ -57,22 +57,22 @@ json
   }
 }
 
-**官方网站：** [https://github.com/myailab/math_genie_calc_mcp_server](https://github.com/myailab/math_genie_calc_mcp_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/myailab/math_genie_calc_mcp_server](https://github.com/myailab/math_genie_calc_mcp_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`developer tools`, `communication`, `计算器`, `数学`, `辅助工具`
+- Categories: `communication`
+- Tags: `developer tools`, `communication`, `计算器`, `数学`, `辅助工具`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`math_genie_calc@latest`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `math_genie_calc@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/stormcloud-math-genie-calc.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/stormcloud-math-genie-calc.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

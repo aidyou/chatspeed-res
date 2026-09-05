@@ -1,227 +1,251 @@
 ---
-title: "MCP问题解决工具"
-description: "# 翻译\n这是MCP顺序思维服务器的一个改编版本，旨在指导在解决问题时如何使用工具。该服务器有助于将复杂问题分解为可管理的步骤，并提供在每个阶段使用哪些MCP工具最为有效的建议。"
+title: "mcp-sequentialthinking-tools"
+description: "An adaptation of the MCP Sequential Thinking Server designed to guide tool usage in problem-solving. This server helps break down complex problems into manageable steps and provides recommendations fo…"
 ---
-
-# MCP问题解决工具
-
-# 翻译
-这是MCP顺序思维服务器的一个改编版本，旨在指导在解决问题时如何使用工具。该服务器有助于将复杂问题分解为可管理的步骤，并提供在每个阶段使用哪些MCP工具最为有效的建议。
 
 # mcp-sequentialthinking-tools
 
-这是对
+An adaptation of the MCP Sequential Thinking Server designed to guide tool usage in problem-solving. This server helps break down complex problems into manageable steps and provides recommendations fo…
+
+# mcp-sequentialthinking-tools
+
+An adaptation of the
 [MCP Sequential Thinking Server](https://github.com/modelcontextprotocol/servers/blob/main/src/sequentialthinking/index.ts)
-的改编版本，旨在指导解决问题时的工具使用。该服务器帮助将复杂问题分解为可管理的步骤，并提供在每个阶段最有效的MCP工具推荐。
+designed to guide tool usage in problem-solving. This server helps
+break down complex problems into manageable steps and provides
+recommendations for which MCP tools would be most effective at each
+stage.
 
   
 
-这是一个结合了顺序思维与智能工具建议的模型上下文协议（MCP）服务器。对于解决问题过程中的每一步，它都会根据信心分数提供哪些工具应该使用的建议，以及为何这些工具适合的理由。
+A Model Context Protocol (MCP) server that combines sequential
+thinking with intelligent tool suggestions. For each step in the
+problem-solving process, it provides confidence-scored recommendations
+for which tools to use, along with rationale for why each tool would
+be appropriate.
 
-## 功能特点
+## Features
 
-- 🤔 通过顺序思考进行动态且反思性的问题解决
-- 🔄 灵活适应并进化的思考过程
-- 🌳 支持思想分支和修订
-- 🛠️ 每步都有智能工具推荐
-- 📊 工具建议的信心评分
-- 🔍 详细的工具推荐理由
-- 📝 带有预期结果的步骤跟踪
-- 🔄 进度监控，包括已完成及剩余步骤
-- 🎯 每步的替代工具建议
+- 🤔 Dynamic and reflective problem-solving through sequential
+  thoughts
+- 🔄 Flexible thinking process that adapts and evolves
+- 🌳 Support for branching and revision of thoughts
+- 🛠️ Intelligent tool recommendations for each step
+- 📊 Confidence scoring for tool suggestions
+- 🔍 Detailed rationale for tool recommendations
+- 📝 Step tracking with expected outcomes
+- 🔄 Progress monitoring with previous and remaining steps
+- 🎯 Alternative tool suggestions for each step
 
-## 工作原理
+## How It Works
 
-此服务器分析您思考过程中的每一步，并推荐合适的MCP工具来帮助完成任务。每条建议都包含：
+This server analyses each step of your thought process and recommends
+appropriate MCP tools to help accomplish the task. Each recommendation
+includes:
 
-- 一个信心分数（0-1），表示工具与当前需求的匹配程度
-- 清晰的理由说明为什么该工具会有帮助
-- 一个优先级水平，用于建议工具执行顺序
-- 可以使用的替代工具
+- A confidence score (0-1) indicating how well the tool matches the
+  current need
+- A clear rationale explaining why the tool would be helpful
+- A priority level to suggest tool execution order
+- Alternative tools that could also be used
 
-服务器可以与您环境中可用的任何MCP工具一起工作。它根据当前步骤的要求提供建议，但实际工具执行由消费者（如Claude）处理。
+The server works with any MCP tools available in your environment. It
+provides recommendations based on the current step's requirements, but
+the actual tool execution is handled by the consumer (like Claude).
 
-## 使用示例
+## Example Usage
 
-这里有一个例子展示了服务器如何引导工具使用：
+Here's an example of how the server guides tool usage:
 
 ```json
 {
-    "thought": "Initial research step to understand what universal reactivity means in Svelte 5",
-    "current_step": {
-        "step_description": "Gather initial information about Svelte 5's universal reactivity",
-        "expected_outcome": "Clear understanding of universal reactivity concept",
-        "recommended_tools": [
-            {
-                "tool_name": "search_docs",
-                "confidence": 0.9,
-                "rationale": "Search Svelte documentation for official information",
-                "priority": 1
-            },
-            {
-                "tool_name": "tavily_search",
-                "confidence": 0.8,
-                "rationale": "Get additional context from reliable sources",
-                "priority": 2
-            }
-        ],
-        "next_step_conditions": [
-            "Verify information accuracy",
-            "Look for implementation details"
-        ]
-    },
-    "thought_number": 1,
-    "total_thoughts": 5,
-    "next_thought_needed": true
+	"thought": "Initial research step to understand what universal reactivity means in Svelte 5",
+	"current_step": {
+		"step_description": "Gather initial information about Svelte 5's universal reactivity",
+		"expected_outcome": "Clear understanding of universal reactivity concept",
+		"recommended_tools": [
+			{
+				"tool_name": "search_docs",
+				"confidence": 0.9,
+				"rationale": "Search Svelte documentation for official information",
+				"priority": 1
+			},
+			{
+				"tool_name": "tavily_search",
+				"confidence": 0.8,
+				"rationale": "Get additional context from reliable sources",
+				"priority": 2
+			}
+		],
+		"next_step_conditions": [
+			"Verify information accuracy",
+			"Look for implementation details"
+		]
+	},
+	"thought_number": 1,
+	"total_thoughts": 5,
+	"next_thought_needed": true
 }
 ```
 
-服务器会追踪您的进度并支持：
+The server tracks your progress and supports:
 
-- 创建分支探索不同的方法
-- 根据新信息修改先前的想法
-- 在多个步骤间保持上下文
-- 根据当前发现建议下一步
+- Creating branches to explore different approaches
+- Revising previous thoughts with new information
+- Maintaining context across multiple steps
+- Suggesting next steps based on current findings
 
-## 配置
+## Configuration
 
-此服务器需要通过您的MCP客户端进行配置。以下是在不同环境下的配置示例：
+This server requires configuration through your MCP client. Here are
+examples for different environments:
 
-### Cline 配置
+### Cline Configuration
 
-将以下内容添加到您的Cline MCP设置中：
+Add this to your Cline MCP settings:
 
 ```json
 {
-    "mcpServers": {
-        "mcp-sequentialthinking-tools": {
-            "command": "npx",
-            "args": ["-y", "mcp-sequentialthinking-tools"]
-        }
-    }
+	"mcpServers": {
+		"mcp-sequentialthinking-tools": {
+			"command": "npx",
+			"args": ["-y", "mcp-sequentialthinking-tools"]
+		}
+	}
 }
 ```
 
-### Claude Desktop with WSL 配置
+### Claude Desktop with WSL Configuration
 
-对于WSL环境，请将以下内容添加到您的Claude Desktop配置中：
+For WSL environments, add this to your Claude Desktop configuration:
 
 ```json
 {
-    "mcpServers": {
-        "mcp-sequentialthinking-tools": {
-            "command": "wsl.exe",
-            "args": [
-                "bash",
-                "-c",
-                "source ~/.nvm/nvm.sh && /home/username/.nvm/versions/node/v20.12.1/bin/npx mcp-sequentialthinking-tools"
-            ]
-        }
-    }
+	"mcpServers": {
+		"mcp-sequentialthinking-tools": {
+			"command": "wsl.exe",
+			"args": [
+				"bash",
+				"-c",
+				"source ~/.nvm/nvm.sh && /home/username/.nvm/versions/node/v20.12.1/bin/npx mcp-sequentialthinking-tools"
+			]
+		}
+	}
 }
 ```
 
 ## API
 
-该服务器实现了一个带有可配置参数的单个MCP工具：
+The server implements a single MCP tool with configurable parameters:
 
 ### sequentialthinking_tools
 
-一个通过思考来进行动态且反思性问题解决的工具，附带智能工具推荐。
+A tool for dynamic and reflective problem-solving through thoughts,
+with intelligent tool recommendations.
 
-参数：
+Parameters:
 
-- `thought` (字符串, 必填): 你当前的思考步骤
-- `next_thought_needed` (布尔值, 必填): 是否需要另一个思考步骤
-- `thought_number` (整数, 必填): 当前思考步骤编号
-- `total_thoughts` (整数, 必填): 预计总共需要的思考步骤数量
-- `is_revision` (布尔值, 可选): 是否修订了之前的思考
-- `revises_thought` (整数, 可选): 正在重新考虑的思考步骤编号
-- `branch_from_thought` (整数, 可选): 分支点的思考步骤编号
-- `branch_id` (字符串, 可选): 分支标识符
-- `needs_more_thoughts` (布尔值, 可选): 是否需要更多的思考步骤
-- `current_step` (对象, 可选): 当前步骤建议，包含:
-  - `step_description`: 需要做什么
-  - `recommended_tools`: 带有置信度分数的工具推荐数组
-  - `expected_outcome`: 从这一步骤中可以期待什么结果
-  - `next_step_conditions`: 下一步骤的条件
-- `previous_steps` (数组, 可选): 已经推荐的步骤
-- `remaining_steps` (数组, 可选): 即将到来的步骤的高层描述
+- `thought` (string, required): Your current thinking step
+- `next_thought_needed` (boolean, required): Whether another thought
+  step is needed
+- `thought_number` (integer, required): Current thought number
+- `total_thoughts` (integer, required): Estimated total thoughts
+  needed
+- `is_revision` (boolean, optional): Whether this revises previous
+  thinking
+- `revises_thought` (integer, optional): Which thought is being
+  reconsidered
+- `branch_from_thought` (integer, optional): Branching point thought
+  number
+- `branch_id` (string, optional): Branch identifier
+- `needs_more_thoughts` (boolean, optional): If more thoughts are
+  needed
+- `current_step` (object, optional): Current step recommendation with:
+  - `step_description`: What needs to be done
+  - `recommended_tools`: Array of tool recommendations with confidence
+    scores
+  - `expected_outcome`: What to expect from this step
+  - `next_step_conditions`: Conditions for next step
+- `previous_steps` (array, optional): Steps already recommended
+- `remaining_steps` (array, optional): High-level descriptions of
+  upcoming steps
 
-## 开发
+## Development
 
-### 设置
+### Setup
 
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-3. 构建项目：
+3. Build the project:
 
 ```bash
 pnpm build
 ```
 
-4. 在开发模式下运行：
+4. Run in development mode:
 
 ```bash
 pnpm dev
 ```
 
-### 发布
+### Publishing
 
-该项目使用 changesets 进行版本管理。要发布：
+The project uses changesets for version management. To publish:
 
-1. 创建一个 changeset：
+1. Create a changeset:
 
 ```bash
 pnpm changeset
 ```
 
-2. 对包进行版本控制：
+2. Version the package:
 
 ```bash
 pnpm changeset version
 ```
 
-3. 发布到 npm：
+3. Publish to npm:
 
 ```bash
 pnpm release
 ```
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 
-MIT 许可证 - 详情请参阅 [LICENSE](https://github.com/spences10/mcp-sequentialthinking-tools/blob/HEAD/LICENSE) 文件。
+MIT License - see the [LICENSE](https://github.com/spences10/mcp-sequentialthinking-tools/blob/HEAD/LICENSE) file for details.
 
-## 致谢
+## Acknowledgments
 
-- 基于 [Model Context Protocol](https://github.com/modelcontextprotocol)
-- 改编自 [MCP Sequential Thinking Server](https://github.com/modelcontextprotocol/servers/blob/main/src/sequentialthinking/index.ts)
+- Built on the
+  [Model Context Protocol](https://github.com/modelcontextprotocol)
+- Adapted from the
+  [MCP Sequential Thinking Server](https://github.com/modelcontextprotocol/servers/blob/main/src/sequentialthinking/index.ts)
 
-**官方网站：** [https://github.com/spences10/mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/spences10/mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-sequentialthinking-tools`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-sequentialthinking-tools`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/spences10-sequentialthinking-tools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/spences10-sequentialthinking-tools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

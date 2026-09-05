@@ -1,11 +1,11 @@
 ---
-title: "MCP邮件服务器工具"
-description: "提供IMAP和SMTP功能，使开发人员能够无缝集成和自动化工作流来管理电子邮件服务。"
+title: "mcp-email-server"
+description: "Provides IMAP and SMTP capabilities, enabling developers to manage email services with seamless integration and automated workflows."
 ---
 
-# MCP邮件服务器工具
+# mcp-email-server
 
-提供IMAP和SMTP功能，使开发人员能够无缝集成和自动化工作流来管理电子邮件服务。
+Provides IMAP and SMTP capabilities, enabling developers to manage email services with seamless integration and automated workflows.
 
 # mcp-email-server
 
@@ -16,18 +16,18 @@ description: "提供IMAP和SMTP功能，使开发人员能够无缝集成和自�
 [![License](/mcp-assets/3558c36785ba77f4575ce643a3a48f2a.svg)](https://img.shields.io/github/license/ai-zerolab/mcp-email-server)
 [Smithery](https://smithery.ai/server/@ai-zerolab/mcp-email-server)
 
-通过 MCP 服务器实现 IMAP 和 SMTP
+IMAP and SMTP via MCP Server
 
-- **Github 仓库**: 
-- **文档** 
+- **Github repository**: 
+- **Documentation** 
 
-## 安装
+## Installation
 
-### 手动安装
+### Manual Installation
 
-我们推荐使用 [uv](https://github.com/astral-sh/uv) 来管理您的环境。
+We recommend using [uv](https://github.com/astral-sh/uv) to manage your environment.
 
-尝试 `uvx mcp-email-server@latest ui` 进行配置，并为 mcp 客户端使用以下配置：
+Try `uvx mcp-email-server@latest ui` to config, and use following configuration for mcp client:
 
 ```json
 {
@@ -40,11 +40,11 @@ description: "提供IMAP和SMTP功能，使开发人员能够无缝集成和自�
 }
 ```
 
-此包在 PyPI 上可用，因此您可以使用 `pip install mcp-email-server` 进行安装。
+This package is available on PyPI, so you can install it using `pip install mcp-email-server`
 
-之后，使用 UI 配置您的电子邮件服务器：`mcp-email-server ui`
+After that, configure your email server using the ui: `mcp-email-server ui`
 
-然后您可以在 [Claude Desktop](https://claude.ai/download) 中试用。如果您想将其与其他 mcp 客户端集成，请运行 `$which mcp-email-server` 获取路径，并在客户端中进行如下配置：
+Then you can try it in [Claude Desktop](https://claude.ai/download). If you want to intergrate it with other mcp client, run `$which mcp-email-server` for the path and configure it in your client like:
 
 ```json
 {
@@ -57,7 +57,7 @@ description: "提供IMAP和SMTP功能，使开发人员能够无缝集成和自�
 }
 ```
 
-如果 `docker` 可用，您可以尝试使用 docker 镜像，但可能需要通过 `MCP` 使用 `tools` 在客户端中进行配置。默认配置路径是 `~/.config/zerolib/mcp_email_server/config.toml`
+If `docker` is avaliable, you can try use docker image, but you may need to config it in your client using `tools` via `MCP`. The default config path is `~/.config/zerolib/mcp_email_server/config.toml`
 
 ```json
 {
@@ -70,47 +70,47 @@ description: "提供IMAP和SMTP功能，使开发人员能够无缝集成和自�
 }
 ```
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@ai-zerolab/mcp-email-server) 自动为 Claude Desktop 安装 Email Server：
+To install Email Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@ai-zerolab/mcp-email-server):
 
 ```bash
 npx -y @smithery/cli install @ai-zerolab/mcp-email-server --client claude
 ```
 
-## 开发
+## Development
 
-此项目使用 [uv](https://github.com/ai-zerolab/uv) 管理。
+This project is managed using [uv](https://github.com/ai-zerolab/uv).
 
-尝试 `make install` 以安装虚拟环境并安装预提交钩子。
+Try `make install` to install the virtual environment and install the pre-commit hooks.
 
-对于本地开发，请使用 `uv run mcp-email-server`。
+Use `uv run mcp-email-server` for local development.
 
-## 发布新版本
+## Releasing a new version
 
-- 在 [PyPI](https://pypi.org/) 上创建一个 API Token。
-- 访问 [此页面](https://github.com/ai-zerolab/mcp-email-server/settings/secrets/actions/new)，将 API Token 添加到项目的密钥中，名称为 `PYPI_TOKEN`。
-- 在 Github 上创建 [新发布](https://github.com/ai-zerolab/mcp-email-server/releases/new)。
-- 创建格式为 `*.*.*` 的新标签。
+- Create an API Token on [PyPI](https://pypi.org/).
+- Add the API Token to your projects secrets with the name `PYPI_TOKEN` by visiting [this page](https://github.com/ai-zerolab/mcp-email-server/settings/secrets/actions/new).
+- Create a [new release](https://github.com/ai-zerolab/mcp-email-server/releases/new) on Github.
+- Create a new tag in the form `*.*.*`.
 
-更多详情请见 [这里](https://fpgmaas.github.io/cookiecutter-uv/features/cicd/#how-to-trigger-a-release)。
+For more details, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/cicd/#how-to-trigger-a-release).
 
-**官方网站：** [https://github.com/ai-zerolab/mcp-email-server](https://github.com/ai-zerolab/mcp-email-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ai-zerolab/mcp-email-server](https://github.com/ai-zerolab/mcp-email-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `developer tools`
+- Categories: `communication`
+- Tags: `communication`, `developer tools`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-email-server@latest stdio`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-email-server@latest stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/ai-zerolab-email.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/ai-zerolab-email.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

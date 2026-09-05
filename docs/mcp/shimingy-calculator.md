@@ -1,11 +1,11 @@
 ---
-title: "计算器"
-description: "MCP 计算器服务器 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -g mcp-calculator 或者本地安装 npm install mcp-calculator 从源码安装 bash 克隆项目 git "
+title: "calculator"
+description: "MCP Calculator Server 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -…"
 ---
 
-# 计算器
+# calculator
 
-MCP 计算器服务器 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -g mcp-calculator 或者本地安装 npm install mcp-calculator 从源码安装 bash 克隆项目 git 
+MCP Calculator Server 一个功能完整的基于 Model Context Protocol (MCP) 的计算器服务器，提供丰富的数学运算功能，包括基础算术、根式运算、三角函数、对数运算、统计学、组合数学、数论、复数运算、矩阵运算、数值分析、金融计算、单位转换和几何计算等 13 个专业数学模块。 📦 安装 通过 npm 安装（推荐） bash 全局安装 npm install -…
 
 # MCP Calculator Server
 
@@ -642,22 +642,22 @@ interface ToolResult {
 }
 ```
 
-**官方网站：** [https://github.com/proflulab/mcp-calculator.git](https://github.com/proflulab/mcp-calculator.git)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/proflulab/mcp-calculator.git](https://github.com/proflulab/mcp-calculator.git)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`other`, `developer tools`
+- Categories: `development`
+- Tags: `other`, `developer tools`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-calculator`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-calculator`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/shimingy-calculator.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/shimingy-calculator.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,41 +1,41 @@
 ---
-title: "TextIn-MCP OCR服务器"
-description: "一台启用OCR功能的服务器，可以从图像、PDF和Word文档中识别文本，将其转换为Markdown格式，并提取关键信息。"
+title: "textin-mcp"
+description: "A server that enables OCR capabilities to recognize text from images, PDFs, and Word documents, convert them to Markdown, and extract key information."
 ---
 
-# TextIn-MCP OCR服务器
+# textin-mcp
 
-一台启用OCR功能的服务器，可以从图像、PDF和Word文档中识别文本，将其转换为Markdown格式，并提取关键信息。
+A server that enables OCR capabilities to recognize text from images, PDFs, and Word documents, convert them to Markdown, and extract key information.
 
 # Textin MCP Server
 
-TextIn MCP Server 是一个用于从文档中提取文本并执行OCR的工具，包括文档文本识别、身份证识别和发票识别。它还支持将文档转换为Markdown格式。
+TextIn MCP Server is a tool for extracting text and performing OCR on documents, including document text recognition, ID recognition, and invoice recognition. It also supports converting documents into Markdown format.
 
   
 
-## 工具
+## Tools
 - `recognition_text`
-  - 从图片、Word文档和PDF文件中进行文本识别。
-  - 输入: `file path` (字符串)
-  - 返回: 文档的文本。
+  - Text recognition from images, Word documents, and PDF files.
+  - Input: `file path` (string)
+  - Return: Text of the document.
 
 - `doc_to_markdown`
-  - 将图片、PDF和Word文档转换为Markdown。
-  - 输入: `file path` (字符串)
-  - 返回: 文档的Markdown。
+  - Convert images, PDFs, and Word documents to Markdown.
+  - Input: `file path` (string)
+  - Return: Markdown of the document.
 
 - `general_information_extration`
-  - 自动且智能地从文档中提取关键信息。
-  - 输入: `file path` (字符串)
-  - 返回: 关键信息的JSON。
+  - Automatically and intelligently extract key information from documents.
+  - Input: `file path` (string)
+  - Return: The key information JSON.
 
-## 设置
+## Setup
 
-### APP_ID 和 APP_SECRET
+### APP_ID and APP_SECRET
 
-点击[这里](https://www.textin.com/user/login?from=github_mcp)注册一个TextIn账户。
+Click [here](https://www.textin.com/user/login?from=github_mcp) to register for a TextIn account.
 
-按照[此处](https://www.textin.com/doc/guide/account/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96app%20id?status=first)的说明获取Textin APP_ID和APP_SECRET。
+Get Textin APP_ID and APP_SECRET by following the instructions [here](https://www.textin.com/doc/guide/account/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96app%20id?status=first).
 
 ### NPX
 
@@ -59,26 +59,26 @@ TextIn MCP Server 是一个用于从文档中提取文本并执行OCR的工具�
 }
 ```
 
-## 许可证
+## License
 
-此MCP服务器采用MIT许可证授权。这意味着您可以在遵守MIT许可证条款和条件的前提下自由使用、修改和分发该软件。更多详情，请参见项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/intsig-textin/textin-mcp](https://github.com/intsig-textin/textin-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/intsig-textin/textin-mcp](https://github.com/intsig-textin/textin-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`image and video processing`, `file systems`, `chinese`
+- Categories: `files`
+- Tags: `image and video processing`, `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @intsig/server-textin`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @intsig/server-textin`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/intsig-textin-textin.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/intsig-textin-textin.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

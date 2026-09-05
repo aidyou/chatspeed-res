@@ -1,11 +1,11 @@
 ---
-title: "记忆知识库"
-description: "基础记忆是一个知识管理系统，它允许你通过与人工智能助手的对话构建持久的语义图。所有知识都以标准的Markdown文件形式存储在你的计算机中，让你完全掌控和拥有自己的数据。它直接与Obsidian.md集成。"
+title: "basic-memory"
+description: "Basic Memory is a knowledge management system that allows you to build a persistent semantic graph from conversations with AI assistants. All knowledge is stored in standard Markdown files on your com…"
 ---
 
-# 记忆知识库
+# basic-memory
 
-基础记忆是一个知识管理系统，它允许你通过与人工智能助手的对话构建持久的语义图。所有知识都以标准的Markdown文件形式存储在你的计算机中，让你完全掌控和拥有自己的数据。它直接与Obsidian.md集成。
+Basic Memory is a knowledge management system that allows you to build a persistent semantic graph from conversations with AI assistants. All knowledge is stored in standard Markdown files on your com…
 
 [![License: AGPL v3](/mcp-assets/e817069efdf1f7a6a364a7bbeba8bb17.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![PyPI version](/mcp-assets/398bb891823a702c9022dbeeb34916b8.svg)](https://badge.fury.io/py/basic-memory)
@@ -18,20 +18,22 @@ description: "基础记忆是一个知识管理系统，它允许你通过与人
 
 # Basic Memory
 
-Basic Memory 使您能够通过与大型语言模型（如 Claude）的自然对话构建持久的知识，同时将所有内容保存在计算机上的简单 Markdown 文件中。它使用 Model Context Protocol (MCP) 来使任何兼容的 LLM 能够读取和写入您的本地知识库。
+Basic Memory lets you build persistent knowledge through natural conversations with Large Language Models (LLMs) like
+Claude, while keeping everything in simple Markdown files on your computer. It uses the Model Context Protocol (MCP) to
+enable any compatible LLM to read and write to your local knowledge base.
 
-- 网站: https://basicmachines.co
-- 文档: https://memory.basicmachines.co
+- Website: https://basicmachines.co
+- Documentation: https://memory.basicmachines.co
 
-## 从上次离开的地方继续对话
+## Pick up your conversation right where you left off
 
-- AI 助手可以在新的对话中从本地文件加载上下文
-- 笔记会实时保存为本地的 Markdown 文件
-- 不需要项目知识或特殊提示
+- AI assistants can load context from local files in a new conversation
+- Notes are saved locally as Markdown files in real time
+- No project knowledge or special prompting required
 
-[https://github.com/user-attachments/assets/a55d8238-8dd0-454a-be4c-8860dbbd0ddc](https://github.com/user-attachments/assets/a55d8238-8dd0-454a-be4c-8860dbbd0ddc)
+https://github.com/user-attachments/assets/a55d8238-8dd0-454a-be4c-8860dbbd0ddc
 
-## 快速开始
+## Quick Start
 
 ```bash
 # Install with uv (recommended)
@@ -57,55 +59,60 @@ uv tool install basic-memory
 
 ```
 
-您可以通过 `~/basic-memory`（默认目录位置）中的文件查看共享上下文。
+You can view shared context via files in `~/basic-memory` (default directory location).
 
-### 通过 Smithery 安装
+### Alternative Installation via Smithery
 
-您可以使用 [Smithery](https://smithery.ai/server/@basicmachines-co/basic-memory) 自动配置 Claude 桌面版的 Basic Memory：
+You can use [Smithery](https://smithery.ai/server/@basicmachines-co/basic-memory) to automatically configure Basic
+Memory for Claude Desktop:
 
 ```bash
 npx -y @smithery/cli install @basicmachines-co/basic-memory --client claude
 ```
 
-这将在不需要手动编辑 Claude 桌面配置文件的情况下安装和配置 Basic Memory。Smithery 服务器托管 MCP 服务器组件，而您的数据仍然以 Markdown 文件的形式存储在本地。
+This installs and configures Basic Memory without requiring manual edits to the Claude Desktop configuration file. The
+Smithery server hosts the MCP server component, while your data remains stored locally as Markdown files.
 
 ### Glama.ai
 
   
 
-## 为什么选择 Basic Memory？
+## Why Basic Memory?
 
-大多数 LLM 交互都是短暂的——您提问，得到答案，然后一切都被遗忘。每次对话都是全新的，没有之前的上下文或知识。当前的解决方法有其局限性：
+Most LLM interactions are ephemeral - you ask a question, get an answer, and everything is forgotten. Each conversation
+starts fresh, without the context or knowledge from previous ones. Current workarounds have limitations:
 
-- 聊天记录可以捕获对话，但不是结构化的知识
-- RAG 系统可以查询文档，但不允许 LLM 写回
-- 向量数据库需要复杂的设置，并且通常位于云端
-- 知识图谱通常需要专门的工具来维护
+- Chat histories capture conversations but aren't structured knowledge
+- RAG systems can query documents but Do not let LLMs write back
+- Vector databases require complex setups and often live in the cloud
+- Knowledge graphs typically need specialized tools to maintain
 
-Basic Memory 通过一种简单的方法解决了这些问题：结构化的 Markdown 文件，既可由人类也可由 LLM 读写。主要优点包括：
+Basic Memory addresses these problems with a simple approach: structured Markdown files that both humans and LLMs can
+read
+and write to. The key advantages:
 
-- **本地优先：** 所有知识都保存在你控制的文件中
-- **双向互动：** 你和大语言模型（LLM）都可以读写相同的文件
-- **结构化但简单：** 使用熟悉的 Markdown 格式并带有语义模式
-- **可遍历的知识图谱：** LLM 可以跟踪主题之间的链接
-- **标准格式：** 与现有的编辑器如 Obsidian 兼容
-- **轻量级基础设施：** 仅使用本地文件并在本地 SQLite 数据库中索引
+- **Local-first:** All knowledge stays in files you control
+- **Bi-directional:** Both you and the LLM read and write to the same files
+- **Structured yet simple:** Uses familiar Markdown with semantic patterns
+- **Traversable knowledge graph:** LLMs can follow links between topics
+- **Standard formats:** Works with existing editors like Obsidian
+- **Lightweight infrastructure:** Just local files indexed in a local SQLite database
 
-使用 Basic Memory，你可以：
+With Basic Memory, you can:
 
-- 进行基于先前知识的对话
-- 在自然对话中创建结构化的笔记
-- 与记住之前讨论内容的大语言模型进行对话
-- 语义地浏览你的知识图谱
-- 保持所有内容本地化并由你控制
-- 使用熟悉的工具如 Obsidian 查看和编辑笔记
-- 构建随时间增长的个人知识库
+- Have conversations that build on previous knowledge
+- Create structured notes during natural conversations
+- Have conversations with LLMs that remember what you've discussed before
+- Navigate your knowledge graph semantically
+- Keep everything local and under your control
+- Use familiar tools like Obsidian to view and edit notes
+- Build a personal knowledge base that grows over time
 
-## 实际工作原理
+## How It Works in Practice
 
-假设你正在探索咖啡冲泡方法，并希望记录你的知识。以下是具体步骤：
+Let's say you're exploring coffee brewing methods and want to capture your knowledge. Here's how it works:
 
-1. 首先开始正常的聊天：
+1. Start by chatting normally:
 
 ```
 I've been experimenting with different coffee brewing methods. Key things I've learned:
@@ -115,15 +122,15 @@ I've been experimenting with different coffee brewing methods. Key things I've l
 - Freshly ground beans make a huge difference
 ```
 
-... 继续对话。
+... continue conversation.
 
-2. 请 LLM 帮助整理这些知识：
+2. Ask the LLM to help structure this knowledge:
 
 ```
 "Let's write a note about coffee brewing methods."
 ```
 
-LLM 会在你的系统上创建一个新的 Markdown 文件（你可以立即在 Obsidian 或其他编辑器中看到）：
+LLM creates a new Markdown file on your system (which you can see instantly in Obsidian or your editor):
 
 ```markdown
 ---
@@ -149,19 +156,19 @@ tags:
 - affects [[Flavor Extraction]]
 ```
 
-该笔记嵌入了语义内容，并通过简单的 Markdown 格式链接到其他主题。
+The note embeds semantic content and links to other topics via simple Markdown formatting.
 
-3. 你会实时在当前项目目录（默认为 `~/$HOME/basic-memory`）中看到这个文件。
+3. You see this file on your computer in real time in the current project directory (default `~/$HOME/basic-memory`).
 
-- 实时同步功能在 v0.12.0 版本中默认启用
+- Realtime sync is enabled by default with the v0.12.0 version
 
-4. 在与 LLM 的对话中，你可以引用某个主题：
+4. In a chat with the LLM, you can reference a topic:
 
 ```
 Look at `coffee-brewing-methods` for context about pour over coffee
 ```
 
-LLM 现在可以从知识图谱中构建丰富的上下文。例如：
+The LLM can now build rich context from the knowledge graph. For example:
 
 ```
 Following relation 'relates_to [[Coffee Bean Origins]]':
@@ -175,36 +182,36 @@ Following relation 'requires [[Proper Grinding Technique]]':
 - Impact of consistent particle size on extraction
 ```
 
-每个相关的文档都可以提供更多上下文，从而构建对你知识库的丰富语义理解。
+Each related document can lead to more context, building a rich semantic understanding of your knowledge base.
 
-这创建了一个双向流程，其中：
+This creates a two-way flow where:
 
-- 人类编写和编辑 Markdown 文件
-- LLM 通过 MCP 协议读写
-- 同步保持一切一致
-- 所有知识都保存在本地文件中。
+- Humans write and edit Markdown files
+- LLMs read and write through the MCP protocol
+- Sync keeps everything consistent
+- All knowledge stays in local files.
 
-## 技术实现
+## Technical Implementation
 
-在底层，Basic Memory：
+Under the hood, Basic Memory:
 
-1. 将所有内容存储在 Markdown 文件中
-2. 使用 SQLite 数据库进行搜索和索引
-3. 从简单的 Markdown 模式中提取语义意义
-    - 文件成为 `Entity` 对象
-    - 每个 `Entity` 可以有 `Observations`，即与其相关的事实
-    - `Relations` 将实体连接在一起形成知识图谱
-4. 维护从文件派生的本地知识图谱
-5. 提供文件和知识图谱之间的双向同步
-6. 实现用于 AI 集成的 Model Context Protocol (MCP)
-7. 提供让 AI 助手遍历和操作知识图谱的工具
-8. 使用 memory:// URL 在工具和对话之间引用实体
+1. Stores everything in Markdown files
+2. Uses a SQLite database for searching and indexing
+3. Extracts semantic meaning from simple Markdown patterns
+    - Files become `Entity` objects
+    - Each `Entity` can have `Observations`, or facts associated with it
+    - `Relations` connect entities together to form the knowledge graph
+4. Maintains the local knowledge graph derived from the files
+5. Provides bidirectional synchronization between files and the knowledge graph
+6. Implements the Model Context Protocol (MCP) for AI integration
+7. Exposes tools that let AI assistants traverse and manipulate the knowledge graph
+8. Uses memory:// URLs to reference entities across tools and conversations
 
-文件格式只是带有简单标记的 Markdown：
+The file format is just Markdown with some simple markup:
 
-每个 Markdown 文件包含：
+Each Markdown file has:
 
-### 前置信息
+### Frontmatter
 
 ```markdown
 title: 
@@ -215,20 +222,19 @@ permalink:
 -  (such as tags) 
 ```
 
-### 观察
+### Observations
 
-请注意，代码块中的内容（如 `#2`, `#3`, `#4`, `#5`, `#6`, `#7`）是占位符，实际内容需要根据具体情况填写。
+Observations are facts about a topic.
+They can be added by creating a Markdown list with a special format that can reference a `category`, `tags` using a
+"#" character, and an optional `context`.
 
-观察是关于某个主题的事实。
-它们可以通过创建具有特殊格式的 Markdown 列表来添加，该列表可以使用 "#" 字符引用 `category` 和 `tags`，以及可选的 `context`。
-
-观察的 Markdown 格式：
+Observation Markdown format:
 
 ```markdown
 - [category] content #tag (optional context)
 ```
 
-观察的例子：
+Examples of observations:
 
 ```markdown
 - [method] Pour over extracts more floral notes than French press
@@ -241,17 +247,17 @@ permalink:
 - [note] My favorite local shop uses a 30-second bloom time
 ```
 
-### 关系
+### Relations
 
-关系是指向其他主题的链接。它们定义了知识图谱中实体之间的连接方式。
+Relations are links to other topics. They define how entities connect in the knowledge graph.
 
-Markdown 格式：
+Markdown format:
 
 ```markdown
 - relation_type [[WikiLink]] (optional context)
 ```
 
-关系的例子：
+Examples of relations:
 
 ```markdown
 - pairs_well_with [[Chocolate Desserts]]
@@ -264,16 +270,16 @@ Markdown 格式：
 - documented_in [[Coffee Journal]]
 ```
 
-## 与 VS Code 一起使用
-要一键安装，请点击下面的其中一个安装按钮...
+## Using with VS Code
+For one-click installation, click one of the install buttons below...
 
-[![通过 UV 在 VS Code 中安装](/mcp-assets/ff0c64ea4d3a42e6aeccd71c5a5b6a57.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=basic-memory&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22basic-memory%22%2C%22mcp%22%5D%7D) [![通过 UV 在 VS Code Insiders 中安装](/mcp-assets/805d41193c5fff3f82290b52ad64e24d.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=basic-memory&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22basic-memory%22%2C%22mcp%22%5D%7D&quality=insiders)
+[![Install with UV in VS Code](/mcp-assets/ff0c64ea4d3a42e6aeccd71c5a5b6a57.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=basic-memory&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22basic-memory%22%2C%22mcp%22%5D%7D) [![Install with UV in VS Code Insiders](/mcp-assets/805d41193c5fff3f82290b52ad64e24d.svg)](https://insiders.vscode.dev/redirect/mcp/install?name=basic-memory&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22basic-memory%22%2C%22mcp%22%5D%7D&quality=insiders)
 
-您可以使用 Basic Memory 与 VS Code 轻松地在编码时检索和存储信息。点击上面的安装按钮进行一键设置，或者按照以下手动安装说明操作。
+You can use Basic Memory with VS Code to easily retrieve and store information while coding. Click the installation buttons above for one-click setup, or follow the manual installation instructions below.
 
-### 手动安装
+### Manual Installation
 
-将以下 JSON 块添加到您的 VS Code 用户设置（JSON）文件中。您可以通过按下 `Ctrl + Shift + P` 并键入 `Preferences: Open User Settings (JSON)` 来完成此操作。
+Add the following JSON block to your User Settings (JSON) file in VS Code. You can do this by pressing `Ctrl + Shift + P` and typing `Preferences: Open User Settings (JSON)`.
 
 ```json
 {
@@ -288,7 +294,7 @@ Markdown 格式：
 }
 ```
 
-或者，您可以将其添加到工作区中的 `.vscode/mcp.json` 文件中。这将允许您与其他人共享配置。
+Optionally, you can add it to a file called `.vscode/mcp.json` in your workspace. This will allow you to share the configuration with others.
 
 ```json
 {
@@ -301,13 +307,14 @@ Markdown 格式：
 }
 ```
 
-## 与 Claude 桌面版一起使用
+## Using with Claude Desktop
 
-Basic Memory 是使用 MCP（模型上下文协议）构建的，并且支持 Claude 桌面应用程序 ([https://claude.ai/](https://claude.ai/)):
+Basic Memory is built using the MCP (Model Context Protocol) and works with the Claude desktop app (https://claude.ai/):
 
-1. 配置 Claude 桌面版以使用 Basic Memory：
+1. Configure Claude Desktop to use Basic Memory:
 
-编辑您的 MCP 配置文件（通常位于 OS X 的 `~/Library/Application Support/Claude/claude_desktop_config.json`）：
+Edit your MCP configuration file (usually located at `~/Library/Application Support/Claude/claude_desktop_config.json`
+for OS X):
 
 ```json
 {
@@ -323,7 +330,9 @@ Basic Memory 是使用 MCP（模型上下文协议）构建的，并且支持 Cl
 }
 ```
 
-如果您想使用特定项目（请参阅 多个项目），更新您的 Claude 桌面版配置：
+If you want to use a specific project (see Multiple Projects), update your
+Claude Desktop
+config:
 
 ```json
 {
@@ -341,11 +350,11 @@ Basic Memory 是使用 MCP（模型上下文协议）构建的，并且支持 Cl
 }
 ```
 
-2. 同步您的知识：
+2. Sync your knowledge:
 
-如果您进行了手动编辑，Basic Memory 将实时同步项目中的文件。
+Basic Memory will sync the files in your project in real time if you make manual edits.
 
-3. 在 Claude 桌面版中，LLM 现在可以使用这些工具：
+3. In Claude Desktop, the LLM can now use these tools:
 
 ```
 write_note(title, content, folder, tags) - Create or update notes
@@ -356,7 +365,7 @@ recent_activity(type, depth, timeframe) - Find recently updated information
 canvas(nodes, edges, title, folder) - Generate knowledge visualizations
 ```
 
-5. 可尝试的示例提示：
+5. Example prompts to try:
 
 ```
 "Create a note about our project architecture decisions"
@@ -366,51 +375,50 @@ canvas(nodes, edges, title, folder) - Generate knowledge visualizations
 "What have I been working on in the past week?"
 ```
 
-## 更多信息
+## Futher info
 
-查看 [文档](https://memory.basicmachines.co/) 了解更多信息，包括：
+See the [Documentation](https://memory.basicmachines.co/) for more info, including:
 
-- [完整用户指南](https://memory.basicmachines.co/docs/user-guide)
-- [CLI 工具](https://memory.basicmachines.co/docs/cli-reference)
-- [管理多个项目](https://memory.basicmachines.co/docs/cli-reference#project)
-- [从 OpenAI/Claude 项目导入数据](https://memory.basicmachines.co/docs/cli-reference#import)
+- [Complete User Guide](https://memory.basicmachines.co/docs/user-guide)
+- [CLI tools](https://memory.basicmachines.co/docs/cli-reference)
+- [Managing multiple Projects](https://memory.basicmachines.co/docs/cli-reference#project)
+- [Importing data from OpenAI/Claude Projects](https://memory.basicmachines.co/docs/cli-reference#import)
 
-## 许可证
+## License
 
 AGPL-3.0
 
-欢迎贡献。有关本地设置项目和提交 PR 的信息，请参阅 [贡献指南](https://github.com/basicmachines-co/basic-memory/blob/HEAD/CONTRIBUTING.md)。
+Contributions are welcome. See the [Contributing](https://github.com/basicmachines-co/basic-memory/blob/HEAD/CONTRIBUTING.md) guide for info about setting up the project locally
+and submitting PRs.
 
-## 星标历史
-
-请注意，上述翻译保留了原始 Markdown 结构及代码块内容不变。对于具体的代码块内容（如 `#8`, `#9` 等），请根据实际情况替换为相应的中文或保持英文原样，因为这些可能是特定的占位符或示例代码。
-
- 
-
-   
-   
-   
+## Star History
 
  
 
-由 Basic Machines 用 ♥️ 构建
+   
+   
+   
 
-**官方网站：** [https://github.com/basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory)
-**状态：** `active`　**最后核验：** `2026-08-30`
+ 
 
-## 分类与标签
+Built with ♥️ by Basic Machines
 
-- 分类：`memory`, `files`
-- 标签：`knowledge and memory`, `note taking`, `file systems`, `chinese`
+**Official site: ** [https://github.com/basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## MCP 配置
+## Categories & Tags
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`basic-memory mcp`
+- Categories: `memory`, `files`
+- Tags: `knowledge and memory`, `note taking`, `file systems`, `chinese`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## MCP Configuration
 
-## 数据来源
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `basic-memory mcp`
 
-资源文件：`resources/mcp/basicmachines-co-basic-memory.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/basicmachines-co-basic-memory.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

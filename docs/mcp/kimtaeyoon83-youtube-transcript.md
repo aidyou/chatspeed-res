@@ -1,45 +1,45 @@
 ---
-title: "YouTube字幕提取器"
-description: "一个模型上下文协议服务器，能够从YouTube视频中检索字幕。该服务器通过简单的方式提供对视频字幕和 subtitle 的直接访问。"
+title: "mcp-server-youtube-transcript"
+description: "A Model Context Protocol server that enables retrieval of transcripts from YouTube videos. This server provides direct access to video captions and subtitles through a simple interface."
 ---
 
-# YouTube字幕提取器
+# mcp-server-youtube-transcript
 
-一个模型上下文协议服务器，能够从YouTube视频中检索字幕。该服务器通过简单的方式提供对视频字幕和 subtitle 的直接访问。
+A Model Context Protocol server that enables retrieval of transcripts from YouTube videos. This server provides direct access to video captions and subtitles through a simple interface.
 
-# YouTube 字幕服务器
+# YouTube Transcript Server
 
 [Smithery](https://smithery.ai/server/@kimtaeyoon83/mcp-server-youtube-transcript)
 
-一个模型上下文协议服务器，可以检索 YouTube 视频的字幕。该服务器通过简单的接口直接访问视频字幕和字幕。
+A Model Context Protocol server that enables retrieval of transcripts from YouTube videos. This server provides direct access to video captions and subtitles through a simple interface.
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@kimtaeyoon83/mcp-server-youtube-transcript) 自动为 Claude Desktop 安装 YouTube 字幕服务器：
+To install YouTube Transcript Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kimtaeyoon83/mcp-server-youtube-transcript):
 
 ```bash
 npx -y @smithery/cli install @kimtaeyoon83/mcp-server-youtube-transcript --client claude
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 - **get_transcript**
-  - 从 YouTube 视频中提取字幕
-  - 输入：
-    - `url` (字符串, 必填): YouTube 视频 URL 或视频 ID
-    - `lang` (字符串, 可选, 默认: "en"): 字幕的语言代码（例如 'ko', 'en'）
+  - Extract transcripts from YouTube videos
+  - Inputs:
+    - `url` (string, required): YouTube video URL or video ID
+    - `lang` (string, optional, default: "en"): Language code for transcript (e.g., 'ko', 'en')
 
-## 主要功能
+## Key Features
 
-- 支持多种视频 URL 格式
-- 特定语言的字幕检索
-- 响应中的详细元数据
+- Support for multiple video URL formats
+- Language-specific transcript retrieval
+- Detailed metadata in responses
 
-## 配置
+## Configuration
 
-要在 Claude Desktop 中使用此服务器，请添加以下配置：
+To use with Claude Desktop, add this server configuration:
 
 ```json
 {
@@ -52,66 +52,66 @@ npx -y @smithery/cli install @kimtaeyoon83/mcp-server-youtube-transcript --clien
 }
 ```
 
-## 通过工具安装
+## Install via tool
 
-[mcp-get](https://github.com/michaellatman/mcp-get) 是一个用于安装和管理 Model Context Protocol (MCP) 服务器的命令行工具。
+[mcp-get](https://github.com/michaellatman/mcp-get) A command-line tool for installing and managing Model Context Protocol (MCP) servers.
 
 ```shell
 npx @michaellatman/mcp-get@latest install @kimtaeyoon83/mcp-server-youtube-transcript
 ```
 
-## awesome-mcp-servers 
-[awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) 是一个精选的 Model Context Protocol (MCP) 服务器列表。
+## Awesome-mcp-servers 
+[awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) A curated list of awesome Model Context Protocol (MCP) servers.
 
-## 开发
+## Development
 
-### 前提条件
+### Prerequisites
 
-- Node.js 18 或更高版本
-- npm 或 yarn
+- Node.js 18 or higher
+- npm or yarn
 
-### 设置
+### Setup
 
-安装依赖项：
+Install dependencies:
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 ```bash
 npm run build
 ```
 
-进行带有自动重建的开发：
+For development with auto-rebuild:
 ```bash
 npm run watch
 ```
 
-### 测试
+### Testing
 
 ```bash
 npm test
 ```
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过 stdio 进行通信，调试可能会比较困难。我们建议在开发过程中使用 MCP Inspector：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the MCP Inspector for development:
 
 ```bash
 npm run inspector
 ```
 
-## 错误处理
+## Error Handling
 
-该服务器实现了针对常见场景的强大错误处理：
-- 无效的视频 URL 或 ID
-- 不可用的字幕
-- 语言可用性问题
-- 网络错误
+The server implements robust error handling for common scenarios:
+- Invalid video URLs or IDs
+- Unavailable transcripts
+- Language availability issues
+- Network errors
 
-## 使用示例
+## Usage Examples
 
-1. 通过视频 URL 获取字幕：
+1. Get transcript by video URL:
 ```typescript
 await server.callTool("get_transcript", {
   url: "https://www.youtube.com/watch?v=VIDEO_ID",
@@ -119,7 +119,7 @@ await server.callTool("get_transcript", {
 });
 ```
 
-2. 通过视频 ID 获取字幕：
+2. Get transcript by video ID:
 ```typescript
 await server.callTool("get_transcript", {
   url: "VIDEO_ID",
@@ -127,39 +127,39 @@ await server.callTool("get_transcript", {
 });
 ```
 
-3. 如何在 Claude Desktop 应用中提取 YouTube 字幕
+3. How to Extract YouTube Subtitles in Claude Desktop App
 ```
 chat: https://youtu.be/ODaHJzOyVCQ?si=aXkJgso96Deri0aB Extract subtitles
 ```
 
-## 安全注意事项
+## Security Considerations
 
-该服务器：
-- 验证所有输入参数
-- 优雅地处理 YouTube API 错误
-- 实现了字幕检索超时
-- 提供详细的错误消息以帮助故障排除
+The server:
+- Validates all input parameters
+- Handles YouTube API errors gracefully
+- Implements timeouts for transcript retrieval
+- Provides detailed error messages for troubleshooting
 
-## 许可证
+## License
 
-此 MCP 服务器采用 MIT 许可证。有关详细信息，请参阅 LICENSE 文件。
+This MCP server is licensed under the MIT License. See the LICENSE file for details.
 
-**官方网站：** [https://github.com/kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`entertainment and media`, `speech processing`, `chinese`
+- Categories: `media`
+- Tags: `entertainment and media`, `speech processing`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @kimtaeyoon83/mcp-server-youtube-transcript`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @kimtaeyoon83/mcp-server-youtube-transcript`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kimtaeyoon83-youtube-transcript.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kimtaeyoon83-youtube-transcript.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

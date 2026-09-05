@@ -1,11 +1,11 @@
 ---
-title: "SAS Viya MCP 服务器"
-description: "SAS Viya MCP Server A Model Context Protocol (MCP) server for executing SAS code, training AutoML projects, scoring models and so much more for SAS Viya environments. Features - 75 tools across 9 selectable tiers, spanni"
+title: "SAS Viya MCP Server"
+description: "SAS Viya MCP Server A Model Context Protocol (MCP) server for executing SAS code, training AutoML projects, scoring models and so much more for SAS Viya environments. Features - 75 tools across 9 sele…"
 ---
 
-# SAS Viya MCP 服务器
+# SAS Viya MCP Server
 
-SAS Viya MCP Server A Model Context Protocol (MCP) server for executing SAS code, training AutoML projects, scoring models and so much more for SAS Viya environments. Features - 75 tools across 9 selectable tiers, spanni
+SAS Viya MCP Server A Model Context Protocol (MCP) server for executing SAS code, training AutoML projects, scoring models and so much more for SAS Viya environments. Features - 75 tools across 9 sele…
 
 # SAS Viya MCP Server
 
@@ -262,22 +262,22 @@ The headings below match the numbered **tiers** above, so `MCP_TIERS` maps direc
 - **create_report**: Create a Visual Analytics report and return its id. Optionally pass an `operations` array to build the whole report in one atomic call; the result carries the created page/object names+labels and a verify hint.
 - **apply_report_operations**: The authoring workhorse — apply an ordered batch of native VA operations (`addData`, `addPage`, `addObject`, `updateObject`, `setParameterValue`, `updateData`, `changeData`, `applyDataView`) to a report. Give a page a **title** with `addPage`'s `title` field (a text band at the top of the page body — VA headers are controls-only); title every chart at add time via `options.object.title`; arrange objects with **placement** — `page`, `relativeToObject` (left/right/top/bottom for columns, rows, and grids), `container` (group into a `standardContainer`), or `report` (`new_page` creates-and-names a page inline for one-batch multi-page reports). The batch is atomic. Validates every operation, object key, and placement against the catalog first (reporting all errors at once), supports `dry_run`, handles the ETag concurrency handshake, and — with `result_report_name`/`result_folder` — applies the batch **save-as** to a new report, leaving the source untouched. Typical loop: `describe_report_objects` → `get_castable_columns` → `apply_report_operations` → `get_report_outline` / `export_re
 
-**官方网站：** [https://github.com/sassoftware/sas-mcp-server](https://github.com/sassoftware/sas-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/sassoftware/sas-mcp-server](https://github.com/sassoftware/sas-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `development`
-- 标签：`sas`, `data analysis`, `analytics`, `developer tools`, `official`
+- Categories: `data`, `development`
+- Tags: `sas`, `data analysis`, `analytics`, `developer tools`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sassoftware-sas.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sassoftware-sas.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

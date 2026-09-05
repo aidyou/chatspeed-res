@@ -3,21 +3,28 @@
   "channel": "free-ai",
   "name": {
     "en": "SenseNova Token Plan (Free Beta)",
-    "zh-Hans": "商汤日日新 Token Plan（免费公测）",
-    "zh-Hant": "商汤日日新 Token Plan（免费公测）"
+    "zh-Hans": "商汤日日新 Token Plan（免费公测）"
   },
   "description": {
     "en": "Free open beta: the general-credit pool and the Flash-Lite credit pool each provide a limited-time supply of 60,000 credits per rolling 5 hours and 600,000 credits per rolling week; Flash-Lite usage of dedicated credits earns a 1:1 general-credit rebate (rules effective 2026-08-28).",
-    "zh-Hans": "免费公测中：通用积分与 Flash-Lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；Flash-Lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。",
-    "zh-Hant": "免费公测中：通用积分与 Flash-Lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；Flash-Lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。"
+    "zh-Hans": "免费公测中：通用积分与 Flash-Lite 专属积分两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度；Flash-Lite 消费专属积分按 1:1 返赠通用积分（2026-08-28 起新规则）。"
   },
   "detail": {
     "en": "SenseNova Token Plan is SenseTime's free open-beta program for its SenseNova (日日新) large-model platform. During the beta, models opened on the platform (e.g. DeepSeek V4 Flash, SenseNova 6.7 Flash-Lite, SenseNova U1 Fast; the list may expand or change) are free through the OpenAI-compatible gateway (https://token.sensenova.cn/v1), and integrations such as WorkBuddy and Claude Code style tools are supported. From 2026-08-28 the platform applies a credits system: accounts carry general credits (shared by all opened models) and Flash-Lite-specific credits (Flash-Lite family only); during the beta each pool provides a rolling 60,000 credits per 5 hours and 600,000 credits per week. A rebate activity also runs from 2026-08-28: every Flash-Lite-specific credit consumed earns 1 general credit back (aggregated by day, settled hourly; rebated credits are valid 30 days and do not count against the rolling limits). Beta benefits and activities may change; confirm on the platform page before relying on them.",
-    "zh-Hans": "商汤日日新 SenseNova Token Plan 是商汤科技大模型平台 SenseNova（日日新）的免费公测计划。公测期间，通过 OpenAI 兼容网关（https://token.sensenova.cn/v1）可免费调用平台已开放模型，包括 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等（名单可能扩充或调整），并支持接入 WorkBuddy、Claude Code 类工具。2026-08-28 起平台启用积分规则：账户区分通用积分（所有已开放模型共用）与 Flash-Lite 专属积分（仅用于 Flash-Lite 系列）；公测期间两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度。同期开启 Flash-Lite 消费返赠活动：每实际消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（按自然日汇总、每小时结算，返赠积分 30 天有效，不占用滚动 5 小时/周额度，也不会解锁新模型权限）。公测权益与活动可能随时调整，正式依赖前请以平台页面为准。",
-    "zh-Hant": "商汤日日新 SenseNova Token Plan 是商汤科技大模型平台 SenseNova（日日新）的免费公测计划。公测期间，通过 OpenAI 兼容网关（https://token.sensenova.cn/v1）可免费调用平台已开放模型，包括 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等（名单可能扩充或调整），并支持接入 WorkBuddy、Claude Code 类工具。2026-08-28 起平台启用积分规则：账户区分通用积分（所有已开放模型共用）与 Flash-Lite 专属积分（仅用于 Flash-Lite 系列）；公测期间两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度。同期开启 Flash-Lite 消费返赠活动：每实际消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（按自然日汇总、每小时结算，返赠积分 30 天有效，不占用滚动 5 小时/周额度，也不会解锁新模型权限）。公测权益与活动可能随时调整，正式依赖前请以平台页面为准。"
+    "zh-Hans": "商汤日日新 SenseNova Token Plan 是商汤科技大模型平台 SenseNova（日日新）的免费公测计划。公测期间，通过 OpenAI 兼容网关（https://token.sensenova.cn/v1）可免费调用平台已开放模型，包括 DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等（名单可能扩充或调整），并支持接入 WorkBuddy、Claude Code 类工具。2026-08-28 起平台启用积分规则：账户区分通用积分（所有已开放模型共用）与 Flash-Lite 专属积分（仅用于 Flash-Lite 系列）；公测期间两个积分池各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周的额度。同期开启 Flash-Lite 消费返赠活动：每实际消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（按自然日汇总、每小时结算，返赠积分 30 天有效，不占用滚动 5 小时/周额度，也不会解锁新模型权限）。公测权益与活动可能随时调整，正式依赖前请以平台页面为准。"
   },
-  "categories": ["general", "coding", "reasoning"],
-  "tags": ["sensenova", "sensetime", "free-trial", "api", "china"],
+  "categories": [
+    "general",
+    "coding",
+    "reasoning"
+  ],
+  "tags": [
+    "sensenova",
+    "sensetime",
+    "free-trial",
+    "api",
+    "china"
+  ],
   "website": "https://www.sensenova.cn/token-plan",
   "status": "active",
   "lastVerifiedAt": "2026-08-30",
@@ -27,67 +34,56 @@
     "hasFreeTier": true,
     "freeLimit": {
       "en": "From 2026-08-28: general-credit pool and Flash-Lite credit pool each give 60,000 credits per rolling 5h and 600,000 credits per rolling week during the beta; Flash-Lite deducts dedicated credits first, then general credits. Rebate activity: 1 Flash-Lite credit consumed returns 1 general credit (settled hourly, valid 30 days, outside the rolling limits). Beta benefits may change.",
-      "zh-Hans": "2026-08-28 起积分规则：通用积分池与 Flash-Lite 专属积分池在公测期间各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周；使用 Flash-Lite 优先扣除专属积分，不足再扣通用积分。活动期间每消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（每小时结算、30 天有效、不占滚动额度）。公测权益可能调整，以官方页面为准。",
-      "zh-Hant": "2026-08-28 起积分规则：通用积分池与 Flash-Lite 专属积分池在公测期间各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周；使用 Flash-Lite 优先扣除专属积分，不足再扣通用积分。活动期间每消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（每小时结算、30 天有效、不占滚动额度）。公测权益可能调整，以官方页面为准。"
+      "zh-Hans": "2026-08-28 起积分规则：通用积分池与 Flash-Lite 专属积分池在公测期间各提供限时放量 60,000 积分/滚动 5 小时、600,000 积分/滚动周；使用 Flash-Lite 优先扣除专属积分，不足再扣通用积分。活动期间每消耗 1 点 Flash-Lite 专属积分返赠 1 点通用积分（每小时结算、30 天有效、不占滚动额度）。公测权益可能调整，以官方页面为准。"
     },
     "availability": "regional",
     "signupUrl": "https://www.sensenova.cn/token-plan",
     "freePolicyUrl": "https://www.sensenova.cn/token-plan",
     "registrationRestriction": {
       "en": "Register on the SenseNova platform to claim the beta quota; mainland phone/email sign-up works, no credit card required.",
-      "zh-Hans": "在商汤日日新平台注册并领取公测额度；支持大陆手机号/邮箱注册，无需信用卡。",
-      "zh-Hant": "在商汤日日新平台注册并领取公测额度；支持大陆手机号/邮箱注册，无需信用卡。"
+      "zh-Hans": "在商汤日日新平台注册并领取公测额度；支持大陆手机号/邮箱注册，无需信用卡。"
     },
     "freeQuotas": [
       {
         "model": {
           "en": "General credit pool (all opened models)",
-          "zh-Hans": "通用积分池（全部已开放模型）",
-          "zh-Hant": "通用积分池（全部已开放模型）"
+          "zh-Hans": "通用积分池（全部已开放模型）"
         },
         "quota": {
           "en": "Limited-time supply 60,000 credits / rolling 5h; 600,000 credits / rolling week",
-          "zh-Hans": "限时放量 60,000 积分/滚动 5 小时；600,000 积分/滚动周",
-          "zh-Hant": "限时放量 60,000 积分/滚动 5 小时；600,000 积分/滚动周"
+          "zh-Hans": "限时放量 60,000 积分/滚动 5 小时；600,000 积分/滚动周"
         },
         "frequency": {
           "en": "Deducted per model actual usage; check account page",
-          "zh-Hans": "不同模型按实际用量扣除不同积分，以账户页面为准",
-          "zh-Hant": "不同模型按实际用量扣除不同积分，以账户页面为准"
+          "zh-Hans": "不同模型按实际用量扣除不同积分，以账户页面为准"
         }
       },
       {
         "model": {
           "en": "Flash-Lite credit pool (Flash-Lite family only)",
-          "zh-Hans": "Flash-Lite 专属积分池（仅 Flash-Lite 系列）",
-          "zh-Hant": "Flash-Lite 专属积分池（仅 Flash-Lite 系列）"
+          "zh-Hans": "Flash-Lite 专属积分池（仅 Flash-Lite 系列）"
         },
         "quota": {
           "en": "60,000 credits / rolling 5h; 600,000 credits / rolling week",
-          "zh-Hans": "60,000 积分/滚动 5 小时；600,000 积分/滚动周",
-          "zh-Hant": "60,000 积分/滚动 5 小时；600,000 积分/滚动周"
+          "zh-Hans": "60,000 积分/滚动 5 小时；600,000 积分/滚动周"
         },
         "frequency": {
           "en": "Deducted first for Flash-Lite; every 1 credit consumed rebates 1 general credit (activity since 2026-08-28)",
-          "zh-Hans": "使用 Flash-Lite 优先扣除；每消耗 1 积分返赠 1 通用积分（2026-08-28 起活动期间）",
-          "zh-Hant": "使用 Flash-Lite 优先扣除；每消耗 1 积分返赠 1 通用积分（2026-08-28 起活动期间）"
+          "zh-Hans": "使用 Flash-Lite 优先扣除；每消耗 1 积分返赠 1 通用积分（2026-08-28 起活动期间）"
         }
       },
       {
         "model": {
           "en": "DeepSeek V4 Flash, SenseNova 6.7 Flash-Lite, GLM-5.2, SenseNova U1 Fast (example models)",
-          "zh-Hans": "DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2、SenseNova U1 Fast（示例模型）",
-          "zh-Hant": "DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2、SenseNova U1 Fast（示例模型）"
+          "zh-Hans": "DeepSeek V4 Flash、SenseNova 6.7 Flash-Lite、GLM-5.2、SenseNova U1 Fast（示例模型）"
         },
         "quota": {
           "en": "Free within the beta credit pools",
-          "zh-Hans": "公测积分额度内免费",
-          "zh-Hant": "公测积分额度内免费"
+          "zh-Hans": "公测积分额度内免费"
         },
         "frequency": {
           "en": "Each model deducts credits per actual usage; check account page",
-          "zh-Hans": "按模型实际用量扣减积分，以账户页面为准",
-          "zh-Hant": "按模型实际用量扣减积分，以账户页面为准"
+          "zh-Hans": "按模型实际用量扣减积分，以账户页面为准"
         }
       }
     ],

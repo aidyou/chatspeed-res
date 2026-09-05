@@ -1,11 +1,11 @@
 ---
-title: "全球实时时间查询（MCP&Agent挑战赛）"
-description: "全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如\"Asia/Shanghai\"、\"America/NewYork\"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 - 计算并显示与UTC的偏移量，支持中文友好的时差描述 - 显示一年中的第几天和第几周 - 具备夏令时检测功能 - 提供直观"
+title: "realtime"
+description: "全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如\"Asia/Shanghai\"、\"America/NewYork\"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 -…"
 ---
 
-# 全球实时时间查询（MCP&Agent挑战赛）
+# realtime
 
-全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如"Asia/Shanghai"、"America/NewYork"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 - 计算并显示与UTC的偏移量，支持中文友好的时差描述 - 显示一年中的第几天和第几周 - 具备夏令时检测功能 - 提供直观
+全球时区时间查询器 项目介绍 全球时区时间查询器是一个基于Python和Gradio开发的Web应用工具，能够实时获取全球任意时区的详细时间信息。该工具具有以下特点： - 支持标准时区格式（如"Asia/Shanghai"、"America/NewYork"等）的时间查询 - 默认显示中国标准时间(UTC+8) - 提供详尽的时间信息，包括当前时间、日期、星期、年份、月份、小时、分钟、秒钟等 -…
 
 # 全球时区时间查询器
 
@@ -107,22 +107,22 @@ studio
 }
 ```
 
-**官方网站：** [https://modelscope.cn/studios/JackGan/realtime/summary](https://modelscope.cn/studios/JackGan/realtime/summary)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://modelscope.cn/studios/JackGan/realtime/summary](https://modelscope.cn/studios/JackGan/realtime/summary)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`search`, `developer tools`, `calendar management`, `时间,地区`
+- Categories: `productivity`
+- Tags: `search`, `developer tools`, `calendar management`, `时间,地区`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`mcp-remote https://jackgan-realtime.ms.show/gradio_api/mcp/sse --transport sse-only`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `mcp-remote https://jackgan-realtime.ms.show/gradio_api/mcp/sse --transport sse-only`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jackgan-realtime.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jackgan-realtime.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

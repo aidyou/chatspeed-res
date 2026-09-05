@@ -1,11 +1,11 @@
 ---
-title: "MCP-紫薇斗数"
-description: "一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向 - 💕 合婚分析: 双人命盘合婚配对分析 - 📅 择日功能: 根据命盘选择吉日良辰 - 🤖 AI智能解盘: 结合传"
+title: "MCP-ZIWEIDOUSHU"
+description: "A professional Purple Star Astrology (Zi Wei Dou Shu) analysis server based on the Model Context Protocol (MCP), providing complete services for natal chart generation, interpretation, analysis, and v…"
 ---
 
-# MCP-紫薇斗数
+# MCP-ZIWEIDOUSHU
 
-一个基于 Model Context Protocol (MCP) 的专业紫微斗数命理分析服务器，提供完整的命盘生成、解读、分析和可视化功能。支持传统紫微斗数算法，集成现代数据持久化和可视化技术。 - 🔮 命盘生成: 基于农历算法生成完整的紫微斗数命盘 - 📖 命盘解读: 提供详细的命盘分析和专业解释 - 🌟 运势分析: 分析当前和未来的运势走向 - 💕 合婚分析: 双人命盘合婚配对分析 - 📅 择日功能: 根据命盘选择吉日良辰 - 🤖 AI智能解盘: 结合传
+A professional Purple Star Astrology (Zi Wei Dou Shu) analysis server based on the Model Context Protocol (MCP), providing complete services for natal chart generation, interpretation, analysis, and v…
 
 # 紫微斗数 MCP 服务器
 
@@ -44,15 +44,14 @@ description: "一个基于 Model Context Protocol (MCP) 的专业紫微斗数命
 
 ### 安装依赖
 
-bash
 ```bash
 npm install
 ```
+
 ## 🚀 使用方法
 
 ### 启动服务器
 
-bash
 ```bash
 # 开发模式
 npm run dev
@@ -60,6 +59,7 @@ npm run dev
 # 生产模式
 npm start
 ```
+
 ### 客户端配置 (stdio)
 
 如果您使用支持MCP的客户端（如Claude Desktop），可以通过stdio方式连接到本服务：
@@ -68,7 +68,6 @@ npm start
 
 在Claude Desktop的配置文件中添加以下配置：
 
-json
 ```json
 {
   "mcpServers": {
@@ -79,6 +78,7 @@ json
   }
 }
 ```
+
 ## 📚 API 文档
 
 ### 核心工具
@@ -154,7 +154,8 @@ json
   - palace_grid: 宫位网格
   - star_map: 星曜地图
 - `includeElements` (array): 包含元素
-- `colorScheme` (string): 配色方案- `outputFormat` (string): 输出格式 (svg/png/html)
+- `colorScheme` (string): 配色方案
+- `outputFormat` (string): 输出格式 (svg/png/html)
 
 ### 专业分析工具
 
@@ -178,39 +179,29 @@ json
 ### 开发环境设置
 
 ```bash
-
 # 进入项目目录
-
 cd 紫微斗数
 
 # 安装依赖
-
 npm install
 
 # 启动MCP服务器
-
 npm start
 
 # 或启动开发模式
-
 npm run dev
-
 ```
+
 ### 可用脚本
 
 ```bash
-
 npm start      # 启动MCP服务器
-
 npm run dev    # 启动开发模式（带调试）
-
 npm test       # 运行基础测试
-
 npm run lint   # ESLint代码检查
-
 npm run format # Prettier代码格式化
-
 ```
+
 ### 代码规范
 
 - 使用 ESLint 进行代码检查
@@ -237,49 +228,31 @@ npm run format # Prettier代码格式化
 ### 生成命盘示例
 
 ```javascript
-
 // 通过MCP调用
-
 const chart = await mcpClient.callTool('generate_chart', {
-
   name: '张三',
-
   birthDate: '1990-01-01',
-
   birthTime: '08:30',
-
   gender: 'male',
-
   location: {
-
     province: '北京市',
-
     city: '北京市',
-
     longitude: 116.4074,
-
     latitude: 39.9042
-
   }
-
 });
-
 ```
+
 ### 命盘解读示例
 
 ```javascript
-
 const interpretation = await mcpClient.callTool('interpret_chart', {
-
   chartId: chart.id,
-
   aspects: ['personality', 'career', 'wealth'],
-
   detailLevel: 'detailed'
-
 });
-
 ```
+
 ## 🤝 贡献指南
 
 1. Fork 项目
@@ -291,22 +264,15 @@ const interpretation = await mcpClient.callTool('interpret_chart', {
 ### 提交规范
 
 ```
-
 feat: 新功能
-
 fix: 修复bug
-
 docs: 文档更新
-
 style: 代码格式调整
-
 refactor: 代码重构
-
 test: 测试相关
-
 chore: 构建过程或辅助工具的变动
-
 ```
+
 ## 📄 许可证
 
 本项目采用 MIT 许可证。
@@ -361,22 +327,24 @@ A: 请确保输入准确的出生日期、时间和地点信息，时间精确�
 3. 操作系统和Node.js版本
 4. 详细的操作步骤
 
-**官方网站：** [https://github.com/taurusduan/ziwei-mcp](https://github.com/taurusduan/ziwei-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+解释数据
 
-## 分类与标签
+**Official site: ** [https://github.com/taurusduan/ziwei-mcp](https://github.com/taurusduan/ziwei-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`memory`
-- 标签：`knowledge and memory`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `memory`
+- Tags: `knowledge and memory`
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y ziwei-mcp`
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y ziwei-mcp`
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/chevalblanc-ziweidoushu.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/chevalblanc-ziweidoushu.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

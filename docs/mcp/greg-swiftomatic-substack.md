@@ -1,11 +1,11 @@
 ---
-title: "Greg-Swiftomatic"
-description: "Substack MCP 一个用于将Substack API与Claude及其他AI助手集成的MCP（Model Context Protocol）服务器。 概述 本项目实现了一个模型上下文协议（MCP）服务器，使像Claude这样的AI助手能够通过标准化接口与Substack的通讯、帖子和作者进行交互。它利用了Substack API库，并通过MCP提供其功能。 借助这个MCP服务器，Claude可以： - 获取通讯文章、播客和推荐 - 获取文章内容和元数据 - 在通讯中搜索文章 - 获取用户资料信息和订阅 安装"
+title: "substack-mcp"
+description: "Substack MCP An MCP (Model Context Protocol) server for Substack API integration with Claude and other AI assistants. Overview This project implements a Model Context Protocol (MCP) server that enable…"
 ---
 
-# Greg-Swiftomatic
+# substack-mcp
 
-Substack MCP 一个用于将Substack API与Claude及其他AI助手集成的MCP（Model Context Protocol）服务器。 概述 本项目实现了一个模型上下文协议（MCP）服务器，使像Claude这样的AI助手能够通过标准化接口与Substack的通讯、帖子和作者进行交互。它利用了Substack API库，并通过MCP提供其功能。 借助这个MCP服务器，Claude可以： - 获取通讯文章、播客和推荐 - 获取文章内容和元数据 - 在通讯中搜索文章 - 获取用户资料信息和订阅 安装
+Substack MCP An MCP (Model Context Protocol) server for Substack API integration with Claude and other AI assistants. Overview This project implements a Model Context Protocol (MCP) server that enable…
 
 # Substack MCP
 
@@ -152,22 +152,22 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Substack API](https://github.com/NHagar/substack_api) - The underlying library for Substack interactions
 - [Model Context Protocol](https://modelcontextprotocol.io/) - Anthropic s protocol for standardized LLM integrations
 
-**官方网站：** [https://github.com/greg-swiftomatic/substack-mcp](https://github.com/greg-swiftomatic/substack-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/greg-swiftomatic/substack-mcp](https://github.com/greg-swiftomatic/substack-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `content management systems`, `search`
+- Categories: `media`
+- Tags: `art and culture`, `content management systems`, `search`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory /ABSOLUTE/PATH/TO/substack-mcp run substack_mcp.py`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory /ABSOLUTE/PATH/TO/substack-mcp run substack_mcp.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/greg-swiftomatic-substack.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/greg-swiftomatic-substack.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,27 +1,27 @@
 ---
-title: "MCP时钟"
-description: "一个轻量级的MCP服务器，可以根据你的IP地址告诉你确切的时间。"
+title: "whattimeisit-mcp"
+description: "A lightweight mcp server that tells you exactly what time is it based on your IP."
 ---
 
-# MCP时钟
+# whattimeisit-mcp
 
-一个轻量级的MCP服务器，可以根据你的IP地址告诉你确切的时间。
+A lightweight mcp server that tells you exactly what time is it based on your IP.
 
-# WhatTimeIsIt MCP 服务器
+# WhatTimeIsIt MCP Server
 
-一个轻量级的MCP服务器，能够准确告诉你当前时间，由[World Time](http://worldtimeapi.org/)提供支持。
+A lightweight mcp server that tells you exactly what time is it, powered by [World Time](http://worldtimeapi.org/).
 
 ![GitHub](/mcp-assets/5816f652aa1f0cc4eedb21a2f733e09e.svg) 
-![GitHub 最后一次提交](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)
+![GitHub last commit](/mcp-assets/fbff8007b8fe8bc1f07f654c3f3c57ca.svg)
 
-## 安装
+## Installation
 
-1. **克隆仓库**
+1. **Clone the Repository**
 ```bash
    git clone https://github.com/kukapay/whattimeisit-mcp.git
 ```
 
-2. **客户端配置**
+2. **Client Configuration**
 ```json
     {
       "mcpServers": {
@@ -32,34 +32,34 @@ description: "一个轻量级的MCP服务器，可以根据你的IP地址告诉�
       }
     }
 ```
+   
+## Usage
 
-## 使用方法
+### MCP Tool
+The server provides a single tool:
+- **Tool Name**: `what_time_is_it`
+- **Description**: Returns the current time string based on the your current IP.
+- **Output**: A string in ISO 8601 format (e.g., `"2025-03-17T03:17:00+11:00"`).
 
-### MCP 工具
-该服务器提供了一个工具：
-- **工具名称**: `what_time_is_it`
-- **描述**: 根据您的当前IP返回当前时间字符串。
-- **输出**: 以ISO 8601格式的字符串（例如，`"2025-03-17T03:17:00+11:00"`）。
+## License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE) file for details.
 
-## 许可证
-本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/kukapay/whattimeisit-mcp/blob/HEAD/LICENSE)文件。
+**Official site: ** [https://github.com/kukapay/whattimeisit-mcp](https://github.com/kukapay/whattimeisit-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://github.com/kukapay/whattimeisit-mcp](https://github.com/kukapay/whattimeisit-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `data`
+- Tags: `location services`, `chinese`
 
-- 分类：`data`
-- 标签：`location services`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory path/to/whattimeisit-mcp run main.py`
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory path/to/whattimeisit-mcp run main.py`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/kukapay-whattimeisit.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kukapay-whattimeisit.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

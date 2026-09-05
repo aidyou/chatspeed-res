@@ -1,53 +1,53 @@
 ---
-title: "Figma MCP 服务器"
-description: "一个集成了Figma API的模型上下文协议服务器，允许与Figma文件、评论、组件、项目和webhook管理进行交互。"
+title: "figma-mcp-server"
+description: "A Model Context Protocol server that integrates with Figma's API, allowing interaction with Figma files, comments, components, projects, and webhook management."
 ---
 
-# Figma MCP 服务器
+# figma-mcp-server
 
-一个集成了Figma API的模型上下文协议服务器，允许与Figma文件、评论、组件、项目和webhook管理进行交互。
+A Model Context Protocol server that integrates with Figma's API, allowing interaction with Figma files, comments, components, projects, and webhook management.
 
-# Figma MCP 服务器
+# Figma MCP Server
 
-这是一个模型上下文协议（MCP）服务器，它通过与Figma的API集成，允许您与Figma文件、评论、组件等进行交互。
+A Model Context Protocol (MCP) server that provides integration with Figma's API, allowing you to interact with Figma files, comments, components, and more.
 
-## 功能
+## Features
 
-- **文件操作**
-  - 获取文件信息
-  - 获取文件版本历史
-  - 获取文件中的组件
+- **File Operations**
+  - Get file information
+  - Get file version history
+  - Get file components
   
-- **评论管理**
-  - 列出文件中的评论
-  - 添加新评论
-  - 删除评论
+- **Comment Management**
+  - List comments in files
+  - Add new comments
+  - Delete comments
   
-- **项目与团队功能**
-  - 列出团队项目
-  - 获取项目文件
-  - 获取已发布的样式
+- **Project & Team Features**
+  - List team projects
+  - Get project files
+  - Get published styles
   
-- **Webhook 管理**
-  - 创建webhook
-  - 列出现有webhook
-  - 删除webhook
+- **Webhook Management**
+  - Create webhooks
+  - List existing webhooks
+  - Delete webhooks
 
-## 安装
+## Installation
 
-1. 克隆仓库
-2. 安装依赖项：
+1. Clone the repository
+2. Install dependencies:
 ```bash
 npm install
 ```
-3. 构建服务器：
+3. Build the server:
 ```bash
 npm run build
 ```
 
-## 配置
+## Configuration
 
-在您的MCP设置文件中使用Figma访问令牌配置服务器：
+Configure the server in your MCP settings file with your Figma access token:
 
 ```json
 {
@@ -65,12 +65,12 @@ npm run build
 }
 ```
 
-## 可用工具
+## Available Tools
 
-### 文件操作
+### File Operations
 
 #### get_file
-获取关于Figma文件的信息
+Get information about a Figma file
 ```json
 {
   "file_key": "string"
@@ -78,7 +78,7 @@ npm run build
 ```
 
 #### get_file_versions
-获取文件的版本历史
+Get version history of a file
 ```json
 {
   "file_key": "string"
@@ -86,17 +86,17 @@ npm run build
 ```
 
 #### get_file_components
-获取文件中的组件
+Get components in a file
 ```json
 {
   "file_key": "string"
 }
 ```
 
-### 评论管理
+### Comment Management
 
 #### get_file_comments
-从文件中获取评论
+Get comments from a file
 ```json
 {
   "file_key": "string"
@@ -104,7 +104,7 @@ npm run build
 ```
 
 #### post_comment
-向文件发布评论
+Post a comment to a file
 ```json
 {
   "file_key": "string",
@@ -113,7 +113,7 @@ npm run build
 ```
 
 #### delete_comment
-从文件中删除评论
+Delete a comment from a file
 ```json
 {
   "file_key": "string",
@@ -121,10 +121,10 @@ npm run build
 }
 ```
 
-### 项目与团队操作
+### Project & Team Operations
 
 #### get_team_projects
-获取团队的项目
+Get projects for a team
 ```json
 {
   "team_id": "string"
@@ -132,7 +132,7 @@ npm run build
 ```
 
 #### get_project_files
-获取项目中的文件
+Get files in a project
 ```json
 {
   "project_id": "string"
@@ -140,17 +140,17 @@ npm run build
 ```
 
 #### get_component_styles
-获取已发布的样式
+Get published styles
 ```json
 {
   "team_id": "string"
 }
 ```
 
-### Webhook 管理
+### Webhook Management
 
 #### create_webhook
-创建一个webhook
+Create a webhook
 ```json
 {
   "team_id": "string",
@@ -160,7 +160,7 @@ npm run build
 ```
 
 #### get_webhooks
-列出webhook
+List webhooks
 ```json
 {
   "team_id": "string"
@@ -168,14 +168,14 @@ npm run build
 ```
 
 #### delete_webhook
-删除一个webhook
+Delete a webhook
 ```json
 {
   "webhook_id": "string"
 }
 ```
 
-## 使用示例
+## Usage Example
 
 ```typescript
 // Example using the MCP tool to get file information
@@ -189,34 +189,34 @@ get_file
 
 ```
 
-## 许可证
+## License
 
 MIT
 
-## 贡献指南
+## Contributing
 
-1. Fork 本仓库
-2. 创建你的特性分支
-3. 提交更改
-4. 推送到该分支
-5. 创建一个新的Pull Request
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
-**官方网站：** [https://github.com/deepsuthar496/figma-mcp-server](https://github.com/deepsuthar496/figma-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/deepsuthar496/figma-mcp-server](https://github.com/deepsuthar496/figma-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `developer tools`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/figma-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/figma-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/deepsuthar496-figma.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/deepsuthar496-figma.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

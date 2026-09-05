@@ -1,11 +1,11 @@
 ---
-title: "MCP PDF阅读器"
-description: "赋予AI代理在项目背景下使用灵活的MCP工具安全地从PDF文件中读取和提取信息（文本、元数据、页数）的能力。"
+title: "pdf-reader-mcp"
+description: "Empowers AI agents to securely read and extract information (text, metadata, page count) from PDF files within project contexts using a flexible MCP tool."
 ---
 
-# MCP PDF阅读器
+# pdf-reader-mcp
 
-赋予AI代理在项目背景下使用灵活的MCP工具安全地从PDF文件中读取和提取信息（文本、元数据、页数）的能力。
+Empowers AI agents to securely read and extract information (text, metadata, page count) from PDF files within project contexts using a flexible MCP tool.
 
 # PDF Reader MCP Server (@sylphlab/pdf-reader-mcp)
 
@@ -15,21 +15,21 @@ description: "赋予AI代理在项目背景下使用灵活的MCP工具安全地�
 [![Docker Pulls](/mcp-assets/dfdae949fb9b905b5571a7a6d41a6870.svg)](https://hub.docker.com/r/sylphlab/pdf-reader-mcp)
 [![License: MIT](/mcp-assets/d21e3b2e66556b6b0c8644ab4bcf5a8d.svg)](https://opensource.org/licenses/MIT)
 
-赋予您的AI代理（如Cline）使用单一、灵活的工具在项目上下文中安全地读取和提取PDF文件中的信息（文本、元数据、页数）的能力。
+Empower your AI agents (like Cline) with the ability to securely read and extract information (text, metadata, page count) from PDF files within your project context using a single, flexible tool.
 
   
 
-## 安装
+## Installation
 
-### 使用 npm (推荐)
+### Using npm (Recommended)
 
-在您的MCP主机环境或项目中作为依赖项安装：
+Install as a dependency in your MCP host environment or project:
 
 ```bash
 pnpm add @sylphlab/pdf-reader-mcp # Or npm install / yarn add
 ```
 
-配置您的MCP主机（例如，`mcp_settings.json`）以使用 `npx`：
+Configure your MCP host (e.g., `mcp_settings.json`) to use `npx`:
 
 ```json
 {
@@ -43,17 +43,17 @@ pnpm add @sylphlab/pdf-reader-mcp # Or npm install / yarn add
 }
 ```
 
-_(确保主机为目标项目设置了正确的 `cwd`)_ 
+_(Ensure the host sets the correct `cwd` for the target project)_
 
-### 使用 Docker
+### Using Docker
 
-拉取镜像：
+Pull the image:
 
 ```bash
 docker pull sylphlab/pdf-reader-mcp:latest
 ```
 
-配置您的MCP主机以运行容器，并将您的项目目录挂载到 `/app`：
+Configure your MCP host to run the container, mounting your project directory to `/app`:
 
 ```json
 {
@@ -74,12 +74,12 @@ docker pull sylphlab/pdf-reader-mcp:latest
 }
 ```
 
-### 本地构建 (用于开发)
+### Local Build (For Development)
 
-1. 克隆: `git clone https://github.com/sylphlab/pdf-reader-mcp.git`
-2. 安装: `cd pdf-reader-mcp && pnpm install`
-3. 构建: `pnpm run build`
-4. 配置MCP主机:
+1. Clone: `git clone https://github.com/sylphlab/pdf-reader-mcp.git`
+2. Install: `cd pdf-reader-mcp && pnpm install`
+3. Build: `pnpm run build`
+4. Configure MCP Host:
 ```json
    {
      "mcpServers": {
@@ -91,13 +91,13 @@ docker pull sylphlab/pdf-reader-mcp:latest
      }
    }
 ```
-   _(确保主机为目标项目设置了正确的 `cwd`)_ 
+   _(Ensure the host sets the correct `cwd` for the target project)_
 
-## 快速开始
+## Quick Start
 
-假设服务器正在运行并在您的MCP主机中已配置：
+Assuming the server is running and configured in your MCP host:
 
-**MCP 请求 (从本地PDF获取元数据和第2页文本):**
+**MCP Request (Get metadata and page 2 text from a local PDF):**
 
 ```json
 {
@@ -116,7 +116,7 @@ docker pull sylphlab/pdf-reader-mcp:latest
 }
 ```
 
-**预期响应片段:**
+**Expected Response Snippet:**
 
 ```json
 {
@@ -137,103 +137,103 @@ docker pull sylphlab/pdf-reader-mcp:latest
 }
 ```
 
-## 为什么选择这个项目？
+## Why Choose This Project?
 
-- **🛡️ 安全:** 严格限制文件访问仅限于项目根目录。
-- **🌐 灵活:** 同时处理本地相对路径和公共URL。
-- **🧩 综合:** 单一的 `read_pdf` 工具满足多种提取需求（全文、特定页面、元数据、页数）。
-- **⚙️ 结构化输出:** 返回的数据采用可预测的JSON格式，易于代理解析。
-- **🚀 易于集成:** 通过 `npx` 或 Docker 在MCP环境中无缝使用设计。
-- **✅ 健壮:** 使用 `pdfjs-dist` 进行可靠的解析和Zod进行输入验证。
+- **🛡️ Secure:** Confines file access strictly to the project root directory.
+- **🌐 Flexible:** Handles both local relative paths and public URLs.
+- **🧩 Consolidated:** A single `read_pdf` tool serves multiple extraction needs (full text, specific pages, metadata, page count).
+- **⚙️ Structured Output:** Returns data in a predictable JSON format, easy for agents to parse.
+- **🚀 Easy Integration:** Designed for seamless use within MCP environments via `npx` or Docker.
+- **✅ Robust:** Uses `pdfjs-dist` for reliable parsing and Zod for input validation.
 
-## 性能优势
+## Performance Advantages
 
-使用Vitest对示例PDF进行的初步基准测试显示，各种操作处理效率高：
+Initial benchmarks using Vitest on a sample PDF show efficient handling of various operations:
 
-| 场景                         | 每秒操作次数 (hz) | 相对速度 |
+| Scenario                         | Operations per Second (hz) | Relative Speed |
 | :------------------------------- | :------------------------- | :------------- |
-| 处理不存在的文件         | ~12,933                    | 最快        |
-| 获取全文本                    | ~5,575                     |                |
-| 获取特定页（第1页）       | ~5,329                     |                |
-| 获取特定页（第1和第2页） | ~5,242                     |                |
-| 获取元数据及页数        | ~4,912                     | 最慢        |
+| Handle Non-Existent File         | ~12,933                    | Fastest        |
+| Get Full Text                    | ~5,575                     |                |
+| Get Specific Page (Page 1)       | ~5,329                     |                |
+| Get Specific Pages (Pages 1 & 2) | ~5,242                     |                |
+| Get Metadata & Page Count        | ~4,912                     | Slowest        |
 
-_(更高的 hz 值表示更好的性能。结果可能因 PDF 的复杂性和环境而异。)_
+_(Higher hz indicates better performance. Results may vary based on PDF complexity and environment.)_
 
-有关更多详细信息和未来计划，请参阅[性能文档](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/performance/index.md)。
+See the [Performance Documentation](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/performance/index.md) for more details and future plans.
 
-## 功能
+## Features
 
-- 从 PDF 文件中读取完整文本内容。
-- 从特定页面或页面范围读取文本内容。
-- 读取 PDF 元数据（作者、标题、创建日期等）。
-- 获取 PDF 的总页数。
-- 在单个请求中处理多个 PDF 源（本地路径或 URL）。
-- 在定义的项目根目录内安全运行。
-- 通过 MCP 提供结构化的 JSON 输出。
-- 可通过 npm 和 Docker Hub 获取。
+- Read full text content from PDF files.
+- Read text content from specific pages or page ranges.
+- Read PDF metadata (author, title, creation date, etc.).
+- Get the total page count of a PDF.
+- Process multiple PDF sources (local paths or URLs) in a single request.
+- Securely operates within the defined project root.
+- Provides structured JSON output via MCP.
+- Available via npm and Docker Hub.
 
-## 设计理念
+## Design Philosophy
 
-服务器通过上下文限制优先考虑安全性，通过结构化数据传输提高效率，并且设计简单以便于集成到 AI 代理工作流程中。它力求最少依赖项，依靠强大的 `pdfjs-dist` 库。
+The server prioritizes security through context confinement, efficiency via structured data transfer, and simplicity for easy integration into AI agent workflows. It aims for minimal dependencies, relying on the robust `pdfjs-dist` library.
 
-查看完整的[设计理念](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/design/index.md)文档。
+See the full [Design Philosophy](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/design/index.md) documentation.
 
-## 与其他解决方案的比较
+## Comparison with Other Solutions
 
-与直接文件访问（通常不可行）或通用文件系统工具相比，此服务器提供了专门针对 PDF 的解析能力。与外部 CLI 工具（例如 `pdftotext`）不同，它提供了一个安全的集成 MCP 接口，并具有结构化的输出，增强了 AI 代理的可靠性和易用性。
+Compared to direct file access (often infeasible) or generic filesystem tools, this server offers PDF-specific parsing capabilities. Unlike external CLI tools (e.g., `pdftotext`), it provides a secure, integrated MCP interface with structured output, enhancing reliability and ease of use for AI agents.
 
-查看完整的[比较](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/comparison/index.md)文档。
+See the full [Comparison](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/docs/comparison/index.md) documentation.
 
-## 未来计划（路线图）
+## Future Plans (Roadmap)
 
-- **文档：**
-  - 完成所有文档部分（指南、API、设计、比较）。
-  - 解决 TypeDoc 问题并生成 API 文档。
-  - 添加更多示例和高级使用模式。
-  - 实现 PWA 支持和文档站点的移动优化。
-  - 向文档站点添加分享按钮和增长指标。
-- **基准测试：**
-  - 使用多样化的 PDF 文件（大小、复杂性）进行全面基准测试。
-  - 测量内存使用情况。
-  - 比较 URL 与本地文件的性能。
-- **核心功能：**
-  - 探索针对非常大的 PDF 文件的潜在优化。
-  - 调查提取图像或注释的选项（长期目标）。
-- **测试：**
-  - 尽可能将测试覆盖率提高到 100%。
-  - 一旦可行，添加运行时测试。
+- **Documentation:**
+  - Finalize all documentation sections (Guide, API, Design, Comparison).
+  - Resolve TypeDoc issue and generate API documentation.
+  - Add more examples and advanced usage patterns.
+  - Implement PWA support and mobile optimization for the docs site.
+  - Add share buttons and growth metrics to the docs site.
+- **Benchmarking:**
+  - Conduct comprehensive benchmarks with diverse PDF files (size, complexity).
+  - Measure memory usage.
+  - Compare URL vs. local file performance.
+- **Core Functionality:**
+  - Explore potential optimizations for very large PDF files.
+  - Investigate options for extracting images or annotations (longer term).
+- **Testing:**
+  - Increase test coverage towards 100% where practical.
+  - Add runtime tests once feasible.
 
-## 文档
+## Documentation
 
-有关详细的使用说明、API 参考和指南，请访问**[完整文档网站](https://sylphlab.github.io/pdf-reader-mcp/)**（部署后更新链接）。
+For detailed usage, API reference, and guides, please visit the **[Full Documentation Website](https://sylphlab.github.io/pdf-reader-mcp/)** (Link to be updated upon deployment).
 
-## 社区与支持
+## Community & Support
 
-- **发现错误或有功能请求？** 请在 [GitHub Issues](https://github.com/sylphlab/pdf-reader-mcp/issues) 上提出问题。
-- **想要贡献代码？** 我们欢迎贡献！请参阅 [CONTRIBUTING.md](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/CONTRIBUTING.md)。
-- **点赞 & 关注：** 如果您觉得这个项目有用，请考虑在 [GitHub](https://github.com/sylphlab/pdf-reader-mcp) 上为仓库点个星 ⭐ 并关注 👀，以表示您的支持并保持更新！
+- **Found a bug or have a feature request?** Please open an issue on [GitHub Issues](https://github.com/sylphlab/pdf-reader-mcp/issues).
+- **Want to contribute?** We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/CONTRIBUTING.md).
+- **Star & Watch:** If you find this project useful, please consider starring ⭐ and watching 👀 the repository on [GitHub](https://github.com/sylphlab/pdf-reader-mcp) to show your support and stay updated!
 
-## 许可证
+## License
 
-本项目采用 [MIT 许可证](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/LICENSE)。
+This project is licensed under the [MIT License](https://github.com/shtse8/pdf-reader-mcp/blob/HEAD/LICENSE).
 
-**官方网站：** [https://github.com/shtse8/pdf-reader-mcp](https://github.com/shtse8/pdf-reader-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/shtse8/pdf-reader-mcp](https://github.com/shtse8/pdf-reader-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@sylphlab/pdf-reader-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@sylphlab/pdf-reader-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/sylphlab-pdf-reader.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sylphlab-pdf-reader.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,56 +1,56 @@
 ---
-title: "DuckDuckGo MCP 服务器"
-description: "一种模型上下文协议（MCP）服务器，通过DuckDuckGo提供网页搜索功能，并具有内容获取和解析的附加功能。"
+title: "duckduckgo-mcp-server"
+description: "A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing."
 ---
 
-# DuckDuckGo MCP 服务器
+# duckduckgo-mcp-server
 
-一种模型上下文协议（MCP）服务器，通过DuckDuckGo提供网页搜索功能，并具有内容获取和解析的附加功能。
+A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.
 
-# DuckDuckGo Search MCP 服务器
+# DuckDuckGo Search MCP Server
 
 [Smithery](https://smithery.ai/server/@nickclyde/duckduckgo-mcp-server)
 
-这是一个通过 DuckDuckGo 提供网络搜索功能的模型上下文协议 (MCP) 服务器，还具有内容获取和解析的附加功能。
+A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.
 
   
 
-## 功能
+## Features
 
-- **网络搜索**：使用高级速率限制和结果格式化进行 DuckDuckGo 搜索
-- **内容获取**：智能文本提取以检索和解析网页内容
-- **速率限制**：内置针对搜索和内容获取的速率限制保护
-- **错误处理**：全面的错误处理和日志记录
-- **LLM 友好输出**：专门为大型语言模型消费而格式化的结果
+- **Web Search**: Search DuckDuckGo with advanced rate limiting and result formatting
+- **Content Fetching**: Retrieve and parse webpage content with intelligent text extraction
+- **Rate Limiting**: Built-in protection against rate limits for both search and content fetching
+- **Error Handling**: Comprehensive error handling and logging
+- **LLM-Friendly Output**: Results formatted specifically for large language model consumption
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@nickclyde/duckduckgo-mcp-server) 自动为 Claude Desktop 安装 DuckDuckGo 搜索服务器：
+To install DuckDuckGo Search Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@nickclyde/duckduckgo-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @nickclyde/duckduckgo-mcp-server --client claude
 ```
 
-### 通过 `uv` 安装
+### Installing via `uv`
 
-直接从 PyPI 使用 `uv` 安装：
+Install directly from PyPI using `uv`:
 
 ```bash
 uv pip install duckduckgo-mcp-server
 ```
 
-## 使用方法
+## Usage
 
-### 与 Claude Desktop 一起运行
+### Running with Claude Desktop
 
-1. 下载 [Claude Desktop](https://claude.ai/download)
-2. 创建或编辑您的 Claude Desktop 配置：
-   - 在 macOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-   - 在 Windows 上：`%APPDATA%\Claude\claude_desktop_config.json`
+1. Download [Claude Desktop](https://claude.ai/download)
+2. Create or edit your Claude Desktop configuration:
+   - On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - On Windows: `%APPDATA%Claudeclaude_desktop_config.json`
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 {
@@ -63,11 +63,11 @@ uv pip install duckduckgo-mcp-server
 }
 ```
 
-3. 重启 Claude Desktop
+3. Restart Claude Desktop
 
-### 开发
+### Development
 
-对于本地开发，您可以使用 MCP CLI：
+For local development, you can use the MCP CLI:
 
 ```bash
 # Run with the MCP Inspector
@@ -76,87 +76,87 @@ mcp dev server.py
 # Install locally for testing with Claude Desktop
 mcp install server.py
 ```
-## 可用工具
+## Available Tools
 
-### 1. 搜索工具
+### 1. Search Tool
 
 ```python
 async def search(query: str, max_results: int = 10) -> str
 ```
 
-在 DuckDuckGo 上执行网络搜索并返回格式化结果。
+Performs a web search on DuckDuckGo and returns formatted results.
 
-**参数：**
-- `query`：搜索查询字符串
-- `max_results`：要返回的最大结果数量（默认：10）
+**Parameters:**
+- `query`: Search query string
+- `max_results`: Maximum number of results to return (default: 10)
 
-**返回：**
-包含标题、URL 和摘要的格式化字符串。
+**Returns:**
+Formatted string containing search results with titles, URLs, and snippets.
 
-### 2. 内容获取工具
+### 2. Content Fetching Tool
 
 ```python
 async def fetch_content(url: str) -> str
 ```
 
-从网页中获取并解析内容。
+Fetches and parses content from a webpage.
 
-**参数：**
-- `url`：要从中获取内容的网页 URL
+**Parameters:**
+- `url`: The webpage URL to fetch content from
 
-**返回：**
-来自网页的清理和格式化文本内容。
+**Returns:**
+Cleaned and formatted text content from the webpage.
 
-## 功能详细说明
+## Features in Detail
 
-### 速率限制
+### Rate Limiting
 
-- 搜索：每分钟限 30 次请求
-- 内容获取：每分钟限 20 次请求
-- 自动队列管理和等待时间
+- Search: Limited to 30 requests per minute
+- Content Fetching: Limited to 20 requests per minute
+- Automatic queue management and wait times
 
-### 结果处理
+### Result Processing
 
-- 移除广告和不相关的内容
-- 清理 DuckDuckGo 重定向 URL
-- 格式化结果以便于 LLM 使用
-- 适当截断长内容
+- Removes ads and irrelevant content
+- Cleans up DuckDuckGo redirect URLs
+- Formats results for optimal LLM consumption
+- Truncates long content appropriately
 
-### 错误处理
+### Error Handling
 
-- 全面的错误捕获和报告
-- 通过 MCP 上下文进行详细的日志记录
-- 在达到速率限制或超时时优雅降级
+- Comprehensive error catching and reporting
+- Detailed logging through MCP context
+- Graceful degradation on rate limits or timeouts
 
-## 贡献
+## Contributing
 
-欢迎提交问题和拉取请求！一些可能改进的地方包括：
+Issues and pull requests are welcome! Some areas for potential improvement:
 
-- 额外的搜索参数（地区、语言等）
-- 增强的内容解析选项
-- 频繁访问内容的缓存层
-- 更多的速率限制策略
+- Additional search parameters (region, language, etc.)
+- Enhanced content parsing options
+- Caching layer for frequently accessed content
+- Additional rate limiting strategies
 
-## 许可证
+## License
 
-此项目根据 MIT 许可证授权。
+This project is licensed under the MIT License.
 
-**官方网站：** [https://github.com/nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`duckduckgo-mcp-server`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `duckduckgo-mcp-server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/nickclyde-duckduckgo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/nickclyde-duckduckgo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

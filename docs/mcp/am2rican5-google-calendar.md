@@ -1,77 +1,77 @@
 ---
-title: "MCP日历助手"
-description: "通过模型上下文协议将 Google 日历与人工智能助手集成，使用户能够通过自然语言交互查看和管理日历事件。"
+title: "mcp-google-calendar"
+description: "Integrates Google Calendar with AI assistants through the Model Context Protocol, allowing users to view and manage calendar events through natural language interaction."
 ---
 
-# MCP日历助手
+# mcp-google-calendar
 
-通过模型上下文协议将 Google 日历与人工智能助手集成，使用户能够通过自然语言交互查看和管理日历事件。
+Integrates Google Calendar with AI assistants through the Model Context Protocol, allowing users to view and manage calendar events through natural language interaction.
 
-# Google Calendar MCP 服务器
+# Google Calendar MCP Server
 
-一个与 Google 日历集成的模型上下文协议 (MCP) 服务器，使用 TypeScript 构建。
+A Model Context Protocol (MCP) server that integrates with Google Calendar, built with TypeScript.
 
-## 功能
+## Features
 
-- 无缝集成 Google 日历并使用 OAuth 2.0 身份验证
-- 持久化令牌存储以实现自动身份验证
-- 列出和管理日历，并提供全面的事件操作
-- 创建、读取、更新和删除日历事件
-- 获取指定日期范围内的日历事件
-- 支持 Server-Sent Events (SSE) 传输选项以实现实时更新
-- 简单集成 Claude 和其他兼容 MCP 的 AI 助手
+- Seamless Google Calendar integration with OAuth 2.0 authentication
+- Persistent token storage for automatic authentication
+- List and manage calendars with comprehensive event operations
+- Create, read, update, and delete calendar events
+- Fetch calendar events between specified dates
+- Server-Sent Events (SSE) transport option for real-time updates
+- Simple integration with Claude and other MCP-compatible AI assistants
 
-## 安装
+## Installation
 
 ```bash
 npm install -g mcp-google-calendar
 ```
 
-或者直接运行：
+Or run directly with:
 
 ```bash
 npx -y mcp-google-calendar
 ```
 
-## 先决条件
+## Prerequisites
 
-1. Node.js（v16 或更高版本）
-2. Google Cloud Platform 账户
-3. 启用 Google 日历 API
-4. OAuth 2.0 凭证
+1. Node.js (v16 or higher)
+2. Google Cloud Platform account
+3. Google Calendar API enabled
+4. OAuth 2.0 credentials
 
-## 设置
+## Setup
 
-### 1. Google Cloud 配置
+### 1. Google Cloud Configuration
 
-1. 前往 [Google Cloud 控制台](https://console.cloud.google.com/)
-2. 创建一个新项目或选择现有项目
-3. 启用 Google 日历 API：
-   - 导航到 "APIs & Services" > "Library"
-   - 搜索 "Google Calendar API"
-   - 单击 "启用"
-4. 配置 OAuth 同意屏幕：
-   - 前往 "APIs & Services" > "OAuth consent screen"
-   - 选择 "外部" 用户类型（或 "内部" 对于 Google Workspace）
-   - 填写必填信息：
-     - 应用名称: mcp-calendar
-     - 用户支持邮箱: (你的邮箱)
-     - 开发者联系信息: (你的邮箱)
-   - 添加权限范围：
-     - 单击 "添加或移除权限范围"
-     - 查找并选择 "https://www.googleapis.com/auth/calendar.events"
-     - 将你的邮箱添加为测试用户
-   - 完成设置
-5. 创建 OAuth 凭证：
-   - 前往 "Credentials"
-   - 单击 "创建凭证" > "OAuth Client ID"
-   - 选择 "桌面应用" 作为应用程序类型
-   - 命名它（例如 "MCP Calendar Desktop Client"）
-   - 下载 JSON 文件并保存为 `credentials.json` 在你的项目目录中
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Enable the Google Calendar API:
+   - Navigate to "APIs & Services" > "Library"
+   - Search for "Google Calendar API"
+   - Click "Enable"
+4. Configure OAuth consent screen:
+   - Go to "APIs & Services" > "OAuth consent screen"
+   - Choose "External" user type (or "Internal" for Google Workspace)
+   - Fill in required information:
+     - App name: mcp-calendar
+     - User support email: (your email)
+     - Developer contact information: (your email)
+   - Add scopes:
+     - Click "Add or Remove Scopes"
+     - Find and select "https://www.googleapis.com/auth/calendar.events"
+     - Add your email as a test user
+   - Complete the setup
+5. Create OAuth credentials:
+   - Go to "Credentials"
+   - Click "Create Credentials" > "OAuth Client ID"
+   - Choose "Desktop app" as application type
+   - Name it (e.g., "MCP Calendar Desktop Client")
+   - Download the JSON file and save as `credentials.json` in your project directory
 
-### 2. 环境配置
+### 2. Environment Configuration
 
-在你的项目根目录中创建一个 `.env` 文件：
+Create a `.env` file in your project root:
 
 ```
 # Server configuration
@@ -81,23 +81,23 @@ PORT=3420
 CREDENTIALS_PATH=./credentials.json
 ```
 
-## 使用
+## Usage
 
-### 启动服务器
+### Starting the Server
 
-使用标准 WebSockets 启动：
+Start with standard WebSockets:
 ```bash
 npx -y mcp-google-calendar
 ```
 
-使用 Server-Sent Events (SSE) 启动：
+Start with Server-Sent Events (SSE):
 ```bash
 npx -y mcp-google-calendar --sse
 ```
 
-### 与 Claude 桌面版一起使用
+### With Claude Desktop
 
-将以下内容添加到你的 `claude_desktop_config.json` 中：
+Add this to your `claude_desktop_config.json`:
 ```json
 {
    "mcpServers": {
@@ -112,88 +112,88 @@ npx -y mcp-google-calendar --sse
 }
 ```
 
-### 身份验证过程
+### Authentication Process
 
-首次运行服务器时：
-1. 浏览器窗口将自动打开
-2. 使用你的 Google 账户登录
-3. 授权请求的日历权限
-4. 认证令牌将保存到 `token.json`
+The first time you run the server:
+1. A browser window will open automatically
+2. Sign in with your Google account
+3. Grant the requested calendar permissions
+4. The authentication token is saved to `token.json`
 
-后续启动时：
-- 服务器会自动使用保存的令牌
-- 除非令牌过期，否则无需浏览器交互
+On subsequent launches:
+- The server uses the saved token automatically
+- No browser interaction is required unless the token expires
 
-## 可用工具
+## Available Tools
 
-| 工具 | 描述 |
+| Tool | Description |
 |------|-------------|
-| `list_calendars` | 获取所有可用日历 |
-| `list_calendar_events` | 检索指定日期之间的事件 |
-| `create_calendar_event` | 向你的日历添加新事件 |
-| `get_calendar_event` | 获取特定事件的详细信息 |
-| `edit_calendar_event` | 修改现有的日历事件 |
-| `delete_calendar_event` | 从你的日历中删除事件 |
+| `list_calendars` | Get all available calendars |
+| `list_calendar_events` | Retrieve events between specified dates |
+| `create_calendar_event` | Add a new event to your calendar |
+| `get_calendar_event` | Fetch details for a specific event |
+| `edit_calendar_event` | Modify an existing calendar event |
+| `delete_calendar_event` | Remove an event from your calendar |
 
-## 开发
+## Development
 
-克隆并设置项目：
+Clone and set up the project:
 ```bash
 git clone https://github.com/am2rican5/mcp-google-calendar.git
 cd mcp-google-calendar
 npm install
 ```
 
-构建项目：
+Build the project:
 ```bash
 npm run build
 ```
 
-以开发模式运行：
+Run in development mode:
 ```bash
 npm start
 ```
 
-## 安全注意事项
+## Security Considerations
 
-⚠️ **重要安全警告** ⚠️
+⚠️ **Important Security Warning** ⚠️
 
-- `credentials.json` 和 `token.json` 包含敏感的认证信息
-- 请勿将这些文件提交到版本控制系统或公开分享
-- 每个用户应创建自己的 OAuth 凭据
-- 如果您怀疑凭据被泄露，请立即在 Google Cloud Console 中撤销它们
-- 令牌授予访问您的 Google 日历数据的权限
+- `credentials.json` and `token.json` contain sensitive authentication information
+- Never commit these files to version control or share them publicly
+- Each user should create their own OAuth credentials
+- If you suspect credential compromise, revoke them immediately in Google Cloud Console
+- The token grants access to your Google Calendar data
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](https://github.com/am2rican5/mcp-google-calendar/blob/HEAD/LICENSE) 文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/am2rican5/mcp-google-calendar/blob/HEAD/LICENSE) file for details.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. 叉分仓库
-2. 创建您的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到该分支 (`git push origin feature/amazing-feature`)
-5. 打开一个 Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**官方网站：** [https://github.com/am2rican5/mcp-google-calendar](https://github.com/am2rican5/mcp-google-calendar)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/am2rican5/mcp-google-calendar](https://github.com/am2rican5/mcp-google-calendar)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y mcp-google-calendar`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y mcp-google-calendar`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/am2rican5-google-calendar.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/am2rican5-google-calendar.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -3,21 +3,27 @@
   "channel": "models",
   "name": {
     "en": "OpenRouter",
-    "zh-Hans": "OpenRouter",
-    "zh-Hant": "OpenRouter"
+    "zh-Hans": "OpenRouter"
   },
   "description": {
     "en": "A unified OpenAI-compatible API with multiple free model variants whose availability and rate limits can change.",
-    "zh-Hans": "统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。",
-    "zh-Hant": "統一的 OpenAI 相容 API，提供多個免費模型變體，但可用性與速率限制可能變化。"
+    "zh-Hans": "统一的 OpenAI 兼容 API，提供多个免费模型变体，但可用性和速率限制可能变化。"
   },
   "detail": {
     "en": "OpenRouter provides one OpenAI-compatible endpoint for models from multiple providers. It can simplify ChatSpeed configuration and routing, including free model variants, but model availability, pricing, provider routing, and free-tier limits can change and must be checked on the selected model page.",
-    "zh-Hans": "OpenRouter 为多个模型供应商提供统一的 OpenAI 兼容接口，可简化 ChatSpeed 的配置和路由，也包含免费模型变体。但模型可用性、价格、供应商路由和免费层限制可能变化，必须在选定的模型页面核验。",
-    "zh-Hant": "OpenRouter 為多個模型供應商提供統一的 OpenAI 相容介面，可簡化 ChatSpeed 的設定與路由，也包含免費模型變體。但模型可用性、價格、供應商路由與免費層限制可能變化，必須在選定的模型頁面核驗。"
+    "zh-Hans": "OpenRouter 为多个模型供应商提供统一的 OpenAI 兼容接口，可简化 ChatSpeed 的配置和路由，也包含免费模型变体。但模型可用性、价格、供应商路由和免费层限制可能变化，必须在选定的模型页面核验。"
   },
-  "categories": ["general", "coding", "reasoning"],
-  "tags": ["openrouter", "openai-compatible", "free-models", "api"],
+  "categories": [
+    "general",
+    "coding",
+    "reasoning"
+  ],
+  "tags": [
+    "openrouter",
+    "openai-compatible",
+    "free-models",
+    "api"
+  ],
   "website": "https://openrouter.ai/",
   "status": "active",
   "lastVerifiedAt": "2026-08-29",

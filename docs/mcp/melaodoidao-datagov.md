@@ -1,29 +1,29 @@
 ---
-title: "政府数据MCP服务器"
-description: "一个MCP服务器，提供来自Data.gov的政府数据集访问，使用户能够搜索数据包、查看数据集详情、列出组和标签，并通过URL访问资源。"
+title: "datagov-mcp-server"
+description: "An MCP server that provides access to government datasets from Data.gov, enabling users to search packages, view dataset details, list groups and tags, and access resources by URL."
 ---
 
-# 政府数据MCP服务器
+# datagov-mcp-server
 
-一个MCP服务器，提供来自Data.gov的政府数据集访问，使用户能够搜索数据包、查看数据集详情、列出组和标签，并通过URL访问资源。
+An MCP server that provides access to government datasets from Data.gov, enabling users to search packages, view dataset details, list groups and tags, and access resources by URL.
 
-# Data.gov MCP 服务器
+# Data.gov MCP Server
 
-一个用于访问 Data.gov 数据的MCP服务器，提供与政府数据集交互的工具和资源。
+An MCP server for accessing data from Data.gov, providing tools and resources for interacting with government datasets.
 
   
 
-## 安装
+## Installation
 
-1. **全局安装包：**
+1.  **Install the package globally:**
 
 ```bash
     npm install -g @melaodoidao/datagov-mcp-server
 ```
 
-2. **配置 MCP 服务器：**
+2. **Configure the MCP Server:**
 
-   - 在您的 `cline_mcp_settings.json` 文件中添加以下条目（通常位于 macOS 上的 `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/`）：
+   - Add the following entry to your `cline_mcp_settings.json` file (usually located in `~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/` on macOS):
 
 ```json
       {
@@ -36,47 +36,47 @@ description: "一个MCP服务器，提供来自Data.gov的政府数据集访问�
         }
       }
 ```
-    - 如果您使用的是 Claude 桌面应用程序，请将条目添加到 `~/Library/Application Support/Claude/claude_desktop_config.json` 中。
+    - If you are using the Claude Desktop app, add the entry to `~/Library/Application Support/Claude/claude_desktop_config.json` instead.
 
-## 使用方法
+## Usage
 
-此服务器提供了以下工具：
+This server provides the following tools:
 
-*   `package_search`: 在 Data.gov 上搜索数据包（数据集）。
-*   `package_show`: 获取特定数据包（数据集）的详细信息。
-*   `group_list`: 列出 Data.gov 上的组。
-*   `tag_list`: 列出 Data.gov 上的标签。
+*   `package_search`: Search for packages (datasets) on Data.gov.
+*   `package_show`: Get details for a specific package (dataset).
+*   `group_list`: List groups on Data.gov.
+*   `tag_list`: List tags on Data.gov.
 
-它还提供了以下资源模板：
+It also provides the following resource template:
 
-*   `datagov://resource/{url}`: 通过 URL 访问 Data.gov 资源。
+*   `datagov://resource/{url}`: Access a Data.gov resource by its URL.
 
-您可以使用 Cline 并指定服务器名称 (`datagov-mcp-server`) 和工具/资源名称来使用这些工具和资源。
+You can use these tools and resources with Cline by specifying the server name (`datagov-mcp-server`) and the tool/resource name.
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交问题或拉取请求。
+Contributions are welcome! Please feel free to submit issues or pull requests.
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-**官方网站：** [https://github.com/melaodoidao/datagov-mcp-server](https://github.com/melaodoidao/datagov-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/melaodoidao/datagov-mcp-server](https://github.com/melaodoidao/datagov-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `databases`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `search`, `databases`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`datagov-mcp-server`
-- 参数：无
+- Transport: `stdio`
+- Command: `datagov-mcp-server`
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/melaodoidao-datagov.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/melaodoidao-datagov.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

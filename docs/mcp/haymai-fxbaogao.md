@@ -1,81 +1,92 @@
 ---
-title: "发现报告"
-description: "发现报告是专业研报搜索平台。全面覆盖行业分析、公司研究、宏观策略、财报、招股书等研究报告的相关搜索和阅读。"
+title: "fxbaogao"
+description: "The Discovery Report is a professional research report search platform. It comprehensively covers the search and reading of related research reports including industry analysis, company research, macr…"
 ---
 
-# 发现报告
+# fxbaogao
 
-发现报告是专业研报搜索平台。全面覆盖行业分析、公司研究、宏观策略、财报、招股书等研究报告的相关搜索和阅读。
+The Discovery Report is a professional research report search platform. It comprehensively covers the search and reading of related research reports including industry analysis, company research, macr…
 
-# 📊 发现报告（MCP Tool）
+# 📊 Discovery Report (MCP Tool)
 
-本工具集成于 MCP 协议，提供对发现报告网站研究报告的搜索与内容提取能力，适用于金融、产业研究、投资分析等场景。
+This tool is integrated into the MCP protocol, providing search and content extraction capabilities for research reports on the Discovery Report website. It is suitable for scenarios such as financial analysis, industry research, and investment analysis.
 
-💡 官方新版本上线： 现已支持 skills, mcp, cli。[立即体验](https://www.fxbaogao.com/agent-interface)
+💡 Official New Version Released: Now supports skills, mcp, cli. [Try it now](https://www.fxbaogao.com/agent-interface)
 ---
 
-## ✨ 工具一：`search_reports`
+## ✨ Tool One: `search_reports`
 
-通过关键词、作者、机构名称、时间范围等条件检索研究报告列表。
+Searches for a list of research reports based on conditions such as keywords, authors, organization names, and time ranges.
 
-### 🔧 参数说明
+### 🔧 Parameter Description
 
-| 参数名        | 类型              | 必填 | 说明 |
-|---------------|-------------------|------|------|
-| `keywords`    | `str`             | 否   | 搜索关键词，支持中英文。 |
-| `authors`     | `List[str]`       | 否   | 作者姓名列表，如 `["张三", "李四"]`。 |
-| `org_names`   | `List[str]`       | 否   | 机构名称列表，如 `["发现报告", "阿里巴巴"]`。 |
-| `start_time`  | `int`             | 否   | 起始时间，毫秒级时间戳，如 `1640995200000` 表示 2022-01-01 00:00:00。 |
-| `end_time`    | `int` / `str`     | 否   | 结束时间，支持毫秒时间戳或相对时间字符串：
+| Parameter Name | Type              | Required | Description |
+|---------------|-------------------|----------|-------------|
+| `keywords`    | `str`             | No       | Search keywords, supports both Chinese and English. |
+| `authors`     | `List[str]`       | No       | List of author names, e.g., `["Zhang San", "Li Si"]`. |
+| `org_names`   | `List[str]`       | No       | List of organization names, e.g., `["Discovery Report", "Alibaba"]`. |
+| `start_time`  | `int`             | No       | Start time, in milliseconds, e.g., `1640995200000` represents 2022-01-01 00:00:00. |
+| `end_time`    | `int` / `str`     | No       | End time, supports millisecond timestamp or relative time string:
 • `"last3day"`
 • `"last7day"`
 • `"last1mon"`
 • `"last3mon"`
 • `"last1year"` |
-| `page_size`   | `int`             | 否   | 返回结果数量，默认 10，最大 100。 |
+| `page_size`   | `int`             | No       | Number of results to return, default is 10, maximum is 100. |
 
-### 📥 使用示例
+### 📥 Usage Example
 
 ```python
+
 # 按关键词搜索
+
 search_reports(keywords="人工智能")
 
 # 按机构搜索
+
 search_reports(org_names=["发现报告"])
 
 # 搜索最近一周某位作者的报告
+
 search_reports(authors=["王磊"], end_time="last7day")
 
 # 精确时间段搜索
+
 search_reports(
+
     keywords="新能源",
+
     start_time=1748707200000,
+
     end_time=1749398399999
+
 )
+
 ```
+## ✨ Tool Two: `get_report_content`
 
-## ✨ 工具二：get_report_content
-
-根据报告 ID（`doc_id`）获取研报的详细内容与总结信息。
-
----
-
-### 🔧 参数说明
-
-| 参数名   | 类型   | 必填 | 说明 |
-|----------|--------|------|------|
-| `doc_id` | `int`  | ✅ 是 | 研报文档 ID，来自 `search_reports` 返回结果中的 `docId` 字段。 |
+Fetches detailed content and summary information of a report based on the report ID (`doc_id`).
 
 ---
 
-### 📥 使用示例
+### 🔧 Parameter Description
+
+| Parameter Name | Type   | Required | Description |
+|---------------|--------|----------|-------------|
+| `doc_id`      | `int`  | Yes      | The document ID of the research report, obtained from the `docId` field in the result returned by `search_reports`. |
+
+---
+
+### 📥 Usage Example
 
 ```python
-# 获取该研报的内容
-content = await get_report_content(doc_id)
-```
 
-## 服务器配置：
+# 获取该研报的内容
+
+content = await get_report_content(doc_id)
+
+```
+## Server Configuration:
 ```json
 {
   "mcpServers": {
@@ -88,27 +99,26 @@ content = await get_report_content(doc_id)
   }
 }
 ```
+## Notes
+This tool is intended for educational and research purposes only. Do not use it for commercial purposes.
+Please comply with the terms of use and relevant laws and regulations of Discovery Report.
 
-## 注意事项
-本工具仅供学习和研究使用，请勿用于商业目的
-请遵守发现报告的使用条款和相关法律法规
+**Official site: ** [https://www.fxbaogao.com/](https://www.fxbaogao.com/)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-**官方网站：** [https://www.fxbaogao.com/](https://www.fxbaogao.com/)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Categories & Tags
 
-## 分类与标签
+- Categories: `search`, `finance`, `data`
+- Tags: `finance`, `research and data`, `search`, `研究报告`, `行业报告`, `咨询管理`, `产业研究`, `投资分析`, `chinese`
 
-- 分类：`search`, `finance`, `data`
-- 标签：`finance`, `research and data`, `search`, `研究报告`, `行业报告`, `咨询管理`, `产业研究`, `投资分析`, `chinese`
+## MCP Configuration
 
-## MCP 配置
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `fxbaogao-mcp@latest`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`fxbaogao-mcp@latest`
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+## Data source
 
-## 数据来源
-
-资源文件：`resources/mcp/haymai-fxbaogao.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/haymai-fxbaogao.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

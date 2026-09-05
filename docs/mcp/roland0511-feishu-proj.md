@@ -1,14 +1,11 @@
 ---
-title: "MCP飞书项目"
-description: "一种模型上下文协议服务器， enables AI助手与飞书项目管理系统交互，允许检索项目视图和工作项。  \n\n（注：原文中的“enables”可调整为更符合中文表达的方式，以下是优化后的翻译：）  \n一种模型上下文协议服务器，使AI助手能够与飞书项目管理系统进行交互，支持检索项目视图和工作项。"
+title: "mcp-feishu-proj"
+description: "A Model Context Protocol server that enables AI assistants to interact with Feishu project management systems, allowing retrieval of project views and work items."
 ---
 
-# MCP飞书项目
+# mcp-feishu-proj
 
-一种模型上下文协议服务器， enables AI助手与飞书项目管理系统交互，允许检索项目视图和工作项。  
-
-（注：原文中的“enables”可调整为更符合中文表达的方式，以下是优化后的翻译：）  
-一种模型上下文协议服务器，使AI助手能够与飞书项目管理系统进行交互，支持检索项目视图和工作项。
+A Model Context Protocol server that enables AI assistants to interact with Feishu project management systems, allowing retrieval of project views and work items.
 
 # MCP-飞书项目管理工具
 
@@ -26,7 +23,7 @@ description: "一种模型上下文协议服务器， enables AI助手与飞书�
 
 以Claude桌面客户端为例，编辑`claude_desktop_config.json`文件:
 - macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
-- Windows: %APPDATA%\Claude\claude_desktop_config.json
+- Windows: %APPDATA%Claudeclaude_desktop_config.json
 
 在`mcpServers`字段中添加以下配置：
 
@@ -330,22 +327,22 @@ kubectl logs -f
 
 本项目采用MIT许可证。详情请参阅[LICENSE](https://github.com/Roland0511/mcp-feishu-proj/blob/HEAD/LICENSE)文件。
 
-**官方网站：** [https://github.com/Roland0511/mcp-feishu-proj](https://github.com/Roland0511/mcp-feishu-proj)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Roland0511/mcp-feishu-proj](https://github.com/Roland0511/mcp-feishu-proj)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`communication`, `chinese`
+- Categories: `communication`
+- Tags: `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-feishu-proj@latest --transport stdio`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-feishu-proj@latest --transport stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/roland0511-feishu-proj.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/roland0511-feishu-proj.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

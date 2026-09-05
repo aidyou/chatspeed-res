@@ -3,18 +3,15 @@
   "channel": "mcp",
   "name": {
     "en": "finData",
-    "zh-Hans": "当日股票预测推荐",
-    "zh-Hant": "当日股票预测推荐"
+    "zh-Hans": "当日股票预测推荐"
   },
   "description": {
     "en": "Can Analyze Recommended Stocks for the Day python def analyzerecommendedstocks(): 这里填写获取并分析当日推荐股票的代码 pass - 该功能允许用户分析系统或分析师为当天推荐的股票。 - 通过调用analyzerecommendedstocks()函数，可以获取到最新的推荐信息，并对其进行深入分析。 - 分析结果可能包括但不限于：股票的基本面、技术指标、市场情绪等关键因素。 更多详细信息，请参考官方文档。",
-    "zh-Hans": "可以分析当日推荐股票",
-    "zh-Hant": "可以分析当日推荐股票"
+    "zh-Hans": "可以分析当日推荐股票"
   },
   "detail": {
     "en": "Can Analyze Recommended Stocks for the Day\n\npython\ndef analyze_recommended_stocks():\n    # 这里填写获取并分析当日推荐股票的代码\n    pass\n\n- 该功能允许用户分析系统或分析师为当天推荐的股票。\n- 通过调用`analyze_recommended_stocks()`函数，可以获取到最新的推荐信息，并对其进行深入分析。\n- 分析结果可能包括但不限于：股票的基本面、技术指标、市场情绪等关键因素。\n\n更多详细信息，请参考[官方文档](https://example.com/official-documentation)。",
-    "zh-Hans": "可以分析当日推荐股票",
-    "zh-Hant": "可以分析当日推荐股票"
+    "zh-Hans": "可以分析当日推荐股票"
   },
   "categories": [
     "finance"

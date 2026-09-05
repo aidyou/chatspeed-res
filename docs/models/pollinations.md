@@ -1,31 +1,31 @@
 ---
 title: "Pollinations"
-description: "开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。"
+description: "Open-source generative platform with free text/image/audio/video APIs; the OpenAI-compatible text endpoint works without sign-up or API key."
 ---
 
 # Pollinations
 
-开源生成式 AI 平台，提供免费文本/图像/音频/视频 API；OpenAI 兼容文本端点无需注册与 API Key 即可使用。
+Open-source generative platform with free text/image/audio/video APIs; the OpenAI-compatible text endpoint works without sign-up or API key.
 
-Pollinations 是开源生成式 AI 平台，提供文本、图像、音频、视频的简单 HTTP API。文本端点为 OpenAI 兼容（https://text.pollinations.ai/openai），免费模型无需注册与 API Key 即可调用；图像生成见 image.pollinations.ai。部分较新模型或更高优先级的调用可能需要 Pollinations 账号/token。限速较宽松但会随负载调整，当前模型名单与限制以官方仓库为准。
+Pollinations is an open-source generative-AI platform exposing simple HTTP APIs for text, image, audio and video. The text endpoint is OpenAI-compatible (https://text.pollinations.ai/openai) and, for free models, requires no sign-up or API key; image generation is available at image.pollinations.ai. Some newer/higher-priority models may require Pollinations tokens/accounts. Rate limits are loose but adjust with load; check the official repo for the current model list and limits.
 
-**官方网站：** [https://pollinations.ai/](https://pollinations.ai/)
-**状态：** `review`　**最后核验：** `2026-08-30`
+**Official site: ** [https://pollinations.ai/](https://pollinations.ai/)
+**Status: ** `review`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`general`, `vision`
-- 标签：`pollinations`, `openai-compatible`, `free-api`, `no-key`
+- Categories: `general`, `vision`
+- Tags: `pollinations`, `openai-compatible`, `free-api`, `no-key`
 
-## 供应商配置
+## Provider Configuration
 
-- 协议：`openai`
-- Base URL：`https://text.pollinations.ai/openai`
-- 模型数量：0
-- 文档：[https://github.com/pollinations/pollinations/blob/master/APIDOCS.md](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md)
-- 模型列表：[https://text.pollinations.ai/models](https://text.pollinations.ai/models)
-- 密钥申请：[]()
+- Protocol: `openai`
+- Base URL: `https://text.pollinations.ai/openai`
+- Model count: 0
+- Docs: [https://github.com/pollinations/pollinations/blob/master/APIDOCS.md](https://github.com/pollinations/pollinations/blob/master/APIDOCS.md)
+- Model list: [https://text.pollinations.ai/models](https://text.pollinations.ai/models)
+- API key: []()
 
-## 数据来源
+## Data source
 
-资源文件：`resources/models/pollinations.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/models/pollinations.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

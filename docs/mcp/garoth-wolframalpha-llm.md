@@ -1,48 +1,48 @@
 ---
-title: "Wolfram Alpha LLM接口"
-description: "启用对 WolframAlpha 的 LLM API 进行自然语言问题的查询，提供经过结构化和简化的答案，这些答案针对 LLM 的使用进行了优化。"
+title: "wolframalpha-llm-mcp"
+description: "Enables querying WolframAlpha's LLM API for natural language questions, providing structured and simplified answers optimized for LLM consumption."
 ---
 
-# Wolfram Alpha LLM接口
+# wolframalpha-llm-mcp
 
-启用对 WolframAlpha 的 LLM API 进行自然语言问题的查询，提供经过结构化和简化的答案，这些答案针对 LLM 的使用进行了优化。
+Enables querying WolframAlpha's LLM API for natural language questions, providing structured and simplified answers optimized for LLM consumption.
 
-# WolframAlpha LLM MCP 服务器
+# WolframAlpha LLM MCP Server
 
  width="256" alt="WolframAlpha LLM MCP Logo" />
 
-一个提供访问 WolframAlpha 的 LLM API 的 Model Context Protocol (MCP) 服务器。[https://products.wolframalpha.com/llm-api/documentation](https://products.wolframalpha.com/llm-api/documentation)
+A Model Context Protocol (MCP) server that provides access to WolframAlpha's LLM API. https://products.wolframalpha.com/llm-api/documentation
 
-   width="609" alt="WolframAlpha MCP 服务器示例 1" />
+   width="609" alt="WolframAlpha MCP Server Example 1" />
 
-   width="609" alt="WolframAlpha MCP 服务器示例 2" />
+   width="609" alt="WolframAlpha MCP Server Example 2" />
 
-## 特性
+## Features
 
-- 使用自然语言问题查询 WolframAlpha 的 LLM API
-- 回答复杂的数学问题
-- 查询关于科学、物理、历史、地理等领域的事实
-- 获取优化后的结构化响应，适合 LLM 消费
-- 支持简化答案和带有章节的详细响应
+- Query WolframAlpha's LLM API with natural language questions
+- Answer complicated mathematical questions
+- Query facts about science, physics, history, geography, and more
+- Get structured responses optimized for LLM consumption
+- Support for simplified answers and detailed responses with sections
 
-## 可用工具
+## Available Tools
 
-- `ask_llm`: 向 WolframAlpha 提问并获取结构化的 llm 友好响应
-- `get_simple_answer`: 获取简化答案
-- `validate_key`: 验证 WolframAlpha API 密钥
+- `ask_llm`: Ask WolframAlpha a question and get a structured llm-friendly response
+- `get_simple_answer`: Get a simplified answer
+- `validate_key`: Validate the WolframAlpha API key
 
-## 安装
+## Installation
 
 ```bash
 git clone https://github.com/Garoth/wolframalpha-llm-mcp.git
 npm install
 ```
 
-## 配置
+## Configuration
 
-1. 从 [developer.wolframalpha.com](https://developer.wolframalpha.com/) 获取您的 WolframAlpha API 密钥
+1. Get your WolframAlpha API key from [developer.wolframalpha.com](https://developer.wolframalpha.com/)
 
-2. 将其添加到 VSCode 设置中的 Cline MCP 设置文件中（例如：~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json）：
+2. Add it to your Cline MCP settings file inside VSCode's settings (ex. ~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json):
 
 ```json
 {
@@ -64,54 +64,54 @@ npm install
 }
 ```
 
-## 开发
+## Development
 
-### 设置测试
+### Setting Up Tests
 
-测试使用真实的 API 调用来确保准确的响应。要运行测试：
+The tests use real API calls to ensure accurate responses. To run the tests:
 
-1. 复制示例环境文件：
+1. Copy the example environment file:
 ```bash
    cp .env.example .env
 ```
 
-2. 编辑 `.env` 并添加您的 WolframAlpha API 密钥：
+2. Edit `.env` and add your WolframAlpha API key:
 ```
    WOLFRAM_LLM_APP_ID=your-api-key-here
 ```
-   注意：`.env` 文件被 gitignore 掉，以防止提交敏感信息。
+   Note: The `.env` file is gitignored to prevent committing sensitive information.
 
-3. 运行测试：
+3. Run the tests:
 ```bash
    npm test
 ```
 
-### 构建
+### Building
 
 ```bash
 npm run build
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/Garoth/wolframalpha-llm-mcp](https://github.com/Garoth/wolframalpha-llm-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Garoth/wolframalpha-llm-mcp](https://github.com/Garoth/wolframalpha-llm-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`search`, `research and data`, `other`, `chinese`
+- Categories: `data`
+- Tags: `search`, `research and data`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/wolframalpha-mcp-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/wolframalpha-mcp-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/garoth-wolframalpha-llm.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/garoth-wolframalpha-llm.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

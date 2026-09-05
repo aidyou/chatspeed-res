@@ -1,45 +1,40 @@
 ---
-title: "图标 MCP"
-description: "一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。 \n\n注：原文中并未包含具体的代码块或链接，因此在翻译时也未添加这些元素。如果需要进一步的信息或有具体的文档内容，请提供详细信息以便更准确地进行翻译。"
+title: "Logo-MCP"
+description: "一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。"
 ---
 
-# 图标 MCP
+# Logo-MCP
 
-一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。 
-
-注：原文中并未包含具体的代码块或链接，因此在翻译时也未添加这些元素。如果需要进一步的信息或有具体的文档内容，请提供详细信息以便更准确地进行翻译。
+一个智能Logo提取和处理的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供图像处理和矢量转换功能。
 
 # logo-mcp
 
-一个智能Logo提取和分析的MCP（Model Context Protocol）服务器，支持从网站URL自动识别并提取Logo图标，并提供详细的Logo分析功能。
+An intelligent Logo extraction and analysis MCP (Model Context Protocol) server that supports automatic recognition and extraction of Logo icons from website URLs, and provides detailed Logo analysis features.
 
-## 功能特性
+## Features
 
-### 🎯 智能Logo提取
-- **多源识别**：支持从favicon、Apple Touch图标、OpenGraph图像、CSS类名等多种方式提取Logo
-- **智能评分**：自动评估候选Logo质量，选择最佳版本
-- **格式支持**：支持PNG、JPG、SVG等多种图像格式
-- **尺寸优化**：自动选择合适尺寸的Logo版本
+### 🎯 Intelligent Logo Extraction
+- **Multi-source Recognition**: Supports extracting Logos from favicon, Apple Touch icons, OpenGraph images, CSS class names, and more.
+- **Intelligent Scoring**: Automatically evaluates the quality of candidate Logos and selects the best version.
+- **Format Support**: Supports multiple image formats such as PNG, JPG, SVG, etc.
+- **Size Optimization**: Automatically selects the appropriate size version of the Logo.
 
-### 📊 Logo分析
-- **详细信息**：提供Logo尺寸、格式、类型等完整信息
-- **多候选比较**：显示所有可能的Logo候选项及其评分
-- **质量评估**：自动评估Logo图像质量和可用性
-- **快速URL获取**：支持直接获取最佳Logo的URL地址
+### 📊 Logo Analysis
+- **Detailed Information**: Provides complete information about the Logo, including dimensions, format, type, etc.
+- **Multiple Candidate Comparison**: Displays all possible Logo candidates and their scores.
+- **Quality Assessment**: Automatically assesses the quality and usability of the Logo image.
+- **Quick URL Retrieval**: Supports directly obtaining the URL address of the best Logo.
 
+## Installation and Usage
 
+### As an MCP Server
 
-## 安装使用
-
-### 作为MCP服务器使用
-
-1. 安装依赖：
-```bash
+1. Install dependencies:
+bash
 npm install @lucianaib/logo-mcp
-```
 
-2. 在MCP客户端配置中添加：
-```json
+2. Add to MCP client configuration:
+json
 {
   "mcpServers": {
     "logo-mcp": {
@@ -48,64 +43,56 @@ npm install @lucianaib/logo-mcp
     }
   }
 }
-```
 
 
 
-### 开发环境设置
+### Development Environment Setup
 
-1. 克隆仓库：
-```bash
+1. Clone the repository:
+bash
 git clone https://github.com/lfrbmw/Logo-MCP.git
 cd Logo-MCP
-```
 
-2. 安装依赖：
-```bash
+2. Install dependencies:
+bash
 npm install
-```
 
-3. 构建项目：
-```bash
+3. Build the project:
+bash
 npm run build
-```
 
-4. 启动开发服务器：
-```bash
+4. Start the development server:
+bash
 npm run dev
-```
 
-## MCP工具
-使用示例：
-> 使用mcp提取 https://juejin.cn/的 Logo
-
-
+## MCP Tools
+Usage example:
+> Use mcp to extract the Logo from https://juejin.cn/
 
 ### get_best_logo_url
-从网站提取并返回最佳Logo的URL地址，适用于只需要获取最佳Logo URL的场景
+Extracts and returns the URL of the best Logo from a website, suitable for scenarios where only the best Logo URL is needed.
 
-**参数：**
-- `url` (必需): 要分析的网站URL
+**Parameters:**
+- `url` (required): The URL of the website to be analyzed
 
-**示例：**
-```json
+**Example:**
+json
 {
   "name": "get_best_logo_url",
   "arguments": {
     "url": "https://www.google.com"
   }
 }
-```
 
 ### analyze_logo
-分析Logo的基本信息（尺寸、格式、质量等），支持onlyBestUrl参数只返回最佳Logo的URL
+Analyzes basic information about the Logo (dimensions, format, quality, etc.), with an optional parameter `onlyBestUrl` to return only the URL of the best Logo.
 
-**参数：**
-- `url` (必需): 要分析的网站URL
-- `onlyBestUrl` (可选): 是否只返回最佳Logo的URL，默认为false
+**Parameters:**
+- `url` (required): The URL of the website to be analyzed
+- `onlyBestUrl` (optional): Whether to return only the URL of the best Logo, default is false
 
-**示例：**
-```json
+**Example:**
+json
 {
   "name": "analyze_logo",
   "arguments": {
@@ -113,119 +100,115 @@ npm run dev
     "onlyBestUrl": false
   }
 }
-```
 
-## 技术架构
+## Technical Architecture
 
-### 核心模块
+### Core Modules
 
-- **LogoExtractor**: 负责从网站提取Logo候选项，实现多源识别和智能评分算法
-- **ImageProcessor**: 提供图像处理功能，包括格式转换、尺寸调整和质量增强
+- **LogoExtractor**: Responsible for extracting Logo candidates from websites, implementing multi-source recognition and intelligent scoring algorithms.
+- **ImageProcessor**: Provides image processing functions, including format conversion, resizing, and quality enhancement.
 
-### 依赖库
+### Dependencies
 
-- `@modelcontextprotocol/sdk`: MCP协议支持，提供服务器和通信框架
-- `axios`: HTTP请求处理，用于获取网站内容和下载Logo图像
-- `cheerio`: HTML解析，用于从网页中提取Logo相关信息
-- `sharp`: 图像处理，提供格式转换、尺寸调整和增强功能
-- `image-size`: 图像尺寸检测，用于获取Logo图像的尺寸信息
-- `url-parse`: URL解析，用于处理和规范化网站URL
-- `mime-types`: MIME类型检测，用于识别图像文件格式
+- `@modelcontextprotocol/sdk`: MCP protocol support, providing server and communication framework.
+- `axios`: HTTP request handling, used for fetching website content and downloading Logo images.
+- `cheerio`: HTML parsing, used for extracting Logo-related information from web pages.
+- `sharp`: Image processing, providing format conversion, resizing, and enhancement functions.
+- `image-size`: Image dimension detection, used for obtaining the dimensions of Logo images.
+- `url-parse`: URL parsing, used for handling and normalizing website URLs.
+- `mime-types`: MIME type detection, used for identifying image file formats.
 
-## Logo提取策略
+## Logo Extraction Strategy
 
-### 1. 多源候选提取
-- Favicon链接 (`
+### 1. Multi-source Candidate Extraction
+- Favicon link (`
 `)
-- Apple Touch图标 (`
+- Apple Touch icon (`
 `)
-- OpenGraph图像 (``)
-- CSS类名识别 (`.logo`, `#logo`, `.brand`等)
-- 品牌相关图像
+- OpenGraph image (``)
+- CSS class name recognition (`.logo`, `#logo`, `.brand`, etc.)
+- Brand-related images
 
-### 2. 智能评分算法
-- **类型权重**：Logo类名 > Apple Touch > Favicon > 品牌图像 > OG图像
-- **尺寸评分**：偏好32-512px的正方形或接近正方形图像
-- **质量检测**：过滤损坏或空白图像
+### 2. Intelligent Scoring Algorithm
+- **Type Weighting**: Logo class name > Apple Touch > Favicon > Brand image > OG image
+- **Size Scoring**: Prefers square or nearly square images between 32-512px
+- **Quality Check**: Filters out damaged or blank images
 
-### 3. 最佳选择
-根据综合评分自动选择最符合主视觉的Logo版本
+### 3. Best Selection
+Automatically selects the most visually appealing Logo version based on a comprehensive score.
 
-## Logo分析流程
+## Logo Analysis Process
 
-### 1. 多源提取
-- **HTML解析**: 从页面meta标签提取favicon、apple-touch-icon等
-- **CSS分析**: 通过类名和ID识别可能的Logo元素
-- **OpenGraph**: 解析OG图像标签获取社交媒体使用的Logo
-- **智能检测**: 识别页面上可能的品牌标识元素
+### 1. Multi-source Extraction
+- **HTML Parsing**: Extracts favicon, apple-touch-icon, etc., from page meta tags.
+- **CSS Analysis**: Identifies potential Logo elements through class names and IDs.
+- **OpenGraph**: Parses OG image tags to obtain Logos used in social media.- **Smart Detection**: Identify potential brand logo elements on the page
 
-### 2. 候选评分
-- **类型权重**: 根据来源类型分配权重（如明确的logo类名权重更高）
-- **尺寸分析**: 评估图像尺寸是否适合作为Logo（32px-512px范围内）
-- **宽高比**: 优先选择接近正方形的图像
-- **质量检测**: 检查图像是否损坏或过于模糊
+### 2. Candidate Scoring
+- **Type Weighting**: Assign weights based on the source type (e.g., explicit logo class names are given higher weight)
+- **Size Analysis**: Evaluate if the image size is suitable for a logo (within the range of 32px to 512px)
+- **Aspect Ratio**: Prefer images that are close to square
+- **Quality Check**: Inspect if the image is corrupted or too blurry
 
-### 3. 结果输出
-- **详细分析**: 提供所有候选项的详细信息及评分
-- **最佳推荐**: 根据综合评分推荐最合适的Logo
-- **快速获取**: 支持直接返回最佳Logo的URL地址
+### 3. Result Output
+- **Detailed Analysis**: Provide detailed information and scores for all candidates
+- **Best Recommendation**: Recommend the most suitable logo based on the comprehensive score
+- **Quick Access**: Support directly returning the URL of the best logo
 
+## Error Handling
 
+- **Network Errors**: Timeout retries and friendly prompts
+- **Image Corruption**: Automatic detection and skipping
+- **Unsupported Formats**: Clear error messages
+- **No Logo Found**: Return a friendly no-result message
 
-## 错误处理
+## Performance Optimization
 
-- **网络错误**：超时重试和友好提示
-- **图像损坏**：自动检测和跳过
-- **格式不支持**：清晰的错误信息
-- **无Logo情况**：返回友好的无结果提示
+- **Concurrent Processing**: Parallel validation of multiple candidate logos
+- **Caching Mechanism**: Avoid repeated downloads
+- **Memory Management**: Timely release of image buffers
+- **Timeout Control**: Prevent long-term blocking
 
-## 性能优化
+## Contribution Guidelines
 
-- **并发处理**：多候选Logo并行验证
-- **缓存机制**：避免重复下载
-- **内存管理**：及时释放图像缓冲区
-- **超时控制**：防止长时间阻塞
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 贡献指南
+## License
 
-1. Fork项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开Pull Request
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/lfrbmw/Logo-MCP/blob/HEAD/LICENSE) file for details
 
-## 许可证
-
-本项目采用MIT许可证 - 查看 [LICENSE](https://github.com/lfrbmw/Logo-MCP/blob/HEAD/LICENSE) 文件了解详情
-
-## 作者
+## Authors
 
 - **lucianaib** - [GitHub](https://github.com/lfrbmw)
 
-## 支持
+## Support
 
-如果您遇到问题或有功能建议，请在 [GitHub Issues](https://github.com/lfrbmw/Logo-MCP/issues) 中提出。
+If you encounter any issues or have feature suggestions, please raise them in [GitHub Issues](https://github.com/lfrbmw/Logo-MCP/issues).
 
 ---
 
-**Logo MCP** - 让Logo提取变得简单智能 🚀
+**Logo MCP** - Making logo extraction simple and smart 🚀
 
-**官方网站：** [https://github.com/lfrbmw/Logo-MCP](https://github.com/lfrbmw/Logo-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/lfrbmw/Logo-MCP](https://github.com/lfrbmw/Logo-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`, `media`
-- 标签：`developer tools`, `entertainment and media`, `file systems`, `图标`, `chinese`
+- Categories: `files`, `media`
+- Tags: `developer tools`, `entertainment and media`, `file systems`, `图标`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@lucianaib/logo-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@lucianaib/logo-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/weiaib-logo.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/weiaib-logo.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

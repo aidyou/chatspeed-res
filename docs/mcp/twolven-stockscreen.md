@@ -1,55 +1,55 @@
 ---
-title: "Yahoo股票筛"
-description: "通过Yahoo Finance提供全面的股票筛选功能。使大型语言模型（LLM）能够根据技术、基本面和期权标准筛选股票，并支持观察列表管理和结果存储。"
+title: "mcp-stockscreen"
+description: "Provides comprehensive stock screening capabilities through Yahoo Finance. Enables LLMs to screen stocks based on technical, fundamental, and options criteria, with support for watchlist management an…"
 ---
 
-# Yahoo股票筛
+# mcp-stockscreen
 
-通过Yahoo Finance提供全面的股票筛选功能。使大型语言模型（LLM）能够根据技术、基本面和期权标准筛选股票，并支持观察列表管理和结果存储。
+Provides comprehensive stock screening capabilities through Yahoo Finance. Enables LLMs to screen stocks based on technical, fundamental, and options criteria, with support for watchlist management an…
 
-# StockScreen MCP 服务器
+# StockScreen MCP Server
 
-一个通过 Yahoo Finance 提供全面股票筛选功能的模型上下文协议 (MCP) 服务器。支持基于技术、基本面和期权标准进行股票筛选，并支持观察列表管理和结果存储。
+A Model Context Protocol (MCP) server providing comprehensive stock screening capabilities through Yahoo Finance. Enables LLMs to screen stocks based on technical, fundamental, and options criteria, with support for watchlist management and result storage.
 
-## 功能
+## Features
 
-### 股票筛选
-- 技术分析筛选
-  - 价格和成交量过滤器
-  - 移动平均线（20、50、200日简单移动平均线）
-  - RSI 指标
-  - 平均真实波动范围 (ATR)
-  - 趋势分析（1天、5天、20天变化）
-  - MA 距离计算
+### Stock Screening
+- Technical Analysis Screening
+  - Price and volume filters
+  - Moving averages (20, 50, 200 SMA)
+  - RSI indicators
+  - Average true Range (ATR)
+  - Trend analysis (1d, 5d, 20d changes)
+  - MA distance calculations
 
-- 基本面筛选
-  - 市值过滤器
-  - P/E 比率分析
-  - 股息收益率标准
-  - 收入增长指标
-  - ETF 特定指标（资产管理规模、费用比率）
+- Fundamental Screening
+  - Market capitalization filters
+  - P/E ratio analysis
+  - Dividend yield criteria
+  - Revenue growth metrics
+  - ETF-specific metrics (AUM, expense ratio)
 
-- 期权筛选
-  - 隐含波动率 (IV) 过滤器
-  - 期权成交量和未平仓合约
-  - 看跌/看涨比率分析
-  - 买卖价差评估
-  - 盈利日期临近检查
+- Options Screening
+  - Implied Volatility (IV) filters
+  - Options volume and open interest
+  - Put/Call ratio analysis
+  - Bid-ask spread evaluation
+  - Earnings date proximity checks
 
-### 数据管理
-- 观察列表创建和管理
-- 筛选结果存储
-- 默认符号类别
-  - 超大市值（>2000亿美元）
-  - 大市值（100亿-2000亿美元）
-  - 中等市值（20亿-100亿美元）
-  - 小市值（3亿-20亿美元）
-  - 微市值（2000亿美元
-- "large_cap": 100亿-2000亿美元
-- "mid_cap": 20亿-100亿美元
-- "small_cap": 3亿-20亿美元
-- "micro_cap": <3亿美元
-- "etf": ETF 工具
+### Data Management
+- Watchlist Creation and Management
+- Screening Result Storage
+- Default Symbol Categories
+  - Mega Cap (>$200B)
+  - Large Cap ($10B-$200B)
+  - Mid Cap ($2B-$10B)
+  - Small Cap ($300M-$2B)
+  - Micro Cap ($200B
+- "large_cap": $10B-$200B
+- "mid_cap": $2B-$10B
+- "small_cap": $300M-$2B
+- "micro_cap": <$300M
+- "etf": ETF instruments
 
 2. `manage_watchlist`
 ```python
@@ -67,9 +67,9 @@ description: "通过Yahoo Finance提供全面的股票筛选功能。使大型�
 }
 ```
 
-## 响应格式
+## Response Formats
 
-### 技术筛选响应
+### Technical Screen Response
 ```python
 {
     "screen_type": "technical",
@@ -107,77 +107,77 @@ description: "通过Yahoo Finance提供全面的股票筛选功能。使大型�
     "timestamp": str
 }
 ```
-## Claude 使用提示
+## Usage Prompt for Claude
 
-“我已经启用了提供股票筛选功能的 stockscreen 工具。您可以使用三个主要功能：
+"I've enabled the stockscreen tools which provide stock screening capabilities. You can use three main functions:
 
-1. 用各种标准类型筛选股票：
-   - 技术：价格、成交量、RSI、移动平均线、ATR
-   - 基本面：市值、P/E、股息、增长率
-   - 期权：IV、成交量、盈利日期
-   - 自定义：结合多种标准类型
+1. Screen stocks with various criteria types:
+   - Technical: Price, volume, RSI, moving averages, ATR
+   - Fundamental: Market cap, P/E, dividends, growth
+   - Options: IV, volume, earnings dates
+   - Custom: Combine multiple criteria types
 
-2. 管理观察列表：
-   - 创建和更新符号列表
-   - 删除现有观察列表
-   - 检索观察列表内容
+2. Manage watchlists:
+   - Create and update symbol lists
+   - Delete existing watchlists
+   - Retrieve watchlist contents
 
-3. 访问已保存的筛选结果：
-   - 加载之前的筛选结果
-   - 查看匹配的符号和标准
+3. Access saved screening results:
+   - Load previous screen results
+   - Review matched symbols and criteria
 
-所有功能都包括错误处理、详细的市场数据和全面的响应。”
+All functions include error handling, detailed market data, and comprehensive responses."
 
-## 要求
+## Requirements
 
 - Python 3.12+
-- MCP 服务器
+- MCP Server
 - yfinance
 - pandas
 - numpy
 - asyncio
 
-## 限制
+## Limitations
 
-- 数据来源于雅虎财经，可能存在延迟
-- 根据雅虎财经API的限制进行速率限制
-- 期权数据的可用性取决于市场时间
-- 某些财务指标可能有延迟或不可用
+- Data sourced from Yahoo Finance with potential delays
+- Rate limits based on Yahoo Finance API restrictions
+- Options data availability depends on market hours
+- Some financial metrics may be delayed or unavailable
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 
-本项目采用MIT许可证 - 详情请参阅[LICENSE](https://github.com/twolven/mcp-stockscreen/blob/HEAD/LICENSE)文件。
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/twolven/mcp-stockscreen/blob/HEAD/LICENSE) file for details.
 
-## 作者
+## Author
 
-Todd Wolven - ([https://github.com/twolven](https://github.com/twolven))
+Todd Wolven - (https://github.com/twolven)
 
-## 致谢
+## Acknowledgments
 
-- 使用Anthropic的模型上下文协议（MCP）构建
-- 数据由[Yahoo Finance](https://finance.yahoo.com/)提供
-- 为与Anthropic的Claude一起使用而开发
+- Built with the Model Context Protocol (MCP) by Anthropic
+- Data provided by [Yahoo Finance](https://finance.yahoo.com/)
+- Developed for use with Anthropic's Claude
 
-**官方网站：** [https://github.com/twolven/mcp-stockscreen](https://github.com/twolven/mcp-stockscreen)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/twolven/mcp-stockscreen](https://github.com/twolven/mcp-stockscreen)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`path/to/stockscreen.py`
+- Transport: `stdio`
+- Command: `python`
+- Args: `path/to/stockscreen.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/twolven-stockscreen.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/twolven-stockscreen.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

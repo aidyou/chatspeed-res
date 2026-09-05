@@ -1,35 +1,35 @@
 ---
-title: "MCP上下文管理总结功能"
-description: "通过一个清晰且可扩展的架构提供智能摘要功能。主要构建用于解决大型存储库中的人工智能代理问题，因为在大型存储库中，大文件可能会占用上下文窗口。"
+title: "mcp-summarization-functions"
+description: "Provides intelligent summarization capabilities through a clean, extensible architecture. Mainly built for solving AI agents issues on big repositories, where large files can eat up the context window…"
 ---
 
-# MCP上下文管理总结功能
+# mcp-summarization-functions
 
-通过一个清晰且可扩展的架构提供智能摘要功能。主要构建用于解决大型存储库中的人工智能代理问题，因为在大型存储库中，大文件可能会占用上下文窗口。
+Provides intelligent summarization capabilities through a clean, extensible architecture. Mainly built for solving AI agents issues on big repositories, where large files can eat up the context window…
 
-# 摘要功能
+# Summarization Functions
 
-### 为 Model Context Protocol 提供智能文本摘要
+### Intelligent text summarization for the Model Context Protocol
 
-[功能](#features) •
-[AI 代理集成](#ai-agent-integration) •
-[安装](#installation) •
-[使用](#usage)
+[Features](#features) •
+[AI Agent Integration](#ai-agent-integration) •
+[Installation](#installation) •
+[Usage](#usage)
 
 [Smithery](https://smithery.ai/server/mcp-summarization-functions)
-[![npm 版本](/mcp-assets/b583c5f3726f8d2d2e609ea4aeba1926.svg)](https://www.npmjs.com/package/mcp-summarization-functions)
+[![npm version](/mcp-assets/b583c5f3726f8d2d2e609ea4aeba1926.svg)](https://www.npmjs.com/package/mcp-summarization-functions)
 
 ---
 
-## 概述
+## Overview
 
-一个强大的 MCP 服务器，通过简洁、可扩展的架构提供智能摘要功能。使用现代 TypeScript 构建，并设计用于与 AI 工作流无缝集成。
+A powerful MCP server that provides intelligent summarization capabilities through a clean, extensible architecture. Built with modern TypeScript and designed for seamless integration with AI workflows.
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/mcp-summarization-functions) 自动安装 Claude Desktop 的摘要功能：
+To install Summarization Functions for Claude Desktop automatically via [Smithery](https://smithery.ai/server/mcp-summarization-functions):
 
 ```bash
 npx -y @smithery/cli install mcp-summarization-functions --client claude
@@ -39,36 +39,36 @@ npx -y @smithery/cli install mcp-summarization-functions --client claude
 npm i mcp-summarization-functions
 ```
 
-## AI 代理集成
+## AI Agent Integration
 
-此 MCP 服务器主要开发用于增强像 Roo Cline 和 Cline 这样的 AI 代理的性能和可靠性。它解决了 AI 代理操作中的一个关键挑战：上下文窗口管理。
+This MCP server was primarily developed to enhance the performance and reliability of AI agents like Roo Cline and Cline. It addresses a critical challenge in AI agent operations: context window management.
 
-### 上下文窗口优化
+### Context Window Optimization
 
-AI 代理经常遇到其上下文窗口被以下内容迅速填满的情况：
-- 命令执行结果
-- 文件内容读取
-- 目录列表
-- API 响应
-- 错误消息和堆栈跟踪
+AI agents frequently encounter situations where their context window gets rapidly filled with large outputs from:
+- Command execution results
+- File content readings
+- Directory listings
+- API responses
+- Error messages and stack traces
 
-该服务器通过以下方式帮助维持高效的上下文使用：
-1. 提供简洁的相关摘要而不是完整内容
-2. 存储完整内容以备需要时参考
-3. 根据具体需求（安全、API 表面等）提供专注的分析
-4. 支持多种输出格式以优化上下文利用
+This server helps maintain efficient context usage by:
+1. Providing concise, relevant summaries instead of full content
+2. Storing full content for reference when needed
+3. Offering focused analysis based on specific needs (security, API surface, etc.)
+4. Supporting multiple output formats for optimal context utilization
 
-### 对 AI 代理的好处
+### Benefits for AI Agents
 
-- **降低失败率**：通过防止上下文窗口溢出
-- **提高响应质量**：通过专注的相关摘要
-- **提高效率**：在减少噪音的同时保持重要上下文
-- **更好的资源管理**：通过智能内容缓存和检索
-- **灵活集成**：支持多个 AI 提供商和配置选项
+- **Reduced Failure Rates**: By preventing context window overflow
+- **Improved Response Quality**: Through focused, relevant summaries
+- **Enhanced Efficiency**: By maintaining important context while reducing noise
+- **Better Resource Management**: Through intelligent content caching and retrieval
+- **Flexible Integration**: Supporting multiple AI providers and configuration options
 
-### 推荐的 AI 代理提示
+### Recommended AI Agent Prompt
 
-在与 AI 代理集成时，请在代理的指令中包含以下内容：
+When integrating with AI agents, include the following in your agent's instructions:
 
 ```
 # CONTEXT MANAGEMENT
@@ -97,48 +97,48 @@ ALWAYS utilize available features:
 There is NO NEED to process perfect or complete output. Summarized content is ALWAYS preferred over raw data. When in doubt, use summarization.
 ```
 
-在 Ollama 仓库中实际应用摘要功能（Gemini 2.0 Flash 摘要，Claude 3.5 代理）
+Summarization in action on the Ollama repository (Gemini 2.0 Flash summarization, Claude 3.5 agent)
 
-## 功能
+## Features
 
-- **命令输出摘要**  
-  执行命令并获取其输出的简洁摘要
+- **Command Output Summarization**  
+  Execute commands and get concise summaries of their output
 
-- **文件内容分析**  
-  在保持技术准确性的同时，总结单个或多个文件
+- **File Content Analysis**  
+  Summarize single or multiple files while maintaining technical accuracy
 
-- **目录结构理解**  
-  获取复杂目录结构的清晰概览
+- **Directory Structure Understanding**  
+  Get clear overviews of complex directory structures
 
-- **灵活的模型支持**
-  使用来自不同提供商的模型
+- **Flexible Model Support**
+  Use models from different providers
 
-- **AI 代理上下文优化**
-  通过智能摘要防止上下文窗口溢出并提高 AI 代理性能
+- **AI Agent Context Optimization**
+  Prevent context window overflow and improve AI agent performance through intelligent summarization
 
-## 配置
+## Configuration
 
-服务器通过环境变量支持多个 AI 提供商：
+The server supports multiple AI providers through environment variables:
 
-### 必需的环境变量
+### Required Environment Variables
 
-- `PROVIDER`: 要使用的AI提供商。支持的值：
-        - `ANTHROPIC` - 来自Anthropic的Claude模型
-        - `OPENAI` - 来自OpenAI的GPT模型
-        - `OPENAI-COMPATIBLE` - 与OpenAI兼容的API（例如Azure）
-        - `GOOGLE` - 来自Google的Gemini模型
-- `API_KEY`: 所选提供商的API密钥
+- `PROVIDER`: AI provider to use. Supported values:
+		- `ANTHROPIC` - Claude models from Anthropic
+		- `OPENAI` - GPT models from OpenAI
+		- `OPENAI-COMPATIBLE` - OpenAI-compatible APIs (e.g. Azure)
+		- `GOOGLE` - Gemini models from Google
+- `API_KEY`: API key for the selected provider
 
-### 可选环境变量
+### Optional Environment Variables
 
-- `MODEL_ID`: 使用的具体模型（默认为提供商的标准模型）
-- `PROVIDER_BASE_URL`: 用于与OpenAI兼容提供商的自定义API端点
-- `MAX_TOKENS`: 模型响应的最大令牌数（默认：1024）
-- `SUMMARIZATION_CHAR_THRESHOLD`: 当需要总结时的字符计数阈值（默认：512）
-- `SUMMARIZATION_CACHE_MAX_AGE`: 缓存持续时间，以毫秒为单位（默认：3600000 - 1小时）
-- `MCP_WORKING_DIR` - 作为回退目录，尝试从中查找具有相对路径的文件
+- `MODEL_ID`: Specific model to use (defaults to provider's standard model)
+- `PROVIDER_BASE_URL`: Custom API endpoint for OpenAI-compatible providers
+- `MAX_TOKENS`: Maximum tokens for model responses (default: 1024)
+- `SUMMARIZATION_CHAR_THRESHOLD`: Character count threshold for when to summarize (default: 512)
+- `SUMMARIZATION_CACHE_MAX_AGE`: Cache duration in milliseconds (default: 3600000 - 1 hour)
+- `MCP_WORKING_DIR` - fallback directory for trying to find files with relative paths from
 
-### 示例配置
+### Example Configurations
 
 ```bash
 # Anthropic Configuration
@@ -163,33 +163,33 @@ API_KEY=your-google-key
 MODEL_ID=gemini-2.0-flash-exp
 ```
 
-## 使用方法
+## Usage
 
-将服务器添加到您的MCP配置文件中：
+Add the server to your MCP configuration file:
 
 ```json
 {
-        "mcpServers": {
-                "MUST_USE_summarization": {
-                        "command": "node",
-                        "args": ["path/to/summarization-functions/build/index.js"],
-                        "env": {
-                                "PROVIDER": "ANTHROPIC",
-                                "API_KEY": "your-api-key",
-                                "MODEL_ID": "claude-3-5-sonnet-20241022",
+		"mcpServers": {
+				"MUST_USE_summarization": {
+						"command": "node",
+						"args": ["path/to/summarization-functions/build/index.js"],
+						"env": {
+								"PROVIDER": "ANTHROPIC",
+								"API_KEY": "your-api-key",
+								"MODEL_ID": "claude-3-5-sonnet-20241022",
                 "MCP_WORKING_DIR": "default_working_directory"
-                        }
-                }
-        }
+						}
+				}
+		}
 }
 ```
 
-### 可用功能
+### Available Functions
 
-该服务器提供以下摘要工具：
+The server provides the following summarization tools:
 
 #### `summarize_command`
-执行并总结命令输出。
+Execute and summarize command output.
 ```typescript
 {
   // Required
@@ -203,7 +203,7 @@ MODEL_ID=gemini-2.0-flash-exp
 ```
 
 #### `summarize_files`
-总结文件内容。
+Summarize file contents.
 ```typescript
 {
   // Required
@@ -217,7 +217,7 @@ MODEL_ID=gemini-2.0-flash-exp
 ```
 
 #### `summarize_directory`
-获取目录结构概览。
+Get directory structure overview.
 ```typescript
 {
   // Required
@@ -232,7 +232,7 @@ MODEL_ID=gemini-2.0-flash-exp
 ```
 
 #### `summarize_text`
-总结任意文本内容。
+Summarize arbitrary text content.
 ```typescript
 {
   // Required
@@ -246,7 +246,7 @@ MODEL_ID=gemini-2.0-flash-exp
 ```
 
 #### `get_full_content`
-根据给定的摘要ID检索完整内容。
+Retrieve the full content for a given summary ID.
 ```typescript
 {
   // Required
@@ -254,26 +254,26 @@ MODEL_ID=gemini-2.0-flash-exp
 }
 ```
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/Braffolk/MCP-summarization-functions](https://github.com/Braffolk/MCP-summarization-functions)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Braffolk/MCP-summarization-functions](https://github.com/Braffolk/MCP-summarization-functions)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`memory`, `data`
-- 标签：`research and data`, `developer tools`, `knowledge and memory`, `chinese`
+- Categories: `memory`, `data`
+- Tags: `research and data`, `developer tools`, `knowledge and memory`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`path/to/summarization-functions/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `path/to/summarization-functions/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/braffolk-summarization-functions.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/braffolk-summarization-functions.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

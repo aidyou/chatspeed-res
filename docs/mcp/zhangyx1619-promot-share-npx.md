@@ -1,35 +1,35 @@
 ---
-title: "AI 提示词分享平台MCP"
-description: "Promot Share MCP Server 是一个标准的 MCP (Model Context Protocol) 服务器，为 Cursor IDE , 通义灵码 ，trae 提供 AI 提示词分享平台的功能。"
+title: "promot-share-mcp-npx"
+description: "Promot Share MCP Server is a standard MCP (Model Context Protocol) server that provides an AI prompt sharing platform for Cursor IDE, Tongyi Lingma, and Trae."
 ---
 
-# AI 提示词分享平台MCP
+# promot-share-mcp-npx
 
-Promot Share MCP Server 是一个标准的 MCP (Model Context Protocol) 服务器，为 Cursor IDE , 通义灵码 ，trae 提供 AI 提示词分享平台的功能。
+Promot Share MCP Server is a standard MCP (Model Context Protocol) server that provides an AI prompt sharing platform for Cursor IDE, Tongyi Lingma, and Trae.
 
 # Promot Share MCP Server
 
-🤖 **Promot Share MCP Server** 是一个标准的 MCP (Model Context Protocol) 服务器，为 Cursor IDE 提供 AI 提示词分享平台的功能。
+🤖 **Promot Share MCP Server** is a standard MCP (Model Context Protocol) server that provides an AI prompt sharing platform for the Cursor IDE.
 
-## ✨ 功能特性
+## ✨ Features
 
-- 🔍 **智能搜索** - 根据需求描述匹配最相关的提示词
-- 📝 **详情查看** - 获取提示词的完整信息  
-- ✨ **内容创建** - 分享优质提示词给社区
-- 👍 **互动功能** - 点赞、评论、收藏提示词
-- 📂 **分类管理** - 18+ 专业分类体系
-- 🔒 **安全认证** - API Key 认证保护
+- 🔍 **Intelligent Search** - Match the most relevant prompts based on the requirement description
+- 📝 **View Details** - Get complete information of the prompt
+- ✨ **Content Creation** - Share high-quality prompts with the community
+- 👍 **Interactive Features** - Like, comment, and favorite prompts
+- 📂 **Category Management** - 18+ professional category systems
+- 🔒 **Security Authentication** - API Key authentication protection
 
-## 🚀 快速开始
-api_key 需要 在https://promot-share.zhangyx-v.cn 注册登录后自行创建，注册登录过程需要激活码，可以邮箱联系zhangyx-vip@foxmail.com获取
+## 🚀 Quick Start
+The `api_key` needs to be created after registering and logging in at https://promot-share.zhangyx-v.cn. The registration and login process requires an activation code, which can be obtained by emailing zhangyx-vip@foxmail.com.
 
-## 🔧 Cursor IDE 配置
+## 🔧 Cursor IDE Configuration
 
-### 旧版本 Cursor (无法携带请求头)
+### Old Version of Cursor (Cannot Carry Request Headers)
 
-在 Cursor 设置中添加 MCP 服务器：
+Add the MCP server in the Cursor settings:
 
-```json
+json
 {
   "mcpServers": {
     "promot-share": {
@@ -42,13 +42,12 @@ api_key 需要 在https://promot-share.zhangyx-v.cn 注册登录后自行创建�
     }
   }
 }
-```
 
-### 新版本 Cursor (支持请求头)
+### New Version of Cursor (Supports Request Headers)
 
-可以直接使用 SSE 方式连接原始服务器：
+You can directly connect to the original server using SSE:
 
-```json
+json
 {
   "mcpServers": {
     "promot-share": {
@@ -59,113 +58,105 @@ api_key 需要 在https://promot-share.zhangyx-v.cn 注册登录后自行创建�
     }
   }
 }
-```
 
-## 🛠️ 可用工具
+## 🛠️ Available Tools
 
-### 🔍 search_prompts - 智能搜索
-根据需求描述搜索最相关的提示词
+### 🔍 search_prompts - Intelligent Search
+Search for the most relevant prompts based on the requirement description
 
+**Parameters:**
+- `query` (required) - Search keyword or requirement description
+- `category` (optional) - Prompt category
+- `limit` (optional) - Number of results to return, default is 10
+- `sortBy` (optional) - Sorting method: relevance/popularity/recent
 
-**参数：**
-- `query` (必需) - 搜索关键词或需求描述
-- `category` (可选) - 提示词分类
-- `limit` (可选) - 返回结果数量，默认 10
-- `sortBy` (可选) - 排序方式：relevance/popularity/recent
+**Example:**
+ 
+Search for prompts related to "writing code comments"
 
-**示例：**
-```
-搜索与"写代码注释"相关的提示词
-```
+### 📝 get_prompt_detail - Get Details
+Get the complete information of a specified prompt
 
-### 📝 get_prompt_detail - 获取详情
-获取指定提示词的完整信息
+**Parameters:**
+- `id` (required) - Prompt ID
 
-**参数：**
-- `id` (必需) - 提示词ID
+### ✨ create_prompt - Create Prompt
+Share a new prompt with the platform
 
-### ✨ create_prompt - 创建提示词
-向平台分享新的提示词
+**Parameters:**
+- `title` (required) - Prompt title
+- `chineseDesc` (required) - Chinese prompt content
+- `englishDesc` (required) - English prompt content
+- `category` (required) - Category
+- `tags` (optional) - Array of tags
 
-**参数：**
-- `title` (必需) - 提示词标题
-- `chineseDesc` (必需) - 中文提示词内容
-- `englishDesc` (必需) - 英文提示词内容  
-- `category` (必需) - 分类
-- `tags` (可选) - 标签数组
+### 👍 like_prompt - Like/Unlike
+Like or unlike a prompt
 
-### 👍 like_prompt - 点赞/取消点赞
-为提示词点赞或取消点赞
+**Parameters:**
+- `promptId` (required) - Prompt ID
+- `action` (optional) - like/unlike, default is like
 
-**参数：**
-- `promptId` (必需) - 提示词ID
-- `action` (可选) - like/unlike，默认 like
+### 💬 comment_prompt - Add Comment
+Add a comment and rating to a prompt
 
-### 💬 comment_prompt - 添加评论
-为提示词添加评论和评分
+**Parameters:**
+- `promptId` (required) - Prompt ID
+- `content` (required) - Comment content
+- `rating` (optional) - Rating from 1 to 5
 
-**参数：**
-- `promptId` (必需) - 提示词ID
-- `content` (必需) - 评论内容
-- `rating` (可选) - 评分 1-5
+## 📂 Supported Categories
 
+- 💻 **Programming Development** - `programming`, `cursor`, `product`, `testing`
+- ✍️ **Writing and Creativity** - `writing`, `article`, `creative`, `copywriting`
+- 🤖 **AI Related** - `ai`, `ai-art`
+- 💼 **Business and Workplace** - `business`, `marketing`, `enterprise`, `seo`
+- 🎓 **Education and Academia** - `education`, `academic`
+- 🧠 **Psychology and Social** - `psychology`, `philosophy`
+- 🏠 **Life Scenarios** - `life`
+- 🛠️ **Tool Assistance** - `tool`, `game`
+- 📊 **Analysis and Evaluation** - `analysis`, `eval`
+- 🌐 **Language Translation** - `language`
+- 💰 **Finance and Investment** - `finance`, `doctor`
+- 🎵 **Creative Entertainment** - `music`, `industry`, `social`
 
-## 📂 支持的分类
+## 🐛 Troubleshooting
 
-- 💻 **编程开发** - `programming`, `cursor`, `product`, `testing`
-- ✍️ **写作创作** - `writing`, `article`, `creative`, `copywriting`
-- 🤖 **AI 相关** - `ai`, `ai-art`
-- 💼 **商务职场** - `business`, `marketing`, `enterprise`, `seo`
-- 🎓 **教育学术** - `education`, `academic`
-- 🧠 **心理社交** - `psychology`, `philosophy`
-- 🏠 **生活场景** - `life`
-- 🛠️ **工具辅助** - `tool`, `game`
-- 📊 **分析评估** - `analysis`, `eval`
-- 🌐 **语言翻译** - `language`
-- 💰 **金融投资** - `finance`, `doctor`
-- 🎵 **创意娱乐** - `music`, `industry`, `social`
+### Connection Failure
+- Check if `PROMOT_SHARE_API_URL` is correct
+- Verify that the API server is running
+- Ensure that the network connection is normal
 
+### Authentication Failure
+- Check if `API_KEY` is correct
+- Confirm that the API Key is valid and not expired
+- Verify user permissions
 
+### Timeout Error
+- Increase the `REQUEST_TIMEOUT` value
+- Check for network latency
+- Ensure the server response is normal
 
-## 🐛 故障排除
+## 🔗 Related Links
 
-### 连接失败
-- 检查 `PROMOT_SHARE_API_URL` 是否正确
-- 验证 API 服务器是否运行
-- 确认网络连接正常
+- [Promot Share WEB Platform Address](https://promot-share.zhangyx-v.cn/promots)
 
-### 认证失败
-- 检查 `API_KEY` 是否正确
-- 确认 API Key 是否有效且未过期
-- 验证用户权限
+**Official site: ** [https://github.com/ZYX2018/promot-share-mcp-npx?tab=readme-ov-file](https://github.com/ZYX2018/promot-share-mcp-npx?tab=readme-ov-file)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-### 超时错误
-- 增加 `REQUEST_TIMEOUT` 值
-- 检查网络延迟
-- 确认服务器响应正常
+## Categories & Tags
 
+- Categories: `memory`, `communication`
+- Tags: `developer tools`, `search`, `communication`, `knowledge and memory`, `chinese`
 
+## MCP Configuration
 
-## 🔗 相关链接
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@zhangyx-v/promot-share-mcp-server`
 
-- [Promot Share WEB平台地址](https://promot-share.zhangyx-v.cn/promots)
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-**官方网站：** [https://github.com/ZYX2018/promot-share-mcp-npx?tab=readme-ov-file](https://github.com/ZYX2018/promot-share-mcp-npx?tab=readme-ov-file)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Data source
 
-## 分类与标签
-
-- 分类：`memory`, `communication`
-- 标签：`developer tools`, `search`, `communication`, `knowledge and memory`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@zhangyx-v/promot-share-mcp-server`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/zhangyx1619-promot-share-npx.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zhangyx1619-promot-share-npx.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,109 +1,108 @@
 ---
-title: "IP归属地查询"
-description: "通过IP地址查询IP归属地相关信息，包含省、市和运营商等信息，支持全球IP查询,支持IPv4。"
+title: "th-ip-location-query"
+description: "Query IP attribution information through the IP address, including province, city, and ISP (Internet Service Provider) details. It supports global IP queries and is compatible with IPv4."
 ---
 
-# IP归属地查询
+# th-ip-location-query
 
-通过IP地址查询IP归属地相关信息，包含省、市和运营商等信息，支持全球IP查询,支持IPv4。
+Query IP attribution information through the IP address, including province, city, and ISP (Internet Service Provider) details. It supports global IP queries and is compatible with IPv4.
 
-# 瞳虎-IP归属地查询 MCP 服务文档
+# Tonghu-IP Location Query MCP Service Documentation
 
-## 什么是 瞳虎-IP归属地查询 MCP 服务？
-瞳虎IP归属地查询MCP Server提供以下核心功能：
-- 通过IP地址查询IP归属地相关信息。
+## What is the Tonghu-IP Location Query MCP Service?
+The Tonghu IP Location Query MCP Server provides the following core functionalities:
+- Querying IP location-related information through an IP address.
 
-服务特点：
-- **覆盖信息全**：直连四大运营商，支持移动、电信、联通、广电、虚拟号码
-- **实时更新**：实时核验，毫秒响应，精准核验。
-- **返回字段**：返回运营商、城市、省份、邮编等信息
+Service Features:
+- **Comprehensive Coverage**: Directly connected to four major carriers, supporting Mobile, Telecom, Unicom, Broadcasting, and virtual numbers.
+- **Real-time Updates**: Real-time verification, millisecond response, precise verification.
+- **Returned Fields**: Returns carrier, city, province, postal code, and other information.
 
 ---
 
-## 如何使用 瞳虎-IP归属地查询 MCP 服务？
-### API Key 获取方式
-1. 注册登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")
-2. 创建您的 API Key（已创建的可直接使用）
-3. 在[产品中心](https://mcp.tonghu.top/#/layout/prodCenter "瞳虎MCP")开通【IP归属地查询】服务
-### 部署方式1（SSE）
-```
+## How to Use the Tonghu-IP Location Query MCP Service?
+### API Key Acquisition
+1. Register and log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP")
+2. Create your API Key (if already created, you can use it directly)
+3. Enable the [IP Location Query] service in the [Product Center](https://mcp.tonghu.top/#/layout/prodCenter "Tonghu MCP")
+
+### Deployment Method 1 (SSE)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/sse?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/sse?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-### 部署方式2（Streamable Http）
-```
+
+### Deployment Method 2 (Streamable Http)
+json
 {
   "mcpServers": {
     "TH_MCP": {
-      "url": "https://mcp.tonghu.top/streamable?apiKey=您在瞳虎mcp平台上申请的apiKey"
+      "url": "https://mcp.tonghu.top/streamable?apiKey=YourAPIKeyFromTonghuMCPPlatform"
     }
   }
 }
-```
-> **注意事项**：
-- 服务已支持集成到智能体和工作流中
+
+> **Note**:
+- The service is now supported for integration into agents and workflows.
 
 ---
 
+## Use Cases of the Tonghu-IP Location Query MCP Service
 
+1. **Visitor Geolocation**
+   - When a visitor enters the website, the system automatically detects their IP address and calls the MCP IP Location Query interface to obtain location information.
+   - Based on the obtained information, dynamically adjust the page language or display relevant content (such as promotions for specific regions).
+   - Enhance user experience, increase user engagement, and improve the relevance and appeal of the content.
 
-## 瞳虎-IP归属地查询 MCP 服务的使用案例
+3. **Security Protection and Fraud Detection**
+   - During login or transaction processes, check the user's IP address location in real-time.
+   - If the IP address is from a known risky area, trigger additional security verification steps or directly reject the request.
+   - Strengthen account security and reduce unauthorized access. Prevent online fraud and other forms of cybercrime.
 
-1. **访问者地理定位**  
-   - 当访问者进入网站时，系统自动检测其IP地址，并调用 MCP IP 归属地查询接口获取归属地信息。
-   - 根据获取的信息动态调整页面语言或显示相关内容（如特定地区的促销活动）。
-   - 提升用户体验，增加用户粘性。提高内容的相关性和吸引力。
-
-3. **安全防护与欺诈检测**  
-   - 在登录或交易过程中，实时检查用户的IP地址归属地。
-   - 如果发现来自已知的风险地区，则触发额外的安全验证步骤或直接拒绝请求。
-   - 加强账户安全，减少未经授权的访问。防范网络诈骗和其他形式的在线欺诈。
-  
-4. **数字营销与广告投放优化**  
-   - 分析网站访客的IP地址以确定其地理位置，然后据此调整广告内容和投放位置。
-   - 提高广告点击率和转化率。
-   - 更精准地触达潜在客户群体。
+4. **Digital Marketing and Ad Placement Optimization**
+   - Analyze the IP addresses of website visitors to determine their geographical locations and then adjust ad content and placement accordingly.
+   - Increase ad click-through rates and conversion rates.
+   - More accurately reach potential customer groups.
 
 ---
 
-## 常见问题解答
+## Frequently Asked Questions
 
-**Q：使用瞳虎-IP归属地查询MCP服务是否需要付费？**  
-A：首次开通产品有免费试用额度，额度耗尽可选择：
-- 购买套餐（限时优惠）
-- 充值余额按次扣费
-- 量大可联系客服定制额外优惠
+**Q: Is there a cost associated with using the Tonghu-IP Location Query MCP Service?**  
+A: There is a free trial quota when you first activate the product. After the quota is exhausted, you can choose:
+- Purchase a package (limited-time offer)
+- Recharge your balance and pay per use
+- For large volumes, contact customer service for customized discounts
 
-**Q：使用瞳虎-IP归属地查询MCP服务注意事项？**  
-A：首次使用请：
-1. 登录[瞳虎MCP平台](https://mcp.tonghu.top "瞳虎MCP")，使用手机号注册账号
-2. 创建 API Key
-3. 在产品中心开通服务（可额外购买套餐）
+**Q: What should I be aware of when using the Tonghu-IP Location Query MCP Service?**  
+A: For first-time users, please:
+1. Log in to the [Tonghu MCP Platform](https://mcp.tonghu.top "Tonghu MCP") and register an account with your phone number.
+2. Create an API Key.
+3. Enable the service in the Product Center (additional packages can be purchased).
 
-> **技术支持**  
-联系平台客服或王先生：18363092551（微信同号）
+> **Technical Support**  
+Contact platform customer service or Mr. Wang: 18363092551 (same WeChat number)
 
-**官方网站：** [https://mcp.tonghu.top](https://mcp.tonghu.top)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://mcp.tonghu.top](https://mcp.tonghu.top)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`location services`, `developer tools`, `other`, `运营商`, `电商服务`, `营销`, `chinese`
+- Categories: `data`
+- Tags: `location services`, `developer tools`, `other`, `运营商`, `电商服务`, `营销`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kid1235789-th-ip-location-query.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kid1235789-th-ip-location-query.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

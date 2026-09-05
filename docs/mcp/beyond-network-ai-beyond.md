@@ -1,61 +1,61 @@
 ---
-title: "超越社交金融模型服务器"
-description: "一个可扩展的模型上下文协议服务器，为AI模型提供对社交平台数据（目前是Farcaster）和区块链数据的标准访问。"
+title: "beyond-mcp-server"
+description: "An extensible Model Context Protocol server that provides standardized access to social platform data (currently Farcaster) and blockchain data for AI models."
 ---
 
-# 超越社交金融模型服务器
+# beyond-mcp-server
 
-一个可扩展的模型上下文协议服务器，为AI模型提供对社交平台数据（目前是Farcaster）和区块链数据的标准访问。
+An extensible Model Context Protocol server that provides standardized access to social platform data (currently Farcaster) and blockchain data for AI models.
 
 # Beyond MCP Server
 
-一个可扩展的模型上下文协议服务器，提供对社交平台数据和链上数据的标准化访问。目前支持通过Neynar API访问Farcaster，并为Twitter集成预留了位置。很快将增加更多平台的支持，如Telegram及其链上数据。
+An extensible Model Context Protocol server that provides standardized access to social platform data and onchain data. Currently supports Farcaster (via Neynar API) with placeholder for Twitter integration. More platforms like Telegram including onchain data will be added soon.
 
-## 功能特点
+## Features
 
-- **MCP合规**：完全实现模型上下文协议规范
-- **多平台支持**：设计用于支持多个社交媒体平台
-- **可扩展性**：易于添加新的平台提供商
-- **格式良好**：针对大语言模型消费优化了上下文格式
-- **灵活传输**：支持标准输入输出以及SSE/HTTP传输方式
+- **MCP Compliant**: Fully implements the Model Context Protocol specification
+- **Multi-Platform**: Designed to support multiple social media platforms
+- **Extensible**: Easy to add new platform providers
+- **Well-Formatted**: Optimized context formatting for LLM consumption
+- **Flexible Transport**: Supports both stdio and SSE/HTTP transports
 
-## 支持的平台
+## Supported Platforms
 
-- **Farcaster**：通过Neynar API完整实现
-- **Twitter**：占位符（未实现）
+- **Farcaster**: Full implementation via Neynar API
+- **Twitter**: Placeholder (not implemented)
 
-## 开始使用
+## Getting Started
 
-### 前提条件
+### Prerequisites
 
 - Node.js 16+
-- Neynar API密钥（用于访问Farcaster）[https://neynar.com/](https://neynar.com/)
+- Neynar API key (for Farcaster access) [https://neynar.com/](https://neynar.com/)
 
-### 安装步骤
+### Installation
 
-1. 克隆仓库
+1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/beyond-mcp-server.git
 cd beyond-mcp-server
 ```
 
-2. 安装依赖项
+2. Install dependencies
 ```bash
 npm install
 ```
 
-3. 从模板创建.env文件
+3. Create a .env file from the template
 ```bash
 cp .env.example .env
 # Edit .env with your API keys
 ```
 
-4. 配置你的环境变量
-   - **必需**：在你的.env文件中设置`NEYNAR_API_KEY`
-   - 你可以从[https://neynar.com/](https://neynar.com/)获取Neynar API密钥
-   - 没有有效的API密钥，Farcaster功能将无法工作
+4. Configure your environment variables
+   - **Required**: Set `NEYNAR_API_KEY` in your .env file
+   - You can obtain a Neynar API key from [https://neynar.com/](https://neynar.com/)
+   - Without a valid API key, Farcaster functionality will not work
 
-5. 构建并启动服务器
+5. Build and start the server
 ```bash
 npm run build
 npm start  # For stdio mode (default)
@@ -63,23 +63,23 @@ npm start  # For stdio mode (default)
 npm run start:http  # For HTTP/SSE mode
 ```
 
-## 与Claude桌面版一起使用
+## Using with Claude for Desktop
 
-1. 构建服务器
+1. Build the server
 ```bash
 npm run build
 ```
 
-2. 确保你的.env文件正确配置了你的API密钥
-   - 服务器将在以下位置查找.env文件：
-     - 当前工作目录
-     - 项目根目录
-     - 上级目录（最多向上追溯3层）
-   - 你也可以直接在系统中设置环境变量
+2. Make sure your .env file is properly configured with your API keys
+   - The server will look for .env in the following locations:
+     - Current working directory
+     - Project root directory
+     - Parent directories (up to 3 levels)
+   - You can also set environment variables directly in your system
 
-3. 在Claude Desktop配置中添加服务器：
+3. Add the server to your Claude Desktop configuration at:
 * macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
-* Windows: %APPDATA%\Claude\claude_desktop_config.json
+* Windows: %APPDATA%Claudeclaude_desktop_config.json
   
 
 ```json
@@ -96,7 +96,7 @@ npm run build
 }
 ```
 
-4. 或者，你可以直接在Claude Desktop配置中传递API密钥和其他环境变量（**推荐**）：
+4. Alternatively, you can pass the API key and other environment variables directly in the Claude Desktop configuration (**recommended**):
 
 ```json
 {
@@ -117,61 +117,61 @@ npm run build
 }
 ```
 
-5. 重启Claude桌面版
+5. Restart Claude for Desktop
 
-## MCP能力
+## MCP Capabilities
 
-### 资源
+### Resources
 
-* `social://{platform}/{query}/search` - 在平台上搜索内容
-* `social://{platform}/user/{userId}/profile` - 获取用户资料
-* `social://{platform}/wallet/{walletAddress}/profile` - 通过钱包地址获取用户资料（仅限 Farcaster）
-* `social://{platform}/user/{userId}/balance` - 获取用户的钱包余额（仅限 Farcaster）
-  - 接受 FID（数字）或用户名
-  - 如果提供的是用户名，则在获取余额前自动转换为 FID
-* `social://{platform}/wallet/{walletAddress}/profile` - 通过钱包地址获取用户资料
-* `social://{platform}/user/{userId}/content` - 获取用户内容
-* `social://{platform}/thread/{threadId}` - 获取对话线程
-* `social://{platform}/trending` - 获取热门话题
-* `social://{platform}/trending-feed` - 获取支持多提供商的热门动态内容（仅限 Farcaster）
-  - 支持的提供商：neynar（默认）、openrank、mbd
-  - 参数：timeWindow (1h, 6h, 12h, 24h, 7d, 30d), limit
+* `social://{platform}/{query}/search` - Search content on a platform
+* `social://{platform}/user/{userId}/profile` - Get user profile
+* `social://{platform}/wallet/{walletAddress}/profile` - Get user profile by wallet address (Farcaster only)
+* `social://{platform}/user/{userId}/balance` - Get user's wallet balance (Farcaster only)
+  - Accepts either FID (numeric) or username
+  - If username is provided, automatically converts to FID before fetching balance
+* `social://{platform}/wallet/{walletAddress}/profile` - Get user profile by wallet address
+* `social://{platform}/user/{userId}/content` - Get user content
+* `social://{platform}/thread/{threadId}` - Get conversation thread
+* `social://{platform}/trending` - Get trending topics
+* `social://{platform}/trending-feed` - Get trending feed content with multi-provider support (Farcaster only)
+  - Supports providers: neynar (default), openrank, mbd
+  - Parameters: timeWindow (1h, 6h, 12h, 24h, 7d, 30d), limit
 
-### 工具
+### Tools
 
-* `search-content` - 在社交平台上搜索内容
-* `get-user-profile` - 获取用户的个人资料信息
-* `get-user-profile-by-wallet` - 通过钱包地址获取用户资料（仅限 Farcaster）
-* `get-user-balance` - 获取用户的钱包余额（仅限 Farcaster）
-  - 接受 FID（数字）或用户名
-  - 自动处理从用户名到 FID 的转换
-* `get-user-content` - 获取特定用户的内容
-* `get-thread` - 获取对话线程
-* `get-trending-topics` - 获取当前热门话题
-* `getTrendingFeed` - 获取支持多提供商的热门动态内容（仅限 Farcaster）
-* `get-wallet-profile` - 根据钱包地址获取并分析用户资料
+* `search-content` - Search for content on a social platform
+* `get-user-profile` - Get a user's profile information
+* `get-user-profile-by-wallet` - Get user profile using wallet address (Farcaster only)
+* `get-user-balance` - Get user's wallet balance (Farcaster only)
+  - Accepts either FID (numeric) or username
+  - Automatically handles username to FID conversion
+* `get-user-content` - Get content from a specific user
+* `get-thread` - Get a conversation thread
+* `get-trending-topics` - Get current trending topics
+* `getTrendingFeed` - Get trending feed with multi-provider support (Farcaster only)
+* `get-wallet-profile` - Get profile based on wallet address
 
-### 提示
+### Prompts
 
-* `analyze-thread` - 分析社交媒体线程
-* `summarize-user-activity` - 概述用户的活动
-* `explore-trending-topics` - 探索平台上的热门话题
-* `analyze-search-results` - 分析查询的搜索结果
-* `explore-trending-feed` - 跨不同提供商分析热门动态内容
-* `get-wallet-profile` - 通过钱包地址获取并分析用户资料
-* `check-user-balance` - 分析用户的钱包余额和持有情况
-  - 支持 FID 和用户名输入
-  - 自动处理用户名到 FID 的解析
+* `analyze-thread` - Analyze a social media thread
+* `summarize-user-activity` - Summarize a user's activity
+* `explore-trending-topics` - Explore trending topics on a platform
+* `analyze-search-results` - Analyze search results for a query
+* `explore-trending-feed` - Analyze trending feed content across different providers
+* `get-wallet-profile` - Get and analyze user profile by wallet address
+* `check-user-balance` - Analyze user's wallet balance and holdings
+  - Works with both FID and username inputs
+  - Handles automatic FID resolution for usernames
 
-## 扩展新提供商
+## Extending with New Providers
 
-要添加一个新的社交平台提供商：
+To add a new social platform provider:
 
-1. 在 `src/providers/` 中创建一个新目录
-2. 实现 `ContentProvider` 接口
-3. 在注册表中注册提供商
+1. Create a new directory in `src/providers/`
+2. Implement the `ContentProvider` interface
+3. Register the provider in the registry
 
-示例：
+Example:
 
 ```typescript
 import { ContentProvider } from '../interfaces/provider';
@@ -184,81 +184,78 @@ export class MyPlatformProvider implements ContentProvider {
 }
 ```
 
-## 开发
+## Development
 
-### 以开发模式运行
+### Running in Development Mode
 
 ```bash
 npm run dev        # stdio mode
 npm run dev:http   # HTTP mode
 ```
 
-### 测试
+### Testing
 
 ```bash
 npm test
 ```
 
-### 代码检查
+### Linting
 
 ```bash
 npm run lint
 npm run lint:fix
 ```
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 更新日志
+## Changelog
 
-   所有对该项目的重要更改都将在此文件中记录。
+   All notable changes to this project will be documented in this file.
    
-   ### [1.0.0] - 2025年3月10日
+   ### [1.0.0] - 2025-Mar-10
    
-   #### 新增
-   - 初始发布
-   - 通过 Neynar API 集成 Farcaster
-   - MCP 兼容的服务器实现
-   - 支持 stdio 和 HTTP 模式
+   #### Added
+   - Initial release
+   - Farcaster integration via Neynar API
+   - MCP compliant server implementation
+   - Support for both stdio and HTTP modes
 
-   ### [1.0.1] - 2025年3月19日
-
-   #### 新增
-   - 添加了新工具和资源，用于通过钱包地址获取用户资料
-   - 添加了新的测试
+   ### [1.0.1] - 2025-Mar-19
+   
+   #### Added
+   - Added new tools and resource to fetch user profile with wallet address
+   - Added new tests
      
-   ### [1.0.2] - 2025-3-21
+   ### [1.0.2] - 2025-Mar-21
    
-   #### 新增
-   - 增加了通过ID或用户名检索Farcaster用户钱包余额的功能
-   - 实现了趋势内容的多提供商支持
-   - 通过增加额外的用户详情增强了updateUserProfile功能
-   - 添加了全面的测试以确保可靠性和性能
-     
-   
-请注意，日期格式已经根据中文习惯进行了调整（从"2025-Mar-21"改为"2025-3-21"），如果你希望保持原样，请告知我。
+   #### Added
+   - Added functionality to retrieve wallet balances of Farcaster users via ID or username
+   - Implemented multi-provider support for trending feed content
+   - Enhanced updateUserProfile with additional user details
+   - Added comprehensive tests to ensure reliability and performance
 
-**官方网站：** [https://github.com/beyond-network-ai/beyond-mcp-server](https://github.com/beyond-network-ai/beyond-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/beyond-network-ai/beyond-mcp-server](https://github.com/beyond-network-ai/beyond-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`social media`, `finance`, `chinese`
+- Categories: `finance`
+- Tags: `social media`, `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/usr/local/bin/node`
-- 参数：`/full/path/to/beyond-mcp-server/dist/index.js --stdio`
+- Transport: `stdio`
+- Command: `/usr/local/bin/node`
+- Args: `/full/path/to/beyond-mcp-server/dist/index.js --stdio`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/beyond-network-ai-beyond.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/beyond-network-ai-beyond.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,29 +1,29 @@
 ---
-title: "Jupyter MCP 服务"
-description: "通过模型上下文协议启用与 Jupyter 笔记本的交互，支持在 JupyterLab 环境中执行代码和插入 markdown。"
+title: "jupyter-mcp-server"
+description: "Enables interaction with Jupyter notebooks through the Model Context Protocol, supporting code execution and markdown insertion within JupyterLab environments."
 ---
 
-# Jupyter MCP 服务
+# jupyter-mcp-server
 
-通过模型上下文协议启用与 Jupyter 笔记本的交互，支持在 JupyterLab 环境中执行代码和插入 markdown。
+Enables interaction with Jupyter notebooks through the Model Context Protocol, supporting code execution and markdown insertion within JupyterLab environments.
 
 [![Datalayer](/mcp-assets/ebffabe66603ffc5befd3fb0a80b406d.svg)](https://datalayer.io)
 
-[![成为赞助商](/mcp-assets/ac64e82bf123c4e77c9539d7abadcb39.svg)](https://github.com/sponsors/datalayer)
+[![Become a Sponsor](/mcp-assets/ac64e82bf123c4e77c9539d7abadcb39.svg)](https://github.com/sponsors/datalayer)
 
-# 🪐 ✨ Jupyter MCP 服务器
+# 🪐 ✨ Jupyter MCP Server
 
-[![Github Actions 状态](/mcp-assets/a360cf14c31b446d557b2bc79fbedc72.svg)](https://github.com/datalayer/jupyter-mcp-server/actions/workflows/build.yml)
-[![PyPI - 版本](/mcp-assets/8ef09b6c2110dbd088df1d98fe6006ab.svg)](https://pypi.org/project/jupyter-mcp-server)
+[![Github Actions Status](/mcp-assets/a360cf14c31b446d557b2bc79fbedc72.svg)](https://github.com/datalayer/jupyter-mcp-server/actions/workflows/build.yml)
+[![PyPI - Version](/mcp-assets/8ef09b6c2110dbd088df1d98fe6006ab.svg)](https://pypi.org/project/jupyter-mcp-server)
 [Smithery](https://smithery.ai/server/@datalayer/jupyter-mcp-server)
 
-Jupyter MCP 服务器是一个 [模型上下文协议](https://modelcontextprotocol.io) (MCP) 服务器实现，它提供了与运行在任何 JupyterLab 中的 📓 Jupyter 笔记本的交互（也适用于你的 💻 本地 JupyterLab）。
+Jupyter MCP Server is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server implementation that provides interaction with 📓 Jupyter notebooks running in any JupyterLab (works also with your 💻 local JupyterLab).
 
-![Jupyter MCP 服务器](/mcp-assets/57180397b99671dab65bd45b4840f2ce.gif)
+![Jupyter MCP Server](/mcp-assets/57180397b99671dab65bd45b4840f2ce.gif)
 
-## 启动 JupyterLab
+## Start JupyterLab
 
-确保你已经安装了以下内容。协作包是必需的，因为通过 [Jupyter 实时协作](https://jupyterlab.readthedocs.io/en/stable/user/rtc.html)，可以在笔记本上看到所做的修改。
+Make sure you have the following installed. The collaboration package is needed as the modifications made on the notebook can be seen thanks to [Jupyter Real Time Collaboration](https://jupyterlab.readthedocs.io/en/stable/user/rtc.html).
 
 ```bash
 pip install jupyterlab jupyter-collaboration ipykernel
@@ -31,42 +31,42 @@ pip uninstall -y pycrdt datalayer_pycrdt
 pip install datalayer_pycrdt
 ```
 
-然后，使用以下命令启动 JupyterLab。
+Then, start JupyterLab with the following command.
 
 ```bash
 jupyter lab --port 8888 --IdentityProvider.token MY_TOKEN --ip 0.0.0.0
 ```
 
-你也可以运行 `make jupyterlab`。
+You can also run `make jupyterlab`.
 
-> [!注意]
+> [!NOTE]
 >
-> `--ip` 设置为 `0.0.0.0` 以便允许在 Docker 容器中运行的 MCP 服务器访问你的本地 JupyterLab。
+> The `--ip` is set to `0.0.0.0` to allow the MCP server running in a Docker container to access your local JupyterLab.
 
-## 与 Claude 桌面版一起使用
+## Use with Claude Desktop
 
-Claude 桌面版可以从 [这个页面](https://claude.ai/download) 下载 macOS 和 Windows 版本。
+Claude Desktop can be downloaded [from this page](https://claude.ai/download) for macOS and Windows.
 
-对于 Linux，我们成功使用了基于 nix 的 [非官方构建脚本](https://github.com/k3d3/claude-desktop-linux-flake)。
+For Linux, we had success using this [UNOFFICIAL build script based on nix](https://github.com/k3d3/claude-desktop-linux-flake)
 
 ```bash
 # ⚠️ UNOFFICIAL
 # You can also run `make claude-linux`
-NIXPKGS_ALLOW_UNFREE=1 nix run github:k3d3/claude-desktop-linux-flake \
-  --impure \
-  --extra-experimental-features flakes \
+NIXPKGS_ALLOW_UNFREE=1 nix run github:k3d3/claude-desktop-linux-flake 
+  --impure 
+  --extra-experimental-features flakes 
   --extra-experimental-features nix-command
 ```
 
-要与 Claude 桌面版一起使用，请将以下内容添加到你的 `claude_desktop_config.json` 中（更多详情请参阅 [MCP 文档网站](https://modelcontextprotocol.io/quickstart/user#2-add-the-filesystem-mcp-server)）。
+To use this with Claude Desktop, add the following to your `claude_desktop_config.json` (read more on the [MCP documentation website](https://modelcontextprotocol.io/quickstart/user#2-add-the-filesystem-mcp-server)).
 
-> [!重要]
+> [!IMPORTANT]
 >
-> 确保 `SERVER_URL` 和 `TOKEN` 的端口与 `jupyter lab` 命令中使用的相匹配。
+> Ensure the port of the `SERVER_URL`and `TOKEN` match those used in the `jupyter lab` command.
 >
-> `NOTEBOOK_PATH` 应该相对于启动 JupyterLab 的目录。
+> The `NOTEBOOK_PATH` should be relative to the directory where JupyterLab was started.
 
-### macOS 和 Windows 上的 Claude 配置
+### Claude Configuration on macOS and Windows
 
 ```json
 {
@@ -95,7 +95,7 @@ NIXPKGS_ALLOW_UNFREE=1 nix run github:k3d3/claude-desktop-linux-flake \
 }
 ```
 
-### Linux 上的 Claude 配置
+### Claude Configuration on Linux
 
 ```bash
 CLAUDE_CONFIG=${HOME}/.config/Claude/claude_desktop_config.json
@@ -129,71 +129,71 @@ EOF
 cat $CLAUDE_CONFIG
 ```
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
-服务器目前提供 3 个工具：
+The server currently offers 3 tools:
 
 1. `add_execute_code_cell`
 
-- 在 Jupyter 笔记本中添加并执行一个代码单元格。
-- 输入：
-  - `cell_content`（字符串）：要执行的代码。
-- 返回：单元格输出。
+- Add and execute a code cell in a Jupyter notebook.
+- Input:
+  - `cell_content`(string): Code to be executed.
+- Returns: Cell output.
 
 2. `add_markdown_cell`
 
-- 在 Jupyter 笔记本中添加一个 Markdown 单元格。
-- 输入：
-  - `cell_content`（字符串）：Markdown 内容。
-- 返回：成功消息。
+- Add a markdown cell in a Jupyter notebook.
+- Input:
+  - `cell_content`(string): Markdown content.
+- Returns: Success message.
 
 3. `download_earth_data_granules`
 
-   ⚠️ 我们计划在未来将此工具迁移到单独的仓库，因为它特定于地理空间分析。
+   ⚠️ We plan to migrate this tool to a separate repository in the future as it is specific to Geospatial analysis.
 
-- 在 Jupyter 笔记本中添加一个代码单元格，用于从 NASA Earth Data 下载地球数据颗粒。
-- 输入：
-  - `folder_name` (字符串)：用于保存数据的本地文件夹名称。
-  - `short_name` (字符串)：要下载的地球数据集的简称。
-  - `count` (整数)：要下载的数据颗粒数量。
-  - `temporal` (元组)：(可选) 时间范围，格式为 (date_from, date_to)。
-  - `bounding_box` (元组)：(可选) 边界框，格式为 (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat)。
-- 返回：单元格输出。
+- Add a code cell in a Jupyter notebook to download Earth data granules from NASA Earth Data.
+- Input:
+  - `folder_name`(string): Local folder name to save the data.
+  - `short_name`(string): Short name of the Earth dataset to download.
+  - `count`(int): Number of data granules to download.
+  - `temporal` (tuple): (Optional) Temporal range in the format (date_from, date_to).
+  - `bounding_box` (tuple): (Optional) Bounding box in the format (lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat).
+- Returns: Cell output.
 
-## 构建
+## Building
 
-您可以从源代码构建 Docker 镜像。
+You can build the Docker image it from source.
 
 ```bash
 make build-docker
 ```
 
-## 通过 Smithery 安装
+## Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@datalayer/jupyter-mcp-server) 自动安装适用于 Claude Desktop 的 Jupyter MCP Server：
+To install Jupyter MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@datalayer/jupyter-mcp-server):
 
 ```bash
 npx -y @smithery/cli install @datalayer/jupyter-mcp-server --client claude
 ```
 
-**官方网站：** [https://github.com/datalayer/jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/datalayer/jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `other`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`docker`
-- 参数：`run -i --rm -e ROOM_URL -e ROOM_TOKEN -e ROOM_ID -e RUNTIME_URL -e RUNTIME_TOKEN datalayer/jupyter-mcp-server:latest`
+- Transport: `stdio`
+- Command: `docker`
+- Args: `run -i --rm -e ROOM_URL -e ROOM_TOKEN -e ROOM_ID -e RUNTIME_URL -e RUNTIME_TOKEN datalayer/jupyter-mcp-server:latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/datalayer-jupyter.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/datalayer-jupyter.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

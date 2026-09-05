@@ -1,47 +1,43 @@
 ---
-title: "CSV表格读取"
-description: "\"该get_data工具提供了用于访问 CSV 文件的自然语言界面,并使用语言模型来分析和响应查询.\""
+title: "xiyan_table_mcp_server"
+description: "\"The getdata tool offers a natural language interface for accessing CSV files and uses language model to analyze and respond to queries.\""
 ---
 
-# CSV表格读取
+# xiyan_table_mcp_server
 
-"该get_data工具提供了用于访问 CSV 文件的自然语言界面,并使用语言模型来分析和响应查询."
+"The getdata tool offers a natural language interface for accessing CSV files and uses language model to analyze and respond to queries."
 
-# Xiyan Table MCP Server
+## Features
+- 🌐 Analyze and query table information using natural language.
+- 🤖 Support general LLMs (GPT,Qwen-Max), and [XiYanTable]
+- 🔧 Read table contents from CSV files
 
-这是一个基于 MCP (Model Control Protocol) 的表格数据查询服务器。它允许用户配置本地表格数据，并通过自然语言进行查询。
+## Tools Preview
+ - "The ``get_data`` tool offers a natural language interface for accessing CSV files and uses language model to analyze and respond to queries."
 
-## 功能特点
-- 🌐 使用自然语言分析和查询表格信息
-- 🤖 支持通用大语言模型（GPT、Qwen-Max）和 [XiYanTable]
-- 🔧 支持从 CSV 文件读取表格内容
+## QuickStart
 
-## 工具预览
-- "get_data 工具提供了一个自然语言接口来访问 CSV 文件，并使用语言模型来分析和响应查询。"
-
-## 快速开始
-
-需要 Python 3.10+ 环境。
-你可以通过 pip 安装服务器，它将安装最新版本：
+Python 3.10+ is required. 
+You can install the server through pip, and it will install the latest version:
 
 ```bash
 pip install xiyan-table-mcp-server
 ```
 
-安装完成后，你可以直接通过以下命令运行服务器：
+After that you can directly run the server by:
 ```bash
-python -m xiyan_mcp_server
+python -m xiyan_table_mcp_server
 ```
-但在完成以下配置之前，它不会提供任何功能。
-你将获得一个 yml 文件。之后你可以通过以下命令运行服务器：
+But it does not provide any functions until you complete following config.
+You will get a yml file. After that you can run the server by:
 ```yaml
-env YML=path/to/yml python -m xiyan_mcp_server
+env YML=path/to/yml python -m xiyan_table_mcp_server
 ```
 
-## 配置
+## Configuration
 
-你需要一个 YAML 配置文件来配置服务器。
-在 config_demo.yml 中提供了一个默认配置文件，内容如下：
+You need a YAML config file to configure the server.
+A default config file is provided in config_demo.yml which looks like this:
 
 ```yaml
 table:
@@ -60,7 +56,7 @@ server:
   version: "0.1.0"   
 ```
 
-## 启动
+## Launch
 ```json
 {
     "mcpServers": {
@@ -78,22 +74,22 @@ server:
 }
 ```
 
-**官方网站：** [https://github.com/zyy07/xiyan_table_mcp_server](https://github.com/zyy07/xiyan_table_mcp_server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zyy07/xiyan_table_mcp_server](https://github.com/zyy07/xiyan_table_mcp_server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`file systems`, `chinese`
+- Categories: `files`
+- Tags: `file systems`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`-m xiyan_table_mcp_server`
+- Transport: `stdio`
+- Command: `python`
+- Args: `-m xiyan_table_mcp_server`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zyy07-xiyan-table.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zyy07-xiyan-table.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

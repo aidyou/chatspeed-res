@@ -1,35 +1,35 @@
 ---
-title: "mcp RSS爬虫"
-description: "一种MCP服务器，它获取RSS源并将其与大型语言模型共享，使人工智能助手能够访问并呈现来自已配置源的最新新闻和文章。"
+title: "mcp-rss-crawler"
+description: "An MCP server that fetches RSS feeds and shares them with LLMs, allowing AI assistants to access and present the latest news and articles from configured feeds."
 ---
 
-# mcp RSS爬虫
+# mcp-rss-crawler
 
-一种MCP服务器，它获取RSS源并将其与大型语言模型共享，使人工智能助手能够访问并呈现来自已配置源的最新新闻和文章。
+An MCP server that fetches RSS feeds and shares them with LLMs, allowing AI assistants to access and present the latest news and articles from configured feeds.
 
 # MCP-RSS-Crawler
 
-一个MCP（消息链协议）服务器，用于抓取RSS源并与LLMs共享。
+An MCP (Message Chain Protocol) server that fetches RSS feeds and shares them with LLMs.
 
-## 特性
+## Features
 
-- 抓取和缓存RSS源（SQLite数据库）
-- 实现MCP协议以无缝集成LLM
-- 支持按类别、来源或关键词过滤源
-- 全面的API端点用于管理源
-  - 添加、更新和删除源
-- 支持从Firecrawl获取文章
+- Fetching and caching of RSS feeds (SQLite database)
+- MCP protocol implementation for seamless LLM integration
+- Support for filtering feeds by category, source, or keywords
+- Comprehensive API endpoints for feed management
+  - Add, update, and delete feeds
+- Support for fetching articles from Firecrawl
 
-## 需求
+## Requirements
 
 - Bun
-- Firecrawl API密钥
-- Claude Desktop或其他MCP客户端
+- Firecrawl API key
+- Claude Desktop or other MCP client
 
-## 设置为MCP服务器
+## Setup as MCP Server
 
-1. 克隆此仓库
-2. 根据`claude_desktop_config.json.example`创建一个`claude_desktop_config.json`文件，并根据你的配置进行修改
+1. Clone this repository
+2. Create a `claude_desktop_config.json` file based on `claude_desktop_config.json.example` with your configuration
 
 ```json
 {
@@ -48,17 +48,17 @@ description: "一种MCP服务器，它获取RSS源并将其与大型语言模型
 }
 ```
 
-3. 安装依赖项：
+3. Install dependencies:
 ```
    bun install
 ```
-4. 启动Claude Desktop：
+4. Start Claude Desktop:
 
-## MCP协议
+## MCP Protocol
 
-该服务器实现了消息链协议(MCP)，允许LLMs访问你最新的RSS源。MCP端点接受包含消息数组的JSON体的POST请求，并返回包含最新源项目的响应。
+The server implements the Message Chain Protocol (MCP) which allows LLMs to access your latest RSS feeds. The MCP endpoint accepts POST requests with a JSON body containing a messages array and returns a response with the latest feed items.
 
-示例请求：
+Example request:
 ```json
 {
   "messages": [
@@ -70,7 +70,7 @@ description: "一种MCP服务器，它获取RSS源并将其与大型语言模型
 }
 ```
 
-示例响应：
+Example response:
 ```json
 {
   "messages": [
@@ -81,43 +81,43 @@ description: "一种MCP服务器，它获取RSS源并将其与大型语言模型
     },
     {
       "role": "tool",
-      "content": "[{\"title\":\"Article Title\",\"summary\":\"Article summary...\",\"published\":\"2025-03-16T04:30:00.000Z\",\"origin\":\"Feed Name\",\"link\":\"https://example.com/article\"}]",
+      "content": "[{"title":"Article Title","summary":"Article summary...","published":"2025-03-16T04:30:00.000Z","origin":"Feed Name","link":"https://example.com/article"}]",
       "name": "rss-feeds"
     }
   ]
 }
 ```
 
-## 配置选项
+## Configuration Options
 
-可以通过环境变量或`.env`文件来配置服务器：
+The server can be configured through environment variables or a `.env` file:
 
-- `PORT` - 服务器端口（默认：5556）
-- `FIRECRAWL_API_KEY` - Firecrawl API密钥
-- `DB_DIR` - 数据库目录（默认：`~/.mcp-rss-crawler`）
+- `PORT` - Server port (default: 5556)
+- `FIRECRAWL_API_KEY` - Firecrawl API key
+- `DB_DIR` - Database directory (default: `~/.mcp-rss-crawler`)
 
-## 故障排除
+## Troubleshooting
 
-- 对于连接问题，请检查您的网络设置和防火墙配置
-- 日志可以在控制台中查看，可用于诊断问题
-- 更详细的日志记录，设置环境变量`DEBUG=mcp-rss:*`
+- For connection issues, check your network settings and firewall configuration
+- Logs are available in the console and can be used to diagnose problems
+- For more detailed logging, set the `DEBUG=mcp-rss:*` environment variable
 
-**官方网站：** [https://github.com/mshk/mcp-rss-crawler](https://github.com/mshk/mcp-rss-crawler)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mshk/mcp-rss-crawler](https://github.com/mshk/mcp-rss-crawler)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`communication`
-- 标签：`search`, `communication`, `chinese`
+- Categories: `communication`
+- Tags: `search`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`/path/to/bun`
-- 参数：`run /path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts`
+- Transport: `stdio`
+- Command: `/path/to/bun`
+- Args: `run /path/to/mcp-rss-crawler/apps/mcp-server/src/mcp-cli.ts`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mshk-rss-crawler.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mshk-rss-crawler.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

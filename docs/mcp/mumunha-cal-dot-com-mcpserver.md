@@ -1,64 +1,64 @@
 ---
-title: "Cal.com日历管理器"
-description: "一种MCP服务器，通过Cal.com的日历API启用日历预约的调度、更新、删除和列出功能。"
+title: "cal_dot_com_mcpserver"
+description: "An MCP server that enables scheduling, updating, deleting, and listing calendar appointments through Cal.com's Calendar API."
 ---
 
-# Cal.com日历管理器
+# cal_dot_com_mcpserver
 
-一种MCP服务器，通过Cal.com的日历API启用日历预约的调度、更新、删除和列出功能。
+An MCP server that enables scheduling, updating, deleting, and listing calendar appointments through Cal.com's Calendar API.
 
-# Cal.com 日历 MCP 服务器
+# Cal.com Calendar MCP Server
 
-这是一个与 Cal.com 日历 API 集成的 MCP 服务器实现，提供了预约安排功能。
+An MCP server implementation that integrates with Cal.com Calendar API, providing appointment scheduling capabilities.
 
-## 功能
+## Features
 
-- **添加预约**：使用参与者详细信息安排新的日历预约
-- **更新预约**：修改现有预约的详细信息，如时间、备注等
-- **删除预约**：取消并移除现有预约
-- **列出预约**：查看特定日期范围内的已安排预约
+- **Add Appointments**: Schedule new calendar appointments with attendee details
+- **Update Appointments**: Modify existing appointment details such as time and notes
+- **Delete Appointments**: Cancel and remove existing appointments
+- **List Appointments**: View scheduled appointments for specific date ranges
 
-## 工具
+## Tools
 
 - **calcom_add_appointment**
-  - 创建新的日历预约
-  - 输入参数：
-    - `eventTypeId` (数字)：Cal.com 事件类型 ID
-    - `startTime` (字符串)：开始时间（ISO 格式 YYYY-MM-DDTHH:mm:ss.sssZ）
-    - `endTime` (字符串)：结束时间（ISO 格式 YYYY-MM-DDTHH:mm:ss.sssZ）
-    - `name` (字符串)：参与者的姓名
-    - `email` (字符串)：参与者的电子邮件
-    - `notes` (字符串, 可选)：预约的附加备注
+  - Create new calendar appointments
+  - Inputs:
+    - `eventTypeId` (number): The Cal.com event type ID
+    - `startTime` (string): Start time in ISO format (YYYY-MM-DDTHH:mm:ss.sssZ)
+    - `endTime` (string): End time in ISO format (YYYY-MM-DDTHH:mm:ss.sssZ)
+    - `name` (string): Attendee's name
+    - `email` (string): Attendee's email
+    - `notes` (string, optional): Additional notes for the appointment
 
 - **calcom_update_appointment**
-  - 更新现有的日历预约
-  - 输入参数：
-    - `bookingId` (数字)：要更新的 Cal.com 预约 ID
-    - `startTime` (字符串, 可选)：新的开始时间（ISO 格式）
-    - `endTime` (字符串, 可选)：新的结束时间（ISO 格式）
-    - `notes` (字符串, 可选)：预约的新备注
+  - Update existing calendar appointments
+  - Inputs:
+    - `bookingId` (number): The Cal.com booking ID to update
+    - `startTime` (string, optional): New start time in ISO format
+    - `endTime` (string, optional): New end time in ISO format
+    - `notes` (string, optional): New notes for the appointment
 
 - **calcom_delete_appointment**
-  - 删除现有的日历预约
-  - 输入参数：
-    - `bookingId` (数字)：要删除的 Cal.com 预约 ID
-    - `reason` (字符串, 可选)：取消原因
+  - Delete existing calendar appointments
+  - Inputs:
+    - `bookingId` (number): The Cal.com booking ID to delete
+    - `reason` (string, optional): Reason for cancellation
 
 - **calcom_list_appointments**
-  - 列出指定日期范围内的日历预约
-  - 输入参数：
-    - `startDate` (字符串)：开始日期（YYYY-MM-DD 格式）
-    - `endDate` (字符串)：结束日期（YYYY-MM-DD 格式）
+  - List calendar appointments in a date range
+  - Inputs:
+    - `startDate` (string): Start date in YYYY-MM-DD format
+    - `endDate` (string): End date in YYYY-MM-DD format
 
-## 配置
+## Configuration
 
-### 获取 API 密钥
-1. 注册一个 [Cal.com 账户](https://cal.com)
-2. 导航到设置 > 开发者 > API 密钥
-3. 生成一个新的具有适当权限的 API 密钥
+### Getting an API Key
+1. Sign up for a [Cal.com account](https://cal.com)
+2. Navigate to Settings > Developer > API Keys
+3. Generate a new API key with appropriate permissions
 
-### 与 Claude Desktop 一起使用
-将以下内容添加到您的 `claude_desktop_config.json` 中：
+### Usage with Claude Desktop
+Add this to your `claude_desktop_config.json`:
 
 ### Docker
 
@@ -102,34 +102,34 @@ description: "一种MCP服务器，通过Cal.com的日历API启用日历预约�
 }
 ```
 
-## 构建
+## Build
 
-Docker 构建：
+Docker build:
 
 ```bash
 docker build -t mcp/calcom-calendar:latest -f Dockerfile .
 ```
 
-## 许可证
+## License
 
-此 MCP 服务器根据 MIT 许可证授权。这意味着您可以自由使用、修改和分发该软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目存储库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/mumunha/cal_dot_com_mcpserver](https://github.com/mumunha/cal_dot_com_mcpserver)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mumunha/cal_dot_com_mcpserver](https://github.com/mumunha/cal_dot_com_mcpserver)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-calcom-calendar`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-calcom-calendar`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mumunha-cal-dot-com-mcpserver.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mumunha-cal-dot-com-mcpserver.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,11 +1,11 @@
 ---
-title: "做生物信息学分析的MCP"
-description: "🎯 这是什么？ BioNext-MCP 是为 Cursor 设计的智能生物信息学分析工具，允许您通过自然语言对话执行复杂的生物信息学分析，而无需编写任何代码！ 简而言之： - 🗣️ 用自然语言告诉 Cursor 您要分析的数据 - 🤖 Cursor 自动生成专业的 Python 分析脚本 - ⚡ 系统自动执行脚本并显示结果 - 📊 获取美观的 HTML 报告和可视化图表 ✨ 主要功能 🧬 支持的分析类型 - 单细胞 RNA 测序 (scRNA-seq) - 细胞聚类、差异表达、轨迹分析 - 基因组学 - 变异分析、"
+title: "MCP4bioinformatics"
+description: "🎯 What is this? BioNext-MCP is an intelligent bioinformatics analysis tool designed for Cursor, allowing you to perform complex bioinformatics analysis through natural language conversations without w…"
 ---
 
-# 做生物信息学分析的MCP
+# MCP4bioinformatics
 
-🎯 这是什么？ BioNext-MCP 是为 Cursor 设计的智能生物信息学分析工具，允许您通过自然语言对话执行复杂的生物信息学分析，而无需编写任何代码！ 简而言之： - 🗣️ 用自然语言告诉 Cursor 您要分析的数据 - 🤖 Cursor 自动生成专业的 Python 分析脚本 - ⚡ 系统自动执行脚本并显示结果 - 📊 获取美观的 HTML 报告和可视化图表 ✨ 主要功能 🧬 支持的分析类型 - 单细胞 RNA 测序 (scRNA-seq) - 细胞聚类、差异表达、轨迹分析 - 基因组学 - 变异分析、
+🎯 What is this? BioNext-MCP is an intelligent bioinformatics analysis tool designed for Cursor, allowing you to perform complex bioinformatics analysis through natural language conversations without w…
 
 ## 🎯 What is this?
 
@@ -265,22 +265,22 @@ Welcome to submit Issues and Pull Requests to improve this project!
 
 **BioNext-MCP Team** - Making bioinformatics analysis simple and accessible!
 
-**官方网站：** [https://github.com/Cherine0205/BioNext-mcp/tree/modelscope-deployment](https://github.com/Cherine0205/BioNext-mcp/tree/modelscope-deployment)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/Cherine0205/BioNext-mcp/tree/modelscope-deployment](https://github.com/Cherine0205/BioNext-mcp/tree/modelscope-deployment)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`
+- Categories: `data`
+- Tags: `research and data`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`bioinformatics-mcp-server@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `bioinformatics-mcp-server@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/judy4algorithmn-mcp4bioinformatics.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/judy4algorithmn-mcp4bioinformatics.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

@@ -1,13 +1,13 @@
 ---
-title: "Obsidian MCP 服务器"
-description: "通过模型上下文协议，启用大型语言模型（LLMs）与Obsidian仓库之间的交互，支持安全的文件操作、内容管理和高级搜索功能。"
+title: "obsidian-mcp-server"
+description: "Enables interaction between LLMs and Obsidian vaults through the Model Context Protocol, supporting secure file operations, content management, and advanced search capabilities."
 ---
 
-# Obsidian MCP 服务器
+# obsidian-mcp-server
 
-通过模型上下文协议，启用大型语言模型（LLMs）与Obsidian仓库之间的交互，支持安全的文件操作、内容管理和高级搜索功能。
+Enables interaction between LLMs and Obsidian vaults through the Model Context Protocol, supporting secure file operations, content management, and advanced search capabilities.
 
-# Obsidian MCP 服务器
+# Obsidian MCP Server
 
 [![TypeScript](/mcp-assets/49904649f602ceb829cc76dcf6be1703.svg)](https://www.typescriptlang.org/)
 [![Model Context Protocol](/mcp-assets/15df3c754569f46c1a9b6856e5620bf8.svg)](https://modelcontextprotocol.io/)
@@ -16,44 +16,44 @@ description: "通过模型上下文协议，启用大型语言模型（LLMs）�
 [![Status](/mcp-assets/d3182a787ddabc121c1e54b8d1c66233.svg)]()
 [![GitHub](/mcp-assets/d0665bdc934c169f40d0d593787b9bb2.svg)](https://github.com/cyanheads/obsidian-mcp-server)
 
-一个为 LLMs 设计的 Model Context Protocol 服务器，用于与 Obsidian 仓库交互。该服务器使用 TypeScript 构建，具备安全的 API 通信、高效的文件操作和全面的搜索功能，使 AI 助手能够通过简洁灵活的工具界面无缝管理知识库。
+A Model Context Protocol server designed for LLMs to interact with Obsidian vaults. Built with TypeScript and featuring secure API communication, efficient file operations, and comprehensive search capabilities, it enables AI assistants to seamlessly manage knowledge bases through a clean, flexible tool interface.
 
-Model Context Protocol (MCP) 使 AI 模型能够通过标准化接口与外部工具和资源进行交互。
+The Model Context Protocol (MCP) enables AI models to interact with external tools and resources through a standardized interface.
 
-需要在 Obsidian 中启用 Local REST API 插件。
+Requires the Local REST API plugin in Obsidian.
 
-## 功能
+## Features
 
-### 文件操作
+### File Operations
 
-- 带验证的原子文件/目录操作
-- 资源监控和清理
-- 错误处理和优雅失败
+- Atomic file/directory operations with validation
+- Resource monitoring and cleanup
+- Error handling and graceful failure
 
-### 搜索系统
+### Search System
 
-- 可配置上下文的全文搜索
-- 高级 JsonLogic 查询支持文件、标签和元数据
-- 支持 glob 模式和 frontmatter 字段
+- Full-text search with configurable context
+- Advanced JsonLogic queries for files, tags, and metadata
+- Support for glob patterns and frontmatter fields
 
-### 属性管理
+### Property Management
 
-- YAML frontmatter 解析和智能合并
-- 自动生成时间戳（由 Obsidian 创建，由服务器修改）
-- 自定义字段支持
+- YAML frontmatter parsing and intelligent merging
+- Automatic timestamps (created by Obsidian, modified by server)
+- Custom field support
 
-### 安全与性能
+### Security & Performance
 
-- 带速率限制和 SSL 选项的 API 密钥认证
-- 资源监控和健康检查
-- 优雅关闭处理
+- API key auth with rate limiting and SSL options
+- Resource monitoring and health checks
+- Graceful shutdown handling
 
-## 安装
+## Installation
 
-注意：需要 Node.js
+Note: Requires Node.js
 
-1. 在 Obsidian 中启用 Local REST API 插件
-2. 克隆并构建：
+1. Enable Local REST API plugin in Obsidian
+2. Clone and build:
 
 ```bash
 git clone git@github.com:cyanheads/obsidian-mcp-server.git
@@ -62,15 +62,15 @@ npm install
 npm run build
 ```
 
-或者从 npm 安装：
+Or install from npm:
 
 ```bash
 npm install obsidian-mcp-server
 ```
 
-## 配置
+## Configuration
 
-将以下内容添加到您的 MCP 客户端设置中（例如 `claude_desktop_config.json` 或 `cline_mcp_settings.json`）：
+Add to your MCP client settings (e.g., `claude_desktop_config.json` or `cline_mcp_settings.json`):
 
 ```json
 {
@@ -96,37 +96,37 @@ npm install obsidian-mcp-server
 }
 ```
 
-环境变量：
+Environment Variables:
 
-必需：
+Required:
 
-- `OBSIDIAN_API_KEY`: 从 Obsidian 的 Local REST API 插件设置中获取的 API 密钥
+- `OBSIDIAN_API_KEY`: Your API key from Obsidian's Local REST API plugin settings
 
-连接设置：
+Connection Settings:
 
-- `VERIFY_SSL`: 启用 SSL 证书验证（默认: false） # 对于自签名证书，必须设置为 false。如果您是本地运行或不理解这是什么意思，应将其设置为 false。
-- `OBSIDIAN_PROTOCOL`: 使用的协议（默认: "https"）
-- `OBSIDIAN_HOST`: 主机地址（默认: "127.0.0.1"）
-- `OBSIDIAN_PORT`: 端口号（默认: 27124）
+- `VERIFY_SSL`: Enable SSL certificate verification (default: false) # This must be set to false for self-signed certificates. If you are running locally or do not understand what this means, this should be set to false.
+- `OBSIDIAN_PROTOCOL`: Protocol to use (default: "https")
+- `OBSIDIAN_HOST`: Host address (default: "127.0.0.1")
+- `OBSIDIAN_PORT`: Port number (default: 27124)
 
-请求限制：
+Request Limits:
 
-- `REQUEST_TIMEOUT`: 请求超时时间（以毫秒为单位，默认: 5000）
-- `MAX_CONTENT_LENGTH`: 最大响应内容长度（以字节为单位，默认: 52428800 [50MB]）
-- `MAX_BODY_LENGTH`: 最大请求体长度（以字节为单位，默认: 52428800 [50MB]）
+- `REQUEST_TIMEOUT`: Request timeout in milliseconds (default: 5000)
+- `MAX_CONTENT_LENGTH`: Maximum response content length in bytes (default: 52428800 [50MB])
+- `MAX_BODY_LENGTH`: Maximum request body length in bytes (default: 52428800 [50MB])
 
-速率限制：
+Rate Limiting:
 
-- `RATE_LIMIT_WINDOW_MS`: 速率限制窗口（以毫秒为单位，默认: 900000 [15 分钟]）
-- `RATE_LIMIT_MAX_REQUESTS`: 每个窗口的最大请求数（默认: 200）
+- `RATE_LIMIT_WINDOW_MS`: Rate limit window in milliseconds (default: 900000 [15 minutes])
+- `RATE_LIMIT_MAX_REQUESTS`: Maximum requests per window (default: 200)
 
-工具执行：
+Tool Execution:
 
-- `TOOL_TIMEOUT_MS`: 工具执行超时时间（以毫秒为单位，默认：60000 [1分钟]）
+- `TOOL_TIMEOUT_MS`: Tool execution timeout in milliseconds (default: 60000 [1 minute])
 
-## 项目结构
+## Project Structure
 
-该项目遵循模块化架构，职责分明：
+The project follows a modular architecture with clear separation of concerns:
 
 ```
 src/
@@ -141,9 +141,9 @@ src/
   └── utils/            # Shared utilities
 ```
 
-## 工具
+## Tools
 
-### 文件管理
+### File Management
 
 ```typescript
 // List vault contents
@@ -161,7 +161,7 @@ obsidian_get_file_contents: {
 }
 ```
 
-### 搜索操作
+### Search Operations
 
 ```typescript
 // Text search with context
@@ -193,7 +193,7 @@ obsidian_get_tags: {
 }
 ```
 
-### 内容修改
+### Content Modification
 
 ```typescript
 // Append to file
@@ -209,7 +209,7 @@ obsidian_patch_content: {
 }
 ```
 
-### 属性管理
+### Property Management
 
 ```typescript
 // Get note properties
@@ -239,50 +239,50 @@ obsidian_update_properties: {
 }
 ```
 
-## 最佳实践
+## Best Practices
 
-### 文件操作
+### File Operations
 
-- 使用带有验证的原子操作
-- 处理错误并监控性能
+- Use atomic operations with validation
+- Handle errors and monitor performance
 
-### 搜索实现
+### Search Implementation
 
-- 根据任务选择合适的搜索工具：
-  - 对于文本搜索使用 obsidian_find_in_file
-  - 对于元数据/标签过滤使用 obsidian_complex_search
-- 保持上下文大小合理（默认：10个字符）
+- Use appropriate search tool for the task:
+  - obsidian_find_in_file for text search
+  - obsidian_complex_search for metadata/tag filtering
+- Keep context size reasonable (default: 10 chars)
 
-### 属性管理
+### Property Management
 
-- 使用适当的类型并验证更新
-- 正确处理数组和自定义字段
-- 绝不手动设置时间戳（自动管理）
+- Use appropriate types and validate updates
+- Handle arrays and custom fields properly
+- Never set timestamps (managed automatically)
 
-### 错误预防
+### Error Prevention
 
-- 验证输入并优雅地处理错误
-- 监控模式并遵守速率限制
+- Validate inputs and handle errors gracefully
+- Monitor patterns and respect rate limits
 
-## 资源
+## Resources
 
-MCP 服务器公开以下资源：
+The MCP server exposes the following resources:
 
 ```
 obsidian://tags  # List of all tags used across the vault
 ```
 
-## 贡献
+## Contributing
 
-1. 分叉仓库
-2. 创建特性分支
-3. 提交 Pull Request
+1. Fork the repository
+2. Create a feature branch
+3. Submit a Pull Request
 
-对于 Bug 和新功能，请在 [https://github.com/cyanheads/obsidian-mcp-server/issues](https://github.com/cyanheads/obsidian-mcp-server/issues) 创建问题。
+For bugs and features, create an issue at [https://github.com/cyanheads/obsidian-mcp-server/issues](https://github.com/cyanheads/obsidian-mcp-server/issues).
 
-## 发布
+## Publishing
 
-当推送版本标签时，包会自动发布到 npm：
+The package is automatically published to npm when version tags are pushed:
 
 ```bash
 # Update version in package.json
@@ -290,32 +290,32 @@ npm version patch  # or minor, or major
 git push --follow-tags
 ```
 
-这将触发 GitHub Action 来构建和发布包。
+This will trigger the GitHub Action to build and publish the package.
 
-## 许可证
+## License
 
 Apache License 2.0
 
 ---
 
-使用 Model Context Protocol 构建
+Built with the Model Context Protocol
 
-**官方网站：** [https://github.com/cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`search`, `files`
-- 标签：`file systems`, `note taking`, `search`, `chinese`
+- Categories: `search`, `files`
+- Tags: `file systems`, `note taking`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/obsidian-mcp-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/obsidian-mcp-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/cyanheads-obsidian.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/cyanheads-obsidian.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

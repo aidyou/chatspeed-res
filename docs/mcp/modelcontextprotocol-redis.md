@@ -1,72 +1,72 @@
 ---
-title: "Redis数据库"
-description: "一个提供访问Redis数据库的模型上下文协议服务器。该服务器通过一系列标准化工具使大语言模型能够与Redis键值存储进行交互。"
+title: "redis"
+description: "A Model Context Protocol server that provides access to Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools."
 ---
 
-# Redis数据库
+# redis
 
-一个提供访问Redis数据库的模型上下文协议服务器。该服务器通过一系列标准化工具使大语言模型能够与Redis键值存储进行交互。
+A Model Context Protocol server that provides access to Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.
 
 # Redis
 
-一个提供访问 Redis 数据库的模型上下文协议服务器。此服务器通过一组标准化工具使 LLM 能够与 Redis 键值存储进行交互。
+A Model Context Protocol server that provides access to Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.
 
-## 先决条件
+## Prerequisites
 
-1. 必须安装并运行 Redis 服务器
-   - [下载 Redis](https://redis.io/download)
-   - 对于 Windows 用户：使用 [Windows Subsystem for Linux (WSL)](https://redis.io/docs/getting-started/installation/install-redis-on-windows/) 或 [Memurai](https://www.memurai.com/)（兼容 Redis 的 Windows 服务器）
-   - 默认端口：6379
+1. Redis server must be installed and running
+   - [Download Redis](https://redis.io/download)
+   - For Windows users: Use [Windows Subsystem for Linux (WSL)](https://redis.io/docs/getting-started/installation/install-redis-on-windows/) or [Memurai](https://www.memurai.com/) (Redis-compatible Windows server)
+   - Default port: 6379
 
-## 常见问题及解决方案
+## Common Issues & Solutions
 
-### 连接错误
+### Connection Errors
 
 **ECONNREFUSED**
-  - **原因**：Redis 服务器未运行或无法访问
-  - **解决方案**：
-    - 验证 Redis 是否正在运行：`redis-cli ping` 应返回 "PONG"
-    - 检查 Redis 服务状态：`systemctl status redis`（Linux）或 `brew services list`（macOS）
-    - 确保默认端口（6379）未被防火墙阻止
-    - 验证 Redis URL 格式：`redis://hostname:port`
+  - **Cause**: Redis server is not running or unreachable
+  - **Solution**: 
+    - Verify Redis is running: `redis-cli ping` should return "PONG"
+    - Check Redis service status: `systemctl status redis` (Linux) or `brew services list` (macOS)
+    - Ensure correct port (default 6379) is not blocked by firewall
+    - Verify Redis URL format: `redis://hostname:port`
 
-### 服务器行为
+### Server Behavior
 
-- 服务器实现了带有最大重试次数 5 次的指数退避策略
-- 初始重试延迟：1 秒，最大延迟：30 秒
-- 服务器将在达到最大重试次数后退出，以防止无限重连循环
+- The server implements exponential backoff with a maximum of 5 retries
+- Initial retry delay: 1 second, maximum delay: 30 seconds
+- Server will exit after max retries to prevent infinite reconnection loops
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 - **set**
-  - 设置 Redis 键值对，并可选设置过期时间
-  - 输入：
-    - `key` (字符串)：Redis 键
-    - `value` (字符串)：要存储的值
-    - `expireSeconds` (数字, 可选)：过期时间（秒）
+  - Set a Redis key-value pair with optional expiration
+  - Input:
+    - `key` (string): Redis key
+    - `value` (string): Value to store
+    - `expireSeconds` (number, optional): Expiration time in seconds
 
 - **get**
-  - 从 Redis 中根据键获取值
-  - 输入：`key` (字符串)：要检索的 Redis 键
+  - Get value by key from Redis
+  - Input: `key` (string): Redis key to retrieve
 
 - **delete**
-  - 从 Redis 中删除一个或多个键
-  - 输入：`key` (字符串 | 字符串数组)：要删除的单个键或键数组
+  - Delete one or more keys from Redis
+  - Input: `key` (string | string[]): Key or array of keys to delete
 
 - **list**
-  - 列出与模式匹配的 Redis 键
-  - 输入：`pattern` (字符串, 可选)：用于匹配键的模式（默认：*）
+  - List Redis keys matching a pattern
+  - Input: `pattern` (string, optional): Pattern to match keys (default: *)
 
-## 与 Claude Desktop 一起使用
+## Usage with Claude Desktop
 
-要将此服务器与 Claude Desktop 应用程序一起使用，请在您的 `claude_desktop_config.json` 文件的 "mcpServers" 部分添加以下配置：
+To use this server with the Claude Desktop app, add the following configuration to the "mcpServers" section of your `claude_desktop_config.json`:
 
 ### Docker
 
-* 在 macOS 上运行 Docker 时，如果服务器在主机网络上运行（例如 localhost），请使用 host.docker.internal
-* 可以作为参数指定 Redis URL，默认为 "redis://localhost:6379"
+* when running docker on macos, use host.docker.internal if the server is running on the host network (eg localhost)
+* Redis URL can be specified as an argument, defaults to "redis://localhost:6379"
 
 ```json
 {
@@ -101,7 +101,7 @@ description: "一个提供访问Redis数据库的模型上下文协议服务器�
 }
 ```
 
-## 构建
+## Building
 
 Docker:
 
@@ -109,26 +109,26 @@ Docker:
 docker build -t mcp/redis -f src/redis/Dockerfile . 
 ```
 
-## 许可证
+## License
 
-该 MCP 服务器基于 MIT 许可证发布。这意味着您可以自由使用、修改和分发软件，但需遵守 MIT 许可证的条款和条件。有关更多详细信息，请参阅项目仓库中的 LICENSE 文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/modelcontextprotocol/servers/tree/main/src/redis](https://github.com/modelcontextprotocol/servers/tree/main/src/redis)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/modelcontextprotocol/servers/tree/main/src/redis](https://github.com/modelcontextprotocol/servers/tree/main/src/redis)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-redis REDIS_URL`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-redis REDIS_URL`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/modelcontextprotocol-redis.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/modelcontextprotocol-redis.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

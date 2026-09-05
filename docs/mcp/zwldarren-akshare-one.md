@@ -1,13 +1,13 @@
 ---
 title: "akshare-one-mcp"
-description: "AKShare One MCP 服务器 English 中文 基于 akshare-one 的 MCP 服务器，提供中国股票市场数据接口，包括历史股票数据、实时数据、新闻数据、财务报表等。 工具 gethistdata 获取历史股票数据 输入参数： - symbol (字符串): 股票代码 - interval (字符串): 时间间隔 ('minute','hour','day','week','month','year') - intervalmultiplier (数字, 可选): 间隔倍数 (默认: 1) -"
+description: "AKShare One MCP Server English 中文 An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historic…"
 ---
 
 # akshare-one-mcp
 
-AKShare One MCP 服务器 English 中文 基于 akshare-one 的 MCP 服务器，提供中国股票市场数据接口，包括历史股票数据、实时数据、新闻数据、财务报表等。 工具 gethistdata 获取历史股票数据 输入参数： - symbol (字符串): 股票代码 - interval (字符串): 时间间隔 ('minute','hour','day','week','month','year') - intervalmultiplier (数字, 可选): 间隔倍数 (默认: 1) -
+AKShare One MCP Server English 中文 An MCP server based on akshare-one, providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historic…
 
-# AKShare One MCP 服务器
+# AKShare One MCP Server
 
   
 English
@@ -17,95 +17,91 @@ English
 
 [Smithery](https://smithery.ai/server/@zwldarren/akshare-one-mcp)
 
-基于 [akshare-one](https://github.com/zwldarren/akshare-one) 的 MCP 服务器，提供中国股票市场数据接口，包括历史股票数据、实时数据、新闻数据、财务报表等。
+An MCP server based on [akshare-one](https://github.com/zwldarren/akshare-one), providing interfaces for China stock market data. It offers a set of tools for retrieving financial information including historical stock data, real-time data, news data, financial statements, etc.
 
   
 
-## 工具
+## Tools
 
 ### `get_hist_data`
 
-获取历史股票数据
-输入参数：
+Get historical stock data
+Input parameters:
 
-- symbol (字符串): 股票代码
-- interval (字符串): 时间间隔 ('minute','hour','day','week','month','year')
-- interval_multiplier (数字, 可选): 间隔倍数 (默认: 1)
-- start_date (字符串, 可选): 开始日期 YYYY-MM-DD 格式 (默认: '1970-01-01')
-- end_date (字符串, 可选): 结束日期 YYYY-MM-DD 格式 (默认: '2030-12-31')
-- adjust (字符串, 可选): 调整类型 ('none', 'qfq', 'hfq') (默认: 'none')
-- source (字符串, 可选): 数据源 ('eastmoney', 'sina') (默认: 'eastmoney')
+- symbol (string): Stock code
+- interval (string): Time interval ('minute','hour','day','week','month','year')
+- interval_multiplier (number, optional): Interval multiplier (default: 1)
+- start_date (string, optional): Start date in YYYY-MM-DD format (default: '1970-01-01')
+- end_date (string, optional): End date in YYYY-MM-DD format (default: '2030-12-31')
+- adjust (string, optional): Adjustment type ('none', 'qfq', 'hfq') (default: 'none')
+- source (string, optional): Data source ('eastmoney', 'sina') (default: 'eastmoney')
 
 ### `get_realtime_data`
 
-获取实时股票数据
-输入参数：
+Get real-time stock data
+Input parameters:
 
-- symbol (字符串, 可选): 股票代码
-- source (字符串, 可选): 数据源 (默认: 'xueqiu')
+- symbol (string, optional): Stock code
+- source (string, optional): Data source (default: 'xueqiu')
 
 ### `get_news_data`
 
-获取股票相关新闻数据
-输入参数：
+Get stock-related news data
+Input parameters:
 
-- symbol (字符串): 股票代码
-- recent_n (数字, 可选): 返回最近记录的数量 (可选)
+- symbol (string): Stock code
+- recent_n (number, optional): Number of most recent records to return (optional)
 
 ### `get_balance_sheet`
 
-获取公司资产负债表数据
-输入参数：
+Get company balance sheet data
+Input parameters:
 
-- symbol (字符串): 股票代码
-- recent_n (数字, 可选): 返回最近记录的数量 (可选)
+- symbol (string): Stock code
+- recent_n (number, optional): Number of most recent records to return (optional)
 
 ### `get_income_statement`
 
-获取公司利润表数据
-输入参数：
+Get company income statement data
+Input parameters:
 
-- symbol (字符串): 股票代码
-- recent_n (数字, 可选): 返回最近记录的数量 (可选)
+- symbol (string): Stock code
+- recent_n (number, optional): Number of most recent records to return (optional)
 
 ### `get_cash_flow`
 
-获取公司现金流量表数据
-输入参数：
+Get company cash flow statement data
+Input parameters:
 
-- symbol (字符串): 股票代码
-- source (字符串, 可选): 数据源 (默认: 'sina')
+- symbol (string): Stock code
+- source (string, optional): Data source (default: 'sina')
 
 ### `get_inner_trade_data`
 
-获取公司内部交易数据
-输入参数：
+Get company insider trading data
+Input parameters:
 
-- symbol (字符串, 可选): 股票代码
+- symbol (string, optional): Stock code
 
-### `get_current_time`
+## Usage Instructions
 
-获取当前时间(ISO格式和时间戳)
+### Installing via Smithery
 
-## 使用说明
-
-### 通过 Smithery 安装
-
-要通过 [Smithery](https://smithery.ai/server/@zwldarren/akshare-one-mcp) 自动安装 akshare-one-mcp 以供 Claude Desktop 使用：
+To install akshare-one-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@zwldarren/akshare-one-mcp):
 
 ```bash
 npx -y @smithery/cli install @zwldarren/akshare-one-mcp --client claude
 ```
 
-### 通过 `uv` 安装
+### Installing via `uv`
 
-直接从 PyPI 使用 uv 安装：
+Install directly from PyPI using uv:
 
 ```bash
 uv pip install akshare-one-mcp
 ```
 
-添加以下配置：
+Add the following configuration:
 
 ```json
 "mcpServers": {
@@ -116,24 +112,24 @@ uv pip install akshare-one-mcp
 }
 ```
 
-### 通过本地源码安装
+### Installing via local source code
 
-1. 克隆此仓库：
+1. Clone this repository:
 
 ```bash
     git clone https://github.com/zwldarren/akshare-one-mcp.git
     cd akshare-one-mcp
 ```
 
-2. 如果尚未安装，请先安装 [uv]()。
+2. Install [uv]() if you haven't already.
 
-3. 安装依赖项：
+3. Install dependencies:
 
 ```bash
     uv sync
 ```
 
-4. 添加以下配置：
+4. Add the following configuration:
 
 ```json
     "mcpServers": {
@@ -149,22 +145,22 @@ uv pip install akshare-one-mcp
     }
 ```
 
-**官方网站：** [https://github.com/zwldarren/akshare-one-mcp](https://github.com/zwldarren/akshare-one-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/zwldarren/akshare-one-mcp](https://github.com/zwldarren/akshare-one-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`
+- Categories: `finance`
+- Tags: `finance`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`akshare-one-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `akshare-one-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/zwldarren-akshare-one.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/zwldarren-akshare-one.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

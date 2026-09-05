@@ -1,54 +1,54 @@
 ---
-title: "香农系统分解"
-description: "一种实现了克劳德·香农问题解决方法论的工具，可以帮助将复杂问题分解为结构化的步骤，包括问题定义、约束条件、建模、验证和实施。"
+title: "shannon-thinking"
+description: "A tool that implements Claude Shannon's problem-solving methodology to help break down complex problems into structured steps including problem definition, constraints, modeling, validation, and imple…"
 ---
-
-# 香农系统分解
-
-一种实现了克劳德·香农问题解决方法论的工具，可以帮助将复杂问题分解为结构化的步骤，包括问题定义、约束条件、建模、验证和实施。
 
 # shannon-thinking
 
-一个实现了克劳德·香农系统性问题解决方法的MCP服务器。该服务器提供了一个工具，帮助将复杂问题按照香农的方法分解为结构化的思考过程，包括问题定义、数学建模和实际实施。
+A tool that implements Claude Shannon's problem-solving methodology to help break down complex problems into structured steps including problem definition, constraints, modeling, validation, and imple…
 
-## 概述
+# shannon-thinking
 
-克劳德·香农，被誉为信息论之父，通过一种系统的方法来处理复杂问题：
+An MCP server implementing Claude Shannon's systematic problem-solving methodology. This server provides a tool that helps break down complex problems into structured thoughts following Shannon's approach of problem definition, mathematical modeling, and practical implementation.
 
-1. **问题定义**：将问题简化为其基本元素
-2. **约束条件**：确定系统的限制和边界
-3. **模型**：开发数学/理论框架
-4. **证明/验证**：通过形式化证明或实验测试进行验证
-5. **实现/实验**：设计并测试实际解决方案
+## Overview
 
-这个MCP服务器将这种方法实现为一个工具，通过这些阶段引导系统性的问题解决。
+Claude Shannon, known as the father of information theory, approached complex problems through a systematic methodology:
 
-## 安装
+1. **Problem Definition**: Strip the problem to its fundamental elements
+2. **Constraints**: Identify system limitations and boundaries
+3. **Model**: Develop mathematical/theoretical frameworks
+4. **Proof/Validation**: Validate through formal proofs or experimental testing
+5. **Implementation/Experiment**: Design and test practical solutions
+
+This MCP server implements this methodology as a tool that helps guide systematic problem-solving through these stages.
+
+## Installation
 
 ```bash
 npm install @modelcontextprotocol/server-shannon-thinking
 ```
 
-## 使用
+## Usage
 
-服务器提供了一个名为`shannonthinking`的工具，根据香农的方法对解决问题的想法进行结构化。
+The server provides a single tool named `shannonthinking` that structures problem-solving thoughts according to Shannon's methodology.
 
-每个想法必须包含：
-- 实际的思想内容
-- 类型（problem_definition/constraints/model/proof/implementation）
-- 思想编号及总思想估计数
-- 置信水平（不确定性：0-1）
-- 对先前思想的依赖
-- 明确的假设
-- 是否需要另一个思想步骤
+Each thought must include:
+- The actual thought content
+- Type (problem_definition/constraints/model/proof/implementation)
+- Thought number and total thoughts estimate
+- Confidence level (uncertainty: 0-1)
+- Dependencies on previous thoughts
+- Explicit assumptions
+- Whether another thought step is needed
 
-附加功能：
-- **修订**：随着理解的发展，想法可以修订早期步骤
-- **复查**：用新信息标记需要重新检查的步骤
-- **实验验证**：支持与形式化证明并行的经验测试
-- **实施说明**：实际约束和提议的解决方案
+Additional capabilities:
+- **Revision**: Thoughts can revise earlier steps as understanding evolves
+- **Recheck**: Mark steps that need re-examination with new information
+- **Experimental Validation**: Support for empirical testing alongside formal proofs
+- **Implementation Notes**: Practical constraints and proposed solutions
 
-### 示例使用
+### Example Usage
 
 ```typescript
 const thought = {
@@ -74,16 +74,16 @@ const thought = {
 const result = await client.callTool("shannonthinking", thought);
 ```
 
-## 特性
+## Features
 
-- **迭代式问题解决**：支持随着理解的发展而进行修订和复查
-- **灵活验证**：结合形式化证明与实验验证
-- **依赖追踪**：明确跟踪想法如何基于先前的想法构建
-- **假设管理**：要求清晰记录假设
-- **置信度级别**：量化每一步中的不确定性
-- **丰富反馈**：格式化的控制台输出，带有颜色编码、符号和验证结果
+- **Iterative Problem-Solving**: Supports revisions and rechecks as understanding evolves
+- **Flexible Validation**: Combines formal proofs with experimental validation
+- **Dependency Tracking**: Explicitly tracks how thoughts build upon previous ones
+- **Assumption Management**: Requires clear documentation of assumptions
+- **Confidence Levels**: Quantifies uncertainty in each step
+- **Rich Feedback**: Formatted console output with color-coding, symbols, and validation results
 
-## 开发
+## Development
 
 ```bash
 # Install dependencies
@@ -99,9 +99,9 @@ npm test
 npm run watch
 ```
 
-## 工具模式
+## Tool Schema
 
-该工具接受具有以下结构的想法：
+The tool accepts thoughts with the following structure:
 
 ```typescript
 interface ShannonThought {
@@ -145,38 +145,38 @@ interface ShannonThought {
 }
 ```
 
-## 何时使用
+## When to Use
 
-此工具特别适用于：
-- 复杂系统分析
-- 信息处理问题
-- 工程设计挑战
-- 需要理论框架的问题
-- 优化问题
-- 需要实际实施的系统
-- 需要迭代改进的问题
-- 实验验证补充理论的情况
+This tool is particularly valuable for:
+- Complex system analysis
+- Information processing problems
+- Engineering design challenges
+- Problems requiring theoretical frameworks
+- Optimization problems
+- Systems requiring practical implementation
+- Problems that need iterative refinement
+- Cases where experimental validation complements theory
 
-## 许可证
+## License
 
 MIT
 
-**官方网站：** [https://github.com/olaservo/shannon-thinking](https://github.com/olaservo/shannon-thinking)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/olaservo/shannon-thinking](https://github.com/olaservo/shannon-thinking)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `developer tools`, `note taking`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `developer tools`, `note taking`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y server-shannon-thinking@latest`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y server-shannon-thinking@latest`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/olaservo-shannon-thinking.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/olaservo-shannon-thinking.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

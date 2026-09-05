@@ -1,92 +1,92 @@
 ---
-title: "日历自动认证MCP服务器"
-description: "用于Cluade桌面端与Google日历集成的服务器，支持自动身份验证。此服务器使人工智能助手能够通过自然语言交互来管理Google日历事件。"
+title: "Calendar-Autoauth-MCP-Server"
+description: "Server for Google Calendar integration in Cluade Desktop with auto authentication support. This server enables AI assistants to manage Google Calendar events through natural language interactions."
 ---
 
-# 日历自动认证MCP服务器
+# Calendar-Autoauth-MCP-Server
 
-用于Cluade桌面端与Google日历集成的服务器，支持自动身份验证。此服务器使人工智能助手能够通过自然语言交互来管理Google日历事件。
+Server for Google Calendar integration in Cluade Desktop with auto authentication support. This server enables AI assistants to manage Google Calendar events through natural language interactions.
 
-# Calendar AutoAuth MCP 服务器
+# Calendar AutoAuth MCP Server
 
-一个用于 Claude Desktop 中 Google 日历集成的支持自动认证的 Model Context Protocol (MCP) 服务器。该服务器使 AI 助手能够通过自然语言交互来管理 Google 日历事件。
+A Model Context Protocol (MCP) server for Google Calendar integration in Cluade Desktop with auto authentication support. This server enables AI assistants to manage Google Calendar events through natural language interactions.
 
-![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP 服务器')
+![](/mcp-assets/c1486b4e2d8cfd67ed0257afeefda188.svg 'MCP Server')
 [Smithery](https://smithery.ai/server/@gongrzhe/server-calendar-autoauth-mcp)
-[![npm 版本](/mcp-assets/8e7cef31ffd2a60eb8a10d31be875b35.svg)](https://www.npmjs.com/package/@gongrzhe/server-calendar-autoauth-mcp)
-[![许可证: ISC](/mcp-assets/3c4ddecb6971fce104f5f6280854eae3.svg)](https://opensource.org/licenses/ISC)
+[![npm version](/mcp-assets/8e7cef31ffd2a60eb8a10d31be875b35.svg)](https://www.npmjs.com/package/@gongrzhe/server-calendar-autoauth-mcp)
+[![License: ISC](/mcp-assets/3c4ddecb6971fce104f5f6280854eae3.svg)](https://opensource.org/licenses/ISC)
 
-## 功能
+## Features
 
-- 创建带有标题、时间、描述和位置的日历事件
-- 通过事件 ID 检索事件详情
-- 更新现有事件（标题、时间、描述、位置）
-- 删除事件
-- 列出指定时间范围内的事件
-- 完全集成 Google 日历 API
-- 简单的 OAuth2 认证流程，支持自动浏览器启动
-- 支持桌面应用程序和服务端应用凭据
-- 全局凭据存储以方便使用
+- Create calendar events with title, time, description, and location
+- Retrieve event details by event ID
+- Update existing events (title, time, description, location)
+- Delete events
+- List events within a specified time range
+- Full integration with Google Calendar API
+- Simple OAuth2 authentication flow with auto browser launch
+- Support for both Desktop and Web application credentials
+- Global credential storage for convenience
 
-## 安装与认证
+## Installation & Authentication
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/@gongrzhe/server-calendar-autoauth-mcp) 自动安装适用于 Claude Desktop 的 Calendar AutoAuth 服务器：
+To install Calendar AutoAuth Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@gongrzhe/server-calendar-autoauth-mcp):
 
 ```bash
 npx -y @smithery/cli install @gongrzhe/server-calendar-autoauth-mcp --client claude
 ```
 
-1. 创建 Google Cloud 项目并获取凭据：
+1. Create a Google Cloud Project and obtain credentials:
 
-   a. 创建 Google Cloud 项目：
-      - 前往 [Google Cloud Console](https://console.cloud.google.com/)
-      - 创建一个新项目或选择一个现有项目
-      - 为您的项目启用 Google 日历 API
+   a. Create a Google Cloud Project:
+      - Go to [Google Cloud Console](https://console.cloud.google.com/)
+      - Create a new project or select an existing one
+      - Enable the Google Calendar API for your project
 
-   b. 创建 OAuth 2.0 凭据：
-      - 转到“API 和服务”>“凭据”
-      - 点击“创建凭据”>“OAuth 客户端 ID”
-      - 选择“桌面应用”或“Web 应用程序”作为应用程序类型
-      - 给它命名并点击“创建”
-      - 对于 Web 应用程序，将 `http://localhost:3000/oauth2callback` 添加到授权重定向 URI 列表中
-      - 下载客户端的 OAuth 密钥 JSON 文件
-      - 将密钥文件重命名为 `gcp-oauth.keys.json`
+   b. Create OAuth 2.0 Credentials:
+      - Go to "APIs & Services" > "Credentials"
+      - Click "Create Credentials" > "OAuth client ID"
+      - Choose either "Desktop app" or "Web application" as application type
+      - Give it a name and click "Create"
+      - For Web application, add `http://localhost:3000/oauth2callback` to the authorized redirect URIs
+      - Download the JSON file of your client's OAuth keys
+      - Rename the key file to `gcp-oauth.keys.json`
 
-2. 运行身份验证：
+2. Run Authentication:
 
-   您可以通过两种方式进行身份验证：
+   You can authenticate in two ways:
 
-   a. 全局身份验证（推荐）：
+   a. Global Authentication (Recommended):
 ```bash
-   # 首次使用：将 gcp-oauth.keys.json 放在主目录下的 .calendar-mcp 文件夹中
+   # First time: Place gcp-oauth.keys.json in your home directory's .calendar-mcp folder
    mkdir -p ~/.calendar-mcp
    mv gcp-oauth.keys.json ~/.calendar-mcp/
 
-   # 可以从任何位置运行身份验证
+   # Run authentication from anywhere
    npx @gongrzhe/server-calendar-autoauth-mcp auth
 ```
 
-   b. 本地身份验证：
+   b. Local Authentication:
 ```bash
-   # 将 gcp-oauth.keys.json 放在当前目录中
-   # 文件将自动复制到全局配置
+   # Place gcp-oauth.keys.json in your current directory
+   # The file will be automatically copied to global config
    npx @gongrzhe/server-calendar-autoauth-mcp auth
 ```
 
-   身份验证过程将：
-   - 在当前目录或 `~/.calendar-mcp/` 中查找 `gcp-oauth.keys.json`
-   - 如果在当前目录找到，则将其复制到 `~/.calendar-mcp/`
-   - 打开默认浏览器进行 Google 身份验证
-   - 将凭据保存为 `~/.calendar-mcp/credentials.json`
+   The authentication process will:
+   - Look for `gcp-oauth.keys.json` in the current directory or `~/.calendar-mcp/`
+   - If found in current directory, copy it to `~/.calendar-mcp/`
+   - Open your default browser for Google authentication
+   - Save credentials as `~/.calendar-mcp/credentials.json`
 
-   > **注意**:
-   > - 成功认证后，凭据存储在 `~/.calendar-mcp/` 中，并可以从任何目录访问
-   > - 同时支持桌面应用和 Web 应用程序凭据
-   > - 对于 Web 应用程序凭据，请确保将 `http://localhost:3000/oauth2callback` 添加到您的授权重定向 URI 列表中
+   > **Note**: 
+   > - After successful authentication, credentials are stored globally in `~/.calendar-mcp/` and can be used from any directory
+   > - Both Desktop app and Web application credentials are supported
+   > - For Web application credentials, make sure to add `http://localhost:3000/oauth2callback` to your authorized redirect URIs
 
-3. 在 Claude Desktop 中配置：
+3. Configure in Claude Desktop:
 
 ```json
 {
@@ -101,22 +101,22 @@ npx -y @smithery/cli install @gongrzhe/server-calendar-autoauth-mcp --client cla
 }
 ```
 
-### Docker 支持
+### Docker Support
 
-如果您更喜欢使用 Docker：
+If you prefer using Docker:
 
-1. 身份验证：
+1. Authentication:
 ```bash
-docker run -i --rm \
-  --mount type=bind,source=/path/to/gcp-oauth.keys.json,target=/gcp-oauth.keys.json \
-  -v mcp-calendar:/calendar-server \
-  -e CALENDAR_OAUTH_PATH=/gcp-oauth.keys.json \
-  -e "CALENDAR_CREDENTIALS_PATH=/calendar-server/credentials.json" \
-  -p 3000:3000 \
+docker run -i --rm 
+  --mount type=bind,source=/path/to/gcp-oauth.keys.json,target=/gcp-oauth.keys.json 
+  -v mcp-calendar:/calendar-server 
+  -e CALENDAR_OAUTH_PATH=/gcp-oauth.keys.json 
+  -e "CALENDAR_CREDENTIALS_PATH=/calendar-server/credentials.json" 
+  -p 3000:3000 
   mcp/calendar auth
 ```
 
-2. 使用方法：
+2. Usage:
 ```json
 {
   "mcpServers": {
@@ -137,11 +137,11 @@ docker run -i --rm \
 }
 ```
 
-## 使用示例
+## Usage Examples
 
-服务器提供了几种可以通过 Claude Desktop 使用的工具：
+The server provides several tools that can be used through the Claude Desktop:
 
-### 创建事件
+### Create Event
 ```json
 {
   "summary": "Team Meeting",
@@ -156,7 +156,7 @@ docker run -i --rm \
 }
 ```
 
-### 列出事件
+### List Events
 ```json
 {
   "timeMin": "2024-01-01T00:00:00Z",
@@ -166,7 +166,7 @@ docker run -i --rm \
 }
 ```
 
-### 更新事件
+### Update Event
 ```json
 {
   "eventId": "event123",
@@ -180,67 +180,67 @@ docker run -i --rm \
 }
 ```
 
-### 删除事件
+### Delete Event
 ```json
 {
   "eventId": "event123"
 }
 ```
 
-## 安全须知
+## Security Notes
 
-- OAuth 凭据安全地存储在您的本地环境 (`~/.calendar-mcp/`) 中
-- 服务器使用离线访问来保持持久的身份验证
-- 切勿共享或将凭据提交到版本控制系统
-- 定期检查并在 Google 帐户设置中撤销未使用的访问权限
-- 凭据是全局存储的，但仅当前用户可访问
+- OAuth credentials are stored securely in your local environment (`~/.calendar-mcp/`)
+- The server uses offline access to maintain persistent authentication
+- Never share or commit your credentials to version control
+- Regularly review and revoke unused access in your Google Account settings
+- Credentials are stored globally but are only accessible by the current user
 
-## 故障排除
+## Troubleshooting
 
-1. **找不到 OAuth 密钥**
-   - 确保 `gcp-oauth.keys.json` 文件位于当前目录或 `~/.calendar-mcp/` 目录中
-   - 检查文件权限
+1. **OAuth Keys Not Found**
+   - Make sure `gcp-oauth.keys.json` is in either your current directory or `~/.calendar-mcp/`
+   - Check file permissions
 
-2. **无效的凭证格式**
-   - 确保证书文件中包含 `web` 或 `installed` 凭证
-   - 对于 Web 应用程序，请验证重定向 URI 是否正确配置
+2. **Invalid Credentials Format**
+   - Ensure your OAuth keys file contains either `web` or `installed` credentials
+   - For web applications, verify the redirect URI is correctly configured
 
-3. **端口已被占用**
-   - 如果 3000 端口已被占用，请在运行身份验证之前释放该端口
-   - 您可以找到并停止使用该端口的进程
+3. **Port Already in Use**
+   - If port 3000 is already in use, please free it up before running authentication
+   - You can find and stop the process using that port
 
-## 贡献
+## Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 许可证
+## License
 
-本项目采用 ISC 许可证。
+This project is licensed under the ISC License.
 
-## 作者
+## Author
 
 gongrzhe
 
-## 支持
+## Support
 
-如果您遇到任何问题或有疑问，请在 GitHub 仓库中提交一个 issue。
+If you encounter any issues or have questions, please file an issue on the GitHub repository.
 
-**官方网站：** [https://github.com/GongRzhe/Calendar-Autoauth-MCP-Server](https://github.com/GongRzhe/Calendar-Autoauth-MCP-Server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/GongRzhe/Calendar-Autoauth-MCP-Server](https://github.com/GongRzhe/Calendar-Autoauth-MCP-Server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `communication`, `chinese`
+- Categories: `productivity`
+- Tags: `calendar management`, `communication`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@gongrzhe/server-calendar-autoauth-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@gongrzhe/server-calendar-autoauth-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/gongrzhe-calendar-autoauth.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/gongrzhe-calendar-autoauth.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

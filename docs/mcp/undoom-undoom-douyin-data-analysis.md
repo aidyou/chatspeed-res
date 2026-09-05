@@ -1,50 +1,50 @@
 ---
-title: "抖音数据分析 MCP 服务器"
-description: "基于原始抖音数据分析工具开发的 MCP (Model Context Protocol) 服务器，提供抖音视频和用户数据的采集、分析和导出功能。 🎉 现已发布到 PyPI，可直接安装使用！ - 视频搜索: 根据关键词搜索抖音视频，采集标题、作者、点赞数、评论数等信息 - 用户搜索: 根据关键词搜索抖音用户，采集用户名、抖音号、粉丝数、获赞数等信息 - 自定义参数: 支持设置滚动次数和延迟时间，控制采集规模和速度"
+title: "undoom-douyin-data-analysis"
+description: "The MCP (Model Context Protocol) server, developed based on the original Douyin data analysis tool, provides functions for collecting, analyzing, and exporting Douyin video and user data. 🎉 It has now…"
 ---
 
-# 抖音数据分析 MCP 服务器
+# undoom-douyin-data-analysis
 
-基于原始抖音数据分析工具开发的 MCP (Model Context Protocol) 服务器，提供抖音视频和用户数据的采集、分析和导出功能。 🎉 现已发布到 PyPI，可直接安装使用！ - 视频搜索: 根据关键词搜索抖音视频，采集标题、作者、点赞数、评论数等信息 - 用户搜索: 根据关键词搜索抖音用户，采集用户名、抖音号、粉丝数、获赞数等信息 - 自定义参数: 支持设置滚动次数和延迟时间，控制采集规模和速度
+The MCP (Model Context Protocol) server, developed based on the original Douyin data analysis tool, provides functions for collecting, analyzing, and exporting Douyin video and user data. 🎉 It has now…
 
-# 抖音数据分析 MCP 服务器
+# Douyin Data Analysis MCP Server
 
 [![PyPI version](/mcp-assets/dec8b35f184274331a6b0bde60435e1d.svg)](https://badge.fury.io/py/undoom-douyin-data-analysis)
 [![Python 3.13+](/mcp-assets/2280fa7946855f272d1788d76d128a9e.svg)](https://www.python.org/downloads/)
 
-基于原始抖音数据分析工具开发的 MCP (Model Context Protocol) 服务器，提供抖音视频和用户数据的采集、分析和导出功能。
+An MCP (Model Context Protocol) server developed based on the original Douyin data analysis tool, providing functions for collecting, analyzing, and exporting Douyin video and user data.
 
-**🎉 现已发布到 PyPI，可直接安装使用！**
+**🎉 Now published on PyPI, ready to install and use!**
 
-## 功能特性
+## Features
 
-### 数据采集
-- **视频搜索**: 根据关键词搜索抖音视频，采集标题、作者、点赞数、评论数等信息
-- **用户搜索**: 根据关键词搜索抖音用户，采集用户名、抖音号、粉丝数、获赞数等信息
-- **自定义参数**: 支持设置滚动次数和延迟时间，控制采集规模和速度
+### Data Collection
+- **Video Search**: Search Douyin videos by keyword, collecting information such as title, author, likes, and comments.
+- **User Search**: Search Douyin users by keyword, collecting information such as username, Douyin ID, followers, and likes received.
+- **Custom Parameters**: Support setting scroll count and delay time to control the scale and speed of data collection.
 
-### 数据分析
-- **互动数据分析**: 分析视频的点赞、评论、分享等互动数据，提供统计报告
-- **内容长度分析**: 分析视频标题长度分布，了解内容特征
-- **关键词分析**: 使用中文分词技术分析高频词汇，发现热门话题
+### Data Analysis
+- **Interaction Data Analysis**: Analyze interaction data such as likes, comments, and shares for videos, providing statistical reports.
+- **Content Length Analysis**: Analyze the distribution of video title lengths to understand content characteristics.
+- **Keyword Analysis**: Use Chinese word segmentation technology to analyze high-frequency words and discover hot topics.
 
-### 数据导出
-- **多格式支持**: 支持 JSON、Excel、CSV 格式导出
-- **分类导出**: 可选择导出视频数据、用户数据或全部数据
-- **时间戳**: 自动添加时间戳，避免文件覆盖
+### Data Export
+- **Multiple Formats Supported**: Supports export in JSON, Excel, and CSV formats.
+- **Categorized Export**: Can choose to export video data, user data, or all data.
+- **Timestamps**: Automatically adds timestamps to avoid file overwriting.
 
-## 安装和配置
+## Installation and Configuration
 
-### 方式一：从 PyPI 安装（推荐）
+### Method One: Install from PyPI (Recommended)
 
-1. **直接安装**:
-```bash
+1. **Direct Installation**:
+   bash
    pip install undoom-douyin-data-analysis
-```
+   
 
-2. **配置 MCP 客户端**:
-   在你的 MCP 客户端配置文件中添加以下配置：
-```json
+2. **Configure MCP Client**:
+   Add the following configuration to your MCP client configuration file:
+   json
    {
      "mcpServers": {
        "undoom-douyin-data-analysis": {
@@ -59,126 +59,125 @@ description: "基于原始抖音数据分析工具开发的 MCP (Model Context P
        }
      }
    }
-```
+   
 
-### 方式二：本地开发安装
+### Method Two: Local Development Installation
 
-1. **克隆仓库**:
-```bash
+1. **Clone Repository**:
+   bash
    git clone https://github.com/kk520879/undoom-douyin-data-analysis.git
    cd undoom_Douyin_data_analysis
-```
+   
 
-2. **安装依赖**:
-```bash
+2. **Install Dependencies**:
+   bash
    uv sync
-```
+   
 
-3. **本地运行**:
-```bash
+3. **Run Locally**:
+   bash
    uv run undoom-douyin-mcp
-```
+   
 
-### 环境要求
+### Environment Requirements
 - Python 3.13+
-- Chrome/Chromium 浏览器
-- 网络连接（访问抖音）
+- Chrome/Chromium browser
+- Internet connection (to access Douyin)
 
-## 可用工具
+## Available Tools
 
 ### 1. search_douyin_videos
-搜索抖音视频数据
+Searches for Douyin video data.
 
-**参数**:
-- `keyword` (必需): 搜索关键词
-- `scroll_count` (可选): 滚动次数，默认为10
-- `delay` (可选): 每次滚动的延迟时间（秒），默认为2.0
+**Parameters**:
+- `keyword` (required): Search keyword
+- `scroll_count` (optional): Number of scrolls, default is 10
+- `delay` (optional): Delay time per scroll (seconds), default is 2.0
 
 ### 2. search_douyin_users
-搜索抖音用户数据
+Searches for Douyin user data.
 
 ### 3. analyze_interaction_data
-分析视频互动数据（点赞、评论等）
+Analyzes video interaction data (likes, comments, etc.).
 
 ### 4. analyze_content_length
-分析视频标题长度分布
+Analyzes the distribution of video title lengths.
 
 ### 5. analyze_keywords
-分析视频标题中的高频词汇
+Analyzes high-frequency words in video titles.
 
 ### 6. export_data
-导出采集的数据
+Exports the collected data.
 
 ### 7. get_data_summary
-获取当前采集数据的摘要信息
+Gets a summary of the currently collected data.
 
 ### 8. clear_data
-清空当前采集的数据
+Clears the currently collected data.
 
-## 可用资源
+## Available Resources
 
 ### 1. douyin://data/videos
-当前采集的视频数据（JSON 格式）
+Currently collected video data (JSON format).
 
 ### 2. douyin://data/users
-当前采集的用户数据（JSON 格式）
+Currently collected user data (JSON format).
 
 ### 3. douyin://analysis/summary
-数据采集和分析摘要（文本格式）
+Summary of data collection and analysis (text format).
 
-## 使用示例
+## Usage Examples
 
-### 基本工作流程
+### Basic Workflow
 
-1. **搜索视频数据**:
-   使用 search_douyin_videos 工具搜索关键词
+1. **Search Video Data**:
+   Use the `search_douyin_videos` tool to search by keyword.
 
-2. **分析数据**:
-   使用 analyze_interaction_data 分析互动数据
-   使用 analyze_keywords 分析高频词汇
+2. **Analyze Data**:
+   Use `analyze_interaction_data` to analyze interaction data.
+   Use `analyze_keywords` to analyze high-frequency words.
 
-3. **导出结果**:
-   使用 export_data 导出为指定格式
+3. **Export Results**:
+   Use `export_data` to export in the specified format.
 
-## 项目信息
+## Project Information
 
-- **PyPI 包**: [undoom-douyin-data-analysis](https://pypi.org/project/undoom-douyin-data-analysis/)
-- **版本**: 0.1.3
-- **许可证**: MIT License
-- **Python 版本**: 3.13+
+- **PyPI Package**: [undoom-douyin-data-analysis](https://pypi.org/project/undoom-douyin-data-analysis/)
+- **Version**: 0.1.3
+- **License**: MIT License
+- **Python Version**: 3.13+
 
-## 注意事项
+## Notes
 
-1. **网络环境**: 需要能够访问抖音网站
-2. **浏览器依赖**: 使用 DrissionPage 需要 Chrome/Chromium 浏览器
-3. **采集频率**: 建议设置适当的延迟时间，避免过于频繁的请求
-4. **合规使用**: 请遵守抖音的使用条款和相关法律法规
-5. **数据使用**: 采集的数据仅供学习和研究使用，请勿用于商业用途
+1. **Network Environment**: Requires access to the Douyin website.2. **Browser Dependency**: Using DrissionPage requires Chrome/Chromium browser
+3. **Crawling Frequency**: It is recommended to set an appropriate delay time to avoid overly frequent requests
+4. **Compliance**: Please adhere to the terms of service and relevant laws and regulations of Douyin
+5. **Data Usage**: The collected data is for learning and research purposes only, do not use it for commercial purposes
 
-## 技术架构
+## Technical Architecture
 
-- **MCP 协议**: 基于 Model Context Protocol 实现
-- **异步处理**: 使用 asyncio 进行异步操作
-- **数据解析**: 使用 BeautifulSoup 解析 HTML
-- **中文分词**: 使用 jieba 进行中文文本分析
-- **数据处理**: 使用 pandas 进行数据操作和导出
+- **MCP Protocol**: Implemented based on Model Context Protocol
+- **Asynchronous Processing**: Uses asyncio for asynchronous operations
+- **Data Parsing**: Uses BeautifulSoup to parse HTML
+- **Chinese Word Segmentation**: Uses jieba for Chinese text analysis
+- **Data Handling**: Uses pandas for data manipulation and export
 
-**官方网站：** [https://github.com/kk520879/undoom-douyin-data-analysis](https://github.com/kk520879/undoom-douyin-data-analysis)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kk520879/undoom-douyin-data-analysis](https://github.com/kk520879/undoom-douyin-data-analysis)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `chinese`
+- Categories: `data`
+- Tags: `research and data`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`--index-url https://pypi.tuna.tsinghua.edu.cn/simple --from undoom-douyin-data-analysis undoom-douyin-mcp`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `--index-url https://pypi.tuna.tsinghua.edu.cn/simple --from undoom-douyin-data-analysis undoom-douyin-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/undoom-undoom-douyin-data-analysis.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/undoom-undoom-douyin-data-analysis.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

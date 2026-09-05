@@ -1,40 +1,40 @@
 ---
-title: "OKX行情数据"
-description: "通过模型上下文协议接口提供OKX交易所的实时加密货币价格数据，允许访问任何交易工具的历史K线数据和当前市场价格。"
+title: "okx-mcp"
+description: "Provides real-time cryptocurrency price data from OKX exchange through a Model Context Protocol interface, allowing access to historical candlestick data and current market prices for any trading inst…"
 ---
 
-# OKX行情数据
+# okx-mcp
 
-通过模型上下文协议接口提供OKX交易所的实时加密货币价格数据，允许访问任何交易工具的历史K线数据和当前市场价格。
+Provides real-time cryptocurrency price data from OKX exchange through a Model Context Protocol interface, allowing access to historical candlestick data and current market prices for any trading inst…
 
-# OKX MCP 服务器
+# OKX MCP Server
 
-这是一个模型上下文协议（MCP）服务器，提供来自OKX交易所的实时加密货币价格数据。
+A Model Context Protocol server that provides real-time cryptocurrency price data from OKX exchange.
 
-## 特性
+## Features
 
-此MCP服务器连接到OKX API，通过一个简单的工具界面提供加密货币的价格信息。它包括全面的错误处理、请求日志记录以及通过OKX API实现的速率限制。
+This MCP server connects to the OKX API to provide cryptocurrency price information through a simple tool interface. It includes comprehensive error handling, request logging, and rate limiting via OKX's API.
 
-### 工具
+### Tools
 
 #### `get_candlesticks`
 
-检索OKX上任何工具的历史K线（OHLCV）数据。
+Retrieves historical candlestick (OHLCV) data for any instrument on OKX.
 
-- **输入**:
-  - `instrument`: 字符串（必需）- 工具ID（例如 "BTC-USDT"）
-  - `bar`: 字符串（可选）- 时间间隔（例如 "1m", "5m", "1H", "1D"），默认为 "1m"
-  - `limit`: 数字（可选）- 返回的K线条数（最大100），默认为100
-- **输出**: JSON对象数组，每个包含：
-  - `timestamp`: K线的时间戳
-  - `open`: 开盘价
-  - `high`: 最高价
-  - `low`: 最低价
-  - `close`: 收盘价
-  - `volume`: 成交量
-  - `volumeCurrency`: 成交量以货币单位表示
+- **Input**:
+  - `instrument`: String (required) - Instrument ID (e.g. "BTC-USDT")
+  - `bar`: String (optional) - Time interval (e.g. "1m", "5m", "1H", "1D"), default "1m"
+  - `limit`: Number (optional) - Number of candlesticks to return (max 100), default 100
+- **Output**: Array of JSON objects, each containing:
+  - `timestamp`: ISO timestamp of the candlestick
+  - `open`: Opening price
+  - `high`: Highest price
+  - `low`: Lowest price
+  - `close`: Closing price
+  - `volume`: Trading volume
+  - `volumeCurrency`: Volume in currency terms
 
-示例用法：
+Example usage:
 
 ```json
 [
@@ -52,21 +52,21 @@ description: "通过模型上下文协议接口提供OKX交易所的实时加密
 
 #### `get_price`
 
-获取OKX上任何工具的最新价格和24小时市场数据。
+Fetches the latest price and 24-hour market data for any instrument on OKX.
 
-- **输入**:
-  - `instrument`: 字符串（必需）- 工具ID（例如 "BTC-USDT"）
-- **输出**: 包含以下内容的JSON对象：
-  - `instrument`: 请求的工具ID
-  - `lastPrice`: 最新成交价
-  - `bid`: 当前最佳买入价
-  - `ask`: 当前最佳卖出价
-  - `high24h`: 24小时内最高价
-  - `low24h`: 24小时内最低价
-  - `volume24h`: 24小时内成交量
-  - `timestamp`: 数据的时间戳
+- **Input**:
+  - `instrument`: String (required) - Instrument ID (e.g. "BTC-USDT")
+- **Output**: JSON object containing:
+  - `instrument`: The requested instrument ID
+  - `lastPrice`: Latest trade price
+  - `bid`: Current best bid price
+  - `ask`: Current best ask price
+  - `high24h`: 24-hour high price
+  - `low24h`: 24-hour low price
+  - `volume24h`: 24-hour trading volume
+  - `timestamp`: ISO timestamp of the data
 
-示例用法：
+Example usage:
 
 ```json
 {
@@ -81,29 +81,29 @@ description: "通过模型上下文协议接口提供OKX交易所的实时加密
 }
 ```
 
-## 开发
+## Development
 
-安装依赖项：
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-构建服务器：
+Build the server:
 
 ```bash
 npm run build
 ```
 
-使用自动重建进行开发：
+For development with auto-rebuild:
 
 ```bash
 npm run watch
 ```
 
-## 安装
+## Installation
 
-要与Claude Desktop或VSCode一起使用，请将服务器配置添加到您的MCP设置中：
+To use with Claude Desktop or VSCode, add the server config to your MCP settings:
 
 macOS (VSCode):
 
@@ -129,7 +129,7 @@ Windows (Claude Desktop):
 %APPDATA%/Claude/claude_desktop_config.json
 ```
 
-配置：
+Configuration:
 
 ```json
 {
@@ -144,31 +144,31 @@ Windows (Claude Desktop):
 }
 ```
 
-### 错误处理
+### Error Handling
 
-服务器实现了全面的错误处理：
+The server implements comprehensive error handling:
 
-- 捕获并返回带有上下文的网络错误
-- 对于无效的工具ID，返回适当的错误消息
-- 通过axios超时配置遵守API速率限制
-- 所有错误均被记录以供调试使用
+- Network errors are captured and returned with context
+- Invalid instrument IDs return appropriate error messages
+- API rate limits are respected through axios timeout configuration
+- All errors are logged for debugging purposes
 
-**官方网站：** [https://github.com/esshka/okx-mcp](https://github.com/esshka/okx-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/esshka/okx-mcp](https://github.com/esshka/okx-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`/path/to/okx-mcp-server/build/index.js`
+- Transport: `stdio`
+- Command: `node`
+- Args: `/path/to/okx-mcp-server/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/esshka-okx.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/esshka-okx.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

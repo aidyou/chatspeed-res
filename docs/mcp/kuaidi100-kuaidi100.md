@@ -1,69 +1,68 @@
 ---
-title: "快递100 MCP Server"
-description: "快递100 MCP Server提供快递信息查询、快递运费预估比价、快递时效查询（含发货前时效查询与在途动态时效查询）等功能。"
+title: "kuaidi100-mcp"
+description: "The Express100 MCP Server provides functions such as querying express delivery information, comparing and estimating express delivery costs, and checking delivery times (including pre-shipment deliver…"
 ---
 
-# 快递100 MCP Server
+# kuaidi100-mcp
 
-快递100 MCP Server提供快递信息查询、快递运费预估比价、快递时效查询（含发货前时效查询与在途动态时效查询）等功能。
+The Express100 MCP Server provides functions such as querying express delivery information, comparing and estimating express delivery costs, and checking delivery times (including pre-shipment deliver…
 
-## 什么是快递100 MCP Server?
+## What is Kuaidi100 MCP Server?
 
-快递100 MCP Server是快递100推出的国内首个兼容MCP协议的物流信息服务平台。快递100旗下百递云·API开放平台的核心服务现已全面支持MCP协议。开发者通过简单配置即可快速接入快递查询、运费预估、智能时效预估（含全程与在途模式）等核心功能。其AI Agent不仅显著降低了开发过程中物流数据服务调用的门槛，提高了开发效率，还增强了对各大行业的物流数据赋能，助力其创新与发展。
+Kuaidi100 MCP Server is the first logistics information service platform in China that is compatible with the MCP protocol, launched by Kuaidi100. The core services of Baidiyun·API Open Platform under Kuaidi100 now fully support the MCP protocol. Developers can quickly access core functions such as parcel tracking, freight estimation, and intelligent delivery time prediction (including full journey and in-transit modes) through simple configuration. Its AI Agent not only significantly lowers the threshold for calling logistics data services during development, improving development efficiency, but also enhances the empowerment of logistics data for various industries, promoting their innovation and development.
 
-## 核心功能
+## Core Functions
 
-1. **快递查询**
-   - 快递100API开放平台，提供查询全球3000+物流公司轨迹查询的能力。
-   - 输入：物流单号
-   - 输出：物流轨迹信息包含物流时间节点和轨迹详情
-2. **快递价格预估**
-   - 通过快递100大数据分析，根据快递公司、收寄件地址和重量来预估快递公司运费价格。
-   - 输入：收件地址、寄件地址、快递公司名称、包裹重量
-   - 输出：预估快递寄件价格
-3. **智能时效预估（全程模式）**
-   - 发货前，根据收寄件地址预测不同快递公司的预计送达时间。
-   - 输入：快递公司编码、收件地址、寄件地址
-   - 输出：预计送达时间
-4. **智能时效预估（在途模式）**
-   - 利用快递100自研AI时效预估模型，预测快递的送达时间。
-   - 输入：下单时间、物流轨迹信息、收件地址、寄件地址
-   - 输出：预计送达时间
+1. **Parcel Tracking**
+   - The Kuaidi100 API Open Platform provides the capability to query the tracking information of over 3,000 global logistics companies.
+   - Input: Waybill number
+   - Output: Logistics tracking information including time nodes and detailed tracking
+2. **Freight Estimation**
+   - Based on big data analysis by Kuaidi100, it estimates the shipping cost of logistics companies according to the sender and recipient addresses and package weight.
+   - Input: Recipient address, sender address, courier company name, package weight
+   - Output: Estimated shipping cost
+3. **Intelligent Delivery Time Prediction (Full Journey Mode)**
+   - Before shipment, it predicts the estimated delivery time for different courier companies based on the sender and recipient addresses.
+   - Input: Courier company code, recipient address, sender address
+   - Output: Estimated delivery time
+4. **Intelligent Delivery Time Prediction (In-Transit Mode)**
+   - Utilizing the self-developed AI delivery time prediction model by Kuaidi100, it predicts the delivery time of parcels.
+   - Input: Order placement time, logistics tracking information, recipient address, sender address
+   - Output: Estimated delivery time
 
-## 快递100 MCP Server的关键特性
+## Key Features of Kuaidi100 MCP Server
 
-1. **快递物流数据质量国内第一**
-   - 数据源自百递云开放平台，支持全球3000+快递公司物流信息数据查询，专注行业15年，有250万+企业客户选择。
-2. **AI+Data+MCP API重新定义**
-   - AI Agent显著降低了开发过程中物流数据服务调用的门槛，提高了开发效率，增强了对各大行业的物流数据赋能，助力其创新与发展。快递100 MCP Server支持通过SSE方式接入任意支持MCP协议的平台。
-3. **AI+Data快递图谱智能跃迁，查询产品焕新**
-   - 结合快递100AI大模型能力、亿级规模数据清洗与快递物流知识图谱技术沉淀，提供精准的快递预计到达时间与预计途径路线，实现快递查询从“快递到了哪里”向“快递何时可到达”升维。
-4. **一次配置，自动迭代**
-   - 用户配置完成后无需反复操作，百递云开放平台会持续对服务进行更新迭代。
+1. **Top-Quality Domestic Express Logistics Data**
+   - Data originates from the Baidiyun Open Platform, supporting the query of logistics information for over 3,000 global express companies. Focused on the industry for 15 years, it has been chosen by more than 2.5 million enterprise customers.
+2. **AI+Data+MCP API Redefined**
+   - The AI Agent significantly reduces the threshold for calling logistics data services during development, enhancing development efficiency and empowering various industries with logistics data, thus promoting their innovation and development. Kuaidi100 MCP Server supports integration with any platform that supports the MCP protocol via SSE.
+3. **AI+Data Express Map Intelligent Leap, Query Product Renewal**
+   - Combining the capabilities of the Kuaidi100 AI large model, billion-scale data cleansing, and express logistics knowledge graph technology, it provides accurate estimated delivery times and routes, elevating parcel tracking from "where is the parcel" to "when will the parcel arrive".
+4. **One-Time Configuration, Automatic Iteration**
+   - After user configuration, there is no need for repeated operations; the Baidiyun Open Platform continuously updates and iterates its services.
 
-## 快递100 MCP Server的使用案例
+## Use Cases of Kuaidi100 MCP Server
 
-- 查询订单包裹的实时物流信息
-- 根据快递运费、快递时效两大维度，对比不同快递公司物流方案，智能比选合适的快递服务
-- 查询快递预计送达时间，结合物流轨迹及路线节点信息动态更新，预计到达时间越临近目的地越精准，方便用户提前规划收货安排
+- Query real-time logistics information for order packages
+- Compare logistics solutions from different courier companies based on shipping costs and delivery times, intelligently selecting the most suitable courier service
+- Query the estimated delivery time of parcels, dynamically updating with logistics tracking and route node information, making the estimated arrival time increasingly accurate as the destination approaches, facilitating users in planning their receipt arrangements in advance
 
-## 常见问题解答
+## Frequently Asked Questions
 
-**Q：使用快递100 MCP Server是否需要付费**  
-A：用户需在[快递100API开放平台](https://api.kuaidi100.com/extend/register?code=d1660fe0390d4084b4f27b19d2feee02) 注册获取API Key，平台为每个用户提供单独的免费调用额度；如果后续超额，可在平台进行充值操作，如有疑问请联系：  
-联系邮箱：api@kuaidi100.com  
-联系电话：0755-86719032  
+**Q: Is there a fee for using Kuaidi100 MCP Server?**  
+A: Users need to register on the [Kuaidi100 API Open Platform](https://api.kuaidi100.com/extend/register?code=d1660fe0390d4084b4f27b19d2feee02) to obtain an API Key. The platform provides each user with a separate free call quota; if the quota is exceeded, users can recharge on the platform. For any questions, please contact:  
+Contact Email: api@kuaidi100.com  
+Contact Phone: 0755-86719032  
 
-## 快递100 MCP Server (Python)
-通过`uv`安装`python`，最低版本要求为3.11
+## Kuaidi100 MCP Server (Python)
+Install `python` with `uv`, requiring at least version 3.11
 
-```bash
+bash
 uv python install 3.11
-```
 
-### 一、在线获取依赖并使用（推荐）
-通过`uvx`命令一步获取kuaidi100_mcp并使用
-```json
+### 1. Online Dependency Acquisition and Usage (Recommended)
+Use the `uvx` command to get kuaidi100_mcp and use it in one step
+json
 {
   "mcpServers": {
     "kuaidi100": {
@@ -77,32 +76,27 @@ uv python install 3.11
     }
   }
 }
-```
 
-### 二、下载至本地配置本地项目
-通过`uv`创建一个项目
+### 2. Download and Configure Local Project
+Create a project with `uv`
 
-```bash
+bash
 uv init mcp_server_kuaidi100
-```
 
-将`api_mcp.py`拷贝到该目录下，通过如下命令测试mcp server是否正常运行
+Copy `api_mcp.py` to this directory and test whether the mcp server is running normally with the following command
 
-```bash
+bash
 uv run --with mcp[cli] mcp run {YOUR_PATH}/mcp_server_kuaidi100/api_mcp.py
-# 如果是mac，需要加转义符
-uv run --with mcp\[cli\] mcp run {YOUR_PATH}/mcp_server_kuaidi100/api_mcp.py
-```
+# If on Mac, add escape characters
+uv run --with mcp\[cli\] mcp run {YOUR_PATH}/mcp_server_kuaidi100/api_mcp.pyIf there are no errors, the MCP Server has started successfully.
 
-如果没有报错则MCP Server启动成功
+### Obtain Kuaidi100 API KEY
+Log in to Kuaidi100 to obtain your API key: https://api.kuaidi100.com/extend/register?code=d1660fe0390d4084b4f27b19d2feee02 (Be cautious not to leak your authorization key to prevent unauthorized use by others!!!)
 
-### 获取快递100 API KEY
-登录快递100获取 https://api.kuaidi100.com/extend/register?code=d1660fe0390d4084b4f27b19d2feee02 （注意不要泄露授权key，以防被他人盗用！！！）
+### Using in an MCP-supported Client
+Add the following content to the MCP Server configuration file and save it:
 
-### 在支持MCP的客户端中使用
-在MCP Server配置文件中添加如下内容后保存
-
-```json
+json
 {
   "mcpServers": {
     "kuaidi100": {
@@ -121,36 +115,35 @@ uv run --with mcp\[cli\] mcp run {YOUR_PATH}/mcp_server_kuaidi100/api_mcp.py
     }
   }
 }
-```
 
-### 测试
+### Testing
 
-#### 物流轨迹查询：
+#### Tracking Query:
 ![trae_test_queryTrace.png](/mcp-assets/f3b326086e0e093f44f0190cb93cd372.png)
-#### 快递预估时效：
+#### Estimated Delivery Time:
 ![trae_test_estimateTime.png](/mcp-assets/64f86c077a4d95076d80e5addd11c732.png)
-#### 快递预估价格
+#### Estimated Shipping Cost:
 ![trae_test_estimatePrice.png](/mcp-assets/e07fbf15c219348e5641f87a5056c191.png)
 
 ### Tips
-如需获取账号信息（如 key、customer、secret），或免费试用100单，请访问[API开放平台](https://api.kuaidi100.com/home)进行注册
+To get account information (such as key, customer, secret), or to try out 100 orders for free, please visit the [API Open Platform](https://api.kuaidi100.com/home) and register.
 
-**官方网站：** [https://github.com/kuaidi100-api/kuaidi100-MCP](https://github.com/kuaidi100-api/kuaidi100-MCP)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/kuaidi100-api/kuaidi100-MCP](https://github.com/kuaidi100-api/kuaidi100-MCP)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`, `search`, `browser`, `productivity`, `memory`, `files`, `communication`, `finance`, `media`, `data`
-- 标签：`other`, `search`, `browser automation`, `communication`, `developer tools`, `entertainment and media`, `file systems`, `finance`, `knowledge and memory`, `location services`
+- Categories: `development`, `search`, `browser`, `productivity`, `memory`, `files`, `communication`, `finance`, `media`, `data`
+- Tags: `other`, `search`, `browser automation`, `communication`, `developer tools`, `entertainment and media`, `file systems`, `finance`, `knowledge and memory`, `location services`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`http`
-- 启动命令：``
-- 参数：无
+- Transport: `http`
+- Command: ``
+- Args: none
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/kuaidi100-kuaidi100.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/kuaidi100-kuaidi100.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

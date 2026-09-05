@@ -1,82 +1,82 @@
 ---
-title: "网页抓取助手"
-description: "使大型语言模型能够通过Puppeteer执行浏览器自动化任务，进行网页浏览、截屏和运行JavaScript。"
+title: "mcp-scrape-copilot"
+description: "Enables LLMs to perform web browsing tasks, take screenshots, and execute JavaScript using Puppeteer for browser automation."
 ---
 
-# 网页抓取助手
+# mcp-scrape-copilot
 
-使大型语言模型能够通过Puppeteer执行浏览器自动化任务，进行网页浏览、截屏和运行JavaScript。
+Enables LLMs to perform web browsing tasks, take screenshots, and execute JavaScript using Puppeteer for browser automation.
 
 # Puppeteer
 
-一个使用Puppeteer提供浏览器自动化功能的模型上下文协议服务器。该服务器使LLM能够与网页进行交互、截取屏幕截图并在真实的浏览器环境中执行JavaScript。
+A Model Context Protocol server that provides browser automation capabilities using Puppeteer. This server enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a real browser environment.
 
-## 组件
+## Components
 
-### 工具
+### Tools
 
 - **puppeteer_navigate**
-  - 在浏览器中导航到任何URL
-  - 输入: `url` (字符串)
+  - Navigate to any URL in the browser
+  - Input: `url` (string)
 
 - **puppeteer_screenshot**
-  - 捕获整个页面或特定元素的屏幕截图
-  - 输入:
-    - `name` (字符串, 必填): 截图名称
-    - `selector` (字符串, 可选): 要截图元素的CSS选择器
-    - `width` (数字, 可选, 默认: 800): 截图宽度
-    - `height` (数字, 可选, 默认: 600): 截图高度
+  - Capture screenshots of the entire page or specific elements
+  - Inputs:
+    - `name` (string, required): Name for the screenshot
+    - `selector` (string, optional): CSS selector for element to screenshot
+    - `width` (number, optional, default: 800): Screenshot width
+    - `height` (number, optional, default: 600): Screenshot height
 
 - **puppeteer_click**
-  - 点击页面上的元素
-  - 输入: `selector` (字符串): 要点击元素的CSS选择器
+  - Click elements on the page
+  - Input: `selector` (string): CSS selector for element to click
 
 - **puppeteer_hover**
-  - 鼠标悬停在页面上的元素上
-  - 输入: `selector` (字符串): 要悬停元素的CSS选择器
+  - Hover elements on the page
+  - Input: `selector` (string): CSS selector for element to hover
 
 - **puppeteer_fill**
-  - 填写输入字段
-  - 输入:
-    - `selector` (字符串): 输入字段的CSS选择器
-    - `value` (字符串): 要填写的值
+  - Fill out input fields
+  - Inputs:
+    - `selector` (string): CSS selector for input field
+    - `value` (string): Value to fill
 
 - **puppeteer_select**
-  - 选择带有SELECT标签的元素
-  - 输入:
-    - `selector` (字符串): 要选择元素的CSS选择器
-    - `value` (字符串): 要选择的值
+  - Select an element with SELECT tag
+  - Inputs:
+    - `selector` (string): CSS selector for element to select
+    - `value` (string): Value to select
 
 - **puppeteer_evaluate**
-  - 在浏览器控制台中执行JavaScript
-  - 输入: `script` (字符串): 要执行的JavaScript代码
+  - Execute JavaScript in the browser console
+  - Input: `script` (string): JavaScript code to execute
 
-### 资源
+### Resources
 
-服务器提供了两种类型的资源访问：
+The server provides access to two types of resources:
 
-1. **控制台日志** (`console://logs`)
-   - 文本格式的浏览器控制台输出
-   - 包括来自浏览器的所有控制台消息
+1. **Console Logs** (`console://logs`)
+   - Browser console output in text format
+   - Includes all console messages from the browser
 
-2. **屏幕截图** (`screenshot://`)
-   - 捕获的屏幕截图的PNG图像
-   - 通过捕获时指定的截图名称访问
+2. **Screenshots** (`screenshot://`)
+   - PNG images of captured screenshots
+   - Accessible via the screenshot name specified during capture
 
-## 主要特性
+## Key Features
 
-- 浏览器自动化
-- 控制台日志监控
-- 屏幕截图功能
-- JavaScript执行
-- 基本的网页交互（导航、点击、表单填写）
+- Browser automation
+- Console log monitoring
+- Screenshot capabilities
+- JavaScript execution
+- Basic web interaction (navigation, clicking, form filling)
 
-## 使用Puppeteer服务器的配置
-这是使用Puppeteer服务器的Claude Desktop配置示例：
+## Configuration to use Puppeteer Server
+Here's the Claude Desktop configuration to use the Puppeter server:
 
 ### Docker
 
-**注意** Docker实现将使用无头Chromium，而NPX版本将打开一个浏览器窗口。
+**NOTE** The docker implementation will use headless chromium, where as the NPX version will open a browser window.
 
 ```json
 {
@@ -102,34 +102,34 @@ description: "使大型语言模型能够通过Puppeteer执行浏览器自动化
 }
 ```
 
-## 构建
+## Build
 
-Docker构建：
+Docker build:
 
 ```bash
 docker build -t mcp/puppeteer -f src/puppeteer/Dockerfile .
 ```
 
-## 许可证
+## License
 
-此MCP服务器根据MIT许可证发布。这意味着您可以在遵守MIT许可证条款和条件的前提下自由使用、修改和分发该软件。更多详情，请参阅项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/jwaldor/mcp-scrape-copilot](https://github.com/jwaldor/mcp-scrape-copilot)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/jwaldor/mcp-scrape-copilot](https://github.com/jwaldor/mcp-scrape-copilot)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @modelcontextprotocol/server-puppeteer`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @modelcontextprotocol/server-puppeteer`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jwaldor-scrape-copilot.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jwaldor-scrape-copilot.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

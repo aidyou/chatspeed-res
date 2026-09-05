@@ -1,180 +1,153 @@
 ---
-title: "微信公众号API-MCP-Server"
-description: "# 微信公众号 MCP 服务简介\n\n## 服务概述\n\n微信公众号MCP（模型控制协议）服务是一个专为通过AI自动化简化微信公众号管理而设计的专业工具。该服务为在微信公众号上创建、发布和管理内容提供了标准化接口，消除了常规发布任务中的手动干预需求。\n\n## 核心功能\n\n- **访问令牌管理**：安全处理认证凭证\n- **内容创建**：支持文本、图片和HTML格式的富媒体内容草稿的程序化创建\n- **发布自动化**：定时或按需将内容发布到微信公众号\n- **资源管理**：高效处理媒体资源和草稿内容\n- **MCP兼容性**：通过模型控制协议标准与AI代理和LLM系统无缝集成\n\n## 技术实现\n\n基于FastMCP框架构建，该服务暴露了一组可由AI系统调用的标准化工具，用于在微信公众号上执行操作。服务处理与微信API的所有通信，透明地管理认证、速率限制和错误处理。\n\n## 使用场景\n\n- 从AI生成内容自动发布内容\n- 定时发布定期更新或通讯\n- 与内容管理系统集成，实现跨平台发布\n- 使AI助手能够管理社交媒体存在\n\n## 集成方式\n\n该服务可以与任何支持MCP协议的系统集成，包括Cursor、ModelScope和自定义MCP客户端。它可以在本地部署或在服务器上部署以进行集中访问。"
+title: "wechat_oa_mcp"
+description: "WeChat Official Account MCP Service Description Service Overview The WeChat Official Account MCP (Model Control Protocol) service is a specialized tool designed to streamline the management of WeChat…"
 ---
 
-# 微信公众号API-MCP-Server
+# wechat_oa_mcp
 
-# 微信公众号 MCP 服务简介
+WeChat Official Account MCP Service Description Service Overview The WeChat Official Account MCP (Model Control Protocol) service is a specialized tool designed to streamline the management of WeChat…
 
-## 服务概述
+# WeChat Official Account MCP Server
 
-微信公众号MCP（模型控制协议）服务是一个专为通过AI自动化简化微信公众号管理而设计的专业工具。该服务为在微信公众号上创建、发布和管理内容提供了标准化接口，消除了常规发布任务中的手动干预需求。
+This is a WeChat Official Account MCP server based on the FastMCP framework, providing a series of practical WeChat Official Account API interface encapsulations, including draft creation, publishing, deletion, and other functions.
 
-## 核心功能
+## Project Introduction
 
-- **访问令牌管理**：安全处理认证凭证
-- **内容创建**：支持文本、图片和HTML格式的富媒体内容草稿的程序化创建
-- **发布自动化**：定时或按需将内容发布到微信公众号
-- **资源管理**：高效处理媒体资源和草稿内容
-- **MCP兼容性**：通过模型控制协议标准与AI代理和LLM系统无缝集成
+This project uses Python and the FastMCP framework to provide WeChat Official Account management APIs through the Model Control Protocol (MCP) specification. It can be easily integrated into various AI systems and automated workflows, helping users conveniently manage WeChat Official Account content.
 
-## 技术实现
+## WeChat Official Platform
 
-基于FastMCP框架构建，该服务暴露了一组可由AI系统调用的标准化工具，用于在微信公众号上执行操作。服务处理与微信API的所有通信，透明地管理认证、速率限制和错误处理。
+WeChat Official Platform official website: [https://mp.weixin.qq.com](https://mp.weixin.qq.com)
 
-## 使用场景
+You need to register and create an official account on the WeChat Official Platform first, and obtain the developer ID (AppID) and secret key (AppSecret) to use this tool.
 
-- 从AI生成内容自动发布内容
-- 定时发布定期更新或通讯
-- 与内容管理系统集成，实现跨平台发布
-- 使AI助手能够管理社交媒体存在
+## Installation Method
 
-## 集成方式
-
-该服务可以与任何支持MCP协议的系统集成，包括Cursor、ModelScope和自定义MCP客户端。它可以在本地部署或在服务器上部署以进行集中访问。
-
-# 微信公众号 MCP 服务器
-
-这是一个基于 FastMCP 框架的微信公众号MCP服务器，提供了一系列实用的微信公众号 API 接口封装，包括草稿创建、发布、删除等功能。
-
-## 项目简介
-
-本项目使用 Python 和 FastMCP 框架，通过 Model Control Protocol (MCP) 规范提供微信公众号管理 API，可以轻松集成到各种 AI 系统和自动化工作流程中，帮助用户便捷地管理微信公众号内容。
-
-## 微信公众平台
-
-微信公众平台官方网址：[https://mp.weixin.qq.com](https://mp.weixin.qq.com)
-
-您需要先在微信公众平台注册并创建公众号，获取开发者ID(AppID)和密钥(AppSecret)才能使用本工具。
-
-## 安装方法
-
-### 使用 pip 安装
+### Install via pip
 
 ```bash
 pip install wechat_oa_mcp
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 ./
-├── README.md              # 项目文档
-├── examples/              # 使用示例
-│   └── simple_usage.py    # 简单使用示例
-├── setup.py               # 安装配置
-├── pyproject.toml         # Python项目配置
-└── wechat_oa_mcp/         # 包主目录
-    ├── __init__.py        # 包初始化文件
-    ├── __main__.py        # 模块直接执行入口
-    ├── cli.py             # 命令行工具入口
-    └── server.py          # 主要功能代码
+├── README.md              # Project documentation
+├── examples/              # Usage examples
+│   └── simple_usage.py    # Simple usage example
+├── setup.py               # Installation configuration
+├── pyproject.toml         # Python project configuration
+└── wechat_oa_mcp/         # Main package directory
+    ├── __init__.py        # Package initialization file
+    ├── __main__.py        # Module direct execution entry
+    ├── cli.py             # Command line tool entry
+    └── server.py          # Main functionality code
 ```
 
-## 依赖项
+## Dependencies
 
 - Python 3.10+
 - fastmcp
 - requests
 
-## 功能列表
+## Feature List
 
-本服务器提供以下功能:
+This server provides the following features:
 
-- **获取微信 Access Token**: 获取接口调用凭证
-- **创建微信公众号草稿**: 创建图文消息草稿
-- **发布微信公众号草稿**: 将草稿发布到公众号
-- **删除微信公众号草稿**: 删除未发布的草稿
-- **删除永久素材**: 删除公众号中的永久素材
+- **Get WeChat Access Token**: Obtain interface calling credentials
+- **Create WeChat Official Account Draft**: Create rich text message drafts
+- **Publish WeChat Official Account Draft**: Publish drafts to the official account
+- **Delete WeChat Official Account Draft**: Delete unpublished drafts
+- **Delete Permanent Material**: Delete permanent materials in the official account
 
-## API 接口说明
+## API Interface Description
 
-### 1. 获取 Access Token
+### 1. Get Access Token
 
 ```python
 WeChat_get_access_token
 ```
 
-**输入参数:**
+**Input Parameters:**
 ```json
-AppID: String·第三方用户唯一凭证(公众号-设置与开发-开发接口管理中获取)
-AppSecret: String·第三方用户唯一凭证密钥(公众号-设置与开发-开发接口管理中获取)
+AppID: String·Third-party user unique credential (obtained from Official Account - Settings and Development - Development Interface Management)
+AppSecret: String·Third-party user unique credential secret key (obtained from Official Account - Settings and Development - Development Interface Management)
 ```
 
-**输出:**
+**Output:**
 ```json
 {
   "success": true,
   "error": null,
-  "access_token": "获取到的access_token",
+  "access_token": "obtained access_token",
   "expires_in": 7200
 }
 ```
 
-### 2. 创建草稿
+### 2. Create Draft
 
 ```python
 WeChat_create_draft
 ```
 
-**输入参数:**
+**Input Parameters:**
 ```json
-access_token: String·你的access_token，调用接口凭证，可通过WeChat_get_access_token获取
-image_url: String·封面图片URL
-title: String·文章标题
-content: String·图文消息的具体内容，支持HTML标签，必须少于2万字符，小于1M
-author: String·(可选)作者名称
-digest: String·(可选)图文消息的摘要，仅有单图文消息才有摘要，多图文此处为空。如果本字段为没有填写，则默认抓取正文前54个字。
-content_source_url: String·(可选)图文消息的原文地址，即点击"阅读原文"后的URL
-need_open_comment: Integer·(可选)Uint32 是否打开评论，0不打开(默认)，1打开
+access_token: String·Your access_token, interface calling credential, can be obtained through WeChat_get_access_token
+image_url: String·Cover image URL
+title: String·Article title
+content: String·The specific content of the rich text message, supports HTML tags, must be less than 20,000 characters, less than 1M
+author: String·(Optional) Author name
+digest: String·(Optional) Summary of the rich text message, only single rich text messages have summaries, multi-rich text is empty here. If this field is not filled, it will default to grab the first 54 characters of the content.
+content_source_url: String·(Optional) Original address of the rich text message, i.e., the URL after clicking "Read original"
+need_open_comment: Integer·(Optional) Uint32 Whether to open comments, 0 does not open (default), 1 opens
 ```
 
-**输出:**
+**Output:**
 ```json
 {
   "success": true,
   "error": null,
-  "draft_media_id": "草稿的media_id",
-  "image_media_id": "封面图片的media_id"
+  "draft_media_id": "draft's media_id",
+  "image_media_id": "cover image's media_id"
 }
 ```
 
-### 3. 发布草稿
+### 3. Publish Draft
 
 ```python
 WeChat_publish_draft
 ```
 
-**输入参数:**
+**Input Parameters:**
 ```json
-access_token: String·调用接口凭证，可通过WeChat_get_access_token获取
-draft_media_id: String·在之前调用WeChat_create_draft之后返回的draft_media_id
+access_token: String·Interface calling credential, can be obtained through WeChat_get_access_token
+draft_media_id: String·The draft_media_id returned after previously calling WeChat_create_draft
 ```
 
-**输出:**
+**Output:**
 ```json
 {
   "success": true,
   "error": null,
   "errmsg": "ok",
-  "publish_id": "发布任务id"
+  "publish_id": "publish task id"
 }
 ```
 
-### 4. 删除草稿
+### 4. Delete Draft
 
 ```python
 WeChat_del_draft
 ```
 
-**输入参数:**
+**Input Parameters:**
 ```json
-access_token: String·调用接口凭证，可通过WeChat_get_access_token获取
-media_id: String·草稿对应凭证，也就是WeChat_create_draft返回的draft_media_id
+access_token: String·Interface calling credential, can be obtained through WeChat_get_access_token
+media_id: String·Draft corresponding credential, which is the draft_media_id returned by WeChat_create_draft
 ```
 
-**输出:**
+**Output:**
 ```json
 {
   "success": true,
@@ -184,19 +157,19 @@ media_id: String·草稿对应凭证，也就是WeChat_create_draft返回的draf
 }
 ```
 
-### 5. 删除永久素材
+### 5. Delete Permanent Material
 
 ```python
 WeChat_del_material
 ```
 
-**输入参数:**
+**Input Parameters:**
 ```json
-access_token: String·调用接口凭证，可通过WeChat_get_access_token获取
-media_id: String·永久素材对应凭证，也就是WeChat_create_draft返回的image_media_id
+access_token: String·Interface calling credential, can be obtained through WeChat_get_access_token
+media_id: String·Permanent material corresponding credential, which is the image_media_id returned by WeChat_create_draft
 ```
 
-**输出:**
+**Output:**
 ```json
 {
   "success": true,
@@ -206,20 +179,20 @@ media_id: String·永久素材对应凭证，也就是WeChat_create_draft返回�
 }
 ```
 
-## 使用方法
+## Usage Methods
 
-### 1. 安装服务器
+### 1. Install the Server
 
 ```bash
-# 通过pip安装
+# Install via pip
 pip install wechat_oa_mcp
 ```
 
-### 2. 调用MCP Server的几种方式
+### 2. Several Ways to Call the MCP Server
 
-#### 2.1 通过代码调用
+#### 2.1 Call via Code
 
-您可以通过以下方式在Python代码中直接调用微信MCP API（只需完成安装步骤即可使用）：
+You can directly call the WeChat MCP API in Python code as follows (just complete the installation step to use it):
 
 ```python
 from wechat_oa_mcp import (
@@ -230,89 +203,89 @@ from wechat_oa_mcp import (
     WeChat_del_material
 )
 
-# 获取access_token
+# Get access_token
 token_result = WeChat_get_access_token({
-    "AppID": "您的微信AppID",
-    "AppSecret": "您的微信AppSecret"
+    "AppID": "Your WeChat AppID",
+    "AppSecret": "Your WeChat AppSecret"
 })
 
 if token_result["success"]:
     access_token = token_result["access_token"]
 
-    # 创建草稿
+    # Create draft
     draft_result = WeChat_create_draft({
         "access_token": access_token,
         "image_url": "https://example.com/image.jpg",
-        "title": "测试文章标题",
+        "title": "Test Article Title",
         "content": "
-这是文章内容
+This is the article content
 ",
-        "author": "作者名称"
+        "author": "Author Name"
     })
 
     if draft_result["success"]:
         draft_id = draft_result["draft_media_id"]
         image_id = draft_result["image_media_id"]
 
-        # 发布草稿
+        # Publish draft
         publish_result = WeChat_publish_draft({
             "access_token": access_token,
             "draft_media_id": draft_id
         })
 
         if publish_result["success"]:
-            print(f"发布成功！发布ID: {publish_result['publish_id']}")
+            print(f"Published successfully! Publish ID: {publish_result['publish_id']}")
 
-        # 删除草稿示例
-        # 注意：通常在发布后才会删除草稿，这里仅为演示API用法
+        # Delete draft example
+        # Note: Usually drafts are deleted after publishing, this is just to demonstrate the API usage
         del_draft_result = WeChat_del_draft({
             "access_token": access_token,
             "media_id": draft_id
         })
 
         if del_draft_result["success"]:
-            print(f"删除草稿成功：{del_draft_result['errmsg']}")
+            print(f"Deleted draft successfully: {del_draft_result['errmsg']}")
 
-        # 删除素材示例
-        # 注意：通常在不需要图片素材时才会删除，这里仅为演示API用法
+        # Delete material example
+        # Note: Usually materials are deleted when they are no longer needed, this is just to demonstrate the API usage
         del_material_result = WeChat_del_material({
             "access_token": access_token,
             "media_id": image_id
         })
 
         if del_material_result["success"]:
-            print(f"删除素材成功：{del_material_result['errmsg']}")
+            print(f"Deleted material successfully: {del_material_result['errmsg']}")
 ```
 
-#### 2.2 通过MCP Inspector进行调试
+#### 2.2 Debug via MCP Inspector
 
-只需完成安装步骤后，即可使用以下命令进行交互测试：
+After completing the installation step, you can use the following command for interactive testing:
 
 ```bash
 npx @modelcontextprotocol/inspector python -m wechat_oa_mcp
 ```
 
-之后访问 http://localhost:6274 可进行交互测试
+Then visit http://localhost:6274 to conduct interactive testing
 
-#### 2.3 通过json添加mcp server
+#### 2.3 Add mcp server via json
 
-**注意：此方式需要先启动MCP服务器**
+**Note: This method requires starting the MCP server first**
 
-1. 首先通过命令行启动服务：
+1. First start the service via command line:
 
 ```bash
-# 直接启动（默认端口8000）
+# Direct startup (default port 8000)
 wechat-oa-mcp
-# 或者
+# Or
 python -m wechat_oa_mcp
 
-# 指定端口启动
+# Specify port to start
 wechat-oa-mcp --port 8123
-# 或者
+# Or
 python -m wechat_oa_mcp --port 8123
 ```
 
-2. 然后将微信MCP服务器添加到其他MCP兼容应用（如Cursor）的配置中：
+2. Then add the WeChat MCP server to the configuration of other MCP compatible applications (such as Cursor):
 
 ```json
 {
@@ -325,51 +298,51 @@ python -m wechat_oa_mcp --port 8123
 }
 ```
 
-**配置参数说明：**
-- `type`: 通信协议类型，支持"sse"(Server-Sent Events)
-- `url`: 服务器地址，默认端口为8000。如果之前指定了port，则以指定端口号为准
-- `wechat_oa_mcp`: 服务器名称，可自定义
+**Configuration Parameter Description:**
+- `type`: Communication protocol type, supports "sse" (Server-Sent Events)
+- `url`: Server address, the default port is 8000. If a port was previously specified, the specified port number will be used
+- `wechat_oa_mcp`: Server name, can be customized
 
-## 技术架构
+## Technical Architecture
 
-本项目基于 FastMCP 框架，通过 MCP 协议提供微信公众号相关服务。服务器采用模块化设计，每个功能都封装为独立的 MCP 工具，可以单独调用。
+This project is based on the FastMCP framework and provides WeChat Official Account related services through the MCP protocol. The server adopts a modular design, with each function encapsulated as an independent MCP tool that can be called separately.
 
-服务器内部通过 HTTP 请求与微信公众号 API 通信，处理认证、参数校验等细节，让使用者可以专注于业务逻辑而不用关心底层实现。
+The server internally communicates with the WeChat Official Account API through HTTP requests, handling authentication, parameter validation, and other details, allowing users to focus on business logic without worrying about the underlying implementation.
 
-## 使用限制
+## Usage Limitations
 
-为了分散服务器压力，每个IP每分钟内最多能调用同一接口五次。
+To distribute server pressure, each IP can call the same interface at most five times per minute.
 
-## IP白名单配置
+## IP Whitelist Configuration
 
-根据微信公众号开发接口管理规定，通过开发者ID及密码调用获取access_token接口时，需要设置访问来源IP为白名单。请将以下IP添加至微信公众号-设置与开发-开发接口管理-IP白名单：
+According to the WeChat Official Account development interface management regulations, when calling the access_token interface through the developer ID and password, the source IP of the visit needs to be set as a whitelist. Please add the following IP to WeChat Official Account - Settings and Development - Development Interface Management - IP Whitelist:
 
 ```
 106.15.125.133
 ```
 
-## 致谢
+## Acknowledgements
 
-- 感谢 FastMCP 项目提供的框架支持
+- Thanks to the FastMCP project for providing framework support
 
-**免责声明：此 MCP 服务器仅限研究用途，禁止用于商业目的。**
+**Disclaimer: This MCP server is for research purposes only and is prohibited for commercial use.**
 
-**官方网站：** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.modelscope.cn/mcp](https://www.modelscope.cn/mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`development`
-- 标签：`developer tools`, `chinese`
+- Categories: `development`
+- Tags: `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`--directory /Users/project/mcp/wechat/wechat_oa_mcp -m wechat_oa_mcp --port 8123`
+- Transport: `stdio`
+- Command: `python`
+- Args: `--directory /Users/project/mcp/wechat/wechat_oa_mcp -m wechat_oa_mcp --port 8123`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/jupiterc-wechat-oa.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/jupiterc-wechat-oa.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

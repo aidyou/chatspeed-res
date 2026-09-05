@@ -1,11 +1,11 @@
 ---
-title: "botanicastudios"
-description: "Crossref MCP 服务器 一个用于与 Crossref API 交互的 Model Context Protocol (MCP) 服务器。 功能 - 按标题搜索作品 - 按作者搜索作品 - 通过 DOI 获取作品详情 安装 { \"mcpServers\": { \"crossref\": { \"command\": \"npx\", \"args\": [ \"-y\", \"@botanicastudios/crossref-mcp\" ] } } } 使用方法 该服务器提供了三个主要工具： 1. 按标题搜索 按标题在 Cros"
+title: "crossref-mcp"
+description: "Crossref MCP Server A Model Context Protocol (MCP) server for interacting with the Crossref API. Features - Search works by title - Search works by author - Get work details by DOI Installation { \"mcp…"
 ---
 
-# botanicastudios
+# crossref-mcp
 
-Crossref MCP 服务器 一个用于与 Crossref API 交互的 Model Context Protocol (MCP) 服务器。 功能 - 按标题搜索作品 - 按作者搜索作品 - 通过 DOI 获取作品详情 安装 { "mcpServers": { "crossref": { "command": "npx", "args": [ "-y", "@botanicastudios/crossref-mcp" ] } } } 使用方法 该服务器提供了三个主要工具： 1. 按标题搜索 按标题在 Cros
+Crossref MCP Server A Model Context Protocol (MCP) server for interacting with the Crossref API. Features - Search works by title - Search works by author - Get work details by DOI Installation { "mcp…
 
 # Crossref MCP Server
 
@@ -183,22 +183,22 @@ it("should handle a new edge case", async () => {
 });
 ```
 
-**官方网站：** [https://github.com/botanicastudios/crossref-mcp](https://github.com/botanicastudios/crossref-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/botanicastudios/crossref-mcp](https://github.com/botanicastudios/crossref-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`
-- 标签：`research and data`, `search`, `open data`
+- Categories: `data`
+- Tags: `research and data`, `search`, `open data`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @botanicastudios/crossref-mcp`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @botanicastudios/crossref-mcp`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/botanicastudios-crossref.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/botanicastudios-crossref.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

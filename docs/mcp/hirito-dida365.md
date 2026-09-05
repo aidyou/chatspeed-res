@@ -1,11 +1,11 @@
 ---
-title: "滴答清单MCP"
-description: "基于滴答清单官方提供的文档实现日志增删改查"
+title: "dida365-mcp-servers"
+description: "Implementing Log CRUD Based on the Official Documentation of TickTick Introduction This guide will walk you through how to implement basic log operations (Create, Read, Update, Delete) using the offic…"
 ---
 
-# 滴答清单MCP
+# dida365-mcp-servers
 
-基于滴答清单官方提供的文档实现日志增删改查
+Implementing Log CRUD Based on the Official Documentation of TickTick Introduction This guide will walk you through how to implement basic log operations (Create, Read, Update, Delete) using the offic…
 
 # 滴答清单 MCP 服务
 
@@ -222,22 +222,22 @@ npm start
 
 欢迎提交 Issue 和 Pull Request！
 
-**官方网站：** [https://github.com/ZH1754629545/dida365-mcp-servers](https://github.com/ZH1754629545/dida365-mcp-servers)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/ZH1754629545/dida365-mcp-servers](https://github.com/ZH1754629545/dida365-mcp-servers)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`calendar management`, `滴答清单`
+- Categories: `productivity`
+- Tags: `calendar management`, `滴答清单`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`node`
-- 参数：`yourPath`
+- Transport: `stdio`
+- Command: `node`
+- Args: `yourPath`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hirito-dida365.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hirito-dida365.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

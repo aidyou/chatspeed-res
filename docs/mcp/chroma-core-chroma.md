@@ -1,11 +1,11 @@
 ---
 title: "Chroma MCP"
-description: "Chroma - the open-source embedding database . The fastest way to build Python or JavaScript LLM apps with memory! Docs Homepage Chroma MCP Server The Model Context Protocol (MCP) is an open protocol designed for effortle"
+description: "Chroma - the open-source embedding database . The fastest way to build Python or JavaScript LLM apps with memory! Docs Homepage Chroma MCP Server The Model Context Protocol (MCP) is an open protocol d…"
 ---
 
 # Chroma MCP
 
-Chroma - the open-source embedding database . The fastest way to build Python or JavaScript LLM apps with memory! Docs Homepage Chroma MCP Server The Model Context Protocol (MCP) is an open protocol designed for effortle
+Chroma - the open-source embedding database . The fastest way to build Python or JavaScript LLM apps with memory! Docs Homepage Chroma MCP Server The Model Context Protocol (MCP) is an open protocol d…
 
 Chroma - the open-source embedding database
 . 
@@ -86,22 +86,22 @@ Chroma MCP supports several embedding functions: `default`, `cohere`, `openai`, 
 The embedding functions utilize Chroma's collection configuration, which persists the selected embedding function of a collection for retrieval. Once a collection is created using the collection configuration, on retrieval for future queries and inserts, the same embedding function will be used, without needing to specify the embedding function again. Embedding function persistance was added in v1.0.0 of Chroma, so if you created a collection using version _API_KEY=""`.
 So to set a Cohere API key, set the environment variable `CHROMA_COHERE_API_KEY=""`. We recommend adding this to a .env file somewhere and using the `CHROMA_DOTENV_PATH` environment variable or `--dotenv-path` flag to set that location for safekeeping.
 
-**官方网站：** [https://github.com/chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`data`, `memory`
-- 标签：`vector database`, `chroma`, `memory`, `rag`, `official`
+- Categories: `data`, `memory`
+- Tags: `vector database`, `chroma`, `memory`, `rag`, `official`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-server-chroma`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-server-chroma`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chroma-core-chroma.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chroma-core-chroma.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

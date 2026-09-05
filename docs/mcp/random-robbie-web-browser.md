@@ -1,43 +1,43 @@
 ---
-title: "智能浏览器"
-description: "一个高级的网络浏览服务器，通过安全的API启用无头浏览器交互，提供导航、内容提取、元素交互和截图捕获等功能。"
+title: "mcp-web-browser"
+description: "An advanced web browsing server enabling headless browser interactions via a secure API, providing features like navigation, content extraction, element interaction, and screenshot capture."
 ---
 
-# 智能浏览器
+# mcp-web-browser
 
-一个高级的网络浏览服务器，通过安全的API启用无头浏览器交互，提供导航、内容提取、元素交互和截图捕获等功能。
+An advanced web browsing server enabling headless browser interactions via a secure API, providing features like navigation, content extraction, element interaction, and screenshot capture.
 
-# MCP Web 浏览器服务器
+# MCP Web Browser Server
 
-一个基于 Playwright 的高级网页浏览服务器，为 Model Context Protocol (MCP) 提供支持，通过灵活且安全的 API 实现无头浏览器交互。
+An advanced web browsing server for the Model Context Protocol (MCP) powered by Playwright, enabling headless browser interactions through a flexible, secure API.
 
-## 🌐 功能
+## 🌐 Features
 
-- **无头网页浏览**：访问任何网站，并绕过 SSL 证书验证
-- **全页面内容提取**：获取完整的 HTML 内容，包括动态加载的 JavaScript
-- **多标签页支持**：创建、管理和切换多个浏览器标签页
-- **高级网页交互工具**：
-  - 提取文本内容
-  - 点击页面元素
-  - 在表单字段中输入文本
-  - 捕获屏幕截图
-  - 提取页面链接并具有过滤功能
-  - 向任意方向滚动页面
-  - 在页面上执行 JavaScript
-  - 刷新页面
-  - 等待导航完成
-- **资源管理**：在不活动后自动清理未使用的资源
-- **增强页面信息**：获取当前页面的详细元数据
+- **Headless Web Browsing**: Navigate to any website with SSL certificate validation bypass
+- **Full Page Content Extraction**: Retrieve complete HTML content, including dynamically loaded JavaScript
+- **Multi-Tab Support**: Create, manage, and switch between multiple browser tabs
+- **Advanced Web Interaction Tools**:
+  - Extract text content
+  - Click page elements
+  - Input text into form fields
+  - Capture screenshots
+  - Extract page links with filtering capabilities
+  - Scroll pages in any direction
+  - Execute JavaScript on pages
+  - Refresh pages
+  - Wait for navigation to complete
+- **Resource Management**: Automatic cleanup of unused resources after inactivity
+- **Enhanced Page Information**: Get detailed metadata about the current page
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 前提条件
+### Prerequisites
 
 - Python 3.10+
 - MCP SDK
 - Playwright
 
-### 安装
+### Installation
 
 ```bash
 # Install MCP and Playwright
@@ -47,9 +47,9 @@ pip install mcp playwright
 playwright install
 ```
 
-### Claude Desktop 配置
+### Configuration for Claude Desktop
 
-将以下内容添加到 `claude_desktop_config.json` 文件中：
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -64,9 +64,9 @@ playwright install
 }
 ```
 
-## 💡 使用示例
+## 💡 Usage Examples
 
-### 基本网页导航
+### Basic Web Navigation
 
 ```python
 # Browse to a website
@@ -79,7 +79,7 @@ text_content = extract_text_content()
 title_text = extract_text_content("h1.title")
 ```
 
-### 网页交互
+### Web Interaction
 
 ```python
 # Navigate to a page
@@ -93,7 +93,7 @@ input_text("#password", "your_password")
 click_element("#login-button")
 ```
 
-### 屏幕截图捕获
+### Screenshot Capture
 
 ```python
 # Capture full page screenshot
@@ -103,7 +103,7 @@ full_page_screenshot = get_page_screenshots(full_page=True)
 element_screenshot = get_page_screenshots(selector="#main-content")
 ```
 
-### 链接提取
+### Link Extraction
 
 ```python
 # Get all links on the page
@@ -113,7 +113,7 @@ page_links = get_page_links()
 filtered_links = get_page_links(filter_pattern="contact")
 ```
 
-### 多标签页浏览
+### Multi-Tab Browsing
 
 ```python
 # Create a new tab
@@ -132,7 +132,7 @@ switch_tab(tab_id)
 close_tab(another_tab_id)
 ```
 
-### 高级交互
+### Advanced Interactions
 
 ```python
 # Scroll the page
@@ -151,97 +151,96 @@ refresh_page()
 wait_for_navigation(timeout_ms=5000)
 ```
 
-## 🛡️ 安全特性
+## 🛡️ Security Features
 
-- 绕过 SSL 证书验证
-- 安全的浏览器上下文管理
-- 自定义用户代理配置
-- 错误处理和全面的日志记录
-- 可配置的超时设置
-- CSP 绕过控制
-- 防止 cookie 被窃取
+- SSL certificate validation bypass
+- Secure browser context management
+- Custom user-agent configuration
+- Error handling and comprehensive logging
+- Configurable timeout settings
+- CSP bypass control
+- Protection against cookie stealing
 
-## 🔧 故障排除
+## 🔧 Troubleshooting
 
-### 常见问题
+### Common Issues
 
-- **SSL 证书错误**：自动绕过
-- **页面加载缓慢**：调整 `browse_to()` 方法中的超时时间
-- **找不到元素**：仔细检查选择器
-- **浏览器资源使用**：在不活动期后自动清理
+- **SSL Certificate Errors**: Automatically bypassed
+- **Slow Page Load**: Adjust timeout in `browse_to()` method
+- **Element Not Found**: Verify selectors carefully
+- **Browser Resource Usage**: Auto-cleanup after inactivity period
 
-### 日志
+### Logging
 
-所有重要事件都会被记录下来，提供详细的调试信息。
+All significant events are logged with detailed information for easy debugging.
 
-## 📋 工具参数
+## 📋 Tool Parameters
 
 ### `browse_to(url: str, context: Optional[Any] = None)`
-- `url`: 要导航到的网站
-- `context`: 可选的上下文对象（目前未使用）
+- `url`: Website to navigate to
+- `context`: Optional context object (currently unused)
 
 ### `extract_text_content(selector: Optional[str] = None, context: Optional[Any] = None)`
-- `selector`: 可选的 CSS 选择器，用于提取特定内容
-- `context`: 可选的上下文对象（目前未使用）
+- `selector`: Optional CSS selector to extract specific content
+- `context`: Optional context object (currently unused)
 
 ### `click_element(selector: str, context: Optional[Any] = None)`
-- `selector`: 要点击的元素的 CSS 选择器
-- `context`: 可选的上下文对象（目前未使用）
+- `selector`: CSS selector of the element to click
+- `context`: Optional context object (currently unused)
 
 ### `get_page_screenshots(full_page: bool = False, selector: Optional[str] = None, context: Optional[Any] = None)`
-
-- `full_page`: 捕获整个页面的截图
-- `selector`: 可选元素以进行截图
-- `context`: 可选上下文对象（当前未使用）
+- `full_page`: Capture entire page screenshot
+- `selector`: Optional element to screenshot
+- `context`: Optional context object (currently unused)
 
 ### `get_page_links(filter_pattern: Optional[str] = None, context: Optional[Any] = None)`
-- `filter_pattern`: 可选文本模式以过滤链接
-- `context`: 可选上下文对象（当前未使用）
+- `filter_pattern`: Optional text pattern to filter links
+- `context`: Optional context object (currently unused)
 
 ### `input_text(selector: str, text: str, context: Optional[Any] = None)`
-- `selector`: 输入元素的 CSS 选择器
-- `text`: 要输入的文本
-- `context`: 可选上下文对象（当前未使用）
+- `selector`: CSS selector of input element
+- `text`: Text to input
+- `context`: Optional context object (currently unused)
 
 ### `create_new_tab(url: Optional[str] = None, context: Optional[Any] = None)`
-- `url`: 在新标签页中导航到的可选 URL
-- `context`: 可选上下文对象（当前未使用）
+- `url`: Optional URL to navigate to in the new tab
+- `context`: Optional context object (currently unused)
 
 ### `switch_tab(tab_id: str, context: Optional[Any] = None)`
-- `tab_id`: 要切换到的标签页 ID
-- `context`: 可选上下文对象（当前未使用）
+- `tab_id`: ID of the tab to switch to
+- `context`: Optional context object (currently unused)
 
 ### `list_tabs(context: Optional[Any] = None)`
-- `context`: 可选上下文对象（当前未使用）
+- `context`: Optional context object (currently unused)
 
 ### `close_tab(tab_id: Optional[str] = None, context: Optional[Any] = None)`
-- `tab_id`: 要关闭的标签页的可选 ID（默认为当前标签页）
-- `context`: 可选上下文对象（当前未使用）
+- `tab_id`: Optional ID of the tab to close (defaults to current tab)
+- `context`: Optional context object (currently unused)
 
 ### `refresh_page(context: Optional[Any] = None)`
-- `context`: 可选上下文对象（当前未使用）
+- `context`: Optional context object (currently unused)
 
 ### `get_page_info(context: Optional[Any] = None)`
-- `context`: 可选上下文对象（当前未使用）
+- `context`: Optional context object (currently unused)
 
 ### `scroll_page(direction: str = "down", amount: str = "page", context: Optional[Any] = None)`
-- `direction`: 滚动方向（'up', 'down', 'left', 'right'）
-- `amount`: 滚动量（'page', 'half' 或一个数字）
-- `context`: 可选上下文对象（当前未使用）
+- `direction`: Direction to scroll ('up', 'down', 'left', 'right')
+- `amount`: Amount to scroll ('page', 'half', or a number)
+- `context`: Optional context object (currently unused)
 
 ### `wait_for_navigation(timeout_ms: int = 10000, context: Optional[Any] = None)`
-- `timeout_ms`: 最大等待时间（毫秒）
-- `context`: 可选上下文对象（当前未使用）
+- `timeout_ms`: Maximum time to wait in milliseconds
+- `context`: Optional context object (currently unused)
 
 ### `execute_javascript(script: str, context: Optional[Any] = None)`
-- `script`: 要执行的 JavaScript 代码
-- `context`: 可选上下文对象（当前未使用）
+- `script`: JavaScript code to execute
+- `context`: Optional context object (currently unused)
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎贡献！请随时提交 Pull Request。
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### 开发设置
+### Development Setup
 
 ```bash
 # Clone the repository
@@ -249,42 +248,42 @@ git clone https://github.com/random-robbie/mcp-web-browser.git
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # On Windows use `venvScriptsactivate`
 
 # Install dependencies
 pip install -e .[dev]
 ```
 
-## 📄 许可证
+## 📄 License
 
-MIT 许可证
+MIT License
 
-## 🔗 相关项目
+## 🔗 Related Projects
 
 - [Model Context Protocol](https://modelcontextprotocol.io)
 - [Playwright](https://playwright.dev)
 - [Claude Desktop](https://claude.ai/desktop)
 
-## 💬 支持
+## 💬 Support
 
-对于问题和疑问，请在 GitHub 上[打开一个问题](https://github.com/random-robbie/mcp-web-browser/issues)。
+For issues and questions, please [open an issue](https://github.com/random-robbie/mcp-web-browser/issues) on GitHub.
 
-**官方网站：** [https://github.com/random-robbie/mcp-web-browser](https://github.com/random-robbie/mcp-web-browser)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/random-robbie/mcp-web-browser](https://github.com/random-robbie/mcp-web-browser)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`python`
-- 参数：`/path/to/your/server.py`
+- Transport: `stdio`
+- Command: `python`
+- Args: `/path/to/your/server.py`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/random-robbie-web-browser.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/random-robbie-web-browser.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

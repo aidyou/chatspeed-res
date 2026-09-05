@@ -1,96 +1,96 @@
 ---
-title: "提示工坊"
-description: "通过简化的SOLID架构，启用提示词的创建、管理和模板化，允许用户按类别组织提示词并在运行时填充模板。"
+title: "mcp-prompts"
+description: "Enables creation, management, and templating of prompts through a simplified SOLID architecture, allowing users to organize prompts by category and fill in templates at runtime."
 ---
 
-# 提示工坊
+# mcp-prompts
 
-通过简化的SOLID架构，启用提示词的创建、管理和模板化，允许用户按类别组织提示词并在运行时填充模板。
+Enables creation, management, and templating of prompts through a simplified SOLID architecture, allowing users to organize prompts by category and fill in templates at runtime.
 
-# MCP 提示服务器
+# MCP Prompts Server
 
-一个用于管理提示和模板并具备项目编排能力的MCP服务器。是Model Context Protocol生态系统的一部分。
+An MCP server for managing prompts and templates with project orchestration capabilities. Part of the Model Context Protocol ecosystem.
 
   
 
-此服务器提供了一种简单的方式来存储、检索和应用AI提示模板，使您更容易在AI应用程序中保持一致的提示模式。
+This server provides a simple way to store, retrieve, and apply templates for AI prompts, making it easier to maintain consistent prompting patterns across your AI applications.
 
-## 目录
-- [特性](#特性)
-- [安装](#安装)
-- [配置](#配置)
-- [使用方法](#使用方法)
-  - [与Claude一起使用](#与claude一起使用)
-  - [可用工具](#可用工具)
-  - [API使用示例](#api使用示例)
-  - [管理提示](#管理提示)
-  - [在您的工作流中使用提示](#在您的工作流中使用提示)
-- [提示格式](#提示格式)
-- [多格式提示支持](#多格式提示支持)
-  - [格式转换](#格式转换)
-  - [应用模板](#应用模板)
-  - [提取变量](#提取变量)
-  - [从不同格式创建](#从不同格式创建)
-  - [与存储适配器集成](#与存储适配器集成)
-- [存储适配器](#存储适配器)
-  - [PostgreSQL设置](#postgresql设置)
-- [Docker部署](#docker部署)
-  - [Docker Compose编排](#docker-compose编排)
-    - [简易部署](#简易部署)
-    - [PostgreSQL部署](#postgresql部署)
-    - [开发环境](#开发环境)
-    - [测试环境](#测试环境)
-    - [Docker管理脚本](#docker管理脚本)
-    - [自定义配置](#自定义配置)
-- [开发](#开发)
-  - [开发工作流程](#开发工作流程)
-  - [开发命令](#开发命令)
-  - [构建过程](#构建过程)
-  - [测试](#测试)
-  - [目录结构](#目录结构)
-- [发布流程](#发布流程)
-- [变更日志](#变更日志)
-- [最佳实践](#最佳实践)
-- [许可证](#许可证)
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+  - [Using with Claude](#using-with-claude)
+  - [Available Tools](#available-tools)
+  - [API Usage Examples](#api-usage-examples)
+  - [Managing Prompts](#managing-prompts)
+  - [Using Prompts in Your Workflow](#using-prompts-in-your-workflow)
+- [Prompt Format](#prompt-format)
+- [Multi-Format Prompt Support](#multi-format-prompt-support)
+  - [Converting Between Formats](#converting-between-formats)
+  - [Applying Templates](#applying-templates)
+  - [Extracting Variables](#extracting-variables)
+  - [Creating from Different Formats](#creating-from-different-formats)
+  - [Integration with Storage Adapters](#integration-with-storage-adapters)
+- [Storage Adapters](#storage-adapters)
+  - [PostgreSQL Setup](#postgresql-setup)
+- [Docker Deployment](#docker-deployment)
+  - [Docker Compose Orchestration](#docker-compose-orchestration)
+    - [Simple Deployment](#simple-deployment)
+    - [PostgreSQL Deployment](#postgresql-deployment)
+    - [Development Environment](#development-environment)
+    - [Testing Environment](#testing-environment)
+    - [Docker Management Script](#docker-management-script)
+    - [Custom Configurations](#custom-configurations)
+- [Development](#development)
+  - [Development Workflow](#development-workflow)
+  - [Development Commands](#development-commands)
+  - [Build Process](#build-process)
+  - [Testing](#testing)
+  - [Directory Structure](#directory-structure)
+- [Release Process](#release-process)
+- [Changelog](#changelog)
+- [Best Practices](#best-practices)
+- [License](#license)
 
-## 特性
+## Features
 
-- 存储和检索提示
-- 创建和使用带有变量的模板
-- 通过标签过滤列出提示
-- 向模板应用变量
-- 多个存储后端（文件系统、PostgreSQL 和 MDC 格式）
-- 易于与Claude及其他AI助手配合使用
-- 项目编排功能
-- 健康检查端点
+- Store and retrieve prompts
+- Create and use templates with variables
+- List prompts with filtering by tags
+- Apply variables to templates
+- Multiple storage backends (file system, PostgreSQL, and MDC format)
+- Easy to use with Claude and other AI assistants
+- Project orchestration capabilities
+- Health check endpoints
 
-## 安装
+## Installation
 
-### 使用 npx (推荐)
+### Using npx (recommended)
 
 ```bash
 npx -y @sparesparrow/mcp-prompts
 ```
 
-### 全局安装
+### Global installation
 
 ```bash
 npm install -g @sparesparrow/mcp-prompts
 ```
 
-### 使用 Docker
+### Using Docker
 
 ```bash
 docker run -p 3003:3003 -v ~/mcp/data:/app/data sparesparrow/mcp-prompts:latest
 ```
 
-### 验证安装
+### Verifying Installation
 
-安装后，您可以按照以下步骤验证服务器是否正常工作：
+After installation, you can verify that the server is working by:
 
-1. 打开Claude桌面版
-2. 在聊天输入框中键入"/"以查看来自服务器的提示是否出现
-3. 测试一个简单的工具调用：
+1. Opening Claude Desktop
+2. Typing "/" in the chat input to see if prompts from the server appear
+3. Testing with a simple tool call:
 ```
    use_mcp_tool({
      server_name: "prompt-manager",
@@ -99,45 +99,45 @@ docker run -p 3003:3003 -v ~/mcp/data:/app/data sparesparrow/mcp-prompts:latest
    });
 ```
 
-## 配置
+## Configuration
 
-服务器可以通过环境变量进行配置：
+The server can be configured using environment variables:
 
-| 环境变量 | 描述 | 默认值 |
+| Environment Variable | Description | Default |
 |----------------------|-------------|---------|
-| SERVER_NAME | 服务器名称 | MCP Prompts Server |
-| SERVER_VERSION | 服务器版本 | package.json 版本 |
-| STORAGE_TYPE | 存储类型：'file', 'postgres' 或 'mdc' | file |
-| PROMPTS_DIR | 存储提示的目录 | ~/mcp/data/prompts |
-| BACKUPS_DIR | 备份目录 | ~/mcp/data/backups |
-| PORT | HTTP 服务器端口 | 3003 |
-| LOG_LEVEL | 日志级别 | info |
-| HTTP_SERVER | 启用 HTTP 服务器 | false |
-| HOST | HTTP 服务器主机 | 0.0.0.0 |
+| SERVER_NAME | Server name | MCP Prompts Server |
+| SERVER_VERSION | Server version | package.json version |
+| STORAGE_TYPE | Storage type: 'file', 'postgres', or 'mdc' | file |
+| PROMPTS_DIR | Directory for storing prompts | ~/mcp/data/prompts |
+| BACKUPS_DIR | Directory for backups | ~/mcp/data/backups |
+| PORT | Port for HTTP server | 3003 |
+| LOG_LEVEL | Logging level | info |
+| HTTP_SERVER | Enable HTTP server | false |
+| HOST | Host for HTTP server | 0.0.0.0 |
 
-### PostgreSQL 设置（如果 STORAGE_TYPE=postgres，则需要）
+### PostgreSQL settings (required if STORAGE_TYPE=postgres)
 
-| 环境变量 | 描述 | 默认值 |
+| Environment Variable | Description | Default |
 |----------------------|-------------|---------|
-| PG_HOST | PostgreSQL 主机 | localhost |
-| PG_PORT | PostgreSQL 端口 | 5432 |
-| PG_DATABASE | PostgreSQL 数据库名 | mcp_prompts |
-| PG_USER | PostgreSQL 用户名 | postgres |
-| PG_PASSWORD | PostgreSQL 密码 | |
-| PG_SSL | 使用 SSL 连接 PostgreSQL | false |
-| POSTGRES_CONNECTION_STRING | 完整的 PostgreSQL 连接字符串（覆盖单独设置） | |
+| PG_HOST | PostgreSQL host | localhost |
+| PG_PORT | PostgreSQL port | 5432 |
+| PG_DATABASE | PostgreSQL database name | mcp_prompts |
+| PG_USER | PostgreSQL username | postgres |
+| PG_PASSWORD | PostgreSQL password | |
+| PG_SSL | Use SSL for PostgreSQL connection | false |
+| POSTGRES_CONNECTION_STRING | Full PostgreSQL connection string (overrides individual settings) | |
 
-### MDC 设置（如果 STORAGE_TYPE=mdc，则需要）
+### MDC settings (required if STORAGE_TYPE=mdc)
 
-| 环境变量 | 描述 | 默认值 |
+| Environment Variable | Description | Default |
 |----------------------|-------------|---------|
-| MDC_RULES_DIR | MDC 规则目录 | ./.cursor/rules |
+| MDC_RULES_DIR | Directory for MDC rules | ./.cursor/rules |
 
-## 使用方法
+## Usage
 
-### 与 Claude 一起使用
+### Using with Claude
 
-在 Claude 3 桌面应用程序中，您可以在 `claude_desktop_config.json` 中配置 MCP 提示服务器：
+In Claude 3 Desktop app, you can configure the MCP Prompts server in your `claude_desktop_config.json`:
 
 ```json
 {
@@ -158,22 +158,22 @@ docker run -p 3003:3003 -v ~/mcp/data:/app/data sparesparrow/mcp-prompts:latest
 }
 ```
 
-### 可用工具
+### Available Tools
 
-MCP 提示服务器提供以下工具：
+The MCP Prompts server provides the following tools:
 
-- `add_prompt`: 添加新提示
-- `get_prompt`: 通过 ID 获取提示
-- `update_prompt`: 更新现有提示
-- `list_prompts`: 列出所有提示
-- `delete_prompt`: 通过 ID 删除提示
-- `apply_template`: 应用变量到提示模板
+- `add_prompt`: Add a new prompt
+- `get_prompt`: Get a prompt by ID
+- `update_prompt`: Update an existing prompt
+- `list_prompts`: List all prompts
+- `delete_prompt`: Delete a prompt by ID
+- `apply_template`: Apply variables to a prompt template
 
-### API 使用示例
+### API Usage Examples
 
-#### 列出可用提示
+#### Listing Available Prompts
 
-要查看可用的提示：
+To see what prompts are available:
 
 ```
 use_mcp_tool({
@@ -183,7 +183,7 @@ use_mcp_tool({
 });
 ```
 
-按标签过滤：
+To filter by tags:
 
 ```
 use_mcp_tool({
@@ -195,9 +195,9 @@ use_mcp_tool({
 });
 ```
 
-#### 获取特定提示
+#### Getting a Specific Prompt
 
-通过 ID 检索特定提示：
+To retrieve a specific prompt by ID:
 
 ```
 use_mcp_tool({
@@ -209,9 +209,9 @@ use_mcp_tool({
 });
 ```
 
-#### 使用模板提示
+#### Using a Template Prompt
 
-应用变量到模板提示：
+To apply variables to a template prompt:
 
 ```
 use_mcp_tool({
@@ -230,11 +230,11 @@ use_mcp_tool({
 });
 ```
 
-### 管理提示
+### Managing Prompts
 
-#### 添加新提示
+#### Adding a New Prompt
 
-添加新提示：
+To add a new prompt:
 
 ```
 use_mcp_tool({
@@ -243,7 +243,22 @@ use_mcp_tool({
   arguments: {
     name: "Bug Report Template",
     description: "Template for submitting bug reports",
-    content: "## Bug Report\n\n### Description\n{{description}}\n\n### Steps to Reproduce\n{{steps}}\n\n### Expected Behavior\n{{expected}}\n\n### Actual Behavior\n{{actual}}\n\n### Environment\n{{environment}}",
+    content: "## Bug Report
+
+### Description
+{{description}}
+
+### Steps to Reproduce
+{{steps}}
+
+### Expected Behavior
+{{expected}}
+
+### Actual Behavior
+{{actual}}
+
+### Environment
+{{environment}}",
     isTemplate: true,
     variables: ["description", "steps", "expected", "actual", "environment"],
     tags: ["bug", "template", "documentation"]
@@ -251,9 +266,9 @@ use_mcp_tool({
 });
 ```
 
-#### 编辑现有提示
+#### Editing an Existing Prompt
 
-编辑现有提示：
+To edit an existing prompt:
 
 ```
 use_mcp_tool({
@@ -267,27 +282,27 @@ use_mcp_tool({
 });
 ```
 
-### 在您的工作流中使用提示
+### Using Prompts in Your Workflow
 
-#### 开发工作流示例
+#### Development Workflow Example
 
-当开始开发一个新功能时：
+When starting work on a new feature:
 
-1. 请求开发系统提示模板
-2. 用项目详细信息填充模板
-3. 使用生成的系统提示来指导 Claude 的帮助
+1. Request the development system prompt template
+2. Fill in the template with your project details
+3. Use the resulting system prompt to guide Claude's assistance
 
-#### 代码审查示例
+#### Code Review Example
 
-当审查代码时：
+When reviewing code:
 
-1. 请求代码审查模板
-2. 提供待审查的代码
-3. Claude 将提供结构化的审查
+1. Request the code review template
+2. Provide the code to be reviewed
+3. Claude will provide a structured review
 
-## 提示格式
+## Prompt Format
 
-提示具有以下结构：
+A prompt has the following structure:
 
 ```json
 {
@@ -305,18 +320,18 @@ use_mcp_tool({
 }
 ```
 
-## 多格式提示支持
+## Multi-Format Prompt Support
 
-MCP 提示服务器包括一个强大的 `MutablePrompt` 接口，允许提示在多种格式之间转换：
+The MCP Prompts Server includes a powerful `MutablePrompt` interface that allows prompts to be converted between multiple formats:
 
-- **JSON 格式**: 服务器使用的标准内部格式
-- **MDC 格式**: 游标规则 Markdown 格式（.mdc 文件）
-- **PGAI 格式**: 支持嵌入的 PostgreSQL AI 格式
-- **模板格式**: 带有变量占位符的动态格式
+- **JSON Format**: Standard internal format used by the server
+- **MDC Format**: Cursor Rules Markdown format (.mdc files)
+- **PGAI Format**: Format with embedding support for PostgreSQL AI
+- **Template Format**: Dynamic format with variable placeholders
 
-### 格式之间的转换
+### Converting Between Formats
 
-MutablePrompt 接口提供了在这些格式之间转换提示的方法：
+The MutablePrompt interface provides methods to convert prompts between these formats:
 
 ```typescript
 // Create a mutable prompt
@@ -324,7 +339,15 @@ const factory = new MutablePromptFactoryImpl();
 const prompt = factory.create({
   name: "API Design Guide",
   description: "Template for designing RESTful APIs",
-  content: "# API Design for {{service_name}}\n\n## Endpoints\n\n{{endpoints}}\n\n## Authentication\n\n{{auth_method}}",
+  content: "# API Design for {{service_name}}
+
+## Endpoints
+
+{{endpoints}}
+
+## Authentication
+
+{{auth_method}}",
   isTemplate: true,
   variables: ["service_name", "endpoints", "auth_method"],
   tags: ["api", "design", "rest", "glob:*.md"]
@@ -351,9 +374,9 @@ const templateContent = prompt.toTemplate({
 });
 ```
 
-### 应用模板
+### Applying Templates
 
-您可以轻松地将变量应用于模板提示：
+You can easily apply variables to template prompts:
 
 ```typescript
 const result = prompt.applyVariables({
@@ -363,18 +386,18 @@ const result = prompt.applyVariables({
 });
 ```
 
-### 提取变量
+### Extracting Variables
 
-从模板内容中提取变量：
+Extract variables from template content:
 
 ```typescript
 const variables = prompt.extractVariables();
 // Returns ["service_name", "endpoints", "auth_method"]
 ```
 
-### 从不同格式创建
+### Creating from Different Formats
 
-您还可以从各种格式创建提示：
+You can also create prompts from various formats:
 
 ```typescript
 // From MDC format
@@ -393,8 +416,8 @@ globs: ["*.js", "*.ts"]
 
 ## Variables
 
-- \`context\`: Description of the code being reviewed
-- \`patterns\`: Common patterns to look for
+- `context`: Description of the code being reviewed
+- `patterns`: Common patterns to look for
 `;
 
 const promptFromMdc = factory.fromMdc(mdcContent);
@@ -403,7 +426,9 @@ const promptFromMdc = factory.fromMdc(mdcContent);
 const pgaiData = {
   id: "api-design",
   name: "API Design Guide",
-  content: "# API Design Guide\n\nUse this guide...",
+  content: "# API Design Guide
+
+Use this guide...",
   metadata: {
     description: "Comprehensive API design guide",
     tags: ["api", "rest"],
@@ -414,9 +439,9 @@ const pgaiData = {
 const promptFromPgai = factory.fromPgai(pgaiData);
 ```
 
-### 与存储适配器集成
+### Integration with Storage Adapters
 
-MutablePrompt 接口与现有的存储适配器无缝协作：
+The MutablePrompt interface works seamlessly with the existing storage adapters:
 
 ```typescript
 // Save a prompt in MDC format
@@ -428,22 +453,22 @@ const pgaiPrompt = factory.fromPgai(pgaiData);
 await postgresAdapter.savePrompt(pgaiPrompt);
 ```
 
-这种灵活的格式处理支持以下功能：
+This flexible format handling enables:
 
-1. **跨平台兼容性**：在不同的工具和平台上使用提示
-2. **向量搜索**：使用 PGAI 格式进行语义搜索
-3. **IDE 集成**：直接兼容游标规则
-4. **模板系统**：导出模板以供多种编程语言使用
+1. **Cross-Platform Compatibility**: Use prompts in different tools and platforms
+2. **Vector Search**: Use PGAI format for semantic search capabilities
+3. **IDE Integration**: Direct compatibility with Cursor Rules
+4. **Template Systems**: Export templates for use in various programming languages
 
-## 存储适配器
+## Storage Adapters
 
-服务器支持三种类型的存储适配器：
+The server supports three types of storage adapters:
 
-1. **文件适配器**：将提示作为单独的 JSON 文件存储在目录中。
-2. **PostgreSQL 适配器**：将提示存储在 PostgreSQL 数据库中。
-3. **MDC 适配器**：将提示存储为游标规则 MDC 格式。
+1. **File Adapter**: Stores prompts as individual JSON files in a directory.
+2. **PostgreSQL Adapter**: Stores prompts in a PostgreSQL database.
+3. **MDC Adapter**: Stores prompts in Cursor Rules MDC format.
 
-存储类型可以通过 `STORAGE_TYPE` 环境变量进行配置：
+Storage types can be configured using the `STORAGE_TYPE` environment variable:
 
 ```
 STORAGE_TYPE=file      # Default
@@ -451,9 +476,9 @@ STORAGE_TYPE=postgres  # Requires PostgreSQL configuration
 STORAGE_TYPE=mdc       # For Cursor Rules format
 ```
 
-### PostgreSQL 设置
+### PostgreSQL Setup
 
-当使用 PostgreSQL 存储时，配置以下环境变量：
+When using PostgreSQL storage, configure the following environment variables:
 
 ```
 PG_HOST=localhost
@@ -464,51 +489,51 @@ PG_PASSWORD=your_password
 PG_SSL=false
 ```
 
-或者，可以使用连接字符串：
+Alternatively, use a connection string:
 
 ```
 POSTGRES_CONNECTION_STRING=postgresql://user:password@host:port/database
 ```
 
-## Docker 部署
+## Docker Deployment
 
-### Docker Compose 编排
+### Docker Compose Orchestration
 
-MCP 提示服务器提供了多种 Docker Compose 配置，适用于不同的部署场景：
+The MCP Prompts Server offers various Docker Compose configurations for different deployment scenarios:
 
-#### 简单部署
+#### Simple Deployment
 ```bash
 docker compose up -d
 ```
-这将使用文件存储在端口 3003 上部署 MCP 提示服务器。
+This will deploy the MCP Prompts server using file storage on port 3003.
 
-#### PostgreSQL 部署
+#### PostgreSQL Deployment
 ```bash
 docker compose -f docker-compose.postgres.yml up -d
 ```
-这将部署：
-- 一个 PostgreSQL 数据库服务器
-- 配置为使用 PostgreSQL 的 MCP 提示服务器
-- 用于数据库管理的 Adminer，在 http://localhost:8080
+This deploys:
+- A PostgreSQL database server
+- The MCP Prompts server configured for PostgreSQL
+- Adminer for database management at http://localhost:8080
 
-#### 开发环境
+#### Development Environment
 ```bash
 docker compose -f docker-compose.dev.yml up -d
 ```
-这设置了一个带有热重载的开发环境。它从您的本地目录挂载源代码，并包含 Adminer。
+This sets up a development environment with hot reloading. It mounts the source code from your local directory and includes Adminer.
 
-#### 测试环境
+#### Testing Environment
 ```bash
 docker compose -f docker-compose.test.yml up --build
 ```
-这创建了一个专用的测试环境，包括：
-- 一个带有测试数据的临时 PostgreSQL 实例
-- 一个隔离的测试运行容器，执行所有测试
-- 测试结果保存在 ./test-results 目录中
+This creates a dedicated testing environment with:
+- A temporary PostgreSQL instance with test data
+- An isolated test runner container that executes all tests
+- Test results saved to the ./test-results directory
 
-#### Docker 管理脚本
+#### Docker Management Script
 
-为了简化 Docker Compose 操作，请使用提供的管理脚本：
+To simplify Docker Compose operations, use the provided management script:
 
 ```bash
 # Start development environment
@@ -527,23 +552,22 @@ docker compose -f docker-compose.test.yml up --build
 ./scripts/docker-manage.sh help
 ```
 
-管理脚本支持以下命令：
+The management script supports the following commands:
+- `start`: Start Docker containers
+- `stop`: Stop Docker containers
+- `restart`: Restart Docker containers
+- `logs`: Show logs from containers
+- `clean`: Remove containers, networks, and volumes
+- `build`: Build Docker images
+- `test`: Run tests in Docker containers
 
-- `start`: 启动 Docker 容器
-- `stop`: 停止 Docker 容器
-- `restart`: 重启 Docker 容器
-- `logs`: 显示容器日志
-- `clean`: 删除容器、网络和卷
-- `build`: 构建 Docker 镜像
-- `test`: 在 Docker 容器中运行测试
+And the following environments:
+- `dev`: Development environment (default)
+- `test`: Testing environment
+- `prod`: Production environment
 
-以及以下环境：
-- `dev`: 开发环境（默认）
-- `test`: 测试环境
-- `prod`: 生产环境
-
-#### 自定义配置
-你可以通过扩展基础配置来创建自己的自定义 Docker Compose 配置：
+#### Custom Configurations
+You can create your own custom Docker Compose configuration by extending the base configurations:
 
 ```yaml
 # custom-compose.yml
@@ -558,99 +582,99 @@ services:
       - CUSTOM_ENV=value
 ```
 
-然后通过以下命令运行它：
+Then run it with:
 ```bash
 docker compose -f custom-compose.yml up -d
 ```
 
-## 开发
+## Development
 
-### 开发工作流
+### Development Workflow
 
-#### 设置开发环境
+#### Setting Up Development Environment
 
-1. **克隆仓库**
+1. **Clone the repository**
 ```bash
    git clone https://github.com/user/mcp-prompt-manager.git
    cd mcp-prompt-manager
 ```
 
-2. **安装依赖**
+2. **Install dependencies**
 ```bash
    npm install
 ```
 
-3. **设置环境变量**
-   创建一个包含必要配置的 `.env` 文件。
+3. **Set up environment variables**
+   Create a `.env` file with the necessary configuration.
 
-### 开发命令
+### Development Commands
 
-- **启动带有热重载的开发服务器**
+- **Start development server with hot reloading**
 ```bash
   npm run dev
 ```
 
-- **构建项目**
+- **Build the project**
 ```bash
   npm run build
 ```
 
-- **运行单元测试**
+- **Run unit tests**
 ```bash
   npm test
 ```
 
-- **运行集成测试**
+- **Run integration tests**
 ```bash
   npm run test:integration
 ```
 
-- **测试构建过程**
+- **Test build process**
 ```bash
   npm run test:build
 ```
 
-- **测试 Docker 构建**
+- **Test Docker build**
 ```bash
   npm run test:docker
 ```
 
-- **构建 Docker 镜像**
+- **Build Docker image**
 ```bash
   npm run docker:build
 ```
 
-### 构建过程
+### Build Process
 
-构建过程包括以下几个重要步骤：
+The build process includes several important steps:
 
-1. **TypeScript 编译**
+1. **TypeScript Compilation**
 ```bash
    npm run build
 ```
 
-2. **使入口点可执行**
+2. **Make Entry Point Executable**
 ```bash
    chmod +x dist/index.js
 ```
 
-### 测试
+### Testing
 
-运行测试：
+Run the tests:
 
 ```bash
 npm test
 ```
 
-运行 MCP 检查器进行测试：
+Run the MCP Inspector for testing:
 
 ```bash
 npm run test:inspector
 ```
 
-#### 全面的测试脚本
+#### Comprehensive Test Scripts
 
-对于更高级的测试选项，可以使用提供的测试脚本：
+For more advanced testing options, use the provided test script:
 
 ```bash
 # Run all tests (unit and integration)
@@ -672,178 +696,145 @@ npm run test:inspector
 ./scripts/run-tests.sh --docker --clean
 ```
 
-#### Docker 容器健康测试
+#### Docker Container Health Testing
 
-要测试 Docker 容器的健康状况：
+To test the health of Docker containers:
 
 ```bash
 # Run the Docker health check tests
 TEST_DOCKER_HEALTH=true npm test -- tests/integration/docker-health.integration.test.ts
 ```
 
-此测试验证当 MCP-Prompts 服务器在 Docker 容器中运行时，健康检查端点是否正常工作。
+This test verifies that the health check endpoint is working correctly when the MCP-Prompts server is running in a Docker container.
 
-### 目录结构
+### Directory Structure
 
-项目遵循结构化的组织方式，以保持清晰的关注点分离：
+The project follows a structured organization to maintain clean separation of concerns:
 
 ```
 mcp-prompt-manager/
-âââ .github/workflows/    # CI/CD workflow configurations
-âââ dist/                 # Built files
-âââ src/                  # Source code
-â   âââ adapters.ts       # Storage adapters
-â   âââ interfaces.ts     # Core types and interfaces
-â   âââ index.ts          # Main entry point
-âââ scripts/              # Maintenance and utility scripts
-âââ package.json          # Project metadata and scripts
-âââ README.md             # Project documentation
+├── .github/workflows/    # CI/CD workflow configurations
+├── dist/                 # Built files
+├── src/                  # Source code
+│   ├── adapters.ts       # Storage adapters
+│   ├── interfaces.ts     # Core types and interfaces
+│   └── index.ts          # Main entry point
+├── scripts/              # Maintenance and utility scripts
+├── package.json          # Project metadata and scripts
+└── README.md             # Project documentation
 ```
 
-## 发布流程
+## Release Process
 
-### 发布前检查清单
+### Pre-Release Checklist
 
-- 所有 TypeScript 错误已解决
-- 代码 linting 无错误
-- 代码根据项目标准正确格式化
-- 单元测试通过
-- 集成测试通过
-- 构建测试通过
-- Docker 构建测试通过
-- 包安装测试通过
-- README 更新为最新功能和变更
-- CHANGELOG 更新所有值得注意的变更
+- All TypeScript errors are resolved
+- Code linting passes with no errors
+- Code is properly formatted according to project standards
+- Unit tests pass
+- Integration tests pass
+- Build test passes
+- Docker build test passes
+- Package installation test passes
+- README is up-to-date with the latest features and changes
+- CHANGELOG is updated with all notable changes
 
-### 版本更新
+### Version Update
 
-- 根据语义化版本更新 `package.json` 中的版本
-- 确保依赖项是最新的
-- 更新文档中的任何版本引用
+- Update version in `package.json` according to semantic versioning
+- Ensure dependencies are up-to-date
+- Update any version references in documentation
 
-### 发布
+### Publishing
 
-- 为新版本创建一个 git 标签
-- 将更改和标签推送到 GitHub
-- 发布到 npm (`npm publish`)
-- 构建并推送 Docker 镜像
+- Create a git tag for the new version
+- Push changes and tag to GitHub
+- Publish to npm (`npm publish`)
+- Build and push Docker image
 
-### 发布后验证
+### Post-Release Verification
 
-- 验证从 npm 的安装
-- 验证包可以通过 npx 运行
-- 验证 Docker 镜像按预期工作
-- 验证与 Claude Desktop 的集成
+- Verify installation from npm
+- Verify package can be run with npx
+- Verify Docker image works as expected
+- Verify integration with Claude Desktop
 
-## 更新日志
+## Changelog
 
 ### [1.2.20] - 2025-03-14
-- 自动版本号增加
+- Automated version bump
 
 ### [1.2.19] - 2024-03-16
-#### 修复
-- 修复了 PostgresAdapter 实现中的 TypeScript 错误
-- 增强了 savePrompt 方法以正确返回创建的提示
-- 在 PostgresAdapter 中添加了 updatePrompt 方法
-- 修复了 StorageAdapter 接口，以包含 listPrompts 和 clearAll 方法
-- 改进了 database-tools.ts 中 clearAll 方法的错误处理
-- 通过更详细的信息增强了健康检查端点
+#### Fixed
+- Fixed TypeScript errors in PostgresAdapter implementation
+- Enhanced savePrompt method to properly return the created prompt
+- Added updatePrompt method to the PostgresAdapter
+- Fixed StorageAdapter interface to include listPrompts and clearAll methods
+- Improved error handling in database-tools.ts for the clearAll method
+- Enhanced health check endpoint with more detailed information
 
-#### 新增
-- 为健康检查端点添加了更好的文档和错误处理
+#### Added
+- Added better documentation and error handling for health check endpoint
 
 ### [1.2.18] - 2024-03-14
-#### 新增
-- 添加了带有健康检查端点的 HTTP 服务器
-- 添加了 Docker 容器健康检查
-- 添加了对 Node.js 18-23+ 的 ESM 模块兼容性
-- 通过更好的错误处理增强了数据库工具
+#### Added
+- Added HTTP server with health check endpoint
+- Added Docker container health checks
+- Added ESM module compatibility for Node.js 18-23+
+- Enhanced database tools with better error handling
 
-#### 更改
-- 通过多阶段构建改进了 Docker 构建过程
-- 简化了配置管理
-- 优化了 PostgreSQL 适配器连接处理
-- 将依赖项更新到最新版本
+#### Changed
+- Improved Docker build process with multi-stage builds
+- Streamlined configuration management
+- Optimized PostgreSQL adapter connection handling
+- Updated dependencies to latest versions
 
-#### 修复
-- 修复了在某些文件系统上文件适配器的问题
-- 改进了错误消息以便更好地调试
-- 修复了模板变量提取问题
+#### Fixed
+- Fixed issues with file adapter on certain file systems
+- Improved error messages for better debugging
+- Fixed template variable extraction
 
 ### [1.2.0] - 2025-03-14
-#### 更改
-- 重新组织代码库结构以提高可维护性
-- 将 Docker 相关文件移至 `docker/` 目录
-- 将构建脚本移至 `scripts/build/` 目录
-- 将测试脚本移至 `scripts/test/` 目录
-- 更新 GitHub 工作流以使用新的文件路径
-- 更新 Docker Compose 配置以使用新的文件路径
-- 添加了全面的开发文档
+#### Changed
+- Reorganized codebase structure for better maintainability
+- Moved Docker-related files to `docker/` directory
+- Moved build scripts to `scripts/build/` directory
+- Moved test scripts to `scripts/test/` directory
+- Updated GitHub workflows to use new file paths
+- Updated Docker Compose configuration to use new file paths
+- Added comprehensive development documentation
 
-#### 新增
-- 创建了包含详细说明的开发文档
-- 创建了用于发布准备的发布检查清单
-- 添加了 CHANGELOG.md 以跟踪更改
+#### Added
+- Created development documentation with detailed instructions
+- Created release checklist for release preparation
+- Added CHANGELOG.md to track changes
 
-#### 移除
-- 移除了重复和冗余的文件
-- 移除了不完整的脚本
+#### Removed
+- Removed duplicate and redundant files
+- Removed incomplete scripts
 
 ### [1.1.0] - 2024-03-01
-#### 新增
-- PGAI 向量搜索用于语义提示发现
-- 对 PostgreSQL 中嵌入的支持
-- 通过专业模板改进提示集合
-- 批处理能力用于提示集合
+#### Added
+- PGAI vector search for semantic prompt discovery
+- Support for embeddings in PostgreSQL
+- Improved prompts collection w
 
-#### 更改
-- 增强了提示处理管道
-- 通过更多选项改进了命令行界面
-- 更好的错误处理和验证
+**Official site: ** [https://github.com/sparesparrow/mcp-prompts](https://github.com/sparesparrow/mcp-prompts)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-### [1.0.0] - 2024-02-15
-#### 新增
-- MCP 提示服务器的初始发布
-- 基本的提示管理功能（添加、编辑、获取、列表、删除）
-- 模板变量替换
-- 基于标签的组织
-- 基于文件的存储
-- 导入/导出功能
-- MCP 协议兼容性
+## Categories & Tags
 
-## 最佳实践
+- Categories: `memory`
+- Tags: `knowledge and memory`, `developer tools`, `chinese`
 
-1. **使用标签组织**: 使用标签对您的提示进行分类，以便更轻松地检索
-2. **使用模板**: 创建可重用的带有变量的模板以保持一致的提示
-3. **包含元数据**: 添加作者、版本等元数据以便更好地组织
-4. **定期备份**: 如果管理关键提示，请使用备份功能
-5. **优化大型集合**: 在检索大型提示集合时使用分页
-6. **使用一致的命名**: 为提示清晰且一致地命名以便于发现
-7. **有效使用标签**: 根据目的、项目或上下文使用标签组织提示
-8. **将可重用的提示模板化**: 为经常使用的提示创建带有变量的模板
-9. **定期更新**: 随着需求的变化保持您的提示是最新的
-10. **与团队共享**: 与您的团队共享有效的提示，以确保一致的交互
+## MCP Configuration
 
-## 许可证
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @sparesparrow/mcp-prompts`
 
-MIT
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-**官方网站：** [https://github.com/sparesparrow/mcp-prompts](https://github.com/sparesparrow/mcp-prompts)
-**状态：** `active`　**最后核验：** `2026-08-30`
+## Data source
 
-## 分类与标签
-
-- 分类：`memory`
-- 标签：`knowledge and memory`, `developer tools`, `chinese`
-
-## MCP 配置
-
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @sparesparrow/mcp-prompts`
-
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
-
-## 数据来源
-
-资源文件：`resources/mcp/sparesparrow-prompts.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/sparesparrow-prompts.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

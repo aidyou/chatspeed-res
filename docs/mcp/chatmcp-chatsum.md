@@ -1,70 +1,70 @@
 ---
-title: "MCP聊天摘要"
-description: "总结你的聊天信息。"
+title: "mcp-server-chatsum"
+description: "Summarizes your chat messages."
 ---
-
-# MCP聊天摘要
-
-总结你的聊天信息。
 
 # mcp-server-chatsum
 
-这个MCP服务器用于总结您的聊天消息。
+Summarizes your chat messages.
+
+# mcp-server-chatsum
+
+This MCP Server is used to summarize your chat messages.
 
 [中文说明](https://github.com/chatmcp/mcp-server-chatsum/blob/HEAD/README_CN.md)
 
-> **在开始之前**
+> **Before you start**
 >
-> 移动到[chatbot](https://github.com/chatmcp/mcp-server-chatsum/tree/HEAD/chatbot)目录，按照[README](https://github.com/chatmcp/mcp-server-chatsum/blob/HEAD/chatbot/README.md)设置聊天数据库。
+> move to [chatbot](https://github.com/chatmcp/mcp-server-chatsum/tree/HEAD/chatbot) directory, follow the [README](https://github.com/chatmcp/mcp-server-chatsum/blob/HEAD/chatbot/README.md) to setup the chat database.
 >
-> 启动聊天机器人以保存您的聊天消息。
+> start chatbot to save your chat messages.
 
-## 功能
+## Features
 
-### 资源
+### Resources
 
-### 工具
+### Tools
 
-- `query_chat_messages` - 查询聊天消息
-  - 根据给定参数查询聊天消息
-  - 基于查询提示总结聊天消息
+- `query_chat_messages` - Query chat messages
+  - Query chat messages with given parameters
+  - Summarize chat messages based on the query prompt
 
-### 提示
+### Prompts
 
-## 开发
+## Development
 
-1. 设置环境变量：
+1. Set up environment variables:
 
-在根目录创建`.env`文件，并设置您的聊天数据库路径。
+create `.env` file in the root directory, and set your chat database path.
 
 ```txt
 CHAT_DB_PATH=path-to/chatbot/data/chat.db
 ```
 
-2. 安装依赖项：
+2. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-构建服务器：
+Build the server:
 
 ```bash
 pnpm build
 ```
 
-对于带有自动重建的开发：
+For development with auto-rebuild:
 
 ```bash
 pnpm watch
 ```
 
-## 安装
+## Installation
 
-要与Claude Desktop一起使用，请添加服务器配置：
+To use with Claude Desktop, add the server config:
 
-在MacOS上: `~/Library/Application Support/Claude/claude_desktop_config.json`
-在Windows上: `%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -80,41 +80,41 @@ pnpm watch
 }
 ```
 
-### 调试
+### Debugging
 
-由于MCP服务器通过标准输入输出进行通信，调试可能会有些困难。我们建议使用[MCP Inspector](https://github.com/modelcontextprotocol/inspector)，它作为包脚本提供：
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 pnpm inspector
 ```
 
-Inspector将提供一个URL，以便您在浏览器中访问调试工具。
+The Inspector will provide a URL to access debugging tools in your browser.
 
-## 社区
+## Community
 
 - [MCP Server Telegram](https://t.me/+N0gv4O9SXio2YWU1)
 - [MCP Server Discord](https://discord.gg/RsYPRrnyqg)
 
-## 关于作者
+## About the author
 
 - [idoubi](https://bento.me/idoubi)
 
-**官方网站：** [https://github.com/chatmcp/mcp-server-chatsum](https://github.com/chatmcp/mcp-server-chatsum)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/chatmcp/mcp-server-chatsum](https://github.com/chatmcp/mcp-server-chatsum)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`path-to/bin/node`
-- 参数：`path-to/mcp-server-chatsum/build/index.js`
+- Transport: `stdio`
+- Command: `path-to/bin/node`
+- Args: `path-to/mcp-server-chatsum/build/index.js`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/chatmcp-chatsum.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/chatmcp-chatsum.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

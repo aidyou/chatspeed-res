@@ -1,50 +1,50 @@
 ---
-title: "Sefaria检索服务器"
-description: "通过标准化接口，启用大型语言模型从Sefaria图书馆检索犹太文本和评论。"
+title: "mcp-sefaria-server"
+description: "Enables Large Language Models to retrieve Jewish texts and commentaries from the Sefaria library through a standardized interface."
 ---
 
-# Sefaria检索服务器
+# mcp-sefaria-server
 
-通过标准化接口，启用大型语言模型从Sefaria图书馆检索犹太文本和评论。
+Enables Large Language Models to retrieve Jewish texts and commentaries from the Sefaria library through a standardized interface.
 
-# Sefaria 犹太图书馆 MCP 服务器
+# Sefaria Jewish Library MCP Server
 
 [Smithery](https://smithery.ai/server/mcp-sefaria-server)
-这是一个 MCP（模型上下文协议）服务器，提供对 Sefaria 图书馆中犹太文本的访问。此服务器使大型语言模型能够通过标准化接口检索和引用犹太文本。
+An MCP (Model Context Protocol) server that provides access to Jewish texts from the Sefaria library. This server enables Large Language Models to retrieve and reference Jewish texts through a standardized interface.
 
-## 特性
+## Features
 
-- 按引用检索犹太文本
-- 检索给定文本的注释
+- Retrieve Jewish texts by reference
+- Retrieve commentaries on a given text
 
-## 安装
+## Installation
 
-需要 Python 3.10 或更高版本。
+Requires Python 3.10 or higher.
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/mcp-sefaria-server) 自动为 Claude Desktop 安装 Sefaria 犹太图书馆：
+To install Sefaria Jewish Library for Claude Desktop automatically via [Smithery](https://smithery.ai/server/mcp-sefaria-server):
 
 ```bash
 npx -y @smithery/cli install mcp-sefaria-server --client claude
 ```
 
-### 克隆仓库
+### Clone the repository
 ```bash
 git clone https://github.com/sivan22/mcp-sefaria-server.git
 cd mcp-sefaria-server
 ```
 
-## 运行服务器
+## Running the Server
 
-可以直接运行服务器：
+The server can be run directly:
 
 ```bash
 uv --directory path/to/directory run sefaria_jewish_library
 ```
 
-或者通过支持模型上下文协议 (MCP) 的客户端运行。
-对于 Claude 桌面应用程序和 cline，您应使用以下配置：
+Or through an MCP client that supports the Model Context Protocol.
+for claude desktop app and cline you should use the following config:
 ```
 {
   "mcpServers": {        
@@ -64,15 +64,15 @@ uv --directory path/to/directory run sefaria_jewish_library
 }
 ```
 
-## 可用工具
+## Available tools
 
-服务器通过 MCP 接口提供以下工具：
+The server provides the following tools through the MCP interface:
 
 ### get_text
 
-按引用检索特定的犹太文本。
+Retrieves a specific Jewish text by its reference.
 
-示例：
+Example:
 ```
 reference: "Genesis 1:1"
 reference: "שמות פרק ב פסוק ג"
@@ -81,47 +81,47 @@ reference: "משנה ברכות פרק א משנה א"
 
 ### get_commentaries
 
-检索给定文本的注释列表。
+Retrieves a list of commentaries for a given text.
 
-示例：
+Example:
 ```
 reference: "Genesis 1:1"
 reference: "שמות פרק ב פסוק ג"
 reference: "משנה ברכות פרק א משנה א"
 ```
 
-## 开发
+## Development
 
-该项目使用：
-- [MCP SDK](https://github.com/modelcontextprotocol/sdk) 用于服务器实现
-- [Sefaria API](https://github.com/Sefaria/Sefaria-API) 用于访问犹太文本
+This project uses:
+- [MCP SDK](https://github.com/modelcontextprotocol/sdk) for server implementation
+- [Sefaria API](https://github.com/Sefaria/Sefaria-API) for accessing Jewish texts
 
-## 要求
+## Requirements
 
 - Python >= 3.10
 - MCP SDK >= 1.1.1
 - Sefaria API
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-**官方网站：** [https://github.com/opentorah-ai/mcp-sefaria-server](https://github.com/opentorah-ai/mcp-sefaria-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/opentorah-ai/mcp-sefaria-server](https://github.com/opentorah-ai/mcp-sefaria-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `search`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `search`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory C:/dev/mcp-sefaria-server run sefaria_jewish_library`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory C:/dev/mcp-sefaria-server run sefaria_jewish_library`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/opentorah-ai-sefaria.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/opentorah-ai-sefaria.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

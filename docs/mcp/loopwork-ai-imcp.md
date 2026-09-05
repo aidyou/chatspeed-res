@@ -1,33 +1,18 @@
 ---
-title: "iMCP服务"
-description: "一个为您的信息、联系人等提供MCP服务器的macOS应用程序"
+title: "iMCP"
+description: "A macOS app that provides an MCP server to your Messages, Contacts, and more"
 ---
 
-# iMCP服务
+# iMCP
 
-一个为您的信息、联系人等提供MCP服务器的macOS应用程序
+A macOS app that provides an MCP server to your Messages, Contacts, and more
 
-iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起来。
-它支持 [Claude Desktop](https://claude.ai/download) 以及越来越多的支持
-[模型上下文协议 (MCP)](https://modelcontextprotocol.io/introduction) 的客户端列表。
+iMCP is a macOS app for connecting your digital life with AI.
+It works with [Claude Desktop][claude-app]
+and a [growing list of clients][mcp-clients] that support the
+[Model Context Protocol (MCP)][mcp].
 
-## 功能
-
-  
-
-    
-
-       width="48" height="48" alt="" role="presentation"/>
-    
-
-    
-
-日历
-
-    
-查看和管理日历事件，包括使用可自定义设置（如重复、提醒和可用性状态）创建新事件。
-
-  
+## Capabilities
 
   
 
@@ -38,10 +23,10 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-联系人
+Calendar
 
     
-访问关于您自己的联系信息，并按姓名、电话号码或电子邮件地址搜索您的联系人。
+View and manage calendar events, including creating new events with customizable settings like recurrence, alarms, and availability status.
 
   
 
@@ -54,10 +39,10 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-位置
+Contacts
 
     
-访问当前位置数据，并在地址和地理坐标之间进行转换。
+Access contact information about yourself and search your contacts by name, phone number, or email address.
 
   
 
@@ -70,10 +55,10 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-地图
+Location
 
     
-提供地点搜索、路线指引、兴趣点查找、旅行时间估算和静态地图图像生成等位置服务。
+Access current location data and convert between addresses and geographic coordinates.
 
   
 
@@ -86,10 +71,10 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-消息
+Maps
 
     
-访问特定参与者在自定义日期范围内的消息历史记录。
+Provides location services including place search, directions, points of interest lookup, travel time estimation, and static map image generation.
 
   
 
@@ -102,10 +87,10 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-提醒事项
+Messages
 
     
-查看并创建具有可自定义到期日期、优先级和提醒的不同提醒事项列表中的提醒事项。
+Access message history with specific participants within customizable date ranges.
 
   
 
@@ -118,72 +103,108 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
     
 
-天气
+Reminders
 
     
-访问任何地点的当前天气状况，包括温度、风速和天气条件。
+View and create reminders with customizable due dates, priorities, and alerts across different reminder lists.
+
+  
+
+  
+
+    
+
+       width="48" height="48" alt="" role="presentation"/>
+    
+
+    
+
+Weather
+
+    
+Access current weather conditions including temperature, wind speed, and weather conditions for any location.
 
   
 
 > [!TIP]
-> 对于新的功能有建议？
-> 请通过 
- 联系我们。
+> Have a suggestion for a new capability?
+> Reach out to us at 
 
-## 开始使用
+## Getting Started
 
-### 下载并打开应用程序
+### Download and open the app
 
-首先，[下载 iMCP 应用程序](https://iMCP.app/download)
-（需要 macOS 15.3 或更高版本）。
+First, [download the iMCP app](https://iMCP.app/download)
+(requires macOS 15.3 or later).
 
- alt="首次启动时 iMCP 的截图" />
+ alt="Screenshot of iMCP on first launch" />
 
-当您打开应用程序时，
-会在菜单栏中看到一个
+When you open the app,
+you'll see a
  />
-图标。
+icon in your menu bar.
 
-点击此图标会显示 iMCP 菜单，该菜单中列出了所有可用的服务。最初，所有服务都会显示为灰色，表示它们处于非活动状态。
+Clicking on this icon reveals the iMCP menu,
+which displays all available services.
+Initially, all services will appear in gray,
+indicating they're inactive.
 
-顶部的蓝色切换开关表示 MCP 服务器正在运行，并且已准备好与兼容 MCP 的客户端连接。
+The blue toggle switch at the top indicates that the MCP server is running
+and ready to connect with MCP-compatible clients.
 
- alt="macOS权限对话框截图" />
+ alt="Screenshot of macOS permission dialog" />
 
-### 激活服务
+### Activate services
 
-要激活某个服务，请点击其图标。系统将提示您一个权限对话框。例如，在激活日历访问时，您会看到一个对话框询问“`iMCP`希望完全访问您的日历”。点击允许完全访问继续。
+To activate a service, click on its icon.
+The system will prompt you with a permission dialog.
+For example, when activating Calendar access, you'll see a dialog asking `"iMCP" Would Like Full Access to Your Calendar`.
+Click Allow Full Access to continue.
 
 > [!IMPORTANT]
-> iMCP **不会** 收集或存储您的任何数据。
-> 像 Claude Desktop 这样的客户端_确实会_在工具调用过程中将您的数据发送出去。
+> iMCP **does not** collect or store any of your data.
+> Clients like Claude Desktop _do_ send
+> your data off device as part of tool calls.
 
- alt="所有服务均已启用的iMCP截图" />
+ alt="Screenshot of iMCP with all services enabled" />
 
-一旦被激活，每个服务的图标将从灰色变为它们特有的颜色——日历为红色、消息为绿色、位置为蓝色等。
+Once activated,
+each service icons goes from gray to their distinctive colors —
+red for Calendar, green for Messages, blue for Location, and so on.
 
-重复这一过程以激活您想要启用的所有功能。这些权限遵循 Apple 的标准安全模型，使您可以完全控制 iMCP 可以访问哪些信息。
+Repeat this process for all of the capabilities you'd like to enable.
+These permissions follow Apple's standard security model,
+giving you complete control over what information iMCP can access.
 
  -->
 
  -->
 
-### 连接到 Claude Desktop
+### Connect to Claude Desktop
 
-如果您尚未安装 Claude Desktop，可以[在此下载](https://claude.ai/download)。
+If you don't have Claude Desktop installed,
+you can [download it here](https://claude.ai/download).
 
-打开 Claude Desktop 并转到“设置... (⌘,)”。点击设置面板侧边栏中的“开发者”，然后点击“编辑配置”。这将在
-`~/Library/Application Support/Claude/claude_desktop_config.json` 创建一个配置文件。
+Open Claude Desktop and go to "Settings... (⌘,)".
+Click on "Developer" in the sidebar of the Settings pane,
+and then click on "Edit Config".
+This will create a configuration file at
+`~/Library/Application Support/Claude/claude_desktop_config.json`.
 
-要将 iMCP 连接到 Claude Desktop，请点击  />
-\> “配置 Claude Desktop”。
+To connect iMCP to Claude Desktop,
+click  />
+> "Configure Claude Desktop".
 
-这将添加或更新使用应用程序中捆绑的 `imcp-server` 可执行文件的 MCP 服务器配置。文件中的其他 MCP 服务器配置将被保留。
+This will add or update the MCP server configuration to use the
+`imcp-server` executable bundled in the application.
+Other MCP server configurations in the file will be preserved.
 
-您也可以手动配置 Claude Desktop
+You can also configure Claude Desktop manually
 
-点击  />
-\> “复制服务器命令到剪贴板”。然后在编辑器中打开 `claude_desktop_config.json` 并输入以下内容：
+Click  />
+> "Copy server command to clipboard".
+Then open `claude_desktop_config.json` in your editor
+and enter the following:
 
 ```json
 {
@@ -197,71 +218,89 @@ iMCP 是一款 macOS 应用程序，用于将您的数字生活与 AI 连接起�
 
  />
 
-### 从 Claude Desktop 调用 iMCP 工具
+### Call iMCP tools from Claude Desktop
 
-退出并重新打开 Claude Desktop 应用程序。您将被提示批准连接。
+Quit and reopen the Claude Desktop app.
+You'll be prompted to approve the connection.
 
 > [!NOTE]
-> 您可能会看到这个对话框两次；请两次都点击批准。
+> You may see this dialog twice;
+> click approve both times.
 
-批准连接后，您现在应该在聊天框的右下角看到 🔨12。点击它可以看到由 iMCP 提供给 Claude 的所有工具列表。
+After approving the connection,
+you should now see 🔨12 in the bottom right corner of your chat box.
+Click on that to see a list of all the tools made available to Claude
+by iMCP.
 
-   alt="启用工具后的 Claude Desktop 截图" />
+   alt="Screenshot of Claude Desktop with tools enabled" />
 
-现在您可以向 Claude 询问需要访问您的个人数据的问题，例如：
-> "我这里的天气怎么样？"
+Now you can ask Claude questions that require access to your personal data,
+such as:
+> "How's the weather where I am?"
 
-Claude 将使用适当的工具检索此信息，为您提供准确、个性化的回答，而无需在对话中手动分享这些数据。
+Claude will use the appropriate tools to retrieve this information,
+providing you with accurate, personalized responses
+without requiring you to manually share this data during your conversation.
 
-   alt="Claude 对用户消息 '我这里的天气怎么样？' 的响应截图" />
+   alt="Screenshot of Claude response to user message 'How's the weather where I am?'" />
 
-## 技术细节
+## Technical Details
 
-### 应用程序与命令行接口
+### App & CLI
 
-iMCP 是一个 macOS 应用程序，其中包含一个命令行可执行文件 `imcp-server`。
-* [iMCP.app](https://github.com/loopwork-ai/imcp/tree/HEAD/App) 提供了配置服务的界面，并且最重要的是，
-  它提供了一种与 macOS 系统权限交互的方式，
-  以便它可以访问联系人、日历和其他信息。
-* [imcp-server](https://github.com/loopwork-ai/imcp/tree/HEAD/CLI) 提供了一个 MCP 服务器，该服务器
-  使用标准输入/输出进行通信
-  ([stdio 传输][mcp-transports])。
+iMCP is a macOS app that bundles a command-line executable, `imcp-server`.
+* [iMCP.app](https://github.com/loopwork-ai/imcp/tree/HEAD/App) provides UI for configuring services and — most importantly —
+  a means of interacting with macOS system permissions,
+  so that it can access Contacts, Calendar, and other information.
+* [imcp-server](https://github.com/loopwork-ai/imcp/tree/HEAD/CLI) provides an MCP server that 
+  uses standard input/output for communication 
+  ([stdio transport][mcp-transports]).
 
-应用程序和命令行接口通过 Bonjour 在本地网络上相互通信，
-用于自动发现。两者都广播类型为 "_mcp._tcp" 和域为 "local" 的服务。
-来自 MCP 客户端的请求由命令行接口从 `stdin` 读取并转发给应用程序；
-应用程序的响应由命令行接口接收并通过 `stdout` 写出。
-有关实现细节，请参见 [`StdioProxy`](https://github.com/loopwork-ai/iMCP/blob/8cf9d250286288b06bf5d3dda78f5905ad0d7729/CLI/main.swift#L47)。
+The app and CLI communicate with each other on the local network
+using [Bonjour][bonjour] for automatic discovery. 
+Both advertise a service with type "_mcp._tcp" and domain "local".
+Requests from MCP clients are read by the CLI from `stdin`
+and relayed to the app;
+responses from the app are received by the CLI and written to `stdout`.
+See [`StdioProxy`](https://github.com/loopwork-ai/iMCP/blob/8cf9d250286288b06bf5d3dda78f5905ad0d7729/CLI/main.swift#L47) 
+for implementation details.
 
-对于这个项目，我们创建了 [mcp-swift-sdk](https://github.com/loopwork-ai/mcp-swift-sdk)：
-这是一个用于 Model Context Protocol 服务器和客户端的 Swift SDK。
-应用程序使用这个包来处理来自 MCP 客户端的代理请求。
+For this project, we created [mcp-swift-sdk]:
+a Swift SDK for Model Context Protocol servers and clients.
+The app uses this package to handle proxied requests from MCP clients.
 
-### iMessage 数据库访问
+### iMessage Database Access
 
-Apple 不提供公开 API 来访问您的消息。然而，macOS 上的 Messages 应用将数据存储在位于
-`~/Library/Messages/chat.db` 的 SQLite 数据库中。
+Apple doesn't provide public APIs for accessing your messages.
+However, the Messages app on macOS stores data in a SQLite database located at
+`~/Library/Messages/chat.db`.
 
-iMCP 运行在 [App Sandbox](https://developer.apple.com/documentation/security/app-sandbox) 中，
-这限制了其对用户数据和系统资源的访问。
-当您启用 Messages 服务时，系统会提示您通过标准文件选择器打开 `chat.db` 文件。
-这样做之后，macOS 会将该文件添加到应用程序的沙盒中。
-[`NSOpenPanel`](https://developer.apple.com/documentation/appkit/nsopenpanel) 就是这样神奇地工作的。
+iMCP runs in [App Sandbox][app-sandbox],
+which limits its access to user data and system resources.
+When you go to enable the Messages service,
+you'll be prompted to open the `chat.db` file through the standard file picker.
+When you do, macOS adds that file to the app’s sandbox.
+[`NSOpenPanel`][nsopenpanel] is magic like that.
 
-但是，打开 iMessage 数据库只是完成了一半的工作。
-在过去几年里，
-Apple 已经不再以纯文本形式存储消息，
-而是转向专有的 `typedstream` 格式。
+But opening the iMessage database is just half the battle.
+Over the past few years, 
+Apple has moved away from storing messages in plain text
+and instead toward a proprietary `typedstream` format.
 
-为此项目，我们创建了 [Madrid](https://github.com/loopwork-ai/Madrid)：
-这是一个用于读取您的 iMessage 数据库的 Swift 包。
-它包括一个解码 Apple `typedstream` 格式的 Swift 实现，
-该实现改编自 Christopher Sardegna 的 [imessage-exporter](https://github.com/ReagentX/imessage-exporter) 项目
-及其关于反向工程 `typedstream` 的[博客文章](https://chrissardegna.com/blog/reverse-engineering-apples-typedstream-format/)。
+For this project, we created [Madrid][madrid]:
+a Swift package for reading your iMessage database.
+It includes a Swift implementation for decoding Apple's `typedstream` format, 
+adapted from Christopher Sardegna's [imessage-exporter] project 
+and [blog post about reverse-engineering `typedstream`][typedstream-blog-post].
 
 ### JSON-LD for Tool Results
 
-iMCP 提供的工具返回的结果是 [JSON-LD](https://json-ld.org) 文档。例如，`fetchContacts` 工具使用了 [Contacts 框架](https://developer.apple.com/documentation/contacts)，该框架用 [`CNContact`](https://developer.apple.com/documentation/contacts/cncontact) 类型表示人和组织。以下是这种类型的对象如何被编码为 JSON-LD 的示例：
+The tools provided by iMCP return results as
+[JSON-LD][json-ld] documents.
+For example,
+the `fetchContacts` tool uses the [Contacts framework][contacts-framework],
+which represents people and organizations with the [`CNContact`][cncontact] type.
+Here's how an object of that type is encoded as JSON-LD:
 
 ```json
 {
@@ -272,40 +311,72 @@ iMCP 提供的工具返回的结果是 [JSON-LD](https://json-ld.org) 文档。�
 }
 ```
 
-[Schema.org](https://schema.org) 为人们、邮政地址、事件以及其他我们想要表示的对象提供了标准词汇表。而 JSON-LD 是一种方便的编码格式，适用于人类、人工智能以及传统软件。
+[Schema.org][schema.org] provides standard vocabularies for
+people, postal addresses, events, and many other objects we want to represent.
+And JSON-LD is a convenient encoding format for 
+humans, AI, and conventional software alike.
 
-对于此项目，我们创建了 [Ontology](https://github.com/loopwork-ai/Ontology)：一个用于处理结构化数据的 Swift 包。它包括来自 Apple 框架（如 iMCP 工具返回的）类型的便捷初始化器。
+For this project, we created [Ontology][ontology]:
+a Swift package for working with structured data.
+It includes convenience initializers for types from Apple frameworks, 
+such as those returned by iMCP tools.
 
-## 致谢
+## Acknowledgments
 
-- [Justin Spahr-Summers](https://jspahrsummers.com/) ([@jspahrsummers](https://github.com/jspahrsummers))、David Soria Parra ([@dsp-ant](https://github.com/dsp-ant)) 和 Ashwin Bhat ([@ashwin-ant](https://github.com/ashwin-ant)) 对 MCP 的贡献。
-- [Christopher Sardegna](https://chrissardegna.com) ([@ReagentX](https://github.com/ReagentX)) 反向工程了 Messages 应用程序使用的 `typedstream` 格式。
+- [Justin Spahr-Summers](https://jspahrsummers.com/)
+  ([@jspahrsummers](https://github.com/jspahrsummers)),
+  David Soria Parra
+  ([@dsp-ant](https://github.com/dsp-ant)), and
+  Ashwin Bhat
+  ([@ashwin-ant](https://github.com/ashwin-ant))
+  for their work on MCP.
+- [Christopher Sardegna](https://chrissardegna.com)
+  ([@ReagentX](https://github.com/ReagentX))
+  for reverse-engineering the `typedstream` format
+  used by the Messages app.
 
-## 许可证
+## License
 
-本项目采用 Apache License, Version 2.0 授权。
+This project is licensed under the Apache License, Version 2.0.
 
-## 法律声明
+## Legal
 
-iMessage® 是苹果公司注册的商标。  
-本项目与苹果公司无关，未得到其认可或赞助。
+iMessage® is a registered trademark of Apple Inc.  
+This project is not affiliated with, endorsed, or sponsored by Apple Inc.
 
-**官方网站：** [https://github.com/loopwork-ai/imcp](https://github.com/loopwork-ai/imcp)
-**状态：** `active`　**最后核验：** `2026-08-30`
+[app-sandbox]: https://developer.apple.com/documentation/security/app-sandbox
+[bonjour]: https://developer.apple.com/bonjour/
+[claude-app]: https://claude.ai/download
+[contacts-framework]: https://developer.apple.com/documentation/contacts
+[cncontact]: https://developer.apple.com/documentation/contacts/cncontact
+[imessage-exporter]: https://github.com/ReagentX/imessage-exporter
+[json-ld]: https://json-ld.org
+[madrid]: https://github.com/loopwork-ai/Madrid
+[mcp]: https://modelcontextprotocol.io/introduction
+[mcp-clients]: https://modelcontextprotocol.io/clients
+[mcp-transports]: https://modelcontextprotocol.io/docs/concepts/architecture#transport-layer
+[nsopenpanel]: https://developer.apple.com/documentation/appkit/nsopenpanel
+[ontology]: https://github.com/loopwork-ai/Ontology
+[schema.org]: https://schema.org
+[mcp-swift-sdk]: https://github.com/loopwork-ai/mcp-swift-sdk
+[typedstream-blog-post]: https://chrissardegna.com/blog/reverse-engineering-apples-typedstream-format/
 
-## 分类与标签
+**Official site: ** [https://github.com/loopwork-ai/imcp](https://github.com/loopwork-ai/imcp)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 分类：`productivity`, `data`
-- 标签：`calendar management`, `location services`, `chinese`
+## Categories & Tags
 
-## MCP 配置
+- Categories: `productivity`, `data`
+- Tags: `calendar management`, `location services`, `chinese`
 
-- 传输方式：`stdio`
-- 启动命令：`{paste iMCP server command}`
-- 参数：无
+## MCP Configuration
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Transport: `stdio`
+- Command: `{paste iMCP server command}`
+- Args: none
 
-## 数据来源
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-资源文件：`resources/mcp/loopwork-ai-imcp.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+## Data source
+
+Resource file: `resources/mcp/loopwork-ai-imcp.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

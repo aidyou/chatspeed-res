@@ -1,65 +1,65 @@
 ---
-title: "MCP 谷歌搜索工具"
-description: "一个使用Google自定义搜索API和网页内容提取功能提供网络搜索功能的模型上下文协议服务器。"
+title: "mcp-google-search"
+description: "A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality."
 ---
 
-# MCP 谷歌搜索工具
+# mcp-google-search
 
-一个使用Google自定义搜索API和网页内容提取功能提供网络搜索功能的模型上下文协议服务器。
+A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.
 
-# MCP 服务器用于 Google 搜索
+# MCP Server for Google Search
 
-一个使用 Google 自定义搜索 API 和网页内容提取功能提供网络搜索能力的模型上下文协议服务器。
+A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.
 
-## 工具
+## Tools
 
-### 搜索
-使用 Google 自定义搜索 API 执行网络搜索：
-- 搜索整个网络或特定站点
-- 控制结果数量（1-10）
-- 获取带有标题、链接和摘要的结构化结果
+### Search
+Perform web searches using Google Custom Search API:
+- Search the entire web or specific sites
+- Control number of results (1-10)
+- Get structured results with title, link, and snippet
 
-### 网页阅读器
-从任何网页中提取内容：
-- 获取并解析网页内容
-- 提取页面标题和主体文本
-- 通过移除脚本和样式来清理内容
-- 返回带有标题、文本和 URL 的结构化数据
+### Webpage Reader
+Extract content from any webpage:
+- Fetch and parse webpage content
+- Extract page title and main text
+- Clean content by removing scripts and styles
+- Return structured data with title, text, and URL
 
-## 安装
+## Installation
 
-### 获取 Google API 密钥和搜索引擎 ID
+### Get Google API Key and Search Engine ID
 
-1. 创建 Google Cloud 项目：
-   - 前往 [Google Cloud 控制台](https://console.cloud.google.com/)
-   - 创建新项目或选择现有项目
-   - 为您的项目启用计费
+1. Create a Google Cloud Project:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable billing for your project
 
-2. 启用自定义搜索 API：
-   - 前往 [API 库](https://console.cloud.google.com/apis/library)
-   - 搜索“Custom Search API”
-   - 单击“启用”
+2. Enable Custom Search API:
+   - Go to [API Library](https://console.cloud.google.com/apis/library)
+   - Search for "Custom Search API"
+   - Click "Enable"
 
-3. 获取 API 密钥：
-   - 前往 [凭据](https://console.cloud.google.com/apis/credentials)
-   - 单击“创建凭据”>“API 密钥”
-   - 复制您的 API 密钥
-   - （可选）将 API 密钥限制为仅自定义搜索 API 使用
+3. Get API Key:
+   - Go to [Credentials](https://console.cloud.google.com/apis/credentials)
+   - Click "Create Credentials" > "API Key"
+   - Copy your API key
+   - (Optional) Restrict the API key to only Custom Search API
 
-4. 创建自定义搜索引擎：
-   - 前往 [可编程搜索引擎](https://programmablesearchengine.google.com/create/new)
-   - 输入您想要搜索的站点（对于一般的网络搜索，使用 www.google.com）
-   - 单击“创建”
-   - 在下一页上，单击“自定义”
-   - 在设置中启用“搜索整个网络”
-   - 复制您的搜索引擎 ID (cx)
+4. Create Custom Search Engine:
+   - Go to [Programmable Search Engine](https://programmablesearchengine.google.com/create/new)
+   - Enter the sites you want to search (use www.google.com for general web search)
+   - Click "Create"
+   - On the next page, click "Customize"
+   - In the settings, enable "Search the entire web"
+   - Copy your Search Engine ID (cx)
 
-### 客户端配置
+### Client Configuration
 
-要与 Claude Desktop 一起使用，请使用您的 Google API 凭证添加服务器配置：
+To use with Claude Desktop, add the server config with your Google API credentials:
 
-在 MacOS 上：`~/Library/Application Support/Claude/claude_desktop_config.json`
-在 Windows 上：`%APPDATA%/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -76,22 +76,22 @@ description: "一个使用Google自定义搜索API和网页内容提取功能提
 }
 ```
 
-**官方网站：** [https://github.com/mcp-for-dev/mcp-google-search](https://github.com/mcp-for-dev/mcp-google-search)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/mcp-for-dev/mcp-google-search](https://github.com/mcp-for-dev/mcp-google-search)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`browser`
-- 标签：`search`, `browser automation`, `chinese`
+- Categories: `browser`
+- Tags: `search`, `browser automation`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @mcp-for-dev/mcp-google-search`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @mcp-for-dev/mcp-google-search`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/mcp-for-dev-google-search.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/mcp-for-dev-google-search.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

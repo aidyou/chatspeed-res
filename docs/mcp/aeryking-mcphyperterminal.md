@@ -1,44 +1,44 @@
 ---
-title: "MCP超级终端"
-description: "MCP超级终端 MCP超级终端 是一款专为 AI IDE 开发场景设计的终端扩展工具。 它解决了 AI IDE 在调用外部工具时的不足，支持执行命令、Git 操作、自定义命令，几乎可以运行任何终端脚本。 目前支持 macOS 和 Linux 用户。 --- ✨ 特性 - 🔧 命令执行：在 IDE 内部直接运行终端命令 - 🌀 Git 集成：支持常见 Git 操作（提交、拉取、推送等） - ⚙️ 自定义命令：自由配置快捷命令，满足个性化需求 - 📜 脚本执行：可运行任何 Shell / Bash 脚本 - 🖥️ 跨平"
+title: "MCPHyperTerminal"
+description: "MCP Hyper Terminal MCP Hyper Terminal is a terminal extension tool specifically designed for AI IDE development scenarios. It addresses the shortcomings of AI IDEs when calling external tools, support…"
 ---
 
-# MCP超级终端
+# MCPHyperTerminal
 
-MCP超级终端 MCP超级终端 是一款专为 AI IDE 开发场景设计的终端扩展工具。 它解决了 AI IDE 在调用外部工具时的不足，支持执行命令、Git 操作、自定义命令，几乎可以运行任何终端脚本。 目前支持 macOS 和 Linux 用户。 --- ✨ 特性 - 🔧 命令执行：在 IDE 内部直接运行终端命令 - 🌀 Git 集成：支持常见 Git 操作（提交、拉取、推送等） - ⚙️ 自定义命令：自由配置快捷命令，满足个性化需求 - 📜 脚本执行：可运行任何 Shell / Bash 脚本 - 🖥️ 跨平
+MCP Hyper Terminal MCP Hyper Terminal is a terminal extension tool specifically designed for AI IDE development scenarios. It addresses the shortcomings of AI IDEs when calling external tools, support…
 
-# MCP超级终端
+# MCP Hyper Terminal
 
-**MCP超级终端** 是一款专为 AI IDE 开发场景设计的终端扩展工具。  
-它解决了 AI IDE 在调用外部工具时的不足，支持执行命令、Git 操作、自定义命令，几乎可以运行任何终端脚本。  
-目前支持 **macOS** 和 **Linux** 用户。
-
----
-
-## ✨ 特性
-
-- 🔧 **命令执行**：在 IDE 内部直接运行终端命令  
-- 🌀 **Git 集成**：支持常见 Git 操作（提交、拉取、推送等）  
-- ⚙️ **自定义命令**：自由配置快捷命令，满足个性化需求  
-- 📜 **脚本执行**：可运行任何 Shell / Bash 脚本  
-- 🖥️ **跨平台**：支持 macOS 和 Linux  
+**MCP Hyper Terminal** is a terminal extension tool specifically designed for AI IDE development scenarios.  
+It addresses the shortcomings of AI IDEs when calling external tools, supporting command execution, Git operations, custom commands, and can run almost any terminal script.  
+Currently, it supports **macOS** and **Linux** users.
 
 ---
 
-## 🚀 使用场景
+## ✨ Features
 
-- AI IDE 开发过程中快速调用外部工具  
-- 在不离开编辑器的情况下执行 Git 工作流  
-- 自动化执行项目脚本（构建、测试、部署）  
-- 替代 IDE 内置但受限的终端调用能力  
+- 🔧 **Command Execution**: Run terminal commands directly within the IDE  
+- 🌀 **Git Integration**: Supports common Git operations (commit, pull, push, etc.)  
+- ⚙️ **Custom Commands**: Freely configure shortcut commands to meet personalized needs  
+- 📜 **Script Execution**: Can run any Shell / Bash script  
+- 🖥️ **Cross-Platform**: Supports macOS and Linux  
 
 ---
 
-## ⚙️ 配置 MCP 服务
+## 🚀 Use Cases
 
-在 IDE 的配置文件中加入以下内容，即可启用 **MCP超级终端**：
+- Quickly call external tools during AI IDE development  
+- Execute Git workflows without leaving the editor  
+- Automate project scripts (build, test, deploy)  
+- Replace the limited terminal calling capabilities built into the IDE  
 
-```json
+---
+
+## ⚙️ Configuring MCP Service
+
+Add the following content to your IDE's configuration file to enable **MCP Hyper Terminal**:
+
+json
 {
   "mcpServers": {
     "MCPHyperTerminal": {
@@ -52,24 +52,23 @@ MCP超级终端 MCP超级终端 是一款专为 AI IDE 开发场景设计的终�
     }
   }
 }
-```
 
-**官方网站：** [https://www.npmjs.com/package/@mcpshell/command](https://www.npmjs.com/package/@mcpshell/command)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://www.npmjs.com/package/@mcpshell/command](https://www.npmjs.com/package/@mcpshell/command)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`files`
-- 标签：`developer tools`, `file systems`, `超级终端`, `chinese`
+- Categories: `files`
+- Tags: `developer tools`, `file systems`, `超级终端`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`-y @mcpshell/command`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `-y @mcpshell/command`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/aeryking-mcphyperterminal.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/aeryking-mcphyperterminal.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

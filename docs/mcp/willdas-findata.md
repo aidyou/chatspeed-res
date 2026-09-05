@@ -1,30 +1,41 @@
 ---
-title: "当日股票预测推荐"
-description: "可以分析当日推荐股票"
+title: "finData"
+description: "Can Analyze Recommended Stocks for the Day python def analyzerecommendedstocks(): 这里填写获取并分析当日推荐股票的代码 pass - 该功能允许用户分析系统或分析师为当天推荐的股票。 - 通过调用analyzerecommendedstocks()函数，可以获取到最新的推荐信息，并对其进行深入分析。 - 分析结果可能…"
 ---
 
-# 当日股票预测推荐
+# finData
 
-可以分析当日推荐股票
+Can Analyze Recommended Stocks for the Day python def analyzerecommendedstocks(): 这里填写获取并分析当日推荐股票的代码 pass - 该功能允许用户分析系统或分析师为当天推荐的股票。 - 通过调用analyzerecommendedstocks()函数，可以获取到最新的推荐信息，并对其进行深入分析。 - 分析结果可能…
 
-可以分析当日推荐股票
+Can Analyze Recommended Stocks for the Day
 
-**官方网站：** [https://github.com/gptForYou/mcp-gusantong-server](https://github.com/gptForYou/mcp-gusantong-server)
-**状态：** `active`　**最后核验：** `2026-08-30`
+python
+def analyze_recommended_stocks():
+    # 这里填写获取并分析当日推荐股票的代码
+    pass
 
-## 分类与标签
+- 该功能允许用户分析系统或分析师为当天推荐的股票。
+- 通过调用`analyze_recommended_stocks()`函数，可以获取到最新的推荐信息，并对其进行深入分析。
+- 分析结果可能包括但不限于：股票的基本面、技术指标、市场情绪等关键因素。
 
-- 分类：`finance`
-- 标签：`finance`, `chinese`
+更多详细信息，请参考[官方文档](https://example.com/official-documentation)。
 
-## MCP 配置
+**Official site: ** [https://github.com/gptForYou/mcp-gusantong-server](https://github.com/gptForYou/mcp-gusantong-server)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-gusantong@latest`
+## Categories & Tags
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+- Categories: `finance`
+- Tags: `finance`, `chinese`
 
-## 数据来源
+## MCP Configuration
 
-资源文件：`resources/mcp/willdas-findata.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-gusantong@latest`
+
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
+
+## Data source
+
+Resource file: `resources/mcp/willdas-findata.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

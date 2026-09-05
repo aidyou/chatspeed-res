@@ -1,84 +1,84 @@
 ---
-title: "MCP G套件服务器"
-description: "MCP服务器用于与Google产品交互。"
+title: "mcp-gsuite"
+description: "MCP server to interact with Google produts."
 ---
 
-# MCP G套件服务器
+# mcp-gsuite
 
-MCP服务器用于与Google产品交互。
+MCP server to interact with Google produts.
 
-# mcp-gsuite MCP 服务器
+# mcp-gsuite MCP server
 
 [Smithery](https://smithery.ai/server/mcp-gsuite)
-用于与 Google 产品交互的 MCP 服务器。
+MCP server to interact with Google produts.
 
-## 示例提示
+## Example prompts
 
-目前，此 MCP 服务器支持 Gmail 和日历集成，具有以下功能：
+Right now, this MCP server supports Gmail and Calendar integration with the following capabilities:
 
-1. 通用
-* 多个 Google 帐户
+1. General
+* Multiple google accounts
 
 2. Gmail
-* 获取您的 Gmail 用户信息
-* 使用灵活搜索查询电子邮件（例如，未读、来自特定发件人、日期范围、带有附件）
-* 通过 ID 检索完整的电子邮件内容
-* 创建带有收件人、主题、正文和抄送选项的新草稿邮件
-* 删除草稿邮件
-* 回复现有邮件（可以立即发送或保存为草稿）
-* 通过其 ID 一次性检索多封邮件。
-* 将多封邮件中的附件保存到本地系统。
+* Get your Gmail user information
+* Query emails with flexible search (e.g., unread, from specific senders, date ranges, with attachments)
+* Retrieve complete email content by ID
+* Create new draft emails with recipients, subject, body and CC options
+* Delete draft emails
+* Reply to existing emails (can either send immediately or save as draft)
+* Retrieve multiple emails at once by their IDs.
+* Save multiple attachments from emails to your local system.
 
-3. 日历
-* 管理多个日历
-* 在指定的时间范围内获取日历事件
-* 创建日历事件：
-  + 标题、开始/结束时间
-  + 可选的位置和描述
-  + 可选的参与者
-  + 自定义时区支持
-  + 通知偏好设置
-* 删除日历事件
+3. Calendar
+* Manage multiple calendars
+* Get calendar events within specified time ranges
+* Create calendar events with:
+  + Title, start/end times
+  + Optional location and description
+  + Optional attendees
+  + Custom timezone support
+  + Notification preferences
+* Delete calendar events
 
-您可以尝试的示例提示：
+Example prompts you can try:
 
-* 检索我最新的未读消息
-* 搜索来自 Scrum Master 的邮件
-* 检索所有来自会计部门的邮件
-* 查找关于 ABC 的邮件并总结它
-* 给 Alice 的最后一封邮件写一个友好的回复，并上传草稿。
-* 用感谢信回复 Bob 的邮件。将其保存为草稿
+* Retrieve my latest unread messages
+* Search my emails from the Scrum Master
+* Retrieve all emails from accounting
+* Take the email about ABC and summarize it
+* Write a nice response to Alice's last email and upload a draft.
+* Reply to Bob's email with a Thank you note. Store it as draft
 
-* 我明天的日程安排是什么？
-* 检查我的私人账户下周的家庭日程
-* 我需要与 Tim 计划下周的一个两小时的活动。建议一些时间段。
+* What do I have on my agenda tomorrow?
+* Check my private account's Family agenda for next week
+* I need to plan an event with Tim for 2hrs next week. Suggest some time slots.
 
-## 快速入门
+## Quickstart
 
-### 安装
+### Install
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/server/mcp-gsuite) 自动安装 Claude Desktop 的 mcp-gsuite：
+To install mcp-gsuite for Claude Desktop automatically via [Smithery](https://smithery.ai/server/mcp-gsuite):
 
 ```bash
 npx -y @smithery/cli install mcp-gsuite --client claude
 ```
 
-#### OAuth 2
+#### Oauth 2
 
-Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设置身份验证：
+Google Workspace (G Suite) APIs require OAuth2 authorization. Follow these steps to set up authentication:
 
-1. 创建 OAuth2 凭据：
-   - 转到 [Google Cloud 控制台](https://console.cloud.google.com/)
-   - 创建新项目或选择现有项目
-   - 为您的项目启用 Gmail API 和 Google Calendar API
-   - 转到“凭据”→“创建凭据”→“OAuth 客户端 ID”
-   - 选择“桌面应用程序”或“Web 应用程序”作为应用程序类型
-   - 使用所需信息配置 OAuth 同意屏幕
-   - 添加授权重定向 URI（包括 `http://localhost:4100/code` 用于本地开发）
+1. Create OAuth2 Credentials:
+   - Go to the [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable the Gmail API and Google Calendar API for your project
+   - Go to "Credentials" → "Create Credentials" → "OAuth client ID"
+   - Select "Desktop app" or "Web application" as the application type
+   - Configure the OAuth consent screen with required information
+   - Add authorized redirect URIs (include `http://localhost:4100/code` for local development)
 
-2. 所需的 OAuth2 范围：
+2. Required OAuth2 Scopes:
    
 
 ```json
@@ -90,7 +90,7 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
    ]
 ```
 
-3. 然后在工作目录中使用客户端创建一个 `.gauth.json` 文件
+3. Then create a `.gauth.json` in your working directory with client
 
 ```json
 {
@@ -104,7 +104,7 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
 }
 ```
 
-4. 创建一个包含帐户信息的 `.accounts.json` 文件
+4. Create a `.accounts.json` file with account information
 
 ```json
 {
@@ -118,17 +118,17 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
 }
 ```
 
-您可以指定多个帐户。确保它们在您的 Google Auth 应用中有访问权限。`extra_info` 字段特别有用，因为您可以在此处添加希望告诉 AI 关于该帐户的信息（例如，它是否有特定的日程）。
+You can specifiy multiple accounts. Make sure they have access in your Google Auth app. The `extra_info` field is especially interesting as you can add info here that you want to tell the AI about the account (e.g. whether it has a specific agenda)
 
-注意：当你首次为特定账户执行其中一个工具时，会打开一个浏览器，将你重定向到 Google 并要求你输入凭证、权限范围等。成功登录后，它会将凭证存储在一个名为 `.oauth.{email}.json` 的本地文件中。一旦授权完成，刷新令牌将会被使用。
+Note: When you first execute one of the tools for a specific account, a browser will open, redirect you to Google and ask for your credentials, scope, etc. After a successful login, it stores the credentials in a local file called `.oauth.{email}.json` . Once you are authorized, the refresh token will be used.
 
-#### Claude 桌面版
+#### Claude Desktop
 
-在 MacOS 上: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-在 Windows 上: `%APPDATA%/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
-  开发/未发布服务器配置
+  Development/Unpublished Servers Configuration
   
 
 ```json
@@ -147,7 +147,7 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
 }
 ```
 
-注意：你也可以使用 `uv run mcp-gsuite --accounts-file /path/to/custom/.accounts.json` 来指定不同的账户文件，或者使用 `--credentials-dir /path/to/custom/credentials` 来指定不同的凭证目录。
+Note: You can also use the `uv run mcp-gsuite --accounts-file /path/to/custom/.accounts.json` to specify a different accounts file or `--credentials-dir /path/to/custom/credentials` to specify a different credentials directory.
 
 ```json
 {
@@ -169,7 +169,7 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
 }
 ```
 
-  已发布服务器配置
+  Published Servers Configuration
   
 
 ```json
@@ -189,88 +189,89 @@ Google Workspace (G Suite) API 需要 OAuth2 授权。请按照以下步骤设�
 }
 ```
 
-### 配置选项
+### Configuration Options
 
-MCP 服务器可以通过几个命令行选项来指定用于认证和账户信息的自定义路径：
+The MCP server can be configured with several command-line options to specify custom paths for authentication and account information:
 
-* `--gauth-file`: 指定包含 OAuth2 客户端配置的 `.gauth.json` 文件的路径。默认值为 `./.gauth.json`。
-* `--accounts-file`: 指定包含有关 Google 账户信息的 `.accounts.json` 文件的路径。默认值为 `./.accounts.json`。
-* `--credentials-dir`: 指定成功认证后存储 OAuth 凭证的目录。默认值为当前工作目录下的每个账户子目录 `.oauth.{email}.json`。
+* `--gauth-file`: Specifies the path to the `.gauth.json` file containing OAuth2 client configuration. Default is `./.gauth.json`.
+* `--accounts-file`: Specifies the path to the `.accounts.json` file containing information about the Google accounts. Default is `./.accounts.json`.
+* `--credentials-dir`: Specifies the directory where OAuth credentials are stored after successful authentication. Default is the current working directory with a subdirectory for each account as `.oauth.{email}.json`.
 
-这些选项允许灵活管理不同环境或多个凭证集和账户集，特别适用于开发和测试场景。
+These options allow for flexibility in managing different environments or multiple sets of credentials and accounts, especially useful in development and testing scenarios.
 
-示例用法：
+Example usage:
 
 ```bash
 uv run mcp-gsuite --gauth-file /path/to/custom/.gauth.json --accounts-file /path/to/custom/.accounts.json --credentials-dir /path/to/custom/credentials
 ```
 
-这种配置对于运行具有不同配置的多个服务器实例，或者部署到默认路径不适用的环境中非常有用。
+This configuration is particularly useful when you have multiple instances of the server running with different configurations or when deploying to environments where the default paths are not suitable.
 
-## 开发
+## Development
 
-### 构建与发布
+### Building and Publishing
 
-准备分发包：
+To prepare the package for distribution:
 
-1. 同步依赖并更新锁文件：
+1. Sync dependencies and update lockfile:
 
 ```bash
 uv sync
 ```
 
-2. 构建包分发：
+2. Build package distributions:
 
 ```bash
 uv build
 ```
 
-这将在 `dist/` 目录下创建源码和 wheel 分发包。
+This will create source and wheel distributions in the `dist/` directory.
 
-3. 发布到 PyPI：
+3. Publish to PyPI:
 
 ```bash
 uv publish
 ```
 
-注意：你需要通过环境变量或命令标志设置 PyPI 凭证：
-* 令牌: `--token` 或 `UV_PUBLISH_TOKEN`
-* 或用户名/密码: `--username`/`UV_PUBLISH_USERNAME` 和 `--password`/`UV_PUBLISH_PASSWORD`
+Note: You'll need to set PyPI credentials via environment variables or command flags:
+* Token: `--token` or `UV_PUBLISH_TOKEN`
+* Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
 
-### 调试
+### Debugging
 
-由于 MCP 服务器通过标准输入输出运行，调试可能会有挑战。为了获得最佳调试体验，我们强烈建议使用 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)。
+Since MCP servers run over stdio, debugging can be challenging. For the best debugging
+experience, we strongly recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
 
-你可以通过 [ `npm` ](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 使用此命令启动 MCP Inspector：
+You can launch the MCP Inspector via [ `npm` ](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) with this command:
 
 ```bash
 npx @modelcontextprotocol/inspector uv --directory /path/to/mcp-gsuite run mcp-gsuite
 ```
 
-启动后，Inspector 将显示一个 URL，你可以在浏览器中访问该 URL 开始调试。
+Upon launching, the Inspector will display a URL that you can access in your browser to begin debugging.
 
-你还可以使用以下命令查看服务器日志：
+You can also watch the server logs with this command:
 
 ```bash
 tail -n 20 -f ~/Library/Logs/Claude/mcp-server-mcp-gsuite.log
 ```
 
-**官方网站：** [https://github.com/MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`communication`, `calendar management`, `cloud storage`, `chinese`
+- Categories: `productivity`
+- Tags: `communication`, `calendar management`, `cloud storage`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uvx`
-- 参数：`mcp-gsuite --accounts-file /path/to/custom/.accounts.json --credentials-dir /path/to/custom/credentials`
+- Transport: `stdio`
+- Command: `uvx`
+- Args: `mcp-gsuite --accounts-file /path/to/custom/.accounts.json --credentials-dir /path/to/custom/credentials`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/markuspfundstein-gsuite.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/markuspfundstein-gsuite.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

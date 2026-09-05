@@ -1,49 +1,44 @@
 ---
-title: "MCP PDF工具"
-description: "使用PyPDF2的MCP可以实现以下功能：\n•    合并PDF（merge-pdfs）\n•    提取页面（extract-pages）\n•    搜索PDF（search-pdfs）\n•    按顺序合并PDF（merge-pdfs-ordered，按照用户指定的顺序合并）\n•    查找相关PDF（find-related-pdfs，通过正则表达式提取文本以查找相关的PDF文件）"
+title: "mcp-pdf-tools"
+description: "mcp using PyPDF2 to: • merge-pdfs • extract-pages • search-pdfs • merge-pdfs-ordered (merge in user spec. order) • find-related-pdfs (regex extracted text for related PDF files)"
 ---
 
-# MCP PDF工具
+# mcp-pdf-tools
 
-使用PyPDF2的MCP可以实现以下功能：
-•    合并PDF（merge-pdfs）
-•    提取页面（extract-pages）
-•    搜索PDF（search-pdfs）
-•    按顺序合并PDF（merge-pdfs-ordered，按照用户指定的顺序合并）
-•    查找相关PDF（find-related-pdfs，通过正则表达式提取文本以查找相关的PDF文件）
+mcp using PyPDF2 to: • merge-pdfs • extract-pages • search-pdfs • merge-pdfs-ordered (merge in user spec. order) • find-related-pdfs (regex extracted text for related PDF files)
 
 # WORK IN PROGRESS - USE WITH CAUTION - Windows:
 
-# MCP PDF 工具服务器
+# MCP PDF Tools Server
 
-一个提供 PDF 操作工具的 MCP（模型上下文协议）服务器。此服务器允许 LLM 通过模型上下文协议执行诸如合并 PDF 和提取页面等操作。
+An MCP (Model Context Protocol) server that provides PDF manipulation tools. This server allows LLMs to perform operations like merging PDFs and extracting pages through the Model Context Protocol.
 
-## 功能
+## Features
 
-- 将多个 PDF 文件合并为一个 PDF
-- 按用户指定顺序将多个 PDF 文件合并为一个 PDF
-- 从 PDF 文件中提取特定页面
-- 搜索 PDF *文件系统搜索或 Everything 搜索比这更有效*
-- 根据目标输入 PDF 的文本提取和正则表达式模式匹配查找（并合并）相关 PDF
+- Merge multiple PDF files into a single PDF
+- Merge multiple PDF files into a single PDF in user specified order
+- Extract specific pages from a PDF file
+- Search PDFs *filesystem search or Everything search works better than this*
+- Find (and merge) related PDFs based on text extraction and regex pattern matching from a target input PDF
 
-## 安装
+## Installation
 
-1. 克隆此仓库
+1. Clone this repository
 2. 
 ```bash
 cd mcp-pdf-tools
 
 # Create and activate virtual environment
 uv venv
-.venv\Scripts\activate
+.venvScriptsactivate
 
 # Install the package
 uv pip install -e .
 ```
 
-## 与 Claude Desktop 一起使用
+## Usage with Claude Desktop
 
-将以下内容添加到您的 Claude Desktop 配置文件 (claude_desktop_config.json) 中：
+Add this to your Claude Desktop configuration file (claude_desktop_config.json):
 
 ```json
 {
@@ -52,7 +47,7 @@ uv pip install -e .
             "command": "uv",
             "args": [
                 "--directory",
-                "PATH_TO\\mcp-pdf-tools",
+                "PATH_TO\mcp-pdf-tools",
                 "run",
                 "pdf-tools"
             ]
@@ -61,22 +56,22 @@ uv pip install -e .
 }
 ```
 
-**官方网站：** [https://github.com/hanweg/mcp-pdf-tools](https://github.com/hanweg/mcp-pdf-tools)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/hanweg/mcp-pdf-tools](https://github.com/hanweg/mcp-pdf-tools)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`productivity`
-- 标签：`other`, `chinese`
+- Categories: `productivity`
+- Tags: `other`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`uv`
-- 参数：`--directory PATH_TO\mcp-pdf-tools run pdf-tools`
+- Transport: `stdio`
+- Command: `uv`
+- Args: `--directory PATH_TO\mcp-pdf-tools run pdf-tools`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/hanweg-pdf-tools.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/hanweg-pdf-tools.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.

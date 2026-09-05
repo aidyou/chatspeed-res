@@ -1,89 +1,88 @@
 ---
-title: "Figma MCP API工具"
-description: "语言类型：英语  \n翻译结果：具有完整API功能的Figma MCP"
+title: "mcp-figma"
+description: "Figma MCP with full API functionality"
 ---
 
-# Figma MCP API工具
+# mcp-figma
 
-语言类型：英语  
-翻译结果：具有完整API功能的Figma MCP
+Figma MCP with full API functionality
 
-# Figma MCP 服务器
+# Figma MCP Server
 
-[thirdstrandstudio.com](https://thirdstrandstudio.com)
+[![Third Strand Studio](/mcp-assets/97198ccfe30e0e6c7c102cfc021faf01.svg)](https://thirdstrandstudio.com)
 
 [Smithery](https://smithery.ai/server/@thirdstrandstudio/mcp-figma)
 
-用于与 Figma API 交互的 MCP 服务器。此服务器通过模型上下文协议提供了一整套 Figma API 方法。在处理大型 Figma 文件时，您可能需要告诉它使用 depth = 1 进行 figma_get_file 操作，然后根据需要增加。
+MCP Server for interacting with the Figma API. This server provides a complete set of Figma API methods through the Model Context Protocol. Sometimes on large figma files you might have to tell it to use depth = 1 for figma_get_file then increase when it needs more.
 
 ![image](/mcp-assets/80684fd100ae09b9de617675bbf68cda.png)
 
-## 工具
+## Tools
 
-该服务器将所有 Figma API 方法实现为 MCP 工具：
+This server implements all Figma API methods as MCP tools:
 
-### 用户方法
-1. `figma_get_me` - 获取当前用户
+### User Methods
+1. `figma_get_me` - Get the current user
 
-### 文件方法
-2. `figma_get_file` - 通过键获取 Figma 文件
-3. `figma_get_file_nodes` - 从 Figma 文件中获取特定节点
-4. `figma_get_images` - 从 Figma 文件中渲染图像
-5. `figma_get_image_fills` - 获取 Figma 文件中的图像填充
-6. `figma_get_file_versions` - 获取 Figma 文件的版本历史记录
+### File Methods
+2. `figma_get_file` - Get a Figma file by key
+3. `figma_get_file_nodes` - Get specific nodes from a Figma file
+4. `figma_get_images` - Render images from a Figma file
+5. `figma_get_image_fills` - Get image fills in a Figma file
+6. `figma_get_file_versions` - Get version history of a Figma file
 
-### 评论方法
-7. `figma_get_comments` - 获取 Figma 文件中的评论
-8. `figma_post_comment` - 向 Figma 文件添加评论
-9. `figma_delete_comment` - 从 Figma 文件中删除评论
-10. `figma_get_comment_reactions` - 获取评论的反应
-11. `figma_post_comment_reaction` - 向评论添加反应
-12. `figma_delete_comment_reaction` - 从评论中删除反应
+### Comment Methods
+7. `figma_get_comments` - Get comments in a Figma file
+8. `figma_post_comment` - Add a comment to a Figma file
+9. `figma_delete_comment` - Delete a comment from a Figma file
+10. `figma_get_comment_reactions` - Get reactions for a comment
+11. `figma_post_comment_reaction` - Add a reaction to a comment
+12. `figma_delete_comment_reaction` - Delete a reaction from a comment
 
-### 团队和项目方法
-13. `figma_get_team_projects` - 获取团队中的项目
-14. `figma_get_project_files` - 获取项目中的文件
+### Team and Project Methods
+13. `figma_get_team_projects` - Get projects in a team
+14. `figma_get_project_files` - Get files in a project
 
-### 组件方法
-15. `figma_get_team_components` - 获取团队中的组件
-16. `figma_get_file_components` - 获取文件中的组件
-17. `figma_get_component` - 通过键获取组件
-18. `figma_get_team_component_sets` - 获取团队中的组件集
-19. `figma_get_file_component_sets` - 获取文件中的组件集
-20. `figma_get_component_set` - 通过键获取组件集
+### Component Methods
+15. `figma_get_team_components` - Get components in a team
+16. `figma_get_file_components` - Get components in a file
+17. `figma_get_component` - Get a component by key
+18. `figma_get_team_component_sets` - Get component sets in a team
+19. `figma_get_file_component_sets` - Get component sets in a file
+20. `figma_get_component_set` - Get a component set by key
 
-### 样式方法
-21. `figma_get_team_styles` - 获取团队中的样式
-22. `figma_get_file_styles` - 获取文件中的样式
-23. `figma_get_style` - 通过键获取样式
+### Style Methods
+21. `figma_get_team_styles` - Get styles in a team
+22. `figma_get_file_styles` - Get styles in a file
+23. `figma_get_style` - Get a style by key
 
-### Webhook 方法（V2 API）
-24. `figma_post_webhook` - 创建 Webhook
-25. `figma_get_webhook` - 通过 ID 获取 Webhook
-26. `figma_update_webhook` - 更新 Webhook
-27. `figma_delete_webhook` - 删除 Webhook
-28. `figma_get_team_webhooks` - 获取团队的 Webhook
+### Webhook Methods (V2 API)
+24. `figma_post_webhook` - Create a webhook
+25. `figma_get_webhook` - Get a webhook by ID
+26. `figma_update_webhook` - Update a webhook
+27. `figma_delete_webhook` - Delete a webhook
+28. `figma_get_team_webhooks` - Get webhooks for a team
 
-### 库分析方法
-29. `figma_get_library_analytics_component_usages` - 获取库分析组件使用数据
-30. `figma_get_library_analytics_style_usages` - 获取库分析样式使用数据
-31. `figma_get_library_analytics_variable_usages` - 获取库分析变量使用数据
+### Library Analytics Methods
+29. `figma_get_library_analytics_component_usages` - Get library analytics component usage data
+30. `figma_get_library_analytics_style_usages` - Get library analytics style usage data
+31. `figma_get_library_analytics_variable_usages` - Get library analytics variable usage data
 
-## 安装
+## Installation
 
-### 通过 Smithery 安装
+### Installing via Smithery
 
-要通过 [Smithery](https://smithery.ai/embed/@thirdstrandstudio/mcp-figma) 自动安装适用于 Claude Desktop 的 mcp-figma：
+To install mcp-figma for Claude Desktop automatically via [Smithery](https://smithery.ai/embed/@thirdstrandstudio/mcp-figma):
 
 ```bash
 npx @smithery/cli@latest install @thirdstrandstudio/mcp-figma --client claude
 ```
 
-### 前提条件
-- Node.js (v16 或更高版本)
-- npm 或 yarn
+### Prerequisites
+- Node.js (v16 or later)
+- npm or yarn
 
-### 安装包
+### Installing the package
 
 ```bash
 # Clone the repository
@@ -97,21 +96,21 @@ npm install
 npm run build
 ```
 
-## 设置
+## Setup
 
-要使用此MCP服务器，您需要设置您的Figma API令牌。您可以通过以下三种方式之一来完成此操作：
+To use this MCP server, you need to set up your Figma API token. You can do this in one of three ways:
 
-### 1. 环境变量
+### 1. Environment Variable
 
-在项目根目录下创建一个`.env`文件或直接设置环境变量：
+Create a `.env` file in the project root or set the environment variable directly:
 
 ```
 FIGMA_API_KEY=your_figma_api_key
 ```
 
-### 2. 命令行参数
+### 2. Command Line Arguments
 
-启动服务器时，您可以将您的Figma API令牌作为命令行参数传递：
+When starting the server, you can pass your Figma API token as a command-line argument:
 
 ```bash
 # Using the long form
@@ -121,11 +120,11 @@ node dist/index.js --figma-token YOUR_FIGMA_TOKEN
 node dist/index.js -ft YOUR_FIGMA_TOKEN
 ```
 
-### 与Claude Desktop一起使用
+### Usage with Claude Desktop
 
-将以下内容添加到您的`claude_desktop_config.json`中：
+Add the following to your `claude_desktop_config.json`:
 
-#### 使用npx
+#### Using npx
 ```json
 {
   "mcpServers": {
@@ -137,7 +136,7 @@ node dist/index.js -ft YOUR_FIGMA_TOKEN
 }
 ```
 
-#### 直接使用Node.js（带环境变量）
+#### Direct Node.js (with environment variable)
 ```json
 {
   "mcpServers": {
@@ -152,7 +151,7 @@ node dist/index.js -ft YOUR_FIGMA_TOKEN
 }
 ```
 
-#### 直接使用Node.js（带命令行参数）
+#### Direct Node.js (with command-line argument)
 ```json
 {
   "mcpServers": {
@@ -164,11 +163,11 @@ node dist/index.js -ft YOUR_FIGMA_TOKEN
 }
 ```
 
-请将`/path/to/mcp-figma`替换为实际的存储库路径。
+Replace `/path/to/mcp-figma` with the actual path to your repository.
 
-## 示例
+## Examples
 
-### 获取Figma文件
+### Get a Figma File
 
 ```javascript
 // Get a Figma file
@@ -177,7 +176,7 @@ const result = await callTool("figma_get_file", {
 });
 ```
 
-### 从文件获取评论
+### Get Comments from a File
 
 ```javascript
 // Get comments from a file
@@ -187,7 +186,7 @@ const comments = await callTool("figma_get_comments", {
 });
 ```
 
-### 创建Webhook
+### Create a Webhook
 
 ```javascript
 // Create a webhook
@@ -200,7 +199,7 @@ const webhook = await callTool("figma_post_webhook", {
 });
 ```
 
-## 开发
+## Development
 
 ```bash
 # Install dependencies
@@ -216,26 +215,26 @@ npm run build
 npm start -- --figma-token YOUR_FIGMA_TOKEN
 ```
 
-## 许可证
+## License
 
-此MCP服务器根据MIT许可证发布。这意味着您可以在遵守MIT许可证条款和条件的前提下自由地使用、修改和分发该软件。更多详情，请参阅项目仓库中的LICENSE文件。
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
 
-**官方网站：** [https://github.com/JayArrowz/mcp-figma](https://github.com/JayArrowz/mcp-figma)
-**状态：** `active`　**最后核验：** `2026-08-30`
+**Official site: ** [https://github.com/JayArrowz/mcp-figma](https://github.com/JayArrowz/mcp-figma)
+**Status: ** `active`　**Last verified: ** `2026-08-30`
 
-## 分类与标签
+## Categories & Tags
 
-- 分类：`media`
-- 标签：`art and culture`, `developer tools`, `chinese`
+- Categories: `media`
+- Tags: `art and culture`, `developer tools`, `chinese`
 
-## MCP 配置
+## MCP Configuration
 
-- 传输方式：`stdio`
-- 启动命令：`npx`
-- 参数：`@thirdstrandstudio/mcp-figma --figma-token your_figma_api_key`
+- Transport: `stdio`
+- Command: `npx`
+- Args: `@thirdstrandstudio/mcp-figma --figma-token your_figma_api_key`
 
-该配置可通过资源站点索引导入 ChatSpeed。导入前请确认命令、参数和权限来源可信。
+This config can be imported into ChatSpeed from the resource index. Verify the command, arguments, and permission source are trustworthy before importing.
 
-## 数据来源
+## Data source
 
-资源文件：`resources/mcp/thirdstrandstudio-figma.json`。内容最后核验于 `2026-08-30`；免费额度和服务限制可能随官方政策变化。
+Resource file: `resources/mcp/thirdstrandstudio-figma.json`. Content last verified on `2026-08-30`; free quotas and service limits may change with official policies.
