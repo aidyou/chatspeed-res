@@ -1,2 +1,3 @@
+name = "chatspeed-resource-center"
 pages_build_output_dir = "docs/.vuepress/dist"
 compatibility_date = "2026-08-29"
